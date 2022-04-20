@@ -1,6 +1,8 @@
 
 #ignore dotnet files
+
 bin/
+bin/**
 .vs/
 obj/
 PublishProfiles/
