@@ -4,7 +4,10 @@
 bin/
 bin/**
 .vs/
+
 obj/
+obj/**
+
 PublishProfiles/
 *.user
 *.vspscc
