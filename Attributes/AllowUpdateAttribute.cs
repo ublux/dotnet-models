@@ -1,4 +1,4 @@
-﻿namespace Ublux.Communications.Domain.Attributes;
+﻿namespace Ublux.Communications.Attributes;
 
 /// <summary>
 ///     Properties containing this attribute will be allowed to be updated

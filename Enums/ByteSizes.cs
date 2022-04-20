@@ -1,4 +1,4 @@
-﻿namespace Ublux.Communications.Domain.Enums;
+﻿namespace Ublux.Communications.Enums;
 
 /// <summary>
 ///     Values are sizes in bytes

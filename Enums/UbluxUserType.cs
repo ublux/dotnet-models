@@ -1,4 +1,4 @@
-﻿namespace Ublux.Communications.Domain.Enums;
+﻿namespace Ublux.Communications.Enums;
 
 /// <summary>
 ///     Use flags in case we may need to specify multiple UserTypes

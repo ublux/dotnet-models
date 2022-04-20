@@ -1,4 +1,4 @@
-﻿namespace Ublux.Communications.Domain.Models;
+﻿namespace Ublux.Communications.Models;
 
 /// <summary> 
 ///     Session is a logged in Identity (user). We use JWT Security tokens to store this Session.

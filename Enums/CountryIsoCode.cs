@@ -1,5 +1,5 @@
 ﻿// ReSharper disable InconsistentNaming
-namespace Ublux.Communications.Domain.Enums;
+namespace Ublux.Communications.Enums;
 
 /// <summary>
 ///     Remember there is an ALL flag and also Unknown
