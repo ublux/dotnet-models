@@ -2,4 +2,7 @@
 #ignore dotnet files
 bin/
 .vs/
-
+obj/
+PublishProfiles/
+*.user
+*.vspscc
