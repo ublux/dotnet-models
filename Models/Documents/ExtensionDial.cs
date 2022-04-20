@@ -1,4 +1,4 @@
-﻿namespace Ublux.Communications.Domain.Models.Documents;
+﻿namespace Ublux.Communications.Models.Documents;
 
 // ReSharper disable ConditionIsAlwaysTrueOrFalse
 /// <summary>

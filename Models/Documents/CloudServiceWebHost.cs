@@ -1,4 +1,4 @@
-﻿namespace Ublux.Communications.Domain.Models.Documents; // ReSharper disable ConditionIsAlwaysTrueOrFalse
+﻿namespace Ublux.Communications.Models.Documents; // ReSharper disable ConditionIsAlwaysTrueOrFalse
 
 /// <summary>
 ///     Server where ublux website lives

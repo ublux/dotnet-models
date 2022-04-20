@@ -1,4 +1,4 @@
-﻿namespace Ublux.Communications.Domain;
+﻿namespace Ublux.Communications.Models;
 
 /// <summary>
 ///     All collections on database must contain this attribute.

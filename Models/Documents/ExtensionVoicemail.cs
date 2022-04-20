@@ -1,4 +1,4 @@
-﻿namespace Ublux.Communications.Domain.Models.Documents; // ReSharper disable ConditionIsAlwaysTrueOrFalse
+﻿namespace Ublux.Communications.Models.Documents; // ReSharper disable ConditionIsAlwaysTrueOrFalse
 
 /// <summary>
 ///     Calling this extension will enable to store a voicemail and be sent via email

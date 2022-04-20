@@ -1,4 +1,4 @@
-﻿namespace Ublux.Communications.Domain.Models.Documents; // ReSharper disable ConditionIsAlwaysTrueOrFalse
+﻿namespace Ublux.Communications.Models.Documents; // ReSharper disable ConditionIsAlwaysTrueOrFalse
 
 /// <summary>
 ///     Configuration of a phone

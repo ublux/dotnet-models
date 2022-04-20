@@ -1,4 +1,4 @@
-﻿namespace Ublux.Communications.Domain.Models;
+﻿namespace Ublux.Communications.Models;
 
 /// <summary>
 ///     Send email notification if call takes to long to be answered. This is used for extension queue

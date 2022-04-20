@@ -1,4 +1,4 @@
-﻿namespace Ublux.Communications.Domain.Models.SubDocuments;
+﻿namespace Ublux.Communications.Models.SubDocuments;
 
 /// <summary>
 ///     Contact email address

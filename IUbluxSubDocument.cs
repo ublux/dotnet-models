@@ -1,4 +1,4 @@
-﻿namespace Ublux.Communications.Domain;
+﻿namespace Ublux.Communications.Models;
 
 /// <summary>
 ///     All objects stored on database must contain this properties

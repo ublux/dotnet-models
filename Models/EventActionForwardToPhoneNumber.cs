@@ -1,4 +1,4 @@
-﻿namespace Ublux.Communications.Domain.Models;
+﻿namespace Ublux.Communications.Models;
 
 /// <summary>
 ///     Forward call to a cell phone or land line because call was not answered

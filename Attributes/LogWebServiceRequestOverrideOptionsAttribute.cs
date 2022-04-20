@@ -1,4 +1,4 @@
-﻿namespace Ublux.Communications.Domain.Attributes;
+﻿namespace Ublux.Communications.Attributes;
 
 /// <summary>
 ///     Used to modify a logWebService request. If it has a value it will be replaced

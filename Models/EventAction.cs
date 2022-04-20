@@ -1,6 +1,6 @@
 ﻿using JsonSubTypes;
 
-namespace Ublux.Communications.Domain.Models;
+namespace Ublux.Communications.Models;
 
 /// <summary>
 ///     EventAction to execute if a specific event occurs. 

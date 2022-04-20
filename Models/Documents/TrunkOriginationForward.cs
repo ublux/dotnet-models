@@ -1,4 +1,4 @@
-﻿namespace Ublux.Communications.Domain.Models.Documents; // ReSharper disable ConditionIsAlwaysTrueOrFalse
+﻿namespace Ublux.Communications.Models.Documents; // ReSharper disable ConditionIsAlwaysTrueOrFalse
 
 /// <summary>
 ///     This type of trunk origination forwards the call to our pbx. Twilio uses this type of Trunk origination

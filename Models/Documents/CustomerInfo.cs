@@ -1,4 +1,4 @@
-﻿namespace Ublux.Communications.Domain.Models.Documents; // ReSharper disable ConditionIsAlwaysTrueOrFalse
+﻿namespace Ublux.Communications.Models.Documents; // ReSharper disable ConditionIsAlwaysTrueOrFalse
 
 /// <summary>
 ///     Needed because some providers like the one from Spain require customers info in order to purchase VoipNumber

@@ -1,4 +1,4 @@
-﻿namespace Ublux.Communications.Domain.Models;
+﻿namespace Ublux.Communications.Models;
 
 /// <summary>
 ///     Rule that determines what action to execute when a phone call is received.

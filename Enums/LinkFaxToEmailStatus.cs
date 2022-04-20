@@ -1,4 +1,4 @@
-﻿namespace Ublux.Communications.Domain.Enums;
+﻿namespace Ublux.Communications.Enums;
 
 /// <summary>
 ///     In order to send faxes on ublux a user must link his email address to a FaxDID.

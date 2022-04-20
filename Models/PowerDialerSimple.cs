@@ -1,4 +1,4 @@
-﻿namespace Ublux.Communications.Domain.Models;
+﻿namespace Ublux.Communications.Models;
 
 /// <summary>
 ///     Power dialer that dials a direct extension and customer

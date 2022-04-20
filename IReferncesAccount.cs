@@ -1,4 +1,4 @@
-﻿namespace Ublux.Communications.Domain;
+﻿namespace Ublux.Communications.Models;
 
 /// <summary>
 ///     Model points to an account. Most models should have this.

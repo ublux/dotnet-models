@@ -1,4 +1,4 @@
-﻿namespace Ublux.Communications.Domain.Models;
+﻿namespace Ublux.Communications.Models;
 
 /// <summary>
 ///     Mailing address
