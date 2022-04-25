@@ -1,24 +1,27 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
-    <RootNamespace>Ublux.Communications.Models</RootNamespace>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<RootNamespace>Ublux.Communications.Models</RootNamespace>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+
+		<!--Needed by swagger to generate comments. GUID: FKGJ7-RUNNGHT44-JFKEIRK -->
+		<GenerateDocumentationFile>true</GenerateDocumentationFile>
+	</PropertyGroup>
 
 
-  <ItemGroup>
-        <!--<PackageReference Include="FluentValidation.AspNetCore" Version="10.3.6" />-->
-        <PackageReference Include="JsonSubTypes" Version="1.8.0" />
-        <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="6.0.0" />
-        <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="6.0.0" />
-        <PackageReference Include="MongoDB.Driver" Version="2.15.0" />
-        <!--<PackageReference Include="MongoDB.Bson" Version="2.15.1" />-->
+	<ItemGroup>
+		<!--<PackageReference Include="FluentValidation.AspNetCore" Version="10.3.6" />-->
+		<PackageReference Include="JsonSubTypes" Version="1.8.0" />
+		<PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="6.0.0" />
+		<PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="6.0.0" />
+		<PackageReference Include="MongoDB.Driver" Version="2.15.0" />
+		<!--<PackageReference Include="MongoDB.Bson" Version="2.15.1" />-->
 
-        
-        <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
-        <PackageReference Include="Standart.Hash.xxHash" Version="3.1.0" />
-    </ItemGroup>
+
+		<PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+		<PackageReference Include="Standart.Hash.xxHash" Version="3.1.0" />
+	</ItemGroup>
 
 </Project>

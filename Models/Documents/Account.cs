@@ -4,7 +4,7 @@
 ///     Ublux Account
 /// </summary>
 public partial class Account : UbluxDocument
-{    
+{
     #region Properties
 
     #region References
@@ -45,7 +45,7 @@ public partial class Account : UbluxDocument
     ///     Example, US-1, MX-1
     ///     Must have at least one
     /// </summary>
-        [AllowUpdate(false)]
+    [AllowUpdate(false)]
     [References(typeof(CloudServicePbx))]
     [IsRequired]
     public List<string> IdsCloudServicePbxs { get => _IdsCloudServicePbxs; set { if (value is null) _IdsCloudServicePbxs.Clear(); else _IdsCloudServicePbxs = value; } }
@@ -58,20 +58,20 @@ public partial class Account : UbluxDocument
     /// <summary>
     ///     Address
     /// </summary>    
-        [AllowUpdate(true)]
+    [AllowUpdate(true)]
     public MailingAddress? MailingAddress { get; set; }
 
     /// <summary>
     ///     Account secrets
     /// </summary>
-        [AllowUpdate(true)]
+    [AllowUpdate(true)]
     [IsRequired]
     public AccountSecrets AccountSecrets { get; set; } = new AccountSecrets();
 
     /// <summary>
     ///     Customizable settings
     /// </summary>    
-        [AllowUpdate(true)]
+    [AllowUpdate(true)]
     [IsRequired]
     public AccountSettings AccountSettings { get; set; } = new();
 
@@ -80,7 +80,7 @@ public partial class Account : UbluxDocument
     /// <summary>
     ///     Name of company
     /// </summary>    
-        [AllowUpdate(true)]
+    [AllowUpdate(true)]
     [IsRequired]
     public string CompanyName { get; set; } = String.Empty;
 
@@ -103,7 +103,7 @@ public partial class Account : UbluxDocument
     ///     If client has granted access to support to make changes to account
     /// </summary>
     [AllowUpdate(false)]
-        public bool HasGrantedSupportAccess { get; set; }
+    public bool HasGrantedSupportAccess { get; set; }
 
     /// <summary>
     ///     Was this account sold by CanalPark, Victor, Daniel?
@@ -116,7 +116,7 @@ public partial class Account : UbluxDocument
     /// <summary>
     ///     Countries on this list will not be marked as international calls
     /// </summary>
-        [AllowUpdate(false)]
+    [AllowUpdate(false)]
     [IsRequired]
     [BsonRepresentation(BsonType.String)]
     public List<CountryIsoCode> CountriesThatCanCallLocally
@@ -129,7 +129,7 @@ public partial class Account : UbluxDocument
     /// <summary>
     ///     If CountriesThatCanCallLocally does not contain country then ublux will attempt to find country on this list.
     /// </summary>
-        [AllowUpdate(false)]
+    [AllowUpdate(false)]
     [BsonRepresentation(BsonType.String)]
     public List<CountryIsoCode> CountriesThatCanCallInternationally
     {
