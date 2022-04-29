@@ -39,7 +39,7 @@ public partial class Account : UbluxDocument
     [References(typeof(TrunkTerminationGroup))]
     [AllowUpdate(false)]
     [IsRequired]
-    public string IdGTrunkTerminationGroup_Or_ValuesSeparatedByCommaIfOnPbx { get; set; } = String.Empty;
+    public string IdGTrunkTerminationGroup { get; set; } = String.Empty;
 
     /// <summary>
     ///     Example, US-1, MX-1
