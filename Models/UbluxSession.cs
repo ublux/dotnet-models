@@ -43,7 +43,7 @@ public class UbluxSession : IReferncesAccount
     /// <summary> exp property from JWT. Date when session expires </summary>
     [IsRequired]
     [AllowUpdate(false)]
-    public string ExpirationDate { get; set; } = string.Empty;
+    public DateTime ExpirationDate { get; set; } 
 
 }
 

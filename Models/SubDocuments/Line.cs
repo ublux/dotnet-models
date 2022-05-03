@@ -9,7 +9,7 @@ public class Line : UbluxSubDocument // this is a subdocument
     //public override string SubDocumentPrefix() => "SubLi";
 
     ///// <inheritdoc />
-    //public override void SetId() => _id =
+    //public override void SetId() => id =
     //    $"{UCore.InstanceId}:{SubDocumentPrefix()}:{DateTime.UtcNow.ToUnixEpoch()}:{Interlocked.Increment(ref DomainGlobals.IdGenerationCounter)}";
 
     /// <summary>
@@ -43,5 +43,4 @@ public class Line : UbluxSubDocument // this is a subdocument
     /// </summary>
     [AllowUpdate(true)]
     public bool RecordInternalCalls { get; set; }
-
 }

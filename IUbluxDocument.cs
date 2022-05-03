@@ -15,7 +15,7 @@ public interface IUbluxDocument : IUbluxDocumentId
     [AllowUpdate(false)] 
     [JsonProperty(Order = 1000)]
     [IsRequired]
-    string DateCreated { get; set; }
+    DateTime DateCreated { get; set; }
 
     /// <summary>
     ///     Date when item was deleted
@@ -23,14 +23,14 @@ public interface IUbluxDocument : IUbluxDocumentId
     [AllowUpdate(false)]
     [JsonProperty(Order = 1001)]
     [IgnoreDataMember]
-    string? DateDeleted { get; set; }
+    DateTime? DateDeleted { get; set; }
 
     /// <summary>
     ///     If collection is immutable this is not needed but we have it regardless
     /// </summary>
     [AllowUpdate(false)]
     [JsonProperty(Order = 1002)]
-    string? DateUpdated { get; set; }
+    DateTime? DateUpdated { get; set; }
 
     ///// <summary>
     /////     If database db is null then references will not be validated.
@@ -61,12 +61,14 @@ public abstract class UbluxDocument : IUbluxDocument, IUbluxDocumentId
     /// <summary>
     ///     Id of document
     /// </summary>
-    [JsonProperty(Order = -1000, PropertyName = "id")]
+    [BsonId]
+    [BsonElement(Order =-1000000)]
+    [JsonProperty(Order = -1000)]
     [IsRequired]
     [HideForCreateRequest]
     [AllowUpdate(true)] // allow update will include property.
                         // This property is needed in order to know what document will be updated
-    public string _id { get; set; } = String.Empty;
+    public string Id { get; set; } = String.Empty;
 
     /// <summary>
     ///     Creation date
@@ -74,7 +76,7 @@ public abstract class UbluxDocument : IUbluxDocument, IUbluxDocumentId
     [JsonProperty(Order = 1000)]
     [AllowUpdate(false)]
     [HideForCreateRequest]
-    public string DateCreated { get; set; } = string.Empty;
+    public DateTime DateCreated { get; set; }
 
     /// <summary>
     ///     Deletion Date
@@ -83,7 +85,7 @@ public abstract class UbluxDocument : IUbluxDocument, IUbluxDocumentId
     [IgnoreDataMember]
     [AllowUpdate(false)]
     [HideForCreateRequest]
-    public string? DateDeleted { get; set; }
+    public DateTime? DateDeleted { get; set; }
 
     /// <summary>
     ///     Updated date
@@ -91,7 +93,7 @@ public abstract class UbluxDocument : IUbluxDocument, IUbluxDocumentId
     [JsonProperty(Order = 1002)]
     [AllowUpdate(false)]
     [HideForCreateRequest]
-    public string? DateUpdated { get; set; }
+    public DateTime? DateUpdated { get; set; }
 
     ///// <summary>
     /////     If database db is null then references will not be validated.
@@ -117,11 +119,12 @@ public interface IUbluxDocumentId
     /// <summary>
     ///     Id of document
     /// </summary>
-    [JsonProperty(Order = -1000, PropertyName = "id")]
-    [System.Diagnostics.CodeAnalysis.SuppressMessage("Style", "IDE1006:Naming Styles", Justification = "<Pending>")]
+    [BsonId]
+    [JsonProperty(Order = -1000)]
+    [BsonElement(Order = -1000000)]
     [AllowUpdate(true)] // set to true because property id is needed on auto-generated objects    
     [IsRequired]
     [HideForCreateRequest]
-    string _id { get; set; }
+    string Id { get; set; }
 }
 

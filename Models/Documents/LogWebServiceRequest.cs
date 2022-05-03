@@ -5,7 +5,7 @@
 ///     All request sent to ublux will be stored.
 /// </summary>
 [BsonIgnoreExtraElements]
-[DebuggerDisplay("Id={_id}")]
+[DebuggerDisplay("Id={id}")]
 public partial class LogWebServiceRequest : UbluxDocument
 {
     #region Properties

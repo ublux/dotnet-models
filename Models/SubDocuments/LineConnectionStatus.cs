@@ -11,7 +11,7 @@ public class LineConnectionStatus : UbluxSubDocument
 
 
     ///// <inheritdoc />
-    //public override void SetId() => _id = $"{UCore.InstanceId}:{SubDocumentPrefix()}:{DateTime.UtcNow.ToUnixEpoch()}:{Interlocked.Increment(ref DomainGlobals.IdGenerationCounter)}";
+    //public override void SetId() => id = $"{UCore.InstanceId}:{SubDocumentPrefix()}:{DateTime.UtcNow.ToUnixEpoch()}:{Interlocked.Increment(ref DomainGlobals.IdGenerationCounter)}";
 
     /// <summary>
     ///     Public ip address of the connection
@@ -53,7 +53,7 @@ public class LineConnectionStatus : UbluxSubDocument
     ///     Date when line was last connected
     /// </summary>
     [AllowUpdate(false)]
-    public string? DateConnected { get; set; }
+    public DateTime? DateConnected { get; set; }
 
     // Have we sent sip notify? we send a sip notify if a phone does not send a packet for to long. 
     // Sending a sip notify will increase the probably of phone replying so we do not mark it as disconnected when in fact it is connected.

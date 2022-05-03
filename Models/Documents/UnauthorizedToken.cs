@@ -27,7 +27,7 @@ public partial class UnauthorizedToken : UbluxDocument, IReferncesAccount
     /// </summary>
         [AllowUpdate(false)]
     [IsRequired]
-    public string ExpirationDate { get; set; } = String.Empty;
+    public DateTime ExpirationDate { get; set; } 
 
     /// <summary>
     ///     Id of account

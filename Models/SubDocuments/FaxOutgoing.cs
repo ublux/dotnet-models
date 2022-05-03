@@ -9,7 +9,7 @@ public class FaxOutgoing : UbluxSubDocument
     //public override string SubDocumentPrefix() => "SubFO";
 
     ///// <inheritdoc />
-    //public override void SetId() => _id = $"{UCore.InstanceId}:{SubDocumentPrefix()}:{DateTime.UtcNow.ToUnixEpoch()}:{Interlocked.Increment(ref DomainGlobals.IdGenerationCounter)}";
+    //public override void SetId() => id = $"{UCore.InstanceId}:{SubDocumentPrefix()}:{DateTime.UtcNow.ToUnixEpoch()}:{Interlocked.Increment(ref DomainGlobals.IdGenerationCounter)}";
 
     /// <summary>
     ///     This is a subdocument. Id of parent

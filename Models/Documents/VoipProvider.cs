@@ -36,7 +36,7 @@ public partial class VoipProvider : UbluxDocument
     public string? Status { get; set; }
 
     /// <summary>
-    ///     The account id of the owner account. If this is the owner account then this will be the same as the _id
+    ///     The account id of the owner account. If this is the owner account then this will be the same as the id
     /// </summary>
     [AllowUpdate(false)]
     [IgnoreDataMember]
@@ -73,7 +73,7 @@ public partial class VoipProvider : UbluxDocument
     //    {
     //        DateUpdated = this.DateUpdated.FromUnixEpoch(),
     //        DateCreated = this.DateCreated.FromUnixEpoch(),
-    //        Id = this._id
+    //        Id = this.id
     //    };
     //}
 

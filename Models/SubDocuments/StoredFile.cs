@@ -68,7 +68,7 @@ public class StoredFile : UbluxSubDocument, IReferncesAccount
     //public override string SubDocumentPrefix() => "SubSF";
 
     ///// <inheritdoc />
-    //public override void SetId() => _id = $"{UCore.InstanceId}:{SubDocumentPrefix()}:{DateTime.UtcNow.ToUnixEpoch()}:{Interlocked.Increment(ref DomainGlobals.IdGenerationCounter)}";
+    //public override void SetId() => id = $"{UCore.InstanceId}:{SubDocumentPrefix()}:{DateTime.UtcNow.ToUnixEpoch()}:{Interlocked.Increment(ref DomainGlobals.IdGenerationCounter)}";
 
     /// <summary>
     ///     Common folders where we store files

@@ -3,10 +3,10 @@
 /// <summary>
 ///     Someone that has access to consume Ublux Web Api. It can be a PBX, WA, or UbluxUser
 /// </summary>
-[DebuggerDisplay("_id:{_id} IdAccount:{IdAccount} IdentityType:{IdentityType}")]
+[DebuggerDisplay("Id:{Id} IdAccount:{IdAccount} IdentityType:{IdentityType}")]
 public partial class Identity : UbluxDocument, IReferncesAccount
 {
-    // _id should be the username/email
+    // id should be the username/email
 
     #region Properties
 
@@ -31,7 +31,7 @@ public partial class Identity : UbluxDocument, IReferncesAccount
     ///     Value = Permissions it has on that role. Maybe it can only read data from that service but it cannot update, create or modify. 
     /// </summary>
     [AllowUpdate(true)]
-        [IsRequired]
+    [IsRequired]
     [BsonRepresentation(BsonType.String)]
     public List<UbluxRole> UbluxRoles
     {
@@ -48,7 +48,7 @@ public partial class Identity : UbluxDocument, IReferncesAccount
     ///     Username needed to authenticate. This is usually an email address in lowercase
     /// </summary>
     [AllowUpdate(false)]
-        [IsRequired]
+    [IsRequired]
     public string Username
     {
         get => (username ?? string.Empty).ToLower();
@@ -66,7 +66,7 @@ public partial class Identity : UbluxDocument, IReferncesAccount
     ///     Password needed to authenticate. This is different than the Authorization.
     /// </summary>
     [AllowUpdate(false)]
-        [IsRequired]
+    [IsRequired]
     [HideForCreateRequest]
     // virtual because of unit tests so that it can mock this object
     public virtual string Password { get; set; } = string.Empty;
@@ -75,7 +75,7 @@ public partial class Identity : UbluxDocument, IReferncesAccount
     ///     What type of user is this? Is this a PBX? WA?
     /// </summary>
     [AllowUpdate(false)]
-        [IsRequired]
+    [IsRequired]
     [HideForCreateRequest] // remember to add this on admin service!
     // virtual because of unit tests so that it can mock this object
     public virtual IdentityType IdentityType { get; set; }
@@ -84,7 +84,7 @@ public partial class Identity : UbluxDocument, IReferncesAccount
     ///     Only allow connections from this regex. Default is "*"
     /// </summary>
     [AllowUpdate(true)]
-        // virtual because of unit tests so that it can mock this object
+    // virtual because of unit tests so that it can mock this object
     public virtual string? AllowConnectingFromIpRegex { get; set; }
 
     /// <summary>
@@ -92,14 +92,14 @@ public partial class Identity : UbluxDocument, IReferncesAccount
     ///     If IpAddressLastAuthenticated is null then this will be allowed.
     /// </summary>
     [AllowUpdate(true)]
-        // virtual because of unit tests so that it can mock this object
+    // virtual because of unit tests so that it can mock this object
     public virtual bool PreventConnectingIfIpChanges { get; set; }
 
     /// <summary>
     ///     Ip address where it was last authenticated
     /// </summary>
     [AllowUpdate(false)]
-        [HideForCreateRequest]
+    [HideForCreateRequest]
     public virtual string? IpAddressWhereAuthenticated { get; set; }
     // virtual because of unit tests so that it can mock this object
 
@@ -107,11 +107,11 @@ public partial class Identity : UbluxDocument, IReferncesAccount
     ///     Date when this user was last authenticated
     /// </summary>
     [AllowUpdate(false)]
-        [HideForCreateRequest]
+    [HideForCreateRequest]
     // virtual because of unit tests so that it can mock this object
-    public virtual string? DateAuthenticated { get; set; }
+    public virtual DateTime? DateAuthenticated { get; set; }
 
     #endregion
 
-    
+
 }

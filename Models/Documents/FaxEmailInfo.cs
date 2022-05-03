@@ -10,7 +10,7 @@ public partial class FaxEmailInfo : UbluxDocument, IReferncesAccount
 
     #region Properties
 
-    // _id is the email address in lowercase
+    // id is the email address in lowercase
 
     #region References
 
@@ -67,7 +67,7 @@ public partial class FaxEmailInfo : UbluxDocument, IReferncesAccount
     [AllowUpdate(false)]
     [IgnoreDataMember]
     [IsRequired]
-    public string DateIdentificationTokenCreated { get; set; } = String.Empty;
+    public DateTime DateIdentificationTokenCreated { get; set; }
 
     /// <summary>
     ///     If someone sends a lot of emails without reading the instructions it will be marked as spam

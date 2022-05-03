@@ -79,7 +79,7 @@ public abstract class Call : UbluxDocument, IReferncesAccount
     ///     DateEnded - DateCreated will let you know the duration of call
     /// </summary>
     [AllowUpdate(false)]
-    public string? DateEnded { get; set; }
+    public DateTime? DateEnded { get; set; }
 
     /// <summary>
     ///     ANSWER: Call is answered. A successful dial. The caller reached the callee.
