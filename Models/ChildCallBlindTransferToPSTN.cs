@@ -3,7 +3,6 @@
 /// <summary>
 ///     Call is blind transferred to land-line or cell-phone
 /// </summary>
-[BsonIgnoreExtraElements]
 public class ChildCallBlindTransferToPSTN : ChildCallBlindTransfer
 {
     /// <summary>

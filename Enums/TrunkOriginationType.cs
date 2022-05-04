@@ -1,4 +1,5 @@
-﻿namespace Ublux.Communications.Enums;
+﻿#if UBLUX_BACKEND
+namespace Ublux.Communications.Enums;
 
 /// <summary>
 ///     Types of trunk originations
@@ -15,3 +16,4 @@ public enum TrunkOriginationType
     /// </summary>
     Register
 }
+#endif

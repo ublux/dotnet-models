@@ -10,16 +10,11 @@ namespace Ublux.Communications.Models;
 [JsonSubtypes.KnownSubType(typeof(EventActionForwardToExtension), nameof(EventActionType.ForwardToExtension))]
 [JsonSubtypes.KnownSubType(typeof(EventActionForwardToPhoneNumber), nameof(EventActionType.ForwardToPhoneNumber))]
 [JsonSubtypes.KnownSubType(typeof(EventActionLeaveVoicemail), nameof(EventActionType.LeaveVoicemail))]
-[BsonKnownTypes(
-    typeof(EventActionForwardToExtension),
-    typeof(EventActionForwardToPhoneNumber),
-    typeof(EventActionLeaveVoicemail)
-)]
-public abstract class EventAction
+public abstract partial class EventAction
 {
     /// <summary>
     ///     Reason why this action should execute
     /// </summary>
-        public abstract EventActionType EventActionType { get; }
+    public abstract EventActionType EventActionType { get; }
 }
 

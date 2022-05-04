@@ -1,26 +1,17 @@
 ﻿using JsonSubTypes;
 
-
 namespace Ublux.Communications.Models;
 
 /// <summary>
+///     This attributes are needed so that deserialization works. Newtonsoft.Json deserializer must be used.
 /// </summary>
 [JsonConverter(typeof(JsonSubtypes), nameof(ChildCallType))]
 [JsonSubtypes.KnownSubType(typeof(ChildCallForwardToExtension), nameof(ChildCallType.ForwardToExtension))]
-[JsonSubtypes.KnownSubType(typeof(ChildCallAttendantTransferToExtension),
-    nameof(ChildCallType.AttendantTransferToExtension))]
+[JsonSubtypes.KnownSubType(typeof(ChildCallAttendantTransferToExtension),nameof(ChildCallType.AttendantTransferToExtension))]
 [JsonSubtypes.KnownSubType(typeof(ChildCallAttendantTransferToPSTN), nameof(ChildCallType.AttendantTransferToPSTN))]
 [JsonSubtypes.KnownSubType(typeof(ChildCallBlindTransferToExtension), nameof(ChildCallType.BlindTransferToExtension))]
 [JsonSubtypes.KnownSubType(typeof(ChildCallBlindTransferToPSTN), nameof(ChildCallType.BlindTransferToPSTN))]
-[BsonKnownTypes(
-    typeof(ChildCallForwardToExtension),
-    typeof(ChildCallAttendantTransferToExtension),
-    typeof(ChildCallAttendantTransferToPSTN),
-    typeof(ChildCallBlindTransferToExtension),
-    typeof(ChildCallBlindTransferToPSTN)
-)]
-[BsonIgnoreExtraElements]
-public abstract class ChildCall
+public abstract partial class ChildCall
 {
     ///// <summary>
     /////     If outgoing:

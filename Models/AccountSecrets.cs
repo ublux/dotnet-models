@@ -28,7 +28,7 @@ public class AccountSecrets
     [IsRequired]
     public string PinSpy { get; set; } = string.Empty;
 
-    
+
 
 
 }

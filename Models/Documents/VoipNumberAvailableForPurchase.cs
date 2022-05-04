@@ -1,19 +1,17 @@
-﻿namespace Ublux.Communications.Models.Documents; // ReSharper disable ConditionIsAlwaysTrueOrFalse
+﻿namespace Ublux.Communications.Models.Documents;
 
 /// <summary>
 ///     Incoming phone number available for purchase
 /// </summary>
 public partial class VoipNumberAvailableForPurchase : VoipNumber
 {
-    
-
     #region Properties
 
     /// <summary>
     ///     key = id of logic OR id of extension.  
     ///     value = day of week when it executes
     /// </summary>    
-        [AllowUpdate(false)]
+    [AllowUpdate(false)]
     public override List<RulePhone> RulesPhone
     {
         get => _RulesVoice;
@@ -24,7 +22,7 @@ public partial class VoipNumberAvailableForPurchase : VoipNumber
     /// <summary>
     ///     Incoming SMS will be sent to these email addresses
     /// </summary>
-        [AllowUpdate(false)]
+    [AllowUpdate(false)]
     public override List<RuleSms> RulesSms
     {
         get => _RulesSms;
@@ -35,7 +33,7 @@ public partial class VoipNumberAvailableForPurchase : VoipNumber
     /// <summary>
     ///     Incoming Faxes will be sent to this email addresses
     /// </summary>
-        [AllowUpdate(false)]
+    [AllowUpdate(false)]
     public override List<RuleFax> RulesFax
     {
         get => _RulesFax;
@@ -46,17 +44,16 @@ public partial class VoipNumberAvailableForPurchase : VoipNumber
     /// <summary>
     ///     Requires customer info in order to be purchased
     /// </summary>
-        [AllowUpdate(false)]
+    [AllowUpdate(false)]
     public bool RequiresCustomerInfo { get; set; }
 
     /// <summary>
     ///     Phone numbers from AirNetwoks for example must be configured on their portal for them to work
     /// </summary>
-        [AllowUpdate(false)]
+    [AllowUpdate(false)]
     public bool PendingToBeConfigured { get; set; }
 
     #endregion
-
 
     /// <summary>
     ///     Type of VOIP number

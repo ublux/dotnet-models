@@ -1,18 +1,19 @@
-﻿namespace Ublux.Communications.Enums
+﻿#if UBLUX_BACKEND
+namespace Ublux.Communications.Enums;
+
+/// <summary>
+///     Used by model AgreementToTermsAndConditions
+/// </summary>
+public enum TermsAndConditionsCategory
 {
     /// <summary>
-    ///     Used by model AgreementToTermsAndConditions
+    ///     Unknown category
     /// </summary>
-    public enum TermsAndConditionsCategory
-    {
-        /// <summary>
-        ///     Unknown category
-        /// </summary>
-        None,
+    None,
 
-        /// <summary>
-        ///     Category recordings
-        /// </summary>
-        Recordings
-    }
+    /// <summary>
+    ///     Category recordings
+    /// </summary>
+    Recordings
 }
+#endif

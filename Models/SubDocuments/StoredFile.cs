@@ -25,6 +25,7 @@ public class StoredFile : UbluxSubDocument, IReferncesAccount
     [IsRequired]
     public string Md5Hash { get; set; } = string.Empty;
 
+#if UBLUX_BACKEND
     /// <summary>
     ///     Id of account it references
     /// </summary>
@@ -33,7 +34,6 @@ public class StoredFile : UbluxSubDocument, IReferncesAccount
     [AllowUpdate(false)]
     [IsRequired]
     public string IdAccount { get; set; } = String.Empty;
-
     /// <summary>
     ///     Example incoming-faxes
     /// </summary>
@@ -41,7 +41,6 @@ public class StoredFile : UbluxSubDocument, IReferncesAccount
     [AllowUpdate(false)]
     [IsRequired]
     public string FolderName { get; set; } = String.Empty;
-
     /// <summary>
     ///     Usually id followed by extension. Example:  CL-I-XXXXX.mp3
     /// </summary>
@@ -49,6 +48,7 @@ public class StoredFile : UbluxSubDocument, IReferncesAccount
     [AllowUpdate(false)]
     [IsRequired]
     public string FileName { get; set; } = String.Empty;
+#endif
 
     ///// <summary>
     /////     Is it saved on server? It does not mean its saved on amazon
@@ -87,6 +87,7 @@ public class StoredFile : UbluxSubDocument, IReferncesAccount
         public const string Recordings = "recordings";
     }
 
+#if UBLUX_BACKEND
     /// <summary>
     ///     Get id
     /// </summary>
@@ -104,6 +105,7 @@ public class StoredFile : UbluxSubDocument, IReferncesAccount
     {
         return $"/usr/share/ublux/accounts/{IdAccount}/{FolderName}";
     }
+#endif
 
-   
+
 }

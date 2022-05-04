@@ -1,4 +1,4 @@
-﻿namespace Ublux.Communications.Models.Documents; // ReSharper disable ConditionIsAlwaysTrueOrFalse
+﻿namespace Ublux.Communications.Models.Documents;
 
 /// <summary>
 ///     Tokens that are not authorized. Perhaps a token has been stolen
@@ -10,14 +10,14 @@ public partial class UnauthorizedToken : UbluxDocument, IReferncesAccount
     /// <summary>
     ///     Full token
     /// </summary>
-        [AllowUpdate(false)]
+    [AllowUpdate(false)]
     [IsRequired]
     public string Jwt { get; set; } = string.Empty;
 
     /// <summary>
     ///     Id user
     /// </summary>
-        [AllowUpdate(false)]
+    [AllowUpdate(false)]
     [References(typeof(Identity))]
     [IsRequired]
     public string IdIdentity { get; set; } = string.Empty;
@@ -25,17 +25,7 @@ public partial class UnauthorizedToken : UbluxDocument, IReferncesAccount
     /// <summary>
     ///     Date when JWT expires
     /// </summary>
-        [AllowUpdate(false)]
-    [IsRequired]
-    public DateTime ExpirationDate { get; set; } 
-
-    /// <summary>
-    ///     Id of account
-    /// </summary>
-    [IgnoreDataMember]
-    [References(typeof(Account))]
     [AllowUpdate(false)]
     [IsRequired]
-    public string IdAccount { get; set; } = String.Empty;
-
+    public DateTime ExpirationDate { get; set; }
 }

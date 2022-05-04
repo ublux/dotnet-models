@@ -7,7 +7,7 @@ public class EventActionForwardToPhoneNumber : EventAction
 {
     /// <inheritdoc/>
     [IsRequired]
-        public override EventActionType EventActionType { get; } = EventActionType.ForwardToPhoneNumber;
+    public override EventActionType EventActionType { get; } = EventActionType.ForwardToPhoneNumber;
 
     /// <summary>
     ///     Phone number where to forward the call

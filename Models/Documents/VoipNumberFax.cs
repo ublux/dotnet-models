@@ -1,18 +1,15 @@
-﻿namespace Ublux.Communications.Models.Documents; // ReSharper disable ConditionIsAlwaysTrueOrFalse
+﻿namespace Ublux.Communications.Models.Documents; 
 
 /// <summary>
 ///     Incoming phone number configured to receive faxes
 /// </summary>
 public partial class VoipNumberFax : VoipNumber
 {
-    
-
-
     /// <summary>
     ///     key = id of logic OR id of extension.  
     ///     value = day of week when it executes
     /// </summary>    
-        [AllowUpdate(true)]
+    [AllowUpdate(true)]
     public override List<RulePhone> RulesPhone
     {
         get => _RulesVoice;
@@ -23,7 +20,7 @@ public partial class VoipNumberFax : VoipNumber
     /// <summary>
     ///     Incoming SMS will be sent to these email addresses
     /// </summary>
-        [AllowUpdate(true)]
+    [AllowUpdate(true)]
     public override List<RuleSms> RulesSms
     {
         get => _RulesSms;
@@ -34,7 +31,7 @@ public partial class VoipNumberFax : VoipNumber
     /// <summary>
     ///     Incoming Faxes will be sent to this email addresses
     /// </summary>
-        [AllowUpdate(true)]
+    [AllowUpdate(true)]
     [IsRequired]
     public override List<RuleFax> RulesFax
     {
@@ -42,7 +39,6 @@ public partial class VoipNumberFax : VoipNumber
         set { if (value is null) _RulesFax.Clear(); else _RulesFax = value; }
     }
     List<RuleFax> _RulesFax = new();
-
 
     /// <summary>
     ///     Type of VOIP number

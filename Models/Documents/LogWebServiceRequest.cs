@@ -1,11 +1,8 @@
 ﻿namespace Ublux.Communications.Models.Documents;
 
-// ReSharper disable ConditionIsAlwaysTrueOrFalse
 /// <summary>
 ///     All request sent to ublux will be stored.
 /// </summary>
-[BsonIgnoreExtraElements]
-[DebuggerDisplay("Id={id}")]
 public partial class LogWebServiceRequest : UbluxDocument
 {
     #region Properties
@@ -19,7 +16,6 @@ public partial class LogWebServiceRequest : UbluxDocument
     public UbluxSession? UbluxSession { get; set; }
 
     #endregion
-
 
     /// <summary>
     ///     This is used to charge customers.
@@ -67,7 +63,6 @@ public partial class LogWebServiceRequest : UbluxDocument
     [IsRequired]
     public string Ip { get; set; } = string.Empty;
 
-
     /// <summary>
     ///     Request url without query string
     /// </summary>
@@ -89,26 +84,10 @@ public partial class LogWebServiceRequest : UbluxDocument
     public string? QueryString { get; set; }
 
     /// <summary>
-    ///     Save request body? If true RequestBody should be set
-    /// </summary>
-    [AllowUpdate(false)]
-    [BsonIgnore] // do not store on DB
-    [IgnoreDataMember]
-    public bool SaveRequestBody { get; set; }
-
-    /// <summary>
     ///     Post data sent by user. GET methods will have this empty.
     /// </summary>
     [AllowUpdate(false)]
     public string? RequestBody { get; set; }
-
-    /// <summary>
-    ///     Save response body? If true ResponseBody should be set
-    /// </summary>
-    [AllowUpdate(false)]
-    [BsonIgnore] // do not store on DB
-    [IgnoreDataMember]
-    public bool SaveResponseBody { get; set; }
 
     /// <summary>
     ///     We only store response body on POST,DELETE and PATCH commands

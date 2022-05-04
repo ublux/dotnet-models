@@ -3,30 +3,16 @@
 /// <summary>
 ///     Group of line keys
 /// </summary>
-public partial class LineKeyGroup : UbluxDocument, IReferncesAccount
+public partial class LineKeyGroup : UbluxDocument
 {
-    
-
     #region Properties
-
-    #region References
-
-    /// <inheritdoc/>
-    [References(typeof(Account))]
-    [IgnoreDataMember]
-    [AllowUpdate(false)]
-    [IsRequired]
-    [HideForCreateRequest]
-    public string IdAccount { get; set; } = String.Empty;
-
-    #endregion
 
     #region Subdocuments
 
     /// <summary>
     ///     Group of speed dial keys. Must have at least one
     /// </summary>
-        [AllowUpdate(true)]
+    [AllowUpdate(true)]
     public List<LineKey> LineKeys
     {
         get => _LineKeys;
@@ -39,7 +25,7 @@ public partial class LineKeyGroup : UbluxDocument, IReferncesAccount
     /// <summary>
     ///     Friendly name of line key group
     /// </summary>
-        [AllowUpdate(true)]
+    [AllowUpdate(true)]
     [IsRequired]
     public string FriendlyName { get; set; } = string.Empty;
 
@@ -47,7 +33,7 @@ public partial class LineKeyGroup : UbluxDocument, IReferncesAccount
     ///     Description of line key group
     /// </summary>
 
-        [AllowUpdate(true)]
+    [AllowUpdate(true)]
     public string? Description { get; set; }
 
     #endregion

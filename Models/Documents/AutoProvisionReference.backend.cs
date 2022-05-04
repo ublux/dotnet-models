@@ -1,12 +1,12 @@
-﻿namespace Ublux.Communications.Models.Documents; // ReSharper disable ConditionIsAlwaysTrueOrFalse
+﻿#if UBLUX_BACKEND
+
+namespace Ublux.Communications.Models.Documents;
 
 /// <summary>
 ///     Id is the mac address of a phone. It should point to an ip phone
 /// </summary>
 public partial class AutoProvisionReference : UbluxDocument
 {
-    
-
     #region Properties
 
     #region References
@@ -39,3 +39,5 @@ public partial class AutoProvisionReference : UbluxDocument
 
     #endregion
 }
+
+#endif

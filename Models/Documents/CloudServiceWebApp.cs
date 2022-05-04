@@ -1,12 +1,10 @@
-﻿namespace Ublux.Communications.Models.Documents; // ReSharper disable ConditionIsAlwaysTrueOrFalse
+﻿namespace Ublux.Communications.Models.Documents;
 
 /// <summary>
 ///     Web app where web-phone lives
 /// </summary>
 public partial class CloudServiceWebApp : CloudService
 {
-
-
     /// <summary>
     ///     Type of cloud service
     /// </summary>

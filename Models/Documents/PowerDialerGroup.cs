@@ -1,49 +1,39 @@
-﻿namespace Ublux.Communications.Models.Documents; // ReSharper disable ConditionIsAlwaysTrueOrFalse
+﻿namespace Ublux.Communications.Models.Documents;
 
 /// <summary>
 ///     Group used to call multiple parties
 /// </summary>
 public partial class PowerDialerGroup : UbluxDocument, IReferncesAccount
 {
-    
-
     #region Properties
 
     #region References
-
-    /// <inheritdoc/>
-    [IgnoreDataMember]
-    [References(typeof(Account))]
-    [AllowUpdate(false)]
-    [IsRequired]
-    [HideForCreateRequest]
-    public string IdAccount { get; set; } = String.Empty;
 
     /// <summary>
     ///     From what phone number we will make call. 
     /// </summary>
     [References(typeof(VoipNumberPhone))]
-        [AllowUpdate(false)]
+    [AllowUpdate(false)]
     public string? IdVoipNumberPhone { get; set; }
 
     /// <summary>
     ///     Override caller id?
     /// </summary>
     [References(typeof(CallerIdMask))]
-        [AllowUpdate(false)]
+    [AllowUpdate(false)]
     public string? IdCallerIdMask { get; set; }
 
     /// <summary>
     ///     What IVR to execute
     /// </summary>
     [References(typeof(CallFlow))]
-        [AllowUpdate(false)]
+    [AllowUpdate(false)]
     public string? IdCallFlow { get; set; }
 
     /// <summary>
     ///     If on mode simple what extensions will ring to take phone calls
     /// </summary>
-        [References(typeof(Extension))]
+    [References(typeof(Extension))]
     [AllowUpdate(false)]
     public string? IdExtension { get; set; }
 
@@ -54,7 +44,7 @@ public partial class PowerDialerGroup : UbluxDocument, IReferncesAccount
     /// <summary>
     ///     Subdocument
     /// </summary>
-        [AllowUpdate(false)]
+    [AllowUpdate(false)]
     [IsRequired]
     public List<PowerDialer> PowerDialers
     {
@@ -68,20 +58,20 @@ public partial class PowerDialerGroup : UbluxDocument, IReferncesAccount
     /// <summary>
     ///     Friendly name of power dialer group
     /// </summary>
-        [AllowUpdate(true)]
+    [AllowUpdate(true)]
     [IsRequired]
     public string FriendlyName { get; set; } = string.Empty;
 
     /// <summary>
     ///     Description of power dialer group
     /// </summary>
-        [AllowUpdate(true)]
+    [AllowUpdate(true)]
     public string? Description { get; set; }
 
     /// <summary>
     ///     Status of power dialer
     /// </summary>
-        [AllowUpdate(false)]
+    [AllowUpdate(false)]
     [IsRequired]
     [HideForCreateRequest]
     public PowerDialerGroupStatus PowerDialerGroupStatus  // added for convenience
@@ -94,7 +84,7 @@ public partial class PowerDialerGroup : UbluxDocument, IReferncesAccount
     /// <summary>
     ///     If there is an error then what error?
     /// </summary>
-        [AllowUpdate(false)]
+    [AllowUpdate(false)]
     [HideForCreateRequest]
     public string? ErrorMessage { get; set; }
 
@@ -106,7 +96,7 @@ public partial class PowerDialerGroup : UbluxDocument, IReferncesAccount
     /// <summary>
     ///     Used by pbx to know what is the current item that is executing. Also by web service to let front know what index is being executed.
     /// </summary>
-        [AllowUpdate(false)]
+    [AllowUpdate(false)]
     [HideForCreateRequest]
     public int PowerDialerExecutingRecordIndex { get; set; }
 
@@ -114,7 +104,7 @@ public partial class PowerDialerGroup : UbluxDocument, IReferncesAccount
     ///     If there are 5 agents using the power dialer then there can 5 five concurrent calls.
     ///     When power dialer was first created only one call at a time existed. When that call ended the next call was made.
     /// </summary>
-        [AllowUpdate(false)]
+    [AllowUpdate(false)]
     [IsRequired]
     public int NumberOfConcurrentCalls { get; set; }
 

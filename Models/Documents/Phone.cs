@@ -10,15 +10,6 @@ public partial class Phone : UbluxDocument, IReferncesAccount
     #region References
 
     /// <summary>
-    ///     Points to what account?
-    /// </summary>
-    [References(typeof(Account))]
-    [IgnoreDataMember]
-    [AllowUpdate(false)]
-    [IsRequired]
-    public string IdAccount { get; set; } = String.Empty;
-
-    /// <summary>
     ///     This specifies to what PBX it will be connected to
     /// </summary>
     [References(typeof(CloudServicePbx))]

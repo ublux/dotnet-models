@@ -1,28 +1,19 @@
-﻿namespace Ublux.Communications.Models.Documents; // ReSharper disable ConditionIsAlwaysTrueOrFalse
+﻿namespace Ublux.Communications.Models.Documents;
 
 /// <summary>
 ///     Group of faxes sent as a group via email
 /// </summary>
-public partial class FaxOutgoingGroup : UbluxDocument, IReferncesAccount
+public partial class FaxOutgoingGroup : UbluxDocument
 {
-    
-
     #region Properties
 
     #region References
-
-    /// <inheritdoc/>
-    [References(typeof(Account))]
-    [IgnoreDataMember]
-    [AllowUpdate(false)]
-    [IsRequired]
-    public string IdAccount { get; set; } = String.Empty;
 
     /// <summary>
     ///     Id of Fax VoipNumber (virtual number) that sent the fax
     /// </summary>    
     [References(typeof(VoipNumberFax))]
-        [AllowUpdate(false)]
+    [AllowUpdate(false)]
     [IsRequired]
     public string IdVoipNumberFax { get; set; } = String.Empty;
 
@@ -33,7 +24,7 @@ public partial class FaxOutgoingGroup : UbluxDocument, IReferncesAccount
     /// <summary>
     ///     There must be at least one fax attachment
     /// </summary>
-        [AllowUpdate(false)]
+    [AllowUpdate(false)]
     [IsRequired]
     public List<FaxOutgoing> FaxesOutgoing
     {
@@ -45,7 +36,7 @@ public partial class FaxOutgoingGroup : UbluxDocument, IReferncesAccount
     /// <summary>
     ///     Email that was sent to fax@ublux.com
     /// </summary>
-        [AllowUpdate(false)]
+    [AllowUpdate(false)]
     [IsRequired]
     public FaxEmail FaxEmail { get; set; } = new FaxEmail();
 
@@ -54,14 +45,14 @@ public partial class FaxOutgoingGroup : UbluxDocument, IReferncesAccount
     /// <summary>
     ///     Phone number where fax is sent
     /// </summary>
-        [AllowUpdate(false)]
+    [AllowUpdate(false)]
     [IsRequired]
     public string From { get; set; } = string.Empty;
 
     /// <summary>
     ///     If fax is sent successfully then send confirmation to this emails
     /// </summary>
-        [AllowUpdate(false)]
+    [AllowUpdate(false)]
     [IsRequired]
     public List<string> SendConfirmationToEmails
     {
@@ -73,7 +64,7 @@ public partial class FaxOutgoingGroup : UbluxDocument, IReferncesAccount
     /// <summary>
     ///     True if there is an error
     /// </summary>
-        [AllowUpdate(false)]
+    [AllowUpdate(false)]
     public bool ContainsError { get; set; }
 
     #endregion

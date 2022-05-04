@@ -1,4 +1,4 @@
-﻿namespace Ublux.Communications.Models.Documents; // ReSharper disable ConditionIsAlwaysTrueOrFalse
+﻿namespace Ublux.Communications.Models.Documents; 
 
 /// <summary>
 ///     SMS message
@@ -9,17 +9,10 @@ public partial class SMS : UbluxDocument, IReferncesAccount
 
     #region References
 
-    /// <inheritdoc />
-    [IgnoreDataMember]
-    [AllowUpdate(false)]
-    [References(typeof(Account))]
-    [IsRequired]
-    public string IdAccount { get; set; } = String.Empty;
-
     /// <summary>
     ///     VOIP number that sent/received SMS message
     /// </summary>
-        [AllowUpdate(false)]
+    [AllowUpdate(false)]
     [References(typeof(VoipNumber))]
     [IsRequired]
     public string IdVoipNumber { get; set; } = string.Empty;
@@ -31,7 +24,7 @@ public partial class SMS : UbluxDocument, IReferncesAccount
     /// <summary>
     ///     Contact
     /// </summary>
-        [AllowUpdate(false)]
+    [AllowUpdate(false)]
     public Contact? Contact { get; set; }
 
     #endregion
@@ -39,13 +32,13 @@ public partial class SMS : UbluxDocument, IReferncesAccount
     /// <summary>
     ///     True if SMS was received false otherwise
     /// </summary>
-        [AllowUpdate(false)]
+    [AllowUpdate(false)]
     public bool IsIncoming { get; set; }
 
     /// <summary>
     ///     SMS message
     /// </summary>
-        [AllowUpdate(false)]
+    [AllowUpdate(false)]
     [IsRequired]
     public string Body { get; set; } = string.Empty;
 
@@ -55,14 +48,14 @@ public partial class SMS : UbluxDocument, IReferncesAccount
     /// <summary>
     ///     If a SMS body is to large, it will be sent in multiple chunks/segments
     /// </summary>
-        [AllowUpdate(false)]
+    [AllowUpdate(false)]
     [IsRequired]
     public int NumSegments { get; set; }
 
     /// <summary>
     ///     Status of SMS
     /// </summary>
-        [AllowUpdate(false)]
+    [AllowUpdate(false)]
     public string? Status { get; set; }
 
     //    // [AllowUpdate(false)]
@@ -83,17 +76,16 @@ public partial class SMS : UbluxDocument, IReferncesAccount
     /// <summary>
     ///     Number that sent SMS
     /// </summary>
-        [AllowUpdate(false)]
+    [AllowUpdate(false)]
     [IsRequired]
-    public string FromInternationalFormat { get; set; } = string.Empty;
+    public string From { get; set; } = string.Empty;
 
     /// <summary>
     ///     Number to whom SMS was sent to 
     /// </summary>
-        [AllowUpdate(false)]
+    [AllowUpdate(false)]
     [IsRequired]
-    public string ToInternationalFormat { get; set; } = string.Empty;
+    public string To { get; set; } = string.Empty;
 
     #endregion
-
 }

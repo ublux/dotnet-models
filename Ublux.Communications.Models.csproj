@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
 		<TargetFramework>net6.0</TargetFramework>
@@ -8,8 +8,9 @@
 
 		<!--Needed by swagger to generate comments. GUID: FKGJ7-RUNNGHT44-JFKEIRK -->
 		<GenerateDocumentationFile>true</GenerateDocumentationFile>
-	</PropertyGroup>
 
+		<DefineConstants>UBLUX_BACKEND</DefineConstants>
+	</PropertyGroup>
 
 	<ItemGroup>
 		<!--<PackageReference Include="FluentValidation.AspNetCore" Version="10.3.6" />-->

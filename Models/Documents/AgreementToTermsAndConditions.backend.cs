@@ -1,4 +1,6 @@
-﻿namespace Ublux.Communications.Models.Documents; // ReSharper disable ConditionIsAlwaysTrueOrFalse
+﻿#if UBLUX_BACKEND
+
+namespace Ublux.Communications.Models.Documents; 
 
 /// <summary>
 ///     Store when user agreed to UBLUX terms and conditions for legal reasons.
@@ -51,4 +53,7 @@ public partial class AgreementToTermsAndConditions : UbluxDocument
     public string? Description { get; set; }
 
     #endregion
+
 }
+
+#endif

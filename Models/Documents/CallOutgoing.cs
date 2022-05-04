@@ -1,4 +1,4 @@
-﻿namespace Ublux.Communications.Models.Documents; // ReSharper disable ConditionIsAlwaysTrueOrFalse
+﻿namespace Ublux.Communications.Models.Documents;
 
 /// <summary>
 ///     Outgoing phone call
@@ -9,13 +9,13 @@ public abstract class CallOutgoing : Call
     ///     Contact to whom we are calling
     /// </summary>
     [AllowUpdate(false)]
-        public override Contact? Contact { get; set; }
+    public override Contact? Contact { get; set; }
 
     /// <summary>
     ///     Id line that started phone call
     /// </summary>
     [AllowUpdate(false)]
-        [References(typeof(Line))]
+    [References(typeof(Line))]
     [IsRequired]
     public string IdLineThatInitiatedCall { get; set; } = string.Empty;
 }

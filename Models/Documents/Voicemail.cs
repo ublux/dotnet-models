@@ -1,27 +1,21 @@
-﻿using JsonSubTypes;
-
-namespace Ublux.Communications.Models.Documents; // ReSharper disable ConditionIsAlwaysTrueOrFalse
+﻿namespace Ublux.Communications.Models.Documents; // ReSharper disable ConditionIsAlwaysTrueOrFalse
 
 /// <summary>
 ///     Extensions may forward an existing voicemail to another extension
 /// </summary>
-/// <summary>
-///     Extension could be of type basic,queue,conference,voicemail or callFlow
-/// </summary>
-[JsonConverter(typeof(JsonSubtypes), nameof(VoicemailType))]
-[JsonSubtypes.KnownSubType(typeof(Voicemail), nameof(VoicemailType.Regular))]
+/* Attributes that help with deserialization */
+[JsonConverter(typeof(JsonSubtypes), nameof(VoicemailType))]                   
+[JsonSubtypes.KnownSubType(typeof(Voicemail), nameof(VoicemailType.Regular))]               
 [JsonSubtypes.KnownSubType(typeof(VoicemailForwarded), nameof(VoicemailType.Forwarded))]
 [BsonKnownTypes(
     typeof(Voicemail),
-    typeof(VoicemailForwarded)
-)]
-[BsonIgnoreExtraElements]
+    typeof(VoicemailForwarded))]
 public partial class Voicemail : UbluxDocument
 {
     /// <summary>
     ///     Type of voicemail
     /// </summary>
-        [AllowUpdate(false)]
+    [AllowUpdate(false)]
     [IsRequired]
     [HideForCreateRequest]
     public virtual VoicemailType VoicemailType => VoicemailType.Regular;
@@ -29,7 +23,7 @@ public partial class Voicemail : UbluxDocument
     /// <summary>
     ///     Ids of lines that can listen to voicemail
     /// </summary>
-        [AllowUpdate(false)]
+    [AllowUpdate(false)]
     [References(typeof(Line))]
     public List<string> IdsLinesThatCanListenToVoicemail
     {
@@ -41,7 +35,7 @@ public partial class Voicemail : UbluxDocument
     /// <summary>
     ///     Email where voicemail was sent
     /// </summary>
-        [AllowUpdate(false)]
+    [AllowUpdate(false)]
     [IsRequired]
     public string Email { get; set; } = string.Empty;
 
@@ -49,25 +43,24 @@ public partial class Voicemail : UbluxDocument
     ///     Voicemail duration in seconds
     /// </summary>
     [AllowUpdate(false)]
-        [IsRequired]
+    [IsRequired]
     public int DurationInSeconds { get; set; }
 
     /// <summary>
     ///     Voicemail in wav format. Optional because there may be an error
     /// </summary>
     [AllowUpdate(false)]
-        public StoredFile? VoicemailWav { get; set; }
+    public StoredFile? VoicemailWav { get; set; }
 
     /// <summary>
     ///     Voicemail in mp3 format. Optional because there may be an error
     /// </summary>
     [AllowUpdate(false)]
-        public StoredFile? VoicemailMp3 { get; set; }
+    public StoredFile? VoicemailMp3 { get; set; }
 
     /// <summary>
     ///     If there is an error sending the voicemail then the error description
     /// </summary>
     [AllowUpdate(false)]
-        public string? ErrorMessage { get; set; }
-
+    public string? ErrorMessage { get; set; }
 }

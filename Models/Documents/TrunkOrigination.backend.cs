@@ -1,6 +1,6 @@
-﻿using JsonSubTypes;
+﻿#if UBLUX_BACKEND
 
-namespace Ublux.Communications.Models.Documents; // ReSharper disable ConditionIsAlwaysTrueOrFalse
+namespace Ublux.Communications.Models.Documents;
 
 /// <summary>
 ///     Trunk used to receive phone calls
@@ -27,7 +27,6 @@ public abstract class TrunkOrigination : UbluxDocument
     [AllowUpdate(false)]
     [IsRequired]
     public string IdVoipProvider { get; set; } = string.Empty;
-
     /// <summary>
     ///     Used by what PBX?
     /// </summary>
@@ -36,7 +35,6 @@ public abstract class TrunkOrigination : UbluxDocument
     [References(typeof(CloudServicePbx))]
     [IsRequired]
     public string IdCloudServicePbx { get; set; } = string.Empty;
-
     /// <summary>
     ///     Backup pbx
     /// </summary>
@@ -45,7 +43,6 @@ public abstract class TrunkOrigination : UbluxDocument
     [References(typeof(CloudServicePbx))]
     [IsRequired]
     public string IdCloudServicePbxFailover { get; set; } = string.Empty;
-
     /// <summary>
     ///     Faxes and numbers used by this trunk
     /// </summary>
@@ -107,6 +104,6 @@ public abstract class TrunkOrigination : UbluxDocument
     //[IgnoreDataMember]
     //[AllowUpdate(false)]
     //public bool IsSecure { get; set; }
-
-    
 }
+
+#endif

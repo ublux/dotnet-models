@@ -1,6 +1,4 @@
-﻿using JsonSubTypes;
-
-namespace Ublux.Communications.Models.Documents; // ReSharper disable ConditionIsAlwaysTrueOrFalse
+﻿namespace Ublux.Communications.Models.Documents; 
 
 /// <summary>
 ///     Incoming phone number (VoipNumber)
@@ -14,51 +12,9 @@ namespace Ublux.Communications.Models.Documents; // ReSharper disable ConditionI
     typeof(VoipNumberFax),
     typeof(VoipNumberPhone)
 )]
-[BsonIgnoreExtraElements]
-public abstract class VoipNumber : UbluxDocument, IReferncesAccount
+public abstract partial class VoipNumber : UbluxDocument, IReferncesAccount
 {
     #region Properties
-
-    #region References
-
-    /// <inheritdoc/>
-    [References(typeof(Account))]
-    [IgnoreDataMember]
-    [AllowUpdate(false)]
-    [IsRequired]
-    public string IdAccount { get; set; } = String.Empty;
-
-    /// <summary>
-    ///     Information about customer. This may be required by some providers.
-    /// </summary>
-    [References(typeof(CustomerInfo))]
-    [AllowUpdate(false)]
-    public string? IdCustomerInfo { get; set; }
-
-    /// <summary>
-    ///     Responsible for receiving phone calls
-    /// </summary>
-    [References(typeof(TrunkOrigination))]
-    [IgnoreDataMember]
-    [AllowUpdate(false)]
-    public string? IdTrunkOrigination { get; set; }
-
-    /// <summary>
-    ///     To what provider this belongs. Thanks to the provider we can use its API.
-    /// </summary>
-    [References(typeof(VoipProvider))]
-    [IgnoreDataMember]
-    [AllowUpdate(false)]
-    [IsRequired]
-    public string IdVoipProvider { get; set; } = string.Empty;
-
-    #endregion
-
-    #region Subdocuments
-
-
-
-    #endregion
 
     #region abstract
 
@@ -103,14 +59,6 @@ public abstract class VoipNumber : UbluxDocument, IReferncesAccount
     /// </summary>
     [AllowUpdate(true)]
     public bool RecordIncomingCalls { get; set; }
-
-    /// <summary>
-    ///     Provider id
-    /// </summary>
-    [IgnoreDataMember]
-    [AllowUpdate(false)]
-    [IsRequired]
-    public string SID { get; set; } = string.Empty;
 
     /// <summary>
     ///     Phone number

@@ -4,7 +4,6 @@
 ///     If a call is forwarded to an extension. 
 ///     For example if call is made to an extension dial that is configured to be forwarded to another extension if not answered this child call will be created
 /// </summary>
-[BsonIgnoreExtraElements]
 public class ChildCallForwardToExtension : ChildCall
 {
     /// <summary>
@@ -56,6 +55,6 @@ public class ChildCallForwardToExtension : ChildCall
     ///     ForwardToExtension
     /// </summary>
     [IsRequired]
-        public override ChildCallType ChildCallType { get; } = ChildCallType.ForwardToExtension;
+    public override ChildCallType ChildCallType { get; } = ChildCallType.ForwardToExtension;
 }
 

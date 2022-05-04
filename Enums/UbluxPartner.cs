@@ -1,4 +1,5 @@
-﻿namespace Ublux.Communications.Enums;
+﻿#if UBLUX_BACKEND
+namespace Ublux.Communications.Enums;
 
 /// <summary>
 ///     This will be the Ublux partner. For example Victor has nothing to do with Canal Park.
@@ -28,3 +29,4 @@ public enum UbluxPartner
     //DanielAndFernando,
     //Fernando
 }
+#endif

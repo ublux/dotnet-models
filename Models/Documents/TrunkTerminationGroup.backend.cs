@@ -1,4 +1,6 @@
-﻿namespace Ublux.Communications.Models.Documents; // ReSharper disable ConditionIsAlwaysTrueOrFalse
+﻿#if UBLUX_BACKEND
+
+namespace Ublux.Communications.Models.Documents; // ReSharper disable ConditionIsAlwaysTrueOrFalse
 
 /// <summary>
 ///     Group of trunk terminations ordered by priority
@@ -19,5 +21,6 @@ public partial class TrunkTerminationGroup : UbluxDocument
         set { if (value is null) _IdsTrunkTerminationsOrderedByPriority.Clear(); else _IdsTrunkTerminationsOrderedByPriority = value; }
     }
     List<string> _IdsTrunkTerminationsOrderedByPriority = new();
-
 }
+
+#endif

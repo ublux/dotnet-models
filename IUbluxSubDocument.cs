@@ -3,7 +3,7 @@
 /// <summary>
 ///     MongoDB supports subdocuments
 /// </summary>
-public abstract class UbluxSubDocument 
+public abstract class UbluxSubDocument
 {
     // TODO: mark this property on database with unique index
 

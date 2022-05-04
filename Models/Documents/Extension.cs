@@ -1,8 +1,5 @@
-﻿using JsonSubTypes;
+﻿namespace Ublux.Communications.Models.Documents;
 
-namespace Ublux.Communications.Models.Documents;
-
-// ReSharper disable ConditionIsAlwaysTrueOrFalse
 /// <summary>
 ///     Extension could be of type basic,queue,conference,voicemail or callFlow
 /// </summary>
@@ -19,20 +16,11 @@ namespace Ublux.Communications.Models.Documents;
     typeof(ExtensionQueue),
     typeof(ExtensionVoicemail)
 )]
-[BsonIgnoreExtraElements]
-public abstract class Extension : UbluxDocument, IReferncesAccount
+public abstract partial class Extension : UbluxDocument
 {
     #region Properties
 
     #region References
-
-    /// <inheritdoc/>
-    [IgnoreDataMember]
-    [References(typeof(Account))]
-    [AllowUpdate(false)]
-    [IsRequired]
-    [HideForCreateRequest]
-    public string IdAccount { get; set; } = String.Empty;
 
     /// <summary>
     ///     Music on hold to use

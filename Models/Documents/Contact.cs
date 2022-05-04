@@ -1,22 +1,15 @@
 ﻿using Standart.Hash.xxHash;
 
-namespace Ublux.Communications.Models.Documents; // ReSharper disable ConditionIsAlwaysTrueOrFalse
+namespace Ublux.Communications.Models.Documents;
 
 /// <summary>
 ///     Contact
 /// </summary>
-public partial class Contact : UbluxDocument, IReferncesAccount
+public partial class Contact : UbluxDocument
 {
     #region Properties
 
     #region References
-
-    /// <inheritdoc/>
-    [IgnoreDataMember]
-    [References(typeof(Account))]
-    [AllowUpdate(false)]
-    [IsRequired]
-    public string IdAccount { get; set; } = String.Empty;
 
     #endregion
 
@@ -27,7 +20,7 @@ public partial class Contact : UbluxDocument, IReferncesAccount
     ///     Key = phone number
     ///     Value = type (example = work)
     /// </summary>
-        [AllowUpdate(true)]
+    [AllowUpdate(true)]
     public List<ContactNumber> ContactNumbers
     {
         get => _ContactNumbers;
@@ -44,7 +37,7 @@ public partial class Contact : UbluxDocument, IReferncesAccount
     /// <summary>
     ///     Email addresses of contact
     /// </summary>
-        [AllowUpdate(true)]
+    [AllowUpdate(true)]
     public List<ContactEmail> ContactEmails
     {
         get => _ContactEmails;
@@ -62,44 +55,30 @@ public partial class Contact : UbluxDocument, IReferncesAccount
     /// <summary>
     ///     Contact first name
     /// </summary>
-        [AllowUpdate(true)]
+    [AllowUpdate(true)]
     public string? FirstName { get; set; }
 
     /// <summary>
     ///     Contact last name
     /// </summary>
-        [AllowUpdate(true)]
+    [AllowUpdate(true)]
     public string? LastName { get; set; }
 
     /// <summary>
     ///     Contact job tittle
     /// </summary>
-        [AllowUpdate(true)]
+    [AllowUpdate(true)]
     public string? JobTittle { get; set; }
 
     /// <summary>
     /// </summary>
-        [AllowUpdate(true)]
+    [AllowUpdate(true)]
     public string? Company { get; set; }
-
-    ///// <summary>
-    /////     This is the actual contact. When someone imports a contact from Gmail or outlook this are the fields that he uploads:
-    /////     First Name,Middle Name,Last Name,Title,Suffix,Initials,Web Page,Gender,Birthday,Anniversary,Location,Language,Internet Free Busy,Notes,E-mail Address,E-mail 2 Address,E-mail 3 Address,Primary Phone,Home Phone,Home Phone 2,Mobile Phone,Pager,Home Fax,Home Address,Home Street,Home Street 2,Home Street 3,Home Address PO Box,Home City,Home State,Home Postal Code,Home Country,Spouse,Children,Manager's Name,Assistant's Name,Referred By,Company Main Phone,Business Phone,Business Phone 2,Business Fax,Assistant's Phone,Company,Job Title,Department,Office Location,Organizational ID Number,Profession,Account,Business Address,Business Street,Business Street 2,Business Street 3,Business Address PO Box,Business City,Business State,Business Postal Code,Business Country,Other Phone,Other Fax,Other Address,Other Street,Other Street 2,Other Street 3,Other Address PO Box,Other City,Other State
-    ///// </summary>
-    //public Dictionary<string, string> Data { get; set; } = new Dictionary<string, string>();
-
-    // /// <summary>
-    // ///     If contact was downloaded from Google then the raw contact
-    // /// </summary>
-    // [IgnoreDataMember]
-    // [AllowUpdate(false)]
-    // [HideForCreateRequest]
-    // public string? RawContact { get; set; }
 
     /// <summary>
     ///     Used to know if contact changed or not. Contacts service is responsible (Julio) for generating this hash
     /// </summary>
-        [AllowUpdate(false)]
+    [AllowUpdate(false)]
     // [IsRequired]
     [HideForCreateRequest]
     public string? Hash { get; set; }
@@ -107,14 +86,14 @@ public partial class Contact : UbluxDocument, IReferncesAccount
     /// <summary>
     ///     Contact Notes
     /// </summary>
-        [AllowUpdate(true)]
-    public string? Notes { get; set; } 
+    [AllowUpdate(true)]
+    public string? Notes { get; set; }
 
     /// <summary>
     ///     Customer custom data
     /// </summary>
-        [AllowUpdate(true)]
-    public List<Variable> Variables 
+    [AllowUpdate(true)]
+    public List<Variable> Variables
     {
         get => _Variables;
         // ReSharper disable once ConditionIsAlwaysTrueOrFalse
@@ -169,11 +148,11 @@ public partial class Contact : UbluxDocument, IReferncesAccount
 
     static string ToBase92(ulong input)
     {
-        ulong b = (ulong) HASH_CHARACTERS.Length;
+        ulong b = (ulong)HASH_CHARACTERS.Length;
         Span<char> result = stackalloc char[10];
-        for (int i = 9;; i--)
+        for (int i = 9; ; i--)
         {
-            int reminder = (int) (input % b);
+            int reminder = (int)(input % b);
             input /= b;
             result[i] = HASH_CHARACTERS[reminder];
             if (input == 0)
@@ -203,7 +182,7 @@ public partial class Contact : UbluxDocument, IReferncesAccount
         {
             if (ce.Email is not null)
                 yield return ce.Email;
-                //yield return ce.Label.ToString()!;
+            //yield return ce.Label.ToString()!;
         }
     }
 

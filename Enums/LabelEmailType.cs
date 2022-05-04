@@ -11,5 +11,5 @@ public enum LabelEmailType
     Home,
     /// <summary></summary>
     Work,
-    
+
 }

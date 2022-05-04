@@ -1,27 +1,18 @@
-﻿namespace Ublux.Communications.Models.Documents; // ReSharper disable ConditionIsAlwaysTrueOrFalse
+﻿namespace Ublux.Communications.Models.Documents;
 
 /// <summary>
 ///     Configuration of a phone
 /// </summary>
 public partial class PhoneConfiguration : UbluxDocument, IReferncesAccount
 {
-    
-
     #region Properties
 
     #region References
 
-    /// <inheritdoc/>
-    [IgnoreDataMember]
-    [References(typeof(Account))]
-    [AllowUpdate(false)]
-    [IsRequired]
-    public string IdAccount { get; set; } = String.Empty;
-
     /// <summary>
     ///     Line keys to use
     /// </summary>
-        [References(typeof(LineKeyGroup))]
+    [References(typeof(LineKeyGroup))]
     [AllowUpdate(true)]
     public string? IdLineKeyGroup { get; set; }
 
@@ -30,14 +21,14 @@ public partial class PhoneConfiguration : UbluxDocument, IReferncesAccount
     /// <summary>
     ///     Phone configuration name
     /// </summary>
-        [AllowUpdate(true)]
+    [AllowUpdate(true)]
     [IsRequired]
     public string FrienlyName { get; set; } = string.Empty;
 
     /// <summary>
     ///     Phone configuration description
     /// </summary>
-        [AllowUpdate(true)]
+    [AllowUpdate(true)]
     public string? Description { get; set; }
 
     #endregion

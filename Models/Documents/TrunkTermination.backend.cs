@@ -1,12 +1,12 @@
-﻿namespace Ublux.Communications.Models.Documents; // ReSharper disable ConditionIsAlwaysTrueOrFalse
+﻿#if UBLUX_BACKEND
+
+namespace Ublux.Communications.Models.Documents;
 
 /// <summary>
 ///     Trunk used to receive phone calls
 /// </summary>
 public partial class TrunkTermination : UbluxDocument
 {
-    
-
     #region Properties
 
     #region References
@@ -114,3 +114,5 @@ public partial class TrunkTermination : UbluxDocument
 
     #endregion
 }
+
+#endif

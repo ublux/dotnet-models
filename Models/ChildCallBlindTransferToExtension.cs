@@ -3,7 +3,6 @@
 /// <summary>
 ///     Call is blind transferred to an extension
 /// </summary>
-[BsonIgnoreExtraElements]
 public class ChildCallBlindTransferToExtension : ChildCallBlindTransfer
 {
     /// <summary>

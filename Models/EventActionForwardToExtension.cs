@@ -7,7 +7,7 @@ public class EventActionForwardToExtension : EventAction
 {
     /// <inheritdoc/>
     [IsRequired]
-        public override EventActionType EventActionType { get; } = EventActionType.ForwardToExtension;
+    public override EventActionType EventActionType { get; } = EventActionType.ForwardToExtension;
 
     /// <summary>
     ///     Extension where to forward call

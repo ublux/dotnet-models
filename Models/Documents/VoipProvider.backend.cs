@@ -1,4 +1,5 @@
-﻿namespace Ublux.Communications.Models.Documents; // ReSharper disable ConditionIsAlwaysTrueOrFalse
+﻿#if UBLUX_BACKEND
+namespace Ublux.Communications.Models.Documents; 
 
 /// <summary>
 ///     VOIP provider. Some providers have an API that enable us to automate things.
@@ -12,6 +13,14 @@ public partial class VoipProvider : UbluxDocument
     [IgnoreDataMember]
     [IsRequired]
     public string SID { get; set; } = string.Empty;
+
+    /// <summary>
+    ///     Ublux partner
+    /// </summary>
+    [AllowUpdate(false)]
+    [IgnoreDataMember]
+    [IsRequired]
+    public UbluxPartner UbluxPartner { get; set; }
 
     /// <summary>
     ///     Twilio calls this authority token
@@ -57,24 +66,5 @@ public partial class VoipProvider : UbluxDocument
     [IgnoreDataMember]
     [IsRequired]
     public VoipCompany VoipCompany { get; set; }
-
-    /// <summary>
-    ///     Ublux partner
-    /// </summary>
-    [AllowUpdate(false)]
-    [IgnoreDataMember]
-    [IsRequired]
-    public UbluxPartner UbluxPartner { get; set; }
-
-    ///// <inheritdoc/>
-    //public override VoipProvider To()
-    //{
-    //    return new VoipProviderDTO()
-    //    {
-    //        DateUpdated = this.DateUpdated.FromUnixEpoch(),
-    //        DateCreated = this.DateCreated.FromUnixEpoch(),
-    //        Id = this.id
-    //    };
-    //}
-
 }
+#endif

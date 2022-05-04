@@ -1,4 +1,5 @@
-﻿namespace Ublux.Communications.Models;
+﻿#if UBLUX_BACKEND
+namespace Ublux.Communications.Models;
 
 /// <summary>
 ///     Provider AirNetworks requests this information for every customer
@@ -40,3 +41,4 @@ public class AirNetworksCustomerInfo
 
     #endregion
 }
+#endif

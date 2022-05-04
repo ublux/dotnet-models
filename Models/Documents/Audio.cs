@@ -1,22 +1,11 @@
-﻿namespace Ublux.Communications.Models.Documents; // ReSharper disable ConditionIsAlwaysTrueOrFalse
+﻿namespace Ublux.Communications.Models.Documents;
 
 /// <summary>
 ///     Mp3 or Wav audio file. Previously called Audio Greeting
 /// </summary>
-public partial class Audio : UbluxDocument, IReferncesAccount
+public partial class Audio : UbluxDocument
 {
     #region Properties
-
-    #region References
-
-    /// <inheritdoc/>
-    [AllowUpdate(false)]
-    [IgnoreDataMember]
-    [References(typeof(Account))]
-    [IsRequired]
-    public string IdAccount { get; set; } = String.Empty;
-
-    #endregion
 
     #region Subdocuments
 
@@ -31,14 +20,6 @@ public partial class Audio : UbluxDocument, IReferncesAccount
     /// </summary>
     [AllowUpdate(false)]
     public StoredFile? AudioWav { get; set; }
-
-    /// <summary>
-    ///     Audio in sln format
-    /// </summary>
-    [AllowUpdate(false)]
-    [IgnoreDataMember] // client does not need to see sln format
-    [IsRequired]
-    public StoredFile AudioSln { get; set; } = new StoredFile();
 
     #endregion
 

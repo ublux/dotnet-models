@@ -1,23 +1,10 @@
 ﻿namespace Ublux.Communications.Models.Documents;
 
-// ReSharper disable ConditionIsAlwaysTrueOrFalse
 /// <summary>
 ///     Basic extension
 /// </summary>
 public partial class ExtensionDial : Extension
 {
-    //#region IUbluxDocument
-
-    ///// <inheritdoc/>
-    //public override IEnumerable<ValidationError> Validate(IUbluxDatabase? db)
-    //{
-    //    // check required properties
-    //    foreach (var item in this.CheckRequiredPropertiesHaveValue())
-    //        yield return item.ToValidationError();
-    //}
-
-    //#endregion
-
     #region Properties
 
     #region References
@@ -66,7 +53,6 @@ public partial class ExtensionDial : Extension
     public int RingTimeInSeconds { get; set; }
 
     #endregion
-
 
     /// <summary>
     ///     Type of extension

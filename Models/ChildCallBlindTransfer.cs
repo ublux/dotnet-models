@@ -3,7 +3,6 @@
 /// <summary>
 ///     Call is blind transferred
 /// </summary>
-[BsonIgnoreExtraElements]
 public abstract class ChildCallBlindTransfer : ChildCall
 {
     /// <summary>
@@ -13,6 +12,6 @@ public abstract class ChildCallBlindTransfer : ChildCall
     public string IdCall { get; set; } = string.Empty;
 
 
-    
+
 }
 

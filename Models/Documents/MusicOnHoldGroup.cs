@@ -1,27 +1,18 @@
-﻿namespace Ublux.Communications.Models.Documents; // ReSharper disable ConditionIsAlwaysTrueOrFalse
+﻿namespace Ublux.Communications.Models.Documents;
 
 /// <summary>
 ///     Multiple audios to be used as music on hold
 /// </summary>
 public partial class MusicOnHoldGroup : UbluxDocument, IReferncesAccount
 {
-
     #region Properties
 
     #region References
 
-    /// <inheritdoc/>
-    [IgnoreDataMember]
-    [References(typeof(Account))]
-    [AllowUpdate(false)]
-    [IsRequired]
-    [HideForCreateRequest]
-    public string IdAccount { get; set; } = String.Empty;
-
     /// <summary>
     ///     Audios to play meanwhile on hold
     /// </summary>
-        [References(typeof(Audio))]
+    [References(typeof(Audio))]
     [AllowUpdate(true)]
     [IsRequired]
     public List<string> IdsAudios
@@ -36,14 +27,14 @@ public partial class MusicOnHoldGroup : UbluxDocument, IReferncesAccount
     /// <summary>
     ///     Name of music on hold group
     /// </summary>
-        [AllowUpdate(true)]
+    [AllowUpdate(true)]
     [IsRequired]
     public string FriendlyName { get; set; } = String.Empty;
 
     /// <summary>
     ///     Description of music on hold group
     /// </summary>
-        [AllowUpdate(true)]
+    [AllowUpdate(true)]
     public string? Description { get; set; }
 
     #endregion

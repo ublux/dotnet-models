@@ -1,7 +1,4 @@
-﻿using JsonSubTypes;
-using System.Net;
-
-namespace Ublux.Communications.Models.Documents; // ReSharper disable ConditionIsAlwaysTrueOrFalse
+﻿namespace Ublux.Communications.Models.Documents; // ReSharper disable ConditionIsAlwaysTrueOrFalse
 
 /// <summary>
 ///     Base class for cloud services
@@ -17,11 +14,8 @@ namespace Ublux.Communications.Models.Documents; // ReSharper disable ConditionI
     typeof(CloudServiceWebHost),
     typeof(CloudServiceWebService)
 )]
-[BsonIgnoreExtraElements]
 public abstract class CloudService : UbluxDocument
 {
-    // id is the subdomain
-
     #region Properties
 
     /// <summary>
@@ -31,21 +25,6 @@ public abstract class CloudService : UbluxDocument
     [References(typeof(Identity))]
     [IsRequired]
     public string IdIdentity { get; set; } = string.Empty;
-
-    // /// <summary>
-    // ///     Example PBX-UST
-    // /// </summary>
-    //     // [AllowUpdate(false)]
-    // [IsRequired]
-    // public string SubDomain
-    // {
-    //     get => (subDomain ?? "").ToLower();
-    //     set
-    //     {
-    //         subDomain = value ?? "";
-    //     }
-    // }
-    // private string subDomain = string.Empty;
 
     /// <summary>
     ///     Type of cloud service
@@ -99,35 +78,11 @@ public abstract class CloudService : UbluxDocument
     [AllowUpdate(false)]
     public bool NAT { get; set; }
 
-    ///// <summary>
-    /////     MUI
-    ///// </summary>
-    //[IgnoreDataMember]
-    //[AllowUpdate(false)]
-    //public string? MUI { get; set; }
-
-    ///// <summary>
-    /////     IF we are not able to send some configuration to pbx we flag it. Once pbx makes itself ready to be used
-    /////     and downloads all the latest configuration we remove this flag.
-    /////     
-    /////     This is the only property that will trigger polling-broken-requires-make-ready-to-be-used
-    ///// </summary>
-    //[IgnoreDataMember]
-    //[AllowUpdate(false)]
-    //public bool IsFlagged { get; set; }
-
     /// <summary>
     ///     Send this constantly to web service when polling. The pbx sends this
     /// </summary>
     [AllowUpdate(false)]
     public bool IsHealthy { get; set; }
-
-    ///// <summary>
-    /////     If pbx is rebooting or updating it will not be marked as offline/unhealthy; therefore, trunkOriginations will not be moved to failover pbx
-    ///// </summary>
-    //[IgnoreDataMember]
-    //[AllowUpdate(false)]
-    //public bool IsRebootingOrUpdating { get; set; }
 
     #endregion     
 }

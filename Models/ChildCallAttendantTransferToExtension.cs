@@ -1,20 +1,18 @@
-﻿namespace Ublux.Communications.Models
+﻿namespace Ublux.Communications.Models;
+
+/// <summary>
+///     Call is attended transferred to extension
+/// </summary>
+public class ChildCallAttendantTransferToExtension : ChildCall
 {
     /// <summary>
-    ///     Call is attended transferred to extension
+    ///     Id extension to whom it was transferred
     /// </summary>
-    [BsonIgnoreExtraElements]
-    public class ChildCallAttendantTransferToExtension : ChildCall
-    {
-        /// <summary>
-        ///     Id extension to whom it was transferred
-        /// </summary>
-        public string IdExtension { get; set; } = string.Empty;
+    public string IdExtension { get; set; } = string.Empty;
 
-        /// <summary>
-        ///     AttendantTransferToExtension
-        /// </summary>
-        [IsRequired]
-        public override ChildCallType ChildCallType { get; } = ChildCallType.AttendantTransferToExtension;
-    }
+    /// <summary>
+    ///     AttendantTransferToExtension
+    /// </summary>
+    [IsRequired]
+    public override ChildCallType ChildCallType { get; } = ChildCallType.AttendantTransferToExtension;
 }

@@ -1,8 +1,5 @@
-﻿using JsonSubTypes;
+﻿namespace Ublux.Communications.Models.Documents;
 
-namespace Ublux.Communications.Models.Documents;
-
-// ReSharper disable ConditionIsAlwaysTrueOrFalse
 /// <summary>
 ///     Ublux phone call
 /// </summary>
@@ -17,18 +14,11 @@ namespace Ublux.Communications.Models.Documents;
     typeof(CallOutgoingToExtension),
     typeof(CallOutgoingToPSTN)
 )]
-public abstract class Call : UbluxDocument, IReferncesAccount
+public abstract partial class Call : UbluxDocument
 {
     #region Properties
 
     #region References
-
-    /// <inheritdoc/>
-    [References(typeof(Account))]
-    [AllowUpdate(false)]
-    [IgnoreDataMember]
-    [IsRequired]
-    public string IdAccount { get; set; } = String.Empty;
 
     /// <summary>
     ///     Id of voicemail in case there is one

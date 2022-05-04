@@ -1,4 +1,6 @@
-﻿namespace Ublux.Communications.Models.Documents; // ReSharper disable ConditionIsAlwaysTrueOrFalse
+﻿#if UBLUX_BACKEND
+
+namespace Ublux.Communications.Models.Documents; 
 
 /// <summary>
 ///     This type of trunk origination forwards the call to our pbx. Twilio uses this type of Trunk origination
@@ -20,7 +22,7 @@ public partial class TrunkOriginationForward : TrunkOrigination
     [IgnoreDataMember]
     [IsRequired]
     public string SipUriFailover { get; set; } = string.Empty;
-    
+
 
     /// <summary>
     ///     Type of trunk origination
@@ -30,4 +32,7 @@ public partial class TrunkOriginationForward : TrunkOrigination
     [IsRequired]
     [HideForCreateRequest]
     public override TrunkOriginationType TrunkOriginationType => TrunkOriginationType.Forward;
+
 }
+
+#endif

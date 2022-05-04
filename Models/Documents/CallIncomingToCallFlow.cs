@@ -1,6 +1,5 @@
 ﻿namespace Ublux.Communications.Models.Documents;
 
-// ReSharper disable ConditionIsAlwaysTrueOrFalse
 /// <summary>
 ///     Incoming phone call that executed an IVR
 /// </summary>
@@ -13,7 +12,6 @@ public partial class CallIncomingToCallFlow : CallIncoming
     [AllowUpdate(false)]
     [IsRequired]
     public string IdCallFlow { get; set; } = String.Empty;
-
 
     /// <summary>
     ///     Type of call

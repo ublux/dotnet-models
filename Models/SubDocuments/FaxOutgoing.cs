@@ -5,12 +5,8 @@
 /// </summary>
 public class FaxOutgoing : UbluxSubDocument
 {
-    ///// <inheritdoc />
-    //public override string SubDocumentPrefix() => "SubFO";
 
-    ///// <inheritdoc />
-    //public override void SetId() => id = $"{UCore.InstanceId}:{SubDocumentPrefix()}:{DateTime.UtcNow.ToUnixEpoch()}:{Interlocked.Increment(ref DomainGlobals.IdGenerationCounter)}";
-
+#if UBLUX_BACKEND
     /// <summary>
     ///     This is a subdocument. Id of parent
     /// </summary>
@@ -19,14 +15,7 @@ public class FaxOutgoing : UbluxSubDocument
     [References(typeof(FaxOutgoingGroup))]
     [IsRequired]
     public string IdFaxOutgoingGroup { get; set; } = string.Empty;
-
-    ///// <summary>
-    /////     Id of fax
-    ///// </summary>
-    //[AllowUpdate(false)]
-    //[IgnoreDataMember]
-    //[IsRequired]
-    //public string ClientFaxId { get; set; } = string.Empty;
+#endif
 
     /// <summary>
     ///     Number of pages that Pdf contains
@@ -55,6 +44,7 @@ public class FaxOutgoing : UbluxSubDocument
     [AllowUpdate(false)]
     public string? ErrorMessage { get; set; }
 
+#if UBLUX_BACKEND
     /// <summary>
     ///     Email attachment that was converted to fax
     /// </summary>
@@ -62,6 +52,7 @@ public class FaxOutgoing : UbluxSubDocument
     [IgnoreDataMember]
     [IsRequired]
     public EmailAttachment EmailAttachment { get; set; } = new EmailAttachment();
+#endif
 
     /// <summary>
     ///     Path where Pdf exists on disk
@@ -103,12 +94,14 @@ public class FaxOutgoing : UbluxSubDocument
     [IsRequired]
     public string Name { get; set; } = string.Empty;
 
+#if UBLUX_BACKEND
     /// <summary>
     ///     True when done sending fax
     /// </summary>
     [AllowUpdate(false)]
     [IgnoreDataMember]
     public bool IsComplete { get; set; }
+#endif
 
     /// <summary>
     ///     Used in case the line is busy to retry again
@@ -125,7 +118,4 @@ public class FaxOutgoing : UbluxSubDocument
         return !string.IsNullOrEmpty(ErrorMessage);
     }
 
-
-
-  
 }

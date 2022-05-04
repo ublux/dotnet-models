@@ -7,15 +7,24 @@
 ///     We need to work with what is stored on our application. 
 ///     DTO objects is what we present to clients
 /// </summary>
-public interface IUbluxDocument : IUbluxDocumentId
+public partial interface IUbluxDocument : IUbluxDocumentId
 {
     /// <summary>
     ///     Creation date
     /// </summary>
-    [AllowUpdate(false)] 
+    [AllowUpdate(false)]
     [JsonProperty(Order = 1000)]
     [IsRequired]
     DateTime DateCreated { get; set; }
+
+    /// <summary>
+    ///     If collection is immutable this is not needed but we have it regardless
+    /// </summary>
+    [AllowUpdate(false)]
+    [JsonProperty(Order = 1002)]
+    DateTime? DateUpdated { get; set; }
+
+#if UBLUX_BACKEND
 
     /// <summary>
     ///     Date when item was deleted
@@ -25,28 +34,7 @@ public interface IUbluxDocument : IUbluxDocumentId
     [IgnoreDataMember]
     DateTime? DateDeleted { get; set; }
 
-    /// <summary>
-    ///     If collection is immutable this is not needed but we have it regardless
-    /// </summary>
-    [AllowUpdate(false)]
-    [JsonProperty(Order = 1002)]
-    DateTime? DateUpdated { get; set; }
-
-    ///// <summary>
-    /////     If database db is null then references will not be validated.
-    ///// </summary>
-    //IEnumerable<ValidationError> Validate(IUbluxDatabase? db);
-
-    ///// <summary>
-    /////     Capital letters of document name. For example table CallIncomingToExtension will be CITE
-    ///// </summary>
-    //string DocumentPrefix();
-
-    ///// <summary>
-    /////     Set document id to comply with ublux standard {InstanceId}:{DocumentPrefix}:{DateCreated}:{Counter}
-    ///// </summary>
-    //void SetId();
-
+#endif
 
 }
 
@@ -62,7 +50,7 @@ public abstract class UbluxDocument : IUbluxDocument, IUbluxDocumentId
     ///     Id of document
     /// </summary>
     [BsonId]
-    [BsonElement(Order =-1000000)]
+    [BsonElement(Order = -1000000)]
     [JsonProperty(Order = -1000)]
     [IsRequired]
     [HideForCreateRequest]
@@ -79,6 +67,16 @@ public abstract class UbluxDocument : IUbluxDocument, IUbluxDocumentId
     public DateTime DateCreated { get; set; }
 
     /// <summary>
+    ///     Updated date
+    /// </summary>
+    [JsonProperty(Order = 1002)]
+    [AllowUpdate(false)]
+    [HideForCreateRequest]
+    public DateTime? DateUpdated { get; set; }
+
+#if UBLUX_BACKEND
+
+    /// <summary>
     ///     Deletion Date
     /// </summary>
     [JsonProperty(Order = 1001)]
@@ -87,28 +85,7 @@ public abstract class UbluxDocument : IUbluxDocument, IUbluxDocumentId
     [HideForCreateRequest]
     public DateTime? DateDeleted { get; set; }
 
-    /// <summary>
-    ///     Updated date
-    /// </summary>
-    [JsonProperty(Order = 1002)]
-    [AllowUpdate(false)]
-    [HideForCreateRequest]
-    public DateTime? DateUpdated { get; set; }
-
-    ///// <summary>
-    /////     If database db is null then references will not be validated.
-    ///// </summary>
-    //public abstract IEnumerable<ValidationError> Validate(IUbluxDatabase? db);
-
-    ///// <summary>
-    /////     Capital letters of document name. For example table CallIncomingToExtension will be CITE
-    ///// </summary>
-    //public abstract string DocumentPrefix();
-
-    ///// <summary>
-    /////     Set document id to comply with ublux standard {InstanceId}:{DocumentPrefix}:{DateCreated}:{Counter}
-    ///// </summary>
-    //public abstract void SetId();
+#endif
 }
 
 /// <summary>

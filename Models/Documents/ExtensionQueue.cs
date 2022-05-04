@@ -1,13 +1,10 @@
 ﻿namespace Ublux.Communications.Models.Documents;
 
-// ReSharper disable ConditionIsAlwaysTrueOrFalse
 /// <summary>
 ///     Extension where people that call will be placed on a sequence awaiting their turn to be attended
 /// </summary>
 public partial class ExtensionQueue : Extension
 {
-    
-
     #region Properties
 
     #region References
@@ -114,7 +111,7 @@ public partial class ExtensionQueue : Extension
 
     #region Helper methods
 
-   
+
 
     /// <summary>
     ///     Timeout in seconds.
@@ -122,7 +119,6 @@ public partial class ExtensionQueue : Extension
     public int GetQueueTimeoutInSeconds() => QueueTimeoutInMinutes * 60;
 
     #endregion
-
 
     /// <summary>
     ///     Type of extension

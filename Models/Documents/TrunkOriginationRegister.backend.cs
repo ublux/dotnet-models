@@ -1,10 +1,13 @@
-﻿namespace Ublux.Communications.Models.Documents; // ReSharper disable ConditionIsAlwaysTrueOrFalse
+﻿#if UBLUX_BACKEND
+
+namespace Ublux.Communications.Models.Documents; // ReSharper disable ConditionIsAlwaysTrueOrFalse
 
 /// <summary>
 ///     This type of trunk origination we must register with provider in order to receive phone calls
 /// </summary>
 public partial class TrunkOriginationRegister : TrunkOrigination
 {
+
     /* Example of what we have to add on sip.conf on region
 
         register => 525587894423:password@208.89.104.161:5060/525587894423
@@ -75,3 +78,5 @@ allow=alaw
 
     // todo check status. For example if trunk is not registered then register on failover pbx
 }
+
+#endif
