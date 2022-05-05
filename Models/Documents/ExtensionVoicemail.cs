@@ -21,12 +21,8 @@ public partial class ExtensionVoicemail : Extension
     /// </summary>
     [References(typeof(Line))]
     [AllowUpdate(true)]
-    public List<string> IdsLinesThatCanListenToVoicemail
-    {
-        get => _IdsLinesThatCanListenToVoicemail;
-        set { if (value is null) _IdsLinesThatCanListenToVoicemail.Clear(); else _IdsLinesThatCanListenToVoicemail = value; }
-    }
-    List<string> _IdsLinesThatCanListenToVoicemail = new();
+    public List<string> IdsLinesThatCanListenToVoicemail { get; set; } = new();
+
     #endregion
 
     /// <summary>
@@ -34,12 +30,7 @@ public partial class ExtensionVoicemail : Extension
     /// </summary>
     [AllowUpdate(true)]
     [IsRequired]
-    public List<string> Email
-    {
-        get => _Email;
-        set { if (value is null) _Email.Clear(); else _Email = value; }
-    }
-    List<string> _Email = new();
+    public List<string> Email { get; set; } = new();
 
     /// <summary>
     ///     This text will be converted to audio and be played before leaving voicemail

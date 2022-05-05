@@ -29,24 +29,14 @@ public partial class CallIncomingToExtension : CallIncoming
     /// </summary>
     [References(typeof(Line))]
     [AllowUpdate(false)]
-    public List<string> IdsLinesThatRing
-    {
-        get => _IdsLinesThatRing;
-        set { if (value is null) _IdsLinesThatRing.Clear(); else _IdsLinesThatRing = value; }
-    }
-    List<string> _IdsLinesThatRing = new();
+    public List<string> IdsLinesThatRing { get; set; } = new();
 
     /// <summary>
     ///     Id of lines that did not ring
     /// </summary>
     [References(typeof(Line))]
     [AllowUpdate(false)]
-    public List<string> IdsLinesThatDidNotRing
-    {
-        get => _IdsLinesThatDidNotRing;
-        set { if (value is null) _IdsLinesThatDidNotRing.Clear(); else _IdsLinesThatDidNotRing = value; }
-    }
-    List<string> _IdsLinesThatDidNotRing = new();
+    public List<string> IdsLinesThatDidNotRing { get; set; } = new();
 
     #endregion
 

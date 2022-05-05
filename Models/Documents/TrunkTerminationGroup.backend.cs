@@ -15,12 +15,7 @@ public partial class TrunkTerminationGroup : UbluxDocument
     [AllowUpdate(false)]
     [References(typeof(TrunkTermination))]
     [IsRequired]
-    public List<string> IdsTrunkTerminationsOrderedByPriority
-    {
-        get => _IdsTrunkTerminationsOrderedByPriority;
-        set { if (value is null) _IdsTrunkTerminationsOrderedByPriority.Clear(); else _IdsTrunkTerminationsOrderedByPriority = value; }
-    }
-    List<string> _IdsTrunkTerminationsOrderedByPriority = new();
+    public List<string> IdsTrunkTerminationsOrderedByPriority { get; set; } = new();
 }
 
 #endif

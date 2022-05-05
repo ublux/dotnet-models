@@ -15,17 +15,7 @@ public partial class ExtensionQueue : Extension
     [References(typeof(Line))]
     [AllowUpdate(true)]
     [IsRequired]
-    public List<string> IdsLines
-    {
-        get => _IdsLines;
-        set
-        {
-            if (value is null) _IdsLines.Clear();
-            else _IdsLines = value;
-        }
-    }
-
-    List<string> _IdsLines = new();
+    public List<string> IdsLines { get; set; } = new();
 
     /// <summary>
     ///     If there is a timeout to what extension we will forward the call?
@@ -40,17 +30,7 @@ public partial class ExtensionQueue : Extension
     /// </summary>
     [References(typeof(Audio))]
     [AllowUpdate(true)]
-    public List<string> IdsAudios
-    {
-        get => _IdsAudios;
-        set
-        {
-            if (value is null) _IdsAudios.Clear();
-            else _IdsAudios = value;
-        }
-    }
-
-    List<string> _IdsAudios = new();
+    public List<string> IdsAudios { get; set; } = new();
 
     #endregion
 

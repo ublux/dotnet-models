@@ -19,12 +19,7 @@ public partial class AirNetworksProvince : UbluxDocument
     /// </summary>
     [AllowUpdate(false)]
     [IsRequired]
-    public List<string> Populations
-    {
-        get => _Populations;
-        set { if (value is null) _Populations.Clear(); else _Populations = value; }
-    }
-    List<string> _Populations = new();
+    public List<string> Populations { get; set; } = new();
 
     #endregion
 }

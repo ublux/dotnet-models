@@ -57,12 +57,7 @@ public abstract class CloudService : UbluxDocument
     /// </summary>
     [AllowUpdate(false)]
     [IsRequired]
-    public List<string> ExternalIps
-    {
-        get => _ExternalIps;
-        set { if (value is null) _ExternalIps.Clear(); else _ExternalIps = value; }
-    }
-    List<string> _ExternalIps = new();
+    public List<string> ExternalIps { get; set; } = new();
 
 
     /// <summary>

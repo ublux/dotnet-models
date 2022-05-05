@@ -15,12 +15,7 @@ public partial class MusicOnHoldGroup : UbluxDocument
     [References(typeof(Audio))]
     [AllowUpdate(true)]
     [IsRequired]
-    public List<string> IdsAudios
-    {
-        get => _IdsAudios;
-        set { if (value is null) _IdsAudios.Clear(); else _IdsAudios = value; }
-    }
-    List<string> _IdsAudios = new();
+    public List<string> IdsAudios { get; set; } = new();
 
     #endregion
 

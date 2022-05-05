@@ -13,12 +13,7 @@ public partial class LineKeyGroup : UbluxDocument
     ///     Group of speed dial keys. Must have at least one
     /// </summary>
     [AllowUpdate(true)]
-    public List<LineKey> LineKeys
-    {
-        get => _LineKeys;
-        set { if (value is null) _LineKeys.Clear(); else _LineKeys = value; }
-    }
-    List<LineKey> _LineKeys = new();
+    public List<LineKey> LineKeys { get; set; } = new();
 
     #endregion
 

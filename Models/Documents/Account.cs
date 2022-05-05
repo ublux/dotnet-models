@@ -16,8 +16,7 @@ public partial class Account : UbluxDocument
     [AllowUpdate(false)]
     [References(typeof(CloudServicePbx))]
     [IsRequired]
-    public List<string> IdsCloudServicePbxs { get => _IdsCloudServicePbxs; set { if (value is null) _IdsCloudServicePbxs.Clear(); else _IdsCloudServicePbxs = value; } }
-    List<string> _IdsCloudServicePbxs = new();
+    public List<string> IdsCloudServicePbxs { get; set; } = new List<string>();
 
     #endregion
 
@@ -64,24 +63,14 @@ public partial class Account : UbluxDocument
     [AllowUpdate(false)]
     [IsRequired]
     [BsonRepresentation(BsonType.String)]
-    public List<CountryIsoCode> CountriesThatCanCallLocally
-    {
-        get => _CountriesThatCanCallLocally;
-        set { if (value is null) _CountriesThatCanCallLocally.Clear(); else _CountriesThatCanCallLocally = value; }
-    }
-    List<CountryIsoCode> _CountriesThatCanCallLocally = new();
+    public List<CountryIsoCode> CountriesThatCanCallLocally { get; set; } = new();
 
     /// <summary>
     ///     If CountriesThatCanCallLocally does not contain country then ublux will attempt to find country on this list.
     /// </summary>
     [AllowUpdate(false)]
     [BsonRepresentation(BsonType.String)]
-    public List<CountryIsoCode> CountriesThatCanCallInternationally
-    {
-        get => _CountriesThatCanCallInternationally;
-        set { if (value is null) _CountriesThatCanCallInternationally.Clear(); else _CountriesThatCanCallInternationally = value; }
-    }
-    List<CountryIsoCode> _CountriesThatCanCallInternationally = new();
+    public List<CountryIsoCode> CountriesThatCanCallInternationally { get; set; } = new();
 
     #endregion
 

@@ -25,12 +25,7 @@ public partial class WebHook : UbluxDocument
     ///     Custom headers to inject on request. Example: x-token:1234,user:eduardo
     /// </summary>
     [AllowUpdate(true)]
-    public List<string> Headers
-    {
-        get => _Headers;
-        set { if (value is null) _Headers.Clear(); else _Headers = value; }
-    }
-    List<string> _Headers = new();
+    public List<string> Headers { get; set; } = new();
 
     #endregion
 }

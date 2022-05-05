@@ -17,10 +17,5 @@ public class SendEmailNotificationIfCallTakesToLongToBeAnswered
     /// </summary>
     [IsRequired]
     [AllowUpdate(true)]
-    public List<string> Email
-    {
-        get => _Email;
-        set { if (value is null) _Email.Clear(); else _Email = value; }
-    }
-    List<string> _Email = new();
+    public List<string> Email { get; set; } = new();
 }

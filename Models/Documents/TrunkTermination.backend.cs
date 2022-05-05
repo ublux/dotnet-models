@@ -69,12 +69,7 @@ public partial class TrunkTermination : UbluxDocument
     [AllowUpdate(false)]
     [IsRequired]
     [BsonRepresentation(BsonType.String)]
-    public List<CountryIsoCode> CountryIsoCodesThatCanCall
-    {
-        get => _CountryIsoCodesThatCanCall;
-        set { if (value is null) _CountryIsoCodesThatCanCall.Clear(); else _CountryIsoCodesThatCanCall = value; }
-    }
-    List<CountryIsoCode> _CountryIsoCodesThatCanCall = new();
+    public List<CountryIsoCode> CountryIsoCodesThatCanCall { get; set; } = new();
 
     /// <summary>
     ///     Friendly name

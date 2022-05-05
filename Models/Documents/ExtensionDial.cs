@@ -15,17 +15,7 @@ public partial class ExtensionDial : Extension
     [References(typeof(Line))]
     [AllowUpdate(true)]
     [IsRequired]
-    public List<string> IdsLines
-    {
-        get => _IdsLines;
-        set
-        {
-            if (value is null) _IdsLines.Clear();
-            else _IdsLines = value;
-        }
-    }
-
-    List<string> _IdsLines = new();
+    public List<string> IdsLines { get; set; } = new();    
 
     #endregion
 

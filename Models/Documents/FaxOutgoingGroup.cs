@@ -26,12 +26,7 @@ public partial class FaxOutgoingGroup : UbluxDocument
     /// </summary>
     [AllowUpdate(false)]
     [IsRequired]
-    public List<FaxOutgoing> FaxesOutgoing
-    {
-        get => _FaxesOutgoing;
-        set { if (value is null) _FaxesOutgoing.Clear(); else _FaxesOutgoing = value; }
-    }
-    List<FaxOutgoing> _FaxesOutgoing = new();
+    public List<FaxOutgoing> FaxesOutgoing { get; set; } = new();
 
     /// <summary>
     ///     Email that was sent to fax@ublux.com
@@ -54,12 +49,7 @@ public partial class FaxOutgoingGroup : UbluxDocument
     /// </summary>
     [AllowUpdate(false)]
     [IsRequired]
-    public List<string> SendConfirmationToEmails
-    {
-        get => _SendConfirmationToEmails;
-        set { if (value is null) _SendConfirmationToEmails.Clear(); else _SendConfirmationToEmails = value; }
-    }
-    List<string> _SendConfirmationToEmails = new();
+    public List<string> SendConfirmationToEmails { get; set; } = new();
 
     /// <summary>
     ///     True if there is an error

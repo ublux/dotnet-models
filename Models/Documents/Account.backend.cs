@@ -52,12 +52,7 @@ public partial class Account : UbluxDocument
     /// </summary>
     [AllowUpdate(false)]
     [IgnoreDataMember]
-    public List<int> ReserveAccountsOnPhone
-    {
-        get => _ReserveAccountsOnPhone;
-        set { if (value is null) _ReserveAccountsOnPhone.Clear(); else _ReserveAccountsOnPhone = value; }
-    }
-    List<int> _ReserveAccountsOnPhone = new();
+    public List<int> ReserveAccountsOnPhone { get; set; } = new();
 
     /// <summary>
     ///     Was this account sold by CanalPark, Victor, Daniel?

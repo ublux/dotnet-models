@@ -35,12 +35,7 @@ public partial class Phone : UbluxDocument
     [JsonProperty(Order = 10000)]
     [AllowUpdate(false)]
     [IsRequired]
-    public List<Line> Lines
-    {
-        get => _Lines;
-        set { if (value is null) _Lines.Clear(); else _Lines = value; }
-    }
-    List<Line> _Lines = new();
+    public List<Line> Lines { get; set; } = new();
 
     #endregion
 

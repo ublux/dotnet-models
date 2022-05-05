@@ -18,12 +18,7 @@ public partial class Identity : UbluxDocument
     [AllowUpdate(true)]
     [IsRequired]
     [BsonRepresentation(BsonType.String)]
-    public List<UbluxRole> UbluxRoles
-    {
-        get => _UbluxRoles;
-        set { if (value is null) _UbluxRoles.Clear(); else _UbluxRoles = value; }
-    }
-    List<UbluxRole> _UbluxRoles = new();
+    public List<UbluxRole> UbluxRoles { get; set; } = new();
 
 
 

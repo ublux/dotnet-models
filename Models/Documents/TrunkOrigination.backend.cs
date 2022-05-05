@@ -49,12 +49,7 @@ public abstract class TrunkOrigination : UbluxDocument
     [IgnoreDataMember]
     [AllowUpdate(false)]
     [IsRequired]
-    public List<string> IdsVoipNumbers
-    {
-        get => _IdsVoipNumbers;
-        set { if (value is null) _IdsVoipNumbers.Clear(); else _IdsVoipNumbers = value; }
-    }
-    List<string> _IdsVoipNumbers = new();
+    public List<string> IdsVoipNumbers { get; set; } = new();
 
     #endregion
 

@@ -42,16 +42,7 @@ public abstract partial class Call : UbluxDocument
     ///     Child calls
     /// </summary>
     [AllowUpdate(false)]
-    public List<ChildCall> ChildCalls
-    {
-        get => _ChildCalls;
-        set
-        {
-            if (value is null) _ChildCalls.Clear();
-            else _ChildCalls = value;
-        }
-    }
-    List<ChildCall> _ChildCalls = new();
+    public List<ChildCall> ChildCalls { get; set; } = new();
 
 
     /// <summary>
@@ -95,16 +86,7 @@ public abstract partial class Call : UbluxDocument
     ///     Dates when call is placed on hold
     /// </summary>
     [AllowUpdate(false)]
-    public List<TimeWhenCallPlacedOnHold> TimesWhenCallPlacedOnHold
-    {
-        get => _TimesWhenCallPlacedOnHold;
-        set
-        {
-            if (value is null) _TimesWhenCallPlacedOnHold.Clear();
-            else _TimesWhenCallPlacedOnHold = value;
-        }
-    }
-    List<TimeWhenCallPlacedOnHold> _TimesWhenCallPlacedOnHold = new();
+    public List<TimeWhenCallPlacedOnHold> TimesWhenCallPlacedOnHold { get; set; } = new();
 
     /// <summary>
     ///     Caller id
@@ -158,16 +140,7 @@ public abstract partial class Call : UbluxDocument
     ///     List because user can send digits multiple times
     /// </summary>
     [AllowUpdate(false)]
-    public List<string> DigitsSent
-    {
-        get => _DigitsSent;
-        set
-        {
-            if (value is null) _DigitsSent.Clear();
-            else _DigitsSent = value;
-        }
-    }
-    List<string> _DigitsSent = new();
+    public List<string> DigitsSent { get; set; } = new();
 
     /// <summary>
     ///     Is the call international. This is true if any of the child calls is international

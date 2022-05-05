@@ -12,34 +12,19 @@ public partial class VoipNumberAvailableForPurchase : VoipNumber
     ///     value = day of week when it executes
     /// </summary>    
     [AllowUpdate(false)]
-    public override List<RulePhone> RulesPhone
-    {
-        get => _RulesVoice;
-        set { if (value is null) _RulesVoice.Clear(); else _RulesVoice = value; }
-    }
-    List<RulePhone> _RulesVoice = new();
+    public override List<RulePhone> RulesPhone { get; set; } = new();
 
     /// <summary>
     ///     Incoming SMS will be sent to these email addresses
     /// </summary>
     [AllowUpdate(false)]
-    public override List<RuleSms> RulesSms
-    {
-        get => _RulesSms;
-        set { if (value is null) _RulesSms.Clear(); else _RulesSms = value; }
-    }
-    List<RuleSms> _RulesSms = new();
+    public override List<RuleSms> RulesSms { get; set; } = new();
 
     /// <summary>
     ///     Incoming Faxes will be sent to this email addresses
     /// </summary>
     [AllowUpdate(false)]
-    public override List<RuleFax> RulesFax
-    {
-        get => _RulesFax;
-        set { if (value is null) _RulesFax.Clear(); else _RulesFax = value; }
-    }
-    List<RuleFax> _RulesFax = new();
+    public override List<RuleFax> RulesFax { get; set; } = new();
 
     /// <summary>
     ///     Requires customer info in order to be purchased

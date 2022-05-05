@@ -25,12 +25,7 @@ public partial class Voicemail : UbluxDocument
     /// </summary>
     [AllowUpdate(false)]
     [References(typeof(Line))]
-    public List<string> IdsLinesThatCanListenToVoicemail
-    {
-        get => _IdsLinesThatCanListenToVoicemail;
-        set { if (value is null) _IdsLinesThatCanListenToVoicemail.Clear(); else _IdsLinesThatCanListenToVoicemail = value; }
-    }
-    List<string> _IdsLinesThatCanListenToVoicemail = new();
+    public List<string> IdsLinesThatCanListenToVoicemail { get; set; } = new();
 
     /// <summary>
     ///     Email where voicemail was sent

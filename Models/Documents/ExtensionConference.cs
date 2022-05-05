@@ -14,12 +14,7 @@ public partial class ExtensionConference : Extension
     /// </summary>
     [References(typeof(Audio))]
     [AllowUpdate(true)]
-    public List<string> IdsAudiosWhenOneParticipant
-    {
-        get => _IdsAudiosWhenOneParticipant;
-        set { if (value is null) _IdsAudiosWhenOneParticipant.Clear(); else _IdsAudiosWhenOneParticipant = value; }
-    }
-    List<string> _IdsAudiosWhenOneParticipant = new();
+    public List<string> IdsAudiosWhenOneParticipant { get; set; } = new();
 
     #endregion
 

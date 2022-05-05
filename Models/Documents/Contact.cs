@@ -21,31 +21,13 @@ public partial class Contact : UbluxDocument
     ///     Value = type (example = work)
     /// </summary>
     [AllowUpdate(true)]
-    public List<ContactNumber> ContactNumbers
-    {
-        get => _ContactNumbers;
-        set
-        {
-            if (value is null) _ContactNumbers.Clear();
-            else _ContactNumbers = value;
-        }
-    }
-    List<ContactNumber> _ContactNumbers = new();
+    public List<ContactNumber> ContactNumbers { get; set; } = new();
 
     /// <summary>
     ///     Email addresses of contact
     /// </summary>
     [AllowUpdate(true)]
-    public List<ContactEmail> ContactEmails
-    {
-        get => _ContactEmails;
-        set
-        {
-            if (value is null) _ContactEmails.Clear();
-            else _ContactEmails = value;
-        }
-    }
-    List<ContactEmail> _ContactEmails = new();
+    public List<ContactEmail> ContactEmails { get; set; } = new();
 
     #endregion
 
@@ -90,16 +72,7 @@ public partial class Contact : UbluxDocument
     ///     Customer custom data
     /// </summary>
     [AllowUpdate(true)]
-    public List<Variable> Variables
-    {
-        get => _Variables;
-        set
-        {
-            if (value is null) _Variables.Clear();
-            else _Variables = value;
-        }
-    }
-    List<Variable> _Variables = new();
+    public List<Variable> Variables { get; set; } = new();
 
     #endregion
 

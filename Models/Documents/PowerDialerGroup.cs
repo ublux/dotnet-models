@@ -46,12 +46,7 @@ public partial class PowerDialerGroup : UbluxDocument
     /// </summary>
     [AllowUpdate(false)]
     [IsRequired]
-    public List<PowerDialer> PowerDialers
-    {
-        get => _PowerDialers;
-        set { if (value is null) _PowerDialers.Clear(); else _PowerDialers = value; }
-    }
-    List<PowerDialer> _PowerDialers = new();
+    public List<PowerDialer> PowerDialers { get; set; } = new();
 
     #endregion
 
