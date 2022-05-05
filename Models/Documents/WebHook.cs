@@ -22,7 +22,7 @@ public partial class WebHook : UbluxDocument
     public string Url { get; set; } = String.Empty;
 
     /// <summary>
-    ///     Custom headers to inject on request. Example: x-token:1234,user:eduardo
+    ///     Custom headers to inject on request. Example: x-token:1234,user:user1
     /// </summary>
     [AllowUpdate(true)]
     public List<string> Headers { get; set; } = new();
