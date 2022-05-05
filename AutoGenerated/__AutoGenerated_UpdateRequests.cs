@@ -1,4 +1,4 @@
-/* THIS FILE IS AUTO GENERATED. DO NOT DELETE/MODIFY THIS FILE */
+/* THIS FILE IS AUTO GENERATED. DO NOT DELETE/MODIFY */
 /* Contain properties with AllowUpdate=True */
 
 #pragma warning disable CA1822 // Mark members as static

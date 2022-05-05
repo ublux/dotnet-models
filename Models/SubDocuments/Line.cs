@@ -3,15 +3,8 @@
 /// <summary>
 ///     It is part of a phone. Lines are needed in order to make and receive phone calls.
 /// </summary>
-public class Line : UbluxSubDocument // this is a subdocument
+public class Line : UbluxSubDocument 
 {
-    ///// <inheritdoc />
-    //public override string SubDocumentPrefix() => "SubLi";
-
-    ///// <inheritdoc />
-    //public override void SetId() => id =
-    //    $"{UCore.InstanceId}:{SubDocumentPrefix()}:{DateTime.UtcNow.ToUnixEpoch()}:{Interlocked.Increment(ref DomainGlobals.IdGenerationCounter)}";
-
     /// <summary>
     /// </summary>
     [AllowUpdate(false)]
