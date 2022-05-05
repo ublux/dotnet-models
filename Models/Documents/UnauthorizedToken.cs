@@ -3,7 +3,7 @@
 /// <summary>
 ///     Tokens that are not authorized. Perhaps a token has been stolen
 /// </summary>
-public partial class UnauthorizedToken : UbluxDocument, IReferncesAccount
+public partial class UnauthorizedToken : UbluxDocument
 {
     // id is the last 16 characters of JWT
 

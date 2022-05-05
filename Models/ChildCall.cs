@@ -11,6 +11,13 @@ namespace Ublux.Communications.Models;
 [JsonSubtypes.KnownSubType(typeof(ChildCallAttendantTransferToPSTN), nameof(ChildCallType.AttendantTransferToPSTN))]
 [JsonSubtypes.KnownSubType(typeof(ChildCallBlindTransferToExtension), nameof(ChildCallType.BlindTransferToExtension))]
 [JsonSubtypes.KnownSubType(typeof(ChildCallBlindTransferToPSTN), nameof(ChildCallType.BlindTransferToPSTN))]
+[BsonKnownTypes(
+    typeof(ChildCallForwardToExtension),
+    typeof(ChildCallAttendantTransferToExtension),
+    typeof(ChildCallAttendantTransferToPSTN),
+    typeof(ChildCallBlindTransferToExtension),
+    typeof(ChildCallBlindTransferToPSTN)
+)]
 public abstract partial class ChildCall
 {
     ///// <summary>

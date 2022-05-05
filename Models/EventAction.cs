@@ -1,6 +1,4 @@
-﻿using JsonSubTypes;
-
-namespace Ublux.Communications.Models;
+﻿namespace Ublux.Communications.Models;
 
 /// <summary>
 ///     EventAction to execute if a specific event occurs. 
@@ -10,6 +8,11 @@ namespace Ublux.Communications.Models;
 [JsonSubtypes.KnownSubType(typeof(EventActionForwardToExtension), nameof(EventActionType.ForwardToExtension))]
 [JsonSubtypes.KnownSubType(typeof(EventActionForwardToPhoneNumber), nameof(EventActionType.ForwardToPhoneNumber))]
 [JsonSubtypes.KnownSubType(typeof(EventActionLeaveVoicemail), nameof(EventActionType.LeaveVoicemail))]
+[BsonKnownTypes(
+    typeof(EventActionForwardToExtension),
+    typeof(EventActionForwardToPhoneNumber),
+    typeof(EventActionLeaveVoicemail)
+)]
 public abstract partial class EventAction
 {
     /// <summary>

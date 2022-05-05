@@ -1,4 +1,4 @@
-﻿namespace Ublux.Communications.Models.Documents; // ReSharper disable ConditionIsAlwaysTrueOrFalse
+﻿namespace Ublux.Communications.Models.Documents;
 
 /// <summary>
 ///     Call made to an extension

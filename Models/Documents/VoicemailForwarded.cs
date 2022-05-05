@@ -1,4 +1,4 @@
-﻿namespace Ublux.Communications.Models.Documents; // ReSharper disable ConditionIsAlwaysTrueOrFalse
+﻿namespace Ublux.Communications.Models.Documents;
 
 /// <summary>
 ///     Voicemail that was forwarded from one extension to another

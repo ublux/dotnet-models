@@ -3,7 +3,7 @@
 /// <summary>
 ///     Multiple audios to be used as music on hold
 /// </summary>
-public partial class MusicOnHoldGroup : UbluxDocument, IReferncesAccount
+public partial class MusicOnHoldGroup : UbluxDocument
 {
     #region Properties
 

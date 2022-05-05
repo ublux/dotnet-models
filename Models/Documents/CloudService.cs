@@ -1,4 +1,4 @@
-﻿namespace Ublux.Communications.Models.Documents; // ReSharper disable ConditionIsAlwaysTrueOrFalse
+﻿namespace Ublux.Communications.Models.Documents;
 
 /// <summary>
 ///     Base class for cloud services

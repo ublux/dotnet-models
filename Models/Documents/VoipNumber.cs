@@ -12,7 +12,7 @@
     typeof(VoipNumberFax),
     typeof(VoipNumberPhone)
 )]
-public abstract partial class VoipNumber : UbluxDocument, IReferncesAccount
+public abstract partial class VoipNumber : UbluxDocument
 {
     #region Properties
 

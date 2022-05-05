@@ -1,4 +1,5 @@
 ﻿#if UBLUX_BACKEND
+
 namespace Ublux.Communications.Models.Documents; 
 
 /// <summary>
@@ -67,4 +68,5 @@ public partial class VoipProvider : UbluxDocument
     [IsRequired]
     public VoipCompany VoipCompany { get; set; }
 }
+
 #endif

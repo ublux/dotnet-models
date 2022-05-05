@@ -1,6 +1,6 @@
 ﻿#if UBLUX_BACKEND
 
-namespace Ublux.Communications.Models.Documents; // ReSharper disable ConditionIsAlwaysTrueOrFalse
+namespace Ublux.Communications.Models.Documents;
 
 /// <summary>
 ///     Configuration of a phone

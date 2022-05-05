@@ -3,7 +3,7 @@
 /// <summary>
 ///     SMS message
 /// </summary>
-public partial class SMS : UbluxDocument, IReferncesAccount
+public partial class SMS : UbluxDocument
 {
     #region Properties
 

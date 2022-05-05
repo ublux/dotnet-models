@@ -24,14 +24,12 @@ public partial class Contact : UbluxDocument
     public List<ContactNumber> ContactNumbers
     {
         get => _ContactNumbers;
-        // ReSharper disable once ConditionIsAlwaysTrueOrFalse
         set
         {
             if (value is null) _ContactNumbers.Clear();
             else _ContactNumbers = value;
         }
     }
-
     List<ContactNumber> _ContactNumbers = new();
 
     /// <summary>
@@ -41,7 +39,6 @@ public partial class Contact : UbluxDocument
     public List<ContactEmail> ContactEmails
     {
         get => _ContactEmails;
-        // ReSharper disable once ConditionIsAlwaysTrueOrFalse
         set
         {
             if (value is null) _ContactEmails.Clear();
@@ -96,7 +93,6 @@ public partial class Contact : UbluxDocument
     public List<Variable> Variables
     {
         get => _Variables;
-        // ReSharper disable once ConditionIsAlwaysTrueOrFalse
         set
         {
             if (value is null) _Variables.Clear();

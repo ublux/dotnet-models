@@ -1,6 +1,6 @@
 ﻿#if UBLUX_BACKEND
 
-namespace Ublux.Communications.Models.Documents; // ReSharper disable ConditionIsAlwaysTrueOrFalse
+namespace Ublux.Communications.Models.Documents;
 
 /// <summary>
 ///     Tokens that are not authorized. Perhaps a token has been stolen

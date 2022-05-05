@@ -3,7 +3,7 @@
 /// <summary>
 ///     Group used to call multiple parties
 /// </summary>
-public partial class PowerDialerGroup : UbluxDocument, IReferncesAccount
+public partial class PowerDialerGroup : UbluxDocument
 {
     #region Properties
 

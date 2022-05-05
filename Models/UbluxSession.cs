@@ -3,7 +3,7 @@
 /// <summary> 
 ///     Session is a logged in Identity (user). We use JWT Security tokens to store this Session.
 /// </summary>
-public class UbluxSession : IReferncesAccount
+public partial class UbluxSession 
 {
     /// <summary> sub property from JWT. Logged in by what user? This may be a PBX </summary>
     [References(typeof(Identity))]
@@ -32,18 +32,11 @@ public class UbluxSession : IReferncesAccount
     [IsRequired]
     [AllowUpdate(false)]
     [BsonRepresentation(BsonType.String)]
-    public List<UbluxRole> UbluxRoles
-    {
-        get => _UbluxRoles;
-        set { if (value is null) _UbluxRoles.Clear(); else _UbluxRoles = value; }
-    }
-    List<UbluxRole> _UbluxRoles = new();
+    public List<UbluxRole> UbluxRoles { get; set; } = new List<UbluxRole>();
 
-    // Use long variable because we store this on database
     /// <summary> exp property from JWT. Date when session expires </summary>
     [IsRequired]
     [AllowUpdate(false)]
     public DateTime ExpirationDate { get; set; }
-
 }
 

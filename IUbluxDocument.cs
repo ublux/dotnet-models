@@ -23,19 +23,6 @@ public partial interface IUbluxDocument : IUbluxDocumentId
     [AllowUpdate(false)]
     [JsonProperty(Order = 1002)]
     DateTime? DateUpdated { get; set; }
-
-#if UBLUX_BACKEND
-
-    /// <summary>
-    ///     Date when item was deleted
-    /// </summary>
-    [AllowUpdate(false)]
-    [JsonProperty(Order = 1001)]
-    [IgnoreDataMember]
-    DateTime? DateDeleted { get; set; }
-
-#endif
-
 }
 
 /// <summary>
@@ -43,8 +30,7 @@ public partial interface IUbluxDocument : IUbluxDocumentId
 ///     All collections on database must contain this attribute.
 ///     Represents a Table on a traditional database
 /// </summary>
-// ReSharper disable once RedundantExtendsListEntry
-public abstract class UbluxDocument : IUbluxDocument, IUbluxDocumentId
+public abstract partial class UbluxDocument : IUbluxDocument, IUbluxDocumentId
 {
     /// <summary>
     ///     Id of document
@@ -74,18 +60,7 @@ public abstract class UbluxDocument : IUbluxDocument, IUbluxDocumentId
     [HideForCreateRequest]
     public DateTime? DateUpdated { get; set; }
 
-#if UBLUX_BACKEND
 
-    /// <summary>
-    ///     Deletion Date
-    /// </summary>
-    [JsonProperty(Order = 1001)]
-    [IgnoreDataMember]
-    [AllowUpdate(false)]
-    [HideForCreateRequest]
-    public DateTime? DateDeleted { get; set; }
-
-#endif
 }
 
 /// <summary>
@@ -104,4 +79,3 @@ public interface IUbluxDocumentId
     [HideForCreateRequest]
     string Id { get; set; }
 }
-

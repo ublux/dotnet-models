@@ -3,7 +3,7 @@
 /// <summary>
 ///     Configuration of a phone
 /// </summary>
-public partial class PhoneConfiguration : UbluxDocument, IReferncesAccount
+public partial class PhoneConfiguration : UbluxDocument
 {
     #region Properties
 

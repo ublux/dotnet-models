@@ -12,7 +12,6 @@ namespace Ublux.Communications.Models.Documents;
     typeof(TrunkOriginationForward),
     typeof(TrunkOriginationRegister)
 )]
-[BsonIgnoreExtraElements]
 public abstract class TrunkOrigination : UbluxDocument
 {
     #region Properties

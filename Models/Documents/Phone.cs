@@ -1,9 +1,9 @@
-﻿namespace Ublux.Communications.Models.Documents; // ReSharper disable ConditionIsAlwaysTrueOrFalse
+﻿namespace Ublux.Communications.Models.Documents;
 
 /// <summary>
 ///     Previously called IpPhone. Represents a phone in UBLUX
 /// </summary>
-public partial class Phone : UbluxDocument, IReferncesAccount
+public partial class Phone : UbluxDocument
 {
     #region Properties
 

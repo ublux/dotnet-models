@@ -3,20 +3,8 @@
 /// <summary>
 ///     Outgoing fax
 /// </summary>
-public class FaxOutgoing : UbluxSubDocument
+public partial class FaxOutgoing : UbluxSubDocument
 {
-
-#if UBLUX_BACKEND
-    /// <summary>
-    ///     This is a subdocument. Id of parent
-    /// </summary>
-    [IgnoreDataMember]
-    [AllowUpdate(false)]
-    [References(typeof(FaxOutgoingGroup))]
-    [IsRequired]
-    public string IdFaxOutgoingGroup { get; set; } = string.Empty;
-#endif
-
     /// <summary>
     ///     Number of pages that Pdf contains
     /// </summary>
@@ -43,16 +31,6 @@ public class FaxOutgoing : UbluxSubDocument
     /// </summary>
     [AllowUpdate(false)]
     public string? ErrorMessage { get; set; }
-
-#if UBLUX_BACKEND
-    /// <summary>
-    ///     Email attachment that was converted to fax
-    /// </summary>
-    [AllowUpdate(false)]
-    [IgnoreDataMember]
-    [IsRequired]
-    public EmailAttachment EmailAttachment { get; set; } = new EmailAttachment();
-#endif
 
     /// <summary>
     ///     Path where Pdf exists on disk
@@ -94,28 +72,11 @@ public class FaxOutgoing : UbluxSubDocument
     [IsRequired]
     public string Name { get; set; } = string.Empty;
 
-#if UBLUX_BACKEND
-    /// <summary>
-    ///     True when done sending fax
-    /// </summary>
-    [AllowUpdate(false)]
-    [IgnoreDataMember]
-    public bool IsComplete { get; set; }
-#endif
-
     /// <summary>
     ///     Used in case the line is busy to retry again
     /// </summary>
     [AllowUpdate(false)]
     [IsRequired]
     public int NumberOfAttempts { get; set; }
-
-    /// <summary>
-    ///     Determine if fax contains an error
-    /// </summary>
-    public bool ContainsError()
-    {
-        return !string.IsNullOrEmpty(ErrorMessage);
-    }
-
+    
 }
