@@ -1362,5 +1362,37 @@ public class WebHookUpdateRequest : IUbluxDocumentId
     }
 
 }
+
+/// <summary>
+/// It is part of a phone. Lines are needed in order to make and receive phone calls.
+/// </summary>
+public class LineUpdateRequest : IUbluxDocumentId
+{
+    /// <inheritdoc />
+    public string Id { get; set; } = String.Empty;
+    /// <summary>
+    /// Caller id number that will be used to place outbound calls
+    /// </summary>
+    public String? CallerIdNumber { get; set; }
+    /// <summary>
+    /// Record outbound calls to PSTN?
+    /// </summary>
+    public Boolean? RecordExternalCalls { get; set; }
+    /// <summary>
+    /// Record calls to other extensions?
+    /// </summary>
+    public Boolean? RecordInternalCalls { get; set; }
+    /// <summary> Set values on actual document </summary>
+    public void SetValuesOnLine(Line line)
+    {
+        if(this.CallerIdNumber!=null)
+            line.CallerIdNumber = this.CallerIdNumber;
+        if(this.RecordExternalCalls!=null)
+            line.RecordExternalCalls = this.RecordExternalCalls.Value;
+        if(this.RecordInternalCalls!=null)
+            line.RecordInternalCalls = this.RecordInternalCalls.Value;
+    }
+
+}
 #pragma warning restore CA1822 // Mark members as static
 #pragma warning restore IDE0060 // Remove unused parameter
