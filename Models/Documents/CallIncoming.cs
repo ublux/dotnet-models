@@ -18,4 +18,11 @@ public abstract partial class CallIncoming : Call
     [AllowUpdate(false)]
     [IsRequired]
     public string IdVoipNumberPhone { get; set; } = String.Empty; // idDID
+
+    /// <summary>
+    ///     Phone number that received phone call in international format
+    /// </summary>
+    [AllowUpdate(false)]
+    [IsRequired]
+    public string FromInternationalFormat { get; set; } = String.Empty;
 }

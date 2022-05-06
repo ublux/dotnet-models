@@ -26,7 +26,7 @@ public abstract class PowerDialer
     ///     Phone number to call
     /// </summary>
     [IsRequired]
-    public string PhoneNumberInternationalFormat { get; set; } = string.Empty;
+    public string PhoneNumber { get; set; } = string.Empty;
 
     /// <summary>
     ///     Country ISO code of phone number to call

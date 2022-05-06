@@ -929,15 +929,15 @@ public class CallFilterRequest
 /// <summary> Enables searching for CallerIdMasks </summary>
 public class CallerIdMaskFilterRequest 
 {
-    /// <summary> PhoneNumberInternationalFormat equals </summary>
-    [JsonProperty("phoneNumberInternationalFormat_eq")]
-    public string? PhoneNumberInternationalFormat_EQ { get; set; }
-    /// <summary> PhoneNumberInternationalFormat contains </summary>
-    [JsonProperty("phoneNumberInternationalFormat_con")]
-    public string? PhoneNumberInternationalFormat_CON { get; set; }
-    /// <summary> PhoneNumberInternationalFormat regex </summary>
-    [JsonProperty("phoneNumberInternationalFormat_reg")]
-    public string? PhoneNumberInternationalFormat_REG { get; set; }
+    /// <summary> PhoneNumber equals </summary>
+    [JsonProperty("phoneNumber_eq")]
+    public string? PhoneNumber_EQ { get; set; }
+    /// <summary> PhoneNumber contains </summary>
+    [JsonProperty("phoneNumber_con")]
+    public string? PhoneNumber_CON { get; set; }
+    /// <summary> PhoneNumber regex </summary>
+    [JsonProperty("phoneNumber_reg")]
+    public string? PhoneNumber_REG { get; set; }
 
     /// <summary> FriendlyName equals </summary>
     [JsonProperty("friendlyName_eq")]
@@ -1208,6 +1208,16 @@ public class CallIncomingFilterRequest
     /// <summary> IdVoipNumberPhone regex </summary>
     [JsonProperty("idVoipNumberPhone_reg")]
     public string? IdVoipNumberPhone_REG { get; set; }
+
+    /// <summary> FromInternationalFormat equals </summary>
+    [JsonProperty("fromInternationalFormat_eq")]
+    public string? FromInternationalFormat_EQ { get; set; }
+    /// <summary> FromInternationalFormat contains </summary>
+    [JsonProperty("fromInternationalFormat_con")]
+    public string? FromInternationalFormat_CON { get; set; }
+    /// <summary> FromInternationalFormat regex </summary>
+    [JsonProperty("fromInternationalFormat_reg")]
+    public string? FromInternationalFormat_REG { get; set; }
 
     /// <summary> IdVoicemail equals </summary>
     [JsonProperty("idVoicemail_eq")]
@@ -1641,6 +1651,16 @@ public class CallIncomingToCallFlowFilterRequest
     /// <summary> IdVoipNumberPhone regex </summary>
     [JsonProperty("idVoipNumberPhone_reg")]
     public string? IdVoipNumberPhone_REG { get; set; }
+
+    /// <summary> FromInternationalFormat equals </summary>
+    [JsonProperty("fromInternationalFormat_eq")]
+    public string? FromInternationalFormat_EQ { get; set; }
+    /// <summary> FromInternationalFormat contains </summary>
+    [JsonProperty("fromInternationalFormat_con")]
+    public string? FromInternationalFormat_CON { get; set; }
+    /// <summary> FromInternationalFormat regex </summary>
+    [JsonProperty("fromInternationalFormat_reg")]
+    public string? FromInternationalFormat_REG { get; set; }
 
     /// <summary> IdVoicemail equals </summary>
     [JsonProperty("idVoicemail_eq")]
@@ -2120,6 +2140,16 @@ public class CallIncomingToExtensionFilterRequest
     /// <summary> IdVoipNumberPhone regex </summary>
     [JsonProperty("idVoipNumberPhone_reg")]
     public string? IdVoipNumberPhone_REG { get; set; }
+
+    /// <summary> FromInternationalFormat equals </summary>
+    [JsonProperty("fromInternationalFormat_eq")]
+    public string? FromInternationalFormat_EQ { get; set; }
+    /// <summary> FromInternationalFormat contains </summary>
+    [JsonProperty("fromInternationalFormat_con")]
+    public string? FromInternationalFormat_CON { get; set; }
+    /// <summary> FromInternationalFormat regex </summary>
+    [JsonProperty("fromInternationalFormat_reg")]
+    public string? FromInternationalFormat_REG { get; set; }
 
     /// <summary> IdVoicemail equals </summary>
     [JsonProperty("idVoicemail_eq")]
@@ -6304,15 +6334,15 @@ public class PowerDialerGroupFilterRequest
     [JsonProperty("powerDialers_powerDialerType_eq")]
     public PowerDialerType? PowerDialers_PowerDialerType_EQ { get; set; }
 
-    /// <summary> PowerDialers.PhoneNumberInternationalFormat equals </summary>
-    [JsonProperty("powerDialers_phoneNumberInternationalFormat_eq")]
-    public string? PowerDialers_PhoneNumberInternationalFormat_EQ { get; set; }
-    /// <summary> PowerDialers.PhoneNumberInternationalFormat contains </summary>
-    [JsonProperty("powerDialers_phoneNumberInternationalFormat_con")]
-    public string? PowerDialers_PhoneNumberInternationalFormat_CON { get; set; }
-    /// <summary> PowerDialers.PhoneNumberInternationalFormat regex </summary>
-    [JsonProperty("powerDialers_phoneNumberInternationalFormat_reg")]
-    public string? PowerDialers_PhoneNumberInternationalFormat_REG { get; set; }
+    /// <summary> PowerDialers.PhoneNumber equals </summary>
+    [JsonProperty("powerDialers_phoneNumber_eq")]
+    public string? PowerDialers_PhoneNumber_EQ { get; set; }
+    /// <summary> PowerDialers.PhoneNumber contains </summary>
+    [JsonProperty("powerDialers_phoneNumber_con")]
+    public string? PowerDialers_PhoneNumber_CON { get; set; }
+    /// <summary> PowerDialers.PhoneNumber regex </summary>
+    [JsonProperty("powerDialers_phoneNumber_reg")]
+    public string? PowerDialers_PhoneNumber_REG { get; set; }
 
     /// <summary> PowerDialers.CountryIsoCode equals </summary>
     [JsonProperty("powerDialers_countryIsoCode_eq")]

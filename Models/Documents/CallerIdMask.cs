@@ -12,7 +12,7 @@ public partial class CallerIdMask : UbluxDocument
     /// </summary>
     [AllowUpdate(false)]
     [IsRequired]
-    public string PhoneNumberInternationalFormat { get; set; } = String.Empty;
+    public string PhoneNumber { get; set; } = String.Empty;
 
     /// <summary>
     ///     Name of this caller id mask

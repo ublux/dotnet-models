@@ -27,5 +27,6 @@ public partial class CallOutgoingToPSTN : CallOutgoing
     ///     Phone number dialed in international format 
     /// </summary>
     [AllowUpdate(false)]
-    public string? ToInternationalFormat { get; set; }
+    [IsRequired]
+    public string ToInternationalFormat { get; set; } = string.Empty;
 }

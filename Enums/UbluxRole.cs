@@ -26,8 +26,310 @@ public enum UbluxRole
 {
     #region Low priority
 
-    /// <summary> Has access to the phones endpoint with all permissions </summary>
-    phones = 10,
+
+
+    /// <summary> Has access to the audios endpoint with full permissions </summary>
+    audios = 10,
+    /// <summary> Has access to the audios endpoint with only read permissions </summary>
+    audios_readonly,
+    /// <summary> Has access to the audios endpoint with only read/update permissions </summary>
+    audios_update,
+    /// <summary> Has access to the audios endpoint with only read/delete permissions </summary>
+    audios_delete,
+    /// <summary> Has access to the audios endpoint with only read/create permissions </summary>
+    audios_create,
+
+
+    /// <summary> Has access to the blacklistphonenumbers endpoint with full permissions </summary>
+    blacklistphonenumbers = 20,
+    /// <summary> Has access to the blacklistphonenumbers endpoint with only read permissions </summary>
+    blacklistphonenumbers_readonly,
+    /// <summary> Has access to the blacklistphonenumbers endpoint with only read/update permissions </summary>
+    blacklistphonenumbers_update,
+    /// <summary> Has access to the blacklistphonenumbers endpoint with only read/delete permissions </summary>
+    blacklistphonenumbers_delete,
+    /// <summary> Has access to the blacklistphonenumbers endpoint with only read/create permissions </summary>
+    blacklistphonenumbers_create,
+
+
+    /// <summary> Has access to the calls endpoint with full permissions </summary>
+    calls = 30,
+    /// <summary> Has access to the calls endpoint with only read permissions </summary>
+    calls_readonly,
+    /// <summary> Has access to the calls endpoint with only read/update permissions </summary>
+    calls_update,
+    /// <summary> Has access to the calls endpoint with only read/delete permissions </summary>
+    calls_delete,
+    /// <summary> Has access to the calls endpoint with only read/create permissions </summary>
+    calls_create,
+
+
+    /// <summary> Has access to the calleridmasks endpoint with full permissions </summary>
+    calleridmasks = 40,
+    /// <summary> Has access to the calleridmasks endpoint with only read permissions </summary>
+    calleridmasks_readonly,
+    /// <summary> Has access to the calleridmasks endpoint with only read/update permissions </summary>
+    calleridmasks_update,
+    /// <summary> Has access to the calleridmasks endpoint with only read/delete permissions </summary>
+    calleridmasks_delete,
+    /// <summary> Has access to the calleridmasks endpoint with only read/create permissions </summary>
+    calleridmasks_create,
+
+
+    /// <summary> Has access to the callflows endpoint with full permissions </summary>
+    callflows = 50,
+    /// <summary> Has access to the callflows endpoint with only read permissions </summary>
+    callflows_readonly,
+    /// <summary> Has access to the callflows endpoint with only read/update permissions </summary>
+    callflows_update,
+    /// <summary> Has access to the callflows endpoint with only read/delete permissions </summary>
+    callflows_delete,
+    /// <summary> Has access to the callflows endpoint with only read/create permissions </summary>
+    callflows_create,
+
+
+    /// <summary> Has access to the callincomings endpoint with full permissions </summary>
+    callincomings = 60,
+    /// <summary> Has access to the callincomings endpoint with only read permissions </summary>
+    callincomings_readonly,
+    /// <summary> Has access to the callincomings endpoint with only read/update permissions </summary>
+    callincomings_update,
+    /// <summary> Has access to the callincomings endpoint with only read/delete permissions </summary>
+    callincomings_delete,
+    /// <summary> Has access to the callincomings endpoint with only read/create permissions </summary>
+    callincomings_create,
+
+
+    /// <summary> Has access to the callincomingtocallflows endpoint with full permissions </summary>
+    callincomingtocallflows = 70,
+    /// <summary> Has access to the callincomingtocallflows endpoint with only read permissions </summary>
+    callincomingtocallflows_readonly,
+    /// <summary> Has access to the callincomingtocallflows endpoint with only read/update permissions </summary>
+    callincomingtocallflows_update,
+    /// <summary> Has access to the callincomingtocallflows endpoint with only read/delete permissions </summary>
+    callincomingtocallflows_delete,
+    /// <summary> Has access to the callincomingtocallflows endpoint with only read/create permissions </summary>
+    callincomingtocallflows_create,
+
+
+    /// <summary> Has access to the callincomingtoextensions endpoint with full permissions </summary>
+    callincomingtoextensions = 80,
+    /// <summary> Has access to the callincomingtoextensions endpoint with only read permissions </summary>
+    callincomingtoextensions_readonly,
+    /// <summary> Has access to the callincomingtoextensions endpoint with only read/update permissions </summary>
+    callincomingtoextensions_update,
+    /// <summary> Has access to the callincomingtoextensions endpoint with only read/delete permissions </summary>
+    callincomingtoextensions_delete,
+    /// <summary> Has access to the callincomingtoextensions endpoint with only read/create permissions </summary>
+    callincomingtoextensions_create,
+
+
+    /// <summary> Has access to the calloutgoings endpoint with full permissions </summary>
+    calloutgoings = 90,
+    /// <summary> Has access to the calloutgoings endpoint with only read permissions </summary>
+    calloutgoings_readonly,
+    /// <summary> Has access to the calloutgoings endpoint with only read/update permissions </summary>
+    calloutgoings_update,
+    /// <summary> Has access to the calloutgoings endpoint with only read/delete permissions </summary>
+    calloutgoings_delete,
+    /// <summary> Has access to the calloutgoings endpoint with only read/create permissions </summary>
+    calloutgoings_create,
+
+
+    /// <summary> Has access to the calloutgoingtoextensions endpoint with full permissions </summary>
+    calloutgoingtoextensions = 100,
+    /// <summary> Has access to the calloutgoingtoextensions endpoint with only read permissions </summary>
+    calloutgoingtoextensions_readonly,
+    /// <summary> Has access to the calloutgoingtoextensions endpoint with only read/update permissions </summary>
+    calloutgoingtoextensions_update,
+    /// <summary> Has access to the calloutgoingtoextensions endpoint with only read/delete permissions </summary>
+    calloutgoingtoextensions_delete,
+    /// <summary> Has access to the calloutgoingtoextensions endpoint with only read/create permissions </summary>
+    calloutgoingtoextensions_create,
+
+
+    /// <summary> Has access to the calloutgoingtopstns endpoint with full permissions </summary>
+    calloutgoingtopstns = 110,
+    /// <summary> Has access to the calloutgoingtopstns endpoint with only read permissions </summary>
+    calloutgoingtopstns_readonly,
+    /// <summary> Has access to the calloutgoingtopstns endpoint with only read/update permissions </summary>
+    calloutgoingtopstns_update,
+    /// <summary> Has access to the calloutgoingtopstns endpoint with only read/delete permissions </summary>
+    calloutgoingtopstns_delete,
+    /// <summary> Has access to the calloutgoingtopstns endpoint with only read/create permissions </summary>
+    calloutgoingtopstns_create,
+
+
+    /// <summary> Has access to the contacts endpoint with full permissions </summary>
+    contacts = 120,
+    /// <summary> Has access to the contacts endpoint with only read permissions </summary>
+    contacts_readonly,
+    /// <summary> Has access to the contacts endpoint with only read/update permissions </summary>
+    contacts_update,
+    /// <summary> Has access to the contacts endpoint with only read/delete permissions </summary>
+    contacts_delete,
+    /// <summary> Has access to the contacts endpoint with only read/create permissions </summary>
+    contacts_create,
+
+
+    /// <summary> Has access to the customerinfos endpoint with full permissions </summary>
+    customerinfos = 130,
+    /// <summary> Has access to the customerinfos endpoint with only read permissions </summary>
+    customerinfos_readonly,
+    /// <summary> Has access to the customerinfos endpoint with only read/update permissions </summary>
+    customerinfos_update,
+    /// <summary> Has access to the customerinfos endpoint with only read/delete permissions </summary>
+    customerinfos_delete,
+    /// <summary> Has access to the customerinfos endpoint with only read/create permissions </summary>
+    customerinfos_create,
+
+
+    /// <summary> Has access to the extensions endpoint with full permissions </summary>
+    extensions = 140,
+    /// <summary> Has access to the extensions endpoint with only read permissions </summary>
+    extensions_readonly,
+    /// <summary> Has access to the extensions endpoint with only read/update permissions </summary>
+    extensions_update,
+    /// <summary> Has access to the extensions endpoint with only read/delete permissions </summary>
+    extensions_delete,
+    /// <summary> Has access to the extensions endpoint with only read/create permissions </summary>
+    extensions_create,
+
+
+    /// <summary> Has access to the extensioncallflows endpoint with full permissions </summary>
+    extensioncallflows = 150,
+    /// <summary> Has access to the extensioncallflows endpoint with only read permissions </summary>
+    extensioncallflows_readonly,
+    /// <summary> Has access to the extensioncallflows endpoint with only read/update permissions </summary>
+    extensioncallflows_update,
+    /// <summary> Has access to the extensioncallflows endpoint with only read/delete permissions </summary>
+    extensioncallflows_delete,
+    /// <summary> Has access to the extensioncallflows endpoint with only read/create permissions </summary>
+    extensioncallflows_create,
+
+
+    /// <summary> Has access to the extensionconferences endpoint with full permissions </summary>
+    extensionconferences = 160,
+    /// <summary> Has access to the extensionconferences endpoint with only read permissions </summary>
+    extensionconferences_readonly,
+    /// <summary> Has access to the extensionconferences endpoint with only read/update permissions </summary>
+    extensionconferences_update,
+    /// <summary> Has access to the extensionconferences endpoint with only read/delete permissions </summary>
+    extensionconferences_delete,
+    /// <summary> Has access to the extensionconferences endpoint with only read/create permissions </summary>
+    extensionconferences_create,
+
+
+    /// <summary> Has access to the extensiondials endpoint with full permissions </summary>
+    extensiondials = 170,
+    /// <summary> Has access to the extensiondials endpoint with only read permissions </summary>
+    extensiondials_readonly,
+    /// <summary> Has access to the extensiondials endpoint with only read/update permissions </summary>
+    extensiondials_update,
+    /// <summary> Has access to the extensiondials endpoint with only read/delete permissions </summary>
+    extensiondials_delete,
+    /// <summary> Has access to the extensiondials endpoint with only read/create permissions </summary>
+    extensiondials_create,
+
+
+    /// <summary> Has access to the extensionqueues endpoint with full permissions </summary>
+    extensionqueues = 180,
+    /// <summary> Has access to the extensionqueues endpoint with only read permissions </summary>
+    extensionqueues_readonly,
+    /// <summary> Has access to the extensionqueues endpoint with only read/update permissions </summary>
+    extensionqueues_update,
+    /// <summary> Has access to the extensionqueues endpoint with only read/delete permissions </summary>
+    extensionqueues_delete,
+    /// <summary> Has access to the extensionqueues endpoint with only read/create permissions </summary>
+    extensionqueues_create,
+
+
+    /// <summary> Has access to the extensionvoicemails endpoint with full permissions </summary>
+    extensionvoicemails = 190,
+    /// <summary> Has access to the extensionvoicemails endpoint with only read permissions </summary>
+    extensionvoicemails_readonly,
+    /// <summary> Has access to the extensionvoicemails endpoint with only read/update permissions </summary>
+    extensionvoicemails_update,
+    /// <summary> Has access to the extensionvoicemails endpoint with only read/delete permissions </summary>
+    extensionvoicemails_delete,
+    /// <summary> Has access to the extensionvoicemails endpoint with only read/create permissions </summary>
+    extensionvoicemails_create,
+
+
+    /// <summary> Has access to the faxemailinfos endpoint with full permissions </summary>
+    faxemailinfos = 200,
+    /// <summary> Has access to the faxemailinfos endpoint with only read permissions </summary>
+    faxemailinfos_readonly,
+    /// <summary> Has access to the faxemailinfos endpoint with only read/update permissions </summary>
+    faxemailinfos_update,
+    /// <summary> Has access to the faxemailinfos endpoint with only read/delete permissions </summary>
+    faxemailinfos_delete,
+    /// <summary> Has access to the faxemailinfos endpoint with only read/create permissions </summary>
+    faxemailinfos_create,
+
+
+    /// <summary> Has access to the faxincomings endpoint with full permissions </summary>
+    faxincomings = 210,
+    /// <summary> Has access to the faxincomings endpoint with only read permissions </summary>
+    faxincomings_readonly,
+    /// <summary> Has access to the faxincomings endpoint with only read/update permissions </summary>
+    faxincomings_update,
+    /// <summary> Has access to the faxincomings endpoint with only read/delete permissions </summary>
+    faxincomings_delete,
+    /// <summary> Has access to the faxincomings endpoint with only read/create permissions </summary>
+    faxincomings_create,
+
+
+    /// <summary> Has access to the faxoutgoinggroups endpoint with full permissions </summary>
+    faxoutgoinggroups = 220,
+    /// <summary> Has access to the faxoutgoinggroups endpoint with only read permissions </summary>
+    faxoutgoinggroups_readonly,
+    /// <summary> Has access to the faxoutgoinggroups endpoint with only read/update permissions </summary>
+    faxoutgoinggroups_update,
+    /// <summary> Has access to the faxoutgoinggroups endpoint with only read/delete permissions </summary>
+    faxoutgoinggroups_delete,
+    /// <summary> Has access to the faxoutgoinggroups endpoint with only read/create permissions </summary>
+    faxoutgoinggroups_create,
+
+
+    /// <summary> Has access to the identitys endpoint with full permissions </summary>
+    identities = 230,
+    /// <summary> Has access to the identities endpoint with only read permissions </summary>
+    identities_readonly,
+    /// <summary> Has access to the identities endpoint with only read/update permissions </summary>
+    identities_update,
+    /// <summary> Has access to the identities endpoint with only read/delete permissions </summary>
+    identities_delete,
+    /// <summary> Has access to the identities endpoint with only read/create permissions </summary>
+    identities_create,
+
+
+    /// <summary> Has access to the linekeygroups endpoint with full permissions </summary>
+    linekeygroups = 240,
+    /// <summary> Has access to the linekeygroups endpoint with only read permissions </summary>
+    linekeygroups_readonly,
+    /// <summary> Has access to the linekeygroups endpoint with only read/update permissions </summary>
+    linekeygroups_update,
+    /// <summary> Has access to the linekeygroups endpoint with only read/delete permissions </summary>
+    linekeygroups_delete,
+    /// <summary> Has access to the linekeygroups endpoint with only read/create permissions </summary>
+    linekeygroups_create,
+
+
+    /// <summary> Has access to the musiconholdgroups endpoint with full permissions </summary>
+    musiconholdgroups = 250,
+    /// <summary> Has access to the musiconholdgroups endpoint with only read permissions </summary>
+    musiconholdgroups_readonly,
+    /// <summary> Has access to the musiconholdgroups endpoint with only read/update permissions </summary>
+    musiconholdgroups_update,
+    /// <summary> Has access to the musiconholdgroups endpoint with only read/delete permissions </summary>
+    musiconholdgroups_delete,
+    /// <summary> Has access to the musiconholdgroups endpoint with only read/create permissions </summary>
+    musiconholdgroups_create,
+
+
+    /// <summary> Has access to the phones endpoint with full permissions </summary>
+    phones = 260,
     /// <summary> Has access to the phones endpoint with only read permissions </summary>
     phones_readonly,
     /// <summary> Has access to the phones endpoint with only read/update permissions </summary>
@@ -37,16 +339,104 @@ public enum UbluxRole
     /// <summary> Has access to the phones endpoint with only read/create permissions </summary>
     phones_create,
 
-    /// <summary> Has access to the extensions endpoint with all permissions </summary>
-    extensions = 20,
-    /// <summary> Has access to the extensions endpoint with only read permissions </summary>
-    extensions_readonly,
-    /// <summary> Has access to the extensions endpoint with only read/update permissions </summary>
-    extensions_update,
-    /// <summary> Has access to the extensions endpoint with only read/delete permissions </summary>
-    extensions_delete,
-    /// <summary> Has access to the extensions endpoint with only read/create permissions </summary>
-    extensions_create,
+
+    /// <summary> Has access to the phoneconfigurations endpoint with full permissions </summary>
+    phoneconfigurations = 270,
+    /// <summary> Has access to the phoneconfigurations endpoint with only read permissions </summary>
+    phoneconfigurations_readonly,
+    /// <summary> Has access to the phoneconfigurations endpoint with only read/update permissions </summary>
+    phoneconfigurations_update,
+    /// <summary> Has access to the phoneconfigurations endpoint with only read/delete permissions </summary>
+    phoneconfigurations_delete,
+    /// <summary> Has access to the phoneconfigurations endpoint with only read/create permissions </summary>
+    phoneconfigurations_create,
+
+
+    /// <summary> Has access to the powerdialergroups endpoint with full permissions </summary>
+    powerdialergroups = 280,
+    /// <summary> Has access to the powerdialergroups endpoint with only read permissions </summary>
+    powerdialergroups_readonly,
+    /// <summary> Has access to the powerdialergroups endpoint with only read/update permissions </summary>
+    powerdialergroups_update,
+    /// <summary> Has access to the powerdialergroups endpoint with only read/delete permissions </summary>
+    powerdialergroups_delete,
+    /// <summary> Has access to the powerdialergroups endpoint with only read/create permissions </summary>
+    powerdialergroups_create,
+
+
+    /// <summary> Has access to the sms endpoint with full permissions </summary>
+    sms = 290,
+    /// <summary> Has access to the sms endpoint with only read permissions </summary>
+    sms_readonly,
+    /// <summary> Has access to the sms endpoint with only read/update permissions </summary>
+    sms_update,
+    /// <summary> Has access to the sms endpoint with only read/delete permissions </summary>
+    sms_delete,
+    /// <summary> Has access to the sms endpoint with only read/create permissions </summary>
+    sms_create,
+
+
+    /// <summary> Has access to the unauthorizedtokens endpoint with full permissions </summary>
+    unauthorizedtokens = 300,
+    /// <summary> Has access to the unauthorizedtokens endpoint with only read permissions </summary>
+    unauthorizedtokens_readonly,
+    /// <summary> Has access to the unauthorizedtokens endpoint with only read/update permissions </summary>
+    unauthorizedtokens_update,
+    /// <summary> Has access to the unauthorizedtokens endpoint with only read/delete permissions </summary>
+    unauthorizedtokens_delete,
+    /// <summary> Has access to the unauthorizedtokens endpoint with only read/create permissions </summary>
+    unauthorizedtokens_create,
+
+
+    /// <summary> Has access to the voipnumbers endpoint with full permissions </summary>
+    voipnumbers = 310,
+    /// <summary> Has access to the voipnumbers endpoint with only read permissions </summary>
+    voipnumbers_readonly,
+    /// <summary> Has access to the voipnumbers endpoint with only read/update permissions </summary>
+    voipnumbers_update,
+    /// <summary> Has access to the voipnumbers endpoint with only read/delete permissions </summary>
+    voipnumbers_delete,
+    /// <summary> Has access to the voipnumbers endpoint with only read/create permissions </summary>
+    voipnumbers_create,
+
+
+    /// <summary> Has access to the voipnumberavailableforpurchases endpoint with full permissions </summary>
+    voipnumberavailableforpurchases = 320,
+    /// <summary> Has access to the voipnumberavailableforpurchases endpoint with only read permissions </summary>
+    voipnumberavailableforpurchases_readonly,
+    /// <summary> Has access to the voipnumberavailableforpurchases endpoint with only read/update permissions </summary>
+    voipnumberavailableforpurchases_update,
+    /// <summary> Has access to the voipnumberavailableforpurchases endpoint with only read/delete permissions </summary>
+    voipnumberavailableforpurchases_delete,
+    /// <summary> Has access to the voipnumberavailableforpurchases endpoint with only read/create permissions </summary>
+    voipnumberavailableforpurchases_create,
+
+
+    /// <summary> Has access to the voipnumberfaxs endpoint with full permissions </summary>
+    voipnumberfaxs = 330,
+    /// <summary> Has access to the voipnumberfaxs endpoint with only read permissions </summary>
+    voipnumberfaxs_readonly,
+    /// <summary> Has access to the voipnumberfaxs endpoint with only read/update permissions </summary>
+    voipnumberfaxs_update,
+    /// <summary> Has access to the voipnumberfaxs endpoint with only read/delete permissions </summary>
+    voipnumberfaxs_delete,
+    /// <summary> Has access to the voipnumberfaxs endpoint with only read/create permissions </summary>
+    voipnumberfaxs_create,
+
+
+    /// <summary> Has access to the voipnumberphones endpoint with full permissions </summary>
+    voipnumberphones = 340,
+    /// <summary> Has access to the voipnumberphones endpoint with only read permissions </summary>
+    voipnumberphones_readonly,
+    /// <summary> Has access to the voipnumberphones endpoint with only read/update permissions </summary>
+    voipnumberphones_update,
+    /// <summary> Has access to the voipnumberphones endpoint with only read/delete permissions </summary>
+    voipnumberphones_delete,
+    /// <summary> Has access to the voipnumberphones endpoint with only read/create permissions </summary>
+    voipnumberphones_create,
+
+
+
 
     #endregion
 
