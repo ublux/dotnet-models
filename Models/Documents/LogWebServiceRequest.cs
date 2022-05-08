@@ -18,6 +18,12 @@ public partial class LogWebServiceRequest : UbluxDocument
     #endregion
 
     /// <summary>
+    ///     Number of concurrent requests when this log message was created. 
+    ///     For example if 5 reques are made at the same time this count may be equal to 5.
+    /// </summary>
+    public int ConcurrentRequests { get; set; }
+
+    /// <summary>
     ///     This is used to charge customers.
     ///     
     ///     Ever time a user consumes the api it will have a cost. 
