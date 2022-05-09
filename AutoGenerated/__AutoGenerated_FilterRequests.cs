@@ -3777,9 +3777,9 @@ public class CloudServiceFilterRequest
     [JsonProperty("isFailover_eq")]
     public bool? IsFailover_EQ { get; set; }
 
-    /// <summary> NAT equals </summary>
-    [JsonProperty("nAT_eq")]
-    public bool? NAT_EQ { get; set; }
+    /// <summary> Nat equals </summary>
+    [JsonProperty("nat_eq")]
+    public bool? Nat_EQ { get; set; }
 
     /// <summary> IsHealthy equals </summary>
     [JsonProperty("isHealthy_eq")]
@@ -3861,9 +3861,9 @@ public class CloudServicePbxFilterRequest
     [JsonProperty("isFailover_eq")]
     public bool? IsFailover_EQ { get; set; }
 
-    /// <summary> NAT equals </summary>
-    [JsonProperty("nAT_eq")]
-    public bool? NAT_EQ { get; set; }
+    /// <summary> Nat equals </summary>
+    [JsonProperty("nat_eq")]
+    public bool? Nat_EQ { get; set; }
 
     /// <summary> IsHealthy equals </summary>
     [JsonProperty("isHealthy_eq")]
@@ -3945,9 +3945,9 @@ public class CloudServiceWebAppFilterRequest
     [JsonProperty("isFailover_eq")]
     public bool? IsFailover_EQ { get; set; }
 
-    /// <summary> NAT equals </summary>
-    [JsonProperty("nAT_eq")]
-    public bool? NAT_EQ { get; set; }
+    /// <summary> Nat equals </summary>
+    [JsonProperty("nat_eq")]
+    public bool? Nat_EQ { get; set; }
 
     /// <summary> IsHealthy equals </summary>
     [JsonProperty("isHealthy_eq")]
@@ -4029,9 +4029,9 @@ public class CloudServiceWebHostFilterRequest
     [JsonProperty("isFailover_eq")]
     public bool? IsFailover_EQ { get; set; }
 
-    /// <summary> NAT equals </summary>
-    [JsonProperty("nAT_eq")]
-    public bool? NAT_EQ { get; set; }
+    /// <summary> Nat equals </summary>
+    [JsonProperty("nat_eq")]
+    public bool? Nat_EQ { get; set; }
 
     /// <summary> IsHealthy equals </summary>
     [JsonProperty("isHealthy_eq")]
@@ -4113,9 +4113,9 @@ public class CloudServiceWebServiceFilterRequest
     [JsonProperty("isFailover_eq")]
     public bool? IsFailover_EQ { get; set; }
 
-    /// <summary> NAT equals </summary>
-    [JsonProperty("nAT_eq")]
-    public bool? NAT_EQ { get; set; }
+    /// <summary> Nat equals </summary>
+    [JsonProperty("nat_eq")]
+    public bool? Nat_EQ { get; set; }
 
     /// <summary> IsHealthy equals </summary>
     [JsonProperty("isHealthy_eq")]
@@ -5821,6 +5821,16 @@ public class LogWebServiceRequestFilterRequest
     [JsonProperty("ubluxSession_expirationDate_gte")]
     public DateTime? UbluxSession_ExpirationDate_GTE { get; set; }
 
+
+    /// <summary> ConcurrentRequests equals </summary>
+    [JsonProperty("concurrentRequests_eq")]
+    public System.Int32? ConcurrentRequests_EQ { get; set; }
+    /// <summary> ConcurrentRequests less than or equal to </summary>
+    [JsonProperty("concurrentRequests_lte")]
+    public System.Int32? ConcurrentRequests_LTE { get; set; }
+    /// <summary> ConcurrentRequests greater than or equal to </summary>
+    [JsonProperty("concurrentRequests_gte")]
+    public System.Int32? ConcurrentRequests_GTE { get; set; }
 
     /// <summary> Charge equals </summary>
     [JsonProperty("charge_eq")]

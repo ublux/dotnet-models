@@ -37,7 +37,7 @@ public partial class TrunkTermination : UbluxDocument
     [IgnoreDataMember]
     [AllowUpdate(false)]
     [IsRequired]
-    public string SID { get; set; } = string.Empty;
+    public string ProviderId { get; set; } = string.Empty;
 
     /// <summary>
     ///     Url where to send calls

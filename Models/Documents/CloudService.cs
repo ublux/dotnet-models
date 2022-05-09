@@ -71,7 +71,7 @@ public abstract class CloudService : UbluxDocument
     ///     Is there a router? For example on Divieto this will be true. On Canal Park this will be false
     /// </summary>
     [AllowUpdate(false)]
-    public bool NAT { get; set; }
+    public bool Nat { get; set; }
 
     /// <summary>
     ///     Send this constantly to web service when polling. The pbx sends this

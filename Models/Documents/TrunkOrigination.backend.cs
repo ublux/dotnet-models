@@ -77,7 +77,7 @@ public abstract class TrunkOrigination : UbluxDocument
     [IgnoreDataMember]
     [AllowUpdate(false)]
     [IsRequired]
-    public string SID { get; set; } = string.Empty;
+    public string ProviderId { get; set; } = string.Empty;
 
     ///// <summary>
     /////     DIDs associated with this trunk

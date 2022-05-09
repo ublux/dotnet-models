@@ -49,6 +49,6 @@ public abstract partial class VoipNumber : UbluxDocument, IReferncesAccount
     [IgnoreDataMember]
     [AllowUpdate(false)]
     [IsRequired]
-    public string SID { get; set; } = string.Empty;
+    public string ProviderId { get; set; } = string.Empty;
 }
 #endif

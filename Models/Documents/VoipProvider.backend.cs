@@ -13,7 +13,7 @@ public partial class VoipProvider : UbluxDocument
     [AllowUpdate(false)]
     [IgnoreDataMember]
     [IsRequired]
-    public string SID { get; set; } = string.Empty;
+    public string ProviderId { get; set; } = string.Empty;
 
     /// <summary>
     ///     Ublux partner
