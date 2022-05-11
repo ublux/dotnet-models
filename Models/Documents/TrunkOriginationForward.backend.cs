@@ -7,6 +7,10 @@ namespace Ublux.Communications.Models.Documents;
 /// </summary>
 public partial class TrunkOriginationForward : TrunkOrigination
 {
+    // Id = "{Provider}:{Name}"
+    // example: Twilio-CanalPark:UST
+    // can have the same id as trunk termination!
+
     /// <summary>
     ///     Url where to forward traffic
     /// </summary>

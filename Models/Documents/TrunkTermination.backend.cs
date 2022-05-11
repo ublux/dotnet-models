@@ -7,6 +7,10 @@ namespace Ublux.Communications.Models.Documents;
 /// </summary>
 public partial class TrunkTermination : UbluxDocument
 {
+    // Id = "{Provider}:{Name}"
+    // example: Twilio-CanalPark:UST
+    // can have the same id as trunk origination!
+
     #region Properties
 
     #region References
@@ -21,13 +25,13 @@ public partial class TrunkTermination : UbluxDocument
     [IsRequired]
     public string IdVoipProvider { get; set; } = String.Empty;
 
-    /// <summary>
-    ///     Needed so that we do not create two trunk terminations that are actually the same on sip.conf. One will be able to call China and the other not but they are the same
-    /// </summary>
-    [References(typeof(TrunkTermination))]
-    [IgnoreDataMember]
-    [AllowUpdate(false)]
-    public string? IdTrunkTerminationExisting { get; set; }
+    ///// <summary>
+    /////     Needed so that we do not create two trunk terminations that are actually the same on sip.conf. One will be able to call China and the other not but they are the same
+    ///// </summary>
+    //[References(typeof(TrunkTermination))]
+    //[IgnoreDataMember]
+    //[AllowUpdate(false)]
+    //public string? IdTrunkTerminationExisting { get; set; }
 
     #endregion
 

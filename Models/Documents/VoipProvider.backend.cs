@@ -13,7 +13,21 @@ public partial class VoipProvider : UbluxDocument
     [AllowUpdate(false)]
     [IgnoreDataMember]
     [IsRequired]
-    public string ProviderId { get; set; } = string.Empty;
+    public string ProviderAccountId { get; set; } = string.Empty;
+
+    /// <summary>
+    ///     The account id of the owner account. If this is the owner account then this will be the same as the id
+    /// </summary>
+    [AllowUpdate(false)]
+    [IgnoreDataMember]
+    public string? ProviderOwnerAccountId { get; set; }
+
+    /// <summary>
+    ///     Twilio calls this authority token
+    /// </summary>
+    [AllowUpdate(false)]
+    [IgnoreDataMember]
+    public string? ProviderAccessToken { get; set; }
 
     /// <summary>
     ///     Ublux partner
@@ -22,13 +36,6 @@ public partial class VoipProvider : UbluxDocument
     [IgnoreDataMember]
     [IsRequired]
     public UbluxPartner UbluxPartner { get; set; }
-
-    /// <summary>
-    ///     Twilio calls this authority token
-    /// </summary>
-    [AllowUpdate(false)]
-    [IgnoreDataMember]
-    public string? AccessToken { get; set; }
 
     /// <summary>
     ///     Friendly name of this provider
@@ -44,13 +51,6 @@ public partial class VoipProvider : UbluxDocument
     [AllowUpdate(false)]
     [IgnoreDataMember]
     public string? Status { get; set; }
-
-    /// <summary>
-    ///     The account id of the owner account. If this is the owner account then this will be the same as the id
-    /// </summary>
-    [AllowUpdate(false)]
-    [IgnoreDataMember]
-    public string? OwnerAccountId { get; set; }
 
     /// <summary>
     ///     Country of this provider
