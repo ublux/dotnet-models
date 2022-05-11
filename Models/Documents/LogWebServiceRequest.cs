@@ -21,6 +21,7 @@ public partial class LogWebServiceRequest : UbluxDocument
     ///     Number of concurrent requests when this log message was created. 
     ///     For example if 5 reques are made at the same time this count may be equal to 5.
     /// </summary>
+    [AllowUpdate(false)]
     public int ConcurrentRequests { get; set; }
 
     /// <summary>
