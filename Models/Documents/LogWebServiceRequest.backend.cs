@@ -5,7 +5,7 @@ namespace Ublux.Communications.Models.Documents;
 /// <summary>
 ///     All request sent to ublux will be stored.
 /// </summary>
-[DebuggerDisplay("Id={id}")]
+[DebuggerDisplay("RequestUrl={RequestUrl}")]
 public partial class LogWebServiceRequest : UbluxDocument
 {
     /// <summary>

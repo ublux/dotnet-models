@@ -1,6 +1,4 @@
-﻿using JsonSubTypes;
-
-namespace Ublux.Communications.Models;
+﻿namespace Ublux.Communications.Models;
 
 /// <summary>
 ///     Peer to call on power dialer group
@@ -20,7 +18,7 @@ public abstract class PowerDialer
     /// </summary>
     [AllowUpdate(false)]
     [IsRequired]
-    public PowerDialerType PowerDialerType { get; set; }
+    public abstract PowerDialerType PowerDialerType { get;}
 
     /// <summary>
     ///     Phone number to call

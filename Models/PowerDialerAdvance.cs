@@ -11,6 +11,13 @@ public class PowerDialerAdvance : PowerDialer
     [IsRequired]
     [AllowUpdate(true)]
     public string IdCallFlow { get; set; } = string.Empty;
+
+    /// <summary>
+    ///     Type of power dialer
+    /// </summary>
+    [AllowUpdate(false)]
+    [IsRequired]
+    public override PowerDialerType PowerDialerType => PowerDialerType.Advanced;
 }
 
 

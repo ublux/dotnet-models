@@ -9,6 +9,13 @@ public class PowerDialerSimple : PowerDialer
     ///     Id of line that made the phone call if on simple mode
     /// </summary>
     public string? IdLine { get; set; }
+
+    /// <summary>
+    ///     Type of power dialer
+    /// </summary>
+    [AllowUpdate(false)]
+    [IsRequired]
+    public override PowerDialerType PowerDialerType => PowerDialerType.Simple;
 }
 
 
