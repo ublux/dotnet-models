@@ -5,14 +5,7 @@
 /// </summary>
 public class LineConnectionStatus : UbluxSubDocument
 {
-
-    ///// <inheritdoc />
-    //public override string SubDocumentPrefix() => "SubLCS";
-
-
-    ///// <inheritdoc />
-    //public override void SetId() => id = $"{UCore.InstanceId}:{SubDocumentPrefix()}:{DateTime.UtcNow.ToUnixEpoch()}:{Interlocked.Increment(ref DomainGlobals.IdGenerationCounter)}";
-
+    
     /// <summary>
     ///     Public ip address of the connection
     /// </summary>

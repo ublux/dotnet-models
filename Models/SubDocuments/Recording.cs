@@ -8,9 +8,6 @@ public class Recording : UbluxSubDocument
     ///// <inheritdoc />
     //public override string SubDocumentPrefix() => "SubRe";
 
-    ///// <inheritdoc />
-    //public override void SetId() => id = $"{UCore.InstanceId}:{SubDocumentPrefix()}:{DateTime.UtcNow.ToUnixEpoch()}:{Interlocked.Increment(ref DomainGlobals.IdGenerationCounter)}";
-
     /// <summary>
     ///     Description of error message if there is one
     /// </summary>
