@@ -1,6 +1,4 @@
-﻿using JsonSubTypes;
-
-namespace Ublux.Communications.Models;
+﻿namespace Ublux.Communications.Models;
 
 /// <summary>
 ///     This attributes are needed so that deserialization works. Newtonsoft.Json deserializer must be used.
