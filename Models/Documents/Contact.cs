@@ -109,25 +109,8 @@ public partial class Contact : UbluxDocument
         var val = string.Join(null, GetValuesNeededToHash());
         var bytes = System.Text.Encoding.UTF8.GetBytes(val);
         var hash = xxHash64.ComputeHash(bytes) >> 22;
-        return ToBase92(hash);
-    }
-
-    private const string HASH_CHARACTERS
-        = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ`-=[];',./~!@#$%^&*()_+{}|:<>?";
-
-    static string ToBase92(ulong input)
-    {
-        ulong b = (ulong)HASH_CHARACTERS.Length;
-        Span<char> result = stackalloc char[10];
-        for (int i = 9; ; i--)
-        {
-            int reminder = (int)(input % b);
-            input /= b;
-            result[i] = HASH_CHARACTERS[reminder];
-            if (input == 0)
-                return new string(result[i..]);
-        }
-    }
+        return ToBase62(hash);
+    }    
 
     IEnumerable<string> GetValuesNeededToHash()
     {
