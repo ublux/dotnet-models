@@ -42,7 +42,15 @@ public abstract partial class UbluxDocument : IUbluxDocument, IUbluxDocumentId
     [HideForCreateRequest]
     [AllowUpdate(true)] // allow update will include property.
                         // This property is needed in order to know what document will be updated
-    public string Id { get; set; } = String.Empty;
+    public string Id
+    {
+        get => id;
+#if UBLUX_BACKEND
+        [Obsolete("Use SetId method. Do not set manually")]
+#endif
+        set => id = value;
+    }
+    private string id = String.Empty;
 
     /// <summary>
     ///     Creation date
@@ -65,6 +73,7 @@ public abstract partial class UbluxDocument : IUbluxDocument, IUbluxDocumentId
     private const string charsString = @"0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
     static readonly char[] base62Chars = charsString.ToCharArray();
     static readonly ulong base62CharsLength = (ulong)base62Chars.Length;
+
 
     /// <summary>
     ///     Convert from base62 string. 0=0 1=1 Z=61 10=62

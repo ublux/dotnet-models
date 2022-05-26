@@ -27,4 +27,21 @@ public class CloudServiceInstance
             CloudServiceType = type
         };
     }
+
+
+    /// <summary>
+    ///     If we cannot read or store IdGlobal to disk
+    /// </summary>
+    public bool Flaged_IdGlobal_DiskError = false;
+
+    /// <summary>
+    ///     If we cannot read or write IdStreamModified to disk
+    /// </summary>
+    public bool Flaged_IdStreamModified_DiskError = false;
+
+    /// <summary>
+    ///     If we cannot read or write IdStreamDeleted to disk
+    /// </summary>
+    public bool Flaged_IdStreamDeleted_DiskError = false;
+
 }

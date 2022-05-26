@@ -44,19 +44,28 @@ public abstract partial class UbluxDocument : IUbluxDocument, IUbluxDocumentId
     /// <summary>
     ///     Increments counter and gets current id
     /// </summary>    
-    public static string GetNextId()
+    public static string IdGlobalAutoIncrement()
     {
         return ToBase62(Interlocked.Increment(ref _idGenerationCounter));
+    }
+
+    /// <summary>
+    ///     Get IdGlobal current value
+    /// </summary>    
+    public static ulong IdGlobalCurrentValue()
+    {
+        return Interlocked.Read(ref _idGenerationCounter);
     }
 
     /// <summary>
     ///     This is not thread safe. call this method before initializing database.
     /// </summary>
     [Obsolete("Only set once. Having an incorrect counter will result in duplicate ids")]
-    public static void SetIdCounter(ulong v)
+    public static void IdGlobalSetValue(ulong v)
     {
         _idGenerationCounter = v;
     }
+    
 }
 
 #endif
