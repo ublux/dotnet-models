@@ -5,6 +5,7 @@
 /// </summary>
 public abstract class UbluxSubDocument
 {
+
     // TODO: mark this property on database with unique index
 
     /// <summary>
@@ -13,6 +14,14 @@ public abstract class UbluxSubDocument
     [AllowUpdate(false)] // subdocuments should be updated separately
     [IsRequired]
     [HideForCreateRequest]
-    public string Id { get; set; } = String.Empty;
+    public string Id
+    {
+        get => id;
+#if UBLUX_BACKEND
+        [Obsolete("Use SetId method. Do not set manually")]
+#endif
+        set => id = value;
+    }
+    private string id = String.Empty;
 }
 
