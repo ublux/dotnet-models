@@ -517,415 +517,6 @@ public class BlackListPhoneNumberFilterRequest
     public DateTime? DateUpdated_GTE { get; set; }
 
 }
-/// <summary> Enables searching for Calls </summary>
-public class CallFilterRequest 
-{
-    /// <summary> IdVoicemail equals </summary>
-    [JsonProperty("idVoicemail_eq")]
-    public string? IdVoicemail_EQ { get; set; }
-    /// <summary> IdVoicemail contains </summary>
-    [JsonProperty("idVoicemail_con")]
-    public string? IdVoicemail_CON { get; set; }
-    /// <summary> IdVoicemail regex </summary>
-    [JsonProperty("idVoicemail_reg")]
-    public string? IdVoicemail_REG { get; set; }
-
-    /// <summary> ChannelVariables.Language equals </summary>
-    [JsonProperty("channelVariables_language_eq")]
-    public Language? ChannelVariables_Language_EQ { get; set; }
-
-    /// <summary> ChannelVariables.IdMusicOnHold equals </summary>
-    [JsonProperty("channelVariables_idMusicOnHold_eq")]
-    public string? ChannelVariables_IdMusicOnHold_EQ { get; set; }
-    /// <summary> ChannelVariables.IdMusicOnHold contains </summary>
-    [JsonProperty("channelVariables_idMusicOnHold_con")]
-    public string? ChannelVariables_IdMusicOnHold_CON { get; set; }
-    /// <summary> ChannelVariables.IdMusicOnHold regex </summary>
-    [JsonProperty("channelVariables_idMusicOnHold_reg")]
-    public string? ChannelVariables_IdMusicOnHold_REG { get; set; }
-
-    /// <summary> ChannelVariables.CallerIdName equals </summary>
-    [JsonProperty("channelVariables_callerIdName_eq")]
-    public string? ChannelVariables_CallerIdName_EQ { get; set; }
-    /// <summary> ChannelVariables.CallerIdName contains </summary>
-    [JsonProperty("channelVariables_callerIdName_con")]
-    public string? ChannelVariables_CallerIdName_CON { get; set; }
-    /// <summary> ChannelVariables.CallerIdName regex </summary>
-    [JsonProperty("channelVariables_callerIdName_reg")]
-    public string? ChannelVariables_CallerIdName_REG { get; set; }
-
-    /// <summary> ChannelVariables.CallerIdNumber equals </summary>
-    [JsonProperty("channelVariables_callerIdNumber_eq")]
-    public string? ChannelVariables_CallerIdNumber_EQ { get; set; }
-    /// <summary> ChannelVariables.CallerIdNumber contains </summary>
-    [JsonProperty("channelVariables_callerIdNumber_con")]
-    public string? ChannelVariables_CallerIdNumber_CON { get; set; }
-    /// <summary> ChannelVariables.CallerIdNumber regex </summary>
-    [JsonProperty("channelVariables_callerIdNumber_reg")]
-    public string? ChannelVariables_CallerIdNumber_REG { get; set; }
-
-
-    /// <summary> ChildCalls.ChildCallType equals </summary>
-    [JsonProperty("childCalls_childCallType_eq")]
-    public ChildCallType? ChildCalls_ChildCallType_EQ { get; set; }
-
-
-    /// <summary> Contact.ContactNumbers.Number equals </summary>
-    [JsonProperty("contact_contactNumbers_number_eq")]
-    public string? Contact_ContactNumbers_Number_EQ { get; set; }
-    /// <summary> Contact.ContactNumbers.Number contains </summary>
-    [JsonProperty("contact_contactNumbers_number_con")]
-    public string? Contact_ContactNumbers_Number_CON { get; set; }
-    /// <summary> Contact.ContactNumbers.Number regex </summary>
-    [JsonProperty("contact_contactNumbers_number_reg")]
-    public string? Contact_ContactNumbers_Number_REG { get; set; }
-
-    /// <summary> Contact.ContactNumbers.NumberInternationalFormat equals </summary>
-    [JsonProperty("contact_contactNumbers_numberInternationalFormat_eq")]
-    public string? Contact_ContactNumbers_NumberInternationalFormat_EQ { get; set; }
-    /// <summary> Contact.ContactNumbers.NumberInternationalFormat contains </summary>
-    [JsonProperty("contact_contactNumbers_numberInternationalFormat_con")]
-    public string? Contact_ContactNumbers_NumberInternationalFormat_CON { get; set; }
-    /// <summary> Contact.ContactNumbers.NumberInternationalFormat regex </summary>
-    [JsonProperty("contact_contactNumbers_numberInternationalFormat_reg")]
-    public string? Contact_ContactNumbers_NumberInternationalFormat_REG { get; set; }
-
-    /// <summary> Contact.ContactNumbers.Label equals </summary>
-    [JsonProperty("contact_contactNumbers_label_eq")]
-    public LabelNumber? Contact_ContactNumbers_Label_EQ { get; set; }
-
-
-    /// <summary> Contact.ContactEmails.Email equals </summary>
-    [JsonProperty("contact_contactEmails_email_eq")]
-    public string? Contact_ContactEmails_Email_EQ { get; set; }
-    /// <summary> Contact.ContactEmails.Email contains </summary>
-    [JsonProperty("contact_contactEmails_email_con")]
-    public string? Contact_ContactEmails_Email_CON { get; set; }
-    /// <summary> Contact.ContactEmails.Email regex </summary>
-    [JsonProperty("contact_contactEmails_email_reg")]
-    public string? Contact_ContactEmails_Email_REG { get; set; }
-
-    /// <summary> Contact.ContactEmails.Label equals </summary>
-    [JsonProperty("contact_contactEmails_label_eq")]
-    public LabelEmailType? Contact_ContactEmails_Label_EQ { get; set; }
-
-
-    /// <summary> Contact.FirstName equals </summary>
-    [JsonProperty("contact_firstName_eq")]
-    public string? Contact_FirstName_EQ { get; set; }
-    /// <summary> Contact.FirstName contains </summary>
-    [JsonProperty("contact_firstName_con")]
-    public string? Contact_FirstName_CON { get; set; }
-    /// <summary> Contact.FirstName regex </summary>
-    [JsonProperty("contact_firstName_reg")]
-    public string? Contact_FirstName_REG { get; set; }
-
-    /// <summary> Contact.LastName equals </summary>
-    [JsonProperty("contact_lastName_eq")]
-    public string? Contact_LastName_EQ { get; set; }
-    /// <summary> Contact.LastName contains </summary>
-    [JsonProperty("contact_lastName_con")]
-    public string? Contact_LastName_CON { get; set; }
-    /// <summary> Contact.LastName regex </summary>
-    [JsonProperty("contact_lastName_reg")]
-    public string? Contact_LastName_REG { get; set; }
-
-    /// <summary> Contact.JobTittle equals </summary>
-    [JsonProperty("contact_jobTittle_eq")]
-    public string? Contact_JobTittle_EQ { get; set; }
-    /// <summary> Contact.JobTittle contains </summary>
-    [JsonProperty("contact_jobTittle_con")]
-    public string? Contact_JobTittle_CON { get; set; }
-    /// <summary> Contact.JobTittle regex </summary>
-    [JsonProperty("contact_jobTittle_reg")]
-    public string? Contact_JobTittle_REG { get; set; }
-
-    /// <summary> Contact.Company equals </summary>
-    [JsonProperty("contact_company_eq")]
-    public string? Contact_Company_EQ { get; set; }
-    /// <summary> Contact.Company contains </summary>
-    [JsonProperty("contact_company_con")]
-    public string? Contact_Company_CON { get; set; }
-    /// <summary> Contact.Company regex </summary>
-    [JsonProperty("contact_company_reg")]
-    public string? Contact_Company_REG { get; set; }
-
-    /// <summary> Contact.Hash equals </summary>
-    [JsonProperty("contact_hash_eq")]
-    public string? Contact_Hash_EQ { get; set; }
-    /// <summary> Contact.Hash contains </summary>
-    [JsonProperty("contact_hash_con")]
-    public string? Contact_Hash_CON { get; set; }
-    /// <summary> Contact.Hash regex </summary>
-    [JsonProperty("contact_hash_reg")]
-    public string? Contact_Hash_REG { get; set; }
-
-    /// <summary> Contact.Notes equals </summary>
-    [JsonProperty("contact_notes_eq")]
-    public string? Contact_Notes_EQ { get; set; }
-    /// <summary> Contact.Notes contains </summary>
-    [JsonProperty("contact_notes_con")]
-    public string? Contact_Notes_CON { get; set; }
-    /// <summary> Contact.Notes regex </summary>
-    [JsonProperty("contact_notes_reg")]
-    public string? Contact_Notes_REG { get; set; }
-
-    /// <summary> Contact.Variables.Name equals </summary>
-    [JsonProperty("contact_variables_name_eq")]
-    public string? Contact_Variables_Name_EQ { get; set; }
-    /// <summary> Contact.Variables.Name contains </summary>
-    [JsonProperty("contact_variables_name_con")]
-    public string? Contact_Variables_Name_CON { get; set; }
-    /// <summary> Contact.Variables.Name regex </summary>
-    [JsonProperty("contact_variables_name_reg")]
-    public string? Contact_Variables_Name_REG { get; set; }
-
-    /// <summary> Contact.Variables.JsonValue equals </summary>
-    [JsonProperty("contact_variables_jsonValue_eq")]
-    public string? Contact_Variables_JsonValue_EQ { get; set; }
-    /// <summary> Contact.Variables.JsonValue contains </summary>
-    [JsonProperty("contact_variables_jsonValue_con")]
-    public string? Contact_Variables_JsonValue_CON { get; set; }
-    /// <summary> Contact.Variables.JsonValue regex </summary>
-    [JsonProperty("contact_variables_jsonValue_reg")]
-    public string? Contact_Variables_JsonValue_REG { get; set; }
-
-
-    /// <summary> Contact.Id equals </summary>
-    [JsonProperty("contact_id_eq")]
-    public string? Contact_Id_EQ { get; set; }
-    /// <summary> Contact.Id contains </summary>
-    [JsonProperty("contact_id_con")]
-    public string? Contact_Id_CON { get; set; }
-    /// <summary> Contact.Id regex </summary>
-    [JsonProperty("contact_id_reg")]
-    public string? Contact_Id_REG { get; set; }
-
-    /// <summary> Contact.DateCreated equals </summary>
-    [JsonProperty("contact_dateCreated_eq")]
-    public DateTime? Contact_DateCreated_EQ { get; set; }
-    /// <summary> Contact.DateCreated less than or equal to </summary>
-    [JsonProperty("contact_dateCreated_lte")]
-    public DateTime? Contact_DateCreated_LTE { get; set; }
-    /// <summary> Contact.DateCreated greater than or equal to </summary>
-    [JsonProperty("contact_dateCreated_gte")]
-    public DateTime? Contact_DateCreated_GTE { get; set; }
-
-    /// <summary> Contact.DateUpdated equals </summary>
-    [JsonProperty("contact_dateUpdated_eq")]
-    public DateTime? Contact_DateUpdated_EQ { get; set; }
-    /// <summary> Contact.DateUpdated less than or equal to </summary>
-    [JsonProperty("contact_dateUpdated_lte")]
-    public DateTime? Contact_DateUpdated_LTE { get; set; }
-    /// <summary> Contact.DateUpdated greater than or equal to </summary>
-    [JsonProperty("contact_dateUpdated_gte")]
-    public DateTime? Contact_DateUpdated_GTE { get; set; }
-
-
-    /// <summary> DateEnded equals </summary>
-    [JsonProperty("dateEnded_eq")]
-    public DateTime? DateEnded_EQ { get; set; }
-    /// <summary> DateEnded less than or equal to </summary>
-    [JsonProperty("dateEnded_lte")]
-    public DateTime? DateEnded_LTE { get; set; }
-    /// <summary> DateEnded greater than or equal to </summary>
-    [JsonProperty("dateEnded_gte")]
-    public DateTime? DateEnded_GTE { get; set; }
-
-    /// <summary> Status equals </summary>
-    [JsonProperty("status_eq")]
-    public string? Status_EQ { get; set; }
-    /// <summary> Status contains </summary>
-    [JsonProperty("status_con")]
-    public string? Status_CON { get; set; }
-    /// <summary> Status regex </summary>
-    [JsonProperty("status_reg")]
-    public string? Status_REG { get; set; }
-
-    /// <summary> SecondsItTookToAnswer equals </summary>
-    [JsonProperty("secondsItTookToAnswer_eq")]
-    public System.Int32? SecondsItTookToAnswer_EQ { get; set; }
-    /// <summary> SecondsItTookToAnswer less than or equal to </summary>
-    [JsonProperty("secondsItTookToAnswer_lte")]
-    public System.Int32? SecondsItTookToAnswer_LTE { get; set; }
-    /// <summary> SecondsItTookToAnswer greater than or equal to </summary>
-    [JsonProperty("secondsItTookToAnswer_gte")]
-    public System.Int32? SecondsItTookToAnswer_GTE { get; set; }
-
-    /// <summary> TimesWhenCallPlacedOnHold.SecondsElapsedWhenPlacedOnHold equals </summary>
-    [JsonProperty("timesWhenCallPlacedOnHold_secondsElapsedWhenPlacedOnHold_eq")]
-    public System.Int32? TimesWhenCallPlacedOnHold_SecondsElapsedWhenPlacedOnHold_EQ { get; set; }
-    /// <summary> TimesWhenCallPlacedOnHold.SecondsElapsedWhenPlacedOnHold less than or equal to </summary>
-    [JsonProperty("timesWhenCallPlacedOnHold_secondsElapsedWhenPlacedOnHold_lte")]
-    public System.Int32? TimesWhenCallPlacedOnHold_SecondsElapsedWhenPlacedOnHold_LTE { get; set; }
-    /// <summary> TimesWhenCallPlacedOnHold.SecondsElapsedWhenPlacedOnHold greater than or equal to </summary>
-    [JsonProperty("timesWhenCallPlacedOnHold_secondsElapsedWhenPlacedOnHold_gte")]
-    public System.Int32? TimesWhenCallPlacedOnHold_SecondsElapsedWhenPlacedOnHold_GTE { get; set; }
-
-    /// <summary> TimesWhenCallPlacedOnHold.SecondsElapsedWhenRemovedFromHold equals </summary>
-    [JsonProperty("timesWhenCallPlacedOnHold_secondsElapsedWhenRemovedFromHold_eq")]
-    public System.Int32? TimesWhenCallPlacedOnHold_SecondsElapsedWhenRemovedFromHold_EQ { get; set; }
-    /// <summary> TimesWhenCallPlacedOnHold.SecondsElapsedWhenRemovedFromHold less than or equal to </summary>
-    [JsonProperty("timesWhenCallPlacedOnHold_secondsElapsedWhenRemovedFromHold_lte")]
-    public System.Int32? TimesWhenCallPlacedOnHold_SecondsElapsedWhenRemovedFromHold_LTE { get; set; }
-    /// <summary> TimesWhenCallPlacedOnHold.SecondsElapsedWhenRemovedFromHold greater than or equal to </summary>
-    [JsonProperty("timesWhenCallPlacedOnHold_secondsElapsedWhenRemovedFromHold_gte")]
-    public System.Int32? TimesWhenCallPlacedOnHold_SecondsElapsedWhenRemovedFromHold_GTE { get; set; }
-
-
-    /// <summary> From equals </summary>
-    [JsonProperty("from_eq")]
-    public string? From_EQ { get; set; }
-    /// <summary> From contains </summary>
-    [JsonProperty("from_con")]
-    public string? From_CON { get; set; }
-    /// <summary> From regex </summary>
-    [JsonProperty("from_reg")]
-    public string? From_REG { get; set; }
-
-    /// <summary> FromCountry equals </summary>
-    [JsonProperty("fromCountry_eq")]
-    public CountryIsoCode? FromCountry_EQ { get; set; }
-
-    /// <summary> To equals </summary>
-    [JsonProperty("to_eq")]
-    public string? To_EQ { get; set; }
-    /// <summary> To contains </summary>
-    [JsonProperty("to_con")]
-    public string? To_CON { get; set; }
-    /// <summary> To regex </summary>
-    [JsonProperty("to_reg")]
-    public string? To_REG { get; set; }
-
-    /// <summary> ToCountry equals </summary>
-    [JsonProperty("toCountry_eq")]
-    public CountryIsoCode? ToCountry_EQ { get; set; }
-
-    /// <summary> CallType equals </summary>
-    [JsonProperty("callType_eq")]
-    public CallType? CallType_EQ { get; set; }
-
-    /// <summary> Recording.ErrorMessage equals </summary>
-    [JsonProperty("recording_errorMessage_eq")]
-    public string? Recording_ErrorMessage_EQ { get; set; }
-    /// <summary> Recording.ErrorMessage contains </summary>
-    [JsonProperty("recording_errorMessage_con")]
-    public string? Recording_ErrorMessage_CON { get; set; }
-    /// <summary> Recording.ErrorMessage regex </summary>
-    [JsonProperty("recording_errorMessage_reg")]
-    public string? Recording_ErrorMessage_REG { get; set; }
-
-    /// <summary> Recording.RecordingMp3.FileSizeInBytes equals </summary>
-    [JsonProperty("recording_recordingMp3_fileSizeInBytes_eq")]
-    public System.Int32? Recording_RecordingMp3_FileSizeInBytes_EQ { get; set; }
-    /// <summary> Recording.RecordingMp3.FileSizeInBytes less than or equal to </summary>
-    [JsonProperty("recording_recordingMp3_fileSizeInBytes_lte")]
-    public System.Int32? Recording_RecordingMp3_FileSizeInBytes_LTE { get; set; }
-    /// <summary> Recording.RecordingMp3.FileSizeInBytes greater than or equal to </summary>
-    [JsonProperty("recording_recordingMp3_fileSizeInBytes_gte")]
-    public System.Int32? Recording_RecordingMp3_FileSizeInBytes_GTE { get; set; }
-
-    /// <summary> Recording.RecordingMp3.Md5Hash equals </summary>
-    [JsonProperty("recording_recordingMp3_md5Hash_eq")]
-    public string? Recording_RecordingMp3_Md5Hash_EQ { get; set; }
-    /// <summary> Recording.RecordingMp3.Md5Hash contains </summary>
-    [JsonProperty("recording_recordingMp3_md5Hash_con")]
-    public string? Recording_RecordingMp3_Md5Hash_CON { get; set; }
-    /// <summary> Recording.RecordingMp3.Md5Hash regex </summary>
-    [JsonProperty("recording_recordingMp3_md5Hash_reg")]
-    public string? Recording_RecordingMp3_Md5Hash_REG { get; set; }
-
-    /// <summary> Recording.RecordingMp3.Url equals </summary>
-    [JsonProperty("recording_recordingMp3_url_eq")]
-    public string? Recording_RecordingMp3_Url_EQ { get; set; }
-    /// <summary> Recording.RecordingMp3.Url contains </summary>
-    [JsonProperty("recording_recordingMp3_url_con")]
-    public string? Recording_RecordingMp3_Url_CON { get; set; }
-    /// <summary> Recording.RecordingMp3.Url regex </summary>
-    [JsonProperty("recording_recordingMp3_url_reg")]
-    public string? Recording_RecordingMp3_Url_REG { get; set; }
-
-    /// <summary> Recording.RecordingMp3.Id equals </summary>
-    [JsonProperty("recording_recordingMp3_id_eq")]
-    public string? Recording_RecordingMp3_Id_EQ { get; set; }
-    /// <summary> Recording.RecordingMp3.Id contains </summary>
-    [JsonProperty("recording_recordingMp3_id_con")]
-    public string? Recording_RecordingMp3_Id_CON { get; set; }
-    /// <summary> Recording.RecordingMp3.Id regex </summary>
-    [JsonProperty("recording_recordingMp3_id_reg")]
-    public string? Recording_RecordingMp3_Id_REG { get; set; }
-
-
-    /// <summary> Recording.RecordingDurationInSeconds equals </summary>
-    [JsonProperty("recording_recordingDurationInSeconds_eq")]
-    public System.Int32? Recording_RecordingDurationInSeconds_EQ { get; set; }
-    /// <summary> Recording.RecordingDurationInSeconds less than or equal to </summary>
-    [JsonProperty("recording_recordingDurationInSeconds_lte")]
-    public System.Int32? Recording_RecordingDurationInSeconds_LTE { get; set; }
-    /// <summary> Recording.RecordingDurationInSeconds greater than or equal to </summary>
-    [JsonProperty("recording_recordingDurationInSeconds_gte")]
-    public System.Int32? Recording_RecordingDurationInSeconds_GTE { get; set; }
-
-    /// <summary> Recording.Id equals </summary>
-    [JsonProperty("recording_id_eq")]
-    public string? Recording_Id_EQ { get; set; }
-    /// <summary> Recording.Id contains </summary>
-    [JsonProperty("recording_id_con")]
-    public string? Recording_Id_CON { get; set; }
-    /// <summary> Recording.Id regex </summary>
-    [JsonProperty("recording_id_reg")]
-    public string? Recording_Id_REG { get; set; }
-
-
-    /// <summary> DisabledVideo equals </summary>
-    [JsonProperty("disabledVideo_eq")]
-    public bool? DisabledVideo_EQ { get; set; }
-
-    /// <summary> DigitsSent equals </summary>
-    [JsonProperty("digitsSent_eq")]
-    public string? DigitsSent_EQ { get; set; }
-    /// <summary> DigitsSent contains </summary>
-    [JsonProperty("digitsSent_con")]
-    public string? DigitsSent_CON { get; set; }
-    /// <summary> DigitsSent regex </summary>
-    [JsonProperty("digitsSent_reg")]
-    public string? DigitsSent_REG { get; set; }
-
-    /// <summary> IsInternational equals </summary>
-    [JsonProperty("isInternational_eq")]
-    public bool? IsInternational_EQ { get; set; }
-
-    /// <summary> Id equals </summary>
-    [JsonProperty("id_eq")]
-    public string? Id_EQ { get; set; }
-    /// <summary> Id contains </summary>
-    [JsonProperty("id_con")]
-    public string? Id_CON { get; set; }
-    /// <summary> Id regex </summary>
-    [JsonProperty("id_reg")]
-    public string? Id_REG { get; set; }
-
-    /// <summary> DateCreated equals </summary>
-    [JsonProperty("dateCreated_eq")]
-    public DateTime? DateCreated_EQ { get; set; }
-    /// <summary> DateCreated less than or equal to </summary>
-    [JsonProperty("dateCreated_lte")]
-    public DateTime? DateCreated_LTE { get; set; }
-    /// <summary> DateCreated greater than or equal to </summary>
-    [JsonProperty("dateCreated_gte")]
-    public DateTime? DateCreated_GTE { get; set; }
-
-    /// <summary> DateUpdated equals </summary>
-    [JsonProperty("dateUpdated_eq")]
-    public DateTime? DateUpdated_EQ { get; set; }
-    /// <summary> DateUpdated less than or equal to </summary>
-    [JsonProperty("dateUpdated_lte")]
-    public DateTime? DateUpdated_LTE { get; set; }
-    /// <summary> DateUpdated greater than or equal to </summary>
-    [JsonProperty("dateUpdated_gte")]
-    public DateTime? DateUpdated_GTE { get; set; }
-
-}
 /// <summary> Enables searching for CallerIdMasks </summary>
 public class CallerIdMaskFilterRequest 
 {
@@ -1012,435 +603,6 @@ public class CallFlowFilterRequest
     /// <summary> XmlTree regex </summary>
     [JsonProperty("xmlTree_reg")]
     public string? XmlTree_REG { get; set; }
-
-    /// <summary> Id equals </summary>
-    [JsonProperty("id_eq")]
-    public string? Id_EQ { get; set; }
-    /// <summary> Id contains </summary>
-    [JsonProperty("id_con")]
-    public string? Id_CON { get; set; }
-    /// <summary> Id regex </summary>
-    [JsonProperty("id_reg")]
-    public string? Id_REG { get; set; }
-
-    /// <summary> DateCreated equals </summary>
-    [JsonProperty("dateCreated_eq")]
-    public DateTime? DateCreated_EQ { get; set; }
-    /// <summary> DateCreated less than or equal to </summary>
-    [JsonProperty("dateCreated_lte")]
-    public DateTime? DateCreated_LTE { get; set; }
-    /// <summary> DateCreated greater than or equal to </summary>
-    [JsonProperty("dateCreated_gte")]
-    public DateTime? DateCreated_GTE { get; set; }
-
-    /// <summary> DateUpdated equals </summary>
-    [JsonProperty("dateUpdated_eq")]
-    public DateTime? DateUpdated_EQ { get; set; }
-    /// <summary> DateUpdated less than or equal to </summary>
-    [JsonProperty("dateUpdated_lte")]
-    public DateTime? DateUpdated_LTE { get; set; }
-    /// <summary> DateUpdated greater than or equal to </summary>
-    [JsonProperty("dateUpdated_gte")]
-    public DateTime? DateUpdated_GTE { get; set; }
-
-}
-/// <summary> Enables searching for CallIncomings </summary>
-public class CallIncomingFilterRequest 
-{
-    /// <summary> Contact.ContactNumbers.Number equals </summary>
-    [JsonProperty("contact_contactNumbers_number_eq")]
-    public string? Contact_ContactNumbers_Number_EQ { get; set; }
-    /// <summary> Contact.ContactNumbers.Number contains </summary>
-    [JsonProperty("contact_contactNumbers_number_con")]
-    public string? Contact_ContactNumbers_Number_CON { get; set; }
-    /// <summary> Contact.ContactNumbers.Number regex </summary>
-    [JsonProperty("contact_contactNumbers_number_reg")]
-    public string? Contact_ContactNumbers_Number_REG { get; set; }
-
-    /// <summary> Contact.ContactNumbers.NumberInternationalFormat equals </summary>
-    [JsonProperty("contact_contactNumbers_numberInternationalFormat_eq")]
-    public string? Contact_ContactNumbers_NumberInternationalFormat_EQ { get; set; }
-    /// <summary> Contact.ContactNumbers.NumberInternationalFormat contains </summary>
-    [JsonProperty("contact_contactNumbers_numberInternationalFormat_con")]
-    public string? Contact_ContactNumbers_NumberInternationalFormat_CON { get; set; }
-    /// <summary> Contact.ContactNumbers.NumberInternationalFormat regex </summary>
-    [JsonProperty("contact_contactNumbers_numberInternationalFormat_reg")]
-    public string? Contact_ContactNumbers_NumberInternationalFormat_REG { get; set; }
-
-    /// <summary> Contact.ContactNumbers.Label equals </summary>
-    [JsonProperty("contact_contactNumbers_label_eq")]
-    public LabelNumber? Contact_ContactNumbers_Label_EQ { get; set; }
-
-
-    /// <summary> Contact.ContactEmails.Email equals </summary>
-    [JsonProperty("contact_contactEmails_email_eq")]
-    public string? Contact_ContactEmails_Email_EQ { get; set; }
-    /// <summary> Contact.ContactEmails.Email contains </summary>
-    [JsonProperty("contact_contactEmails_email_con")]
-    public string? Contact_ContactEmails_Email_CON { get; set; }
-    /// <summary> Contact.ContactEmails.Email regex </summary>
-    [JsonProperty("contact_contactEmails_email_reg")]
-    public string? Contact_ContactEmails_Email_REG { get; set; }
-
-    /// <summary> Contact.ContactEmails.Label equals </summary>
-    [JsonProperty("contact_contactEmails_label_eq")]
-    public LabelEmailType? Contact_ContactEmails_Label_EQ { get; set; }
-
-
-    /// <summary> Contact.FirstName equals </summary>
-    [JsonProperty("contact_firstName_eq")]
-    public string? Contact_FirstName_EQ { get; set; }
-    /// <summary> Contact.FirstName contains </summary>
-    [JsonProperty("contact_firstName_con")]
-    public string? Contact_FirstName_CON { get; set; }
-    /// <summary> Contact.FirstName regex </summary>
-    [JsonProperty("contact_firstName_reg")]
-    public string? Contact_FirstName_REG { get; set; }
-
-    /// <summary> Contact.LastName equals </summary>
-    [JsonProperty("contact_lastName_eq")]
-    public string? Contact_LastName_EQ { get; set; }
-    /// <summary> Contact.LastName contains </summary>
-    [JsonProperty("contact_lastName_con")]
-    public string? Contact_LastName_CON { get; set; }
-    /// <summary> Contact.LastName regex </summary>
-    [JsonProperty("contact_lastName_reg")]
-    public string? Contact_LastName_REG { get; set; }
-
-    /// <summary> Contact.JobTittle equals </summary>
-    [JsonProperty("contact_jobTittle_eq")]
-    public string? Contact_JobTittle_EQ { get; set; }
-    /// <summary> Contact.JobTittle contains </summary>
-    [JsonProperty("contact_jobTittle_con")]
-    public string? Contact_JobTittle_CON { get; set; }
-    /// <summary> Contact.JobTittle regex </summary>
-    [JsonProperty("contact_jobTittle_reg")]
-    public string? Contact_JobTittle_REG { get; set; }
-
-    /// <summary> Contact.Company equals </summary>
-    [JsonProperty("contact_company_eq")]
-    public string? Contact_Company_EQ { get; set; }
-    /// <summary> Contact.Company contains </summary>
-    [JsonProperty("contact_company_con")]
-    public string? Contact_Company_CON { get; set; }
-    /// <summary> Contact.Company regex </summary>
-    [JsonProperty("contact_company_reg")]
-    public string? Contact_Company_REG { get; set; }
-
-    /// <summary> Contact.Hash equals </summary>
-    [JsonProperty("contact_hash_eq")]
-    public string? Contact_Hash_EQ { get; set; }
-    /// <summary> Contact.Hash contains </summary>
-    [JsonProperty("contact_hash_con")]
-    public string? Contact_Hash_CON { get; set; }
-    /// <summary> Contact.Hash regex </summary>
-    [JsonProperty("contact_hash_reg")]
-    public string? Contact_Hash_REG { get; set; }
-
-    /// <summary> Contact.Notes equals </summary>
-    [JsonProperty("contact_notes_eq")]
-    public string? Contact_Notes_EQ { get; set; }
-    /// <summary> Contact.Notes contains </summary>
-    [JsonProperty("contact_notes_con")]
-    public string? Contact_Notes_CON { get; set; }
-    /// <summary> Contact.Notes regex </summary>
-    [JsonProperty("contact_notes_reg")]
-    public string? Contact_Notes_REG { get; set; }
-
-    /// <summary> Contact.Variables.Name equals </summary>
-    [JsonProperty("contact_variables_name_eq")]
-    public string? Contact_Variables_Name_EQ { get; set; }
-    /// <summary> Contact.Variables.Name contains </summary>
-    [JsonProperty("contact_variables_name_con")]
-    public string? Contact_Variables_Name_CON { get; set; }
-    /// <summary> Contact.Variables.Name regex </summary>
-    [JsonProperty("contact_variables_name_reg")]
-    public string? Contact_Variables_Name_REG { get; set; }
-
-    /// <summary> Contact.Variables.JsonValue equals </summary>
-    [JsonProperty("contact_variables_jsonValue_eq")]
-    public string? Contact_Variables_JsonValue_EQ { get; set; }
-    /// <summary> Contact.Variables.JsonValue contains </summary>
-    [JsonProperty("contact_variables_jsonValue_con")]
-    public string? Contact_Variables_JsonValue_CON { get; set; }
-    /// <summary> Contact.Variables.JsonValue regex </summary>
-    [JsonProperty("contact_variables_jsonValue_reg")]
-    public string? Contact_Variables_JsonValue_REG { get; set; }
-
-
-    /// <summary> Contact.Id equals </summary>
-    [JsonProperty("contact_id_eq")]
-    public string? Contact_Id_EQ { get; set; }
-    /// <summary> Contact.Id contains </summary>
-    [JsonProperty("contact_id_con")]
-    public string? Contact_Id_CON { get; set; }
-    /// <summary> Contact.Id regex </summary>
-    [JsonProperty("contact_id_reg")]
-    public string? Contact_Id_REG { get; set; }
-
-    /// <summary> Contact.DateCreated equals </summary>
-    [JsonProperty("contact_dateCreated_eq")]
-    public DateTime? Contact_DateCreated_EQ { get; set; }
-    /// <summary> Contact.DateCreated less than or equal to </summary>
-    [JsonProperty("contact_dateCreated_lte")]
-    public DateTime? Contact_DateCreated_LTE { get; set; }
-    /// <summary> Contact.DateCreated greater than or equal to </summary>
-    [JsonProperty("contact_dateCreated_gte")]
-    public DateTime? Contact_DateCreated_GTE { get; set; }
-
-    /// <summary> Contact.DateUpdated equals </summary>
-    [JsonProperty("contact_dateUpdated_eq")]
-    public DateTime? Contact_DateUpdated_EQ { get; set; }
-    /// <summary> Contact.DateUpdated less than or equal to </summary>
-    [JsonProperty("contact_dateUpdated_lte")]
-    public DateTime? Contact_DateUpdated_LTE { get; set; }
-    /// <summary> Contact.DateUpdated greater than or equal to </summary>
-    [JsonProperty("contact_dateUpdated_gte")]
-    public DateTime? Contact_DateUpdated_GTE { get; set; }
-
-
-    /// <summary> IdVoipNumberPhone equals </summary>
-    [JsonProperty("idVoipNumberPhone_eq")]
-    public string? IdVoipNumberPhone_EQ { get; set; }
-    /// <summary> IdVoipNumberPhone contains </summary>
-    [JsonProperty("idVoipNumberPhone_con")]
-    public string? IdVoipNumberPhone_CON { get; set; }
-    /// <summary> IdVoipNumberPhone regex </summary>
-    [JsonProperty("idVoipNumberPhone_reg")]
-    public string? IdVoipNumberPhone_REG { get; set; }
-
-    /// <summary> FromInternationalFormat equals </summary>
-    [JsonProperty("fromInternationalFormat_eq")]
-    public string? FromInternationalFormat_EQ { get; set; }
-    /// <summary> FromInternationalFormat contains </summary>
-    [JsonProperty("fromInternationalFormat_con")]
-    public string? FromInternationalFormat_CON { get; set; }
-    /// <summary> FromInternationalFormat regex </summary>
-    [JsonProperty("fromInternationalFormat_reg")]
-    public string? FromInternationalFormat_REG { get; set; }
-
-    /// <summary> IdVoicemail equals </summary>
-    [JsonProperty("idVoicemail_eq")]
-    public string? IdVoicemail_EQ { get; set; }
-    /// <summary> IdVoicemail contains </summary>
-    [JsonProperty("idVoicemail_con")]
-    public string? IdVoicemail_CON { get; set; }
-    /// <summary> IdVoicemail regex </summary>
-    [JsonProperty("idVoicemail_reg")]
-    public string? IdVoicemail_REG { get; set; }
-
-    /// <summary> ChannelVariables.Language equals </summary>
-    [JsonProperty("channelVariables_language_eq")]
-    public Language? ChannelVariables_Language_EQ { get; set; }
-
-    /// <summary> ChannelVariables.IdMusicOnHold equals </summary>
-    [JsonProperty("channelVariables_idMusicOnHold_eq")]
-    public string? ChannelVariables_IdMusicOnHold_EQ { get; set; }
-    /// <summary> ChannelVariables.IdMusicOnHold contains </summary>
-    [JsonProperty("channelVariables_idMusicOnHold_con")]
-    public string? ChannelVariables_IdMusicOnHold_CON { get; set; }
-    /// <summary> ChannelVariables.IdMusicOnHold regex </summary>
-    [JsonProperty("channelVariables_idMusicOnHold_reg")]
-    public string? ChannelVariables_IdMusicOnHold_REG { get; set; }
-
-    /// <summary> ChannelVariables.CallerIdName equals </summary>
-    [JsonProperty("channelVariables_callerIdName_eq")]
-    public string? ChannelVariables_CallerIdName_EQ { get; set; }
-    /// <summary> ChannelVariables.CallerIdName contains </summary>
-    [JsonProperty("channelVariables_callerIdName_con")]
-    public string? ChannelVariables_CallerIdName_CON { get; set; }
-    /// <summary> ChannelVariables.CallerIdName regex </summary>
-    [JsonProperty("channelVariables_callerIdName_reg")]
-    public string? ChannelVariables_CallerIdName_REG { get; set; }
-
-    /// <summary> ChannelVariables.CallerIdNumber equals </summary>
-    [JsonProperty("channelVariables_callerIdNumber_eq")]
-    public string? ChannelVariables_CallerIdNumber_EQ { get; set; }
-    /// <summary> ChannelVariables.CallerIdNumber contains </summary>
-    [JsonProperty("channelVariables_callerIdNumber_con")]
-    public string? ChannelVariables_CallerIdNumber_CON { get; set; }
-    /// <summary> ChannelVariables.CallerIdNumber regex </summary>
-    [JsonProperty("channelVariables_callerIdNumber_reg")]
-    public string? ChannelVariables_CallerIdNumber_REG { get; set; }
-
-
-    /// <summary> ChildCalls.ChildCallType equals </summary>
-    [JsonProperty("childCalls_childCallType_eq")]
-    public ChildCallType? ChildCalls_ChildCallType_EQ { get; set; }
-
-
-    /// <summary> DateEnded equals </summary>
-    [JsonProperty("dateEnded_eq")]
-    public DateTime? DateEnded_EQ { get; set; }
-    /// <summary> DateEnded less than or equal to </summary>
-    [JsonProperty("dateEnded_lte")]
-    public DateTime? DateEnded_LTE { get; set; }
-    /// <summary> DateEnded greater than or equal to </summary>
-    [JsonProperty("dateEnded_gte")]
-    public DateTime? DateEnded_GTE { get; set; }
-
-    /// <summary> Status equals </summary>
-    [JsonProperty("status_eq")]
-    public string? Status_EQ { get; set; }
-    /// <summary> Status contains </summary>
-    [JsonProperty("status_con")]
-    public string? Status_CON { get; set; }
-    /// <summary> Status regex </summary>
-    [JsonProperty("status_reg")]
-    public string? Status_REG { get; set; }
-
-    /// <summary> SecondsItTookToAnswer equals </summary>
-    [JsonProperty("secondsItTookToAnswer_eq")]
-    public System.Int32? SecondsItTookToAnswer_EQ { get; set; }
-    /// <summary> SecondsItTookToAnswer less than or equal to </summary>
-    [JsonProperty("secondsItTookToAnswer_lte")]
-    public System.Int32? SecondsItTookToAnswer_LTE { get; set; }
-    /// <summary> SecondsItTookToAnswer greater than or equal to </summary>
-    [JsonProperty("secondsItTookToAnswer_gte")]
-    public System.Int32? SecondsItTookToAnswer_GTE { get; set; }
-
-    /// <summary> TimesWhenCallPlacedOnHold.SecondsElapsedWhenPlacedOnHold equals </summary>
-    [JsonProperty("timesWhenCallPlacedOnHold_secondsElapsedWhenPlacedOnHold_eq")]
-    public System.Int32? TimesWhenCallPlacedOnHold_SecondsElapsedWhenPlacedOnHold_EQ { get; set; }
-    /// <summary> TimesWhenCallPlacedOnHold.SecondsElapsedWhenPlacedOnHold less than or equal to </summary>
-    [JsonProperty("timesWhenCallPlacedOnHold_secondsElapsedWhenPlacedOnHold_lte")]
-    public System.Int32? TimesWhenCallPlacedOnHold_SecondsElapsedWhenPlacedOnHold_LTE { get; set; }
-    /// <summary> TimesWhenCallPlacedOnHold.SecondsElapsedWhenPlacedOnHold greater than or equal to </summary>
-    [JsonProperty("timesWhenCallPlacedOnHold_secondsElapsedWhenPlacedOnHold_gte")]
-    public System.Int32? TimesWhenCallPlacedOnHold_SecondsElapsedWhenPlacedOnHold_GTE { get; set; }
-
-    /// <summary> TimesWhenCallPlacedOnHold.SecondsElapsedWhenRemovedFromHold equals </summary>
-    [JsonProperty("timesWhenCallPlacedOnHold_secondsElapsedWhenRemovedFromHold_eq")]
-    public System.Int32? TimesWhenCallPlacedOnHold_SecondsElapsedWhenRemovedFromHold_EQ { get; set; }
-    /// <summary> TimesWhenCallPlacedOnHold.SecondsElapsedWhenRemovedFromHold less than or equal to </summary>
-    [JsonProperty("timesWhenCallPlacedOnHold_secondsElapsedWhenRemovedFromHold_lte")]
-    public System.Int32? TimesWhenCallPlacedOnHold_SecondsElapsedWhenRemovedFromHold_LTE { get; set; }
-    /// <summary> TimesWhenCallPlacedOnHold.SecondsElapsedWhenRemovedFromHold greater than or equal to </summary>
-    [JsonProperty("timesWhenCallPlacedOnHold_secondsElapsedWhenRemovedFromHold_gte")]
-    public System.Int32? TimesWhenCallPlacedOnHold_SecondsElapsedWhenRemovedFromHold_GTE { get; set; }
-
-
-    /// <summary> From equals </summary>
-    [JsonProperty("from_eq")]
-    public string? From_EQ { get; set; }
-    /// <summary> From contains </summary>
-    [JsonProperty("from_con")]
-    public string? From_CON { get; set; }
-    /// <summary> From regex </summary>
-    [JsonProperty("from_reg")]
-    public string? From_REG { get; set; }
-
-    /// <summary> FromCountry equals </summary>
-    [JsonProperty("fromCountry_eq")]
-    public CountryIsoCode? FromCountry_EQ { get; set; }
-
-    /// <summary> To equals </summary>
-    [JsonProperty("to_eq")]
-    public string? To_EQ { get; set; }
-    /// <summary> To contains </summary>
-    [JsonProperty("to_con")]
-    public string? To_CON { get; set; }
-    /// <summary> To regex </summary>
-    [JsonProperty("to_reg")]
-    public string? To_REG { get; set; }
-
-    /// <summary> ToCountry equals </summary>
-    [JsonProperty("toCountry_eq")]
-    public CountryIsoCode? ToCountry_EQ { get; set; }
-
-    /// <summary> CallType equals </summary>
-    [JsonProperty("callType_eq")]
-    public CallType? CallType_EQ { get; set; }
-
-    /// <summary> Recording.ErrorMessage equals </summary>
-    [JsonProperty("recording_errorMessage_eq")]
-    public string? Recording_ErrorMessage_EQ { get; set; }
-    /// <summary> Recording.ErrorMessage contains </summary>
-    [JsonProperty("recording_errorMessage_con")]
-    public string? Recording_ErrorMessage_CON { get; set; }
-    /// <summary> Recording.ErrorMessage regex </summary>
-    [JsonProperty("recording_errorMessage_reg")]
-    public string? Recording_ErrorMessage_REG { get; set; }
-
-    /// <summary> Recording.RecordingMp3.FileSizeInBytes equals </summary>
-    [JsonProperty("recording_recordingMp3_fileSizeInBytes_eq")]
-    public System.Int32? Recording_RecordingMp3_FileSizeInBytes_EQ { get; set; }
-    /// <summary> Recording.RecordingMp3.FileSizeInBytes less than or equal to </summary>
-    [JsonProperty("recording_recordingMp3_fileSizeInBytes_lte")]
-    public System.Int32? Recording_RecordingMp3_FileSizeInBytes_LTE { get; set; }
-    /// <summary> Recording.RecordingMp3.FileSizeInBytes greater than or equal to </summary>
-    [JsonProperty("recording_recordingMp3_fileSizeInBytes_gte")]
-    public System.Int32? Recording_RecordingMp3_FileSizeInBytes_GTE { get; set; }
-
-    /// <summary> Recording.RecordingMp3.Md5Hash equals </summary>
-    [JsonProperty("recording_recordingMp3_md5Hash_eq")]
-    public string? Recording_RecordingMp3_Md5Hash_EQ { get; set; }
-    /// <summary> Recording.RecordingMp3.Md5Hash contains </summary>
-    [JsonProperty("recording_recordingMp3_md5Hash_con")]
-    public string? Recording_RecordingMp3_Md5Hash_CON { get; set; }
-    /// <summary> Recording.RecordingMp3.Md5Hash regex </summary>
-    [JsonProperty("recording_recordingMp3_md5Hash_reg")]
-    public string? Recording_RecordingMp3_Md5Hash_REG { get; set; }
-
-    /// <summary> Recording.RecordingMp3.Url equals </summary>
-    [JsonProperty("recording_recordingMp3_url_eq")]
-    public string? Recording_RecordingMp3_Url_EQ { get; set; }
-    /// <summary> Recording.RecordingMp3.Url contains </summary>
-    [JsonProperty("recording_recordingMp3_url_con")]
-    public string? Recording_RecordingMp3_Url_CON { get; set; }
-    /// <summary> Recording.RecordingMp3.Url regex </summary>
-    [JsonProperty("recording_recordingMp3_url_reg")]
-    public string? Recording_RecordingMp3_Url_REG { get; set; }
-
-    /// <summary> Recording.RecordingMp3.Id equals </summary>
-    [JsonProperty("recording_recordingMp3_id_eq")]
-    public string? Recording_RecordingMp3_Id_EQ { get; set; }
-    /// <summary> Recording.RecordingMp3.Id contains </summary>
-    [JsonProperty("recording_recordingMp3_id_con")]
-    public string? Recording_RecordingMp3_Id_CON { get; set; }
-    /// <summary> Recording.RecordingMp3.Id regex </summary>
-    [JsonProperty("recording_recordingMp3_id_reg")]
-    public string? Recording_RecordingMp3_Id_REG { get; set; }
-
-
-    /// <summary> Recording.RecordingDurationInSeconds equals </summary>
-    [JsonProperty("recording_recordingDurationInSeconds_eq")]
-    public System.Int32? Recording_RecordingDurationInSeconds_EQ { get; set; }
-    /// <summary> Recording.RecordingDurationInSeconds less than or equal to </summary>
-    [JsonProperty("recording_recordingDurationInSeconds_lte")]
-    public System.Int32? Recording_RecordingDurationInSeconds_LTE { get; set; }
-    /// <summary> Recording.RecordingDurationInSeconds greater than or equal to </summary>
-    [JsonProperty("recording_recordingDurationInSeconds_gte")]
-    public System.Int32? Recording_RecordingDurationInSeconds_GTE { get; set; }
-
-    /// <summary> Recording.Id equals </summary>
-    [JsonProperty("recording_id_eq")]
-    public string? Recording_Id_EQ { get; set; }
-    /// <summary> Recording.Id contains </summary>
-    [JsonProperty("recording_id_con")]
-    public string? Recording_Id_CON { get; set; }
-    /// <summary> Recording.Id regex </summary>
-    [JsonProperty("recording_id_reg")]
-    public string? Recording_Id_REG { get; set; }
-
-
-    /// <summary> DisabledVideo equals </summary>
-    [JsonProperty("disabledVideo_eq")]
-    public bool? DisabledVideo_EQ { get; set; }
-
-    /// <summary> DigitsSent equals </summary>
-    [JsonProperty("digitsSent_eq")]
-    public string? DigitsSent_EQ { get; set; }
-    /// <summary> DigitsSent contains </summary>
-    [JsonProperty("digitsSent_con")]
-    public string? DigitsSent_CON { get; set; }
-    /// <summary> DigitsSent regex </summary>
-    [JsonProperty("digitsSent_reg")]
-    public string? DigitsSent_REG { get; set; }
-
-    /// <summary> IsInternational equals </summary>
-    [JsonProperty("isInternational_eq")]
-    public bool? IsInternational_EQ { get; set; }
 
     /// <summary> Id equals </summary>
     [JsonProperty("id_eq")]
@@ -2279,425 +1441,6 @@ public class CallIncomingToExtensionFilterRequest
     /// <summary> ToCountry equals </summary>
     [JsonProperty("toCountry_eq")]
     public CountryIsoCode? ToCountry_EQ { get; set; }
-
-    /// <summary> Recording.ErrorMessage equals </summary>
-    [JsonProperty("recording_errorMessage_eq")]
-    public string? Recording_ErrorMessage_EQ { get; set; }
-    /// <summary> Recording.ErrorMessage contains </summary>
-    [JsonProperty("recording_errorMessage_con")]
-    public string? Recording_ErrorMessage_CON { get; set; }
-    /// <summary> Recording.ErrorMessage regex </summary>
-    [JsonProperty("recording_errorMessage_reg")]
-    public string? Recording_ErrorMessage_REG { get; set; }
-
-    /// <summary> Recording.RecordingMp3.FileSizeInBytes equals </summary>
-    [JsonProperty("recording_recordingMp3_fileSizeInBytes_eq")]
-    public System.Int32? Recording_RecordingMp3_FileSizeInBytes_EQ { get; set; }
-    /// <summary> Recording.RecordingMp3.FileSizeInBytes less than or equal to </summary>
-    [JsonProperty("recording_recordingMp3_fileSizeInBytes_lte")]
-    public System.Int32? Recording_RecordingMp3_FileSizeInBytes_LTE { get; set; }
-    /// <summary> Recording.RecordingMp3.FileSizeInBytes greater than or equal to </summary>
-    [JsonProperty("recording_recordingMp3_fileSizeInBytes_gte")]
-    public System.Int32? Recording_RecordingMp3_FileSizeInBytes_GTE { get; set; }
-
-    /// <summary> Recording.RecordingMp3.Md5Hash equals </summary>
-    [JsonProperty("recording_recordingMp3_md5Hash_eq")]
-    public string? Recording_RecordingMp3_Md5Hash_EQ { get; set; }
-    /// <summary> Recording.RecordingMp3.Md5Hash contains </summary>
-    [JsonProperty("recording_recordingMp3_md5Hash_con")]
-    public string? Recording_RecordingMp3_Md5Hash_CON { get; set; }
-    /// <summary> Recording.RecordingMp3.Md5Hash regex </summary>
-    [JsonProperty("recording_recordingMp3_md5Hash_reg")]
-    public string? Recording_RecordingMp3_Md5Hash_REG { get; set; }
-
-    /// <summary> Recording.RecordingMp3.Url equals </summary>
-    [JsonProperty("recording_recordingMp3_url_eq")]
-    public string? Recording_RecordingMp3_Url_EQ { get; set; }
-    /// <summary> Recording.RecordingMp3.Url contains </summary>
-    [JsonProperty("recording_recordingMp3_url_con")]
-    public string? Recording_RecordingMp3_Url_CON { get; set; }
-    /// <summary> Recording.RecordingMp3.Url regex </summary>
-    [JsonProperty("recording_recordingMp3_url_reg")]
-    public string? Recording_RecordingMp3_Url_REG { get; set; }
-
-    /// <summary> Recording.RecordingMp3.Id equals </summary>
-    [JsonProperty("recording_recordingMp3_id_eq")]
-    public string? Recording_RecordingMp3_Id_EQ { get; set; }
-    /// <summary> Recording.RecordingMp3.Id contains </summary>
-    [JsonProperty("recording_recordingMp3_id_con")]
-    public string? Recording_RecordingMp3_Id_CON { get; set; }
-    /// <summary> Recording.RecordingMp3.Id regex </summary>
-    [JsonProperty("recording_recordingMp3_id_reg")]
-    public string? Recording_RecordingMp3_Id_REG { get; set; }
-
-
-    /// <summary> Recording.RecordingDurationInSeconds equals </summary>
-    [JsonProperty("recording_recordingDurationInSeconds_eq")]
-    public System.Int32? Recording_RecordingDurationInSeconds_EQ { get; set; }
-    /// <summary> Recording.RecordingDurationInSeconds less than or equal to </summary>
-    [JsonProperty("recording_recordingDurationInSeconds_lte")]
-    public System.Int32? Recording_RecordingDurationInSeconds_LTE { get; set; }
-    /// <summary> Recording.RecordingDurationInSeconds greater than or equal to </summary>
-    [JsonProperty("recording_recordingDurationInSeconds_gte")]
-    public System.Int32? Recording_RecordingDurationInSeconds_GTE { get; set; }
-
-    /// <summary> Recording.Id equals </summary>
-    [JsonProperty("recording_id_eq")]
-    public string? Recording_Id_EQ { get; set; }
-    /// <summary> Recording.Id contains </summary>
-    [JsonProperty("recording_id_con")]
-    public string? Recording_Id_CON { get; set; }
-    /// <summary> Recording.Id regex </summary>
-    [JsonProperty("recording_id_reg")]
-    public string? Recording_Id_REG { get; set; }
-
-
-    /// <summary> DisabledVideo equals </summary>
-    [JsonProperty("disabledVideo_eq")]
-    public bool? DisabledVideo_EQ { get; set; }
-
-    /// <summary> DigitsSent equals </summary>
-    [JsonProperty("digitsSent_eq")]
-    public string? DigitsSent_EQ { get; set; }
-    /// <summary> DigitsSent contains </summary>
-    [JsonProperty("digitsSent_con")]
-    public string? DigitsSent_CON { get; set; }
-    /// <summary> DigitsSent regex </summary>
-    [JsonProperty("digitsSent_reg")]
-    public string? DigitsSent_REG { get; set; }
-
-    /// <summary> IsInternational equals </summary>
-    [JsonProperty("isInternational_eq")]
-    public bool? IsInternational_EQ { get; set; }
-
-    /// <summary> Id equals </summary>
-    [JsonProperty("id_eq")]
-    public string? Id_EQ { get; set; }
-    /// <summary> Id contains </summary>
-    [JsonProperty("id_con")]
-    public string? Id_CON { get; set; }
-    /// <summary> Id regex </summary>
-    [JsonProperty("id_reg")]
-    public string? Id_REG { get; set; }
-
-    /// <summary> DateCreated equals </summary>
-    [JsonProperty("dateCreated_eq")]
-    public DateTime? DateCreated_EQ { get; set; }
-    /// <summary> DateCreated less than or equal to </summary>
-    [JsonProperty("dateCreated_lte")]
-    public DateTime? DateCreated_LTE { get; set; }
-    /// <summary> DateCreated greater than or equal to </summary>
-    [JsonProperty("dateCreated_gte")]
-    public DateTime? DateCreated_GTE { get; set; }
-
-    /// <summary> DateUpdated equals </summary>
-    [JsonProperty("dateUpdated_eq")]
-    public DateTime? DateUpdated_EQ { get; set; }
-    /// <summary> DateUpdated less than or equal to </summary>
-    [JsonProperty("dateUpdated_lte")]
-    public DateTime? DateUpdated_LTE { get; set; }
-    /// <summary> DateUpdated greater than or equal to </summary>
-    [JsonProperty("dateUpdated_gte")]
-    public DateTime? DateUpdated_GTE { get; set; }
-
-}
-/// <summary> Enables searching for CallOutgoings </summary>
-public class CallOutgoingFilterRequest 
-{
-    /// <summary> Contact.ContactNumbers.Number equals </summary>
-    [JsonProperty("contact_contactNumbers_number_eq")]
-    public string? Contact_ContactNumbers_Number_EQ { get; set; }
-    /// <summary> Contact.ContactNumbers.Number contains </summary>
-    [JsonProperty("contact_contactNumbers_number_con")]
-    public string? Contact_ContactNumbers_Number_CON { get; set; }
-    /// <summary> Contact.ContactNumbers.Number regex </summary>
-    [JsonProperty("contact_contactNumbers_number_reg")]
-    public string? Contact_ContactNumbers_Number_REG { get; set; }
-
-    /// <summary> Contact.ContactNumbers.NumberInternationalFormat equals </summary>
-    [JsonProperty("contact_contactNumbers_numberInternationalFormat_eq")]
-    public string? Contact_ContactNumbers_NumberInternationalFormat_EQ { get; set; }
-    /// <summary> Contact.ContactNumbers.NumberInternationalFormat contains </summary>
-    [JsonProperty("contact_contactNumbers_numberInternationalFormat_con")]
-    public string? Contact_ContactNumbers_NumberInternationalFormat_CON { get; set; }
-    /// <summary> Contact.ContactNumbers.NumberInternationalFormat regex </summary>
-    [JsonProperty("contact_contactNumbers_numberInternationalFormat_reg")]
-    public string? Contact_ContactNumbers_NumberInternationalFormat_REG { get; set; }
-
-    /// <summary> Contact.ContactNumbers.Label equals </summary>
-    [JsonProperty("contact_contactNumbers_label_eq")]
-    public LabelNumber? Contact_ContactNumbers_Label_EQ { get; set; }
-
-
-    /// <summary> Contact.ContactEmails.Email equals </summary>
-    [JsonProperty("contact_contactEmails_email_eq")]
-    public string? Contact_ContactEmails_Email_EQ { get; set; }
-    /// <summary> Contact.ContactEmails.Email contains </summary>
-    [JsonProperty("contact_contactEmails_email_con")]
-    public string? Contact_ContactEmails_Email_CON { get; set; }
-    /// <summary> Contact.ContactEmails.Email regex </summary>
-    [JsonProperty("contact_contactEmails_email_reg")]
-    public string? Contact_ContactEmails_Email_REG { get; set; }
-
-    /// <summary> Contact.ContactEmails.Label equals </summary>
-    [JsonProperty("contact_contactEmails_label_eq")]
-    public LabelEmailType? Contact_ContactEmails_Label_EQ { get; set; }
-
-
-    /// <summary> Contact.FirstName equals </summary>
-    [JsonProperty("contact_firstName_eq")]
-    public string? Contact_FirstName_EQ { get; set; }
-    /// <summary> Contact.FirstName contains </summary>
-    [JsonProperty("contact_firstName_con")]
-    public string? Contact_FirstName_CON { get; set; }
-    /// <summary> Contact.FirstName regex </summary>
-    [JsonProperty("contact_firstName_reg")]
-    public string? Contact_FirstName_REG { get; set; }
-
-    /// <summary> Contact.LastName equals </summary>
-    [JsonProperty("contact_lastName_eq")]
-    public string? Contact_LastName_EQ { get; set; }
-    /// <summary> Contact.LastName contains </summary>
-    [JsonProperty("contact_lastName_con")]
-    public string? Contact_LastName_CON { get; set; }
-    /// <summary> Contact.LastName regex </summary>
-    [JsonProperty("contact_lastName_reg")]
-    public string? Contact_LastName_REG { get; set; }
-
-    /// <summary> Contact.JobTittle equals </summary>
-    [JsonProperty("contact_jobTittle_eq")]
-    public string? Contact_JobTittle_EQ { get; set; }
-    /// <summary> Contact.JobTittle contains </summary>
-    [JsonProperty("contact_jobTittle_con")]
-    public string? Contact_JobTittle_CON { get; set; }
-    /// <summary> Contact.JobTittle regex </summary>
-    [JsonProperty("contact_jobTittle_reg")]
-    public string? Contact_JobTittle_REG { get; set; }
-
-    /// <summary> Contact.Company equals </summary>
-    [JsonProperty("contact_company_eq")]
-    public string? Contact_Company_EQ { get; set; }
-    /// <summary> Contact.Company contains </summary>
-    [JsonProperty("contact_company_con")]
-    public string? Contact_Company_CON { get; set; }
-    /// <summary> Contact.Company regex </summary>
-    [JsonProperty("contact_company_reg")]
-    public string? Contact_Company_REG { get; set; }
-
-    /// <summary> Contact.Hash equals </summary>
-    [JsonProperty("contact_hash_eq")]
-    public string? Contact_Hash_EQ { get; set; }
-    /// <summary> Contact.Hash contains </summary>
-    [JsonProperty("contact_hash_con")]
-    public string? Contact_Hash_CON { get; set; }
-    /// <summary> Contact.Hash regex </summary>
-    [JsonProperty("contact_hash_reg")]
-    public string? Contact_Hash_REG { get; set; }
-
-    /// <summary> Contact.Notes equals </summary>
-    [JsonProperty("contact_notes_eq")]
-    public string? Contact_Notes_EQ { get; set; }
-    /// <summary> Contact.Notes contains </summary>
-    [JsonProperty("contact_notes_con")]
-    public string? Contact_Notes_CON { get; set; }
-    /// <summary> Contact.Notes regex </summary>
-    [JsonProperty("contact_notes_reg")]
-    public string? Contact_Notes_REG { get; set; }
-
-    /// <summary> Contact.Variables.Name equals </summary>
-    [JsonProperty("contact_variables_name_eq")]
-    public string? Contact_Variables_Name_EQ { get; set; }
-    /// <summary> Contact.Variables.Name contains </summary>
-    [JsonProperty("contact_variables_name_con")]
-    public string? Contact_Variables_Name_CON { get; set; }
-    /// <summary> Contact.Variables.Name regex </summary>
-    [JsonProperty("contact_variables_name_reg")]
-    public string? Contact_Variables_Name_REG { get; set; }
-
-    /// <summary> Contact.Variables.JsonValue equals </summary>
-    [JsonProperty("contact_variables_jsonValue_eq")]
-    public string? Contact_Variables_JsonValue_EQ { get; set; }
-    /// <summary> Contact.Variables.JsonValue contains </summary>
-    [JsonProperty("contact_variables_jsonValue_con")]
-    public string? Contact_Variables_JsonValue_CON { get; set; }
-    /// <summary> Contact.Variables.JsonValue regex </summary>
-    [JsonProperty("contact_variables_jsonValue_reg")]
-    public string? Contact_Variables_JsonValue_REG { get; set; }
-
-
-    /// <summary> Contact.Id equals </summary>
-    [JsonProperty("contact_id_eq")]
-    public string? Contact_Id_EQ { get; set; }
-    /// <summary> Contact.Id contains </summary>
-    [JsonProperty("contact_id_con")]
-    public string? Contact_Id_CON { get; set; }
-    /// <summary> Contact.Id regex </summary>
-    [JsonProperty("contact_id_reg")]
-    public string? Contact_Id_REG { get; set; }
-
-    /// <summary> Contact.DateCreated equals </summary>
-    [JsonProperty("contact_dateCreated_eq")]
-    public DateTime? Contact_DateCreated_EQ { get; set; }
-    /// <summary> Contact.DateCreated less than or equal to </summary>
-    [JsonProperty("contact_dateCreated_lte")]
-    public DateTime? Contact_DateCreated_LTE { get; set; }
-    /// <summary> Contact.DateCreated greater than or equal to </summary>
-    [JsonProperty("contact_dateCreated_gte")]
-    public DateTime? Contact_DateCreated_GTE { get; set; }
-
-    /// <summary> Contact.DateUpdated equals </summary>
-    [JsonProperty("contact_dateUpdated_eq")]
-    public DateTime? Contact_DateUpdated_EQ { get; set; }
-    /// <summary> Contact.DateUpdated less than or equal to </summary>
-    [JsonProperty("contact_dateUpdated_lte")]
-    public DateTime? Contact_DateUpdated_LTE { get; set; }
-    /// <summary> Contact.DateUpdated greater than or equal to </summary>
-    [JsonProperty("contact_dateUpdated_gte")]
-    public DateTime? Contact_DateUpdated_GTE { get; set; }
-
-
-    /// <summary> IdLineThatInitiatedCall equals </summary>
-    [JsonProperty("idLineThatInitiatedCall_eq")]
-    public string? IdLineThatInitiatedCall_EQ { get; set; }
-    /// <summary> IdLineThatInitiatedCall contains </summary>
-    [JsonProperty("idLineThatInitiatedCall_con")]
-    public string? IdLineThatInitiatedCall_CON { get; set; }
-    /// <summary> IdLineThatInitiatedCall regex </summary>
-    [JsonProperty("idLineThatInitiatedCall_reg")]
-    public string? IdLineThatInitiatedCall_REG { get; set; }
-
-    /// <summary> IdVoicemail equals </summary>
-    [JsonProperty("idVoicemail_eq")]
-    public string? IdVoicemail_EQ { get; set; }
-    /// <summary> IdVoicemail contains </summary>
-    [JsonProperty("idVoicemail_con")]
-    public string? IdVoicemail_CON { get; set; }
-    /// <summary> IdVoicemail regex </summary>
-    [JsonProperty("idVoicemail_reg")]
-    public string? IdVoicemail_REG { get; set; }
-
-    /// <summary> ChannelVariables.Language equals </summary>
-    [JsonProperty("channelVariables_language_eq")]
-    public Language? ChannelVariables_Language_EQ { get; set; }
-
-    /// <summary> ChannelVariables.IdMusicOnHold equals </summary>
-    [JsonProperty("channelVariables_idMusicOnHold_eq")]
-    public string? ChannelVariables_IdMusicOnHold_EQ { get; set; }
-    /// <summary> ChannelVariables.IdMusicOnHold contains </summary>
-    [JsonProperty("channelVariables_idMusicOnHold_con")]
-    public string? ChannelVariables_IdMusicOnHold_CON { get; set; }
-    /// <summary> ChannelVariables.IdMusicOnHold regex </summary>
-    [JsonProperty("channelVariables_idMusicOnHold_reg")]
-    public string? ChannelVariables_IdMusicOnHold_REG { get; set; }
-
-    /// <summary> ChannelVariables.CallerIdName equals </summary>
-    [JsonProperty("channelVariables_callerIdName_eq")]
-    public string? ChannelVariables_CallerIdName_EQ { get; set; }
-    /// <summary> ChannelVariables.CallerIdName contains </summary>
-    [JsonProperty("channelVariables_callerIdName_con")]
-    public string? ChannelVariables_CallerIdName_CON { get; set; }
-    /// <summary> ChannelVariables.CallerIdName regex </summary>
-    [JsonProperty("channelVariables_callerIdName_reg")]
-    public string? ChannelVariables_CallerIdName_REG { get; set; }
-
-    /// <summary> ChannelVariables.CallerIdNumber equals </summary>
-    [JsonProperty("channelVariables_callerIdNumber_eq")]
-    public string? ChannelVariables_CallerIdNumber_EQ { get; set; }
-    /// <summary> ChannelVariables.CallerIdNumber contains </summary>
-    [JsonProperty("channelVariables_callerIdNumber_con")]
-    public string? ChannelVariables_CallerIdNumber_CON { get; set; }
-    /// <summary> ChannelVariables.CallerIdNumber regex </summary>
-    [JsonProperty("channelVariables_callerIdNumber_reg")]
-    public string? ChannelVariables_CallerIdNumber_REG { get; set; }
-
-
-    /// <summary> ChildCalls.ChildCallType equals </summary>
-    [JsonProperty("childCalls_childCallType_eq")]
-    public ChildCallType? ChildCalls_ChildCallType_EQ { get; set; }
-
-
-    /// <summary> DateEnded equals </summary>
-    [JsonProperty("dateEnded_eq")]
-    public DateTime? DateEnded_EQ { get; set; }
-    /// <summary> DateEnded less than or equal to </summary>
-    [JsonProperty("dateEnded_lte")]
-    public DateTime? DateEnded_LTE { get; set; }
-    /// <summary> DateEnded greater than or equal to </summary>
-    [JsonProperty("dateEnded_gte")]
-    public DateTime? DateEnded_GTE { get; set; }
-
-    /// <summary> Status equals </summary>
-    [JsonProperty("status_eq")]
-    public string? Status_EQ { get; set; }
-    /// <summary> Status contains </summary>
-    [JsonProperty("status_con")]
-    public string? Status_CON { get; set; }
-    /// <summary> Status regex </summary>
-    [JsonProperty("status_reg")]
-    public string? Status_REG { get; set; }
-
-    /// <summary> SecondsItTookToAnswer equals </summary>
-    [JsonProperty("secondsItTookToAnswer_eq")]
-    public System.Int32? SecondsItTookToAnswer_EQ { get; set; }
-    /// <summary> SecondsItTookToAnswer less than or equal to </summary>
-    [JsonProperty("secondsItTookToAnswer_lte")]
-    public System.Int32? SecondsItTookToAnswer_LTE { get; set; }
-    /// <summary> SecondsItTookToAnswer greater than or equal to </summary>
-    [JsonProperty("secondsItTookToAnswer_gte")]
-    public System.Int32? SecondsItTookToAnswer_GTE { get; set; }
-
-    /// <summary> TimesWhenCallPlacedOnHold.SecondsElapsedWhenPlacedOnHold equals </summary>
-    [JsonProperty("timesWhenCallPlacedOnHold_secondsElapsedWhenPlacedOnHold_eq")]
-    public System.Int32? TimesWhenCallPlacedOnHold_SecondsElapsedWhenPlacedOnHold_EQ { get; set; }
-    /// <summary> TimesWhenCallPlacedOnHold.SecondsElapsedWhenPlacedOnHold less than or equal to </summary>
-    [JsonProperty("timesWhenCallPlacedOnHold_secondsElapsedWhenPlacedOnHold_lte")]
-    public System.Int32? TimesWhenCallPlacedOnHold_SecondsElapsedWhenPlacedOnHold_LTE { get; set; }
-    /// <summary> TimesWhenCallPlacedOnHold.SecondsElapsedWhenPlacedOnHold greater than or equal to </summary>
-    [JsonProperty("timesWhenCallPlacedOnHold_secondsElapsedWhenPlacedOnHold_gte")]
-    public System.Int32? TimesWhenCallPlacedOnHold_SecondsElapsedWhenPlacedOnHold_GTE { get; set; }
-
-    /// <summary> TimesWhenCallPlacedOnHold.SecondsElapsedWhenRemovedFromHold equals </summary>
-    [JsonProperty("timesWhenCallPlacedOnHold_secondsElapsedWhenRemovedFromHold_eq")]
-    public System.Int32? TimesWhenCallPlacedOnHold_SecondsElapsedWhenRemovedFromHold_EQ { get; set; }
-    /// <summary> TimesWhenCallPlacedOnHold.SecondsElapsedWhenRemovedFromHold less than or equal to </summary>
-    [JsonProperty("timesWhenCallPlacedOnHold_secondsElapsedWhenRemovedFromHold_lte")]
-    public System.Int32? TimesWhenCallPlacedOnHold_SecondsElapsedWhenRemovedFromHold_LTE { get; set; }
-    /// <summary> TimesWhenCallPlacedOnHold.SecondsElapsedWhenRemovedFromHold greater than or equal to </summary>
-    [JsonProperty("timesWhenCallPlacedOnHold_secondsElapsedWhenRemovedFromHold_gte")]
-    public System.Int32? TimesWhenCallPlacedOnHold_SecondsElapsedWhenRemovedFromHold_GTE { get; set; }
-
-
-    /// <summary> From equals </summary>
-    [JsonProperty("from_eq")]
-    public string? From_EQ { get; set; }
-    /// <summary> From contains </summary>
-    [JsonProperty("from_con")]
-    public string? From_CON { get; set; }
-    /// <summary> From regex </summary>
-    [JsonProperty("from_reg")]
-    public string? From_REG { get; set; }
-
-    /// <summary> FromCountry equals </summary>
-    [JsonProperty("fromCountry_eq")]
-    public CountryIsoCode? FromCountry_EQ { get; set; }
-
-    /// <summary> To equals </summary>
-    [JsonProperty("to_eq")]
-    public string? To_EQ { get; set; }
-    /// <summary> To contains </summary>
-    [JsonProperty("to_con")]
-    public string? To_CON { get; set; }
-    /// <summary> To regex </summary>
-    [JsonProperty("to_reg")]
-    public string? To_REG { get; set; }
-
-    /// <summary> ToCountry equals </summary>
-    [JsonProperty("toCountry_eq")]
-    public CountryIsoCode? ToCountry_EQ { get; set; }
-
-    /// <summary> CallType equals </summary>
-    [JsonProperty("callType_eq")]
-    public CallType? CallType_EQ { get; set; }
 
     /// <summary> Recording.ErrorMessage equals </summary>
     [JsonProperty("recording_errorMessage_eq")]
@@ -3732,90 +2475,6 @@ public class CallOutgoingToPSTNFilterRequest
     public DateTime? DateUpdated_GTE { get; set; }
 
 }
-/// <summary> Enables searching for CloudServices </summary>
-public class CloudServiceFilterRequest 
-{
-    /// <summary> IdIdentity equals </summary>
-    [JsonProperty("idIdentity_eq")]
-    public string? IdIdentity_EQ { get; set; }
-    /// <summary> IdIdentity contains </summary>
-    [JsonProperty("idIdentity_con")]
-    public string? IdIdentity_CON { get; set; }
-    /// <summary> IdIdentity regex </summary>
-    [JsonProperty("idIdentity_reg")]
-    public string? IdIdentity_REG { get; set; }
-
-    /// <summary> CloudServiceType equals </summary>
-    [JsonProperty("cloudServiceType_eq")]
-    public CloudServiceType? CloudServiceType_EQ { get; set; }
-
-    /// <summary> CountryIsoCode equals </summary>
-    [JsonProperty("countryIsoCode_eq")]
-    public CountryIsoCode? CountryIsoCode_EQ { get; set; }
-
-    /// <summary> Localnet equals </summary>
-    [JsonProperty("localnet_eq")]
-    public string? Localnet_EQ { get; set; }
-    /// <summary> Localnet contains </summary>
-    [JsonProperty("localnet_con")]
-    public string? Localnet_CON { get; set; }
-    /// <summary> Localnet regex </summary>
-    [JsonProperty("localnet_reg")]
-    public string? Localnet_REG { get; set; }
-
-    /// <summary> ExternalIps equals </summary>
-    [JsonProperty("externalIps_eq")]
-    public string? ExternalIps_EQ { get; set; }
-    /// <summary> ExternalIps contains </summary>
-    [JsonProperty("externalIps_con")]
-    public string? ExternalIps_CON { get; set; }
-    /// <summary> ExternalIps regex </summary>
-    [JsonProperty("externalIps_reg")]
-    public string? ExternalIps_REG { get; set; }
-
-    /// <summary> IsFailover equals </summary>
-    [JsonProperty("isFailover_eq")]
-    public bool? IsFailover_EQ { get; set; }
-
-    /// <summary> Nat equals </summary>
-    [JsonProperty("nat_eq")]
-    public bool? Nat_EQ { get; set; }
-
-    /// <summary> IsHealthy equals </summary>
-    [JsonProperty("isHealthy_eq")]
-    public bool? IsHealthy_EQ { get; set; }
-
-    /// <summary> Id equals </summary>
-    [JsonProperty("id_eq")]
-    public string? Id_EQ { get; set; }
-    /// <summary> Id contains </summary>
-    [JsonProperty("id_con")]
-    public string? Id_CON { get; set; }
-    /// <summary> Id regex </summary>
-    [JsonProperty("id_reg")]
-    public string? Id_REG { get; set; }
-
-    /// <summary> DateCreated equals </summary>
-    [JsonProperty("dateCreated_eq")]
-    public DateTime? DateCreated_EQ { get; set; }
-    /// <summary> DateCreated less than or equal to </summary>
-    [JsonProperty("dateCreated_lte")]
-    public DateTime? DateCreated_LTE { get; set; }
-    /// <summary> DateCreated greater than or equal to </summary>
-    [JsonProperty("dateCreated_gte")]
-    public DateTime? DateCreated_GTE { get; set; }
-
-    /// <summary> DateUpdated equals </summary>
-    [JsonProperty("dateUpdated_eq")]
-    public DateTime? DateUpdated_EQ { get; set; }
-    /// <summary> DateUpdated less than or equal to </summary>
-    [JsonProperty("dateUpdated_lte")]
-    public DateTime? DateUpdated_LTE { get; set; }
-    /// <summary> DateUpdated greater than or equal to </summary>
-    [JsonProperty("dateUpdated_gte")]
-    public DateTime? DateUpdated_GTE { get; set; }
-
-}
 /// <summary> Enables searching for CloudServicePbxs </summary>
 public class CloudServicePbxFilterRequest 
 {
@@ -4445,68 +3104,6 @@ public class CustomerInfoFilterRequest
     /// <summary> FullName regex </summary>
     [JsonProperty("fullName_reg")]
     public string? FullName_REG { get; set; }
-
-    /// <summary> Id equals </summary>
-    [JsonProperty("id_eq")]
-    public string? Id_EQ { get; set; }
-    /// <summary> Id contains </summary>
-    [JsonProperty("id_con")]
-    public string? Id_CON { get; set; }
-    /// <summary> Id regex </summary>
-    [JsonProperty("id_reg")]
-    public string? Id_REG { get; set; }
-
-    /// <summary> DateCreated equals </summary>
-    [JsonProperty("dateCreated_eq")]
-    public DateTime? DateCreated_EQ { get; set; }
-    /// <summary> DateCreated less than or equal to </summary>
-    [JsonProperty("dateCreated_lte")]
-    public DateTime? DateCreated_LTE { get; set; }
-    /// <summary> DateCreated greater than or equal to </summary>
-    [JsonProperty("dateCreated_gte")]
-    public DateTime? DateCreated_GTE { get; set; }
-
-    /// <summary> DateUpdated equals </summary>
-    [JsonProperty("dateUpdated_eq")]
-    public DateTime? DateUpdated_EQ { get; set; }
-    /// <summary> DateUpdated less than or equal to </summary>
-    [JsonProperty("dateUpdated_lte")]
-    public DateTime? DateUpdated_LTE { get; set; }
-    /// <summary> DateUpdated greater than or equal to </summary>
-    [JsonProperty("dateUpdated_gte")]
-    public DateTime? DateUpdated_GTE { get; set; }
-
-}
-/// <summary> Enables searching for Extensions </summary>
-public class ExtensionFilterRequest 
-{
-    /// <summary> IdMusicOnHoldGroup equals </summary>
-    [JsonProperty("idMusicOnHoldGroup_eq")]
-    public string? IdMusicOnHoldGroup_EQ { get; set; }
-    /// <summary> IdMusicOnHoldGroup contains </summary>
-    [JsonProperty("idMusicOnHoldGroup_con")]
-    public string? IdMusicOnHoldGroup_CON { get; set; }
-    /// <summary> IdMusicOnHoldGroup regex </summary>
-    [JsonProperty("idMusicOnHoldGroup_reg")]
-    public string? IdMusicOnHoldGroup_REG { get; set; }
-
-    /// <summary> ExtensionType equals </summary>
-    [JsonProperty("extensionType_eq")]
-    public ExtensionType? ExtensionType_EQ { get; set; }
-
-    /// <summary> Number equals </summary>
-    [JsonProperty("number_eq")]
-    public string? Number_EQ { get; set; }
-    /// <summary> Number contains </summary>
-    [JsonProperty("number_con")]
-    public string? Number_CON { get; set; }
-    /// <summary> Number regex </summary>
-    [JsonProperty("number_reg")]
-    public string? Number_REG { get; set; }
-
-    /// <summary> InjectExtensionNameToCallerId equals </summary>
-    [JsonProperty("injectExtensionNameToCallerId_eq")]
-    public bool? InjectExtensionNameToCallerId_EQ { get; set; }
 
     /// <summary> Id equals </summary>
     [JsonProperty("id_eq")]
@@ -6142,16 +4739,6 @@ public class PhoneFilterRequest
     [JsonProperty("lines_lineConnectionStatus_dateConnected_gte")]
     public DateTime? Lines_LineConnectionStatus_DateConnected_GTE { get; set; }
 
-    /// <summary> Lines.LineConnectionStatus.Id equals </summary>
-    [JsonProperty("lines_lineConnectionStatus_id_eq")]
-    public string? Lines_LineConnectionStatus_Id_EQ { get; set; }
-    /// <summary> Lines.LineConnectionStatus.Id contains </summary>
-    [JsonProperty("lines_lineConnectionStatus_id_con")]
-    public string? Lines_LineConnectionStatus_Id_CON { get; set; }
-    /// <summary> Lines.LineConnectionStatus.Id regex </summary>
-    [JsonProperty("lines_lineConnectionStatus_id_reg")]
-    public string? Lines_LineConnectionStatus_Id_REG { get; set; }
-
 
     /// <summary> Lines.CallerIdNumber equals </summary>
     [JsonProperty("lines_callerIdNumber_eq")]
@@ -6738,40 +5325,6 @@ public class SMSFilterRequest
     public DateTime? DateUpdated_GTE { get; set; }
 
 }
-/// <summary> Enables searching for TrunkOriginations </summary>
-public class TrunkOriginationFilterRequest 
-{
-    /// <summary> Id equals </summary>
-    [JsonProperty("id_eq")]
-    public string? Id_EQ { get; set; }
-    /// <summary> Id contains </summary>
-    [JsonProperty("id_con")]
-    public string? Id_CON { get; set; }
-    /// <summary> Id regex </summary>
-    [JsonProperty("id_reg")]
-    public string? Id_REG { get; set; }
-
-    /// <summary> DateCreated equals </summary>
-    [JsonProperty("dateCreated_eq")]
-    public DateTime? DateCreated_EQ { get; set; }
-    /// <summary> DateCreated less than or equal to </summary>
-    [JsonProperty("dateCreated_lte")]
-    public DateTime? DateCreated_LTE { get; set; }
-    /// <summary> DateCreated greater than or equal to </summary>
-    [JsonProperty("dateCreated_gte")]
-    public DateTime? DateCreated_GTE { get; set; }
-
-    /// <summary> DateUpdated equals </summary>
-    [JsonProperty("dateUpdated_eq")]
-    public DateTime? DateUpdated_EQ { get; set; }
-    /// <summary> DateUpdated less than or equal to </summary>
-    [JsonProperty("dateUpdated_lte")]
-    public DateTime? DateUpdated_LTE { get; set; }
-    /// <summary> DateUpdated greater than or equal to </summary>
-    [JsonProperty("dateUpdated_gte")]
-    public DateTime? DateUpdated_GTE { get; set; }
-
-}
 /// <summary> Enables searching for TrunkOriginationForwards </summary>
 public class TrunkOriginationForwardFilterRequest 
 {
@@ -7280,183 +5833,6 @@ public class VoicemailForwardedFilterRequest
     /// <summary> ErrorMessage regex </summary>
     [JsonProperty("errorMessage_reg")]
     public string? ErrorMessage_REG { get; set; }
-
-    /// <summary> Id equals </summary>
-    [JsonProperty("id_eq")]
-    public string? Id_EQ { get; set; }
-    /// <summary> Id contains </summary>
-    [JsonProperty("id_con")]
-    public string? Id_CON { get; set; }
-    /// <summary> Id regex </summary>
-    [JsonProperty("id_reg")]
-    public string? Id_REG { get; set; }
-
-    /// <summary> DateCreated equals </summary>
-    [JsonProperty("dateCreated_eq")]
-    public DateTime? DateCreated_EQ { get; set; }
-    /// <summary> DateCreated less than or equal to </summary>
-    [JsonProperty("dateCreated_lte")]
-    public DateTime? DateCreated_LTE { get; set; }
-    /// <summary> DateCreated greater than or equal to </summary>
-    [JsonProperty("dateCreated_gte")]
-    public DateTime? DateCreated_GTE { get; set; }
-
-    /// <summary> DateUpdated equals </summary>
-    [JsonProperty("dateUpdated_eq")]
-    public DateTime? DateUpdated_EQ { get; set; }
-    /// <summary> DateUpdated less than or equal to </summary>
-    [JsonProperty("dateUpdated_lte")]
-    public DateTime? DateUpdated_LTE { get; set; }
-    /// <summary> DateUpdated greater than or equal to </summary>
-    [JsonProperty("dateUpdated_gte")]
-    public DateTime? DateUpdated_GTE { get; set; }
-
-}
-/// <summary> Enables searching for VoipNumbers </summary>
-public class VoipNumberFilterRequest 
-{
-    /// <summary> RulesPhone.IdCallFlow equals </summary>
-    [JsonProperty("rulesPhone_idCallFlow_eq")]
-    public string? RulesPhone_IdCallFlow_EQ { get; set; }
-    /// <summary> RulesPhone.IdCallFlow contains </summary>
-    [JsonProperty("rulesPhone_idCallFlow_con")]
-    public string? RulesPhone_IdCallFlow_CON { get; set; }
-    /// <summary> RulesPhone.IdCallFlow regex </summary>
-    [JsonProperty("rulesPhone_idCallFlow_reg")]
-    public string? RulesPhone_IdCallFlow_REG { get; set; }
-
-    /// <summary> RulesPhone.IdExtension equals </summary>
-    [JsonProperty("rulesPhone_idExtension_eq")]
-    public string? RulesPhone_IdExtension_EQ { get; set; }
-    /// <summary> RulesPhone.IdExtension contains </summary>
-    [JsonProperty("rulesPhone_idExtension_con")]
-    public string? RulesPhone_IdExtension_CON { get; set; }
-    /// <summary> RulesPhone.IdExtension regex </summary>
-    [JsonProperty("rulesPhone_idExtension_reg")]
-    public string? RulesPhone_IdExtension_REG { get; set; }
-
-    /// <summary> RulesPhone.DaysOfWeek contains </summary>
-    [JsonProperty("rulesPhone_daysOfWeek_con")]
-    public DayOfWeek? RulesPhone_DaysOfWeek_CON { get; set; }
-
-
-    /// <summary> RulesSms.ForwardToEmailAddress equals </summary>
-    [JsonProperty("rulesSms_forwardToEmailAddress_eq")]
-    public string? RulesSms_ForwardToEmailAddress_EQ { get; set; }
-    /// <summary> RulesSms.ForwardToEmailAddress contains </summary>
-    [JsonProperty("rulesSms_forwardToEmailAddress_con")]
-    public string? RulesSms_ForwardToEmailAddress_CON { get; set; }
-    /// <summary> RulesSms.ForwardToEmailAddress regex </summary>
-    [JsonProperty("rulesSms_forwardToEmailAddress_reg")]
-    public string? RulesSms_ForwardToEmailAddress_REG { get; set; }
-
-
-    /// <summary> RulesFax.ForwardToEmailAddress equals </summary>
-    [JsonProperty("rulesFax_forwardToEmailAddress_eq")]
-    public string? RulesFax_ForwardToEmailAddress_EQ { get; set; }
-    /// <summary> RulesFax.ForwardToEmailAddress contains </summary>
-    [JsonProperty("rulesFax_forwardToEmailAddress_con")]
-    public string? RulesFax_ForwardToEmailAddress_CON { get; set; }
-    /// <summary> RulesFax.ForwardToEmailAddress regex </summary>
-    [JsonProperty("rulesFax_forwardToEmailAddress_reg")]
-    public string? RulesFax_ForwardToEmailAddress_REG { get; set; }
-
-
-    /// <summary> VoipNumberType equals </summary>
-    [JsonProperty("voipNumberType_eq")]
-    public VoipNumberType? VoipNumberType_EQ { get; set; }
-
-    /// <summary> InjectFriendlyNameToCallerId equals </summary>
-    [JsonProperty("injectFriendlyNameToCallerId_eq")]
-    public bool? InjectFriendlyNameToCallerId_EQ { get; set; }
-
-    /// <summary> RecordIncomingCalls equals </summary>
-    [JsonProperty("recordIncomingCalls_eq")]
-    public bool? RecordIncomingCalls_EQ { get; set; }
-
-    /// <summary> Number equals </summary>
-    [JsonProperty("number_eq")]
-    public string? Number_EQ { get; set; }
-    /// <summary> Number contains </summary>
-    [JsonProperty("number_con")]
-    public string? Number_CON { get; set; }
-    /// <summary> Number regex </summary>
-    [JsonProperty("number_reg")]
-    public string? Number_REG { get; set; }
-
-    /// <summary> FriendlyName equals </summary>
-    [JsonProperty("friendlyName_eq")]
-    public string? FriendlyName_EQ { get; set; }
-    /// <summary> FriendlyName contains </summary>
-    [JsonProperty("friendlyName_con")]
-    public string? FriendlyName_CON { get; set; }
-    /// <summary> FriendlyName regex </summary>
-    [JsonProperty("friendlyName_reg")]
-    public string? FriendlyName_REG { get; set; }
-
-    /// <summary> Description equals </summary>
-    [JsonProperty("description_eq")]
-    public string? Description_EQ { get; set; }
-    /// <summary> Description contains </summary>
-    [JsonProperty("description_con")]
-    public string? Description_CON { get; set; }
-    /// <summary> Description regex </summary>
-    [JsonProperty("description_reg")]
-    public string? Description_REG { get; set; }
-
-    /// <summary> Language equals </summary>
-    [JsonProperty("language_eq")]
-    public Language? Language_EQ { get; set; }
-
-    /// <summary> City equals </summary>
-    [JsonProperty("city_eq")]
-    public string? City_EQ { get; set; }
-    /// <summary> City contains </summary>
-    [JsonProperty("city_con")]
-    public string? City_CON { get; set; }
-    /// <summary> City regex </summary>
-    [JsonProperty("city_reg")]
-    public string? City_REG { get; set; }
-
-    /// <summary> State equals </summary>
-    [JsonProperty("state_eq")]
-    public string? State_EQ { get; set; }
-    /// <summary> State contains </summary>
-    [JsonProperty("state_con")]
-    public string? State_CON { get; set; }
-    /// <summary> State regex </summary>
-    [JsonProperty("state_reg")]
-    public string? State_REG { get; set; }
-
-    /// <summary> CountryIsoCode equals </summary>
-    [JsonProperty("countryIsoCode_eq")]
-    public CountryIsoCode? CountryIsoCode_EQ { get; set; }
-
-    /// <summary> IsSmsEnabled equals </summary>
-    [JsonProperty("isSmsEnabled_eq")]
-    public bool? IsSmsEnabled_EQ { get; set; }
-
-    /// <summary> IsVoiceEnabled equals </summary>
-    [JsonProperty("isVoiceEnabled_eq")]
-    public bool? IsVoiceEnabled_EQ { get; set; }
-
-    /// <summary> IsTollFree equals </summary>
-    [JsonProperty("isTollFree_eq")]
-    public bool? IsTollFree_EQ { get; set; }
-
-    /// <summary> IsWhatsappEnabled equals </summary>
-    [JsonProperty("isWhatsappEnabled_eq")]
-    public bool? IsWhatsappEnabled_EQ { get; set; }
-
-    /// <summary> TimeZone equals </summary>
-    [JsonProperty("timeZone_eq")]
-    public string? TimeZone_EQ { get; set; }
-    /// <summary> TimeZone contains </summary>
-    [JsonProperty("timeZone_con")]
-    public string? TimeZone_CON { get; set; }
-    /// <summary> TimeZone regex </summary>
-    [JsonProperty("timeZone_reg")]
-    public string? TimeZone_REG { get; set; }
 
     /// <summary> Id equals </summary>
     [JsonProperty("id_eq")]
@@ -8088,6 +6464,1620 @@ public class WebHookFilterRequest
     /// <summary> Headers regex </summary>
     [JsonProperty("headers_reg")]
     public string? Headers_REG { get; set; }
+
+    /// <summary> Id equals </summary>
+    [JsonProperty("id_eq")]
+    public string? Id_EQ { get; set; }
+    /// <summary> Id contains </summary>
+    [JsonProperty("id_con")]
+    public string? Id_CON { get; set; }
+    /// <summary> Id regex </summary>
+    [JsonProperty("id_reg")]
+    public string? Id_REG { get; set; }
+
+    /// <summary> DateCreated equals </summary>
+    [JsonProperty("dateCreated_eq")]
+    public DateTime? DateCreated_EQ { get; set; }
+    /// <summary> DateCreated less than or equal to </summary>
+    [JsonProperty("dateCreated_lte")]
+    public DateTime? DateCreated_LTE { get; set; }
+    /// <summary> DateCreated greater than or equal to </summary>
+    [JsonProperty("dateCreated_gte")]
+    public DateTime? DateCreated_GTE { get; set; }
+
+    /// <summary> DateUpdated equals </summary>
+    [JsonProperty("dateUpdated_eq")]
+    public DateTime? DateUpdated_EQ { get; set; }
+    /// <summary> DateUpdated less than or equal to </summary>
+    [JsonProperty("dateUpdated_lte")]
+    public DateTime? DateUpdated_LTE { get; set; }
+    /// <summary> DateUpdated greater than or equal to </summary>
+    [JsonProperty("dateUpdated_gte")]
+    public DateTime? DateUpdated_GTE { get; set; }
+
+}
+/// <summary> Enables searching for Calls </summary>
+public class CallFilterRequest 
+{
+    /// <summary> CallType equals </summary>
+    [JsonProperty("callType_eq")]
+    public CallType? CallType_EQ { get; set; }
+
+    /// <summary> Contact.ContactNumbers.Number equals </summary>
+    [JsonProperty("contact_contactNumbers_number_eq")]
+    public string? Contact_ContactNumbers_Number_EQ { get; set; }
+    /// <summary> Contact.ContactNumbers.Number contains </summary>
+    [JsonProperty("contact_contactNumbers_number_con")]
+    public string? Contact_ContactNumbers_Number_CON { get; set; }
+    /// <summary> Contact.ContactNumbers.Number regex </summary>
+    [JsonProperty("contact_contactNumbers_number_reg")]
+    public string? Contact_ContactNumbers_Number_REG { get; set; }
+
+    /// <summary> Contact.ContactNumbers.NumberInternationalFormat equals </summary>
+    [JsonProperty("contact_contactNumbers_numberInternationalFormat_eq")]
+    public string? Contact_ContactNumbers_NumberInternationalFormat_EQ { get; set; }
+    /// <summary> Contact.ContactNumbers.NumberInternationalFormat contains </summary>
+    [JsonProperty("contact_contactNumbers_numberInternationalFormat_con")]
+    public string? Contact_ContactNumbers_NumberInternationalFormat_CON { get; set; }
+    /// <summary> Contact.ContactNumbers.NumberInternationalFormat regex </summary>
+    [JsonProperty("contact_contactNumbers_numberInternationalFormat_reg")]
+    public string? Contact_ContactNumbers_NumberInternationalFormat_REG { get; set; }
+
+    /// <summary> Contact.ContactNumbers.Label equals </summary>
+    [JsonProperty("contact_contactNumbers_label_eq")]
+    public LabelNumber? Contact_ContactNumbers_Label_EQ { get; set; }
+
+
+    /// <summary> Contact.ContactEmails.Email equals </summary>
+    [JsonProperty("contact_contactEmails_email_eq")]
+    public string? Contact_ContactEmails_Email_EQ { get; set; }
+    /// <summary> Contact.ContactEmails.Email contains </summary>
+    [JsonProperty("contact_contactEmails_email_con")]
+    public string? Contact_ContactEmails_Email_CON { get; set; }
+    /// <summary> Contact.ContactEmails.Email regex </summary>
+    [JsonProperty("contact_contactEmails_email_reg")]
+    public string? Contact_ContactEmails_Email_REG { get; set; }
+
+    /// <summary> Contact.ContactEmails.Label equals </summary>
+    [JsonProperty("contact_contactEmails_label_eq")]
+    public LabelEmailType? Contact_ContactEmails_Label_EQ { get; set; }
+
+
+    /// <summary> Contact.FirstName equals </summary>
+    [JsonProperty("contact_firstName_eq")]
+    public string? Contact_FirstName_EQ { get; set; }
+    /// <summary> Contact.FirstName contains </summary>
+    [JsonProperty("contact_firstName_con")]
+    public string? Contact_FirstName_CON { get; set; }
+    /// <summary> Contact.FirstName regex </summary>
+    [JsonProperty("contact_firstName_reg")]
+    public string? Contact_FirstName_REG { get; set; }
+
+    /// <summary> Contact.LastName equals </summary>
+    [JsonProperty("contact_lastName_eq")]
+    public string? Contact_LastName_EQ { get; set; }
+    /// <summary> Contact.LastName contains </summary>
+    [JsonProperty("contact_lastName_con")]
+    public string? Contact_LastName_CON { get; set; }
+    /// <summary> Contact.LastName regex </summary>
+    [JsonProperty("contact_lastName_reg")]
+    public string? Contact_LastName_REG { get; set; }
+
+    /// <summary> Contact.JobTittle equals </summary>
+    [JsonProperty("contact_jobTittle_eq")]
+    public string? Contact_JobTittle_EQ { get; set; }
+    /// <summary> Contact.JobTittle contains </summary>
+    [JsonProperty("contact_jobTittle_con")]
+    public string? Contact_JobTittle_CON { get; set; }
+    /// <summary> Contact.JobTittle regex </summary>
+    [JsonProperty("contact_jobTittle_reg")]
+    public string? Contact_JobTittle_REG { get; set; }
+
+    /// <summary> Contact.Company equals </summary>
+    [JsonProperty("contact_company_eq")]
+    public string? Contact_Company_EQ { get; set; }
+    /// <summary> Contact.Company contains </summary>
+    [JsonProperty("contact_company_con")]
+    public string? Contact_Company_CON { get; set; }
+    /// <summary> Contact.Company regex </summary>
+    [JsonProperty("contact_company_reg")]
+    public string? Contact_Company_REG { get; set; }
+
+    /// <summary> Contact.Hash equals </summary>
+    [JsonProperty("contact_hash_eq")]
+    public string? Contact_Hash_EQ { get; set; }
+    /// <summary> Contact.Hash contains </summary>
+    [JsonProperty("contact_hash_con")]
+    public string? Contact_Hash_CON { get; set; }
+    /// <summary> Contact.Hash regex </summary>
+    [JsonProperty("contact_hash_reg")]
+    public string? Contact_Hash_REG { get; set; }
+
+    /// <summary> Contact.Notes equals </summary>
+    [JsonProperty("contact_notes_eq")]
+    public string? Contact_Notes_EQ { get; set; }
+    /// <summary> Contact.Notes contains </summary>
+    [JsonProperty("contact_notes_con")]
+    public string? Contact_Notes_CON { get; set; }
+    /// <summary> Contact.Notes regex </summary>
+    [JsonProperty("contact_notes_reg")]
+    public string? Contact_Notes_REG { get; set; }
+
+    /// <summary> Contact.Variables.Name equals </summary>
+    [JsonProperty("contact_variables_name_eq")]
+    public string? Contact_Variables_Name_EQ { get; set; }
+    /// <summary> Contact.Variables.Name contains </summary>
+    [JsonProperty("contact_variables_name_con")]
+    public string? Contact_Variables_Name_CON { get; set; }
+    /// <summary> Contact.Variables.Name regex </summary>
+    [JsonProperty("contact_variables_name_reg")]
+    public string? Contact_Variables_Name_REG { get; set; }
+
+    /// <summary> Contact.Variables.JsonValue equals </summary>
+    [JsonProperty("contact_variables_jsonValue_eq")]
+    public string? Contact_Variables_JsonValue_EQ { get; set; }
+    /// <summary> Contact.Variables.JsonValue contains </summary>
+    [JsonProperty("contact_variables_jsonValue_con")]
+    public string? Contact_Variables_JsonValue_CON { get; set; }
+    /// <summary> Contact.Variables.JsonValue regex </summary>
+    [JsonProperty("contact_variables_jsonValue_reg")]
+    public string? Contact_Variables_JsonValue_REG { get; set; }
+
+
+    /// <summary> Contact.Id equals </summary>
+    [JsonProperty("contact_id_eq")]
+    public string? Contact_Id_EQ { get; set; }
+    /// <summary> Contact.Id contains </summary>
+    [JsonProperty("contact_id_con")]
+    public string? Contact_Id_CON { get; set; }
+    /// <summary> Contact.Id regex </summary>
+    [JsonProperty("contact_id_reg")]
+    public string? Contact_Id_REG { get; set; }
+
+    /// <summary> Contact.DateCreated equals </summary>
+    [JsonProperty("contact_dateCreated_eq")]
+    public DateTime? Contact_DateCreated_EQ { get; set; }
+    /// <summary> Contact.DateCreated less than or equal to </summary>
+    [JsonProperty("contact_dateCreated_lte")]
+    public DateTime? Contact_DateCreated_LTE { get; set; }
+    /// <summary> Contact.DateCreated greater than or equal to </summary>
+    [JsonProperty("contact_dateCreated_gte")]
+    public DateTime? Contact_DateCreated_GTE { get; set; }
+
+    /// <summary> Contact.DateUpdated equals </summary>
+    [JsonProperty("contact_dateUpdated_eq")]
+    public DateTime? Contact_DateUpdated_EQ { get; set; }
+    /// <summary> Contact.DateUpdated less than or equal to </summary>
+    [JsonProperty("contact_dateUpdated_lte")]
+    public DateTime? Contact_DateUpdated_LTE { get; set; }
+    /// <summary> Contact.DateUpdated greater than or equal to </summary>
+    [JsonProperty("contact_dateUpdated_gte")]
+    public DateTime? Contact_DateUpdated_GTE { get; set; }
+
+
+    /// <summary> IdVoicemail equals </summary>
+    [JsonProperty("idVoicemail_eq")]
+    public string? IdVoicemail_EQ { get; set; }
+    /// <summary> IdVoicemail contains </summary>
+    [JsonProperty("idVoicemail_con")]
+    public string? IdVoicemail_CON { get; set; }
+    /// <summary> IdVoicemail regex </summary>
+    [JsonProperty("idVoicemail_reg")]
+    public string? IdVoicemail_REG { get; set; }
+
+    /// <summary> ChannelVariables.Language equals </summary>
+    [JsonProperty("channelVariables_language_eq")]
+    public Language? ChannelVariables_Language_EQ { get; set; }
+
+    /// <summary> ChannelVariables.IdMusicOnHold equals </summary>
+    [JsonProperty("channelVariables_idMusicOnHold_eq")]
+    public string? ChannelVariables_IdMusicOnHold_EQ { get; set; }
+    /// <summary> ChannelVariables.IdMusicOnHold contains </summary>
+    [JsonProperty("channelVariables_idMusicOnHold_con")]
+    public string? ChannelVariables_IdMusicOnHold_CON { get; set; }
+    /// <summary> ChannelVariables.IdMusicOnHold regex </summary>
+    [JsonProperty("channelVariables_idMusicOnHold_reg")]
+    public string? ChannelVariables_IdMusicOnHold_REG { get; set; }
+
+    /// <summary> ChannelVariables.CallerIdName equals </summary>
+    [JsonProperty("channelVariables_callerIdName_eq")]
+    public string? ChannelVariables_CallerIdName_EQ { get; set; }
+    /// <summary> ChannelVariables.CallerIdName contains </summary>
+    [JsonProperty("channelVariables_callerIdName_con")]
+    public string? ChannelVariables_CallerIdName_CON { get; set; }
+    /// <summary> ChannelVariables.CallerIdName regex </summary>
+    [JsonProperty("channelVariables_callerIdName_reg")]
+    public string? ChannelVariables_CallerIdName_REG { get; set; }
+
+    /// <summary> ChannelVariables.CallerIdNumber equals </summary>
+    [JsonProperty("channelVariables_callerIdNumber_eq")]
+    public string? ChannelVariables_CallerIdNumber_EQ { get; set; }
+    /// <summary> ChannelVariables.CallerIdNumber contains </summary>
+    [JsonProperty("channelVariables_callerIdNumber_con")]
+    public string? ChannelVariables_CallerIdNumber_CON { get; set; }
+    /// <summary> ChannelVariables.CallerIdNumber regex </summary>
+    [JsonProperty("channelVariables_callerIdNumber_reg")]
+    public string? ChannelVariables_CallerIdNumber_REG { get; set; }
+
+
+    /// <summary> ChildCalls.ChildCallType equals </summary>
+    [JsonProperty("childCalls_childCallType_eq")]
+    public ChildCallType? ChildCalls_ChildCallType_EQ { get; set; }
+
+
+    /// <summary> DateEnded equals </summary>
+    [JsonProperty("dateEnded_eq")]
+    public DateTime? DateEnded_EQ { get; set; }
+    /// <summary> DateEnded less than or equal to </summary>
+    [JsonProperty("dateEnded_lte")]
+    public DateTime? DateEnded_LTE { get; set; }
+    /// <summary> DateEnded greater than or equal to </summary>
+    [JsonProperty("dateEnded_gte")]
+    public DateTime? DateEnded_GTE { get; set; }
+
+    /// <summary> Status equals </summary>
+    [JsonProperty("status_eq")]
+    public string? Status_EQ { get; set; }
+    /// <summary> Status contains </summary>
+    [JsonProperty("status_con")]
+    public string? Status_CON { get; set; }
+    /// <summary> Status regex </summary>
+    [JsonProperty("status_reg")]
+    public string? Status_REG { get; set; }
+
+    /// <summary> SecondsItTookToAnswer equals </summary>
+    [JsonProperty("secondsItTookToAnswer_eq")]
+    public System.Int32? SecondsItTookToAnswer_EQ { get; set; }
+    /// <summary> SecondsItTookToAnswer less than or equal to </summary>
+    [JsonProperty("secondsItTookToAnswer_lte")]
+    public System.Int32? SecondsItTookToAnswer_LTE { get; set; }
+    /// <summary> SecondsItTookToAnswer greater than or equal to </summary>
+    [JsonProperty("secondsItTookToAnswer_gte")]
+    public System.Int32? SecondsItTookToAnswer_GTE { get; set; }
+
+    /// <summary> TimesWhenCallPlacedOnHold.SecondsElapsedWhenPlacedOnHold equals </summary>
+    [JsonProperty("timesWhenCallPlacedOnHold_secondsElapsedWhenPlacedOnHold_eq")]
+    public System.Int32? TimesWhenCallPlacedOnHold_SecondsElapsedWhenPlacedOnHold_EQ { get; set; }
+    /// <summary> TimesWhenCallPlacedOnHold.SecondsElapsedWhenPlacedOnHold less than or equal to </summary>
+    [JsonProperty("timesWhenCallPlacedOnHold_secondsElapsedWhenPlacedOnHold_lte")]
+    public System.Int32? TimesWhenCallPlacedOnHold_SecondsElapsedWhenPlacedOnHold_LTE { get; set; }
+    /// <summary> TimesWhenCallPlacedOnHold.SecondsElapsedWhenPlacedOnHold greater than or equal to </summary>
+    [JsonProperty("timesWhenCallPlacedOnHold_secondsElapsedWhenPlacedOnHold_gte")]
+    public System.Int32? TimesWhenCallPlacedOnHold_SecondsElapsedWhenPlacedOnHold_GTE { get; set; }
+
+    /// <summary> TimesWhenCallPlacedOnHold.SecondsElapsedWhenRemovedFromHold equals </summary>
+    [JsonProperty("timesWhenCallPlacedOnHold_secondsElapsedWhenRemovedFromHold_eq")]
+    public System.Int32? TimesWhenCallPlacedOnHold_SecondsElapsedWhenRemovedFromHold_EQ { get; set; }
+    /// <summary> TimesWhenCallPlacedOnHold.SecondsElapsedWhenRemovedFromHold less than or equal to </summary>
+    [JsonProperty("timesWhenCallPlacedOnHold_secondsElapsedWhenRemovedFromHold_lte")]
+    public System.Int32? TimesWhenCallPlacedOnHold_SecondsElapsedWhenRemovedFromHold_LTE { get; set; }
+    /// <summary> TimesWhenCallPlacedOnHold.SecondsElapsedWhenRemovedFromHold greater than or equal to </summary>
+    [JsonProperty("timesWhenCallPlacedOnHold_secondsElapsedWhenRemovedFromHold_gte")]
+    public System.Int32? TimesWhenCallPlacedOnHold_SecondsElapsedWhenRemovedFromHold_GTE { get; set; }
+
+
+    /// <summary> From equals </summary>
+    [JsonProperty("from_eq")]
+    public string? From_EQ { get; set; }
+    /// <summary> From contains </summary>
+    [JsonProperty("from_con")]
+    public string? From_CON { get; set; }
+    /// <summary> From regex </summary>
+    [JsonProperty("from_reg")]
+    public string? From_REG { get; set; }
+
+    /// <summary> FromCountry equals </summary>
+    [JsonProperty("fromCountry_eq")]
+    public CountryIsoCode? FromCountry_EQ { get; set; }
+
+    /// <summary> To equals </summary>
+    [JsonProperty("to_eq")]
+    public string? To_EQ { get; set; }
+    /// <summary> To contains </summary>
+    [JsonProperty("to_con")]
+    public string? To_CON { get; set; }
+    /// <summary> To regex </summary>
+    [JsonProperty("to_reg")]
+    public string? To_REG { get; set; }
+
+    /// <summary> ToCountry equals </summary>
+    [JsonProperty("toCountry_eq")]
+    public CountryIsoCode? ToCountry_EQ { get; set; }
+
+    /// <summary> Recording.ErrorMessage equals </summary>
+    [JsonProperty("recording_errorMessage_eq")]
+    public string? Recording_ErrorMessage_EQ { get; set; }
+    /// <summary> Recording.ErrorMessage contains </summary>
+    [JsonProperty("recording_errorMessage_con")]
+    public string? Recording_ErrorMessage_CON { get; set; }
+    /// <summary> Recording.ErrorMessage regex </summary>
+    [JsonProperty("recording_errorMessage_reg")]
+    public string? Recording_ErrorMessage_REG { get; set; }
+
+    /// <summary> Recording.RecordingMp3.FileSizeInBytes equals </summary>
+    [JsonProperty("recording_recordingMp3_fileSizeInBytes_eq")]
+    public System.Int32? Recording_RecordingMp3_FileSizeInBytes_EQ { get; set; }
+    /// <summary> Recording.RecordingMp3.FileSizeInBytes less than or equal to </summary>
+    [JsonProperty("recording_recordingMp3_fileSizeInBytes_lte")]
+    public System.Int32? Recording_RecordingMp3_FileSizeInBytes_LTE { get; set; }
+    /// <summary> Recording.RecordingMp3.FileSizeInBytes greater than or equal to </summary>
+    [JsonProperty("recording_recordingMp3_fileSizeInBytes_gte")]
+    public System.Int32? Recording_RecordingMp3_FileSizeInBytes_GTE { get; set; }
+
+    /// <summary> Recording.RecordingMp3.Md5Hash equals </summary>
+    [JsonProperty("recording_recordingMp3_md5Hash_eq")]
+    public string? Recording_RecordingMp3_Md5Hash_EQ { get; set; }
+    /// <summary> Recording.RecordingMp3.Md5Hash contains </summary>
+    [JsonProperty("recording_recordingMp3_md5Hash_con")]
+    public string? Recording_RecordingMp3_Md5Hash_CON { get; set; }
+    /// <summary> Recording.RecordingMp3.Md5Hash regex </summary>
+    [JsonProperty("recording_recordingMp3_md5Hash_reg")]
+    public string? Recording_RecordingMp3_Md5Hash_REG { get; set; }
+
+    /// <summary> Recording.RecordingMp3.Url equals </summary>
+    [JsonProperty("recording_recordingMp3_url_eq")]
+    public string? Recording_RecordingMp3_Url_EQ { get; set; }
+    /// <summary> Recording.RecordingMp3.Url contains </summary>
+    [JsonProperty("recording_recordingMp3_url_con")]
+    public string? Recording_RecordingMp3_Url_CON { get; set; }
+    /// <summary> Recording.RecordingMp3.Url regex </summary>
+    [JsonProperty("recording_recordingMp3_url_reg")]
+    public string? Recording_RecordingMp3_Url_REG { get; set; }
+
+    /// <summary> Recording.RecordingMp3.Id equals </summary>
+    [JsonProperty("recording_recordingMp3_id_eq")]
+    public string? Recording_RecordingMp3_Id_EQ { get; set; }
+    /// <summary> Recording.RecordingMp3.Id contains </summary>
+    [JsonProperty("recording_recordingMp3_id_con")]
+    public string? Recording_RecordingMp3_Id_CON { get; set; }
+    /// <summary> Recording.RecordingMp3.Id regex </summary>
+    [JsonProperty("recording_recordingMp3_id_reg")]
+    public string? Recording_RecordingMp3_Id_REG { get; set; }
+
+
+    /// <summary> Recording.RecordingDurationInSeconds equals </summary>
+    [JsonProperty("recording_recordingDurationInSeconds_eq")]
+    public System.Int32? Recording_RecordingDurationInSeconds_EQ { get; set; }
+    /// <summary> Recording.RecordingDurationInSeconds less than or equal to </summary>
+    [JsonProperty("recording_recordingDurationInSeconds_lte")]
+    public System.Int32? Recording_RecordingDurationInSeconds_LTE { get; set; }
+    /// <summary> Recording.RecordingDurationInSeconds greater than or equal to </summary>
+    [JsonProperty("recording_recordingDurationInSeconds_gte")]
+    public System.Int32? Recording_RecordingDurationInSeconds_GTE { get; set; }
+
+    /// <summary> Recording.Id equals </summary>
+    [JsonProperty("recording_id_eq")]
+    public string? Recording_Id_EQ { get; set; }
+    /// <summary> Recording.Id contains </summary>
+    [JsonProperty("recording_id_con")]
+    public string? Recording_Id_CON { get; set; }
+    /// <summary> Recording.Id regex </summary>
+    [JsonProperty("recording_id_reg")]
+    public string? Recording_Id_REG { get; set; }
+
+
+    /// <summary> DisabledVideo equals </summary>
+    [JsonProperty("disabledVideo_eq")]
+    public bool? DisabledVideo_EQ { get; set; }
+
+    /// <summary> DigitsSent equals </summary>
+    [JsonProperty("digitsSent_eq")]
+    public string? DigitsSent_EQ { get; set; }
+    /// <summary> DigitsSent contains </summary>
+    [JsonProperty("digitsSent_con")]
+    public string? DigitsSent_CON { get; set; }
+    /// <summary> DigitsSent regex </summary>
+    [JsonProperty("digitsSent_reg")]
+    public string? DigitsSent_REG { get; set; }
+
+    /// <summary> IsInternational equals </summary>
+    [JsonProperty("isInternational_eq")]
+    public bool? IsInternational_EQ { get; set; }
+
+    /// <summary> Id equals </summary>
+    [JsonProperty("id_eq")]
+    public string? Id_EQ { get; set; }
+    /// <summary> Id contains </summary>
+    [JsonProperty("id_con")]
+    public string? Id_CON { get; set; }
+    /// <summary> Id regex </summary>
+    [JsonProperty("id_reg")]
+    public string? Id_REG { get; set; }
+
+    /// <summary> DateCreated equals </summary>
+    [JsonProperty("dateCreated_eq")]
+    public DateTime? DateCreated_EQ { get; set; }
+    /// <summary> DateCreated less than or equal to </summary>
+    [JsonProperty("dateCreated_lte")]
+    public DateTime? DateCreated_LTE { get; set; }
+    /// <summary> DateCreated greater than or equal to </summary>
+    [JsonProperty("dateCreated_gte")]
+    public DateTime? DateCreated_GTE { get; set; }
+
+    /// <summary> DateUpdated equals </summary>
+    [JsonProperty("dateUpdated_eq")]
+    public DateTime? DateUpdated_EQ { get; set; }
+    /// <summary> DateUpdated less than or equal to </summary>
+    [JsonProperty("dateUpdated_lte")]
+    public DateTime? DateUpdated_LTE { get; set; }
+    /// <summary> DateUpdated greater than or equal to </summary>
+    [JsonProperty("dateUpdated_gte")]
+    public DateTime? DateUpdated_GTE { get; set; }
+
+}
+/// <summary> Enables searching for CallIncomings </summary>
+public class CallIncomingFilterRequest 
+{
+    /// <summary> Contact.ContactNumbers.Number equals </summary>
+    [JsonProperty("contact_contactNumbers_number_eq")]
+    public string? Contact_ContactNumbers_Number_EQ { get; set; }
+    /// <summary> Contact.ContactNumbers.Number contains </summary>
+    [JsonProperty("contact_contactNumbers_number_con")]
+    public string? Contact_ContactNumbers_Number_CON { get; set; }
+    /// <summary> Contact.ContactNumbers.Number regex </summary>
+    [JsonProperty("contact_contactNumbers_number_reg")]
+    public string? Contact_ContactNumbers_Number_REG { get; set; }
+
+    /// <summary> Contact.ContactNumbers.NumberInternationalFormat equals </summary>
+    [JsonProperty("contact_contactNumbers_numberInternationalFormat_eq")]
+    public string? Contact_ContactNumbers_NumberInternationalFormat_EQ { get; set; }
+    /// <summary> Contact.ContactNumbers.NumberInternationalFormat contains </summary>
+    [JsonProperty("contact_contactNumbers_numberInternationalFormat_con")]
+    public string? Contact_ContactNumbers_NumberInternationalFormat_CON { get; set; }
+    /// <summary> Contact.ContactNumbers.NumberInternationalFormat regex </summary>
+    [JsonProperty("contact_contactNumbers_numberInternationalFormat_reg")]
+    public string? Contact_ContactNumbers_NumberInternationalFormat_REG { get; set; }
+
+    /// <summary> Contact.ContactNumbers.Label equals </summary>
+    [JsonProperty("contact_contactNumbers_label_eq")]
+    public LabelNumber? Contact_ContactNumbers_Label_EQ { get; set; }
+
+
+    /// <summary> Contact.ContactEmails.Email equals </summary>
+    [JsonProperty("contact_contactEmails_email_eq")]
+    public string? Contact_ContactEmails_Email_EQ { get; set; }
+    /// <summary> Contact.ContactEmails.Email contains </summary>
+    [JsonProperty("contact_contactEmails_email_con")]
+    public string? Contact_ContactEmails_Email_CON { get; set; }
+    /// <summary> Contact.ContactEmails.Email regex </summary>
+    [JsonProperty("contact_contactEmails_email_reg")]
+    public string? Contact_ContactEmails_Email_REG { get; set; }
+
+    /// <summary> Contact.ContactEmails.Label equals </summary>
+    [JsonProperty("contact_contactEmails_label_eq")]
+    public LabelEmailType? Contact_ContactEmails_Label_EQ { get; set; }
+
+
+    /// <summary> Contact.FirstName equals </summary>
+    [JsonProperty("contact_firstName_eq")]
+    public string? Contact_FirstName_EQ { get; set; }
+    /// <summary> Contact.FirstName contains </summary>
+    [JsonProperty("contact_firstName_con")]
+    public string? Contact_FirstName_CON { get; set; }
+    /// <summary> Contact.FirstName regex </summary>
+    [JsonProperty("contact_firstName_reg")]
+    public string? Contact_FirstName_REG { get; set; }
+
+    /// <summary> Contact.LastName equals </summary>
+    [JsonProperty("contact_lastName_eq")]
+    public string? Contact_LastName_EQ { get; set; }
+    /// <summary> Contact.LastName contains </summary>
+    [JsonProperty("contact_lastName_con")]
+    public string? Contact_LastName_CON { get; set; }
+    /// <summary> Contact.LastName regex </summary>
+    [JsonProperty("contact_lastName_reg")]
+    public string? Contact_LastName_REG { get; set; }
+
+    /// <summary> Contact.JobTittle equals </summary>
+    [JsonProperty("contact_jobTittle_eq")]
+    public string? Contact_JobTittle_EQ { get; set; }
+    /// <summary> Contact.JobTittle contains </summary>
+    [JsonProperty("contact_jobTittle_con")]
+    public string? Contact_JobTittle_CON { get; set; }
+    /// <summary> Contact.JobTittle regex </summary>
+    [JsonProperty("contact_jobTittle_reg")]
+    public string? Contact_JobTittle_REG { get; set; }
+
+    /// <summary> Contact.Company equals </summary>
+    [JsonProperty("contact_company_eq")]
+    public string? Contact_Company_EQ { get; set; }
+    /// <summary> Contact.Company contains </summary>
+    [JsonProperty("contact_company_con")]
+    public string? Contact_Company_CON { get; set; }
+    /// <summary> Contact.Company regex </summary>
+    [JsonProperty("contact_company_reg")]
+    public string? Contact_Company_REG { get; set; }
+
+    /// <summary> Contact.Hash equals </summary>
+    [JsonProperty("contact_hash_eq")]
+    public string? Contact_Hash_EQ { get; set; }
+    /// <summary> Contact.Hash contains </summary>
+    [JsonProperty("contact_hash_con")]
+    public string? Contact_Hash_CON { get; set; }
+    /// <summary> Contact.Hash regex </summary>
+    [JsonProperty("contact_hash_reg")]
+    public string? Contact_Hash_REG { get; set; }
+
+    /// <summary> Contact.Notes equals </summary>
+    [JsonProperty("contact_notes_eq")]
+    public string? Contact_Notes_EQ { get; set; }
+    /// <summary> Contact.Notes contains </summary>
+    [JsonProperty("contact_notes_con")]
+    public string? Contact_Notes_CON { get; set; }
+    /// <summary> Contact.Notes regex </summary>
+    [JsonProperty("contact_notes_reg")]
+    public string? Contact_Notes_REG { get; set; }
+
+    /// <summary> Contact.Variables.Name equals </summary>
+    [JsonProperty("contact_variables_name_eq")]
+    public string? Contact_Variables_Name_EQ { get; set; }
+    /// <summary> Contact.Variables.Name contains </summary>
+    [JsonProperty("contact_variables_name_con")]
+    public string? Contact_Variables_Name_CON { get; set; }
+    /// <summary> Contact.Variables.Name regex </summary>
+    [JsonProperty("contact_variables_name_reg")]
+    public string? Contact_Variables_Name_REG { get; set; }
+
+    /// <summary> Contact.Variables.JsonValue equals </summary>
+    [JsonProperty("contact_variables_jsonValue_eq")]
+    public string? Contact_Variables_JsonValue_EQ { get; set; }
+    /// <summary> Contact.Variables.JsonValue contains </summary>
+    [JsonProperty("contact_variables_jsonValue_con")]
+    public string? Contact_Variables_JsonValue_CON { get; set; }
+    /// <summary> Contact.Variables.JsonValue regex </summary>
+    [JsonProperty("contact_variables_jsonValue_reg")]
+    public string? Contact_Variables_JsonValue_REG { get; set; }
+
+
+    /// <summary> Contact.Id equals </summary>
+    [JsonProperty("contact_id_eq")]
+    public string? Contact_Id_EQ { get; set; }
+    /// <summary> Contact.Id contains </summary>
+    [JsonProperty("contact_id_con")]
+    public string? Contact_Id_CON { get; set; }
+    /// <summary> Contact.Id regex </summary>
+    [JsonProperty("contact_id_reg")]
+    public string? Contact_Id_REG { get; set; }
+
+    /// <summary> Contact.DateCreated equals </summary>
+    [JsonProperty("contact_dateCreated_eq")]
+    public DateTime? Contact_DateCreated_EQ { get; set; }
+    /// <summary> Contact.DateCreated less than or equal to </summary>
+    [JsonProperty("contact_dateCreated_lte")]
+    public DateTime? Contact_DateCreated_LTE { get; set; }
+    /// <summary> Contact.DateCreated greater than or equal to </summary>
+    [JsonProperty("contact_dateCreated_gte")]
+    public DateTime? Contact_DateCreated_GTE { get; set; }
+
+    /// <summary> Contact.DateUpdated equals </summary>
+    [JsonProperty("contact_dateUpdated_eq")]
+    public DateTime? Contact_DateUpdated_EQ { get; set; }
+    /// <summary> Contact.DateUpdated less than or equal to </summary>
+    [JsonProperty("contact_dateUpdated_lte")]
+    public DateTime? Contact_DateUpdated_LTE { get; set; }
+    /// <summary> Contact.DateUpdated greater than or equal to </summary>
+    [JsonProperty("contact_dateUpdated_gte")]
+    public DateTime? Contact_DateUpdated_GTE { get; set; }
+
+
+    /// <summary> IdVoipNumberPhone equals </summary>
+    [JsonProperty("idVoipNumberPhone_eq")]
+    public string? IdVoipNumberPhone_EQ { get; set; }
+    /// <summary> IdVoipNumberPhone contains </summary>
+    [JsonProperty("idVoipNumberPhone_con")]
+    public string? IdVoipNumberPhone_CON { get; set; }
+    /// <summary> IdVoipNumberPhone regex </summary>
+    [JsonProperty("idVoipNumberPhone_reg")]
+    public string? IdVoipNumberPhone_REG { get; set; }
+
+    /// <summary> FromInternationalFormat equals </summary>
+    [JsonProperty("fromInternationalFormat_eq")]
+    public string? FromInternationalFormat_EQ { get; set; }
+    /// <summary> FromInternationalFormat contains </summary>
+    [JsonProperty("fromInternationalFormat_con")]
+    public string? FromInternationalFormat_CON { get; set; }
+    /// <summary> FromInternationalFormat regex </summary>
+    [JsonProperty("fromInternationalFormat_reg")]
+    public string? FromInternationalFormat_REG { get; set; }
+
+    /// <summary> IdVoicemail equals </summary>
+    [JsonProperty("idVoicemail_eq")]
+    public string? IdVoicemail_EQ { get; set; }
+    /// <summary> IdVoicemail contains </summary>
+    [JsonProperty("idVoicemail_con")]
+    public string? IdVoicemail_CON { get; set; }
+    /// <summary> IdVoicemail regex </summary>
+    [JsonProperty("idVoicemail_reg")]
+    public string? IdVoicemail_REG { get; set; }
+
+    /// <summary> ChannelVariables.Language equals </summary>
+    [JsonProperty("channelVariables_language_eq")]
+    public Language? ChannelVariables_Language_EQ { get; set; }
+
+    /// <summary> ChannelVariables.IdMusicOnHold equals </summary>
+    [JsonProperty("channelVariables_idMusicOnHold_eq")]
+    public string? ChannelVariables_IdMusicOnHold_EQ { get; set; }
+    /// <summary> ChannelVariables.IdMusicOnHold contains </summary>
+    [JsonProperty("channelVariables_idMusicOnHold_con")]
+    public string? ChannelVariables_IdMusicOnHold_CON { get; set; }
+    /// <summary> ChannelVariables.IdMusicOnHold regex </summary>
+    [JsonProperty("channelVariables_idMusicOnHold_reg")]
+    public string? ChannelVariables_IdMusicOnHold_REG { get; set; }
+
+    /// <summary> ChannelVariables.CallerIdName equals </summary>
+    [JsonProperty("channelVariables_callerIdName_eq")]
+    public string? ChannelVariables_CallerIdName_EQ { get; set; }
+    /// <summary> ChannelVariables.CallerIdName contains </summary>
+    [JsonProperty("channelVariables_callerIdName_con")]
+    public string? ChannelVariables_CallerIdName_CON { get; set; }
+    /// <summary> ChannelVariables.CallerIdName regex </summary>
+    [JsonProperty("channelVariables_callerIdName_reg")]
+    public string? ChannelVariables_CallerIdName_REG { get; set; }
+
+    /// <summary> ChannelVariables.CallerIdNumber equals </summary>
+    [JsonProperty("channelVariables_callerIdNumber_eq")]
+    public string? ChannelVariables_CallerIdNumber_EQ { get; set; }
+    /// <summary> ChannelVariables.CallerIdNumber contains </summary>
+    [JsonProperty("channelVariables_callerIdNumber_con")]
+    public string? ChannelVariables_CallerIdNumber_CON { get; set; }
+    /// <summary> ChannelVariables.CallerIdNumber regex </summary>
+    [JsonProperty("channelVariables_callerIdNumber_reg")]
+    public string? ChannelVariables_CallerIdNumber_REG { get; set; }
+
+
+    /// <summary> ChildCalls.ChildCallType equals </summary>
+    [JsonProperty("childCalls_childCallType_eq")]
+    public ChildCallType? ChildCalls_ChildCallType_EQ { get; set; }
+
+
+    /// <summary> DateEnded equals </summary>
+    [JsonProperty("dateEnded_eq")]
+    public DateTime? DateEnded_EQ { get; set; }
+    /// <summary> DateEnded less than or equal to </summary>
+    [JsonProperty("dateEnded_lte")]
+    public DateTime? DateEnded_LTE { get; set; }
+    /// <summary> DateEnded greater than or equal to </summary>
+    [JsonProperty("dateEnded_gte")]
+    public DateTime? DateEnded_GTE { get; set; }
+
+    /// <summary> Status equals </summary>
+    [JsonProperty("status_eq")]
+    public string? Status_EQ { get; set; }
+    /// <summary> Status contains </summary>
+    [JsonProperty("status_con")]
+    public string? Status_CON { get; set; }
+    /// <summary> Status regex </summary>
+    [JsonProperty("status_reg")]
+    public string? Status_REG { get; set; }
+
+    /// <summary> SecondsItTookToAnswer equals </summary>
+    [JsonProperty("secondsItTookToAnswer_eq")]
+    public System.Int32? SecondsItTookToAnswer_EQ { get; set; }
+    /// <summary> SecondsItTookToAnswer less than or equal to </summary>
+    [JsonProperty("secondsItTookToAnswer_lte")]
+    public System.Int32? SecondsItTookToAnswer_LTE { get; set; }
+    /// <summary> SecondsItTookToAnswer greater than or equal to </summary>
+    [JsonProperty("secondsItTookToAnswer_gte")]
+    public System.Int32? SecondsItTookToAnswer_GTE { get; set; }
+
+    /// <summary> TimesWhenCallPlacedOnHold.SecondsElapsedWhenPlacedOnHold equals </summary>
+    [JsonProperty("timesWhenCallPlacedOnHold_secondsElapsedWhenPlacedOnHold_eq")]
+    public System.Int32? TimesWhenCallPlacedOnHold_SecondsElapsedWhenPlacedOnHold_EQ { get; set; }
+    /// <summary> TimesWhenCallPlacedOnHold.SecondsElapsedWhenPlacedOnHold less than or equal to </summary>
+    [JsonProperty("timesWhenCallPlacedOnHold_secondsElapsedWhenPlacedOnHold_lte")]
+    public System.Int32? TimesWhenCallPlacedOnHold_SecondsElapsedWhenPlacedOnHold_LTE { get; set; }
+    /// <summary> TimesWhenCallPlacedOnHold.SecondsElapsedWhenPlacedOnHold greater than or equal to </summary>
+    [JsonProperty("timesWhenCallPlacedOnHold_secondsElapsedWhenPlacedOnHold_gte")]
+    public System.Int32? TimesWhenCallPlacedOnHold_SecondsElapsedWhenPlacedOnHold_GTE { get; set; }
+
+    /// <summary> TimesWhenCallPlacedOnHold.SecondsElapsedWhenRemovedFromHold equals </summary>
+    [JsonProperty("timesWhenCallPlacedOnHold_secondsElapsedWhenRemovedFromHold_eq")]
+    public System.Int32? TimesWhenCallPlacedOnHold_SecondsElapsedWhenRemovedFromHold_EQ { get; set; }
+    /// <summary> TimesWhenCallPlacedOnHold.SecondsElapsedWhenRemovedFromHold less than or equal to </summary>
+    [JsonProperty("timesWhenCallPlacedOnHold_secondsElapsedWhenRemovedFromHold_lte")]
+    public System.Int32? TimesWhenCallPlacedOnHold_SecondsElapsedWhenRemovedFromHold_LTE { get; set; }
+    /// <summary> TimesWhenCallPlacedOnHold.SecondsElapsedWhenRemovedFromHold greater than or equal to </summary>
+    [JsonProperty("timesWhenCallPlacedOnHold_secondsElapsedWhenRemovedFromHold_gte")]
+    public System.Int32? TimesWhenCallPlacedOnHold_SecondsElapsedWhenRemovedFromHold_GTE { get; set; }
+
+
+    /// <summary> From equals </summary>
+    [JsonProperty("from_eq")]
+    public string? From_EQ { get; set; }
+    /// <summary> From contains </summary>
+    [JsonProperty("from_con")]
+    public string? From_CON { get; set; }
+    /// <summary> From regex </summary>
+    [JsonProperty("from_reg")]
+    public string? From_REG { get; set; }
+
+    /// <summary> FromCountry equals </summary>
+    [JsonProperty("fromCountry_eq")]
+    public CountryIsoCode? FromCountry_EQ { get; set; }
+
+    /// <summary> To equals </summary>
+    [JsonProperty("to_eq")]
+    public string? To_EQ { get; set; }
+    /// <summary> To contains </summary>
+    [JsonProperty("to_con")]
+    public string? To_CON { get; set; }
+    /// <summary> To regex </summary>
+    [JsonProperty("to_reg")]
+    public string? To_REG { get; set; }
+
+    /// <summary> ToCountry equals </summary>
+    [JsonProperty("toCountry_eq")]
+    public CountryIsoCode? ToCountry_EQ { get; set; }
+
+    /// <summary> CallType equals </summary>
+    [JsonProperty("callType_eq")]
+    public CallType? CallType_EQ { get; set; }
+
+    /// <summary> Recording.ErrorMessage equals </summary>
+    [JsonProperty("recording_errorMessage_eq")]
+    public string? Recording_ErrorMessage_EQ { get; set; }
+    /// <summary> Recording.ErrorMessage contains </summary>
+    [JsonProperty("recording_errorMessage_con")]
+    public string? Recording_ErrorMessage_CON { get; set; }
+    /// <summary> Recording.ErrorMessage regex </summary>
+    [JsonProperty("recording_errorMessage_reg")]
+    public string? Recording_ErrorMessage_REG { get; set; }
+
+    /// <summary> Recording.RecordingMp3.FileSizeInBytes equals </summary>
+    [JsonProperty("recording_recordingMp3_fileSizeInBytes_eq")]
+    public System.Int32? Recording_RecordingMp3_FileSizeInBytes_EQ { get; set; }
+    /// <summary> Recording.RecordingMp3.FileSizeInBytes less than or equal to </summary>
+    [JsonProperty("recording_recordingMp3_fileSizeInBytes_lte")]
+    public System.Int32? Recording_RecordingMp3_FileSizeInBytes_LTE { get; set; }
+    /// <summary> Recording.RecordingMp3.FileSizeInBytes greater than or equal to </summary>
+    [JsonProperty("recording_recordingMp3_fileSizeInBytes_gte")]
+    public System.Int32? Recording_RecordingMp3_FileSizeInBytes_GTE { get; set; }
+
+    /// <summary> Recording.RecordingMp3.Md5Hash equals </summary>
+    [JsonProperty("recording_recordingMp3_md5Hash_eq")]
+    public string? Recording_RecordingMp3_Md5Hash_EQ { get; set; }
+    /// <summary> Recording.RecordingMp3.Md5Hash contains </summary>
+    [JsonProperty("recording_recordingMp3_md5Hash_con")]
+    public string? Recording_RecordingMp3_Md5Hash_CON { get; set; }
+    /// <summary> Recording.RecordingMp3.Md5Hash regex </summary>
+    [JsonProperty("recording_recordingMp3_md5Hash_reg")]
+    public string? Recording_RecordingMp3_Md5Hash_REG { get; set; }
+
+    /// <summary> Recording.RecordingMp3.Url equals </summary>
+    [JsonProperty("recording_recordingMp3_url_eq")]
+    public string? Recording_RecordingMp3_Url_EQ { get; set; }
+    /// <summary> Recording.RecordingMp3.Url contains </summary>
+    [JsonProperty("recording_recordingMp3_url_con")]
+    public string? Recording_RecordingMp3_Url_CON { get; set; }
+    /// <summary> Recording.RecordingMp3.Url regex </summary>
+    [JsonProperty("recording_recordingMp3_url_reg")]
+    public string? Recording_RecordingMp3_Url_REG { get; set; }
+
+    /// <summary> Recording.RecordingMp3.Id equals </summary>
+    [JsonProperty("recording_recordingMp3_id_eq")]
+    public string? Recording_RecordingMp3_Id_EQ { get; set; }
+    /// <summary> Recording.RecordingMp3.Id contains </summary>
+    [JsonProperty("recording_recordingMp3_id_con")]
+    public string? Recording_RecordingMp3_Id_CON { get; set; }
+    /// <summary> Recording.RecordingMp3.Id regex </summary>
+    [JsonProperty("recording_recordingMp3_id_reg")]
+    public string? Recording_RecordingMp3_Id_REG { get; set; }
+
+
+    /// <summary> Recording.RecordingDurationInSeconds equals </summary>
+    [JsonProperty("recording_recordingDurationInSeconds_eq")]
+    public System.Int32? Recording_RecordingDurationInSeconds_EQ { get; set; }
+    /// <summary> Recording.RecordingDurationInSeconds less than or equal to </summary>
+    [JsonProperty("recording_recordingDurationInSeconds_lte")]
+    public System.Int32? Recording_RecordingDurationInSeconds_LTE { get; set; }
+    /// <summary> Recording.RecordingDurationInSeconds greater than or equal to </summary>
+    [JsonProperty("recording_recordingDurationInSeconds_gte")]
+    public System.Int32? Recording_RecordingDurationInSeconds_GTE { get; set; }
+
+    /// <summary> Recording.Id equals </summary>
+    [JsonProperty("recording_id_eq")]
+    public string? Recording_Id_EQ { get; set; }
+    /// <summary> Recording.Id contains </summary>
+    [JsonProperty("recording_id_con")]
+    public string? Recording_Id_CON { get; set; }
+    /// <summary> Recording.Id regex </summary>
+    [JsonProperty("recording_id_reg")]
+    public string? Recording_Id_REG { get; set; }
+
+
+    /// <summary> DisabledVideo equals </summary>
+    [JsonProperty("disabledVideo_eq")]
+    public bool? DisabledVideo_EQ { get; set; }
+
+    /// <summary> DigitsSent equals </summary>
+    [JsonProperty("digitsSent_eq")]
+    public string? DigitsSent_EQ { get; set; }
+    /// <summary> DigitsSent contains </summary>
+    [JsonProperty("digitsSent_con")]
+    public string? DigitsSent_CON { get; set; }
+    /// <summary> DigitsSent regex </summary>
+    [JsonProperty("digitsSent_reg")]
+    public string? DigitsSent_REG { get; set; }
+
+    /// <summary> IsInternational equals </summary>
+    [JsonProperty("isInternational_eq")]
+    public bool? IsInternational_EQ { get; set; }
+
+    /// <summary> Id equals </summary>
+    [JsonProperty("id_eq")]
+    public string? Id_EQ { get; set; }
+    /// <summary> Id contains </summary>
+    [JsonProperty("id_con")]
+    public string? Id_CON { get; set; }
+    /// <summary> Id regex </summary>
+    [JsonProperty("id_reg")]
+    public string? Id_REG { get; set; }
+
+    /// <summary> DateCreated equals </summary>
+    [JsonProperty("dateCreated_eq")]
+    public DateTime? DateCreated_EQ { get; set; }
+    /// <summary> DateCreated less than or equal to </summary>
+    [JsonProperty("dateCreated_lte")]
+    public DateTime? DateCreated_LTE { get; set; }
+    /// <summary> DateCreated greater than or equal to </summary>
+    [JsonProperty("dateCreated_gte")]
+    public DateTime? DateCreated_GTE { get; set; }
+
+    /// <summary> DateUpdated equals </summary>
+    [JsonProperty("dateUpdated_eq")]
+    public DateTime? DateUpdated_EQ { get; set; }
+    /// <summary> DateUpdated less than or equal to </summary>
+    [JsonProperty("dateUpdated_lte")]
+    public DateTime? DateUpdated_LTE { get; set; }
+    /// <summary> DateUpdated greater than or equal to </summary>
+    [JsonProperty("dateUpdated_gte")]
+    public DateTime? DateUpdated_GTE { get; set; }
+
+}
+/// <summary> Enables searching for CallOutgoings </summary>
+public class CallOutgoingFilterRequest 
+{
+    /// <summary> Contact.ContactNumbers.Number equals </summary>
+    [JsonProperty("contact_contactNumbers_number_eq")]
+    public string? Contact_ContactNumbers_Number_EQ { get; set; }
+    /// <summary> Contact.ContactNumbers.Number contains </summary>
+    [JsonProperty("contact_contactNumbers_number_con")]
+    public string? Contact_ContactNumbers_Number_CON { get; set; }
+    /// <summary> Contact.ContactNumbers.Number regex </summary>
+    [JsonProperty("contact_contactNumbers_number_reg")]
+    public string? Contact_ContactNumbers_Number_REG { get; set; }
+
+    /// <summary> Contact.ContactNumbers.NumberInternationalFormat equals </summary>
+    [JsonProperty("contact_contactNumbers_numberInternationalFormat_eq")]
+    public string? Contact_ContactNumbers_NumberInternationalFormat_EQ { get; set; }
+    /// <summary> Contact.ContactNumbers.NumberInternationalFormat contains </summary>
+    [JsonProperty("contact_contactNumbers_numberInternationalFormat_con")]
+    public string? Contact_ContactNumbers_NumberInternationalFormat_CON { get; set; }
+    /// <summary> Contact.ContactNumbers.NumberInternationalFormat regex </summary>
+    [JsonProperty("contact_contactNumbers_numberInternationalFormat_reg")]
+    public string? Contact_ContactNumbers_NumberInternationalFormat_REG { get; set; }
+
+    /// <summary> Contact.ContactNumbers.Label equals </summary>
+    [JsonProperty("contact_contactNumbers_label_eq")]
+    public LabelNumber? Contact_ContactNumbers_Label_EQ { get; set; }
+
+
+    /// <summary> Contact.ContactEmails.Email equals </summary>
+    [JsonProperty("contact_contactEmails_email_eq")]
+    public string? Contact_ContactEmails_Email_EQ { get; set; }
+    /// <summary> Contact.ContactEmails.Email contains </summary>
+    [JsonProperty("contact_contactEmails_email_con")]
+    public string? Contact_ContactEmails_Email_CON { get; set; }
+    /// <summary> Contact.ContactEmails.Email regex </summary>
+    [JsonProperty("contact_contactEmails_email_reg")]
+    public string? Contact_ContactEmails_Email_REG { get; set; }
+
+    /// <summary> Contact.ContactEmails.Label equals </summary>
+    [JsonProperty("contact_contactEmails_label_eq")]
+    public LabelEmailType? Contact_ContactEmails_Label_EQ { get; set; }
+
+
+    /// <summary> Contact.FirstName equals </summary>
+    [JsonProperty("contact_firstName_eq")]
+    public string? Contact_FirstName_EQ { get; set; }
+    /// <summary> Contact.FirstName contains </summary>
+    [JsonProperty("contact_firstName_con")]
+    public string? Contact_FirstName_CON { get; set; }
+    /// <summary> Contact.FirstName regex </summary>
+    [JsonProperty("contact_firstName_reg")]
+    public string? Contact_FirstName_REG { get; set; }
+
+    /// <summary> Contact.LastName equals </summary>
+    [JsonProperty("contact_lastName_eq")]
+    public string? Contact_LastName_EQ { get; set; }
+    /// <summary> Contact.LastName contains </summary>
+    [JsonProperty("contact_lastName_con")]
+    public string? Contact_LastName_CON { get; set; }
+    /// <summary> Contact.LastName regex </summary>
+    [JsonProperty("contact_lastName_reg")]
+    public string? Contact_LastName_REG { get; set; }
+
+    /// <summary> Contact.JobTittle equals </summary>
+    [JsonProperty("contact_jobTittle_eq")]
+    public string? Contact_JobTittle_EQ { get; set; }
+    /// <summary> Contact.JobTittle contains </summary>
+    [JsonProperty("contact_jobTittle_con")]
+    public string? Contact_JobTittle_CON { get; set; }
+    /// <summary> Contact.JobTittle regex </summary>
+    [JsonProperty("contact_jobTittle_reg")]
+    public string? Contact_JobTittle_REG { get; set; }
+
+    /// <summary> Contact.Company equals </summary>
+    [JsonProperty("contact_company_eq")]
+    public string? Contact_Company_EQ { get; set; }
+    /// <summary> Contact.Company contains </summary>
+    [JsonProperty("contact_company_con")]
+    public string? Contact_Company_CON { get; set; }
+    /// <summary> Contact.Company regex </summary>
+    [JsonProperty("contact_company_reg")]
+    public string? Contact_Company_REG { get; set; }
+
+    /// <summary> Contact.Hash equals </summary>
+    [JsonProperty("contact_hash_eq")]
+    public string? Contact_Hash_EQ { get; set; }
+    /// <summary> Contact.Hash contains </summary>
+    [JsonProperty("contact_hash_con")]
+    public string? Contact_Hash_CON { get; set; }
+    /// <summary> Contact.Hash regex </summary>
+    [JsonProperty("contact_hash_reg")]
+    public string? Contact_Hash_REG { get; set; }
+
+    /// <summary> Contact.Notes equals </summary>
+    [JsonProperty("contact_notes_eq")]
+    public string? Contact_Notes_EQ { get; set; }
+    /// <summary> Contact.Notes contains </summary>
+    [JsonProperty("contact_notes_con")]
+    public string? Contact_Notes_CON { get; set; }
+    /// <summary> Contact.Notes regex </summary>
+    [JsonProperty("contact_notes_reg")]
+    public string? Contact_Notes_REG { get; set; }
+
+    /// <summary> Contact.Variables.Name equals </summary>
+    [JsonProperty("contact_variables_name_eq")]
+    public string? Contact_Variables_Name_EQ { get; set; }
+    /// <summary> Contact.Variables.Name contains </summary>
+    [JsonProperty("contact_variables_name_con")]
+    public string? Contact_Variables_Name_CON { get; set; }
+    /// <summary> Contact.Variables.Name regex </summary>
+    [JsonProperty("contact_variables_name_reg")]
+    public string? Contact_Variables_Name_REG { get; set; }
+
+    /// <summary> Contact.Variables.JsonValue equals </summary>
+    [JsonProperty("contact_variables_jsonValue_eq")]
+    public string? Contact_Variables_JsonValue_EQ { get; set; }
+    /// <summary> Contact.Variables.JsonValue contains </summary>
+    [JsonProperty("contact_variables_jsonValue_con")]
+    public string? Contact_Variables_JsonValue_CON { get; set; }
+    /// <summary> Contact.Variables.JsonValue regex </summary>
+    [JsonProperty("contact_variables_jsonValue_reg")]
+    public string? Contact_Variables_JsonValue_REG { get; set; }
+
+
+    /// <summary> Contact.Id equals </summary>
+    [JsonProperty("contact_id_eq")]
+    public string? Contact_Id_EQ { get; set; }
+    /// <summary> Contact.Id contains </summary>
+    [JsonProperty("contact_id_con")]
+    public string? Contact_Id_CON { get; set; }
+    /// <summary> Contact.Id regex </summary>
+    [JsonProperty("contact_id_reg")]
+    public string? Contact_Id_REG { get; set; }
+
+    /// <summary> Contact.DateCreated equals </summary>
+    [JsonProperty("contact_dateCreated_eq")]
+    public DateTime? Contact_DateCreated_EQ { get; set; }
+    /// <summary> Contact.DateCreated less than or equal to </summary>
+    [JsonProperty("contact_dateCreated_lte")]
+    public DateTime? Contact_DateCreated_LTE { get; set; }
+    /// <summary> Contact.DateCreated greater than or equal to </summary>
+    [JsonProperty("contact_dateCreated_gte")]
+    public DateTime? Contact_DateCreated_GTE { get; set; }
+
+    /// <summary> Contact.DateUpdated equals </summary>
+    [JsonProperty("contact_dateUpdated_eq")]
+    public DateTime? Contact_DateUpdated_EQ { get; set; }
+    /// <summary> Contact.DateUpdated less than or equal to </summary>
+    [JsonProperty("contact_dateUpdated_lte")]
+    public DateTime? Contact_DateUpdated_LTE { get; set; }
+    /// <summary> Contact.DateUpdated greater than or equal to </summary>
+    [JsonProperty("contact_dateUpdated_gte")]
+    public DateTime? Contact_DateUpdated_GTE { get; set; }
+
+
+    /// <summary> IdLineThatInitiatedCall equals </summary>
+    [JsonProperty("idLineThatInitiatedCall_eq")]
+    public string? IdLineThatInitiatedCall_EQ { get; set; }
+    /// <summary> IdLineThatInitiatedCall contains </summary>
+    [JsonProperty("idLineThatInitiatedCall_con")]
+    public string? IdLineThatInitiatedCall_CON { get; set; }
+    /// <summary> IdLineThatInitiatedCall regex </summary>
+    [JsonProperty("idLineThatInitiatedCall_reg")]
+    public string? IdLineThatInitiatedCall_REG { get; set; }
+
+    /// <summary> IdVoicemail equals </summary>
+    [JsonProperty("idVoicemail_eq")]
+    public string? IdVoicemail_EQ { get; set; }
+    /// <summary> IdVoicemail contains </summary>
+    [JsonProperty("idVoicemail_con")]
+    public string? IdVoicemail_CON { get; set; }
+    /// <summary> IdVoicemail regex </summary>
+    [JsonProperty("idVoicemail_reg")]
+    public string? IdVoicemail_REG { get; set; }
+
+    /// <summary> ChannelVariables.Language equals </summary>
+    [JsonProperty("channelVariables_language_eq")]
+    public Language? ChannelVariables_Language_EQ { get; set; }
+
+    /// <summary> ChannelVariables.IdMusicOnHold equals </summary>
+    [JsonProperty("channelVariables_idMusicOnHold_eq")]
+    public string? ChannelVariables_IdMusicOnHold_EQ { get; set; }
+    /// <summary> ChannelVariables.IdMusicOnHold contains </summary>
+    [JsonProperty("channelVariables_idMusicOnHold_con")]
+    public string? ChannelVariables_IdMusicOnHold_CON { get; set; }
+    /// <summary> ChannelVariables.IdMusicOnHold regex </summary>
+    [JsonProperty("channelVariables_idMusicOnHold_reg")]
+    public string? ChannelVariables_IdMusicOnHold_REG { get; set; }
+
+    /// <summary> ChannelVariables.CallerIdName equals </summary>
+    [JsonProperty("channelVariables_callerIdName_eq")]
+    public string? ChannelVariables_CallerIdName_EQ { get; set; }
+    /// <summary> ChannelVariables.CallerIdName contains </summary>
+    [JsonProperty("channelVariables_callerIdName_con")]
+    public string? ChannelVariables_CallerIdName_CON { get; set; }
+    /// <summary> ChannelVariables.CallerIdName regex </summary>
+    [JsonProperty("channelVariables_callerIdName_reg")]
+    public string? ChannelVariables_CallerIdName_REG { get; set; }
+
+    /// <summary> ChannelVariables.CallerIdNumber equals </summary>
+    [JsonProperty("channelVariables_callerIdNumber_eq")]
+    public string? ChannelVariables_CallerIdNumber_EQ { get; set; }
+    /// <summary> ChannelVariables.CallerIdNumber contains </summary>
+    [JsonProperty("channelVariables_callerIdNumber_con")]
+    public string? ChannelVariables_CallerIdNumber_CON { get; set; }
+    /// <summary> ChannelVariables.CallerIdNumber regex </summary>
+    [JsonProperty("channelVariables_callerIdNumber_reg")]
+    public string? ChannelVariables_CallerIdNumber_REG { get; set; }
+
+
+    /// <summary> ChildCalls.ChildCallType equals </summary>
+    [JsonProperty("childCalls_childCallType_eq")]
+    public ChildCallType? ChildCalls_ChildCallType_EQ { get; set; }
+
+
+    /// <summary> DateEnded equals </summary>
+    [JsonProperty("dateEnded_eq")]
+    public DateTime? DateEnded_EQ { get; set; }
+    /// <summary> DateEnded less than or equal to </summary>
+    [JsonProperty("dateEnded_lte")]
+    public DateTime? DateEnded_LTE { get; set; }
+    /// <summary> DateEnded greater than or equal to </summary>
+    [JsonProperty("dateEnded_gte")]
+    public DateTime? DateEnded_GTE { get; set; }
+
+    /// <summary> Status equals </summary>
+    [JsonProperty("status_eq")]
+    public string? Status_EQ { get; set; }
+    /// <summary> Status contains </summary>
+    [JsonProperty("status_con")]
+    public string? Status_CON { get; set; }
+    /// <summary> Status regex </summary>
+    [JsonProperty("status_reg")]
+    public string? Status_REG { get; set; }
+
+    /// <summary> SecondsItTookToAnswer equals </summary>
+    [JsonProperty("secondsItTookToAnswer_eq")]
+    public System.Int32? SecondsItTookToAnswer_EQ { get; set; }
+    /// <summary> SecondsItTookToAnswer less than or equal to </summary>
+    [JsonProperty("secondsItTookToAnswer_lte")]
+    public System.Int32? SecondsItTookToAnswer_LTE { get; set; }
+    /// <summary> SecondsItTookToAnswer greater than or equal to </summary>
+    [JsonProperty("secondsItTookToAnswer_gte")]
+    public System.Int32? SecondsItTookToAnswer_GTE { get; set; }
+
+    /// <summary> TimesWhenCallPlacedOnHold.SecondsElapsedWhenPlacedOnHold equals </summary>
+    [JsonProperty("timesWhenCallPlacedOnHold_secondsElapsedWhenPlacedOnHold_eq")]
+    public System.Int32? TimesWhenCallPlacedOnHold_SecondsElapsedWhenPlacedOnHold_EQ { get; set; }
+    /// <summary> TimesWhenCallPlacedOnHold.SecondsElapsedWhenPlacedOnHold less than or equal to </summary>
+    [JsonProperty("timesWhenCallPlacedOnHold_secondsElapsedWhenPlacedOnHold_lte")]
+    public System.Int32? TimesWhenCallPlacedOnHold_SecondsElapsedWhenPlacedOnHold_LTE { get; set; }
+    /// <summary> TimesWhenCallPlacedOnHold.SecondsElapsedWhenPlacedOnHold greater than or equal to </summary>
+    [JsonProperty("timesWhenCallPlacedOnHold_secondsElapsedWhenPlacedOnHold_gte")]
+    public System.Int32? TimesWhenCallPlacedOnHold_SecondsElapsedWhenPlacedOnHold_GTE { get; set; }
+
+    /// <summary> TimesWhenCallPlacedOnHold.SecondsElapsedWhenRemovedFromHold equals </summary>
+    [JsonProperty("timesWhenCallPlacedOnHold_secondsElapsedWhenRemovedFromHold_eq")]
+    public System.Int32? TimesWhenCallPlacedOnHold_SecondsElapsedWhenRemovedFromHold_EQ { get; set; }
+    /// <summary> TimesWhenCallPlacedOnHold.SecondsElapsedWhenRemovedFromHold less than or equal to </summary>
+    [JsonProperty("timesWhenCallPlacedOnHold_secondsElapsedWhenRemovedFromHold_lte")]
+    public System.Int32? TimesWhenCallPlacedOnHold_SecondsElapsedWhenRemovedFromHold_LTE { get; set; }
+    /// <summary> TimesWhenCallPlacedOnHold.SecondsElapsedWhenRemovedFromHold greater than or equal to </summary>
+    [JsonProperty("timesWhenCallPlacedOnHold_secondsElapsedWhenRemovedFromHold_gte")]
+    public System.Int32? TimesWhenCallPlacedOnHold_SecondsElapsedWhenRemovedFromHold_GTE { get; set; }
+
+
+    /// <summary> From equals </summary>
+    [JsonProperty("from_eq")]
+    public string? From_EQ { get; set; }
+    /// <summary> From contains </summary>
+    [JsonProperty("from_con")]
+    public string? From_CON { get; set; }
+    /// <summary> From regex </summary>
+    [JsonProperty("from_reg")]
+    public string? From_REG { get; set; }
+
+    /// <summary> FromCountry equals </summary>
+    [JsonProperty("fromCountry_eq")]
+    public CountryIsoCode? FromCountry_EQ { get; set; }
+
+    /// <summary> To equals </summary>
+    [JsonProperty("to_eq")]
+    public string? To_EQ { get; set; }
+    /// <summary> To contains </summary>
+    [JsonProperty("to_con")]
+    public string? To_CON { get; set; }
+    /// <summary> To regex </summary>
+    [JsonProperty("to_reg")]
+    public string? To_REG { get; set; }
+
+    /// <summary> ToCountry equals </summary>
+    [JsonProperty("toCountry_eq")]
+    public CountryIsoCode? ToCountry_EQ { get; set; }
+
+    /// <summary> CallType equals </summary>
+    [JsonProperty("callType_eq")]
+    public CallType? CallType_EQ { get; set; }
+
+    /// <summary> Recording.ErrorMessage equals </summary>
+    [JsonProperty("recording_errorMessage_eq")]
+    public string? Recording_ErrorMessage_EQ { get; set; }
+    /// <summary> Recording.ErrorMessage contains </summary>
+    [JsonProperty("recording_errorMessage_con")]
+    public string? Recording_ErrorMessage_CON { get; set; }
+    /// <summary> Recording.ErrorMessage regex </summary>
+    [JsonProperty("recording_errorMessage_reg")]
+    public string? Recording_ErrorMessage_REG { get; set; }
+
+    /// <summary> Recording.RecordingMp3.FileSizeInBytes equals </summary>
+    [JsonProperty("recording_recordingMp3_fileSizeInBytes_eq")]
+    public System.Int32? Recording_RecordingMp3_FileSizeInBytes_EQ { get; set; }
+    /// <summary> Recording.RecordingMp3.FileSizeInBytes less than or equal to </summary>
+    [JsonProperty("recording_recordingMp3_fileSizeInBytes_lte")]
+    public System.Int32? Recording_RecordingMp3_FileSizeInBytes_LTE { get; set; }
+    /// <summary> Recording.RecordingMp3.FileSizeInBytes greater than or equal to </summary>
+    [JsonProperty("recording_recordingMp3_fileSizeInBytes_gte")]
+    public System.Int32? Recording_RecordingMp3_FileSizeInBytes_GTE { get; set; }
+
+    /// <summary> Recording.RecordingMp3.Md5Hash equals </summary>
+    [JsonProperty("recording_recordingMp3_md5Hash_eq")]
+    public string? Recording_RecordingMp3_Md5Hash_EQ { get; set; }
+    /// <summary> Recording.RecordingMp3.Md5Hash contains </summary>
+    [JsonProperty("recording_recordingMp3_md5Hash_con")]
+    public string? Recording_RecordingMp3_Md5Hash_CON { get; set; }
+    /// <summary> Recording.RecordingMp3.Md5Hash regex </summary>
+    [JsonProperty("recording_recordingMp3_md5Hash_reg")]
+    public string? Recording_RecordingMp3_Md5Hash_REG { get; set; }
+
+    /// <summary> Recording.RecordingMp3.Url equals </summary>
+    [JsonProperty("recording_recordingMp3_url_eq")]
+    public string? Recording_RecordingMp3_Url_EQ { get; set; }
+    /// <summary> Recording.RecordingMp3.Url contains </summary>
+    [JsonProperty("recording_recordingMp3_url_con")]
+    public string? Recording_RecordingMp3_Url_CON { get; set; }
+    /// <summary> Recording.RecordingMp3.Url regex </summary>
+    [JsonProperty("recording_recordingMp3_url_reg")]
+    public string? Recording_RecordingMp3_Url_REG { get; set; }
+
+    /// <summary> Recording.RecordingMp3.Id equals </summary>
+    [JsonProperty("recording_recordingMp3_id_eq")]
+    public string? Recording_RecordingMp3_Id_EQ { get; set; }
+    /// <summary> Recording.RecordingMp3.Id contains </summary>
+    [JsonProperty("recording_recordingMp3_id_con")]
+    public string? Recording_RecordingMp3_Id_CON { get; set; }
+    /// <summary> Recording.RecordingMp3.Id regex </summary>
+    [JsonProperty("recording_recordingMp3_id_reg")]
+    public string? Recording_RecordingMp3_Id_REG { get; set; }
+
+
+    /// <summary> Recording.RecordingDurationInSeconds equals </summary>
+    [JsonProperty("recording_recordingDurationInSeconds_eq")]
+    public System.Int32? Recording_RecordingDurationInSeconds_EQ { get; set; }
+    /// <summary> Recording.RecordingDurationInSeconds less than or equal to </summary>
+    [JsonProperty("recording_recordingDurationInSeconds_lte")]
+    public System.Int32? Recording_RecordingDurationInSeconds_LTE { get; set; }
+    /// <summary> Recording.RecordingDurationInSeconds greater than or equal to </summary>
+    [JsonProperty("recording_recordingDurationInSeconds_gte")]
+    public System.Int32? Recording_RecordingDurationInSeconds_GTE { get; set; }
+
+    /// <summary> Recording.Id equals </summary>
+    [JsonProperty("recording_id_eq")]
+    public string? Recording_Id_EQ { get; set; }
+    /// <summary> Recording.Id contains </summary>
+    [JsonProperty("recording_id_con")]
+    public string? Recording_Id_CON { get; set; }
+    /// <summary> Recording.Id regex </summary>
+    [JsonProperty("recording_id_reg")]
+    public string? Recording_Id_REG { get; set; }
+
+
+    /// <summary> DisabledVideo equals </summary>
+    [JsonProperty("disabledVideo_eq")]
+    public bool? DisabledVideo_EQ { get; set; }
+
+    /// <summary> DigitsSent equals </summary>
+    [JsonProperty("digitsSent_eq")]
+    public string? DigitsSent_EQ { get; set; }
+    /// <summary> DigitsSent contains </summary>
+    [JsonProperty("digitsSent_con")]
+    public string? DigitsSent_CON { get; set; }
+    /// <summary> DigitsSent regex </summary>
+    [JsonProperty("digitsSent_reg")]
+    public string? DigitsSent_REG { get; set; }
+
+    /// <summary> IsInternational equals </summary>
+    [JsonProperty("isInternational_eq")]
+    public bool? IsInternational_EQ { get; set; }
+
+    /// <summary> Id equals </summary>
+    [JsonProperty("id_eq")]
+    public string? Id_EQ { get; set; }
+    /// <summary> Id contains </summary>
+    [JsonProperty("id_con")]
+    public string? Id_CON { get; set; }
+    /// <summary> Id regex </summary>
+    [JsonProperty("id_reg")]
+    public string? Id_REG { get; set; }
+
+    /// <summary> DateCreated equals </summary>
+    [JsonProperty("dateCreated_eq")]
+    public DateTime? DateCreated_EQ { get; set; }
+    /// <summary> DateCreated less than or equal to </summary>
+    [JsonProperty("dateCreated_lte")]
+    public DateTime? DateCreated_LTE { get; set; }
+    /// <summary> DateCreated greater than or equal to </summary>
+    [JsonProperty("dateCreated_gte")]
+    public DateTime? DateCreated_GTE { get; set; }
+
+    /// <summary> DateUpdated equals </summary>
+    [JsonProperty("dateUpdated_eq")]
+    public DateTime? DateUpdated_EQ { get; set; }
+    /// <summary> DateUpdated less than or equal to </summary>
+    [JsonProperty("dateUpdated_lte")]
+    public DateTime? DateUpdated_LTE { get; set; }
+    /// <summary> DateUpdated greater than or equal to </summary>
+    [JsonProperty("dateUpdated_gte")]
+    public DateTime? DateUpdated_GTE { get; set; }
+
+}
+/// <summary> Enables searching for CloudServices </summary>
+public class CloudServiceFilterRequest 
+{
+    /// <summary> CloudServiceType equals </summary>
+    [JsonProperty("cloudServiceType_eq")]
+    public CloudServiceType? CloudServiceType_EQ { get; set; }
+
+    /// <summary> IdIdentity equals </summary>
+    [JsonProperty("idIdentity_eq")]
+    public string? IdIdentity_EQ { get; set; }
+    /// <summary> IdIdentity contains </summary>
+    [JsonProperty("idIdentity_con")]
+    public string? IdIdentity_CON { get; set; }
+    /// <summary> IdIdentity regex </summary>
+    [JsonProperty("idIdentity_reg")]
+    public string? IdIdentity_REG { get; set; }
+
+    /// <summary> CountryIsoCode equals </summary>
+    [JsonProperty("countryIsoCode_eq")]
+    public CountryIsoCode? CountryIsoCode_EQ { get; set; }
+
+    /// <summary> Localnet equals </summary>
+    [JsonProperty("localnet_eq")]
+    public string? Localnet_EQ { get; set; }
+    /// <summary> Localnet contains </summary>
+    [JsonProperty("localnet_con")]
+    public string? Localnet_CON { get; set; }
+    /// <summary> Localnet regex </summary>
+    [JsonProperty("localnet_reg")]
+    public string? Localnet_REG { get; set; }
+
+    /// <summary> ExternalIps equals </summary>
+    [JsonProperty("externalIps_eq")]
+    public string? ExternalIps_EQ { get; set; }
+    /// <summary> ExternalIps contains </summary>
+    [JsonProperty("externalIps_con")]
+    public string? ExternalIps_CON { get; set; }
+    /// <summary> ExternalIps regex </summary>
+    [JsonProperty("externalIps_reg")]
+    public string? ExternalIps_REG { get; set; }
+
+    /// <summary> IsFailover equals </summary>
+    [JsonProperty("isFailover_eq")]
+    public bool? IsFailover_EQ { get; set; }
+
+    /// <summary> Nat equals </summary>
+    [JsonProperty("nat_eq")]
+    public bool? Nat_EQ { get; set; }
+
+    /// <summary> IsHealthy equals </summary>
+    [JsonProperty("isHealthy_eq")]
+    public bool? IsHealthy_EQ { get; set; }
+
+    /// <summary> Id equals </summary>
+    [JsonProperty("id_eq")]
+    public string? Id_EQ { get; set; }
+    /// <summary> Id contains </summary>
+    [JsonProperty("id_con")]
+    public string? Id_CON { get; set; }
+    /// <summary> Id regex </summary>
+    [JsonProperty("id_reg")]
+    public string? Id_REG { get; set; }
+
+    /// <summary> DateCreated equals </summary>
+    [JsonProperty("dateCreated_eq")]
+    public DateTime? DateCreated_EQ { get; set; }
+    /// <summary> DateCreated less than or equal to </summary>
+    [JsonProperty("dateCreated_lte")]
+    public DateTime? DateCreated_LTE { get; set; }
+    /// <summary> DateCreated greater than or equal to </summary>
+    [JsonProperty("dateCreated_gte")]
+    public DateTime? DateCreated_GTE { get; set; }
+
+    /// <summary> DateUpdated equals </summary>
+    [JsonProperty("dateUpdated_eq")]
+    public DateTime? DateUpdated_EQ { get; set; }
+    /// <summary> DateUpdated less than or equal to </summary>
+    [JsonProperty("dateUpdated_lte")]
+    public DateTime? DateUpdated_LTE { get; set; }
+    /// <summary> DateUpdated greater than or equal to </summary>
+    [JsonProperty("dateUpdated_gte")]
+    public DateTime? DateUpdated_GTE { get; set; }
+
+}
+/// <summary> Enables searching for Extensions </summary>
+public class ExtensionFilterRequest 
+{
+    /// <summary> ExtensionType equals </summary>
+    [JsonProperty("extensionType_eq")]
+    public ExtensionType? ExtensionType_EQ { get; set; }
+
+    /// <summary> IdMusicOnHoldGroup equals </summary>
+    [JsonProperty("idMusicOnHoldGroup_eq")]
+    public string? IdMusicOnHoldGroup_EQ { get; set; }
+    /// <summary> IdMusicOnHoldGroup contains </summary>
+    [JsonProperty("idMusicOnHoldGroup_con")]
+    public string? IdMusicOnHoldGroup_CON { get; set; }
+    /// <summary> IdMusicOnHoldGroup regex </summary>
+    [JsonProperty("idMusicOnHoldGroup_reg")]
+    public string? IdMusicOnHoldGroup_REG { get; set; }
+
+    /// <summary> Number equals </summary>
+    [JsonProperty("number_eq")]
+    public string? Number_EQ { get; set; }
+    /// <summary> Number contains </summary>
+    [JsonProperty("number_con")]
+    public string? Number_CON { get; set; }
+    /// <summary> Number regex </summary>
+    [JsonProperty("number_reg")]
+    public string? Number_REG { get; set; }
+
+    /// <summary> InjectExtensionNameToCallerId equals </summary>
+    [JsonProperty("injectExtensionNameToCallerId_eq")]
+    public bool? InjectExtensionNameToCallerId_EQ { get; set; }
+
+    /// <summary> Id equals </summary>
+    [JsonProperty("id_eq")]
+    public string? Id_EQ { get; set; }
+    /// <summary> Id contains </summary>
+    [JsonProperty("id_con")]
+    public string? Id_CON { get; set; }
+    /// <summary> Id regex </summary>
+    [JsonProperty("id_reg")]
+    public string? Id_REG { get; set; }
+
+    /// <summary> DateCreated equals </summary>
+    [JsonProperty("dateCreated_eq")]
+    public DateTime? DateCreated_EQ { get; set; }
+    /// <summary> DateCreated less than or equal to </summary>
+    [JsonProperty("dateCreated_lte")]
+    public DateTime? DateCreated_LTE { get; set; }
+    /// <summary> DateCreated greater than or equal to </summary>
+    [JsonProperty("dateCreated_gte")]
+    public DateTime? DateCreated_GTE { get; set; }
+
+    /// <summary> DateUpdated equals </summary>
+    [JsonProperty("dateUpdated_eq")]
+    public DateTime? DateUpdated_EQ { get; set; }
+    /// <summary> DateUpdated less than or equal to </summary>
+    [JsonProperty("dateUpdated_lte")]
+    public DateTime? DateUpdated_LTE { get; set; }
+    /// <summary> DateUpdated greater than or equal to </summary>
+    [JsonProperty("dateUpdated_gte")]
+    public DateTime? DateUpdated_GTE { get; set; }
+
+}
+/// <summary> Enables searching for TrunkOriginations </summary>
+public class TrunkOriginationFilterRequest 
+{
+    /// <summary> Id equals </summary>
+    [JsonProperty("id_eq")]
+    public string? Id_EQ { get; set; }
+    /// <summary> Id contains </summary>
+    [JsonProperty("id_con")]
+    public string? Id_CON { get; set; }
+    /// <summary> Id regex </summary>
+    [JsonProperty("id_reg")]
+    public string? Id_REG { get; set; }
+
+    /// <summary> DateCreated equals </summary>
+    [JsonProperty("dateCreated_eq")]
+    public DateTime? DateCreated_EQ { get; set; }
+    /// <summary> DateCreated less than or equal to </summary>
+    [JsonProperty("dateCreated_lte")]
+    public DateTime? DateCreated_LTE { get; set; }
+    /// <summary> DateCreated greater than or equal to </summary>
+    [JsonProperty("dateCreated_gte")]
+    public DateTime? DateCreated_GTE { get; set; }
+
+    /// <summary> DateUpdated equals </summary>
+    [JsonProperty("dateUpdated_eq")]
+    public DateTime? DateUpdated_EQ { get; set; }
+    /// <summary> DateUpdated less than or equal to </summary>
+    [JsonProperty("dateUpdated_lte")]
+    public DateTime? DateUpdated_LTE { get; set; }
+    /// <summary> DateUpdated greater than or equal to </summary>
+    [JsonProperty("dateUpdated_gte")]
+    public DateTime? DateUpdated_GTE { get; set; }
+
+}
+/// <summary> Enables searching for VoipNumbers </summary>
+public class VoipNumberFilterRequest 
+{
+    /// <summary> RulesPhone.IdCallFlow equals </summary>
+    [JsonProperty("rulesPhone_idCallFlow_eq")]
+    public string? RulesPhone_IdCallFlow_EQ { get; set; }
+    /// <summary> RulesPhone.IdCallFlow contains </summary>
+    [JsonProperty("rulesPhone_idCallFlow_con")]
+    public string? RulesPhone_IdCallFlow_CON { get; set; }
+    /// <summary> RulesPhone.IdCallFlow regex </summary>
+    [JsonProperty("rulesPhone_idCallFlow_reg")]
+    public string? RulesPhone_IdCallFlow_REG { get; set; }
+
+    /// <summary> RulesPhone.IdExtension equals </summary>
+    [JsonProperty("rulesPhone_idExtension_eq")]
+    public string? RulesPhone_IdExtension_EQ { get; set; }
+    /// <summary> RulesPhone.IdExtension contains </summary>
+    [JsonProperty("rulesPhone_idExtension_con")]
+    public string? RulesPhone_IdExtension_CON { get; set; }
+    /// <summary> RulesPhone.IdExtension regex </summary>
+    [JsonProperty("rulesPhone_idExtension_reg")]
+    public string? RulesPhone_IdExtension_REG { get; set; }
+
+    /// <summary> RulesPhone.DaysOfWeek contains </summary>
+    [JsonProperty("rulesPhone_daysOfWeek_con")]
+    public DayOfWeek? RulesPhone_DaysOfWeek_CON { get; set; }
+
+
+    /// <summary> RulesSms.ForwardToEmailAddress equals </summary>
+    [JsonProperty("rulesSms_forwardToEmailAddress_eq")]
+    public string? RulesSms_ForwardToEmailAddress_EQ { get; set; }
+    /// <summary> RulesSms.ForwardToEmailAddress contains </summary>
+    [JsonProperty("rulesSms_forwardToEmailAddress_con")]
+    public string? RulesSms_ForwardToEmailAddress_CON { get; set; }
+    /// <summary> RulesSms.ForwardToEmailAddress regex </summary>
+    [JsonProperty("rulesSms_forwardToEmailAddress_reg")]
+    public string? RulesSms_ForwardToEmailAddress_REG { get; set; }
+
+
+    /// <summary> RulesFax.ForwardToEmailAddress equals </summary>
+    [JsonProperty("rulesFax_forwardToEmailAddress_eq")]
+    public string? RulesFax_ForwardToEmailAddress_EQ { get; set; }
+    /// <summary> RulesFax.ForwardToEmailAddress contains </summary>
+    [JsonProperty("rulesFax_forwardToEmailAddress_con")]
+    public string? RulesFax_ForwardToEmailAddress_CON { get; set; }
+    /// <summary> RulesFax.ForwardToEmailAddress regex </summary>
+    [JsonProperty("rulesFax_forwardToEmailAddress_reg")]
+    public string? RulesFax_ForwardToEmailAddress_REG { get; set; }
+
+
+    /// <summary> VoipNumberType equals </summary>
+    [JsonProperty("voipNumberType_eq")]
+    public VoipNumberType? VoipNumberType_EQ { get; set; }
+
+    /// <summary> InjectFriendlyNameToCallerId equals </summary>
+    [JsonProperty("injectFriendlyNameToCallerId_eq")]
+    public bool? InjectFriendlyNameToCallerId_EQ { get; set; }
+
+    /// <summary> RecordIncomingCalls equals </summary>
+    [JsonProperty("recordIncomingCalls_eq")]
+    public bool? RecordIncomingCalls_EQ { get; set; }
+
+    /// <summary> Number equals </summary>
+    [JsonProperty("number_eq")]
+    public string? Number_EQ { get; set; }
+    /// <summary> Number contains </summary>
+    [JsonProperty("number_con")]
+    public string? Number_CON { get; set; }
+    /// <summary> Number regex </summary>
+    [JsonProperty("number_reg")]
+    public string? Number_REG { get; set; }
+
+    /// <summary> FriendlyName equals </summary>
+    [JsonProperty("friendlyName_eq")]
+    public string? FriendlyName_EQ { get; set; }
+    /// <summary> FriendlyName contains </summary>
+    [JsonProperty("friendlyName_con")]
+    public string? FriendlyName_CON { get; set; }
+    /// <summary> FriendlyName regex </summary>
+    [JsonProperty("friendlyName_reg")]
+    public string? FriendlyName_REG { get; set; }
+
+    /// <summary> Description equals </summary>
+    [JsonProperty("description_eq")]
+    public string? Description_EQ { get; set; }
+    /// <summary> Description contains </summary>
+    [JsonProperty("description_con")]
+    public string? Description_CON { get; set; }
+    /// <summary> Description regex </summary>
+    [JsonProperty("description_reg")]
+    public string? Description_REG { get; set; }
+
+    /// <summary> Language equals </summary>
+    [JsonProperty("language_eq")]
+    public Language? Language_EQ { get; set; }
+
+    /// <summary> City equals </summary>
+    [JsonProperty("city_eq")]
+    public string? City_EQ { get; set; }
+    /// <summary> City contains </summary>
+    [JsonProperty("city_con")]
+    public string? City_CON { get; set; }
+    /// <summary> City regex </summary>
+    [JsonProperty("city_reg")]
+    public string? City_REG { get; set; }
+
+    /// <summary> State equals </summary>
+    [JsonProperty("state_eq")]
+    public string? State_EQ { get; set; }
+    /// <summary> State contains </summary>
+    [JsonProperty("state_con")]
+    public string? State_CON { get; set; }
+    /// <summary> State regex </summary>
+    [JsonProperty("state_reg")]
+    public string? State_REG { get; set; }
+
+    /// <summary> CountryIsoCode equals </summary>
+    [JsonProperty("countryIsoCode_eq")]
+    public CountryIsoCode? CountryIsoCode_EQ { get; set; }
+
+    /// <summary> IsSmsEnabled equals </summary>
+    [JsonProperty("isSmsEnabled_eq")]
+    public bool? IsSmsEnabled_EQ { get; set; }
+
+    /// <summary> IsVoiceEnabled equals </summary>
+    [JsonProperty("isVoiceEnabled_eq")]
+    public bool? IsVoiceEnabled_EQ { get; set; }
+
+    /// <summary> IsTollFree equals </summary>
+    [JsonProperty("isTollFree_eq")]
+    public bool? IsTollFree_EQ { get; set; }
+
+    /// <summary> IsWhatsappEnabled equals </summary>
+    [JsonProperty("isWhatsappEnabled_eq")]
+    public bool? IsWhatsappEnabled_EQ { get; set; }
+
+    /// <summary> TimeZone equals </summary>
+    [JsonProperty("timeZone_eq")]
+    public string? TimeZone_EQ { get; set; }
+    /// <summary> TimeZone contains </summary>
+    [JsonProperty("timeZone_con")]
+    public string? TimeZone_CON { get; set; }
+    /// <summary> TimeZone regex </summary>
+    [JsonProperty("timeZone_reg")]
+    public string? TimeZone_REG { get; set; }
 
     /// <summary> Id equals </summary>
     [JsonProperty("id_eq")]

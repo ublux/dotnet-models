@@ -1,11 +1,10 @@
-﻿namespace Ublux.Communications.Models.SubDocuments;
+﻿namespace Ublux.Communications.Models;
 
 /// <summary>
 ///     Status of phone line
 /// </summary>
-public class LineConnectionStatus : UbluxSubDocument
-{
-    
+public class LineConnectionStatus 
+{    
     /// <summary>
     ///     Public ip address of the connection
     /// </summary>

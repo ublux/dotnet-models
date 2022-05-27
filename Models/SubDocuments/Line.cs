@@ -3,7 +3,7 @@
 /// <summary>
 ///     It is part of a phone. Lines are needed in order to make and receive phone calls.
 /// </summary>
-public class Line : UbluxSubDocument 
+public partial class Line : UbluxSubDocument 
 {
     /// <summary>
     /// </summary>

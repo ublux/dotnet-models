@@ -61,7 +61,8 @@ public partial class Account : UbluxDocument
     [AllowUpdate(false)]
     [IsRequired]
     public UbluxPartner UbluxPartner { get; set; }
-
 }
 
 #endif
+
+

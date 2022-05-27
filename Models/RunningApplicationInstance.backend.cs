@@ -1,5 +1,4 @@
-﻿using Microsoft.Extensions.Logging;
-
+﻿#if UBLUX_BACKEND
 namespace Ublux.Communications.Models;
 
 /// <summary>
@@ -125,3 +124,4 @@ public class RunningApplicationInstance
     public bool Flaged_IdStreamDeleted_DiskError = false;
 
 }
+#endif

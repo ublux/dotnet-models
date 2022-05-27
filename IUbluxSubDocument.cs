@@ -3,7 +3,7 @@
 /// <summary>
 ///     MongoDB supports subdocuments
 /// </summary>
-public abstract class UbluxSubDocument
+public abstract partial class UbluxSubDocument
 {
 
     // TODO: mark this property on database with unique index
@@ -23,5 +23,6 @@ public abstract class UbluxSubDocument
         set => id = value;
     }
     private string id = String.Empty;
+
 }
 

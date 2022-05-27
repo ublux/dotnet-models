@@ -3,7 +3,7 @@
 /// <summary>
 ///     Recording of a phone call
 /// </summary>
-public class Recording : UbluxSubDocument
+public partial class Recording : UbluxSubDocument
 {
     ///// <inheritdoc />
     //public override string SubDocumentPrefix() => "SubRe";
