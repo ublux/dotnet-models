@@ -15,7 +15,7 @@ public class AccountSecrets
     //public string PinFax { get; set; } = string.Empty;
 
     /// <summary>
-    ///     7 digit number that a customer must dial in order to link his phone to a new account. 
+    ///     9 digit number that a customer must dial in order to link his phone to a new account. 
     /// </summary>
     [AllowUpdate(false)]
     [IsRequired]
@@ -23,6 +23,7 @@ public class AccountSecrets
 
     /// <summary>
     ///     If you dial *7 and you enter this pin you will be able to ChanSpy "spy" on a extension
+    ///     9 digits now to make it more secure
     /// </summary>
     [AllowUpdate(false)]
     [IsRequired]

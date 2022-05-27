@@ -18,14 +18,14 @@ public partial class Account : UbluxDocument
     [IsRequired]
     public string IdCloudServicePbxFailover { get; set; } = String.Empty;
 
-    /// <summary>
-    ///     Reference to webAppCloudService. Thanks to this we know where to send events. For example on pbx when we receive a new phone call we send that event to CloudServicePbx
-    /// </summary>
-    [IgnoreDataMember]
-    [AllowUpdate(false)]
-    [References(typeof(CloudServiceWebApp))]
-    [IsRequired]
-    public string IdCloudServiceWebApp { get; set; } = String.Empty;
+    ///// <summary>
+    /////     Reference to webAppCloudService. Thanks to this we know where to send events. For example on pbx when we receive a new phone call we send that event to CloudServicePbx
+    ///// </summary>
+    //[IgnoreDataMember]
+    //[AllowUpdate(false)]
+    //[References(typeof(CloudServiceWebApp))]
+    //[IsRequired]
+    //public string IdCloudServiceWebApp { get; set; } = String.Empty;
 
     /// <summary>
     ///     Trunks that will be used for outgoing calls ordered by priority. Points to collection Group_TrunkTerminations

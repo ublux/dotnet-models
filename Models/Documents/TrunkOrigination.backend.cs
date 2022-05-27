@@ -42,14 +42,16 @@ public abstract class TrunkOrigination : UbluxDocument
     [References(typeof(CloudServicePbx))]
     [IsRequired]
     public string IdCloudServicePbxFailover { get; set; } = string.Empty;
-    /// <summary>
-    ///     Faxes and numbers used by this trunk
-    /// </summary>
-    [References(typeof(VoipNumber))]
-    [IgnoreDataMember]
-    [AllowUpdate(false)]
-    [IsRequired]
-    public List<string> IdsVoipNumbers { get; set; } = new();
+
+    // This can be ontained quering database
+    ///// <summary>
+    /////     Faxes and numbers used by this trunk
+    ///// </summary>
+    //[References(typeof(VoipNumber))]
+    //[IgnoreDataMember]
+    //[AllowUpdate(false)]
+    //[IsRequired]
+    //public List<string> IdsVoipNumbers { get; set; } = new();
 
     #endregion
 

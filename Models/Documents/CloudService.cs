@@ -18,13 +18,13 @@ public abstract class CloudService : UbluxDocument
 {
     #region Properties
 
-    /// <summary>
-    ///     Identity that can login to this PBX. Must point to an identity of type PBX
-    /// </summary>
-    [AllowUpdate(false)]
-    [References(typeof(Identity))]
-    [IsRequired]
-    public string IdIdentity { get; set; } = string.Empty;
+    ///// <summary>
+    /////     Identity that can login to this PBX. Must point to an identity of type PBX
+    ///// </summary>
+    //[AllowUpdate(false)]
+    //[References(typeof(Identity))]
+    //[IsRequired]
+    //public string IdIdentity { get; set; } = string.Empty;
 
     /// <summary>
     ///     Type of cloud service
