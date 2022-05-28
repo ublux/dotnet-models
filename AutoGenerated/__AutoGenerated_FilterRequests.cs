@@ -652,6 +652,26 @@ public class CallIncomingToCallFlowFilterRequest
     [JsonProperty("callType_eq")]
     public CallType? CallType_EQ { get; set; }
 
+    /// <summary> Contact.IdIdentityUser equals </summary>
+    [JsonProperty("contact_idIdentityUser_eq")]
+    public string? Contact_IdIdentityUser_EQ { get; set; }
+    /// <summary> Contact.IdIdentityUser contains </summary>
+    [JsonProperty("contact_idIdentityUser_con")]
+    public string? Contact_IdIdentityUser_CON { get; set; }
+    /// <summary> Contact.IdIdentityUser regex </summary>
+    [JsonProperty("contact_idIdentityUser_reg")]
+    public string? Contact_IdIdentityUser_REG { get; set; }
+
+    /// <summary> Contact.ContactNumbers.SearchIndex equals </summary>
+    [JsonProperty("contact_contactNumbers_searchIndex_eq")]
+    public string? Contact_ContactNumbers_SearchIndex_EQ { get; set; }
+    /// <summary> Contact.ContactNumbers.SearchIndex contains </summary>
+    [JsonProperty("contact_contactNumbers_searchIndex_con")]
+    public string? Contact_ContactNumbers_SearchIndex_CON { get; set; }
+    /// <summary> Contact.ContactNumbers.SearchIndex regex </summary>
+    [JsonProperty("contact_contactNumbers_searchIndex_reg")]
+    public string? Contact_ContactNumbers_SearchIndex_REG { get; set; }
+
     /// <summary> Contact.ContactNumbers.Number equals </summary>
     [JsonProperty("contact_contactNumbers_number_eq")]
     public string? Contact_ContactNumbers_Number_EQ { get; set; }
@@ -676,6 +696,16 @@ public class CallIncomingToCallFlowFilterRequest
     [JsonProperty("contact_contactNumbers_label_eq")]
     public LabelNumber? Contact_ContactNumbers_Label_EQ { get; set; }
 
+
+    /// <summary> Contact.ContactEmails.SearchIndex equals </summary>
+    [JsonProperty("contact_contactEmails_searchIndex_eq")]
+    public string? Contact_ContactEmails_SearchIndex_EQ { get; set; }
+    /// <summary> Contact.ContactEmails.SearchIndex contains </summary>
+    [JsonProperty("contact_contactEmails_searchIndex_con")]
+    public string? Contact_ContactEmails_SearchIndex_CON { get; set; }
+    /// <summary> Contact.ContactEmails.SearchIndex regex </summary>
+    [JsonProperty("contact_contactEmails_searchIndex_reg")]
+    public string? Contact_ContactEmails_SearchIndex_REG { get; set; }
 
     /// <summary> Contact.ContactEmails.Email equals </summary>
     [JsonProperty("contact_contactEmails_email_eq")]
@@ -1141,6 +1171,26 @@ public class CallIncomingToExtensionFilterRequest
     [JsonProperty("callType_eq")]
     public CallType? CallType_EQ { get; set; }
 
+    /// <summary> Contact.IdIdentityUser equals </summary>
+    [JsonProperty("contact_idIdentityUser_eq")]
+    public string? Contact_IdIdentityUser_EQ { get; set; }
+    /// <summary> Contact.IdIdentityUser contains </summary>
+    [JsonProperty("contact_idIdentityUser_con")]
+    public string? Contact_IdIdentityUser_CON { get; set; }
+    /// <summary> Contact.IdIdentityUser regex </summary>
+    [JsonProperty("contact_idIdentityUser_reg")]
+    public string? Contact_IdIdentityUser_REG { get; set; }
+
+    /// <summary> Contact.ContactNumbers.SearchIndex equals </summary>
+    [JsonProperty("contact_contactNumbers_searchIndex_eq")]
+    public string? Contact_ContactNumbers_SearchIndex_EQ { get; set; }
+    /// <summary> Contact.ContactNumbers.SearchIndex contains </summary>
+    [JsonProperty("contact_contactNumbers_searchIndex_con")]
+    public string? Contact_ContactNumbers_SearchIndex_CON { get; set; }
+    /// <summary> Contact.ContactNumbers.SearchIndex regex </summary>
+    [JsonProperty("contact_contactNumbers_searchIndex_reg")]
+    public string? Contact_ContactNumbers_SearchIndex_REG { get; set; }
+
     /// <summary> Contact.ContactNumbers.Number equals </summary>
     [JsonProperty("contact_contactNumbers_number_eq")]
     public string? Contact_ContactNumbers_Number_EQ { get; set; }
@@ -1165,6 +1215,16 @@ public class CallIncomingToExtensionFilterRequest
     [JsonProperty("contact_contactNumbers_label_eq")]
     public LabelNumber? Contact_ContactNumbers_Label_EQ { get; set; }
 
+
+    /// <summary> Contact.ContactEmails.SearchIndex equals </summary>
+    [JsonProperty("contact_contactEmails_searchIndex_eq")]
+    public string? Contact_ContactEmails_SearchIndex_EQ { get; set; }
+    /// <summary> Contact.ContactEmails.SearchIndex contains </summary>
+    [JsonProperty("contact_contactEmails_searchIndex_con")]
+    public string? Contact_ContactEmails_SearchIndex_CON { get; set; }
+    /// <summary> Contact.ContactEmails.SearchIndex regex </summary>
+    [JsonProperty("contact_contactEmails_searchIndex_reg")]
+    public string? Contact_ContactEmails_SearchIndex_REG { get; set; }
 
     /// <summary> Contact.ContactEmails.Email equals </summary>
     [JsonProperty("contact_contactEmails_email_eq")]
@@ -1630,6 +1690,26 @@ public class CallOutgoingToExtensionFilterRequest
     [JsonProperty("callType_eq")]
     public CallType? CallType_EQ { get; set; }
 
+    /// <summary> Contact.IdIdentityUser equals </summary>
+    [JsonProperty("contact_idIdentityUser_eq")]
+    public string? Contact_IdIdentityUser_EQ { get; set; }
+    /// <summary> Contact.IdIdentityUser contains </summary>
+    [JsonProperty("contact_idIdentityUser_con")]
+    public string? Contact_IdIdentityUser_CON { get; set; }
+    /// <summary> Contact.IdIdentityUser regex </summary>
+    [JsonProperty("contact_idIdentityUser_reg")]
+    public string? Contact_IdIdentityUser_REG { get; set; }
+
+    /// <summary> Contact.ContactNumbers.SearchIndex equals </summary>
+    [JsonProperty("contact_contactNumbers_searchIndex_eq")]
+    public string? Contact_ContactNumbers_SearchIndex_EQ { get; set; }
+    /// <summary> Contact.ContactNumbers.SearchIndex contains </summary>
+    [JsonProperty("contact_contactNumbers_searchIndex_con")]
+    public string? Contact_ContactNumbers_SearchIndex_CON { get; set; }
+    /// <summary> Contact.ContactNumbers.SearchIndex regex </summary>
+    [JsonProperty("contact_contactNumbers_searchIndex_reg")]
+    public string? Contact_ContactNumbers_SearchIndex_REG { get; set; }
+
     /// <summary> Contact.ContactNumbers.Number equals </summary>
     [JsonProperty("contact_contactNumbers_number_eq")]
     public string? Contact_ContactNumbers_Number_EQ { get; set; }
@@ -1654,6 +1734,16 @@ public class CallOutgoingToExtensionFilterRequest
     [JsonProperty("contact_contactNumbers_label_eq")]
     public LabelNumber? Contact_ContactNumbers_Label_EQ { get; set; }
 
+
+    /// <summary> Contact.ContactEmails.SearchIndex equals </summary>
+    [JsonProperty("contact_contactEmails_searchIndex_eq")]
+    public string? Contact_ContactEmails_SearchIndex_EQ { get; set; }
+    /// <summary> Contact.ContactEmails.SearchIndex contains </summary>
+    [JsonProperty("contact_contactEmails_searchIndex_con")]
+    public string? Contact_ContactEmails_SearchIndex_CON { get; set; }
+    /// <summary> Contact.ContactEmails.SearchIndex regex </summary>
+    [JsonProperty("contact_contactEmails_searchIndex_reg")]
+    public string? Contact_ContactEmails_SearchIndex_REG { get; set; }
 
     /// <summary> Contact.ContactEmails.Email equals </summary>
     [JsonProperty("contact_contactEmails_email_eq")]
@@ -2063,6 +2153,26 @@ public class CallOutgoingToPSTNFilterRequest
     [JsonProperty("toInternationalFormat_reg")]
     public string? ToInternationalFormat_REG { get; set; }
 
+    /// <summary> Contact.IdIdentityUser equals </summary>
+    [JsonProperty("contact_idIdentityUser_eq")]
+    public string? Contact_IdIdentityUser_EQ { get; set; }
+    /// <summary> Contact.IdIdentityUser contains </summary>
+    [JsonProperty("contact_idIdentityUser_con")]
+    public string? Contact_IdIdentityUser_CON { get; set; }
+    /// <summary> Contact.IdIdentityUser regex </summary>
+    [JsonProperty("contact_idIdentityUser_reg")]
+    public string? Contact_IdIdentityUser_REG { get; set; }
+
+    /// <summary> Contact.ContactNumbers.SearchIndex equals </summary>
+    [JsonProperty("contact_contactNumbers_searchIndex_eq")]
+    public string? Contact_ContactNumbers_SearchIndex_EQ { get; set; }
+    /// <summary> Contact.ContactNumbers.SearchIndex contains </summary>
+    [JsonProperty("contact_contactNumbers_searchIndex_con")]
+    public string? Contact_ContactNumbers_SearchIndex_CON { get; set; }
+    /// <summary> Contact.ContactNumbers.SearchIndex regex </summary>
+    [JsonProperty("contact_contactNumbers_searchIndex_reg")]
+    public string? Contact_ContactNumbers_SearchIndex_REG { get; set; }
+
     /// <summary> Contact.ContactNumbers.Number equals </summary>
     [JsonProperty("contact_contactNumbers_number_eq")]
     public string? Contact_ContactNumbers_Number_EQ { get; set; }
@@ -2087,6 +2197,16 @@ public class CallOutgoingToPSTNFilterRequest
     [JsonProperty("contact_contactNumbers_label_eq")]
     public LabelNumber? Contact_ContactNumbers_Label_EQ { get; set; }
 
+
+    /// <summary> Contact.ContactEmails.SearchIndex equals </summary>
+    [JsonProperty("contact_contactEmails_searchIndex_eq")]
+    public string? Contact_ContactEmails_SearchIndex_EQ { get; set; }
+    /// <summary> Contact.ContactEmails.SearchIndex contains </summary>
+    [JsonProperty("contact_contactEmails_searchIndex_con")]
+    public string? Contact_ContactEmails_SearchIndex_CON { get; set; }
+    /// <summary> Contact.ContactEmails.SearchIndex regex </summary>
+    [JsonProperty("contact_contactEmails_searchIndex_reg")]
+    public string? Contact_ContactEmails_SearchIndex_REG { get; set; }
 
     /// <summary> Contact.ContactEmails.Email equals </summary>
     [JsonProperty("contact_contactEmails_email_eq")]
@@ -2482,16 +2602,6 @@ public class CloudServicePbxFilterRequest
     [JsonProperty("cloudServiceType_eq")]
     public CloudServiceType? CloudServiceType_EQ { get; set; }
 
-    /// <summary> IdIdentity equals </summary>
-    [JsonProperty("idIdentity_eq")]
-    public string? IdIdentity_EQ { get; set; }
-    /// <summary> IdIdentity contains </summary>
-    [JsonProperty("idIdentity_con")]
-    public string? IdIdentity_CON { get; set; }
-    /// <summary> IdIdentity regex </summary>
-    [JsonProperty("idIdentity_reg")]
-    public string? IdIdentity_REG { get; set; }
-
     /// <summary> CountryIsoCode equals </summary>
     [JsonProperty("countryIsoCode_eq")]
     public CountryIsoCode? CountryIsoCode_EQ { get; set; }
@@ -2565,16 +2675,6 @@ public class CloudServiceWebAppFilterRequest
     /// <summary> CloudServiceType equals </summary>
     [JsonProperty("cloudServiceType_eq")]
     public CloudServiceType? CloudServiceType_EQ { get; set; }
-
-    /// <summary> IdIdentity equals </summary>
-    [JsonProperty("idIdentity_eq")]
-    public string? IdIdentity_EQ { get; set; }
-    /// <summary> IdIdentity contains </summary>
-    [JsonProperty("idIdentity_con")]
-    public string? IdIdentity_CON { get; set; }
-    /// <summary> IdIdentity regex </summary>
-    [JsonProperty("idIdentity_reg")]
-    public string? IdIdentity_REG { get; set; }
 
     /// <summary> CountryIsoCode equals </summary>
     [JsonProperty("countryIsoCode_eq")]
@@ -2650,16 +2750,6 @@ public class CloudServiceWebHostFilterRequest
     [JsonProperty("cloudServiceType_eq")]
     public CloudServiceType? CloudServiceType_EQ { get; set; }
 
-    /// <summary> IdIdentity equals </summary>
-    [JsonProperty("idIdentity_eq")]
-    public string? IdIdentity_EQ { get; set; }
-    /// <summary> IdIdentity contains </summary>
-    [JsonProperty("idIdentity_con")]
-    public string? IdIdentity_CON { get; set; }
-    /// <summary> IdIdentity regex </summary>
-    [JsonProperty("idIdentity_reg")]
-    public string? IdIdentity_REG { get; set; }
-
     /// <summary> CountryIsoCode equals </summary>
     [JsonProperty("countryIsoCode_eq")]
     public CountryIsoCode? CountryIsoCode_EQ { get; set; }
@@ -2734,16 +2824,6 @@ public class CloudServiceWebServiceFilterRequest
     [JsonProperty("cloudServiceType_eq")]
     public CloudServiceType? CloudServiceType_EQ { get; set; }
 
-    /// <summary> IdIdentity equals </summary>
-    [JsonProperty("idIdentity_eq")]
-    public string? IdIdentity_EQ { get; set; }
-    /// <summary> IdIdentity contains </summary>
-    [JsonProperty("idIdentity_con")]
-    public string? IdIdentity_CON { get; set; }
-    /// <summary> IdIdentity regex </summary>
-    [JsonProperty("idIdentity_reg")]
-    public string? IdIdentity_REG { get; set; }
-
     /// <summary> CountryIsoCode equals </summary>
     [JsonProperty("countryIsoCode_eq")]
     public CountryIsoCode? CountryIsoCode_EQ { get; set; }
@@ -2814,6 +2894,26 @@ public class CloudServiceWebServiceFilterRequest
 /// <summary> Enables searching for Contacts </summary>
 public class ContactFilterRequest 
 {
+    /// <summary> IdIdentityUser equals </summary>
+    [JsonProperty("idIdentityUser_eq")]
+    public string? IdIdentityUser_EQ { get; set; }
+    /// <summary> IdIdentityUser contains </summary>
+    [JsonProperty("idIdentityUser_con")]
+    public string? IdIdentityUser_CON { get; set; }
+    /// <summary> IdIdentityUser regex </summary>
+    [JsonProperty("idIdentityUser_reg")]
+    public string? IdIdentityUser_REG { get; set; }
+
+    /// <summary> ContactNumbers.SearchIndex equals </summary>
+    [JsonProperty("contactNumbers_searchIndex_eq")]
+    public string? ContactNumbers_SearchIndex_EQ { get; set; }
+    /// <summary> ContactNumbers.SearchIndex contains </summary>
+    [JsonProperty("contactNumbers_searchIndex_con")]
+    public string? ContactNumbers_SearchIndex_CON { get; set; }
+    /// <summary> ContactNumbers.SearchIndex regex </summary>
+    [JsonProperty("contactNumbers_searchIndex_reg")]
+    public string? ContactNumbers_SearchIndex_REG { get; set; }
+
     /// <summary> ContactNumbers.Number equals </summary>
     [JsonProperty("contactNumbers_number_eq")]
     public string? ContactNumbers_Number_EQ { get; set; }
@@ -2838,6 +2938,16 @@ public class ContactFilterRequest
     [JsonProperty("contactNumbers_label_eq")]
     public LabelNumber? ContactNumbers_Label_EQ { get; set; }
 
+
+    /// <summary> ContactEmails.SearchIndex equals </summary>
+    [JsonProperty("contactEmails_searchIndex_eq")]
+    public string? ContactEmails_SearchIndex_EQ { get; set; }
+    /// <summary> ContactEmails.SearchIndex contains </summary>
+    [JsonProperty("contactEmails_searchIndex_con")]
+    public string? ContactEmails_SearchIndex_CON { get; set; }
+    /// <summary> ContactEmails.SearchIndex regex </summary>
+    [JsonProperty("contactEmails_searchIndex_reg")]
+    public string? ContactEmails_SearchIndex_REG { get; set; }
 
     /// <summary> ContactEmails.Email equals </summary>
     [JsonProperty("contactEmails_email_eq")]
@@ -5088,6 +5198,26 @@ public class SMSFilterRequest
     [JsonProperty("idVoipNumber_reg")]
     public string? IdVoipNumber_REG { get; set; }
 
+    /// <summary> Contact.IdIdentityUser equals </summary>
+    [JsonProperty("contact_idIdentityUser_eq")]
+    public string? Contact_IdIdentityUser_EQ { get; set; }
+    /// <summary> Contact.IdIdentityUser contains </summary>
+    [JsonProperty("contact_idIdentityUser_con")]
+    public string? Contact_IdIdentityUser_CON { get; set; }
+    /// <summary> Contact.IdIdentityUser regex </summary>
+    [JsonProperty("contact_idIdentityUser_reg")]
+    public string? Contact_IdIdentityUser_REG { get; set; }
+
+    /// <summary> Contact.ContactNumbers.SearchIndex equals </summary>
+    [JsonProperty("contact_contactNumbers_searchIndex_eq")]
+    public string? Contact_ContactNumbers_SearchIndex_EQ { get; set; }
+    /// <summary> Contact.ContactNumbers.SearchIndex contains </summary>
+    [JsonProperty("contact_contactNumbers_searchIndex_con")]
+    public string? Contact_ContactNumbers_SearchIndex_CON { get; set; }
+    /// <summary> Contact.ContactNumbers.SearchIndex regex </summary>
+    [JsonProperty("contact_contactNumbers_searchIndex_reg")]
+    public string? Contact_ContactNumbers_SearchIndex_REG { get; set; }
+
     /// <summary> Contact.ContactNumbers.Number equals </summary>
     [JsonProperty("contact_contactNumbers_number_eq")]
     public string? Contact_ContactNumbers_Number_EQ { get; set; }
@@ -5112,6 +5242,16 @@ public class SMSFilterRequest
     [JsonProperty("contact_contactNumbers_label_eq")]
     public LabelNumber? Contact_ContactNumbers_Label_EQ { get; set; }
 
+
+    /// <summary> Contact.ContactEmails.SearchIndex equals </summary>
+    [JsonProperty("contact_contactEmails_searchIndex_eq")]
+    public string? Contact_ContactEmails_SearchIndex_EQ { get; set; }
+    /// <summary> Contact.ContactEmails.SearchIndex contains </summary>
+    [JsonProperty("contact_contactEmails_searchIndex_con")]
+    public string? Contact_ContactEmails_SearchIndex_CON { get; set; }
+    /// <summary> Contact.ContactEmails.SearchIndex regex </summary>
+    [JsonProperty("contact_contactEmails_searchIndex_reg")]
+    public string? Contact_ContactEmails_SearchIndex_REG { get; set; }
 
     /// <summary> Contact.ContactEmails.Email equals </summary>
     [JsonProperty("contact_contactEmails_email_eq")]
@@ -6503,6 +6643,26 @@ public class CallFilterRequest
     [JsonProperty("callType_eq")]
     public CallType? CallType_EQ { get; set; }
 
+    /// <summary> Contact.IdIdentityUser equals </summary>
+    [JsonProperty("contact_idIdentityUser_eq")]
+    public string? Contact_IdIdentityUser_EQ { get; set; }
+    /// <summary> Contact.IdIdentityUser contains </summary>
+    [JsonProperty("contact_idIdentityUser_con")]
+    public string? Contact_IdIdentityUser_CON { get; set; }
+    /// <summary> Contact.IdIdentityUser regex </summary>
+    [JsonProperty("contact_idIdentityUser_reg")]
+    public string? Contact_IdIdentityUser_REG { get; set; }
+
+    /// <summary> Contact.ContactNumbers.SearchIndex equals </summary>
+    [JsonProperty("contact_contactNumbers_searchIndex_eq")]
+    public string? Contact_ContactNumbers_SearchIndex_EQ { get; set; }
+    /// <summary> Contact.ContactNumbers.SearchIndex contains </summary>
+    [JsonProperty("contact_contactNumbers_searchIndex_con")]
+    public string? Contact_ContactNumbers_SearchIndex_CON { get; set; }
+    /// <summary> Contact.ContactNumbers.SearchIndex regex </summary>
+    [JsonProperty("contact_contactNumbers_searchIndex_reg")]
+    public string? Contact_ContactNumbers_SearchIndex_REG { get; set; }
+
     /// <summary> Contact.ContactNumbers.Number equals </summary>
     [JsonProperty("contact_contactNumbers_number_eq")]
     public string? Contact_ContactNumbers_Number_EQ { get; set; }
@@ -6527,6 +6687,16 @@ public class CallFilterRequest
     [JsonProperty("contact_contactNumbers_label_eq")]
     public LabelNumber? Contact_ContactNumbers_Label_EQ { get; set; }
 
+
+    /// <summary> Contact.ContactEmails.SearchIndex equals </summary>
+    [JsonProperty("contact_contactEmails_searchIndex_eq")]
+    public string? Contact_ContactEmails_SearchIndex_EQ { get; set; }
+    /// <summary> Contact.ContactEmails.SearchIndex contains </summary>
+    [JsonProperty("contact_contactEmails_searchIndex_con")]
+    public string? Contact_ContactEmails_SearchIndex_CON { get; set; }
+    /// <summary> Contact.ContactEmails.SearchIndex regex </summary>
+    [JsonProperty("contact_contactEmails_searchIndex_reg")]
+    public string? Contact_ContactEmails_SearchIndex_REG { get; set; }
 
     /// <summary> Contact.ContactEmails.Email equals </summary>
     [JsonProperty("contact_contactEmails_email_eq")]
@@ -6908,6 +7078,26 @@ public class CallFilterRequest
 /// <summary> Enables searching for CallIncomings </summary>
 public class CallIncomingFilterRequest 
 {
+    /// <summary> Contact.IdIdentityUser equals </summary>
+    [JsonProperty("contact_idIdentityUser_eq")]
+    public string? Contact_IdIdentityUser_EQ { get; set; }
+    /// <summary> Contact.IdIdentityUser contains </summary>
+    [JsonProperty("contact_idIdentityUser_con")]
+    public string? Contact_IdIdentityUser_CON { get; set; }
+    /// <summary> Contact.IdIdentityUser regex </summary>
+    [JsonProperty("contact_idIdentityUser_reg")]
+    public string? Contact_IdIdentityUser_REG { get; set; }
+
+    /// <summary> Contact.ContactNumbers.SearchIndex equals </summary>
+    [JsonProperty("contact_contactNumbers_searchIndex_eq")]
+    public string? Contact_ContactNumbers_SearchIndex_EQ { get; set; }
+    /// <summary> Contact.ContactNumbers.SearchIndex contains </summary>
+    [JsonProperty("contact_contactNumbers_searchIndex_con")]
+    public string? Contact_ContactNumbers_SearchIndex_CON { get; set; }
+    /// <summary> Contact.ContactNumbers.SearchIndex regex </summary>
+    [JsonProperty("contact_contactNumbers_searchIndex_reg")]
+    public string? Contact_ContactNumbers_SearchIndex_REG { get; set; }
+
     /// <summary> Contact.ContactNumbers.Number equals </summary>
     [JsonProperty("contact_contactNumbers_number_eq")]
     public string? Contact_ContactNumbers_Number_EQ { get; set; }
@@ -6932,6 +7122,16 @@ public class CallIncomingFilterRequest
     [JsonProperty("contact_contactNumbers_label_eq")]
     public LabelNumber? Contact_ContactNumbers_Label_EQ { get; set; }
 
+
+    /// <summary> Contact.ContactEmails.SearchIndex equals </summary>
+    [JsonProperty("contact_contactEmails_searchIndex_eq")]
+    public string? Contact_ContactEmails_SearchIndex_EQ { get; set; }
+    /// <summary> Contact.ContactEmails.SearchIndex contains </summary>
+    [JsonProperty("contact_contactEmails_searchIndex_con")]
+    public string? Contact_ContactEmails_SearchIndex_CON { get; set; }
+    /// <summary> Contact.ContactEmails.SearchIndex regex </summary>
+    [JsonProperty("contact_contactEmails_searchIndex_reg")]
+    public string? Contact_ContactEmails_SearchIndex_REG { get; set; }
 
     /// <summary> Contact.ContactEmails.Email equals </summary>
     [JsonProperty("contact_contactEmails_email_eq")]
@@ -7337,6 +7537,26 @@ public class CallIncomingFilterRequest
 /// <summary> Enables searching for CallOutgoings </summary>
 public class CallOutgoingFilterRequest 
 {
+    /// <summary> Contact.IdIdentityUser equals </summary>
+    [JsonProperty("contact_idIdentityUser_eq")]
+    public string? Contact_IdIdentityUser_EQ { get; set; }
+    /// <summary> Contact.IdIdentityUser contains </summary>
+    [JsonProperty("contact_idIdentityUser_con")]
+    public string? Contact_IdIdentityUser_CON { get; set; }
+    /// <summary> Contact.IdIdentityUser regex </summary>
+    [JsonProperty("contact_idIdentityUser_reg")]
+    public string? Contact_IdIdentityUser_REG { get; set; }
+
+    /// <summary> Contact.ContactNumbers.SearchIndex equals </summary>
+    [JsonProperty("contact_contactNumbers_searchIndex_eq")]
+    public string? Contact_ContactNumbers_SearchIndex_EQ { get; set; }
+    /// <summary> Contact.ContactNumbers.SearchIndex contains </summary>
+    [JsonProperty("contact_contactNumbers_searchIndex_con")]
+    public string? Contact_ContactNumbers_SearchIndex_CON { get; set; }
+    /// <summary> Contact.ContactNumbers.SearchIndex regex </summary>
+    [JsonProperty("contact_contactNumbers_searchIndex_reg")]
+    public string? Contact_ContactNumbers_SearchIndex_REG { get; set; }
+
     /// <summary> Contact.ContactNumbers.Number equals </summary>
     [JsonProperty("contact_contactNumbers_number_eq")]
     public string? Contact_ContactNumbers_Number_EQ { get; set; }
@@ -7361,6 +7581,16 @@ public class CallOutgoingFilterRequest
     [JsonProperty("contact_contactNumbers_label_eq")]
     public LabelNumber? Contact_ContactNumbers_Label_EQ { get; set; }
 
+
+    /// <summary> Contact.ContactEmails.SearchIndex equals </summary>
+    [JsonProperty("contact_contactEmails_searchIndex_eq")]
+    public string? Contact_ContactEmails_SearchIndex_EQ { get; set; }
+    /// <summary> Contact.ContactEmails.SearchIndex contains </summary>
+    [JsonProperty("contact_contactEmails_searchIndex_con")]
+    public string? Contact_ContactEmails_SearchIndex_CON { get; set; }
+    /// <summary> Contact.ContactEmails.SearchIndex regex </summary>
+    [JsonProperty("contact_contactEmails_searchIndex_reg")]
+    public string? Contact_ContactEmails_SearchIndex_REG { get; set; }
 
     /// <summary> Contact.ContactEmails.Email equals </summary>
     [JsonProperty("contact_contactEmails_email_eq")]
@@ -7759,16 +7989,6 @@ public class CloudServiceFilterRequest
     /// <summary> CloudServiceType equals </summary>
     [JsonProperty("cloudServiceType_eq")]
     public CloudServiceType? CloudServiceType_EQ { get; set; }
-
-    /// <summary> IdIdentity equals </summary>
-    [JsonProperty("idIdentity_eq")]
-    public string? IdIdentity_EQ { get; set; }
-    /// <summary> IdIdentity contains </summary>
-    [JsonProperty("idIdentity_con")]
-    public string? IdIdentity_CON { get; set; }
-    /// <summary> IdIdentity regex </summary>
-    [JsonProperty("idIdentity_reg")]
-    public string? IdIdentity_REG { get; set; }
 
     /// <summary> CountryIsoCode equals </summary>
     [JsonProperty("countryIsoCode_eq")]

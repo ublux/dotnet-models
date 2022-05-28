@@ -13,7 +13,7 @@ public class Variable
     public string Name { get; set; } = string.Empty;
 
     /// <summary>
-    ///     Value of variable
+    ///     Value of variable in json format
     /// </summary>
     [AllowUpdate(true)]
     public string? JsonValue { get; set; }

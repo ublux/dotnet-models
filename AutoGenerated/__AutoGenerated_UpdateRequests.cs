@@ -333,7 +333,7 @@ public class ContactUpdateRequest : IUbluxDocumentId
     /// <summary>
     /// Email addresses of contact
     /// </summary>
-    public List<Ublux.Communications.Models.SubDocuments.ContactEmail>? ContactEmails { get; set; }
+    public List<Ublux.Communications.Models.ContactEmail>? ContactEmails { get; set; }
     /// <summary>
     /// Contact first name
     /// </summary>

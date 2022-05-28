@@ -12,7 +12,7 @@ public partial class Contact : UbluxDocument, IReferncesAccount
     [References(typeof(Account))]
     [AllowUpdate(false)]
     [IsRequired]
-    public string IdAccount { get; set; } = String.Empty;
+    public string IdAccount { get; set; } = String.Empty;    
 }
 
 #endif

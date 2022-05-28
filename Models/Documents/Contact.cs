@@ -11,6 +11,14 @@ public partial class Contact : UbluxDocument
 
     #region References
 
+    /// <summary>
+    ///     If null it can be seen by entire account. In other words it is a global contact. 
+    ///     Otherwise it will only be visible to a specific identity (user)
+    /// </summary>
+    [AllowUpdate(false)]
+    [References(typeof(Identity))]
+    public string? IdIdentityUser { get; set; }
+
     #endregion
 
     #region Subdocuments
@@ -110,7 +118,7 @@ public partial class Contact : UbluxDocument
         var bytes = System.Text.Encoding.UTF8.GetBytes(val);
         var hash = xxHash64.ComputeHash(bytes) >> 22;
         return ToBase62(hash);
-    }    
+    }
 
     IEnumerable<string> GetValuesNeededToHash()
     {
@@ -124,17 +132,21 @@ public partial class Contact : UbluxDocument
             yield return Company;
         if (Notes != null)
             yield return Notes;
+
         foreach (var cn in ContactNumbers)
         {
             if (cn.NumberInternationalFormat is not null)
                 yield return cn.NumberInternationalFormat;
+
+            yield return cn.Label.ToString();
         }
 
         foreach (var ce in ContactEmails)
         {
             if (ce.Email is not null)
                 yield return ce.Email;
-            //yield return ce.Label.ToString()!;
+
+            yield return ce.Label.ToString();
         }
     }
 
