@@ -3,6 +3,17 @@
 /// <summary>
 ///     Incoming phone call between PSTN and Ublux
 /// </summary>
+[JsonConverter(typeof(JsonSubtypes), nameof(CallType))]
+[JsonSubtypes.KnownSubType(typeof(CallIncomingToCallFlow), nameof(CallType.IncomingToCallFlow))]
+[JsonSubtypes.KnownSubType(typeof(CallIncomingToExtension), nameof(CallType.IncomingToExtension))]
+//[JsonSubtypes.KnownSubType(typeof(CallOutgoingToExtension), nameof(CallType.OutgoingToExtension))]
+//[JsonSubtypes.KnownSubType(typeof(CallOutgoingToPSTN), nameof(CallType.OutgoingToPSTN))]
+[BsonKnownTypes(
+    typeof(CallIncomingToCallFlow),
+    typeof(CallIncomingToExtension)
+    //typeof(CallOutgoingToExtension),
+    //typeof(CallOutgoingToPSTN)
+)]
 public abstract partial class CallIncoming : Call
 {
     /// <summary>

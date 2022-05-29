@@ -6,7 +6,7 @@ namespace Ublux.Communications.Models.Documents;
 ///     Trunk used to receive phone calls
 /// </summary>
 [JsonConverter(typeof(JsonSubtypes), nameof(TrunkOriginationType))]
-[JsonSubtypes.KnownSubType(typeof(TrunkOriginationForward), nameof(Enum.Format))]
+[JsonSubtypes.KnownSubType(typeof(TrunkOriginationForward), nameof(TrunkOriginationType.Forward))]
 [JsonSubtypes.KnownSubType(typeof(TrunkOriginationRegister), nameof(TrunkOriginationType.Register))]
 [BsonKnownTypes(
     typeof(TrunkOriginationForward),
@@ -26,6 +26,7 @@ public abstract class TrunkOrigination : UbluxDocument
     [AllowUpdate(false)]
     [IsRequired]
     public string IdVoipProvider { get; set; } = string.Empty;
+
     /// <summary>
     ///     Used by what PBX?
     /// </summary>
@@ -34,6 +35,7 @@ public abstract class TrunkOrigination : UbluxDocument
     [References(typeof(CloudServicePbx))]
     [IsRequired]
     public string IdCloudServicePbx { get; set; } = string.Empty;
+
     /// <summary>
     ///     Backup pbx
     /// </summary>
@@ -61,7 +63,7 @@ public abstract class TrunkOrigination : UbluxDocument
     ///     Type of trunk origination
     /// </summary>
     [AllowUpdate(false)]
-    [IgnoreDataMember]
+    [HideForCreateRequest]
     [IsRequired]
     public abstract TrunkOriginationType TrunkOriginationType { get; }
 

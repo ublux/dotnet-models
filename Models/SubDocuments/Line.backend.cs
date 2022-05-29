@@ -20,9 +20,11 @@ public partial class Line : UbluxSubDocument
     /// </summary>
     public static string GetIdPhone(string idLine)
     {
-        // Example of line id:   Li:0:Ph:1000
-        // this will return therefore Ph:1000
-        return idLine[(DocumentPrefix.Length + 3)..];
+        // Example of line id:   Li:AZ100:Ph:1:23
+        // this will return therefore Ph:1:23
+
+        var index = idLine.IndexOf(':', DocumentPrefix.Length + 1);
+        return idLine[(index + 1)..];
     }
 }
 

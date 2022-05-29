@@ -71,7 +71,7 @@ allow=alaw
     ///     Type of trunk origination
     /// </summary>
     [AllowUpdate(false)]
-    [IgnoreDataMember]
+    // [IgnoreDataMember] if ignored deserialization will not work
     [IsRequired]
     [HideForCreateRequest]
     public override TrunkOriginationType TrunkOriginationType => TrunkOriginationType.Register;

@@ -81,7 +81,7 @@ public partial class LogWebServiceRequest : UbluxDocument
     ///     Save query string?
     /// </summary>
     [AllowUpdate(false)]
-    [BsonIgnore] // do not store on DB
+    //[BsonIgnore] // gives problesm with unit test. Just include it
     public bool SaveQueryString { get; set; } = true;
 
     /// <summary>

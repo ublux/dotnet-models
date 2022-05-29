@@ -27,16 +27,14 @@ public partial class TrunkOriginationForward : TrunkOrigination
     [IsRequired]
     public string SipUriFailover { get; set; } = string.Empty;
 
-
     /// <summary>
     ///     Type of trunk origination
     /// </summary>
     [AllowUpdate(false)]
-    [IgnoreDataMember]
+    // [IgnoreDataMember] if ignored deserialization will not work
     [IsRequired]
     [HideForCreateRequest]
     public override TrunkOriginationType TrunkOriginationType => TrunkOriginationType.Forward;
-
 }
 
 #endif

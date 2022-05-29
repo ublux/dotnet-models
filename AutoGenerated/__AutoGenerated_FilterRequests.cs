@@ -5468,6 +5468,10 @@ public class SMSFilterRequest
 /// <summary> Enables searching for TrunkOriginationForwards </summary>
 public class TrunkOriginationForwardFilterRequest 
 {
+    /// <summary> TrunkOriginationType equals </summary>
+    [JsonProperty("trunkOriginationType_eq")]
+    public TrunkOriginationType? TrunkOriginationType_EQ { get; set; }
+
     /// <summary> Id equals </summary>
     [JsonProperty("id_eq")]
     public string? Id_EQ { get; set; }
@@ -5502,6 +5506,10 @@ public class TrunkOriginationForwardFilterRequest
 /// <summary> Enables searching for TrunkOriginationRegisters </summary>
 public class TrunkOriginationRegisterFilterRequest 
 {
+    /// <summary> TrunkOriginationType equals </summary>
+    [JsonProperty("trunkOriginationType_eq")]
+    public TrunkOriginationType? TrunkOriginationType_EQ { get; set; }
+
     /// <summary> Id equals </summary>
     [JsonProperty("id_eq")]
     public string? Id_EQ { get; set; }
@@ -8122,6 +8130,10 @@ public class ExtensionFilterRequest
 /// <summary> Enables searching for TrunkOriginations </summary>
 public class TrunkOriginationFilterRequest 
 {
+    /// <summary> TrunkOriginationType equals </summary>
+    [JsonProperty("trunkOriginationType_eq")]
+    public TrunkOriginationType? TrunkOriginationType_EQ { get; set; }
+
     /// <summary> Id equals </summary>
     [JsonProperty("id_eq")]
     public string? Id_EQ { get; set; }

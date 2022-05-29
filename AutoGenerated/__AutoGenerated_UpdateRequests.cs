@@ -1365,6 +1365,8 @@ public class WebHookUpdateRequest : IUbluxDocumentId
 
 /// <summary>
 /// It is part of a phone. Lines are needed in order to make and receive phone calls.
+/// </summary><summary>
+/// It is part of a phone. Lines are needed in order to make and receive phone calls.
 /// </summary>
 public class LineUpdateRequest : IUbluxDocumentId
 {
