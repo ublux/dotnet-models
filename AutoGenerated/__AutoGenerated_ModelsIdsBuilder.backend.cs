@@ -362,8 +362,8 @@ namespace Ublux.Communications.Models.SubDocuments {
         /// <summary> Id prefix </summary>
         public const string DocumentPrefix = "SF";
 
-        /// <summary> Build Id </summary>
-        public static BuiltId BuildId(RunningApplicationInstance instance) => new($"{DocumentPrefix}:{instance.Id}:{UbluxDocument.IdGlobalAutoIncrement()}");
+        /// <summary> Custom: prefix:randomUnsignedLong. Example SF:5uHSKHqJeqc1ZAURK </summary>
+        public static BuiltId BuildId() => new($"{DocumentPrefix}:{UbluxDocument.ToBase62(BitConverter.ToUInt64(Guid.NewGuid().ToByteArray()))}:{UbluxDocument.ToBase62(BitConverter.ToUInt16(Guid.NewGuid().ToByteArray()))}");
     }
 }
 
