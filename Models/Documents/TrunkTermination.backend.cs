@@ -7,10 +7,6 @@ namespace Ublux.Communications.Models.Documents;
 /// </summary>
 public partial class TrunkTermination : UbluxDocument
 {
-    // Id = "{Provider}:{Name}"
-    // example: Twilio-CanalPark:UST
-    // can have the same id as trunk origination!
-
     #region Properties
 
     #region References

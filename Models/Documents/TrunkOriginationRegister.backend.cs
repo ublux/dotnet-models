@@ -3,7 +3,7 @@
 namespace Ublux.Communications.Models.Documents;
 
 /// <summary>
-///     This type of trunk origination we must register with provider in order to receive phone calls
+///     This type of trunk origination we must register with provider in order to receive phone calls. Netbox solutions uses this type of trunk
 /// </summary>
 public partial class TrunkOriginationRegister : TrunkOrigination
 {

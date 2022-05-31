@@ -1,4 +1,4 @@
-﻿namespace Ublux.Communications.Models.Enums;
+﻿namespace Ublux.Communications.Enums;
 
 /// <summary>
 ///     Database tables

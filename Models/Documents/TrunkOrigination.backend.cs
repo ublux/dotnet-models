@@ -29,6 +29,7 @@ public abstract class TrunkOrigination : UbluxDocument
 
     /// <summary>
     ///     Used by what PBX?
+    ///     TODO: place index on db baced on this field
     /// </summary>
     [IgnoreDataMember]
     [AllowUpdate(false)]
@@ -38,6 +39,7 @@ public abstract class TrunkOrigination : UbluxDocument
 
     /// <summary>
     ///     Backup pbx
+    ///     TODO: place index on db baced on this field
     /// </summary>
     [IgnoreDataMember]
     [AllowUpdate(false)]

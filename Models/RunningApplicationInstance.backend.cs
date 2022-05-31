@@ -63,7 +63,7 @@ public class RunningApplicationInstance
     ///     Executes an operation that will not allow application to terminate until this operation is done
     ///     returns exception if there is an error
     /// </summary>
-    public async Task<Exception?> ExecuteImportantOperationAsync(string operationGuid, Func<Task> func)
+    public async Task<Exception?> ExecuteImportantOperationAsync(Func<Task> func)
     {
         IncrementNumberOfOperationsExecuting();
 
@@ -78,7 +78,7 @@ public class RunningApplicationInstance
                 Debugger.Break();
             
             return ex;
-            //logger?.Log(LogLevel.Error, "Unknown error executing opertation with guid {operationGuid} {ex}", operationGuid, ex);
+            // logger?.Log(LogLevel.Error, "Unknown error executing opertation with guid {operationGuid} {ex}", operationGuid, ex);
         }
         finally
         {
