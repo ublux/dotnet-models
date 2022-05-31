@@ -4889,15 +4889,15 @@ public class PhoneFilterRequest
     [JsonProperty("friendlyName_reg")]
     public string? FriendlyName_REG { get; set; }
 
-    /// <summary> IdIdentityWebApp equals </summary>
-    [JsonProperty("idIdentityWebApp_eq")]
-    public string? IdIdentityWebApp_EQ { get; set; }
-    /// <summary> IdIdentityWebApp contains </summary>
-    [JsonProperty("idIdentityWebApp_con")]
-    public string? IdIdentityWebApp_CON { get; set; }
-    /// <summary> IdIdentityWebApp regex </summary>
-    [JsonProperty("idIdentityWebApp_reg")]
-    public string? IdIdentityWebApp_REG { get; set; }
+    /// <summary> IdIdentity equals </summary>
+    [JsonProperty("IdIdentity_eq")]
+    public string? IdIdentity_EQ { get; set; }
+    /// <summary> IdIdentity contains </summary>
+    [JsonProperty("IdIdentity_con")]
+    public string? IdIdentity_CON { get; set; }
+    /// <summary> IdIdentity regex </summary>
+    [JsonProperty("IdIdentity_reg")]
+    public string? IdIdentity_REG { get; set; }
 
     /// <summary> Id equals </summary>
     [JsonProperty("id_eq")]

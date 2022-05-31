@@ -24,6 +24,13 @@ public partial class Phone : UbluxDocument
     [AllowUpdate(true)]
     public string? IdPhoneConfiguration { get; set; }
 
+    /// <summary>
+    ///     Username and password to login to web-app
+    /// </summary>
+    [AllowUpdate(true)]
+    [References(typeof(Identity))]
+    public string? IdIdentity { get; set; }
+
 
     #endregion
 
@@ -46,15 +53,7 @@ public partial class Phone : UbluxDocument
     [IsRequired]
     public string FriendlyName { get; set; } = String.Empty;
 
-
-    /// <summary>
-    ///     Username and password to login to web-app
-    /// </summary>
-    [AllowUpdate(true)]
-    [References(typeof(Identity))]
-    public string? IdIdentityWebApp { get; set; }
-
+    
 
     #endregion
-
 }

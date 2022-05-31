@@ -12,10 +12,8 @@ namespace Ublux.Communications.Models.Documents;
 /// </summary><summary>
 /// Ublux Account
 /// </summary>
-public class AccountUpdateRequest : IUbluxDocumentId
+public class AccountUpdateRequest // : IUbluxDocumentId
 {
-    /// <inheritdoc />
-    public string Id { get; set; } = String.Empty;
     /// <summary>
     /// Address
     /// </summary>
@@ -50,10 +48,8 @@ public class AccountUpdateRequest : IUbluxDocumentId
 /// <summary>
 /// Store when user agreed to UBLUX terms and conditions for legal reasons.
 /// </summary>
-public class AgreementToTermsAndConditionsUpdateRequest : IUbluxDocumentId
+public class AgreementToTermsAndConditionsUpdateRequest // : IUbluxDocumentId
 {
-    /// <inheritdoc />
-    public string Id { get; set; } = String.Empty;
     /// <summary> Set values on actual document </summary>
     public void SetValuesOnAgreementToTermsAndConditions(AgreementToTermsAndConditions agreementToTermsAndConditions)
     {
@@ -64,10 +60,8 @@ public class AgreementToTermsAndConditionsUpdateRequest : IUbluxDocumentId
 /// <summary>
 /// When a customer purchases a Phone Number from AirNetworks Provider from Spain he needs to feel the province and population info
 /// </summary>
-public class AirNetworksProvinceUpdateRequest : IUbluxDocumentId
+public class AirNetworksProvinceUpdateRequest // : IUbluxDocumentId
 {
-    /// <inheritdoc />
-    public string Id { get; set; } = String.Empty;
     /// <summary> Set values on actual document </summary>
     public void SetValuesOnAirNetworksProvince(AirNetworksProvince airNetworksProvince)
     {
@@ -80,10 +74,8 @@ public class AirNetworksProvinceUpdateRequest : IUbluxDocumentId
 /// </summary><summary>
 /// Mp3 or Wav audio file. Previously called Audio Greeting
 /// </summary>
-public class AudioUpdateRequest : IUbluxDocumentId
+public class AudioUpdateRequest // : IUbluxDocumentId
 {
-    /// <inheritdoc />
-    public string Id { get; set; } = String.Empty;
     /// <summary>
     /// Name of audio
     /// </summary>
@@ -106,10 +98,8 @@ public class AudioUpdateRequest : IUbluxDocumentId
 /// <summary>
 /// Id is the mac address of a phone. It should point to an ip phone
 /// </summary>
-public class AutoProvisionReferenceUpdateRequest : IUbluxDocumentId
+public class AutoProvisionReferenceUpdateRequest // : IUbluxDocumentId
 {
-    /// <inheritdoc />
-    public string Id { get; set; } = String.Empty;
     /// <summary> Set values on actual document </summary>
     public void SetValuesOnAutoProvisionReference(AutoProvisionReference autoProvisionReference)
     {
@@ -122,10 +112,8 @@ public class AutoProvisionReferenceUpdateRequest : IUbluxDocumentId
 /// </summary><summary>
 /// Phone numbers that will be blocked
 /// </summary>
-public class BlackListPhoneNumberUpdateRequest : IUbluxDocumentId
+public class BlackListPhoneNumberUpdateRequest // : IUbluxDocumentId
 {
-    /// <inheritdoc />
-    public string Id { get; set; } = String.Empty;
     /// <summary>
     /// The phone number that will be blocked
     /// </summary>
@@ -150,10 +138,8 @@ public class BlackListPhoneNumberUpdateRequest : IUbluxDocumentId
 /// </summary><summary>
 /// Phone numbers that will be blocked
 /// </summary>
-public class CallerIdMaskUpdateRequest : IUbluxDocumentId
+public class CallerIdMaskUpdateRequest // : IUbluxDocumentId
 {
-    /// <inheritdoc />
-    public string Id { get; set; } = String.Empty;
     /// <summary>
     /// Name of this caller id mask
     /// </summary>
@@ -172,10 +158,8 @@ public class CallerIdMaskUpdateRequest : IUbluxDocumentId
 /// </summary><summary>
 /// Virtual receptionist
 /// </summary>
-public class CallFlowUpdateRequest : IUbluxDocumentId
+public class CallFlowUpdateRequest // : IUbluxDocumentId
 {
-    /// <inheritdoc />
-    public string Id { get; set; } = String.Empty;
     /// <summary>
     /// Name of virtual receptionist
     /// </summary>
@@ -204,10 +188,8 @@ public class CallFlowUpdateRequest : IUbluxDocumentId
 /// <summary>
 /// Incoming phone call that executed an IVR
 /// </summary>
-public class CallIncomingToCallFlowUpdateRequest : IUbluxDocumentId
+public class CallIncomingToCallFlowUpdateRequest // : IUbluxDocumentId
 {
-    /// <inheritdoc />
-    public string Id { get; set; } = String.Empty;
     /// <summary> Set values on actual document </summary>
     public void SetValuesOnCallIncomingToCallFlow(CallIncomingToCallFlow callIncomingToCallFlow)
     {
@@ -218,10 +200,8 @@ public class CallIncomingToCallFlowUpdateRequest : IUbluxDocumentId
 /// <summary>
 /// Incoming phone call from PSTN to an extension
 /// </summary>
-public class CallIncomingToExtensionUpdateRequest : IUbluxDocumentId
+public class CallIncomingToExtensionUpdateRequest // : IUbluxDocumentId
 {
-    /// <inheritdoc />
-    public string Id { get; set; } = String.Empty;
     /// <summary> Set values on actual document </summary>
     public void SetValuesOnCallIncomingToExtension(CallIncomingToExtension callIncomingToExtension)
     {
@@ -232,10 +212,8 @@ public class CallIncomingToExtensionUpdateRequest : IUbluxDocumentId
 /// <summary>
 /// Call made to an extension
 /// </summary>
-public class CallOutgoingToExtensionUpdateRequest : IUbluxDocumentId
+public class CallOutgoingToExtensionUpdateRequest // : IUbluxDocumentId
 {
-    /// <inheritdoc />
-    public string Id { get; set; } = String.Empty;
     /// <summary> Set values on actual document </summary>
     public void SetValuesOnCallOutgoingToExtension(CallOutgoingToExtension callOutgoingToExtension)
     {
@@ -248,10 +226,8 @@ public class CallOutgoingToExtensionUpdateRequest : IUbluxDocumentId
 /// </summary><summary>
 /// Call made to cell phone or land line
 /// </summary>
-public class CallOutgoingToPSTNUpdateRequest : IUbluxDocumentId
+public class CallOutgoingToPSTNUpdateRequest // : IUbluxDocumentId
 {
-    /// <inheritdoc />
-    public string Id { get; set; } = String.Empty;
     /// <summary> Set values on actual document </summary>
     public void SetValuesOnCallOutgoingToPSTN(CallOutgoingToPSTN callOutgoingToPSTN)
     {
@@ -262,10 +238,8 @@ public class CallOutgoingToPSTNUpdateRequest : IUbluxDocumentId
 /// <summary>
 /// PBX cloud service where phones connect
 /// </summary>
-public class CloudServicePbxUpdateRequest : IUbluxDocumentId
+public class CloudServicePbxUpdateRequest // : IUbluxDocumentId
 {
-    /// <inheritdoc />
-    public string Id { get; set; } = String.Empty;
     /// <summary> Set values on actual document </summary>
     public void SetValuesOnCloudServicePbx(CloudServicePbx cloudServicePbx)
     {
@@ -276,10 +250,8 @@ public class CloudServicePbxUpdateRequest : IUbluxDocumentId
 /// <summary>
 /// Web app where web-phone lives
 /// </summary>
-public class CloudServiceWebAppUpdateRequest : IUbluxDocumentId
+public class CloudServiceWebAppUpdateRequest // : IUbluxDocumentId
 {
-    /// <inheritdoc />
-    public string Id { get; set; } = String.Empty;
     /// <summary> Set values on actual document </summary>
     public void SetValuesOnCloudServiceWebApp(CloudServiceWebApp cloudServiceWebApp)
     {
@@ -290,10 +262,8 @@ public class CloudServiceWebAppUpdateRequest : IUbluxDocumentId
 /// <summary>
 /// Server where ublux website lives
 /// </summary>
-public class CloudServiceWebHostUpdateRequest : IUbluxDocumentId
+public class CloudServiceWebHostUpdateRequest // : IUbluxDocumentId
 {
-    /// <inheritdoc />
-    public string Id { get; set; } = String.Empty;
     /// <summary> Set values on actual document </summary>
     public void SetValuesOnCloudServiceWebHost(CloudServiceWebHost cloudServiceWebHost)
     {
@@ -304,10 +274,8 @@ public class CloudServiceWebHostUpdateRequest : IUbluxDocumentId
 /// <summary>
 /// Ublux API cloud service
 /// </summary>
-public class CloudServiceWebServiceUpdateRequest : IUbluxDocumentId
+public class CloudServiceWebServiceUpdateRequest // : IUbluxDocumentId
 {
-    /// <inheritdoc />
-    public string Id { get; set; } = String.Empty;
     /// <summary> Set values on actual document </summary>
     public void SetValuesOnCloudServiceWebService(CloudServiceWebService cloudServiceWebService)
     {
@@ -320,10 +288,8 @@ public class CloudServiceWebServiceUpdateRequest : IUbluxDocumentId
 /// </summary><summary>
 /// Contact
 /// </summary>
-public class ContactUpdateRequest : IUbluxDocumentId
+public class ContactUpdateRequest // : IUbluxDocumentId
 {
-    /// <inheritdoc />
-    public string Id { get; set; } = String.Empty;
     /// <summary>
     /// Phone numbers of contact
     /// Key = phone number
@@ -382,10 +348,8 @@ public class ContactUpdateRequest : IUbluxDocumentId
 /// <summary>
 /// Needed because some providers like the one from Spain require customers info in order to purchase VoipNumber
 /// </summary>
-public class CustomerInfoUpdateRequest : IUbluxDocumentId
+public class CustomerInfoUpdateRequest // : IUbluxDocumentId
 {
-    /// <inheritdoc />
-    public string Id { get; set; } = String.Empty;
     /// <summary>
     /// Address where this phone number is intended to be used
     /// </summary>
@@ -408,10 +372,8 @@ public class CustomerInfoUpdateRequest : IUbluxDocumentId
 /// <summary>
 /// Executes a custom IVR when calling this extension
 /// </summary>
-public class ExtensionCallFlowUpdateRequest : IUbluxDocumentId
+public class ExtensionCallFlowUpdateRequest // : IUbluxDocumentId
 {
-    /// <inheritdoc />
-    public string Id { get; set; } = String.Empty;
     /// <summary>
     /// Id of call flow to execute
     /// </summary>
@@ -459,10 +421,8 @@ public class ExtensionCallFlowUpdateRequest : IUbluxDocumentId
 /// <summary>
 /// Parties that dial this extension will be connected
 /// </summary>
-public class ExtensionConferenceUpdateRequest : IUbluxDocumentId
+public class ExtensionConferenceUpdateRequest // : IUbluxDocumentId
 {
-    /// <inheritdoc />
-    public string Id { get; set; } = String.Empty;
     /// <summary>
     /// Optional audio to hear when the first participant enters the conference
     /// </summary>
@@ -510,10 +470,8 @@ public class ExtensionConferenceUpdateRequest : IUbluxDocumentId
 /// <summary>
 /// Basic extension
 /// </summary>
-public class ExtensionDialUpdateRequest : IUbluxDocumentId
+public class ExtensionDialUpdateRequest // : IUbluxDocumentId
 {
-    /// <inheritdoc />
-    public string Id { get; set; } = String.Empty;
     /// <summary>
     /// Lines to call and ring. Minimum of one line is required
     /// </summary>
@@ -566,10 +524,8 @@ public class ExtensionDialUpdateRequest : IUbluxDocumentId
 /// <summary>
 /// Extension where people that call will be placed on a sequence awaiting their turn to be attended
 /// </summary>
-public class ExtensionQueueUpdateRequest : IUbluxDocumentId
+public class ExtensionQueueUpdateRequest // : IUbluxDocumentId
 {
-    /// <inheritdoc />
-    public string Id { get; set; } = String.Empty;
     /// <summary>
     /// Lines to ring
     /// </summary>
@@ -658,10 +614,8 @@ public class ExtensionQueueUpdateRequest : IUbluxDocumentId
 /// <summary>
 /// Calling this extension will enable to store a voicemail and be sent via email
 /// </summary>
-public class ExtensionVoicemailUpdateRequest : IUbluxDocumentId
+public class ExtensionVoicemailUpdateRequest // : IUbluxDocumentId
 {
-    /// <inheritdoc />
-    public string Id { get; set; } = String.Empty;
     /// <summary>
     /// Optional audio to play before leaving voicemail
     /// </summary>
@@ -724,10 +678,8 @@ public class ExtensionVoicemailUpdateRequest : IUbluxDocumentId
 /// Ublux sends and receives faxes via email. This class enables to know the relationship between an email and a fax.
 /// For example email foo@gmail.com will send faxes through VoipFax with id XXXX-XXXX
 /// </summary>
-public class FaxEmailInfoUpdateRequest : IUbluxDocumentId
+public class FaxEmailInfoUpdateRequest // : IUbluxDocumentId
 {
-    /// <inheritdoc />
-    public string Id { get; set; } = String.Empty;
     /// <summary> Set values on actual document </summary>
     public void SetValuesOnFaxEmailInfo(FaxEmailInfo faxEmailInfo)
     {
@@ -740,10 +692,8 @@ public class FaxEmailInfoUpdateRequest : IUbluxDocumentId
 /// </summary><summary>
 /// Incoming fax
 /// </summary>
-public class FaxIncomingUpdateRequest : IUbluxDocumentId
+public class FaxIncomingUpdateRequest // : IUbluxDocumentId
 {
-    /// <inheritdoc />
-    public string Id { get; set; } = String.Empty;
     /// <summary> Set values on actual document </summary>
     public void SetValuesOnFaxIncoming(FaxIncoming faxIncoming)
     {
@@ -756,10 +706,8 @@ public class FaxIncomingUpdateRequest : IUbluxDocumentId
 /// </summary><summary>
 /// Group of faxes sent as a group via email
 /// </summary>
-public class FaxOutgoingGroupUpdateRequest : IUbluxDocumentId
+public class FaxOutgoingGroupUpdateRequest // : IUbluxDocumentId
 {
-    /// <inheritdoc />
-    public string Id { get; set; } = String.Empty;
     /// <summary> Set values on actual document </summary>
     public void SetValuesOnFaxOutgoingGroup(FaxOutgoingGroup faxOutgoingGroup)
     {
@@ -772,10 +720,8 @@ public class FaxOutgoingGroupUpdateRequest : IUbluxDocumentId
 /// </summary><summary>
 /// Someone that has access to consume Ublux Web Api. It can be a PBX, WA, or UbluxUser
 /// </summary>
-public class IdentityUpdateRequest : IUbluxDocumentId
+public class IdentityUpdateRequest // : IUbluxDocumentId
 {
-    /// <inheritdoc />
-    public string Id { get; set; } = String.Empty;
     /// <summary>
     /// Key = service/role such as Phone. The phone role probably will have access to the PhoneController service
     /// Value = Permissions it has on that role. Maybe it can only read data from that service but it cannot update, create or modify.
@@ -808,10 +754,8 @@ public class IdentityUpdateRequest : IUbluxDocumentId
 /// </summary><summary>
 /// Ip address
 /// </summary>
-public class IPUpdateRequest : IUbluxDocumentId
+public class IPUpdateRequest // : IUbluxDocumentId
 {
-    /// <inheritdoc />
-    public string Id { get; set; } = String.Empty;
     /// <summary> Set values on actual document </summary>
     public void SetValuesOnIP(IP iP)
     {
@@ -824,10 +768,8 @@ public class IPUpdateRequest : IUbluxDocumentId
 /// </summary><summary>
 /// Group of line keys
 /// </summary>
-public class LineKeyGroupUpdateRequest : IUbluxDocumentId
+public class LineKeyGroupUpdateRequest // : IUbluxDocumentId
 {
-    /// <inheritdoc />
-    public string Id { get; set; } = String.Empty;
     /// <summary>
     /// Group of speed dial keys. Must have at least one
     /// </summary>
@@ -858,10 +800,8 @@ public class LineKeyGroupUpdateRequest : IUbluxDocumentId
 /// </summary><summary>
 /// All request sent to ublux will be stored.
 /// </summary>
-public class LogWebServiceRequestUpdateRequest : IUbluxDocumentId
+public class LogWebServiceRequestUpdateRequest // : IUbluxDocumentId
 {
-    /// <inheritdoc />
-    public string Id { get; set; } = String.Empty;
     /// <summary> Set values on actual document </summary>
     public void SetValuesOnLogWebServiceRequest(LogWebServiceRequest logWebServiceRequest)
     {
@@ -874,10 +814,8 @@ public class LogWebServiceRequestUpdateRequest : IUbluxDocumentId
 /// </summary><summary>
 /// Multiple audios to be used as music on hold
 /// </summary>
-public class MusicOnHoldGroupUpdateRequest : IUbluxDocumentId
+public class MusicOnHoldGroupUpdateRequest // : IUbluxDocumentId
 {
-    /// <inheritdoc />
-    public string Id { get; set; } = String.Empty;
     /// <summary>
     /// Audios to play meanwhile on hold
     /// </summary>
@@ -908,10 +846,8 @@ public class MusicOnHoldGroupUpdateRequest : IUbluxDocumentId
 /// </summary><summary>
 /// Previously called IpPhone. Represents a phone in UBLUX
 /// </summary>
-public class PhoneUpdateRequest : IUbluxDocumentId
+public class PhoneUpdateRequest // : IUbluxDocumentId
 {
-    /// <inheritdoc />
-    public string Id { get; set; } = String.Empty;
     /// <summary>
     /// This specifies to what PBX it will be connected to
     /// </summary>
@@ -927,7 +863,7 @@ public class PhoneUpdateRequest : IUbluxDocumentId
     /// <summary>
     /// Username and password to login to web-app
     /// </summary>
-    public String? IdIdentityWebApp { get; set; }
+    public String? IdIdentity { get; set; }
     /// <summary> Set values on actual document </summary>
     public void SetValuesOnPhone(Phone phone)
     {
@@ -937,8 +873,8 @@ public class PhoneUpdateRequest : IUbluxDocumentId
             phone.IdPhoneConfiguration = this.IdPhoneConfiguration;
         if(this.FriendlyName!=null)
             phone.FriendlyName = this.FriendlyName;
-        if(this.IdIdentityWebApp!=null)
-            phone.IdIdentityWebApp = this.IdIdentityWebApp;
+        if(this.IdIdentity!=null)
+            phone.IdIdentity = this.IdIdentity;
     }
 
 }
@@ -948,10 +884,8 @@ public class PhoneUpdateRequest : IUbluxDocumentId
 /// </summary><summary>
 /// Configuration of a phone
 /// </summary>
-public class PhoneConfigurationUpdateRequest : IUbluxDocumentId
+public class PhoneConfigurationUpdateRequest // : IUbluxDocumentId
 {
-    /// <inheritdoc />
-    public string Id { get; set; } = String.Empty;
     /// <summary>
     /// Line keys to use
     /// </summary>
@@ -982,10 +916,8 @@ public class PhoneConfigurationUpdateRequest : IUbluxDocumentId
 /// </summary><summary>
 /// Group used to call multiple parties
 /// </summary>
-public class PowerDialerGroupUpdateRequest : IUbluxDocumentId
+public class PowerDialerGroupUpdateRequest // : IUbluxDocumentId
 {
-    /// <inheritdoc />
-    public string Id { get; set; } = String.Empty;
     /// <summary>
     /// Friendly name of power dialer group
     /// </summary>
@@ -1010,10 +942,8 @@ public class PowerDialerGroupUpdateRequest : IUbluxDocumentId
 /// </summary><summary>
 /// SMS message
 /// </summary>
-public class SMSUpdateRequest : IUbluxDocumentId
+public class SMSUpdateRequest // : IUbluxDocumentId
 {
-    /// <inheritdoc />
-    public string Id { get; set; } = String.Empty;
     /// <summary> Set values on actual document </summary>
     public void SetValuesOnSMS(SMS sMS)
     {
@@ -1024,10 +954,8 @@ public class SMSUpdateRequest : IUbluxDocumentId
 /// <summary>
 /// This type of trunk origination forwards the call to our pbx. Twilio uses this type of Trunk origination
 /// </summary>
-public class TrunkOriginationForwardUpdateRequest : IUbluxDocumentId
+public class TrunkOriginationForwardUpdateRequest // : IUbluxDocumentId
 {
-    /// <inheritdoc />
-    public string Id { get; set; } = String.Empty;
     /// <summary> Set values on actual document </summary>
     public void SetValuesOnTrunkOriginationForward(TrunkOriginationForward trunkOriginationForward)
     {
@@ -1036,12 +964,10 @@ public class TrunkOriginationForwardUpdateRequest : IUbluxDocumentId
 }
 
 /// <summary>
-/// This type of trunk origination we must register with provider in order to receive phone calls
+/// This type of trunk origination we must register with provider in order to receive phone calls. Netbox solutions uses this type of trunk
 /// </summary>
-public class TrunkOriginationRegisterUpdateRequest : IUbluxDocumentId
+public class TrunkOriginationRegisterUpdateRequest // : IUbluxDocumentId
 {
-    /// <inheritdoc />
-    public string Id { get; set; } = String.Empty;
     /// <summary> Set values on actual document </summary>
     public void SetValuesOnTrunkOriginationRegister(TrunkOriginationRegister trunkOriginationRegister)
     {
@@ -1052,10 +978,8 @@ public class TrunkOriginationRegisterUpdateRequest : IUbluxDocumentId
 /// <summary>
 /// Trunk used to receive phone calls
 /// </summary>
-public class TrunkTerminationUpdateRequest : IUbluxDocumentId
+public class TrunkTerminationUpdateRequest // : IUbluxDocumentId
 {
-    /// <inheritdoc />
-    public string Id { get; set; } = String.Empty;
     /// <summary> Set values on actual document </summary>
     public void SetValuesOnTrunkTermination(TrunkTermination trunkTermination)
     {
@@ -1066,10 +990,8 @@ public class TrunkTerminationUpdateRequest : IUbluxDocumentId
 /// <summary>
 /// Group of trunk terminations ordered by priority
 /// </summary>
-public class TrunkTerminationGroupUpdateRequest : IUbluxDocumentId
+public class TrunkTerminationGroupUpdateRequest // : IUbluxDocumentId
 {
-    /// <inheritdoc />
-    public string Id { get; set; } = String.Empty;
     /// <summary> Set values on actual document </summary>
     public void SetValuesOnTrunkTerminationGroup(TrunkTerminationGroup trunkTerminationGroup)
     {
@@ -1082,10 +1004,8 @@ public class TrunkTerminationGroupUpdateRequest : IUbluxDocumentId
 /// </summary><summary>
 /// Tokens that are not authorized. Perhaps a token has been stolen
 /// </summary>
-public class UnauthorizedTokenUpdateRequest : IUbluxDocumentId
+public class UnauthorizedTokenUpdateRequest // : IUbluxDocumentId
 {
-    /// <inheritdoc />
-    public string Id { get; set; } = String.Empty;
     /// <summary> Set values on actual document </summary>
     public void SetValuesOnUnauthorizedToken(UnauthorizedToken unauthorizedToken)
     {
@@ -1096,10 +1016,8 @@ public class UnauthorizedTokenUpdateRequest : IUbluxDocumentId
 /// <summary>
 /// Extensions may forward an existing voicemail to another extension
 /// </summary>
-public class VoicemailUpdateRequest : IUbluxDocumentId
+public class VoicemailUpdateRequest // : IUbluxDocumentId
 {
-    /// <inheritdoc />
-    public string Id { get; set; } = String.Empty;
     /// <summary> Set values on actual document </summary>
     public void SetValuesOnVoicemail(Voicemail voicemail)
     {
@@ -1110,10 +1028,8 @@ public class VoicemailUpdateRequest : IUbluxDocumentId
 /// <summary>
 /// Voicemail that was forwarded from one extension to another
 /// </summary>
-public class VoicemailForwardedUpdateRequest : IUbluxDocumentId
+public class VoicemailForwardedUpdateRequest // : IUbluxDocumentId
 {
-    /// <inheritdoc />
-    public string Id { get; set; } = String.Empty;
     /// <summary> Set values on actual document </summary>
     public void SetValuesOnVoicemailForwarded(VoicemailForwarded voicemailForwarded)
     {
@@ -1124,10 +1040,8 @@ public class VoicemailForwardedUpdateRequest : IUbluxDocumentId
 /// <summary>
 /// Incoming phone number available for purchase
 /// </summary>
-public class VoipNumberAvailableForPurchaseUpdateRequest : IUbluxDocumentId
+public class VoipNumberAvailableForPurchaseUpdateRequest // : IUbluxDocumentId
 {
-    /// <inheritdoc />
-    public string Id { get; set; } = String.Empty;
     /// <summary>
     /// This is only for external incoming calls
     /// If the friendly name of this VoipNumber is "Spanish Support" then "Spanish Support"
@@ -1176,10 +1090,8 @@ public class VoipNumberAvailableForPurchaseUpdateRequest : IUbluxDocumentId
 /// <summary>
 /// Incoming phone number configured to receive faxes
 /// </summary>
-public class VoipNumberFaxUpdateRequest : IUbluxDocumentId
+public class VoipNumberFaxUpdateRequest // : IUbluxDocumentId
 {
-    /// <inheritdoc />
-    public string Id { get; set; } = String.Empty;
     /// <summary>
     /// key = id of logic OR id of extension.
     /// value = day of week when it executes
@@ -1247,10 +1159,8 @@ public class VoipNumberFaxUpdateRequest : IUbluxDocumentId
 /// <summary>
 /// Incoming phone number configured to receive phone calls
 /// </summary>
-public class VoipNumberPhoneUpdateRequest : IUbluxDocumentId
+public class VoipNumberPhoneUpdateRequest // : IUbluxDocumentId
 {
-    /// <inheritdoc />
-    public string Id { get; set; } = String.Empty;
     /// <summary>
     /// key = id of logic OR id of extension.
     /// value = day of week when it executes
@@ -1318,10 +1228,8 @@ public class VoipNumberPhoneUpdateRequest : IUbluxDocumentId
 /// <summary>
 /// VOIP provider. Some providers have an API that enable us to automate things.
 /// </summary>
-public class VoipProviderUpdateRequest : IUbluxDocumentId
+public class VoipProviderUpdateRequest // : IUbluxDocumentId
 {
-    /// <inheritdoc />
-    public string Id { get; set; } = String.Empty;
     /// <summary> Set values on actual document </summary>
     public void SetValuesOnVoipProvider(VoipProvider voipProvider)
     {
@@ -1334,10 +1242,8 @@ public class VoipProviderUpdateRequest : IUbluxDocumentId
 /// </summary><summary>
 /// Web callback that will be fired when a custom event of interest occurs.
 /// </summary>
-public class WebHookUpdateRequest : IUbluxDocumentId
+public class WebHookUpdateRequest // : IUbluxDocumentId
 {
-    /// <inheritdoc />
-    public string Id { get; set; } = String.Empty;
     /// <summary>
     /// Points to enum and not database!
     /// </summary>
@@ -1368,10 +1274,8 @@ public class WebHookUpdateRequest : IUbluxDocumentId
 /// </summary><summary>
 /// It is part of a phone. Lines are needed in order to make and receive phone calls.
 /// </summary>
-public class LineUpdateRequest : IUbluxDocumentId
+public class LineUpdateRequest // : IUbluxDocumentId
 {
-    /// <inheritdoc />
-    public string Id { get; set; } = String.Empty;
     /// <summary>
     /// Caller id number that will be used to place outbound calls
     /// </summary>

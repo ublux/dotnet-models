@@ -10,44 +10,42 @@ public static class ModelsExtensionMethods
     /// </summary>
     public static Type GetTypeUsedByCollection(this Collections collection)
     {
-        switch (collection)
+        return collection switch
         {
-            case Collections.Accounts: return typeof(Account);
-            case Collections.AgreementsToTermsAndConditions: return typeof(AgreementToTermsAndConditions);
-            case Collections.AirNetworksProvinces: return typeof(AirNetworksProvince);
-            case Collections.Audios: return typeof(Audio);
-            case Collections.AutoProvisionReferences: return typeof(AutoProvisionReference);
-            case Collections.BlackListPhoneNumbers: return typeof(BlackListPhoneNumber);
-            case Collections.Calls: return typeof(Call);
-            case Collections.CallerIdMasks: return typeof(CallerIdMask);
-            case Collections.CallFlows: return typeof(CallFlow);
-            case Collections.CloudServices: return typeof(CloudService);
-            case Collections.Contacts: return typeof(Contact);
-            case Collections.CustomerInfos: return typeof(CustomerInfo);
-            case Collections.Extensions: return typeof(Extension);
-            case Collections.FaxEmailInfos: return typeof(FaxEmailInfo);
-            case Collections.FaxesIncoming: return typeof(FaxIncoming);
-            case Collections.FaxOutgoingGroups: return typeof(FaxOutgoingGroup);
-            case Collections.Voicemails: return typeof(Voicemail);
-            case Collections.Identities: return typeof(Identity);
-            case Collections.IPs: return typeof(IP);
-            case Collections.LineKeyGroups: return typeof(LineKeyGroup);
-            case Collections.LogWebServiceRequests: return typeof(LogWebServiceRequest);
-            case Collections.MusicOnHoldGroups: return typeof(MusicOnHoldGroup);
-            case Collections.Phones: return typeof(Phone);
-            case Collections.PhoneConfigurations: return typeof(PhoneConfiguration);
-            case Collections.PowerDialerGroups: return typeof(PowerDialerGroup);
-            case Collections.SMS: return typeof(SMS);
-            case Collections.TrunkOriginations: return typeof(TrunkOrigination);
-            case Collections.TrunkTerminations: return typeof(TrunkTermination);
-            case Collections.TrunkTerminationGroups: return typeof(TrunkTerminationGroup);
-            case Collections.VoipNumbers: return typeof(VoipNumber);
-            case Collections.VoipProviders: return typeof(VoipProvider);
-            case Collections.WebHooks: return typeof(WebHook);
-            case Collections.UnauthorizedTokens: return typeof(UnauthorizedToken);
-            default:
-                // should never hit this point because this is tested in SouceCode Unit tests
-                throw new Exception("Missing collection type");
-        }
+            Collections.Accounts => typeof(Account),
+            Collections.AgreementsToTermsAndConditions => typeof(AgreementToTermsAndConditions),
+            Collections.AirNetworksProvinces => typeof(AirNetworksProvince),
+            Collections.Audios => typeof(Audio),
+            Collections.AutoProvisionReferences => typeof(AutoProvisionReference),
+            Collections.BlackListPhoneNumbers => typeof(BlackListPhoneNumber),
+            Collections.Calls => typeof(Call),
+            Collections.CallerIdMasks => typeof(CallerIdMask),
+            Collections.CallFlows => typeof(CallFlow),
+            Collections.CloudServices => typeof(CloudService),
+            Collections.Contacts => typeof(Contact),
+            Collections.CustomerInfos => typeof(CustomerInfo),
+            Collections.Extensions => typeof(Extension),
+            Collections.FaxEmailInfos => typeof(FaxEmailInfo),
+            Collections.FaxesIncoming => typeof(FaxIncoming),
+            Collections.FaxOutgoingGroups => typeof(FaxOutgoingGroup),
+            Collections.Voicemails => typeof(Voicemail),
+            Collections.Identities => typeof(Identity),
+            Collections.IPs => typeof(IP),
+            Collections.LineKeyGroups => typeof(LineKeyGroup),
+            Collections.LogWebServiceRequests => typeof(LogWebServiceRequest),
+            Collections.MusicOnHoldGroups => typeof(MusicOnHoldGroup),
+            Collections.Phones => typeof(Phone),
+            Collections.PhoneConfigurations => typeof(PhoneConfiguration),
+            Collections.PowerDialerGroups => typeof(PowerDialerGroup),
+            Collections.SMS => typeof(SMS),
+            Collections.TrunkOriginations => typeof(TrunkOrigination),
+            Collections.TrunkTerminations => typeof(TrunkTermination),
+            Collections.TrunkTerminationGroups => typeof(TrunkTerminationGroup),
+            Collections.VoipNumbers => typeof(VoipNumber),
+            Collections.VoipProviders => typeof(VoipProvider),
+            Collections.WebHooks => typeof(WebHook),
+            Collections.UnauthorizedTokens => typeof(UnauthorizedToken),
+            _ => throw new Exception("Missing collection type"),// should never hit this point because this is tested in SouceCode Unit tests
+        };
     }
 }

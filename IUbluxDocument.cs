@@ -48,10 +48,10 @@ public abstract partial class UbluxDocument : IUbluxDocument, IUbluxDocumentId
 #if UBLUX_BACKEND
         [Obsolete($"Set via {nameof(BuiltId)}")]
 #endif
-        set => id = value;
+        init => id = value;
     }
-    private string id = String.Empty;    
-
+    private string id = String.Empty;
+    
     /// <summary>
     ///     Creation date
     /// </summary>
@@ -67,21 +67,4 @@ public abstract partial class UbluxDocument : IUbluxDocument, IUbluxDocumentId
     [AllowUpdate(false)]
     [HideForCreateRequest]
     public DateTime? DateUpdated { get; set; }
-}
-
-/// <summary>
-///     All ublux documents should have this id
-/// </summary>
-public interface IUbluxDocumentId
-{
-    /// <summary>
-    ///     Id of document
-    /// </summary>
-    [BsonId]
-    [JsonProperty(Order = -1000)]
-    [BsonElement(Order = -1000000)]
-    [AllowUpdate(true)] // set to true because property id is needed on auto-generated objects    
-    [IsRequired]
-    [HideForCreateRequest]
-    string Id { get; set; }
 }

@@ -28,6 +28,15 @@ public partial interface IUbluxDocument : IUbluxDocumentId
 public abstract partial class UbluxDocument : IUbluxDocument, IUbluxDocumentId
 {
     /// <summary>
+    ///     Only used in unit tests
+    /// </summary>
+    [Obsolete($"Only use this for unit tests")]
+    public void UnitTest_SetId(string id)
+    {
+        this.id = id;
+    }
+
+    /// <summary>
     ///     Set id
     /// </summary>
     [System.Text.Json.Serialization.JsonIgnore]
