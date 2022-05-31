@@ -4775,6 +4775,16 @@ public class PhoneFilterRequest
     [JsonProperty("idPhoneConfiguration_reg")]
     public string? IdPhoneConfiguration_REG { get; set; }
 
+    /// <summary> IdIdentity equals </summary>
+    [JsonProperty("idIdentity_eq")]
+    public string? IdIdentity_EQ { get; set; }
+    /// <summary> IdIdentity contains </summary>
+    [JsonProperty("idIdentity_con")]
+    public string? IdIdentity_CON { get; set; }
+    /// <summary> IdIdentity regex </summary>
+    [JsonProperty("idIdentity_reg")]
+    public string? IdIdentity_REG { get; set; }
+
     /// <summary> Lines.FriendlyName equals </summary>
     [JsonProperty("lines_friendlyName_eq")]
     public string? Lines_FriendlyName_EQ { get; set; }
@@ -4888,16 +4898,6 @@ public class PhoneFilterRequest
     /// <summary> FriendlyName regex </summary>
     [JsonProperty("friendlyName_reg")]
     public string? FriendlyName_REG { get; set; }
-
-    /// <summary> IdIdentity equals </summary>
-    [JsonProperty("IdIdentity_eq")]
-    public string? IdIdentity_EQ { get; set; }
-    /// <summary> IdIdentity contains </summary>
-    [JsonProperty("IdIdentity_con")]
-    public string? IdIdentity_CON { get; set; }
-    /// <summary> IdIdentity regex </summary>
-    [JsonProperty("IdIdentity_reg")]
-    public string? IdIdentity_REG { get; set; }
 
     /// <summary> Id equals </summary>
     [JsonProperty("id_eq")]

@@ -857,13 +857,13 @@ public class PhoneUpdateRequest // : IUbluxDocumentId
     /// </summary>
     public String? IdPhoneConfiguration { get; set; }
     /// <summary>
-    /// Descriptive name of phone
-    /// </summary>
-    public String? FriendlyName { get; set; }
-    /// <summary>
     /// Username and password to login to web-app
     /// </summary>
     public String? IdIdentity { get; set; }
+    /// <summary>
+    /// Descriptive name of phone
+    /// </summary>
+    public String? FriendlyName { get; set; }
     /// <summary> Set values on actual document </summary>
     public void SetValuesOnPhone(Phone phone)
     {
@@ -871,10 +871,10 @@ public class PhoneUpdateRequest // : IUbluxDocumentId
             phone.IdCloudServicePbx = this.IdCloudServicePbx;
         if(this.IdPhoneConfiguration!=null)
             phone.IdPhoneConfiguration = this.IdPhoneConfiguration;
-        if(this.FriendlyName!=null)
-            phone.FriendlyName = this.FriendlyName;
         if(this.IdIdentity!=null)
             phone.IdIdentity = this.IdIdentity;
+        if(this.FriendlyName!=null)
+            phone.FriendlyName = this.FriendlyName;
     }
 
 }
