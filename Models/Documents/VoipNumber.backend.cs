@@ -25,7 +25,7 @@ public abstract partial class VoipNumber : UbluxDocument, IReferncesAccount
     public string? IdCustomerInfo { get; set; }
 
     /// <summary>
-    ///     Responsible for receiving phone calls
+    ///     Responsible for receiving phone calls. May be null because phone number may not be activated (AvailableForPurcahse)
     /// </summary>
     [References(typeof(TrunkOrigination))]
     [IgnoreDataMember]
