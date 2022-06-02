@@ -67,7 +67,7 @@ public partial class ContactNumber
             buf[index++] = c;
 
         // append separator
-        buf[index++] = ':';
+        buf[index++] = '-';
 
         // append last 8 digits
         foreach (var c in phoneNumber.Where(x => char.IsDigit(x)).Reverse().Take(8).Reverse())
