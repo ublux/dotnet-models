@@ -6,9 +6,9 @@
 public class ChildCallAttendantTransferToExtension : ChildCall
 {
     /// <summary>
-    ///     Id extension to whom it was transferred
+    ///     Extension to whom it was transferred
     /// </summary>
-    public string IdExtension { get; set; } = string.Empty;
+    public Extension? Extension { get; set; } 
 
     /// <summary>
     ///     AttendantTransferToExtension

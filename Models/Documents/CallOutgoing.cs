@@ -23,12 +23,12 @@ public abstract class CallOutgoing : Call
     public override Contact? Contact { get; set; }
 
     /// <summary>
-    ///     Id line that started phone call
+    ///     Line that started phone call
     /// </summary>
     [AllowUpdate(false)]
-    [References(typeof(Line))]
+    //[References(typeof(Line))]
     [IsRequired]
-    public string IdLineThatInitiatedCall { get; set; } = string.Empty;
+    public Line LineThatInitiatedCall { get; set; } = new Line();
 }
 
 

@@ -24,7 +24,7 @@ public partial class CallOutgoingToPSTN : CallOutgoing
     public CountryIsoCode Country { get; set; }
 
     /// <summary>
-    ///     Phone number dialed in international format 
+    ///     Phone number dialed in international format. Property To should contain number that was actually dialed
     /// </summary>
     [AllowUpdate(false)]
     [IsRequired]

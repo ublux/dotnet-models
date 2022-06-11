@@ -6,10 +6,10 @@
 public class ChildCallBlindTransferToExtension : ChildCallBlindTransfer
 {
     /// <summary>
-    ///     Id of extension where it was blind transferred to
+    ///     Extension where it was blind transferred to
     /// </summary>
-    [IsRequired]
-    public string IdExtension { get; set; } = string.Empty;
+    //[IsRequired]
+    public Extension? Extension { get; set; } 
 
     /// <summary>
     ///     BlindTransferToExtension

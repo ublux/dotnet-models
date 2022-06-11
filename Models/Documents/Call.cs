@@ -44,7 +44,6 @@ public abstract partial class Call : UbluxDocument
     [AllowUpdate(false)]
     public List<ChildCall> ChildCalls { get; set; } = new();
 
-
     /// <summary>
     ///     If outgoing:
     ///         Contact that we are calling
@@ -128,13 +127,11 @@ public abstract partial class Call : UbluxDocument
     [AllowUpdate(false)]
     public Recording? Recording { get; set; }
 
-
     /// <summary>
     ///     Was video disabled on call?
     /// </summary>
     [AllowUpdate(false)]
     public bool DisabledVideo { get; set; }
-
 
     /// <summary>
     ///     List because user can send digits multiple times

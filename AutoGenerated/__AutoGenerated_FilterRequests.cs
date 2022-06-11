@@ -1107,65 +1107,376 @@ public class CallIncomingToCallFlowFilterRequest
 /// <summary> Enables searching for CallIncomingToExtensions </summary>
 public class CallIncomingToExtensionFilterRequest 
 {
-    /// <summary> IdExtension equals </summary>
-    [JsonProperty("idExtension_eq")]
-    public string? IdExtension_EQ { get; set; }
-    /// <summary> IdExtension contains </summary>
-    [JsonProperty("idExtension_con")]
-    public string? IdExtension_CON { get; set; }
-    /// <summary> IdExtension regex </summary>
-    [JsonProperty("idExtension_reg")]
-    public string? IdExtension_REG { get; set; }
+    /// <summary> Extension.IdMusicOnHoldGroup equals </summary>
+    [JsonProperty("extension_idMusicOnHoldGroup_eq")]
+    public string? Extension_IdMusicOnHoldGroup_EQ { get; set; }
+    /// <summary> Extension.IdMusicOnHoldGroup contains </summary>
+    [JsonProperty("extension_idMusicOnHoldGroup_con")]
+    public string? Extension_IdMusicOnHoldGroup_CON { get; set; }
+    /// <summary> Extension.IdMusicOnHoldGroup regex </summary>
+    [JsonProperty("extension_idMusicOnHoldGroup_reg")]
+    public string? Extension_IdMusicOnHoldGroup_REG { get; set; }
 
-    /// <summary> IdLineThatAnswered equals </summary>
-    [JsonProperty("idLineThatAnswered_eq")]
-    public string? IdLineThatAnswered_EQ { get; set; }
-    /// <summary> IdLineThatAnswered contains </summary>
-    [JsonProperty("idLineThatAnswered_con")]
-    public string? IdLineThatAnswered_CON { get; set; }
-    /// <summary> IdLineThatAnswered regex </summary>
-    [JsonProperty("idLineThatAnswered_reg")]
-    public string? IdLineThatAnswered_REG { get; set; }
+    /// <summary> Extension.ExtensionType equals </summary>
+    [JsonProperty("extension_extensionType_eq")]
+    public ExtensionType? Extension_ExtensionType_EQ { get; set; }
 
-    /// <summary> IdsLinesThatRing equals </summary>
-    [JsonProperty("idsLinesThatRing_eq")]
-    public string? IdsLinesThatRing_EQ { get; set; }
-    /// <summary> IdsLinesThatRing contains </summary>
-    [JsonProperty("idsLinesThatRing_con")]
-    public string? IdsLinesThatRing_CON { get; set; }
-    /// <summary> IdsLinesThatRing regex </summary>
-    [JsonProperty("idsLinesThatRing_reg")]
-    public string? IdsLinesThatRing_REG { get; set; }
+    /// <summary> Extension.Number equals </summary>
+    [JsonProperty("extension_number_eq")]
+    public string? Extension_Number_EQ { get; set; }
+    /// <summary> Extension.Number contains </summary>
+    [JsonProperty("extension_number_con")]
+    public string? Extension_Number_CON { get; set; }
+    /// <summary> Extension.Number regex </summary>
+    [JsonProperty("extension_number_reg")]
+    public string? Extension_Number_REG { get; set; }
 
-    /// <summary> IdsLinesThatDidNotRing equals </summary>
-    [JsonProperty("idsLinesThatDidNotRing_eq")]
-    public string? IdsLinesThatDidNotRing_EQ { get; set; }
-    /// <summary> IdsLinesThatDidNotRing contains </summary>
-    [JsonProperty("idsLinesThatDidNotRing_con")]
-    public string? IdsLinesThatDidNotRing_CON { get; set; }
-    /// <summary> IdsLinesThatDidNotRing regex </summary>
-    [JsonProperty("idsLinesThatDidNotRing_reg")]
-    public string? IdsLinesThatDidNotRing_REG { get; set; }
+    /// <summary> Extension.InjectExtensionNameToCallerId equals </summary>
+    [JsonProperty("extension_injectExtensionNameToCallerId_eq")]
+    public bool? Extension_InjectExtensionNameToCallerId_EQ { get; set; }
 
-    /// <summary> ExtensionNumber equals </summary>
-    [JsonProperty("extensionNumber_eq")]
-    public string? ExtensionNumber_EQ { get; set; }
-    /// <summary> ExtensionNumber contains </summary>
-    [JsonProperty("extensionNumber_con")]
-    public string? ExtensionNumber_CON { get; set; }
-    /// <summary> ExtensionNumber regex </summary>
-    [JsonProperty("extensionNumber_reg")]
-    public string? ExtensionNumber_REG { get; set; }
+    /// <summary> Extension.Id equals </summary>
+    [JsonProperty("extension_id_eq")]
+    public string? Extension_Id_EQ { get; set; }
+    /// <summary> Extension.Id contains </summary>
+    [JsonProperty("extension_id_con")]
+    public string? Extension_Id_CON { get; set; }
+    /// <summary> Extension.Id regex </summary>
+    [JsonProperty("extension_id_reg")]
+    public string? Extension_Id_REG { get; set; }
 
-    /// <summary> ExtensionFriendlyName equals </summary>
-    [JsonProperty("extensionFriendlyName_eq")]
-    public string? ExtensionFriendlyName_EQ { get; set; }
-    /// <summary> ExtensionFriendlyName contains </summary>
-    [JsonProperty("extensionFriendlyName_con")]
-    public string? ExtensionFriendlyName_CON { get; set; }
-    /// <summary> ExtensionFriendlyName regex </summary>
-    [JsonProperty("extensionFriendlyName_reg")]
-    public string? ExtensionFriendlyName_REG { get; set; }
+    /// <summary> Extension.DateCreated equals </summary>
+    [JsonProperty("extension_dateCreated_eq")]
+    public DateTime? Extension_DateCreated_EQ { get; set; }
+    /// <summary> Extension.DateCreated less than or equal to </summary>
+    [JsonProperty("extension_dateCreated_lte")]
+    public DateTime? Extension_DateCreated_LTE { get; set; }
+    /// <summary> Extension.DateCreated greater than or equal to </summary>
+    [JsonProperty("extension_dateCreated_gte")]
+    public DateTime? Extension_DateCreated_GTE { get; set; }
+
+    /// <summary> Extension.DateUpdated equals </summary>
+    [JsonProperty("extension_dateUpdated_eq")]
+    public DateTime? Extension_DateUpdated_EQ { get; set; }
+    /// <summary> Extension.DateUpdated less than or equal to </summary>
+    [JsonProperty("extension_dateUpdated_lte")]
+    public DateTime? Extension_DateUpdated_LTE { get; set; }
+    /// <summary> Extension.DateUpdated greater than or equal to </summary>
+    [JsonProperty("extension_dateUpdated_gte")]
+    public DateTime? Extension_DateUpdated_GTE { get; set; }
+
+
+    /// <summary> LineThatAnswered.FriendlyName equals </summary>
+    [JsonProperty("lineThatAnswered_friendlyName_eq")]
+    public string? LineThatAnswered_FriendlyName_EQ { get; set; }
+    /// <summary> LineThatAnswered.FriendlyName contains </summary>
+    [JsonProperty("lineThatAnswered_friendlyName_con")]
+    public string? LineThatAnswered_FriendlyName_CON { get; set; }
+    /// <summary> LineThatAnswered.FriendlyName regex </summary>
+    [JsonProperty("lineThatAnswered_friendlyName_reg")]
+    public string? LineThatAnswered_FriendlyName_REG { get; set; }
+
+    /// <summary> LineThatAnswered.LineConnectionStatus.IpWAN equals </summary>
+    [JsonProperty("lineThatAnswered_lineConnectionStatus_ipWAN_eq")]
+    public string? LineThatAnswered_LineConnectionStatus_IpWAN_EQ { get; set; }
+    /// <summary> LineThatAnswered.LineConnectionStatus.IpWAN contains </summary>
+    [JsonProperty("lineThatAnswered_lineConnectionStatus_ipWAN_con")]
+    public string? LineThatAnswered_LineConnectionStatus_IpWAN_CON { get; set; }
+    /// <summary> LineThatAnswered.LineConnectionStatus.IpWAN regex </summary>
+    [JsonProperty("lineThatAnswered_lineConnectionStatus_ipWAN_reg")]
+    public string? LineThatAnswered_LineConnectionStatus_IpWAN_REG { get; set; }
+
+    /// <summary> LineThatAnswered.LineConnectionStatus.PortWAN equals </summary>
+    [JsonProperty("lineThatAnswered_lineConnectionStatus_portWAN_eq")]
+    public System.Int32? LineThatAnswered_LineConnectionStatus_PortWAN_EQ { get; set; }
+    /// <summary> LineThatAnswered.LineConnectionStatus.PortWAN less than or equal to </summary>
+    [JsonProperty("lineThatAnswered_lineConnectionStatus_portWAN_lte")]
+    public System.Int32? LineThatAnswered_LineConnectionStatus_PortWAN_LTE { get; set; }
+    /// <summary> LineThatAnswered.LineConnectionStatus.PortWAN greater than or equal to </summary>
+    [JsonProperty("lineThatAnswered_lineConnectionStatus_portWAN_gte")]
+    public System.Int32? LineThatAnswered_LineConnectionStatus_PortWAN_GTE { get; set; }
+
+    /// <summary> LineThatAnswered.LineConnectionStatus.IpLAN equals </summary>
+    [JsonProperty("lineThatAnswered_lineConnectionStatus_ipLAN_eq")]
+    public string? LineThatAnswered_LineConnectionStatus_IpLAN_EQ { get; set; }
+    /// <summary> LineThatAnswered.LineConnectionStatus.IpLAN contains </summary>
+    [JsonProperty("lineThatAnswered_lineConnectionStatus_ipLAN_con")]
+    public string? LineThatAnswered_LineConnectionStatus_IpLAN_CON { get; set; }
+    /// <summary> LineThatAnswered.LineConnectionStatus.IpLAN regex </summary>
+    [JsonProperty("lineThatAnswered_lineConnectionStatus_ipLAN_reg")]
+    public string? LineThatAnswered_LineConnectionStatus_IpLAN_REG { get; set; }
+
+    /// <summary> LineThatAnswered.LineConnectionStatus.PortLAN equals </summary>
+    [JsonProperty("lineThatAnswered_lineConnectionStatus_portLAN_eq")]
+    public System.Int32? LineThatAnswered_LineConnectionStatus_PortLAN_EQ { get; set; }
+    /// <summary> LineThatAnswered.LineConnectionStatus.PortLAN less than or equal to </summary>
+    [JsonProperty("lineThatAnswered_lineConnectionStatus_portLAN_lte")]
+    public System.Int32? LineThatAnswered_LineConnectionStatus_PortLAN_LTE { get; set; }
+    /// <summary> LineThatAnswered.LineConnectionStatus.PortLAN greater than or equal to </summary>
+    [JsonProperty("lineThatAnswered_lineConnectionStatus_portLAN_gte")]
+    public System.Int32? LineThatAnswered_LineConnectionStatus_PortLAN_GTE { get; set; }
+
+    /// <summary> LineThatAnswered.LineConnectionStatus.UserAgent equals </summary>
+    [JsonProperty("lineThatAnswered_lineConnectionStatus_userAgent_eq")]
+    public string? LineThatAnswered_LineConnectionStatus_UserAgent_EQ { get; set; }
+    /// <summary> LineThatAnswered.LineConnectionStatus.UserAgent contains </summary>
+    [JsonProperty("lineThatAnswered_lineConnectionStatus_userAgent_con")]
+    public string? LineThatAnswered_LineConnectionStatus_UserAgent_CON { get; set; }
+    /// <summary> LineThatAnswered.LineConnectionStatus.UserAgent regex </summary>
+    [JsonProperty("lineThatAnswered_lineConnectionStatus_userAgent_reg")]
+    public string? LineThatAnswered_LineConnectionStatus_UserAgent_REG { get; set; }
+
+    /// <summary> LineThatAnswered.LineConnectionStatus.IsConnected equals </summary>
+    [JsonProperty("lineThatAnswered_lineConnectionStatus_isConnected_eq")]
+    public bool? LineThatAnswered_LineConnectionStatus_IsConnected_EQ { get; set; }
+
+    /// <summary> LineThatAnswered.LineConnectionStatus.DateConnected equals </summary>
+    [JsonProperty("lineThatAnswered_lineConnectionStatus_dateConnected_eq")]
+    public DateTime? LineThatAnswered_LineConnectionStatus_DateConnected_EQ { get; set; }
+    /// <summary> LineThatAnswered.LineConnectionStatus.DateConnected less than or equal to </summary>
+    [JsonProperty("lineThatAnswered_lineConnectionStatus_dateConnected_lte")]
+    public DateTime? LineThatAnswered_LineConnectionStatus_DateConnected_LTE { get; set; }
+    /// <summary> LineThatAnswered.LineConnectionStatus.DateConnected greater than or equal to </summary>
+    [JsonProperty("lineThatAnswered_lineConnectionStatus_dateConnected_gte")]
+    public DateTime? LineThatAnswered_LineConnectionStatus_DateConnected_GTE { get; set; }
+
+
+    /// <summary> LineThatAnswered.CallerIdNumber equals </summary>
+    [JsonProperty("lineThatAnswered_callerIdNumber_eq")]
+    public string? LineThatAnswered_CallerIdNumber_EQ { get; set; }
+    /// <summary> LineThatAnswered.CallerIdNumber contains </summary>
+    [JsonProperty("lineThatAnswered_callerIdNumber_con")]
+    public string? LineThatAnswered_CallerIdNumber_CON { get; set; }
+    /// <summary> LineThatAnswered.CallerIdNumber regex </summary>
+    [JsonProperty("lineThatAnswered_callerIdNumber_reg")]
+    public string? LineThatAnswered_CallerIdNumber_REG { get; set; }
+
+    /// <summary> LineThatAnswered.RecordExternalCalls equals </summary>
+    [JsonProperty("lineThatAnswered_recordExternalCalls_eq")]
+    public bool? LineThatAnswered_RecordExternalCalls_EQ { get; set; }
+
+    /// <summary> LineThatAnswered.RecordInternalCalls equals </summary>
+    [JsonProperty("lineThatAnswered_recordInternalCalls_eq")]
+    public bool? LineThatAnswered_RecordInternalCalls_EQ { get; set; }
+
+    /// <summary> LineThatAnswered.Id equals </summary>
+    [JsonProperty("lineThatAnswered_id_eq")]
+    public string? LineThatAnswered_Id_EQ { get; set; }
+    /// <summary> LineThatAnswered.Id contains </summary>
+    [JsonProperty("lineThatAnswered_id_con")]
+    public string? LineThatAnswered_Id_CON { get; set; }
+    /// <summary> LineThatAnswered.Id regex </summary>
+    [JsonProperty("lineThatAnswered_id_reg")]
+    public string? LineThatAnswered_Id_REG { get; set; }
+
+
+    /// <summary> LinesThatRing.FriendlyName equals </summary>
+    [JsonProperty("linesThatRing_friendlyName_eq")]
+    public string? LinesThatRing_FriendlyName_EQ { get; set; }
+    /// <summary> LinesThatRing.FriendlyName contains </summary>
+    [JsonProperty("linesThatRing_friendlyName_con")]
+    public string? LinesThatRing_FriendlyName_CON { get; set; }
+    /// <summary> LinesThatRing.FriendlyName regex </summary>
+    [JsonProperty("linesThatRing_friendlyName_reg")]
+    public string? LinesThatRing_FriendlyName_REG { get; set; }
+
+    /// <summary> LinesThatRing.LineConnectionStatus.IpWAN equals </summary>
+    [JsonProperty("linesThatRing_lineConnectionStatus_ipWAN_eq")]
+    public string? LinesThatRing_LineConnectionStatus_IpWAN_EQ { get; set; }
+    /// <summary> LinesThatRing.LineConnectionStatus.IpWAN contains </summary>
+    [JsonProperty("linesThatRing_lineConnectionStatus_ipWAN_con")]
+    public string? LinesThatRing_LineConnectionStatus_IpWAN_CON { get; set; }
+    /// <summary> LinesThatRing.LineConnectionStatus.IpWAN regex </summary>
+    [JsonProperty("linesThatRing_lineConnectionStatus_ipWAN_reg")]
+    public string? LinesThatRing_LineConnectionStatus_IpWAN_REG { get; set; }
+
+    /// <summary> LinesThatRing.LineConnectionStatus.PortWAN equals </summary>
+    [JsonProperty("linesThatRing_lineConnectionStatus_portWAN_eq")]
+    public System.Int32? LinesThatRing_LineConnectionStatus_PortWAN_EQ { get; set; }
+    /// <summary> LinesThatRing.LineConnectionStatus.PortWAN less than or equal to </summary>
+    [JsonProperty("linesThatRing_lineConnectionStatus_portWAN_lte")]
+    public System.Int32? LinesThatRing_LineConnectionStatus_PortWAN_LTE { get; set; }
+    /// <summary> LinesThatRing.LineConnectionStatus.PortWAN greater than or equal to </summary>
+    [JsonProperty("linesThatRing_lineConnectionStatus_portWAN_gte")]
+    public System.Int32? LinesThatRing_LineConnectionStatus_PortWAN_GTE { get; set; }
+
+    /// <summary> LinesThatRing.LineConnectionStatus.IpLAN equals </summary>
+    [JsonProperty("linesThatRing_lineConnectionStatus_ipLAN_eq")]
+    public string? LinesThatRing_LineConnectionStatus_IpLAN_EQ { get; set; }
+    /// <summary> LinesThatRing.LineConnectionStatus.IpLAN contains </summary>
+    [JsonProperty("linesThatRing_lineConnectionStatus_ipLAN_con")]
+    public string? LinesThatRing_LineConnectionStatus_IpLAN_CON { get; set; }
+    /// <summary> LinesThatRing.LineConnectionStatus.IpLAN regex </summary>
+    [JsonProperty("linesThatRing_lineConnectionStatus_ipLAN_reg")]
+    public string? LinesThatRing_LineConnectionStatus_IpLAN_REG { get; set; }
+
+    /// <summary> LinesThatRing.LineConnectionStatus.PortLAN equals </summary>
+    [JsonProperty("linesThatRing_lineConnectionStatus_portLAN_eq")]
+    public System.Int32? LinesThatRing_LineConnectionStatus_PortLAN_EQ { get; set; }
+    /// <summary> LinesThatRing.LineConnectionStatus.PortLAN less than or equal to </summary>
+    [JsonProperty("linesThatRing_lineConnectionStatus_portLAN_lte")]
+    public System.Int32? LinesThatRing_LineConnectionStatus_PortLAN_LTE { get; set; }
+    /// <summary> LinesThatRing.LineConnectionStatus.PortLAN greater than or equal to </summary>
+    [JsonProperty("linesThatRing_lineConnectionStatus_portLAN_gte")]
+    public System.Int32? LinesThatRing_LineConnectionStatus_PortLAN_GTE { get; set; }
+
+    /// <summary> LinesThatRing.LineConnectionStatus.UserAgent equals </summary>
+    [JsonProperty("linesThatRing_lineConnectionStatus_userAgent_eq")]
+    public string? LinesThatRing_LineConnectionStatus_UserAgent_EQ { get; set; }
+    /// <summary> LinesThatRing.LineConnectionStatus.UserAgent contains </summary>
+    [JsonProperty("linesThatRing_lineConnectionStatus_userAgent_con")]
+    public string? LinesThatRing_LineConnectionStatus_UserAgent_CON { get; set; }
+    /// <summary> LinesThatRing.LineConnectionStatus.UserAgent regex </summary>
+    [JsonProperty("linesThatRing_lineConnectionStatus_userAgent_reg")]
+    public string? LinesThatRing_LineConnectionStatus_UserAgent_REG { get; set; }
+
+    /// <summary> LinesThatRing.LineConnectionStatus.IsConnected equals </summary>
+    [JsonProperty("linesThatRing_lineConnectionStatus_isConnected_eq")]
+    public bool? LinesThatRing_LineConnectionStatus_IsConnected_EQ { get; set; }
+
+    /// <summary> LinesThatRing.LineConnectionStatus.DateConnected equals </summary>
+    [JsonProperty("linesThatRing_lineConnectionStatus_dateConnected_eq")]
+    public DateTime? LinesThatRing_LineConnectionStatus_DateConnected_EQ { get; set; }
+    /// <summary> LinesThatRing.LineConnectionStatus.DateConnected less than or equal to </summary>
+    [JsonProperty("linesThatRing_lineConnectionStatus_dateConnected_lte")]
+    public DateTime? LinesThatRing_LineConnectionStatus_DateConnected_LTE { get; set; }
+    /// <summary> LinesThatRing.LineConnectionStatus.DateConnected greater than or equal to </summary>
+    [JsonProperty("linesThatRing_lineConnectionStatus_dateConnected_gte")]
+    public DateTime? LinesThatRing_LineConnectionStatus_DateConnected_GTE { get; set; }
+
+
+    /// <summary> LinesThatRing.CallerIdNumber equals </summary>
+    [JsonProperty("linesThatRing_callerIdNumber_eq")]
+    public string? LinesThatRing_CallerIdNumber_EQ { get; set; }
+    /// <summary> LinesThatRing.CallerIdNumber contains </summary>
+    [JsonProperty("linesThatRing_callerIdNumber_con")]
+    public string? LinesThatRing_CallerIdNumber_CON { get; set; }
+    /// <summary> LinesThatRing.CallerIdNumber regex </summary>
+    [JsonProperty("linesThatRing_callerIdNumber_reg")]
+    public string? LinesThatRing_CallerIdNumber_REG { get; set; }
+
+    /// <summary> LinesThatRing.RecordExternalCalls equals </summary>
+    [JsonProperty("linesThatRing_recordExternalCalls_eq")]
+    public bool? LinesThatRing_RecordExternalCalls_EQ { get; set; }
+
+    /// <summary> LinesThatRing.RecordInternalCalls equals </summary>
+    [JsonProperty("linesThatRing_recordInternalCalls_eq")]
+    public bool? LinesThatRing_RecordInternalCalls_EQ { get; set; }
+
+    /// <summary> LinesThatRing.Id equals </summary>
+    [JsonProperty("linesThatRing_id_eq")]
+    public string? LinesThatRing_Id_EQ { get; set; }
+    /// <summary> LinesThatRing.Id contains </summary>
+    [JsonProperty("linesThatRing_id_con")]
+    public string? LinesThatRing_Id_CON { get; set; }
+    /// <summary> LinesThatRing.Id regex </summary>
+    [JsonProperty("linesThatRing_id_reg")]
+    public string? LinesThatRing_Id_REG { get; set; }
+
+
+    /// <summary> LinesThatDidNotRing.FriendlyName equals </summary>
+    [JsonProperty("linesThatDidNotRing_friendlyName_eq")]
+    public string? LinesThatDidNotRing_FriendlyName_EQ { get; set; }
+    /// <summary> LinesThatDidNotRing.FriendlyName contains </summary>
+    [JsonProperty("linesThatDidNotRing_friendlyName_con")]
+    public string? LinesThatDidNotRing_FriendlyName_CON { get; set; }
+    /// <summary> LinesThatDidNotRing.FriendlyName regex </summary>
+    [JsonProperty("linesThatDidNotRing_friendlyName_reg")]
+    public string? LinesThatDidNotRing_FriendlyName_REG { get; set; }
+
+    /// <summary> LinesThatDidNotRing.LineConnectionStatus.IpWAN equals </summary>
+    [JsonProperty("linesThatDidNotRing_lineConnectionStatus_ipWAN_eq")]
+    public string? LinesThatDidNotRing_LineConnectionStatus_IpWAN_EQ { get; set; }
+    /// <summary> LinesThatDidNotRing.LineConnectionStatus.IpWAN contains </summary>
+    [JsonProperty("linesThatDidNotRing_lineConnectionStatus_ipWAN_con")]
+    public string? LinesThatDidNotRing_LineConnectionStatus_IpWAN_CON { get; set; }
+    /// <summary> LinesThatDidNotRing.LineConnectionStatus.IpWAN regex </summary>
+    [JsonProperty("linesThatDidNotRing_lineConnectionStatus_ipWAN_reg")]
+    public string? LinesThatDidNotRing_LineConnectionStatus_IpWAN_REG { get; set; }
+
+    /// <summary> LinesThatDidNotRing.LineConnectionStatus.PortWAN equals </summary>
+    [JsonProperty("linesThatDidNotRing_lineConnectionStatus_portWAN_eq")]
+    public System.Int32? LinesThatDidNotRing_LineConnectionStatus_PortWAN_EQ { get; set; }
+    /// <summary> LinesThatDidNotRing.LineConnectionStatus.PortWAN less than or equal to </summary>
+    [JsonProperty("linesThatDidNotRing_lineConnectionStatus_portWAN_lte")]
+    public System.Int32? LinesThatDidNotRing_LineConnectionStatus_PortWAN_LTE { get; set; }
+    /// <summary> LinesThatDidNotRing.LineConnectionStatus.PortWAN greater than or equal to </summary>
+    [JsonProperty("linesThatDidNotRing_lineConnectionStatus_portWAN_gte")]
+    public System.Int32? LinesThatDidNotRing_LineConnectionStatus_PortWAN_GTE { get; set; }
+
+    /// <summary> LinesThatDidNotRing.LineConnectionStatus.IpLAN equals </summary>
+    [JsonProperty("linesThatDidNotRing_lineConnectionStatus_ipLAN_eq")]
+    public string? LinesThatDidNotRing_LineConnectionStatus_IpLAN_EQ { get; set; }
+    /// <summary> LinesThatDidNotRing.LineConnectionStatus.IpLAN contains </summary>
+    [JsonProperty("linesThatDidNotRing_lineConnectionStatus_ipLAN_con")]
+    public string? LinesThatDidNotRing_LineConnectionStatus_IpLAN_CON { get; set; }
+    /// <summary> LinesThatDidNotRing.LineConnectionStatus.IpLAN regex </summary>
+    [JsonProperty("linesThatDidNotRing_lineConnectionStatus_ipLAN_reg")]
+    public string? LinesThatDidNotRing_LineConnectionStatus_IpLAN_REG { get; set; }
+
+    /// <summary> LinesThatDidNotRing.LineConnectionStatus.PortLAN equals </summary>
+    [JsonProperty("linesThatDidNotRing_lineConnectionStatus_portLAN_eq")]
+    public System.Int32? LinesThatDidNotRing_LineConnectionStatus_PortLAN_EQ { get; set; }
+    /// <summary> LinesThatDidNotRing.LineConnectionStatus.PortLAN less than or equal to </summary>
+    [JsonProperty("linesThatDidNotRing_lineConnectionStatus_portLAN_lte")]
+    public System.Int32? LinesThatDidNotRing_LineConnectionStatus_PortLAN_LTE { get; set; }
+    /// <summary> LinesThatDidNotRing.LineConnectionStatus.PortLAN greater than or equal to </summary>
+    [JsonProperty("linesThatDidNotRing_lineConnectionStatus_portLAN_gte")]
+    public System.Int32? LinesThatDidNotRing_LineConnectionStatus_PortLAN_GTE { get; set; }
+
+    /// <summary> LinesThatDidNotRing.LineConnectionStatus.UserAgent equals </summary>
+    [JsonProperty("linesThatDidNotRing_lineConnectionStatus_userAgent_eq")]
+    public string? LinesThatDidNotRing_LineConnectionStatus_UserAgent_EQ { get; set; }
+    /// <summary> LinesThatDidNotRing.LineConnectionStatus.UserAgent contains </summary>
+    [JsonProperty("linesThatDidNotRing_lineConnectionStatus_userAgent_con")]
+    public string? LinesThatDidNotRing_LineConnectionStatus_UserAgent_CON { get; set; }
+    /// <summary> LinesThatDidNotRing.LineConnectionStatus.UserAgent regex </summary>
+    [JsonProperty("linesThatDidNotRing_lineConnectionStatus_userAgent_reg")]
+    public string? LinesThatDidNotRing_LineConnectionStatus_UserAgent_REG { get; set; }
+
+    /// <summary> LinesThatDidNotRing.LineConnectionStatus.IsConnected equals </summary>
+    [JsonProperty("linesThatDidNotRing_lineConnectionStatus_isConnected_eq")]
+    public bool? LinesThatDidNotRing_LineConnectionStatus_IsConnected_EQ { get; set; }
+
+    /// <summary> LinesThatDidNotRing.LineConnectionStatus.DateConnected equals </summary>
+    [JsonProperty("linesThatDidNotRing_lineConnectionStatus_dateConnected_eq")]
+    public DateTime? LinesThatDidNotRing_LineConnectionStatus_DateConnected_EQ { get; set; }
+    /// <summary> LinesThatDidNotRing.LineConnectionStatus.DateConnected less than or equal to </summary>
+    [JsonProperty("linesThatDidNotRing_lineConnectionStatus_dateConnected_lte")]
+    public DateTime? LinesThatDidNotRing_LineConnectionStatus_DateConnected_LTE { get; set; }
+    /// <summary> LinesThatDidNotRing.LineConnectionStatus.DateConnected greater than or equal to </summary>
+    [JsonProperty("linesThatDidNotRing_lineConnectionStatus_dateConnected_gte")]
+    public DateTime? LinesThatDidNotRing_LineConnectionStatus_DateConnected_GTE { get; set; }
+
+
+    /// <summary> LinesThatDidNotRing.CallerIdNumber equals </summary>
+    [JsonProperty("linesThatDidNotRing_callerIdNumber_eq")]
+    public string? LinesThatDidNotRing_CallerIdNumber_EQ { get; set; }
+    /// <summary> LinesThatDidNotRing.CallerIdNumber contains </summary>
+    [JsonProperty("linesThatDidNotRing_callerIdNumber_con")]
+    public string? LinesThatDidNotRing_CallerIdNumber_CON { get; set; }
+    /// <summary> LinesThatDidNotRing.CallerIdNumber regex </summary>
+    [JsonProperty("linesThatDidNotRing_callerIdNumber_reg")]
+    public string? LinesThatDidNotRing_CallerIdNumber_REG { get; set; }
+
+    /// <summary> LinesThatDidNotRing.RecordExternalCalls equals </summary>
+    [JsonProperty("linesThatDidNotRing_recordExternalCalls_eq")]
+    public bool? LinesThatDidNotRing_RecordExternalCalls_EQ { get; set; }
+
+    /// <summary> LinesThatDidNotRing.RecordInternalCalls equals </summary>
+    [JsonProperty("linesThatDidNotRing_recordInternalCalls_eq")]
+    public bool? LinesThatDidNotRing_RecordInternalCalls_EQ { get; set; }
+
+    /// <summary> LinesThatDidNotRing.Id equals </summary>
+    [JsonProperty("linesThatDidNotRing_id_eq")]
+    public string? LinesThatDidNotRing_Id_EQ { get; set; }
+    /// <summary> LinesThatDidNotRing.Id contains </summary>
+    [JsonProperty("linesThatDidNotRing_id_con")]
+    public string? LinesThatDidNotRing_Id_CON { get; set; }
+    /// <summary> LinesThatDidNotRing.Id regex </summary>
+    [JsonProperty("linesThatDidNotRing_id_reg")]
+    public string? LinesThatDidNotRing_Id_REG { get; set; }
+
 
     /// <summary> CallType equals </summary>
     [JsonProperty("callType_eq")]
@@ -1626,65 +1937,376 @@ public class CallIncomingToExtensionFilterRequest
 /// <summary> Enables searching for CallOutgoingToExtensions </summary>
 public class CallOutgoingToExtensionFilterRequest 
 {
-    /// <summary> IdExtension equals </summary>
-    [JsonProperty("idExtension_eq")]
-    public string? IdExtension_EQ { get; set; }
-    /// <summary> IdExtension contains </summary>
-    [JsonProperty("idExtension_con")]
-    public string? IdExtension_CON { get; set; }
-    /// <summary> IdExtension regex </summary>
-    [JsonProperty("idExtension_reg")]
-    public string? IdExtension_REG { get; set; }
+    /// <summary> Extension.IdMusicOnHoldGroup equals </summary>
+    [JsonProperty("extension_idMusicOnHoldGroup_eq")]
+    public string? Extension_IdMusicOnHoldGroup_EQ { get; set; }
+    /// <summary> Extension.IdMusicOnHoldGroup contains </summary>
+    [JsonProperty("extension_idMusicOnHoldGroup_con")]
+    public string? Extension_IdMusicOnHoldGroup_CON { get; set; }
+    /// <summary> Extension.IdMusicOnHoldGroup regex </summary>
+    [JsonProperty("extension_idMusicOnHoldGroup_reg")]
+    public string? Extension_IdMusicOnHoldGroup_REG { get; set; }
 
-    /// <summary> IdLineThatAnswered equals </summary>
-    [JsonProperty("idLineThatAnswered_eq")]
-    public string? IdLineThatAnswered_EQ { get; set; }
-    /// <summary> IdLineThatAnswered contains </summary>
-    [JsonProperty("idLineThatAnswered_con")]
-    public string? IdLineThatAnswered_CON { get; set; }
-    /// <summary> IdLineThatAnswered regex </summary>
-    [JsonProperty("idLineThatAnswered_reg")]
-    public string? IdLineThatAnswered_REG { get; set; }
+    /// <summary> Extension.ExtensionType equals </summary>
+    [JsonProperty("extension_extensionType_eq")]
+    public ExtensionType? Extension_ExtensionType_EQ { get; set; }
 
-    /// <summary> IdsLinesThatRing equals </summary>
-    [JsonProperty("idsLinesThatRing_eq")]
-    public string? IdsLinesThatRing_EQ { get; set; }
-    /// <summary> IdsLinesThatRing contains </summary>
-    [JsonProperty("idsLinesThatRing_con")]
-    public string? IdsLinesThatRing_CON { get; set; }
-    /// <summary> IdsLinesThatRing regex </summary>
-    [JsonProperty("idsLinesThatRing_reg")]
-    public string? IdsLinesThatRing_REG { get; set; }
+    /// <summary> Extension.Number equals </summary>
+    [JsonProperty("extension_number_eq")]
+    public string? Extension_Number_EQ { get; set; }
+    /// <summary> Extension.Number contains </summary>
+    [JsonProperty("extension_number_con")]
+    public string? Extension_Number_CON { get; set; }
+    /// <summary> Extension.Number regex </summary>
+    [JsonProperty("extension_number_reg")]
+    public string? Extension_Number_REG { get; set; }
 
-    /// <summary> IdsLinesThatDidNotRing equals </summary>
-    [JsonProperty("idsLinesThatDidNotRing_eq")]
-    public string? IdsLinesThatDidNotRing_EQ { get; set; }
-    /// <summary> IdsLinesThatDidNotRing contains </summary>
-    [JsonProperty("idsLinesThatDidNotRing_con")]
-    public string? IdsLinesThatDidNotRing_CON { get; set; }
-    /// <summary> IdsLinesThatDidNotRing regex </summary>
-    [JsonProperty("idsLinesThatDidNotRing_reg")]
-    public string? IdsLinesThatDidNotRing_REG { get; set; }
+    /// <summary> Extension.InjectExtensionNameToCallerId equals </summary>
+    [JsonProperty("extension_injectExtensionNameToCallerId_eq")]
+    public bool? Extension_InjectExtensionNameToCallerId_EQ { get; set; }
 
-    /// <summary> ExtensionNumber equals </summary>
-    [JsonProperty("extensionNumber_eq")]
-    public string? ExtensionNumber_EQ { get; set; }
-    /// <summary> ExtensionNumber contains </summary>
-    [JsonProperty("extensionNumber_con")]
-    public string? ExtensionNumber_CON { get; set; }
-    /// <summary> ExtensionNumber regex </summary>
-    [JsonProperty("extensionNumber_reg")]
-    public string? ExtensionNumber_REG { get; set; }
+    /// <summary> Extension.Id equals </summary>
+    [JsonProperty("extension_id_eq")]
+    public string? Extension_Id_EQ { get; set; }
+    /// <summary> Extension.Id contains </summary>
+    [JsonProperty("extension_id_con")]
+    public string? Extension_Id_CON { get; set; }
+    /// <summary> Extension.Id regex </summary>
+    [JsonProperty("extension_id_reg")]
+    public string? Extension_Id_REG { get; set; }
 
-    /// <summary> ExtensionFriendlyName equals </summary>
-    [JsonProperty("extensionFriendlyName_eq")]
-    public string? ExtensionFriendlyName_EQ { get; set; }
-    /// <summary> ExtensionFriendlyName contains </summary>
-    [JsonProperty("extensionFriendlyName_con")]
-    public string? ExtensionFriendlyName_CON { get; set; }
-    /// <summary> ExtensionFriendlyName regex </summary>
-    [JsonProperty("extensionFriendlyName_reg")]
-    public string? ExtensionFriendlyName_REG { get; set; }
+    /// <summary> Extension.DateCreated equals </summary>
+    [JsonProperty("extension_dateCreated_eq")]
+    public DateTime? Extension_DateCreated_EQ { get; set; }
+    /// <summary> Extension.DateCreated less than or equal to </summary>
+    [JsonProperty("extension_dateCreated_lte")]
+    public DateTime? Extension_DateCreated_LTE { get; set; }
+    /// <summary> Extension.DateCreated greater than or equal to </summary>
+    [JsonProperty("extension_dateCreated_gte")]
+    public DateTime? Extension_DateCreated_GTE { get; set; }
+
+    /// <summary> Extension.DateUpdated equals </summary>
+    [JsonProperty("extension_dateUpdated_eq")]
+    public DateTime? Extension_DateUpdated_EQ { get; set; }
+    /// <summary> Extension.DateUpdated less than or equal to </summary>
+    [JsonProperty("extension_dateUpdated_lte")]
+    public DateTime? Extension_DateUpdated_LTE { get; set; }
+    /// <summary> Extension.DateUpdated greater than or equal to </summary>
+    [JsonProperty("extension_dateUpdated_gte")]
+    public DateTime? Extension_DateUpdated_GTE { get; set; }
+
+
+    /// <summary> LineThatAnswered.FriendlyName equals </summary>
+    [JsonProperty("lineThatAnswered_friendlyName_eq")]
+    public string? LineThatAnswered_FriendlyName_EQ { get; set; }
+    /// <summary> LineThatAnswered.FriendlyName contains </summary>
+    [JsonProperty("lineThatAnswered_friendlyName_con")]
+    public string? LineThatAnswered_FriendlyName_CON { get; set; }
+    /// <summary> LineThatAnswered.FriendlyName regex </summary>
+    [JsonProperty("lineThatAnswered_friendlyName_reg")]
+    public string? LineThatAnswered_FriendlyName_REG { get; set; }
+
+    /// <summary> LineThatAnswered.LineConnectionStatus.IpWAN equals </summary>
+    [JsonProperty("lineThatAnswered_lineConnectionStatus_ipWAN_eq")]
+    public string? LineThatAnswered_LineConnectionStatus_IpWAN_EQ { get; set; }
+    /// <summary> LineThatAnswered.LineConnectionStatus.IpWAN contains </summary>
+    [JsonProperty("lineThatAnswered_lineConnectionStatus_ipWAN_con")]
+    public string? LineThatAnswered_LineConnectionStatus_IpWAN_CON { get; set; }
+    /// <summary> LineThatAnswered.LineConnectionStatus.IpWAN regex </summary>
+    [JsonProperty("lineThatAnswered_lineConnectionStatus_ipWAN_reg")]
+    public string? LineThatAnswered_LineConnectionStatus_IpWAN_REG { get; set; }
+
+    /// <summary> LineThatAnswered.LineConnectionStatus.PortWAN equals </summary>
+    [JsonProperty("lineThatAnswered_lineConnectionStatus_portWAN_eq")]
+    public System.Int32? LineThatAnswered_LineConnectionStatus_PortWAN_EQ { get; set; }
+    /// <summary> LineThatAnswered.LineConnectionStatus.PortWAN less than or equal to </summary>
+    [JsonProperty("lineThatAnswered_lineConnectionStatus_portWAN_lte")]
+    public System.Int32? LineThatAnswered_LineConnectionStatus_PortWAN_LTE { get; set; }
+    /// <summary> LineThatAnswered.LineConnectionStatus.PortWAN greater than or equal to </summary>
+    [JsonProperty("lineThatAnswered_lineConnectionStatus_portWAN_gte")]
+    public System.Int32? LineThatAnswered_LineConnectionStatus_PortWAN_GTE { get; set; }
+
+    /// <summary> LineThatAnswered.LineConnectionStatus.IpLAN equals </summary>
+    [JsonProperty("lineThatAnswered_lineConnectionStatus_ipLAN_eq")]
+    public string? LineThatAnswered_LineConnectionStatus_IpLAN_EQ { get; set; }
+    /// <summary> LineThatAnswered.LineConnectionStatus.IpLAN contains </summary>
+    [JsonProperty("lineThatAnswered_lineConnectionStatus_ipLAN_con")]
+    public string? LineThatAnswered_LineConnectionStatus_IpLAN_CON { get; set; }
+    /// <summary> LineThatAnswered.LineConnectionStatus.IpLAN regex </summary>
+    [JsonProperty("lineThatAnswered_lineConnectionStatus_ipLAN_reg")]
+    public string? LineThatAnswered_LineConnectionStatus_IpLAN_REG { get; set; }
+
+    /// <summary> LineThatAnswered.LineConnectionStatus.PortLAN equals </summary>
+    [JsonProperty("lineThatAnswered_lineConnectionStatus_portLAN_eq")]
+    public System.Int32? LineThatAnswered_LineConnectionStatus_PortLAN_EQ { get; set; }
+    /// <summary> LineThatAnswered.LineConnectionStatus.PortLAN less than or equal to </summary>
+    [JsonProperty("lineThatAnswered_lineConnectionStatus_portLAN_lte")]
+    public System.Int32? LineThatAnswered_LineConnectionStatus_PortLAN_LTE { get; set; }
+    /// <summary> LineThatAnswered.LineConnectionStatus.PortLAN greater than or equal to </summary>
+    [JsonProperty("lineThatAnswered_lineConnectionStatus_portLAN_gte")]
+    public System.Int32? LineThatAnswered_LineConnectionStatus_PortLAN_GTE { get; set; }
+
+    /// <summary> LineThatAnswered.LineConnectionStatus.UserAgent equals </summary>
+    [JsonProperty("lineThatAnswered_lineConnectionStatus_userAgent_eq")]
+    public string? LineThatAnswered_LineConnectionStatus_UserAgent_EQ { get; set; }
+    /// <summary> LineThatAnswered.LineConnectionStatus.UserAgent contains </summary>
+    [JsonProperty("lineThatAnswered_lineConnectionStatus_userAgent_con")]
+    public string? LineThatAnswered_LineConnectionStatus_UserAgent_CON { get; set; }
+    /// <summary> LineThatAnswered.LineConnectionStatus.UserAgent regex </summary>
+    [JsonProperty("lineThatAnswered_lineConnectionStatus_userAgent_reg")]
+    public string? LineThatAnswered_LineConnectionStatus_UserAgent_REG { get; set; }
+
+    /// <summary> LineThatAnswered.LineConnectionStatus.IsConnected equals </summary>
+    [JsonProperty("lineThatAnswered_lineConnectionStatus_isConnected_eq")]
+    public bool? LineThatAnswered_LineConnectionStatus_IsConnected_EQ { get; set; }
+
+    /// <summary> LineThatAnswered.LineConnectionStatus.DateConnected equals </summary>
+    [JsonProperty("lineThatAnswered_lineConnectionStatus_dateConnected_eq")]
+    public DateTime? LineThatAnswered_LineConnectionStatus_DateConnected_EQ { get; set; }
+    /// <summary> LineThatAnswered.LineConnectionStatus.DateConnected less than or equal to </summary>
+    [JsonProperty("lineThatAnswered_lineConnectionStatus_dateConnected_lte")]
+    public DateTime? LineThatAnswered_LineConnectionStatus_DateConnected_LTE { get; set; }
+    /// <summary> LineThatAnswered.LineConnectionStatus.DateConnected greater than or equal to </summary>
+    [JsonProperty("lineThatAnswered_lineConnectionStatus_dateConnected_gte")]
+    public DateTime? LineThatAnswered_LineConnectionStatus_DateConnected_GTE { get; set; }
+
+
+    /// <summary> LineThatAnswered.CallerIdNumber equals </summary>
+    [JsonProperty("lineThatAnswered_callerIdNumber_eq")]
+    public string? LineThatAnswered_CallerIdNumber_EQ { get; set; }
+    /// <summary> LineThatAnswered.CallerIdNumber contains </summary>
+    [JsonProperty("lineThatAnswered_callerIdNumber_con")]
+    public string? LineThatAnswered_CallerIdNumber_CON { get; set; }
+    /// <summary> LineThatAnswered.CallerIdNumber regex </summary>
+    [JsonProperty("lineThatAnswered_callerIdNumber_reg")]
+    public string? LineThatAnswered_CallerIdNumber_REG { get; set; }
+
+    /// <summary> LineThatAnswered.RecordExternalCalls equals </summary>
+    [JsonProperty("lineThatAnswered_recordExternalCalls_eq")]
+    public bool? LineThatAnswered_RecordExternalCalls_EQ { get; set; }
+
+    /// <summary> LineThatAnswered.RecordInternalCalls equals </summary>
+    [JsonProperty("lineThatAnswered_recordInternalCalls_eq")]
+    public bool? LineThatAnswered_RecordInternalCalls_EQ { get; set; }
+
+    /// <summary> LineThatAnswered.Id equals </summary>
+    [JsonProperty("lineThatAnswered_id_eq")]
+    public string? LineThatAnswered_Id_EQ { get; set; }
+    /// <summary> LineThatAnswered.Id contains </summary>
+    [JsonProperty("lineThatAnswered_id_con")]
+    public string? LineThatAnswered_Id_CON { get; set; }
+    /// <summary> LineThatAnswered.Id regex </summary>
+    [JsonProperty("lineThatAnswered_id_reg")]
+    public string? LineThatAnswered_Id_REG { get; set; }
+
+
+    /// <summary> LinesThatRing.FriendlyName equals </summary>
+    [JsonProperty("linesThatRing_friendlyName_eq")]
+    public string? LinesThatRing_FriendlyName_EQ { get; set; }
+    /// <summary> LinesThatRing.FriendlyName contains </summary>
+    [JsonProperty("linesThatRing_friendlyName_con")]
+    public string? LinesThatRing_FriendlyName_CON { get; set; }
+    /// <summary> LinesThatRing.FriendlyName regex </summary>
+    [JsonProperty("linesThatRing_friendlyName_reg")]
+    public string? LinesThatRing_FriendlyName_REG { get; set; }
+
+    /// <summary> LinesThatRing.LineConnectionStatus.IpWAN equals </summary>
+    [JsonProperty("linesThatRing_lineConnectionStatus_ipWAN_eq")]
+    public string? LinesThatRing_LineConnectionStatus_IpWAN_EQ { get; set; }
+    /// <summary> LinesThatRing.LineConnectionStatus.IpWAN contains </summary>
+    [JsonProperty("linesThatRing_lineConnectionStatus_ipWAN_con")]
+    public string? LinesThatRing_LineConnectionStatus_IpWAN_CON { get; set; }
+    /// <summary> LinesThatRing.LineConnectionStatus.IpWAN regex </summary>
+    [JsonProperty("linesThatRing_lineConnectionStatus_ipWAN_reg")]
+    public string? LinesThatRing_LineConnectionStatus_IpWAN_REG { get; set; }
+
+    /// <summary> LinesThatRing.LineConnectionStatus.PortWAN equals </summary>
+    [JsonProperty("linesThatRing_lineConnectionStatus_portWAN_eq")]
+    public System.Int32? LinesThatRing_LineConnectionStatus_PortWAN_EQ { get; set; }
+    /// <summary> LinesThatRing.LineConnectionStatus.PortWAN less than or equal to </summary>
+    [JsonProperty("linesThatRing_lineConnectionStatus_portWAN_lte")]
+    public System.Int32? LinesThatRing_LineConnectionStatus_PortWAN_LTE { get; set; }
+    /// <summary> LinesThatRing.LineConnectionStatus.PortWAN greater than or equal to </summary>
+    [JsonProperty("linesThatRing_lineConnectionStatus_portWAN_gte")]
+    public System.Int32? LinesThatRing_LineConnectionStatus_PortWAN_GTE { get; set; }
+
+    /// <summary> LinesThatRing.LineConnectionStatus.IpLAN equals </summary>
+    [JsonProperty("linesThatRing_lineConnectionStatus_ipLAN_eq")]
+    public string? LinesThatRing_LineConnectionStatus_IpLAN_EQ { get; set; }
+    /// <summary> LinesThatRing.LineConnectionStatus.IpLAN contains </summary>
+    [JsonProperty("linesThatRing_lineConnectionStatus_ipLAN_con")]
+    public string? LinesThatRing_LineConnectionStatus_IpLAN_CON { get; set; }
+    /// <summary> LinesThatRing.LineConnectionStatus.IpLAN regex </summary>
+    [JsonProperty("linesThatRing_lineConnectionStatus_ipLAN_reg")]
+    public string? LinesThatRing_LineConnectionStatus_IpLAN_REG { get; set; }
+
+    /// <summary> LinesThatRing.LineConnectionStatus.PortLAN equals </summary>
+    [JsonProperty("linesThatRing_lineConnectionStatus_portLAN_eq")]
+    public System.Int32? LinesThatRing_LineConnectionStatus_PortLAN_EQ { get; set; }
+    /// <summary> LinesThatRing.LineConnectionStatus.PortLAN less than or equal to </summary>
+    [JsonProperty("linesThatRing_lineConnectionStatus_portLAN_lte")]
+    public System.Int32? LinesThatRing_LineConnectionStatus_PortLAN_LTE { get; set; }
+    /// <summary> LinesThatRing.LineConnectionStatus.PortLAN greater than or equal to </summary>
+    [JsonProperty("linesThatRing_lineConnectionStatus_portLAN_gte")]
+    public System.Int32? LinesThatRing_LineConnectionStatus_PortLAN_GTE { get; set; }
+
+    /// <summary> LinesThatRing.LineConnectionStatus.UserAgent equals </summary>
+    [JsonProperty("linesThatRing_lineConnectionStatus_userAgent_eq")]
+    public string? LinesThatRing_LineConnectionStatus_UserAgent_EQ { get; set; }
+    /// <summary> LinesThatRing.LineConnectionStatus.UserAgent contains </summary>
+    [JsonProperty("linesThatRing_lineConnectionStatus_userAgent_con")]
+    public string? LinesThatRing_LineConnectionStatus_UserAgent_CON { get; set; }
+    /// <summary> LinesThatRing.LineConnectionStatus.UserAgent regex </summary>
+    [JsonProperty("linesThatRing_lineConnectionStatus_userAgent_reg")]
+    public string? LinesThatRing_LineConnectionStatus_UserAgent_REG { get; set; }
+
+    /// <summary> LinesThatRing.LineConnectionStatus.IsConnected equals </summary>
+    [JsonProperty("linesThatRing_lineConnectionStatus_isConnected_eq")]
+    public bool? LinesThatRing_LineConnectionStatus_IsConnected_EQ { get; set; }
+
+    /// <summary> LinesThatRing.LineConnectionStatus.DateConnected equals </summary>
+    [JsonProperty("linesThatRing_lineConnectionStatus_dateConnected_eq")]
+    public DateTime? LinesThatRing_LineConnectionStatus_DateConnected_EQ { get; set; }
+    /// <summary> LinesThatRing.LineConnectionStatus.DateConnected less than or equal to </summary>
+    [JsonProperty("linesThatRing_lineConnectionStatus_dateConnected_lte")]
+    public DateTime? LinesThatRing_LineConnectionStatus_DateConnected_LTE { get; set; }
+    /// <summary> LinesThatRing.LineConnectionStatus.DateConnected greater than or equal to </summary>
+    [JsonProperty("linesThatRing_lineConnectionStatus_dateConnected_gte")]
+    public DateTime? LinesThatRing_LineConnectionStatus_DateConnected_GTE { get; set; }
+
+
+    /// <summary> LinesThatRing.CallerIdNumber equals </summary>
+    [JsonProperty("linesThatRing_callerIdNumber_eq")]
+    public string? LinesThatRing_CallerIdNumber_EQ { get; set; }
+    /// <summary> LinesThatRing.CallerIdNumber contains </summary>
+    [JsonProperty("linesThatRing_callerIdNumber_con")]
+    public string? LinesThatRing_CallerIdNumber_CON { get; set; }
+    /// <summary> LinesThatRing.CallerIdNumber regex </summary>
+    [JsonProperty("linesThatRing_callerIdNumber_reg")]
+    public string? LinesThatRing_CallerIdNumber_REG { get; set; }
+
+    /// <summary> LinesThatRing.RecordExternalCalls equals </summary>
+    [JsonProperty("linesThatRing_recordExternalCalls_eq")]
+    public bool? LinesThatRing_RecordExternalCalls_EQ { get; set; }
+
+    /// <summary> LinesThatRing.RecordInternalCalls equals </summary>
+    [JsonProperty("linesThatRing_recordInternalCalls_eq")]
+    public bool? LinesThatRing_RecordInternalCalls_EQ { get; set; }
+
+    /// <summary> LinesThatRing.Id equals </summary>
+    [JsonProperty("linesThatRing_id_eq")]
+    public string? LinesThatRing_Id_EQ { get; set; }
+    /// <summary> LinesThatRing.Id contains </summary>
+    [JsonProperty("linesThatRing_id_con")]
+    public string? LinesThatRing_Id_CON { get; set; }
+    /// <summary> LinesThatRing.Id regex </summary>
+    [JsonProperty("linesThatRing_id_reg")]
+    public string? LinesThatRing_Id_REG { get; set; }
+
+
+    /// <summary> LinesThatDidNotRing.FriendlyName equals </summary>
+    [JsonProperty("linesThatDidNotRing_friendlyName_eq")]
+    public string? LinesThatDidNotRing_FriendlyName_EQ { get; set; }
+    /// <summary> LinesThatDidNotRing.FriendlyName contains </summary>
+    [JsonProperty("linesThatDidNotRing_friendlyName_con")]
+    public string? LinesThatDidNotRing_FriendlyName_CON { get; set; }
+    /// <summary> LinesThatDidNotRing.FriendlyName regex </summary>
+    [JsonProperty("linesThatDidNotRing_friendlyName_reg")]
+    public string? LinesThatDidNotRing_FriendlyName_REG { get; set; }
+
+    /// <summary> LinesThatDidNotRing.LineConnectionStatus.IpWAN equals </summary>
+    [JsonProperty("linesThatDidNotRing_lineConnectionStatus_ipWAN_eq")]
+    public string? LinesThatDidNotRing_LineConnectionStatus_IpWAN_EQ { get; set; }
+    /// <summary> LinesThatDidNotRing.LineConnectionStatus.IpWAN contains </summary>
+    [JsonProperty("linesThatDidNotRing_lineConnectionStatus_ipWAN_con")]
+    public string? LinesThatDidNotRing_LineConnectionStatus_IpWAN_CON { get; set; }
+    /// <summary> LinesThatDidNotRing.LineConnectionStatus.IpWAN regex </summary>
+    [JsonProperty("linesThatDidNotRing_lineConnectionStatus_ipWAN_reg")]
+    public string? LinesThatDidNotRing_LineConnectionStatus_IpWAN_REG { get; set; }
+
+    /// <summary> LinesThatDidNotRing.LineConnectionStatus.PortWAN equals </summary>
+    [JsonProperty("linesThatDidNotRing_lineConnectionStatus_portWAN_eq")]
+    public System.Int32? LinesThatDidNotRing_LineConnectionStatus_PortWAN_EQ { get; set; }
+    /// <summary> LinesThatDidNotRing.LineConnectionStatus.PortWAN less than or equal to </summary>
+    [JsonProperty("linesThatDidNotRing_lineConnectionStatus_portWAN_lte")]
+    public System.Int32? LinesThatDidNotRing_LineConnectionStatus_PortWAN_LTE { get; set; }
+    /// <summary> LinesThatDidNotRing.LineConnectionStatus.PortWAN greater than or equal to </summary>
+    [JsonProperty("linesThatDidNotRing_lineConnectionStatus_portWAN_gte")]
+    public System.Int32? LinesThatDidNotRing_LineConnectionStatus_PortWAN_GTE { get; set; }
+
+    /// <summary> LinesThatDidNotRing.LineConnectionStatus.IpLAN equals </summary>
+    [JsonProperty("linesThatDidNotRing_lineConnectionStatus_ipLAN_eq")]
+    public string? LinesThatDidNotRing_LineConnectionStatus_IpLAN_EQ { get; set; }
+    /// <summary> LinesThatDidNotRing.LineConnectionStatus.IpLAN contains </summary>
+    [JsonProperty("linesThatDidNotRing_lineConnectionStatus_ipLAN_con")]
+    public string? LinesThatDidNotRing_LineConnectionStatus_IpLAN_CON { get; set; }
+    /// <summary> LinesThatDidNotRing.LineConnectionStatus.IpLAN regex </summary>
+    [JsonProperty("linesThatDidNotRing_lineConnectionStatus_ipLAN_reg")]
+    public string? LinesThatDidNotRing_LineConnectionStatus_IpLAN_REG { get; set; }
+
+    /// <summary> LinesThatDidNotRing.LineConnectionStatus.PortLAN equals </summary>
+    [JsonProperty("linesThatDidNotRing_lineConnectionStatus_portLAN_eq")]
+    public System.Int32? LinesThatDidNotRing_LineConnectionStatus_PortLAN_EQ { get; set; }
+    /// <summary> LinesThatDidNotRing.LineConnectionStatus.PortLAN less than or equal to </summary>
+    [JsonProperty("linesThatDidNotRing_lineConnectionStatus_portLAN_lte")]
+    public System.Int32? LinesThatDidNotRing_LineConnectionStatus_PortLAN_LTE { get; set; }
+    /// <summary> LinesThatDidNotRing.LineConnectionStatus.PortLAN greater than or equal to </summary>
+    [JsonProperty("linesThatDidNotRing_lineConnectionStatus_portLAN_gte")]
+    public System.Int32? LinesThatDidNotRing_LineConnectionStatus_PortLAN_GTE { get; set; }
+
+    /// <summary> LinesThatDidNotRing.LineConnectionStatus.UserAgent equals </summary>
+    [JsonProperty("linesThatDidNotRing_lineConnectionStatus_userAgent_eq")]
+    public string? LinesThatDidNotRing_LineConnectionStatus_UserAgent_EQ { get; set; }
+    /// <summary> LinesThatDidNotRing.LineConnectionStatus.UserAgent contains </summary>
+    [JsonProperty("linesThatDidNotRing_lineConnectionStatus_userAgent_con")]
+    public string? LinesThatDidNotRing_LineConnectionStatus_UserAgent_CON { get; set; }
+    /// <summary> LinesThatDidNotRing.LineConnectionStatus.UserAgent regex </summary>
+    [JsonProperty("linesThatDidNotRing_lineConnectionStatus_userAgent_reg")]
+    public string? LinesThatDidNotRing_LineConnectionStatus_UserAgent_REG { get; set; }
+
+    /// <summary> LinesThatDidNotRing.LineConnectionStatus.IsConnected equals </summary>
+    [JsonProperty("linesThatDidNotRing_lineConnectionStatus_isConnected_eq")]
+    public bool? LinesThatDidNotRing_LineConnectionStatus_IsConnected_EQ { get; set; }
+
+    /// <summary> LinesThatDidNotRing.LineConnectionStatus.DateConnected equals </summary>
+    [JsonProperty("linesThatDidNotRing_lineConnectionStatus_dateConnected_eq")]
+    public DateTime? LinesThatDidNotRing_LineConnectionStatus_DateConnected_EQ { get; set; }
+    /// <summary> LinesThatDidNotRing.LineConnectionStatus.DateConnected less than or equal to </summary>
+    [JsonProperty("linesThatDidNotRing_lineConnectionStatus_dateConnected_lte")]
+    public DateTime? LinesThatDidNotRing_LineConnectionStatus_DateConnected_LTE { get; set; }
+    /// <summary> LinesThatDidNotRing.LineConnectionStatus.DateConnected greater than or equal to </summary>
+    [JsonProperty("linesThatDidNotRing_lineConnectionStatus_dateConnected_gte")]
+    public DateTime? LinesThatDidNotRing_LineConnectionStatus_DateConnected_GTE { get; set; }
+
+
+    /// <summary> LinesThatDidNotRing.CallerIdNumber equals </summary>
+    [JsonProperty("linesThatDidNotRing_callerIdNumber_eq")]
+    public string? LinesThatDidNotRing_CallerIdNumber_EQ { get; set; }
+    /// <summary> LinesThatDidNotRing.CallerIdNumber contains </summary>
+    [JsonProperty("linesThatDidNotRing_callerIdNumber_con")]
+    public string? LinesThatDidNotRing_CallerIdNumber_CON { get; set; }
+    /// <summary> LinesThatDidNotRing.CallerIdNumber regex </summary>
+    [JsonProperty("linesThatDidNotRing_callerIdNumber_reg")]
+    public string? LinesThatDidNotRing_CallerIdNumber_REG { get; set; }
+
+    /// <summary> LinesThatDidNotRing.RecordExternalCalls equals </summary>
+    [JsonProperty("linesThatDidNotRing_recordExternalCalls_eq")]
+    public bool? LinesThatDidNotRing_RecordExternalCalls_EQ { get; set; }
+
+    /// <summary> LinesThatDidNotRing.RecordInternalCalls equals </summary>
+    [JsonProperty("linesThatDidNotRing_recordInternalCalls_eq")]
+    public bool? LinesThatDidNotRing_RecordInternalCalls_EQ { get; set; }
+
+    /// <summary> LinesThatDidNotRing.Id equals </summary>
+    [JsonProperty("linesThatDidNotRing_id_eq")]
+    public string? LinesThatDidNotRing_Id_EQ { get; set; }
+    /// <summary> LinesThatDidNotRing.Id contains </summary>
+    [JsonProperty("linesThatDidNotRing_id_con")]
+    public string? LinesThatDidNotRing_Id_CON { get; set; }
+    /// <summary> LinesThatDidNotRing.Id regex </summary>
+    [JsonProperty("linesThatDidNotRing_id_reg")]
+    public string? LinesThatDidNotRing_Id_REG { get; set; }
+
 
     /// <summary> CallType equals </summary>
     [JsonProperty("callType_eq")]
@@ -1872,15 +2494,109 @@ public class CallOutgoingToExtensionFilterRequest
     public DateTime? Contact_DateUpdated_GTE { get; set; }
 
 
-    /// <summary> IdLineThatInitiatedCall equals </summary>
-    [JsonProperty("idLineThatInitiatedCall_eq")]
-    public string? IdLineThatInitiatedCall_EQ { get; set; }
-    /// <summary> IdLineThatInitiatedCall contains </summary>
-    [JsonProperty("idLineThatInitiatedCall_con")]
-    public string? IdLineThatInitiatedCall_CON { get; set; }
-    /// <summary> IdLineThatInitiatedCall regex </summary>
-    [JsonProperty("idLineThatInitiatedCall_reg")]
-    public string? IdLineThatInitiatedCall_REG { get; set; }
+    /// <summary> LineThatInitiatedCall.FriendlyName equals </summary>
+    [JsonProperty("lineThatInitiatedCall_friendlyName_eq")]
+    public string? LineThatInitiatedCall_FriendlyName_EQ { get; set; }
+    /// <summary> LineThatInitiatedCall.FriendlyName contains </summary>
+    [JsonProperty("lineThatInitiatedCall_friendlyName_con")]
+    public string? LineThatInitiatedCall_FriendlyName_CON { get; set; }
+    /// <summary> LineThatInitiatedCall.FriendlyName regex </summary>
+    [JsonProperty("lineThatInitiatedCall_friendlyName_reg")]
+    public string? LineThatInitiatedCall_FriendlyName_REG { get; set; }
+
+    /// <summary> LineThatInitiatedCall.LineConnectionStatus.IpWAN equals </summary>
+    [JsonProperty("lineThatInitiatedCall_lineConnectionStatus_ipWAN_eq")]
+    public string? LineThatInitiatedCall_LineConnectionStatus_IpWAN_EQ { get; set; }
+    /// <summary> LineThatInitiatedCall.LineConnectionStatus.IpWAN contains </summary>
+    [JsonProperty("lineThatInitiatedCall_lineConnectionStatus_ipWAN_con")]
+    public string? LineThatInitiatedCall_LineConnectionStatus_IpWAN_CON { get; set; }
+    /// <summary> LineThatInitiatedCall.LineConnectionStatus.IpWAN regex </summary>
+    [JsonProperty("lineThatInitiatedCall_lineConnectionStatus_ipWAN_reg")]
+    public string? LineThatInitiatedCall_LineConnectionStatus_IpWAN_REG { get; set; }
+
+    /// <summary> LineThatInitiatedCall.LineConnectionStatus.PortWAN equals </summary>
+    [JsonProperty("lineThatInitiatedCall_lineConnectionStatus_portWAN_eq")]
+    public System.Int32? LineThatInitiatedCall_LineConnectionStatus_PortWAN_EQ { get; set; }
+    /// <summary> LineThatInitiatedCall.LineConnectionStatus.PortWAN less than or equal to </summary>
+    [JsonProperty("lineThatInitiatedCall_lineConnectionStatus_portWAN_lte")]
+    public System.Int32? LineThatInitiatedCall_LineConnectionStatus_PortWAN_LTE { get; set; }
+    /// <summary> LineThatInitiatedCall.LineConnectionStatus.PortWAN greater than or equal to </summary>
+    [JsonProperty("lineThatInitiatedCall_lineConnectionStatus_portWAN_gte")]
+    public System.Int32? LineThatInitiatedCall_LineConnectionStatus_PortWAN_GTE { get; set; }
+
+    /// <summary> LineThatInitiatedCall.LineConnectionStatus.IpLAN equals </summary>
+    [JsonProperty("lineThatInitiatedCall_lineConnectionStatus_ipLAN_eq")]
+    public string? LineThatInitiatedCall_LineConnectionStatus_IpLAN_EQ { get; set; }
+    /// <summary> LineThatInitiatedCall.LineConnectionStatus.IpLAN contains </summary>
+    [JsonProperty("lineThatInitiatedCall_lineConnectionStatus_ipLAN_con")]
+    public string? LineThatInitiatedCall_LineConnectionStatus_IpLAN_CON { get; set; }
+    /// <summary> LineThatInitiatedCall.LineConnectionStatus.IpLAN regex </summary>
+    [JsonProperty("lineThatInitiatedCall_lineConnectionStatus_ipLAN_reg")]
+    public string? LineThatInitiatedCall_LineConnectionStatus_IpLAN_REG { get; set; }
+
+    /// <summary> LineThatInitiatedCall.LineConnectionStatus.PortLAN equals </summary>
+    [JsonProperty("lineThatInitiatedCall_lineConnectionStatus_portLAN_eq")]
+    public System.Int32? LineThatInitiatedCall_LineConnectionStatus_PortLAN_EQ { get; set; }
+    /// <summary> LineThatInitiatedCall.LineConnectionStatus.PortLAN less than or equal to </summary>
+    [JsonProperty("lineThatInitiatedCall_lineConnectionStatus_portLAN_lte")]
+    public System.Int32? LineThatInitiatedCall_LineConnectionStatus_PortLAN_LTE { get; set; }
+    /// <summary> LineThatInitiatedCall.LineConnectionStatus.PortLAN greater than or equal to </summary>
+    [JsonProperty("lineThatInitiatedCall_lineConnectionStatus_portLAN_gte")]
+    public System.Int32? LineThatInitiatedCall_LineConnectionStatus_PortLAN_GTE { get; set; }
+
+    /// <summary> LineThatInitiatedCall.LineConnectionStatus.UserAgent equals </summary>
+    [JsonProperty("lineThatInitiatedCall_lineConnectionStatus_userAgent_eq")]
+    public string? LineThatInitiatedCall_LineConnectionStatus_UserAgent_EQ { get; set; }
+    /// <summary> LineThatInitiatedCall.LineConnectionStatus.UserAgent contains </summary>
+    [JsonProperty("lineThatInitiatedCall_lineConnectionStatus_userAgent_con")]
+    public string? LineThatInitiatedCall_LineConnectionStatus_UserAgent_CON { get; set; }
+    /// <summary> LineThatInitiatedCall.LineConnectionStatus.UserAgent regex </summary>
+    [JsonProperty("lineThatInitiatedCall_lineConnectionStatus_userAgent_reg")]
+    public string? LineThatInitiatedCall_LineConnectionStatus_UserAgent_REG { get; set; }
+
+    /// <summary> LineThatInitiatedCall.LineConnectionStatus.IsConnected equals </summary>
+    [JsonProperty("lineThatInitiatedCall_lineConnectionStatus_isConnected_eq")]
+    public bool? LineThatInitiatedCall_LineConnectionStatus_IsConnected_EQ { get; set; }
+
+    /// <summary> LineThatInitiatedCall.LineConnectionStatus.DateConnected equals </summary>
+    [JsonProperty("lineThatInitiatedCall_lineConnectionStatus_dateConnected_eq")]
+    public DateTime? LineThatInitiatedCall_LineConnectionStatus_DateConnected_EQ { get; set; }
+    /// <summary> LineThatInitiatedCall.LineConnectionStatus.DateConnected less than or equal to </summary>
+    [JsonProperty("lineThatInitiatedCall_lineConnectionStatus_dateConnected_lte")]
+    public DateTime? LineThatInitiatedCall_LineConnectionStatus_DateConnected_LTE { get; set; }
+    /// <summary> LineThatInitiatedCall.LineConnectionStatus.DateConnected greater than or equal to </summary>
+    [JsonProperty("lineThatInitiatedCall_lineConnectionStatus_dateConnected_gte")]
+    public DateTime? LineThatInitiatedCall_LineConnectionStatus_DateConnected_GTE { get; set; }
+
+
+    /// <summary> LineThatInitiatedCall.CallerIdNumber equals </summary>
+    [JsonProperty("lineThatInitiatedCall_callerIdNumber_eq")]
+    public string? LineThatInitiatedCall_CallerIdNumber_EQ { get; set; }
+    /// <summary> LineThatInitiatedCall.CallerIdNumber contains </summary>
+    [JsonProperty("lineThatInitiatedCall_callerIdNumber_con")]
+    public string? LineThatInitiatedCall_CallerIdNumber_CON { get; set; }
+    /// <summary> LineThatInitiatedCall.CallerIdNumber regex </summary>
+    [JsonProperty("lineThatInitiatedCall_callerIdNumber_reg")]
+    public string? LineThatInitiatedCall_CallerIdNumber_REG { get; set; }
+
+    /// <summary> LineThatInitiatedCall.RecordExternalCalls equals </summary>
+    [JsonProperty("lineThatInitiatedCall_recordExternalCalls_eq")]
+    public bool? LineThatInitiatedCall_RecordExternalCalls_EQ { get; set; }
+
+    /// <summary> LineThatInitiatedCall.RecordInternalCalls equals </summary>
+    [JsonProperty("lineThatInitiatedCall_recordInternalCalls_eq")]
+    public bool? LineThatInitiatedCall_RecordInternalCalls_EQ { get; set; }
+
+    /// <summary> LineThatInitiatedCall.Id equals </summary>
+    [JsonProperty("lineThatInitiatedCall_id_eq")]
+    public string? LineThatInitiatedCall_Id_EQ { get; set; }
+    /// <summary> LineThatInitiatedCall.Id contains </summary>
+    [JsonProperty("lineThatInitiatedCall_id_con")]
+    public string? LineThatInitiatedCall_Id_CON { get; set; }
+    /// <summary> LineThatInitiatedCall.Id regex </summary>
+    [JsonProperty("lineThatInitiatedCall_id_reg")]
+    public string? LineThatInitiatedCall_Id_REG { get; set; }
+
 
     /// <summary> IdVoicemail equals </summary>
     [JsonProperty("idVoicemail_eq")]
@@ -2335,15 +3051,109 @@ public class CallOutgoingToPSTNFilterRequest
     public DateTime? Contact_DateUpdated_GTE { get; set; }
 
 
-    /// <summary> IdLineThatInitiatedCall equals </summary>
-    [JsonProperty("idLineThatInitiatedCall_eq")]
-    public string? IdLineThatInitiatedCall_EQ { get; set; }
-    /// <summary> IdLineThatInitiatedCall contains </summary>
-    [JsonProperty("idLineThatInitiatedCall_con")]
-    public string? IdLineThatInitiatedCall_CON { get; set; }
-    /// <summary> IdLineThatInitiatedCall regex </summary>
-    [JsonProperty("idLineThatInitiatedCall_reg")]
-    public string? IdLineThatInitiatedCall_REG { get; set; }
+    /// <summary> LineThatInitiatedCall.FriendlyName equals </summary>
+    [JsonProperty("lineThatInitiatedCall_friendlyName_eq")]
+    public string? LineThatInitiatedCall_FriendlyName_EQ { get; set; }
+    /// <summary> LineThatInitiatedCall.FriendlyName contains </summary>
+    [JsonProperty("lineThatInitiatedCall_friendlyName_con")]
+    public string? LineThatInitiatedCall_FriendlyName_CON { get; set; }
+    /// <summary> LineThatInitiatedCall.FriendlyName regex </summary>
+    [JsonProperty("lineThatInitiatedCall_friendlyName_reg")]
+    public string? LineThatInitiatedCall_FriendlyName_REG { get; set; }
+
+    /// <summary> LineThatInitiatedCall.LineConnectionStatus.IpWAN equals </summary>
+    [JsonProperty("lineThatInitiatedCall_lineConnectionStatus_ipWAN_eq")]
+    public string? LineThatInitiatedCall_LineConnectionStatus_IpWAN_EQ { get; set; }
+    /// <summary> LineThatInitiatedCall.LineConnectionStatus.IpWAN contains </summary>
+    [JsonProperty("lineThatInitiatedCall_lineConnectionStatus_ipWAN_con")]
+    public string? LineThatInitiatedCall_LineConnectionStatus_IpWAN_CON { get; set; }
+    /// <summary> LineThatInitiatedCall.LineConnectionStatus.IpWAN regex </summary>
+    [JsonProperty("lineThatInitiatedCall_lineConnectionStatus_ipWAN_reg")]
+    public string? LineThatInitiatedCall_LineConnectionStatus_IpWAN_REG { get; set; }
+
+    /// <summary> LineThatInitiatedCall.LineConnectionStatus.PortWAN equals </summary>
+    [JsonProperty("lineThatInitiatedCall_lineConnectionStatus_portWAN_eq")]
+    public System.Int32? LineThatInitiatedCall_LineConnectionStatus_PortWAN_EQ { get; set; }
+    /// <summary> LineThatInitiatedCall.LineConnectionStatus.PortWAN less than or equal to </summary>
+    [JsonProperty("lineThatInitiatedCall_lineConnectionStatus_portWAN_lte")]
+    public System.Int32? LineThatInitiatedCall_LineConnectionStatus_PortWAN_LTE { get; set; }
+    /// <summary> LineThatInitiatedCall.LineConnectionStatus.PortWAN greater than or equal to </summary>
+    [JsonProperty("lineThatInitiatedCall_lineConnectionStatus_portWAN_gte")]
+    public System.Int32? LineThatInitiatedCall_LineConnectionStatus_PortWAN_GTE { get; set; }
+
+    /// <summary> LineThatInitiatedCall.LineConnectionStatus.IpLAN equals </summary>
+    [JsonProperty("lineThatInitiatedCall_lineConnectionStatus_ipLAN_eq")]
+    public string? LineThatInitiatedCall_LineConnectionStatus_IpLAN_EQ { get; set; }
+    /// <summary> LineThatInitiatedCall.LineConnectionStatus.IpLAN contains </summary>
+    [JsonProperty("lineThatInitiatedCall_lineConnectionStatus_ipLAN_con")]
+    public string? LineThatInitiatedCall_LineConnectionStatus_IpLAN_CON { get; set; }
+    /// <summary> LineThatInitiatedCall.LineConnectionStatus.IpLAN regex </summary>
+    [JsonProperty("lineThatInitiatedCall_lineConnectionStatus_ipLAN_reg")]
+    public string? LineThatInitiatedCall_LineConnectionStatus_IpLAN_REG { get; set; }
+
+    /// <summary> LineThatInitiatedCall.LineConnectionStatus.PortLAN equals </summary>
+    [JsonProperty("lineThatInitiatedCall_lineConnectionStatus_portLAN_eq")]
+    public System.Int32? LineThatInitiatedCall_LineConnectionStatus_PortLAN_EQ { get; set; }
+    /// <summary> LineThatInitiatedCall.LineConnectionStatus.PortLAN less than or equal to </summary>
+    [JsonProperty("lineThatInitiatedCall_lineConnectionStatus_portLAN_lte")]
+    public System.Int32? LineThatInitiatedCall_LineConnectionStatus_PortLAN_LTE { get; set; }
+    /// <summary> LineThatInitiatedCall.LineConnectionStatus.PortLAN greater than or equal to </summary>
+    [JsonProperty("lineThatInitiatedCall_lineConnectionStatus_portLAN_gte")]
+    public System.Int32? LineThatInitiatedCall_LineConnectionStatus_PortLAN_GTE { get; set; }
+
+    /// <summary> LineThatInitiatedCall.LineConnectionStatus.UserAgent equals </summary>
+    [JsonProperty("lineThatInitiatedCall_lineConnectionStatus_userAgent_eq")]
+    public string? LineThatInitiatedCall_LineConnectionStatus_UserAgent_EQ { get; set; }
+    /// <summary> LineThatInitiatedCall.LineConnectionStatus.UserAgent contains </summary>
+    [JsonProperty("lineThatInitiatedCall_lineConnectionStatus_userAgent_con")]
+    public string? LineThatInitiatedCall_LineConnectionStatus_UserAgent_CON { get; set; }
+    /// <summary> LineThatInitiatedCall.LineConnectionStatus.UserAgent regex </summary>
+    [JsonProperty("lineThatInitiatedCall_lineConnectionStatus_userAgent_reg")]
+    public string? LineThatInitiatedCall_LineConnectionStatus_UserAgent_REG { get; set; }
+
+    /// <summary> LineThatInitiatedCall.LineConnectionStatus.IsConnected equals </summary>
+    [JsonProperty("lineThatInitiatedCall_lineConnectionStatus_isConnected_eq")]
+    public bool? LineThatInitiatedCall_LineConnectionStatus_IsConnected_EQ { get; set; }
+
+    /// <summary> LineThatInitiatedCall.LineConnectionStatus.DateConnected equals </summary>
+    [JsonProperty("lineThatInitiatedCall_lineConnectionStatus_dateConnected_eq")]
+    public DateTime? LineThatInitiatedCall_LineConnectionStatus_DateConnected_EQ { get; set; }
+    /// <summary> LineThatInitiatedCall.LineConnectionStatus.DateConnected less than or equal to </summary>
+    [JsonProperty("lineThatInitiatedCall_lineConnectionStatus_dateConnected_lte")]
+    public DateTime? LineThatInitiatedCall_LineConnectionStatus_DateConnected_LTE { get; set; }
+    /// <summary> LineThatInitiatedCall.LineConnectionStatus.DateConnected greater than or equal to </summary>
+    [JsonProperty("lineThatInitiatedCall_lineConnectionStatus_dateConnected_gte")]
+    public DateTime? LineThatInitiatedCall_LineConnectionStatus_DateConnected_GTE { get; set; }
+
+
+    /// <summary> LineThatInitiatedCall.CallerIdNumber equals </summary>
+    [JsonProperty("lineThatInitiatedCall_callerIdNumber_eq")]
+    public string? LineThatInitiatedCall_CallerIdNumber_EQ { get; set; }
+    /// <summary> LineThatInitiatedCall.CallerIdNumber contains </summary>
+    [JsonProperty("lineThatInitiatedCall_callerIdNumber_con")]
+    public string? LineThatInitiatedCall_CallerIdNumber_CON { get; set; }
+    /// <summary> LineThatInitiatedCall.CallerIdNumber regex </summary>
+    [JsonProperty("lineThatInitiatedCall_callerIdNumber_reg")]
+    public string? LineThatInitiatedCall_CallerIdNumber_REG { get; set; }
+
+    /// <summary> LineThatInitiatedCall.RecordExternalCalls equals </summary>
+    [JsonProperty("lineThatInitiatedCall_recordExternalCalls_eq")]
+    public bool? LineThatInitiatedCall_RecordExternalCalls_EQ { get; set; }
+
+    /// <summary> LineThatInitiatedCall.RecordInternalCalls equals </summary>
+    [JsonProperty("lineThatInitiatedCall_recordInternalCalls_eq")]
+    public bool? LineThatInitiatedCall_RecordInternalCalls_EQ { get; set; }
+
+    /// <summary> LineThatInitiatedCall.Id equals </summary>
+    [JsonProperty("lineThatInitiatedCall_id_eq")]
+    public string? LineThatInitiatedCall_Id_EQ { get; set; }
+    /// <summary> LineThatInitiatedCall.Id contains </summary>
+    [JsonProperty("lineThatInitiatedCall_id_con")]
+    public string? LineThatInitiatedCall_Id_CON { get; set; }
+    /// <summary> LineThatInitiatedCall.Id regex </summary>
+    [JsonProperty("lineThatInitiatedCall_id_reg")]
+    public string? LineThatInitiatedCall_Id_REG { get; set; }
+
 
     /// <summary> IdVoicemail equals </summary>
     [JsonProperty("idVoicemail_eq")]
@@ -3819,15 +4629,109 @@ public class ExtensionVoicemailFilterRequest
 /// <summary> Enables searching for FaxEmailInfos </summary>
 public class FaxEmailInfoFilterRequest 
 {
-    /// <summary> IdLineThatValidatedEmail equals </summary>
-    [JsonProperty("idLineThatValidatedEmail_eq")]
-    public string? IdLineThatValidatedEmail_EQ { get; set; }
-    /// <summary> IdLineThatValidatedEmail contains </summary>
-    [JsonProperty("idLineThatValidatedEmail_con")]
-    public string? IdLineThatValidatedEmail_CON { get; set; }
-    /// <summary> IdLineThatValidatedEmail regex </summary>
-    [JsonProperty("idLineThatValidatedEmail_reg")]
-    public string? IdLineThatValidatedEmail_REG { get; set; }
+    /// <summary> LineThatValidatedEmail.FriendlyName equals </summary>
+    [JsonProperty("lineThatValidatedEmail_friendlyName_eq")]
+    public string? LineThatValidatedEmail_FriendlyName_EQ { get; set; }
+    /// <summary> LineThatValidatedEmail.FriendlyName contains </summary>
+    [JsonProperty("lineThatValidatedEmail_friendlyName_con")]
+    public string? LineThatValidatedEmail_FriendlyName_CON { get; set; }
+    /// <summary> LineThatValidatedEmail.FriendlyName regex </summary>
+    [JsonProperty("lineThatValidatedEmail_friendlyName_reg")]
+    public string? LineThatValidatedEmail_FriendlyName_REG { get; set; }
+
+    /// <summary> LineThatValidatedEmail.LineConnectionStatus.IpWAN equals </summary>
+    [JsonProperty("lineThatValidatedEmail_lineConnectionStatus_ipWAN_eq")]
+    public string? LineThatValidatedEmail_LineConnectionStatus_IpWAN_EQ { get; set; }
+    /// <summary> LineThatValidatedEmail.LineConnectionStatus.IpWAN contains </summary>
+    [JsonProperty("lineThatValidatedEmail_lineConnectionStatus_ipWAN_con")]
+    public string? LineThatValidatedEmail_LineConnectionStatus_IpWAN_CON { get; set; }
+    /// <summary> LineThatValidatedEmail.LineConnectionStatus.IpWAN regex </summary>
+    [JsonProperty("lineThatValidatedEmail_lineConnectionStatus_ipWAN_reg")]
+    public string? LineThatValidatedEmail_LineConnectionStatus_IpWAN_REG { get; set; }
+
+    /// <summary> LineThatValidatedEmail.LineConnectionStatus.PortWAN equals </summary>
+    [JsonProperty("lineThatValidatedEmail_lineConnectionStatus_portWAN_eq")]
+    public System.Int32? LineThatValidatedEmail_LineConnectionStatus_PortWAN_EQ { get; set; }
+    /// <summary> LineThatValidatedEmail.LineConnectionStatus.PortWAN less than or equal to </summary>
+    [JsonProperty("lineThatValidatedEmail_lineConnectionStatus_portWAN_lte")]
+    public System.Int32? LineThatValidatedEmail_LineConnectionStatus_PortWAN_LTE { get; set; }
+    /// <summary> LineThatValidatedEmail.LineConnectionStatus.PortWAN greater than or equal to </summary>
+    [JsonProperty("lineThatValidatedEmail_lineConnectionStatus_portWAN_gte")]
+    public System.Int32? LineThatValidatedEmail_LineConnectionStatus_PortWAN_GTE { get; set; }
+
+    /// <summary> LineThatValidatedEmail.LineConnectionStatus.IpLAN equals </summary>
+    [JsonProperty("lineThatValidatedEmail_lineConnectionStatus_ipLAN_eq")]
+    public string? LineThatValidatedEmail_LineConnectionStatus_IpLAN_EQ { get; set; }
+    /// <summary> LineThatValidatedEmail.LineConnectionStatus.IpLAN contains </summary>
+    [JsonProperty("lineThatValidatedEmail_lineConnectionStatus_ipLAN_con")]
+    public string? LineThatValidatedEmail_LineConnectionStatus_IpLAN_CON { get; set; }
+    /// <summary> LineThatValidatedEmail.LineConnectionStatus.IpLAN regex </summary>
+    [JsonProperty("lineThatValidatedEmail_lineConnectionStatus_ipLAN_reg")]
+    public string? LineThatValidatedEmail_LineConnectionStatus_IpLAN_REG { get; set; }
+
+    /// <summary> LineThatValidatedEmail.LineConnectionStatus.PortLAN equals </summary>
+    [JsonProperty("lineThatValidatedEmail_lineConnectionStatus_portLAN_eq")]
+    public System.Int32? LineThatValidatedEmail_LineConnectionStatus_PortLAN_EQ { get; set; }
+    /// <summary> LineThatValidatedEmail.LineConnectionStatus.PortLAN less than or equal to </summary>
+    [JsonProperty("lineThatValidatedEmail_lineConnectionStatus_portLAN_lte")]
+    public System.Int32? LineThatValidatedEmail_LineConnectionStatus_PortLAN_LTE { get; set; }
+    /// <summary> LineThatValidatedEmail.LineConnectionStatus.PortLAN greater than or equal to </summary>
+    [JsonProperty("lineThatValidatedEmail_lineConnectionStatus_portLAN_gte")]
+    public System.Int32? LineThatValidatedEmail_LineConnectionStatus_PortLAN_GTE { get; set; }
+
+    /// <summary> LineThatValidatedEmail.LineConnectionStatus.UserAgent equals </summary>
+    [JsonProperty("lineThatValidatedEmail_lineConnectionStatus_userAgent_eq")]
+    public string? LineThatValidatedEmail_LineConnectionStatus_UserAgent_EQ { get; set; }
+    /// <summary> LineThatValidatedEmail.LineConnectionStatus.UserAgent contains </summary>
+    [JsonProperty("lineThatValidatedEmail_lineConnectionStatus_userAgent_con")]
+    public string? LineThatValidatedEmail_LineConnectionStatus_UserAgent_CON { get; set; }
+    /// <summary> LineThatValidatedEmail.LineConnectionStatus.UserAgent regex </summary>
+    [JsonProperty("lineThatValidatedEmail_lineConnectionStatus_userAgent_reg")]
+    public string? LineThatValidatedEmail_LineConnectionStatus_UserAgent_REG { get; set; }
+
+    /// <summary> LineThatValidatedEmail.LineConnectionStatus.IsConnected equals </summary>
+    [JsonProperty("lineThatValidatedEmail_lineConnectionStatus_isConnected_eq")]
+    public bool? LineThatValidatedEmail_LineConnectionStatus_IsConnected_EQ { get; set; }
+
+    /// <summary> LineThatValidatedEmail.LineConnectionStatus.DateConnected equals </summary>
+    [JsonProperty("lineThatValidatedEmail_lineConnectionStatus_dateConnected_eq")]
+    public DateTime? LineThatValidatedEmail_LineConnectionStatus_DateConnected_EQ { get; set; }
+    /// <summary> LineThatValidatedEmail.LineConnectionStatus.DateConnected less than or equal to </summary>
+    [JsonProperty("lineThatValidatedEmail_lineConnectionStatus_dateConnected_lte")]
+    public DateTime? LineThatValidatedEmail_LineConnectionStatus_DateConnected_LTE { get; set; }
+    /// <summary> LineThatValidatedEmail.LineConnectionStatus.DateConnected greater than or equal to </summary>
+    [JsonProperty("lineThatValidatedEmail_lineConnectionStatus_dateConnected_gte")]
+    public DateTime? LineThatValidatedEmail_LineConnectionStatus_DateConnected_GTE { get; set; }
+
+
+    /// <summary> LineThatValidatedEmail.CallerIdNumber equals </summary>
+    [JsonProperty("lineThatValidatedEmail_callerIdNumber_eq")]
+    public string? LineThatValidatedEmail_CallerIdNumber_EQ { get; set; }
+    /// <summary> LineThatValidatedEmail.CallerIdNumber contains </summary>
+    [JsonProperty("lineThatValidatedEmail_callerIdNumber_con")]
+    public string? LineThatValidatedEmail_CallerIdNumber_CON { get; set; }
+    /// <summary> LineThatValidatedEmail.CallerIdNumber regex </summary>
+    [JsonProperty("lineThatValidatedEmail_callerIdNumber_reg")]
+    public string? LineThatValidatedEmail_CallerIdNumber_REG { get; set; }
+
+    /// <summary> LineThatValidatedEmail.RecordExternalCalls equals </summary>
+    [JsonProperty("lineThatValidatedEmail_recordExternalCalls_eq")]
+    public bool? LineThatValidatedEmail_RecordExternalCalls_EQ { get; set; }
+
+    /// <summary> LineThatValidatedEmail.RecordInternalCalls equals </summary>
+    [JsonProperty("lineThatValidatedEmail_recordInternalCalls_eq")]
+    public bool? LineThatValidatedEmail_RecordInternalCalls_EQ { get; set; }
+
+    /// <summary> LineThatValidatedEmail.Id equals </summary>
+    [JsonProperty("lineThatValidatedEmail_id_eq")]
+    public string? LineThatValidatedEmail_Id_EQ { get; set; }
+    /// <summary> LineThatValidatedEmail.Id contains </summary>
+    [JsonProperty("lineThatValidatedEmail_id_con")]
+    public string? LineThatValidatedEmail_Id_CON { get; set; }
+    /// <summary> LineThatValidatedEmail.Id regex </summary>
+    [JsonProperty("lineThatValidatedEmail_id_reg")]
+    public string? LineThatValidatedEmail_Id_REG { get; set; }
+
 
     /// <summary> NumberOfEmailsReceived equals </summary>
     [JsonProperty("numberOfEmailsReceived_eq")]
@@ -5840,25 +6744,168 @@ public class VoicemailForwardedFilterRequest
     [JsonProperty("voicemailType_eq")]
     public VoicemailType? VoicemailType_EQ { get; set; }
 
-    /// <summary> IdLineThatForwardedVoicemail equals </summary>
-    [JsonProperty("idLineThatForwardedVoicemail_eq")]
-    public string? IdLineThatForwardedVoicemail_EQ { get; set; }
-    /// <summary> IdLineThatForwardedVoicemail contains </summary>
-    [JsonProperty("idLineThatForwardedVoicemail_con")]
-    public string? IdLineThatForwardedVoicemail_CON { get; set; }
-    /// <summary> IdLineThatForwardedVoicemail regex </summary>
-    [JsonProperty("idLineThatForwardedVoicemail_reg")]
-    public string? IdLineThatForwardedVoicemail_REG { get; set; }
+    /// <summary> LineThatForwardedVoicemail.FriendlyName equals </summary>
+    [JsonProperty("lineThatForwardedVoicemail_friendlyName_eq")]
+    public string? LineThatForwardedVoicemail_FriendlyName_EQ { get; set; }
+    /// <summary> LineThatForwardedVoicemail.FriendlyName contains </summary>
+    [JsonProperty("lineThatForwardedVoicemail_friendlyName_con")]
+    public string? LineThatForwardedVoicemail_FriendlyName_CON { get; set; }
+    /// <summary> LineThatForwardedVoicemail.FriendlyName regex </summary>
+    [JsonProperty("lineThatForwardedVoicemail_friendlyName_reg")]
+    public string? LineThatForwardedVoicemail_FriendlyName_REG { get; set; }
 
-    /// <summary> IdExtensionForwarde equals </summary>
-    [JsonProperty("idExtensionForwarde_eq")]
-    public string? IdExtensionForwarde_EQ { get; set; }
-    /// <summary> IdExtensionForwarde contains </summary>
-    [JsonProperty("idExtensionForwarde_con")]
-    public string? IdExtensionForwarde_CON { get; set; }
-    /// <summary> IdExtensionForwarde regex </summary>
-    [JsonProperty("idExtensionForwarde_reg")]
-    public string? IdExtensionForwarde_REG { get; set; }
+    /// <summary> LineThatForwardedVoicemail.LineConnectionStatus.IpWAN equals </summary>
+    [JsonProperty("lineThatForwardedVoicemail_lineConnectionStatus_ipWAN_eq")]
+    public string? LineThatForwardedVoicemail_LineConnectionStatus_IpWAN_EQ { get; set; }
+    /// <summary> LineThatForwardedVoicemail.LineConnectionStatus.IpWAN contains </summary>
+    [JsonProperty("lineThatForwardedVoicemail_lineConnectionStatus_ipWAN_con")]
+    public string? LineThatForwardedVoicemail_LineConnectionStatus_IpWAN_CON { get; set; }
+    /// <summary> LineThatForwardedVoicemail.LineConnectionStatus.IpWAN regex </summary>
+    [JsonProperty("lineThatForwardedVoicemail_lineConnectionStatus_ipWAN_reg")]
+    public string? LineThatForwardedVoicemail_LineConnectionStatus_IpWAN_REG { get; set; }
+
+    /// <summary> LineThatForwardedVoicemail.LineConnectionStatus.PortWAN equals </summary>
+    [JsonProperty("lineThatForwardedVoicemail_lineConnectionStatus_portWAN_eq")]
+    public System.Int32? LineThatForwardedVoicemail_LineConnectionStatus_PortWAN_EQ { get; set; }
+    /// <summary> LineThatForwardedVoicemail.LineConnectionStatus.PortWAN less than or equal to </summary>
+    [JsonProperty("lineThatForwardedVoicemail_lineConnectionStatus_portWAN_lte")]
+    public System.Int32? LineThatForwardedVoicemail_LineConnectionStatus_PortWAN_LTE { get; set; }
+    /// <summary> LineThatForwardedVoicemail.LineConnectionStatus.PortWAN greater than or equal to </summary>
+    [JsonProperty("lineThatForwardedVoicemail_lineConnectionStatus_portWAN_gte")]
+    public System.Int32? LineThatForwardedVoicemail_LineConnectionStatus_PortWAN_GTE { get; set; }
+
+    /// <summary> LineThatForwardedVoicemail.LineConnectionStatus.IpLAN equals </summary>
+    [JsonProperty("lineThatForwardedVoicemail_lineConnectionStatus_ipLAN_eq")]
+    public string? LineThatForwardedVoicemail_LineConnectionStatus_IpLAN_EQ { get; set; }
+    /// <summary> LineThatForwardedVoicemail.LineConnectionStatus.IpLAN contains </summary>
+    [JsonProperty("lineThatForwardedVoicemail_lineConnectionStatus_ipLAN_con")]
+    public string? LineThatForwardedVoicemail_LineConnectionStatus_IpLAN_CON { get; set; }
+    /// <summary> LineThatForwardedVoicemail.LineConnectionStatus.IpLAN regex </summary>
+    [JsonProperty("lineThatForwardedVoicemail_lineConnectionStatus_ipLAN_reg")]
+    public string? LineThatForwardedVoicemail_LineConnectionStatus_IpLAN_REG { get; set; }
+
+    /// <summary> LineThatForwardedVoicemail.LineConnectionStatus.PortLAN equals </summary>
+    [JsonProperty("lineThatForwardedVoicemail_lineConnectionStatus_portLAN_eq")]
+    public System.Int32? LineThatForwardedVoicemail_LineConnectionStatus_PortLAN_EQ { get; set; }
+    /// <summary> LineThatForwardedVoicemail.LineConnectionStatus.PortLAN less than or equal to </summary>
+    [JsonProperty("lineThatForwardedVoicemail_lineConnectionStatus_portLAN_lte")]
+    public System.Int32? LineThatForwardedVoicemail_LineConnectionStatus_PortLAN_LTE { get; set; }
+    /// <summary> LineThatForwardedVoicemail.LineConnectionStatus.PortLAN greater than or equal to </summary>
+    [JsonProperty("lineThatForwardedVoicemail_lineConnectionStatus_portLAN_gte")]
+    public System.Int32? LineThatForwardedVoicemail_LineConnectionStatus_PortLAN_GTE { get; set; }
+
+    /// <summary> LineThatForwardedVoicemail.LineConnectionStatus.UserAgent equals </summary>
+    [JsonProperty("lineThatForwardedVoicemail_lineConnectionStatus_userAgent_eq")]
+    public string? LineThatForwardedVoicemail_LineConnectionStatus_UserAgent_EQ { get; set; }
+    /// <summary> LineThatForwardedVoicemail.LineConnectionStatus.UserAgent contains </summary>
+    [JsonProperty("lineThatForwardedVoicemail_lineConnectionStatus_userAgent_con")]
+    public string? LineThatForwardedVoicemail_LineConnectionStatus_UserAgent_CON { get; set; }
+    /// <summary> LineThatForwardedVoicemail.LineConnectionStatus.UserAgent regex </summary>
+    [JsonProperty("lineThatForwardedVoicemail_lineConnectionStatus_userAgent_reg")]
+    public string? LineThatForwardedVoicemail_LineConnectionStatus_UserAgent_REG { get; set; }
+
+    /// <summary> LineThatForwardedVoicemail.LineConnectionStatus.IsConnected equals </summary>
+    [JsonProperty("lineThatForwardedVoicemail_lineConnectionStatus_isConnected_eq")]
+    public bool? LineThatForwardedVoicemail_LineConnectionStatus_IsConnected_EQ { get; set; }
+
+    /// <summary> LineThatForwardedVoicemail.LineConnectionStatus.DateConnected equals </summary>
+    [JsonProperty("lineThatForwardedVoicemail_lineConnectionStatus_dateConnected_eq")]
+    public DateTime? LineThatForwardedVoicemail_LineConnectionStatus_DateConnected_EQ { get; set; }
+    /// <summary> LineThatForwardedVoicemail.LineConnectionStatus.DateConnected less than or equal to </summary>
+    [JsonProperty("lineThatForwardedVoicemail_lineConnectionStatus_dateConnected_lte")]
+    public DateTime? LineThatForwardedVoicemail_LineConnectionStatus_DateConnected_LTE { get; set; }
+    /// <summary> LineThatForwardedVoicemail.LineConnectionStatus.DateConnected greater than or equal to </summary>
+    [JsonProperty("lineThatForwardedVoicemail_lineConnectionStatus_dateConnected_gte")]
+    public DateTime? LineThatForwardedVoicemail_LineConnectionStatus_DateConnected_GTE { get; set; }
+
+
+    /// <summary> LineThatForwardedVoicemail.CallerIdNumber equals </summary>
+    [JsonProperty("lineThatForwardedVoicemail_callerIdNumber_eq")]
+    public string? LineThatForwardedVoicemail_CallerIdNumber_EQ { get; set; }
+    /// <summary> LineThatForwardedVoicemail.CallerIdNumber contains </summary>
+    [JsonProperty("lineThatForwardedVoicemail_callerIdNumber_con")]
+    public string? LineThatForwardedVoicemail_CallerIdNumber_CON { get; set; }
+    /// <summary> LineThatForwardedVoicemail.CallerIdNumber regex </summary>
+    [JsonProperty("lineThatForwardedVoicemail_callerIdNumber_reg")]
+    public string? LineThatForwardedVoicemail_CallerIdNumber_REG { get; set; }
+
+    /// <summary> LineThatForwardedVoicemail.RecordExternalCalls equals </summary>
+    [JsonProperty("lineThatForwardedVoicemail_recordExternalCalls_eq")]
+    public bool? LineThatForwardedVoicemail_RecordExternalCalls_EQ { get; set; }
+
+    /// <summary> LineThatForwardedVoicemail.RecordInternalCalls equals </summary>
+    [JsonProperty("lineThatForwardedVoicemail_recordInternalCalls_eq")]
+    public bool? LineThatForwardedVoicemail_RecordInternalCalls_EQ { get; set; }
+
+    /// <summary> LineThatForwardedVoicemail.Id equals </summary>
+    [JsonProperty("lineThatForwardedVoicemail_id_eq")]
+    public string? LineThatForwardedVoicemail_Id_EQ { get; set; }
+    /// <summary> LineThatForwardedVoicemail.Id contains </summary>
+    [JsonProperty("lineThatForwardedVoicemail_id_con")]
+    public string? LineThatForwardedVoicemail_Id_CON { get; set; }
+    /// <summary> LineThatForwardedVoicemail.Id regex </summary>
+    [JsonProperty("lineThatForwardedVoicemail_id_reg")]
+    public string? LineThatForwardedVoicemail_Id_REG { get; set; }
+
+
+    /// <summary> ExtensionForwarded.IdMusicOnHoldGroup equals </summary>
+    [JsonProperty("extensionForwarded_idMusicOnHoldGroup_eq")]
+    public string? ExtensionForwarded_IdMusicOnHoldGroup_EQ { get; set; }
+    /// <summary> ExtensionForwarded.IdMusicOnHoldGroup contains </summary>
+    [JsonProperty("extensionForwarded_idMusicOnHoldGroup_con")]
+    public string? ExtensionForwarded_IdMusicOnHoldGroup_CON { get; set; }
+    /// <summary> ExtensionForwarded.IdMusicOnHoldGroup regex </summary>
+    [JsonProperty("extensionForwarded_idMusicOnHoldGroup_reg")]
+    public string? ExtensionForwarded_IdMusicOnHoldGroup_REG { get; set; }
+
+    /// <summary> ExtensionForwarded.ExtensionType equals </summary>
+    [JsonProperty("extensionForwarded_extensionType_eq")]
+    public ExtensionType? ExtensionForwarded_ExtensionType_EQ { get; set; }
+
+    /// <summary> ExtensionForwarded.Number equals </summary>
+    [JsonProperty("extensionForwarded_number_eq")]
+    public string? ExtensionForwarded_Number_EQ { get; set; }
+    /// <summary> ExtensionForwarded.Number contains </summary>
+    [JsonProperty("extensionForwarded_number_con")]
+    public string? ExtensionForwarded_Number_CON { get; set; }
+    /// <summary> ExtensionForwarded.Number regex </summary>
+    [JsonProperty("extensionForwarded_number_reg")]
+    public string? ExtensionForwarded_Number_REG { get; set; }
+
+    /// <summary> ExtensionForwarded.InjectExtensionNameToCallerId equals </summary>
+    [JsonProperty("extensionForwarded_injectExtensionNameToCallerId_eq")]
+    public bool? ExtensionForwarded_InjectExtensionNameToCallerId_EQ { get; set; }
+
+    /// <summary> ExtensionForwarded.Id equals </summary>
+    [JsonProperty("extensionForwarded_id_eq")]
+    public string? ExtensionForwarded_Id_EQ { get; set; }
+    /// <summary> ExtensionForwarded.Id contains </summary>
+    [JsonProperty("extensionForwarded_id_con")]
+    public string? ExtensionForwarded_Id_CON { get; set; }
+    /// <summary> ExtensionForwarded.Id regex </summary>
+    [JsonProperty("extensionForwarded_id_reg")]
+    public string? ExtensionForwarded_Id_REG { get; set; }
+
+    /// <summary> ExtensionForwarded.DateCreated equals </summary>
+    [JsonProperty("extensionForwarded_dateCreated_eq")]
+    public DateTime? ExtensionForwarded_DateCreated_EQ { get; set; }
+    /// <summary> ExtensionForwarded.DateCreated less than or equal to </summary>
+    [JsonProperty("extensionForwarded_dateCreated_lte")]
+    public DateTime? ExtensionForwarded_DateCreated_LTE { get; set; }
+    /// <summary> ExtensionForwarded.DateCreated greater than or equal to </summary>
+    [JsonProperty("extensionForwarded_dateCreated_gte")]
+    public DateTime? ExtensionForwarded_DateCreated_GTE { get; set; }
+
+    /// <summary> ExtensionForwarded.DateUpdated equals </summary>
+    [JsonProperty("extensionForwarded_dateUpdated_eq")]
+    public DateTime? ExtensionForwarded_DateUpdated_EQ { get; set; }
+    /// <summary> ExtensionForwarded.DateUpdated less than or equal to </summary>
+    [JsonProperty("extensionForwarded_dateUpdated_lte")]
+    public DateTime? ExtensionForwarded_DateUpdated_LTE { get; set; }
+    /// <summary> ExtensionForwarded.DateUpdated greater than or equal to </summary>
+    [JsonProperty("extensionForwarded_dateUpdated_gte")]
+    public DateTime? ExtensionForwarded_DateUpdated_GTE { get; set; }
+
 
     /// <summary> IdsLinesThatCanListenToVoicemail equals </summary>
     [JsonProperty("idsLinesThatCanListenToVoicemail_eq")]
@@ -7727,15 +8774,109 @@ public class CallOutgoingFilterRequest
     public DateTime? Contact_DateUpdated_GTE { get; set; }
 
 
-    /// <summary> IdLineThatInitiatedCall equals </summary>
-    [JsonProperty("idLineThatInitiatedCall_eq")]
-    public string? IdLineThatInitiatedCall_EQ { get; set; }
-    /// <summary> IdLineThatInitiatedCall contains </summary>
-    [JsonProperty("idLineThatInitiatedCall_con")]
-    public string? IdLineThatInitiatedCall_CON { get; set; }
-    /// <summary> IdLineThatInitiatedCall regex </summary>
-    [JsonProperty("idLineThatInitiatedCall_reg")]
-    public string? IdLineThatInitiatedCall_REG { get; set; }
+    /// <summary> LineThatInitiatedCall.FriendlyName equals </summary>
+    [JsonProperty("lineThatInitiatedCall_friendlyName_eq")]
+    public string? LineThatInitiatedCall_FriendlyName_EQ { get; set; }
+    /// <summary> LineThatInitiatedCall.FriendlyName contains </summary>
+    [JsonProperty("lineThatInitiatedCall_friendlyName_con")]
+    public string? LineThatInitiatedCall_FriendlyName_CON { get; set; }
+    /// <summary> LineThatInitiatedCall.FriendlyName regex </summary>
+    [JsonProperty("lineThatInitiatedCall_friendlyName_reg")]
+    public string? LineThatInitiatedCall_FriendlyName_REG { get; set; }
+
+    /// <summary> LineThatInitiatedCall.LineConnectionStatus.IpWAN equals </summary>
+    [JsonProperty("lineThatInitiatedCall_lineConnectionStatus_ipWAN_eq")]
+    public string? LineThatInitiatedCall_LineConnectionStatus_IpWAN_EQ { get; set; }
+    /// <summary> LineThatInitiatedCall.LineConnectionStatus.IpWAN contains </summary>
+    [JsonProperty("lineThatInitiatedCall_lineConnectionStatus_ipWAN_con")]
+    public string? LineThatInitiatedCall_LineConnectionStatus_IpWAN_CON { get; set; }
+    /// <summary> LineThatInitiatedCall.LineConnectionStatus.IpWAN regex </summary>
+    [JsonProperty("lineThatInitiatedCall_lineConnectionStatus_ipWAN_reg")]
+    public string? LineThatInitiatedCall_LineConnectionStatus_IpWAN_REG { get; set; }
+
+    /// <summary> LineThatInitiatedCall.LineConnectionStatus.PortWAN equals </summary>
+    [JsonProperty("lineThatInitiatedCall_lineConnectionStatus_portWAN_eq")]
+    public System.Int32? LineThatInitiatedCall_LineConnectionStatus_PortWAN_EQ { get; set; }
+    /// <summary> LineThatInitiatedCall.LineConnectionStatus.PortWAN less than or equal to </summary>
+    [JsonProperty("lineThatInitiatedCall_lineConnectionStatus_portWAN_lte")]
+    public System.Int32? LineThatInitiatedCall_LineConnectionStatus_PortWAN_LTE { get; set; }
+    /// <summary> LineThatInitiatedCall.LineConnectionStatus.PortWAN greater than or equal to </summary>
+    [JsonProperty("lineThatInitiatedCall_lineConnectionStatus_portWAN_gte")]
+    public System.Int32? LineThatInitiatedCall_LineConnectionStatus_PortWAN_GTE { get; set; }
+
+    /// <summary> LineThatInitiatedCall.LineConnectionStatus.IpLAN equals </summary>
+    [JsonProperty("lineThatInitiatedCall_lineConnectionStatus_ipLAN_eq")]
+    public string? LineThatInitiatedCall_LineConnectionStatus_IpLAN_EQ { get; set; }
+    /// <summary> LineThatInitiatedCall.LineConnectionStatus.IpLAN contains </summary>
+    [JsonProperty("lineThatInitiatedCall_lineConnectionStatus_ipLAN_con")]
+    public string? LineThatInitiatedCall_LineConnectionStatus_IpLAN_CON { get; set; }
+    /// <summary> LineThatInitiatedCall.LineConnectionStatus.IpLAN regex </summary>
+    [JsonProperty("lineThatInitiatedCall_lineConnectionStatus_ipLAN_reg")]
+    public string? LineThatInitiatedCall_LineConnectionStatus_IpLAN_REG { get; set; }
+
+    /// <summary> LineThatInitiatedCall.LineConnectionStatus.PortLAN equals </summary>
+    [JsonProperty("lineThatInitiatedCall_lineConnectionStatus_portLAN_eq")]
+    public System.Int32? LineThatInitiatedCall_LineConnectionStatus_PortLAN_EQ { get; set; }
+    /// <summary> LineThatInitiatedCall.LineConnectionStatus.PortLAN less than or equal to </summary>
+    [JsonProperty("lineThatInitiatedCall_lineConnectionStatus_portLAN_lte")]
+    public System.Int32? LineThatInitiatedCall_LineConnectionStatus_PortLAN_LTE { get; set; }
+    /// <summary> LineThatInitiatedCall.LineConnectionStatus.PortLAN greater than or equal to </summary>
+    [JsonProperty("lineThatInitiatedCall_lineConnectionStatus_portLAN_gte")]
+    public System.Int32? LineThatInitiatedCall_LineConnectionStatus_PortLAN_GTE { get; set; }
+
+    /// <summary> LineThatInitiatedCall.LineConnectionStatus.UserAgent equals </summary>
+    [JsonProperty("lineThatInitiatedCall_lineConnectionStatus_userAgent_eq")]
+    public string? LineThatInitiatedCall_LineConnectionStatus_UserAgent_EQ { get; set; }
+    /// <summary> LineThatInitiatedCall.LineConnectionStatus.UserAgent contains </summary>
+    [JsonProperty("lineThatInitiatedCall_lineConnectionStatus_userAgent_con")]
+    public string? LineThatInitiatedCall_LineConnectionStatus_UserAgent_CON { get; set; }
+    /// <summary> LineThatInitiatedCall.LineConnectionStatus.UserAgent regex </summary>
+    [JsonProperty("lineThatInitiatedCall_lineConnectionStatus_userAgent_reg")]
+    public string? LineThatInitiatedCall_LineConnectionStatus_UserAgent_REG { get; set; }
+
+    /// <summary> LineThatInitiatedCall.LineConnectionStatus.IsConnected equals </summary>
+    [JsonProperty("lineThatInitiatedCall_lineConnectionStatus_isConnected_eq")]
+    public bool? LineThatInitiatedCall_LineConnectionStatus_IsConnected_EQ { get; set; }
+
+    /// <summary> LineThatInitiatedCall.LineConnectionStatus.DateConnected equals </summary>
+    [JsonProperty("lineThatInitiatedCall_lineConnectionStatus_dateConnected_eq")]
+    public DateTime? LineThatInitiatedCall_LineConnectionStatus_DateConnected_EQ { get; set; }
+    /// <summary> LineThatInitiatedCall.LineConnectionStatus.DateConnected less than or equal to </summary>
+    [JsonProperty("lineThatInitiatedCall_lineConnectionStatus_dateConnected_lte")]
+    public DateTime? LineThatInitiatedCall_LineConnectionStatus_DateConnected_LTE { get; set; }
+    /// <summary> LineThatInitiatedCall.LineConnectionStatus.DateConnected greater than or equal to </summary>
+    [JsonProperty("lineThatInitiatedCall_lineConnectionStatus_dateConnected_gte")]
+    public DateTime? LineThatInitiatedCall_LineConnectionStatus_DateConnected_GTE { get; set; }
+
+
+    /// <summary> LineThatInitiatedCall.CallerIdNumber equals </summary>
+    [JsonProperty("lineThatInitiatedCall_callerIdNumber_eq")]
+    public string? LineThatInitiatedCall_CallerIdNumber_EQ { get; set; }
+    /// <summary> LineThatInitiatedCall.CallerIdNumber contains </summary>
+    [JsonProperty("lineThatInitiatedCall_callerIdNumber_con")]
+    public string? LineThatInitiatedCall_CallerIdNumber_CON { get; set; }
+    /// <summary> LineThatInitiatedCall.CallerIdNumber regex </summary>
+    [JsonProperty("lineThatInitiatedCall_callerIdNumber_reg")]
+    public string? LineThatInitiatedCall_CallerIdNumber_REG { get; set; }
+
+    /// <summary> LineThatInitiatedCall.RecordExternalCalls equals </summary>
+    [JsonProperty("lineThatInitiatedCall_recordExternalCalls_eq")]
+    public bool? LineThatInitiatedCall_RecordExternalCalls_EQ { get; set; }
+
+    /// <summary> LineThatInitiatedCall.RecordInternalCalls equals </summary>
+    [JsonProperty("lineThatInitiatedCall_recordInternalCalls_eq")]
+    public bool? LineThatInitiatedCall_RecordInternalCalls_EQ { get; set; }
+
+    /// <summary> LineThatInitiatedCall.Id equals </summary>
+    [JsonProperty("lineThatInitiatedCall_id_eq")]
+    public string? LineThatInitiatedCall_Id_EQ { get; set; }
+    /// <summary> LineThatInitiatedCall.Id contains </summary>
+    [JsonProperty("lineThatInitiatedCall_id_con")]
+    public string? LineThatInitiatedCall_Id_CON { get; set; }
+    /// <summary> LineThatInitiatedCall.Id regex </summary>
+    [JsonProperty("lineThatInitiatedCall_id_reg")]
+    public string? LineThatInitiatedCall_Id_REG { get; set; }
+
 
     /// <summary> IdVoicemail equals </summary>
     [JsonProperty("idVoicemail_eq")]
@@ -8068,10 +9209,6 @@ public class CloudServiceFilterRequest
 /// <summary> Enables searching for Extensions </summary>
 public class ExtensionFilterRequest 
 {
-    /// <summary> ExtensionType equals </summary>
-    [JsonProperty("extensionType_eq")]
-    public ExtensionType? ExtensionType_EQ { get; set; }
-
     /// <summary> IdMusicOnHoldGroup equals </summary>
     [JsonProperty("idMusicOnHoldGroup_eq")]
     public string? IdMusicOnHoldGroup_EQ { get; set; }
@@ -8081,6 +9218,10 @@ public class ExtensionFilterRequest
     /// <summary> IdMusicOnHoldGroup regex </summary>
     [JsonProperty("idMusicOnHoldGroup_reg")]
     public string? IdMusicOnHoldGroup_REG { get; set; }
+
+    /// <summary> ExtensionType equals </summary>
+    [JsonProperty("extensionType_eq")]
+    public ExtensionType? ExtensionType_EQ { get; set; }
 
     /// <summary> Number equals </summary>
     [JsonProperty("number_eq")]

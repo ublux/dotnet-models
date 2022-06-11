@@ -9,35 +9,23 @@ public class ChildCallForwardToExtension : ChildCall
     /// <summary>
     ///     Extension being called
     /// </summary>
-    [IsRequired]
-    public string IdExtension { get; set; } = string.Empty;
+    // [IsRequired]
+    public Extension? Extension { get; set; }     
 
     /// <summary>
-    ///     Extension number that was called
-    /// </summary>
-    [IsRequired]
-    public string ExtensionNumber { get; set; } = string.Empty;
-
-    /// <summary>
-    ///     Name of extension
-    /// </summary>
-    [IsRequired]
-    public string ExtensionFriendlyName { get; set; } = string.Empty;
-
-    /// <summary>
-    ///     Id of line that answered
+    ///     Line that answered
     /// </summary>    
-    public string? IdLineThatAnswered { get; set; }
+    public Line? LineThatAnswered { get; set; }
 
     /// <summary>
     ///     Lines that rang
     /// </summary>
-    public List<string> IdsLinesThatRing { get; set; } = new();
+    public List<Line> LinesThatRing { get; set; } = new();
 
     /// <summary>
-    ///     Id of lines that did not ring
+    ///     Lines that did not ring
     /// </summary>
-    public List<string> IdsLinesThatDidNotRing { get; set; } = new();
+    public List<Line> LinesThatDidNotRing { get; set; } = new();
 
     /// <summary>
     ///     ForwardToExtension

@@ -14,11 +14,11 @@ public partial class FaxEmailInfo : UbluxDocument
 
     /// <summary>
     ///     If email was validated with phone then what line validated this email?
-    ///     Id of line that validated email
+    ///     Line that validated email
     /// </summary>
     [AllowUpdate(false)]
     [References(typeof(Line))]
-    public string? IdLineThatValidatedEmail { get; set; }
+    public Line? LineThatValidatedEmail { get; set; }
 
     #endregion
 

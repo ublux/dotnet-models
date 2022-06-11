@@ -19,14 +19,14 @@ public partial class VoicemailForwarded : Voicemail
     [AllowUpdate(false)]
     [References(typeof(Line))]
     [IsRequired]
-    public string IdLineThatForwardedVoicemail { get; set; } = string.Empty;
+    public Line LineThatForwardedVoicemail { get; set; } = new Line();
 
     /// <summary>
     ///     If voicemail is forwarded
-    ///     To what extension was this voicemail forwarded to
+    ///     To what extension was this voicemail forwarded to?
     /// </summary>
     [AllowUpdate(false)]
     [References(typeof(Extension))]
-    [IsRequired]
-    public string IdExtensionForwarde { get; set; } = string.Empty;
+    //[IsRequired]
+    public Extension? ExtensionForwarded { get; set; }
 }

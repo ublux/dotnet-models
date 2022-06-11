@@ -7,54 +7,54 @@ public partial class CallOutgoingToExtension : CallOutgoing
 {
     #region Properties
 
-    #region References
+    #region Subdocuments
 
     /// <summary>
     ///     Extension being called
     /// </summary>
-    [References(typeof(Extension))]
+    //[References(typeof(Extension))]
     [AllowUpdate(false)]
-    [IsRequired]
-    public string IdExtension { get; set; } = String.Empty;
+    //[IsRequired]
+    public Extension? Extension { get; set; }
 
     /// <summary>
-    ///     Id of line that answered
+    ///     Line that answered
     /// </summary>
-    [References(typeof(Line))]
+    //[References(typeof(Line))]
     [AllowUpdate(false)]
-    public string? IdLineThatAnswered { get; set; }
+    public Line? LineThatAnswered { get; set; }
 
     /// <summary>
-    ///     Lines that rang
+    ///     Lines that ring
     /// </summary>
-    [References(typeof(Line))]
+    //[References(typeof(Line))]
     [AllowUpdate(false)]
-    public List<string> IdsLinesThatRing { get; set; } = new();
+    public List<Line> LinesThatRing { get; set; } = new();
 
     /// <summary>
-    ///     Id of lines that did not ring
+    ///     Lines that did not ring
     /// </summary>
-    [References(typeof(Line))]
+    //[References(typeof(Line))]
     [AllowUpdate(false)]
-    public List<string> IdsLinesThatDidNotRing { get; set; } = new();
+    public List<Line> LinesThatDidNotRing { get; set; } = new();
 
     #endregion
 
     #endregion
 
-    /// <summary>
-    ///     Extension number that was called
-    /// </summary>
-    [AllowUpdate(false)]
-    [IsRequired]
-    public string ExtensionNumber { get; set; } = String.Empty;
+    ///// <summary>
+    /////     Extension number that was called
+    ///// </summary>
+    //[AllowUpdate(false)]
+    //[IsRequired]
+    //public string ExtensionNumber { get; set; } = String.Empty;
 
-    /// <summary>
-    ///     Name of extension
-    /// </summary>
-    [AllowUpdate(false)]
-    [IsRequired]
-    public string ExtensionFriendlyName { get; set; } = String.Empty;
+    ///// <summary>
+    /////     Name of extension
+    ///// </summary>
+    //[AllowUpdate(false)]
+    //[IsRequired]
+    //public string ExtensionFriendlyName { get; set; } = String.Empty;
 
     /// <summary>
     ///     Type of call
