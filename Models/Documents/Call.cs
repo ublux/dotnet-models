@@ -73,7 +73,7 @@ public abstract partial class Call : UbluxDocument
     ///     INVALIDARGS: Error parsing Dial command arguments (added for Asterisk 1.4.1, SVN r53135-53136)
     /// </summary>
     [AllowUpdate(false)]
-    public string? Status { get; set; }
+    public DialStatus Status { get; set; }
 
     /// <summary>
     ///     Number of seconds it took to answer

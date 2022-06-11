@@ -916,13 +916,7 @@ public class CallIncomingToCallFlowFilterRequest
 
     /// <summary> Status equals </summary>
     [JsonProperty("status_eq")]
-    public string? Status_EQ { get; set; }
-    /// <summary> Status contains </summary>
-    [JsonProperty("status_con")]
-    public string? Status_CON { get; set; }
-    /// <summary> Status regex </summary>
-    [JsonProperty("status_reg")]
-    public string? Status_REG { get; set; }
+    public DialStatus? Status_EQ { get; set; }
 
     /// <summary> SecondsItTookToAnswer equals </summary>
     [JsonProperty("secondsItTookToAnswer_eq")]
@@ -1746,13 +1740,7 @@ public class CallIncomingToExtensionFilterRequest
 
     /// <summary> Status equals </summary>
     [JsonProperty("status_eq")]
-    public string? Status_EQ { get; set; }
-    /// <summary> Status contains </summary>
-    [JsonProperty("status_con")]
-    public string? Status_CON { get; set; }
-    /// <summary> Status regex </summary>
-    [JsonProperty("status_reg")]
-    public string? Status_REG { get; set; }
+    public DialStatus? Status_EQ { get; set; }
 
     /// <summary> SecondsItTookToAnswer equals </summary>
     [JsonProperty("secondsItTookToAnswer_eq")]
@@ -2660,13 +2648,7 @@ public class CallOutgoingToExtensionFilterRequest
 
     /// <summary> Status equals </summary>
     [JsonProperty("status_eq")]
-    public string? Status_EQ { get; set; }
-    /// <summary> Status contains </summary>
-    [JsonProperty("status_con")]
-    public string? Status_CON { get; set; }
-    /// <summary> Status regex </summary>
-    [JsonProperty("status_reg")]
-    public string? Status_REG { get; set; }
+    public DialStatus? Status_EQ { get; set; }
 
     /// <summary> SecondsItTookToAnswer equals </summary>
     [JsonProperty("secondsItTookToAnswer_eq")]
@@ -3217,13 +3199,7 @@ public class CallOutgoingToPSTNFilterRequest
 
     /// <summary> Status equals </summary>
     [JsonProperty("status_eq")]
-    public string? Status_EQ { get; set; }
-    /// <summary> Status contains </summary>
-    [JsonProperty("status_con")]
-    public string? Status_CON { get; set; }
-    /// <summary> Status regex </summary>
-    [JsonProperty("status_reg")]
-    public string? Status_REG { get; set; }
+    public DialStatus? Status_EQ { get; set; }
 
     /// <summary> SecondsItTookToAnswer equals </summary>
     [JsonProperty("secondsItTookToAnswer_eq")]
@@ -7942,13 +7918,7 @@ public class CallFilterRequest
 
     /// <summary> Status equals </summary>
     [JsonProperty("status_eq")]
-    public string? Status_EQ { get; set; }
-    /// <summary> Status contains </summary>
-    [JsonProperty("status_con")]
-    public string? Status_CON { get; set; }
-    /// <summary> Status regex </summary>
-    [JsonProperty("status_reg")]
-    public string? Status_REG { get; set; }
+    public DialStatus? Status_EQ { get; set; }
 
     /// <summary> SecondsItTookToAnswer equals </summary>
     [JsonProperty("secondsItTookToAnswer_eq")]
@@ -8397,13 +8367,7 @@ public class CallIncomingFilterRequest
 
     /// <summary> Status equals </summary>
     [JsonProperty("status_eq")]
-    public string? Status_EQ { get; set; }
-    /// <summary> Status contains </summary>
-    [JsonProperty("status_con")]
-    public string? Status_CON { get; set; }
-    /// <summary> Status regex </summary>
-    [JsonProperty("status_reg")]
-    public string? Status_REG { get; set; }
+    public DialStatus? Status_EQ { get; set; }
 
     /// <summary> SecondsItTookToAnswer equals </summary>
     [JsonProperty("secondsItTookToAnswer_eq")]
@@ -8940,13 +8904,7 @@ public class CallOutgoingFilterRequest
 
     /// <summary> Status equals </summary>
     [JsonProperty("status_eq")]
-    public string? Status_EQ { get; set; }
-    /// <summary> Status contains </summary>
-    [JsonProperty("status_con")]
-    public string? Status_CON { get; set; }
-    /// <summary> Status regex </summary>
-    [JsonProperty("status_reg")]
-    public string? Status_REG { get; set; }
+    public DialStatus? Status_EQ { get; set; }
 
     /// <summary> SecondsItTookToAnswer equals </summary>
     [JsonProperty("secondsItTookToAnswer_eq")]

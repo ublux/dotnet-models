@@ -10,8 +10,4 @@ public abstract class ChildCallBlindTransfer : ChildCall
     /// </summary>
     [IsRequired]
     public string IdCall { get; set; } = string.Empty;
-
-
-
 }
-
