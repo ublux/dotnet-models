@@ -117,7 +117,7 @@ public class BlackListPhoneNumberUpdateRequest // : IUbluxDocumentId
     /// <summary>
     /// The phone number that will be blocked
     /// </summary>
-    public String? PhoneNumber { get; set; }
+    public String? Number { get; set; }
     /// <summary>
     /// Friendly name of this rule
     /// </summary>
@@ -125,8 +125,8 @@ public class BlackListPhoneNumberUpdateRequest // : IUbluxDocumentId
     /// <summary> Set values on actual document </summary>
     public void SetValuesOnBlackListPhoneNumber(BlackListPhoneNumber blackListPhoneNumber)
     {
-        if(this.PhoneNumber!=null)
-            blackListPhoneNumber.PhoneNumber = this.PhoneNumber;
+        if(this.Number!=null)
+            blackListPhoneNumber.Number = this.Number;
         if(this.FriendlyName!=null)
             blackListPhoneNumber.FriendlyName = this.FriendlyName;
     }

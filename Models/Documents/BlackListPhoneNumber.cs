@@ -16,14 +16,14 @@ public partial class BlackListPhoneNumber : UbluxDocument
     [AllowUpdate(false)]
     public string? IdAudioToPlayIfCallIsBlocked { get; set; }
 
-    #endregion
+    #endregion    
 
     /// <summary>
     ///     The phone number that will be blocked
     /// </summary>
     [AllowUpdate(true)]
     [IsRequired]
-    public string PhoneNumber { get; set; } = String.Empty;
+    public string Number { get; set; } = String.Empty;
 
     /// <summary>
     ///     Friendly name of this rule

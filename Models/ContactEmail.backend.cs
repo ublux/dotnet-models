@@ -4,14 +4,29 @@ namespace Ublux.Communications.Models;
 
 public partial class ContactEmail
 {
-    #region Setters
+    #region Search index
+
+    /// <summary>
+    ///     This cannot be the id because if the email address changes we should not change the id.
+    ///     Thanks to this index we can search fast on database. This index consists of: Account followed by the email address
+    ///     TODO: make this an index on database. Do not make it unique only and index because we can have two contacts with the same email address
+    /// </summary>
+    [AllowUpdate(false)]
+    [Obsolete("Set via SetSearchIndex method")]
+    public string SearchIndex
+    {
+        get => searchIndex;
+        [Obsolete("Set via SetSearchIndex method")]
+        set => searchIndex = value;
+    }
+    private string searchIndex = string.Empty;
 
     /// <summary>
     ///     Set value of search index
     /// </summary>
-    public void SetSearchIndex(BuiltId builtId)
+    public void SetSearchIndex(BuiltId accountId)
     {
-        this.searchIndex = BuildSearchIndexCommon(builtId.Id, this.Email);
+        this.searchIndex = BuildSearchIndexCommon(accountId.Id, this.Email);
     }
 
     /// <summary>
@@ -19,30 +34,9 @@ public partial class ContactEmail
     /// </summary>
     public void SetSearchIndex(Account account)
     {
+        if (string.IsNullOrEmpty(account.Id)) throw new Exception("id connot be null");
         this.searchIndex = BuildSearchIndexCommon(account.Id, this.Email);
     }
-
-    #endregion
-
-    #region Static helper method to build search index
-
-    /// <summary>
-    ///     Build serach index
-    /// </summary>
-    public static string BuildSearchIndex(Account account, string phoneNumber)
-    {
-        return BuildSearchIndexCommon(account.Id, phoneNumber);
-    }
-
-    /// <summary>
-    ///     Build serach index
-    /// </summary>
-    public static string BuildSearchIndex(BuiltId idAccount, string phoneNumber)
-    {
-        return BuildSearchIndexCommon(idAccount.Id, phoneNumber);
-    }
-
-    #endregion
 
     private static string BuildSearchIndexCommon(string idAccount, string email)
     {
@@ -54,6 +48,8 @@ public partial class ContactEmail
 
         return $"{idAccount}:{(email ?? "").ToLower()}";
     }
+
+    #endregion
 }
 
 #endif

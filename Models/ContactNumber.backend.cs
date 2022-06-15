@@ -4,14 +4,28 @@ namespace Ublux.Communications.Models;
 
 public partial class ContactNumber
 {
-    #region Setter
+    #region SearchIndex
+
+    /// <summary>
+    ///     This cannot be the id because if the phone number changes we cannot modify the id
+    ///     Thanks to this index we can search fast on database. This index consists of: Account and last 8 numbers of phone number.
+    ///     TODO: make this an index on database. Do not make it unique only and index because we can have two contacts with the same phone number
+    /// </summary>
+    [AllowUpdate(false)]
+    public string SearchIndex
+    {
+        get => searchIndex;
+        [Obsolete("Set via SetSearchIndex method")]
+        set => searchIndex = value;
+    }
+    private string searchIndex = string.Empty;
 
     /// <summary>
     ///     Set value of search index
     /// </summary>
-    public void SetSearchIndex(BuiltId builtId)
+    public void SetSearchIndex(BuiltId accountId)
     {
-        this.searchIndex = BuildSearchIndexCommon(builtId.Id, this.Number);
+        this.searchIndex = BuildSearchIndexCommon(accountId.Id, this.Number);
     }
 
     /// <summary>
@@ -19,30 +33,9 @@ public partial class ContactNumber
     /// </summary>
     public void SetSearchIndex(Account account)
     {
+        if (string.IsNullOrEmpty(account.Id)) throw new Exception("id connot be null");
         this.searchIndex = BuildSearchIndexCommon(account.Id, this.Number);
     }
-
-    #endregion
-
-    #region Static helper method to build search index
-
-    /// <summary>
-    ///     Build serach index
-    /// </summary>
-    public static string BuildSearchIndex(Account account, string phoneNumber)
-    {
-        return BuildSearchIndexCommon(account.Id, phoneNumber);
-    }
-
-    /// <summary>
-    ///     Build serach index
-    /// </summary>
-    public static string BuildSearchIndex(BuiltId idAccount, string phoneNumber)
-    {
-        return BuildSearchIndexCommon(idAccount.Id, phoneNumber);
-    }
-
-    #endregion
 
     private static string BuildSearchIndexCommon(string idAccount, string phoneNumber)
     {
@@ -52,7 +45,7 @@ public partial class ContactNumber
             throw new Exception("built id must be and id from an account");
         }
 
-        if(phoneNumber is null)
+        if (phoneNumber is null)
         {
             if (Debugger.IsAttached) Debugger.Break();
             throw new Exception("There must be a phone number in order to build search index");
@@ -75,6 +68,8 @@ public partial class ContactNumber
 
         return new string(buf[..index]);
     }
+
+    #endregion
 }
 
 #endif

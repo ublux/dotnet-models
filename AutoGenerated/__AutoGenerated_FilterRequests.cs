@@ -456,6 +456,16 @@ public class AutoProvisionReferenceFilterRequest
 /// <summary> Enables searching for BlackListPhoneNumbers </summary>
 public class BlackListPhoneNumberFilterRequest 
 {
+    /// <summary> SearchIndex equals </summary>
+    [JsonProperty("searchIndex_eq")]
+    public string? SearchIndex_EQ { get; set; }
+    /// <summary> SearchIndex contains </summary>
+    [JsonProperty("searchIndex_con")]
+    public string? SearchIndex_CON { get; set; }
+    /// <summary> SearchIndex regex </summary>
+    [JsonProperty("searchIndex_reg")]
+    public string? SearchIndex_REG { get; set; }
+
     /// <summary> IdAudioToPlayIfCallIsBlocked equals </summary>
     [JsonProperty("idAudioToPlayIfCallIsBlocked_eq")]
     public string? IdAudioToPlayIfCallIsBlocked_EQ { get; set; }
@@ -466,15 +476,15 @@ public class BlackListPhoneNumberFilterRequest
     [JsonProperty("idAudioToPlayIfCallIsBlocked_reg")]
     public string? IdAudioToPlayIfCallIsBlocked_REG { get; set; }
 
-    /// <summary> PhoneNumber equals </summary>
-    [JsonProperty("phoneNumber_eq")]
-    public string? PhoneNumber_EQ { get; set; }
-    /// <summary> PhoneNumber contains </summary>
-    [JsonProperty("phoneNumber_con")]
-    public string? PhoneNumber_CON { get; set; }
-    /// <summary> PhoneNumber regex </summary>
-    [JsonProperty("phoneNumber_reg")]
-    public string? PhoneNumber_REG { get; set; }
+    /// <summary> Number equals </summary>
+    [JsonProperty("number_eq")]
+    public string? Number_EQ { get; set; }
+    /// <summary> Number contains </summary>
+    [JsonProperty("number_con")]
+    public string? Number_CON { get; set; }
+    /// <summary> Number regex </summary>
+    [JsonProperty("number_reg")]
+    public string? Number_REG { get; set; }
 
     /// <summary> FriendlyName equals </summary>
     [JsonProperty("friendlyName_eq")]
