@@ -53,7 +53,12 @@ public partial class Phone : UbluxDocument
     [IsRequired]
     public string FriendlyName { get; set; } = String.Empty;
 
-    
-
     #endregion
+
+    /// <summary>
+    ///     Type of phone. If its of type web and identity (username and password) must exist in order for phone to connect.
+    /// </summary>
+    [IsRequired]
+    [AllowUpdate(true)]
+    public PhoneType PhoneType { get; set; }
 }

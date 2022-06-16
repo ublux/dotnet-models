@@ -5789,6 +5789,10 @@ public class PhoneFilterRequest
     [JsonProperty("friendlyName_reg")]
     public string? FriendlyName_REG { get; set; }
 
+    /// <summary> PhoneType equals </summary>
+    [JsonProperty("phoneType_eq")]
+    public PhoneType? PhoneType_EQ { get; set; }
+
     /// <summary> Id equals </summary>
     [JsonProperty("id_eq")]
     public string? Id_EQ { get; set; }

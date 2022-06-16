@@ -864,6 +864,10 @@ public class PhoneUpdateRequest // : IUbluxDocumentId
     /// Descriptive name of phone
     /// </summary>
     public String? FriendlyName { get; set; }
+    /// <summary>
+    /// Type of phone. If its of type web and identity (username and password) must exist in order for phone to connect.
+    /// </summary>
+    public PhoneType? PhoneType { get; set; }
     /// <summary> Set values on actual document </summary>
     public void SetValuesOnPhone(Phone phone)
     {
@@ -875,6 +879,8 @@ public class PhoneUpdateRequest // : IUbluxDocumentId
             phone.IdIdentity = this.IdIdentity;
         if(this.FriendlyName!=null)
             phone.FriendlyName = this.FriendlyName;
+        if(this.PhoneType!=null)
+            phone.PhoneType = this.PhoneType.Value;
     }
 
 }

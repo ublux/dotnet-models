@@ -15,6 +15,14 @@ public partial class Phone : UbluxDocument, IReferncesAccount
     [AllowUpdate(false)]
     [IsRequired]
     public string IdAccount { get; set; } = String.Empty;
+
+    /// <summary>
+    ///     Password of phone used to authenticate with asterisk
+    /// </summary>
+    [IsRequired]
+    [AllowUpdate(false)]
+    [IgnoreDataMember]
+    public string Password { get; set; } = String.Empty;
 }
 
 #endif
