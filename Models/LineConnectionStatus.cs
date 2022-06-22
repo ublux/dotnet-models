@@ -42,10 +42,23 @@ public class LineConnectionStatus
     public bool? IsConnected { get; set; }
 
     /// <summary>
+    ///     Reason of phone disconnected. 
+    ///     Posible reasons: none, registration failure, remove existing, remove unavailable, expiration, request, shutdown
+    /// </summary>
+    [AllowUpdate(false)]
+    public string? DisconnectedReason { get; set; }
+
+    /// <summary>
     ///     Date when line was last connected
     /// </summary>
     [AllowUpdate(false)]
     public DateTime? DateConnected { get; set; }
+
+    /// <summary>
+    ///     Date when line was last disconnected
+    /// </summary>
+    [AllowUpdate(false)]
+    public DateTime? DateDisconnected { get; set; }
 
     // Have we sent sip notify? we send a sip notify if a phone does not send a packet for to long. 
     // Sending a sip notify will increase the probably of phone replying so we do not mark it as disconnected when in fact it is connected.
