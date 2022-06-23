@@ -20,12 +20,12 @@ public partial class Line : UbluxSubDocument
     /// </summary>
     public static string? GetIdPhone(string idLine)
     {
-        // Example of line id:   Li/AZ100/Ph/1/23
-        // this will return therefore Ph/1:23
+        // Example of line id:   Li.AZ100.Ph.1.23
+        // this will return therefore Ph.1.23
         if (idLine == null)
             return null;
 
-        var index = idLine.IndexOf('/', DocumentPrefix.Length + 1);
+        var index = idLine.IndexOf(RedisConstants.DelimeterId, DocumentPrefix.Length + 1);
         if (index > 0)
             return idLine[(index + 1)..];
         else

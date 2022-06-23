@@ -67,4 +67,6 @@ public abstract partial class UbluxDocument : IUbluxDocument, IUbluxDocumentId
     [AllowUpdate(false)]
     [HideForCreateRequest]
     public DateTime? DateUpdated { get; set; }
+
+    
 }

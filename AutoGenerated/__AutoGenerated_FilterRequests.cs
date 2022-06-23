@@ -1234,6 +1234,16 @@ public class CallIncomingToExtensionFilterRequest
     [JsonProperty("lineThatAnswered_lineConnectionStatus_isConnected_eq")]
     public bool? LineThatAnswered_LineConnectionStatus_IsConnected_EQ { get; set; }
 
+    /// <summary> LineThatAnswered.LineConnectionStatus.DisconnectedReason equals </summary>
+    [JsonProperty("lineThatAnswered_lineConnectionStatus_disconnectedReason_eq")]
+    public string? LineThatAnswered_LineConnectionStatus_DisconnectedReason_EQ { get; set; }
+    /// <summary> LineThatAnswered.LineConnectionStatus.DisconnectedReason contains </summary>
+    [JsonProperty("lineThatAnswered_lineConnectionStatus_disconnectedReason_con")]
+    public string? LineThatAnswered_LineConnectionStatus_DisconnectedReason_CON { get; set; }
+    /// <summary> LineThatAnswered.LineConnectionStatus.DisconnectedReason regex </summary>
+    [JsonProperty("lineThatAnswered_lineConnectionStatus_disconnectedReason_reg")]
+    public string? LineThatAnswered_LineConnectionStatus_DisconnectedReason_REG { get; set; }
+
     /// <summary> LineThatAnswered.LineConnectionStatus.DateConnected equals </summary>
     [JsonProperty("lineThatAnswered_lineConnectionStatus_dateConnected_eq")]
     public DateTime? LineThatAnswered_LineConnectionStatus_DateConnected_EQ { get; set; }
@@ -1243,6 +1253,16 @@ public class CallIncomingToExtensionFilterRequest
     /// <summary> LineThatAnswered.LineConnectionStatus.DateConnected greater than or equal to </summary>
     [JsonProperty("lineThatAnswered_lineConnectionStatus_dateConnected_gte")]
     public DateTime? LineThatAnswered_LineConnectionStatus_DateConnected_GTE { get; set; }
+
+    /// <summary> LineThatAnswered.LineConnectionStatus.DateDisconnected equals </summary>
+    [JsonProperty("lineThatAnswered_lineConnectionStatus_dateDisconnected_eq")]
+    public DateTime? LineThatAnswered_LineConnectionStatus_DateDisconnected_EQ { get; set; }
+    /// <summary> LineThatAnswered.LineConnectionStatus.DateDisconnected less than or equal to </summary>
+    [JsonProperty("lineThatAnswered_lineConnectionStatus_dateDisconnected_lte")]
+    public DateTime? LineThatAnswered_LineConnectionStatus_DateDisconnected_LTE { get; set; }
+    /// <summary> LineThatAnswered.LineConnectionStatus.DateDisconnected greater than or equal to </summary>
+    [JsonProperty("lineThatAnswered_lineConnectionStatus_dateDisconnected_gte")]
+    public DateTime? LineThatAnswered_LineConnectionStatus_DateDisconnected_GTE { get; set; }
 
 
     /// <summary> LineThatAnswered.CallerIdNumber equals </summary>
@@ -1338,6 +1358,16 @@ public class CallIncomingToExtensionFilterRequest
     [JsonProperty("linesThatRing_lineConnectionStatus_isConnected_eq")]
     public bool? LinesThatRing_LineConnectionStatus_IsConnected_EQ { get; set; }
 
+    /// <summary> LinesThatRing.LineConnectionStatus.DisconnectedReason equals </summary>
+    [JsonProperty("linesThatRing_lineConnectionStatus_disconnectedReason_eq")]
+    public string? LinesThatRing_LineConnectionStatus_DisconnectedReason_EQ { get; set; }
+    /// <summary> LinesThatRing.LineConnectionStatus.DisconnectedReason contains </summary>
+    [JsonProperty("linesThatRing_lineConnectionStatus_disconnectedReason_con")]
+    public string? LinesThatRing_LineConnectionStatus_DisconnectedReason_CON { get; set; }
+    /// <summary> LinesThatRing.LineConnectionStatus.DisconnectedReason regex </summary>
+    [JsonProperty("linesThatRing_lineConnectionStatus_disconnectedReason_reg")]
+    public string? LinesThatRing_LineConnectionStatus_DisconnectedReason_REG { get; set; }
+
     /// <summary> LinesThatRing.LineConnectionStatus.DateConnected equals </summary>
     [JsonProperty("linesThatRing_lineConnectionStatus_dateConnected_eq")]
     public DateTime? LinesThatRing_LineConnectionStatus_DateConnected_EQ { get; set; }
@@ -1347,6 +1377,16 @@ public class CallIncomingToExtensionFilterRequest
     /// <summary> LinesThatRing.LineConnectionStatus.DateConnected greater than or equal to </summary>
     [JsonProperty("linesThatRing_lineConnectionStatus_dateConnected_gte")]
     public DateTime? LinesThatRing_LineConnectionStatus_DateConnected_GTE { get; set; }
+
+    /// <summary> LinesThatRing.LineConnectionStatus.DateDisconnected equals </summary>
+    [JsonProperty("linesThatRing_lineConnectionStatus_dateDisconnected_eq")]
+    public DateTime? LinesThatRing_LineConnectionStatus_DateDisconnected_EQ { get; set; }
+    /// <summary> LinesThatRing.LineConnectionStatus.DateDisconnected less than or equal to </summary>
+    [JsonProperty("linesThatRing_lineConnectionStatus_dateDisconnected_lte")]
+    public DateTime? LinesThatRing_LineConnectionStatus_DateDisconnected_LTE { get; set; }
+    /// <summary> LinesThatRing.LineConnectionStatus.DateDisconnected greater than or equal to </summary>
+    [JsonProperty("linesThatRing_lineConnectionStatus_dateDisconnected_gte")]
+    public DateTime? LinesThatRing_LineConnectionStatus_DateDisconnected_GTE { get; set; }
 
 
     /// <summary> LinesThatRing.CallerIdNumber equals </summary>
@@ -1442,6 +1482,16 @@ public class CallIncomingToExtensionFilterRequest
     [JsonProperty("linesThatDidNotRing_lineConnectionStatus_isConnected_eq")]
     public bool? LinesThatDidNotRing_LineConnectionStatus_IsConnected_EQ { get; set; }
 
+    /// <summary> LinesThatDidNotRing.LineConnectionStatus.DisconnectedReason equals </summary>
+    [JsonProperty("linesThatDidNotRing_lineConnectionStatus_disconnectedReason_eq")]
+    public string? LinesThatDidNotRing_LineConnectionStatus_DisconnectedReason_EQ { get; set; }
+    /// <summary> LinesThatDidNotRing.LineConnectionStatus.DisconnectedReason contains </summary>
+    [JsonProperty("linesThatDidNotRing_lineConnectionStatus_disconnectedReason_con")]
+    public string? LinesThatDidNotRing_LineConnectionStatus_DisconnectedReason_CON { get; set; }
+    /// <summary> LinesThatDidNotRing.LineConnectionStatus.DisconnectedReason regex </summary>
+    [JsonProperty("linesThatDidNotRing_lineConnectionStatus_disconnectedReason_reg")]
+    public string? LinesThatDidNotRing_LineConnectionStatus_DisconnectedReason_REG { get; set; }
+
     /// <summary> LinesThatDidNotRing.LineConnectionStatus.DateConnected equals </summary>
     [JsonProperty("linesThatDidNotRing_lineConnectionStatus_dateConnected_eq")]
     public DateTime? LinesThatDidNotRing_LineConnectionStatus_DateConnected_EQ { get; set; }
@@ -1451,6 +1501,16 @@ public class CallIncomingToExtensionFilterRequest
     /// <summary> LinesThatDidNotRing.LineConnectionStatus.DateConnected greater than or equal to </summary>
     [JsonProperty("linesThatDidNotRing_lineConnectionStatus_dateConnected_gte")]
     public DateTime? LinesThatDidNotRing_LineConnectionStatus_DateConnected_GTE { get; set; }
+
+    /// <summary> LinesThatDidNotRing.LineConnectionStatus.DateDisconnected equals </summary>
+    [JsonProperty("linesThatDidNotRing_lineConnectionStatus_dateDisconnected_eq")]
+    public DateTime? LinesThatDidNotRing_LineConnectionStatus_DateDisconnected_EQ { get; set; }
+    /// <summary> LinesThatDidNotRing.LineConnectionStatus.DateDisconnected less than or equal to </summary>
+    [JsonProperty("linesThatDidNotRing_lineConnectionStatus_dateDisconnected_lte")]
+    public DateTime? LinesThatDidNotRing_LineConnectionStatus_DateDisconnected_LTE { get; set; }
+    /// <summary> LinesThatDidNotRing.LineConnectionStatus.DateDisconnected greater than or equal to </summary>
+    [JsonProperty("linesThatDidNotRing_lineConnectionStatus_dateDisconnected_gte")]
+    public DateTime? LinesThatDidNotRing_LineConnectionStatus_DateDisconnected_GTE { get; set; }
 
 
     /// <summary> LinesThatDidNotRing.CallerIdNumber equals </summary>
@@ -2058,6 +2118,16 @@ public class CallOutgoingToExtensionFilterRequest
     [JsonProperty("lineThatAnswered_lineConnectionStatus_isConnected_eq")]
     public bool? LineThatAnswered_LineConnectionStatus_IsConnected_EQ { get; set; }
 
+    /// <summary> LineThatAnswered.LineConnectionStatus.DisconnectedReason equals </summary>
+    [JsonProperty("lineThatAnswered_lineConnectionStatus_disconnectedReason_eq")]
+    public string? LineThatAnswered_LineConnectionStatus_DisconnectedReason_EQ { get; set; }
+    /// <summary> LineThatAnswered.LineConnectionStatus.DisconnectedReason contains </summary>
+    [JsonProperty("lineThatAnswered_lineConnectionStatus_disconnectedReason_con")]
+    public string? LineThatAnswered_LineConnectionStatus_DisconnectedReason_CON { get; set; }
+    /// <summary> LineThatAnswered.LineConnectionStatus.DisconnectedReason regex </summary>
+    [JsonProperty("lineThatAnswered_lineConnectionStatus_disconnectedReason_reg")]
+    public string? LineThatAnswered_LineConnectionStatus_DisconnectedReason_REG { get; set; }
+
     /// <summary> LineThatAnswered.LineConnectionStatus.DateConnected equals </summary>
     [JsonProperty("lineThatAnswered_lineConnectionStatus_dateConnected_eq")]
     public DateTime? LineThatAnswered_LineConnectionStatus_DateConnected_EQ { get; set; }
@@ -2067,6 +2137,16 @@ public class CallOutgoingToExtensionFilterRequest
     /// <summary> LineThatAnswered.LineConnectionStatus.DateConnected greater than or equal to </summary>
     [JsonProperty("lineThatAnswered_lineConnectionStatus_dateConnected_gte")]
     public DateTime? LineThatAnswered_LineConnectionStatus_DateConnected_GTE { get; set; }
+
+    /// <summary> LineThatAnswered.LineConnectionStatus.DateDisconnected equals </summary>
+    [JsonProperty("lineThatAnswered_lineConnectionStatus_dateDisconnected_eq")]
+    public DateTime? LineThatAnswered_LineConnectionStatus_DateDisconnected_EQ { get; set; }
+    /// <summary> LineThatAnswered.LineConnectionStatus.DateDisconnected less than or equal to </summary>
+    [JsonProperty("lineThatAnswered_lineConnectionStatus_dateDisconnected_lte")]
+    public DateTime? LineThatAnswered_LineConnectionStatus_DateDisconnected_LTE { get; set; }
+    /// <summary> LineThatAnswered.LineConnectionStatus.DateDisconnected greater than or equal to </summary>
+    [JsonProperty("lineThatAnswered_lineConnectionStatus_dateDisconnected_gte")]
+    public DateTime? LineThatAnswered_LineConnectionStatus_DateDisconnected_GTE { get; set; }
 
 
     /// <summary> LineThatAnswered.CallerIdNumber equals </summary>
@@ -2162,6 +2242,16 @@ public class CallOutgoingToExtensionFilterRequest
     [JsonProperty("linesThatRing_lineConnectionStatus_isConnected_eq")]
     public bool? LinesThatRing_LineConnectionStatus_IsConnected_EQ { get; set; }
 
+    /// <summary> LinesThatRing.LineConnectionStatus.DisconnectedReason equals </summary>
+    [JsonProperty("linesThatRing_lineConnectionStatus_disconnectedReason_eq")]
+    public string? LinesThatRing_LineConnectionStatus_DisconnectedReason_EQ { get; set; }
+    /// <summary> LinesThatRing.LineConnectionStatus.DisconnectedReason contains </summary>
+    [JsonProperty("linesThatRing_lineConnectionStatus_disconnectedReason_con")]
+    public string? LinesThatRing_LineConnectionStatus_DisconnectedReason_CON { get; set; }
+    /// <summary> LinesThatRing.LineConnectionStatus.DisconnectedReason regex </summary>
+    [JsonProperty("linesThatRing_lineConnectionStatus_disconnectedReason_reg")]
+    public string? LinesThatRing_LineConnectionStatus_DisconnectedReason_REG { get; set; }
+
     /// <summary> LinesThatRing.LineConnectionStatus.DateConnected equals </summary>
     [JsonProperty("linesThatRing_lineConnectionStatus_dateConnected_eq")]
     public DateTime? LinesThatRing_LineConnectionStatus_DateConnected_EQ { get; set; }
@@ -2171,6 +2261,16 @@ public class CallOutgoingToExtensionFilterRequest
     /// <summary> LinesThatRing.LineConnectionStatus.DateConnected greater than or equal to </summary>
     [JsonProperty("linesThatRing_lineConnectionStatus_dateConnected_gte")]
     public DateTime? LinesThatRing_LineConnectionStatus_DateConnected_GTE { get; set; }
+
+    /// <summary> LinesThatRing.LineConnectionStatus.DateDisconnected equals </summary>
+    [JsonProperty("linesThatRing_lineConnectionStatus_dateDisconnected_eq")]
+    public DateTime? LinesThatRing_LineConnectionStatus_DateDisconnected_EQ { get; set; }
+    /// <summary> LinesThatRing.LineConnectionStatus.DateDisconnected less than or equal to </summary>
+    [JsonProperty("linesThatRing_lineConnectionStatus_dateDisconnected_lte")]
+    public DateTime? LinesThatRing_LineConnectionStatus_DateDisconnected_LTE { get; set; }
+    /// <summary> LinesThatRing.LineConnectionStatus.DateDisconnected greater than or equal to </summary>
+    [JsonProperty("linesThatRing_lineConnectionStatus_dateDisconnected_gte")]
+    public DateTime? LinesThatRing_LineConnectionStatus_DateDisconnected_GTE { get; set; }
 
 
     /// <summary> LinesThatRing.CallerIdNumber equals </summary>
@@ -2266,6 +2366,16 @@ public class CallOutgoingToExtensionFilterRequest
     [JsonProperty("linesThatDidNotRing_lineConnectionStatus_isConnected_eq")]
     public bool? LinesThatDidNotRing_LineConnectionStatus_IsConnected_EQ { get; set; }
 
+    /// <summary> LinesThatDidNotRing.LineConnectionStatus.DisconnectedReason equals </summary>
+    [JsonProperty("linesThatDidNotRing_lineConnectionStatus_disconnectedReason_eq")]
+    public string? LinesThatDidNotRing_LineConnectionStatus_DisconnectedReason_EQ { get; set; }
+    /// <summary> LinesThatDidNotRing.LineConnectionStatus.DisconnectedReason contains </summary>
+    [JsonProperty("linesThatDidNotRing_lineConnectionStatus_disconnectedReason_con")]
+    public string? LinesThatDidNotRing_LineConnectionStatus_DisconnectedReason_CON { get; set; }
+    /// <summary> LinesThatDidNotRing.LineConnectionStatus.DisconnectedReason regex </summary>
+    [JsonProperty("linesThatDidNotRing_lineConnectionStatus_disconnectedReason_reg")]
+    public string? LinesThatDidNotRing_LineConnectionStatus_DisconnectedReason_REG { get; set; }
+
     /// <summary> LinesThatDidNotRing.LineConnectionStatus.DateConnected equals </summary>
     [JsonProperty("linesThatDidNotRing_lineConnectionStatus_dateConnected_eq")]
     public DateTime? LinesThatDidNotRing_LineConnectionStatus_DateConnected_EQ { get; set; }
@@ -2275,6 +2385,16 @@ public class CallOutgoingToExtensionFilterRequest
     /// <summary> LinesThatDidNotRing.LineConnectionStatus.DateConnected greater than or equal to </summary>
     [JsonProperty("linesThatDidNotRing_lineConnectionStatus_dateConnected_gte")]
     public DateTime? LinesThatDidNotRing_LineConnectionStatus_DateConnected_GTE { get; set; }
+
+    /// <summary> LinesThatDidNotRing.LineConnectionStatus.DateDisconnected equals </summary>
+    [JsonProperty("linesThatDidNotRing_lineConnectionStatus_dateDisconnected_eq")]
+    public DateTime? LinesThatDidNotRing_LineConnectionStatus_DateDisconnected_EQ { get; set; }
+    /// <summary> LinesThatDidNotRing.LineConnectionStatus.DateDisconnected less than or equal to </summary>
+    [JsonProperty("linesThatDidNotRing_lineConnectionStatus_dateDisconnected_lte")]
+    public DateTime? LinesThatDidNotRing_LineConnectionStatus_DateDisconnected_LTE { get; set; }
+    /// <summary> LinesThatDidNotRing.LineConnectionStatus.DateDisconnected greater than or equal to </summary>
+    [JsonProperty("linesThatDidNotRing_lineConnectionStatus_dateDisconnected_gte")]
+    public DateTime? LinesThatDidNotRing_LineConnectionStatus_DateDisconnected_GTE { get; set; }
 
 
     /// <summary> LinesThatDidNotRing.CallerIdNumber equals </summary>
@@ -2556,6 +2676,16 @@ public class CallOutgoingToExtensionFilterRequest
     [JsonProperty("lineThatInitiatedCall_lineConnectionStatus_isConnected_eq")]
     public bool? LineThatInitiatedCall_LineConnectionStatus_IsConnected_EQ { get; set; }
 
+    /// <summary> LineThatInitiatedCall.LineConnectionStatus.DisconnectedReason equals </summary>
+    [JsonProperty("lineThatInitiatedCall_lineConnectionStatus_disconnectedReason_eq")]
+    public string? LineThatInitiatedCall_LineConnectionStatus_DisconnectedReason_EQ { get; set; }
+    /// <summary> LineThatInitiatedCall.LineConnectionStatus.DisconnectedReason contains </summary>
+    [JsonProperty("lineThatInitiatedCall_lineConnectionStatus_disconnectedReason_con")]
+    public string? LineThatInitiatedCall_LineConnectionStatus_DisconnectedReason_CON { get; set; }
+    /// <summary> LineThatInitiatedCall.LineConnectionStatus.DisconnectedReason regex </summary>
+    [JsonProperty("lineThatInitiatedCall_lineConnectionStatus_disconnectedReason_reg")]
+    public string? LineThatInitiatedCall_LineConnectionStatus_DisconnectedReason_REG { get; set; }
+
     /// <summary> LineThatInitiatedCall.LineConnectionStatus.DateConnected equals </summary>
     [JsonProperty("lineThatInitiatedCall_lineConnectionStatus_dateConnected_eq")]
     public DateTime? LineThatInitiatedCall_LineConnectionStatus_DateConnected_EQ { get; set; }
@@ -2565,6 +2695,16 @@ public class CallOutgoingToExtensionFilterRequest
     /// <summary> LineThatInitiatedCall.LineConnectionStatus.DateConnected greater than or equal to </summary>
     [JsonProperty("lineThatInitiatedCall_lineConnectionStatus_dateConnected_gte")]
     public DateTime? LineThatInitiatedCall_LineConnectionStatus_DateConnected_GTE { get; set; }
+
+    /// <summary> LineThatInitiatedCall.LineConnectionStatus.DateDisconnected equals </summary>
+    [JsonProperty("lineThatInitiatedCall_lineConnectionStatus_dateDisconnected_eq")]
+    public DateTime? LineThatInitiatedCall_LineConnectionStatus_DateDisconnected_EQ { get; set; }
+    /// <summary> LineThatInitiatedCall.LineConnectionStatus.DateDisconnected less than or equal to </summary>
+    [JsonProperty("lineThatInitiatedCall_lineConnectionStatus_dateDisconnected_lte")]
+    public DateTime? LineThatInitiatedCall_LineConnectionStatus_DateDisconnected_LTE { get; set; }
+    /// <summary> LineThatInitiatedCall.LineConnectionStatus.DateDisconnected greater than or equal to </summary>
+    [JsonProperty("lineThatInitiatedCall_lineConnectionStatus_dateDisconnected_gte")]
+    public DateTime? LineThatInitiatedCall_LineConnectionStatus_DateDisconnected_GTE { get; set; }
 
 
     /// <summary> LineThatInitiatedCall.CallerIdNumber equals </summary>
@@ -3107,6 +3247,16 @@ public class CallOutgoingToPSTNFilterRequest
     [JsonProperty("lineThatInitiatedCall_lineConnectionStatus_isConnected_eq")]
     public bool? LineThatInitiatedCall_LineConnectionStatus_IsConnected_EQ { get; set; }
 
+    /// <summary> LineThatInitiatedCall.LineConnectionStatus.DisconnectedReason equals </summary>
+    [JsonProperty("lineThatInitiatedCall_lineConnectionStatus_disconnectedReason_eq")]
+    public string? LineThatInitiatedCall_LineConnectionStatus_DisconnectedReason_EQ { get; set; }
+    /// <summary> LineThatInitiatedCall.LineConnectionStatus.DisconnectedReason contains </summary>
+    [JsonProperty("lineThatInitiatedCall_lineConnectionStatus_disconnectedReason_con")]
+    public string? LineThatInitiatedCall_LineConnectionStatus_DisconnectedReason_CON { get; set; }
+    /// <summary> LineThatInitiatedCall.LineConnectionStatus.DisconnectedReason regex </summary>
+    [JsonProperty("lineThatInitiatedCall_lineConnectionStatus_disconnectedReason_reg")]
+    public string? LineThatInitiatedCall_LineConnectionStatus_DisconnectedReason_REG { get; set; }
+
     /// <summary> LineThatInitiatedCall.LineConnectionStatus.DateConnected equals </summary>
     [JsonProperty("lineThatInitiatedCall_lineConnectionStatus_dateConnected_eq")]
     public DateTime? LineThatInitiatedCall_LineConnectionStatus_DateConnected_EQ { get; set; }
@@ -3116,6 +3266,16 @@ public class CallOutgoingToPSTNFilterRequest
     /// <summary> LineThatInitiatedCall.LineConnectionStatus.DateConnected greater than or equal to </summary>
     [JsonProperty("lineThatInitiatedCall_lineConnectionStatus_dateConnected_gte")]
     public DateTime? LineThatInitiatedCall_LineConnectionStatus_DateConnected_GTE { get; set; }
+
+    /// <summary> LineThatInitiatedCall.LineConnectionStatus.DateDisconnected equals </summary>
+    [JsonProperty("lineThatInitiatedCall_lineConnectionStatus_dateDisconnected_eq")]
+    public DateTime? LineThatInitiatedCall_LineConnectionStatus_DateDisconnected_EQ { get; set; }
+    /// <summary> LineThatInitiatedCall.LineConnectionStatus.DateDisconnected less than or equal to </summary>
+    [JsonProperty("lineThatInitiatedCall_lineConnectionStatus_dateDisconnected_lte")]
+    public DateTime? LineThatInitiatedCall_LineConnectionStatus_DateDisconnected_LTE { get; set; }
+    /// <summary> LineThatInitiatedCall.LineConnectionStatus.DateDisconnected greater than or equal to </summary>
+    [JsonProperty("lineThatInitiatedCall_lineConnectionStatus_dateDisconnected_gte")]
+    public DateTime? LineThatInitiatedCall_LineConnectionStatus_DateDisconnected_GTE { get; set; }
 
 
     /// <summary> LineThatInitiatedCall.CallerIdNumber equals </summary>
@@ -4679,6 +4839,16 @@ public class FaxEmailInfoFilterRequest
     [JsonProperty("lineThatValidatedEmail_lineConnectionStatus_isConnected_eq")]
     public bool? LineThatValidatedEmail_LineConnectionStatus_IsConnected_EQ { get; set; }
 
+    /// <summary> LineThatValidatedEmail.LineConnectionStatus.DisconnectedReason equals </summary>
+    [JsonProperty("lineThatValidatedEmail_lineConnectionStatus_disconnectedReason_eq")]
+    public string? LineThatValidatedEmail_LineConnectionStatus_DisconnectedReason_EQ { get; set; }
+    /// <summary> LineThatValidatedEmail.LineConnectionStatus.DisconnectedReason contains </summary>
+    [JsonProperty("lineThatValidatedEmail_lineConnectionStatus_disconnectedReason_con")]
+    public string? LineThatValidatedEmail_LineConnectionStatus_DisconnectedReason_CON { get; set; }
+    /// <summary> LineThatValidatedEmail.LineConnectionStatus.DisconnectedReason regex </summary>
+    [JsonProperty("lineThatValidatedEmail_lineConnectionStatus_disconnectedReason_reg")]
+    public string? LineThatValidatedEmail_LineConnectionStatus_DisconnectedReason_REG { get; set; }
+
     /// <summary> LineThatValidatedEmail.LineConnectionStatus.DateConnected equals </summary>
     [JsonProperty("lineThatValidatedEmail_lineConnectionStatus_dateConnected_eq")]
     public DateTime? LineThatValidatedEmail_LineConnectionStatus_DateConnected_EQ { get; set; }
@@ -4688,6 +4858,16 @@ public class FaxEmailInfoFilterRequest
     /// <summary> LineThatValidatedEmail.LineConnectionStatus.DateConnected greater than or equal to </summary>
     [JsonProperty("lineThatValidatedEmail_lineConnectionStatus_dateConnected_gte")]
     public DateTime? LineThatValidatedEmail_LineConnectionStatus_DateConnected_GTE { get; set; }
+
+    /// <summary> LineThatValidatedEmail.LineConnectionStatus.DateDisconnected equals </summary>
+    [JsonProperty("lineThatValidatedEmail_lineConnectionStatus_dateDisconnected_eq")]
+    public DateTime? LineThatValidatedEmail_LineConnectionStatus_DateDisconnected_EQ { get; set; }
+    /// <summary> LineThatValidatedEmail.LineConnectionStatus.DateDisconnected less than or equal to </summary>
+    [JsonProperty("lineThatValidatedEmail_lineConnectionStatus_dateDisconnected_lte")]
+    public DateTime? LineThatValidatedEmail_LineConnectionStatus_DateDisconnected_LTE { get; set; }
+    /// <summary> LineThatValidatedEmail.LineConnectionStatus.DateDisconnected greater than or equal to </summary>
+    [JsonProperty("lineThatValidatedEmail_lineConnectionStatus_dateDisconnected_gte")]
+    public DateTime? LineThatValidatedEmail_LineConnectionStatus_DateDisconnected_GTE { get; set; }
 
 
     /// <summary> LineThatValidatedEmail.CallerIdNumber equals </summary>
@@ -5739,6 +5919,16 @@ public class PhoneFilterRequest
     [JsonProperty("lines_lineConnectionStatus_isConnected_eq")]
     public bool? Lines_LineConnectionStatus_IsConnected_EQ { get; set; }
 
+    /// <summary> Lines.LineConnectionStatus.DisconnectedReason equals </summary>
+    [JsonProperty("lines_lineConnectionStatus_disconnectedReason_eq")]
+    public string? Lines_LineConnectionStatus_DisconnectedReason_EQ { get; set; }
+    /// <summary> Lines.LineConnectionStatus.DisconnectedReason contains </summary>
+    [JsonProperty("lines_lineConnectionStatus_disconnectedReason_con")]
+    public string? Lines_LineConnectionStatus_DisconnectedReason_CON { get; set; }
+    /// <summary> Lines.LineConnectionStatus.DisconnectedReason regex </summary>
+    [JsonProperty("lines_lineConnectionStatus_disconnectedReason_reg")]
+    public string? Lines_LineConnectionStatus_DisconnectedReason_REG { get; set; }
+
     /// <summary> Lines.LineConnectionStatus.DateConnected equals </summary>
     [JsonProperty("lines_lineConnectionStatus_dateConnected_eq")]
     public DateTime? Lines_LineConnectionStatus_DateConnected_EQ { get; set; }
@@ -5748,6 +5938,16 @@ public class PhoneFilterRequest
     /// <summary> Lines.LineConnectionStatus.DateConnected greater than or equal to </summary>
     [JsonProperty("lines_lineConnectionStatus_dateConnected_gte")]
     public DateTime? Lines_LineConnectionStatus_DateConnected_GTE { get; set; }
+
+    /// <summary> Lines.LineConnectionStatus.DateDisconnected equals </summary>
+    [JsonProperty("lines_lineConnectionStatus_dateDisconnected_eq")]
+    public DateTime? Lines_LineConnectionStatus_DateDisconnected_EQ { get; set; }
+    /// <summary> Lines.LineConnectionStatus.DateDisconnected less than or equal to </summary>
+    [JsonProperty("lines_lineConnectionStatus_dateDisconnected_lte")]
+    public DateTime? Lines_LineConnectionStatus_DateDisconnected_LTE { get; set; }
+    /// <summary> Lines.LineConnectionStatus.DateDisconnected greater than or equal to </summary>
+    [JsonProperty("lines_lineConnectionStatus_dateDisconnected_gte")]
+    public DateTime? Lines_LineConnectionStatus_DateDisconnected_GTE { get; set; }
 
 
     /// <summary> Lines.CallerIdNumber equals </summary>
@@ -6798,6 +6998,16 @@ public class VoicemailForwardedFilterRequest
     [JsonProperty("lineThatForwardedVoicemail_lineConnectionStatus_isConnected_eq")]
     public bool? LineThatForwardedVoicemail_LineConnectionStatus_IsConnected_EQ { get; set; }
 
+    /// <summary> LineThatForwardedVoicemail.LineConnectionStatus.DisconnectedReason equals </summary>
+    [JsonProperty("lineThatForwardedVoicemail_lineConnectionStatus_disconnectedReason_eq")]
+    public string? LineThatForwardedVoicemail_LineConnectionStatus_DisconnectedReason_EQ { get; set; }
+    /// <summary> LineThatForwardedVoicemail.LineConnectionStatus.DisconnectedReason contains </summary>
+    [JsonProperty("lineThatForwardedVoicemail_lineConnectionStatus_disconnectedReason_con")]
+    public string? LineThatForwardedVoicemail_LineConnectionStatus_DisconnectedReason_CON { get; set; }
+    /// <summary> LineThatForwardedVoicemail.LineConnectionStatus.DisconnectedReason regex </summary>
+    [JsonProperty("lineThatForwardedVoicemail_lineConnectionStatus_disconnectedReason_reg")]
+    public string? LineThatForwardedVoicemail_LineConnectionStatus_DisconnectedReason_REG { get; set; }
+
     /// <summary> LineThatForwardedVoicemail.LineConnectionStatus.DateConnected equals </summary>
     [JsonProperty("lineThatForwardedVoicemail_lineConnectionStatus_dateConnected_eq")]
     public DateTime? LineThatForwardedVoicemail_LineConnectionStatus_DateConnected_EQ { get; set; }
@@ -6807,6 +7017,16 @@ public class VoicemailForwardedFilterRequest
     /// <summary> LineThatForwardedVoicemail.LineConnectionStatus.DateConnected greater than or equal to </summary>
     [JsonProperty("lineThatForwardedVoicemail_lineConnectionStatus_dateConnected_gte")]
     public DateTime? LineThatForwardedVoicemail_LineConnectionStatus_DateConnected_GTE { get; set; }
+
+    /// <summary> LineThatForwardedVoicemail.LineConnectionStatus.DateDisconnected equals </summary>
+    [JsonProperty("lineThatForwardedVoicemail_lineConnectionStatus_dateDisconnected_eq")]
+    public DateTime? LineThatForwardedVoicemail_LineConnectionStatus_DateDisconnected_EQ { get; set; }
+    /// <summary> LineThatForwardedVoicemail.LineConnectionStatus.DateDisconnected less than or equal to </summary>
+    [JsonProperty("lineThatForwardedVoicemail_lineConnectionStatus_dateDisconnected_lte")]
+    public DateTime? LineThatForwardedVoicemail_LineConnectionStatus_DateDisconnected_LTE { get; set; }
+    /// <summary> LineThatForwardedVoicemail.LineConnectionStatus.DateDisconnected greater than or equal to </summary>
+    [JsonProperty("lineThatForwardedVoicemail_lineConnectionStatus_dateDisconnected_gte")]
+    public DateTime? LineThatForwardedVoicemail_LineConnectionStatus_DateDisconnected_GTE { get; set; }
 
 
     /// <summary> LineThatForwardedVoicemail.CallerIdNumber equals </summary>
@@ -8816,6 +9036,16 @@ public class CallOutgoingFilterRequest
     [JsonProperty("lineThatInitiatedCall_lineConnectionStatus_isConnected_eq")]
     public bool? LineThatInitiatedCall_LineConnectionStatus_IsConnected_EQ { get; set; }
 
+    /// <summary> LineThatInitiatedCall.LineConnectionStatus.DisconnectedReason equals </summary>
+    [JsonProperty("lineThatInitiatedCall_lineConnectionStatus_disconnectedReason_eq")]
+    public string? LineThatInitiatedCall_LineConnectionStatus_DisconnectedReason_EQ { get; set; }
+    /// <summary> LineThatInitiatedCall.LineConnectionStatus.DisconnectedReason contains </summary>
+    [JsonProperty("lineThatInitiatedCall_lineConnectionStatus_disconnectedReason_con")]
+    public string? LineThatInitiatedCall_LineConnectionStatus_DisconnectedReason_CON { get; set; }
+    /// <summary> LineThatInitiatedCall.LineConnectionStatus.DisconnectedReason regex </summary>
+    [JsonProperty("lineThatInitiatedCall_lineConnectionStatus_disconnectedReason_reg")]
+    public string? LineThatInitiatedCall_LineConnectionStatus_DisconnectedReason_REG { get; set; }
+
     /// <summary> LineThatInitiatedCall.LineConnectionStatus.DateConnected equals </summary>
     [JsonProperty("lineThatInitiatedCall_lineConnectionStatus_dateConnected_eq")]
     public DateTime? LineThatInitiatedCall_LineConnectionStatus_DateConnected_EQ { get; set; }
@@ -8825,6 +9055,16 @@ public class CallOutgoingFilterRequest
     /// <summary> LineThatInitiatedCall.LineConnectionStatus.DateConnected greater than or equal to </summary>
     [JsonProperty("lineThatInitiatedCall_lineConnectionStatus_dateConnected_gte")]
     public DateTime? LineThatInitiatedCall_LineConnectionStatus_DateConnected_GTE { get; set; }
+
+    /// <summary> LineThatInitiatedCall.LineConnectionStatus.DateDisconnected equals </summary>
+    [JsonProperty("lineThatInitiatedCall_lineConnectionStatus_dateDisconnected_eq")]
+    public DateTime? LineThatInitiatedCall_LineConnectionStatus_DateDisconnected_EQ { get; set; }
+    /// <summary> LineThatInitiatedCall.LineConnectionStatus.DateDisconnected less than or equal to </summary>
+    [JsonProperty("lineThatInitiatedCall_lineConnectionStatus_dateDisconnected_lte")]
+    public DateTime? LineThatInitiatedCall_LineConnectionStatus_DateDisconnected_LTE { get; set; }
+    /// <summary> LineThatInitiatedCall.LineConnectionStatus.DateDisconnected greater than or equal to </summary>
+    [JsonProperty("lineThatInitiatedCall_lineConnectionStatus_dateDisconnected_gte")]
+    public DateTime? LineThatInitiatedCall_LineConnectionStatus_DateDisconnected_GTE { get; set; }
 
 
     /// <summary> LineThatInitiatedCall.CallerIdNumber equals </summary>
