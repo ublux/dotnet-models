@@ -6,6 +6,10 @@
 [JsonConverter(typeof(JsonSubtypes), nameof(PowerDialerType))]
 [JsonSubtypes.KnownSubType(typeof(PowerDialerSimple), nameof(PowerDialerType.Simple))]
 [JsonSubtypes.KnownSubType(typeof(PowerDialerAdvance), nameof(PowerDialerType.Advanced))]
+[BsonKnownTypes(
+    typeof(PowerDialerAdvance),
+    typeof(PowerDialerSimple)
+)]
 public abstract class PowerDialer
 {
     ///// <summary>
