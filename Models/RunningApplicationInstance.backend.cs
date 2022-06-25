@@ -19,6 +19,11 @@ public class RunningApplicationInstance
     public CloudServiceType CloudServiceType { get; set; }
 
     /// <summary>
+    ///     Application will exit with this exit code
+    /// </summary>
+    public int ExitCode { get; set; }
+
+    /// <summary>
     ///     Generate a random Instance. Used for unit tests 
     /// </summary>
     public static RunningApplicationInstance GenerateRandom(CloudServiceType type)
@@ -29,6 +34,8 @@ public class RunningApplicationInstance
             CloudServiceType = type
         };
     }
+
+    
 
     #region NumberOfOperationsExecuting
 
