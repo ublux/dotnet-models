@@ -85,7 +85,6 @@ public class RunningApplicationInstance
                 Debugger.Break();
             
             return ex;
-            // logger?.Log(LogLevel.Error, "Unknown error executing opertation with guid {operationGuid} {ex}", operationGuid, ex);
         }
         finally
         {
