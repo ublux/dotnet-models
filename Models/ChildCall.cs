@@ -26,7 +26,6 @@ public abstract partial class ChildCall
     ///// </summary>
     //public Contact? Contact { get; set; }
 
-
     ///// <summary>
     /////     Call that blind transferred this call
     ///// </summary>
@@ -52,4 +51,9 @@ public abstract partial class ChildCall
     /////     True if transferred from channel that is not being executed on dialplan. 
     ///// </summary>
     //public bool IsSwaped { get; set; }
+
+    /// <summary>
+    ///     Status of call
+    /// </summary>
+    public DialStatus Status { get; set; }
 }

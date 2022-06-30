@@ -6,17 +6,22 @@
 public enum Language
 {
     /// <summary>
-    ///     None
+    ///     None. If none langue will try to be infered
     /// </summary>
     None,
 
     /// <summary>
-    ///     English
+    ///     English U.S.
     /// </summary>
-    EN,
+    EN_US,
 
     /// <summary>
-    ///     Spanish
+    ///     Spanish Spain
     /// </summary>
-    ES
+    ES_ES,
+
+    /// <summary>
+    ///     Spanish Mexico
+    /// </summary>
+    ES_MX
 }

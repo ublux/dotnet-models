@@ -36,4 +36,10 @@ public partial class Line : UbluxSubDocument
     /// </summary>
     [AllowUpdate(true)]
     public bool RecordInternalCalls { get; set; }
+
+    /// <summary>
+    ///     Langage to use when playing messages
+    /// </summary>
+    [AllowUpdate(true)]
+    public Language Language { get; set; }
 }

@@ -6,19 +6,19 @@
 public enum DialStatus
 {
     /// <summary>
-    ///     Call is ringing. This is not an asterisk status
+    ///     The party that called hangup
     /// </summary>
-    RINGING,
+    HANGUP,
 
-    /// <summary>
-    ///     Either the dialed peer exists but is not currently reachable, e.g. endpoint is not registered, or an attempt was made to call a nonexistent location, e.g. nonexistent DNS hostname.
-    /// </summary>
-    CHANUNAVAIL,
+    ///// <summary>
+    /////     Either the dialed peer exists but is not currently reachable, e.g. endpoint is not registered, or an attempt was made to call a nonexistent location, e.g. nonexistent DNS hostname.
+    ///// </summary>
+    //CHANUNAVAIL,
 
-    /// <summary>
-    ///      Channel or switching congestion occured when routing the call. This can occur if there is a slow or no response from the remote end.
-    /// </summary>
-    CONGESTION,
+    ///// <summary>
+    /////      Channel or switching congestion occured when routing the call. This can occur if there is a slow or no response from the remote end.
+    ///// </summary>
+    //CONGESTION,
 
     /// <summary>
     ///     Called party did not answer.
@@ -36,22 +36,34 @@ public enum DialStatus
     ANSWER,
 
     /// <summary>
-    ///     Dial was cancelled before call was answered or reached some other terminating event.
+    ///     If calling lines are ofline for example
     /// </summary>
-    CANCEL,
+    UNAVAILABLE,
+
+    // This is hangup
+    ///// <summary>
+    /////     Dial was cancelled before call was answered or reached some other terminating event.
+    ///// </summary>
+    //CANCEL,
+
+    ///// <summary>
+    /////      For the Privacy and Screening Modes. Will be set if the called party chooses to send the calling party to the 'Go Away' script.
+    ///// </summary>
+    //DONTCALL,
+
+    ///// <summary>
+    /////     For the Privacy and Screening Modes. Will be set if the called party chooses to send the calling party to the 'torture' script.
+    ///// </summary>
+    //TORTURE,
+
+    ///// <summary>
+    /////      Dial failed due to invalid syntax.
+    ///// </summary>
+    //INVALIDARGS,
 
     /// <summary>
-    ///      For the Privacy and Screening Modes. Will be set if the called party chooses to send the calling party to the 'Go Away' script.
+    ///     Some error ocured
     /// </summary>
-    DONTCALL,
+    ERROR,
 
-    /// <summary>
-    ///     For the Privacy and Screening Modes. Will be set if the called party chooses to send the calling party to the 'torture' script.
-    /// </summary>
-    TORTURE,
-
-    /// <summary>
-    ///      Dial failed due to invalid syntax.
-    /// </summary>
-    INVALIDARGS
 }

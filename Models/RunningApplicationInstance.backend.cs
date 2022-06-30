@@ -19,7 +19,7 @@ public class RunningApplicationInstance
     public CloudServiceType CloudServiceType { get; set; }
 
     /// <summary>
-    ///     Application will exit with this exit code
+    ///     Application will end with this exit code
     /// </summary>
     public int ExitCode { get; set; }
 
@@ -35,12 +35,10 @@ public class RunningApplicationInstance
         };
     }
 
-    
-
     #region NumberOfOperationsExecuting
 
     /// <summary>
-    ///     Number of current requests
+    ///     Number of important tasks running
     ///     When stopping application gracefully we wait for this counter to equal 0. 
     ///     That way we are sure we did not terminated application in the middle of something
     /// </summary>
@@ -115,23 +113,8 @@ public class RunningApplicationInstance
     #endregion
 
     /// <summary>
-    ///     TODO. Make this enum
-    ///     If we cannot read or store IdGlobal to disk
+    ///     Problems with cloud service
     /// </summary>
-    [Obsolete("make this an enum")]
-    public bool Flaged_IdGlobal_DiskError = false;
-
-    /// <summary>
-    ///     If we cannot read or write IdStreamModified to disk
-    /// </summary>
-    [Obsolete("make this an enum")]
-    public bool Flaged_IdStreamModified_DiskError = false;
-
-    /// <summary>
-    ///     If we cannot read or write IdStreamDeleted to disk
-    /// </summary>
-    [Obsolete("make this an enum")]
-    public bool Flaged_IdStreamDeleted_DiskError = false;
-
+    public HashSet<CloudServiceFlag> Flags { get; set; } = new();
 }
 #endif
