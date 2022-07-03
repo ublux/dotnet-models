@@ -14,7 +14,7 @@
     typeof(CallOutgoingToExtension),
     typeof(CallOutgoingToPSTN)
 )]
-public abstract class CallOutgoing : Call
+public abstract partial class CallOutgoing : Call
 {
     /// <summary>    
     ///     Contact to whom we are calling
