@@ -13,6 +13,11 @@ public class LineConnectionStatusChanged
     [AllowUpdate(false)]
     public string IdLine { get; set; } = string.Empty;
 
+    /// <summary>
+    ///     Line index
+    /// </summary>
+    public int LineIndex { get; set; }
+
     ///// <summary>
     /////     Id of phone
     ///// </summary>
