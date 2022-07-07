@@ -21,11 +21,11 @@ public class ChannelVariables
     ///     Caller id is composed of a name and phone number. This is the name part of the caller id
     /// </summary>
     [IsRequired]
-    public string CallerIdName { get; set; } = string.Empty;
+    public required string CallerIdName { get; set; }
 
     /// <summary>
     ///     Caller id is composed of a name and phone number. This is the phone number part of the caller id
     /// </summary>
     [IsRequired]
-    public string CallerIdNumber { get; set; } = string.Empty;
+    public required string CallerIdNumber { get; set; }
 }

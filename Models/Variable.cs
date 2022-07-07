@@ -10,7 +10,7 @@ public class Variable
     /// </summary>
     [AllowUpdate(true)]
     [IsRequired]
-    public string Name { get; set; } = string.Empty;
+    public required string Name { get; set; }
 
     /// <summary>
     ///     Value of variable in json format

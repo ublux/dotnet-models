@@ -17,7 +17,7 @@ public partial class AgreementToTermsAndConditions : UbluxDocument
     [IgnoreDataMember]
     [AllowUpdate(false)]
     [IsRequired]
-    public UbluxSession UbluxSession { get; set; } = new UbluxSession();
+    public required UbluxSession UbluxSession { get; set; }
 
     #endregion
 
@@ -27,7 +27,7 @@ public partial class AgreementToTermsAndConditions : UbluxDocument
     [IgnoreDataMember]
     [AllowUpdate(false)]
     [IsRequired]
-    public string Ip { get; set; } = String.Empty;
+    public required string Ip { get; set; }
 
     /// <summary>
     ///     Headers of client
@@ -35,7 +35,7 @@ public partial class AgreementToTermsAndConditions : UbluxDocument
     [IgnoreDataMember]
     [AllowUpdate(false)]
     [IsRequired]
-    public string HttpRequestHeaders { get; set; } = String.Empty;
+    public required string HttpRequestHeaders { get; set; }
 
     /// <summary>
     ///     Section to terms and conditions that user agreed to
@@ -43,7 +43,7 @@ public partial class AgreementToTermsAndConditions : UbluxDocument
     [IgnoreDataMember]
     [AllowUpdate(false)]
     [IsRequired]
-    public TermsAndConditionsCategory TermsAndConditionsCategory { get; set; }
+    public required TermsAndConditionsCategory TermsAndConditionsCategory { get; set; }
 
     /// <summary>
     ///     Description of this agreement

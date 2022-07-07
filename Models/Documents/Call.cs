@@ -36,7 +36,7 @@ public abstract partial class Call : UbluxDocument
     /// </summary>
     [AllowUpdate(false)]
     [IsRequired]
-    public ChannelVariables ChannelVariables { get; set; } = new ChannelVariables();
+    public required ChannelVariables ChannelVariables { get; set; }
 
     /// <summary>
     ///     Child calls
@@ -92,28 +92,28 @@ public abstract partial class Call : UbluxDocument
     /// </summary>
     [AllowUpdate(false)]
     [IsRequired]
-    public string From { get; set; } = string.Empty;
+    public required string From { get; set; }
 
     /// <summary>
     ///     Country that initiated phone call
     /// </summary>
     [AllowUpdate(false)]
     [IsRequired]
-    public CountryIsoCode FromCountry { get; set; }
+    public required CountryIsoCode FromCountry { get; set; }
 
     /// <summary>
     ///     Phone number called
     /// </summary>
     [AllowUpdate(false)]
     [IsRequired]
-    public string To { get; set; } = string.Empty;
+    public required string To { get; set; }
 
     /// <summary>
     ///     Country that initiated phone call
     /// </summary>
     [AllowUpdate(false)]
     [IsRequired]
-    public CountryIsoCode ToCountry { get; set; }
+    public required CountryIsoCode ToCountry { get; set; }
 
     /// <summary>
     ///     Type of call

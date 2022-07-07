@@ -8,7 +8,8 @@ public class MailingAddress
     /// <summary>
     ///     Recipient name
     /// </summary>
-    public string RecipientName { get; set; } = string.Empty;
+    [IsRequired]
+    public required string RecipientName { get; set; }
 
     /// <summary>
     ///     Business Name
@@ -18,7 +19,8 @@ public class MailingAddress
     /// <summary>
     ///     Street address
     /// </summary>
-    public string StreetAddress { get; set; } = string.Empty;
+    [IsRequired]
+    public required string StreetAddress { get; set; }
 
     /// <summary>
     ///     Unit number
@@ -28,21 +30,24 @@ public class MailingAddress
     /// <summary>
     ///     City
     /// </summary>
-    public string City { get; set; } = string.Empty;
+    [IsRequired]
+    public required string City { get; set; }
 
     /// <summary>
     ///     State
     /// </summary>
-    public string State { get; set; } = string.Empty;
+    [IsRequired]
+    public required string State { get; set; }
 
     /// <summary>
     ///     Zip code
     /// </summary>
-    public string ZipCode { get; set; } = string.Empty;
+    [IsRequired]
+    public required string ZipCode { get; set; }
 
     /// <summary>
     ///     Country
     /// </summary>
-    public CountryIsoCode Country { get; set; } = CountryIsoCode.US;
+    public required CountryIsoCode Country { get; set; } = CountryIsoCode.US;
 
 }

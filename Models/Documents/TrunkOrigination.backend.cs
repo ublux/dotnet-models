@@ -25,7 +25,7 @@ public abstract class TrunkOrigination : UbluxDocument
     [References(typeof(VoipProvider))]
     [AllowUpdate(false)]
     [IsRequired]
-    public string IdVoipProvider { get; set; } = string.Empty;
+    public required string IdVoipProvider { get; set; }
 
     /// <summary>
     ///     Used by what PBX?
@@ -35,7 +35,7 @@ public abstract class TrunkOrigination : UbluxDocument
     [AllowUpdate(false)]
     [References(typeof(CloudServicePbx))]
     [IsRequired]
-    public string IdCloudServicePbx { get; set; } = string.Empty;
+    public required string IdCloudServicePbx { get; set; }
 
     /// <summary>
     ///     Backup pbx
@@ -45,7 +45,7 @@ public abstract class TrunkOrigination : UbluxDocument
     [AllowUpdate(false)]
     [References(typeof(CloudServicePbx))]
     [IsRequired]
-    public string IdCloudServicePbxFailover { get; set; } = string.Empty;
+    public required string IdCloudServicePbxFailover { get; set; }
 
     // This can be ontained quering database
     ///// <summary>
@@ -83,7 +83,7 @@ public abstract class TrunkOrigination : UbluxDocument
     [IgnoreDataMember]
     [AllowUpdate(false)]
     [IsRequired]
-    public string ProviderId { get; set; } = string.Empty;
+    public required string ProviderId { get; set; }
 
     ///// <summary>
     /////     DIDs associated with this trunk
@@ -96,7 +96,7 @@ public abstract class TrunkOrigination : UbluxDocument
     [IgnoreDataMember]
     [AllowUpdate(false)]
     [IsRequired]
-    public string FriendlyName { get; set; } = string.Empty;
+    public required string FriendlyName { get; set; }
 
     ///// <summary>
     /////     Is connection secure?

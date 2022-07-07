@@ -21,12 +21,13 @@ public partial class CallOutgoingToPSTN : CallOutgoing
     ///     Country called
     /// </summary>
     [AllowUpdate(false)]
-    public CountryIsoCode Country { get; set; }
+    [IsRequired]
+    public required CountryIsoCode Country { get; set; }
 
     /// <summary>
     ///     Phone number dialed in international format. Property To should contain number that was actually dialed
     /// </summary>
     [AllowUpdate(false)]
     [IsRequired]
-    public string ToInternationalFormat { get; set; } = string.Empty;
+    public required string ToInternationalFormat { get; set; }
 }

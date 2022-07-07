@@ -11,7 +11,7 @@ public class RunningApplicationInstance
     /// <summary>
     ///     Example US-T
     /// </summary>
-    public string Id { get; set; } = string.Empty;
+    public required string Id { get; set; }
 
     /// <summary>
     ///     Type of Cloud service

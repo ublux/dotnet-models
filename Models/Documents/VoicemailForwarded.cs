@@ -19,7 +19,7 @@ public partial class VoicemailForwarded : Voicemail
     [AllowUpdate(false)]
     [References(typeof(Line))]
     [IsRequired]
-    public Line LineThatForwardedVoicemail { get; set; } = new Line();
+    public required Line LineThatForwardedVoicemail { get; set; }
 
     /// <summary>
     ///     If voicemail is forwarded

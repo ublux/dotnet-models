@@ -10,7 +10,7 @@ public partial class ContactNumber
     /// </summary>
     [IsRequired]
     [AllowUpdate(true)]
-    public string Number { get; set; } = string.Empty;
+    public required string Number { get; set; }
 
     /// <summary>
     ///     Phone number normalized in national format. This is needed so that searches are faster.

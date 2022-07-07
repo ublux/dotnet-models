@@ -28,7 +28,7 @@ public partial class Audio : UbluxDocument
     /// </summary>
     [AllowUpdate(true)]
     [IsRequired]
-    public string FriendlyName { get; set; } = String.Empty;
+    public required string FriendlyName { get; set; }
 
     /// <summary>
     ///     Duration of audio in seconds
@@ -36,7 +36,7 @@ public partial class Audio : UbluxDocument
     [AllowUpdate(false)]
     [IsRequired]
     [HideForCreateRequest]
-    public int DurationInSeconds { get; set; }
+    public required int DurationInSeconds { get; set; }
 
     /// <summary>
     ///     Description of audio
@@ -45,5 +45,4 @@ public partial class Audio : UbluxDocument
     public string? Description { get; set; }
 
     #endregion
-
 }

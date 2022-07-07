@@ -18,7 +18,7 @@ public partial class Identity : UbluxDocument
     [AllowUpdate(true)]
     [IsRequired]
     [BsonRepresentation(BsonType.String)]
-    public List<UbluxRole> UbluxRoles { get; set; } = new();
+    public required List<UbluxRole> UbluxRoles { get; set; }
 
 
 
@@ -29,7 +29,7 @@ public partial class Identity : UbluxDocument
     /// </summary>
     [AllowUpdate(false)]
     [IsRequired]
-    public string Username
+    public required string Username
     {
         get => (username ?? string.Empty).ToLower();
         set
@@ -49,7 +49,7 @@ public partial class Identity : UbluxDocument
     [IsRequired]
     [HideForCreateRequest]
     // virtual because of unit tests so that it can mock this object
-    public virtual string Password { get; set; } = string.Empty;
+    public required string Password { get; set; }
 
     /// <summary>
     ///     What type of user is this? Is this a PBX? WA?
@@ -58,7 +58,7 @@ public partial class Identity : UbluxDocument
     [IsRequired]
     [HideForCreateRequest] // remember to add this on admin service!
     // virtual because of unit tests so that it can mock this object
-    public virtual IdentityType IdentityType { get; set; }
+    public required IdentityType IdentityType { get; set; }
 
     /// <summary>
     ///     Only allow connections from this regex. Default is "*"

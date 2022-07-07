@@ -23,7 +23,7 @@ public partial class ExtensionQueue : Extension
     [References(typeof(Extension))]
     [AllowUpdate(true)]
     [IsRequired]
-    public string IdExtensionIfTimeout { get; set; } = String.Empty;
+    public required string IdExtensionIfTimeout { get; set; }
 
     /// <summary>
     ///     Audios to play meanwhile caller is waiting to be attended
@@ -59,7 +59,7 @@ public partial class ExtensionQueue : Extension
     /// </summary>
     [AllowUpdate(true)]
     [IsRequired]
-    public int RingTimeInSeconds { get; set; }
+    public required int RingTimeInSeconds { get; set; }
 
     /// <summary>
     ///     If line is busy do you still want it to ring it?
@@ -72,7 +72,7 @@ public partial class ExtensionQueue : Extension
     /// </summary>
     [AllowUpdate(true)]
     [IsRequired]
-    public int QueueTimeoutInMinutes { get; set; }
+    public required int QueueTimeoutInMinutes { get; set; }
 
     /// <summary>
     ///     Play position announcements. For example say things like you are now position 2 in queue. There are 2 calls ahead of you.
@@ -85,7 +85,7 @@ public partial class ExtensionQueue : Extension
     /// </summary>
     [AllowUpdate(true)]
     [IsRequired]
-    public int RetryFrequency { get; set; }
+    public required int RetryFrequency { get; set; }
 
     #endregion
 

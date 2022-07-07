@@ -14,15 +14,15 @@ public partial class FaxOutgoing : UbluxSubDocument
     [AllowUpdate(false)]
     [References(typeof(FaxOutgoingGroup))]
     [IsRequired]
-    public string IdFaxOutgoingGroup { get; set; } = string.Empty;
-    
+    public required string IdFaxOutgoingGroup { get; set; }
+
     /// <summary>
     ///     Email attachment that was converted to fax
     /// </summary>
     [AllowUpdate(false)]
     [IgnoreDataMember]
     [IsRequired]
-    public EmailAttachment EmailAttachment { get; set; } = new EmailAttachment();
+    public required EmailAttachment EmailAttachment { get; set; }
 
     /// <summary>
     ///     True when done sending fax

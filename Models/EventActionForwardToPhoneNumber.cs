@@ -13,5 +13,5 @@ public class EventActionForwardToPhoneNumber : EventAction
     ///     Phone number where to forward the call
     /// </summary>
     [IsRequired]
-    public string PhoneNumber { get; set; } = String.Empty;
+    public required string PhoneNumber { get; set; }
 }

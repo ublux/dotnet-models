@@ -22,7 +22,7 @@ public partial class LineKeyGroup : UbluxDocument
     /// </summary>
     [AllowUpdate(true)]
     [IsRequired]
-    public string FriendlyName { get; set; } = string.Empty;
+    public required string FriendlyName { get; set; }
 
     /// <summary>
     ///     Description of line key group

@@ -46,7 +46,7 @@ public partial class PowerDialerGroup : UbluxDocument
     /// </summary>
     [AllowUpdate(false)]
     [IsRequired]
-    public List<PowerDialer> PowerDialers { get; set; } = new();
+    public required List<PowerDialer> PowerDialers { get; set; }
 
     #endregion
 
@@ -55,7 +55,7 @@ public partial class PowerDialerGroup : UbluxDocument
     /// </summary>
     [AllowUpdate(true)]
     [IsRequired]
-    public string FriendlyName { get; set; } = string.Empty;
+    public required string FriendlyName { get; set; }
 
     /// <summary>
     ///     Description of power dialer group

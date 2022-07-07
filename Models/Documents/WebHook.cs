@@ -12,14 +12,14 @@ public partial class WebHook : UbluxDocument
     /// </summary>
     [AllowUpdate(true)]
     [IsRequired]
-    public WebHookEvent WebHookEvent { get; set; }
+    public required WebHookEvent WebHookEvent { get; set; }
 
     /// <summary>
     ///     Url where event will be sent
     /// </summary>
     [AllowUpdate(true)]
     [IsRequired]
-    public string Url { get; set; } = String.Empty;
+    public required string Url { get; set; }
 
     /// <summary>
     ///     Custom headers to inject on request. Example: x-token:1234,user:user1

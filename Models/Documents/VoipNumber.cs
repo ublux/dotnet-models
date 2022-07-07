@@ -1,4 +1,4 @@
-﻿namespace Ublux.Communications.Models.Documents; 
+﻿namespace Ublux.Communications.Models.Documents;
 
 /// <summary>
 ///     Incoming phone number (VoipNumber)
@@ -65,14 +65,14 @@ public abstract partial class VoipNumber : UbluxDocument
     /// </summary>
     [AllowUpdate(false)]
     [IsRequired]
-    public string Number { get; set; } = string.Empty;
+    public required string Number { get; set; }
 
     /// <summary>
     ///     Incoming phone number friendly name
     /// </summary>
     [AllowUpdate(true)]
     [IsRequired]
-    public string FriendlyName { get; set; } = string.Empty;
+    public required string FriendlyName { get; set; }
 
     /// <summary>
     ///     Incoming phone number description
@@ -85,56 +85,56 @@ public abstract partial class VoipNumber : UbluxDocument
     /// </summary>
     [AllowUpdate(true)]
     [IsRequired]
-    public Language Language { get; set; }
+    public required Language Language { get; set; }
 
     /// <summary>
     ///     City of incoming phone number
     /// </summary>    
     [AllowUpdate(false)]
     [IsRequired]
-    public string City { get; set; } = string.Empty;
+    public required string City { get; set; }
 
     /// <summary>
     ///     State of incoming phone number
     /// </summary>
     [AllowUpdate(false)]
     [IsRequired]
-    public string State { get; set; } = string.Empty;
+    public required string State { get; set; }
 
     /// <summary>
     ///     Country of incoming phone number
     /// </summary>
     [AllowUpdate(false)]
     [IsRequired]
-    public CountryIsoCode CountryIsoCode { get; set; }
+    public required CountryIsoCode CountryIsoCode { get; set; }
 
     /// <summary>
     ///     Does this phone number have SMS capabilities?
     /// </summary>
     [AllowUpdate(false)]
     [IsRequired]
-    public bool IsSmsEnabled { get; set; }
+    public required bool IsSmsEnabled { get; set; }
 
     /// <summary>
     ///     Does this phone number have calling capabilities?
     /// </summary>
     [AllowUpdate(false)]
     [IsRequired]
-    public bool IsVoiceEnabled { get; set; }
+    public required bool IsVoiceEnabled { get; set; }
 
     /// <summary>
     ///     Is this phone number toll free?
     /// </summary>
     [AllowUpdate(false)]
     [IsRequired]
-    public bool IsTollFree { get; set; }
+    public required bool IsTollFree { get; set; }
 
     /// <summary>
     ///     Does this number support WhatsApp?
     /// </summary>
     [AllowUpdate(false)]
     [IsRequired]
-    public bool IsWhatsappEnabled { get; set; }
+    public required bool IsWhatsappEnabled { get; set; }
 
     /// <summary>
     ///     TimeZone of this phone number
@@ -154,7 +154,7 @@ public abstract partial class VoipNumber : UbluxDocument
         if (string.IsNullOrEmpty(phoneNumber))
             return "";
 
-        var phoneNumberWithoutIllegalChars = new String(phoneNumber.Where(Char.IsDigit).ToArray());
+        var phoneNumberWithoutIllegalChars = new string(phoneNumber.Where(char.IsDigit).ToArray());
         return phoneNumberWithoutIllegalChars[Math.Max(0, phoneNumberWithoutIllegalChars.Length - 8)..];
     }
 

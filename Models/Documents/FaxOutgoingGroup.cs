@@ -15,7 +15,7 @@ public partial class FaxOutgoingGroup : UbluxDocument
     [References(typeof(VoipNumberFax))]
     [AllowUpdate(false)]
     [IsRequired]
-    public string IdVoipNumberFax { get; set; } = String.Empty;
+    public required string IdVoipNumberFax { get; set; }
 
     #endregion
 
@@ -33,7 +33,7 @@ public partial class FaxOutgoingGroup : UbluxDocument
     /// </summary>
     [AllowUpdate(false)]
     [IsRequired]
-    public FaxEmail FaxEmail { get; set; } = new FaxEmail();
+    public required FaxEmail FaxEmail { get; set; }
 
     #endregion
 
@@ -42,14 +42,14 @@ public partial class FaxOutgoingGroup : UbluxDocument
     /// </summary>
     [AllowUpdate(false)]
     [IsRequired]
-    public string From { get; set; } = string.Empty;
+    public required string From { get; set; }
 
     /// <summary>
     ///     If fax is sent successfully then send confirmation to this emails
     /// </summary>
     [AllowUpdate(false)]
     [IsRequired]
-    public List<string> SendConfirmationToEmails { get; set; } = new();
+    public required List<string> SendConfirmationToEmails { get; set; }
 
     /// <summary>
     ///     True if there is an error

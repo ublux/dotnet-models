@@ -28,7 +28,7 @@ public abstract partial class CallOutgoing : Call
     [AllowUpdate(false)]
     //[References(typeof(Line))]
     [IsRequired]
-    public Line LineThatInitiatedCall { get; set; } = new Line();
+    public required Line LineThatInitiatedCall { get; set; }
 }
 
 

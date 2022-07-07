@@ -50,7 +50,7 @@ public abstract partial class UbluxDocument : IUbluxDocument, IUbluxDocumentId
 #endif
         init => id = value;
     }
-    private string id = String.Empty;
+    private string id = string.Empty;
     
     /// <summary>
     ///     Creation date

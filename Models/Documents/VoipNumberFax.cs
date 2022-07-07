@@ -10,20 +10,20 @@ public partial class VoipNumberFax : VoipNumber
     ///     value = day of week when it executes
     /// </summary>    
     [AllowUpdate(true)]
-    public override List<RulePhone> RulesPhone { get; set; } = new();
+    public required override List<RulePhone> RulesPhone { get; set; }
 
     /// <summary>
     ///     Incoming SMS will be sent to these email addresses
     /// </summary>
     [AllowUpdate(true)]
-    public override List<RuleSms> RulesSms { get; set; } = new();
+    public required override List<RuleSms> RulesSms { get; set; }
 
     /// <summary>
     ///     Incoming Faxes will be sent to this email addresses
     /// </summary>
     [AllowUpdate(true)]
     [IsRequired]
-    public override List<RuleFax> RulesFax { get; set; } = new();
+    public required override List<RuleFax> RulesFax { get; set; }
 
     /// <summary>
     ///     Type of VOIP number

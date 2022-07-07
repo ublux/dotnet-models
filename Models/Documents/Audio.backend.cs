@@ -14,7 +14,7 @@ public partial class Audio : UbluxDocument, IReferncesAccount
     [IgnoreDataMember]
     [References(typeof(Account))]
     [IsRequired]
-    public string IdAccount { get; set; } = String.Empty;
+    public required string IdAccount { get; set; }
 
     #endregion
 
@@ -24,7 +24,7 @@ public partial class Audio : UbluxDocument, IReferncesAccount
     [AllowUpdate(false)]
     [IgnoreDataMember] // client does not need to see sln format
     [IsRequired]
-    public StoredFile AudioSln { get; set; } = new StoredFile();
+    public required StoredFile AudioSln { get; set; }
 }
 
 #endif

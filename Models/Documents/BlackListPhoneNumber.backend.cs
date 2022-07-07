@@ -80,7 +80,7 @@ public partial class BlackListPhoneNumber : UbluxDocument, IReferncesAccount
     [IgnoreDataMember]
     [AllowUpdate(false)]
     [IsRequired]
-    public string IdAccount { get; set; } = String.Empty;
+    public required string IdAccount { get; set; }
 }
 
 #endif

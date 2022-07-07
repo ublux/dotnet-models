@@ -9,19 +9,19 @@ public class EmailAttachment
     ///     Id of attachment
     /// </summary>
     [IsRequired]
-    public string Id { get; set; } = string.Empty;
+    public required string Id { get; set; }
 
     /// <summary>
     ///     To what email it points to
     /// </summary>
     [IsRequired]
-    public string IdFaxEmailInfo { get; set; } = String.Empty;
+    public required string IdFaxEmailInfo { get; set; }
 
     /// <summary>
     ///     Attachment name
     /// </summary>
     [IsRequired]
-    public string Name { get; set; } = string.Empty;
+    public required string Name { get; set; }
 
     /// <summary>
     ///     Location in disk where attachment was downloaded

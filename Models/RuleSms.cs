@@ -10,5 +10,5 @@ public class RuleSms
     /// </summary>
     [IsRequired]
     [AllowUpdate(true)]
-    public string ForwardToEmailAddress { get; set; } = string.Empty;
+    public required string ForwardToEmailAddress { get; set; }
 }

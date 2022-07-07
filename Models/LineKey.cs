@@ -9,19 +9,19 @@ public class LineKey
     ///     Type of line key
     /// </summary>
     [IsRequired]
-    public LineKeyType LineKeyType { get; set; }
+    public required LineKeyType LineKeyType { get; set; }
 
     /// <summary>
     ///     Value of line key. Example: 9546543982
     /// </summary>
     [IsRequired]
-    public string Value { get; set; } = string.Empty;
+    public required string Value { get; set; }
 
     /// <summary>
     ///     Display name of line key
     /// </summary>
     [IsRequired]
-    public string Label { get; set; } = string.Empty;
+    public required string Label { get; set; }
 
     /// <summary>
     ///     Id of extension to call
@@ -31,5 +31,5 @@ public class LineKey
     /// <summary>
     ///     Position of line key
     /// </summary>
-    public int LineIndex { get; set; }
+    public int LineKeyIndex { get; set; }
 }

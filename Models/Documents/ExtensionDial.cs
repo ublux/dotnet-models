@@ -40,7 +40,7 @@ public partial class ExtensionDial : Extension
     /// </summary>
     [AllowUpdate(true)]
     [IsRequired]
-    public int RingTimeInSeconds { get; set; }
+    public required int RingTimeInSeconds { get; set; }
 
     #endregion
 

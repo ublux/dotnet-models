@@ -17,7 +17,7 @@ public partial class FaxEmailInfo : UbluxDocument, IReferncesAccount
     [AllowUpdate(false)]
     [IgnoreDataMember]
     [IsRequired]
-    public string IdAccount { get; set; } = String.Empty;
+    public required string IdAccount { get; set; }
 
     #endregion
 
@@ -28,20 +28,23 @@ public partial class FaxEmailInfo : UbluxDocument, IReferncesAccount
     [AllowUpdate(false)]
     [IgnoreDataMember]
     [IsRequired]
-    public int IdentificationToken { get; set; }
+    public required int IdentificationToken { get; set; }
+
     /// <summary>
     ///     Needed because identification token expires. IdentificationToken should be valid for 5 minutes
     /// </summary>
     [AllowUpdate(false)]
     [IgnoreDataMember]
     [IsRequired]
-    public DateTime DateIdentificationTokenCreated { get; set; }
+    public required DateTime DateIdentificationTokenCreated { get; set; }
+
     /// <summary>
     ///     If someone sends a lot of emails without reading the instructions it will be marked as spam
     /// </summary>
     [AllowUpdate(false)]
     [IgnoreDataMember]
     public bool IsSpam { get; set; }
+
     /// <summary>
     ///     The first time the user sends a fax we explain that he has to wait for a confirmation
     /// </summary>

@@ -9,24 +9,29 @@ public class FaxEmail
     ///     Email id
     /// </summary>
     [IsRequired]
-    public string Id { get; set; } = string.Empty;
+    public required string Id { get; set; }
+
     /// <summary>
     ///     Email message id
     /// </summary>
     [IsRequired]
-    public string MessageID { get; set; } = string.Empty;
+    public required string MessageID { get; set; }
+
     /// <summary>
     ///     Email thread id
     /// </summary>    
     public string? ThreadId { get; set; }
+
     /// <summary>
     ///     Subject
     /// </summary>
     [IsRequired]
-    public string Subject { get; set; } = string.Empty;
+    public required string Subject { get; set; }
+
     /// <summary>
     ///     From
     /// </summary>
     [IsRequired]
-    public string From { get; set; } = string.Empty;
+    public required string From { get; set; }
+
 }

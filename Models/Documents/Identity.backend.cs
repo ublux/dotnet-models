@@ -18,7 +18,7 @@ public partial class Identity : UbluxDocument, IReferncesAccount
     [IgnoreDataMember]
     [HideForCreateRequest]
     // virtual because of unit tests so that it can mock this object
-    public virtual string IdAccount { get; set; } = String.Empty;
+    public required virtual string IdAccount { get; set; }
 
 }
 

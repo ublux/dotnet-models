@@ -10,5 +10,5 @@ public class RuleFax
     /// </summary>
     [IsRequired]
     [AllowUpdate(true)]
-    public string ForwardToEmailAddress { get; set; } = String.Empty;
+    public required string ForwardToEmailAddress { get; set; }
 }

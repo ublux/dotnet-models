@@ -12,7 +12,7 @@ public partial class CallFlow : UbluxDocument, IReferncesAccount
     [References(typeof(Account))]
     [AllowUpdate(false)]
     [IsRequired]
-    public string IdAccount { get; set; } = String.Empty;
+    public required string IdAccount { get; set; }
 }
 
 #endif

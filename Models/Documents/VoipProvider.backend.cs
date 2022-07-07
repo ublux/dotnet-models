@@ -1,6 +1,6 @@
 ﻿#if UBLUX_BACKEND
 
-namespace Ublux.Communications.Models.Documents; 
+namespace Ublux.Communications.Models.Documents;
 
 /// <summary>
 ///     VOIP provider. Some providers have an API that enable us to automate things.
@@ -13,7 +13,7 @@ public partial class VoipProvider : UbluxDocument
     [AllowUpdate(false)]
     [IgnoreDataMember]
     [IsRequired]
-    public string ProviderAccountId { get; set; } = string.Empty;
+    public required string ProviderAccountId { get; set; }
 
     /// <summary>
     ///     The account id of the owner account. If this is the owner account then this will be the same as the id
@@ -35,7 +35,7 @@ public partial class VoipProvider : UbluxDocument
     [AllowUpdate(false)]
     [IgnoreDataMember]
     [IsRequired]
-    public UbluxPartner UbluxPartner { get; set; }
+    public required UbluxPartner UbluxPartner { get; set; }
 
     /// <summary>
     ///     Friendly name of this provider
@@ -43,7 +43,7 @@ public partial class VoipProvider : UbluxDocument
     [AllowUpdate(false)]
     [IgnoreDataMember]
     [IsRequired]
-    public string FriendlyName { get; set; } = string.Empty;
+    public required string FriendlyName { get; set; }
 
     /// <summary>
     ///     Used mostly for sub-accounts. A sub account in twilio can be suspended, closed or active 
@@ -58,7 +58,7 @@ public partial class VoipProvider : UbluxDocument
     [AllowUpdate(false)]
     [IgnoreDataMember]
     [IsRequired]
-    public CountryIsoCode Country { get; set; }
+    public required CountryIsoCode Country { get; set; }
 
     /// <summary>
     ///     Company of this provider for example Twilio
@@ -66,7 +66,7 @@ public partial class VoipProvider : UbluxDocument
     [AllowUpdate(false)]
     [IgnoreDataMember]
     [IsRequired]
-    public VoipCompany VoipCompany { get; set; }
+    public required VoipCompany VoipCompany { get; set; }
 }
 
 #endif

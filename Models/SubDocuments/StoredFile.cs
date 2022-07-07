@@ -13,7 +13,7 @@ public partial class StoredFile : UbluxSubDocument
     /// </summary>
     [AllowUpdate(false)]
     [IsRequired]
-    public int FileSizeInBytes { get; set; }
+    public required int FileSizeInBytes { get; set; }
 
     /// <summary>
     ///     New
@@ -21,14 +21,14 @@ public partial class StoredFile : UbluxSubDocument
     /// </summary>
     [AllowUpdate(false)]
     [IsRequired]
-    public string Md5Hash { get; set; } = string.Empty;
+    public required string Md5Hash { get; set; }
 
     /// <summary>
     ///     Link where it can be downloaded
     /// </summary>
     [AllowUpdate(false)]
     [IsRequired]
-    public string Url { get; set; } = String.Empty;
+    public required string Url { get; set; }
 
     #endregion
 }

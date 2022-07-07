@@ -25,5 +25,5 @@ public class RulePhone
     [IsRequired]
     [AllowUpdate(true)]
     [BsonRepresentation(BsonType.String)]
-    public List<DayOfWeek> DaysOfWeek { get; set; } = new();
+    public required List<DayOfWeek> DaysOfWeek { get; set; }
 }

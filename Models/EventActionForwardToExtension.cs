@@ -14,5 +14,5 @@ public class EventActionForwardToExtension : EventAction
     /// </summary>
     [References(typeof(Extension))]
     [IsRequired]
-    public string IdExtension { get; set; } = String.Empty;
+    public required string IdExtension { get; set; } 
 }

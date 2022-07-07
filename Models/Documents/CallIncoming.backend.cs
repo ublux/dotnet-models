@@ -23,7 +23,7 @@ public abstract partial class CallIncoming : Call
     [AllowUpdate(false)]
     [IgnoreDataMember]
     [IsRequired]
-    public string IdVoipProvider { get; set; } = String.Empty;
+    public required string IdVoipProvider { get; set; }
 }
 
 #endif

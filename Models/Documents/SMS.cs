@@ -15,7 +15,7 @@ public partial class SMS : UbluxDocument
     [AllowUpdate(false)]
     [References(typeof(VoipNumber))]
     [IsRequired]
-    public string IdVoipNumber { get; set; } = string.Empty;
+    public required string IdVoipNumber { get; set; }
 
     #endregion
 
@@ -40,7 +40,7 @@ public partial class SMS : UbluxDocument
     /// </summary>
     [AllowUpdate(false)]
     [IsRequired]
-    public string Body { get; set; } = string.Empty;
+    public required string Body { get; set; }
 
     //    // [AllowUpdate(false)]
     //public int? ZipCode { get; set; }
@@ -50,7 +50,7 @@ public partial class SMS : UbluxDocument
     /// </summary>
     [AllowUpdate(false)]
     [IsRequired]
-    public int NumSegments { get; set; }
+    public required int NumSegments { get; set; }
 
     /// <summary>
     ///     Status of SMS
@@ -78,14 +78,14 @@ public partial class SMS : UbluxDocument
     /// </summary>
     [AllowUpdate(false)]
     [IsRequired]
-    public string From { get; set; } = string.Empty;
+    public required string From { get; set; }
 
     /// <summary>
     ///     Number to whom SMS was sent to 
     /// </summary>
     [AllowUpdate(false)]
     [IsRequired]
-    public string To { get; set; } = string.Empty;
+    public required string To { get; set; }
 
     #endregion
 }

@@ -1,6 +1,6 @@
 ﻿#if UBLUX_BACKEND
 
-namespace Ublux.Communications.Models.Documents; 
+namespace Ublux.Communications.Models.Documents;
 
 /// <summary>
 ///     Needed because some providers like the one from Spain require customers info in order to purchase VoipNumber
@@ -16,7 +16,7 @@ public partial class CustomerInfo : UbluxDocument, IReferncesAccount
     [References(typeof(Account))]
     [AllowUpdate(false)]
     [IsRequired]
-    public string IdAccount { get; set; } = String.Empty;
+    public required string IdAccount { get; set; }
 
     #endregion
 
@@ -27,7 +27,7 @@ public partial class CustomerInfo : UbluxDocument, IReferncesAccount
     /// </summary>
     [AllowUpdate(true)]
     [IsRequired]
-    public MailingAddress MailingAddress { get; set; } = new MailingAddress();
+    public required MailingAddress MailingAddress { get; set; }
 
     /// <summary>
     ///     If its a VoipNumber from provider AirNetworks then this information is required
@@ -41,7 +41,7 @@ public partial class CustomerInfo : UbluxDocument, IReferncesAccount
     ///     Full legal name
     /// </summary>
     [AllowUpdate(true)]
-    public string FullName { get; set; } = String.Empty;
+    public required string FullName { get; set; }
 
     #endregion
 }

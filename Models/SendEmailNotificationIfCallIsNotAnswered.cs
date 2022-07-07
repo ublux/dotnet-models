@@ -10,7 +10,7 @@ public class SendEmailNotificationIfCallIsNotAnswered
     /// </summary>
     [IsRequired]
     [AllowUpdate(true)]
-    public List<string> Email { get; set; } = new();
+    public required List<string> Email { get; set; }
 
     /// <summary>
     ///     If a caller calls and hung up right away then maybe we don't want to send a notification.

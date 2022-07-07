@@ -9,7 +9,7 @@ public class ChildCallAttendantTransferToPSTN : ChildCall
     ///     Phone number where call was transferred to
     /// </summary>
     [IsRequired]
-    public string PhoneNumber { get; set; } = string.Empty;
+    public required string PhoneNumber { get; set; }
 
     /// <summary>
     ///     AttendantTransferToPSTN

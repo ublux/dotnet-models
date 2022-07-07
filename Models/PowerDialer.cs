@@ -15,27 +15,27 @@ public abstract class PowerDialer
     ///// <summary>
     /////     Id of power dialer
     ///// </summary>
-    //public string Id { get; set; } = string.Empty;
+    //public required string Id { get; set; }
 
     /// <summary>
     ///     Type of power dialer
     /// </summary>
     [AllowUpdate(false)]
     [IsRequired]
-    public abstract PowerDialerType PowerDialerType { get;}
+    public abstract PowerDialerType PowerDialerType { get; }
 
     /// <summary>
     ///     Phone number to call
     /// </summary>
     [IsRequired]
-    public string PhoneNumber { get; set; } = string.Empty;
+    public required string PhoneNumber { get; set; }
 
     /// <summary>
     ///     Country ISO code of phone number to call
     /// </summary>
     [AllowUpdate(false)]
     [IsRequired]
-    public CountryIsoCode CountryIsoCode { get; set; }
+    public required CountryIsoCode CountryIsoCode { get; set; }
 
     /// <summary>
     ///     Id of contact
@@ -47,7 +47,7 @@ public abstract class PowerDialer
     ///     Status of this item
     /// </summary>
     [IsRequired]
-    public PowerDialerStatus PowerDialerStatus { get; set; }
+    public required PowerDialerStatus PowerDialerStatus { get; set; }
 
     /// <summary>
     ///     Error message

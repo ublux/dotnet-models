@@ -10,7 +10,7 @@ public partial class ContactEmail
     /// </summary>
     [AllowUpdate(true)]
     [IsRequired]
-    public string Email { get; set; } = string.Empty;
+    public required string Email { get; set; }
 
     /// <summary>
     ///     Type of email

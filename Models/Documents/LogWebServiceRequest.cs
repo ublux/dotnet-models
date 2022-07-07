@@ -55,7 +55,7 @@ public partial class LogWebServiceRequest : UbluxDocument
     /// </summary>
     [AllowUpdate(false)]
     [IsRequired]
-    public string HttpMethod { get; set; } = string.Empty;
+    public required string HttpMethod { get; set; }
 
     /// <summary>
     ///     User agent
@@ -68,14 +68,14 @@ public partial class LogWebServiceRequest : UbluxDocument
     /// </summary>
     [AllowUpdate(false)]
     [IsRequired]
-    public string Ip { get; set; } = string.Empty;
+    public required string Ip { get; set; }
 
     /// <summary>
     ///     Request url without query string
     /// </summary>
     [AllowUpdate(false)]
     [IsRequired]
-    public string RequestUrl { get; set; } = string.Empty;
+    public required string RequestUrl { get; set; }
 
     /// <summary>
     ///     Save query string?
@@ -107,7 +107,7 @@ public partial class LogWebServiceRequest : UbluxDocument
     /// </summary>
     [AllowUpdate(false)]
     [IsRequired]
-    public HttpResponseStatusCode HttpResponseStatusCode { get; set; }
+    public required HttpResponseStatusCode HttpResponseStatusCode { get; set; }
 
     /// <summary>
     ///     Response time in milliseconds. 

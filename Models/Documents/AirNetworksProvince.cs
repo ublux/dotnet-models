@@ -12,7 +12,7 @@ public partial class AirNetworksProvince : UbluxDocument
     /// </summary>
     [AllowUpdate(false)]
     [IsRequired]
-    public string Name { get; set; } = String.Empty;
+    public required string Name { get; set; }
 
     /// <summary>
     ///     List of "poblaciones". Example: ABENGIBRE, ABUZADERAS, AGRA....

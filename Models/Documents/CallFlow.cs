@@ -12,7 +12,7 @@ public partial class CallFlow : UbluxDocument
     /// </summary>
     [AllowUpdate(true)]
     [IsRequired]
-    public string FriendlyName { get; set; } = String.Empty;
+    public required string FriendlyName { get; set; }
 
     /// <summary>
     ///     Description of virtual receptionist
@@ -25,7 +25,7 @@ public partial class CallFlow : UbluxDocument
     /// </summary>
     [AllowUpdate(true)]
     [IsRequired]
-    public string XmlTree { get; set; } = String.Empty;
+    public required string XmlTree { get; set; }
 
     #endregion
 }

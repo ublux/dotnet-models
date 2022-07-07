@@ -11,8 +11,8 @@
 [BsonKnownTypes(
     typeof(CallIncomingToCallFlow),
     typeof(CallIncomingToExtension)
-    //typeof(CallOutgoingToExtension),
-    //typeof(CallOutgoingToPSTN)
+//typeof(CallOutgoingToExtension),
+//typeof(CallOutgoingToPSTN)
 )]
 public abstract partial class CallIncoming : Call
 {
@@ -28,12 +28,12 @@ public abstract partial class CallIncoming : Call
     [References(typeof(VoipNumberPhone))]
     [AllowUpdate(false)]
     [IsRequired]
-    public string IdVoipNumberPhone { get; set; } = String.Empty; // idDID
+    public required string IdVoipNumberPhone { get; set; } // idDID
 
     /// <summary>
     ///     Phone number that received phone call in international format
     /// </summary>
     [AllowUpdate(false)]
     [IsRequired]
-    public string FromInternationalFormat { get; set; } = String.Empty;
+    public required string FromInternationalFormat { get; set; }
 }

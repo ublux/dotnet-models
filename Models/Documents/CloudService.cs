@@ -24,7 +24,7 @@ public abstract class CloudService : UbluxDocument
     //[AllowUpdate(false)]
     //[References(typeof(Identity))]
     //[IsRequired]
-    //public string IdIdentity { get; set; } = string.Empty;
+    //public string required IdIdentity { get; set; }
 
     /// <summary>
     ///     Type of cloud service
@@ -40,7 +40,7 @@ public abstract class CloudService : UbluxDocument
     /// </summary>
     [AllowUpdate(false)]
     [IsRequired]
-    public CountryIsoCode CountryIsoCode { get; set; }
+    public required CountryIsoCode CountryIsoCode { get; set; }
 
     /// <summary>
     ///     If this service is inside a nat what is the local ip address?
@@ -65,13 +65,14 @@ public abstract class CloudService : UbluxDocument
     /// </summary>
     [AllowUpdate(false)]
     [IsRequired]
-    public bool IsFailover { get; set; }
+    public required bool IsFailover { get; set; }
 
     /// <summary>
     ///     Is there a router? For example on Divieto this will be true. On Canal Park this will be false
     /// </summary>
     [AllowUpdate(false)]
-    public bool Nat { get; set; }
+    [IsRequired]
+    public required bool Nat { get; set; }
 
     /// <summary>
     ///     Send this constantly to web service when polling. The pbx sends this

@@ -8,9 +8,9 @@ public class ValidationError
     /// <summary>
     ///     Name of property containing error.
     /// </summary>
-    [IsRequired]
+    //[IsRequired]
     [AllowUpdate(false)]
-    public string PropertyName { get; set; } = string.Empty;
+    public string? PropertyName { get; set; }
 
     /// <summary>
     ///     Value of property containing error.
@@ -23,5 +23,4 @@ public class ValidationError
     /// </summary>    
     [AllowUpdate(false)]
     public string? ErrorMessage { get; set; }
-
 }

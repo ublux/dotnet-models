@@ -11,7 +11,7 @@ public partial class CallIncomingToCallFlow : CallIncoming
     [References(typeof(CallFlow))]
     [AllowUpdate(false)]
     [IsRequired]
-    public string IdCallFlow { get; set; } = String.Empty;
+    public required string IdCallFlow { get; set; }
 
     /// <summary>
     ///     Type of call

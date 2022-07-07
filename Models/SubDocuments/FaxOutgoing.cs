@@ -10,21 +10,21 @@ public partial class FaxOutgoing : UbluxSubDocument
     /// </summary>
     [AllowUpdate(false)]
     [IsRequired]
-    public int NumberOfPages { get; set; }
+    public required int NumberOfPages { get; set; }
 
     /// <summary>
     ///     Status of fax sent
     /// </summary>
     [AllowUpdate(false)]
     [IsRequired]
-    public string FaxStatus { get; set; } = string.Empty;
+    public required string FaxStatus { get; set; }
 
     /// <summary>
     ///     Fax number to where fax was sent
     /// </summary>
     [AllowUpdate(false)]
     [IsRequired]
-    public string To { get; set; } = string.Empty;
+    public required string To { get; set; }
 
     /// <summary>
     ///     Description of error
@@ -51,7 +51,7 @@ public partial class FaxOutgoing : UbluxSubDocument
     /// </summary>
     [AllowUpdate(false)]
     [IsRequired]
-    public StoredFile Pdf { get; set; } = new();
+    public required StoredFile Pdf { get; set; }
 
     /// <summary>
     ///     Number of pages that where actually sent
@@ -70,7 +70,7 @@ public partial class FaxOutgoing : UbluxSubDocument
     /// </summary>
     [AllowUpdate(false)]
     [IsRequired]
-    public string Name { get; set; } = string.Empty;
+    public required string Name { get; set; }
 
     /// <summary>
     ///     Used in case the line is busy to retry again
@@ -78,5 +78,4 @@ public partial class FaxOutgoing : UbluxSubDocument
     [AllowUpdate(false)]
     [IsRequired]
     public int NumberOfAttempts { get; set; }
-    
 }

@@ -44,7 +44,7 @@ public abstract partial class Extension : UbluxDocument
     /// </summary>
     [AllowUpdate(true)]
     [IsRequired]
-    public string Number { get; set; } = String.Empty;
+    public required string Number { get; set; }
 
     /// <summary>
     ///     Inject extension name to caller id

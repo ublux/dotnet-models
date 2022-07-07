@@ -14,7 +14,7 @@ public abstract partial class VoipNumber : UbluxDocument, IReferncesAccount
     [IgnoreDataMember]
     [AllowUpdate(false)]
     [IsRequired]
-    public string IdAccount { get; set; } = String.Empty;
+    public required string IdAccount { get; set; }
 
     /// <summary>
     ///     Information about customer. This may be required by some providers.
@@ -39,7 +39,7 @@ public abstract partial class VoipNumber : UbluxDocument, IReferncesAccount
     [IgnoreDataMember]
     [AllowUpdate(false)]
     [IsRequired]
-    public string IdVoipProvider { get; set; } = string.Empty;
+    public required string IdVoipProvider { get; set; }
 
     #endregion
 
@@ -49,6 +49,6 @@ public abstract partial class VoipNumber : UbluxDocument, IReferncesAccount
     [IgnoreDataMember]
     [AllowUpdate(false)]
     [IsRequired]
-    public string ProviderId { get; set; } = string.Empty;
+    public required string ProviderId { get; set; }
 }
 #endif

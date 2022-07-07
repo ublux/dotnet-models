@@ -47,14 +47,14 @@ public partial class CallOutgoingToExtension : CallOutgoing
     ///// </summary>
     //[AllowUpdate(false)]
     //[IsRequired]
-    //public string ExtensionNumber { get; set; } = String.Empty;
+    //public required string ExtensionNumber { get; set; }
 
     ///// <summary>
     /////     Name of extension
     ///// </summary>
     //[AllowUpdate(false)]
     //[IsRequired]
-    //public string ExtensionFriendlyName { get; set; } = String.Empty;
+    //public required string ExtensionFriendlyName { get; set; }
 
     /// <summary>
     ///     Type of call

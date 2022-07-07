@@ -18,7 +18,7 @@ public partial class AutoProvisionReference : UbluxDocument
     [AllowUpdate(false)]
     [References(typeof(Phone))]
     [IsRequired]
-    public string IdPhone { get; set; } = String.Empty;
+    public required string IdPhone { get; set; }
 
     /// <summary>
     ///     When phone is connected to case27 and it wants to connect to a new phone. It will do so but when phone requests cfg file

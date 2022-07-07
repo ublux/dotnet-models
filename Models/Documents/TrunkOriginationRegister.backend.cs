@@ -33,7 +33,7 @@ allow=alaw
     [IgnoreDataMember]
     [AllowUpdate(false)]
     [IsRequired]
-    public string Reg_username { get; set; } = string.Empty;
+    public required string Reg_username { get; set; }
 
     /// <summary>
     ///     Registration password
@@ -41,7 +41,7 @@ allow=alaw
     [IgnoreDataMember]
     [AllowUpdate(false)]
     [IsRequired]
-    public string Reg_password { get; set; } = string.Empty;
+    public required string Reg_password { get; set; }
 
     /// <summary>
     ///     Registration host
@@ -49,7 +49,7 @@ allow=alaw
     [IgnoreDataMember]
     [AllowUpdate(false)]
     [IsRequired]
-    public string Reg_host { get; set; } = string.Empty;
+    public required string Reg_host { get; set; }
 
     /// <summary>
     ///     Registration port
@@ -57,7 +57,7 @@ allow=alaw
     [IgnoreDataMember]
     [AllowUpdate(false)]
     [IsRequired]
-    public int Reg_port { get; set; }
+    public required int Reg_port { get; set; }
 
     ///// <summary>
     /////     Example: US-1. On what pbx we will receive phone calls

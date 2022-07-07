@@ -22,7 +22,7 @@ public abstract partial class UbluxSubDocument
 #endif
         set => id = value;
     }
-    private string id = String.Empty;
+    private string id = string.Empty;
 
 }
 

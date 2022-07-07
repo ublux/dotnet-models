@@ -15,7 +15,7 @@ public partial class WebHook : UbluxDocument
     [AllowUpdate(false)]
     [IsRequired]
     [HideForCreateRequest]
-    public string IdAccount { get; set; } = String.Empty;
+    public required string IdAccount { get; set; }
 
     #endregion
 }

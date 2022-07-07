@@ -13,7 +13,7 @@ public class EventActionLeaveVoicemail : EventAction
     ///     Email where to send voicemail
     /// </summary>
     [IsRequired]
-    public string Email { get; set; } = String.Empty;
+    public required string Email { get; set; }
 
     /// <summary>
     ///     Optional audio to play to instruct caller how to leave a voicemail. 

@@ -3,13 +3,13 @@
 /// <summary>
 ///     It is part of a phone. Lines are needed in order to make and receive phone calls.
 /// </summary>
-public partial class Line : UbluxSubDocument 
+public partial class Line : UbluxSubDocument
 {
     /// <summary>
     /// </summary>
     [AllowUpdate(false)]
     [IsRequired]
-    public string FriendlyName { get; set; } = String.Empty;
+    public required string FriendlyName { get; set; }
 
     /// <summary>
     ///     Line status
@@ -23,7 +23,7 @@ public partial class Line : UbluxSubDocument
     /// </summary>
     [AllowUpdate(true)]
     [IsRequired]
-    public string CallerIdNumber { get; set; } = string.Empty;
+    public required string CallerIdNumber { get; set; }
 
     /// <summary>
     ///     Record outbound calls to PSTN?

@@ -10,12 +10,12 @@ public class SendEmailNotificationIfCallTakesToLongToBeAnswered
     /// </summary>
     [IsRequired]
     [AllowUpdate(true)]
-    public int TimeInSeconds { get; set; }
+    public required int TimeInSeconds { get; set; }
 
     /// <summary>
     ///     Email addresses where to send notifications in case call is not answered.
     /// </summary>
     [IsRequired]
     [AllowUpdate(true)]
-    public List<string> Email { get; set; } = new();
+    public required List<string> Email { get; set; }
 }

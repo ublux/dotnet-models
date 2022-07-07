@@ -15,7 +15,7 @@ public partial class Phone : UbluxDocument
     [References(typeof(CloudServicePbx))]
     [AllowUpdate(true)]
     [IsRequired]
-    public string IdCloudServicePbx { get; set; } = string.Empty;
+    public required string IdCloudServicePbx { get; set; }
 
     /// <summary>
     ///     Configuration phone will use
@@ -42,7 +42,7 @@ public partial class Phone : UbluxDocument
     [JsonProperty(Order = 10000)]
     [AllowUpdate(false)]
     [IsRequired]
-    public List<Line> Lines { get; set; } = new();
+    public required List<Line> Lines { get; set; }
 
     #endregion
 
@@ -51,7 +51,7 @@ public partial class Phone : UbluxDocument
     /// </summary>
     [AllowUpdate(true)]
     [IsRequired]
-    public string FriendlyName { get; set; } = String.Empty;
+    public required string FriendlyName { get; set; }
 
     #endregion
 
@@ -60,5 +60,5 @@ public partial class Phone : UbluxDocument
     /// </summary>
     [IsRequired]
     [AllowUpdate(true)]
-    public PhoneType PhoneType { get; set; }
+    public required PhoneType PhoneType { get; set; }
 }

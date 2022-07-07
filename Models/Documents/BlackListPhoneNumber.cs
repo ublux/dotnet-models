@@ -23,14 +23,14 @@ public partial class BlackListPhoneNumber : UbluxDocument
     /// </summary>
     [AllowUpdate(true)]
     [IsRequired]
-    public string Number { get; set; } = String.Empty;
+    public required string Number { get; set; }
 
     /// <summary>
     ///     Friendly name of this rule
     /// </summary>
     [AllowUpdate(true)]
     [IsRequired]
-    public string FriendlyName { get; set; } = String.Empty;
+    public required string FriendlyName { get; set; }
 
     #endregion
 }

@@ -30,7 +30,7 @@ public partial class ExtensionVoicemail : Extension
     /// </summary>
     [AllowUpdate(true)]
     [IsRequired]
-    public List<string> Email { get; set; } = new();
+    public required List<string> Email { get; set; }
 
     /// <summary>
     ///     This text will be converted to audio and be played before leaving voicemail

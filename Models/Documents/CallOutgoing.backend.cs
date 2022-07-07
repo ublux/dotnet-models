@@ -12,7 +12,7 @@ public abstract partial class CallOutgoing : Call
     /// </summary>
     [IgnoreDataMember]
     [AllowUpdate(false)]
-    public string ChannelFrom { get; set; } = string.Empty;
+    public required string ChannelFrom { get; set; }
 
     /// <summary>
     ///     Connected channel

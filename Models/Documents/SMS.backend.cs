@@ -14,7 +14,7 @@ public partial class SMS : UbluxDocument, IReferncesAccount
     [AllowUpdate(false)]
     [References(typeof(Account))]
     [IsRequired]
-    public string IdAccount { get; set; } = String.Empty;
+    public required string IdAccount { get; set; }
 
     #endregion
 }

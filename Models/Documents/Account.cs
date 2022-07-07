@@ -16,7 +16,7 @@ public partial class Account : UbluxDocument
     [AllowUpdate(false)]
     [References(typeof(CloudServicePbx))]
     [IsRequired]
-    public List<string> IdsCloudServicePbxs { get; set; } = new List<string>();
+    public required List<string> IdsCloudServicePbxs { get; set; }
 
     #endregion
 
@@ -33,14 +33,14 @@ public partial class Account : UbluxDocument
     /// </summary>
     [AllowUpdate(true)]
     [IsRequired]
-    public AccountSecrets AccountSecrets { get; set; } = new AccountSecrets();
+    public required AccountSecrets AccountSecrets { get; set; } 
 
     /// <summary>
     ///     Customizable settings
     /// </summary>    
     [AllowUpdate(true)]
     [IsRequired]
-    public AccountSettings AccountSettings { get; set; } = new();
+    public required AccountSettings AccountSettings { get; set; } 
 
     #endregion
 
@@ -49,7 +49,7 @@ public partial class Account : UbluxDocument
     /// </summary>    
     [AllowUpdate(true)]
     [IsRequired]
-    public string CompanyName { get; set; } = String.Empty;
+    public required string CompanyName { get; set; }
 
     /// <summary>
     ///     If client has granted access to support to make changes to account

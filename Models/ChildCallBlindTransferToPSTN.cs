@@ -8,7 +8,7 @@ public class ChildCallBlindTransferToPSTN : ChildCallBlindTransfer
     /// <summary>
     ///     Phone number where call was transferred to
     /// </summary>
-    public string PhoneNumber { get; set; } = string.Empty;
+    public required string PhoneNumber { get; set; }
 
     /// <summary>
     ///     Trunk used to make call

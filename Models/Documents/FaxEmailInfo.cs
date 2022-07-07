@@ -27,14 +27,14 @@ public partial class FaxEmailInfo : UbluxDocument
     /// </summary>
     [AllowUpdate(false)]
     [IsRequired] /* at least one email should be received */
-    public int NumberOfEmailsReceived { get; set; }
+    public required int NumberOfEmailsReceived { get; set; }
 
     /// <summary>
     ///     Current status of authenticating email
     /// </summary>
     [AllowUpdate(false)]
     [IsRequired]
-    public LinkFaxToEmailStatus ReplyStatus { get; set; }
+    public required LinkFaxToEmailStatus ReplyStatus { get; set; }
 
     #endregion
 }

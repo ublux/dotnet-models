@@ -12,7 +12,7 @@ public partial class UnauthorizedToken : UbluxDocument
     /// </summary>
     [AllowUpdate(false)]
     [IsRequired]
-    public string Jwt { get; set; } = string.Empty;
+    public required string Jwt { get; set; }
 
     /// <summary>
     ///     Id user
@@ -20,12 +20,12 @@ public partial class UnauthorizedToken : UbluxDocument
     [AllowUpdate(false)]
     [References(typeof(Identity))]
     [IsRequired]
-    public string IdIdentity { get; set; } = string.Empty;
+    public required string IdIdentity { get; set; }
 
     /// <summary>
     ///     Date when JWT expires
     /// </summary>
     [AllowUpdate(false)]
     [IsRequired]
-    public DateTime ExpirationDate { get; set; }
+    public required DateTime ExpirationDate { get; set; }
 }

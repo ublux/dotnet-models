@@ -19,7 +19,7 @@ public partial class TrunkTermination : UbluxDocument
     [IgnoreDataMember]
     [AllowUpdate(false)]
     [IsRequired]
-    public string IdVoipProvider { get; set; } = String.Empty;
+    public required string IdVoipProvider { get; set; }
 
     ///// <summary>
     /////     Needed so that we do not create two trunk terminations that are actually the same on sip.conf. One will be able to call China and the other not but they are the same
@@ -37,7 +37,7 @@ public partial class TrunkTermination : UbluxDocument
     [IgnoreDataMember]
     [AllowUpdate(false)]
     [IsRequired]
-    public string ProviderId { get; set; } = string.Empty;
+    public required string ProviderId { get; set; }
 
     /// <summary>
     ///     Url where to send calls
@@ -46,7 +46,7 @@ public partial class TrunkTermination : UbluxDocument
     [IgnoreDataMember]
     [AllowUpdate(false)]
     [IsRequired]
-    public string TerminationUri { get; set; } = String.Empty;
+    public required string TerminationUri { get; set; }
 
     /// <summary>
     ///     Username that provider requires in order to authenticate. Optional because provider may validate us via ip address
@@ -69,7 +69,7 @@ public partial class TrunkTermination : UbluxDocument
     [AllowUpdate(false)]
     [IsRequired]
     [BsonRepresentation(BsonType.String)]
-    public List<CountryIsoCode> CountryIsoCodesThatCanCall { get; set; } = new();
+    public required List<CountryIsoCode> CountryIsoCodesThatCanCall { get; set; }
 
     /// <summary>
     ///     Friendly name
@@ -77,7 +77,7 @@ public partial class TrunkTermination : UbluxDocument
     [IgnoreDataMember]
     [AllowUpdate(false)]
     [IsRequired]
-    public string FriendlyName { get; set; } = string.Empty;
+    public required string FriendlyName { get; set; }
 
     ///// <summary>
     /////     Is trunk encrypted?

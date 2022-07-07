@@ -11,7 +11,7 @@ public class LineConnectionStatusChanged
     ///     Id of line that was modified
     /// </summary>
     [AllowUpdate(false)]
-    public string IdLine { get; set; } = string.Empty;
+    public required string IdLine { get; set; }
 
     /// <summary>
     ///     Line index
@@ -22,19 +22,19 @@ public class LineConnectionStatusChanged
     /////     Id of phone
     ///// </summary>
     //[AllowUpdate(false)]
-    //public string IdPhone { get; set; } = string.Empty;
+    //public required string IdPhone { get; set; }
 
     /// <summary>
     ///     Id of Account
     /// </summary>
     [AllowUpdate(false)]
-    public string IdAccount { get; set; } = string.Empty;
+    public required string IdAccount { get; set; }
 
     /// <summary>
     ///     Clone this to avoid sync problems.
     /// </summary>
     [AllowUpdate(false)]
-    public LineConnectionStatus NewLineConnectionStatus { get; set; } = new ();
+    public required LineConnectionStatus NewLineConnectionStatus { get; set; }
 }
 
 #endif

@@ -306,21 +306,21 @@ namespace Ublux.Communications.Models.Documents {
         public const string DocumentPrefix = "VNAFP";
 
         /// <summary> Custom: id of account only </summary>
-        public static BuiltId BuildId(string phoneNumber) => new($"{DocumentPrefix}.{new String(phoneNumber.Where(Char.IsDigit).ToArray())[^8..]}");
+        public static BuiltId BuildId(string phoneNumber) => new($"{DocumentPrefix}.{new string(phoneNumber.Where(char.IsDigit).ToArray())[^8..]}");
     }
     public partial class VoipNumberFax {
         /// <summary> Id prefix </summary>
         public const string DocumentPrefix = "VNF";
 
         /// <summary> Custom: id of account only </summary>
-        public static BuiltId BuildId(string phoneNumber) => new($"{DocumentPrefix}.{new String(phoneNumber.Where(Char.IsDigit).ToArray())[^8..]}");
+        public static BuiltId BuildId(string phoneNumber) => new($"{DocumentPrefix}.{new string(phoneNumber.Where(char.IsDigit).ToArray())[^8..]}");
     }
     public partial class VoipNumberPhone {
         /// <summary> Id prefix </summary>
         public const string DocumentPrefix = "VNP";
 
         /// <summary> Custom: id of account only </summary>
-        public static BuiltId BuildId(string phoneNumber) => new($"{DocumentPrefix}.{new String(phoneNumber.Where(Char.IsDigit).ToArray())[^8..]}");
+        public static BuiltId BuildId(string phoneNumber) => new($"{DocumentPrefix}.{new string(phoneNumber.Where(char.IsDigit).ToArray())[^8..]}");
     }
     public partial class VoipProvider {
         /// <summary> Id prefix </summary>

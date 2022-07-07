@@ -3,20 +3,20 @@
 /// <summary> 
 ///     Session is a logged in Identity (user). We use JWT Security tokens to store this Session.
 /// </summary>
-public partial class UbluxSession 
+public partial class UbluxSession
 {
     /// <summary> sub property from JWT. Logged in by what user? This may be a PBX </summary>
     [References(typeof(Identity))]
     [IsRequired]
     [AllowUpdate(false)]
-    public string IdIdentity { get; set; } = String.Empty;
+    public required string IdIdentity { get; set; }
 
     /// <summary>
     ///     aud property from JWT. Audience identity type
     /// </summary>
     [IsRequired]
     [AllowUpdate(false)]
-    public IdentityType IdentityType { get; set; }
+    public required IdentityType IdentityType { get; set; }
 
     /// <summary>
     ///     acc property from JWT. Id of account
@@ -24,7 +24,7 @@ public partial class UbluxSession
     [References(typeof(Account))]
     [IsRequired]
     [AllowUpdate(false)]
-    public string IdAccount { get; set; } = String.Empty;
+    public required string IdAccount { get; set; }
 
     /// <summary>
     ///     role properties from JWT. Permissions
@@ -32,11 +32,11 @@ public partial class UbluxSession
     [IsRequired]
     [AllowUpdate(false)]
     [BsonRepresentation(BsonType.String)]
-    public List<UbluxRole> UbluxRoles { get; set; } = new List<UbluxRole>();
+    public required List<UbluxRole> UbluxRoles { get; set; }
 
     /// <summary> exp property from JWT. Date when session expires </summary>
     [IsRequired]
     [AllowUpdate(false)]
-    public DateTime ExpirationDate { get; set; }
+    public required DateTime ExpirationDate { get; set; }
 }
 

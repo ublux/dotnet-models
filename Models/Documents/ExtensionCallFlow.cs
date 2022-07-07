@@ -15,7 +15,7 @@ public partial class ExtensionCallFlow : Extension
     [References(typeof(CallFlow))]
     [AllowUpdate(true)]
     [IsRequired]
-    public string IdCallFlow { get; set; } = string.Empty;
+    public required string IdCallFlow { get; set; }
 
     #endregion
 

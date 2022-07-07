@@ -4,8 +4,8 @@
 ///     Extensions may forward an existing voicemail to another extension
 /// </summary>
 /* Attributes that help with deserialization */
-[JsonConverter(typeof(JsonSubtypes), nameof(VoicemailType))]                   
-[JsonSubtypes.KnownSubType(typeof(Voicemail), nameof(VoicemailType.Regular))]               
+[JsonConverter(typeof(JsonSubtypes), nameof(VoicemailType))]
+[JsonSubtypes.KnownSubType(typeof(Voicemail), nameof(VoicemailType.Regular))]
 [JsonSubtypes.KnownSubType(typeof(VoicemailForwarded), nameof(VoicemailType.Forwarded))]
 [BsonKnownTypes(
     typeof(Voicemail),
@@ -32,14 +32,14 @@ public partial class Voicemail : UbluxDocument
     /// </summary>
     [AllowUpdate(false)]
     [IsRequired]
-    public string Email { get; set; } = string.Empty;
+    public required string Email { get; set; }
 
     /// <summary>
     ///     Voicemail duration in seconds
     /// </summary>
     [AllowUpdate(false)]
     [IsRequired]
-    public int DurationInSeconds { get; set; }
+    public required int DurationInSeconds { get; set; }
 
     /// <summary>
     ///     Voicemail in wav format. Optional because there may be an error

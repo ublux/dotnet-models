@@ -16,22 +16,23 @@ public partial class StoredFile : UbluxSubDocument, IReferncesAccount
     [IgnoreDataMember]
     [AllowUpdate(false)]
     [IsRequired]
-    public string IdAccount { get; set; } = String.Empty;
+    public required string IdAccount { get; set; }
+
     /// <summary>
     ///     Example incoming-faxes
     /// </summary>
     [IgnoreDataMember]
     [AllowUpdate(false)]
     [IsRequired]
-    public string FolderName { get; set; } = String.Empty;
+    public required string FolderName { get; set; }
+
     /// <summary>
     ///     Usually id followed by extension. Example:  CL-I-XXXXX.mp3
     /// </summary>
     [IgnoreDataMember]
     [AllowUpdate(false)]
     [IsRequired]
-    public string FileName { get; set; } = String.Empty;
-
+    public required string FileName { get; set; }
 
     /// <summary>
     ///     Common folders where we store files
@@ -67,8 +68,6 @@ public partial class StoredFile : UbluxSubDocument, IReferncesAccount
     {
         return $"/usr/share/ublux/accounts/{IdAccount}/{FolderName}";
     }
-
-
 }
 
 #endif
