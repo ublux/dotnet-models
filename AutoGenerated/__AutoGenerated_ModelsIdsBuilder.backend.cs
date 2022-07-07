@@ -19,49 +19,49 @@ namespace Ublux.Communications.Models.Documents {
         public const string DocumentPrefix = "ATTAC";
 
         /// <summary> Build Id </summary>
-        public static BuiltId BuildId(RunningApplicationInstance instance) => new($"{DocumentPrefix}.{instance.Id}.{UbluxDocument.IdGlobalAutoIncrement()}");
+        public static BuiltId BuildId(RunningApplicationInstance instance) => new($"{DocumentPrefix}.{instance.Id}.{instance.IdGlobalAutoIncrement()}");
     }
     public partial class AirNetworksProvince {
         /// <summary> Id prefix </summary>
         public const string DocumentPrefix = "ANP";
 
         /// <summary> Build Id </summary>
-        public static BuiltId BuildId(RunningApplicationInstance instance) => new($"{DocumentPrefix}.{instance.Id}.{UbluxDocument.IdGlobalAutoIncrement()}");
+        public static BuiltId BuildId(RunningApplicationInstance instance) => new($"{DocumentPrefix}.{instance.Id}.{instance.IdGlobalAutoIncrement()}");
     }
     public partial class Audio {
         /// <summary> Id prefix </summary>
         public const string DocumentPrefix = "Au";
 
         /// <summary> Build Id </summary>
-        public static BuiltId BuildId(RunningApplicationInstance instance) => new($"{DocumentPrefix}.{instance.Id}.{UbluxDocument.IdGlobalAutoIncrement()}");
+        public static BuiltId BuildId(RunningApplicationInstance instance) => new($"{DocumentPrefix}.{instance.Id}.{instance.IdGlobalAutoIncrement()}");
     }
     public partial class AutoProvisionReference {
         /// <summary> Id prefix </summary>
         public const string DocumentPrefix = "APR";
 
         /// <summary> Build Id </summary>
-        public static BuiltId BuildId(RunningApplicationInstance instance) => new($"{DocumentPrefix}.{instance.Id}.{UbluxDocument.IdGlobalAutoIncrement()}");
+        public static BuiltId BuildId(RunningApplicationInstance instance) => new($"{DocumentPrefix}.{instance.Id}.{instance.IdGlobalAutoIncrement()}");
     }
     public partial class BlackListPhoneNumber {
         /// <summary> Id prefix </summary>
         public const string DocumentPrefix = "BLPN";
 
         /// <summary> Build Id </summary>
-        public static BuiltId BuildId(RunningApplicationInstance instance) => new($"{DocumentPrefix}.{instance.Id}.{UbluxDocument.IdGlobalAutoIncrement()}");
+        public static BuiltId BuildId(RunningApplicationInstance instance) => new($"{DocumentPrefix}.{instance.Id}.{instance.IdGlobalAutoIncrement()}");
     }
     public partial class CallerIdMask {
         /// <summary> Id prefix </summary>
         public const string DocumentPrefix = "CIM";
 
         /// <summary> Build Id </summary>
-        public static BuiltId BuildId(RunningApplicationInstance instance) => new($"{DocumentPrefix}.{instance.Id}.{UbluxDocument.IdGlobalAutoIncrement()}");
+        public static BuiltId BuildId(RunningApplicationInstance instance) => new($"{DocumentPrefix}.{instance.Id}.{instance.IdGlobalAutoIncrement()}");
     }
     public partial class CallFlow {
         /// <summary> Id prefix </summary>
         public const string DocumentPrefix = "CF";
 
         /// <summary> Build Id </summary>
-        public static BuiltId BuildId(RunningApplicationInstance instance) => new($"{DocumentPrefix}.{instance.Id}.{UbluxDocument.IdGlobalAutoIncrement()}");
+        public static BuiltId BuildId(RunningApplicationInstance instance) => new($"{DocumentPrefix}.{instance.Id}.{instance.IdGlobalAutoIncrement()}");
     }
     public partial class CallIncomingToCallFlow {
         /// <summary> Id prefix </summary>
@@ -124,70 +124,70 @@ namespace Ublux.Communications.Models.Documents {
         public const string DocumentPrefix = "Co";
 
         /// <summary> Build Id </summary>
-        public static BuiltId BuildId(RunningApplicationInstance instance) => new($"{DocumentPrefix}.{instance.Id}.{UbluxDocument.IdGlobalAutoIncrement()}");
+        public static BuiltId BuildId(RunningApplicationInstance instance) => new($"{DocumentPrefix}.{instance.Id}.{instance.IdGlobalAutoIncrement()}");
     }
     public partial class CustomerInfo {
         /// <summary> Id prefix </summary>
         public const string DocumentPrefix = "CI";
 
         /// <summary> Build Id </summary>
-        public static BuiltId BuildId(RunningApplicationInstance instance) => new($"{DocumentPrefix}.{instance.Id}.{UbluxDocument.IdGlobalAutoIncrement()}");
+        public static BuiltId BuildId(RunningApplicationInstance instance) => new($"{DocumentPrefix}.{instance.Id}.{instance.IdGlobalAutoIncrement()}");
     }
     public partial class ExtensionCallFlow {
         /// <summary> Id prefix </summary>
         public const string DocumentPrefix = "ECF";
 
         /// <summary> Build Id </summary>
-        public static BuiltId BuildId(RunningApplicationInstance instance) => new($"{DocumentPrefix}.{instance.Id}.{UbluxDocument.IdGlobalAutoIncrement()}");
+        public static BuiltId BuildId(RunningApplicationInstance instance) => new($"{DocumentPrefix}.{instance.Id}.{instance.IdGlobalAutoIncrement()}");
     }
     public partial class ExtensionConference {
         /// <summary> Id prefix </summary>
         public const string DocumentPrefix = "EC";
 
         /// <summary> Build Id </summary>
-        public static BuiltId BuildId(RunningApplicationInstance instance) => new($"{DocumentPrefix}.{instance.Id}.{UbluxDocument.IdGlobalAutoIncrement()}");
+        public static BuiltId BuildId(RunningApplicationInstance instance) => new($"{DocumentPrefix}.{instance.Id}.{instance.IdGlobalAutoIncrement()}");
     }
     public partial class ExtensionDial {
         /// <summary> Id prefix </summary>
         public const string DocumentPrefix = "ED";
 
         /// <summary> Build Id </summary>
-        public static BuiltId BuildId(RunningApplicationInstance instance) => new($"{DocumentPrefix}.{instance.Id}.{UbluxDocument.IdGlobalAutoIncrement()}");
+        public static BuiltId BuildId(RunningApplicationInstance instance) => new($"{DocumentPrefix}.{instance.Id}.{instance.IdGlobalAutoIncrement()}");
     }
     public partial class ExtensionQueue {
         /// <summary> Id prefix </summary>
         public const string DocumentPrefix = "EQ";
 
         /// <summary> Build Id </summary>
-        public static BuiltId BuildId(RunningApplicationInstance instance) => new($"{DocumentPrefix}.{instance.Id}.{UbluxDocument.IdGlobalAutoIncrement()}");
+        public static BuiltId BuildId(RunningApplicationInstance instance) => new($"{DocumentPrefix}.{instance.Id}.{instance.IdGlobalAutoIncrement()}");
     }
     public partial class ExtensionVoicemail {
         /// <summary> Id prefix </summary>
         public const string DocumentPrefix = "EV";
 
         /// <summary> Build Id </summary>
-        public static BuiltId BuildId(RunningApplicationInstance instance) => new($"{DocumentPrefix}.{instance.Id}.{UbluxDocument.IdGlobalAutoIncrement()}");
+        public static BuiltId BuildId(RunningApplicationInstance instance) => new($"{DocumentPrefix}.{instance.Id}.{instance.IdGlobalAutoIncrement()}");
     }
     public partial class FaxEmailInfo {
         /// <summary> Id prefix </summary>
         public const string DocumentPrefix = "FEI";
 
         /// <summary> Build Id </summary>
-        public static BuiltId BuildId(RunningApplicationInstance instance) => new($"{DocumentPrefix}.{instance.Id}.{UbluxDocument.IdGlobalAutoIncrement()}");
+        public static BuiltId BuildId(RunningApplicationInstance instance) => new($"{DocumentPrefix}.{instance.Id}.{instance.IdGlobalAutoIncrement()}");
     }
     public partial class FaxIncoming {
         /// <summary> Id prefix </summary>
         public const string DocumentPrefix = "FI";
 
         /// <summary> Build Id </summary>
-        public static BuiltId BuildId(RunningApplicationInstance instance) => new($"{DocumentPrefix}.{instance.Id}.{UbluxDocument.IdGlobalAutoIncrement()}");
+        public static BuiltId BuildId(RunningApplicationInstance instance) => new($"{DocumentPrefix}.{instance.Id}.{instance.IdGlobalAutoIncrement()}");
     }
     public partial class FaxOutgoingGroup {
         /// <summary> Id prefix </summary>
         public const string DocumentPrefix = "FOG";
 
         /// <summary> Build Id </summary>
-        public static BuiltId BuildId(RunningApplicationInstance instance) => new($"{DocumentPrefix}.{instance.Id}.{UbluxDocument.IdGlobalAutoIncrement()}");
+        public static BuiltId BuildId(RunningApplicationInstance instance) => new($"{DocumentPrefix}.{instance.Id}.{instance.IdGlobalAutoIncrement()}");
     }
     public partial class Identity {
         /// <summary> Id prefix </summary>
@@ -208,7 +208,7 @@ namespace Ublux.Communications.Models.Documents {
         public const string DocumentPrefix = "LKG";
 
         /// <summary> Build Id </summary>
-        public static BuiltId BuildId(RunningApplicationInstance instance) => new($"{DocumentPrefix}.{instance.Id}.{UbluxDocument.IdGlobalAutoIncrement()}");
+        public static BuiltId BuildId(RunningApplicationInstance instance) => new($"{DocumentPrefix}.{instance.Id}.{instance.IdGlobalAutoIncrement()}");
     }
     public partial class LogWebServiceRequest {
         /// <summary> Id prefix </summary>
@@ -222,35 +222,35 @@ namespace Ublux.Communications.Models.Documents {
         public const string DocumentPrefix = "MOHG";
 
         /// <summary> Build Id </summary>
-        public static BuiltId BuildId(RunningApplicationInstance instance) => new($"{DocumentPrefix}.{instance.Id}.{UbluxDocument.IdGlobalAutoIncrement()}");
+        public static BuiltId BuildId(RunningApplicationInstance instance) => new($"{DocumentPrefix}.{instance.Id}.{instance.IdGlobalAutoIncrement()}");
     }
     public partial class Phone {
         /// <summary> Id prefix </summary>
         public const string DocumentPrefix = "Ph";
 
         /// <summary> Build Id </summary>
-        public static BuiltId BuildId(RunningApplicationInstance instance) => new($"{DocumentPrefix}.{instance.Id}.{UbluxDocument.IdGlobalAutoIncrement()}");
+        public static BuiltId BuildId(RunningApplicationInstance instance) => new($"{DocumentPrefix}.{instance.Id}.{instance.IdGlobalAutoIncrement()}");
     }
     public partial class PhoneConfiguration {
         /// <summary> Id prefix </summary>
         public const string DocumentPrefix = "PC";
 
         /// <summary> Build Id </summary>
-        public static BuiltId BuildId(RunningApplicationInstance instance) => new($"{DocumentPrefix}.{instance.Id}.{UbluxDocument.IdGlobalAutoIncrement()}");
+        public static BuiltId BuildId(RunningApplicationInstance instance) => new($"{DocumentPrefix}.{instance.Id}.{instance.IdGlobalAutoIncrement()}");
     }
     public partial class PowerDialerGroup {
         /// <summary> Id prefix </summary>
         public const string DocumentPrefix = "PDG";
 
         /// <summary> Build Id </summary>
-        public static BuiltId BuildId(RunningApplicationInstance instance) => new($"{DocumentPrefix}.{instance.Id}.{UbluxDocument.IdGlobalAutoIncrement()}");
+        public static BuiltId BuildId(RunningApplicationInstance instance) => new($"{DocumentPrefix}.{instance.Id}.{instance.IdGlobalAutoIncrement()}");
     }
     public partial class SMS {
         /// <summary> Id prefix </summary>
         public const string DocumentPrefix = "SMS";
 
         /// <summary> Build Id </summary>
-        public static BuiltId BuildId(RunningApplicationInstance instance) => new($"{DocumentPrefix}.{instance.Id}.{UbluxDocument.IdGlobalAutoIncrement()}");
+        public static BuiltId BuildId(RunningApplicationInstance instance) => new($"{DocumentPrefix}.{instance.Id}.{instance.IdGlobalAutoIncrement()}");
     }
     public partial class TrunkOriginationForward {
         /// <summary> Id prefix </summary>
@@ -292,14 +292,14 @@ namespace Ublux.Communications.Models.Documents {
         public const string DocumentPrefix = "Vo";
 
         /// <summary> Build Id </summary>
-        public static BuiltId BuildId(RunningApplicationInstance instance) => new($"{DocumentPrefix}.{instance.Id}.{UbluxDocument.IdGlobalAutoIncrement()}");
+        public static BuiltId BuildId(RunningApplicationInstance instance) => new($"{DocumentPrefix}.{instance.Id}.{instance.IdGlobalAutoIncrement()}");
     }
     public partial class VoicemailForwarded {
         /// <summary> Id prefix </summary>
         public new const string DocumentPrefix = "VF";
 
         /// <summary> Build Id </summary>
-        public new static BuiltId BuildId(RunningApplicationInstance instance) => new($"{DocumentPrefix}.{instance.Id}.{UbluxDocument.IdGlobalAutoIncrement()}");
+        public new static BuiltId BuildId(RunningApplicationInstance instance) => new($"{DocumentPrefix}.{instance.Id}.{instance.IdGlobalAutoIncrement()}");
     }
     public partial class VoipNumberAvailableForPurchase {
         /// <summary> Id prefix </summary>
@@ -334,7 +334,7 @@ namespace Ublux.Communications.Models.Documents {
         public const string DocumentPrefix = "WH";
 
         /// <summary> Build Id </summary>
-        public static BuiltId BuildId(RunningApplicationInstance instance) => new($"{DocumentPrefix}.{instance.Id}.{UbluxDocument.IdGlobalAutoIncrement()}");
+        public static BuiltId BuildId(RunningApplicationInstance instance) => new($"{DocumentPrefix}.{instance.Id}.{instance.IdGlobalAutoIncrement()}");
     }
 }
 
@@ -354,7 +354,7 @@ namespace Ublux.Communications.Models.SubDocuments {
         public const string DocumentPrefix = "Li";
 
         /// <summary> Custom: prefix.lineNumber.parentPhoneId. Example Li.1.Po.100 </summary>
-        public static BuiltId BuildId(Phone parent) => new($"{DocumentPrefix}.{UbluxDocument.IdGlobalAutoIncrement()}.{parent.Id}");
+        public static BuiltId BuildId(RunningApplicationInstance instance, Phone parent) => new($"{DocumentPrefix}.{instance.IdGlobalAutoIncrement()}.{parent.Id}");
     }
     public partial class Recording {
         /// <summary> Id prefix </summary>
@@ -368,7 +368,7 @@ namespace Ublux.Communications.Models.SubDocuments {
         public const string DocumentPrefix = "SF";
 
         /// <summary> Custom: prefix.randomUnsignedLong. Example SF.5uHSKHqJeqc1ZAURK </summary>
-        public static BuiltId BuildId() => new($"{DocumentPrefix}.{UbluxDocument.ToBase62(BitConverter.ToUInt64(Guid.NewGuid().ToByteArray()))}.{UbluxDocument.ToBase62(BitConverter.ToUInt16(Guid.NewGuid().ToByteArray()))}");
+        public static BuiltId BuildId() => new($"{DocumentPrefix}.{RunningApplicationInstance.ToBase62(BitConverter.ToUInt64(Guid.NewGuid().ToByteArray()))}.{RunningApplicationInstance.ToBase62(BitConverter.ToUInt16(Guid.NewGuid().ToByteArray()))}");
     }
 }
 

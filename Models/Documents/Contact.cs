@@ -117,7 +117,7 @@ public partial class Contact : UbluxDocument
         var val = string.Join(null, GetValuesNeededToHash());
         var bytes = System.Text.Encoding.UTF8.GetBytes(val);
         var hash = xxHash64.ComputeHash(bytes) >> 22;
-        return ToBase62(hash);
+        return RunningApplicationInstance.ToBase62(hash);
     }
 
     IEnumerable<string> GetValuesNeededToHash()
