@@ -913,6 +913,10 @@ public class CallIncomingToCallFlowFilterRequest
     [JsonProperty("childCalls_childCallType_eq")]
     public ChildCallType? ChildCalls_ChildCallType_EQ { get; set; }
 
+    /// <summary> ChildCalls.Status equals </summary>
+    [JsonProperty("childCalls_status_eq")]
+    public DialStatus? ChildCalls_Status_EQ { get; set; }
+
 
     /// <summary> DateEnded equals </summary>
     [JsonProperty("dateEnded_eq")]
@@ -1283,6 +1287,10 @@ public class CallIncomingToExtensionFilterRequest
     [JsonProperty("lineThatAnswered_recordInternalCalls_eq")]
     public bool? LineThatAnswered_RecordInternalCalls_EQ { get; set; }
 
+    /// <summary> LineThatAnswered.Language equals </summary>
+    [JsonProperty("lineThatAnswered_language_eq")]
+    public Language? LineThatAnswered_Language_EQ { get; set; }
+
     /// <summary> LineThatAnswered.Id equals </summary>
     [JsonProperty("lineThatAnswered_id_eq")]
     public string? LineThatAnswered_Id_EQ { get; set; }
@@ -1407,6 +1415,10 @@ public class CallIncomingToExtensionFilterRequest
     [JsonProperty("linesThatRing_recordInternalCalls_eq")]
     public bool? LinesThatRing_RecordInternalCalls_EQ { get; set; }
 
+    /// <summary> LinesThatRing.Language equals </summary>
+    [JsonProperty("linesThatRing_language_eq")]
+    public Language? LinesThatRing_Language_EQ { get; set; }
+
     /// <summary> LinesThatRing.Id equals </summary>
     [JsonProperty("linesThatRing_id_eq")]
     public string? LinesThatRing_Id_EQ { get; set; }
@@ -1530,6 +1542,10 @@ public class CallIncomingToExtensionFilterRequest
     /// <summary> LinesThatDidNotRing.RecordInternalCalls equals </summary>
     [JsonProperty("linesThatDidNotRing_recordInternalCalls_eq")]
     public bool? LinesThatDidNotRing_RecordInternalCalls_EQ { get; set; }
+
+    /// <summary> LinesThatDidNotRing.Language equals </summary>
+    [JsonProperty("linesThatDidNotRing_language_eq")]
+    public Language? LinesThatDidNotRing_Language_EQ { get; set; }
 
     /// <summary> LinesThatDidNotRing.Id equals </summary>
     [JsonProperty("linesThatDidNotRing_id_eq")]
@@ -1796,6 +1812,10 @@ public class CallIncomingToExtensionFilterRequest
     /// <summary> ChildCalls.ChildCallType equals </summary>
     [JsonProperty("childCalls_childCallType_eq")]
     public ChildCallType? ChildCalls_ChildCallType_EQ { get; set; }
+
+    /// <summary> ChildCalls.Status equals </summary>
+    [JsonProperty("childCalls_status_eq")]
+    public DialStatus? ChildCalls_Status_EQ { get; set; }
 
 
     /// <summary> DateEnded equals </summary>
@@ -2167,6 +2187,10 @@ public class CallOutgoingToExtensionFilterRequest
     [JsonProperty("lineThatAnswered_recordInternalCalls_eq")]
     public bool? LineThatAnswered_RecordInternalCalls_EQ { get; set; }
 
+    /// <summary> LineThatAnswered.Language equals </summary>
+    [JsonProperty("lineThatAnswered_language_eq")]
+    public Language? LineThatAnswered_Language_EQ { get; set; }
+
     /// <summary> LineThatAnswered.Id equals </summary>
     [JsonProperty("lineThatAnswered_id_eq")]
     public string? LineThatAnswered_Id_EQ { get; set; }
@@ -2291,6 +2315,10 @@ public class CallOutgoingToExtensionFilterRequest
     [JsonProperty("linesThatRing_recordInternalCalls_eq")]
     public bool? LinesThatRing_RecordInternalCalls_EQ { get; set; }
 
+    /// <summary> LinesThatRing.Language equals </summary>
+    [JsonProperty("linesThatRing_language_eq")]
+    public Language? LinesThatRing_Language_EQ { get; set; }
+
     /// <summary> LinesThatRing.Id equals </summary>
     [JsonProperty("linesThatRing_id_eq")]
     public string? LinesThatRing_Id_EQ { get; set; }
@@ -2414,6 +2442,10 @@ public class CallOutgoingToExtensionFilterRequest
     /// <summary> LinesThatDidNotRing.RecordInternalCalls equals </summary>
     [JsonProperty("linesThatDidNotRing_recordInternalCalls_eq")]
     public bool? LinesThatDidNotRing_RecordInternalCalls_EQ { get; set; }
+
+    /// <summary> LinesThatDidNotRing.Language equals </summary>
+    [JsonProperty("linesThatDidNotRing_language_eq")]
+    public Language? LinesThatDidNotRing_Language_EQ { get; set; }
 
     /// <summary> LinesThatDidNotRing.Id equals </summary>
     [JsonProperty("linesThatDidNotRing_id_eq")]
@@ -2725,6 +2757,10 @@ public class CallOutgoingToExtensionFilterRequest
     [JsonProperty("lineThatInitiatedCall_recordInternalCalls_eq")]
     public bool? LineThatInitiatedCall_RecordInternalCalls_EQ { get; set; }
 
+    /// <summary> LineThatInitiatedCall.Language equals </summary>
+    [JsonProperty("lineThatInitiatedCall_language_eq")]
+    public Language? LineThatInitiatedCall_Language_EQ { get; set; }
+
     /// <summary> LineThatInitiatedCall.Id equals </summary>
     [JsonProperty("lineThatInitiatedCall_id_eq")]
     public string? LineThatInitiatedCall_Id_EQ { get; set; }
@@ -2784,6 +2820,10 @@ public class CallOutgoingToExtensionFilterRequest
     /// <summary> ChildCalls.ChildCallType equals </summary>
     [JsonProperty("childCalls_childCallType_eq")]
     public ChildCallType? ChildCalls_ChildCallType_EQ { get; set; }
+
+    /// <summary> ChildCalls.Status equals </summary>
+    [JsonProperty("childCalls_status_eq")]
+    public DialStatus? ChildCalls_Status_EQ { get; set; }
 
 
     /// <summary> DateEnded equals </summary>
@@ -3296,6 +3336,10 @@ public class CallOutgoingToPSTNFilterRequest
     [JsonProperty("lineThatInitiatedCall_recordInternalCalls_eq")]
     public bool? LineThatInitiatedCall_RecordInternalCalls_EQ { get; set; }
 
+    /// <summary> LineThatInitiatedCall.Language equals </summary>
+    [JsonProperty("lineThatInitiatedCall_language_eq")]
+    public Language? LineThatInitiatedCall_Language_EQ { get; set; }
+
     /// <summary> LineThatInitiatedCall.Id equals </summary>
     [JsonProperty("lineThatInitiatedCall_id_eq")]
     public string? LineThatInitiatedCall_Id_EQ { get; set; }
@@ -3355,6 +3399,10 @@ public class CallOutgoingToPSTNFilterRequest
     /// <summary> ChildCalls.ChildCallType equals </summary>
     [JsonProperty("childCalls_childCallType_eq")]
     public ChildCallType? ChildCalls_ChildCallType_EQ { get; set; }
+
+    /// <summary> ChildCalls.Status equals </summary>
+    [JsonProperty("childCalls_status_eq")]
+    public DialStatus? ChildCalls_Status_EQ { get; set; }
 
 
     /// <summary> DateEnded equals </summary>
@@ -4888,6 +4936,10 @@ public class FaxEmailInfoFilterRequest
     [JsonProperty("lineThatValidatedEmail_recordInternalCalls_eq")]
     public bool? LineThatValidatedEmail_RecordInternalCalls_EQ { get; set; }
 
+    /// <summary> LineThatValidatedEmail.Language equals </summary>
+    [JsonProperty("lineThatValidatedEmail_language_eq")]
+    public Language? LineThatValidatedEmail_Language_EQ { get; set; }
+
     /// <summary> LineThatValidatedEmail.Id equals </summary>
     [JsonProperty("lineThatValidatedEmail_id_eq")]
     public string? LineThatValidatedEmail_Id_EQ { get; set; }
@@ -5495,15 +5547,15 @@ public class LineKeyGroupFilterRequest
     [JsonProperty("lineKeys_idExtension_reg")]
     public string? LineKeys_IdExtension_REG { get; set; }
 
-    /// <summary> LineKeys.LineIndex equals </summary>
-    [JsonProperty("lineKeys_lineIndex_eq")]
-    public System.Int32? LineKeys_LineIndex_EQ { get; set; }
-    /// <summary> LineKeys.LineIndex less than or equal to </summary>
-    [JsonProperty("lineKeys_lineIndex_lte")]
-    public System.Int32? LineKeys_LineIndex_LTE { get; set; }
-    /// <summary> LineKeys.LineIndex greater than or equal to </summary>
-    [JsonProperty("lineKeys_lineIndex_gte")]
-    public System.Int32? LineKeys_LineIndex_GTE { get; set; }
+    /// <summary> LineKeys.LineKeyIndex equals </summary>
+    [JsonProperty("lineKeys_lineKeyIndex_eq")]
+    public System.Int32? LineKeys_LineKeyIndex_EQ { get; set; }
+    /// <summary> LineKeys.LineKeyIndex less than or equal to </summary>
+    [JsonProperty("lineKeys_lineKeyIndex_lte")]
+    public System.Int32? LineKeys_LineKeyIndex_LTE { get; set; }
+    /// <summary> LineKeys.LineKeyIndex greater than or equal to </summary>
+    [JsonProperty("lineKeys_lineKeyIndex_gte")]
+    public System.Int32? LineKeys_LineKeyIndex_GTE { get; set; }
 
 
     /// <summary> FriendlyName equals </summary>
@@ -5967,6 +6019,10 @@ public class PhoneFilterRequest
     /// <summary> Lines.RecordInternalCalls equals </summary>
     [JsonProperty("lines_recordInternalCalls_eq")]
     public bool? Lines_RecordInternalCalls_EQ { get; set; }
+
+    /// <summary> Lines.Language equals </summary>
+    [JsonProperty("lines_language_eq")]
+    public Language? Lines_Language_EQ { get; set; }
 
     /// <summary> Lines.Id equals </summary>
     [JsonProperty("lines_id_eq")]
@@ -7046,6 +7102,10 @@ public class VoicemailForwardedFilterRequest
     /// <summary> LineThatForwardedVoicemail.RecordInternalCalls equals </summary>
     [JsonProperty("lineThatForwardedVoicemail_recordInternalCalls_eq")]
     public bool? LineThatForwardedVoicemail_RecordInternalCalls_EQ { get; set; }
+
+    /// <summary> LineThatForwardedVoicemail.Language equals </summary>
+    [JsonProperty("lineThatForwardedVoicemail_language_eq")]
+    public Language? LineThatForwardedVoicemail_Language_EQ { get; set; }
 
     /// <summary> LineThatForwardedVoicemail.Id equals </summary>
     [JsonProperty("lineThatForwardedVoicemail_id_eq")]
@@ -8139,6 +8199,10 @@ public class CallFilterRequest
     [JsonProperty("childCalls_childCallType_eq")]
     public ChildCallType? ChildCalls_ChildCallType_EQ { get; set; }
 
+    /// <summary> ChildCalls.Status equals </summary>
+    [JsonProperty("childCalls_status_eq")]
+    public DialStatus? ChildCalls_Status_EQ { get; set; }
+
 
     /// <summary> DateEnded equals </summary>
     [JsonProperty("dateEnded_eq")]
@@ -8587,6 +8651,10 @@ public class CallIncomingFilterRequest
     /// <summary> ChildCalls.ChildCallType equals </summary>
     [JsonProperty("childCalls_childCallType_eq")]
     public ChildCallType? ChildCalls_ChildCallType_EQ { get; set; }
+
+    /// <summary> ChildCalls.Status equals </summary>
+    [JsonProperty("childCalls_status_eq")]
+    public DialStatus? ChildCalls_Status_EQ { get; set; }
 
 
     /// <summary> DateEnded equals </summary>
@@ -9085,6 +9153,10 @@ public class CallOutgoingFilterRequest
     [JsonProperty("lineThatInitiatedCall_recordInternalCalls_eq")]
     public bool? LineThatInitiatedCall_RecordInternalCalls_EQ { get; set; }
 
+    /// <summary> LineThatInitiatedCall.Language equals </summary>
+    [JsonProperty("lineThatInitiatedCall_language_eq")]
+    public Language? LineThatInitiatedCall_Language_EQ { get; set; }
+
     /// <summary> LineThatInitiatedCall.Id equals </summary>
     [JsonProperty("lineThatInitiatedCall_id_eq")]
     public string? LineThatInitiatedCall_Id_EQ { get; set; }
@@ -9144,6 +9216,10 @@ public class CallOutgoingFilterRequest
     /// <summary> ChildCalls.ChildCallType equals </summary>
     [JsonProperty("childCalls_childCallType_eq")]
     public ChildCallType? ChildCalls_ChildCallType_EQ { get; set; }
+
+    /// <summary> ChildCalls.Status equals </summary>
+    [JsonProperty("childCalls_status_eq")]
+    public DialStatus? ChildCalls_Status_EQ { get; set; }
 
 
     /// <summary> DateEnded equals </summary>

@@ -1294,6 +1294,10 @@ public class LineUpdateRequest // : IUbluxDocumentId
     /// Record calls to other extensions?
     /// </summary>
     public Boolean? RecordInternalCalls { get; set; }
+    /// <summary>
+    /// Langage to use when playing messages
+    /// </summary>
+    public Language? Language { get; set; }
     /// <summary> Set values on actual document </summary>
     public void SetValuesOnLine(Line line)
     {
@@ -1303,6 +1307,8 @@ public class LineUpdateRequest // : IUbluxDocumentId
             line.RecordExternalCalls = this.RecordExternalCalls.Value;
         if(this.RecordInternalCalls!=null)
             line.RecordInternalCalls = this.RecordInternalCalls.Value;
+        if(this.Language!=null)
+            line.Language = this.Language.Value;
     }
 
 }
