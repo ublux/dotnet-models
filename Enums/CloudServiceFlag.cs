@@ -18,5 +18,10 @@ public enum CloudServiceFlag
     /// <summary>
     ///     Unable to store or read last id of items deleted on redis
     /// </summary>
-    WS_IdStreamDeleted_DiskError
+    WS_IdStreamDeleted_DiskError,
+
+    /// <summary>
+    ///     Unable to convert slave to master
+    /// </summary>
+    WS_UnableToConvertSlaveToMasterRebootRequired
 }
