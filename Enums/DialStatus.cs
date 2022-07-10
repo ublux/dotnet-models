@@ -5,11 +5,6 @@
 /// </summary>
 public enum DialStatus
 {
-    /// <summary>
-    ///     The party that called hangup
-    /// </summary>
-    HANGUP,
-
     ///// <summary>
     /////     Either the dialed peer exists but is not currently reachable, e.g. endpoint is not registered, or an attempt was made to call a nonexistent location, e.g. nonexistent DNS hostname.
     ///// </summary>
@@ -21,9 +16,24 @@ public enum DialStatus
     //CONGESTION,
 
     /// <summary>
+    ///     This is part of ublux and not asterisk
+    /// </summary>
+    RINGING,
+
+    /// <summary>
     ///     Called party did not answer.
     /// </summary>
     NOANSWER,
+
+    /// <summary>
+    ///     The person that received call hangup
+    /// </summary>
+    HANGUP,
+
+    /// <summary>
+    ///     Person that made call hangup
+    /// </summary>
+    CANCEL,
 
     /// <summary>
     ///     The called party was busy or indicated a busy status. Note that some SIP devices will respond with 486 Busy if their Do Not Disturb modes are active. In this case, you can use DEVICE_STATUS to check if the endpoint is actually in use, if needed.
@@ -39,12 +49,6 @@ public enum DialStatus
     ///     If calling lines are ofline for example
     /// </summary>
     UNAVAILABLE,
-
-    // This is hangup
-    ///// <summary>
-    /////     Dial was cancelled before call was answered or reached some other terminating event.
-    ///// </summary>
-    //CANCEL,
 
     ///// <summary>
     /////      For the Privacy and Screening Modes. Will be set if the called party chooses to send the calling party to the 'Go Away' script.

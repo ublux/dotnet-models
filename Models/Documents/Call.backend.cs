@@ -13,6 +13,16 @@ public abstract partial class Call : UbluxDocument, IReferncesAccount
     [IgnoreDataMember]
     [IsRequired]
     public required string IdAccount { get; set; }
+
+    /// <inheritdoc />
+    [AllowUpdate(false)]
+    [IgnoreDataMember]
+    public required string ChannelFrom { get; set; }
+    
+    /// <inheritdoc />
+    [AllowUpdate(false)]
+    [IgnoreDataMember]
+    public string? ChannelTo { get; set; }
 }
 
 #endif

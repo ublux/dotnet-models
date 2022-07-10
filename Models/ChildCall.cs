@@ -5,7 +5,7 @@
 /// </summary>
 [JsonConverter(typeof(JsonSubtypes), nameof(ChildCallType))]
 [JsonSubtypes.KnownSubType(typeof(ChildCallForwardToExtension), nameof(ChildCallType.ForwardToExtension))]
-[JsonSubtypes.KnownSubType(typeof(ChildCallAttendantTransferToExtension),nameof(ChildCallType.AttendantTransferToExtension))]
+[JsonSubtypes.KnownSubType(typeof(ChildCallAttendantTransferToExtension), nameof(ChildCallType.AttendantTransferToExtension))]
 [JsonSubtypes.KnownSubType(typeof(ChildCallAttendantTransferToPSTN), nameof(ChildCallType.AttendantTransferToPSTN))]
 [JsonSubtypes.KnownSubType(typeof(ChildCallBlindTransferToExtension), nameof(ChildCallType.BlindTransferToExtension))]
 [JsonSubtypes.KnownSubType(typeof(ChildCallBlindTransferToPSTN), nameof(ChildCallType.BlindTransferToPSTN))]
@@ -16,7 +16,7 @@
     typeof(ChildCallBlindTransferToExtension),
     typeof(ChildCallBlindTransferToPSTN)
 )]
-public abstract partial class ChildCall
+public abstract partial class ChildCall : ICall
 {
     ///// <summary>
     /////     If outgoing:
@@ -39,7 +39,7 @@ public abstract partial class ChildCall
     ///// <summary>
     /////     True if this call was
     ///// </summary>
-    //public bool IsForwarded { get; set; }
+    //public bool IsForwarded { get; set; }    
 
     /// <summary>
     ///     PSTN or EXTEN
@@ -55,5 +55,10 @@ public abstract partial class ChildCall
     /// <summary>
     ///     Status of call
     /// </summary>
-    public DialStatus Status { get; set; }
+    public required string DialStatus { get; set; }
+
+    /// <inheritdoc />
+    public DateTime DateCreated { get; set; }
+    /// <inheritdoc />
+    public DateTime? DateEnded { get; set; }
 }

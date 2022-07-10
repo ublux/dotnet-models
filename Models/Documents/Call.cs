@@ -1,5 +1,7 @@
 ﻿namespace Ublux.Communications.Models.Documents;
 
+
+
 /// <summary>
 ///     Ublux phone call
 /// </summary>
@@ -14,7 +16,7 @@
     typeof(CallOutgoingToExtension),
     typeof(CallOutgoingToPSTN)
 )]
-public abstract partial class Call : UbluxDocument
+public abstract partial class Call : UbluxDocument, ICall
 {
     #region Properties
 
@@ -54,13 +56,7 @@ public abstract partial class Call : UbluxDocument
     public abstract Contact? Contact { get; set; }
 
     #endregion
-
-    /// <summary>
-    ///     DateEnded - DateCreated will let you know the duration of call
-    /// </summary>
-    [AllowUpdate(false)]
-    public DateTime? DateEnded { get; set; }
-
+   
     /// <summary>
     ///     ANSWER: Call is answered. A successful dial. The caller reached the callee.
     ///     BUSY: Busy signal. The dial command reached its number but the number is busy.
@@ -73,7 +69,7 @@ public abstract partial class Call : UbluxDocument
     ///     INVALIDARGS: Error parsing Dial command arguments (added for Asterisk 1.4.1, SVN r53135-53136)
     /// </summary>
     [AllowUpdate(false)]
-    public DialStatus Status { get; set; }
+    public required string DialStatus { get; set; }
 
     /// <summary>
     ///     Number of seconds it took to answer
@@ -145,6 +141,10 @@ public abstract partial class Call : UbluxDocument
     /// </summary>               
     [AllowUpdate(false)]
     public bool IsInternational { get; set; }
+
+    /// <inheritdoc />
+    [AllowUpdate(false)]
+    public DateTime? DateEnded { get; set; }
 
     #endregion
 }
