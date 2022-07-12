@@ -392,6 +392,10 @@ public class ExtensionCallFlowUpdateRequest // : IUbluxDocumentId
     /// </summary>
     public String? IdMusicOnHoldGroup { get; set; }
     /// <summary>
+    /// Extension friendly name
+    /// </summary>
+    public String? FriendlyName { get; set; }
+    /// <summary>
     /// Extension number
     /// </summary>
     public String? Number { get; set; }
@@ -410,6 +414,8 @@ public class ExtensionCallFlowUpdateRequest // : IUbluxDocumentId
             extensionCallFlow.TimeZone = this.TimeZone;
         if(this.IdMusicOnHoldGroup!=null)
             extensionCallFlow.IdMusicOnHoldGroup = this.IdMusicOnHoldGroup;
+        if(this.FriendlyName!=null)
+            extensionCallFlow.FriendlyName = this.FriendlyName;
         if(this.Number!=null)
             extensionCallFlow.Number = this.Number;
         if(this.InjectExtensionNameToCallerId!=null)
@@ -441,6 +447,10 @@ public class ExtensionConferenceUpdateRequest // : IUbluxDocumentId
     /// </summary>
     public String? IdMusicOnHoldGroup { get; set; }
     /// <summary>
+    /// Extension friendly name
+    /// </summary>
+    public String? FriendlyName { get; set; }
+    /// <summary>
     /// Extension number
     /// </summary>
     public String? Number { get; set; }
@@ -459,6 +469,8 @@ public class ExtensionConferenceUpdateRequest // : IUbluxDocumentId
             extensionConference.Pin = this.Pin;
         if(this.IdMusicOnHoldGroup!=null)
             extensionConference.IdMusicOnHoldGroup = this.IdMusicOnHoldGroup;
+        if(this.FriendlyName!=null)
+            extensionConference.FriendlyName = this.FriendlyName;
         if(this.Number!=null)
             extensionConference.Number = this.Number;
         if(this.InjectExtensionNameToCallerId!=null)
@@ -493,6 +505,10 @@ public class ExtensionDialUpdateRequest // : IUbluxDocumentId
     /// </summary>
     public String? IdMusicOnHoldGroup { get; set; }
     /// <summary>
+    /// Extension friendly name
+    /// </summary>
+    public String? FriendlyName { get; set; }
+    /// <summary>
     /// Extension number
     /// </summary>
     public String? Number { get; set; }
@@ -513,6 +529,8 @@ public class ExtensionDialUpdateRequest // : IUbluxDocumentId
             extensionDial.RingTimeInSeconds = this.RingTimeInSeconds.Value;
         if(this.IdMusicOnHoldGroup!=null)
             extensionDial.IdMusicOnHoldGroup = this.IdMusicOnHoldGroup;
+        if(this.FriendlyName!=null)
+            extensionDial.FriendlyName = this.FriendlyName;
         if(this.Number!=null)
             extensionDial.Number = this.Number;
         if(this.InjectExtensionNameToCallerId!=null)
@@ -571,6 +589,10 @@ public class ExtensionQueueUpdateRequest // : IUbluxDocumentId
     /// </summary>
     public String? IdMusicOnHoldGroup { get; set; }
     /// <summary>
+    /// Extension friendly name
+    /// </summary>
+    public String? FriendlyName { get; set; }
+    /// <summary>
     /// Extension number
     /// </summary>
     public String? Number { get; set; }
@@ -603,6 +625,8 @@ public class ExtensionQueueUpdateRequest // : IUbluxDocumentId
             extensionQueue.RetryFrequency = this.RetryFrequency.Value;
         if(this.IdMusicOnHoldGroup!=null)
             extensionQueue.IdMusicOnHoldGroup = this.IdMusicOnHoldGroup;
+        if(this.FriendlyName!=null)
+            extensionQueue.FriendlyName = this.FriendlyName;
         if(this.Number!=null)
             extensionQueue.Number = this.Number;
         if(this.InjectExtensionNameToCallerId!=null)
@@ -641,6 +665,10 @@ public class ExtensionVoicemailUpdateRequest // : IUbluxDocumentId
     /// </summary>
     public String? IdMusicOnHoldGroup { get; set; }
     /// <summary>
+    /// Extension friendly name
+    /// </summary>
+    public String? FriendlyName { get; set; }
+    /// <summary>
     /// Extension number
     /// </summary>
     public String? Number { get; set; }
@@ -663,6 +691,8 @@ public class ExtensionVoicemailUpdateRequest // : IUbluxDocumentId
             extensionVoicemail.TextToSpeechVoiceId = this.TextToSpeechVoiceId;
         if(this.IdMusicOnHoldGroup!=null)
             extensionVoicemail.IdMusicOnHoldGroup = this.IdMusicOnHoldGroup;
+        if(this.FriendlyName!=null)
+            extensionVoicemail.FriendlyName = this.FriendlyName;
         if(this.Number!=null)
             extensionVoicemail.Number = this.Number;
         if(this.InjectExtensionNameToCallerId!=null)

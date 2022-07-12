@@ -909,25 +909,19 @@ public class CallIncomingToCallFlowFilterRequest
     public string? ChannelVariables_CallerIdNumber_REG { get; set; }
 
 
-    /// <summary> ChildCalls.ChannelFrom equals </summary>
-    [JsonProperty("childCalls_channelFrom_eq")]
-    public string? ChildCalls_ChannelFrom_EQ { get; set; }
-    /// <summary> ChildCalls.ChannelFrom contains </summary>
-    [JsonProperty("childCalls_channelFrom_con")]
-    public string? ChildCalls_ChannelFrom_CON { get; set; }
-    /// <summary> ChildCalls.ChannelFrom regex </summary>
-    [JsonProperty("childCalls_channelFrom_reg")]
-    public string? ChildCalls_ChannelFrom_REG { get; set; }
+    /// <summary> ChildCalls.ChildCallType equals </summary>
+    [JsonProperty("childCalls_childCallType_eq")]
+    public ChildCallType? ChildCalls_ChildCallType_EQ { get; set; }
 
-    /// <summary> ChildCalls.ChannelTo equals </summary>
-    [JsonProperty("childCalls_channelTo_eq")]
-    public string? ChildCalls_ChannelTo_EQ { get; set; }
-    /// <summary> ChildCalls.ChannelTo contains </summary>
-    [JsonProperty("childCalls_channelTo_con")]
-    public string? ChildCalls_ChannelTo_CON { get; set; }
-    /// <summary> ChildCalls.ChannelTo regex </summary>
-    [JsonProperty("childCalls_channelTo_reg")]
-    public string? ChildCalls_ChannelTo_REG { get; set; }
+    /// <summary> ChildCalls.DialStatus equals </summary>
+    [JsonProperty("childCalls_dialStatus_eq")]
+    public string? ChildCalls_DialStatus_EQ { get; set; }
+    /// <summary> ChildCalls.DialStatus contains </summary>
+    [JsonProperty("childCalls_dialStatus_con")]
+    public string? ChildCalls_DialStatus_CON { get; set; }
+    /// <summary> ChildCalls.DialStatus regex </summary>
+    [JsonProperty("childCalls_dialStatus_reg")]
+    public string? ChildCalls_DialStatus_REG { get; set; }
 
     /// <summary> ChildCalls.DateCreated equals </summary>
     [JsonProperty("childCalls_dateCreated_eq")]
@@ -949,30 +943,6 @@ public class CallIncomingToCallFlowFilterRequest
     [JsonProperty("childCalls_dateEnded_gte")]
     public DateTime? ChildCalls_DateEnded_GTE { get; set; }
 
-    /// <summary> ChildCalls.ChildCallType equals </summary>
-    [JsonProperty("childCalls_childCallType_eq")]
-    public ChildCallType? ChildCalls_ChildCallType_EQ { get; set; }
-
-    /// <summary> ChildCalls.DialStatus equals </summary>
-    [JsonProperty("childCalls_dialStatus_eq")]
-    public string? ChildCalls_DialStatus_EQ { get; set; }
-    /// <summary> ChildCalls.DialStatus contains </summary>
-    [JsonProperty("childCalls_dialStatus_con")]
-    public string? ChildCalls_DialStatus_CON { get; set; }
-    /// <summary> ChildCalls.DialStatus regex </summary>
-    [JsonProperty("childCalls_dialStatus_reg")]
-    public string? ChildCalls_DialStatus_REG { get; set; }
-
-
-    /// <summary> DateEnded equals </summary>
-    [JsonProperty("dateEnded_eq")]
-    public DateTime? DateEnded_EQ { get; set; }
-    /// <summary> DateEnded less than or equal to </summary>
-    [JsonProperty("dateEnded_lte")]
-    public DateTime? DateEnded_LTE { get; set; }
-    /// <summary> DateEnded greater than or equal to </summary>
-    [JsonProperty("dateEnded_gte")]
-    public DateTime? DateEnded_GTE { get; set; }
 
     /// <summary> DialStatus equals </summary>
     [JsonProperty("dialStatus_eq")]
@@ -1133,6 +1103,16 @@ public class CallIncomingToCallFlowFilterRequest
     [JsonProperty("isInternational_eq")]
     public bool? IsInternational_EQ { get; set; }
 
+    /// <summary> DateEnded equals </summary>
+    [JsonProperty("dateEnded_eq")]
+    public DateTime? DateEnded_EQ { get; set; }
+    /// <summary> DateEnded less than or equal to </summary>
+    [JsonProperty("dateEnded_lte")]
+    public DateTime? DateEnded_LTE { get; set; }
+    /// <summary> DateEnded greater than or equal to </summary>
+    [JsonProperty("dateEnded_gte")]
+    public DateTime? DateEnded_GTE { get; set; }
+
     /// <summary> Id equals </summary>
     [JsonProperty("id_eq")]
     public string? Id_EQ { get; set; }
@@ -1180,6 +1160,16 @@ public class CallIncomingToExtensionFilterRequest
     /// <summary> Extension.ExtensionType equals </summary>
     [JsonProperty("extension_extensionType_eq")]
     public ExtensionType? Extension_ExtensionType_EQ { get; set; }
+
+    /// <summary> Extension.FriendlyName equals </summary>
+    [JsonProperty("extension_friendlyName_eq")]
+    public string? Extension_FriendlyName_EQ { get; set; }
+    /// <summary> Extension.FriendlyName contains </summary>
+    [JsonProperty("extension_friendlyName_con")]
+    public string? Extension_FriendlyName_CON { get; set; }
+    /// <summary> Extension.FriendlyName regex </summary>
+    [JsonProperty("extension_friendlyName_reg")]
+    public string? Extension_FriendlyName_REG { get; set; }
 
     /// <summary> Extension.Number equals </summary>
     [JsonProperty("extension_number_eq")]
@@ -1861,25 +1851,19 @@ public class CallIncomingToExtensionFilterRequest
     public string? ChannelVariables_CallerIdNumber_REG { get; set; }
 
 
-    /// <summary> ChildCalls.ChannelFrom equals </summary>
-    [JsonProperty("childCalls_channelFrom_eq")]
-    public string? ChildCalls_ChannelFrom_EQ { get; set; }
-    /// <summary> ChildCalls.ChannelFrom contains </summary>
-    [JsonProperty("childCalls_channelFrom_con")]
-    public string? ChildCalls_ChannelFrom_CON { get; set; }
-    /// <summary> ChildCalls.ChannelFrom regex </summary>
-    [JsonProperty("childCalls_channelFrom_reg")]
-    public string? ChildCalls_ChannelFrom_REG { get; set; }
+    /// <summary> ChildCalls.ChildCallType equals </summary>
+    [JsonProperty("childCalls_childCallType_eq")]
+    public ChildCallType? ChildCalls_ChildCallType_EQ { get; set; }
 
-    /// <summary> ChildCalls.ChannelTo equals </summary>
-    [JsonProperty("childCalls_channelTo_eq")]
-    public string? ChildCalls_ChannelTo_EQ { get; set; }
-    /// <summary> ChildCalls.ChannelTo contains </summary>
-    [JsonProperty("childCalls_channelTo_con")]
-    public string? ChildCalls_ChannelTo_CON { get; set; }
-    /// <summary> ChildCalls.ChannelTo regex </summary>
-    [JsonProperty("childCalls_channelTo_reg")]
-    public string? ChildCalls_ChannelTo_REG { get; set; }
+    /// <summary> ChildCalls.DialStatus equals </summary>
+    [JsonProperty("childCalls_dialStatus_eq")]
+    public string? ChildCalls_DialStatus_EQ { get; set; }
+    /// <summary> ChildCalls.DialStatus contains </summary>
+    [JsonProperty("childCalls_dialStatus_con")]
+    public string? ChildCalls_DialStatus_CON { get; set; }
+    /// <summary> ChildCalls.DialStatus regex </summary>
+    [JsonProperty("childCalls_dialStatus_reg")]
+    public string? ChildCalls_DialStatus_REG { get; set; }
 
     /// <summary> ChildCalls.DateCreated equals </summary>
     [JsonProperty("childCalls_dateCreated_eq")]
@@ -1901,30 +1885,6 @@ public class CallIncomingToExtensionFilterRequest
     [JsonProperty("childCalls_dateEnded_gte")]
     public DateTime? ChildCalls_DateEnded_GTE { get; set; }
 
-    /// <summary> ChildCalls.ChildCallType equals </summary>
-    [JsonProperty("childCalls_childCallType_eq")]
-    public ChildCallType? ChildCalls_ChildCallType_EQ { get; set; }
-
-    /// <summary> ChildCalls.DialStatus equals </summary>
-    [JsonProperty("childCalls_dialStatus_eq")]
-    public string? ChildCalls_DialStatus_EQ { get; set; }
-    /// <summary> ChildCalls.DialStatus contains </summary>
-    [JsonProperty("childCalls_dialStatus_con")]
-    public string? ChildCalls_DialStatus_CON { get; set; }
-    /// <summary> ChildCalls.DialStatus regex </summary>
-    [JsonProperty("childCalls_dialStatus_reg")]
-    public string? ChildCalls_DialStatus_REG { get; set; }
-
-
-    /// <summary> DateEnded equals </summary>
-    [JsonProperty("dateEnded_eq")]
-    public DateTime? DateEnded_EQ { get; set; }
-    /// <summary> DateEnded less than or equal to </summary>
-    [JsonProperty("dateEnded_lte")]
-    public DateTime? DateEnded_LTE { get; set; }
-    /// <summary> DateEnded greater than or equal to </summary>
-    [JsonProperty("dateEnded_gte")]
-    public DateTime? DateEnded_GTE { get; set; }
 
     /// <summary> DialStatus equals </summary>
     [JsonProperty("dialStatus_eq")]
@@ -2085,6 +2045,16 @@ public class CallIncomingToExtensionFilterRequest
     [JsonProperty("isInternational_eq")]
     public bool? IsInternational_EQ { get; set; }
 
+    /// <summary> DateEnded equals </summary>
+    [JsonProperty("dateEnded_eq")]
+    public DateTime? DateEnded_EQ { get; set; }
+    /// <summary> DateEnded less than or equal to </summary>
+    [JsonProperty("dateEnded_lte")]
+    public DateTime? DateEnded_LTE { get; set; }
+    /// <summary> DateEnded greater than or equal to </summary>
+    [JsonProperty("dateEnded_gte")]
+    public DateTime? DateEnded_GTE { get; set; }
+
     /// <summary> Id equals </summary>
     [JsonProperty("id_eq")]
     public string? Id_EQ { get; set; }
@@ -2132,6 +2102,16 @@ public class CallOutgoingToExtensionFilterRequest
     /// <summary> Extension.ExtensionType equals </summary>
     [JsonProperty("extension_extensionType_eq")]
     public ExtensionType? Extension_ExtensionType_EQ { get; set; }
+
+    /// <summary> Extension.FriendlyName equals </summary>
+    [JsonProperty("extension_friendlyName_eq")]
+    public string? Extension_FriendlyName_EQ { get; set; }
+    /// <summary> Extension.FriendlyName contains </summary>
+    [JsonProperty("extension_friendlyName_con")]
+    public string? Extension_FriendlyName_CON { get; set; }
+    /// <summary> Extension.FriendlyName regex </summary>
+    [JsonProperty("extension_friendlyName_reg")]
+    public string? Extension_FriendlyName_REG { get; set; }
 
     /// <summary> Extension.Number equals </summary>
     [JsonProperty("extension_number_eq")]
@@ -2921,25 +2901,19 @@ public class CallOutgoingToExtensionFilterRequest
     public string? ChannelVariables_CallerIdNumber_REG { get; set; }
 
 
-    /// <summary> ChildCalls.ChannelFrom equals </summary>
-    [JsonProperty("childCalls_channelFrom_eq")]
-    public string? ChildCalls_ChannelFrom_EQ { get; set; }
-    /// <summary> ChildCalls.ChannelFrom contains </summary>
-    [JsonProperty("childCalls_channelFrom_con")]
-    public string? ChildCalls_ChannelFrom_CON { get; set; }
-    /// <summary> ChildCalls.ChannelFrom regex </summary>
-    [JsonProperty("childCalls_channelFrom_reg")]
-    public string? ChildCalls_ChannelFrom_REG { get; set; }
+    /// <summary> ChildCalls.ChildCallType equals </summary>
+    [JsonProperty("childCalls_childCallType_eq")]
+    public ChildCallType? ChildCalls_ChildCallType_EQ { get; set; }
 
-    /// <summary> ChildCalls.ChannelTo equals </summary>
-    [JsonProperty("childCalls_channelTo_eq")]
-    public string? ChildCalls_ChannelTo_EQ { get; set; }
-    /// <summary> ChildCalls.ChannelTo contains </summary>
-    [JsonProperty("childCalls_channelTo_con")]
-    public string? ChildCalls_ChannelTo_CON { get; set; }
-    /// <summary> ChildCalls.ChannelTo regex </summary>
-    [JsonProperty("childCalls_channelTo_reg")]
-    public string? ChildCalls_ChannelTo_REG { get; set; }
+    /// <summary> ChildCalls.DialStatus equals </summary>
+    [JsonProperty("childCalls_dialStatus_eq")]
+    public string? ChildCalls_DialStatus_EQ { get; set; }
+    /// <summary> ChildCalls.DialStatus contains </summary>
+    [JsonProperty("childCalls_dialStatus_con")]
+    public string? ChildCalls_DialStatus_CON { get; set; }
+    /// <summary> ChildCalls.DialStatus regex </summary>
+    [JsonProperty("childCalls_dialStatus_reg")]
+    public string? ChildCalls_DialStatus_REG { get; set; }
 
     /// <summary> ChildCalls.DateCreated equals </summary>
     [JsonProperty("childCalls_dateCreated_eq")]
@@ -2961,30 +2935,6 @@ public class CallOutgoingToExtensionFilterRequest
     [JsonProperty("childCalls_dateEnded_gte")]
     public DateTime? ChildCalls_DateEnded_GTE { get; set; }
 
-    /// <summary> ChildCalls.ChildCallType equals </summary>
-    [JsonProperty("childCalls_childCallType_eq")]
-    public ChildCallType? ChildCalls_ChildCallType_EQ { get; set; }
-
-    /// <summary> ChildCalls.DialStatus equals </summary>
-    [JsonProperty("childCalls_dialStatus_eq")]
-    public string? ChildCalls_DialStatus_EQ { get; set; }
-    /// <summary> ChildCalls.DialStatus contains </summary>
-    [JsonProperty("childCalls_dialStatus_con")]
-    public string? ChildCalls_DialStatus_CON { get; set; }
-    /// <summary> ChildCalls.DialStatus regex </summary>
-    [JsonProperty("childCalls_dialStatus_reg")]
-    public string? ChildCalls_DialStatus_REG { get; set; }
-
-
-    /// <summary> DateEnded equals </summary>
-    [JsonProperty("dateEnded_eq")]
-    public DateTime? DateEnded_EQ { get; set; }
-    /// <summary> DateEnded less than or equal to </summary>
-    [JsonProperty("dateEnded_lte")]
-    public DateTime? DateEnded_LTE { get; set; }
-    /// <summary> DateEnded greater than or equal to </summary>
-    [JsonProperty("dateEnded_gte")]
-    public DateTime? DateEnded_GTE { get; set; }
 
     /// <summary> DialStatus equals </summary>
     [JsonProperty("dialStatus_eq")]
@@ -3144,6 +3094,16 @@ public class CallOutgoingToExtensionFilterRequest
     /// <summary> IsInternational equals </summary>
     [JsonProperty("isInternational_eq")]
     public bool? IsInternational_EQ { get; set; }
+
+    /// <summary> DateEnded equals </summary>
+    [JsonProperty("dateEnded_eq")]
+    public DateTime? DateEnded_EQ { get; set; }
+    /// <summary> DateEnded less than or equal to </summary>
+    [JsonProperty("dateEnded_lte")]
+    public DateTime? DateEnded_LTE { get; set; }
+    /// <summary> DateEnded greater than or equal to </summary>
+    [JsonProperty("dateEnded_gte")]
+    public DateTime? DateEnded_GTE { get; set; }
 
     /// <summary> Id equals </summary>
     [JsonProperty("id_eq")]
@@ -3552,25 +3512,19 @@ public class CallOutgoingToPSTNFilterRequest
     public string? ChannelVariables_CallerIdNumber_REG { get; set; }
 
 
-    /// <summary> ChildCalls.ChannelFrom equals </summary>
-    [JsonProperty("childCalls_channelFrom_eq")]
-    public string? ChildCalls_ChannelFrom_EQ { get; set; }
-    /// <summary> ChildCalls.ChannelFrom contains </summary>
-    [JsonProperty("childCalls_channelFrom_con")]
-    public string? ChildCalls_ChannelFrom_CON { get; set; }
-    /// <summary> ChildCalls.ChannelFrom regex </summary>
-    [JsonProperty("childCalls_channelFrom_reg")]
-    public string? ChildCalls_ChannelFrom_REG { get; set; }
+    /// <summary> ChildCalls.ChildCallType equals </summary>
+    [JsonProperty("childCalls_childCallType_eq")]
+    public ChildCallType? ChildCalls_ChildCallType_EQ { get; set; }
 
-    /// <summary> ChildCalls.ChannelTo equals </summary>
-    [JsonProperty("childCalls_channelTo_eq")]
-    public string? ChildCalls_ChannelTo_EQ { get; set; }
-    /// <summary> ChildCalls.ChannelTo contains </summary>
-    [JsonProperty("childCalls_channelTo_con")]
-    public string? ChildCalls_ChannelTo_CON { get; set; }
-    /// <summary> ChildCalls.ChannelTo regex </summary>
-    [JsonProperty("childCalls_channelTo_reg")]
-    public string? ChildCalls_ChannelTo_REG { get; set; }
+    /// <summary> ChildCalls.DialStatus equals </summary>
+    [JsonProperty("childCalls_dialStatus_eq")]
+    public string? ChildCalls_DialStatus_EQ { get; set; }
+    /// <summary> ChildCalls.DialStatus contains </summary>
+    [JsonProperty("childCalls_dialStatus_con")]
+    public string? ChildCalls_DialStatus_CON { get; set; }
+    /// <summary> ChildCalls.DialStatus regex </summary>
+    [JsonProperty("childCalls_dialStatus_reg")]
+    public string? ChildCalls_DialStatus_REG { get; set; }
 
     /// <summary> ChildCalls.DateCreated equals </summary>
     [JsonProperty("childCalls_dateCreated_eq")]
@@ -3592,30 +3546,6 @@ public class CallOutgoingToPSTNFilterRequest
     [JsonProperty("childCalls_dateEnded_gte")]
     public DateTime? ChildCalls_DateEnded_GTE { get; set; }
 
-    /// <summary> ChildCalls.ChildCallType equals </summary>
-    [JsonProperty("childCalls_childCallType_eq")]
-    public ChildCallType? ChildCalls_ChildCallType_EQ { get; set; }
-
-    /// <summary> ChildCalls.DialStatus equals </summary>
-    [JsonProperty("childCalls_dialStatus_eq")]
-    public string? ChildCalls_DialStatus_EQ { get; set; }
-    /// <summary> ChildCalls.DialStatus contains </summary>
-    [JsonProperty("childCalls_dialStatus_con")]
-    public string? ChildCalls_DialStatus_CON { get; set; }
-    /// <summary> ChildCalls.DialStatus regex </summary>
-    [JsonProperty("childCalls_dialStatus_reg")]
-    public string? ChildCalls_DialStatus_REG { get; set; }
-
-
-    /// <summary> DateEnded equals </summary>
-    [JsonProperty("dateEnded_eq")]
-    public DateTime? DateEnded_EQ { get; set; }
-    /// <summary> DateEnded less than or equal to </summary>
-    [JsonProperty("dateEnded_lte")]
-    public DateTime? DateEnded_LTE { get; set; }
-    /// <summary> DateEnded greater than or equal to </summary>
-    [JsonProperty("dateEnded_gte")]
-    public DateTime? DateEnded_GTE { get; set; }
 
     /// <summary> DialStatus equals </summary>
     [JsonProperty("dialStatus_eq")]
@@ -3775,6 +3705,16 @@ public class CallOutgoingToPSTNFilterRequest
     /// <summary> IsInternational equals </summary>
     [JsonProperty("isInternational_eq")]
     public bool? IsInternational_EQ { get; set; }
+
+    /// <summary> DateEnded equals </summary>
+    [JsonProperty("dateEnded_eq")]
+    public DateTime? DateEnded_EQ { get; set; }
+    /// <summary> DateEnded less than or equal to </summary>
+    [JsonProperty("dateEnded_lte")]
+    public DateTime? DateEnded_LTE { get; set; }
+    /// <summary> DateEnded greater than or equal to </summary>
+    [JsonProperty("dateEnded_gte")]
+    public DateTime? DateEnded_GTE { get; set; }
 
     /// <summary> Id equals </summary>
     [JsonProperty("id_eq")]
@@ -4505,6 +4445,16 @@ public class ExtensionCallFlowFilterRequest
     [JsonProperty("idMusicOnHoldGroup_reg")]
     public string? IdMusicOnHoldGroup_REG { get; set; }
 
+    /// <summary> FriendlyName equals </summary>
+    [JsonProperty("friendlyName_eq")]
+    public string? FriendlyName_EQ { get; set; }
+    /// <summary> FriendlyName contains </summary>
+    [JsonProperty("friendlyName_con")]
+    public string? FriendlyName_CON { get; set; }
+    /// <summary> FriendlyName regex </summary>
+    [JsonProperty("friendlyName_reg")]
+    public string? FriendlyName_REG { get; set; }
+
     /// <summary> Number equals </summary>
     [JsonProperty("number_eq")]
     public string? Number_EQ { get; set; }
@@ -4590,6 +4540,16 @@ public class ExtensionConferenceFilterRequest
     /// <summary> IdMusicOnHoldGroup regex </summary>
     [JsonProperty("idMusicOnHoldGroup_reg")]
     public string? IdMusicOnHoldGroup_REG { get; set; }
+
+    /// <summary> FriendlyName equals </summary>
+    [JsonProperty("friendlyName_eq")]
+    public string? FriendlyName_EQ { get; set; }
+    /// <summary> FriendlyName contains </summary>
+    [JsonProperty("friendlyName_con")]
+    public string? FriendlyName_CON { get; set; }
+    /// <summary> FriendlyName regex </summary>
+    [JsonProperty("friendlyName_reg")]
+    public string? FriendlyName_REG { get; set; }
 
     /// <summary> Number equals </summary>
     [JsonProperty("number_eq")]
@@ -4698,6 +4658,16 @@ public class ExtensionDialFilterRequest
     /// <summary> IdMusicOnHoldGroup regex </summary>
     [JsonProperty("idMusicOnHoldGroup_reg")]
     public string? IdMusicOnHoldGroup_REG { get; set; }
+
+    /// <summary> FriendlyName equals </summary>
+    [JsonProperty("friendlyName_eq")]
+    public string? FriendlyName_EQ { get; set; }
+    /// <summary> FriendlyName contains </summary>
+    [JsonProperty("friendlyName_con")]
+    public string? FriendlyName_CON { get; set; }
+    /// <summary> FriendlyName regex </summary>
+    [JsonProperty("friendlyName_reg")]
+    public string? FriendlyName_REG { get; set; }
 
     /// <summary> Number equals </summary>
     [JsonProperty("number_eq")]
@@ -4871,6 +4841,16 @@ public class ExtensionQueueFilterRequest
     [JsonProperty("idMusicOnHoldGroup_reg")]
     public string? IdMusicOnHoldGroup_REG { get; set; }
 
+    /// <summary> FriendlyName equals </summary>
+    [JsonProperty("friendlyName_eq")]
+    public string? FriendlyName_EQ { get; set; }
+    /// <summary> FriendlyName contains </summary>
+    [JsonProperty("friendlyName_con")]
+    public string? FriendlyName_CON { get; set; }
+    /// <summary> FriendlyName regex </summary>
+    [JsonProperty("friendlyName_reg")]
+    public string? FriendlyName_REG { get; set; }
+
     /// <summary> Number equals </summary>
     [JsonProperty("number_eq")]
     public string? Number_EQ { get; set; }
@@ -4982,6 +4962,16 @@ public class ExtensionVoicemailFilterRequest
     /// <summary> IdMusicOnHoldGroup regex </summary>
     [JsonProperty("idMusicOnHoldGroup_reg")]
     public string? IdMusicOnHoldGroup_REG { get; set; }
+
+    /// <summary> FriendlyName equals </summary>
+    [JsonProperty("friendlyName_eq")]
+    public string? FriendlyName_EQ { get; set; }
+    /// <summary> FriendlyName contains </summary>
+    [JsonProperty("friendlyName_con")]
+    public string? FriendlyName_CON { get; set; }
+    /// <summary> FriendlyName regex </summary>
+    [JsonProperty("friendlyName_reg")]
+    public string? FriendlyName_REG { get; set; }
 
     /// <summary> Number equals </summary>
     [JsonProperty("number_eq")]
@@ -7340,6 +7330,16 @@ public class VoicemailForwardedFilterRequest
     [JsonProperty("extensionForwarded_extensionType_eq")]
     public ExtensionType? ExtensionForwarded_ExtensionType_EQ { get; set; }
 
+    /// <summary> ExtensionForwarded.FriendlyName equals </summary>
+    [JsonProperty("extensionForwarded_friendlyName_eq")]
+    public string? ExtensionForwarded_FriendlyName_EQ { get; set; }
+    /// <summary> ExtensionForwarded.FriendlyName contains </summary>
+    [JsonProperty("extensionForwarded_friendlyName_con")]
+    public string? ExtensionForwarded_FriendlyName_CON { get; set; }
+    /// <summary> ExtensionForwarded.FriendlyName regex </summary>
+    [JsonProperty("extensionForwarded_friendlyName_reg")]
+    public string? ExtensionForwarded_FriendlyName_REG { get; set; }
+
     /// <summary> ExtensionForwarded.Number equals </summary>
     [JsonProperty("extensionForwarded_number_eq")]
     public string? ExtensionForwarded_Number_EQ { get; set; }
@@ -8403,25 +8403,19 @@ public class CallFilterRequest
     public string? ChannelVariables_CallerIdNumber_REG { get; set; }
 
 
-    /// <summary> ChildCalls.ChannelFrom equals </summary>
-    [JsonProperty("childCalls_channelFrom_eq")]
-    public string? ChildCalls_ChannelFrom_EQ { get; set; }
-    /// <summary> ChildCalls.ChannelFrom contains </summary>
-    [JsonProperty("childCalls_channelFrom_con")]
-    public string? ChildCalls_ChannelFrom_CON { get; set; }
-    /// <summary> ChildCalls.ChannelFrom regex </summary>
-    [JsonProperty("childCalls_channelFrom_reg")]
-    public string? ChildCalls_ChannelFrom_REG { get; set; }
+    /// <summary> ChildCalls.ChildCallType equals </summary>
+    [JsonProperty("childCalls_childCallType_eq")]
+    public ChildCallType? ChildCalls_ChildCallType_EQ { get; set; }
 
-    /// <summary> ChildCalls.ChannelTo equals </summary>
-    [JsonProperty("childCalls_channelTo_eq")]
-    public string? ChildCalls_ChannelTo_EQ { get; set; }
-    /// <summary> ChildCalls.ChannelTo contains </summary>
-    [JsonProperty("childCalls_channelTo_con")]
-    public string? ChildCalls_ChannelTo_CON { get; set; }
-    /// <summary> ChildCalls.ChannelTo regex </summary>
-    [JsonProperty("childCalls_channelTo_reg")]
-    public string? ChildCalls_ChannelTo_REG { get; set; }
+    /// <summary> ChildCalls.DialStatus equals </summary>
+    [JsonProperty("childCalls_dialStatus_eq")]
+    public string? ChildCalls_DialStatus_EQ { get; set; }
+    /// <summary> ChildCalls.DialStatus contains </summary>
+    [JsonProperty("childCalls_dialStatus_con")]
+    public string? ChildCalls_DialStatus_CON { get; set; }
+    /// <summary> ChildCalls.DialStatus regex </summary>
+    [JsonProperty("childCalls_dialStatus_reg")]
+    public string? ChildCalls_DialStatus_REG { get; set; }
 
     /// <summary> ChildCalls.DateCreated equals </summary>
     [JsonProperty("childCalls_dateCreated_eq")]
@@ -8443,30 +8437,6 @@ public class CallFilterRequest
     [JsonProperty("childCalls_dateEnded_gte")]
     public DateTime? ChildCalls_DateEnded_GTE { get; set; }
 
-    /// <summary> ChildCalls.ChildCallType equals </summary>
-    [JsonProperty("childCalls_childCallType_eq")]
-    public ChildCallType? ChildCalls_ChildCallType_EQ { get; set; }
-
-    /// <summary> ChildCalls.DialStatus equals </summary>
-    [JsonProperty("childCalls_dialStatus_eq")]
-    public string? ChildCalls_DialStatus_EQ { get; set; }
-    /// <summary> ChildCalls.DialStatus contains </summary>
-    [JsonProperty("childCalls_dialStatus_con")]
-    public string? ChildCalls_DialStatus_CON { get; set; }
-    /// <summary> ChildCalls.DialStatus regex </summary>
-    [JsonProperty("childCalls_dialStatus_reg")]
-    public string? ChildCalls_DialStatus_REG { get; set; }
-
-
-    /// <summary> DateEnded equals </summary>
-    [JsonProperty("dateEnded_eq")]
-    public DateTime? DateEnded_EQ { get; set; }
-    /// <summary> DateEnded less than or equal to </summary>
-    [JsonProperty("dateEnded_lte")]
-    public DateTime? DateEnded_LTE { get; set; }
-    /// <summary> DateEnded greater than or equal to </summary>
-    [JsonProperty("dateEnded_gte")]
-    public DateTime? DateEnded_GTE { get; set; }
 
     /// <summary> DialStatus equals </summary>
     [JsonProperty("dialStatus_eq")]
@@ -8626,6 +8596,16 @@ public class CallFilterRequest
     /// <summary> IsInternational equals </summary>
     [JsonProperty("isInternational_eq")]
     public bool? IsInternational_EQ { get; set; }
+
+    /// <summary> DateEnded equals </summary>
+    [JsonProperty("dateEnded_eq")]
+    public DateTime? DateEnded_EQ { get; set; }
+    /// <summary> DateEnded less than or equal to </summary>
+    [JsonProperty("dateEnded_lte")]
+    public DateTime? DateEnded_LTE { get; set; }
+    /// <summary> DateEnded greater than or equal to </summary>
+    [JsonProperty("dateEnded_gte")]
+    public DateTime? DateEnded_GTE { get; set; }
 
     /// <summary> Id equals </summary>
     [JsonProperty("id_eq")]
@@ -8908,25 +8888,19 @@ public class CallIncomingFilterRequest
     public string? ChannelVariables_CallerIdNumber_REG { get; set; }
 
 
-    /// <summary> ChildCalls.ChannelFrom equals </summary>
-    [JsonProperty("childCalls_channelFrom_eq")]
-    public string? ChildCalls_ChannelFrom_EQ { get; set; }
-    /// <summary> ChildCalls.ChannelFrom contains </summary>
-    [JsonProperty("childCalls_channelFrom_con")]
-    public string? ChildCalls_ChannelFrom_CON { get; set; }
-    /// <summary> ChildCalls.ChannelFrom regex </summary>
-    [JsonProperty("childCalls_channelFrom_reg")]
-    public string? ChildCalls_ChannelFrom_REG { get; set; }
+    /// <summary> ChildCalls.ChildCallType equals </summary>
+    [JsonProperty("childCalls_childCallType_eq")]
+    public ChildCallType? ChildCalls_ChildCallType_EQ { get; set; }
 
-    /// <summary> ChildCalls.ChannelTo equals </summary>
-    [JsonProperty("childCalls_channelTo_eq")]
-    public string? ChildCalls_ChannelTo_EQ { get; set; }
-    /// <summary> ChildCalls.ChannelTo contains </summary>
-    [JsonProperty("childCalls_channelTo_con")]
-    public string? ChildCalls_ChannelTo_CON { get; set; }
-    /// <summary> ChildCalls.ChannelTo regex </summary>
-    [JsonProperty("childCalls_channelTo_reg")]
-    public string? ChildCalls_ChannelTo_REG { get; set; }
+    /// <summary> ChildCalls.DialStatus equals </summary>
+    [JsonProperty("childCalls_dialStatus_eq")]
+    public string? ChildCalls_DialStatus_EQ { get; set; }
+    /// <summary> ChildCalls.DialStatus contains </summary>
+    [JsonProperty("childCalls_dialStatus_con")]
+    public string? ChildCalls_DialStatus_CON { get; set; }
+    /// <summary> ChildCalls.DialStatus regex </summary>
+    [JsonProperty("childCalls_dialStatus_reg")]
+    public string? ChildCalls_DialStatus_REG { get; set; }
 
     /// <summary> ChildCalls.DateCreated equals </summary>
     [JsonProperty("childCalls_dateCreated_eq")]
@@ -8948,30 +8922,6 @@ public class CallIncomingFilterRequest
     [JsonProperty("childCalls_dateEnded_gte")]
     public DateTime? ChildCalls_DateEnded_GTE { get; set; }
 
-    /// <summary> ChildCalls.ChildCallType equals </summary>
-    [JsonProperty("childCalls_childCallType_eq")]
-    public ChildCallType? ChildCalls_ChildCallType_EQ { get; set; }
-
-    /// <summary> ChildCalls.DialStatus equals </summary>
-    [JsonProperty("childCalls_dialStatus_eq")]
-    public string? ChildCalls_DialStatus_EQ { get; set; }
-    /// <summary> ChildCalls.DialStatus contains </summary>
-    [JsonProperty("childCalls_dialStatus_con")]
-    public string? ChildCalls_DialStatus_CON { get; set; }
-    /// <summary> ChildCalls.DialStatus regex </summary>
-    [JsonProperty("childCalls_dialStatus_reg")]
-    public string? ChildCalls_DialStatus_REG { get; set; }
-
-
-    /// <summary> DateEnded equals </summary>
-    [JsonProperty("dateEnded_eq")]
-    public DateTime? DateEnded_EQ { get; set; }
-    /// <summary> DateEnded less than or equal to </summary>
-    [JsonProperty("dateEnded_lte")]
-    public DateTime? DateEnded_LTE { get; set; }
-    /// <summary> DateEnded greater than or equal to </summary>
-    [JsonProperty("dateEnded_gte")]
-    public DateTime? DateEnded_GTE { get; set; }
 
     /// <summary> DialStatus equals </summary>
     [JsonProperty("dialStatus_eq")]
@@ -9135,6 +9085,16 @@ public class CallIncomingFilterRequest
     /// <summary> IsInternational equals </summary>
     [JsonProperty("isInternational_eq")]
     public bool? IsInternational_EQ { get; set; }
+
+    /// <summary> DateEnded equals </summary>
+    [JsonProperty("dateEnded_eq")]
+    public DateTime? DateEnded_EQ { get; set; }
+    /// <summary> DateEnded less than or equal to </summary>
+    [JsonProperty("dateEnded_lte")]
+    public DateTime? DateEnded_LTE { get; set; }
+    /// <summary> DateEnded greater than or equal to </summary>
+    [JsonProperty("dateEnded_gte")]
+    public DateTime? DateEnded_GTE { get; set; }
 
     /// <summary> Id equals </summary>
     [JsonProperty("id_eq")]
@@ -9525,25 +9485,19 @@ public class CallOutgoingFilterRequest
     public string? ChannelVariables_CallerIdNumber_REG { get; set; }
 
 
-    /// <summary> ChildCalls.ChannelFrom equals </summary>
-    [JsonProperty("childCalls_channelFrom_eq")]
-    public string? ChildCalls_ChannelFrom_EQ { get; set; }
-    /// <summary> ChildCalls.ChannelFrom contains </summary>
-    [JsonProperty("childCalls_channelFrom_con")]
-    public string? ChildCalls_ChannelFrom_CON { get; set; }
-    /// <summary> ChildCalls.ChannelFrom regex </summary>
-    [JsonProperty("childCalls_channelFrom_reg")]
-    public string? ChildCalls_ChannelFrom_REG { get; set; }
+    /// <summary> ChildCalls.ChildCallType equals </summary>
+    [JsonProperty("childCalls_childCallType_eq")]
+    public ChildCallType? ChildCalls_ChildCallType_EQ { get; set; }
 
-    /// <summary> ChildCalls.ChannelTo equals </summary>
-    [JsonProperty("childCalls_channelTo_eq")]
-    public string? ChildCalls_ChannelTo_EQ { get; set; }
-    /// <summary> ChildCalls.ChannelTo contains </summary>
-    [JsonProperty("childCalls_channelTo_con")]
-    public string? ChildCalls_ChannelTo_CON { get; set; }
-    /// <summary> ChildCalls.ChannelTo regex </summary>
-    [JsonProperty("childCalls_channelTo_reg")]
-    public string? ChildCalls_ChannelTo_REG { get; set; }
+    /// <summary> ChildCalls.DialStatus equals </summary>
+    [JsonProperty("childCalls_dialStatus_eq")]
+    public string? ChildCalls_DialStatus_EQ { get; set; }
+    /// <summary> ChildCalls.DialStatus contains </summary>
+    [JsonProperty("childCalls_dialStatus_con")]
+    public string? ChildCalls_DialStatus_CON { get; set; }
+    /// <summary> ChildCalls.DialStatus regex </summary>
+    [JsonProperty("childCalls_dialStatus_reg")]
+    public string? ChildCalls_DialStatus_REG { get; set; }
 
     /// <summary> ChildCalls.DateCreated equals </summary>
     [JsonProperty("childCalls_dateCreated_eq")]
@@ -9565,30 +9519,6 @@ public class CallOutgoingFilterRequest
     [JsonProperty("childCalls_dateEnded_gte")]
     public DateTime? ChildCalls_DateEnded_GTE { get; set; }
 
-    /// <summary> ChildCalls.ChildCallType equals </summary>
-    [JsonProperty("childCalls_childCallType_eq")]
-    public ChildCallType? ChildCalls_ChildCallType_EQ { get; set; }
-
-    /// <summary> ChildCalls.DialStatus equals </summary>
-    [JsonProperty("childCalls_dialStatus_eq")]
-    public string? ChildCalls_DialStatus_EQ { get; set; }
-    /// <summary> ChildCalls.DialStatus contains </summary>
-    [JsonProperty("childCalls_dialStatus_con")]
-    public string? ChildCalls_DialStatus_CON { get; set; }
-    /// <summary> ChildCalls.DialStatus regex </summary>
-    [JsonProperty("childCalls_dialStatus_reg")]
-    public string? ChildCalls_DialStatus_REG { get; set; }
-
-
-    /// <summary> DateEnded equals </summary>
-    [JsonProperty("dateEnded_eq")]
-    public DateTime? DateEnded_EQ { get; set; }
-    /// <summary> DateEnded less than or equal to </summary>
-    [JsonProperty("dateEnded_lte")]
-    public DateTime? DateEnded_LTE { get; set; }
-    /// <summary> DateEnded greater than or equal to </summary>
-    [JsonProperty("dateEnded_gte")]
-    public DateTime? DateEnded_GTE { get; set; }
 
     /// <summary> DialStatus equals </summary>
     [JsonProperty("dialStatus_eq")]
@@ -9753,6 +9683,16 @@ public class CallOutgoingFilterRequest
     [JsonProperty("isInternational_eq")]
     public bool? IsInternational_EQ { get; set; }
 
+    /// <summary> DateEnded equals </summary>
+    [JsonProperty("dateEnded_eq")]
+    public DateTime? DateEnded_EQ { get; set; }
+    /// <summary> DateEnded less than or equal to </summary>
+    [JsonProperty("dateEnded_lte")]
+    public DateTime? DateEnded_LTE { get; set; }
+    /// <summary> DateEnded greater than or equal to </summary>
+    [JsonProperty("dateEnded_gte")]
+    public DateTime? DateEnded_GTE { get; set; }
+
     /// <summary> Id equals </summary>
     [JsonProperty("id_eq")]
     public string? Id_EQ { get; set; }
@@ -9874,6 +9814,16 @@ public class ExtensionFilterRequest
     /// <summary> ExtensionType equals </summary>
     [JsonProperty("extensionType_eq")]
     public ExtensionType? ExtensionType_EQ { get; set; }
+
+    /// <summary> FriendlyName equals </summary>
+    [JsonProperty("friendlyName_eq")]
+    public string? FriendlyName_EQ { get; set; }
+    /// <summary> FriendlyName contains </summary>
+    [JsonProperty("friendlyName_con")]
+    public string? FriendlyName_CON { get; set; }
+    /// <summary> FriendlyName regex </summary>
+    [JsonProperty("friendlyName_reg")]
+    public string? FriendlyName_REG { get; set; }
 
     /// <summary> Number equals </summary>
     [JsonProperty("number_eq")]
