@@ -1,5 +1,10 @@
 ﻿#if UBLUX_BACKEND
 
+using System.Runtime.CompilerServices;
+
+[assembly: InternalsVisibleTo("Ublux.Communications.WS.IntegrationTests")]
+
+
 namespace Ublux.Communications.Models;
 
 /// <summary>
@@ -30,8 +35,7 @@ public abstract partial class UbluxDocument : IUbluxDocument, IUbluxDocumentId
     /// <summary>
     ///     Only used in unit tests
     /// </summary>
-    [Obsolete($"Only use this for unit tests")]
-    public void UnitTest_SetId(string id)
+    internal void UnitTest_SetId(string id)
     {
         this.id = id;
     }

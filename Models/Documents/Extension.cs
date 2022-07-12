@@ -40,6 +40,13 @@ public abstract partial class Extension : UbluxDocument
     public abstract ExtensionType ExtensionType { get; }
 
     /// <summary>
+    ///     Extension friendly name
+    /// </summary>
+    [AllowUpdate(true)]
+    [IsRequired]
+    public required string FriendlyName { get; set; }
+
+    /// <summary>
     ///     Extension number
     /// </summary>
     [AllowUpdate(true)]
