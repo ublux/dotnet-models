@@ -32,7 +32,7 @@ public partial class TrunkTermination : UbluxDocument
     #endregion
 
     /// <summary>
-    ///     This is the id on the provider. Example: TKaf8091afbf6f8d9299a021b87c5e6f61
+    ///     This is the id that the provider has and not ublux. Example: TKaf8091afbf6f8d9299a021b87c5e6f61
     /// </summary>
     [IgnoreDataMember]
     [AllowUpdate(false)]
