@@ -1,7 +1,5 @@
 ﻿namespace Ublux.Communications.Models.Documents;
 
-
-
 /// <summary>
 ///     Ublux phone call
 /// </summary>
@@ -56,7 +54,7 @@ public abstract partial class Call : UbluxDocument, ICall
     public abstract Contact? Contact { get; set; }
 
     #endregion
-   
+
     /// <summary>
     ///     ANSWER: Call is answered. A successful dial. The caller reached the callee.
     ///     BUSY: Busy signal. The dial command reached its number but the number is busy.
