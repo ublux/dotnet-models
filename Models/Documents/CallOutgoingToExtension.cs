@@ -3,7 +3,7 @@
 /// <summary>
 ///     Call made to an extension
 /// </summary>
-public partial class CallOutgoingToExtension : CallOutgoing
+public partial class CallOutgoingToExtension : CallOutgoing, ICallToExtension
 {
     #region Properties
 

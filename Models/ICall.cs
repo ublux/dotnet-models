@@ -30,5 +30,12 @@ public partial interface ICall
     /// </summary>
     [AllowUpdate(false)]
     string DialStatus { get; set; }
+
+
+    /// <summary>
+    ///     Number of seconds it took to answer
+    /// </summary>
+    [AllowUpdate(false)]
+    int? SecondsItTookToAnswer { get; set; }
 }
 

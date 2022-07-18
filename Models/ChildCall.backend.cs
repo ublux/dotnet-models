@@ -12,7 +12,7 @@ public abstract partial class ChildCall : ICall
     /// <inheritdoc />
     [IgnoreDataMember]
     [AllowUpdate(false)]
-    public string? ChannelTo { get; set; }
+    public string? ChannelTo { get; set; }    
 }
 
 #endif

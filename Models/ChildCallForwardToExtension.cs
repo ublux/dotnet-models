@@ -4,7 +4,7 @@
 ///     If a call is forwarded to an extension. 
 ///     For example if call is made to an extension dial that is configured to be forwarded to another extension if not answered this child call will be created
 /// </summary>
-public class ChildCallForwardToExtension : ChildCall
+public class ChildCallForwardToExtension : ChildCall, ICallToExtension
 {
     /// <summary>
     ///     Extension being called

@@ -61,4 +61,9 @@ public abstract partial class ChildCall : ICall
     public DateTime DateCreated { get; set; }
     /// <inheritdoc />
     public DateTime? DateEnded { get; set; }
+
+    /// <summary>
+    ///     Number of seconds it took to answer
+    /// </summary>
+    public int? SecondsItTookToAnswer { get; set; }
 }
