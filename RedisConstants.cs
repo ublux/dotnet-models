@@ -13,6 +13,11 @@ public class RedisConstants
     public const char DelimeterId = '.';
 
     /// <summary>
+    ///     Delimterer escaped if using a regex
+    /// </summary>
+    public const string DelimeterEscaped = @"\.";
+
+    /// <summary>
     ///     Delimeter used for set. Example Phones:Ac.1
     /// </summary>
     public const char DelimeterSet = ':';
