@@ -37,7 +37,10 @@ public partial class ContactNumber
         this.searchIndex = BuildSearchIndexCommon(account.Id, this.Number);
     }
 
-    private static string BuildSearchIndexCommon(string idAccount, string phoneNumber)
+    /// <summary>
+    ///     Build search index. Example Ac.1-12345678
+    /// </summary>
+    public static string BuildSearchIndexCommon(string idAccount, string phoneNumber)
     {
         if (idAccount.StartsWith(Account.DocumentPrefix) == false)
         {
