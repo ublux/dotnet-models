@@ -31,8 +31,6 @@ public class ChildCallForwardToExtension : ChildCall, ICallToExtension
     ///     ForwardToExtension
     /// </summary>
     [IsRequired]
-    public override ChildCallType ChildCallType { get; } = ChildCallType.ForwardToExtension;
-
-    
+    public override ChildCallType ChildCallType { get; } = ChildCallType.ForwardToExtension;    
 }
 
