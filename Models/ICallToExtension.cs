@@ -3,7 +3,7 @@
 /// <summary>
 ///     Shared between CallOutgoingToExtension and ChildCallForwardToExtension
 /// </summary>
-public interface ICallToExtension : ICall
+public interface ICallToExtension : ICall, IReferncesAccount
 {
     /// <summary>
     ///     Extension being called

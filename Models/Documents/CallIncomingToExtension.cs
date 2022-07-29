@@ -3,7 +3,7 @@
 /// <summary>
 ///     Incoming phone call from PSTN to an extension
 /// </summary>
-public partial class CallIncomingToExtension : CallIncoming
+public partial class CallIncomingToExtension : CallIncoming, ICallToExtension
 {
     #region Properties
 
