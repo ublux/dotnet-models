@@ -16,6 +16,7 @@
     typeof(ExtensionQueue),
     typeof(ExtensionVoicemail)
 )]
+[DebuggerDisplay("Name:{FriendlyName} Number:{Number} ExtensionType:{ExtensionType}")]
 public abstract partial class Extension : UbluxDocument
 {
     #region Properties

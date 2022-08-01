@@ -3,7 +3,7 @@
 /// <summary>
 ///     Rule to execute when receiving fax
 /// </summary>
-public class RuleFax
+public class RuleFax : Rule
 {
     /// <summary>
     ///     Email address where to send fax

@@ -3,7 +3,7 @@
 /// <summary>
 ///     Rule that determines what action to execute when a phone call is received.
 /// </summary>
-public class RulePhone
+public class RulePhone : Rule
 {
     /// <summary>
     ///     Id of Call Flow (IVR) to execute
