@@ -20,8 +20,6 @@ public partial class Identity : UbluxDocument
     [BsonRepresentation(BsonType.String)]
     public required List<UbluxRole> UbluxRoles { get; set; }
 
-
-
     #endregion
 
     /// <summary>
