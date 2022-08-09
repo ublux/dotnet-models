@@ -3,7 +3,7 @@
 /// <summary>
 ///     Call is attended transferred to extension
 /// </summary>
-public class ChildCallAttendantTransferToExtension : ChildCall
+public class ChildCallAttendantTransferToExtension : ChildCall, IAttendantTransfer
 {
     /// <summary>
     ///     Extension to whom it was transferred
@@ -15,4 +15,9 @@ public class ChildCallAttendantTransferToExtension : ChildCall
     /// </summary>
     [IsRequired]
     public override ChildCallType ChildCallType { get; } = ChildCallType.AttendantTransferToExtension;
+
+
+    /// <summary> Id of call that attendant transfered this call </summary>
+
+    public required string IdCallAttendantTransfer { get; set; }
 }

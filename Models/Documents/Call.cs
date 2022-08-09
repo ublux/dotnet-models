@@ -27,6 +27,14 @@ public abstract partial class Call : UbluxDocument, ICall
     [References(typeof(Voicemail))]
     public string? IdVoicemail { get; set; }
 
+    /// <summary>
+    ///     This call was originated with the purpose of tranfering another call with this id    
+    ///     When this variable is set the call is marked as completed
+    /// </summary>
+    [AllowUpdate(false)]
+    [References(typeof(Call))]
+    public string? IdCallThatTerminatedThisCallDoToAttendantTransfer { get; set; }
+
     #endregion
 
     #region Subdocuments
