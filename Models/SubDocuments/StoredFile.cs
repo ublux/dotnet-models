@@ -8,6 +8,13 @@ public partial class StoredFile : UbluxSubDocument
     #region Properties
 
     /// <summary>
+    ///     Date when file was stored
+    /// </summary>
+    [AllowUpdate(false)]
+    [IsRequired]
+    public required DateTime DateStored { get; set; }
+
+    /// <summary>
     ///     New because we removed table account data
     ///     How big the file is
     /// </summary>
@@ -16,7 +23,6 @@ public partial class StoredFile : UbluxSubDocument
     public required int FileSizeInBytes { get; set; }
 
     /// <summary>
-    ///     New
     ///     Md5 hash of file
     /// </summary>
     [AllowUpdate(false)]
@@ -27,8 +33,14 @@ public partial class StoredFile : UbluxSubDocument
     ///     Link where it can be downloaded
     /// </summary>
     [AllowUpdate(false)]
+    public string Url => $"https://{ApiDomain}/{nameof(StoredFile)}/{this.IdAccount}/{this.FolderName}/{this.Id}";
+
+    /// <summary>
+    ///     Thanks to this domain url can be built
+    /// </summary>
+    [AllowUpdate(false)]
     [IsRequired]
-    public required string Url { get; set; }
+    public required string ApiDomain { get; set; }
 
     #endregion
 }

@@ -585,6 +585,10 @@ public class ExtensionQueueUpdateRequest // : IUbluxDocumentId
     /// </summary>
     public Int32? RetryFrequency { get; set; }
     /// <summary>
+    /// Strategy to ring queue. Default is RingAll
+    /// </summary>
+    public QueueRingStrategy? RingStrategy { get; set; }
+    /// <summary>
     /// Music on hold to use
     /// </summary>
     public String? IdMusicOnHoldGroup { get; set; }
@@ -623,6 +627,8 @@ public class ExtensionQueueUpdateRequest // : IUbluxDocumentId
             extensionQueue.PlayPositionAnnouncements = this.PlayPositionAnnouncements.Value;
         if(this.RetryFrequency!=null)
             extensionQueue.RetryFrequency = this.RetryFrequency.Value;
+        if(this.RingStrategy!=null)
+            extensionQueue.RingStrategy = this.RingStrategy.Value;
         if(this.IdMusicOnHoldGroup!=null)
             extensionQueue.IdMusicOnHoldGroup = this.IdMusicOnHoldGroup;
         if(this.FriendlyName!=null)

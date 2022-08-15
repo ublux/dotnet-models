@@ -1,5 +1,7 @@
 ﻿#if UBLUX_BACKEND
 
+using System.Text;
+
 namespace Ublux.Communications.Models.SubDocuments;
 
 // Previously called SaveOnAwsBucket
@@ -35,6 +37,12 @@ public partial class StoredFile : UbluxSubDocument, IReferncesAccount
     public required string FileName { get; set; }
 
     /// <summary>
+    ///     Server that stored this file so that other servers can download it. Example W for work. Thus it can be downloaded from w.ublux.com    
+    /// </summary>
+    [AllowUpdate(false)]
+    public required string InstanceId { get; set; }
+
+    /// <summary>
     ///     Common folders where we store files
     /// </summary>
     public static class CommonFolderNames
@@ -63,11 +71,27 @@ public partial class StoredFile : UbluxSubDocument, IReferncesAccount
     /// <summary>
     ///     Get location where it will be stored on file system
     /// </summary>
-    /// <returns></returns>
-    public string GetDirectoryWhereToSaveOnLinux()
+    public static string GetDirectoryWhereToSaveOnLinux(string idAccount, string folderName)
     {
-        return $"/usr/share/ublux/accounts/{IdAccount}/{FolderName}";
+        return $"{GetDirectoryWhereToSaveOnLinuxBase()}/{idAccount}/{folderName}";
     }
+
+    /// <summary> Get base directory where to save accounts data </summary>
+    public static string GetDirectoryWhereToSaveOnLinuxBase() => "/usr/share/ublux/accounts";
+
+    /// <summary>
+    ///     Helper to get hash
+    /// </summary>
+    public static string GetHash(byte[] hash)
+    {
+        var result = new StringBuilder(hash.Length * 2);
+
+        for (int i = 0; i < hash.Length; i++)
+            result.Append(hash[i].ToString("X2"));
+
+        return result.ToString();
+    }
+  
 }
 
 #endif

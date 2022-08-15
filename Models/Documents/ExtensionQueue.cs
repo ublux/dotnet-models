@@ -87,6 +87,12 @@ public partial class ExtensionQueue : Extension
     [IsRequired]
     public required int RetryFrequency { get; set; }
 
+    /// <summary>
+    ///     Strategy to ring queue. Default is RingAll
+    /// </summary>
+    [AllowUpdate(true)]
+    public QueueRingStrategy RingStrategy { get; set; }
+
     #endregion
 
     #region Helper methods

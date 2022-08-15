@@ -276,6 +276,26 @@ public class AirNetworksProvinceFilterRequest
 /// <summary> Enables searching for Audios </summary>
 public class AudioFilterRequest 
 {
+    /// <summary> AudioMp3.InstanceId equals </summary>
+    [JsonProperty("audioMp3_instanceId_eq")]
+    public string? AudioMp3_InstanceId_EQ { get; set; }
+    /// <summary> AudioMp3.InstanceId contains </summary>
+    [JsonProperty("audioMp3_instanceId_con")]
+    public string? AudioMp3_InstanceId_CON { get; set; }
+    /// <summary> AudioMp3.InstanceId regex </summary>
+    [JsonProperty("audioMp3_instanceId_reg")]
+    public string? AudioMp3_InstanceId_REG { get; set; }
+
+    /// <summary> AudioMp3.DateStored equals </summary>
+    [JsonProperty("audioMp3_dateStored_eq")]
+    public DateTime? AudioMp3_DateStored_EQ { get; set; }
+    /// <summary> AudioMp3.DateStored less than or equal to </summary>
+    [JsonProperty("audioMp3_dateStored_lte")]
+    public DateTime? AudioMp3_DateStored_LTE { get; set; }
+    /// <summary> AudioMp3.DateStored greater than or equal to </summary>
+    [JsonProperty("audioMp3_dateStored_gte")]
+    public DateTime? AudioMp3_DateStored_GTE { get; set; }
+
     /// <summary> AudioMp3.FileSizeInBytes equals </summary>
     [JsonProperty("audioMp3_fileSizeInBytes_eq")]
     public System.Int32? AudioMp3_FileSizeInBytes_EQ { get; set; }
@@ -306,6 +326,16 @@ public class AudioFilterRequest
     [JsonProperty("audioMp3_url_reg")]
     public string? AudioMp3_Url_REG { get; set; }
 
+    /// <summary> AudioMp3.ApiDomain equals </summary>
+    [JsonProperty("audioMp3_apiDomain_eq")]
+    public string? AudioMp3_ApiDomain_EQ { get; set; }
+    /// <summary> AudioMp3.ApiDomain contains </summary>
+    [JsonProperty("audioMp3_apiDomain_con")]
+    public string? AudioMp3_ApiDomain_CON { get; set; }
+    /// <summary> AudioMp3.ApiDomain regex </summary>
+    [JsonProperty("audioMp3_apiDomain_reg")]
+    public string? AudioMp3_ApiDomain_REG { get; set; }
+
     /// <summary> AudioMp3.Id equals </summary>
     [JsonProperty("audioMp3_id_eq")]
     public string? AudioMp3_Id_EQ { get; set; }
@@ -316,6 +346,26 @@ public class AudioFilterRequest
     [JsonProperty("audioMp3_id_reg")]
     public string? AudioMp3_Id_REG { get; set; }
 
+
+    /// <summary> AudioWav.InstanceId equals </summary>
+    [JsonProperty("audioWav_instanceId_eq")]
+    public string? AudioWav_InstanceId_EQ { get; set; }
+    /// <summary> AudioWav.InstanceId contains </summary>
+    [JsonProperty("audioWav_instanceId_con")]
+    public string? AudioWav_InstanceId_CON { get; set; }
+    /// <summary> AudioWav.InstanceId regex </summary>
+    [JsonProperty("audioWav_instanceId_reg")]
+    public string? AudioWav_InstanceId_REG { get; set; }
+
+    /// <summary> AudioWav.DateStored equals </summary>
+    [JsonProperty("audioWav_dateStored_eq")]
+    public DateTime? AudioWav_DateStored_EQ { get; set; }
+    /// <summary> AudioWav.DateStored less than or equal to </summary>
+    [JsonProperty("audioWav_dateStored_lte")]
+    public DateTime? AudioWav_DateStored_LTE { get; set; }
+    /// <summary> AudioWav.DateStored greater than or equal to </summary>
+    [JsonProperty("audioWav_dateStored_gte")]
+    public DateTime? AudioWav_DateStored_GTE { get; set; }
 
     /// <summary> AudioWav.FileSizeInBytes equals </summary>
     [JsonProperty("audioWav_fileSizeInBytes_eq")]
@@ -346,6 +396,16 @@ public class AudioFilterRequest
     /// <summary> AudioWav.Url regex </summary>
     [JsonProperty("audioWav_url_reg")]
     public string? AudioWav_Url_REG { get; set; }
+
+    /// <summary> AudioWav.ApiDomain equals </summary>
+    [JsonProperty("audioWav_apiDomain_eq")]
+    public string? AudioWav_ApiDomain_EQ { get; set; }
+    /// <summary> AudioWav.ApiDomain contains </summary>
+    [JsonProperty("audioWav_apiDomain_con")]
+    public string? AudioWav_ApiDomain_CON { get; set; }
+    /// <summary> AudioWav.ApiDomain regex </summary>
+    [JsonProperty("audioWav_apiDomain_reg")]
+    public string? AudioWav_ApiDomain_REG { get; set; }
 
     /// <summary> AudioWav.Id equals </summary>
     [JsonProperty("audioWav_id_eq")]
@@ -874,6 +934,16 @@ public class CallIncomingToCallFlowFilterRequest
     [JsonProperty("idVoicemail_reg")]
     public string? IdVoicemail_REG { get; set; }
 
+    /// <summary> IdCallThatTerminatedThisCallDoToAttendantTransfer equals </summary>
+    [JsonProperty("idCallThatTerminatedThisCallDoToAttendantTransfer_eq")]
+    public string? IdCallThatTerminatedThisCallDoToAttendantTransfer_EQ { get; set; }
+    /// <summary> IdCallThatTerminatedThisCallDoToAttendantTransfer contains </summary>
+    [JsonProperty("idCallThatTerminatedThisCallDoToAttendantTransfer_con")]
+    public string? IdCallThatTerminatedThisCallDoToAttendantTransfer_CON { get; set; }
+    /// <summary> IdCallThatTerminatedThisCallDoToAttendantTransfer regex </summary>
+    [JsonProperty("idCallThatTerminatedThisCallDoToAttendantTransfer_reg")]
+    public string? IdCallThatTerminatedThisCallDoToAttendantTransfer_REG { get; set; }
+
     /// <summary> ChannelVariables.Language equals </summary>
     [JsonProperty("channelVariables_language_eq")]
     public Language? ChannelVariables_Language_EQ { get; set; }
@@ -1033,6 +1103,26 @@ public class CallIncomingToCallFlowFilterRequest
     [JsonProperty("recording_errorMessage_reg")]
     public string? Recording_ErrorMessage_REG { get; set; }
 
+    /// <summary> Recording.RecordingMp3.InstanceId equals </summary>
+    [JsonProperty("recording_recordingMp3_instanceId_eq")]
+    public string? Recording_RecordingMp3_InstanceId_EQ { get; set; }
+    /// <summary> Recording.RecordingMp3.InstanceId contains </summary>
+    [JsonProperty("recording_recordingMp3_instanceId_con")]
+    public string? Recording_RecordingMp3_InstanceId_CON { get; set; }
+    /// <summary> Recording.RecordingMp3.InstanceId regex </summary>
+    [JsonProperty("recording_recordingMp3_instanceId_reg")]
+    public string? Recording_RecordingMp3_InstanceId_REG { get; set; }
+
+    /// <summary> Recording.RecordingMp3.DateStored equals </summary>
+    [JsonProperty("recording_recordingMp3_dateStored_eq")]
+    public DateTime? Recording_RecordingMp3_DateStored_EQ { get; set; }
+    /// <summary> Recording.RecordingMp3.DateStored less than or equal to </summary>
+    [JsonProperty("recording_recordingMp3_dateStored_lte")]
+    public DateTime? Recording_RecordingMp3_DateStored_LTE { get; set; }
+    /// <summary> Recording.RecordingMp3.DateStored greater than or equal to </summary>
+    [JsonProperty("recording_recordingMp3_dateStored_gte")]
+    public DateTime? Recording_RecordingMp3_DateStored_GTE { get; set; }
+
     /// <summary> Recording.RecordingMp3.FileSizeInBytes equals </summary>
     [JsonProperty("recording_recordingMp3_fileSizeInBytes_eq")]
     public System.Int32? Recording_RecordingMp3_FileSizeInBytes_EQ { get; set; }
@@ -1062,6 +1152,16 @@ public class CallIncomingToCallFlowFilterRequest
     /// <summary> Recording.RecordingMp3.Url regex </summary>
     [JsonProperty("recording_recordingMp3_url_reg")]
     public string? Recording_RecordingMp3_Url_REG { get; set; }
+
+    /// <summary> Recording.RecordingMp3.ApiDomain equals </summary>
+    [JsonProperty("recording_recordingMp3_apiDomain_eq")]
+    public string? Recording_RecordingMp3_ApiDomain_EQ { get; set; }
+    /// <summary> Recording.RecordingMp3.ApiDomain contains </summary>
+    [JsonProperty("recording_recordingMp3_apiDomain_con")]
+    public string? Recording_RecordingMp3_ApiDomain_CON { get; set; }
+    /// <summary> Recording.RecordingMp3.ApiDomain regex </summary>
+    [JsonProperty("recording_recordingMp3_apiDomain_reg")]
+    public string? Recording_RecordingMp3_ApiDomain_REG { get; set; }
 
     /// <summary> Recording.RecordingMp3.Id equals </summary>
     [JsonProperty("recording_recordingMp3_id_eq")]
@@ -1826,6 +1926,16 @@ public class CallIncomingToExtensionFilterRequest
     [JsonProperty("idVoicemail_reg")]
     public string? IdVoicemail_REG { get; set; }
 
+    /// <summary> IdCallThatTerminatedThisCallDoToAttendantTransfer equals </summary>
+    [JsonProperty("idCallThatTerminatedThisCallDoToAttendantTransfer_eq")]
+    public string? IdCallThatTerminatedThisCallDoToAttendantTransfer_EQ { get; set; }
+    /// <summary> IdCallThatTerminatedThisCallDoToAttendantTransfer contains </summary>
+    [JsonProperty("idCallThatTerminatedThisCallDoToAttendantTransfer_con")]
+    public string? IdCallThatTerminatedThisCallDoToAttendantTransfer_CON { get; set; }
+    /// <summary> IdCallThatTerminatedThisCallDoToAttendantTransfer regex </summary>
+    [JsonProperty("idCallThatTerminatedThisCallDoToAttendantTransfer_reg")]
+    public string? IdCallThatTerminatedThisCallDoToAttendantTransfer_REG { get; set; }
+
     /// <summary> ChannelVariables.Language equals </summary>
     [JsonProperty("channelVariables_language_eq")]
     public Language? ChannelVariables_Language_EQ { get; set; }
@@ -1985,6 +2095,26 @@ public class CallIncomingToExtensionFilterRequest
     [JsonProperty("recording_errorMessage_reg")]
     public string? Recording_ErrorMessage_REG { get; set; }
 
+    /// <summary> Recording.RecordingMp3.InstanceId equals </summary>
+    [JsonProperty("recording_recordingMp3_instanceId_eq")]
+    public string? Recording_RecordingMp3_InstanceId_EQ { get; set; }
+    /// <summary> Recording.RecordingMp3.InstanceId contains </summary>
+    [JsonProperty("recording_recordingMp3_instanceId_con")]
+    public string? Recording_RecordingMp3_InstanceId_CON { get; set; }
+    /// <summary> Recording.RecordingMp3.InstanceId regex </summary>
+    [JsonProperty("recording_recordingMp3_instanceId_reg")]
+    public string? Recording_RecordingMp3_InstanceId_REG { get; set; }
+
+    /// <summary> Recording.RecordingMp3.DateStored equals </summary>
+    [JsonProperty("recording_recordingMp3_dateStored_eq")]
+    public DateTime? Recording_RecordingMp3_DateStored_EQ { get; set; }
+    /// <summary> Recording.RecordingMp3.DateStored less than or equal to </summary>
+    [JsonProperty("recording_recordingMp3_dateStored_lte")]
+    public DateTime? Recording_RecordingMp3_DateStored_LTE { get; set; }
+    /// <summary> Recording.RecordingMp3.DateStored greater than or equal to </summary>
+    [JsonProperty("recording_recordingMp3_dateStored_gte")]
+    public DateTime? Recording_RecordingMp3_DateStored_GTE { get; set; }
+
     /// <summary> Recording.RecordingMp3.FileSizeInBytes equals </summary>
     [JsonProperty("recording_recordingMp3_fileSizeInBytes_eq")]
     public System.Int32? Recording_RecordingMp3_FileSizeInBytes_EQ { get; set; }
@@ -2014,6 +2144,16 @@ public class CallIncomingToExtensionFilterRequest
     /// <summary> Recording.RecordingMp3.Url regex </summary>
     [JsonProperty("recording_recordingMp3_url_reg")]
     public string? Recording_RecordingMp3_Url_REG { get; set; }
+
+    /// <summary> Recording.RecordingMp3.ApiDomain equals </summary>
+    [JsonProperty("recording_recordingMp3_apiDomain_eq")]
+    public string? Recording_RecordingMp3_ApiDomain_EQ { get; set; }
+    /// <summary> Recording.RecordingMp3.ApiDomain contains </summary>
+    [JsonProperty("recording_recordingMp3_apiDomain_con")]
+    public string? Recording_RecordingMp3_ApiDomain_CON { get; set; }
+    /// <summary> Recording.RecordingMp3.ApiDomain regex </summary>
+    [JsonProperty("recording_recordingMp3_apiDomain_reg")]
+    public string? Recording_RecordingMp3_ApiDomain_REG { get; set; }
 
     /// <summary> Recording.RecordingMp3.Id equals </summary>
     [JsonProperty("recording_recordingMp3_id_eq")]
@@ -2886,6 +3026,16 @@ public class CallOutgoingToExtensionFilterRequest
     [JsonProperty("idVoicemail_reg")]
     public string? IdVoicemail_REG { get; set; }
 
+    /// <summary> IdCallThatTerminatedThisCallDoToAttendantTransfer equals </summary>
+    [JsonProperty("idCallThatTerminatedThisCallDoToAttendantTransfer_eq")]
+    public string? IdCallThatTerminatedThisCallDoToAttendantTransfer_EQ { get; set; }
+    /// <summary> IdCallThatTerminatedThisCallDoToAttendantTransfer contains </summary>
+    [JsonProperty("idCallThatTerminatedThisCallDoToAttendantTransfer_con")]
+    public string? IdCallThatTerminatedThisCallDoToAttendantTransfer_CON { get; set; }
+    /// <summary> IdCallThatTerminatedThisCallDoToAttendantTransfer regex </summary>
+    [JsonProperty("idCallThatTerminatedThisCallDoToAttendantTransfer_reg")]
+    public string? IdCallThatTerminatedThisCallDoToAttendantTransfer_REG { get; set; }
+
     /// <summary> ChannelVariables.Language equals </summary>
     [JsonProperty("channelVariables_language_eq")]
     public Language? ChannelVariables_Language_EQ { get; set; }
@@ -3045,6 +3195,26 @@ public class CallOutgoingToExtensionFilterRequest
     [JsonProperty("recording_errorMessage_reg")]
     public string? Recording_ErrorMessage_REG { get; set; }
 
+    /// <summary> Recording.RecordingMp3.InstanceId equals </summary>
+    [JsonProperty("recording_recordingMp3_instanceId_eq")]
+    public string? Recording_RecordingMp3_InstanceId_EQ { get; set; }
+    /// <summary> Recording.RecordingMp3.InstanceId contains </summary>
+    [JsonProperty("recording_recordingMp3_instanceId_con")]
+    public string? Recording_RecordingMp3_InstanceId_CON { get; set; }
+    /// <summary> Recording.RecordingMp3.InstanceId regex </summary>
+    [JsonProperty("recording_recordingMp3_instanceId_reg")]
+    public string? Recording_RecordingMp3_InstanceId_REG { get; set; }
+
+    /// <summary> Recording.RecordingMp3.DateStored equals </summary>
+    [JsonProperty("recording_recordingMp3_dateStored_eq")]
+    public DateTime? Recording_RecordingMp3_DateStored_EQ { get; set; }
+    /// <summary> Recording.RecordingMp3.DateStored less than or equal to </summary>
+    [JsonProperty("recording_recordingMp3_dateStored_lte")]
+    public DateTime? Recording_RecordingMp3_DateStored_LTE { get; set; }
+    /// <summary> Recording.RecordingMp3.DateStored greater than or equal to </summary>
+    [JsonProperty("recording_recordingMp3_dateStored_gte")]
+    public DateTime? Recording_RecordingMp3_DateStored_GTE { get; set; }
+
     /// <summary> Recording.RecordingMp3.FileSizeInBytes equals </summary>
     [JsonProperty("recording_recordingMp3_fileSizeInBytes_eq")]
     public System.Int32? Recording_RecordingMp3_FileSizeInBytes_EQ { get; set; }
@@ -3074,6 +3244,16 @@ public class CallOutgoingToExtensionFilterRequest
     /// <summary> Recording.RecordingMp3.Url regex </summary>
     [JsonProperty("recording_recordingMp3_url_reg")]
     public string? Recording_RecordingMp3_Url_REG { get; set; }
+
+    /// <summary> Recording.RecordingMp3.ApiDomain equals </summary>
+    [JsonProperty("recording_recordingMp3_apiDomain_eq")]
+    public string? Recording_RecordingMp3_ApiDomain_EQ { get; set; }
+    /// <summary> Recording.RecordingMp3.ApiDomain contains </summary>
+    [JsonProperty("recording_recordingMp3_apiDomain_con")]
+    public string? Recording_RecordingMp3_ApiDomain_CON { get; set; }
+    /// <summary> Recording.RecordingMp3.ApiDomain regex </summary>
+    [JsonProperty("recording_recordingMp3_apiDomain_reg")]
+    public string? Recording_RecordingMp3_ApiDomain_REG { get; set; }
 
     /// <summary> Recording.RecordingMp3.Id equals </summary>
     [JsonProperty("recording_recordingMp3_id_eq")]
@@ -3507,6 +3687,16 @@ public class CallOutgoingToPSTNFilterRequest
     [JsonProperty("idVoicemail_reg")]
     public string? IdVoicemail_REG { get; set; }
 
+    /// <summary> IdCallThatTerminatedThisCallDoToAttendantTransfer equals </summary>
+    [JsonProperty("idCallThatTerminatedThisCallDoToAttendantTransfer_eq")]
+    public string? IdCallThatTerminatedThisCallDoToAttendantTransfer_EQ { get; set; }
+    /// <summary> IdCallThatTerminatedThisCallDoToAttendantTransfer contains </summary>
+    [JsonProperty("idCallThatTerminatedThisCallDoToAttendantTransfer_con")]
+    public string? IdCallThatTerminatedThisCallDoToAttendantTransfer_CON { get; set; }
+    /// <summary> IdCallThatTerminatedThisCallDoToAttendantTransfer regex </summary>
+    [JsonProperty("idCallThatTerminatedThisCallDoToAttendantTransfer_reg")]
+    public string? IdCallThatTerminatedThisCallDoToAttendantTransfer_REG { get; set; }
+
     /// <summary> ChannelVariables.Language equals </summary>
     [JsonProperty("channelVariables_language_eq")]
     public Language? ChannelVariables_Language_EQ { get; set; }
@@ -3666,6 +3856,26 @@ public class CallOutgoingToPSTNFilterRequest
     [JsonProperty("recording_errorMessage_reg")]
     public string? Recording_ErrorMessage_REG { get; set; }
 
+    /// <summary> Recording.RecordingMp3.InstanceId equals </summary>
+    [JsonProperty("recording_recordingMp3_instanceId_eq")]
+    public string? Recording_RecordingMp3_InstanceId_EQ { get; set; }
+    /// <summary> Recording.RecordingMp3.InstanceId contains </summary>
+    [JsonProperty("recording_recordingMp3_instanceId_con")]
+    public string? Recording_RecordingMp3_InstanceId_CON { get; set; }
+    /// <summary> Recording.RecordingMp3.InstanceId regex </summary>
+    [JsonProperty("recording_recordingMp3_instanceId_reg")]
+    public string? Recording_RecordingMp3_InstanceId_REG { get; set; }
+
+    /// <summary> Recording.RecordingMp3.DateStored equals </summary>
+    [JsonProperty("recording_recordingMp3_dateStored_eq")]
+    public DateTime? Recording_RecordingMp3_DateStored_EQ { get; set; }
+    /// <summary> Recording.RecordingMp3.DateStored less than or equal to </summary>
+    [JsonProperty("recording_recordingMp3_dateStored_lte")]
+    public DateTime? Recording_RecordingMp3_DateStored_LTE { get; set; }
+    /// <summary> Recording.RecordingMp3.DateStored greater than or equal to </summary>
+    [JsonProperty("recording_recordingMp3_dateStored_gte")]
+    public DateTime? Recording_RecordingMp3_DateStored_GTE { get; set; }
+
     /// <summary> Recording.RecordingMp3.FileSizeInBytes equals </summary>
     [JsonProperty("recording_recordingMp3_fileSizeInBytes_eq")]
     public System.Int32? Recording_RecordingMp3_FileSizeInBytes_EQ { get; set; }
@@ -3695,6 +3905,16 @@ public class CallOutgoingToPSTNFilterRequest
     /// <summary> Recording.RecordingMp3.Url regex </summary>
     [JsonProperty("recording_recordingMp3_url_reg")]
     public string? Recording_RecordingMp3_Url_REG { get; set; }
+
+    /// <summary> Recording.RecordingMp3.ApiDomain equals </summary>
+    [JsonProperty("recording_recordingMp3_apiDomain_eq")]
+    public string? Recording_RecordingMp3_ApiDomain_EQ { get; set; }
+    /// <summary> Recording.RecordingMp3.ApiDomain contains </summary>
+    [JsonProperty("recording_recordingMp3_apiDomain_con")]
+    public string? Recording_RecordingMp3_ApiDomain_CON { get; set; }
+    /// <summary> Recording.RecordingMp3.ApiDomain regex </summary>
+    [JsonProperty("recording_recordingMp3_apiDomain_reg")]
+    public string? Recording_RecordingMp3_ApiDomain_REG { get; set; }
 
     /// <summary> Recording.RecordingMp3.Id equals </summary>
     [JsonProperty("recording_recordingMp3_id_eq")]
@@ -4654,15 +4874,15 @@ public class ExtensionDialFilterRequest
     public EventActionType? EventActionToExecuteIfCallIsNotAnswered_EventActionType_EQ { get; set; }
 
 
-    /// <summary> SendEmailNotificationIfCallIsNotAnswered.Email equals </summary>
-    [JsonProperty("sendEmailNotificationIfCallIsNotAnswered_email_eq")]
-    public string? SendEmailNotificationIfCallIsNotAnswered_Email_EQ { get; set; }
-    /// <summary> SendEmailNotificationIfCallIsNotAnswered.Email contains </summary>
-    [JsonProperty("sendEmailNotificationIfCallIsNotAnswered_email_con")]
-    public string? SendEmailNotificationIfCallIsNotAnswered_Email_CON { get; set; }
-    /// <summary> SendEmailNotificationIfCallIsNotAnswered.Email regex </summary>
-    [JsonProperty("sendEmailNotificationIfCallIsNotAnswered_email_reg")]
-    public string? SendEmailNotificationIfCallIsNotAnswered_Email_REG { get; set; }
+    /// <summary> SendEmailNotificationIfCallIsNotAnswered.Emails equals </summary>
+    [JsonProperty("sendEmailNotificationIfCallIsNotAnswered_emails_eq")]
+    public string? SendEmailNotificationIfCallIsNotAnswered_Emails_EQ { get; set; }
+    /// <summary> SendEmailNotificationIfCallIsNotAnswered.Emails contains </summary>
+    [JsonProperty("sendEmailNotificationIfCallIsNotAnswered_emails_con")]
+    public string? SendEmailNotificationIfCallIsNotAnswered_Emails_CON { get; set; }
+    /// <summary> SendEmailNotificationIfCallIsNotAnswered.Emails regex </summary>
+    [JsonProperty("sendEmailNotificationIfCallIsNotAnswered_emails_reg")]
+    public string? SendEmailNotificationIfCallIsNotAnswered_Emails_REG { get; set; }
 
     /// <summary> SendEmailNotificationIfCallIsNotAnswered.PreventSendingNotificationIfCallLastsLessThanNSeconds equals </summary>
     [JsonProperty("sendEmailNotificationIfCallIsNotAnswered_preventSendingNotificationIfCallLastsLessThanNSeconds_eq")]
@@ -4787,15 +5007,15 @@ public class ExtensionQueueFilterRequest
     [JsonProperty("idsAudios_reg")]
     public string? IdsAudios_REG { get; set; }
 
-    /// <summary> SendEmailNotificationIfCallIsNotAnswered.Email equals </summary>
-    [JsonProperty("sendEmailNotificationIfCallIsNotAnswered_email_eq")]
-    public string? SendEmailNotificationIfCallIsNotAnswered_Email_EQ { get; set; }
-    /// <summary> SendEmailNotificationIfCallIsNotAnswered.Email contains </summary>
-    [JsonProperty("sendEmailNotificationIfCallIsNotAnswered_email_con")]
-    public string? SendEmailNotificationIfCallIsNotAnswered_Email_CON { get; set; }
-    /// <summary> SendEmailNotificationIfCallIsNotAnswered.Email regex </summary>
-    [JsonProperty("sendEmailNotificationIfCallIsNotAnswered_email_reg")]
-    public string? SendEmailNotificationIfCallIsNotAnswered_Email_REG { get; set; }
+    /// <summary> SendEmailNotificationIfCallIsNotAnswered.Emails equals </summary>
+    [JsonProperty("sendEmailNotificationIfCallIsNotAnswered_emails_eq")]
+    public string? SendEmailNotificationIfCallIsNotAnswered_Emails_EQ { get; set; }
+    /// <summary> SendEmailNotificationIfCallIsNotAnswered.Emails contains </summary>
+    [JsonProperty("sendEmailNotificationIfCallIsNotAnswered_emails_con")]
+    public string? SendEmailNotificationIfCallIsNotAnswered_Emails_CON { get; set; }
+    /// <summary> SendEmailNotificationIfCallIsNotAnswered.Emails regex </summary>
+    [JsonProperty("sendEmailNotificationIfCallIsNotAnswered_emails_reg")]
+    public string? SendEmailNotificationIfCallIsNotAnswered_Emails_REG { get; set; }
 
     /// <summary> SendEmailNotificationIfCallIsNotAnswered.PreventSendingNotificationIfCallLastsLessThanNSeconds equals </summary>
     [JsonProperty("sendEmailNotificationIfCallIsNotAnswered_preventSendingNotificationIfCallLastsLessThanNSeconds_eq")]
@@ -4866,6 +5086,10 @@ public class ExtensionQueueFilterRequest
     /// <summary> RetryFrequency greater than or equal to </summary>
     [JsonProperty("retryFrequency_gte")]
     public System.Int32? RetryFrequency_GTE { get; set; }
+
+    /// <summary> RingStrategy equals </summary>
+    [JsonProperty("ringStrategy_eq")]
+    public QueueRingStrategy? RingStrategy_EQ { get; set; }
 
     /// <summary> ExtensionType equals </summary>
     [JsonProperty("extensionType_eq")]
@@ -5247,6 +5471,26 @@ public class FaxIncomingFilterRequest
     [JsonProperty("idVoipNumberFax_reg")]
     public string? IdVoipNumberFax_REG { get; set; }
 
+    /// <summary> Pdf.InstanceId equals </summary>
+    [JsonProperty("pdf_instanceId_eq")]
+    public string? Pdf_InstanceId_EQ { get; set; }
+    /// <summary> Pdf.InstanceId contains </summary>
+    [JsonProperty("pdf_instanceId_con")]
+    public string? Pdf_InstanceId_CON { get; set; }
+    /// <summary> Pdf.InstanceId regex </summary>
+    [JsonProperty("pdf_instanceId_reg")]
+    public string? Pdf_InstanceId_REG { get; set; }
+
+    /// <summary> Pdf.DateStored equals </summary>
+    [JsonProperty("pdf_dateStored_eq")]
+    public DateTime? Pdf_DateStored_EQ { get; set; }
+    /// <summary> Pdf.DateStored less than or equal to </summary>
+    [JsonProperty("pdf_dateStored_lte")]
+    public DateTime? Pdf_DateStored_LTE { get; set; }
+    /// <summary> Pdf.DateStored greater than or equal to </summary>
+    [JsonProperty("pdf_dateStored_gte")]
+    public DateTime? Pdf_DateStored_GTE { get; set; }
+
     /// <summary> Pdf.FileSizeInBytes equals </summary>
     [JsonProperty("pdf_fileSizeInBytes_eq")]
     public System.Int32? Pdf_FileSizeInBytes_EQ { get; set; }
@@ -5276,6 +5520,16 @@ public class FaxIncomingFilterRequest
     /// <summary> Pdf.Url regex </summary>
     [JsonProperty("pdf_url_reg")]
     public string? Pdf_Url_REG { get; set; }
+
+    /// <summary> Pdf.ApiDomain equals </summary>
+    [JsonProperty("pdf_apiDomain_eq")]
+    public string? Pdf_ApiDomain_EQ { get; set; }
+    /// <summary> Pdf.ApiDomain contains </summary>
+    [JsonProperty("pdf_apiDomain_con")]
+    public string? Pdf_ApiDomain_CON { get; set; }
+    /// <summary> Pdf.ApiDomain regex </summary>
+    [JsonProperty("pdf_apiDomain_reg")]
+    public string? Pdf_ApiDomain_REG { get; set; }
 
     /// <summary> Pdf.Id equals </summary>
     [JsonProperty("pdf_id_eq")]
@@ -5422,6 +5676,26 @@ public class FaxOutgoingGroupFilterRequest
     [JsonProperty("faxesOutgoing_errorMessage_reg")]
     public string? FaxesOutgoing_ErrorMessage_REG { get; set; }
 
+    /// <summary> FaxesOutgoing.Pdf.InstanceId equals </summary>
+    [JsonProperty("faxesOutgoing_pdf_instanceId_eq")]
+    public string? FaxesOutgoing_Pdf_InstanceId_EQ { get; set; }
+    /// <summary> FaxesOutgoing.Pdf.InstanceId contains </summary>
+    [JsonProperty("faxesOutgoing_pdf_instanceId_con")]
+    public string? FaxesOutgoing_Pdf_InstanceId_CON { get; set; }
+    /// <summary> FaxesOutgoing.Pdf.InstanceId regex </summary>
+    [JsonProperty("faxesOutgoing_pdf_instanceId_reg")]
+    public string? FaxesOutgoing_Pdf_InstanceId_REG { get; set; }
+
+    /// <summary> FaxesOutgoing.Pdf.DateStored equals </summary>
+    [JsonProperty("faxesOutgoing_pdf_dateStored_eq")]
+    public DateTime? FaxesOutgoing_Pdf_DateStored_EQ { get; set; }
+    /// <summary> FaxesOutgoing.Pdf.DateStored less than or equal to </summary>
+    [JsonProperty("faxesOutgoing_pdf_dateStored_lte")]
+    public DateTime? FaxesOutgoing_Pdf_DateStored_LTE { get; set; }
+    /// <summary> FaxesOutgoing.Pdf.DateStored greater than or equal to </summary>
+    [JsonProperty("faxesOutgoing_pdf_dateStored_gte")]
+    public DateTime? FaxesOutgoing_Pdf_DateStored_GTE { get; set; }
+
     /// <summary> FaxesOutgoing.Pdf.FileSizeInBytes equals </summary>
     [JsonProperty("faxesOutgoing_pdf_fileSizeInBytes_eq")]
     public System.Int32? FaxesOutgoing_Pdf_FileSizeInBytes_EQ { get; set; }
@@ -5451,6 +5725,16 @@ public class FaxOutgoingGroupFilterRequest
     /// <summary> FaxesOutgoing.Pdf.Url regex </summary>
     [JsonProperty("faxesOutgoing_pdf_url_reg")]
     public string? FaxesOutgoing_Pdf_Url_REG { get; set; }
+
+    /// <summary> FaxesOutgoing.Pdf.ApiDomain equals </summary>
+    [JsonProperty("faxesOutgoing_pdf_apiDomain_eq")]
+    public string? FaxesOutgoing_Pdf_ApiDomain_EQ { get; set; }
+    /// <summary> FaxesOutgoing.Pdf.ApiDomain contains </summary>
+    [JsonProperty("faxesOutgoing_pdf_apiDomain_con")]
+    public string? FaxesOutgoing_Pdf_ApiDomain_CON { get; set; }
+    /// <summary> FaxesOutgoing.Pdf.ApiDomain regex </summary>
+    [JsonProperty("faxesOutgoing_pdf_apiDomain_reg")]
+    public string? FaxesOutgoing_Pdf_ApiDomain_REG { get; set; }
 
     /// <summary> FaxesOutgoing.Pdf.Id equals </summary>
     [JsonProperty("faxesOutgoing_pdf_id_eq")]
@@ -7098,6 +7382,26 @@ public class VoicemailFilterRequest
     [JsonProperty("durationInSeconds_gte")]
     public System.Int32? DurationInSeconds_GTE { get; set; }
 
+    /// <summary> VoicemailWav.InstanceId equals </summary>
+    [JsonProperty("voicemailWav_instanceId_eq")]
+    public string? VoicemailWav_InstanceId_EQ { get; set; }
+    /// <summary> VoicemailWav.InstanceId contains </summary>
+    [JsonProperty("voicemailWav_instanceId_con")]
+    public string? VoicemailWav_InstanceId_CON { get; set; }
+    /// <summary> VoicemailWav.InstanceId regex </summary>
+    [JsonProperty("voicemailWav_instanceId_reg")]
+    public string? VoicemailWav_InstanceId_REG { get; set; }
+
+    /// <summary> VoicemailWav.DateStored equals </summary>
+    [JsonProperty("voicemailWav_dateStored_eq")]
+    public DateTime? VoicemailWav_DateStored_EQ { get; set; }
+    /// <summary> VoicemailWav.DateStored less than or equal to </summary>
+    [JsonProperty("voicemailWav_dateStored_lte")]
+    public DateTime? VoicemailWav_DateStored_LTE { get; set; }
+    /// <summary> VoicemailWav.DateStored greater than or equal to </summary>
+    [JsonProperty("voicemailWav_dateStored_gte")]
+    public DateTime? VoicemailWav_DateStored_GTE { get; set; }
+
     /// <summary> VoicemailWav.FileSizeInBytes equals </summary>
     [JsonProperty("voicemailWav_fileSizeInBytes_eq")]
     public System.Int32? VoicemailWav_FileSizeInBytes_EQ { get; set; }
@@ -7128,6 +7432,16 @@ public class VoicemailFilterRequest
     [JsonProperty("voicemailWav_url_reg")]
     public string? VoicemailWav_Url_REG { get; set; }
 
+    /// <summary> VoicemailWav.ApiDomain equals </summary>
+    [JsonProperty("voicemailWav_apiDomain_eq")]
+    public string? VoicemailWav_ApiDomain_EQ { get; set; }
+    /// <summary> VoicemailWav.ApiDomain contains </summary>
+    [JsonProperty("voicemailWav_apiDomain_con")]
+    public string? VoicemailWav_ApiDomain_CON { get; set; }
+    /// <summary> VoicemailWav.ApiDomain regex </summary>
+    [JsonProperty("voicemailWav_apiDomain_reg")]
+    public string? VoicemailWav_ApiDomain_REG { get; set; }
+
     /// <summary> VoicemailWav.Id equals </summary>
     [JsonProperty("voicemailWav_id_eq")]
     public string? VoicemailWav_Id_EQ { get; set; }
@@ -7138,6 +7452,26 @@ public class VoicemailFilterRequest
     [JsonProperty("voicemailWav_id_reg")]
     public string? VoicemailWav_Id_REG { get; set; }
 
+
+    /// <summary> VoicemailMp3.InstanceId equals </summary>
+    [JsonProperty("voicemailMp3_instanceId_eq")]
+    public string? VoicemailMp3_InstanceId_EQ { get; set; }
+    /// <summary> VoicemailMp3.InstanceId contains </summary>
+    [JsonProperty("voicemailMp3_instanceId_con")]
+    public string? VoicemailMp3_InstanceId_CON { get; set; }
+    /// <summary> VoicemailMp3.InstanceId regex </summary>
+    [JsonProperty("voicemailMp3_instanceId_reg")]
+    public string? VoicemailMp3_InstanceId_REG { get; set; }
+
+    /// <summary> VoicemailMp3.DateStored equals </summary>
+    [JsonProperty("voicemailMp3_dateStored_eq")]
+    public DateTime? VoicemailMp3_DateStored_EQ { get; set; }
+    /// <summary> VoicemailMp3.DateStored less than or equal to </summary>
+    [JsonProperty("voicemailMp3_dateStored_lte")]
+    public DateTime? VoicemailMp3_DateStored_LTE { get; set; }
+    /// <summary> VoicemailMp3.DateStored greater than or equal to </summary>
+    [JsonProperty("voicemailMp3_dateStored_gte")]
+    public DateTime? VoicemailMp3_DateStored_GTE { get; set; }
 
     /// <summary> VoicemailMp3.FileSizeInBytes equals </summary>
     [JsonProperty("voicemailMp3_fileSizeInBytes_eq")]
@@ -7168,6 +7502,16 @@ public class VoicemailFilterRequest
     /// <summary> VoicemailMp3.Url regex </summary>
     [JsonProperty("voicemailMp3_url_reg")]
     public string? VoicemailMp3_Url_REG { get; set; }
+
+    /// <summary> VoicemailMp3.ApiDomain equals </summary>
+    [JsonProperty("voicemailMp3_apiDomain_eq")]
+    public string? VoicemailMp3_ApiDomain_EQ { get; set; }
+    /// <summary> VoicemailMp3.ApiDomain contains </summary>
+    [JsonProperty("voicemailMp3_apiDomain_con")]
+    public string? VoicemailMp3_ApiDomain_CON { get; set; }
+    /// <summary> VoicemailMp3.ApiDomain regex </summary>
+    [JsonProperty("voicemailMp3_apiDomain_reg")]
+    public string? VoicemailMp3_ApiDomain_REG { get; set; }
 
     /// <summary> VoicemailMp3.Id equals </summary>
     [JsonProperty("voicemailMp3_id_eq")]
@@ -7455,6 +7799,26 @@ public class VoicemailForwardedFilterRequest
     [JsonProperty("durationInSeconds_gte")]
     public System.Int32? DurationInSeconds_GTE { get; set; }
 
+    /// <summary> VoicemailWav.InstanceId equals </summary>
+    [JsonProperty("voicemailWav_instanceId_eq")]
+    public string? VoicemailWav_InstanceId_EQ { get; set; }
+    /// <summary> VoicemailWav.InstanceId contains </summary>
+    [JsonProperty("voicemailWav_instanceId_con")]
+    public string? VoicemailWav_InstanceId_CON { get; set; }
+    /// <summary> VoicemailWav.InstanceId regex </summary>
+    [JsonProperty("voicemailWav_instanceId_reg")]
+    public string? VoicemailWav_InstanceId_REG { get; set; }
+
+    /// <summary> VoicemailWav.DateStored equals </summary>
+    [JsonProperty("voicemailWav_dateStored_eq")]
+    public DateTime? VoicemailWav_DateStored_EQ { get; set; }
+    /// <summary> VoicemailWav.DateStored less than or equal to </summary>
+    [JsonProperty("voicemailWav_dateStored_lte")]
+    public DateTime? VoicemailWav_DateStored_LTE { get; set; }
+    /// <summary> VoicemailWav.DateStored greater than or equal to </summary>
+    [JsonProperty("voicemailWav_dateStored_gte")]
+    public DateTime? VoicemailWav_DateStored_GTE { get; set; }
+
     /// <summary> VoicemailWav.FileSizeInBytes equals </summary>
     [JsonProperty("voicemailWav_fileSizeInBytes_eq")]
     public System.Int32? VoicemailWav_FileSizeInBytes_EQ { get; set; }
@@ -7485,6 +7849,16 @@ public class VoicemailForwardedFilterRequest
     [JsonProperty("voicemailWav_url_reg")]
     public string? VoicemailWav_Url_REG { get; set; }
 
+    /// <summary> VoicemailWav.ApiDomain equals </summary>
+    [JsonProperty("voicemailWav_apiDomain_eq")]
+    public string? VoicemailWav_ApiDomain_EQ { get; set; }
+    /// <summary> VoicemailWav.ApiDomain contains </summary>
+    [JsonProperty("voicemailWav_apiDomain_con")]
+    public string? VoicemailWav_ApiDomain_CON { get; set; }
+    /// <summary> VoicemailWav.ApiDomain regex </summary>
+    [JsonProperty("voicemailWav_apiDomain_reg")]
+    public string? VoicemailWav_ApiDomain_REG { get; set; }
+
     /// <summary> VoicemailWav.Id equals </summary>
     [JsonProperty("voicemailWav_id_eq")]
     public string? VoicemailWav_Id_EQ { get; set; }
@@ -7495,6 +7869,26 @@ public class VoicemailForwardedFilterRequest
     [JsonProperty("voicemailWav_id_reg")]
     public string? VoicemailWav_Id_REG { get; set; }
 
+
+    /// <summary> VoicemailMp3.InstanceId equals </summary>
+    [JsonProperty("voicemailMp3_instanceId_eq")]
+    public string? VoicemailMp3_InstanceId_EQ { get; set; }
+    /// <summary> VoicemailMp3.InstanceId contains </summary>
+    [JsonProperty("voicemailMp3_instanceId_con")]
+    public string? VoicemailMp3_InstanceId_CON { get; set; }
+    /// <summary> VoicemailMp3.InstanceId regex </summary>
+    [JsonProperty("voicemailMp3_instanceId_reg")]
+    public string? VoicemailMp3_InstanceId_REG { get; set; }
+
+    /// <summary> VoicemailMp3.DateStored equals </summary>
+    [JsonProperty("voicemailMp3_dateStored_eq")]
+    public DateTime? VoicemailMp3_DateStored_EQ { get; set; }
+    /// <summary> VoicemailMp3.DateStored less than or equal to </summary>
+    [JsonProperty("voicemailMp3_dateStored_lte")]
+    public DateTime? VoicemailMp3_DateStored_LTE { get; set; }
+    /// <summary> VoicemailMp3.DateStored greater than or equal to </summary>
+    [JsonProperty("voicemailMp3_dateStored_gte")]
+    public DateTime? VoicemailMp3_DateStored_GTE { get; set; }
 
     /// <summary> VoicemailMp3.FileSizeInBytes equals </summary>
     [JsonProperty("voicemailMp3_fileSizeInBytes_eq")]
@@ -7525,6 +7919,16 @@ public class VoicemailForwardedFilterRequest
     /// <summary> VoicemailMp3.Url regex </summary>
     [JsonProperty("voicemailMp3_url_reg")]
     public string? VoicemailMp3_Url_REG { get; set; }
+
+    /// <summary> VoicemailMp3.ApiDomain equals </summary>
+    [JsonProperty("voicemailMp3_apiDomain_eq")]
+    public string? VoicemailMp3_ApiDomain_EQ { get; set; }
+    /// <summary> VoicemailMp3.ApiDomain contains </summary>
+    [JsonProperty("voicemailMp3_apiDomain_con")]
+    public string? VoicemailMp3_ApiDomain_CON { get; set; }
+    /// <summary> VoicemailMp3.ApiDomain regex </summary>
+    [JsonProperty("voicemailMp3_apiDomain_reg")]
+    public string? VoicemailMp3_ApiDomain_REG { get; set; }
 
     /// <summary> VoicemailMp3.Id equals </summary>
     [JsonProperty("voicemailMp3_id_eq")]
@@ -8222,6 +8626,16 @@ public class CallFilterRequest
     [JsonProperty("idVoicemail_reg")]
     public string? IdVoicemail_REG { get; set; }
 
+    /// <summary> IdCallThatTerminatedThisCallDoToAttendantTransfer equals </summary>
+    [JsonProperty("idCallThatTerminatedThisCallDoToAttendantTransfer_eq")]
+    public string? IdCallThatTerminatedThisCallDoToAttendantTransfer_EQ { get; set; }
+    /// <summary> IdCallThatTerminatedThisCallDoToAttendantTransfer contains </summary>
+    [JsonProperty("idCallThatTerminatedThisCallDoToAttendantTransfer_con")]
+    public string? IdCallThatTerminatedThisCallDoToAttendantTransfer_CON { get; set; }
+    /// <summary> IdCallThatTerminatedThisCallDoToAttendantTransfer regex </summary>
+    [JsonProperty("idCallThatTerminatedThisCallDoToAttendantTransfer_reg")]
+    public string? IdCallThatTerminatedThisCallDoToAttendantTransfer_REG { get; set; }
+
     /// <summary> ChannelVariables.Language equals </summary>
     [JsonProperty("channelVariables_language_eq")]
     public Language? ChannelVariables_Language_EQ { get; set; }
@@ -8567,6 +8981,26 @@ public class CallFilterRequest
     [JsonProperty("recording_errorMessage_reg")]
     public string? Recording_ErrorMessage_REG { get; set; }
 
+    /// <summary> Recording.RecordingMp3.InstanceId equals </summary>
+    [JsonProperty("recording_recordingMp3_instanceId_eq")]
+    public string? Recording_RecordingMp3_InstanceId_EQ { get; set; }
+    /// <summary> Recording.RecordingMp3.InstanceId contains </summary>
+    [JsonProperty("recording_recordingMp3_instanceId_con")]
+    public string? Recording_RecordingMp3_InstanceId_CON { get; set; }
+    /// <summary> Recording.RecordingMp3.InstanceId regex </summary>
+    [JsonProperty("recording_recordingMp3_instanceId_reg")]
+    public string? Recording_RecordingMp3_InstanceId_REG { get; set; }
+
+    /// <summary> Recording.RecordingMp3.DateStored equals </summary>
+    [JsonProperty("recording_recordingMp3_dateStored_eq")]
+    public DateTime? Recording_RecordingMp3_DateStored_EQ { get; set; }
+    /// <summary> Recording.RecordingMp3.DateStored less than or equal to </summary>
+    [JsonProperty("recording_recordingMp3_dateStored_lte")]
+    public DateTime? Recording_RecordingMp3_DateStored_LTE { get; set; }
+    /// <summary> Recording.RecordingMp3.DateStored greater than or equal to </summary>
+    [JsonProperty("recording_recordingMp3_dateStored_gte")]
+    public DateTime? Recording_RecordingMp3_DateStored_GTE { get; set; }
+
     /// <summary> Recording.RecordingMp3.FileSizeInBytes equals </summary>
     [JsonProperty("recording_recordingMp3_fileSizeInBytes_eq")]
     public System.Int32? Recording_RecordingMp3_FileSizeInBytes_EQ { get; set; }
@@ -8596,6 +9030,16 @@ public class CallFilterRequest
     /// <summary> Recording.RecordingMp3.Url regex </summary>
     [JsonProperty("recording_recordingMp3_url_reg")]
     public string? Recording_RecordingMp3_Url_REG { get; set; }
+
+    /// <summary> Recording.RecordingMp3.ApiDomain equals </summary>
+    [JsonProperty("recording_recordingMp3_apiDomain_eq")]
+    public string? Recording_RecordingMp3_ApiDomain_EQ { get; set; }
+    /// <summary> Recording.RecordingMp3.ApiDomain contains </summary>
+    [JsonProperty("recording_recordingMp3_apiDomain_con")]
+    public string? Recording_RecordingMp3_ApiDomain_CON { get; set; }
+    /// <summary> Recording.RecordingMp3.ApiDomain regex </summary>
+    [JsonProperty("recording_recordingMp3_apiDomain_reg")]
+    public string? Recording_RecordingMp3_ApiDomain_REG { get; set; }
 
     /// <summary> Recording.RecordingMp3.Id equals </summary>
     [JsonProperty("recording_recordingMp3_id_eq")]
@@ -8903,6 +9347,16 @@ public class CallIncomingFilterRequest
     [JsonProperty("idVoicemail_reg")]
     public string? IdVoicemail_REG { get; set; }
 
+    /// <summary> IdCallThatTerminatedThisCallDoToAttendantTransfer equals </summary>
+    [JsonProperty("idCallThatTerminatedThisCallDoToAttendantTransfer_eq")]
+    public string? IdCallThatTerminatedThisCallDoToAttendantTransfer_EQ { get; set; }
+    /// <summary> IdCallThatTerminatedThisCallDoToAttendantTransfer contains </summary>
+    [JsonProperty("idCallThatTerminatedThisCallDoToAttendantTransfer_con")]
+    public string? IdCallThatTerminatedThisCallDoToAttendantTransfer_CON { get; set; }
+    /// <summary> IdCallThatTerminatedThisCallDoToAttendantTransfer regex </summary>
+    [JsonProperty("idCallThatTerminatedThisCallDoToAttendantTransfer_reg")]
+    public string? IdCallThatTerminatedThisCallDoToAttendantTransfer_REG { get; set; }
+
     /// <summary> ChannelVariables.Language equals </summary>
     [JsonProperty("channelVariables_language_eq")]
     public Language? ChannelVariables_Language_EQ { get; set; }
@@ -9066,6 +9520,26 @@ public class CallIncomingFilterRequest
     [JsonProperty("recording_errorMessage_reg")]
     public string? Recording_ErrorMessage_REG { get; set; }
 
+    /// <summary> Recording.RecordingMp3.InstanceId equals </summary>
+    [JsonProperty("recording_recordingMp3_instanceId_eq")]
+    public string? Recording_RecordingMp3_InstanceId_EQ { get; set; }
+    /// <summary> Recording.RecordingMp3.InstanceId contains </summary>
+    [JsonProperty("recording_recordingMp3_instanceId_con")]
+    public string? Recording_RecordingMp3_InstanceId_CON { get; set; }
+    /// <summary> Recording.RecordingMp3.InstanceId regex </summary>
+    [JsonProperty("recording_recordingMp3_instanceId_reg")]
+    public string? Recording_RecordingMp3_InstanceId_REG { get; set; }
+
+    /// <summary> Recording.RecordingMp3.DateStored equals </summary>
+    [JsonProperty("recording_recordingMp3_dateStored_eq")]
+    public DateTime? Recording_RecordingMp3_DateStored_EQ { get; set; }
+    /// <summary> Recording.RecordingMp3.DateStored less than or equal to </summary>
+    [JsonProperty("recording_recordingMp3_dateStored_lte")]
+    public DateTime? Recording_RecordingMp3_DateStored_LTE { get; set; }
+    /// <summary> Recording.RecordingMp3.DateStored greater than or equal to </summary>
+    [JsonProperty("recording_recordingMp3_dateStored_gte")]
+    public DateTime? Recording_RecordingMp3_DateStored_GTE { get; set; }
+
     /// <summary> Recording.RecordingMp3.FileSizeInBytes equals </summary>
     [JsonProperty("recording_recordingMp3_fileSizeInBytes_eq")]
     public System.Int32? Recording_RecordingMp3_FileSizeInBytes_EQ { get; set; }
@@ -9095,6 +9569,16 @@ public class CallIncomingFilterRequest
     /// <summary> Recording.RecordingMp3.Url regex </summary>
     [JsonProperty("recording_recordingMp3_url_reg")]
     public string? Recording_RecordingMp3_Url_REG { get; set; }
+
+    /// <summary> Recording.RecordingMp3.ApiDomain equals </summary>
+    [JsonProperty("recording_recordingMp3_apiDomain_eq")]
+    public string? Recording_RecordingMp3_ApiDomain_EQ { get; set; }
+    /// <summary> Recording.RecordingMp3.ApiDomain contains </summary>
+    [JsonProperty("recording_recordingMp3_apiDomain_con")]
+    public string? Recording_RecordingMp3_ApiDomain_CON { get; set; }
+    /// <summary> Recording.RecordingMp3.ApiDomain regex </summary>
+    [JsonProperty("recording_recordingMp3_apiDomain_reg")]
+    public string? Recording_RecordingMp3_ApiDomain_REG { get; set; }
 
     /// <summary> Recording.RecordingMp3.Id equals </summary>
     [JsonProperty("recording_recordingMp3_id_eq")]
@@ -9510,6 +9994,16 @@ public class CallOutgoingFilterRequest
     [JsonProperty("idVoicemail_reg")]
     public string? IdVoicemail_REG { get; set; }
 
+    /// <summary> IdCallThatTerminatedThisCallDoToAttendantTransfer equals </summary>
+    [JsonProperty("idCallThatTerminatedThisCallDoToAttendantTransfer_eq")]
+    public string? IdCallThatTerminatedThisCallDoToAttendantTransfer_EQ { get; set; }
+    /// <summary> IdCallThatTerminatedThisCallDoToAttendantTransfer contains </summary>
+    [JsonProperty("idCallThatTerminatedThisCallDoToAttendantTransfer_con")]
+    public string? IdCallThatTerminatedThisCallDoToAttendantTransfer_CON { get; set; }
+    /// <summary> IdCallThatTerminatedThisCallDoToAttendantTransfer regex </summary>
+    [JsonProperty("idCallThatTerminatedThisCallDoToAttendantTransfer_reg")]
+    public string? IdCallThatTerminatedThisCallDoToAttendantTransfer_REG { get; set; }
+
     /// <summary> ChannelVariables.Language equals </summary>
     [JsonProperty("channelVariables_language_eq")]
     public Language? ChannelVariables_Language_EQ { get; set; }
@@ -9673,6 +10167,26 @@ public class CallOutgoingFilterRequest
     [JsonProperty("recording_errorMessage_reg")]
     public string? Recording_ErrorMessage_REG { get; set; }
 
+    /// <summary> Recording.RecordingMp3.InstanceId equals </summary>
+    [JsonProperty("recording_recordingMp3_instanceId_eq")]
+    public string? Recording_RecordingMp3_InstanceId_EQ { get; set; }
+    /// <summary> Recording.RecordingMp3.InstanceId contains </summary>
+    [JsonProperty("recording_recordingMp3_instanceId_con")]
+    public string? Recording_RecordingMp3_InstanceId_CON { get; set; }
+    /// <summary> Recording.RecordingMp3.InstanceId regex </summary>
+    [JsonProperty("recording_recordingMp3_instanceId_reg")]
+    public string? Recording_RecordingMp3_InstanceId_REG { get; set; }
+
+    /// <summary> Recording.RecordingMp3.DateStored equals </summary>
+    [JsonProperty("recording_recordingMp3_dateStored_eq")]
+    public DateTime? Recording_RecordingMp3_DateStored_EQ { get; set; }
+    /// <summary> Recording.RecordingMp3.DateStored less than or equal to </summary>
+    [JsonProperty("recording_recordingMp3_dateStored_lte")]
+    public DateTime? Recording_RecordingMp3_DateStored_LTE { get; set; }
+    /// <summary> Recording.RecordingMp3.DateStored greater than or equal to </summary>
+    [JsonProperty("recording_recordingMp3_dateStored_gte")]
+    public DateTime? Recording_RecordingMp3_DateStored_GTE { get; set; }
+
     /// <summary> Recording.RecordingMp3.FileSizeInBytes equals </summary>
     [JsonProperty("recording_recordingMp3_fileSizeInBytes_eq")]
     public System.Int32? Recording_RecordingMp3_FileSizeInBytes_EQ { get; set; }
@@ -9702,6 +10216,16 @@ public class CallOutgoingFilterRequest
     /// <summary> Recording.RecordingMp3.Url regex </summary>
     [JsonProperty("recording_recordingMp3_url_reg")]
     public string? Recording_RecordingMp3_Url_REG { get; set; }
+
+    /// <summary> Recording.RecordingMp3.ApiDomain equals </summary>
+    [JsonProperty("recording_recordingMp3_apiDomain_eq")]
+    public string? Recording_RecordingMp3_ApiDomain_EQ { get; set; }
+    /// <summary> Recording.RecordingMp3.ApiDomain contains </summary>
+    [JsonProperty("recording_recordingMp3_apiDomain_con")]
+    public string? Recording_RecordingMp3_ApiDomain_CON { get; set; }
+    /// <summary> Recording.RecordingMp3.ApiDomain regex </summary>
+    [JsonProperty("recording_recordingMp3_apiDomain_reg")]
+    public string? Recording_RecordingMp3_ApiDomain_REG { get; set; }
 
     /// <summary> Recording.RecordingMp3.Id equals </summary>
     [JsonProperty("recording_recordingMp3_id_eq")]

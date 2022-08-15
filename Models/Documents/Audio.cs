@@ -19,7 +19,7 @@ public partial class Audio : UbluxDocument
     ///     Audio in wav format
     /// </summary>
     [AllowUpdate(false)]
-    public StoredFile? AudioWav { get; set; }
+    public required StoredFile? AudioWav { get; set; }
 
     #endregion
 
