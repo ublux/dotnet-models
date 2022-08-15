@@ -30,9 +30,10 @@ public partial class StoredFile : UbluxSubDocument
     public required string Md5Hash { get; set; }
 
     /// <summary>
-    ///     Link where it can be downloaded
+    ///     Link where it can be downloaded. Example: https://api.ublux.com/StoredFile/Ac.1/audios/SF.xxxxxxxx.mp3
     /// </summary>
     [AllowUpdate(false)]
+    [BsonIgnore] // do not store on mongo
     public string Url => $"https://{ApiDomain}/{nameof(StoredFile)}/{this.IdAccount}/{this.FolderName}/{this.Id}";
 
     /// <summary>
