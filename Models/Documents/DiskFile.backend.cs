@@ -4,6 +4,7 @@ namespace Ublux.Communications.Models.Documents;
 
 /// <summary>
 ///     File stored on disk. All storedFiles will have a copy
+///     This collection should not be stored on redis and be created with time to leave
 /// </summary>
 public partial class DiskFile : UbluxDocument
 {
