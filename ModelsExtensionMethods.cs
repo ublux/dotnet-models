@@ -45,6 +45,7 @@ public static class ModelsExtensionMethods
             Collections.VoipProviders => typeof(VoipProvider),
             Collections.WebHooks => typeof(WebHook),
             Collections.UnauthorizedTokens => typeof(UnauthorizedToken),
+            Collections.DiskFiles => typeof(DiskFile),
             _ => throw new Exception("Missing collection type"),// should never hit this point because this is tested in SouceCode Unit tests
         };
     }

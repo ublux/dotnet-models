@@ -286,16 +286,6 @@ public class AudioFilterRequest
     [JsonProperty("audioMp3_instanceId_reg")]
     public string? AudioMp3_InstanceId_REG { get; set; }
 
-    /// <summary> AudioMp3.DateStored equals </summary>
-    [JsonProperty("audioMp3_dateStored_eq")]
-    public DateTime? AudioMp3_DateStored_EQ { get; set; }
-    /// <summary> AudioMp3.DateStored less than or equal to </summary>
-    [JsonProperty("audioMp3_dateStored_lte")]
-    public DateTime? AudioMp3_DateStored_LTE { get; set; }
-    /// <summary> AudioMp3.DateStored greater than or equal to </summary>
-    [JsonProperty("audioMp3_dateStored_gte")]
-    public DateTime? AudioMp3_DateStored_GTE { get; set; }
-
     /// <summary> AudioMp3.FileSizeInBytes equals </summary>
     [JsonProperty("audioMp3_fileSizeInBytes_eq")]
     public System.Int32? AudioMp3_FileSizeInBytes_EQ { get; set; }
@@ -356,16 +346,6 @@ public class AudioFilterRequest
     /// <summary> AudioWav.InstanceId regex </summary>
     [JsonProperty("audioWav_instanceId_reg")]
     public string? AudioWav_InstanceId_REG { get; set; }
-
-    /// <summary> AudioWav.DateStored equals </summary>
-    [JsonProperty("audioWav_dateStored_eq")]
-    public DateTime? AudioWav_DateStored_EQ { get; set; }
-    /// <summary> AudioWav.DateStored less than or equal to </summary>
-    [JsonProperty("audioWav_dateStored_lte")]
-    public DateTime? AudioWav_DateStored_LTE { get; set; }
-    /// <summary> AudioWav.DateStored greater than or equal to </summary>
-    [JsonProperty("audioWav_dateStored_gte")]
-    public DateTime? AudioWav_DateStored_GTE { get; set; }
 
     /// <summary> AudioWav.FileSizeInBytes equals </summary>
     [JsonProperty("audioWav_fileSizeInBytes_eq")]
@@ -1112,16 +1092,6 @@ public class CallIncomingToCallFlowFilterRequest
     /// <summary> Recording.RecordingMp3.InstanceId regex </summary>
     [JsonProperty("recording_recordingMp3_instanceId_reg")]
     public string? Recording_RecordingMp3_InstanceId_REG { get; set; }
-
-    /// <summary> Recording.RecordingMp3.DateStored equals </summary>
-    [JsonProperty("recording_recordingMp3_dateStored_eq")]
-    public DateTime? Recording_RecordingMp3_DateStored_EQ { get; set; }
-    /// <summary> Recording.RecordingMp3.DateStored less than or equal to </summary>
-    [JsonProperty("recording_recordingMp3_dateStored_lte")]
-    public DateTime? Recording_RecordingMp3_DateStored_LTE { get; set; }
-    /// <summary> Recording.RecordingMp3.DateStored greater than or equal to </summary>
-    [JsonProperty("recording_recordingMp3_dateStored_gte")]
-    public DateTime? Recording_RecordingMp3_DateStored_GTE { get; set; }
 
     /// <summary> Recording.RecordingMp3.FileSizeInBytes equals </summary>
     [JsonProperty("recording_recordingMp3_fileSizeInBytes_eq")]
@@ -2104,16 +2074,6 @@ public class CallIncomingToExtensionFilterRequest
     /// <summary> Recording.RecordingMp3.InstanceId regex </summary>
     [JsonProperty("recording_recordingMp3_instanceId_reg")]
     public string? Recording_RecordingMp3_InstanceId_REG { get; set; }
-
-    /// <summary> Recording.RecordingMp3.DateStored equals </summary>
-    [JsonProperty("recording_recordingMp3_dateStored_eq")]
-    public DateTime? Recording_RecordingMp3_DateStored_EQ { get; set; }
-    /// <summary> Recording.RecordingMp3.DateStored less than or equal to </summary>
-    [JsonProperty("recording_recordingMp3_dateStored_lte")]
-    public DateTime? Recording_RecordingMp3_DateStored_LTE { get; set; }
-    /// <summary> Recording.RecordingMp3.DateStored greater than or equal to </summary>
-    [JsonProperty("recording_recordingMp3_dateStored_gte")]
-    public DateTime? Recording_RecordingMp3_DateStored_GTE { get; set; }
 
     /// <summary> Recording.RecordingMp3.FileSizeInBytes equals </summary>
     [JsonProperty("recording_recordingMp3_fileSizeInBytes_eq")]
@@ -3205,16 +3165,6 @@ public class CallOutgoingToExtensionFilterRequest
     [JsonProperty("recording_recordingMp3_instanceId_reg")]
     public string? Recording_RecordingMp3_InstanceId_REG { get; set; }
 
-    /// <summary> Recording.RecordingMp3.DateStored equals </summary>
-    [JsonProperty("recording_recordingMp3_dateStored_eq")]
-    public DateTime? Recording_RecordingMp3_DateStored_EQ { get; set; }
-    /// <summary> Recording.RecordingMp3.DateStored less than or equal to </summary>
-    [JsonProperty("recording_recordingMp3_dateStored_lte")]
-    public DateTime? Recording_RecordingMp3_DateStored_LTE { get; set; }
-    /// <summary> Recording.RecordingMp3.DateStored greater than or equal to </summary>
-    [JsonProperty("recording_recordingMp3_dateStored_gte")]
-    public DateTime? Recording_RecordingMp3_DateStored_GTE { get; set; }
-
     /// <summary> Recording.RecordingMp3.FileSizeInBytes equals </summary>
     [JsonProperty("recording_recordingMp3_fileSizeInBytes_eq")]
     public System.Int32? Recording_RecordingMp3_FileSizeInBytes_EQ { get; set; }
@@ -3865,16 +3815,6 @@ public class CallOutgoingToPSTNFilterRequest
     /// <summary> Recording.RecordingMp3.InstanceId regex </summary>
     [JsonProperty("recording_recordingMp3_instanceId_reg")]
     public string? Recording_RecordingMp3_InstanceId_REG { get; set; }
-
-    /// <summary> Recording.RecordingMp3.DateStored equals </summary>
-    [JsonProperty("recording_recordingMp3_dateStored_eq")]
-    public DateTime? Recording_RecordingMp3_DateStored_EQ { get; set; }
-    /// <summary> Recording.RecordingMp3.DateStored less than or equal to </summary>
-    [JsonProperty("recording_recordingMp3_dateStored_lte")]
-    public DateTime? Recording_RecordingMp3_DateStored_LTE { get; set; }
-    /// <summary> Recording.RecordingMp3.DateStored greater than or equal to </summary>
-    [JsonProperty("recording_recordingMp3_dateStored_gte")]
-    public DateTime? Recording_RecordingMp3_DateStored_GTE { get; set; }
 
     /// <summary> Recording.RecordingMp3.FileSizeInBytes equals </summary>
     [JsonProperty("recording_recordingMp3_fileSizeInBytes_eq")]
@@ -5481,16 +5421,6 @@ public class FaxIncomingFilterRequest
     [JsonProperty("pdf_instanceId_reg")]
     public string? Pdf_InstanceId_REG { get; set; }
 
-    /// <summary> Pdf.DateStored equals </summary>
-    [JsonProperty("pdf_dateStored_eq")]
-    public DateTime? Pdf_DateStored_EQ { get; set; }
-    /// <summary> Pdf.DateStored less than or equal to </summary>
-    [JsonProperty("pdf_dateStored_lte")]
-    public DateTime? Pdf_DateStored_LTE { get; set; }
-    /// <summary> Pdf.DateStored greater than or equal to </summary>
-    [JsonProperty("pdf_dateStored_gte")]
-    public DateTime? Pdf_DateStored_GTE { get; set; }
-
     /// <summary> Pdf.FileSizeInBytes equals </summary>
     [JsonProperty("pdf_fileSizeInBytes_eq")]
     public System.Int32? Pdf_FileSizeInBytes_EQ { get; set; }
@@ -5685,16 +5615,6 @@ public class FaxOutgoingGroupFilterRequest
     /// <summary> FaxesOutgoing.Pdf.InstanceId regex </summary>
     [JsonProperty("faxesOutgoing_pdf_instanceId_reg")]
     public string? FaxesOutgoing_Pdf_InstanceId_REG { get; set; }
-
-    /// <summary> FaxesOutgoing.Pdf.DateStored equals </summary>
-    [JsonProperty("faxesOutgoing_pdf_dateStored_eq")]
-    public DateTime? FaxesOutgoing_Pdf_DateStored_EQ { get; set; }
-    /// <summary> FaxesOutgoing.Pdf.DateStored less than or equal to </summary>
-    [JsonProperty("faxesOutgoing_pdf_dateStored_lte")]
-    public DateTime? FaxesOutgoing_Pdf_DateStored_LTE { get; set; }
-    /// <summary> FaxesOutgoing.Pdf.DateStored greater than or equal to </summary>
-    [JsonProperty("faxesOutgoing_pdf_dateStored_gte")]
-    public DateTime? FaxesOutgoing_Pdf_DateStored_GTE { get; set; }
 
     /// <summary> FaxesOutgoing.Pdf.FileSizeInBytes equals </summary>
     [JsonProperty("faxesOutgoing_pdf_fileSizeInBytes_eq")]
@@ -7392,16 +7312,6 @@ public class VoicemailFilterRequest
     [JsonProperty("voicemailWav_instanceId_reg")]
     public string? VoicemailWav_InstanceId_REG { get; set; }
 
-    /// <summary> VoicemailWav.DateStored equals </summary>
-    [JsonProperty("voicemailWav_dateStored_eq")]
-    public DateTime? VoicemailWav_DateStored_EQ { get; set; }
-    /// <summary> VoicemailWav.DateStored less than or equal to </summary>
-    [JsonProperty("voicemailWav_dateStored_lte")]
-    public DateTime? VoicemailWav_DateStored_LTE { get; set; }
-    /// <summary> VoicemailWav.DateStored greater than or equal to </summary>
-    [JsonProperty("voicemailWav_dateStored_gte")]
-    public DateTime? VoicemailWav_DateStored_GTE { get; set; }
-
     /// <summary> VoicemailWav.FileSizeInBytes equals </summary>
     [JsonProperty("voicemailWav_fileSizeInBytes_eq")]
     public System.Int32? VoicemailWav_FileSizeInBytes_EQ { get; set; }
@@ -7462,16 +7372,6 @@ public class VoicemailFilterRequest
     /// <summary> VoicemailMp3.InstanceId regex </summary>
     [JsonProperty("voicemailMp3_instanceId_reg")]
     public string? VoicemailMp3_InstanceId_REG { get; set; }
-
-    /// <summary> VoicemailMp3.DateStored equals </summary>
-    [JsonProperty("voicemailMp3_dateStored_eq")]
-    public DateTime? VoicemailMp3_DateStored_EQ { get; set; }
-    /// <summary> VoicemailMp3.DateStored less than or equal to </summary>
-    [JsonProperty("voicemailMp3_dateStored_lte")]
-    public DateTime? VoicemailMp3_DateStored_LTE { get; set; }
-    /// <summary> VoicemailMp3.DateStored greater than or equal to </summary>
-    [JsonProperty("voicemailMp3_dateStored_gte")]
-    public DateTime? VoicemailMp3_DateStored_GTE { get; set; }
 
     /// <summary> VoicemailMp3.FileSizeInBytes equals </summary>
     [JsonProperty("voicemailMp3_fileSizeInBytes_eq")]
@@ -7809,16 +7709,6 @@ public class VoicemailForwardedFilterRequest
     [JsonProperty("voicemailWav_instanceId_reg")]
     public string? VoicemailWav_InstanceId_REG { get; set; }
 
-    /// <summary> VoicemailWav.DateStored equals </summary>
-    [JsonProperty("voicemailWav_dateStored_eq")]
-    public DateTime? VoicemailWav_DateStored_EQ { get; set; }
-    /// <summary> VoicemailWav.DateStored less than or equal to </summary>
-    [JsonProperty("voicemailWav_dateStored_lte")]
-    public DateTime? VoicemailWav_DateStored_LTE { get; set; }
-    /// <summary> VoicemailWav.DateStored greater than or equal to </summary>
-    [JsonProperty("voicemailWav_dateStored_gte")]
-    public DateTime? VoicemailWav_DateStored_GTE { get; set; }
-
     /// <summary> VoicemailWav.FileSizeInBytes equals </summary>
     [JsonProperty("voicemailWav_fileSizeInBytes_eq")]
     public System.Int32? VoicemailWav_FileSizeInBytes_EQ { get; set; }
@@ -7879,16 +7769,6 @@ public class VoicemailForwardedFilterRequest
     /// <summary> VoicemailMp3.InstanceId regex </summary>
     [JsonProperty("voicemailMp3_instanceId_reg")]
     public string? VoicemailMp3_InstanceId_REG { get; set; }
-
-    /// <summary> VoicemailMp3.DateStored equals </summary>
-    [JsonProperty("voicemailMp3_dateStored_eq")]
-    public DateTime? VoicemailMp3_DateStored_EQ { get; set; }
-    /// <summary> VoicemailMp3.DateStored less than or equal to </summary>
-    [JsonProperty("voicemailMp3_dateStored_lte")]
-    public DateTime? VoicemailMp3_DateStored_LTE { get; set; }
-    /// <summary> VoicemailMp3.DateStored greater than or equal to </summary>
-    [JsonProperty("voicemailMp3_dateStored_gte")]
-    public DateTime? VoicemailMp3_DateStored_GTE { get; set; }
 
     /// <summary> VoicemailMp3.FileSizeInBytes equals </summary>
     [JsonProperty("voicemailMp3_fileSizeInBytes_eq")]
@@ -8613,6 +8493,121 @@ public class WebHookFilterRequest
     public DateTime? DateUpdated_GTE { get; set; }
 
 }
+/// <summary> Enables searching for DiskFiles </summary>
+public class DiskFileFilterRequest 
+{
+    /// <summary> IdDocument equals </summary>
+    [JsonProperty("idDocument_eq")]
+    public string? IdDocument_EQ { get; set; }
+    /// <summary> IdDocument contains </summary>
+    [JsonProperty("idDocument_con")]
+    public string? IdDocument_CON { get; set; }
+    /// <summary> IdDocument regex </summary>
+    [JsonProperty("idDocument_reg")]
+    public string? IdDocument_REG { get; set; }
+
+    /// <summary> IdStoredFile equals </summary>
+    [JsonProperty("idStoredFile_eq")]
+    public string? IdStoredFile_EQ { get; set; }
+    /// <summary> IdStoredFile contains </summary>
+    [JsonProperty("idStoredFile_con")]
+    public string? IdStoredFile_CON { get; set; }
+    /// <summary> IdStoredFile regex </summary>
+    [JsonProperty("idStoredFile_reg")]
+    public string? IdStoredFile_REG { get; set; }
+
+    /// <summary> StoredFile.InstanceId equals </summary>
+    [JsonProperty("storedFile_instanceId_eq")]
+    public string? StoredFile_InstanceId_EQ { get; set; }
+    /// <summary> StoredFile.InstanceId contains </summary>
+    [JsonProperty("storedFile_instanceId_con")]
+    public string? StoredFile_InstanceId_CON { get; set; }
+    /// <summary> StoredFile.InstanceId regex </summary>
+    [JsonProperty("storedFile_instanceId_reg")]
+    public string? StoredFile_InstanceId_REG { get; set; }
+
+    /// <summary> StoredFile.FileSizeInBytes equals </summary>
+    [JsonProperty("storedFile_fileSizeInBytes_eq")]
+    public System.Int32? StoredFile_FileSizeInBytes_EQ { get; set; }
+    /// <summary> StoredFile.FileSizeInBytes less than or equal to </summary>
+    [JsonProperty("storedFile_fileSizeInBytes_lte")]
+    public System.Int32? StoredFile_FileSizeInBytes_LTE { get; set; }
+    /// <summary> StoredFile.FileSizeInBytes greater than or equal to </summary>
+    [JsonProperty("storedFile_fileSizeInBytes_gte")]
+    public System.Int32? StoredFile_FileSizeInBytes_GTE { get; set; }
+
+    /// <summary> StoredFile.Md5Hash equals </summary>
+    [JsonProperty("storedFile_md5Hash_eq")]
+    public string? StoredFile_Md5Hash_EQ { get; set; }
+    /// <summary> StoredFile.Md5Hash contains </summary>
+    [JsonProperty("storedFile_md5Hash_con")]
+    public string? StoredFile_Md5Hash_CON { get; set; }
+    /// <summary> StoredFile.Md5Hash regex </summary>
+    [JsonProperty("storedFile_md5Hash_reg")]
+    public string? StoredFile_Md5Hash_REG { get; set; }
+
+    /// <summary> StoredFile.Url equals </summary>
+    [JsonProperty("storedFile_url_eq")]
+    public string? StoredFile_Url_EQ { get; set; }
+    /// <summary> StoredFile.Url contains </summary>
+    [JsonProperty("storedFile_url_con")]
+    public string? StoredFile_Url_CON { get; set; }
+    /// <summary> StoredFile.Url regex </summary>
+    [JsonProperty("storedFile_url_reg")]
+    public string? StoredFile_Url_REG { get; set; }
+
+    /// <summary> StoredFile.ApiDomain equals </summary>
+    [JsonProperty("storedFile_apiDomain_eq")]
+    public string? StoredFile_ApiDomain_EQ { get; set; }
+    /// <summary> StoredFile.ApiDomain contains </summary>
+    [JsonProperty("storedFile_apiDomain_con")]
+    public string? StoredFile_ApiDomain_CON { get; set; }
+    /// <summary> StoredFile.ApiDomain regex </summary>
+    [JsonProperty("storedFile_apiDomain_reg")]
+    public string? StoredFile_ApiDomain_REG { get; set; }
+
+    /// <summary> StoredFile.Id equals </summary>
+    [JsonProperty("storedFile_id_eq")]
+    public string? StoredFile_Id_EQ { get; set; }
+    /// <summary> StoredFile.Id contains </summary>
+    [JsonProperty("storedFile_id_con")]
+    public string? StoredFile_Id_CON { get; set; }
+    /// <summary> StoredFile.Id regex </summary>
+    [JsonProperty("storedFile_id_reg")]
+    public string? StoredFile_Id_REG { get; set; }
+
+
+    /// <summary> Id equals </summary>
+    [JsonProperty("id_eq")]
+    public string? Id_EQ { get; set; }
+    /// <summary> Id contains </summary>
+    [JsonProperty("id_con")]
+    public string? Id_CON { get; set; }
+    /// <summary> Id regex </summary>
+    [JsonProperty("id_reg")]
+    public string? Id_REG { get; set; }
+
+    /// <summary> DateCreated equals </summary>
+    [JsonProperty("dateCreated_eq")]
+    public DateTime? DateCreated_EQ { get; set; }
+    /// <summary> DateCreated less than or equal to </summary>
+    [JsonProperty("dateCreated_lte")]
+    public DateTime? DateCreated_LTE { get; set; }
+    /// <summary> DateCreated greater than or equal to </summary>
+    [JsonProperty("dateCreated_gte")]
+    public DateTime? DateCreated_GTE { get; set; }
+
+    /// <summary> DateUpdated equals </summary>
+    [JsonProperty("dateUpdated_eq")]
+    public DateTime? DateUpdated_EQ { get; set; }
+    /// <summary> DateUpdated less than or equal to </summary>
+    [JsonProperty("dateUpdated_lte")]
+    public DateTime? DateUpdated_LTE { get; set; }
+    /// <summary> DateUpdated greater than or equal to </summary>
+    [JsonProperty("dateUpdated_gte")]
+    public DateTime? DateUpdated_GTE { get; set; }
+
+}
 /// <summary> Enables searching for Calls </summary>
 public class CallFilterRequest 
 {
@@ -8990,16 +8985,6 @@ public class CallFilterRequest
     /// <summary> Recording.RecordingMp3.InstanceId regex </summary>
     [JsonProperty("recording_recordingMp3_instanceId_reg")]
     public string? Recording_RecordingMp3_InstanceId_REG { get; set; }
-
-    /// <summary> Recording.RecordingMp3.DateStored equals </summary>
-    [JsonProperty("recording_recordingMp3_dateStored_eq")]
-    public DateTime? Recording_RecordingMp3_DateStored_EQ { get; set; }
-    /// <summary> Recording.RecordingMp3.DateStored less than or equal to </summary>
-    [JsonProperty("recording_recordingMp3_dateStored_lte")]
-    public DateTime? Recording_RecordingMp3_DateStored_LTE { get; set; }
-    /// <summary> Recording.RecordingMp3.DateStored greater than or equal to </summary>
-    [JsonProperty("recording_recordingMp3_dateStored_gte")]
-    public DateTime? Recording_RecordingMp3_DateStored_GTE { get; set; }
 
     /// <summary> Recording.RecordingMp3.FileSizeInBytes equals </summary>
     [JsonProperty("recording_recordingMp3_fileSizeInBytes_eq")]
@@ -9529,16 +9514,6 @@ public class CallIncomingFilterRequest
     /// <summary> Recording.RecordingMp3.InstanceId regex </summary>
     [JsonProperty("recording_recordingMp3_instanceId_reg")]
     public string? Recording_RecordingMp3_InstanceId_REG { get; set; }
-
-    /// <summary> Recording.RecordingMp3.DateStored equals </summary>
-    [JsonProperty("recording_recordingMp3_dateStored_eq")]
-    public DateTime? Recording_RecordingMp3_DateStored_EQ { get; set; }
-    /// <summary> Recording.RecordingMp3.DateStored less than or equal to </summary>
-    [JsonProperty("recording_recordingMp3_dateStored_lte")]
-    public DateTime? Recording_RecordingMp3_DateStored_LTE { get; set; }
-    /// <summary> Recording.RecordingMp3.DateStored greater than or equal to </summary>
-    [JsonProperty("recording_recordingMp3_dateStored_gte")]
-    public DateTime? Recording_RecordingMp3_DateStored_GTE { get; set; }
 
     /// <summary> Recording.RecordingMp3.FileSizeInBytes equals </summary>
     [JsonProperty("recording_recordingMp3_fileSizeInBytes_eq")]
@@ -10176,16 +10151,6 @@ public class CallOutgoingFilterRequest
     /// <summary> Recording.RecordingMp3.InstanceId regex </summary>
     [JsonProperty("recording_recordingMp3_instanceId_reg")]
     public string? Recording_RecordingMp3_InstanceId_REG { get; set; }
-
-    /// <summary> Recording.RecordingMp3.DateStored equals </summary>
-    [JsonProperty("recording_recordingMp3_dateStored_eq")]
-    public DateTime? Recording_RecordingMp3_DateStored_EQ { get; set; }
-    /// <summary> Recording.RecordingMp3.DateStored less than or equal to </summary>
-    [JsonProperty("recording_recordingMp3_dateStored_lte")]
-    public DateTime? Recording_RecordingMp3_DateStored_LTE { get; set; }
-    /// <summary> Recording.RecordingMp3.DateStored greater than or equal to </summary>
-    [JsonProperty("recording_recordingMp3_dateStored_gte")]
-    public DateTime? Recording_RecordingMp3_DateStored_GTE { get; set; }
 
     /// <summary> Recording.RecordingMp3.FileSizeInBytes equals </summary>
     [JsonProperty("recording_recordingMp3_fileSizeInBytes_eq")]

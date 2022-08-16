@@ -103,4 +103,8 @@ public enum Collections
 
     /// <summary>UnauthorizedTokens</summary>
     UnauthorizedTokens,
+
+    // Al StoredFile object must have a clone on this table
+    /// <summary>DiskFiles</summary>
+    DiskFiles,
 }

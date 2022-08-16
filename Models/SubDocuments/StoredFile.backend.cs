@@ -1,7 +1,5 @@
 ﻿#if UBLUX_BACKEND
 
-using System.Text;
-
 namespace Ublux.Communications.Models.SubDocuments;
 
 // Previously called SaveOnAwsBucket
@@ -11,6 +9,15 @@ namespace Ublux.Communications.Models.SubDocuments;
 /// </summary>
 public partial class StoredFile : UbluxSubDocument, IReferncesAccount
 {
+    /// <summary>
+    ///     Reference to disk file
+    /// </summary>
+    [References(typeof(DiskFile))]
+    [IgnoreDataMember]
+    [AllowUpdate(false)]
+    [IsRequired]
+    public required string IdDiskFile { get; set; }
+
     /// <summary>
     ///     Id of account it references
     /// </summary>
@@ -26,7 +33,7 @@ public partial class StoredFile : UbluxSubDocument, IReferncesAccount
     [IgnoreDataMember]
     [AllowUpdate(false)]
     [IsRequired]
-    public required string FolderName { get; set; }
+    public required StorageFolderName FolderName { get; set; }
 
     /// <summary>
     ///     Usually id followed by extension. Example:  CL-I-XXXXX.mp3
@@ -42,22 +49,7 @@ public partial class StoredFile : UbluxSubDocument, IReferncesAccount
     [AllowUpdate(false)]
     public required string InstanceId { get; set; }
 
-    /// <summary>
-    ///     Common folders where we store files
-    /// </summary>
-    public static class CommonFolderNames
-    {
-        /// <summary></summary>
-        public const string Voicemail = "voicemails";
-        /// <summary></summary>
-        public const string FaxesIncoming = "faxes-incoming";
-        /// <summary></summary>
-        public const string FaxesOutgoing = "faxes-outgoing";
-        /// <summary></summary>
-        public const string Audios = "audios";
-        /// <summary></summary>
-        public const string Recordings = "recordings";
-    }
+    
 
     /// <summary>
     ///     Get id
@@ -71,7 +63,7 @@ public partial class StoredFile : UbluxSubDocument, IReferncesAccount
     /// <summary>
     ///     Get location where it will be stored on file system
     /// </summary>
-    public static string GetDirectoryWhereToSaveOnLinux(string idAccount, string folderName)
+    public static string GetDirectoryWhereToSaveOnLinux(string idAccount, StorageFolderName folderName)
     {
         return $"{GetDirectoryWhereToSaveOnLinuxBase()}/{idAccount}/{folderName}";
     }

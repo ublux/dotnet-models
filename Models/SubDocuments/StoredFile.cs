@@ -5,14 +5,7 @@
 /// </summary>
 public partial class StoredFile : UbluxSubDocument
 {
-    #region Properties
-
-    /// <summary>
-    ///     Date when file was stored
-    /// </summary>
-    [AllowUpdate(false)]
-    [IsRequired]
-    public required DateTime DateStored { get; set; }
+    #region Properties    
 
     /// <summary>
     ///     New because we removed table account data

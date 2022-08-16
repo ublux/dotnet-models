@@ -1312,6 +1312,18 @@ public class WebHookUpdateRequest // : IUbluxDocumentId
 }
 
 /// <summary>
+/// File stored on disk. All storedFiles will have a copy
+/// </summary>
+public class DiskFileUpdateRequest // : IUbluxDocumentId
+{
+    /// <summary> Set values on actual document </summary>
+    public void SetValuesOnDiskFile(DiskFile diskFile)
+    {
+    }
+
+}
+
+/// <summary>
 /// It is part of a phone. Lines are needed in order to make and receive phone calls.
 /// </summary><summary>
 /// It is part of a phone. Lines are needed in order to make and receive phone calls.

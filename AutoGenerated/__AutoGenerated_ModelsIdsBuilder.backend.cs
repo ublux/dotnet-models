@@ -336,6 +336,15 @@ namespace Ublux.Communications.Models.Documents {
         /// <summary> Build Id </summary>
         public static BuiltId BuildId(RunningApplicationInstance instance) => new($"{DocumentPrefix}.{instance.Id}.{instance.IdGlobalAutoIncrement()}");
     }
+    public partial class DiskFile {
+        /// <summary> Id prefix </summary>
+        public const string DocumentPrefix = "DF";
+
+        /// <summary> Prefix followed by stored file id Example DF.SF.1232 </summary>
+        public static BuiltId BuildId(StoredFile storedFile) => new($"{DocumentPrefix}.{storedFile.Id}");
+        /// <summary> Overload </summary>
+        public static BuiltId BuildId(string storedFileId) => new($"{DocumentPrefix}.{storedFileId}");
+    }
 }
 
 
