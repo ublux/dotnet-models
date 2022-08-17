@@ -27,15 +27,15 @@ public partial class StoredFile : UbluxSubDocument
     /// </summary>
     [AllowUpdate(false)]
     [BsonIgnore] // do not store on mongo
-    public string Url => BuildUrl(ApiDomain, this.IdAccount, this.FolderName, this.Id);
-    
+    public string Url => BuildUrl(this.ApiDomain, this.Id);
+
     /// <summary>
     ///     Helper method to build URL
     /// </summary>
-    public static string BuildUrl(string apiDomain, string idAccount, StorageFolderName folderName, string id)
+    public static string BuildUrl(string apiDomain, string idStoredFile)
     {
-        return $"https://{apiDomain}/{nameof(StoredFile)}/{idAccount}/{folderName}/{id}";
-    }
+        return $"https://{apiDomain}/{nameof(StoredFile)}/{GetIdDiskFile(idStoredFile)}";
+    }    
 
 
     /// <summary>

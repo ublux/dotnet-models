@@ -9,17 +9,27 @@ namespace Ublux.Communications.Models.Documents;
 public partial class DiskFile : UbluxDocument
 {
     /// <summary>
+    ///     Factory Pattern
+    /// </summary>
+    public static DiskFile Create(StoredFile sf)
+    {
+        return new DiskFile()
+        {
+            BuiltId = DiskFile.BuildId(sf),
+            DateCreated = DateTime.UtcNow,
+            DateDeleted = null,
+            DateUpdated = null,
+            HasBeenDownloaded = false,
+            IdDocument = sf.Id,
+            StoredFile = sf
+        };
+    }
+
+    /// <summary>
     ///     Id of document containing this Stored File. Example Audio1234
     /// </summary>
     [AllowUpdate(false)]
-    public required string IdDocument { get; set; }
-
-    /// <summary>
-    ///     Id of stored file
-    /// </summary>
-    [AllowUpdate(false)]
-    [References(typeof(StoredFile))]
-    public required string IdStoredFile { get; set; }
+    public required string IdDocument { get; set; }    
 
     /// <summary>
     ///     Stored file such as an Audio MP3 file
@@ -32,7 +42,7 @@ public partial class DiskFile : UbluxDocument
     ///     TODO: Set index on this property
     /// </summary>
     [AllowUpdate(false)]
-    public bool HasBeenDownloaded { get; set; }
+    public required bool HasBeenDownloaded { get; set; }
 }
 
 #endif

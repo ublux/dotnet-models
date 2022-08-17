@@ -1313,6 +1313,7 @@ public class WebHookUpdateRequest // : IUbluxDocumentId
 
 /// <summary>
 /// File stored on disk. All storedFiles will have a copy
+/// This collection should not be stored on redis and be created with time to leave
 /// </summary>
 public class DiskFileUpdateRequest // : IUbluxDocumentId
 {

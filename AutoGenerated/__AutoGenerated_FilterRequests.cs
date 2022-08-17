@@ -8506,16 +8506,6 @@ public class DiskFileFilterRequest
     [JsonProperty("idDocument_reg")]
     public string? IdDocument_REG { get; set; }
 
-    /// <summary> IdStoredFile equals </summary>
-    [JsonProperty("idStoredFile_eq")]
-    public string? IdStoredFile_EQ { get; set; }
-    /// <summary> IdStoredFile contains </summary>
-    [JsonProperty("idStoredFile_con")]
-    public string? IdStoredFile_CON { get; set; }
-    /// <summary> IdStoredFile regex </summary>
-    [JsonProperty("idStoredFile_reg")]
-    public string? IdStoredFile_REG { get; set; }
-
     /// <summary> StoredFile.InstanceId equals </summary>
     [JsonProperty("storedFile_instanceId_eq")]
     public string? StoredFile_InstanceId_EQ { get; set; }
@@ -8576,6 +8566,10 @@ public class DiskFileFilterRequest
     [JsonProperty("storedFile_id_reg")]
     public string? StoredFile_Id_REG { get; set; }
 
+
+    /// <summary> HasBeenDownloaded equals </summary>
+    [JsonProperty("hasBeenDownloaded_eq")]
+    public bool? HasBeenDownloaded_EQ { get; set; }
 
     /// <summary> Id equals </summary>
     [JsonProperty("id_eq")]

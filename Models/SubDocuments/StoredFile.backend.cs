@@ -10,13 +10,20 @@ namespace Ublux.Communications.Models.SubDocuments;
 public partial class StoredFile : UbluxSubDocument, IReferncesAccount
 {
     /// <summary>
-    ///     Reference to disk file
+    ///     Get id of disk file
     /// </summary>
-    [References(typeof(DiskFile))]
-    [IgnoreDataMember]
-    [AllowUpdate(false)]
-    [IsRequired]
-    public required string IdDiskFile { get; set; }
+    public string GetIdDiskFile()
+    {
+        return DiskFile.BuildId(this).Id;
+    }
+    /// <summary>
+    ///     Static implementation
+    /// </summary>
+    public static string GetIdDiskFile(string idStoredFile)
+    {
+        return DiskFile.BuildId(idStoredFile).Id;
+    }
+    
 
     /// <summary>
     ///     Id of account it references
@@ -48,9 +55,7 @@ public partial class StoredFile : UbluxSubDocument, IReferncesAccount
     /// </summary>
     [AllowUpdate(false)]
     public required string InstanceId { get; set; }
-
     
-
     /// <summary>
     ///     Get id
     /// </summary>
@@ -70,13 +75,13 @@ public partial class StoredFile : UbluxSubDocument, IReferncesAccount
     /// <summary>
     ///     Get location where it will be stored on file system
     /// </summary>
-    public string GetDirectoryWhereToSaveOnLinux()
+    public string GetPathWhereToSaveOnLinux()
     {
-        return GetDirectoryWhereToSaveOnLinux(this.IdAccount, this.FolderName);
+        return System.IO.Path.Combine(GetDirectoryWhereToSaveOnLinux(this.IdAccount, this.FolderName), this.Id);
     }
 
     /// <summary> Get base directory where to save accounts data </summary>
-    public static string GetDirectoryWhereToSaveOnLinuxBase() => "/usr/share/ublux/accounts";
+    public static string GetDirectoryWhereToSaveOnLinuxBase() => "/usr/share/ublux/accounts-data";
 
     /// <summary>
     ///     Helper to get hash
