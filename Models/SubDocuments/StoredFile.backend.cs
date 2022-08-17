@@ -67,6 +67,13 @@ public partial class StoredFile : UbluxSubDocument, IReferncesAccount
     {
         return $"{GetDirectoryWhereToSaveOnLinuxBase()}/{idAccount}/{folderName}";
     }
+    /// <summary>
+    ///     Get location where it will be stored on file system
+    /// </summary>
+    public string GetDirectoryWhereToSaveOnLinux()
+    {
+        return GetDirectoryWhereToSaveOnLinux(this.IdAccount, this.FolderName);
+    }
 
     /// <summary> Get base directory where to save accounts data </summary>
     public static string GetDirectoryWhereToSaveOnLinuxBase() => "/usr/share/ublux/accounts";

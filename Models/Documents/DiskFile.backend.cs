@@ -26,6 +26,13 @@ public partial class DiskFile : UbluxDocument
     /// </summary>    
     [AllowUpdate(false)]
     public required StoredFile StoredFile { get; set; }
+
+    /// <summary>
+    ///     This property is going to only change on local mongodb. That means that one instance of mongo may have different value than another
+    ///     TODO: Set index on this property
+    /// </summary>
+    [AllowUpdate(false)]
+    public bool HasBeenDownloaded { get; set; }
 }
 
 #endif
