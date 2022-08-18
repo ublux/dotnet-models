@@ -3,6 +3,7 @@
 /// <summary>
 ///     Represents a validation error.
 /// </summary>
+[DebuggerDisplay("PropertyName={PropertyName} PropertyValue={PropertyValue} ErrorMessage={ErrorMessage}")]
 public class ValidationError
 {
     /// <summary>
