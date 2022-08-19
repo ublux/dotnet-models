@@ -3,7 +3,7 @@
 namespace Ublux.Communications.Enums;
 
 /// <summary>
-///     Email client types
+///     Ublux email types
 /// </summary>
 public enum UbluxEmail
 {
