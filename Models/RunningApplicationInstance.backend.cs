@@ -64,31 +64,7 @@ public class RunningApplicationInstance
         return Interlocked.Decrement(ref _numberOfOperationsExecuting);
     }
 
-    /// <summary>
-    ///     Executes an operation that will not allow application to terminate until this operation is done
-    ///     returns exception if there is an error
-    /// </summary>
-    public async Task<Exception?> ExecuteImportantOperationAsync(Func<Task> func)
-    {
-        IncrementNumberOfOperationsExecuting();
-
-        try
-        {
-            await func();
-            return null;
-        }
-        catch (Exception ex)
-        {
-            if (Debugger.IsAttached)
-                Debugger.Break();
-            
-            return ex;
-        }
-        finally
-        {
-            DecrementNumberOfOperationsExecuting();
-        }
-    }
+   
 
     /// <summary>
     ///     Returns false if timeout. true otherwise
