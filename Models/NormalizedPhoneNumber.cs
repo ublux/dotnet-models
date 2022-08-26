@@ -18,5 +18,5 @@ public class NormalizedPhoneNumber
     /// <summary>
     ///     Country of phone number. Null if unknown
     /// </summary>
-    public CountryIsoCode? CountryIsoCode { get; set; }
+    public CountryIsoCode CountryIsoCode { get; set; }
 }
