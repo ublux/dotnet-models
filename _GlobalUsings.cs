@@ -10,3 +10,6 @@ global using MongoDB.Bson;
 global using System.Diagnostics;
 global using JsonSubTypes;
 global using System.Text;
+
+using System.Runtime.CompilerServices;
+[assembly: InternalsVisibleTo("Ublux.Communications.WS.IntegrationTests")]

@@ -1,10 +1,5 @@
 ﻿#if UBLUX_BACKEND
 
-using System.Runtime.CompilerServices;
-
-[assembly: InternalsVisibleTo("Ublux.Communications.WS.IntegrationTests")]
-
-
 namespace Ublux.Communications.Models;
 
 /// <summary>

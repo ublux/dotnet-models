@@ -91,7 +91,7 @@ public partial class Contact : UbluxDocument
     /// </summary>
     public string GetFullName()
     {
-        System.Text.StringBuilder sb = new(64);
+        StringBuilder sb = new(64);
 
         if (!string.IsNullOrEmpty(FirstName))
         {
