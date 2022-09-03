@@ -14,7 +14,7 @@
     typeof(CloudServiceWebHost),
     typeof(CloudServiceWebService)
 )]
-public abstract class CloudService : UbluxDocument
+public abstract partial class CloudService : UbluxDocument
 {
     #region Properties
 
@@ -31,7 +31,7 @@ public abstract class CloudService : UbluxDocument
     /// </summary>
     [AllowUpdate(false)]
     [IsRequired]
-    [HideForCreateRequest]
+    [HideForCreateRequest]    
     public abstract CloudServiceType CloudServiceType { get; }
 
     /// <summary>
@@ -59,7 +59,6 @@ public abstract class CloudService : UbluxDocument
     [IsRequired]
     public List<string> ExternalIps { get; set; } = new();
 
-
     /// <summary>
     ///     Is this service used as a backup pbx? Failover and NonFailover servers should NEVER overlap.         
     /// </summary>
@@ -79,6 +78,12 @@ public abstract class CloudService : UbluxDocument
     /// </summary>
     [AllowUpdate(false)]
     public bool IsHealthy { get; set; }
+
+    /// <summary>
+    ///     Instance Id. Example US-A for pbx or 1 for WebService
+    /// </summary>
+    [AllowUpdate(false)]
+    public required string InstanceId { get; set; }
 
     #endregion     
 }
