@@ -272,18 +272,6 @@ public class CloudServiceWebHostUpdateRequest // : IUbluxDocumentId
 }
 
 /// <summary>
-/// Ublux API cloud service
-/// </summary>
-public class CloudServiceWebServiceUpdateRequest // : IUbluxDocumentId
-{
-    /// <summary> Set values on actual document </summary>
-    public void SetValuesOnCloudServiceWebService(CloudServiceWebService cloudServiceWebService)
-    {
-    }
-
-}
-
-/// <summary>
 /// Contact
 /// </summary><summary>
 /// Contact

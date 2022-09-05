@@ -7,12 +7,12 @@
 [JsonSubtypes.KnownSubType(typeof(CloudServicePbx), nameof(CloudServiceType.PBX))]
 [JsonSubtypes.KnownSubType(typeof(CloudServiceWebApp), nameof(CloudServiceType.WA))]
 [JsonSubtypes.KnownSubType(typeof(CloudServiceWebHost), nameof(CloudServiceType.WH))]
-[JsonSubtypes.KnownSubType(typeof(CloudServiceWebService), nameof(CloudServiceType.WS))]
+//[JsonSubtypes.KnownSubType(typeof(CloudServiceWebService), nameof(CloudServiceType.WS))]
 [BsonKnownTypes(
     typeof(CloudServicePbx),
     typeof(CloudServiceWebApp),
-    typeof(CloudServiceWebHost),
-    typeof(CloudServiceWebService)
+    typeof(CloudServiceWebHost)
+    //typeof(CloudServiceWebService)
 )]
 public abstract partial class CloudService : UbluxDocument
 {

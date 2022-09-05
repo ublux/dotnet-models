@@ -112,13 +112,6 @@ namespace Ublux.Communications.Models.Documents {
         /// <summary> Custom: Prefix followed by id. Example: PBX.UST, PBX.US1, WS.1 </summary>
         public static BuiltId BuildId(string id) => new($"{DocumentPrefix}.{id}");
     }
-    public partial class CloudServiceWebService {
-        /// <summary> Id prefix </summary>
-        public const string DocumentPrefix = "CSWS";
-
-        /// <summary> Custom: Prefix followed by id. Example: PBX.UST, PBX.US1, WS.1 </summary>
-        public static BuiltId BuildId(string id) => new($"{DocumentPrefix}.{id}");
-    }
     public partial class Contact {
         /// <summary> Id prefix </summary>
         public const string DocumentPrefix = "Co";

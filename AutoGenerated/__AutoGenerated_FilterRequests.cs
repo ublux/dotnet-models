@@ -316,16 +316,6 @@ public class AudioFilterRequest
     [JsonProperty("audioMp3_url_reg")]
     public string? AudioMp3_Url_REG { get; set; }
 
-    /// <summary> AudioMp3.ApiDomain equals </summary>
-    [JsonProperty("audioMp3_apiDomain_eq")]
-    public string? AudioMp3_ApiDomain_EQ { get; set; }
-    /// <summary> AudioMp3.ApiDomain contains </summary>
-    [JsonProperty("audioMp3_apiDomain_con")]
-    public string? AudioMp3_ApiDomain_CON { get; set; }
-    /// <summary> AudioMp3.ApiDomain regex </summary>
-    [JsonProperty("audioMp3_apiDomain_reg")]
-    public string? AudioMp3_ApiDomain_REG { get; set; }
-
     /// <summary> AudioMp3.Id equals </summary>
     [JsonProperty("audioMp3_id_eq")]
     public string? AudioMp3_Id_EQ { get; set; }
@@ -376,16 +366,6 @@ public class AudioFilterRequest
     /// <summary> AudioWav.Url regex </summary>
     [JsonProperty("audioWav_url_reg")]
     public string? AudioWav_Url_REG { get; set; }
-
-    /// <summary> AudioWav.ApiDomain equals </summary>
-    [JsonProperty("audioWav_apiDomain_eq")]
-    public string? AudioWav_ApiDomain_EQ { get; set; }
-    /// <summary> AudioWav.ApiDomain contains </summary>
-    [JsonProperty("audioWav_apiDomain_con")]
-    public string? AudioWav_ApiDomain_CON { get; set; }
-    /// <summary> AudioWav.ApiDomain regex </summary>
-    [JsonProperty("audioWav_apiDomain_reg")]
-    public string? AudioWav_ApiDomain_REG { get; set; }
 
     /// <summary> AudioWav.Id equals </summary>
     [JsonProperty("audioWav_id_eq")]
@@ -1122,16 +1102,6 @@ public class CallIncomingToCallFlowFilterRequest
     /// <summary> Recording.RecordingMp3.Url regex </summary>
     [JsonProperty("recording_recordingMp3_url_reg")]
     public string? Recording_RecordingMp3_Url_REG { get; set; }
-
-    /// <summary> Recording.RecordingMp3.ApiDomain equals </summary>
-    [JsonProperty("recording_recordingMp3_apiDomain_eq")]
-    public string? Recording_RecordingMp3_ApiDomain_EQ { get; set; }
-    /// <summary> Recording.RecordingMp3.ApiDomain contains </summary>
-    [JsonProperty("recording_recordingMp3_apiDomain_con")]
-    public string? Recording_RecordingMp3_ApiDomain_CON { get; set; }
-    /// <summary> Recording.RecordingMp3.ApiDomain regex </summary>
-    [JsonProperty("recording_recordingMp3_apiDomain_reg")]
-    public string? Recording_RecordingMp3_ApiDomain_REG { get; set; }
 
     /// <summary> Recording.RecordingMp3.Id equals </summary>
     [JsonProperty("recording_recordingMp3_id_eq")]
@@ -2104,16 +2074,6 @@ public class CallIncomingToExtensionFilterRequest
     /// <summary> Recording.RecordingMp3.Url regex </summary>
     [JsonProperty("recording_recordingMp3_url_reg")]
     public string? Recording_RecordingMp3_Url_REG { get; set; }
-
-    /// <summary> Recording.RecordingMp3.ApiDomain equals </summary>
-    [JsonProperty("recording_recordingMp3_apiDomain_eq")]
-    public string? Recording_RecordingMp3_ApiDomain_EQ { get; set; }
-    /// <summary> Recording.RecordingMp3.ApiDomain contains </summary>
-    [JsonProperty("recording_recordingMp3_apiDomain_con")]
-    public string? Recording_RecordingMp3_ApiDomain_CON { get; set; }
-    /// <summary> Recording.RecordingMp3.ApiDomain regex </summary>
-    [JsonProperty("recording_recordingMp3_apiDomain_reg")]
-    public string? Recording_RecordingMp3_ApiDomain_REG { get; set; }
 
     /// <summary> Recording.RecordingMp3.Id equals </summary>
     [JsonProperty("recording_recordingMp3_id_eq")]
@@ -3195,16 +3155,6 @@ public class CallOutgoingToExtensionFilterRequest
     [JsonProperty("recording_recordingMp3_url_reg")]
     public string? Recording_RecordingMp3_Url_REG { get; set; }
 
-    /// <summary> Recording.RecordingMp3.ApiDomain equals </summary>
-    [JsonProperty("recording_recordingMp3_apiDomain_eq")]
-    public string? Recording_RecordingMp3_ApiDomain_EQ { get; set; }
-    /// <summary> Recording.RecordingMp3.ApiDomain contains </summary>
-    [JsonProperty("recording_recordingMp3_apiDomain_con")]
-    public string? Recording_RecordingMp3_ApiDomain_CON { get; set; }
-    /// <summary> Recording.RecordingMp3.ApiDomain regex </summary>
-    [JsonProperty("recording_recordingMp3_apiDomain_reg")]
-    public string? Recording_RecordingMp3_ApiDomain_REG { get; set; }
-
     /// <summary> Recording.RecordingMp3.Id equals </summary>
     [JsonProperty("recording_recordingMp3_id_eq")]
     public string? Recording_RecordingMp3_Id_EQ { get; set; }
@@ -3846,16 +3796,6 @@ public class CallOutgoingToPSTNFilterRequest
     [JsonProperty("recording_recordingMp3_url_reg")]
     public string? Recording_RecordingMp3_Url_REG { get; set; }
 
-    /// <summary> Recording.RecordingMp3.ApiDomain equals </summary>
-    [JsonProperty("recording_recordingMp3_apiDomain_eq")]
-    public string? Recording_RecordingMp3_ApiDomain_EQ { get; set; }
-    /// <summary> Recording.RecordingMp3.ApiDomain contains </summary>
-    [JsonProperty("recording_recordingMp3_apiDomain_con")]
-    public string? Recording_RecordingMp3_ApiDomain_CON { get; set; }
-    /// <summary> Recording.RecordingMp3.ApiDomain regex </summary>
-    [JsonProperty("recording_recordingMp3_apiDomain_reg")]
-    public string? Recording_RecordingMp3_ApiDomain_REG { get; set; }
-
     /// <summary> Recording.RecordingMp3.Id equals </summary>
     [JsonProperty("recording_recordingMp3_id_eq")]
     public string? Recording_RecordingMp3_Id_EQ { get; set; }
@@ -3990,6 +3930,16 @@ public class CloudServicePbxFilterRequest
     [JsonProperty("isHealthy_eq")]
     public bool? IsHealthy_EQ { get; set; }
 
+    /// <summary> InstanceId equals </summary>
+    [JsonProperty("instanceId_eq")]
+    public string? InstanceId_EQ { get; set; }
+    /// <summary> InstanceId contains </summary>
+    [JsonProperty("instanceId_con")]
+    public string? InstanceId_CON { get; set; }
+    /// <summary> InstanceId regex </summary>
+    [JsonProperty("instanceId_reg")]
+    public string? InstanceId_REG { get; set; }
+
     /// <summary> Id equals </summary>
     [JsonProperty("id_eq")]
     public string? Id_EQ { get; set; }
@@ -4063,6 +4013,16 @@ public class CloudServiceWebAppFilterRequest
     /// <summary> IsHealthy equals </summary>
     [JsonProperty("isHealthy_eq")]
     public bool? IsHealthy_EQ { get; set; }
+
+    /// <summary> InstanceId equals </summary>
+    [JsonProperty("instanceId_eq")]
+    public string? InstanceId_EQ { get; set; }
+    /// <summary> InstanceId contains </summary>
+    [JsonProperty("instanceId_con")]
+    public string? InstanceId_CON { get; set; }
+    /// <summary> InstanceId regex </summary>
+    [JsonProperty("instanceId_reg")]
+    public string? InstanceId_REG { get; set; }
 
     /// <summary> Id equals </summary>
     [JsonProperty("id_eq")]
@@ -4138,79 +4098,15 @@ public class CloudServiceWebHostFilterRequest
     [JsonProperty("isHealthy_eq")]
     public bool? IsHealthy_EQ { get; set; }
 
-    /// <summary> Id equals </summary>
-    [JsonProperty("id_eq")]
-    public string? Id_EQ { get; set; }
-    /// <summary> Id contains </summary>
-    [JsonProperty("id_con")]
-    public string? Id_CON { get; set; }
-    /// <summary> Id regex </summary>
-    [JsonProperty("id_reg")]
-    public string? Id_REG { get; set; }
-
-    /// <summary> DateCreated equals </summary>
-    [JsonProperty("dateCreated_eq")]
-    public DateTime? DateCreated_EQ { get; set; }
-    /// <summary> DateCreated less than or equal to </summary>
-    [JsonProperty("dateCreated_lte")]
-    public DateTime? DateCreated_LTE { get; set; }
-    /// <summary> DateCreated greater than or equal to </summary>
-    [JsonProperty("dateCreated_gte")]
-    public DateTime? DateCreated_GTE { get; set; }
-
-    /// <summary> DateUpdated equals </summary>
-    [JsonProperty("dateUpdated_eq")]
-    public DateTime? DateUpdated_EQ { get; set; }
-    /// <summary> DateUpdated less than or equal to </summary>
-    [JsonProperty("dateUpdated_lte")]
-    public DateTime? DateUpdated_LTE { get; set; }
-    /// <summary> DateUpdated greater than or equal to </summary>
-    [JsonProperty("dateUpdated_gte")]
-    public DateTime? DateUpdated_GTE { get; set; }
-
-}
-/// <summary> Enables searching for CloudServiceWebServices </summary>
-public class CloudServiceWebServiceFilterRequest 
-{
-    /// <summary> CloudServiceType equals </summary>
-    [JsonProperty("cloudServiceType_eq")]
-    public CloudServiceType? CloudServiceType_EQ { get; set; }
-
-    /// <summary> CountryIsoCode equals </summary>
-    [JsonProperty("countryIsoCode_eq")]
-    public CountryIsoCode? CountryIsoCode_EQ { get; set; }
-
-    /// <summary> Localnet equals </summary>
-    [JsonProperty("localnet_eq")]
-    public string? Localnet_EQ { get; set; }
-    /// <summary> Localnet contains </summary>
-    [JsonProperty("localnet_con")]
-    public string? Localnet_CON { get; set; }
-    /// <summary> Localnet regex </summary>
-    [JsonProperty("localnet_reg")]
-    public string? Localnet_REG { get; set; }
-
-    /// <summary> ExternalIps equals </summary>
-    [JsonProperty("externalIps_eq")]
-    public string? ExternalIps_EQ { get; set; }
-    /// <summary> ExternalIps contains </summary>
-    [JsonProperty("externalIps_con")]
-    public string? ExternalIps_CON { get; set; }
-    /// <summary> ExternalIps regex </summary>
-    [JsonProperty("externalIps_reg")]
-    public string? ExternalIps_REG { get; set; }
-
-    /// <summary> IsFailover equals </summary>
-    [JsonProperty("isFailover_eq")]
-    public bool? IsFailover_EQ { get; set; }
-
-    /// <summary> Nat equals </summary>
-    [JsonProperty("nat_eq")]
-    public bool? Nat_EQ { get; set; }
-
-    /// <summary> IsHealthy equals </summary>
-    [JsonProperty("isHealthy_eq")]
-    public bool? IsHealthy_EQ { get; set; }
+    /// <summary> InstanceId equals </summary>
+    [JsonProperty("instanceId_eq")]
+    public string? InstanceId_EQ { get; set; }
+    /// <summary> InstanceId contains </summary>
+    [JsonProperty("instanceId_con")]
+    public string? InstanceId_CON { get; set; }
+    /// <summary> InstanceId regex </summary>
+    [JsonProperty("instanceId_reg")]
+    public string? InstanceId_REG { get; set; }
 
     /// <summary> Id equals </summary>
     [JsonProperty("id_eq")]
@@ -5451,16 +5347,6 @@ public class FaxIncomingFilterRequest
     [JsonProperty("pdf_url_reg")]
     public string? Pdf_Url_REG { get; set; }
 
-    /// <summary> Pdf.ApiDomain equals </summary>
-    [JsonProperty("pdf_apiDomain_eq")]
-    public string? Pdf_ApiDomain_EQ { get; set; }
-    /// <summary> Pdf.ApiDomain contains </summary>
-    [JsonProperty("pdf_apiDomain_con")]
-    public string? Pdf_ApiDomain_CON { get; set; }
-    /// <summary> Pdf.ApiDomain regex </summary>
-    [JsonProperty("pdf_apiDomain_reg")]
-    public string? Pdf_ApiDomain_REG { get; set; }
-
     /// <summary> Pdf.Id equals </summary>
     [JsonProperty("pdf_id_eq")]
     public string? Pdf_Id_EQ { get; set; }
@@ -5645,16 +5531,6 @@ public class FaxOutgoingGroupFilterRequest
     /// <summary> FaxesOutgoing.Pdf.Url regex </summary>
     [JsonProperty("faxesOutgoing_pdf_url_reg")]
     public string? FaxesOutgoing_Pdf_Url_REG { get; set; }
-
-    /// <summary> FaxesOutgoing.Pdf.ApiDomain equals </summary>
-    [JsonProperty("faxesOutgoing_pdf_apiDomain_eq")]
-    public string? FaxesOutgoing_Pdf_ApiDomain_EQ { get; set; }
-    /// <summary> FaxesOutgoing.Pdf.ApiDomain contains </summary>
-    [JsonProperty("faxesOutgoing_pdf_apiDomain_con")]
-    public string? FaxesOutgoing_Pdf_ApiDomain_CON { get; set; }
-    /// <summary> FaxesOutgoing.Pdf.ApiDomain regex </summary>
-    [JsonProperty("faxesOutgoing_pdf_apiDomain_reg")]
-    public string? FaxesOutgoing_Pdf_ApiDomain_REG { get; set; }
 
     /// <summary> FaxesOutgoing.Pdf.Id equals </summary>
     [JsonProperty("faxesOutgoing_pdf_id_eq")]
@@ -7342,16 +7218,6 @@ public class VoicemailFilterRequest
     [JsonProperty("voicemailWav_url_reg")]
     public string? VoicemailWav_Url_REG { get; set; }
 
-    /// <summary> VoicemailWav.ApiDomain equals </summary>
-    [JsonProperty("voicemailWav_apiDomain_eq")]
-    public string? VoicemailWav_ApiDomain_EQ { get; set; }
-    /// <summary> VoicemailWav.ApiDomain contains </summary>
-    [JsonProperty("voicemailWav_apiDomain_con")]
-    public string? VoicemailWav_ApiDomain_CON { get; set; }
-    /// <summary> VoicemailWav.ApiDomain regex </summary>
-    [JsonProperty("voicemailWav_apiDomain_reg")]
-    public string? VoicemailWav_ApiDomain_REG { get; set; }
-
     /// <summary> VoicemailWav.Id equals </summary>
     [JsonProperty("voicemailWav_id_eq")]
     public string? VoicemailWav_Id_EQ { get; set; }
@@ -7402,16 +7268,6 @@ public class VoicemailFilterRequest
     /// <summary> VoicemailMp3.Url regex </summary>
     [JsonProperty("voicemailMp3_url_reg")]
     public string? VoicemailMp3_Url_REG { get; set; }
-
-    /// <summary> VoicemailMp3.ApiDomain equals </summary>
-    [JsonProperty("voicemailMp3_apiDomain_eq")]
-    public string? VoicemailMp3_ApiDomain_EQ { get; set; }
-    /// <summary> VoicemailMp3.ApiDomain contains </summary>
-    [JsonProperty("voicemailMp3_apiDomain_con")]
-    public string? VoicemailMp3_ApiDomain_CON { get; set; }
-    /// <summary> VoicemailMp3.ApiDomain regex </summary>
-    [JsonProperty("voicemailMp3_apiDomain_reg")]
-    public string? VoicemailMp3_ApiDomain_REG { get; set; }
 
     /// <summary> VoicemailMp3.Id equals </summary>
     [JsonProperty("voicemailMp3_id_eq")]
@@ -7739,16 +7595,6 @@ public class VoicemailForwardedFilterRequest
     [JsonProperty("voicemailWav_url_reg")]
     public string? VoicemailWav_Url_REG { get; set; }
 
-    /// <summary> VoicemailWav.ApiDomain equals </summary>
-    [JsonProperty("voicemailWav_apiDomain_eq")]
-    public string? VoicemailWav_ApiDomain_EQ { get; set; }
-    /// <summary> VoicemailWav.ApiDomain contains </summary>
-    [JsonProperty("voicemailWav_apiDomain_con")]
-    public string? VoicemailWav_ApiDomain_CON { get; set; }
-    /// <summary> VoicemailWav.ApiDomain regex </summary>
-    [JsonProperty("voicemailWav_apiDomain_reg")]
-    public string? VoicemailWav_ApiDomain_REG { get; set; }
-
     /// <summary> VoicemailWav.Id equals </summary>
     [JsonProperty("voicemailWav_id_eq")]
     public string? VoicemailWav_Id_EQ { get; set; }
@@ -7799,16 +7645,6 @@ public class VoicemailForwardedFilterRequest
     /// <summary> VoicemailMp3.Url regex </summary>
     [JsonProperty("voicemailMp3_url_reg")]
     public string? VoicemailMp3_Url_REG { get; set; }
-
-    /// <summary> VoicemailMp3.ApiDomain equals </summary>
-    [JsonProperty("voicemailMp3_apiDomain_eq")]
-    public string? VoicemailMp3_ApiDomain_EQ { get; set; }
-    /// <summary> VoicemailMp3.ApiDomain contains </summary>
-    [JsonProperty("voicemailMp3_apiDomain_con")]
-    public string? VoicemailMp3_ApiDomain_CON { get; set; }
-    /// <summary> VoicemailMp3.ApiDomain regex </summary>
-    [JsonProperty("voicemailMp3_apiDomain_reg")]
-    public string? VoicemailMp3_ApiDomain_REG { get; set; }
 
     /// <summary> VoicemailMp3.Id equals </summary>
     [JsonProperty("voicemailMp3_id_eq")]
@@ -8546,16 +8382,6 @@ public class DiskFileFilterRequest
     [JsonProperty("storedFile_url_reg")]
     public string? StoredFile_Url_REG { get; set; }
 
-    /// <summary> StoredFile.ApiDomain equals </summary>
-    [JsonProperty("storedFile_apiDomain_eq")]
-    public string? StoredFile_ApiDomain_EQ { get; set; }
-    /// <summary> StoredFile.ApiDomain contains </summary>
-    [JsonProperty("storedFile_apiDomain_con")]
-    public string? StoredFile_ApiDomain_CON { get; set; }
-    /// <summary> StoredFile.ApiDomain regex </summary>
-    [JsonProperty("storedFile_apiDomain_reg")]
-    public string? StoredFile_ApiDomain_REG { get; set; }
-
     /// <summary> StoredFile.Id equals </summary>
     [JsonProperty("storedFile_id_eq")]
     public string? StoredFile_Id_EQ { get; set; }
@@ -9009,16 +8835,6 @@ public class CallFilterRequest
     /// <summary> Recording.RecordingMp3.Url regex </summary>
     [JsonProperty("recording_recordingMp3_url_reg")]
     public string? Recording_RecordingMp3_Url_REG { get; set; }
-
-    /// <summary> Recording.RecordingMp3.ApiDomain equals </summary>
-    [JsonProperty("recording_recordingMp3_apiDomain_eq")]
-    public string? Recording_RecordingMp3_ApiDomain_EQ { get; set; }
-    /// <summary> Recording.RecordingMp3.ApiDomain contains </summary>
-    [JsonProperty("recording_recordingMp3_apiDomain_con")]
-    public string? Recording_RecordingMp3_ApiDomain_CON { get; set; }
-    /// <summary> Recording.RecordingMp3.ApiDomain regex </summary>
-    [JsonProperty("recording_recordingMp3_apiDomain_reg")]
-    public string? Recording_RecordingMp3_ApiDomain_REG { get; set; }
 
     /// <summary> Recording.RecordingMp3.Id equals </summary>
     [JsonProperty("recording_recordingMp3_id_eq")]
@@ -9538,16 +9354,6 @@ public class CallIncomingFilterRequest
     /// <summary> Recording.RecordingMp3.Url regex </summary>
     [JsonProperty("recording_recordingMp3_url_reg")]
     public string? Recording_RecordingMp3_Url_REG { get; set; }
-
-    /// <summary> Recording.RecordingMp3.ApiDomain equals </summary>
-    [JsonProperty("recording_recordingMp3_apiDomain_eq")]
-    public string? Recording_RecordingMp3_ApiDomain_EQ { get; set; }
-    /// <summary> Recording.RecordingMp3.ApiDomain contains </summary>
-    [JsonProperty("recording_recordingMp3_apiDomain_con")]
-    public string? Recording_RecordingMp3_ApiDomain_CON { get; set; }
-    /// <summary> Recording.RecordingMp3.ApiDomain regex </summary>
-    [JsonProperty("recording_recordingMp3_apiDomain_reg")]
-    public string? Recording_RecordingMp3_ApiDomain_REG { get; set; }
 
     /// <summary> Recording.RecordingMp3.Id equals </summary>
     [JsonProperty("recording_recordingMp3_id_eq")]
@@ -10176,16 +9982,6 @@ public class CallOutgoingFilterRequest
     [JsonProperty("recording_recordingMp3_url_reg")]
     public string? Recording_RecordingMp3_Url_REG { get; set; }
 
-    /// <summary> Recording.RecordingMp3.ApiDomain equals </summary>
-    [JsonProperty("recording_recordingMp3_apiDomain_eq")]
-    public string? Recording_RecordingMp3_ApiDomain_EQ { get; set; }
-    /// <summary> Recording.RecordingMp3.ApiDomain contains </summary>
-    [JsonProperty("recording_recordingMp3_apiDomain_con")]
-    public string? Recording_RecordingMp3_ApiDomain_CON { get; set; }
-    /// <summary> Recording.RecordingMp3.ApiDomain regex </summary>
-    [JsonProperty("recording_recordingMp3_apiDomain_reg")]
-    public string? Recording_RecordingMp3_ApiDomain_REG { get; set; }
-
     /// <summary> Recording.RecordingMp3.Id equals </summary>
     [JsonProperty("recording_recordingMp3_id_eq")]
     public string? Recording_RecordingMp3_Id_EQ { get; set; }
@@ -10319,6 +10115,16 @@ public class CloudServiceFilterRequest
     /// <summary> IsHealthy equals </summary>
     [JsonProperty("isHealthy_eq")]
     public bool? IsHealthy_EQ { get; set; }
+
+    /// <summary> InstanceId equals </summary>
+    [JsonProperty("instanceId_eq")]
+    public string? InstanceId_EQ { get; set; }
+    /// <summary> InstanceId contains </summary>
+    [JsonProperty("instanceId_con")]
+    public string? InstanceId_CON { get; set; }
+    /// <summary> InstanceId regex </summary>
+    [JsonProperty("instanceId_reg")]
+    public string? InstanceId_REG { get; set; }
 
     /// <summary> Id equals </summary>
     [JsonProperty("id_eq")]
