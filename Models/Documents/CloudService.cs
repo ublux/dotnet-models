@@ -80,7 +80,7 @@ public abstract partial class CloudService : UbluxDocument
     public bool IsHealthy { get; set; }
 
     /// <summary>
-    ///     Instance Id. Example US-A for pbx or 1 for WebService
+    ///     Instance Id. Example US-A for CSP.US-A
     /// </summary>
     [AllowUpdate(false)]
     public required string InstanceId { get; set; }
