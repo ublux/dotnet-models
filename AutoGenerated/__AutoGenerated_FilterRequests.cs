@@ -3908,15 +3908,15 @@ public class CloudServicePbxFilterRequest
     [JsonProperty("localnet_reg")]
     public string? Localnet_REG { get; set; }
 
-    /// <summary> ExternalIps equals </summary>
-    [JsonProperty("externalIps_eq")]
-    public string? ExternalIps_EQ { get; set; }
-    /// <summary> ExternalIps contains </summary>
-    [JsonProperty("externalIps_con")]
-    public string? ExternalIps_CON { get; set; }
-    /// <summary> ExternalIps regex </summary>
-    [JsonProperty("externalIps_reg")]
-    public string? ExternalIps_REG { get; set; }
+    /// <summary> ExternalIp equals </summary>
+    [JsonProperty("externalIp_eq")]
+    public string? ExternalIp_EQ { get; set; }
+    /// <summary> ExternalIp contains </summary>
+    [JsonProperty("externalIp_con")]
+    public string? ExternalIp_CON { get; set; }
+    /// <summary> ExternalIp regex </summary>
+    [JsonProperty("externalIp_reg")]
+    public string? ExternalIp_REG { get; set; }
 
     /// <summary> IsFailover equals </summary>
     [JsonProperty("isFailover_eq")]
@@ -3939,6 +3939,16 @@ public class CloudServicePbxFilterRequest
     /// <summary> InstanceId regex </summary>
     [JsonProperty("instanceId_reg")]
     public string? InstanceId_REG { get; set; }
+
+    /// <summary> HttpListenPort equals </summary>
+    [JsonProperty("httpListenPort_eq")]
+    public System.Int32? HttpListenPort_EQ { get; set; }
+    /// <summary> HttpListenPort less than or equal to </summary>
+    [JsonProperty("httpListenPort_lte")]
+    public System.Int32? HttpListenPort_LTE { get; set; }
+    /// <summary> HttpListenPort greater than or equal to </summary>
+    [JsonProperty("httpListenPort_gte")]
+    public System.Int32? HttpListenPort_GTE { get; set; }
 
     /// <summary> Id equals </summary>
     [JsonProperty("id_eq")]
@@ -3992,15 +4002,15 @@ public class CloudServiceWebAppFilterRequest
     [JsonProperty("localnet_reg")]
     public string? Localnet_REG { get; set; }
 
-    /// <summary> ExternalIps equals </summary>
-    [JsonProperty("externalIps_eq")]
-    public string? ExternalIps_EQ { get; set; }
-    /// <summary> ExternalIps contains </summary>
-    [JsonProperty("externalIps_con")]
-    public string? ExternalIps_CON { get; set; }
-    /// <summary> ExternalIps regex </summary>
-    [JsonProperty("externalIps_reg")]
-    public string? ExternalIps_REG { get; set; }
+    /// <summary> ExternalIp equals </summary>
+    [JsonProperty("externalIp_eq")]
+    public string? ExternalIp_EQ { get; set; }
+    /// <summary> ExternalIp contains </summary>
+    [JsonProperty("externalIp_con")]
+    public string? ExternalIp_CON { get; set; }
+    /// <summary> ExternalIp regex </summary>
+    [JsonProperty("externalIp_reg")]
+    public string? ExternalIp_REG { get; set; }
 
     /// <summary> IsFailover equals </summary>
     [JsonProperty("isFailover_eq")]
@@ -4023,6 +4033,16 @@ public class CloudServiceWebAppFilterRequest
     /// <summary> InstanceId regex </summary>
     [JsonProperty("instanceId_reg")]
     public string? InstanceId_REG { get; set; }
+
+    /// <summary> HttpListenPort equals </summary>
+    [JsonProperty("httpListenPort_eq")]
+    public System.Int32? HttpListenPort_EQ { get; set; }
+    /// <summary> HttpListenPort less than or equal to </summary>
+    [JsonProperty("httpListenPort_lte")]
+    public System.Int32? HttpListenPort_LTE { get; set; }
+    /// <summary> HttpListenPort greater than or equal to </summary>
+    [JsonProperty("httpListenPort_gte")]
+    public System.Int32? HttpListenPort_GTE { get; set; }
 
     /// <summary> Id equals </summary>
     [JsonProperty("id_eq")]
@@ -4076,15 +4096,15 @@ public class CloudServiceWebHostFilterRequest
     [JsonProperty("localnet_reg")]
     public string? Localnet_REG { get; set; }
 
-    /// <summary> ExternalIps equals </summary>
-    [JsonProperty("externalIps_eq")]
-    public string? ExternalIps_EQ { get; set; }
-    /// <summary> ExternalIps contains </summary>
-    [JsonProperty("externalIps_con")]
-    public string? ExternalIps_CON { get; set; }
-    /// <summary> ExternalIps regex </summary>
-    [JsonProperty("externalIps_reg")]
-    public string? ExternalIps_REG { get; set; }
+    /// <summary> ExternalIp equals </summary>
+    [JsonProperty("externalIp_eq")]
+    public string? ExternalIp_EQ { get; set; }
+    /// <summary> ExternalIp contains </summary>
+    [JsonProperty("externalIp_con")]
+    public string? ExternalIp_CON { get; set; }
+    /// <summary> ExternalIp regex </summary>
+    [JsonProperty("externalIp_reg")]
+    public string? ExternalIp_REG { get; set; }
 
     /// <summary> IsFailover equals </summary>
     [JsonProperty("isFailover_eq")]
@@ -4107,6 +4127,16 @@ public class CloudServiceWebHostFilterRequest
     /// <summary> InstanceId regex </summary>
     [JsonProperty("instanceId_reg")]
     public string? InstanceId_REG { get; set; }
+
+    /// <summary> HttpListenPort equals </summary>
+    [JsonProperty("httpListenPort_eq")]
+    public System.Int32? HttpListenPort_EQ { get; set; }
+    /// <summary> HttpListenPort less than or equal to </summary>
+    [JsonProperty("httpListenPort_lte")]
+    public System.Int32? HttpListenPort_LTE { get; set; }
+    /// <summary> HttpListenPort greater than or equal to </summary>
+    [JsonProperty("httpListenPort_gte")]
+    public System.Int32? HttpListenPort_GTE { get; set; }
 
     /// <summary> Id equals </summary>
     [JsonProperty("id_eq")]
@@ -10094,15 +10124,15 @@ public class CloudServiceFilterRequest
     [JsonProperty("localnet_reg")]
     public string? Localnet_REG { get; set; }
 
-    /// <summary> ExternalIps equals </summary>
-    [JsonProperty("externalIps_eq")]
-    public string? ExternalIps_EQ { get; set; }
-    /// <summary> ExternalIps contains </summary>
-    [JsonProperty("externalIps_con")]
-    public string? ExternalIps_CON { get; set; }
-    /// <summary> ExternalIps regex </summary>
-    [JsonProperty("externalIps_reg")]
-    public string? ExternalIps_REG { get; set; }
+    /// <summary> ExternalIp equals </summary>
+    [JsonProperty("externalIp_eq")]
+    public string? ExternalIp_EQ { get; set; }
+    /// <summary> ExternalIp contains </summary>
+    [JsonProperty("externalIp_con")]
+    public string? ExternalIp_CON { get; set; }
+    /// <summary> ExternalIp regex </summary>
+    [JsonProperty("externalIp_reg")]
+    public string? ExternalIp_REG { get; set; }
 
     /// <summary> IsFailover equals </summary>
     [JsonProperty("isFailover_eq")]
@@ -10125,6 +10155,16 @@ public class CloudServiceFilterRequest
     /// <summary> InstanceId regex </summary>
     [JsonProperty("instanceId_reg")]
     public string? InstanceId_REG { get; set; }
+
+    /// <summary> HttpListenPort equals </summary>
+    [JsonProperty("httpListenPort_eq")]
+    public System.Int32? HttpListenPort_EQ { get; set; }
+    /// <summary> HttpListenPort less than or equal to </summary>
+    [JsonProperty("httpListenPort_lte")]
+    public System.Int32? HttpListenPort_LTE { get; set; }
+    /// <summary> HttpListenPort greater than or equal to </summary>
+    [JsonProperty("httpListenPort_gte")]
+    public System.Int32? HttpListenPort_GTE { get; set; }
 
     /// <summary> Id equals </summary>
     [JsonProperty("id_eq")]
