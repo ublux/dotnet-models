@@ -96,21 +96,21 @@ namespace Ublux.Communications.Models.Documents {
         public const string DocumentPrefix = "CSP";
 
         /// <summary> Custom: Prefix followed by id. Example: PBX.UST, PBX.US1, WS.1 </summary>
-        public static BuiltId BuildId(string id) => new($"{DocumentPrefix}.{id}");
+        public static BuiltId BuildId(string instanceId) => new($"{DocumentPrefix}.{instanceId.ToUpper()}");
     }
     public partial class CloudServiceWebApp {
         /// <summary> Id prefix </summary>
         public const string DocumentPrefix = "CSWA";
 
         /// <summary> Custom: Prefix followed by id. Example: PBX.UST, PBX.US1, WS.1 </summary>
-        public static BuiltId BuildId(string id) => new($"{DocumentPrefix}.{id}");
+        public static BuiltId BuildId(string instanceId) => new($"{DocumentPrefix}.{instanceId.ToUpper()}");
     }
     public partial class CloudServiceWebHost {
         /// <summary> Id prefix </summary>
         public const string DocumentPrefix = "CSWH";
 
         /// <summary> Custom: Prefix followed by id. Example: PBX.UST, PBX.US1, WS.1 </summary>
-        public static BuiltId BuildId(string id) => new($"{DocumentPrefix}.{id}");
+        public static BuiltId BuildId(string instanceId) => new($"{DocumentPrefix}.{instanceId.ToUpper()}");
     }
     public partial class Contact {
         /// <summary> Id prefix </summary>

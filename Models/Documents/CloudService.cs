@@ -12,7 +12,7 @@
     typeof(CloudServicePbx),
     typeof(CloudServiceWebApp),
     typeof(CloudServiceWebHost)
-    //typeof(CloudServiceWebService)
+//typeof(CloudServiceWebService)
 )]
 public abstract partial class CloudService : UbluxDocument
 {
@@ -31,7 +31,7 @@ public abstract partial class CloudService : UbluxDocument
     /// </summary>
     [AllowUpdate(false)]
     [IsRequired]
-    [HideForCreateRequest]    
+    [HideForCreateRequest]
     public abstract CloudServiceType CloudServiceType { get; }
 
     /// <summary>
@@ -49,15 +49,22 @@ public abstract partial class CloudService : UbluxDocument
     [AllowUpdate(false)]
     public string? Localnet { get; set; }
 
+    ///// <summary>
+    /////     If this Linux cloud service is inside a NAT then what is the public ip address.
+    /////     This is needed by asterisk sip.conf file
+    ///// 
+    /////     It is a list because sometimes it may contain multiple public ips. For example in namschul we get requests of ip phones from a different ip
+    ///// </summary>
+    //[AllowUpdate(false)]
+    //[IsRequired]
+    //public List<string> ExternalIps { get; set; } = new();
+
     /// <summary>
-    ///     If this Linux cloud service is inside a NAT then what is the public ip address.
-    ///     This is needed by asterisk sip.conf file
-    /// 
-    ///     It is a list because sometimes it may contain multiple public ips. For example in namschul we get requests of ip phones from a different ip
+    ///     It can have multipe ips but only one should be used.
+    ///     Hard host name should point to this
     /// </summary>
     [AllowUpdate(false)]
-    [IsRequired]
-    public List<string> ExternalIps { get; set; } = new();
+    public string? ExternalIp { get; set; }
 
     /// <summary>
     ///     Is this service used as a backup pbx? Failover and NonFailover servers should NEVER overlap.         
@@ -83,7 +90,14 @@ public abstract partial class CloudService : UbluxDocument
     ///     Instance Id. Example US-A for CSP.US-A
     /// </summary>
     [AllowUpdate(false)]
-    public required string InstanceId { get; set; }
+    public required string InstanceId { get => instanceId; set => instanceId = value.ToUpper(); }
+    private string instanceId = "";
+
+    /// <summary>
+    ///     Http port where it is listening. For example PBX listens on port 8181
+    /// </summary>
+    [AllowUpdate(false)]
+    public int HttpListenPort { get; set; }
 
     #endregion     
 }

@@ -20,10 +20,11 @@ public partial class Identity : UbluxDocument
     [BsonRepresentation(BsonType.String)]
     public required List<UbluxRole> UbluxRoles { get; set; }
 
-    #endregion
+    #endregion    
 
     /// <summary>
     ///     Username needed to authenticate. This is usually an email address in lowercase
+    ///     If its a PBX then it is the instance id
     /// </summary>
     [AllowUpdate(false)]
     [IsRequired]

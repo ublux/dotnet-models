@@ -9,14 +9,14 @@ public partial class Account : UbluxDocument
 {
     #region References
 
-    /// <summary>
-    ///     Failover pbx that will be used for account
-    /// </summary>
-    [IgnoreDataMember]
-    [AllowUpdate(false)]
-    [References(typeof(CloudServicePbx))]
-    [IsRequired]
-    public required string IdCloudServicePbxFailover { get; set; }
+    ///// <summary>
+    /////     Failover pbx that will be used for account
+    ///// </summary>
+    //[IgnoreDataMember]
+    //[AllowUpdate(false)]
+    //[References(typeof(CloudServicePbx))]
+    //[IsRequired]
+    //public required string IdCloudServicePbxFailover { get; set; }
 
     ///// <summary>
     /////     Reference to webAppCloudService. Thanks to this we know where to send events. For example on pbx when we receive a new phone call we send that event to CloudServicePbx
