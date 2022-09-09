@@ -20,7 +20,7 @@ public static class ModelsExtensionMethods
             Collections.BlackListPhoneNumbers => typeof(BlackListPhoneNumber),
             Collections.Calls => typeof(Call),
             Collections.CallerIdMasks => typeof(CallerIdMask),
-            Collections.CallFlows => typeof(CallFlowLogic),
+            Collections.CallFlowLogics => typeof(CallFlowLogic),
             Collections.CloudServices => typeof(CloudService),
             Collections.Contacts => typeof(Contact),
             Collections.CustomerInfos => typeof(CustomerInfo),

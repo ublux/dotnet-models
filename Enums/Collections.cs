@@ -29,8 +29,8 @@ public enum Collections
     /// <summary>CallerIdMasks</summary>
     CallerIdMasks,
 
-    /// <summary>CallFlows</summary>
-    CallFlows,
+    /// <summary>CallFlowLogics</summary>
+    CallFlowLogics,
 
     /// <summary>CloudServices</summary>
     CloudServices,

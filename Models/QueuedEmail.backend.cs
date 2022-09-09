@@ -51,17 +51,6 @@ public class QueuedEmail : IUbluxDocumentId
     ///     Location where attachment is located
     /// </summary>
     public string? PathAttachment { get; set; }
-
-//    /// <summary>
-//    ///     Override to string
-//    /// </summary>
-//    /// <returns></returns>
-//    public override string ToString()
-//    {
-//#pragma warning disable CS0618 // Ok to use it
-//        return $"Id={this.Id} From={this.FromName} To={string.Join(',', this.To)}";
-//#pragma warning restore CS0618 
-//    }
 }
 
 #endif
