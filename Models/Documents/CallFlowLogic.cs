@@ -3,7 +3,7 @@
 /// <summary>
 ///     Virtual receptionist
 /// </summary>
-public partial class CallFlow : UbluxDocument
+public partial class CallFlowLogic : UbluxDocument
 {
     #region Properties
 

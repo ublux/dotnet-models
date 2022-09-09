@@ -668,13 +668,13 @@ public class CallFlowFilterRequest
 /// <summary> Enables searching for CallIncomingToCallFlows </summary>
 public class CallIncomingToCallFlowFilterRequest 
 {
-    /// <summary> IdCallFlow equals </summary>
+    /// <summary> IdCallFlowLogic equals </summary>
     [JsonProperty("idCallFlow_eq")]
     public string? IdCallFlow_EQ { get; set; }
-    /// <summary> IdCallFlow contains </summary>
+    /// <summary> IdCallFlowLogic contains </summary>
     [JsonProperty("idCallFlow_con")]
     public string? IdCallFlow_CON { get; set; }
-    /// <summary> IdCallFlow regex </summary>
+    /// <summary> IdCallFlowLogic regex </summary>
     [JsonProperty("idCallFlow_reg")]
     public string? IdCallFlow_REG { get; set; }
 
@@ -4527,13 +4527,13 @@ public class CustomerInfoFilterRequest
 /// <summary> Enables searching for ExtensionCallFlows </summary>
 public class ExtensionCallFlowFilterRequest 
 {
-    /// <summary> IdCallFlow equals </summary>
+    /// <summary> IdCallFlowLogic equals </summary>
     [JsonProperty("idCallFlow_eq")]
     public string? IdCallFlow_EQ { get; set; }
-    /// <summary> IdCallFlow contains </summary>
+    /// <summary> IdCallFlowLogic contains </summary>
     [JsonProperty("idCallFlow_con")]
     public string? IdCallFlow_CON { get; set; }
-    /// <summary> IdCallFlow regex </summary>
+    /// <summary> IdCallFlowLogic regex </summary>
     [JsonProperty("idCallFlow_reg")]
     public string? IdCallFlow_REG { get; set; }
 
@@ -6515,13 +6515,13 @@ public class PowerDialerGroupFilterRequest
     [JsonProperty("idCallerIdMask_reg")]
     public string? IdCallerIdMask_REG { get; set; }
 
-    /// <summary> IdCallFlow equals </summary>
+    /// <summary> IdCallFlowLogic equals </summary>
     [JsonProperty("idCallFlow_eq")]
     public string? IdCallFlow_EQ { get; set; }
-    /// <summary> IdCallFlow contains </summary>
+    /// <summary> IdCallFlowLogic contains </summary>
     [JsonProperty("idCallFlow_con")]
     public string? IdCallFlow_CON { get; set; }
-    /// <summary> IdCallFlow regex </summary>
+    /// <summary> IdCallFlowLogic regex </summary>
     [JsonProperty("idCallFlow_reg")]
     public string? IdCallFlow_REG { get; set; }
 
@@ -7731,13 +7731,13 @@ public class VoicemailForwardedFilterRequest
 /// <summary> Enables searching for VoipNumberAvailableForPurchases </summary>
 public class VoipNumberAvailableForPurchaseFilterRequest 
 {
-    /// <summary> RulesPhone.IdCallFlow equals </summary>
+    /// <summary> RulesPhone.IdCallFlowLogic equals </summary>
     [JsonProperty("rulesPhone_idCallFlow_eq")]
     public string? RulesPhone_IdCallFlow_EQ { get; set; }
-    /// <summary> RulesPhone.IdCallFlow contains </summary>
+    /// <summary> RulesPhone.IdCallFlowLogic contains </summary>
     [JsonProperty("rulesPhone_idCallFlow_con")]
     public string? RulesPhone_IdCallFlow_CON { get; set; }
-    /// <summary> RulesPhone.IdCallFlow regex </summary>
+    /// <summary> RulesPhone.IdCallFlowLogic regex </summary>
     [JsonProperty("rulesPhone_idCallFlow_reg")]
     public string? RulesPhone_IdCallFlow_REG { get; set; }
 
@@ -7916,13 +7916,13 @@ public class VoipNumberAvailableForPurchaseFilterRequest
 /// <summary> Enables searching for VoipNumberFaxs </summary>
 public class VoipNumberFaxFilterRequest 
 {
-    /// <summary> RulesPhone.IdCallFlow equals </summary>
+    /// <summary> RulesPhone.IdCallFlowLogic equals </summary>
     [JsonProperty("rulesPhone_idCallFlow_eq")]
     public string? RulesPhone_IdCallFlow_EQ { get; set; }
-    /// <summary> RulesPhone.IdCallFlow contains </summary>
+    /// <summary> RulesPhone.IdCallFlowLogic contains </summary>
     [JsonProperty("rulesPhone_idCallFlow_con")]
     public string? RulesPhone_IdCallFlow_CON { get; set; }
-    /// <summary> RulesPhone.IdCallFlow regex </summary>
+    /// <summary> RulesPhone.IdCallFlowLogic regex </summary>
     [JsonProperty("rulesPhone_idCallFlow_reg")]
     public string? RulesPhone_IdCallFlow_REG { get; set; }
 
@@ -8093,13 +8093,13 @@ public class VoipNumberFaxFilterRequest
 /// <summary> Enables searching for VoipNumberPhones </summary>
 public class VoipNumberPhoneFilterRequest 
 {
-    /// <summary> RulesPhone.IdCallFlow equals </summary>
+    /// <summary> RulesPhone.IdCallFlowLogic equals </summary>
     [JsonProperty("rulesPhone_idCallFlow_eq")]
     public string? RulesPhone_IdCallFlow_EQ { get; set; }
-    /// <summary> RulesPhone.IdCallFlow contains </summary>
+    /// <summary> RulesPhone.IdCallFlowLogic contains </summary>
     [JsonProperty("rulesPhone_idCallFlow_con")]
     public string? RulesPhone_IdCallFlow_CON { get; set; }
-    /// <summary> RulesPhone.IdCallFlow regex </summary>
+    /// <summary> RulesPhone.IdCallFlowLogic regex </summary>
     [JsonProperty("rulesPhone_idCallFlow_reg")]
     public string? RulesPhone_IdCallFlow_REG { get; set; }
 
@@ -10310,13 +10310,13 @@ public class TrunkOriginationFilterRequest
 /// <summary> Enables searching for VoipNumbers </summary>
 public class VoipNumberFilterRequest 
 {
-    /// <summary> RulesPhone.IdCallFlow equals </summary>
+    /// <summary> RulesPhone.IdCallFlowLogic equals </summary>
     [JsonProperty("rulesPhone_idCallFlow_eq")]
     public string? RulesPhone_IdCallFlow_EQ { get; set; }
-    /// <summary> RulesPhone.IdCallFlow contains </summary>
+    /// <summary> RulesPhone.IdCallFlowLogic contains </summary>
     [JsonProperty("rulesPhone_idCallFlow_con")]
     public string? RulesPhone_IdCallFlow_CON { get; set; }
-    /// <summary> RulesPhone.IdCallFlow regex </summary>
+    /// <summary> RulesPhone.IdCallFlowLogic regex </summary>
     [JsonProperty("rulesPhone_idCallFlow_reg")]
     public string? RulesPhone_IdCallFlow_REG { get; set; }
 

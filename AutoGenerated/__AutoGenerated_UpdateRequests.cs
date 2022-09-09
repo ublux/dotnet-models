@@ -173,14 +173,14 @@ public class CallFlowUpdateRequest // : IUbluxDocumentId
     /// </summary>
     public String? XmlTree { get; set; }
     /// <summary> Set values on actual document </summary>
-    public void SetValuesOnCallFlow(CallFlow callFlow)
+    public void SetValuesOnCallFlowLogic(CallFlowLogic callFlowLogic)
     {
         if(this.FriendlyName!=null)
-            callFlow.FriendlyName = this.FriendlyName;
+            callFlowLogic.FriendlyName = this.FriendlyName;
         if(this.Description!=null)
-            callFlow.Description = this.Description;
+            callFlowLogic.Description = this.Description;
         if(this.XmlTree!=null)
-            callFlow.XmlTree = this.XmlTree;
+            callFlowLogic.XmlTree = this.XmlTree;
     }
 
 }
@@ -191,7 +191,7 @@ public class CallFlowUpdateRequest // : IUbluxDocumentId
 public class CallIncomingToCallFlowUpdateRequest // : IUbluxDocumentId
 {
     /// <summary> Set values on actual document </summary>
-    public void SetValuesOnCallIncomingToCallFlow(CallIncomingToCallFlow callIncomingToCallFlow)
+    public void SetValuesOnCallIncomingToCallFlowLogic(CallIncomingToCallFlowLogic callIncomingToCallFlowLogic)
     {
     }
 
@@ -365,7 +365,7 @@ public class ExtensionCallFlowUpdateRequest // : IUbluxDocumentId
     /// <summary>
     /// Id of call flow to execute
     /// </summary>
-    public String? IdCallFlow { get; set; }
+    public String? IdCallFlowLogic { get; set; }
     /// <summary>
     /// Optional label to jump to on the call flow?
     /// </summary>
@@ -392,22 +392,22 @@ public class ExtensionCallFlowUpdateRequest // : IUbluxDocumentId
     /// </summary>
     public Boolean? InjectExtensionNameToCallerId { get; set; }
     /// <summary> Set values on actual document </summary>
-    public void SetValuesOnExtensionCallFlow(ExtensionCallFlow extensionCallFlow)
+    public void SetValuesOnExtensionCallFlowLogic(ExtensionCallFlowLogic extensionCallFlowLogic)
     {
-        if(this.IdCallFlow!=null)
-            extensionCallFlow.IdCallFlow = this.IdCallFlow;
+        if(this.IdCallFlowLogic!=null)
+            extensionCallFlowLogic.IdCallFlowLogic = this.IdCallFlowLogic;
         if(this.CallFlowLabel!=null)
-            extensionCallFlow.CallFlowLabel = this.CallFlowLabel;
+            extensionCallFlowLogic.CallFlowLabel = this.CallFlowLabel;
         if(this.TimeZone!=null)
-            extensionCallFlow.TimeZone = this.TimeZone;
+            extensionCallFlowLogic.TimeZone = this.TimeZone;
         if(this.IdMusicOnHoldGroup!=null)
-            extensionCallFlow.IdMusicOnHoldGroup = this.IdMusicOnHoldGroup;
+            extensionCallFlowLogic.IdMusicOnHoldGroup = this.IdMusicOnHoldGroup;
         if(this.FriendlyName!=null)
-            extensionCallFlow.FriendlyName = this.FriendlyName;
+            extensionCallFlowLogic.FriendlyName = this.FriendlyName;
         if(this.Number!=null)
-            extensionCallFlow.Number = this.Number;
+            extensionCallFlowLogic.Number = this.Number;
         if(this.InjectExtensionNameToCallerId!=null)
-            extensionCallFlow.InjectExtensionNameToCallerId = this.InjectExtensionNameToCallerId.Value;
+            extensionCallFlowLogic.InjectExtensionNameToCallerId = this.InjectExtensionNameToCallerId.Value;
     }
 
 }
@@ -1306,7 +1306,7 @@ public class WebHookUpdateRequest // : IUbluxDocumentId
 public class DiskFileUpdateRequest // : IUbluxDocumentId
 {
     /// <summary> Set values on actual document </summary>
-    public void SetValuesOnDiskFile(DiskFile diskFile)
+    public void SetValuesOnDiskFile(CloudFile diskFile)
     {
     }
 

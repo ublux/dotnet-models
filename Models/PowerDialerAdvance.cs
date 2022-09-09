@@ -10,7 +10,7 @@ public class PowerDialerAdvance : PowerDialer
     /// </summary>
     [IsRequired]
     [AllowUpdate(true)]
-    public required string IdCallFlow { get; set; }
+    public required string IdCallFlowLogic { get; set; }
 
     /// <summary>
     ///     Type of power dialer

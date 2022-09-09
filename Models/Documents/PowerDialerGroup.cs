@@ -26,9 +26,9 @@ public partial class PowerDialerGroup : UbluxDocument
     /// <summary>
     ///     What IVR to execute
     /// </summary>
-    [References(typeof(CallFlow))]
+    [References(typeof(CallFlowLogic))]
     [AllowUpdate(false)]
-    public string? IdCallFlow { get; set; }
+    public string? IdCallFlowLogic { get; set; }
 
     /// <summary>
     ///     If on mode simple what extensions will ring to take phone calls
@@ -112,7 +112,7 @@ public partial class PowerDialerGroup : UbluxDocument
     /// </summary>
     public bool IsSimpleMode()
     {
-        return string.IsNullOrEmpty(IdCallFlow);
+        return string.IsNullOrEmpty(IdCallFlowLogic);
     }
 
     #endregion

@@ -8,7 +8,7 @@ public enum CallType
     /// <summary>
     ///     Incoming phone call that executed an IVR
     /// </summary>
-    IncomingToCallFlow,
+    IncomingToCallFlowLogic,
 
     /// <summary>
     ///     Incoming phone call that called an extension

@@ -56,14 +56,14 @@ namespace Ublux.Communications.Models.Documents {
         /// <summary> Build Id </summary>
         public static BuiltId BuildId(RunningApplicationInstance instance) => new($"{DocumentPrefix}.{instance.Id}.{instance.IdGlobalAutoIncrement()}");
     }
-    public partial class CallFlow {
+    public partial class CallFlowLogic {
         /// <summary> Id prefix </summary>
-        public const string DocumentPrefix = "CF";
+        public const string DocumentPrefix = "CFL";
 
         /// <summary> Build Id </summary>
         public static BuiltId BuildId(RunningApplicationInstance instance) => new($"{DocumentPrefix}.{instance.Id}.{instance.IdGlobalAutoIncrement()}");
     }
-    public partial class CallIncomingToCallFlow {
+    public partial class CallIncomingToCallFlowLogic {
         /// <summary> Id prefix </summary>
         public const string DocumentPrefix = "CITCF";
 
@@ -126,7 +126,7 @@ namespace Ublux.Communications.Models.Documents {
         /// <summary> Build Id </summary>
         public static BuiltId BuildId(RunningApplicationInstance instance) => new($"{DocumentPrefix}.{instance.Id}.{instance.IdGlobalAutoIncrement()}");
     }
-    public partial class ExtensionCallFlow {
+    public partial class ExtensionCallFlowLogic {
         /// <summary> Id prefix </summary>
         public const string DocumentPrefix = "ECF";
 
@@ -329,9 +329,9 @@ namespace Ublux.Communications.Models.Documents {
         /// <summary> Build Id </summary>
         public static BuiltId BuildId(RunningApplicationInstance instance) => new($"{DocumentPrefix}.{instance.Id}.{instance.IdGlobalAutoIncrement()}");
     }
-    public partial class DiskFile {
+    public partial class CloudFile {
         /// <summary> Id prefix </summary>
-        public const string DocumentPrefix = "DF";
+        public const string DocumentPrefix = "CF";
 
         /// <summary> Prefix followed by stored file id Example DF.SF.1232 </summary>
         public static BuiltId BuildId(StoredFile storedFile) => new($"{DocumentPrefix}.{storedFile.Id}");
@@ -369,10 +369,11 @@ namespace Ublux.Communications.Models.SubDocuments {
         /// <summary> Id prefix </summary>
         public const string DocumentPrefix = "SF";
 
-        /// <summary> Custom: prefix.randomUnsignedLong. Example SF.5uHSKHqJeqc1ZAURK.wav </summary>
-        public static BuiltId BuildId(string fileExtension) => new($"{DocumentPrefix}.{RunningApplicationInstance.ToBase62(BitConverter.ToUInt64(Guid.NewGuid().ToByteArray()))}{RunningApplicationInstance.ToBase62(BitConverter.ToUInt64(Guid.NewGuid().ToByteArray())/2)}.{fileExtension}");
+        /// <summary> Example SF.Ac.1/Audios/JFKEYIERJKHDKJHDSF.wav </summary>
+        public static BuiltId BuildId(string idAcc, StorageFolderName folderName, string fileExtension) => new($"{DocumentPrefix}.{idAcc}/{folderName}/{RunningApplicationInstance.ToBase62(BitConverter.ToUInt64(Guid.NewGuid().ToByteArray()))}{RunningApplicationInstance.ToBase62(BitConverter.ToUInt64(Guid.NewGuid().ToByteArray())/2)}.{fileExtension.ToLower()}");
+        
         /// <summary> oveload </summary>
-        public static BuiltId BuildId() => new($"{DocumentPrefix}.{RunningApplicationInstance.ToBase62(BitConverter.ToUInt64(Guid.NewGuid().ToByteArray()))}{RunningApplicationInstance.ToBase62(BitConverter.ToUInt64(Guid.NewGuid().ToByteArray())/2)}");
+        public static BuiltId BuildId(string idAcc, StorageFolderName folderName) => new($"{DocumentPrefix}.{idAcc}/{folderName}/{RunningApplicationInstance.ToBase62(BitConverter.ToUInt64(Guid.NewGuid().ToByteArray()))}{RunningApplicationInstance.ToBase62(BitConverter.ToUInt64(Guid.NewGuid().ToByteArray())/2)}");
         /// <summary> oveload </summary>
         public static BuiltId BuildId(BuiltId builtId, string fileExtension) => new($"{builtId.Id}.{fileExtension}");
     }

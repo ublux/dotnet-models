@@ -5,7 +5,7 @@ namespace Ublux.Communications.Models.Documents;
 /// <summary>
 ///     Virtual receptionist
 /// </summary>
-public partial class CallFlow : UbluxDocument, IReferncesAccount
+public partial class CallFlowLogic : UbluxDocument, IReferncesAccount
 {
     /// <inheritdoc/>
     [IgnoreDataMember]

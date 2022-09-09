@@ -3,19 +3,19 @@
 /// <summary>
 ///     Incoming phone call that executed an IVR
 /// </summary>
-public partial class CallIncomingToCallFlow : CallIncoming
+public partial class CallIncomingToCallFlowLogic : CallIncoming
 {
     /// <summary>
     ///     Id of Call Flow (IVR) to execute
     /// </summary>
-    [References(typeof(CallFlow))]
+    [References(typeof(CallFlowLogic))]
     [AllowUpdate(false)]
     [IsRequired]
-    public required string IdCallFlow { get; set; }
+    public required string IdCallFlowLogic { get; set; }
 
     /// <summary>
     ///     Type of call
     /// </summary>
     [AllowUpdate(false)]
-    public override CallType CallType => CallType.IncomingToCallFlow;
+    public override CallType CallType => CallType.IncomingToCallFlowLogic;
 }

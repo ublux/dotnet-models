@@ -3,7 +3,7 @@
 /// <summary>
 ///     Executes a custom IVR when calling this extension
 /// </summary>
-public partial class ExtensionCallFlow : Extension
+public partial class ExtensionCallFlowLogic : Extension
 {
     #region Properties
 
@@ -12,10 +12,10 @@ public partial class ExtensionCallFlow : Extension
     /// <summary>
     ///     Id of call flow to execute
     /// </summary>
-    [References(typeof(CallFlow))]
+    [References(typeof(CallFlowLogic))]
     [AllowUpdate(true)]
     [IsRequired]
-    public required string IdCallFlow { get; set; }
+    public required string IdCallFlowLogic { get; set; }
 
     #endregion
 
@@ -40,5 +40,5 @@ public partial class ExtensionCallFlow : Extension
     [AllowUpdate(false)]
     [IsRequired]
     [HideForCreateRequest]
-    public override ExtensionType ExtensionType => ExtensionType.CallFlow;
+    public override ExtensionType ExtensionType => ExtensionType.CallFlowLogic;
 }

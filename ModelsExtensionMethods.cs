@@ -20,7 +20,7 @@ public static class ModelsExtensionMethods
             Collections.BlackListPhoneNumbers => typeof(BlackListPhoneNumber),
             Collections.Calls => typeof(Call),
             Collections.CallerIdMasks => typeof(CallerIdMask),
-            Collections.CallFlows => typeof(CallFlow),
+            Collections.CallFlows => typeof(CallFlowLogic),
             Collections.CloudServices => typeof(CloudService),
             Collections.Contacts => typeof(Contact),
             Collections.CustomerInfos => typeof(CustomerInfo),
@@ -45,7 +45,7 @@ public static class ModelsExtensionMethods
             Collections.VoipProviders => typeof(VoipProvider),
             Collections.WebHooks => typeof(WebHook),
             Collections.UnauthorizedTokens => typeof(UnauthorizedToken),
-            Collections.DiskFiles => typeof(DiskFile),
+            Collections.CloudFiles => typeof(CloudFile),
             _ => throw new Exception("Missing collection type"),// should never hit this point because this is tested in SouceCode Unit tests
         };
     }

@@ -8,7 +8,7 @@ public enum ExtensionType
     /// <summary>
     ///     Executes an IVR
     /// </summary>
-    CallFlow,
+    CallFlowLogic,
     /// <summary>
     ///     Conference
     /// </summary>

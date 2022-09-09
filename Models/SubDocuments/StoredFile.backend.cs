@@ -9,21 +9,22 @@ namespace Ublux.Communications.Models.SubDocuments;
 /// </summary>
 public partial class StoredFile : UbluxSubDocument, IReferncesAccount
 {
+    // ID is its file name
+
     /// <summary>
-    ///     Get id of disk file
+    ///     Get id of cloud file
     /// </summary>
-    public string GetIdDiskFile()
+    public string GetIdCloudFile()
     {
-        return DiskFile.BuildId(this).Id;
+        return CloudFile.BuildId(this).Id;
     }
     /// <summary>
     ///     Static implementation
     /// </summary>
-    public static string GetIdDiskFile(string idStoredFile)
+    public static string GetIdCloudFile(string idStoredFile)
     {
-        return DiskFile.BuildId(idStoredFile).Id;
+        return CloudFile.BuildId(idStoredFile).Id;
     }
-    
 
     /// <summary>
     ///     Id of account it references
@@ -55,33 +56,38 @@ public partial class StoredFile : UbluxSubDocument, IReferncesAccount
     /// </summary>
     [AllowUpdate(false)]
     public required string InstanceId { get; set; }
-    
+
     /// <summary>
     ///     Get id
     /// </summary>
     /// <returns></returns>
     public string GetKey()
     {
-        return $"{IdAccount}/{FolderName}/{FileName}";
+        var acc = IdAccount;
+        if (string.IsNullOrEmpty(acc)) throw new Exception("Invalid Account");
+        return $"{acc}/{FolderName}/{FileName}";
     }
 
-    /// <summary>
-    ///     Get location where it will be stored on file system
-    /// </summary>
-    public static string GetDirectoryWhereToSaveOnLinux(string idAccount, StorageFolderName folderName)
-    {
-        return $"{GetDirectoryWhereToSaveOnLinuxBase()}/{idAccount}/{folderName}";
-    }
-    /// <summary>
-    ///     Get location where it will be stored on file system
-    /// </summary>
-    public string GetPathWhereToSaveOnLinux()
-    {
-        return System.IO.Path.Combine(GetDirectoryWhereToSaveOnLinux(this.IdAccount, this.FolderName), this.Id);
-    }
 
-    /// <summary> Get base directory where to save accounts data </summary>
-    public static string GetDirectoryWhereToSaveOnLinuxBase() => "/usr/share/ublux/accounts-data";
+    /// <summary> /usr/share/ublux/accounts-files </summary>
+    public static string GetBaseDirectoryWhereToSave(bool createDirectoryIfNotExists)
+    {
+        string path;
+        if(Environment.OSVersion.Platform == PlatformID.Unix)
+        {
+            path = "/usr/share/ublux/accounts-files";
+        }
+        else
+        {
+            path = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+        }
+
+        if (createDirectoryIfNotExists)
+            if (Directory.Exists(path) == false)
+                Directory.CreateDirectory(path);
+
+        return path;
+    }
 
     /// <summary>
     ///     Helper to get hash
@@ -95,7 +101,7 @@ public partial class StoredFile : UbluxSubDocument, IReferncesAccount
 
         return result.ToString();
     }
-  
+
 }
 
 #endif

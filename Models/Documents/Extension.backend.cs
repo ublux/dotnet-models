@@ -3,7 +3,7 @@
 namespace Ublux.Communications.Models.Documents;
 
 /// <summary>
-///     Extension could be of type basic,queue,conference,voicemail or callFlow
+///     Extension could be of type basic,queue,conference,voicemail or callFlowLogic
 /// </summary>
 public abstract partial class Extension : UbluxDocument, IReferncesAccount
 {

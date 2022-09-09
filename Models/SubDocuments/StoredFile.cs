@@ -30,12 +30,12 @@ public partial class StoredFile : UbluxSubDocument
     public string Url => BuildUrl(Constants.WebService_BaseUrl, this.Id);
 
     /// <summary>
-    ///     Helper method to build URL
+    ///     helper method to build url
     /// </summary>
-    public static string BuildUrl(string webServiceBaseUrl, string idStoredFile)
+    public static string BuildUrl(string webserviceBaseUrl, string idstoredfile)
     {
-        return $"{webServiceBaseUrl}/{nameof(StoredFile)}/{GetIdDiskFile(idStoredFile)}";
-    }    
+        return $"{webserviceBaseUrl}/{nameof(StoredFile)}/{idstoredfile}";
+    }
 
     #endregion
 }

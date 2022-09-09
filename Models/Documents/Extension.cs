@@ -1,16 +1,16 @@
 ﻿namespace Ublux.Communications.Models.Documents;
 
 /// <summary>
-///     Extension could be of type basic,queue,conference,voicemail or callFlow
+///     Extension could be of type basic,queue,conference,voicemail or callFlowLogic
 /// </summary>
 [JsonConverter(typeof(JsonSubtypes), nameof(ExtensionType))]
-[JsonSubtypes.KnownSubType(typeof(ExtensionCallFlow), nameof(ExtensionType.CallFlow))]
+[JsonSubtypes.KnownSubType(typeof(ExtensionCallFlowLogic), nameof(ExtensionType.CallFlowLogic))]
 [JsonSubtypes.KnownSubType(typeof(ExtensionConference), nameof(ExtensionType.Conference))]
 [JsonSubtypes.KnownSubType(typeof(ExtensionDial), nameof(ExtensionType.Dial))]
 [JsonSubtypes.KnownSubType(typeof(ExtensionQueue), nameof(ExtensionType.Queue))]
 [JsonSubtypes.KnownSubType(typeof(ExtensionVoicemail), nameof(ExtensionType.Voicemail))]
 [BsonKnownTypes(
-    typeof(ExtensionCallFlow),
+    typeof(ExtensionCallFlowLogic),
     typeof(ExtensionConference),
     typeof(ExtensionDial),
     typeof(ExtensionQueue),

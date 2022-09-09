@@ -8,9 +8,9 @@ public class RulePhone : Rule
     /// <summary>
     ///     Id of Call Flow (IVR) to execute
     /// </summary>
-    [References(typeof(CallFlow))]
+    [References(typeof(CallFlowLogic))]
     [AllowUpdate(true)]
-    public string? IdCallFlow { get; set; }
+    public string? IdCallFlowLogic { get; set; }
 
     /// <summary>
     ///     Id of extension to call

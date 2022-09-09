@@ -3,25 +3,25 @@
 namespace Ublux.Communications.Models.Documents;
 
 /// <summary>
-///     File stored on disk. All storedFiles will have a copy
-///     This collection should not be stored on redis and be created with time to leave
+///     File stored on the cloud
+///     This collection should not be stored on redis and be created with TTL of one month
 /// </summary>
-public partial class DiskFile : UbluxDocument
+public partial class CloudFile : UbluxDocument
 {
     /// <summary>
     ///     Factory Pattern
     /// </summary>
-    public static DiskFile Create(StoredFile sf)
+    public static CloudFile Create(StoredFile sf)
     {
-        return new DiskFile()
+        return new CloudFile()
         {
-            BuiltId = DiskFile.BuildId(sf),
+            BuiltId = CloudFile.BuildId(sf),
             DateCreated = DateTime.UtcNow,
             DateDeleted = null,
             DateUpdated = null,
-            HasBeenDownloaded = false,
             IdDocument = sf.Id,
-            StoredFile = sf
+            StoredFile = sf,
+            IsBackup = false,
         };
     }
 
@@ -29,7 +29,7 @@ public partial class DiskFile : UbluxDocument
     ///     Id of document containing this Stored File. Example Audio1234
     /// </summary>
     [AllowUpdate(false)]
-    public required string IdDocument { get; set; }    
+    public required string IdDocument { get; set; }
 
     /// <summary>
     ///     Stored file such as an Audio MP3 file
@@ -37,12 +37,17 @@ public partial class DiskFile : UbluxDocument
     [AllowUpdate(false)]
     public required StoredFile StoredFile { get; set; }
 
+    // Remove because PBX cannot set this
+    ///// <summary>
+    /////     Date when stored file was uploaded to Cloud
+    ///// </summary>
+    //public DateTime? DateUploaded { get; set; }
+
     /// <summary>
-    ///     This property is going to only change on local mongodb. That means that one instance of mongo may have different value than another
-    ///     TODO: Set index on this property
+    ///     Is this Cloud file backed up
     /// </summary>
     [AllowUpdate(false)]
-    public required bool HasBeenDownloaded { get; set; }
+    public required bool IsBackup { get; set; }
 }
 
 #endif
