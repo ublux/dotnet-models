@@ -65,7 +65,7 @@ namespace Ublux.Communications.Models.Documents {
     }
     public partial class CallIncomingToCallFlowLogic {
         /// <summary> Id prefix </summary>
-        public const string DocumentPrefix = "CITCF";
+        public const string DocumentPrefix = "CITCFL";
 
         /// <summary> Custom: prefix.instance.channel-uid. Example COTE.PBXUS1.1232123.2 </summary>
         public static BuiltId BuildId(RunningApplicationInstance instance,  string channelUid) => new($"{DocumentPrefix}.{instance.Id}.{channelUid}");
@@ -128,7 +128,7 @@ namespace Ublux.Communications.Models.Documents {
     }
     public partial class ExtensionCallFlowLogic {
         /// <summary> Id prefix </summary>
-        public const string DocumentPrefix = "ECF";
+        public const string DocumentPrefix = "ECFL";
 
         /// <summary> Build Id </summary>
         public static BuiltId BuildId(RunningApplicationInstance instance) => new($"{DocumentPrefix}.{instance.Id}.{instance.IdGlobalAutoIncrement()}");
@@ -371,7 +371,6 @@ namespace Ublux.Communications.Models.SubDocuments {
 
         /// <summary> Example SF.Ac.1/Audios/JFKEYIERJKHDKJHDSF.wav </summary>
         public static BuiltId BuildId(string idAcc, StorageFolderName folderName, string fileExtension) => new($"{DocumentPrefix}.{idAcc}/{folderName}/{RunningApplicationInstance.ToBase62(BitConverter.ToUInt64(Guid.NewGuid().ToByteArray()))}{RunningApplicationInstance.ToBase62(BitConverter.ToUInt64(Guid.NewGuid().ToByteArray())/2)}.{fileExtension.ToLower()}");
-        
         /// <summary> oveload </summary>
         public static BuiltId BuildId(string idAcc, StorageFolderName folderName) => new($"{DocumentPrefix}.{idAcc}/{folderName}/{RunningApplicationInstance.ToBase62(BitConverter.ToUInt64(Guid.NewGuid().ToByteArray()))}{RunningApplicationInstance.ToBase62(BitConverter.ToUInt64(Guid.NewGuid().ToByteArray())/2)}");
         /// <summary> oveload </summary>

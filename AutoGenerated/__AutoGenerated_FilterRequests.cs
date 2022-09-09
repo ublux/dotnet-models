@@ -601,8 +601,8 @@ public class CallerIdMaskFilterRequest
     public DateTime? DateUpdated_GTE { get; set; }
 
 }
-/// <summary> Enables searching for CallFlows </summary>
-public class CallFlowFilterRequest 
+/// <summary> Enables searching for CallFlowLogics </summary>
+public class CallFlowLogicFilterRequest 
 {
     /// <summary> FriendlyName equals </summary>
     [JsonProperty("friendlyName_eq")]
@@ -665,18 +665,18 @@ public class CallFlowFilterRequest
     public DateTime? DateUpdated_GTE { get; set; }
 
 }
-/// <summary> Enables searching for CallIncomingToCallFlows </summary>
-public class CallIncomingToCallFlowFilterRequest 
+/// <summary> Enables searching for CallIncomingToCallFlowLogics </summary>
+public class CallIncomingToCallFlowLogicFilterRequest 
 {
     /// <summary> IdCallFlowLogic equals </summary>
-    [JsonProperty("idCallFlow_eq")]
-    public string? IdCallFlow_EQ { get; set; }
+    [JsonProperty("idCallFlowLogic_eq")]
+    public string? IdCallFlowLogic_EQ { get; set; }
     /// <summary> IdCallFlowLogic contains </summary>
-    [JsonProperty("idCallFlow_con")]
-    public string? IdCallFlow_CON { get; set; }
+    [JsonProperty("idCallFlowLogic_con")]
+    public string? IdCallFlowLogic_CON { get; set; }
     /// <summary> IdCallFlowLogic regex </summary>
-    [JsonProperty("idCallFlow_reg")]
-    public string? IdCallFlow_REG { get; set; }
+    [JsonProperty("idCallFlowLogic_reg")]
+    public string? IdCallFlowLogic_REG { get; set; }
 
     /// <summary> CallType equals </summary>
     [JsonProperty("callType_eq")]
@@ -4524,18 +4524,18 @@ public class CustomerInfoFilterRequest
     public DateTime? DateUpdated_GTE { get; set; }
 
 }
-/// <summary> Enables searching for ExtensionCallFlows </summary>
-public class ExtensionCallFlowFilterRequest 
+/// <summary> Enables searching for ExtensionCallFlowLogics </summary>
+public class ExtensionCallFlowLogicFilterRequest 
 {
     /// <summary> IdCallFlowLogic equals </summary>
-    [JsonProperty("idCallFlow_eq")]
-    public string? IdCallFlow_EQ { get; set; }
+    [JsonProperty("idCallFlowLogic_eq")]
+    public string? IdCallFlowLogic_EQ { get; set; }
     /// <summary> IdCallFlowLogic contains </summary>
-    [JsonProperty("idCallFlow_con")]
-    public string? IdCallFlow_CON { get; set; }
+    [JsonProperty("idCallFlowLogic_con")]
+    public string? IdCallFlowLogic_CON { get; set; }
     /// <summary> IdCallFlowLogic regex </summary>
-    [JsonProperty("idCallFlow_reg")]
-    public string? IdCallFlow_REG { get; set; }
+    [JsonProperty("idCallFlowLogic_reg")]
+    public string? IdCallFlowLogic_REG { get; set; }
 
     /// <summary> CallFlowLabel equals </summary>
     [JsonProperty("callFlowLabel_eq")]
@@ -6516,14 +6516,14 @@ public class PowerDialerGroupFilterRequest
     public string? IdCallerIdMask_REG { get; set; }
 
     /// <summary> IdCallFlowLogic equals </summary>
-    [JsonProperty("idCallFlow_eq")]
-    public string? IdCallFlow_EQ { get; set; }
+    [JsonProperty("idCallFlowLogic_eq")]
+    public string? IdCallFlowLogic_EQ { get; set; }
     /// <summary> IdCallFlowLogic contains </summary>
-    [JsonProperty("idCallFlow_con")]
-    public string? IdCallFlow_CON { get; set; }
+    [JsonProperty("idCallFlowLogic_con")]
+    public string? IdCallFlowLogic_CON { get; set; }
     /// <summary> IdCallFlowLogic regex </summary>
-    [JsonProperty("idCallFlow_reg")]
-    public string? IdCallFlow_REG { get; set; }
+    [JsonProperty("idCallFlowLogic_reg")]
+    public string? IdCallFlowLogic_REG { get; set; }
 
     /// <summary> IdExtension equals </summary>
     [JsonProperty("idExtension_eq")]
@@ -7732,14 +7732,14 @@ public class VoicemailForwardedFilterRequest
 public class VoipNumberAvailableForPurchaseFilterRequest 
 {
     /// <summary> RulesPhone.IdCallFlowLogic equals </summary>
-    [JsonProperty("rulesPhone_idCallFlow_eq")]
-    public string? RulesPhone_IdCallFlow_EQ { get; set; }
+    [JsonProperty("rulesPhone_idCallFlowLogic_eq")]
+    public string? RulesPhone_IdCallFlowLogic_EQ { get; set; }
     /// <summary> RulesPhone.IdCallFlowLogic contains </summary>
-    [JsonProperty("rulesPhone_idCallFlow_con")]
-    public string? RulesPhone_IdCallFlow_CON { get; set; }
+    [JsonProperty("rulesPhone_idCallFlowLogic_con")]
+    public string? RulesPhone_IdCallFlowLogic_CON { get; set; }
     /// <summary> RulesPhone.IdCallFlowLogic regex </summary>
-    [JsonProperty("rulesPhone_idCallFlow_reg")]
-    public string? RulesPhone_IdCallFlow_REG { get; set; }
+    [JsonProperty("rulesPhone_idCallFlowLogic_reg")]
+    public string? RulesPhone_IdCallFlowLogic_REG { get; set; }
 
     /// <summary> RulesPhone.IdExtension equals </summary>
     [JsonProperty("rulesPhone_idExtension_eq")]
@@ -7917,14 +7917,14 @@ public class VoipNumberAvailableForPurchaseFilterRequest
 public class VoipNumberFaxFilterRequest 
 {
     /// <summary> RulesPhone.IdCallFlowLogic equals </summary>
-    [JsonProperty("rulesPhone_idCallFlow_eq")]
-    public string? RulesPhone_IdCallFlow_EQ { get; set; }
+    [JsonProperty("rulesPhone_idCallFlowLogic_eq")]
+    public string? RulesPhone_IdCallFlowLogic_EQ { get; set; }
     /// <summary> RulesPhone.IdCallFlowLogic contains </summary>
-    [JsonProperty("rulesPhone_idCallFlow_con")]
-    public string? RulesPhone_IdCallFlow_CON { get; set; }
+    [JsonProperty("rulesPhone_idCallFlowLogic_con")]
+    public string? RulesPhone_IdCallFlowLogic_CON { get; set; }
     /// <summary> RulesPhone.IdCallFlowLogic regex </summary>
-    [JsonProperty("rulesPhone_idCallFlow_reg")]
-    public string? RulesPhone_IdCallFlow_REG { get; set; }
+    [JsonProperty("rulesPhone_idCallFlowLogic_reg")]
+    public string? RulesPhone_IdCallFlowLogic_REG { get; set; }
 
     /// <summary> RulesPhone.IdExtension equals </summary>
     [JsonProperty("rulesPhone_idExtension_eq")]
@@ -8094,14 +8094,14 @@ public class VoipNumberFaxFilterRequest
 public class VoipNumberPhoneFilterRequest 
 {
     /// <summary> RulesPhone.IdCallFlowLogic equals </summary>
-    [JsonProperty("rulesPhone_idCallFlow_eq")]
-    public string? RulesPhone_IdCallFlow_EQ { get; set; }
+    [JsonProperty("rulesPhone_idCallFlowLogic_eq")]
+    public string? RulesPhone_IdCallFlowLogic_EQ { get; set; }
     /// <summary> RulesPhone.IdCallFlowLogic contains </summary>
-    [JsonProperty("rulesPhone_idCallFlow_con")]
-    public string? RulesPhone_IdCallFlow_CON { get; set; }
+    [JsonProperty("rulesPhone_idCallFlowLogic_con")]
+    public string? RulesPhone_IdCallFlowLogic_CON { get; set; }
     /// <summary> RulesPhone.IdCallFlowLogic regex </summary>
-    [JsonProperty("rulesPhone_idCallFlow_reg")]
-    public string? RulesPhone_IdCallFlow_REG { get; set; }
+    [JsonProperty("rulesPhone_idCallFlowLogic_reg")]
+    public string? RulesPhone_IdCallFlowLogic_REG { get; set; }
 
     /// <summary> RulesPhone.IdExtension equals </summary>
     [JsonProperty("rulesPhone_idExtension_eq")]
@@ -8359,8 +8359,8 @@ public class WebHookFilterRequest
     public DateTime? DateUpdated_GTE { get; set; }
 
 }
-/// <summary> Enables searching for DiskFiles </summary>
-public class DiskFileFilterRequest 
+/// <summary> Enables searching for CloudFiles </summary>
+public class CloudFileFilterRequest 
 {
     /// <summary> IdDocument equals </summary>
     [JsonProperty("idDocument_eq")]
@@ -8423,9 +8423,9 @@ public class DiskFileFilterRequest
     public string? StoredFile_Id_REG { get; set; }
 
 
-    /// <summary> HasBeenDownloaded equals </summary>
-    [JsonProperty("hasBeenDownloaded_eq")]
-    public bool? HasBeenDownloaded_EQ { get; set; }
+    /// <summary> IsBackup equals </summary>
+    [JsonProperty("isBackup_eq")]
+    public bool? IsBackup_EQ { get; set; }
 
     /// <summary> Id equals </summary>
     [JsonProperty("id_eq")]
@@ -10311,14 +10311,14 @@ public class TrunkOriginationFilterRequest
 public class VoipNumberFilterRequest 
 {
     /// <summary> RulesPhone.IdCallFlowLogic equals </summary>
-    [JsonProperty("rulesPhone_idCallFlow_eq")]
-    public string? RulesPhone_IdCallFlow_EQ { get; set; }
+    [JsonProperty("rulesPhone_idCallFlowLogic_eq")]
+    public string? RulesPhone_IdCallFlowLogic_EQ { get; set; }
     /// <summary> RulesPhone.IdCallFlowLogic contains </summary>
-    [JsonProperty("rulesPhone_idCallFlow_con")]
-    public string? RulesPhone_IdCallFlow_CON { get; set; }
+    [JsonProperty("rulesPhone_idCallFlowLogic_con")]
+    public string? RulesPhone_IdCallFlowLogic_CON { get; set; }
     /// <summary> RulesPhone.IdCallFlowLogic regex </summary>
-    [JsonProperty("rulesPhone_idCallFlow_reg")]
-    public string? RulesPhone_IdCallFlow_REG { get; set; }
+    [JsonProperty("rulesPhone_idCallFlowLogic_reg")]
+    public string? RulesPhone_IdCallFlowLogic_REG { get; set; }
 
     /// <summary> RulesPhone.IdExtension equals </summary>
     [JsonProperty("rulesPhone_idExtension_eq")]

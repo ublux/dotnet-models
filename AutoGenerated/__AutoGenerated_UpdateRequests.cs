@@ -158,7 +158,7 @@ public class CallerIdMaskUpdateRequest // : IUbluxDocumentId
 /// </summary><summary>
 /// Virtual receptionist
 /// </summary>
-public class CallFlowUpdateRequest // : IUbluxDocumentId
+public class CallFlowLogicUpdateRequest // : IUbluxDocumentId
 {
     /// <summary>
     /// Name of virtual receptionist
@@ -188,7 +188,7 @@ public class CallFlowUpdateRequest // : IUbluxDocumentId
 /// <summary>
 /// Incoming phone call that executed an IVR
 /// </summary>
-public class CallIncomingToCallFlowUpdateRequest // : IUbluxDocumentId
+public class CallIncomingToCallFlowLogicUpdateRequest // : IUbluxDocumentId
 {
     /// <summary> Set values on actual document </summary>
     public void SetValuesOnCallIncomingToCallFlowLogic(CallIncomingToCallFlowLogic callIncomingToCallFlowLogic)
@@ -360,7 +360,7 @@ public class CustomerInfoUpdateRequest // : IUbluxDocumentId
 /// <summary>
 /// Executes a custom IVR when calling this extension
 /// </summary>
-public class ExtensionCallFlowUpdateRequest // : IUbluxDocumentId
+public class ExtensionCallFlowLogicUpdateRequest // : IUbluxDocumentId
 {
     /// <summary>
     /// Id of call flow to execute
@@ -1300,13 +1300,13 @@ public class WebHookUpdateRequest // : IUbluxDocumentId
 }
 
 /// <summary>
-/// File stored on disk. All storedFiles will have a copy
-/// This collection should not be stored on redis and be created with time to leave
+/// File stored on the cloud
+/// This collection should not be stored on redis and be created with TTL of one month
 /// </summary>
-public class DiskFileUpdateRequest // : IUbluxDocumentId
+public class CloudFileUpdateRequest // : IUbluxDocumentId
 {
     /// <summary> Set values on actual document </summary>
-    public void SetValuesOnDiskFile(CloudFile diskFile)
+    public void SetValuesOnCloudFile(CloudFile cloudFile)
     {
     }
 

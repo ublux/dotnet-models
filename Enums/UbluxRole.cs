@@ -76,16 +76,16 @@ public enum UbluxRole
     calleridmasks_create,
 
 
-    /// <summary> Has access to the callflows endpoint with full permissions </summary>
-    callflows = 50,
-    /// <summary> Has access to the callflows endpoint with only read permissions </summary>
-    callflows_readonly,
-    /// <summary> Has access to the callflows endpoint with only read/update permissions </summary>
-    callflows_update,
-    /// <summary> Has access to the callflows endpoint with only read/delete permissions </summary>
-    callflows_delete,
-    /// <summary> Has access to the callflows endpoint with only read/create permissions </summary>
-    callflows_create,
+    /// <summary> Has access to the callflowlogics endpoint with full permissions </summary>
+    callflowlogics = 50,
+    /// <summary> Has access to the callflowlogics endpoint with only read permissions </summary>
+    callflowlogics_readonly,
+    /// <summary> Has access to the callflowlogics endpoint with only read/update permissions </summary>
+    callflowlogics_update,
+    /// <summary> Has access to the callflowlogics endpoint with only read/delete permissions </summary>
+    callflowlogics_delete,
+    /// <summary> Has access to the callflowlogics endpoint with only read/create permissions </summary>
+    callflowlogics_create,
 
 
     /// <summary> Has access to the callincomings endpoint with full permissions </summary>
@@ -100,16 +100,16 @@ public enum UbluxRole
     callincomings_create,
 
 
-    /// <summary> Has access to the callincomingtocallflows endpoint with full permissions </summary>
-    callincomingtocallflows = 70,
-    /// <summary> Has access to the callincomingtocallflows endpoint with only read permissions </summary>
-    callincomingtocallflows_readonly,
-    /// <summary> Has access to the callincomingtocallflows endpoint with only read/update permissions </summary>
-    callincomingtocallflows_update,
-    /// <summary> Has access to the callincomingtocallflows endpoint with only read/delete permissions </summary>
-    callincomingtocallflows_delete,
-    /// <summary> Has access to the callincomingtocallflows endpoint with only read/create permissions </summary>
-    callincomingtocallflows_create,
+    /// <summary> Has access to the callincomingtocallflowlogics endpoint with full permissions </summary>
+    callincomingtocallflowlogics = 70,
+    /// <summary> Has access to the callincomingtocallflowlogics endpoint with only read permissions </summary>
+    callincomingtocallflowlogics_readonly,
+    /// <summary> Has access to the callincomingtocallflowlogics endpoint with only read/update permissions </summary>
+    callincomingtocallflowlogics_update,
+    /// <summary> Has access to the callincomingtocallflowlogics endpoint with only read/delete permissions </summary>
+    callincomingtocallflowlogics_delete,
+    /// <summary> Has access to the callincomingtocallflowlogics endpoint with only read/create permissions </summary>
+    callincomingtocallflowlogics_create,
 
 
     /// <summary> Has access to the callincomingtoextensions endpoint with full permissions </summary>
@@ -196,16 +196,16 @@ public enum UbluxRole
     extensions_create,
 
 
-    /// <summary> Has access to the extensioncallflows endpoint with full permissions </summary>
-    extensioncallflows = 150,
-    /// <summary> Has access to the extensioncallflows endpoint with only read permissions </summary>
-    extensioncallflows_readonly,
-    /// <summary> Has access to the extensioncallflows endpoint with only read/update permissions </summary>
-    extensioncallflows_update,
-    /// <summary> Has access to the extensioncallflows endpoint with only read/delete permissions </summary>
-    extensioncallflows_delete,
-    /// <summary> Has access to the extensioncallflows endpoint with only read/create permissions </summary>
-    extensioncallflows_create,
+    /// <summary> Has access to the extensioncallflowlogics endpoint with full permissions </summary>
+    extensioncallflowlogics = 150,
+    /// <summary> Has access to the extensioncallflowlogics endpoint with only read permissions </summary>
+    extensioncallflowlogics_readonly,
+    /// <summary> Has access to the extensioncallflowlogics endpoint with only read/update permissions </summary>
+    extensioncallflowlogics_update,
+    /// <summary> Has access to the extensioncallflowlogics endpoint with only read/delete permissions </summary>
+    extensioncallflowlogics_delete,
+    /// <summary> Has access to the extensioncallflowlogics endpoint with only read/create permissions </summary>
+    extensioncallflowlogics_create,
 
 
     /// <summary> Has access to the extensionconferences endpoint with full permissions </summary>
