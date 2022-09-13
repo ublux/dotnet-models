@@ -240,9 +240,21 @@ public class CallOutgoingToPSTNUpdateRequest // : IUbluxDocumentId
 /// </summary>
 public class CloudServicePbxUpdateRequest // : IUbluxDocumentId
 {
+    /// <summary>
+    /// We need instance id in order to reboot cloud service for example. Example: i-0655b45b8134e6425
+    /// </summary>
+    public String? ProviderInstanceId { get; set; }
+    /// <summary>
+    /// Example AWS for amazon web services
+    /// </summary>
+    public CloudServiceProviderType? ProviderType { get; set; }
     /// <summary> Set values on actual document </summary>
     public void SetValuesOnCloudServicePbx(CloudServicePbx cloudServicePbx)
     {
+        if(this.ProviderInstanceId!=null)
+            cloudServicePbx.ProviderInstanceId = this.ProviderInstanceId;
+        if(this.ProviderType!=null)
+            cloudServicePbx.ProviderType = this.ProviderType.Value;
     }
 
 }
@@ -252,9 +264,21 @@ public class CloudServicePbxUpdateRequest // : IUbluxDocumentId
 /// </summary>
 public class CloudServiceWebAppUpdateRequest // : IUbluxDocumentId
 {
+    /// <summary>
+    /// We need instance id in order to reboot cloud service for example. Example: i-0655b45b8134e6425
+    /// </summary>
+    public String? ProviderInstanceId { get; set; }
+    /// <summary>
+    /// Example AWS for amazon web services
+    /// </summary>
+    public CloudServiceProviderType? ProviderType { get; set; }
     /// <summary> Set values on actual document </summary>
     public void SetValuesOnCloudServiceWebApp(CloudServiceWebApp cloudServiceWebApp)
     {
+        if(this.ProviderInstanceId!=null)
+            cloudServiceWebApp.ProviderInstanceId = this.ProviderInstanceId;
+        if(this.ProviderType!=null)
+            cloudServiceWebApp.ProviderType = this.ProviderType.Value;
     }
 
 }
@@ -264,9 +288,21 @@ public class CloudServiceWebAppUpdateRequest // : IUbluxDocumentId
 /// </summary>
 public class CloudServiceWebHostUpdateRequest // : IUbluxDocumentId
 {
+    /// <summary>
+    /// We need instance id in order to reboot cloud service for example. Example: i-0655b45b8134e6425
+    /// </summary>
+    public String? ProviderInstanceId { get; set; }
+    /// <summary>
+    /// Example AWS for amazon web services
+    /// </summary>
+    public CloudServiceProviderType? ProviderType { get; set; }
     /// <summary> Set values on actual document </summary>
     public void SetValuesOnCloudServiceWebHost(CloudServiceWebHost cloudServiceWebHost)
     {
+        if(this.ProviderInstanceId!=null)
+            cloudServiceWebHost.ProviderInstanceId = this.ProviderInstanceId;
+        if(this.ProviderType!=null)
+            cloudServiceWebHost.ProviderType = this.ProviderType.Value;
     }
 
 }

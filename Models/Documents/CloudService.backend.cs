@@ -1,7 +1,5 @@
 ﻿#if UBLUX_BACKEND
 
-using System.Net;
-
 namespace Ublux.Communications.Models.Documents;
 
 /// <summary>
@@ -9,6 +7,22 @@ namespace Ublux.Communications.Models.Documents;
 /// </summary>
 public abstract partial class CloudService : UbluxDocument
 {
+    /// <summary>
+    ///     We need instance id in order to reboot cloud service for example. Example: i-0655b45b8134e6425 
+    /// </summary>
+    [IsRequired]
+    [IgnoreDataMember]
+    [AllowUpdate(true)]
+    public required string ProviderInstanceId { get; set; }
+
+    /// <summary>
+    ///     Example AWS for amazon web services
+    /// </summary>
+    [IsRequired]
+    [IgnoreDataMember]
+    [AllowUpdate(true)]
+    public required CloudServiceProviderType ProviderType { get; set; }
+
     /// <summary>
     ///     Examples:  
     ///         us1.ublux.com for csp.us1 pbx
