@@ -30,7 +30,7 @@ public static class ModelsExtensionMethods
             Collections.FaxOutgoingGroups => typeof(FaxOutgoingGroup),
             Collections.Voicemails => typeof(Voicemail),
             Collections.Identities => typeof(Identity),
-            Collections.IPs => typeof(IP),
+            // Collections.IPs => typeof(IP),
             Collections.LineKeyGroups => typeof(LineKeyGroup),
             Collections.LogWebServiceRequests => typeof(LogWebServiceRequest),
             Collections.MusicOnHoldGroups => typeof(MusicOnHoldGroup),

@@ -189,13 +189,6 @@ namespace Ublux.Communications.Models.Documents {
         /// <summary> Custom: prefix and the amail address. Example Id.antonio@ublux.com, or Id.PBX.UST </summary>
         public static BuiltId BuildId(string emailOrCloudServiceName) => new($"{DocumentPrefix}.{emailOrCloudServiceName}");
     }
-    public partial class IP {
-        /// <summary> Id prefix </summary>
-        public const string DocumentPrefix = "IP";
-
-        /// <summary> Custom: Prefix follwed by ip address. Example IP.1.1.1.1 </summary>
-        public static BuiltId BuildId(string ipAddress) => new($"{DocumentPrefix}.{ipAddress}");
-    }
     public partial class LineKeyGroup {
         /// <summary> Id prefix </summary>
         public const string DocumentPrefix = "LKG";

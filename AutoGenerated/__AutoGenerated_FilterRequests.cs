@@ -89,7 +89,13 @@ public class AccountFilterRequest
 
     /// <summary> MailingAddress.Country equals </summary>
     [JsonProperty("mailingAddress_country_eq")]
-    public CountryIsoCode? MailingAddress_Country_EQ { get; set; }
+    public string? MailingAddress_Country_EQ { get; set; }
+    /// <summary> MailingAddress.Country contains </summary>
+    [JsonProperty("mailingAddress_country_con")]
+    public string? MailingAddress_Country_CON { get; set; }
+    /// <summary> MailingAddress.Country regex </summary>
+    [JsonProperty("mailingAddress_country_reg")]
+    public string? MailingAddress_Country_REG { get; set; }
 
 
     /// <summary> AccountSecrets.PinPhone equals </summary>
@@ -680,7 +686,13 @@ public class CallIncomingToCallFlowLogicFilterRequest
 
     /// <summary> CallType equals </summary>
     [JsonProperty("callType_eq")]
-    public CallType? CallType_EQ { get; set; }
+    public string? CallType_EQ { get; set; }
+    /// <summary> CallType contains </summary>
+    [JsonProperty("callType_con")]
+    public string? CallType_CON { get; set; }
+    /// <summary> CallType regex </summary>
+    [JsonProperty("callType_reg")]
+    public string? CallType_REG { get; set; }
 
     /// <summary> Contact.IdIdentityUser equals </summary>
     [JsonProperty("contact_idIdentityUser_eq")]
@@ -724,7 +736,13 @@ public class CallIncomingToCallFlowLogicFilterRequest
 
     /// <summary> Contact.ContactNumbers.Label equals </summary>
     [JsonProperty("contact_contactNumbers_label_eq")]
-    public LabelNumber? Contact_ContactNumbers_Label_EQ { get; set; }
+    public string? Contact_ContactNumbers_Label_EQ { get; set; }
+    /// <summary> Contact.ContactNumbers.Label contains </summary>
+    [JsonProperty("contact_contactNumbers_label_con")]
+    public string? Contact_ContactNumbers_Label_CON { get; set; }
+    /// <summary> Contact.ContactNumbers.Label regex </summary>
+    [JsonProperty("contact_contactNumbers_label_reg")]
+    public string? Contact_ContactNumbers_Label_REG { get; set; }
 
 
     /// <summary> Contact.ContactEmails.SearchIndex equals </summary>
@@ -749,7 +767,13 @@ public class CallIncomingToCallFlowLogicFilterRequest
 
     /// <summary> Contact.ContactEmails.Label equals </summary>
     [JsonProperty("contact_contactEmails_label_eq")]
-    public LabelEmailType? Contact_ContactEmails_Label_EQ { get; set; }
+    public string? Contact_ContactEmails_Label_EQ { get; set; }
+    /// <summary> Contact.ContactEmails.Label contains </summary>
+    [JsonProperty("contact_contactEmails_label_con")]
+    public string? Contact_ContactEmails_Label_CON { get; set; }
+    /// <summary> Contact.ContactEmails.Label regex </summary>
+    [JsonProperty("contact_contactEmails_label_reg")]
+    public string? Contact_ContactEmails_Label_REG { get; set; }
 
 
     /// <summary> Contact.FirstName equals </summary>
@@ -906,7 +930,13 @@ public class CallIncomingToCallFlowLogicFilterRequest
 
     /// <summary> ChannelVariables.Language equals </summary>
     [JsonProperty("channelVariables_language_eq")]
-    public Language? ChannelVariables_Language_EQ { get; set; }
+    public string? ChannelVariables_Language_EQ { get; set; }
+    /// <summary> ChannelVariables.Language contains </summary>
+    [JsonProperty("channelVariables_language_con")]
+    public string? ChannelVariables_Language_CON { get; set; }
+    /// <summary> ChannelVariables.Language regex </summary>
+    [JsonProperty("channelVariables_language_reg")]
+    public string? ChannelVariables_Language_REG { get; set; }
 
     /// <summary> ChannelVariables.IdMusicOnHold equals </summary>
     [JsonProperty("channelVariables_idMusicOnHold_eq")]
@@ -941,7 +971,13 @@ public class CallIncomingToCallFlowLogicFilterRequest
 
     /// <summary> ChildCalls.ChildCallType equals </summary>
     [JsonProperty("childCalls_childCallType_eq")]
-    public ChildCallType? ChildCalls_ChildCallType_EQ { get; set; }
+    public string? ChildCalls_ChildCallType_EQ { get; set; }
+    /// <summary> ChildCalls.ChildCallType contains </summary>
+    [JsonProperty("childCalls_childCallType_con")]
+    public string? ChildCalls_ChildCallType_CON { get; set; }
+    /// <summary> ChildCalls.ChildCallType regex </summary>
+    [JsonProperty("childCalls_childCallType_reg")]
+    public string? ChildCalls_ChildCallType_REG { get; set; }
 
     /// <summary> ChildCalls.DialStatus equals </summary>
     [JsonProperty("childCalls_dialStatus_eq")]
@@ -1037,7 +1073,13 @@ public class CallIncomingToCallFlowLogicFilterRequest
 
     /// <summary> FromCountry equals </summary>
     [JsonProperty("fromCountry_eq")]
-    public CountryIsoCode? FromCountry_EQ { get; set; }
+    public string? FromCountry_EQ { get; set; }
+    /// <summary> FromCountry contains </summary>
+    [JsonProperty("fromCountry_con")]
+    public string? FromCountry_CON { get; set; }
+    /// <summary> FromCountry regex </summary>
+    [JsonProperty("fromCountry_reg")]
+    public string? FromCountry_REG { get; set; }
 
     /// <summary> To equals </summary>
     [JsonProperty("to_eq")]
@@ -1051,7 +1093,13 @@ public class CallIncomingToCallFlowLogicFilterRequest
 
     /// <summary> ToCountry equals </summary>
     [JsonProperty("toCountry_eq")]
-    public CountryIsoCode? ToCountry_EQ { get; set; }
+    public string? ToCountry_EQ { get; set; }
+    /// <summary> ToCountry contains </summary>
+    [JsonProperty("toCountry_con")]
+    public string? ToCountry_CON { get; set; }
+    /// <summary> ToCountry regex </summary>
+    [JsonProperty("toCountry_reg")]
+    public string? ToCountry_REG { get; set; }
 
     /// <summary> Recording.ErrorMessage equals </summary>
     [JsonProperty("recording_errorMessage_eq")]
@@ -1209,7 +1257,13 @@ public class CallIncomingToExtensionFilterRequest
 
     /// <summary> Extension.ExtensionType equals </summary>
     [JsonProperty("extension_extensionType_eq")]
-    public ExtensionType? Extension_ExtensionType_EQ { get; set; }
+    public string? Extension_ExtensionType_EQ { get; set; }
+    /// <summary> Extension.ExtensionType contains </summary>
+    [JsonProperty("extension_extensionType_con")]
+    public string? Extension_ExtensionType_CON { get; set; }
+    /// <summary> Extension.ExtensionType regex </summary>
+    [JsonProperty("extension_extensionType_reg")]
+    public string? Extension_ExtensionType_REG { get; set; }
 
     /// <summary> Extension.FriendlyName equals </summary>
     [JsonProperty("extension_friendlyName_eq")]
@@ -1381,7 +1435,13 @@ public class CallIncomingToExtensionFilterRequest
 
     /// <summary> LineThatAnswered.Language equals </summary>
     [JsonProperty("lineThatAnswered_language_eq")]
-    public Language? LineThatAnswered_Language_EQ { get; set; }
+    public string? LineThatAnswered_Language_EQ { get; set; }
+    /// <summary> LineThatAnswered.Language contains </summary>
+    [JsonProperty("lineThatAnswered_language_con")]
+    public string? LineThatAnswered_Language_CON { get; set; }
+    /// <summary> LineThatAnswered.Language regex </summary>
+    [JsonProperty("lineThatAnswered_language_reg")]
+    public string? LineThatAnswered_Language_REG { get; set; }
 
     /// <summary> LineThatAnswered.Id equals </summary>
     [JsonProperty("lineThatAnswered_id_eq")]
@@ -1509,7 +1569,13 @@ public class CallIncomingToExtensionFilterRequest
 
     /// <summary> LinesThatRing.Language equals </summary>
     [JsonProperty("linesThatRing_language_eq")]
-    public Language? LinesThatRing_Language_EQ { get; set; }
+    public string? LinesThatRing_Language_EQ { get; set; }
+    /// <summary> LinesThatRing.Language contains </summary>
+    [JsonProperty("linesThatRing_language_con")]
+    public string? LinesThatRing_Language_CON { get; set; }
+    /// <summary> LinesThatRing.Language regex </summary>
+    [JsonProperty("linesThatRing_language_reg")]
+    public string? LinesThatRing_Language_REG { get; set; }
 
     /// <summary> LinesThatRing.Id equals </summary>
     [JsonProperty("linesThatRing_id_eq")]
@@ -1637,7 +1703,13 @@ public class CallIncomingToExtensionFilterRequest
 
     /// <summary> LinesThatDidNotRing.Language equals </summary>
     [JsonProperty("linesThatDidNotRing_language_eq")]
-    public Language? LinesThatDidNotRing_Language_EQ { get; set; }
+    public string? LinesThatDidNotRing_Language_EQ { get; set; }
+    /// <summary> LinesThatDidNotRing.Language contains </summary>
+    [JsonProperty("linesThatDidNotRing_language_con")]
+    public string? LinesThatDidNotRing_Language_CON { get; set; }
+    /// <summary> LinesThatDidNotRing.Language regex </summary>
+    [JsonProperty("linesThatDidNotRing_language_reg")]
+    public string? LinesThatDidNotRing_Language_REG { get; set; }
 
     /// <summary> LinesThatDidNotRing.Id equals </summary>
     [JsonProperty("linesThatDidNotRing_id_eq")]
@@ -1652,7 +1724,13 @@ public class CallIncomingToExtensionFilterRequest
 
     /// <summary> CallType equals </summary>
     [JsonProperty("callType_eq")]
-    public CallType? CallType_EQ { get; set; }
+    public string? CallType_EQ { get; set; }
+    /// <summary> CallType contains </summary>
+    [JsonProperty("callType_con")]
+    public string? CallType_CON { get; set; }
+    /// <summary> CallType regex </summary>
+    [JsonProperty("callType_reg")]
+    public string? CallType_REG { get; set; }
 
     /// <summary> Contact.IdIdentityUser equals </summary>
     [JsonProperty("contact_idIdentityUser_eq")]
@@ -1696,7 +1774,13 @@ public class CallIncomingToExtensionFilterRequest
 
     /// <summary> Contact.ContactNumbers.Label equals </summary>
     [JsonProperty("contact_contactNumbers_label_eq")]
-    public LabelNumber? Contact_ContactNumbers_Label_EQ { get; set; }
+    public string? Contact_ContactNumbers_Label_EQ { get; set; }
+    /// <summary> Contact.ContactNumbers.Label contains </summary>
+    [JsonProperty("contact_contactNumbers_label_con")]
+    public string? Contact_ContactNumbers_Label_CON { get; set; }
+    /// <summary> Contact.ContactNumbers.Label regex </summary>
+    [JsonProperty("contact_contactNumbers_label_reg")]
+    public string? Contact_ContactNumbers_Label_REG { get; set; }
 
 
     /// <summary> Contact.ContactEmails.SearchIndex equals </summary>
@@ -1721,7 +1805,13 @@ public class CallIncomingToExtensionFilterRequest
 
     /// <summary> Contact.ContactEmails.Label equals </summary>
     [JsonProperty("contact_contactEmails_label_eq")]
-    public LabelEmailType? Contact_ContactEmails_Label_EQ { get; set; }
+    public string? Contact_ContactEmails_Label_EQ { get; set; }
+    /// <summary> Contact.ContactEmails.Label contains </summary>
+    [JsonProperty("contact_contactEmails_label_con")]
+    public string? Contact_ContactEmails_Label_CON { get; set; }
+    /// <summary> Contact.ContactEmails.Label regex </summary>
+    [JsonProperty("contact_contactEmails_label_reg")]
+    public string? Contact_ContactEmails_Label_REG { get; set; }
 
 
     /// <summary> Contact.FirstName equals </summary>
@@ -1878,7 +1968,13 @@ public class CallIncomingToExtensionFilterRequest
 
     /// <summary> ChannelVariables.Language equals </summary>
     [JsonProperty("channelVariables_language_eq")]
-    public Language? ChannelVariables_Language_EQ { get; set; }
+    public string? ChannelVariables_Language_EQ { get; set; }
+    /// <summary> ChannelVariables.Language contains </summary>
+    [JsonProperty("channelVariables_language_con")]
+    public string? ChannelVariables_Language_CON { get; set; }
+    /// <summary> ChannelVariables.Language regex </summary>
+    [JsonProperty("channelVariables_language_reg")]
+    public string? ChannelVariables_Language_REG { get; set; }
 
     /// <summary> ChannelVariables.IdMusicOnHold equals </summary>
     [JsonProperty("channelVariables_idMusicOnHold_eq")]
@@ -1913,7 +2009,13 @@ public class CallIncomingToExtensionFilterRequest
 
     /// <summary> ChildCalls.ChildCallType equals </summary>
     [JsonProperty("childCalls_childCallType_eq")]
-    public ChildCallType? ChildCalls_ChildCallType_EQ { get; set; }
+    public string? ChildCalls_ChildCallType_EQ { get; set; }
+    /// <summary> ChildCalls.ChildCallType contains </summary>
+    [JsonProperty("childCalls_childCallType_con")]
+    public string? ChildCalls_ChildCallType_CON { get; set; }
+    /// <summary> ChildCalls.ChildCallType regex </summary>
+    [JsonProperty("childCalls_childCallType_reg")]
+    public string? ChildCalls_ChildCallType_REG { get; set; }
 
     /// <summary> ChildCalls.DialStatus equals </summary>
     [JsonProperty("childCalls_dialStatus_eq")]
@@ -2009,7 +2111,13 @@ public class CallIncomingToExtensionFilterRequest
 
     /// <summary> FromCountry equals </summary>
     [JsonProperty("fromCountry_eq")]
-    public CountryIsoCode? FromCountry_EQ { get; set; }
+    public string? FromCountry_EQ { get; set; }
+    /// <summary> FromCountry contains </summary>
+    [JsonProperty("fromCountry_con")]
+    public string? FromCountry_CON { get; set; }
+    /// <summary> FromCountry regex </summary>
+    [JsonProperty("fromCountry_reg")]
+    public string? FromCountry_REG { get; set; }
 
     /// <summary> To equals </summary>
     [JsonProperty("to_eq")]
@@ -2023,7 +2131,13 @@ public class CallIncomingToExtensionFilterRequest
 
     /// <summary> ToCountry equals </summary>
     [JsonProperty("toCountry_eq")]
-    public CountryIsoCode? ToCountry_EQ { get; set; }
+    public string? ToCountry_EQ { get; set; }
+    /// <summary> ToCountry contains </summary>
+    [JsonProperty("toCountry_con")]
+    public string? ToCountry_CON { get; set; }
+    /// <summary> ToCountry regex </summary>
+    [JsonProperty("toCountry_reg")]
+    public string? ToCountry_REG { get; set; }
 
     /// <summary> Recording.ErrorMessage equals </summary>
     [JsonProperty("recording_errorMessage_eq")]
@@ -2181,7 +2295,13 @@ public class CallOutgoingToExtensionFilterRequest
 
     /// <summary> Extension.ExtensionType equals </summary>
     [JsonProperty("extension_extensionType_eq")]
-    public ExtensionType? Extension_ExtensionType_EQ { get; set; }
+    public string? Extension_ExtensionType_EQ { get; set; }
+    /// <summary> Extension.ExtensionType contains </summary>
+    [JsonProperty("extension_extensionType_con")]
+    public string? Extension_ExtensionType_CON { get; set; }
+    /// <summary> Extension.ExtensionType regex </summary>
+    [JsonProperty("extension_extensionType_reg")]
+    public string? Extension_ExtensionType_REG { get; set; }
 
     /// <summary> Extension.FriendlyName equals </summary>
     [JsonProperty("extension_friendlyName_eq")]
@@ -2353,7 +2473,13 @@ public class CallOutgoingToExtensionFilterRequest
 
     /// <summary> LineThatAnswered.Language equals </summary>
     [JsonProperty("lineThatAnswered_language_eq")]
-    public Language? LineThatAnswered_Language_EQ { get; set; }
+    public string? LineThatAnswered_Language_EQ { get; set; }
+    /// <summary> LineThatAnswered.Language contains </summary>
+    [JsonProperty("lineThatAnswered_language_con")]
+    public string? LineThatAnswered_Language_CON { get; set; }
+    /// <summary> LineThatAnswered.Language regex </summary>
+    [JsonProperty("lineThatAnswered_language_reg")]
+    public string? LineThatAnswered_Language_REG { get; set; }
 
     /// <summary> LineThatAnswered.Id equals </summary>
     [JsonProperty("lineThatAnswered_id_eq")]
@@ -2481,7 +2607,13 @@ public class CallOutgoingToExtensionFilterRequest
 
     /// <summary> LinesThatRing.Language equals </summary>
     [JsonProperty("linesThatRing_language_eq")]
-    public Language? LinesThatRing_Language_EQ { get; set; }
+    public string? LinesThatRing_Language_EQ { get; set; }
+    /// <summary> LinesThatRing.Language contains </summary>
+    [JsonProperty("linesThatRing_language_con")]
+    public string? LinesThatRing_Language_CON { get; set; }
+    /// <summary> LinesThatRing.Language regex </summary>
+    [JsonProperty("linesThatRing_language_reg")]
+    public string? LinesThatRing_Language_REG { get; set; }
 
     /// <summary> LinesThatRing.Id equals </summary>
     [JsonProperty("linesThatRing_id_eq")]
@@ -2609,7 +2741,13 @@ public class CallOutgoingToExtensionFilterRequest
 
     /// <summary> LinesThatDidNotRing.Language equals </summary>
     [JsonProperty("linesThatDidNotRing_language_eq")]
-    public Language? LinesThatDidNotRing_Language_EQ { get; set; }
+    public string? LinesThatDidNotRing_Language_EQ { get; set; }
+    /// <summary> LinesThatDidNotRing.Language contains </summary>
+    [JsonProperty("linesThatDidNotRing_language_con")]
+    public string? LinesThatDidNotRing_Language_CON { get; set; }
+    /// <summary> LinesThatDidNotRing.Language regex </summary>
+    [JsonProperty("linesThatDidNotRing_language_reg")]
+    public string? LinesThatDidNotRing_Language_REG { get; set; }
 
     /// <summary> LinesThatDidNotRing.Id equals </summary>
     [JsonProperty("linesThatDidNotRing_id_eq")]
@@ -2624,7 +2762,13 @@ public class CallOutgoingToExtensionFilterRequest
 
     /// <summary> CallType equals </summary>
     [JsonProperty("callType_eq")]
-    public CallType? CallType_EQ { get; set; }
+    public string? CallType_EQ { get; set; }
+    /// <summary> CallType contains </summary>
+    [JsonProperty("callType_con")]
+    public string? CallType_CON { get; set; }
+    /// <summary> CallType regex </summary>
+    [JsonProperty("callType_reg")]
+    public string? CallType_REG { get; set; }
 
     /// <summary> Contact.IdIdentityUser equals </summary>
     [JsonProperty("contact_idIdentityUser_eq")]
@@ -2668,7 +2812,13 @@ public class CallOutgoingToExtensionFilterRequest
 
     /// <summary> Contact.ContactNumbers.Label equals </summary>
     [JsonProperty("contact_contactNumbers_label_eq")]
-    public LabelNumber? Contact_ContactNumbers_Label_EQ { get; set; }
+    public string? Contact_ContactNumbers_Label_EQ { get; set; }
+    /// <summary> Contact.ContactNumbers.Label contains </summary>
+    [JsonProperty("contact_contactNumbers_label_con")]
+    public string? Contact_ContactNumbers_Label_CON { get; set; }
+    /// <summary> Contact.ContactNumbers.Label regex </summary>
+    [JsonProperty("contact_contactNumbers_label_reg")]
+    public string? Contact_ContactNumbers_Label_REG { get; set; }
 
 
     /// <summary> Contact.ContactEmails.SearchIndex equals </summary>
@@ -2693,7 +2843,13 @@ public class CallOutgoingToExtensionFilterRequest
 
     /// <summary> Contact.ContactEmails.Label equals </summary>
     [JsonProperty("contact_contactEmails_label_eq")]
-    public LabelEmailType? Contact_ContactEmails_Label_EQ { get; set; }
+    public string? Contact_ContactEmails_Label_EQ { get; set; }
+    /// <summary> Contact.ContactEmails.Label contains </summary>
+    [JsonProperty("contact_contactEmails_label_con")]
+    public string? Contact_ContactEmails_Label_CON { get; set; }
+    /// <summary> Contact.ContactEmails.Label regex </summary>
+    [JsonProperty("contact_contactEmails_label_reg")]
+    public string? Contact_ContactEmails_Label_REG { get; set; }
 
 
     /// <summary> Contact.FirstName equals </summary>
@@ -2923,7 +3079,13 @@ public class CallOutgoingToExtensionFilterRequest
 
     /// <summary> LineThatInitiatedCall.Language equals </summary>
     [JsonProperty("lineThatInitiatedCall_language_eq")]
-    public Language? LineThatInitiatedCall_Language_EQ { get; set; }
+    public string? LineThatInitiatedCall_Language_EQ { get; set; }
+    /// <summary> LineThatInitiatedCall.Language contains </summary>
+    [JsonProperty("lineThatInitiatedCall_language_con")]
+    public string? LineThatInitiatedCall_Language_CON { get; set; }
+    /// <summary> LineThatInitiatedCall.Language regex </summary>
+    [JsonProperty("lineThatInitiatedCall_language_reg")]
+    public string? LineThatInitiatedCall_Language_REG { get; set; }
 
     /// <summary> LineThatInitiatedCall.Id equals </summary>
     [JsonProperty("lineThatInitiatedCall_id_eq")]
@@ -2958,7 +3120,13 @@ public class CallOutgoingToExtensionFilterRequest
 
     /// <summary> ChannelVariables.Language equals </summary>
     [JsonProperty("channelVariables_language_eq")]
-    public Language? ChannelVariables_Language_EQ { get; set; }
+    public string? ChannelVariables_Language_EQ { get; set; }
+    /// <summary> ChannelVariables.Language contains </summary>
+    [JsonProperty("channelVariables_language_con")]
+    public string? ChannelVariables_Language_CON { get; set; }
+    /// <summary> ChannelVariables.Language regex </summary>
+    [JsonProperty("channelVariables_language_reg")]
+    public string? ChannelVariables_Language_REG { get; set; }
 
     /// <summary> ChannelVariables.IdMusicOnHold equals </summary>
     [JsonProperty("channelVariables_idMusicOnHold_eq")]
@@ -2993,7 +3161,13 @@ public class CallOutgoingToExtensionFilterRequest
 
     /// <summary> ChildCalls.ChildCallType equals </summary>
     [JsonProperty("childCalls_childCallType_eq")]
-    public ChildCallType? ChildCalls_ChildCallType_EQ { get; set; }
+    public string? ChildCalls_ChildCallType_EQ { get; set; }
+    /// <summary> ChildCalls.ChildCallType contains </summary>
+    [JsonProperty("childCalls_childCallType_con")]
+    public string? ChildCalls_ChildCallType_CON { get; set; }
+    /// <summary> ChildCalls.ChildCallType regex </summary>
+    [JsonProperty("childCalls_childCallType_reg")]
+    public string? ChildCalls_ChildCallType_REG { get; set; }
 
     /// <summary> ChildCalls.DialStatus equals </summary>
     [JsonProperty("childCalls_dialStatus_eq")]
@@ -3089,7 +3263,13 @@ public class CallOutgoingToExtensionFilterRequest
 
     /// <summary> FromCountry equals </summary>
     [JsonProperty("fromCountry_eq")]
-    public CountryIsoCode? FromCountry_EQ { get; set; }
+    public string? FromCountry_EQ { get; set; }
+    /// <summary> FromCountry contains </summary>
+    [JsonProperty("fromCountry_con")]
+    public string? FromCountry_CON { get; set; }
+    /// <summary> FromCountry regex </summary>
+    [JsonProperty("fromCountry_reg")]
+    public string? FromCountry_REG { get; set; }
 
     /// <summary> To equals </summary>
     [JsonProperty("to_eq")]
@@ -3103,7 +3283,13 @@ public class CallOutgoingToExtensionFilterRequest
 
     /// <summary> ToCountry equals </summary>
     [JsonProperty("toCountry_eq")]
-    public CountryIsoCode? ToCountry_EQ { get; set; }
+    public string? ToCountry_EQ { get; set; }
+    /// <summary> ToCountry contains </summary>
+    [JsonProperty("toCountry_con")]
+    public string? ToCountry_CON { get; set; }
+    /// <summary> ToCountry regex </summary>
+    [JsonProperty("toCountry_reg")]
+    public string? ToCountry_REG { get; set; }
 
     /// <summary> Recording.ErrorMessage equals </summary>
     [JsonProperty("recording_errorMessage_eq")]
@@ -3251,11 +3437,23 @@ public class CallOutgoingToPSTNFilterRequest
 {
     /// <summary> CallType equals </summary>
     [JsonProperty("callType_eq")]
-    public CallType? CallType_EQ { get; set; }
+    public string? CallType_EQ { get; set; }
+    /// <summary> CallType contains </summary>
+    [JsonProperty("callType_con")]
+    public string? CallType_CON { get; set; }
+    /// <summary> CallType regex </summary>
+    [JsonProperty("callType_reg")]
+    public string? CallType_REG { get; set; }
 
     /// <summary> Country equals </summary>
     [JsonProperty("country_eq")]
-    public CountryIsoCode? Country_EQ { get; set; }
+    public string? Country_EQ { get; set; }
+    /// <summary> Country contains </summary>
+    [JsonProperty("country_con")]
+    public string? Country_CON { get; set; }
+    /// <summary> Country regex </summary>
+    [JsonProperty("country_reg")]
+    public string? Country_REG { get; set; }
 
     /// <summary> ToInternationalFormat equals </summary>
     [JsonProperty("toInternationalFormat_eq")]
@@ -3309,7 +3507,13 @@ public class CallOutgoingToPSTNFilterRequest
 
     /// <summary> Contact.ContactNumbers.Label equals </summary>
     [JsonProperty("contact_contactNumbers_label_eq")]
-    public LabelNumber? Contact_ContactNumbers_Label_EQ { get; set; }
+    public string? Contact_ContactNumbers_Label_EQ { get; set; }
+    /// <summary> Contact.ContactNumbers.Label contains </summary>
+    [JsonProperty("contact_contactNumbers_label_con")]
+    public string? Contact_ContactNumbers_Label_CON { get; set; }
+    /// <summary> Contact.ContactNumbers.Label regex </summary>
+    [JsonProperty("contact_contactNumbers_label_reg")]
+    public string? Contact_ContactNumbers_Label_REG { get; set; }
 
 
     /// <summary> Contact.ContactEmails.SearchIndex equals </summary>
@@ -3334,7 +3538,13 @@ public class CallOutgoingToPSTNFilterRequest
 
     /// <summary> Contact.ContactEmails.Label equals </summary>
     [JsonProperty("contact_contactEmails_label_eq")]
-    public LabelEmailType? Contact_ContactEmails_Label_EQ { get; set; }
+    public string? Contact_ContactEmails_Label_EQ { get; set; }
+    /// <summary> Contact.ContactEmails.Label contains </summary>
+    [JsonProperty("contact_contactEmails_label_con")]
+    public string? Contact_ContactEmails_Label_CON { get; set; }
+    /// <summary> Contact.ContactEmails.Label regex </summary>
+    [JsonProperty("contact_contactEmails_label_reg")]
+    public string? Contact_ContactEmails_Label_REG { get; set; }
 
 
     /// <summary> Contact.FirstName equals </summary>
@@ -3564,7 +3774,13 @@ public class CallOutgoingToPSTNFilterRequest
 
     /// <summary> LineThatInitiatedCall.Language equals </summary>
     [JsonProperty("lineThatInitiatedCall_language_eq")]
-    public Language? LineThatInitiatedCall_Language_EQ { get; set; }
+    public string? LineThatInitiatedCall_Language_EQ { get; set; }
+    /// <summary> LineThatInitiatedCall.Language contains </summary>
+    [JsonProperty("lineThatInitiatedCall_language_con")]
+    public string? LineThatInitiatedCall_Language_CON { get; set; }
+    /// <summary> LineThatInitiatedCall.Language regex </summary>
+    [JsonProperty("lineThatInitiatedCall_language_reg")]
+    public string? LineThatInitiatedCall_Language_REG { get; set; }
 
     /// <summary> LineThatInitiatedCall.Id equals </summary>
     [JsonProperty("lineThatInitiatedCall_id_eq")]
@@ -3599,7 +3815,13 @@ public class CallOutgoingToPSTNFilterRequest
 
     /// <summary> ChannelVariables.Language equals </summary>
     [JsonProperty("channelVariables_language_eq")]
-    public Language? ChannelVariables_Language_EQ { get; set; }
+    public string? ChannelVariables_Language_EQ { get; set; }
+    /// <summary> ChannelVariables.Language contains </summary>
+    [JsonProperty("channelVariables_language_con")]
+    public string? ChannelVariables_Language_CON { get; set; }
+    /// <summary> ChannelVariables.Language regex </summary>
+    [JsonProperty("channelVariables_language_reg")]
+    public string? ChannelVariables_Language_REG { get; set; }
 
     /// <summary> ChannelVariables.IdMusicOnHold equals </summary>
     [JsonProperty("channelVariables_idMusicOnHold_eq")]
@@ -3634,7 +3856,13 @@ public class CallOutgoingToPSTNFilterRequest
 
     /// <summary> ChildCalls.ChildCallType equals </summary>
     [JsonProperty("childCalls_childCallType_eq")]
-    public ChildCallType? ChildCalls_ChildCallType_EQ { get; set; }
+    public string? ChildCalls_ChildCallType_EQ { get; set; }
+    /// <summary> ChildCalls.ChildCallType contains </summary>
+    [JsonProperty("childCalls_childCallType_con")]
+    public string? ChildCalls_ChildCallType_CON { get; set; }
+    /// <summary> ChildCalls.ChildCallType regex </summary>
+    [JsonProperty("childCalls_childCallType_reg")]
+    public string? ChildCalls_ChildCallType_REG { get; set; }
 
     /// <summary> ChildCalls.DialStatus equals </summary>
     [JsonProperty("childCalls_dialStatus_eq")]
@@ -3730,7 +3958,13 @@ public class CallOutgoingToPSTNFilterRequest
 
     /// <summary> FromCountry equals </summary>
     [JsonProperty("fromCountry_eq")]
-    public CountryIsoCode? FromCountry_EQ { get; set; }
+    public string? FromCountry_EQ { get; set; }
+    /// <summary> FromCountry contains </summary>
+    [JsonProperty("fromCountry_con")]
+    public string? FromCountry_CON { get; set; }
+    /// <summary> FromCountry regex </summary>
+    [JsonProperty("fromCountry_reg")]
+    public string? FromCountry_REG { get; set; }
 
     /// <summary> To equals </summary>
     [JsonProperty("to_eq")]
@@ -3744,7 +3978,13 @@ public class CallOutgoingToPSTNFilterRequest
 
     /// <summary> ToCountry equals </summary>
     [JsonProperty("toCountry_eq")]
-    public CountryIsoCode? ToCountry_EQ { get; set; }
+    public string? ToCountry_EQ { get; set; }
+    /// <summary> ToCountry contains </summary>
+    [JsonProperty("toCountry_con")]
+    public string? ToCountry_CON { get; set; }
+    /// <summary> ToCountry regex </summary>
+    [JsonProperty("toCountry_reg")]
+    public string? ToCountry_REG { get; set; }
 
     /// <summary> Recording.ErrorMessage equals </summary>
     [JsonProperty("recording_errorMessage_eq")]
@@ -3892,11 +4132,23 @@ public class CloudServicePbxFilterRequest
 {
     /// <summary> CloudServiceType equals </summary>
     [JsonProperty("cloudServiceType_eq")]
-    public CloudServiceType? CloudServiceType_EQ { get; set; }
+    public string? CloudServiceType_EQ { get; set; }
+    /// <summary> CloudServiceType contains </summary>
+    [JsonProperty("cloudServiceType_con")]
+    public string? CloudServiceType_CON { get; set; }
+    /// <summary> CloudServiceType regex </summary>
+    [JsonProperty("cloudServiceType_reg")]
+    public string? CloudServiceType_REG { get; set; }
 
     /// <summary> CountryIsoCode equals </summary>
     [JsonProperty("countryIsoCode_eq")]
-    public CountryIsoCode? CountryIsoCode_EQ { get; set; }
+    public string? CountryIsoCode_EQ { get; set; }
+    /// <summary> CountryIsoCode contains </summary>
+    [JsonProperty("countryIsoCode_con")]
+    public string? CountryIsoCode_CON { get; set; }
+    /// <summary> CountryIsoCode regex </summary>
+    [JsonProperty("countryIsoCode_reg")]
+    public string? CountryIsoCode_REG { get; set; }
 
     /// <summary> Localnet equals </summary>
     [JsonProperty("localnet_eq")]
@@ -3986,11 +4238,23 @@ public class CloudServiceWebAppFilterRequest
 {
     /// <summary> CloudServiceType equals </summary>
     [JsonProperty("cloudServiceType_eq")]
-    public CloudServiceType? CloudServiceType_EQ { get; set; }
+    public string? CloudServiceType_EQ { get; set; }
+    /// <summary> CloudServiceType contains </summary>
+    [JsonProperty("cloudServiceType_con")]
+    public string? CloudServiceType_CON { get; set; }
+    /// <summary> CloudServiceType regex </summary>
+    [JsonProperty("cloudServiceType_reg")]
+    public string? CloudServiceType_REG { get; set; }
 
     /// <summary> CountryIsoCode equals </summary>
     [JsonProperty("countryIsoCode_eq")]
-    public CountryIsoCode? CountryIsoCode_EQ { get; set; }
+    public string? CountryIsoCode_EQ { get; set; }
+    /// <summary> CountryIsoCode contains </summary>
+    [JsonProperty("countryIsoCode_con")]
+    public string? CountryIsoCode_CON { get; set; }
+    /// <summary> CountryIsoCode regex </summary>
+    [JsonProperty("countryIsoCode_reg")]
+    public string? CountryIsoCode_REG { get; set; }
 
     /// <summary> Localnet equals </summary>
     [JsonProperty("localnet_eq")]
@@ -4080,11 +4344,23 @@ public class CloudServiceWebHostFilterRequest
 {
     /// <summary> CloudServiceType equals </summary>
     [JsonProperty("cloudServiceType_eq")]
-    public CloudServiceType? CloudServiceType_EQ { get; set; }
+    public string? CloudServiceType_EQ { get; set; }
+    /// <summary> CloudServiceType contains </summary>
+    [JsonProperty("cloudServiceType_con")]
+    public string? CloudServiceType_CON { get; set; }
+    /// <summary> CloudServiceType regex </summary>
+    [JsonProperty("cloudServiceType_reg")]
+    public string? CloudServiceType_REG { get; set; }
 
     /// <summary> CountryIsoCode equals </summary>
     [JsonProperty("countryIsoCode_eq")]
-    public CountryIsoCode? CountryIsoCode_EQ { get; set; }
+    public string? CountryIsoCode_EQ { get; set; }
+    /// <summary> CountryIsoCode contains </summary>
+    [JsonProperty("countryIsoCode_con")]
+    public string? CountryIsoCode_CON { get; set; }
+    /// <summary> CountryIsoCode regex </summary>
+    [JsonProperty("countryIsoCode_reg")]
+    public string? CountryIsoCode_REG { get; set; }
 
     /// <summary> Localnet equals </summary>
     [JsonProperty("localnet_eq")]
@@ -4214,7 +4490,13 @@ public class ContactFilterRequest
 
     /// <summary> ContactNumbers.Label equals </summary>
     [JsonProperty("contactNumbers_label_eq")]
-    public LabelNumber? ContactNumbers_Label_EQ { get; set; }
+    public string? ContactNumbers_Label_EQ { get; set; }
+    /// <summary> ContactNumbers.Label contains </summary>
+    [JsonProperty("contactNumbers_label_con")]
+    public string? ContactNumbers_Label_CON { get; set; }
+    /// <summary> ContactNumbers.Label regex </summary>
+    [JsonProperty("contactNumbers_label_reg")]
+    public string? ContactNumbers_Label_REG { get; set; }
 
 
     /// <summary> ContactEmails.SearchIndex equals </summary>
@@ -4239,7 +4521,13 @@ public class ContactFilterRequest
 
     /// <summary> ContactEmails.Label equals </summary>
     [JsonProperty("contactEmails_label_eq")]
-    public LabelEmailType? ContactEmails_Label_EQ { get; set; }
+    public string? ContactEmails_Label_EQ { get; set; }
+    /// <summary> ContactEmails.Label contains </summary>
+    [JsonProperty("contactEmails_label_con")]
+    public string? ContactEmails_Label_CON { get; set; }
+    /// <summary> ContactEmails.Label regex </summary>
+    [JsonProperty("contactEmails_label_reg")]
+    public string? ContactEmails_Label_REG { get; set; }
 
 
     /// <summary> FirstName equals </summary>
@@ -4429,7 +4717,13 @@ public class CustomerInfoFilterRequest
 
     /// <summary> MailingAddress.Country equals </summary>
     [JsonProperty("mailingAddress_country_eq")]
-    public CountryIsoCode? MailingAddress_Country_EQ { get; set; }
+    public string? MailingAddress_Country_EQ { get; set; }
+    /// <summary> MailingAddress.Country contains </summary>
+    [JsonProperty("mailingAddress_country_con")]
+    public string? MailingAddress_Country_CON { get; set; }
+    /// <summary> MailingAddress.Country regex </summary>
+    [JsonProperty("mailingAddress_country_reg")]
+    public string? MailingAddress_Country_REG { get; set; }
 
 
     /// <summary> AirNetworksCustomerInfo.IdNumber equals </summary>
@@ -4559,7 +4853,13 @@ public class ExtensionCallFlowLogicFilterRequest
 
     /// <summary> ExtensionType equals </summary>
     [JsonProperty("extensionType_eq")]
-    public ExtensionType? ExtensionType_EQ { get; set; }
+    public string? ExtensionType_EQ { get; set; }
+    /// <summary> ExtensionType contains </summary>
+    [JsonProperty("extensionType_con")]
+    public string? ExtensionType_CON { get; set; }
+    /// <summary> ExtensionType regex </summary>
+    [JsonProperty("extensionType_reg")]
+    public string? ExtensionType_REG { get; set; }
 
     /// <summary> IdMusicOnHoldGroup equals </summary>
     [JsonProperty("idMusicOnHoldGroup_eq")]
@@ -4655,7 +4955,13 @@ public class ExtensionConferenceFilterRequest
 
     /// <summary> ExtensionType equals </summary>
     [JsonProperty("extensionType_eq")]
-    public ExtensionType? ExtensionType_EQ { get; set; }
+    public string? ExtensionType_EQ { get; set; }
+    /// <summary> ExtensionType contains </summary>
+    [JsonProperty("extensionType_con")]
+    public string? ExtensionType_CON { get; set; }
+    /// <summary> ExtensionType regex </summary>
+    [JsonProperty("extensionType_reg")]
+    public string? ExtensionType_REG { get; set; }
 
     /// <summary> IdMusicOnHoldGroup equals </summary>
     [JsonProperty("idMusicOnHoldGroup_eq")]
@@ -4737,7 +5043,13 @@ public class ExtensionDialFilterRequest
 
     /// <summary> EventActionToExecuteIfCallIsNotAnswered.EventActionType equals </summary>
     [JsonProperty("eventActionToExecuteIfCallIsNotAnswered_eventActionType_eq")]
-    public EventActionType? EventActionToExecuteIfCallIsNotAnswered_EventActionType_EQ { get; set; }
+    public string? EventActionToExecuteIfCallIsNotAnswered_EventActionType_EQ { get; set; }
+    /// <summary> EventActionToExecuteIfCallIsNotAnswered.EventActionType contains </summary>
+    [JsonProperty("eventActionToExecuteIfCallIsNotAnswered_eventActionType_con")]
+    public string? EventActionToExecuteIfCallIsNotAnswered_EventActionType_CON { get; set; }
+    /// <summary> EventActionToExecuteIfCallIsNotAnswered.EventActionType regex </summary>
+    [JsonProperty("eventActionToExecuteIfCallIsNotAnswered_eventActionType_reg")]
+    public string? EventActionToExecuteIfCallIsNotAnswered_EventActionType_REG { get; set; }
 
 
     /// <summary> SendEmailNotificationIfCallIsNotAnswered.Emails equals </summary>
@@ -4773,7 +5085,13 @@ public class ExtensionDialFilterRequest
 
     /// <summary> ExtensionType equals </summary>
     [JsonProperty("extensionType_eq")]
-    public ExtensionType? ExtensionType_EQ { get; set; }
+    public string? ExtensionType_EQ { get; set; }
+    /// <summary> ExtensionType contains </summary>
+    [JsonProperty("extensionType_con")]
+    public string? ExtensionType_CON { get; set; }
+    /// <summary> ExtensionType regex </summary>
+    [JsonProperty("extensionType_reg")]
+    public string? ExtensionType_REG { get; set; }
 
     /// <summary> IdMusicOnHoldGroup equals </summary>
     [JsonProperty("idMusicOnHoldGroup_eq")]
@@ -4955,11 +5273,23 @@ public class ExtensionQueueFilterRequest
 
     /// <summary> RingStrategy equals </summary>
     [JsonProperty("ringStrategy_eq")]
-    public QueueRingStrategy? RingStrategy_EQ { get; set; }
+    public string? RingStrategy_EQ { get; set; }
+    /// <summary> RingStrategy contains </summary>
+    [JsonProperty("ringStrategy_con")]
+    public string? RingStrategy_CON { get; set; }
+    /// <summary> RingStrategy regex </summary>
+    [JsonProperty("ringStrategy_reg")]
+    public string? RingStrategy_REG { get; set; }
 
     /// <summary> ExtensionType equals </summary>
     [JsonProperty("extensionType_eq")]
-    public ExtensionType? ExtensionType_EQ { get; set; }
+    public string? ExtensionType_EQ { get; set; }
+    /// <summary> ExtensionType contains </summary>
+    [JsonProperty("extensionType_con")]
+    public string? ExtensionType_CON { get; set; }
+    /// <summary> ExtensionType regex </summary>
+    [JsonProperty("extensionType_reg")]
+    public string? ExtensionType_REG { get; set; }
 
     /// <summary> IdMusicOnHoldGroup equals </summary>
     [JsonProperty("idMusicOnHoldGroup_eq")]
@@ -5081,7 +5411,13 @@ public class ExtensionVoicemailFilterRequest
 
     /// <summary> ExtensionType equals </summary>
     [JsonProperty("extensionType_eq")]
-    public ExtensionType? ExtensionType_EQ { get; set; }
+    public string? ExtensionType_EQ { get; set; }
+    /// <summary> ExtensionType contains </summary>
+    [JsonProperty("extensionType_con")]
+    public string? ExtensionType_CON { get; set; }
+    /// <summary> ExtensionType regex </summary>
+    [JsonProperty("extensionType_reg")]
+    public string? ExtensionType_REG { get; set; }
 
     /// <summary> IdMusicOnHoldGroup equals </summary>
     [JsonProperty("idMusicOnHoldGroup_eq")]
@@ -5266,7 +5602,13 @@ public class FaxEmailInfoFilterRequest
 
     /// <summary> LineThatValidatedEmail.Language equals </summary>
     [JsonProperty("lineThatValidatedEmail_language_eq")]
-    public Language? LineThatValidatedEmail_Language_EQ { get; set; }
+    public string? LineThatValidatedEmail_Language_EQ { get; set; }
+    /// <summary> LineThatValidatedEmail.Language contains </summary>
+    [JsonProperty("lineThatValidatedEmail_language_con")]
+    public string? LineThatValidatedEmail_Language_CON { get; set; }
+    /// <summary> LineThatValidatedEmail.Language regex </summary>
+    [JsonProperty("lineThatValidatedEmail_language_reg")]
+    public string? LineThatValidatedEmail_Language_REG { get; set; }
 
     /// <summary> LineThatValidatedEmail.Id equals </summary>
     [JsonProperty("lineThatValidatedEmail_id_eq")]
@@ -5291,7 +5633,13 @@ public class FaxEmailInfoFilterRequest
 
     /// <summary> ReplyStatus equals </summary>
     [JsonProperty("replyStatus_eq")]
-    public LinkFaxToEmailStatus? ReplyStatus_EQ { get; set; }
+    public string? ReplyStatus_EQ { get; set; }
+    /// <summary> ReplyStatus contains </summary>
+    [JsonProperty("replyStatus_con")]
+    public string? ReplyStatus_CON { get; set; }
+    /// <summary> ReplyStatus regex </summary>
+    [JsonProperty("replyStatus_reg")]
+    public string? ReplyStatus_REG { get; set; }
 
     /// <summary> Id equals </summary>
     [JsonProperty("id_eq")]
@@ -5753,7 +6101,13 @@ public class IdentityFilterRequest
 
     /// <summary> IdentityType equals </summary>
     [JsonProperty("identityType_eq")]
-    public IdentityType? IdentityType_EQ { get; set; }
+    public string? IdentityType_EQ { get; set; }
+    /// <summary> IdentityType contains </summary>
+    [JsonProperty("identityType_con")]
+    public string? IdentityType_CON { get; set; }
+    /// <summary> IdentityType regex </summary>
+    [JsonProperty("identityType_reg")]
+    public string? IdentityType_REG { get; set; }
 
     /// <summary> AllowConnectingFromIpRegex equals </summary>
     [JsonProperty("allowConnectingFromIpRegex_eq")]
@@ -5820,50 +6174,18 @@ public class IdentityFilterRequest
     public DateTime? DateUpdated_GTE { get; set; }
 
 }
-/// <summary> Enables searching for IPs </summary>
-public class IPFilterRequest 
-{
-    /// <summary> IsBlack equals </summary>
-    [JsonProperty("isBlack_eq")]
-    public bool? IsBlack_EQ { get; set; }
-
-    /// <summary> Id equals </summary>
-    [JsonProperty("id_eq")]
-    public string? Id_EQ { get; set; }
-    /// <summary> Id contains </summary>
-    [JsonProperty("id_con")]
-    public string? Id_CON { get; set; }
-    /// <summary> Id regex </summary>
-    [JsonProperty("id_reg")]
-    public string? Id_REG { get; set; }
-
-    /// <summary> DateCreated equals </summary>
-    [JsonProperty("dateCreated_eq")]
-    public DateTime? DateCreated_EQ { get; set; }
-    /// <summary> DateCreated less than or equal to </summary>
-    [JsonProperty("dateCreated_lte")]
-    public DateTime? DateCreated_LTE { get; set; }
-    /// <summary> DateCreated greater than or equal to </summary>
-    [JsonProperty("dateCreated_gte")]
-    public DateTime? DateCreated_GTE { get; set; }
-
-    /// <summary> DateUpdated equals </summary>
-    [JsonProperty("dateUpdated_eq")]
-    public DateTime? DateUpdated_EQ { get; set; }
-    /// <summary> DateUpdated less than or equal to </summary>
-    [JsonProperty("dateUpdated_lte")]
-    public DateTime? DateUpdated_LTE { get; set; }
-    /// <summary> DateUpdated greater than or equal to </summary>
-    [JsonProperty("dateUpdated_gte")]
-    public DateTime? DateUpdated_GTE { get; set; }
-
-}
 /// <summary> Enables searching for LineKeyGroups </summary>
 public class LineKeyGroupFilterRequest 
 {
     /// <summary> LineKeys.LineKeyType equals </summary>
     [JsonProperty("lineKeys_lineKeyType_eq")]
-    public LineKeyType? LineKeys_LineKeyType_EQ { get; set; }
+    public string? LineKeys_LineKeyType_EQ { get; set; }
+    /// <summary> LineKeys.LineKeyType contains </summary>
+    [JsonProperty("lineKeys_lineKeyType_con")]
+    public string? LineKeys_LineKeyType_CON { get; set; }
+    /// <summary> LineKeys.LineKeyType regex </summary>
+    [JsonProperty("lineKeys_lineKeyType_reg")]
+    public string? LineKeys_LineKeyType_REG { get; set; }
 
     /// <summary> LineKeys.Value equals </summary>
     [JsonProperty("lineKeys_value_eq")]
@@ -5972,7 +6294,13 @@ public class LogWebServiceRequestFilterRequest
 
     /// <summary> UbluxSession.IdentityType equals </summary>
     [JsonProperty("ubluxSession_identityType_eq")]
-    public IdentityType? UbluxSession_IdentityType_EQ { get; set; }
+    public string? UbluxSession_IdentityType_EQ { get; set; }
+    /// <summary> UbluxSession.IdentityType contains </summary>
+    [JsonProperty("ubluxSession_identityType_con")]
+    public string? UbluxSession_IdentityType_CON { get; set; }
+    /// <summary> UbluxSession.IdentityType regex </summary>
+    [JsonProperty("ubluxSession_identityType_reg")]
+    public string? UbluxSession_IdentityType_REG { get; set; }
 
     /// <summary> UbluxSession.IdAccount equals </summary>
     [JsonProperty("ubluxSession_idAccount_eq")]
@@ -6115,7 +6443,13 @@ public class LogWebServiceRequestFilterRequest
 
     /// <summary> HttpResponseStatusCode equals </summary>
     [JsonProperty("httpResponseStatusCode_eq")]
-    public HttpResponseStatusCode? HttpResponseStatusCode_EQ { get; set; }
+    public string? HttpResponseStatusCode_EQ { get; set; }
+    /// <summary> HttpResponseStatusCode contains </summary>
+    [JsonProperty("httpResponseStatusCode_con")]
+    public string? HttpResponseStatusCode_CON { get; set; }
+    /// <summary> HttpResponseStatusCode regex </summary>
+    [JsonProperty("httpResponseStatusCode_reg")]
+    public string? HttpResponseStatusCode_REG { get; set; }
 
     /// <summary> ResponseTime equals </summary>
     [JsonProperty("responseTime_eq")]
@@ -6370,7 +6704,13 @@ public class PhoneFilterRequest
 
     /// <summary> Lines.Language equals </summary>
     [JsonProperty("lines_language_eq")]
-    public Language? Lines_Language_EQ { get; set; }
+    public string? Lines_Language_EQ { get; set; }
+    /// <summary> Lines.Language contains </summary>
+    [JsonProperty("lines_language_con")]
+    public string? Lines_Language_CON { get; set; }
+    /// <summary> Lines.Language regex </summary>
+    [JsonProperty("lines_language_reg")]
+    public string? Lines_Language_REG { get; set; }
 
     /// <summary> Lines.Id equals </summary>
     [JsonProperty("lines_id_eq")]
@@ -6395,7 +6735,13 @@ public class PhoneFilterRequest
 
     /// <summary> PhoneType equals </summary>
     [JsonProperty("phoneType_eq")]
-    public PhoneType? PhoneType_EQ { get; set; }
+    public string? PhoneType_EQ { get; set; }
+    /// <summary> PhoneType contains </summary>
+    [JsonProperty("phoneType_con")]
+    public string? PhoneType_CON { get; set; }
+    /// <summary> PhoneType regex </summary>
+    [JsonProperty("phoneType_reg")]
+    public string? PhoneType_REG { get; set; }
 
     /// <summary> Id equals </summary>
     [JsonProperty("id_eq")]
@@ -6537,7 +6883,13 @@ public class PowerDialerGroupFilterRequest
 
     /// <summary> PowerDialers.PowerDialerType equals </summary>
     [JsonProperty("powerDialers_powerDialerType_eq")]
-    public PowerDialerType? PowerDialers_PowerDialerType_EQ { get; set; }
+    public string? PowerDialers_PowerDialerType_EQ { get; set; }
+    /// <summary> PowerDialers.PowerDialerType contains </summary>
+    [JsonProperty("powerDialers_powerDialerType_con")]
+    public string? PowerDialers_PowerDialerType_CON { get; set; }
+    /// <summary> PowerDialers.PowerDialerType regex </summary>
+    [JsonProperty("powerDialers_powerDialerType_reg")]
+    public string? PowerDialers_PowerDialerType_REG { get; set; }
 
     /// <summary> PowerDialers.PhoneNumber equals </summary>
     [JsonProperty("powerDialers_phoneNumber_eq")]
@@ -6551,7 +6903,13 @@ public class PowerDialerGroupFilterRequest
 
     /// <summary> PowerDialers.CountryIsoCode equals </summary>
     [JsonProperty("powerDialers_countryIsoCode_eq")]
-    public CountryIsoCode? PowerDialers_CountryIsoCode_EQ { get; set; }
+    public string? PowerDialers_CountryIsoCode_EQ { get; set; }
+    /// <summary> PowerDialers.CountryIsoCode contains </summary>
+    [JsonProperty("powerDialers_countryIsoCode_con")]
+    public string? PowerDialers_CountryIsoCode_CON { get; set; }
+    /// <summary> PowerDialers.CountryIsoCode regex </summary>
+    [JsonProperty("powerDialers_countryIsoCode_reg")]
+    public string? PowerDialers_CountryIsoCode_REG { get; set; }
 
     /// <summary> PowerDialers.IdContact equals </summary>
     [JsonProperty("powerDialers_idContact_eq")]
@@ -6565,7 +6923,13 @@ public class PowerDialerGroupFilterRequest
 
     /// <summary> PowerDialers.PowerDialerStatus equals </summary>
     [JsonProperty("powerDialers_powerDialerStatus_eq")]
-    public PowerDialerStatus? PowerDialers_PowerDialerStatus_EQ { get; set; }
+    public string? PowerDialers_PowerDialerStatus_EQ { get; set; }
+    /// <summary> PowerDialers.PowerDialerStatus contains </summary>
+    [JsonProperty("powerDialers_powerDialerStatus_con")]
+    public string? PowerDialers_PowerDialerStatus_CON { get; set; }
+    /// <summary> PowerDialers.PowerDialerStatus regex </summary>
+    [JsonProperty("powerDialers_powerDialerStatus_reg")]
+    public string? PowerDialers_PowerDialerStatus_REG { get; set; }
 
     /// <summary> PowerDialers.ErrorMessage equals </summary>
     [JsonProperty("powerDialers_errorMessage_eq")]
@@ -6620,7 +6984,13 @@ public class PowerDialerGroupFilterRequest
 
     /// <summary> PowerDialerGroupStatus equals </summary>
     [JsonProperty("powerDialerGroupStatus_eq")]
-    public PowerDialerGroupStatus? PowerDialerGroupStatus_EQ { get; set; }
+    public string? PowerDialerGroupStatus_EQ { get; set; }
+    /// <summary> PowerDialerGroupStatus contains </summary>
+    [JsonProperty("powerDialerGroupStatus_con")]
+    public string? PowerDialerGroupStatus_CON { get; set; }
+    /// <summary> PowerDialerGroupStatus regex </summary>
+    [JsonProperty("powerDialerGroupStatus_reg")]
+    public string? PowerDialerGroupStatus_REG { get; set; }
 
     /// <summary> ErrorMessage equals </summary>
     [JsonProperty("errorMessage_eq")]
@@ -6738,7 +7108,13 @@ public class SMSFilterRequest
 
     /// <summary> Contact.ContactNumbers.Label equals </summary>
     [JsonProperty("contact_contactNumbers_label_eq")]
-    public LabelNumber? Contact_ContactNumbers_Label_EQ { get; set; }
+    public string? Contact_ContactNumbers_Label_EQ { get; set; }
+    /// <summary> Contact.ContactNumbers.Label contains </summary>
+    [JsonProperty("contact_contactNumbers_label_con")]
+    public string? Contact_ContactNumbers_Label_CON { get; set; }
+    /// <summary> Contact.ContactNumbers.Label regex </summary>
+    [JsonProperty("contact_contactNumbers_label_reg")]
+    public string? Contact_ContactNumbers_Label_REG { get; set; }
 
 
     /// <summary> Contact.ContactEmails.SearchIndex equals </summary>
@@ -6763,7 +7139,13 @@ public class SMSFilterRequest
 
     /// <summary> Contact.ContactEmails.Label equals </summary>
     [JsonProperty("contact_contactEmails_label_eq")]
-    public LabelEmailType? Contact_ContactEmails_Label_EQ { get; set; }
+    public string? Contact_ContactEmails_Label_EQ { get; set; }
+    /// <summary> Contact.ContactEmails.Label contains </summary>
+    [JsonProperty("contact_contactEmails_label_con")]
+    public string? Contact_ContactEmails_Label_CON { get; set; }
+    /// <summary> Contact.ContactEmails.Label regex </summary>
+    [JsonProperty("contact_contactEmails_label_reg")]
+    public string? Contact_ContactEmails_Label_REG { get; set; }
 
 
     /// <summary> Contact.FirstName equals </summary>
@@ -6968,7 +7350,13 @@ public class TrunkOriginationForwardFilterRequest
 {
     /// <summary> TrunkOriginationType equals </summary>
     [JsonProperty("trunkOriginationType_eq")]
-    public TrunkOriginationType? TrunkOriginationType_EQ { get; set; }
+    public string? TrunkOriginationType_EQ { get; set; }
+    /// <summary> TrunkOriginationType contains </summary>
+    [JsonProperty("trunkOriginationType_con")]
+    public string? TrunkOriginationType_CON { get; set; }
+    /// <summary> TrunkOriginationType regex </summary>
+    [JsonProperty("trunkOriginationType_reg")]
+    public string? TrunkOriginationType_REG { get; set; }
 
     /// <summary> Id equals </summary>
     [JsonProperty("id_eq")]
@@ -7006,7 +7394,13 @@ public class TrunkOriginationRegisterFilterRequest
 {
     /// <summary> TrunkOriginationType equals </summary>
     [JsonProperty("trunkOriginationType_eq")]
-    public TrunkOriginationType? TrunkOriginationType_EQ { get; set; }
+    public string? TrunkOriginationType_EQ { get; set; }
+    /// <summary> TrunkOriginationType contains </summary>
+    [JsonProperty("trunkOriginationType_con")]
+    public string? TrunkOriginationType_CON { get; set; }
+    /// <summary> TrunkOriginationType regex </summary>
+    [JsonProperty("trunkOriginationType_reg")]
+    public string? TrunkOriginationType_REG { get; set; }
 
     /// <summary> Id equals </summary>
     [JsonProperty("id_eq")]
@@ -7176,7 +7570,13 @@ public class VoicemailFilterRequest
 {
     /// <summary> VoicemailType equals </summary>
     [JsonProperty("voicemailType_eq")]
-    public VoicemailType? VoicemailType_EQ { get; set; }
+    public string? VoicemailType_EQ { get; set; }
+    /// <summary> VoicemailType contains </summary>
+    [JsonProperty("voicemailType_con")]
+    public string? VoicemailType_CON { get; set; }
+    /// <summary> VoicemailType regex </summary>
+    [JsonProperty("voicemailType_reg")]
+    public string? VoicemailType_REG { get; set; }
 
     /// <summary> IdsLinesThatCanListenToVoicemail equals </summary>
     [JsonProperty("idsLinesThatCanListenToVoicemail_eq")]
@@ -7356,7 +7756,13 @@ public class VoicemailForwardedFilterRequest
 {
     /// <summary> VoicemailType equals </summary>
     [JsonProperty("voicemailType_eq")]
-    public VoicemailType? VoicemailType_EQ { get; set; }
+    public string? VoicemailType_EQ { get; set; }
+    /// <summary> VoicemailType contains </summary>
+    [JsonProperty("voicemailType_con")]
+    public string? VoicemailType_CON { get; set; }
+    /// <summary> VoicemailType regex </summary>
+    [JsonProperty("voicemailType_reg")]
+    public string? VoicemailType_REG { get; set; }
 
     /// <summary> LineThatForwardedVoicemail.FriendlyName equals </summary>
     [JsonProperty("lineThatForwardedVoicemail_friendlyName_eq")]
@@ -7473,7 +7879,13 @@ public class VoicemailForwardedFilterRequest
 
     /// <summary> LineThatForwardedVoicemail.Language equals </summary>
     [JsonProperty("lineThatForwardedVoicemail_language_eq")]
-    public Language? LineThatForwardedVoicemail_Language_EQ { get; set; }
+    public string? LineThatForwardedVoicemail_Language_EQ { get; set; }
+    /// <summary> LineThatForwardedVoicemail.Language contains </summary>
+    [JsonProperty("lineThatForwardedVoicemail_language_con")]
+    public string? LineThatForwardedVoicemail_Language_CON { get; set; }
+    /// <summary> LineThatForwardedVoicemail.Language regex </summary>
+    [JsonProperty("lineThatForwardedVoicemail_language_reg")]
+    public string? LineThatForwardedVoicemail_Language_REG { get; set; }
 
     /// <summary> LineThatForwardedVoicemail.Id equals </summary>
     [JsonProperty("lineThatForwardedVoicemail_id_eq")]
@@ -7498,7 +7910,13 @@ public class VoicemailForwardedFilterRequest
 
     /// <summary> ExtensionForwarded.ExtensionType equals </summary>
     [JsonProperty("extensionForwarded_extensionType_eq")]
-    public ExtensionType? ExtensionForwarded_ExtensionType_EQ { get; set; }
+    public string? ExtensionForwarded_ExtensionType_EQ { get; set; }
+    /// <summary> ExtensionForwarded.ExtensionType contains </summary>
+    [JsonProperty("extensionForwarded_extensionType_con")]
+    public string? ExtensionForwarded_ExtensionType_CON { get; set; }
+    /// <summary> ExtensionForwarded.ExtensionType regex </summary>
+    [JsonProperty("extensionForwarded_extensionType_reg")]
+    public string? ExtensionForwarded_ExtensionType_REG { get; set; }
 
     /// <summary> ExtensionForwarded.FriendlyName equals </summary>
     [JsonProperty("extensionForwarded_friendlyName_eq")]
@@ -7788,7 +8206,13 @@ public class VoipNumberAvailableForPurchaseFilterRequest
 
     /// <summary> VoipNumberType equals </summary>
     [JsonProperty("voipNumberType_eq")]
-    public VoipNumberType? VoipNumberType_EQ { get; set; }
+    public string? VoipNumberType_EQ { get; set; }
+    /// <summary> VoipNumberType contains </summary>
+    [JsonProperty("voipNumberType_con")]
+    public string? VoipNumberType_CON { get; set; }
+    /// <summary> VoipNumberType regex </summary>
+    [JsonProperty("voipNumberType_reg")]
+    public string? VoipNumberType_REG { get; set; }
 
     /// <summary> InjectFriendlyNameToCallerId equals </summary>
     [JsonProperty("injectFriendlyNameToCallerId_eq")]
@@ -7830,7 +8254,13 @@ public class VoipNumberAvailableForPurchaseFilterRequest
 
     /// <summary> Language equals </summary>
     [JsonProperty("language_eq")]
-    public Language? Language_EQ { get; set; }
+    public string? Language_EQ { get; set; }
+    /// <summary> Language contains </summary>
+    [JsonProperty("language_con")]
+    public string? Language_CON { get; set; }
+    /// <summary> Language regex </summary>
+    [JsonProperty("language_reg")]
+    public string? Language_REG { get; set; }
 
     /// <summary> City equals </summary>
     [JsonProperty("city_eq")]
@@ -7854,7 +8284,13 @@ public class VoipNumberAvailableForPurchaseFilterRequest
 
     /// <summary> CountryIsoCode equals </summary>
     [JsonProperty("countryIsoCode_eq")]
-    public CountryIsoCode? CountryIsoCode_EQ { get; set; }
+    public string? CountryIsoCode_EQ { get; set; }
+    /// <summary> CountryIsoCode contains </summary>
+    [JsonProperty("countryIsoCode_con")]
+    public string? CountryIsoCode_CON { get; set; }
+    /// <summary> CountryIsoCode regex </summary>
+    [JsonProperty("countryIsoCode_reg")]
+    public string? CountryIsoCode_REG { get; set; }
 
     /// <summary> IsSmsEnabled equals </summary>
     [JsonProperty("isSmsEnabled_eq")]
@@ -7965,7 +8401,13 @@ public class VoipNumberFaxFilterRequest
 
     /// <summary> VoipNumberType equals </summary>
     [JsonProperty("voipNumberType_eq")]
-    public VoipNumberType? VoipNumberType_EQ { get; set; }
+    public string? VoipNumberType_EQ { get; set; }
+    /// <summary> VoipNumberType contains </summary>
+    [JsonProperty("voipNumberType_con")]
+    public string? VoipNumberType_CON { get; set; }
+    /// <summary> VoipNumberType regex </summary>
+    [JsonProperty("voipNumberType_reg")]
+    public string? VoipNumberType_REG { get; set; }
 
     /// <summary> InjectFriendlyNameToCallerId equals </summary>
     [JsonProperty("injectFriendlyNameToCallerId_eq")]
@@ -8007,7 +8449,13 @@ public class VoipNumberFaxFilterRequest
 
     /// <summary> Language equals </summary>
     [JsonProperty("language_eq")]
-    public Language? Language_EQ { get; set; }
+    public string? Language_EQ { get; set; }
+    /// <summary> Language contains </summary>
+    [JsonProperty("language_con")]
+    public string? Language_CON { get; set; }
+    /// <summary> Language regex </summary>
+    [JsonProperty("language_reg")]
+    public string? Language_REG { get; set; }
 
     /// <summary> City equals </summary>
     [JsonProperty("city_eq")]
@@ -8031,7 +8479,13 @@ public class VoipNumberFaxFilterRequest
 
     /// <summary> CountryIsoCode equals </summary>
     [JsonProperty("countryIsoCode_eq")]
-    public CountryIsoCode? CountryIsoCode_EQ { get; set; }
+    public string? CountryIsoCode_EQ { get; set; }
+    /// <summary> CountryIsoCode contains </summary>
+    [JsonProperty("countryIsoCode_con")]
+    public string? CountryIsoCode_CON { get; set; }
+    /// <summary> CountryIsoCode regex </summary>
+    [JsonProperty("countryIsoCode_reg")]
+    public string? CountryIsoCode_REG { get; set; }
 
     /// <summary> IsSmsEnabled equals </summary>
     [JsonProperty("isSmsEnabled_eq")]
@@ -8142,7 +8596,13 @@ public class VoipNumberPhoneFilterRequest
 
     /// <summary> VoipNumberType equals </summary>
     [JsonProperty("voipNumberType_eq")]
-    public VoipNumberType? VoipNumberType_EQ { get; set; }
+    public string? VoipNumberType_EQ { get; set; }
+    /// <summary> VoipNumberType contains </summary>
+    [JsonProperty("voipNumberType_con")]
+    public string? VoipNumberType_CON { get; set; }
+    /// <summary> VoipNumberType regex </summary>
+    [JsonProperty("voipNumberType_reg")]
+    public string? VoipNumberType_REG { get; set; }
 
     /// <summary> InjectFriendlyNameToCallerId equals </summary>
     [JsonProperty("injectFriendlyNameToCallerId_eq")]
@@ -8184,7 +8644,13 @@ public class VoipNumberPhoneFilterRequest
 
     /// <summary> Language equals </summary>
     [JsonProperty("language_eq")]
-    public Language? Language_EQ { get; set; }
+    public string? Language_EQ { get; set; }
+    /// <summary> Language contains </summary>
+    [JsonProperty("language_con")]
+    public string? Language_CON { get; set; }
+    /// <summary> Language regex </summary>
+    [JsonProperty("language_reg")]
+    public string? Language_REG { get; set; }
 
     /// <summary> City equals </summary>
     [JsonProperty("city_eq")]
@@ -8208,7 +8674,13 @@ public class VoipNumberPhoneFilterRequest
 
     /// <summary> CountryIsoCode equals </summary>
     [JsonProperty("countryIsoCode_eq")]
-    public CountryIsoCode? CountryIsoCode_EQ { get; set; }
+    public string? CountryIsoCode_EQ { get; set; }
+    /// <summary> CountryIsoCode contains </summary>
+    [JsonProperty("countryIsoCode_con")]
+    public string? CountryIsoCode_CON { get; set; }
+    /// <summary> CountryIsoCode regex </summary>
+    [JsonProperty("countryIsoCode_reg")]
+    public string? CountryIsoCode_REG { get; set; }
 
     /// <summary> IsSmsEnabled equals </summary>
     [JsonProperty("isSmsEnabled_eq")]
@@ -8306,7 +8778,13 @@ public class WebHookFilterRequest
 {
     /// <summary> WebHookEvent equals </summary>
     [JsonProperty("webHookEvent_eq")]
-    public WebHookEvent? WebHookEvent_EQ { get; set; }
+    public string? WebHookEvent_EQ { get; set; }
+    /// <summary> WebHookEvent contains </summary>
+    [JsonProperty("webHookEvent_con")]
+    public string? WebHookEvent_CON { get; set; }
+    /// <summary> WebHookEvent regex </summary>
+    [JsonProperty("webHookEvent_reg")]
+    public string? WebHookEvent_REG { get; set; }
 
     /// <summary> Url equals </summary>
     [JsonProperty("url_eq")]
@@ -8483,7 +8961,13 @@ public class CallFilterRequest
 
     /// <summary> ChannelVariables.Language equals </summary>
     [JsonProperty("channelVariables_language_eq")]
-    public Language? ChannelVariables_Language_EQ { get; set; }
+    public string? ChannelVariables_Language_EQ { get; set; }
+    /// <summary> ChannelVariables.Language contains </summary>
+    [JsonProperty("channelVariables_language_con")]
+    public string? ChannelVariables_Language_CON { get; set; }
+    /// <summary> ChannelVariables.Language regex </summary>
+    [JsonProperty("channelVariables_language_reg")]
+    public string? ChannelVariables_Language_REG { get; set; }
 
     /// <summary> ChannelVariables.IdMusicOnHold equals </summary>
     [JsonProperty("channelVariables_idMusicOnHold_eq")]
@@ -8518,7 +9002,13 @@ public class CallFilterRequest
 
     /// <summary> ChildCalls.ChildCallType equals </summary>
     [JsonProperty("childCalls_childCallType_eq")]
-    public ChildCallType? ChildCalls_ChildCallType_EQ { get; set; }
+    public string? ChildCalls_ChildCallType_EQ { get; set; }
+    /// <summary> ChildCalls.ChildCallType contains </summary>
+    [JsonProperty("childCalls_childCallType_con")]
+    public string? ChildCalls_ChildCallType_CON { get; set; }
+    /// <summary> ChildCalls.ChildCallType regex </summary>
+    [JsonProperty("childCalls_childCallType_reg")]
+    public string? ChildCalls_ChildCallType_REG { get; set; }
 
     /// <summary> ChildCalls.DialStatus equals </summary>
     [JsonProperty("childCalls_dialStatus_eq")]
@@ -8603,7 +9093,13 @@ public class CallFilterRequest
 
     /// <summary> Contact.ContactNumbers.Label equals </summary>
     [JsonProperty("contact_contactNumbers_label_eq")]
-    public LabelNumber? Contact_ContactNumbers_Label_EQ { get; set; }
+    public string? Contact_ContactNumbers_Label_EQ { get; set; }
+    /// <summary> Contact.ContactNumbers.Label contains </summary>
+    [JsonProperty("contact_contactNumbers_label_con")]
+    public string? Contact_ContactNumbers_Label_CON { get; set; }
+    /// <summary> Contact.ContactNumbers.Label regex </summary>
+    [JsonProperty("contact_contactNumbers_label_reg")]
+    public string? Contact_ContactNumbers_Label_REG { get; set; }
 
 
     /// <summary> Contact.ContactEmails.SearchIndex equals </summary>
@@ -8628,7 +9124,13 @@ public class CallFilterRequest
 
     /// <summary> Contact.ContactEmails.Label equals </summary>
     [JsonProperty("contact_contactEmails_label_eq")]
-    public LabelEmailType? Contact_ContactEmails_Label_EQ { get; set; }
+    public string? Contact_ContactEmails_Label_EQ { get; set; }
+    /// <summary> Contact.ContactEmails.Label contains </summary>
+    [JsonProperty("contact_contactEmails_label_con")]
+    public string? Contact_ContactEmails_Label_CON { get; set; }
+    /// <summary> Contact.ContactEmails.Label regex </summary>
+    [JsonProperty("contact_contactEmails_label_reg")]
+    public string? Contact_ContactEmails_Label_REG { get; set; }
 
 
     /// <summary> Contact.FirstName equals </summary>
@@ -8796,7 +9298,13 @@ public class CallFilterRequest
 
     /// <summary> FromCountry equals </summary>
     [JsonProperty("fromCountry_eq")]
-    public CountryIsoCode? FromCountry_EQ { get; set; }
+    public string? FromCountry_EQ { get; set; }
+    /// <summary> FromCountry contains </summary>
+    [JsonProperty("fromCountry_con")]
+    public string? FromCountry_CON { get; set; }
+    /// <summary> FromCountry regex </summary>
+    [JsonProperty("fromCountry_reg")]
+    public string? FromCountry_REG { get; set; }
 
     /// <summary> To equals </summary>
     [JsonProperty("to_eq")]
@@ -8810,11 +9318,23 @@ public class CallFilterRequest
 
     /// <summary> ToCountry equals </summary>
     [JsonProperty("toCountry_eq")]
-    public CountryIsoCode? ToCountry_EQ { get; set; }
+    public string? ToCountry_EQ { get; set; }
+    /// <summary> ToCountry contains </summary>
+    [JsonProperty("toCountry_con")]
+    public string? ToCountry_CON { get; set; }
+    /// <summary> ToCountry regex </summary>
+    [JsonProperty("toCountry_reg")]
+    public string? ToCountry_REG { get; set; }
 
     /// <summary> CallType equals </summary>
     [JsonProperty("callType_eq")]
-    public CallType? CallType_EQ { get; set; }
+    public string? CallType_EQ { get; set; }
+    /// <summary> CallType contains </summary>
+    [JsonProperty("callType_con")]
+    public string? CallType_CON { get; set; }
+    /// <summary> CallType regex </summary>
+    [JsonProperty("callType_reg")]
+    public string? CallType_REG { get; set; }
 
     /// <summary> Recording.ErrorMessage equals </summary>
     [JsonProperty("recording_errorMessage_eq")]
@@ -9002,7 +9522,13 @@ public class CallIncomingFilterRequest
 
     /// <summary> Contact.ContactNumbers.Label equals </summary>
     [JsonProperty("contact_contactNumbers_label_eq")]
-    public LabelNumber? Contact_ContactNumbers_Label_EQ { get; set; }
+    public string? Contact_ContactNumbers_Label_EQ { get; set; }
+    /// <summary> Contact.ContactNumbers.Label contains </summary>
+    [JsonProperty("contact_contactNumbers_label_con")]
+    public string? Contact_ContactNumbers_Label_CON { get; set; }
+    /// <summary> Contact.ContactNumbers.Label regex </summary>
+    [JsonProperty("contact_contactNumbers_label_reg")]
+    public string? Contact_ContactNumbers_Label_REG { get; set; }
 
 
     /// <summary> Contact.ContactEmails.SearchIndex equals </summary>
@@ -9027,7 +9553,13 @@ public class CallIncomingFilterRequest
 
     /// <summary> Contact.ContactEmails.Label equals </summary>
     [JsonProperty("contact_contactEmails_label_eq")]
-    public LabelEmailType? Contact_ContactEmails_Label_EQ { get; set; }
+    public string? Contact_ContactEmails_Label_EQ { get; set; }
+    /// <summary> Contact.ContactEmails.Label contains </summary>
+    [JsonProperty("contact_contactEmails_label_con")]
+    public string? Contact_ContactEmails_Label_CON { get; set; }
+    /// <summary> Contact.ContactEmails.Label regex </summary>
+    [JsonProperty("contact_contactEmails_label_reg")]
+    public string? Contact_ContactEmails_Label_REG { get; set; }
 
 
     /// <summary> Contact.FirstName equals </summary>
@@ -9184,7 +9716,13 @@ public class CallIncomingFilterRequest
 
     /// <summary> ChannelVariables.Language equals </summary>
     [JsonProperty("channelVariables_language_eq")]
-    public Language? ChannelVariables_Language_EQ { get; set; }
+    public string? ChannelVariables_Language_EQ { get; set; }
+    /// <summary> ChannelVariables.Language contains </summary>
+    [JsonProperty("channelVariables_language_con")]
+    public string? ChannelVariables_Language_CON { get; set; }
+    /// <summary> ChannelVariables.Language regex </summary>
+    [JsonProperty("channelVariables_language_reg")]
+    public string? ChannelVariables_Language_REG { get; set; }
 
     /// <summary> ChannelVariables.IdMusicOnHold equals </summary>
     [JsonProperty("channelVariables_idMusicOnHold_eq")]
@@ -9219,7 +9757,13 @@ public class CallIncomingFilterRequest
 
     /// <summary> ChildCalls.ChildCallType equals </summary>
     [JsonProperty("childCalls_childCallType_eq")]
-    public ChildCallType? ChildCalls_ChildCallType_EQ { get; set; }
+    public string? ChildCalls_ChildCallType_EQ { get; set; }
+    /// <summary> ChildCalls.ChildCallType contains </summary>
+    [JsonProperty("childCalls_childCallType_con")]
+    public string? ChildCalls_ChildCallType_CON { get; set; }
+    /// <summary> ChildCalls.ChildCallType regex </summary>
+    [JsonProperty("childCalls_childCallType_reg")]
+    public string? ChildCalls_ChildCallType_REG { get; set; }
 
     /// <summary> ChildCalls.DialStatus equals </summary>
     [JsonProperty("childCalls_dialStatus_eq")]
@@ -9315,7 +9859,13 @@ public class CallIncomingFilterRequest
 
     /// <summary> FromCountry equals </summary>
     [JsonProperty("fromCountry_eq")]
-    public CountryIsoCode? FromCountry_EQ { get; set; }
+    public string? FromCountry_EQ { get; set; }
+    /// <summary> FromCountry contains </summary>
+    [JsonProperty("fromCountry_con")]
+    public string? FromCountry_CON { get; set; }
+    /// <summary> FromCountry regex </summary>
+    [JsonProperty("fromCountry_reg")]
+    public string? FromCountry_REG { get; set; }
 
     /// <summary> To equals </summary>
     [JsonProperty("to_eq")]
@@ -9329,11 +9879,23 @@ public class CallIncomingFilterRequest
 
     /// <summary> ToCountry equals </summary>
     [JsonProperty("toCountry_eq")]
-    public CountryIsoCode? ToCountry_EQ { get; set; }
+    public string? ToCountry_EQ { get; set; }
+    /// <summary> ToCountry contains </summary>
+    [JsonProperty("toCountry_con")]
+    public string? ToCountry_CON { get; set; }
+    /// <summary> ToCountry regex </summary>
+    [JsonProperty("toCountry_reg")]
+    public string? ToCountry_REG { get; set; }
 
     /// <summary> CallType equals </summary>
     [JsonProperty("callType_eq")]
-    public CallType? CallType_EQ { get; set; }
+    public string? CallType_EQ { get; set; }
+    /// <summary> CallType contains </summary>
+    [JsonProperty("callType_con")]
+    public string? CallType_CON { get; set; }
+    /// <summary> CallType regex </summary>
+    [JsonProperty("callType_reg")]
+    public string? CallType_REG { get; set; }
 
     /// <summary> Recording.ErrorMessage equals </summary>
     [JsonProperty("recording_errorMessage_eq")]
@@ -9521,7 +10083,13 @@ public class CallOutgoingFilterRequest
 
     /// <summary> Contact.ContactNumbers.Label equals </summary>
     [JsonProperty("contact_contactNumbers_label_eq")]
-    public LabelNumber? Contact_ContactNumbers_Label_EQ { get; set; }
+    public string? Contact_ContactNumbers_Label_EQ { get; set; }
+    /// <summary> Contact.ContactNumbers.Label contains </summary>
+    [JsonProperty("contact_contactNumbers_label_con")]
+    public string? Contact_ContactNumbers_Label_CON { get; set; }
+    /// <summary> Contact.ContactNumbers.Label regex </summary>
+    [JsonProperty("contact_contactNumbers_label_reg")]
+    public string? Contact_ContactNumbers_Label_REG { get; set; }
 
 
     /// <summary> Contact.ContactEmails.SearchIndex equals </summary>
@@ -9546,7 +10114,13 @@ public class CallOutgoingFilterRequest
 
     /// <summary> Contact.ContactEmails.Label equals </summary>
     [JsonProperty("contact_contactEmails_label_eq")]
-    public LabelEmailType? Contact_ContactEmails_Label_EQ { get; set; }
+    public string? Contact_ContactEmails_Label_EQ { get; set; }
+    /// <summary> Contact.ContactEmails.Label contains </summary>
+    [JsonProperty("contact_contactEmails_label_con")]
+    public string? Contact_ContactEmails_Label_CON { get; set; }
+    /// <summary> Contact.ContactEmails.Label regex </summary>
+    [JsonProperty("contact_contactEmails_label_reg")]
+    public string? Contact_ContactEmails_Label_REG { get; set; }
 
 
     /// <summary> Contact.FirstName equals </summary>
@@ -9776,7 +10350,13 @@ public class CallOutgoingFilterRequest
 
     /// <summary> LineThatInitiatedCall.Language equals </summary>
     [JsonProperty("lineThatInitiatedCall_language_eq")]
-    public Language? LineThatInitiatedCall_Language_EQ { get; set; }
+    public string? LineThatInitiatedCall_Language_EQ { get; set; }
+    /// <summary> LineThatInitiatedCall.Language contains </summary>
+    [JsonProperty("lineThatInitiatedCall_language_con")]
+    public string? LineThatInitiatedCall_Language_CON { get; set; }
+    /// <summary> LineThatInitiatedCall.Language regex </summary>
+    [JsonProperty("lineThatInitiatedCall_language_reg")]
+    public string? LineThatInitiatedCall_Language_REG { get; set; }
 
     /// <summary> LineThatInitiatedCall.Id equals </summary>
     [JsonProperty("lineThatInitiatedCall_id_eq")]
@@ -9811,7 +10391,13 @@ public class CallOutgoingFilterRequest
 
     /// <summary> ChannelVariables.Language equals </summary>
     [JsonProperty("channelVariables_language_eq")]
-    public Language? ChannelVariables_Language_EQ { get; set; }
+    public string? ChannelVariables_Language_EQ { get; set; }
+    /// <summary> ChannelVariables.Language contains </summary>
+    [JsonProperty("channelVariables_language_con")]
+    public string? ChannelVariables_Language_CON { get; set; }
+    /// <summary> ChannelVariables.Language regex </summary>
+    [JsonProperty("channelVariables_language_reg")]
+    public string? ChannelVariables_Language_REG { get; set; }
 
     /// <summary> ChannelVariables.IdMusicOnHold equals </summary>
     [JsonProperty("channelVariables_idMusicOnHold_eq")]
@@ -9846,7 +10432,13 @@ public class CallOutgoingFilterRequest
 
     /// <summary> ChildCalls.ChildCallType equals </summary>
     [JsonProperty("childCalls_childCallType_eq")]
-    public ChildCallType? ChildCalls_ChildCallType_EQ { get; set; }
+    public string? ChildCalls_ChildCallType_EQ { get; set; }
+    /// <summary> ChildCalls.ChildCallType contains </summary>
+    [JsonProperty("childCalls_childCallType_con")]
+    public string? ChildCalls_ChildCallType_CON { get; set; }
+    /// <summary> ChildCalls.ChildCallType regex </summary>
+    [JsonProperty("childCalls_childCallType_reg")]
+    public string? ChildCalls_ChildCallType_REG { get; set; }
 
     /// <summary> ChildCalls.DialStatus equals </summary>
     [JsonProperty("childCalls_dialStatus_eq")]
@@ -9942,7 +10534,13 @@ public class CallOutgoingFilterRequest
 
     /// <summary> FromCountry equals </summary>
     [JsonProperty("fromCountry_eq")]
-    public CountryIsoCode? FromCountry_EQ { get; set; }
+    public string? FromCountry_EQ { get; set; }
+    /// <summary> FromCountry contains </summary>
+    [JsonProperty("fromCountry_con")]
+    public string? FromCountry_CON { get; set; }
+    /// <summary> FromCountry regex </summary>
+    [JsonProperty("fromCountry_reg")]
+    public string? FromCountry_REG { get; set; }
 
     /// <summary> To equals </summary>
     [JsonProperty("to_eq")]
@@ -9956,11 +10554,23 @@ public class CallOutgoingFilterRequest
 
     /// <summary> ToCountry equals </summary>
     [JsonProperty("toCountry_eq")]
-    public CountryIsoCode? ToCountry_EQ { get; set; }
+    public string? ToCountry_EQ { get; set; }
+    /// <summary> ToCountry contains </summary>
+    [JsonProperty("toCountry_con")]
+    public string? ToCountry_CON { get; set; }
+    /// <summary> ToCountry regex </summary>
+    [JsonProperty("toCountry_reg")]
+    public string? ToCountry_REG { get; set; }
 
     /// <summary> CallType equals </summary>
     [JsonProperty("callType_eq")]
-    public CallType? CallType_EQ { get; set; }
+    public string? CallType_EQ { get; set; }
+    /// <summary> CallType contains </summary>
+    [JsonProperty("callType_con")]
+    public string? CallType_CON { get; set; }
+    /// <summary> CallType regex </summary>
+    [JsonProperty("callType_reg")]
+    public string? CallType_REG { get; set; }
 
     /// <summary> Recording.ErrorMessage equals </summary>
     [JsonProperty("recording_errorMessage_eq")]
@@ -10108,11 +10718,23 @@ public class CloudServiceFilterRequest
 {
     /// <summary> CloudServiceType equals </summary>
     [JsonProperty("cloudServiceType_eq")]
-    public CloudServiceType? CloudServiceType_EQ { get; set; }
+    public string? CloudServiceType_EQ { get; set; }
+    /// <summary> CloudServiceType contains </summary>
+    [JsonProperty("cloudServiceType_con")]
+    public string? CloudServiceType_CON { get; set; }
+    /// <summary> CloudServiceType regex </summary>
+    [JsonProperty("cloudServiceType_reg")]
+    public string? CloudServiceType_REG { get; set; }
 
     /// <summary> CountryIsoCode equals </summary>
     [JsonProperty("countryIsoCode_eq")]
-    public CountryIsoCode? CountryIsoCode_EQ { get; set; }
+    public string? CountryIsoCode_EQ { get; set; }
+    /// <summary> CountryIsoCode contains </summary>
+    [JsonProperty("countryIsoCode_con")]
+    public string? CountryIsoCode_CON { get; set; }
+    /// <summary> CountryIsoCode regex </summary>
+    [JsonProperty("countryIsoCode_reg")]
+    public string? CountryIsoCode_REG { get; set; }
 
     /// <summary> Localnet equals </summary>
     [JsonProperty("localnet_eq")]
@@ -10212,7 +10834,13 @@ public class ExtensionFilterRequest
 
     /// <summary> ExtensionType equals </summary>
     [JsonProperty("extensionType_eq")]
-    public ExtensionType? ExtensionType_EQ { get; set; }
+    public string? ExtensionType_EQ { get; set; }
+    /// <summary> ExtensionType contains </summary>
+    [JsonProperty("extensionType_con")]
+    public string? ExtensionType_CON { get; set; }
+    /// <summary> ExtensionType regex </summary>
+    [JsonProperty("extensionType_reg")]
+    public string? ExtensionType_REG { get; set; }
 
     /// <summary> FriendlyName equals </summary>
     [JsonProperty("friendlyName_eq")]
@@ -10274,7 +10902,13 @@ public class TrunkOriginationFilterRequest
 {
     /// <summary> TrunkOriginationType equals </summary>
     [JsonProperty("trunkOriginationType_eq")]
-    public TrunkOriginationType? TrunkOriginationType_EQ { get; set; }
+    public string? TrunkOriginationType_EQ { get; set; }
+    /// <summary> TrunkOriginationType contains </summary>
+    [JsonProperty("trunkOriginationType_con")]
+    public string? TrunkOriginationType_CON { get; set; }
+    /// <summary> TrunkOriginationType regex </summary>
+    [JsonProperty("trunkOriginationType_reg")]
+    public string? TrunkOriginationType_REG { get; set; }
 
     /// <summary> Id equals </summary>
     [JsonProperty("id_eq")]
@@ -10359,7 +10993,13 @@ public class VoipNumberFilterRequest
 
     /// <summary> VoipNumberType equals </summary>
     [JsonProperty("voipNumberType_eq")]
-    public VoipNumberType? VoipNumberType_EQ { get; set; }
+    public string? VoipNumberType_EQ { get; set; }
+    /// <summary> VoipNumberType contains </summary>
+    [JsonProperty("voipNumberType_con")]
+    public string? VoipNumberType_CON { get; set; }
+    /// <summary> VoipNumberType regex </summary>
+    [JsonProperty("voipNumberType_reg")]
+    public string? VoipNumberType_REG { get; set; }
 
     /// <summary> InjectFriendlyNameToCallerId equals </summary>
     [JsonProperty("injectFriendlyNameToCallerId_eq")]
@@ -10401,7 +11041,13 @@ public class VoipNumberFilterRequest
 
     /// <summary> Language equals </summary>
     [JsonProperty("language_eq")]
-    public Language? Language_EQ { get; set; }
+    public string? Language_EQ { get; set; }
+    /// <summary> Language contains </summary>
+    [JsonProperty("language_con")]
+    public string? Language_CON { get; set; }
+    /// <summary> Language regex </summary>
+    [JsonProperty("language_reg")]
+    public string? Language_REG { get; set; }
 
     /// <summary> City equals </summary>
     [JsonProperty("city_eq")]
@@ -10425,7 +11071,13 @@ public class VoipNumberFilterRequest
 
     /// <summary> CountryIsoCode equals </summary>
     [JsonProperty("countryIsoCode_eq")]
-    public CountryIsoCode? CountryIsoCode_EQ { get; set; }
+    public string? CountryIsoCode_EQ { get; set; }
+    /// <summary> CountryIsoCode contains </summary>
+    [JsonProperty("countryIsoCode_con")]
+    public string? CountryIsoCode_CON { get; set; }
+    /// <summary> CountryIsoCode regex </summary>
+    [JsonProperty("countryIsoCode_reg")]
+    public string? CountryIsoCode_REG { get; set; }
 
     /// <summary> IsSmsEnabled equals </summary>
     [JsonProperty("isSmsEnabled_eq")]

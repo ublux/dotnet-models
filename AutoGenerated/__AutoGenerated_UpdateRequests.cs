@@ -810,20 +810,6 @@ public class IdentityUpdateRequest // : IUbluxDocumentId
 }
 
 /// <summary>
-/// Ip address
-/// </summary><summary>
-/// Ip address
-/// </summary>
-public class IPUpdateRequest // : IUbluxDocumentId
-{
-    /// <summary> Set values on actual document </summary>
-    public void SetValuesOnIP(IP iP)
-    {
-    }
-
-}
-
-/// <summary>
 /// Group of line keys
 /// </summary><summary>
 /// Group of line keys
