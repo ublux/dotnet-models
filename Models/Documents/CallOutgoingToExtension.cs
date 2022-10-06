@@ -3,6 +3,7 @@
 /// <summary>
 ///     Call made to an extension
 /// </summary>
+[BsonIgnoreExtraElements]
 public partial class CallOutgoingToExtension : CallOutgoing, ICallToExtension
 {
     #region Properties

@@ -3,6 +3,7 @@
 /// <summary>
 ///     Represents a stored file in ublux. 
 /// </summary>
+[BsonIgnoreExtraElements]
 public partial class StoredFile : UbluxSubDocument
 {
     #region Properties    

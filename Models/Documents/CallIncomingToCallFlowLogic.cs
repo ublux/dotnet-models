@@ -3,6 +3,7 @@
 /// <summary>
 ///     Incoming phone call that executed an IVR
 /// </summary>
+[BsonIgnoreExtraElements]
 public partial class CallIncomingToCallFlowLogic : CallIncoming
 {
     /// <summary>

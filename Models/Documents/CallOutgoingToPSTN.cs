@@ -3,6 +3,7 @@
 /// <summary>
 ///     Call made to cell phone or land line
 /// </summary>
+[BsonIgnoreExtraElements]
 public partial class CallOutgoingToPSTN : CallOutgoing
 {
     /// <summary>

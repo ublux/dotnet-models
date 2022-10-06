@@ -3,6 +3,7 @@
 /// <summary>
 ///     Incoming phone call from PSTN to an extension
 /// </summary>
+[BsonIgnoreExtraElements]
 public partial class CallIncomingToExtension : CallIncoming, ICallToExtension
 {
     #region Properties

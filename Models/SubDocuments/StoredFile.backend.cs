@@ -43,13 +43,13 @@ public partial class StoredFile : UbluxSubDocument, IReferncesAccount
     [IsRequired]
     public required StorageFolderName FolderName { get; set; }
 
-    /// <summary>
-    ///     Usually id followed by extension. Example:  CL-I-XXXXX.mp3
-    /// </summary>
-    [IgnoreDataMember]
-    [AllowUpdate(false)]
-    [IsRequired]
-    public required string FileName { get; set; }
+    ///// <summary>
+    /////     Usually id followed by extension. Example:  CL-I-XXXXX.mp3
+    ///// </summary>
+    //[IgnoreDataMember]
+    //[AllowUpdate(false)]
+    //[IsRequired]
+    //public required string FileName { get; set; }
 
     /// <summary>
     ///     Server that stored this file so that other servers can download it. Example W for work. Thus it can be downloaded from w.ublux.com    
@@ -57,25 +57,14 @@ public partial class StoredFile : UbluxSubDocument, IReferncesAccount
     [AllowUpdate(false)]
     public required string InstanceId { get; set; }
 
-    /// <summary>
-    ///     Get id
-    /// </summary>
-    /// <returns></returns>
-    public string GetKey()
-    {
-        var acc = IdAccount;
-        if (string.IsNullOrEmpty(acc)) throw new Exception("Invalid Account");
-        return $"{acc}/{FolderName}/{FileName}";
-    }
-
 
     /// <summary> /usr/share/ublux/accounts-files </summary>
-    public static string GetBaseDirectoryWhereToSave(bool createDirectoryIfNotExists)
+    public static string GetTempDir(bool createDirectoryIfNotExists)
     {
         string path;
         if(Environment.OSVersion.Platform == PlatformID.Unix)
         {
-            path = "/usr/share/ublux/accounts-files";
+            path = "/usr/share/ublux/tmp";
         }
         else
         {

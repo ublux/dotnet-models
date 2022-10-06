@@ -363,9 +363,9 @@ namespace Ublux.Communications.Models.SubDocuments {
         public const string DocumentPrefix = "SF";
 
         /// <summary> Example SF.Ac.1/Audios/JFKEYIERJKHDKJHDSF.wav </summary>
-        public static BuiltId BuildId(string idAcc, StorageFolderName folderName, string fileExtension) => new($"{DocumentPrefix}.{idAcc}/{folderName}/{RunningApplicationInstance.ToBase62(BitConverter.ToUInt64(Guid.NewGuid().ToByteArray()))}{RunningApplicationInstance.ToBase62(BitConverter.ToUInt64(Guid.NewGuid().ToByteArray())/2)}.{fileExtension.ToLower()}");
+        public static BuiltId BuildId(string idAcc, StorageFolderName folderName, string fileExtension) => new($"{DocumentPrefix}.{idAcc}.{folderName}.{RunningApplicationInstance.ToBase62(BitConverter.ToUInt64(Guid.NewGuid().ToByteArray()))}{RunningApplicationInstance.ToBase62(BitConverter.ToUInt64(Guid.NewGuid().ToByteArray())/2)}.{fileExtension.ToLower()}");
         /// <summary> oveload </summary>
-        public static BuiltId BuildId(string idAcc, StorageFolderName folderName) => new($"{DocumentPrefix}.{idAcc}/{folderName}/{RunningApplicationInstance.ToBase62(BitConverter.ToUInt64(Guid.NewGuid().ToByteArray()))}{RunningApplicationInstance.ToBase62(BitConverter.ToUInt64(Guid.NewGuid().ToByteArray())/2)}");
+        public static BuiltId BuildId(string idAcc, StorageFolderName folderName) => new($"{DocumentPrefix}.{idAcc}.{folderName}.{RunningApplicationInstance.ToBase62(BitConverter.ToUInt64(Guid.NewGuid().ToByteArray()))}{RunningApplicationInstance.ToBase62(BitConverter.ToUInt64(Guid.NewGuid().ToByteArray())/2)}");
         /// <summary> oveload </summary>
         public static BuiltId BuildId(BuiltId builtId, string fileExtension) => new($"{builtId.Id}.{fileExtension}");
     }
