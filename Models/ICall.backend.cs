@@ -12,11 +12,18 @@ public partial interface ICall
     public string ChannelFrom { get; set; }
 
     /// <summary>
-    ///     Connected channel
+    ///     List because a line can ring multiple lines
     /// </summary>
     [IgnoreDataMember]
     [AllowUpdate(false)]
-    public string? ChannelTo { get; set; }
+    public List<string> ChannelsTo { get; set; }
+
+    /// <summary>
+    ///     Channel To that answered
+    /// </summary>
+    [IgnoreDataMember]
+    [AllowUpdate(false)]
+    public string? ChannelToAnswer { get; set; }
 }
 
 #endif

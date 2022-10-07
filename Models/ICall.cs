@@ -31,9 +31,8 @@ public partial interface ICall
     [AllowUpdate(false)]
     string DialStatus { get; set; }
 
-
     /// <summary>
-    ///     Number of seconds it took to answer
+    ///     Number of seconds it took to answer. Null means it was not answered
     /// </summary>
     [AllowUpdate(false)]
     int? SecondsItTookToAnswer { get; set; }

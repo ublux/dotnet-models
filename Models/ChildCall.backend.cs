@@ -9,10 +9,19 @@ public abstract partial class ChildCall : ICall
     [AllowUpdate(false)]
     public required string ChannelFrom { get; set; }
 
-    /// <inheritdoc />
+    /// <summary>
+    ///     Multiple because it can ring multiple lines
+    /// </summary>
     [IgnoreDataMember]
     [AllowUpdate(false)]
-    public string? ChannelTo { get; set; }    
+    public List<string> ChannelsTo { get; set; } = new();
+
+    /// <summary>
+    ///     Channel To that answered
+    /// </summary>
+    [IgnoreDataMember]
+    [AllowUpdate(false)]
+    public string? ChannelToAnswer { get; set; }
 }
 
 #endif

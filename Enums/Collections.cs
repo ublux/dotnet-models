@@ -59,8 +59,8 @@ public enum Collections
     /// <summary>Identities</summary>
     Identities,
 
-    /// <summary>IPs</summary>
-    IPs,
+    ///// <summary>IPs</summary>
+    //IPs,
 
     /// <summary>LineKeyGroups</summary>
     LineKeyGroups,
