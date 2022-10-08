@@ -6743,6 +6743,10 @@ public class PhoneFilterRequest
     [JsonProperty("phoneType_reg")]
     public string? PhoneType_REG { get; set; }
 
+    /// <summary> DisableEncryption equals </summary>
+    [JsonProperty("disableEncryption_eq")]
+    public bool? DisableEncryption_EQ { get; set; }
+
     /// <summary> Id equals </summary>
     [JsonProperty("id_eq")]
     public string? Id_EQ { get; set; }

@@ -61,4 +61,11 @@ public partial class Phone : UbluxDocument
     [IsRequired]
     [AllowUpdate(true)]
     public required PhoneType PhoneType { get; set; }
+
+    /// <summary>
+    ///     Disable encryption in case device does not support it
+    /// </summary>
+    [IsRequired]
+    [AllowUpdate(true)]
+    public bool DisableEncryption { get; set; }
 }
