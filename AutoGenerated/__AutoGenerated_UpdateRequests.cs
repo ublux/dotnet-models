@@ -1347,6 +1347,8 @@ public class CloudFileUpdateRequest // : IUbluxDocumentId
 /// </summary>
 public class LineUpdateRequest // : IUbluxDocumentId
 {
+    /// <summary></summary>
+    public String? FriendlyName { get; set; }
     /// <summary>
     /// Caller id number that will be used to place outbound calls
     /// </summary>
@@ -1366,6 +1368,8 @@ public class LineUpdateRequest // : IUbluxDocumentId
     /// <summary> Set values on actual document </summary>
     public void SetValuesOnLine(Line line)
     {
+        if(this.FriendlyName!=null)
+            line.FriendlyName = this.FriendlyName;
         if(this.CallerIdNumber!=null)
             line.CallerIdNumber = this.CallerIdNumber;
         if(this.RecordExternalCalls!=null)

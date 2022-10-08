@@ -7,7 +7,7 @@ public partial class Line : UbluxSubDocument
 {
     /// <summary>
     /// </summary>
-    [AllowUpdate(false)]
+    [AllowUpdate(true)]
     [IsUbluxRequired]
     public required string FriendlyName { get; set; }
 
