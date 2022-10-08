@@ -8,7 +8,7 @@ public class TimeWhenCallPlacedOnHold
     /// <summary>
     ///     Seconds elapsed since the call started when call was placed on hold
     /// </summary>
-    [IsRequired]
+    [IsUbluxRequired]
     [AllowUpdate(false)]
     public required int SecondsElapsedWhenPlacedOnHold { get; set; }
 

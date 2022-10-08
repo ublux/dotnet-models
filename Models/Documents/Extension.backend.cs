@@ -11,7 +11,7 @@ public abstract partial class Extension : UbluxDocument, IReferncesAccount
     [IgnoreDataMember]
     [References(typeof(Account))]
     [AllowUpdate(false)]
-    [IsRequired]
+    [IsUbluxRequired]
     [HideForCreateRequest]    
     public required string IdAccount { get; set; } = string.Empty;
 }

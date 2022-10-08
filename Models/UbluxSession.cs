@@ -7,14 +7,14 @@ public partial class UbluxSession
 {
     /// <summary> sub property from JWT. Logged in by what user? This may be a PBX </summary>
     [References(typeof(Identity))]
-    [IsRequired]
+    [IsUbluxRequired]
     [AllowUpdate(false)]
     public required string IdIdentity { get; set; }
 
     /// <summary>
     ///     aud property from JWT. Audience identity type
     /// </summary>
-    [IsRequired]
+    [IsUbluxRequired]
     [AllowUpdate(false)]
     public required IdentityType IdentityType { get; set; }
 
@@ -22,20 +22,20 @@ public partial class UbluxSession
     ///     acc property from JWT. Id of account
     /// </summary>
     [References(typeof(Account))]
-    [IsRequired]
+    [IsUbluxRequired]
     [AllowUpdate(false)]
     public required string IdAccount { get; set; }
 
     /// <summary>
     ///     role properties from JWT. Permissions
     /// </summary>
-    [IsRequired]
+    [IsUbluxRequired]
     [AllowUpdate(false)]
     [BsonRepresentation(BsonType.String)]
     public required List<UbluxRole> UbluxRoles { get; set; }
 
     /// <summary> exp property from JWT. Date when session expires </summary>
-    [IsRequired]
+    [IsUbluxRequired]
     [AllowUpdate(false)]
     public required DateTime ExpirationDate { get; set; }
 }

@@ -18,6 +18,6 @@ public class ChildCallBlindTransferToPSTN : ChildCallBlindTransfer
     /// <summary>
     ///     BlindTransferToPSTN
     /// </summary>
-    [IsRequired]
+    [IsUbluxRequired]
     public override ChildCallType ChildCallType { get; } = ChildCallType.BlindTransferToPSTN;
 }

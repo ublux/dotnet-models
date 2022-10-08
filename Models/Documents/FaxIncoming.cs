@@ -14,7 +14,7 @@ public partial class FaxIncoming : UbluxDocument
     /// </summary>
     [AllowUpdate(false)]
     [References(typeof(VoipNumberFax))]
-    [IsRequired]
+    [IsUbluxRequired]
     public required string IdVoipNumberFax { get; set; }
 
     #endregion
@@ -39,21 +39,21 @@ public partial class FaxIncoming : UbluxDocument
     ///     Status of fax
     /// </summary>
     [AllowUpdate(false)]
-    [IsRequired]
+    [IsUbluxRequired]
     public required string FaxStatus { get; set; }
 
     /// <summary>
     ///     Fax number of sender
     /// </summary>
     [AllowUpdate(false)]
-    [IsRequired]
+    [IsUbluxRequired]
     public required string From { get; set; }
 
     /// <summary>
     ///     Fax number that received the fax
     /// </summary>
     [AllowUpdate(false)]
-    [IsRequired]
+    [IsUbluxRequired]
     public required string To { get; set; }
 
     /// <summary>

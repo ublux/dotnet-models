@@ -11,7 +11,7 @@ public partial class FaxOutgoingGroup : UbluxDocument, IReferncesAccount
     [References(typeof(Account))]
     [IgnoreDataMember]
     [AllowUpdate(false)]
-    [IsRequired]
+    [IsUbluxRequired]
     public required string IdAccount { get; set; }
 }
 

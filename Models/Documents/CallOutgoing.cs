@@ -27,7 +27,7 @@ public abstract partial class CallOutgoing : Call
     /// </summary>
     [AllowUpdate(false)]
     //[References(typeof(Line))]
-    [IsRequired]
+    [IsUbluxRequired]
     public required Line LineThatInitiatedCall { get; set; }
 }
 

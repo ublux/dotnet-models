@@ -11,14 +11,14 @@ public partial class AirNetworksProvince : UbluxDocument
     ///     Example: ALAVA
     /// </summary>
     [AllowUpdate(false)]
-    [IsRequired]
+    [IsUbluxRequired]
     public required string Name { get; set; }
 
     /// <summary>
     ///     List of "poblaciones". Example: ABENGIBRE, ABUZADERAS, AGRA....
     /// </summary>
     [AllowUpdate(false)]
-    [IsRequired]
+    [IsUbluxRequired]
     public List<string> Populations { get; set; } = new();
 
     #endregion

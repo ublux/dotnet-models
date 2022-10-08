@@ -13,16 +13,16 @@ public partial class Phone : UbluxDocument, IReferncesAccount
     [References(typeof(Account))]
     [IgnoreDataMember]
     [AllowUpdate(false)]
-    [IsRequired]
-    public required string IdAccount { get; set; }
+    [IsUbluxRequired]
+    public required string IdAccount { get; set; } = string.Empty;
 
     /// <summary>
     ///     Password of phone used to authenticate with asterisk
     /// </summary>
-    [IsRequired]
+    [IsUbluxRequired]
     [AllowUpdate(false)]
     [IgnoreDataMember]
-    public required string Password { get; set; }
+    public required string Password { get; set; } = string.Empty;
 }
 
 #endif

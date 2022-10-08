@@ -64,14 +64,14 @@ public abstract partial class VoipNumber : UbluxDocument
     ///     Phone number
     /// </summary>
     [AllowUpdate(false)]
-    [IsRequired]
+    [IsUbluxRequired]
     public required string Number { get; set; }
 
     /// <summary>
     ///     Incoming phone number friendly name
     /// </summary>
     [AllowUpdate(true)]
-    [IsRequired]
+    [IsUbluxRequired]
     public required string FriendlyName { get; set; }
 
     /// <summary>
@@ -84,56 +84,56 @@ public abstract partial class VoipNumber : UbluxDocument
     ///     Example: EN, SP, etc..
     /// </summary>
     [AllowUpdate(true)]
-    [IsRequired]
+    [IsUbluxRequired]
     public required Language Language { get; set; }
 
     /// <summary>
     ///     City of incoming phone number
     /// </summary>    
     [AllowUpdate(false)]
-    [IsRequired]
+    [IsUbluxRequired]
     public required string City { get; set; }
 
     /// <summary>
     ///     State of incoming phone number
     /// </summary>
     [AllowUpdate(false)]
-    [IsRequired]
+    [IsUbluxRequired]
     public required string State { get; set; }
 
     /// <summary>
     ///     Country of incoming phone number
     /// </summary>
     [AllowUpdate(false)]
-    [IsRequired]
+    [IsUbluxRequired]
     public required CountryIsoCode CountryIsoCode { get; set; }
 
     /// <summary>
     ///     Does this phone number have SMS capabilities?
     /// </summary>
     [AllowUpdate(false)]
-    [IsRequired]
+    [IsUbluxRequired]
     public required bool IsSmsEnabled { get; set; }
 
     /// <summary>
     ///     Does this phone number have calling capabilities?
     /// </summary>
     [AllowUpdate(false)]
-    [IsRequired]
+    [IsUbluxRequired]
     public required bool IsVoiceEnabled { get; set; }
 
     /// <summary>
     ///     Is this phone number toll free?
     /// </summary>
     [AllowUpdate(false)]
-    [IsRequired]
+    [IsUbluxRequired]
     public required bool IsTollFree { get; set; }
 
     /// <summary>
     ///     Does this number support WhatsApp?
     /// </summary>
     [AllowUpdate(false)]
-    [IsRequired]
+    [IsUbluxRequired]
     public required bool IsWhatsappEnabled { get; set; }
 
     /// <summary>

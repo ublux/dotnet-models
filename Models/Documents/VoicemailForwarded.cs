@@ -9,7 +9,7 @@ public partial class VoicemailForwarded : Voicemail
     ///     Type of voicemail
     /// </summary>
     [AllowUpdate(false)]
-    [IsRequired]
+    [IsUbluxRequired]
     [HideForCreateRequest]
     public override VoicemailType VoicemailType => VoicemailType.Forwarded;
 
@@ -18,7 +18,7 @@ public partial class VoicemailForwarded : Voicemail
     /// </summary>
     [AllowUpdate(false)]
     [References(typeof(Line))]
-    [IsRequired]
+    [IsUbluxRequired]
     public required Line LineThatForwardedVoicemail { get; set; }
 
     /// <summary>
@@ -27,6 +27,6 @@ public partial class VoicemailForwarded : Voicemail
     /// </summary>
     [AllowUpdate(false)]
     [References(typeof(Extension))]
-    //[IsRequired]
+    //[IsUbluxRequired]
     public Extension? ExtensionForwarded { get; set; }
 }

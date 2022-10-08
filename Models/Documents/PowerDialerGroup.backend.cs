@@ -13,7 +13,7 @@ public partial class PowerDialerGroup : UbluxDocument, IReferncesAccount
     [IgnoreDataMember]
     [References(typeof(Account))]
     [AllowUpdate(false)]
-    [IsRequired]
+    [IsUbluxRequired]
     [HideForCreateRequest]
     public required string IdAccount { get; set; }
 

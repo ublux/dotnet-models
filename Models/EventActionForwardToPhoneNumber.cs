@@ -6,12 +6,12 @@
 public class EventActionForwardToPhoneNumber : EventAction
 {
     /// <inheritdoc/>
-    [IsRequired]
+    [IsUbluxRequired]
     public override EventActionType EventActionType { get; } = EventActionType.ForwardToPhoneNumber;
 
     /// <summary>
     ///     Phone number where to forward the call
     /// </summary>
-    [IsRequired]
+    [IsUbluxRequired]
     public required string PhoneNumber { get; set; }
 }

@@ -6,6 +6,6 @@
 public interface IAttendantTransfer
 {
     /// <summary> Id of call that attendant transfered this call </summary>
-    [IsRequired]
+    [IsUbluxRequired]
     string IdCallAttendantTransfer { get; set; }
 }

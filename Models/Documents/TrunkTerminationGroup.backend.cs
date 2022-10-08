@@ -14,7 +14,7 @@ public partial class TrunkTerminationGroup : UbluxDocument
     [IgnoreDataMember]
     [AllowUpdate(false)]
     [References(typeof(TrunkTermination))]
-    [IsRequired]
+    [IsUbluxRequired]
     public required List<string> IdsTrunkTerminationsOrderedByPriority { get; set; }
 }
 

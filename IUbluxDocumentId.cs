@@ -12,7 +12,7 @@ public interface IUbluxDocumentId
     [JsonProperty(Order = -1000)]
     [BsonElement(Order = -1000000)]
     [AllowUpdate(true)] // set to true because property id is needed on auto-generated objects    
-    [IsRequired]
+    [IsUbluxRequired]
     [HideForCreateRequest]
     string Id { get; init; }
 }

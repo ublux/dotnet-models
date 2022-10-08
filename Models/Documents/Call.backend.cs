@@ -11,7 +11,7 @@ public abstract partial class Call : UbluxDocument, IReferncesAccount
     [References(typeof(Account))]
     [AllowUpdate(false)]
     [IgnoreDataMember]
-    [IsRequired]
+    [IsUbluxRequired]
     public required string IdAccount { get; set; }
 
     /// <inheritdoc />

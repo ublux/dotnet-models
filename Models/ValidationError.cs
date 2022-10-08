@@ -9,7 +9,7 @@ public class ValidationError
     /// <summary>
     ///     Name of property containing error.
     /// </summary>
-    //[IsRequired]
+    //[IsUbluxRequired]
     [AllowUpdate(false)]
     public string? PropertyName { get; set; }
 

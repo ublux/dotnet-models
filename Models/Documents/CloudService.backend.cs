@@ -10,7 +10,7 @@ public abstract partial class CloudService : UbluxDocument
     /// <summary>
     ///     We need instance id in order to reboot cloud service for example. Example: i-0655b45b8134e6425 
     /// </summary>
-    [IsRequired]
+    [IsUbluxRequired]
     [IgnoreDataMember]
     [AllowUpdate(true)]
     public required string ProviderInstanceId { get; set; }
@@ -18,7 +18,7 @@ public abstract partial class CloudService : UbluxDocument
     /// <summary>
     ///     Example AWS for amazon web services
     /// </summary>
-    [IsRequired]
+    [IsUbluxRequired]
     [IgnoreDataMember]
     [AllowUpdate(true)]
     public required CloudServiceProviderType ProviderType { get; set; }

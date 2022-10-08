@@ -43,7 +43,7 @@ public abstract partial class Call : UbluxDocument, ICall
     ///     Call channel variables. Language, MOH, CallerId etc
     /// </summary>
     [AllowUpdate(false)]
-    [IsRequired]
+    [IsUbluxRequired]
     public required ChannelVariables ChannelVariables { get; set; }
 
     /// <summary>
@@ -93,28 +93,28 @@ public abstract partial class Call : UbluxDocument, ICall
     ///     Caller id
     /// </summary>
     [AllowUpdate(false)]
-    [IsRequired]
+    [IsUbluxRequired]
     public required string From { get; set; }
 
     /// <summary>
     ///     Country that initiated phone call
     /// </summary>
     [AllowUpdate(false)]
-    [IsRequired]
+    [IsUbluxRequired]
     public required CountryIsoCode FromCountry { get; set; }
 
     /// <summary>
     ///     Phone number called
     /// </summary>
     [AllowUpdate(false)]
-    [IsRequired]
+    [IsUbluxRequired]
     public required string To { get; set; }
 
     /// <summary>
     ///     Country that initiated phone call
     /// </summary>
     [AllowUpdate(false)]
-    [IsRequired]
+    [IsUbluxRequired]
     public required CountryIsoCode ToCountry { get; set; }
 
     /// <summary>

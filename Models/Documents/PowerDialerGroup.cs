@@ -45,7 +45,7 @@ public partial class PowerDialerGroup : UbluxDocument
     ///     Subdocument
     /// </summary>
     [AllowUpdate(false)]
-    [IsRequired]
+    [IsUbluxRequired]
     public required List<PowerDialer> PowerDialers { get; set; }
 
     #endregion
@@ -54,7 +54,7 @@ public partial class PowerDialerGroup : UbluxDocument
     ///     Friendly name of power dialer group
     /// </summary>
     [AllowUpdate(true)]
-    [IsRequired]
+    [IsUbluxRequired]
     public required string FriendlyName { get; set; }
 
     /// <summary>
@@ -67,7 +67,7 @@ public partial class PowerDialerGroup : UbluxDocument
     ///     Status of power dialer
     /// </summary>
     [AllowUpdate(false)]
-    [IsRequired]
+    [IsUbluxRequired]
     [HideForCreateRequest]
     public PowerDialerGroupStatus PowerDialerGroupStatus  // added for convenience
     {
@@ -100,7 +100,7 @@ public partial class PowerDialerGroup : UbluxDocument
     ///     When power dialer was first created only one call at a time existed. When that call ended the next call was made.
     /// </summary>
     [AllowUpdate(false)]
-    [IsRequired]
+    [IsUbluxRequired]
     public int NumberOfConcurrentCalls { get; set; }
 
     #endregion

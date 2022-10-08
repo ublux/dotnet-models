@@ -12,7 +12,7 @@ public abstract partial class UbluxSubDocument
     ///     Id of entity
     /// </summary>
     [AllowUpdate(false)] // subdocuments should be updated separately
-    [IsRequired]
+    [IsUbluxRequired]
     [HideForCreateRequest]
     public string Id
     {

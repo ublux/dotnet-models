@@ -14,7 +14,7 @@ public partial class SMS : UbluxDocument
     /// </summary>
     [AllowUpdate(false)]
     [References(typeof(VoipNumber))]
-    [IsRequired]
+    [IsUbluxRequired]
     public required string IdVoipNumber { get; set; }
 
     #endregion
@@ -39,7 +39,7 @@ public partial class SMS : UbluxDocument
     ///     SMS message
     /// </summary>
     [AllowUpdate(false)]
-    [IsRequired]
+    [IsUbluxRequired]
     public required string Body { get; set; }
 
     //    // [AllowUpdate(false)]
@@ -49,7 +49,7 @@ public partial class SMS : UbluxDocument
     ///     If a SMS body is to large, it will be sent in multiple chunks/segments
     /// </summary>
     [AllowUpdate(false)]
-    [IsRequired]
+    [IsUbluxRequired]
     public required int NumSegments { get; set; }
 
     /// <summary>
@@ -77,14 +77,14 @@ public partial class SMS : UbluxDocument
     ///     Number that sent SMS
     /// </summary>
     [AllowUpdate(false)]
-    [IsRequired]
+    [IsUbluxRequired]
     public required string From { get; set; }
 
     /// <summary>
     ///     Number to whom SMS was sent to 
     /// </summary>
     [AllowUpdate(false)]
-    [IsRequired]
+    [IsUbluxRequired]
     public required string To { get; set; }
 
     #endregion

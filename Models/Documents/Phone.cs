@@ -14,7 +14,7 @@ public partial class Phone : UbluxDocument
     /// </summary>
     [References(typeof(CloudServicePbx))]
     [AllowUpdate(true)]
-    [IsRequired]
+    [IsUbluxRequired]
     public required string IdCloudServicePbx { get; set; }
 
     /// <summary>
@@ -41,7 +41,7 @@ public partial class Phone : UbluxDocument
     /// </summary>
     [JsonProperty(Order = 10000)]
     [AllowUpdate(false)]
-    [IsRequired]
+    [IsUbluxRequired]
     public required List<Line> Lines { get; set; }
 
     #endregion
@@ -50,7 +50,7 @@ public partial class Phone : UbluxDocument
     ///     Descriptive name of phone
     /// </summary>
     [AllowUpdate(true)]
-    [IsRequired]
+    [IsUbluxRequired]
     public required string FriendlyName { get; set; }
 
     #endregion
@@ -58,14 +58,14 @@ public partial class Phone : UbluxDocument
     /// <summary>
     ///     Type of phone. If its of type web and identity (username and password) must exist in order for phone to connect.
     /// </summary>
-    [IsRequired]
+    [IsUbluxRequired]
     [AllowUpdate(true)]
     public required PhoneType PhoneType { get; set; }
 
     /// <summary>
     ///     Disable encryption in case device does not support it
     /// </summary>
-    [IsRequired]
+    [IsUbluxRequired]
     [AllowUpdate(true)]
     public bool DisableEncryption { get; set; }
 }

@@ -24,7 +24,7 @@ public abstract class TrunkOrigination : UbluxDocument
     [IgnoreDataMember]
     [References(typeof(VoipProvider))]
     [AllowUpdate(false)]
-    [IsRequired]
+    [IsUbluxRequired]
     public required string IdVoipProvider { get; set; }
 
     /// <summary>
@@ -34,7 +34,7 @@ public abstract class TrunkOrigination : UbluxDocument
     [IgnoreDataMember]
     [AllowUpdate(false)]
     [References(typeof(CloudServicePbx))]
-    [IsRequired]
+    [IsUbluxRequired]
     public required string IdCloudServicePbx { get; set; }
 
     /// <summary>
@@ -44,7 +44,7 @@ public abstract class TrunkOrigination : UbluxDocument
     [IgnoreDataMember]
     [AllowUpdate(false)]
     [References(typeof(CloudServicePbx))]
-    [IsRequired]
+    [IsUbluxRequired]
     public required string IdCloudServicePbxFailover { get; set; }
 
     // This can be ontained quering database
@@ -54,7 +54,7 @@ public abstract class TrunkOrigination : UbluxDocument
     //[References(typeof(VoipNumber))]
     //[IgnoreDataMember]
     //[AllowUpdate(false)]
-    //[IsRequired]
+    //[IsUbluxRequired]
     //public List<string> IdsVoipNumbers { get; set; } = new();
 
     #endregion
@@ -66,7 +66,7 @@ public abstract class TrunkOrigination : UbluxDocument
     /// </summary>
     [AllowUpdate(false)]
     [HideForCreateRequest]
-    [IsRequired]
+    [IsUbluxRequired]
     public abstract TrunkOriginationType TrunkOriginationType { get; }
 
     ///// <summary>
@@ -82,7 +82,7 @@ public abstract class TrunkOrigination : UbluxDocument
     /// </summary>
     [IgnoreDataMember]
     [AllowUpdate(false)]
-    [IsRequired]
+    [IsUbluxRequired]
     public required string ProviderId { get; set; }
 
     ///// <summary>
@@ -95,7 +95,7 @@ public abstract class TrunkOrigination : UbluxDocument
     /// </summary>
     [IgnoreDataMember]
     [AllowUpdate(false)]
-    [IsRequired]
+    [IsUbluxRequired]
     public required string FriendlyName { get; set; }
 
     ///// <summary>

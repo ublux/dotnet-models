@@ -15,7 +15,7 @@ public partial class Account : UbluxDocument
     //[IgnoreDataMember]
     //[AllowUpdate(false)]
     //[References(typeof(CloudServicePbx))]
-    //[IsRequired]
+    //[IsUbluxRequired]
     //public required string IdCloudServicePbxFailover { get; set; }
 
     ///// <summary>
@@ -24,7 +24,7 @@ public partial class Account : UbluxDocument
     //[IgnoreDataMember]
     //[AllowUpdate(false)]
     //[References(typeof(CloudServiceWebApp))]
-    //[IsRequired]
+    //[IsUbluxRequired]
     //public required string IdCloudServiceWebApp { get; set; }
 
     /// <summary>
@@ -38,7 +38,7 @@ public partial class Account : UbluxDocument
     [IgnoreDataMember]
     [References(typeof(TrunkTerminationGroup))]
     [AllowUpdate(false)]
-    [IsRequired]
+    [IsUbluxRequired]
     public required string IdGTrunkTerminationGroup { get; set; }
 
 
@@ -59,7 +59,7 @@ public partial class Account : UbluxDocument
     /// </summary>
     [IgnoreDataMember]
     [AllowUpdate(false)]
-    [IsRequired]
+    [IsUbluxRequired]
     public UbluxPartner UbluxPartner { get; set; }
 }
 

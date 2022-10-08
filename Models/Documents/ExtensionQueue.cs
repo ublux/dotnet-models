@@ -14,7 +14,7 @@ public partial class ExtensionQueue : Extension
     /// </summary>
     [References(typeof(Line))]
     [AllowUpdate(true)]
-    [IsRequired]
+    [IsUbluxRequired]
     public List<string> IdsLines { get; set; } = new();
 
     /// <summary>
@@ -22,7 +22,7 @@ public partial class ExtensionQueue : Extension
     /// </summary>
     [References(typeof(Extension))]
     [AllowUpdate(true)]
-    [IsRequired]
+    [IsUbluxRequired]
     public required string IdExtensionIfTimeout { get; set; }
 
     /// <summary>
@@ -58,7 +58,7 @@ public partial class ExtensionQueue : Extension
     ///     Time that lines will ring in seconds until answered
     /// </summary>
     [AllowUpdate(true)]
-    [IsRequired]
+    [IsUbluxRequired]
     public required int RingTimeInSeconds { get; set; }
 
     /// <summary>
@@ -71,7 +71,7 @@ public partial class ExtensionQueue : Extension
     ///     Maximum amount of minutes a user can be waiting on the queue.
     /// </summary>
     [AllowUpdate(true)]
-    [IsRequired]
+    [IsUbluxRequired]
     public required int QueueTimeoutInMinutes { get; set; }
 
     /// <summary>
@@ -84,7 +84,7 @@ public partial class ExtensionQueue : Extension
     ///     Number of seconds to wait in between rings. Default value if null is 20 seconds
     /// </summary>
     [AllowUpdate(true)]
-    [IsRequired]
+    [IsUbluxRequired]
     public required int RetryFrequency { get; set; }
 
     /// <summary>
@@ -110,7 +110,7 @@ public partial class ExtensionQueue : Extension
     ///     Type of extension
     /// </summary>
     [AllowUpdate(false)]
-    [IsRequired]
+    [IsUbluxRequired]
     [HideForCreateRequest]
     public override ExtensionType ExtensionType => ExtensionType.Queue;
 }

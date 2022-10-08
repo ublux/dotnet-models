@@ -9,7 +9,7 @@ public class ChannelVariables
     ///     Language. For example if you leave a voicemail to an extension that has default settings 
     ///     then the greeting message will be played to the caller in this language
     /// </summary>
-    [IsRequired]
+    [IsUbluxRequired]
     public Language Language { get; set; }
 
     /// <summary>
@@ -20,12 +20,12 @@ public class ChannelVariables
     /// <summary>
     ///     Caller id is composed of a name and phone number. This is the name part of the caller id
     /// </summary>
-    [IsRequired]
+    [IsUbluxRequired]
     public required string CallerIdName { get; set; }
 
     /// <summary>
     ///     Caller id is composed of a name and phone number. This is the phone number part of the caller id
     /// </summary>
-    [IsRequired]
+    [IsUbluxRequired]
     public required string CallerIdNumber { get; set; }
 }

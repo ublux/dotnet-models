@@ -16,7 +16,7 @@ public partial class Identity : UbluxDocument
     ///     Value = Permissions it has on that role. Maybe it can only read data from that service but it cannot update, create or modify. 
     /// </summary>
     [AllowUpdate(true)]
-    [IsRequired]
+    [IsUbluxRequired]
     [BsonRepresentation(BsonType.String)]
     public required List<UbluxRole> UbluxRoles { get; set; }
 
@@ -27,7 +27,7 @@ public partial class Identity : UbluxDocument
     ///     If its a PBX then it is the instance id
     /// </summary>
     [AllowUpdate(false)]
-    [IsRequired]
+    [IsUbluxRequired]
     public required string Username
     {
         get => (username ?? string.Empty).ToLower();
@@ -45,7 +45,7 @@ public partial class Identity : UbluxDocument
     ///     Password needed to authenticate. This is different than the Authorization.
     /// </summary>
     [AllowUpdate(false)]
-    [IsRequired]
+    [IsUbluxRequired]
     [HideForCreateRequest]
     // virtual because of unit tests so that it can mock this object
     public required string Password { get; set; }
@@ -54,7 +54,7 @@ public partial class Identity : UbluxDocument
     ///     What type of user is this? Is this a PBX? WA?
     /// </summary>
     [AllowUpdate(false)]
-    [IsRequired]
+    [IsUbluxRequired]
     [HideForCreateRequest] // remember to add this on admin service!
     // virtual because of unit tests so that it can mock this object
     public required IdentityType IdentityType { get; set; }

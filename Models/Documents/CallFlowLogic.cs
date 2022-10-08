@@ -11,7 +11,7 @@ public partial class CallFlowLogic : UbluxDocument
     ///     Name of virtual receptionist
     /// </summary>
     [AllowUpdate(true)]
-    [IsRequired]
+    [IsUbluxRequired]
     public required string FriendlyName { get; set; }
 
     /// <summary>
@@ -24,7 +24,7 @@ public partial class CallFlowLogic : UbluxDocument
     ///     XML containing the call flow rules
     /// </summary>
     [AllowUpdate(true)]
-    [IsRequired]
+    [IsUbluxRequired]
     public required string XmlTree { get; set; }
 
     #endregion

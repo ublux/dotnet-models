@@ -66,7 +66,7 @@ public partial class Contact : UbluxDocument
     ///     Used to know if contact changed or not. Contacts service is responsible (Julio) for generating this hash
     /// </summary>
     [AllowUpdate(false)]
-    // [IsRequired]
+    // [IsUbluxRequired]
     [HideForCreateRequest]
     public string? Hash { get; set; }
 

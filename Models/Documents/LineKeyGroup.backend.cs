@@ -11,7 +11,7 @@ public partial class LineKeyGroup : UbluxDocument, IReferncesAccount
     [References(typeof(Account))]
     [IgnoreDataMember]
     [AllowUpdate(false)]
-    [IsRequired]
+    [IsUbluxRequired]
     [HideForCreateRequest]
     public required string IdAccount { get; set; }
 }

@@ -9,7 +9,7 @@ public partial class ContactEmail
     ///     Contact email address
     /// </summary>
     [AllowUpdate(true)]
-    [IsRequired]
+    [IsUbluxRequired]
     public required string Email { get; set; }
 
     /// <summary>

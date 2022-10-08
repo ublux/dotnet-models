@@ -16,7 +16,7 @@ public partial class TrunkOriginationForward : TrunkOrigination
     /// </summary>
     [AllowUpdate(false)]
     [IgnoreDataMember]
-    [IsRequired]
+    [IsUbluxRequired]
     public required string SipUri { get; set; }
 
     /// <summary>
@@ -24,7 +24,7 @@ public partial class TrunkOriginationForward : TrunkOrigination
     /// </summary>
     [AllowUpdate(false)]
     [IgnoreDataMember]
-    [IsRequired]
+    [IsUbluxRequired]
     public required string SipUriFailover { get; set; }
 
     /// <summary>
@@ -32,7 +32,7 @@ public partial class TrunkOriginationForward : TrunkOrigination
     /// </summary>
     [AllowUpdate(false)]
     // [IgnoreDataMember] if ignored deserialization will not work
-    [IsRequired]
+    [IsUbluxRequired]
     [HideForCreateRequest]
     public override TrunkOriginationType TrunkOriginationType => TrunkOriginationType.Forward;
 }

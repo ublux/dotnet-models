@@ -22,7 +22,7 @@ public class RulePhone : Rule
     /// <summary>
     ///     Day of week when to execute
     /// </summary>
-    [IsRequired]
+    [IsUbluxRequired]
     [AllowUpdate(true)]
     [BsonRepresentation(BsonType.String)]
     public required List<DayOfWeek> DaysOfWeek { get; set; }

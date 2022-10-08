@@ -9,7 +9,7 @@ public class ChildCallForwardToExtension : ChildCall, ICallToExtension
     /// <summary>
     ///     Extension being called
     /// </summary>
-    // [IsRequired]
+    // [IsUbluxRequired]
     public Extension? Extension { get; set; }     
 
     /// <summary>
@@ -30,7 +30,7 @@ public class ChildCallForwardToExtension : ChildCall, ICallToExtension
     /// <summary>
     ///     ForwardToExtension
     /// </summary>
-    [IsRequired]
+    [IsUbluxRequired]
     public override ChildCallType ChildCallType { get; } = ChildCallType.ForwardToExtension;    
 }
 

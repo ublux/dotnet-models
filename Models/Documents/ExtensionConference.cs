@@ -37,7 +37,7 @@ public partial class ExtensionConference : Extension
     ///     Type of extension
     /// </summary>
     [AllowUpdate(false)]
-    [IsRequired]
+    [IsUbluxRequired]
     [HideForCreateRequest]
     public override ExtensionType ExtensionType => ExtensionType.Conference;
 }

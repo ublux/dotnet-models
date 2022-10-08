@@ -13,7 +13,7 @@ public partial class FaxOutgoing : UbluxSubDocument
     [IgnoreDataMember]
     [AllowUpdate(false)]
     [References(typeof(FaxOutgoingGroup))]
-    [IsRequired]
+    [IsUbluxRequired]
     public required string IdFaxOutgoingGroup { get; set; }
 
     /// <summary>
@@ -21,7 +21,7 @@ public partial class FaxOutgoing : UbluxSubDocument
     /// </summary>
     [AllowUpdate(false)]
     [IgnoreDataMember]
-    [IsRequired]
+    [IsUbluxRequired]
     public required EmailAttachment EmailAttachment { get; set; }
 
     /// <summary>

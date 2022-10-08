@@ -8,12 +8,12 @@ public class ChildCallBlindTransferToExtension : ChildCallBlindTransfer
     /// <summary>
     ///     Extension where it was blind transferred to
     /// </summary>
-    //[IsRequired]
+    //[IsUbluxRequired]
     public Extension? Extension { get; set; } 
 
     /// <summary>
     ///     BlindTransferToExtension
     /// </summary>
-    [IsRequired]
+    [IsUbluxRequired]
     public override ChildCallType ChildCallType { get; } = ChildCallType.BlindTransferToExtension;
 }

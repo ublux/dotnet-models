@@ -32,7 +32,7 @@ public partial class StoredFile : UbluxSubDocument, IReferncesAccount
     [References(typeof(Account))]
     [IgnoreDataMember]
     [AllowUpdate(false)]
-    [IsRequired]
+    [IsUbluxRequired]
     public required string IdAccount { get; set; }
 
     /// <summary>
@@ -40,7 +40,7 @@ public partial class StoredFile : UbluxSubDocument, IReferncesAccount
     /// </summary>
     [IgnoreDataMember]
     [AllowUpdate(false)]
-    [IsRequired]
+    [IsUbluxRequired]
     public required StorageFolderName FolderName { get; set; }
 
     ///// <summary>
@@ -48,7 +48,7 @@ public partial class StoredFile : UbluxSubDocument, IReferncesAccount
     ///// </summary>
     //[IgnoreDataMember]
     //[AllowUpdate(false)]
-    //[IsRequired]
+    //[IsUbluxRequired]
     //public required string FileName { get; set; }
 
     /// <summary>

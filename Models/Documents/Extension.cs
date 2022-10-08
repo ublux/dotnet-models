@@ -36,7 +36,7 @@ public abstract partial class Extension : UbluxDocument
     ///     Type of extension
     /// </summary>
     [AllowUpdate(false)]
-    [IsRequired]
+    [IsUbluxRequired]
     [HideForCreateRequest]
     public abstract ExtensionType ExtensionType { get; }
 
@@ -44,14 +44,14 @@ public abstract partial class Extension : UbluxDocument
     ///     Extension friendly name
     /// </summary>
     [AllowUpdate(true)]
-    [IsRequired]
+    [IsUbluxRequired]
     public required string FriendlyName { get; set; }
 
     /// <summary>
     ///     Extension number
     /// </summary>
     [AllowUpdate(true)]
-    [IsRequired]
+    [IsUbluxRequired]
     public required string Number { get; set; }
 
     /// <summary>

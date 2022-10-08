@@ -10,7 +10,7 @@ public interface ICallToExtension : ICall
     /// </summary>
     //[References(typeof(Extension))]
     [AllowUpdate(false)]
-    //[IsRequired]
+    //[IsUbluxRequired]
     Extension? Extension { get; set; }
 
     /// <summary>

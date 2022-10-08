@@ -44,7 +44,7 @@ public abstract partial class ChildCall : ICall
     /// <summary>
     ///     PSTN or EXTEN
     /// </summary>
-    [IsRequired]
+    [IsUbluxRequired]
     public abstract ChildCallType ChildCallType { get; }
 
     ///// <summary>

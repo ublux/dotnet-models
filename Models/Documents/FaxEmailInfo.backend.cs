@@ -16,7 +16,7 @@ public partial class FaxEmailInfo : UbluxDocument, IReferncesAccount
     [References(typeof(Account))]
     [AllowUpdate(false)]
     [IgnoreDataMember]
-    [IsRequired]
+    [IsUbluxRequired]
     public required string IdAccount { get; set; }
 
     #endregion
@@ -27,7 +27,7 @@ public partial class FaxEmailInfo : UbluxDocument, IReferncesAccount
     /// </summary>
     [AllowUpdate(false)]
     [IgnoreDataMember]
-    [IsRequired]
+    [IsUbluxRequired]
     public required int IdentificationToken { get; set; }
 
     /// <summary>
@@ -35,7 +35,7 @@ public partial class FaxEmailInfo : UbluxDocument, IReferncesAccount
     /// </summary>
     [AllowUpdate(false)]
     [IgnoreDataMember]
-    [IsRequired]
+    [IsUbluxRequired]
     public required DateTime DateIdentificationTokenCreated { get; set; }
 
     /// <summary>

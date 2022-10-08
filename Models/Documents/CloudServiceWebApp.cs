@@ -9,7 +9,7 @@ public partial class CloudServiceWebApp : CloudService
     ///     Type of cloud service
     /// </summary>
     [AllowUpdate(false)]
-    [IsRequired]
+    [IsUbluxRequired]
     [HideForCreateRequest]
     public override CloudServiceType CloudServiceType => CloudServiceType.WA;
 }

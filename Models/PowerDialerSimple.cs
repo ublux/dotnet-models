@@ -14,7 +14,7 @@ public class PowerDialerSimple : PowerDialer
     ///     Type of power dialer
     /// </summary>
     [AllowUpdate(false)]
-    [IsRequired]
+    [IsUbluxRequired]
     public override PowerDialerType PowerDialerType => PowerDialerType.Simple;
 }
 

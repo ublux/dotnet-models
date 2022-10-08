@@ -11,7 +11,7 @@ public partial class CallIncomingToCallFlowLogic : CallIncoming
     /// </summary>
     [References(typeof(CallFlowLogic))]
     [AllowUpdate(false)]
-    [IsRequired]
+    [IsUbluxRequired]
     public required string IdCallFlowLogic { get; set; }
 
     /// <summary>

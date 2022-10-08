@@ -21,20 +21,20 @@ public abstract class PowerDialer
     ///     Type of power dialer
     /// </summary>
     [AllowUpdate(false)]
-    [IsRequired]
+    [IsUbluxRequired]
     public abstract PowerDialerType PowerDialerType { get; }
 
     /// <summary>
     ///     Phone number to call
     /// </summary>
-    [IsRequired]
+    [IsUbluxRequired]
     public required string PhoneNumber { get; set; }
 
     /// <summary>
     ///     Country ISO code of phone number to call
     /// </summary>
     [AllowUpdate(false)]
-    [IsRequired]
+    [IsUbluxRequired]
     public required CountryIsoCode CountryIsoCode { get; set; }
 
     /// <summary>
@@ -46,7 +46,7 @@ public abstract class PowerDialer
     /// <summary>
     ///     Status of this item
     /// </summary>
-    [IsRequired]
+    [IsUbluxRequired]
     public required PowerDialerStatus PowerDialerStatus { get; set; }
 
     /// <summary>

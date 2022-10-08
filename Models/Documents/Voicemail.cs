@@ -16,7 +16,7 @@ public partial class Voicemail : UbluxDocument
     ///     Type of voicemail
     /// </summary>
     [AllowUpdate(false)]
-    [IsRequired]
+    [IsUbluxRequired]
     [HideForCreateRequest]
     public virtual VoicemailType VoicemailType => VoicemailType.Regular;
 
@@ -31,14 +31,14 @@ public partial class Voicemail : UbluxDocument
     ///     Email where voicemail was sent
     /// </summary>
     [AllowUpdate(false)]
-    [IsRequired]
+    [IsUbluxRequired]
     public required string Email { get; set; }
 
     /// <summary>
     ///     Voicemail duration in seconds
     /// </summary>
     [AllowUpdate(false)]
-    [IsRequired]
+    [IsUbluxRequired]
     public required int DurationInSeconds { get; set; }
 
     /// <summary>

@@ -8,7 +8,7 @@ public class MailingAddress
     /// <summary>
     ///     Recipient name
     /// </summary>
-    [IsRequired]
+    [IsUbluxRequired]
     public required string RecipientName { get; set; }
 
     /// <summary>
@@ -19,7 +19,7 @@ public class MailingAddress
     /// <summary>
     ///     Street address
     /// </summary>
-    [IsRequired]
+    [IsUbluxRequired]
     public required string StreetAddress { get; set; }
 
     /// <summary>
@@ -30,19 +30,19 @@ public class MailingAddress
     /// <summary>
     ///     City
     /// </summary>
-    [IsRequired]
+    [IsUbluxRequired]
     public required string City { get; set; }
 
     /// <summary>
     ///     State
     /// </summary>
-    [IsRequired]
+    [IsUbluxRequired]
     public required string State { get; set; }
 
     /// <summary>
     ///     Zip code
     /// </summary>
-    [IsRequired]
+    [IsUbluxRequired]
     public required string ZipCode { get; set; }
 
     /// <summary>

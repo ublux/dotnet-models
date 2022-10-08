@@ -15,7 +15,7 @@ public partial class CustomerInfo : UbluxDocument, IReferncesAccount
     [IgnoreDataMember]
     [References(typeof(Account))]
     [AllowUpdate(false)]
-    [IsRequired]
+    [IsUbluxRequired]
     public required string IdAccount { get; set; }
 
     #endregion
@@ -26,7 +26,7 @@ public partial class CustomerInfo : UbluxDocument, IReferncesAccount
     ///     Address where this phone number is intended to be used
     /// </summary>
     [AllowUpdate(true)]
-    [IsRequired]
+    [IsUbluxRequired]
     public required MailingAddress MailingAddress { get; set; }
 
     /// <summary>

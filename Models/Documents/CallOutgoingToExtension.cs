@@ -15,7 +15,7 @@ public partial class CallOutgoingToExtension : CallOutgoing, ICallToExtension
     /// </summary>
     //[References(typeof(Extension))]
     [AllowUpdate(false)]
-    //[IsRequired]
+    //[IsUbluxRequired]
     public Extension? Extension { get; set; }
 
     /// <summary>
@@ -47,14 +47,14 @@ public partial class CallOutgoingToExtension : CallOutgoing, ICallToExtension
     /////     Extension number that was called
     ///// </summary>
     //[AllowUpdate(false)]
-    //[IsRequired]
+    //[IsUbluxRequired]
     //public required string ExtensionNumber { get; set; }
 
     ///// <summary>
     /////     Name of extension
     ///// </summary>
     //[AllowUpdate(false)]
-    //[IsRequired]
+    //[IsUbluxRequired]
     //public required string ExtensionFriendlyName { get; set; }
 
     /// <summary>

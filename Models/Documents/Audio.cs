@@ -27,14 +27,14 @@ public partial class Audio : UbluxDocument
     ///     Name of audio
     /// </summary>
     [AllowUpdate(true)]
-    [IsRequired]
+    [IsUbluxRequired]
     public required string FriendlyName { get; set; }
 
     /// <summary>
     ///     Duration of audio in seconds
     /// </summary>
     [AllowUpdate(false)]
-    [IsRequired]
+    [IsUbluxRequired]
     [HideForCreateRequest]
     public required int DurationInSeconds { get; set; }
 

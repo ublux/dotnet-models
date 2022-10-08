@@ -6,13 +6,13 @@
 public class EventActionForwardToExtension : EventAction
 {
     /// <inheritdoc/>
-    [IsRequired]
+    [IsUbluxRequired]
     public override EventActionType EventActionType { get; } = EventActionType.ForwardToExtension;
 
     /// <summary>
     ///     Extension where to forward call
     /// </summary>
     [References(typeof(Extension))]
-    [IsRequired]
+    [IsUbluxRequired]
     public required string IdExtension { get; set; } 
 }

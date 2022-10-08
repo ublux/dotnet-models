@@ -11,7 +11,7 @@ public partial class FaxIncoming : UbluxDocument, IReferncesAccount
     [AllowUpdate(false)]
     [IgnoreDataMember]
     [References(typeof(Account))]
-    [IsRequired]
+    [IsUbluxRequired]
     public required string IdAccount { get; set; }
 }
 

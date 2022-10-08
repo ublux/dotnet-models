@@ -6,13 +6,13 @@
 public class EventActionLeaveVoicemail : EventAction
 {
     /// <inheritdoc/>
-    [IsRequired]
+    [IsUbluxRequired]
     public override EventActionType EventActionType { get; } = EventActionType.LeaveVoicemail;
 
     /// <summary>
     ///     Email where to send voicemail
     /// </summary>
-    [IsRequired]
+    [IsUbluxRequired]
     public required string Email { get; set; }
 
     /// <summary>

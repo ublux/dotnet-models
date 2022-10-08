@@ -17,7 +17,7 @@ public partial class AutoProvisionReference : UbluxDocument
     [IgnoreDataMember]
     [AllowUpdate(false)]
     [References(typeof(Phone))]
-    [IsRequired]
+    [IsUbluxRequired]
     public required string IdPhone { get; set; }
 
     /// <summary>

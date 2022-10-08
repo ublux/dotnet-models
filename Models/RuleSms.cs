@@ -8,7 +8,7 @@ public class RuleSms
     /// <summary>
     ///     Email address where to send SMS
     /// </summary>
-    [IsRequired]
+    [IsUbluxRequired]
     [AllowUpdate(true)]
     public required string ForwardToEmailAddress { get; set; }
 }

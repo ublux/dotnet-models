@@ -18,7 +18,7 @@ public partial class TrunkTermination : UbluxDocument
     [References(typeof(VoipProvider))]
     [IgnoreDataMember]
     [AllowUpdate(false)]
-    [IsRequired]
+    [IsUbluxRequired]
     public required string IdVoipProvider { get; set; }
 
     ///// <summary>
@@ -36,7 +36,7 @@ public partial class TrunkTermination : UbluxDocument
     /// </summary>
     [IgnoreDataMember]
     [AllowUpdate(false)]
-    [IsRequired]
+    [IsUbluxRequired]
     public required string ProviderId { get; set; }
 
     /// <summary>
@@ -45,7 +45,7 @@ public partial class TrunkTermination : UbluxDocument
     //[JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [IgnoreDataMember]
     [AllowUpdate(false)]
-    [IsRequired]
+    [IsUbluxRequired]
     public required string TerminationUri { get; set; }
 
     /// <summary>
@@ -67,7 +67,7 @@ public partial class TrunkTermination : UbluxDocument
     /// </summary>
     [IgnoreDataMember]
     [AllowUpdate(false)]
-    [IsRequired]
+    [IsUbluxRequired]
     [BsonRepresentation(BsonType.String)]
     public required List<CountryIsoCode> CountryIsoCodesThatCanCall { get; set; }
 
@@ -76,7 +76,7 @@ public partial class TrunkTermination : UbluxDocument
     /// </summary>
     [IgnoreDataMember]
     [AllowUpdate(false)]
-    [IsRequired]
+    [IsUbluxRequired]
     public required string FriendlyName { get; set; }
 
     ///// <summary>

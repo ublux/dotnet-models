@@ -27,13 +27,13 @@ public abstract partial class CallIncoming : Call
     /// </summary>
     [References(typeof(VoipNumberPhone))]
     [AllowUpdate(false)]
-    [IsRequired]
+    [IsUbluxRequired]
     public required string IdVoipNumberPhone { get; set; } // idDID
 
     /// <summary>
     ///     Phone number that received phone call in international format
     /// </summary>
     [AllowUpdate(false)]
-    [IsRequired]
+    [IsUbluxRequired]
     public required string FromInternationalFormat { get; set; }
 }

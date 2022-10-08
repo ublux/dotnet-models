@@ -8,7 +8,7 @@ public class SnsMessage
     /// <summary>
     ///     Id of message
     /// </summary>
-    [IsRequired]
+    [IsUbluxRequired]
     public string Id { get; set; } = Guid.NewGuid().ToString();
 
     /// <summary>
@@ -19,7 +19,7 @@ public class SnsMessage
     /// <summary>
     ///     Topic or category type
     /// </summary>
-    [IsRequired]
+    [IsUbluxRequired]
     public required SnsTopic SnsTopic { get; set; }
 
     /// <summary>

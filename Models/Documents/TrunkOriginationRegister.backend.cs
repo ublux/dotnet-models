@@ -32,7 +32,7 @@ allow=alaw
     /// </summary>
     [IgnoreDataMember]
     [AllowUpdate(false)]
-    [IsRequired]
+    [IsUbluxRequired]
     public required string Reg_username { get; set; }
 
     /// <summary>
@@ -40,7 +40,7 @@ allow=alaw
     /// </summary>
     [IgnoreDataMember]
     [AllowUpdate(false)]
-    [IsRequired]
+    [IsUbluxRequired]
     public required string Reg_password { get; set; }
 
     /// <summary>
@@ -48,7 +48,7 @@ allow=alaw
     /// </summary>
     [IgnoreDataMember]
     [AllowUpdate(false)]
-    [IsRequired]
+    [IsUbluxRequired]
     public required string Reg_host { get; set; }
 
     /// <summary>
@@ -56,7 +56,7 @@ allow=alaw
     /// </summary>
     [IgnoreDataMember]
     [AllowUpdate(false)]
-    [IsRequired]
+    [IsUbluxRequired]
     public required int Reg_port { get; set; }
 
     ///// <summary>
@@ -72,7 +72,7 @@ allow=alaw
     /// </summary>
     [AllowUpdate(false)]
     // [IgnoreDataMember] if ignored deserialization will not work
-    [IsRequired]
+    [IsUbluxRequired]
     [HideForCreateRequest]
     public override TrunkOriginationType TrunkOriginationType => TrunkOriginationType.Register;
 

@@ -11,14 +11,14 @@ public class AccountSecrets
     /////     EAB24
     ///// </summary>
     //[AllowUpdate(false)]
-    //[IsRequired]
+    //[IsUbluxRequired]
     //public required string PinFax { get; set; }
 
     /// <summary>
     ///     9 digit number that a customer must dial in order to link his phone to a new account. 
     /// </summary>
     [AllowUpdate(false)]
-    [IsRequired]
+    [IsUbluxRequired]
     public required string PinPhone { get; set; } 
 
     /// <summary>
@@ -26,7 +26,7 @@ public class AccountSecrets
     ///     9 digits now to make it more secure
     /// </summary>
     [AllowUpdate(false)]
-    [IsRequired]
+    [IsUbluxRequired]
     public required string PinSpy { get; set; } 
 
 

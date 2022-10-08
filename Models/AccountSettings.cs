@@ -18,7 +18,7 @@ public class AccountSettings
     /// <summary>
     ///     Example: Antonio Namnum (Ublux)
     /// </summary>
-    [IsRequired]
+    [IsUbluxRequired]
     public string ContactCallerIdTemplate { get; set; } = "{FullName} ({Company})";
 
 }

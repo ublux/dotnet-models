@@ -11,32 +11,32 @@ public class AirNetworksCustomerInfo
     /// <summary>
     ///     The passport number or driver's license number
     /// </summary>
-    [IsRequired]
+    [IsUbluxRequired]
     public required string IdNumber { get; set; } 
 
     /// <summary>
     ///     Example Passport or CifNif
     /// </summary>
-    [IsRequired]
+    [IsUbluxRequired]
     public required string IdType { get; set; } 
 
     /// <summary>
     ///     This province should be obtained from AirNetworkProvinces table
     /// </summary>
-    [IsRequired]
+    [IsUbluxRequired]
     public required string Province { get; set; } 
 
     /// <summary>
     ///     Id of air networks province
     /// </summary>
     [References(typeof(AirNetworksProvince))]
-    [IsRequired]
+    [IsUbluxRequired]
     public required string IdAirNetworksProvince { get; set; } 
 
     /// <summary>
     ///     Population
     /// </summary>
-    [IsRequired]
+    [IsUbluxRequired]
     public required string Population { get; set; } 
 
     #endregion

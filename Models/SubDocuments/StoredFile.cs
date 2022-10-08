@@ -13,14 +13,14 @@ public partial class StoredFile : UbluxSubDocument
     ///     How big the file is
     /// </summary>
     [AllowUpdate(false)]
-    [IsRequired]
+    [IsUbluxRequired]
     public required int FileSizeInBytes { get; set; }
 
     /// <summary>
     ///     Md5 hash of file
     /// </summary>
     [AllowUpdate(false)]
-    [IsRequired]
+    [IsUbluxRequired]
     public required string Md5Hash { get; set; }
 
     /// <summary>

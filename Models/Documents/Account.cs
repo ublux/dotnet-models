@@ -15,7 +15,7 @@ public partial class Account : UbluxDocument
     /// </summary>
     [AllowUpdate(false)]
     [References(typeof(CloudServicePbx))]
-    [IsRequired]
+    [IsUbluxRequired]
     public required List<string> IdsCloudServicePbxs { get; set; }
 
     #endregion
@@ -32,14 +32,14 @@ public partial class Account : UbluxDocument
     ///     Account secrets
     /// </summary>
     [AllowUpdate(true)]
-    [IsRequired]
+    [IsUbluxRequired]
     public required AccountSecrets AccountSecrets { get; set; } 
 
     /// <summary>
     ///     Customizable settings
     /// </summary>    
     [AllowUpdate(true)]
-    [IsRequired]
+    [IsUbluxRequired]
     public required AccountSettings AccountSettings { get; set; } 
 
     #endregion
@@ -48,7 +48,7 @@ public partial class Account : UbluxDocument
     ///     Name of company
     /// </summary>    
     [AllowUpdate(true)]
-    [IsRequired]
+    [IsUbluxRequired]
     public required string CompanyName { get; set; }
 
     /// <summary>
@@ -61,7 +61,7 @@ public partial class Account : UbluxDocument
     ///     Countries on this list will not be marked as international calls
     /// </summary>
     [AllowUpdate(false)]
-    [IsRequired]
+    [IsUbluxRequired]
     [BsonRepresentation(BsonType.String)]
     public List<CountryIsoCode> CountriesThatCanCallLocally { get; set; } = new();
 

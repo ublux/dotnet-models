@@ -15,7 +15,7 @@ public partial class CallerIdMask : UbluxDocument, IReferncesAccount
     [References(typeof(Account))]
     [IgnoreDataMember]
     [AllowUpdate(false)]
-    [IsRequired]
+    [IsUbluxRequired]
     public required string IdAccount { get; set; }
 
     #endregion
@@ -25,7 +25,7 @@ public partial class CallerIdMask : UbluxDocument, IReferncesAccount
     /// </summary>
     [IgnoreDataMember]
     [AllowUpdate(false)]
-    [IsRequired]
+    [IsUbluxRequired]
     public required string RandomVerificationCode { get; set; }
 
 }

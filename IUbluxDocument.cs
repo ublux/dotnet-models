@@ -14,7 +14,7 @@ public partial interface IUbluxDocument : IUbluxDocumentId
     /// </summary>
     [AllowUpdate(false)]
     [JsonProperty(Order = 1000)]
-    [IsRequired]
+    [IsUbluxRequired]
     DateTime DateCreated { get; set; }
 
     /// <summary>
@@ -38,7 +38,7 @@ public abstract partial class UbluxDocument : IUbluxDocument, IUbluxDocumentId
     [BsonId]
     [BsonElement(Order = -1000000)]
     [JsonProperty(Order = -1000)]
-    [IsRequired]
+    [IsUbluxRequired]
     [HideForCreateRequest]
     [AllowUpdate(true)] // allow update will include property.
                         // This property is needed in order to know what document will be updated

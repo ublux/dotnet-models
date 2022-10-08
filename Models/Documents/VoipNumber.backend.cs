@@ -13,7 +13,7 @@ public abstract partial class VoipNumber : UbluxDocument, IReferncesAccount
     [References(typeof(Account))]
     [IgnoreDataMember]
     [AllowUpdate(false)]
-    [IsRequired]
+    [IsUbluxRequired]
     public required string IdAccount { get; set; }
 
     /// <summary>
@@ -38,7 +38,7 @@ public abstract partial class VoipNumber : UbluxDocument, IReferncesAccount
     [References(typeof(VoipProvider))]
     [IgnoreDataMember]
     [AllowUpdate(false)]
-    [IsRequired]
+    [IsUbluxRequired]
     public required string IdVoipProvider { get; set; }
 
     #endregion
@@ -48,7 +48,7 @@ public abstract partial class VoipNumber : UbluxDocument, IReferncesAccount
     /// </summary>
     [IgnoreDataMember]
     [AllowUpdate(false)]
-    [IsRequired]
+    [IsUbluxRequired]
     public required string ProviderId { get; set; }
 }
 #endif

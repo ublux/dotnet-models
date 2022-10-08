@@ -9,21 +9,21 @@ public partial class FaxOutgoing : UbluxSubDocument
     ///     Number of pages that Pdf contains
     /// </summary>
     [AllowUpdate(false)]
-    [IsRequired]
+    [IsUbluxRequired]
     public required int NumberOfPages { get; set; }
 
     /// <summary>
     ///     Status of fax sent
     /// </summary>
     [AllowUpdate(false)]
-    [IsRequired]
+    [IsUbluxRequired]
     public required string FaxStatus { get; set; }
 
     /// <summary>
     ///     Fax number to where fax was sent
     /// </summary>
     [AllowUpdate(false)]
-    [IsRequired]
+    [IsUbluxRequired]
     public required string To { get; set; }
 
     /// <summary>
@@ -50,7 +50,7 @@ public partial class FaxOutgoing : UbluxSubDocument
     ///     Pdf to be sent as a fax
     /// </summary>
     [AllowUpdate(false)]
-    [IsRequired]
+    [IsUbluxRequired]
     public required StoredFile Pdf { get; set; }
 
     /// <summary>
@@ -69,13 +69,13 @@ public partial class FaxOutgoing : UbluxSubDocument
     ///     File name of attachment
     /// </summary>
     [AllowUpdate(false)]
-    [IsRequired]
+    [IsUbluxRequired]
     public required string Name { get; set; }
 
     /// <summary>
     ///     Used in case the line is busy to retry again
     /// </summary>
     [AllowUpdate(false)]
-    [IsRequired]
+    [IsUbluxRequired]
     public int NumberOfAttempts { get; set; }
 }

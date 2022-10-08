@@ -8,7 +8,7 @@ public class RuleFax : Rule
     /// <summary>
     ///     Email address where to send fax
     /// </summary>
-    [IsRequired]
+    [IsUbluxRequired]
     [AllowUpdate(true)]
     public required string ForwardToEmailAddress { get; set; }
 }

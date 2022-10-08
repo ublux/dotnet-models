@@ -21,7 +21,7 @@ public partial class LineKeyGroup : UbluxDocument
     ///     Friendly name of line key group
     /// </summary>
     [AllowUpdate(true)]
-    [IsRequired]
+    [IsUbluxRequired]
     public required string FriendlyName { get; set; }
 
     /// <summary>

@@ -11,14 +11,14 @@ public partial class CloudServicePbx : CloudService
     [IgnoreDataMember]
     [AllowUpdate(false)]
     [References(typeof(CloudServicePbx))]
-    [IsRequired]
+    [IsUbluxRequired]
     public required string IdCloudServicePbxFailover { get; set; }    
 
     /// <summary>
     ///     Type of cloud service
     /// </summary>
     [AllowUpdate(false)]
-    [IsRequired]
+    [IsUbluxRequired]
     [HideForCreateRequest]
     public override CloudServiceType CloudServiceType => CloudServiceType.PBX;
 }

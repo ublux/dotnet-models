@@ -8,13 +8,13 @@ public class FaxEmail
     /// <summary>
     ///     Email id
     /// </summary>
-    [IsRequired]
+    [IsUbluxRequired]
     public required string Id { get; set; }
 
     /// <summary>
     ///     Email message id
     /// </summary>
-    [IsRequired]
+    [IsUbluxRequired]
     public required string MessageID { get; set; }
 
     /// <summary>
@@ -25,13 +25,13 @@ public class FaxEmail
     /// <summary>
     ///     Subject
     /// </summary>
-    [IsRequired]
+    [IsUbluxRequired]
     public required string Subject { get; set; }
 
     /// <summary>
     ///     From
     /// </summary>
-    [IsRequired]
+    [IsUbluxRequired]
     public required string From { get; set; }
 
 }

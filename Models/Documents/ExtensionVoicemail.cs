@@ -29,7 +29,7 @@ public partial class ExtensionVoicemail : Extension
     ///     Emails where to send the voicemail
     /// </summary>
     [AllowUpdate(true)]
-    [IsRequired]
+    [IsUbluxRequired]
     public required List<string> Email { get; set; }
 
     /// <summary>
@@ -50,7 +50,7 @@ public partial class ExtensionVoicemail : Extension
     ///     Type of extension
     /// </summary>
     [AllowUpdate(false)]
-    [IsRequired]
+    [IsUbluxRequired]
     [HideForCreateRequest]
     public override ExtensionType ExtensionType => ExtensionType.Voicemail;
 }

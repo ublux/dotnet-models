@@ -13,7 +13,7 @@ public class ChildCallAttendantTransferToExtension : ChildCall, IAttendantTransf
     /// <summary>
     ///     AttendantTransferToExtension
     /// </summary>
-    [IsRequired]
+    [IsUbluxRequired]
     public override ChildCallType ChildCallType { get; } = ChildCallType.AttendantTransferToExtension;
 
 

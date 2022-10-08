@@ -22,7 +22,7 @@ public abstract partial class CallIncoming : Call
     [References(typeof(VoipProvider))]
     [AllowUpdate(false)]
     [IgnoreDataMember]
-    [IsRequired]
+    [IsUbluxRequired]
     public required string IdVoipProvider { get; set; }
 }
 

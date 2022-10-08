@@ -8,19 +8,19 @@ public class EmailAttachment
     /// <summary>
     ///     Id of attachment
     /// </summary>
-    [IsRequired]
+    [IsUbluxRequired]
     public required string Id { get; set; }
 
     /// <summary>
     ///     To what email it points to
     /// </summary>
-    [IsRequired]
+    [IsUbluxRequired]
     public required string IdFaxEmailInfo { get; set; }
 
     /// <summary>
     ///     Attachment name
     /// </summary>
-    [IsRequired]
+    [IsUbluxRequired]
     public required string Name { get; set; }
 
     /// <summary>

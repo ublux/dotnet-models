@@ -15,7 +15,7 @@ public partial class CallIncomingToExtension : CallIncoming, ICallToExtension
     /// </summary>
     //[References(typeof(Extension))]
     [AllowUpdate(false)]
-    //[IsRequired]
+    //[IsUbluxRequired]
     public Extension? Extension { get; set; }
 
     /// <summary>

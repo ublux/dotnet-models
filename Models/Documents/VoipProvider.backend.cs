@@ -12,7 +12,7 @@ public partial class VoipProvider : UbluxDocument
     /// </summary>
     [AllowUpdate(false)]
     [IgnoreDataMember]
-    [IsRequired]
+    [IsUbluxRequired]
     public required string ProviderAccountId { get; set; }
 
     /// <summary>
@@ -34,7 +34,7 @@ public partial class VoipProvider : UbluxDocument
     /// </summary>
     [AllowUpdate(false)]
     [IgnoreDataMember]
-    [IsRequired]
+    [IsUbluxRequired]
     public required UbluxPartner UbluxPartner { get; set; }
 
     /// <summary>
@@ -42,7 +42,7 @@ public partial class VoipProvider : UbluxDocument
     /// </summary>
     [AllowUpdate(false)]
     [IgnoreDataMember]
-    [IsRequired]
+    [IsUbluxRequired]
     public required string FriendlyName { get; set; }
 
     /// <summary>
@@ -57,7 +57,7 @@ public partial class VoipProvider : UbluxDocument
     /// </summary>
     [AllowUpdate(false)]
     [IgnoreDataMember]
-    [IsRequired]
+    [IsUbluxRequired]
     public required CountryIsoCode Country { get; set; }
 
     /// <summary>
@@ -65,7 +65,7 @@ public partial class VoipProvider : UbluxDocument
     /// </summary>
     [AllowUpdate(false)]
     [IgnoreDataMember]
-    [IsRequired]
+    [IsUbluxRequired]
     public required VoipCompany VoipCompany { get; set; }
 }
 

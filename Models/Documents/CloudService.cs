@@ -23,14 +23,14 @@ public abstract partial class CloudService : UbluxDocument
     ///// </summary>
     //[AllowUpdate(false)]
     //[References(typeof(Identity))]
-    //[IsRequired]
+    //[IsUbluxRequired]
     //public string required IdIdentity { get; set; }
 
     /// <summary>
     ///     Type of cloud service
     /// </summary>
     [AllowUpdate(false)]
-    [IsRequired]
+    [IsUbluxRequired]
     [HideForCreateRequest]
     public abstract CloudServiceType CloudServiceType { get; }
 
@@ -39,7 +39,7 @@ public abstract partial class CloudService : UbluxDocument
     ///     Example: US, MX
     /// </summary>
     [AllowUpdate(false)]
-    [IsRequired]
+    [IsUbluxRequired]
     public required CountryIsoCode CountryIsoCode { get; set; }
 
     /// <summary>
@@ -56,7 +56,7 @@ public abstract partial class CloudService : UbluxDocument
     /////     It is a list because sometimes it may contain multiple public ips. For example in namschul we get requests of ip phones from a different ip
     ///// </summary>
     //[AllowUpdate(false)]
-    //[IsRequired]
+    //[IsUbluxRequired]
     //public List<string> ExternalIps { get; set; } = new();
 
     /// <summary>
@@ -70,14 +70,14 @@ public abstract partial class CloudService : UbluxDocument
     ///     Is this service used as a backup pbx? Failover and NonFailover servers should NEVER overlap.         
     /// </summary>
     [AllowUpdate(false)]
-    [IsRequired]
+    [IsUbluxRequired]
     public required bool IsFailover { get; set; }
 
     /// <summary>
     ///     Is there a router? For example on Divieto this will be true. On Canal Park this will be false
     /// </summary>
     [AllowUpdate(false)]
-    [IsRequired]
+    [IsUbluxRequired]
     public required bool Nat { get; set; }
 
     /// <summary>

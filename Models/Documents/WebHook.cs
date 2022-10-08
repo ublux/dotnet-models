@@ -11,14 +11,14 @@ public partial class WebHook : UbluxDocument
     ///     Points to enum and not database!
     /// </summary>
     [AllowUpdate(true)]
-    [IsRequired]
+    [IsUbluxRequired]
     public required WebHookEvent WebHookEvent { get; set; }
 
     /// <summary>
     ///     Url where event will be sent
     /// </summary>
     [AllowUpdate(true)]
-    [IsRequired]
+    [IsUbluxRequired]
     public required string Url { get; set; }
 
     /// <summary>

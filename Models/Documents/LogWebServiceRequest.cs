@@ -60,7 +60,7 @@ public partial class LogWebServiceRequest : UbluxDocument
     ///     Is it a GET,POST,DELETE or PATCH request?
     /// </summary>
     [AllowUpdate(false)]
-    [IsRequired]
+    [IsUbluxRequired]
     public required string HttpMethod { get; set; }
 
     /// <summary>
@@ -73,14 +73,14 @@ public partial class LogWebServiceRequest : UbluxDocument
     ///     Ip address where request came from
     /// </summary>
     [AllowUpdate(false)]
-    [IsRequired]
+    [IsUbluxRequired]
     public required string Ip { get; set; }
 
     /// <summary>
     ///     Request url without query string
     /// </summary>
     [AllowUpdate(false)]
-    [IsRequired]
+    [IsUbluxRequired]
     public required string RequestUrl { get; set; }
 
     /// <summary>
@@ -112,7 +112,7 @@ public partial class LogWebServiceRequest : UbluxDocument
     ///     Response status code
     /// </summary>
     [AllowUpdate(false)]
-    [IsRequired]
+    [IsUbluxRequired]
     public required HttpResponseStatusCode HttpResponseStatusCode { get; set; }
 
     /// <summary>
@@ -120,7 +120,7 @@ public partial class LogWebServiceRequest : UbluxDocument
     ///     This is the duration of the request
     /// </summary>
     [AllowUpdate(false)]
-    [IsRequired]
+    [IsUbluxRequired]
     public int ResponseTime { get; set; }
 
     #endregion

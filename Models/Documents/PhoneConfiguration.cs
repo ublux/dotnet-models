@@ -22,7 +22,7 @@ public partial class PhoneConfiguration : UbluxDocument
     ///     Phone configuration name
     /// </summary>
     [AllowUpdate(true)]
-    [IsRequired]
+    [IsUbluxRequired]
     public required string FrienlyName { get; set; }
 
     /// <summary>
