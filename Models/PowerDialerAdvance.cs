@@ -17,5 +17,11 @@ public class PowerDialerAdvance : PowerDialer
     /// </summary>
     [AllowUpdate(false)]
     [IsUbluxRequired]
-    public override PowerDialerType PowerDialerType => PowerDialerType.Advanced;
+    [BsonRepresentation(BsonType.String)] // important so that it is saved on mongo
+    public override PowerDialerType PowerDialerType
+    {
+        get => PowerDialerType.Advanced;
+        //[Obsolete("set method is only used to so that field is stored on mongo DB")]
+        //internal set { }
+    }
 }

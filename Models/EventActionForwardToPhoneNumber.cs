@@ -7,7 +7,13 @@ public class EventActionForwardToPhoneNumber : EventAction
 {
     /// <inheritdoc/>
     [IsUbluxRequired]
-    public override EventActionType EventActionType { get; } = EventActionType.ForwardToPhoneNumber;
+    [BsonRepresentation(BsonType.String)] // important so that it is saved on mongo
+    public override EventActionType EventActionType
+    {
+        get => EventActionType.ForwardToPhoneNumber;
+        //[Obsolete("set method is only used to so that field is stored on mongo DB")]
+        //internal set { }
+    }
 
     /// <summary>
     ///     Phone number where to forward the call

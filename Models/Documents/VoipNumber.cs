@@ -44,7 +44,13 @@ public abstract partial class VoipNumber : UbluxDocument
     /// </summary>
     [AllowUpdate(false)]
     [HideForCreateRequest]
-    public abstract VoipNumberType VoipNumberType { get; }
+    [BsonRepresentation(BsonType.String)] // important so that it is saved on mongo
+    public abstract VoipNumberType VoipNumberType
+    {
+        get;
+        //[Obsolete("set method is only used to so that field is stored on mongo DB")]
+        //internal set;
+    }
 
     /// <summary>
     ///     This is only for external incoming calls

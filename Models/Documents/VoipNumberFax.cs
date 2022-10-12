@@ -1,4 +1,4 @@
-﻿namespace Ublux.Communications.Models.Documents; 
+﻿namespace Ublux.Communications.Models.Documents;
 
 /// <summary>
 ///     Incoming phone number configured to receive faxes
@@ -30,5 +30,11 @@ public partial class VoipNumberFax : VoipNumber
     /// </summary>
     [AllowUpdate(false)]
     [HideForCreateRequest]
-    public override VoipNumberType VoipNumberType => VoipNumberType.Fax;
+    [BsonRepresentation(BsonType.String)] // important so that it is saved on mongo
+    public override VoipNumberType VoipNumberType
+    {
+        get => VoipNumberType.Fax;
+        //[Obsolete("set method is only used to so that field is stored on mongo DB")]
+        //internal set { }
+    }
 }

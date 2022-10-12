@@ -31,5 +31,11 @@ public partial class VoipNumberPhone : VoipNumber
     /// </summary>
     [AllowUpdate(false)]
     [HideForCreateRequest]
-    public override VoipNumberType VoipNumberType => VoipNumberType.Phone;
+    [BsonRepresentation(BsonType.String)] // important so that it is saved on mongo
+    public override VoipNumberType VoipNumberType
+    {
+        get => VoipNumberType.Phone;
+        //[Obsolete("set method is only used to so that field is stored on mongo DB")]
+        //internal set { }
+    }
 }

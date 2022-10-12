@@ -18,6 +18,12 @@ public abstract partial class EventAction
     /// <summary>
     ///     Reason why this action should execute
     /// </summary>
-    public abstract EventActionType EventActionType { get; }
+    [BsonRepresentation(BsonType.String)] // important so that it is saved on mongo
+    public abstract EventActionType EventActionType
+    {
+        get;
+        //[Obsolete("set method is only used to so that field is stored on mongo DB")]
+        //internal set;
+    }
 }
 

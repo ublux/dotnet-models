@@ -119,9 +119,16 @@ public abstract partial class Call : UbluxDocument, ICall
 
     /// <summary>
     ///     Type of call
+    ///     TODO: Create index on DB
     /// </summary>
     [AllowUpdate(false)]
-    public abstract CallType CallType { get; }
+    [BsonRepresentation(BsonType.String)] // important so that it is saved on mongo
+    public abstract CallType CallType
+    {
+        get;
+        //[Obsolete("set method is only used to so that field is stored on mongo DB")]
+        //internal set;
+    }
 
     /// <summary>
     ///     True if call has recording

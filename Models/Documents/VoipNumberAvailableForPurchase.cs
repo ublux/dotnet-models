@@ -45,5 +45,11 @@ public partial class VoipNumberAvailableForPurchase : VoipNumber
     /// </summary>
     [AllowUpdate(false)]
     [HideForCreateRequest]
-    public override VoipNumberType VoipNumberType => VoipNumberType.AvailableForPurchase;
+    [BsonRepresentation(BsonType.String)] // important so that it is saved on mongo
+    public override VoipNumberType VoipNumberType
+    {
+        get => VoipNumberType.AvailableForPurchase;
+        //[Obsolete("set method is only used to so that field is stored on mongo DB")]
+        //internal set { }
+    }
 }

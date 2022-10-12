@@ -15,7 +15,7 @@ public partial class ExtensionDial : Extension
     [References(typeof(Line))]
     [AllowUpdate(true)]
     [IsUbluxRequired]
-    public List<string> IdsLines { get; set; } = new();    
+    public List<string> IdsLines { get; set; } = new();
 
     #endregion
 
@@ -50,5 +50,11 @@ public partial class ExtensionDial : Extension
     [AllowUpdate(false)]
     [IsUbluxRequired]
     [HideForCreateRequest]
-    public override ExtensionType ExtensionType => ExtensionType.Dial;
+    [BsonRepresentation(BsonType.String)] // important so that it is saved on mongo
+    public override ExtensionType ExtensionType
+    {
+        get => ExtensionType.Dial;
+        //[Obsolete("set method is only used to so that field is stored on mongo DB")]
+        //internal set { }
+    }
 }

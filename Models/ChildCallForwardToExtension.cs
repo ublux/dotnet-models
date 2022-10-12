@@ -10,7 +10,7 @@ public class ChildCallForwardToExtension : ChildCall, ICallToExtension
     ///     Extension being called
     /// </summary>
     // [IsUbluxRequired]
-    public Extension? Extension { get; set; }     
+    public Extension? Extension { get; set; }
 
     /// <summary>
     ///     Line that answered
@@ -31,6 +31,12 @@ public class ChildCallForwardToExtension : ChildCall, ICallToExtension
     ///     ForwardToExtension
     /// </summary>
     [IsUbluxRequired]
-    public override ChildCallType ChildCallType { get; } = ChildCallType.ForwardToExtension;    
+    [BsonRepresentation(BsonType.String)] // important so that it is saved on mongo
+    public override ChildCallType ChildCallType
+    {
+        get => ChildCallType.ForwardToExtension;
+        //[Obsolete("set method is only used to so that field is stored on mongo DB")]
+        //internal set { }
+    }
 }
 

@@ -67,7 +67,13 @@ public abstract class TrunkOrigination : UbluxDocument
     [AllowUpdate(false)]
     [HideForCreateRequest]
     [IsUbluxRequired]
-    public abstract TrunkOriginationType TrunkOriginationType { get; }
+    [BsonRepresentation(BsonType.String)] // important so that it is saved on mongo
+    public abstract TrunkOriginationType TrunkOriginationType
+    {
+        get;
+        //[Obsolete("set method is only used to so that field is stored on mongo DB")]
+        //internal set;
+    }
 
     ///// <summary>
     /////     When a pbx goes offline or is unhealthy we will move this trunk origination to failover region

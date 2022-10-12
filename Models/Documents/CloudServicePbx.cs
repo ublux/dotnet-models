@@ -12,7 +12,7 @@ public partial class CloudServicePbx : CloudService
     [AllowUpdate(false)]
     [References(typeof(CloudServicePbx))]
     [IsUbluxRequired]
-    public required string IdCloudServicePbxFailover { get; set; }    
+    public required string IdCloudServicePbxFailover { get; set; }
 
     /// <summary>
     ///     Type of cloud service
@@ -20,5 +20,11 @@ public partial class CloudServicePbx : CloudService
     [AllowUpdate(false)]
     [IsUbluxRequired]
     [HideForCreateRequest]
-    public override CloudServiceType CloudServiceType => CloudServiceType.PBX;
+    [BsonRepresentation(BsonType.String)] // important so that it is saved on mongo
+    public override CloudServiceType CloudServiceType
+    {
+        get => CloudServiceType.PBX;
+        //[Obsolete("set method is only used to so that field is stored on mongo DB")]
+        //internal set { }
+    }
 }

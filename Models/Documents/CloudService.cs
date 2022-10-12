@@ -32,7 +32,13 @@ public abstract partial class CloudService : UbluxDocument
     [AllowUpdate(false)]
     [IsUbluxRequired]
     [HideForCreateRequest]
-    public abstract CloudServiceType CloudServiceType { get; }
+    [BsonRepresentation(BsonType.String)] // important so that it is saved on mongo
+    public abstract CloudServiceType CloudServiceType
+    {
+        get;
+        //[Obsolete("set method is only used to so that field is stored on mongo DB")]
+        //internal set;
+    }
 
     /// <summary>
     ///     Country where this system is located

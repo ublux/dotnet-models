@@ -52,5 +52,11 @@ public partial class ExtensionVoicemail : Extension
     [AllowUpdate(false)]
     [IsUbluxRequired]
     [HideForCreateRequest]
-    public override ExtensionType ExtensionType => ExtensionType.Voicemail;
+    [BsonRepresentation(BsonType.String)] // important so that it is saved on mongo
+    public override ExtensionType ExtensionType
+    {
+        get => ExtensionType.Voicemail;
+        //[Obsolete("set method is only used to so that field is stored on mongo DB")]
+        //internal set { }
+    }
 }

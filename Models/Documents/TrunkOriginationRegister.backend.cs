@@ -74,7 +74,13 @@ allow=alaw
     // [IgnoreDataMember] if ignored deserialization will not work
     [IsUbluxRequired]
     [HideForCreateRequest]
-    public override TrunkOriginationType TrunkOriginationType => TrunkOriginationType.Register;
+    [BsonRepresentation(BsonType.String)] // important so that it is saved on mongo
+    public override TrunkOriginationType TrunkOriginationType
+    {
+        get => TrunkOriginationType.Register;
+        //[Obsolete("set method is only used to so that field is stored on mongo DB")]
+        //internal set { }
+    }
 
     // todo check status. For example if trunk is not registered then register on failover pbx
 }
