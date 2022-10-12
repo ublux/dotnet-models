@@ -24,9 +24,7 @@
 /// </summary>
 public enum UbluxRole
 {
-    #region Low priority
-
-
+    #region Low priority (auto generated at Generator_UserControllers.cs last line)
 
     /// <summary> Has access to the audios endpoint with full permissions </summary>
     audios = 10,
@@ -39,7 +37,6 @@ public enum UbluxRole
     /// <summary> Has access to the audios endpoint with only read/create permissions </summary>
     audios_create,
 
-
     /// <summary> Has access to the blacklistphonenumbers endpoint with full permissions </summary>
     blacklistphonenumbers = 20,
     /// <summary> Has access to the blacklistphonenumbers endpoint with only read permissions </summary>
@@ -50,7 +47,6 @@ public enum UbluxRole
     blacklistphonenumbers_delete,
     /// <summary> Has access to the blacklistphonenumbers endpoint with only read/create permissions </summary>
     blacklistphonenumbers_create,
-
 
     /// <summary> Has access to the calls endpoint with full permissions </summary>
     calls = 30,
@@ -63,7 +59,6 @@ public enum UbluxRole
     /// <summary> Has access to the calls endpoint with only read/create permissions </summary>
     calls_create,
 
-
     /// <summary> Has access to the calleridmasks endpoint with full permissions </summary>
     calleridmasks = 40,
     /// <summary> Has access to the calleridmasks endpoint with only read permissions </summary>
@@ -74,7 +69,6 @@ public enum UbluxRole
     calleridmasks_delete,
     /// <summary> Has access to the calleridmasks endpoint with only read/create permissions </summary>
     calleridmasks_create,
-
 
     /// <summary> Has access to the callflowlogics endpoint with full permissions </summary>
     callflowlogics = 50,
@@ -87,7 +81,6 @@ public enum UbluxRole
     /// <summary> Has access to the callflowlogics endpoint with only read/create permissions </summary>
     callflowlogics_create,
 
-
     /// <summary> Has access to the callincomings endpoint with full permissions </summary>
     callincomings = 60,
     /// <summary> Has access to the callincomings endpoint with only read permissions </summary>
@@ -98,7 +91,6 @@ public enum UbluxRole
     callincomings_delete,
     /// <summary> Has access to the callincomings endpoint with only read/create permissions </summary>
     callincomings_create,
-
 
     /// <summary> Has access to the callincomingtocallflowlogics endpoint with full permissions </summary>
     callincomingtocallflowlogics = 70,
@@ -111,7 +103,6 @@ public enum UbluxRole
     /// <summary> Has access to the callincomingtocallflowlogics endpoint with only read/create permissions </summary>
     callincomingtocallflowlogics_create,
 
-
     /// <summary> Has access to the callincomingtoextensions endpoint with full permissions </summary>
     callincomingtoextensions = 80,
     /// <summary> Has access to the callincomingtoextensions endpoint with only read permissions </summary>
@@ -122,7 +113,6 @@ public enum UbluxRole
     callincomingtoextensions_delete,
     /// <summary> Has access to the callincomingtoextensions endpoint with only read/create permissions </summary>
     callincomingtoextensions_create,
-
 
     /// <summary> Has access to the calloutgoings endpoint with full permissions </summary>
     calloutgoings = 90,
@@ -135,7 +125,6 @@ public enum UbluxRole
     /// <summary> Has access to the calloutgoings endpoint with only read/create permissions </summary>
     calloutgoings_create,
 
-
     /// <summary> Has access to the calloutgoingtoextensions endpoint with full permissions </summary>
     calloutgoingtoextensions = 100,
     /// <summary> Has access to the calloutgoingtoextensions endpoint with only read permissions </summary>
@@ -146,7 +135,6 @@ public enum UbluxRole
     calloutgoingtoextensions_delete,
     /// <summary> Has access to the calloutgoingtoextensions endpoint with only read/create permissions </summary>
     calloutgoingtoextensions_create,
-
 
     /// <summary> Has access to the calloutgoingtopstns endpoint with full permissions </summary>
     calloutgoingtopstns = 110,
@@ -159,7 +147,6 @@ public enum UbluxRole
     /// <summary> Has access to the calloutgoingtopstns endpoint with only read/create permissions </summary>
     calloutgoingtopstns_create,
 
-
     /// <summary> Has access to the contacts endpoint with full permissions </summary>
     contacts = 120,
     /// <summary> Has access to the contacts endpoint with only read permissions </summary>
@@ -170,7 +157,6 @@ public enum UbluxRole
     contacts_delete,
     /// <summary> Has access to the contacts endpoint with only read/create permissions </summary>
     contacts_create,
-
 
     /// <summary> Has access to the customerinfos endpoint with full permissions </summary>
     customerinfos = 130,
@@ -183,7 +169,6 @@ public enum UbluxRole
     /// <summary> Has access to the customerinfos endpoint with only read/create permissions </summary>
     customerinfos_create,
 
-
     /// <summary> Has access to the extensions endpoint with full permissions </summary>
     extensions = 140,
     /// <summary> Has access to the extensions endpoint with only read permissions </summary>
@@ -194,7 +179,6 @@ public enum UbluxRole
     extensions_delete,
     /// <summary> Has access to the extensions endpoint with only read/create permissions </summary>
     extensions_create,
-
 
     /// <summary> Has access to the extensioncallflowlogics endpoint with full permissions </summary>
     extensioncallflowlogics = 150,
@@ -207,7 +191,6 @@ public enum UbluxRole
     /// <summary> Has access to the extensioncallflowlogics endpoint with only read/create permissions </summary>
     extensioncallflowlogics_create,
 
-
     /// <summary> Has access to the extensionconferences endpoint with full permissions </summary>
     extensionconferences = 160,
     /// <summary> Has access to the extensionconferences endpoint with only read permissions </summary>
@@ -218,7 +201,6 @@ public enum UbluxRole
     extensionconferences_delete,
     /// <summary> Has access to the extensionconferences endpoint with only read/create permissions </summary>
     extensionconferences_create,
-
 
     /// <summary> Has access to the extensiondials endpoint with full permissions </summary>
     extensiondials = 170,
@@ -231,7 +213,6 @@ public enum UbluxRole
     /// <summary> Has access to the extensiondials endpoint with only read/create permissions </summary>
     extensiondials_create,
 
-
     /// <summary> Has access to the extensionqueues endpoint with full permissions </summary>
     extensionqueues = 180,
     /// <summary> Has access to the extensionqueues endpoint with only read permissions </summary>
@@ -242,7 +223,6 @@ public enum UbluxRole
     extensionqueues_delete,
     /// <summary> Has access to the extensionqueues endpoint with only read/create permissions </summary>
     extensionqueues_create,
-
 
     /// <summary> Has access to the extensionvoicemails endpoint with full permissions </summary>
     extensionvoicemails = 190,
@@ -255,7 +235,6 @@ public enum UbluxRole
     /// <summary> Has access to the extensionvoicemails endpoint with only read/create permissions </summary>
     extensionvoicemails_create,
 
-
     /// <summary> Has access to the faxemailinfos endpoint with full permissions </summary>
     faxemailinfos = 200,
     /// <summary> Has access to the faxemailinfos endpoint with only read permissions </summary>
@@ -266,7 +245,6 @@ public enum UbluxRole
     faxemailinfos_delete,
     /// <summary> Has access to the faxemailinfos endpoint with only read/create permissions </summary>
     faxemailinfos_create,
-
 
     /// <summary> Has access to the faxincomings endpoint with full permissions </summary>
     faxincomings = 210,
@@ -279,7 +257,6 @@ public enum UbluxRole
     /// <summary> Has access to the faxincomings endpoint with only read/create permissions </summary>
     faxincomings_create,
 
-
     /// <summary> Has access to the faxoutgoinggroups endpoint with full permissions </summary>
     faxoutgoinggroups = 220,
     /// <summary> Has access to the faxoutgoinggroups endpoint with only read permissions </summary>
@@ -291,8 +268,7 @@ public enum UbluxRole
     /// <summary> Has access to the faxoutgoinggroups endpoint with only read/create permissions </summary>
     faxoutgoinggroups_create,
 
-
-    /// <summary> Has access to the identitys endpoint with full permissions </summary>
+    /// <summary> Has access to the identities endpoint with full permissions </summary>
     identities = 230,
     /// <summary> Has access to the identities endpoint with only read permissions </summary>
     identities_readonly,
@@ -302,7 +278,6 @@ public enum UbluxRole
     identities_delete,
     /// <summary> Has access to the identities endpoint with only read/create permissions </summary>
     identities_create,
-
 
     /// <summary> Has access to the linekeygroups endpoint with full permissions </summary>
     linekeygroups = 240,
@@ -315,7 +290,6 @@ public enum UbluxRole
     /// <summary> Has access to the linekeygroups endpoint with only read/create permissions </summary>
     linekeygroups_create,
 
-
     /// <summary> Has access to the musiconholdgroups endpoint with full permissions </summary>
     musiconholdgroups = 250,
     /// <summary> Has access to the musiconholdgroups endpoint with only read permissions </summary>
@@ -326,7 +300,6 @@ public enum UbluxRole
     musiconholdgroups_delete,
     /// <summary> Has access to the musiconholdgroups endpoint with only read/create permissions </summary>
     musiconholdgroups_create,
-
 
     /// <summary> Has access to the phones endpoint with full permissions </summary>
     phones = 260,
@@ -339,7 +312,6 @@ public enum UbluxRole
     /// <summary> Has access to the phones endpoint with only read/create permissions </summary>
     phones_create,
 
-
     /// <summary> Has access to the phoneconfigurations endpoint with full permissions </summary>
     phoneconfigurations = 270,
     /// <summary> Has access to the phoneconfigurations endpoint with only read permissions </summary>
@@ -350,7 +322,6 @@ public enum UbluxRole
     phoneconfigurations_delete,
     /// <summary> Has access to the phoneconfigurations endpoint with only read/create permissions </summary>
     phoneconfigurations_create,
-
 
     /// <summary> Has access to the powerdialergroups endpoint with full permissions </summary>
     powerdialergroups = 280,
@@ -363,7 +334,6 @@ public enum UbluxRole
     /// <summary> Has access to the powerdialergroups endpoint with only read/create permissions </summary>
     powerdialergroups_create,
 
-
     /// <summary> Has access to the sms endpoint with full permissions </summary>
     sms = 290,
     /// <summary> Has access to the sms endpoint with only read permissions </summary>
@@ -375,18 +345,16 @@ public enum UbluxRole
     /// <summary> Has access to the sms endpoint with only read/create permissions </summary>
     sms_create,
 
-
-    /// <summary> Has access to the unauthorizedtokens endpoint with full permissions </summary>
-    unauthorizedtokens = 300,
-    /// <summary> Has access to the unauthorizedtokens endpoint with only read permissions </summary>
-    unauthorizedtokens_readonly,
-    /// <summary> Has access to the unauthorizedtokens endpoint with only read/update permissions </summary>
-    unauthorizedtokens_update,
-    /// <summary> Has access to the unauthorizedtokens endpoint with only read/delete permissions </summary>
-    unauthorizedtokens_delete,
-    /// <summary> Has access to the unauthorizedtokens endpoint with only read/create permissions </summary>
-    unauthorizedtokens_create,
-
+    /// <summary> Has access to the voicemails endpoint with full permissions </summary>
+    voicemails = 300,
+    /// <summary> Has access to the voicemails endpoint with only read permissions </summary>
+    voicemails_readonly,
+    /// <summary> Has access to the voicemails endpoint with only read/update permissions </summary>
+    voicemails_update,
+    /// <summary> Has access to the voicemails endpoint with only read/delete permissions </summary>
+    voicemails_delete,
+    /// <summary> Has access to the voicemails endpoint with only read/create permissions </summary>
+    voicemails_create,
 
     /// <summary> Has access to the voipnumbers endpoint with full permissions </summary>
     voipnumbers = 310,
@@ -399,7 +367,6 @@ public enum UbluxRole
     /// <summary> Has access to the voipnumbers endpoint with only read/create permissions </summary>
     voipnumbers_create,
 
-
     /// <summary> Has access to the voipnumberavailableforpurchases endpoint with full permissions </summary>
     voipnumberavailableforpurchases = 320,
     /// <summary> Has access to the voipnumberavailableforpurchases endpoint with only read permissions </summary>
@@ -410,7 +377,6 @@ public enum UbluxRole
     voipnumberavailableforpurchases_delete,
     /// <summary> Has access to the voipnumberavailableforpurchases endpoint with only read/create permissions </summary>
     voipnumberavailableforpurchases_create,
-
 
     /// <summary> Has access to the voipnumberfaxs endpoint with full permissions </summary>
     voipnumberfaxs = 330,
@@ -423,7 +389,6 @@ public enum UbluxRole
     /// <summary> Has access to the voipnumberfaxs endpoint with only read/create permissions </summary>
     voipnumberfaxs_create,
 
-
     /// <summary> Has access to the voipnumberphones endpoint with full permissions </summary>
     voipnumberphones = 340,
     /// <summary> Has access to the voipnumberphones endpoint with only read permissions </summary>
@@ -434,6 +399,18 @@ public enum UbluxRole
     voipnumberphones_delete,
     /// <summary> Has access to the voipnumberphones endpoint with only read/create permissions </summary>
     voipnumberphones_create,
+
+    /// <summary> Has access to the webhooks endpoint with full permissions </summary>
+    webhooks = 350,
+    /// <summary> Has access to the webhooks endpoint with only read permissions </summary>
+    webhooks_readonly,
+    /// <summary> Has access to the webhooks endpoint with only read/update permissions </summary>
+    webhooks_update,
+    /// <summary> Has access to the webhooks endpoint with only read/delete permissions </summary>
+    webhooks_delete,
+    /// <summary> Has access to the webhooks endpoint with only read/create permissions </summary>
+    webhooks_create,
+
 
 
 
@@ -467,6 +444,15 @@ public enum UbluxRole
     admin_delete,
     /// <summary> admin with only read/create permissions </summary>
     admin_create,
+
+    #endregion
+
+    #region Web phone priority
+
+    /// <summary>
+    ///     Used to get webphone password. Ends with 1 because its readonly
+    /// </summary>
+    webphonepass_readonly = 100_001,
 
     #endregion
 

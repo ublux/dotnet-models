@@ -17,7 +17,7 @@
     typeof(ExtensionVoicemail)
 )]
 [DebuggerDisplay("Name:{FriendlyName} Number:{Number} ExtensionType:{ExtensionType}")]
-public abstract partial class Extension : UbluxDocument
+public abstract partial class Extension : UbluxDocument, IReferencesTags
 {
     #region Properties
 
@@ -30,6 +30,13 @@ public abstract partial class Extension : UbluxDocument
     [AllowUpdate(true)]
     public string? IdMusicOnHoldGroup { get; set; }
 
+    /// <summary>
+    ///     Ids of tags
+    /// </summary>
+    [AllowUpdate(true)]
+    [References(typeof(Tag))]
+    public List<string> Tags { get; set; } = new();
+
     #endregion
 
     /// <summary>
@@ -38,12 +45,11 @@ public abstract partial class Extension : UbluxDocument
     [AllowUpdate(false)]
     [IsUbluxRequired]
     [HideForCreateRequest]
-    [BsonRepresentation(BsonType.String)] // important so that it is saved on mongo
     public abstract ExtensionType ExtensionType
     {
         get;
-        //[Obsolete("set method is only used to so that field is stored on mongo DB")]
-        //internal set;
+        [Obsolete("set method is only used to so that field is stored on mongo DB")]
+        internal set;
     }
 
     /// <summary>

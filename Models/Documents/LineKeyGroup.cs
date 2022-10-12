@@ -3,9 +3,20 @@
 /// <summary>
 ///     Group of line keys
 /// </summary>
-public partial class LineKeyGroup : UbluxDocument
+public partial class LineKeyGroup : UbluxDocument, IReferencesTags
 {
     #region Properties
+
+    #region References
+
+    /// <summary>
+    ///     Ids of tags
+    /// </summary>
+    [AllowUpdate(true)]
+    [References(typeof(Tag))]
+    public List<string> Tags { get; set; } = new();
+
+    #endregion
 
     #region Subdocuments
 

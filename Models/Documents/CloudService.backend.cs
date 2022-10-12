@@ -39,7 +39,6 @@ public abstract partial class CloudService : UbluxDocument
     /// </summary>
     public string HostNameSoft() => HostNameSoft(this.InstanceId);
 
-
     /// <summary>
     ///     Examples:  
     ///         us1.ublux.com for csp.us1 pbx

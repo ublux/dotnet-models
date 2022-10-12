@@ -8,6 +8,14 @@ public partial class StoredFile : UbluxSubDocument
 {
     #region Properties    
 
+    // Not used because its a subdocument
+    ///// <summary>
+    /////     Ids of tags
+    ///// </summary>
+    //[AllowUpdate(true)]
+    //[References(typeof(Tag))]
+    //public List<string> Tags { get; set; }  = new();
+
     /// <summary>
     ///     New because we removed table account data
     ///     How big the file is

@@ -3,9 +3,20 @@
 /// <summary>
 ///     Mp3 or Wav audio file. Previously called Audio Greeting
 /// </summary>
-public partial class Audio : UbluxDocument
+public partial class Audio : UbluxDocument, IReferencesTags
 {
     #region Properties
+
+    #region References
+
+    /// <summary>
+    ///     Ids of tags
+    /// </summary>
+    [AllowUpdate(true)]
+    [References(typeof(Tag))]
+    public List<string> Tags { get; set; } = new();
+
+    #endregion
 
     #region Subdocuments
 

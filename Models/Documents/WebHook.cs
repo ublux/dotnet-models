@@ -3,9 +3,20 @@
 /// <summary>
 ///     Web callback that will be fired when a custom event of interest occurs.
 /// </summary>
-public partial class WebHook : UbluxDocument
+public partial class WebHook : UbluxDocument, IReferencesTags
 {
     #region Properties    
+
+    #region References
+
+    /// <summary>
+    ///     Ids of tags
+    /// </summary>
+    [AllowUpdate(true)]
+    [References(typeof(Tag))]
+    public List<string> Tags { get; set; } = new();
+
+    #endregion
 
     /// <summary>
     ///     Points to enum and not database!

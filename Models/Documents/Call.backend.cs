@@ -12,7 +12,7 @@ public abstract partial class Call : UbluxDocument, IReferncesAccount
     [AllowUpdate(false)]
     [IgnoreDataMember]
     [IsUbluxRequired]
-    public required string IdAccount { get; set; }
+    public required string IdAccount { get; set; }    
 
     /// <inheritdoc />
     [AllowUpdate(false)]

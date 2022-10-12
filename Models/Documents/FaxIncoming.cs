@@ -3,7 +3,7 @@
 /// <summary>
 ///     Incoming fax
 /// </summary>
-public partial class FaxIncoming : UbluxDocument
+public partial class FaxIncoming : UbluxDocument, IReferencesTags
 {
     #region Properties
 
@@ -16,6 +16,13 @@ public partial class FaxIncoming : UbluxDocument
     [References(typeof(VoipNumberFax))]
     [IsUbluxRequired]
     public required string IdVoipNumberFax { get; set; }
+
+    /// <summary>
+    ///     Ids of tags
+    /// </summary>
+    [AllowUpdate(true)]
+    [References(typeof(Tag))]
+    public List<string> Tags { get; set; } = new();
 
     #endregion
 

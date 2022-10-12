@@ -47,12 +47,11 @@ public partial class CallIncomingToExtension : CallIncoming, ICallToExtension
     ///     Type of call
     /// </summary>
     [AllowUpdate(false)]
-    [BsonRepresentation(BsonType.String)] // important so that it is saved on mongo
     public override CallType CallType
     {
         get => CallType.IncomingToExtension;
-        //[Obsolete("set method is only used to so that field is stored on mongo DB")]
-        //internal set { }
+        [Obsolete("set method is only used to so that field is stored on mongo DB")]
+        internal set { }
     }
 }
 

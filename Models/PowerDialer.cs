@@ -22,12 +22,11 @@ public abstract class PowerDialer
     /// </summary>
     [AllowUpdate(false)]
     [IsUbluxRequired]
-    [BsonRepresentation(BsonType.String)] // important so that it is saved on mongo
     public abstract PowerDialerType PowerDialerType
     {
         get;
-        //[Obsolete("set method is only used to so that field is stored on mongo DB")]
-        //internal set;
+        [Obsolete("set method is only used to so that field is stored on mongo DB")]
+        internal set;
     }
 
     /// <summary>

@@ -4,7 +4,7 @@
 ///     Ublux sends and receives faxes via email. This class enables to know the relationship between an email and a fax.
 ///     For example email foo@gmail.com will send faxes through VoipFax with id XXXX-XXXX
 /// </summary>
-public partial class FaxEmailInfo : UbluxDocument
+public partial class FaxEmailInfo : UbluxDocument, IReferencesTags
 {
     #region Properties
 
@@ -19,6 +19,13 @@ public partial class FaxEmailInfo : UbluxDocument
     [AllowUpdate(false)]
     [References(typeof(Line))]
     public Line? LineThatValidatedEmail { get; set; }
+
+    /// <summary>
+    ///     Ids of tags
+    /// </summary>
+    [AllowUpdate(true)]
+    [References(typeof(Tag))]
+    public List<string> Tags { get; set; } = new();
 
     #endregion
 

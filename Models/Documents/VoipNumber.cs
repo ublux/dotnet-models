@@ -12,9 +12,20 @@
     typeof(VoipNumberFax),
     typeof(VoipNumberPhone)
 )]
-public abstract partial class VoipNumber : UbluxDocument
+public abstract partial class VoipNumber : UbluxDocument, IReferencesTags
 {
     #region Properties
+
+    #region References
+
+    /// <summary>
+    ///     Ids of tags
+    /// </summary>
+    [AllowUpdate(true)]
+    [References(typeof(Tag))]
+    public List<string> Tags { get; set; } = new();
+
+    #endregion
 
     #region abstract
 
@@ -44,12 +55,11 @@ public abstract partial class VoipNumber : UbluxDocument
     /// </summary>
     [AllowUpdate(false)]
     [HideForCreateRequest]
-    [BsonRepresentation(BsonType.String)] // important so that it is saved on mongo
     public abstract VoipNumberType VoipNumberType
     {
         get;
-        //[Obsolete("set method is only used to so that field is stored on mongo DB")]
-        //internal set;
+        [Obsolete("set method is only used to so that field is stored on mongo DB")]
+        internal set;
     }
 
     /// <summary>

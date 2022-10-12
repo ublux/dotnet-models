@@ -3,7 +3,7 @@
 /// <summary>
 ///     Phone numbers that will be blocked
 /// </summary>
-public partial class BlackListPhoneNumber : UbluxDocument
+public partial class BlackListPhoneNumber : UbluxDocument, IReferencesTags
 {
     #region Properties
 
@@ -15,6 +15,13 @@ public partial class BlackListPhoneNumber : UbluxDocument
     [References(typeof(Audio))]
     [AllowUpdate(false)]
     public string? IdAudioToPlayIfCallIsBlocked { get; set; }
+
+    /// <summary>
+    ///     Ids of tags
+    /// </summary>
+    [AllowUpdate(true)]
+    [References(typeof(Tag))]
+    public List<string> Tags { get; set; } = new();
 
     #endregion    
 

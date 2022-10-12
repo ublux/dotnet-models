@@ -16,7 +16,7 @@ public partial class CallerIdMask : UbluxDocument, IReferncesAccount
     [IgnoreDataMember]
     [AllowUpdate(false)]
     [IsUbluxRequired]
-    public required string IdAccount { get; set; }
+    public required string IdAccount { get; set; }    
 
     #endregion
 

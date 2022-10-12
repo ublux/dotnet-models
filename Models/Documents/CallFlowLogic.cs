@@ -3,9 +3,16 @@
 /// <summary>
 ///     Virtual receptionist
 /// </summary>
-public partial class CallFlowLogic : UbluxDocument
+public partial class CallFlowLogic : UbluxDocument, IReferencesTags
 {
     #region Properties
+
+    /// <summary>
+    ///     Ids of tags
+    /// </summary>
+    [AllowUpdate(true)]
+    [References(typeof(Tag))]
+    public List<string> Tags { get; set; } = new();
 
     /// <summary>
     ///     Name of virtual receptionist

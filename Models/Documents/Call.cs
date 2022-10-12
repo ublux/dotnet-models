@@ -14,7 +14,7 @@
     typeof(CallOutgoingToExtension),
     typeof(CallOutgoingToPSTN)
 )]
-public abstract partial class Call : UbluxDocument, ICall
+public abstract partial class Call : UbluxDocument, ICall, IReferencesTags
 {
     #region Properties
 
@@ -34,6 +34,13 @@ public abstract partial class Call : UbluxDocument, ICall
     [AllowUpdate(false)]
     [References(typeof(Call))]
     public string? IdCallThatTerminatedThisCallDoToAttendantTransfer { get; set; }
+
+    /// <summary>
+    ///     Ids of tags
+    /// </summary>
+    [AllowUpdate(true)]
+    [References(typeof(Tag))]
+    public List<string> Tags { get; set; } = new();
 
     #endregion
 
@@ -122,12 +129,11 @@ public abstract partial class Call : UbluxDocument, ICall
     ///     TODO: Create index on DB
     /// </summary>
     [AllowUpdate(false)]
-    [BsonRepresentation(BsonType.String)] // important so that it is saved on mongo
     public abstract CallType CallType
     {
         get;
-        //[Obsolete("set method is only used to so that field is stored on mongo DB")]
-        //internal set;
+        [Obsolete("set method is only used to so that field is stored on mongo DB")]
+        internal set;
     }
 
     /// <summary>
@@ -158,6 +164,12 @@ public abstract partial class Call : UbluxDocument, ICall
     /// <inheritdoc />
     [AllowUpdate(false)]
     public DateTime? DateEnded { get; set; }
+
+    /// <summary>
+    ///     Result of a call
+    /// </summary>
+    [AllowUpdate(true)]
+    public CallResult CallResult { get; set; }
 
     #endregion
 }

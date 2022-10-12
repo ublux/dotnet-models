@@ -5,12 +5,10 @@ namespace Ublux.Communications.Models.SubDocuments;
 // Previously called SaveOnAwsBucket
 
 /// <summary>
-///     Represents a stored file in ublux. 
+///     Represents a stored file in ublux such as a recording or audio.
 /// </summary>
 public partial class StoredFile : UbluxSubDocument, IReferncesAccount
 {
-    // ID is its file name
-
     /// <summary>
     ///     Get id of cloud file
     /// </summary>
@@ -33,7 +31,7 @@ public partial class StoredFile : UbluxSubDocument, IReferncesAccount
     [IgnoreDataMember]
     [AllowUpdate(false)]
     [IsUbluxRequired]
-    public required string IdAccount { get; set; }
+    public required string IdAccount { get; set; }    
 
     /// <summary>
     ///     Example incoming-faxes

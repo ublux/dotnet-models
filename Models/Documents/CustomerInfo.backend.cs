@@ -5,7 +5,7 @@ namespace Ublux.Communications.Models.Documents;
 /// <summary>
 ///     Needed because some providers like the one from Spain require customers info in order to purchase VoipNumber
 /// </summary>
-public partial class CustomerInfo : UbluxDocument, IReferncesAccount
+public partial class CustomerInfo : UbluxDocument, IReferncesAccount, IReferencesTags
 {
     #region Properties
 
@@ -17,6 +17,13 @@ public partial class CustomerInfo : UbluxDocument, IReferncesAccount
     [AllowUpdate(false)]
     [IsUbluxRequired]
     public required string IdAccount { get; set; }
+
+    /// <summary>
+    ///     Ids of tags
+    /// </summary>
+    [AllowUpdate(true)]
+    [References(typeof(Tag))]
+    public List<string> Tags { get; set; }  = new();
 
     #endregion
 

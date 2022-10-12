@@ -3,11 +3,20 @@
 /// <summary>
 ///     Someone that has access to consume Ublux Web Api. It can be a PBX, WA, or UbluxUser
 /// </summary>
-public partial class Identity : UbluxDocument
+public partial class Identity : UbluxDocument, IReferencesTags
 {
-    // id should be the username/email
-
     #region Properties
+
+    #region References
+
+    /// <summary>
+    ///     Ids of tags
+    /// </summary>
+    [AllowUpdate(true)]
+    [References(typeof(Tag))]
+    public List<string> Tags { get; set; } = new();
+
+    #endregion
 
     #region Subdocuments
 
@@ -49,15 +58,6 @@ public partial class Identity : UbluxDocument
     [HideForCreateRequest]
     // virtual because of unit tests so that it can mock this object
     public required string Password { get; set; }
-
-    /// <summary>
-    ///     What type of user is this? Is this a PBX? WA?
-    /// </summary>
-    [AllowUpdate(false)]
-    [IsUbluxRequired]
-    [HideForCreateRequest] // remember to add this on admin service!
-    // virtual because of unit tests so that it can mock this object
-    public required IdentityType IdentityType { get; set; }
 
     /// <summary>
     ///     Only allow connections from this regex. Default is "*"

@@ -331,6 +331,13 @@ namespace Ublux.Communications.Models.Documents {
         /// <summary> Overload </summary>
         public static BuiltId BuildId(string storedFileId) => new($"{DocumentPrefix}.{storedFileId}");
     }
+    public partial class Tag {
+        /// <summary> Id prefix </summary>
+        public const string DocumentPrefix = "Ta";
+
+        /// <summary> Build Id </summary>
+        public static BuiltId BuildId(RunningApplicationInstance instance) => new($"{DocumentPrefix}.{instance.Id}.{instance.IdGlobalAutoIncrement()}");
+    }
 }
 
 

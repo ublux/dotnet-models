@@ -15,7 +15,7 @@ public partial class PowerDialerGroup : UbluxDocument, IReferncesAccount
     [AllowUpdate(false)]
     [IsUbluxRequired]
     [HideForCreateRequest]
-    public required string IdAccount { get; set; }
+    public required string IdAccount { get; set; }    
 
     #endregion
 

@@ -21,6 +21,12 @@ public enum IdentityType
     /// </summary>
     User = 1,
 
+    // Identity points to phone instead
+    ///// <summary>
+    /////     This user is the one that uses webphone for example
+    ///// </summary>
+    //Phone = 2,
+
     /// <summary>
     ///     US-1, US-2, etc...
     /// </summary>

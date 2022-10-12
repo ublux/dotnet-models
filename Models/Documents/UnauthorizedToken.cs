@@ -3,7 +3,7 @@
 /// <summary>
 ///     Tokens that are not authorized. Perhaps a token has been stolen
 /// </summary>
-public partial class UnauthorizedToken : UbluxDocument
+public partial class UnauthorizedToken : UbluxDocument, IReferencesTags
 {
     // id is the last 16 characters of JWT
 
@@ -28,4 +28,11 @@ public partial class UnauthorizedToken : UbluxDocument
     [AllowUpdate(false)]
     [IsUbluxRequired]
     public required DateTime ExpirationDate { get; set; }
+
+    /// <summary>
+    ///     Ids of tags
+    /// </summary>
+    [AllowUpdate(true)]
+    [References(typeof(Tag))]
+    public List<string> Tags { get; set; } = new();
 }

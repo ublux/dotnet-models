@@ -112,11 +112,10 @@ public partial class ExtensionQueue : Extension
     [AllowUpdate(false)]
     [IsUbluxRequired]
     [HideForCreateRequest]
-    [BsonRepresentation(BsonType.String)] // important so that it is saved on mongo
     public override ExtensionType ExtensionType
     {
         get => ExtensionType.Queue;
-        //[Obsolete("set method is only used to so that field is stored on mongo DB")]
-        //internal set { }
+        [Obsolete("set method is only used to so that field is stored on mongo DB")]
+        internal set { }
     }
 }

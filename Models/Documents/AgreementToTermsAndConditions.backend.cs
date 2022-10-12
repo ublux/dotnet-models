@@ -53,7 +53,6 @@ public partial class AgreementToTermsAndConditions : UbluxDocument
     public string? Description { get; set; }
 
     #endregion
-
 }
 
 #endif

@@ -3,7 +3,7 @@
 /// <summary>
 ///     Group used to call multiple parties
 /// </summary>
-public partial class PowerDialerGroup : UbluxDocument
+public partial class PowerDialerGroup : UbluxDocument, IReferencesTags
 {
     #region Properties
 
@@ -36,6 +36,13 @@ public partial class PowerDialerGroup : UbluxDocument
     [References(typeof(Extension))]
     [AllowUpdate(false)]
     public string? IdExtension { get; set; }
+
+    /// <summary>
+    ///     Ids of tags
+    /// </summary>
+    [AllowUpdate(true)]
+    [References(typeof(Tag))]
+    public List<string> Tags { get; set; } = new();
 
     #endregion
 

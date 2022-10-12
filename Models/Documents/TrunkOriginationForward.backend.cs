@@ -34,12 +34,11 @@ public partial class TrunkOriginationForward : TrunkOrigination
     // [IgnoreDataMember] if ignored deserialization will not work
     [IsUbluxRequired]
     [HideForCreateRequest]
-    [BsonRepresentation(BsonType.String)] // important so that it is saved on mongo
     public override TrunkOriginationType TrunkOriginationType
     {
         get => TrunkOriginationType.Forward;
-        //[Obsolete("set method is only used to so that field is stored on mongo DB")]
-        //internal set { }
+        [Obsolete("set method is only used to so that field is stored on mongo DB")]
+        internal set { }
     }
 }
 

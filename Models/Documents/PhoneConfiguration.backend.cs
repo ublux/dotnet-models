@@ -7,14 +7,12 @@ namespace Ublux.Communications.Models.Documents;
 /// </summary>
 public partial class PhoneConfiguration : UbluxDocument, IReferncesAccount
 {
-
     /// <inheritdoc/>
     [IgnoreDataMember]
     [References(typeof(Account))]
     [AllowUpdate(false)]
     [IsUbluxRequired]
-    public required string IdAccount { get; set; }
-
+    public required string IdAccount { get; set; }    
 }
 
 #endif

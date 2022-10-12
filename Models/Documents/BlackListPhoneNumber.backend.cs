@@ -73,6 +73,8 @@ public partial class BlackListPhoneNumber : UbluxDocument, IReferncesAccount
 
     #endregion
 
+    #region References
+
     /// <summary>
     ///     Account that is blocking this phone number
     /// </summary>
@@ -80,7 +82,9 @@ public partial class BlackListPhoneNumber : UbluxDocument, IReferncesAccount
     [IgnoreDataMember]
     [AllowUpdate(false)]
     [IsUbluxRequired]
-    public required string IdAccount { get; set; }
+    public required string IdAccount { get; set; }    
+
+    #endregion
 }
 
 #endif

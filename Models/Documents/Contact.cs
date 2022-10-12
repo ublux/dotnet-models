@@ -5,7 +5,7 @@ namespace Ublux.Communications.Models.Documents;
 /// <summary>
 ///     Contact
 /// </summary>
-public partial class Contact : UbluxDocument
+public partial class Contact : UbluxDocument, IReferencesTags
 {
     #region Properties
 
@@ -18,6 +18,13 @@ public partial class Contact : UbluxDocument
     [AllowUpdate(false)]
     [References(typeof(Identity))]
     public string? IdIdentityUser { get; set; }
+
+    /// <summary>
+    ///     Ids of tags
+    /// </summary>
+    [AllowUpdate(true)]
+    [References(typeof(Tag))]
+    public List<string> Tags { get; set; } = new();
 
     #endregion
 

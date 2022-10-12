@@ -13,7 +13,7 @@ public abstract partial class Extension : UbluxDocument, IReferncesAccount
     [AllowUpdate(false)]
     [IsUbluxRequired]
     [HideForCreateRequest]    
-    public required string IdAccount { get; set; } = string.Empty;
+    public required string IdAccount { get; set; } = string.Empty;    
 }
 
 #endif

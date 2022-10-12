@@ -3,7 +3,7 @@
 /// <summary>
 ///     Group of faxes sent as a group via email
 /// </summary>
-public partial class FaxOutgoingGroup : UbluxDocument
+public partial class FaxOutgoingGroup : UbluxDocument, IReferencesTags
 {
     #region Properties
 
@@ -16,6 +16,13 @@ public partial class FaxOutgoingGroup : UbluxDocument
     [AllowUpdate(false)]
     [IsUbluxRequired]
     public required string IdVoipNumberFax { get; set; }
+
+    /// <summary>
+    ///     Ids of tags
+    /// </summary>
+    [AllowUpdate(true)]
+    [References(typeof(Tag))]
+    public List<string> Tags { get; set; } = new();
 
     #endregion
 
