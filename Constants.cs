@@ -33,4 +33,12 @@ public static partial class Constants
     /// </summary>
     [GeneratedRegex("(\\d+\\.\\d+\\.\\d+\\.\\d+)")]
     public static partial Regex RegexIp();
+
+
+    /// <summary>
+    ///     Example: sip:Li.1G.Ph.1.1F@189.174.117.130:12013;transport=TLS;x-ast-orig-host=192.168.1.10:12013
+    ///     Attempt to get two ip addresses the public and private ip of line
+    /// </summary>
+    [GeneratedRegex("(\\d+\\.\\d+\\.\\d+\\.\\d+)")]
+    public static partial Regex RegexLineContact();
 }

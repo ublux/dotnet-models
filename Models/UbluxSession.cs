@@ -24,7 +24,7 @@ public partial class UbluxSession
     [References(typeof(Account))]
     [IsUbluxRequired]
     [AllowUpdate(false)]
-    public required string IdAccount { get; set; }
+    public required string IdAccount { get; set; } = String.Empty;
 
     ///// <summary>
     /////     Ids of tags

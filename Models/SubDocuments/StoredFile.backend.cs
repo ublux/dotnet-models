@@ -31,7 +31,7 @@ public partial class StoredFile : UbluxSubDocument, IReferncesAccount
     [IgnoreDataMember]
     [AllowUpdate(false)]
     [IsUbluxRequired]
-    public required string IdAccount { get; set; }    
+    public required string IdAccount { get; set; } = String.Empty;
 
     /// <summary>
     ///     Example incoming-faxes
@@ -53,7 +53,7 @@ public partial class StoredFile : UbluxSubDocument, IReferncesAccount
     ///     Server that stored this file so that other servers can download it. Example W for work. Thus it can be downloaded from w.ublux.com    
     /// </summary>
     [AllowUpdate(false)]
-    public required string InstanceId { get; set; }
+    public required string InstanceId { get; set; } = string.Empty;
 
 
     /// <summary> /usr/share/ublux/accounts-files </summary>

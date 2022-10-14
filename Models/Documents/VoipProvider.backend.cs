@@ -13,7 +13,7 @@ public partial class VoipProvider : UbluxDocument
     [AllowUpdate(false)]
     [IgnoreDataMember]
     [IsUbluxRequired]
-    public required string ProviderAccountId { get; set; }
+    public required string ProviderAccountId { get; set; } = string.Empty;
 
     /// <summary>
     ///     The account id of the owner account. If this is the owner account then this will be the same as the id
@@ -35,7 +35,7 @@ public partial class VoipProvider : UbluxDocument
     [AllowUpdate(false)]
     [IgnoreDataMember]
     [IsUbluxRequired]
-    public required UbluxPartner UbluxPartner { get; set; }
+    public required UbluxPartner UbluxPartner { get; set; } 
 
     /// <summary>
     ///     Friendly name of this provider
@@ -43,7 +43,7 @@ public partial class VoipProvider : UbluxDocument
     [AllowUpdate(false)]
     [IgnoreDataMember]
     [IsUbluxRequired]
-    public required string FriendlyName { get; set; }
+    public required string FriendlyName { get; set; } = string.Empty;
 
     /// <summary>
     ///     Used mostly for sub-accounts. A sub account in twilio can be suspended, closed or active 

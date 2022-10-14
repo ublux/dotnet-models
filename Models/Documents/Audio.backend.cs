@@ -1,5 +1,7 @@
 ﻿#if UBLUX_BACKEND
 
+using System.Security.Cryptography.X509Certificates;
+
 namespace Ublux.Communications.Models.Documents;
 
 /// <summary>
@@ -14,7 +16,7 @@ public partial class Audio : UbluxDocument, IReferncesAccount
     [IgnoreDataMember]
     [References(typeof(Account))]
     [IsUbluxRequired]
-    public required string IdAccount { get; set; }   
+    public required string IdAccount { get; set; } = String.Empty;
 
     #endregion
 
@@ -26,7 +28,7 @@ public partial class Audio : UbluxDocument, IReferncesAccount
     [IsUbluxRequired]
     public required StoredFile AudioSln { get; set; }
 
-    
+
 }
 
 #endif

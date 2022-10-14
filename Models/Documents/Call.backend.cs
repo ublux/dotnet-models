@@ -12,12 +12,12 @@ public abstract partial class Call : UbluxDocument, IReferncesAccount
     [AllowUpdate(false)]
     [IgnoreDataMember]
     [IsUbluxRequired]
-    public required string IdAccount { get; set; }    
+    public required string IdAccount { get; set; } = String.Empty;
 
     /// <inheritdoc />
     [AllowUpdate(false)]
     [IgnoreDataMember]
-    public required string ChannelFrom { get; set; }
+    public required string ChannelFrom { get; set; } = string.Empty;
 
     /// <summary>
     ///     List because a call can call multiple persons. 

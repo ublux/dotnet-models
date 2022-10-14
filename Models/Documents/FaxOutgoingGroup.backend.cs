@@ -12,7 +12,7 @@ public partial class FaxOutgoingGroup : UbluxDocument, IReferncesAccount
     [IgnoreDataMember]
     [AllowUpdate(false)]
     [IsUbluxRequired]
-    public required string IdAccount { get; set; }    
+    public required string IdAccount { get; set; } = String.Empty;
 }
 
 #endif

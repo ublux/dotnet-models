@@ -71,5 +71,4 @@ public class LineConnectionStatus
     ///     Get value of _sentSipNotify
     /// </summary>
     public bool GetSentSipNofity() => _sentSipNotify;
-
 }

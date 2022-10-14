@@ -449,6 +449,8 @@ public class ContactUpdateRequest // : IUbluxDocumentId
 
 /// <summary>
 /// Needed because some providers like the one from Spain require customers info in order to purchase VoipNumber
+/// </summary><summary>
+/// Needed because some providers like the one from Spain require customers info in order to purchase VoipNumber
 /// </summary>
 public class CustomerInfoUpdateRequest // : IUbluxDocumentId
 {

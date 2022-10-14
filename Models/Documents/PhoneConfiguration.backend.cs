@@ -12,7 +12,7 @@ public partial class PhoneConfiguration : UbluxDocument, IReferncesAccount
     [References(typeof(Account))]
     [AllowUpdate(false)]
     [IsUbluxRequired]
-    public required string IdAccount { get; set; }    
+    public required string IdAccount { get; set; } = String.Empty;
 }
 
 #endif

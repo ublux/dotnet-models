@@ -10,12 +10,12 @@ public class LineConnectionStatusChanged
     /// <summary>
     ///     Id of line that was modified
     /// </summary>
-    [AllowUpdate(false)]
-    public required string IdLine { get; set; }
+    [AllowUpdate(false)]    
+    public required string IdLine { get; set; } = String.Empty;
 
     /// <summary>
     ///     Line index
-    /// </summary>
+    /// </summary>    
     public int LineIndex { get; set; }
 
     ///// <summary>
@@ -28,7 +28,7 @@ public class LineConnectionStatusChanged
     ///     Id of Account
     /// </summary>
     [AllowUpdate(false)]
-    public required string IdAccount { get; set; }
+    public required string IdAccount { get; set; } = String.Empty;
 
     /// <summary>
     ///     Clone this to avoid sync problems.

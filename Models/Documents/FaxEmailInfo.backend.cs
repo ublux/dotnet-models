@@ -17,7 +17,7 @@ public partial class FaxEmailInfo : UbluxDocument, IReferncesAccount
     [AllowUpdate(false)]
     [IgnoreDataMember]
     [IsUbluxRequired]
-    public required string IdAccount { get; set; }    
+    public required string IdAccount { get; set; } = String.Empty;
 
     #endregion
 

@@ -14,6 +14,7 @@ public partial class BlackListPhoneNumber : UbluxDocument, IReferncesAccount
     ///     TODO: make this an index on database. Do not make it unique only and index because we can have two contacts with the same phone number
     /// </summary>
     [AllowUpdate(false)]
+    [IgnoreDataMember]
     public string SearchIndex
     {
         get => searchIndex;
@@ -82,7 +83,7 @@ public partial class BlackListPhoneNumber : UbluxDocument, IReferncesAccount
     [IgnoreDataMember]
     [AllowUpdate(false)]
     [IsUbluxRequired]
-    public required string IdAccount { get; set; }    
+    public required string IdAccount { get; set; } = String.Empty;
 
     #endregion
 }

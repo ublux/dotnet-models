@@ -42,4 +42,36 @@ public partial class Line : UbluxSubDocument
     /// </summary>
     [AllowUpdate(true)]
     public Language Language { get; set; }
+
+    /// <summary>
+    ///     Field used to know when the line received last network traffic packet
+    ///     Thanks to this field we can monitor when a phone is disconnected
+    /// </summary>
+    [System.Text.Json.Serialization.JsonIgnore]
+    [JsonIgnore]
+    [BsonIgnore]
+    [HideForCreateRequest]
+    public DateTime DateReceivedLastPacket;
+
+    /// <summary>
+    ///     If true it will be sync with WS because line status changed
+    /// </summary>
+    [System.Text.Json.Serialization.JsonIgnore]
+    [JsonIgnore]
+    [BsonIgnore]
+    [HideForCreateRequest]
+    public bool IsConnectionStatusChanged;
+
+    /// <summary>
+    ///     Example: 1.1.1.1.5060
+    ///     This is the ip and port that we get from tcpdump captured packets. Note it uses "." instead of ":" to separate the port
+    /// </summary>
+    public string? GetTcpDumpSourceEndpointKey()
+    {
+        if (this.LineConnectionStatus?.IpWAN is null)
+            return null;
+
+        // Example: 1.1.1.1.5060
+        return $"{this.LineConnectionStatus.IpWAN}.{this.LineConnectionStatus.PortWAN}";
+    }
 }
