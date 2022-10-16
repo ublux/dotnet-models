@@ -107,4 +107,7 @@ public enum Collections
     // Al StoredFile object must have a clone on this table
     /// <summary>DiskFiles</summary>
     CloudFiles,
+
+    /// <summary> Categories </summary>
+    Tags
 }

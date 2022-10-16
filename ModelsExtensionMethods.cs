@@ -46,6 +46,7 @@ public static class ModelsExtensionMethods
             Collections.WebHooks => typeof(WebHook),
             Collections.UnauthorizedTokens => typeof(UnauthorizedToken),
             Collections.CloudFiles => typeof(CloudFile),
+            Collections.Tags => typeof(Tag),
             _ => throw new Exception($"Missing collection type: {collection}"),// should never hit this point because this is tested in SouceCode Unit tests
         };
     }
