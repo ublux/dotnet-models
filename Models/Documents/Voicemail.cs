@@ -21,6 +21,13 @@ public partial class Voicemail : UbluxDocument, IReferencesTags
     [References(typeof(Tag))]
     public List<string> Tags { get; set; } = new();
 
+    /// <summary>
+    ///     Ids of lines that can listen to voicemail
+    /// </summary>
+    [AllowUpdate(false)]
+    [References(typeof(Line))]
+    public List<string> IdsLinesThatCanListenToVoicemail { get; set; } = new();
+
     #endregion
 
     /// <summary>
@@ -30,13 +37,6 @@ public partial class Voicemail : UbluxDocument, IReferencesTags
     [IsUbluxRequired]
     [HideForCreateRequest]
     public virtual VoicemailType VoicemailType => VoicemailType.Regular;
-
-    /// <summary>
-    ///     Ids of lines that can listen to voicemail
-    /// </summary>
-    [AllowUpdate(false)]
-    [References(typeof(Line))]
-    public List<string> IdsLinesThatCanListenToVoicemail { get; set; } = new();
 
     /// <summary>
     ///     Email where voicemail was sent

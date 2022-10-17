@@ -13,6 +13,7 @@ public partial class AutoProvisionReference : UbluxDocument
 
     /// <summary>
     ///     Id of phone that this mac is associated with
+    ///     (Note: phone may be deleted and do not exist!)
     /// </summary>
     [IgnoreDataMember]
     [AllowUpdate(false)]
@@ -22,6 +23,7 @@ public partial class AutoProvisionReference : UbluxDocument
 
     /// <summary>
     ///     When phone is connected to case27 and it wants to connect to a new phone. It will do so but when phone requests cfg file
+    ///     (Note: phone may be deleted and do not exist!)
     /// </summary>
     [IgnoreDataMember]
     [AllowUpdate(false)]

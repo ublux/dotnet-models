@@ -7882,16 +7882,6 @@ public class VoicemailFilterRequest
     [JsonProperty("tags_reg")]
     public string? Tags_REG { get; set; }
 
-    /// <summary> VoicemailType equals </summary>
-    [JsonProperty("voicemailType_eq")]
-    public string? VoicemailType_EQ { get; set; }
-    /// <summary> VoicemailType contains </summary>
-    [JsonProperty("voicemailType_con")]
-    public string? VoicemailType_CON { get; set; }
-    /// <summary> VoicemailType regex </summary>
-    [JsonProperty("voicemailType_reg")]
-    public string? VoicemailType_REG { get; set; }
-
     /// <summary> IdsLinesThatCanListenToVoicemail equals </summary>
     [JsonProperty("idsLinesThatCanListenToVoicemail_eq")]
     public string? IdsLinesThatCanListenToVoicemail_EQ { get; set; }
@@ -7901,6 +7891,16 @@ public class VoicemailFilterRequest
     /// <summary> IdsLinesThatCanListenToVoicemail regex </summary>
     [JsonProperty("idsLinesThatCanListenToVoicemail_reg")]
     public string? IdsLinesThatCanListenToVoicemail_REG { get; set; }
+
+    /// <summary> VoicemailType equals </summary>
+    [JsonProperty("voicemailType_eq")]
+    public string? VoicemailType_EQ { get; set; }
+    /// <summary> VoicemailType contains </summary>
+    [JsonProperty("voicemailType_con")]
+    public string? VoicemailType_CON { get; set; }
+    /// <summary> VoicemailType regex </summary>
+    [JsonProperty("voicemailType_reg")]
+    public string? VoicemailType_REG { get; set; }
 
     /// <summary> Email equals </summary>
     [JsonProperty("email_eq")]
