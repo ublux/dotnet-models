@@ -121,6 +121,10 @@ public class AutoProvisionReferenceUpdateRequest // : IUbluxDocumentId
 public class BlackListPhoneNumberUpdateRequest // : IUbluxDocumentId
 {
     /// <summary>
+    /// Optional audio to play if call is blocked
+    /// </summary>
+    public String? IdAudioToPlayIfCallIsBlocked { get; set; }
+    /// <summary>
     /// Ids of tags
     /// </summary>
     public List<System.String>? Tags { get; set; }
@@ -135,6 +139,8 @@ public class BlackListPhoneNumberUpdateRequest // : IUbluxDocumentId
     /// <summary> Set values on actual document </summary>
     public void SetValuesOnBlackListPhoneNumber(BlackListPhoneNumber blackListPhoneNumber)
     {
+        if(this.IdAudioToPlayIfCallIsBlocked!=null)
+            blackListPhoneNumber.IdAudioToPlayIfCallIsBlocked = this.IdAudioToPlayIfCallIsBlocked;
         if(this.Tags!=null)
             blackListPhoneNumber.Tags = this.Tags;
         if(this.Number!=null)

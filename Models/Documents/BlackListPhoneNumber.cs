@@ -13,7 +13,7 @@ public partial class BlackListPhoneNumber : UbluxDocument, IReferencesTags
     ///     Optional audio to play if call is blocked
     /// </summary>
     [References(typeof(Audio))]
-    [AllowUpdate(false)]
+    [AllowUpdate(true)]
     public string? IdAudioToPlayIfCallIsBlocked { get; set; }
 
     /// <summary>
