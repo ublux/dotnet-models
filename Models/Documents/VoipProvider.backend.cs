@@ -4,6 +4,7 @@ namespace Ublux.Communications.Models.Documents;
 
 /// <summary>
 ///     VOIP provider. Some providers have an API that enable us to automate things.
+///     Examples of voip providers are Twilio, Marcatel, Airnetworks etc...
 /// </summary>
 public partial class VoipProvider : UbluxDocument
 {
