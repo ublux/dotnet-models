@@ -1,7 +1,5 @@
 ﻿#if UBLUX_BACKEND
 
-using System.Security.Cryptography.X509Certificates;
-
 namespace Ublux.Communications.Models.Documents;
 
 /// <summary>
@@ -28,7 +26,17 @@ public partial class Audio : UbluxDocument, IReferncesAccount
     [IsUbluxRequired]
     public required StoredFile AudioSln { get; set; }
 
-
+    /// <summary>
+    ///     Gets directory where to save on PBX
+    /// </summary>
+    public string GetDirectoryWhereToSaveOnPBX(bool createDirIfItDoesNotExist)
+    {
+        var path = $"/usr/share/ublux/audios/{this.IdAccount}";
+        if (createDirIfItDoesNotExist)
+            if (Directory.Exists(path) == false)
+                Directory.CreateDirectory(path);
+        return path;
+    }
 }
 
 #endif
