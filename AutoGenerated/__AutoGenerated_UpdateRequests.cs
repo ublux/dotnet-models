@@ -713,7 +713,15 @@ public class ExtensionQueueUpdateRequest // : IUbluxDocumentId
     /// <summary>
     /// Play position announcements. For example say things like you are now position 2 in queue. There are 2 calls ahead of you.
     /// </summary>
-    public Boolean? PlayPositionAnnouncements { get; set; }
+    public Boolean? AnnouncePosition { get; set; }
+    /// <summary>
+    /// Play thinks like. Currently wait time is 2 minutes
+    /// </summary>
+    public Boolean? AnnounceHoldTime { get; set; }
+    /// <summary>
+    /// How often to announce stuff?
+    /// </summary>
+    public Int32? AnnounceFrequency { get; set; }
     /// <summary>
     /// Number of seconds to wait in between rings. Default value if null is 20 seconds
     /// </summary>
@@ -761,8 +769,12 @@ public class ExtensionQueueUpdateRequest // : IUbluxDocumentId
             extensionQueue.RingInUse = this.RingInUse.Value;
         if(this.QueueTimeoutInMinutes!=null)
             extensionQueue.QueueTimeoutInMinutes = this.QueueTimeoutInMinutes.Value;
-        if(this.PlayPositionAnnouncements!=null)
-            extensionQueue.PlayPositionAnnouncements = this.PlayPositionAnnouncements.Value;
+        if(this.AnnouncePosition!=null)
+            extensionQueue.AnnouncePosition = this.AnnouncePosition.Value;
+        if(this.AnnounceHoldTime!=null)
+            extensionQueue.AnnounceHoldTime = this.AnnounceHoldTime.Value;
+        if(this.AnnounceFrequency!=null)
+            extensionQueue.AnnounceFrequency = this.AnnounceFrequency.Value;
         if(this.RetryFrequency!=null)
             extensionQueue.RetryFrequency = this.RetryFrequency.Value;
         if(this.RingStrategy!=null)
@@ -1503,6 +1515,7 @@ public class VoipNumberPhoneUpdateRequest // : IUbluxDocumentId
 
 /// <summary>
 /// VOIP provider. Some providers have an API that enable us to automate things.
+/// Examples of voip providers are Twilio, Marcatel, Airnetworks etc...
 /// </summary>
 public class VoipProviderUpdateRequest // : IUbluxDocumentId
 {

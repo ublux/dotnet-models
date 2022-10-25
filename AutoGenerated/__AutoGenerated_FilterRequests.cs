@@ -5427,9 +5427,23 @@ public class ExtensionQueueFilterRequest
     [JsonProperty("queueTimeoutInMinutes_gte")]
     public System.Int32? QueueTimeoutInMinutes_GTE { get; set; }
 
-    /// <summary> PlayPositionAnnouncements equals </summary>
-    [JsonProperty("playPositionAnnouncements_eq")]
-    public bool? PlayPositionAnnouncements_EQ { get; set; }
+    /// <summary> AnnouncePosition equals </summary>
+    [JsonProperty("announcePosition_eq")]
+    public bool? AnnouncePosition_EQ { get; set; }
+
+    /// <summary> AnnounceHoldTime equals </summary>
+    [JsonProperty("announceHoldTime_eq")]
+    public bool? AnnounceHoldTime_EQ { get; set; }
+
+    /// <summary> AnnounceFrequency equals </summary>
+    [JsonProperty("announceFrequency_eq")]
+    public System.Int32? AnnounceFrequency_EQ { get; set; }
+    /// <summary> AnnounceFrequency less than or equal to </summary>
+    [JsonProperty("announceFrequency_lte")]
+    public System.Int32? AnnounceFrequency_LTE { get; set; }
+    /// <summary> AnnounceFrequency greater than or equal to </summary>
+    [JsonProperty("announceFrequency_gte")]
+    public System.Int32? AnnounceFrequency_GTE { get; set; }
 
     /// <summary> RetryFrequency equals </summary>
     [JsonProperty("retryFrequency_eq")]

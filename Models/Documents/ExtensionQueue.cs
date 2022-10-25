@@ -78,7 +78,20 @@ public partial class ExtensionQueue : Extension
     ///     Play position announcements. For example say things like you are now position 2 in queue. There are 2 calls ahead of you.
     /// </summary>
     [AllowUpdate(true)]
-    public bool PlayPositionAnnouncements { get; set; }
+    public bool AnnouncePosition { get; set; }
+
+    /// <summary>
+    ///     Play thinks like. Currently wait time is 2 minutes
+    /// </summary>
+    [AllowUpdate(true)]
+    public bool AnnounceHoldTime { get; set; }
+
+    /// <summary>
+    ///    How often to announce stuff?
+    /// </summary>
+    [AllowUpdate(true)]
+    public int AnnounceFrequency { get; set; }
+
 
     /// <summary>
     ///     Number of seconds to wait in between rings. Default value if null is 20 seconds
