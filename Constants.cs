@@ -41,4 +41,24 @@ public static partial class Constants
     /// </summary>
     [GeneratedRegex("(\\d+\\.\\d+\\.\\d+\\.\\d+)")]
     public static partial Regex RegexLineContact();
+
+
+    /// <summary>
+    ///     Port used for UDP
+    /// </summary>
+    public const int AsteriskPortUdp = 5060;
+    /// <summary>
+    ///     Port used by asterisk on TCP
+    /// </summary>
+    public const int AsteriskPortTcp = 5060;
+
+    /// <summary>
+    ///     Port used for encrypted asterisk connections
+    /// </summary>
+    public const int AsteriskPortTls = 5061;
+
+    /// <summary>
+    ///     Port used for web phones
+    /// </summary>
+    public const int AsteriskPortWss = 8089;
 }

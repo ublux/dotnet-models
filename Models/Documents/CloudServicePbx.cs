@@ -26,4 +26,10 @@ public partial class CloudServicePbx : CloudService
         [Obsolete("set method is only used to so that field is stored on mongo DB")]
         internal set { }
     }
+
+    /// <summary>
+    ///     If true we will not monitor pbx in order to update its soft dns in case it is not healthy
+    /// </summary>
+    [AllowUpdate(true)]
+    public bool DisableMonitoring { get; set; }
 }
