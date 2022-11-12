@@ -2,7 +2,7 @@
 
 	<PropertyGroup>
 		<TargetFramework>net7.0</TargetFramework>
-		<LangVersion>preview</LangVersion>
+		<!--<LangVersion>preview</LangVersion>-->
 		<RootNamespace>Ublux.Communications.Models</RootNamespace>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
