@@ -806,6 +806,16 @@ public class CallIncomingToCallFlowLogicFilterRequest
     public string? Contact_ContactEmails_Label_REG { get; set; }
 
 
+    /// <summary> Contact.Owner equals </summary>
+    [JsonProperty("contact_owner_eq")]
+    public string? Contact_Owner_EQ { get; set; }
+    /// <summary> Contact.Owner contains </summary>
+    [JsonProperty("contact_owner_con")]
+    public string? Contact_Owner_CON { get; set; }
+    /// <summary> Contact.Owner regex </summary>
+    [JsonProperty("contact_owner_reg")]
+    public string? Contact_Owner_REG { get; set; }
+
     /// <summary> Contact.FirstName equals </summary>
     [JsonProperty("contact_firstName_eq")]
     public string? Contact_FirstName_EQ { get; set; }
@@ -1873,6 +1883,16 @@ public class CallIncomingToExtensionFilterRequest
     [JsonProperty("contact_contactEmails_label_reg")]
     public string? Contact_ContactEmails_Label_REG { get; set; }
 
+
+    /// <summary> Contact.Owner equals </summary>
+    [JsonProperty("contact_owner_eq")]
+    public string? Contact_Owner_EQ { get; set; }
+    /// <summary> Contact.Owner contains </summary>
+    [JsonProperty("contact_owner_con")]
+    public string? Contact_Owner_CON { get; set; }
+    /// <summary> Contact.Owner regex </summary>
+    [JsonProperty("contact_owner_reg")]
+    public string? Contact_Owner_REG { get; set; }
 
     /// <summary> Contact.FirstName equals </summary>
     [JsonProperty("contact_firstName_eq")]
@@ -2942,6 +2962,16 @@ public class CallOutgoingToExtensionFilterRequest
     public string? Contact_ContactEmails_Label_REG { get; set; }
 
 
+    /// <summary> Contact.Owner equals </summary>
+    [JsonProperty("contact_owner_eq")]
+    public string? Contact_Owner_EQ { get; set; }
+    /// <summary> Contact.Owner contains </summary>
+    [JsonProperty("contact_owner_con")]
+    public string? Contact_Owner_CON { get; set; }
+    /// <summary> Contact.Owner regex </summary>
+    [JsonProperty("contact_owner_reg")]
+    public string? Contact_Owner_REG { get; set; }
+
     /// <summary> Contact.FirstName equals </summary>
     [JsonProperty("contact_firstName_eq")]
     public string? Contact_FirstName_EQ { get; set; }
@@ -3657,6 +3687,16 @@ public class CallOutgoingToPSTNFilterRequest
     public string? Contact_ContactEmails_Label_REG { get; set; }
 
 
+    /// <summary> Contact.Owner equals </summary>
+    [JsonProperty("contact_owner_eq")]
+    public string? Contact_Owner_EQ { get; set; }
+    /// <summary> Contact.Owner contains </summary>
+    [JsonProperty("contact_owner_con")]
+    public string? Contact_Owner_CON { get; set; }
+    /// <summary> Contact.Owner regex </summary>
+    [JsonProperty("contact_owner_reg")]
+    public string? Contact_Owner_REG { get; set; }
+
     /// <summary> Contact.FirstName equals </summary>
     [JsonProperty("contact_firstName_eq")]
     public string? Contact_FirstName_EQ { get; set; }
@@ -4270,6 +4310,10 @@ public class CloudServicePbxFilterRequest
     [JsonProperty("cloudServiceType_reg")]
     public string? CloudServiceType_REG { get; set; }
 
+    /// <summary> DisableMonitoring equals </summary>
+    [JsonProperty("disableMonitoring_eq")]
+    public bool? DisableMonitoring_EQ { get; set; }
+
     /// <summary> CountryIsoCode equals </summary>
     [JsonProperty("countryIsoCode_eq")]
     public string? CountryIsoCode_EQ { get; set; }
@@ -4659,6 +4703,16 @@ public class ContactFilterRequest
     [JsonProperty("contactEmails_label_reg")]
     public string? ContactEmails_Label_REG { get; set; }
 
+
+    /// <summary> Owner equals </summary>
+    [JsonProperty("owner_eq")]
+    public string? Owner_EQ { get; set; }
+    /// <summary> Owner contains </summary>
+    [JsonProperty("owner_con")]
+    public string? Owner_CON { get; set; }
+    /// <summary> Owner regex </summary>
+    [JsonProperty("owner_reg")]
+    public string? Owner_REG { get; set; }
 
     /// <summary> FirstName equals </summary>
     [JsonProperty("firstName_eq")]
@@ -7456,6 +7510,16 @@ public class SMSFilterRequest
     public string? Contact_ContactEmails_Label_REG { get; set; }
 
 
+    /// <summary> Contact.Owner equals </summary>
+    [JsonProperty("contact_owner_eq")]
+    public string? Contact_Owner_EQ { get; set; }
+    /// <summary> Contact.Owner contains </summary>
+    [JsonProperty("contact_owner_con")]
+    public string? Contact_Owner_CON { get; set; }
+    /// <summary> Contact.Owner regex </summary>
+    [JsonProperty("contact_owner_reg")]
+    public string? Contact_Owner_REG { get; set; }
+
     /// <summary> Contact.FirstName equals </summary>
     [JsonProperty("contact_firstName_eq")]
     public string? Contact_FirstName_EQ { get; set; }
@@ -9585,6 +9649,16 @@ public class CallFilterRequest
     public string? Contact_ContactEmails_Label_REG { get; set; }
 
 
+    /// <summary> Contact.Owner equals </summary>
+    [JsonProperty("contact_owner_eq")]
+    public string? Contact_Owner_EQ { get; set; }
+    /// <summary> Contact.Owner contains </summary>
+    [JsonProperty("contact_owner_con")]
+    public string? Contact_Owner_CON { get; set; }
+    /// <summary> Contact.Owner regex </summary>
+    [JsonProperty("contact_owner_reg")]
+    public string? Contact_Owner_REG { get; set; }
+
     /// <summary> Contact.FirstName equals </summary>
     [JsonProperty("contact_firstName_eq")]
     public string? Contact_FirstName_EQ { get; set; }
@@ -10023,6 +10097,16 @@ public class CallIncomingFilterRequest
     [JsonProperty("contact_contactEmails_label_reg")]
     public string? Contact_ContactEmails_Label_REG { get; set; }
 
+
+    /// <summary> Contact.Owner equals </summary>
+    [JsonProperty("contact_owner_eq")]
+    public string? Contact_Owner_EQ { get; set; }
+    /// <summary> Contact.Owner contains </summary>
+    [JsonProperty("contact_owner_con")]
+    public string? Contact_Owner_CON { get; set; }
+    /// <summary> Contact.Owner regex </summary>
+    [JsonProperty("contact_owner_reg")]
+    public string? Contact_Owner_REG { get; set; }
 
     /// <summary> Contact.FirstName equals </summary>
     [JsonProperty("contact_firstName_eq")]
@@ -10604,6 +10688,16 @@ public class CallOutgoingFilterRequest
     [JsonProperty("contact_contactEmails_label_reg")]
     public string? Contact_ContactEmails_Label_REG { get; set; }
 
+
+    /// <summary> Contact.Owner equals </summary>
+    [JsonProperty("contact_owner_eq")]
+    public string? Contact_Owner_EQ { get; set; }
+    /// <summary> Contact.Owner contains </summary>
+    [JsonProperty("contact_owner_con")]
+    public string? Contact_Owner_CON { get; set; }
+    /// <summary> Contact.Owner regex </summary>
+    [JsonProperty("contact_owner_reg")]
+    public string? Contact_Owner_REG { get; set; }
 
     /// <summary> Contact.FirstName equals </summary>
     [JsonProperty("contact_firstName_eq")]

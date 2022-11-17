@@ -47,6 +47,12 @@ public partial class Contact : UbluxDocument, IReferencesTags
     #endregion
 
     /// <summary>
+    ///     Who owns the contact. If null it will belong to entire account
+    /// </summary>
+    [AllowUpdate(true)]
+    public string? Owner { get; set; }
+
+    /// <summary>
     ///     Contact first name
     /// </summary>
     [AllowUpdate(true)]

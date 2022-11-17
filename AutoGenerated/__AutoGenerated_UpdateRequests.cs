@@ -319,6 +319,10 @@ public class CallOutgoingToPSTNUpdateRequest // : IUbluxDocumentId
 public class CloudServicePbxUpdateRequest // : IUbluxDocumentId
 {
     /// <summary>
+    /// If true we will not monitor pbx in order to update its soft dns in case it is not healthy
+    /// </summary>
+    public Boolean? DisableMonitoring { get; set; }
+    /// <summary>
     /// We need instance id in order to reboot cloud service for example. Example: i-0655b45b8134e6425
     /// </summary>
     public String? ProviderInstanceId { get; set; }
@@ -329,6 +333,8 @@ public class CloudServicePbxUpdateRequest // : IUbluxDocumentId
     /// <summary> Set values on actual document </summary>
     public void SetValuesOnCloudServicePbx(CloudServicePbx cloudServicePbx)
     {
+        if(this.DisableMonitoring!=null)
+            cloudServicePbx.DisableMonitoring = this.DisableMonitoring.Value;
         if(this.ProviderInstanceId!=null)
             cloudServicePbx.ProviderInstanceId = this.ProviderInstanceId;
         if(this.ProviderType!=null)
@@ -407,6 +413,10 @@ public class ContactUpdateRequest // : IUbluxDocumentId
     /// </summary>
     public List<Ublux.Communications.Models.ContactEmail>? ContactEmails { get; set; }
     /// <summary>
+    /// Who owns the contact. If null it will belong to entire account
+    /// </summary>
+    public String? Owner { get; set; }
+    /// <summary>
     /// Contact first name
     /// </summary>
     public String? FirstName { get; set; }
@@ -437,6 +447,8 @@ public class ContactUpdateRequest // : IUbluxDocumentId
             contact.ContactNumbers = this.ContactNumbers;
         if(this.ContactEmails!=null)
             contact.ContactEmails = this.ContactEmails;
+        if(this.Owner!=null)
+            contact.Owner = this.Owner;
         if(this.FirstName!=null)
             contact.FirstName = this.FirstName;
         if(this.LastName!=null)
