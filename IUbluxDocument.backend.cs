@@ -43,7 +43,7 @@ public abstract partial class UbluxDocument : IUbluxDocument, IUbluxDocumentId
     [JsonIgnore]
     [IgnoreDataMember]
     [AllowUpdate(false)]
-    public required BuiltId BuiltId
+    public /*required*/ BuiltId BuiltId
     {
         set
         {

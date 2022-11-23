@@ -8,6 +8,11 @@ namespace Ublux.Communications.Models;
 public static partial class Constants
 {
     /// <summary>
+    ///     If a packet contains this we will not mark it as black. Zoiper does not send domain on packets
+    /// </summary>
+    public const string SipPacketLineId = "sip:Li.";
+
+    /// <summary>
     ///     Domain for application
     /// </summary>
     public const string Domain = "ublux.com";
