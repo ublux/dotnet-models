@@ -199,7 +199,7 @@ public class CallFlowLogicUpdateRequest // : IUbluxDocumentId
     /// <summary>
     /// XML containing the call flow rules
     /// </summary>
-    public String? XmlTree { get; set; }
+    public FlowNode? Tree { get; set; }
     /// <summary> Set values on actual document </summary>
     public void SetValuesOnCallFlowLogic(CallFlowLogic callFlowLogic)
     {
@@ -209,8 +209,8 @@ public class CallFlowLogicUpdateRequest // : IUbluxDocumentId
             callFlowLogic.FriendlyName = this.FriendlyName;
         if(this.Description!=null)
             callFlowLogic.Description = this.Description;
-        if(this.XmlTree!=null)
-            callFlowLogic.XmlTree = this.XmlTree;
+        if(this.Tree!=null)
+            callFlowLogic.Tree = this.Tree;
     }
 
 }

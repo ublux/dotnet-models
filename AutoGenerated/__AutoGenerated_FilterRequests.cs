@@ -660,15 +660,16 @@ public class CallFlowLogicFilterRequest
     [JsonProperty("description_reg")]
     public string? Description_REG { get; set; }
 
-    /// <summary> XmlTree equals </summary>
-    [JsonProperty("xmlTree_eq")]
-    public string? XmlTree_EQ { get; set; }
-    /// <summary> XmlTree contains </summary>
-    [JsonProperty("xmlTree_con")]
-    public string? XmlTree_CON { get; set; }
-    /// <summary> XmlTree regex </summary>
-    [JsonProperty("xmlTree_reg")]
-    public string? XmlTree_REG { get; set; }
+    /// <summary> Tree.FlowNodeType equals </summary>
+    [JsonProperty("tree_flowNodeType_eq")]
+    public string? Tree_FlowNodeType_EQ { get; set; }
+    /// <summary> Tree.FlowNodeType contains </summary>
+    [JsonProperty("tree_flowNodeType_con")]
+    public string? Tree_FlowNodeType_CON { get; set; }
+    /// <summary> Tree.FlowNodeType regex </summary>
+    [JsonProperty("tree_flowNodeType_reg")]
+    public string? Tree_FlowNodeType_REG { get; set; }
+
 
     /// <summary> Id equals </summary>
     [JsonProperty("id_eq")]

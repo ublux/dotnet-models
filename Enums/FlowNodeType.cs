@@ -17,10 +17,7 @@ public enum FlowNodeType
     Digits,
     /// <summary></summary>
     AnyDigits,
-    /// <summary></summary>
-    NoDigits,
-    /// <summary></summary>
-    DynamicExtension,
+    
 
     /// <summary></summary>
     IfTime,
@@ -33,6 +30,9 @@ public enum FlowNodeType
 
     /// <summary> Call an extension </summary>
     Extension,
+
+    /// <summary></summary>
+    DynamicExtension,
 
     /// <summary> If a line is offline </summary>
     IfLineOffline,

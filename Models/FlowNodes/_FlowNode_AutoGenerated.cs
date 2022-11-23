@@ -12,7 +12,6 @@ namespace Ublux.Communications.Models.FlowNodes;
 [JsonSubtypes.KnownSubType(typeof(NodeIfDigits), /*                           */ nameof(FlowNodeType.IfDigits))]
 [JsonSubtypes.KnownSubType(typeof(NodeDigits), /*                             */ nameof(FlowNodeType.Digits))]
 [JsonSubtypes.KnownSubType(typeof(NodeAnyDigits), /*                          */ nameof(FlowNodeType.AnyDigits))]
-[JsonSubtypes.KnownSubType(typeof(NodeNoDigits), /*                           */ nameof(FlowNodeType.NoDigits))]
 [JsonSubtypes.KnownSubType(typeof(NodeDynamicExtension), /*                   */ nameof(FlowNodeType.DynamicExtension))]
 [JsonSubtypes.KnownSubType(typeof(NodeIfTime), /*                             */ nameof(FlowNodeType.IfTime))]
 [JsonSubtypes.KnownSubType(typeof(NodeTime), /*                               */ nameof(FlowNodeType.Time))]
@@ -35,7 +34,6 @@ namespace Ublux.Communications.Models.FlowNodes;
     typeof(NodeIfDigits),
     typeof(NodeDigits),
     typeof(NodeAnyDigits),
-    typeof(NodeNoDigits),
     typeof(NodeDynamicExtension),
     typeof(NodeIfTime),
     typeof(NodeTime),
@@ -173,22 +171,6 @@ public partial class NodeAnyDigits : FlowNode, IOneChild
     public FlowNode? Child { get; set; }
 }
 
-/// <summary></summary>
-public partial class NodeNoDigits : FlowNode, IOneChild
-{
-    /// <inheritdoc />
-    public override FlowNodeType FlowNodeType
-    {
-        get => FlowNodeType.NoDigits;
-        [Obsolete("set method is only used to so that field is stored on mongo DB")]
-        internal set { }
-    }
-
-    /// <inheritdoc />
-    [AllowUpdate(false)]
-    [References(typeof(FlowNode))]
-    public FlowNode? Child { get; set; }
-}
 
 /// <summary></summary>
 public partial class NodeDynamicExtension : FlowNode, IOneChild

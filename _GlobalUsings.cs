@@ -10,6 +10,7 @@ global using MongoDB.Bson;
 global using System.Diagnostics;
 global using JsonSubTypes;
 global using System.Text;
+global using Ublux.Communications.Models.FlowNodes;
 global using Tag = Ublux.Communications.Models.Documents.Tag;
 
 using System.Runtime.CompilerServices;

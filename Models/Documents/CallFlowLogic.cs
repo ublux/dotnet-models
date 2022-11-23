@@ -27,12 +27,19 @@ public partial class CallFlowLogic : UbluxDocument, IReferencesTags
     [AllowUpdate(true)]
     public string? Description { get; set; }
 
+    ///// <summary>
+    /////     XML containing the call flow rules
+    ///// </summary>
+    //[AllowUpdate(true)]
+    //[IsUbluxRequired]
+    //public required string XmlTree { get; set; }
+
     /// <summary>
     ///     XML containing the call flow rules
     /// </summary>
     [AllowUpdate(true)]
     [IsUbluxRequired]
-    public required string XmlTree { get; set; }
+    public required FlowNode Tree { get; set; }
 
     #endregion
 }
