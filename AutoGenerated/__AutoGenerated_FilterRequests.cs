@@ -9229,15 +9229,15 @@ public class WebHookFilterRequest
     [JsonProperty("tags_reg")]
     public string? Tags_REG { get; set; }
 
-    /// <summary> WebHookEvent equals </summary>
-    [JsonProperty("webHookEvent_eq")]
-    public string? WebHookEvent_EQ { get; set; }
-    /// <summary> WebHookEvent contains </summary>
-    [JsonProperty("webHookEvent_con")]
-    public string? WebHookEvent_CON { get; set; }
-    /// <summary> WebHookEvent regex </summary>
-    [JsonProperty("webHookEvent_reg")]
-    public string? WebHookEvent_REG { get; set; }
+    /// <summary> EventTrigger equals </summary>
+    [JsonProperty("eventTrigger_eq")]
+    public string? EventTrigger_EQ { get; set; }
+    /// <summary> EventTrigger contains </summary>
+    [JsonProperty("eventTrigger_con")]
+    public string? EventTrigger_CON { get; set; }
+    /// <summary> EventTrigger regex </summary>
+    [JsonProperty("eventTrigger_reg")]
+    public string? EventTrigger_REG { get; set; }
 
     /// <summary> Url equals </summary>
     [JsonProperty("url_eq")]

@@ -1,0 +1,80 @@
+﻿namespace Ublux.Communications.Enums;
+
+/// <summary>
+///     Type of events that could trigger a custom action
+/// </summary>
+public enum EventTrigger
+{
+    #region Call terminated
+
+    /// <summary/>
+    event_outgoing_call_terminated,
+    /// <summary/>
+    event_incoming_call_terminated,
+
+    /// <summary/>
+    event_outgoing_call_terminated_with_recording,
+    /// <summary/>
+    event_incoming_call_terminated_with_recording,
+
+    #endregion
+
+    #region Line connected/disconnected
+
+    /// <summary/>
+    event_line_disconnected,
+    /// <summary/>
+    event_line_connected,
+
+    #endregion
+
+    #region Extension dial
+
+    /// <summary/>
+    event_extension_dial_not_answered,
+
+    #endregion
+
+    #region Extension Queue
+
+    /// <summary/>
+    event_extension_queue_not_answered,
+    /// <summary/>
+    event_extension_queue_took_to_long_to_be_answered,
+
+    #endregion
+
+    #region Calls
+
+    /// <summary/>
+    event_call_placed_on_hold_for_too_long,
+
+    #endregion
+
+
+    ///// <summary/>
+    //event_phone_created,
+    ///// <summary/>
+    //event_phone_updated,
+    ///// <summary/>
+    //event_phone_deleted,
+    ///// <summary/>
+    //event_phone_line_created,
+    ///// <summary/>
+    //event_phone_line_deleted,
+
+
+    ///// <summary/>
+    //event_extension_created,
+    ///// <summary/>
+    //event_extension_updated,
+    ///// <summary/>
+    //event_extension_deleted,
+    ///// <summary/>
+
+    //// only  needed the created event for web hooks page. 
+    ///// <summary/>
+    //event_power_dialer_created,
+    ///// <summary/>
+    //event_power_dialer_changed
+}

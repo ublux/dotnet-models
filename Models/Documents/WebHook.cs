@@ -23,7 +23,7 @@ public partial class WebHook : UbluxDocument, IReferencesTags
     /// </summary>
     [AllowUpdate(true)]
     [IsUbluxRequired]
-    public required WebHookEvent WebHookEvent { get; set; }
+    public required EventTrigger EventTrigger { get; set; }
 
     /// <summary>
     ///     Url where event will be sent

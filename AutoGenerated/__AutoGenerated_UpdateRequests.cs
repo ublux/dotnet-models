@@ -1552,7 +1552,7 @@ public class WebHookUpdateRequest // : IUbluxDocumentId
     /// <summary>
     /// Points to enum and not database!
     /// </summary>
-    public WebHookEvent? WebHookEvent { get; set; }
+    public EventTrigger? EventTrigger { get; set; }
     /// <summary>
     /// Url where event will be sent
     /// </summary>
@@ -1566,8 +1566,8 @@ public class WebHookUpdateRequest // : IUbluxDocumentId
     {
         if(this.Tags!=null)
             webHook.Tags = this.Tags;
-        if(this.WebHookEvent!=null)
-            webHook.WebHookEvent = this.WebHookEvent.Value;
+        if(this.EventTrigger!=null)
+            webHook.EventTrigger = this.EventTrigger.Value;
         if(this.Url!=null)
             webHook.Url = this.Url;
         if(this.Headers!=null)

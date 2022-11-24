@@ -12,11 +12,11 @@ namespace Ublux.Communications.Models.FlowNodes;
 [JsonSubtypes.KnownSubType(typeof(NodeIfDigits), /*                           */ nameof(FlowNodeType.IfDigits))]
 [JsonSubtypes.KnownSubType(typeof(NodeDigits), /*                             */ nameof(FlowNodeType.Digits))]
 [JsonSubtypes.KnownSubType(typeof(NodeAnyDigits), /*                          */ nameof(FlowNodeType.AnyDigits))]
-[JsonSubtypes.KnownSubType(typeof(NodeDynamicExtension), /*                   */ nameof(FlowNodeType.DynamicExtension))]
 [JsonSubtypes.KnownSubType(typeof(NodeIfTime), /*                             */ nameof(FlowNodeType.IfTime))]
 [JsonSubtypes.KnownSubType(typeof(NodeTime), /*                               */ nameof(FlowNodeType.Time))]
 [JsonSubtypes.KnownSubType(typeof(NodeAnyTime), /*                            */ nameof(FlowNodeType.AnyTime))]
 [JsonSubtypes.KnownSubType(typeof(NodeExtension), /*                          */ nameof(FlowNodeType.Extension))]
+[JsonSubtypes.KnownSubType(typeof(NodeDynamicExtension), /*                   */ nameof(FlowNodeType.DynamicExtension))]
 [JsonSubtypes.KnownSubType(typeof(NodeIfLineOffline), /*                      */ nameof(FlowNodeType.IfLineOffline))]
 [JsonSubtypes.KnownSubType(typeof(NodeLineOnline), /*                         */ nameof(FlowNodeType.LineOnline))]
 [JsonSubtypes.KnownSubType(typeof(NodeLineOffline), /*                        */ nameof(FlowNodeType.LineOffline))]
@@ -34,11 +34,11 @@ namespace Ublux.Communications.Models.FlowNodes;
     typeof(NodeIfDigits),
     typeof(NodeDigits),
     typeof(NodeAnyDigits),
-    typeof(NodeDynamicExtension),
     typeof(NodeIfTime),
     typeof(NodeTime),
     typeof(NodeAnyTime),
     typeof(NodeExtension),
+    typeof(NodeDynamicExtension),
     typeof(NodeIfLineOffline),
     typeof(NodeLineOnline),
     typeof(NodeLineOffline),
@@ -171,24 +171,6 @@ public partial class NodeAnyDigits : FlowNode, IOneChild
     public FlowNode? Child { get; set; }
 }
 
-
-/// <summary></summary>
-public partial class NodeDynamicExtension : FlowNode, IOneChild
-{
-    /// <inheritdoc />
-    public override FlowNodeType FlowNodeType
-    {
-        get => FlowNodeType.DynamicExtension;
-        [Obsolete("set method is only used to so that field is stored on mongo DB")]
-        internal set { }
-    }
-
-    /// <inheritdoc />
-    [AllowUpdate(false)]
-    [References(typeof(FlowNode))]
-    public FlowNode? Child { get; set; }
-}
-
 /// <summary></summary>
 public partial class NodeIfTime : FlowNode, IMultipleChildren
 {
@@ -247,6 +229,23 @@ public partial class NodeExtension : FlowNode, IOneChild
     public override FlowNodeType FlowNodeType
     {
         get => FlowNodeType.Extension;
+        [Obsolete("set method is only used to so that field is stored on mongo DB")]
+        internal set { }
+    }
+
+    /// <inheritdoc />
+    [AllowUpdate(false)]
+    [References(typeof(FlowNode))]
+    public FlowNode? Child { get; set; }
+}
+
+/// <summary></summary>
+public partial class NodeDynamicExtension : FlowNode, IOneChild
+{
+    /// <inheritdoc />
+    public override FlowNodeType FlowNodeType
+    {
+        get => FlowNodeType.DynamicExtension;
         [Obsolete("set method is only used to so that field is stored on mongo DB")]
         internal set { }
     }
