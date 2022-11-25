@@ -27,6 +27,7 @@ public partial class WebHook : UbluxDocument, IReferencesTags
 
     /// <summary>
     ///     Url where event will be sent
+    ///     TODO: place index on this field. Index is needed because when zapier deletes/unsubscribes it passes this url
     /// </summary>
     [AllowUpdate(true)]
     [IsUbluxRequired]

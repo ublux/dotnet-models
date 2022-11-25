@@ -4,9 +4,10 @@ namespace Ublux.Communications.Models.EventTriggersModels;
 /* Contains web hooks models */
 
 /// <summary />
-public partial class OutgoingCallTerminated : EventTriggerModel
+public partial class EventOutgoingCallTerminated : EventTriggerModel
 {
     /// <inheritdoc />
+    [AllowUpdate(false)]
     public override EventTrigger EventTrigger
     {
         get => EventTrigger.event_outgoing_call_terminated;
@@ -16,9 +17,10 @@ public partial class OutgoingCallTerminated : EventTriggerModel
 }
 
 /// <summary />
-public partial class IncomingCallTerminated : EventTriggerModel
+public partial class EventIncomingCallTerminated : EventTriggerModel
 {
     /// <inheritdoc />
+    [AllowUpdate(false)]
     public override EventTrigger EventTrigger
     {
         get => EventTrigger.event_incoming_call_terminated;
@@ -28,9 +30,10 @@ public partial class IncomingCallTerminated : EventTriggerModel
 }
 
 /// <summary />
-public partial class OutgoingCallTerminatedWithRecording : EventTriggerModel
+public partial class EventOutgoingCallTerminatedWithRecording : EventTriggerModel
 {
     /// <inheritdoc />
+    [AllowUpdate(false)]
     public override EventTrigger EventTrigger
     {
         get => EventTrigger.event_outgoing_call_terminated_with_recording;
@@ -40,9 +43,10 @@ public partial class OutgoingCallTerminatedWithRecording : EventTriggerModel
 }
 
 /// <summary />
-public partial class IncomingCallTerminatedWithRecording : EventTriggerModel
+public partial class EventIncomingCallTerminatedWithRecording : EventTriggerModel
 {
     /// <inheritdoc />
+    [AllowUpdate(false)]
     public override EventTrigger EventTrigger
     {
         get => EventTrigger.event_incoming_call_terminated_with_recording;
@@ -52,9 +56,10 @@ public partial class IncomingCallTerminatedWithRecording : EventTriggerModel
 }
 
 /// <summary />
-public partial class LineDisconnected : EventTriggerModel
+public partial class EventLineDisconnected : EventTriggerModel
 {
     /// <inheritdoc />
+    [AllowUpdate(false)]
     public override EventTrigger EventTrigger
     {
         get => EventTrigger.event_line_disconnected;
@@ -64,9 +69,10 @@ public partial class LineDisconnected : EventTriggerModel
 }
 
 /// <summary />
-public partial class LineConnected : EventTriggerModel
+public partial class EventLineConnected : EventTriggerModel
 {
     /// <inheritdoc />
+    [AllowUpdate(false)]
     public override EventTrigger EventTrigger
     {
         get => EventTrigger.event_line_connected;
@@ -76,9 +82,10 @@ public partial class LineConnected : EventTriggerModel
 }
 
 /// <summary />
-public partial class ExtensionDialNotAnswered : EventTriggerModel
+public partial class EventExtensionDialNotAnswered : EventTriggerModel
 {
     /// <inheritdoc />
+    [AllowUpdate(false)]
     public override EventTrigger EventTrigger
     {
         get => EventTrigger.event_extension_dial_not_answered;
@@ -88,9 +95,10 @@ public partial class ExtensionDialNotAnswered : EventTriggerModel
 }
 
 /// <summary />
-public partial class ExtensionQueueNotAnswered : EventTriggerModel
+public partial class EventExtensionQueueNotAnswered : EventTriggerModel
 {
     /// <inheritdoc />
+    [AllowUpdate(false)]
     public override EventTrigger EventTrigger
     {
         get => EventTrigger.event_extension_queue_not_answered;
@@ -100,9 +108,10 @@ public partial class ExtensionQueueNotAnswered : EventTriggerModel
 }
 
 /// <summary />
-public partial class ExtensionQueueTookToLongToBeAnswered : EventTriggerModel
+public partial class EventExtensionQueueTookToLongToBeAnswered : EventTriggerModel
 {
     /// <inheritdoc />
+    [AllowUpdate(false)]
     public override EventTrigger EventTrigger
     {
         get => EventTrigger.event_extension_queue_took_to_long_to_be_answered;
@@ -112,9 +121,10 @@ public partial class ExtensionQueueTookToLongToBeAnswered : EventTriggerModel
 }
 
 /// <summary />
-public partial class CallPlacedOnHoldForTooLong : EventTriggerModel
+public partial class EventCallPlacedOnHoldForTooLong : EventTriggerModel
 {
     /// <inheritdoc />
+    [AllowUpdate(false)]
     public override EventTrigger EventTrigger
     {
         get => EventTrigger.event_call_placed_on_hold_for_too_long;

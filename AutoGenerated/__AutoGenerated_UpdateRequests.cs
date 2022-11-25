@@ -1555,6 +1555,7 @@ public class WebHookUpdateRequest // : IUbluxDocumentId
     public EventTrigger? EventTrigger { get; set; }
     /// <summary>
     /// Url where event will be sent
+    /// TODO: place index on this field. Index is needed because when zapier deletes/unsubscribes it passes this url
     /// </summary>
     public String? Url { get; set; }
     /// <summary>
