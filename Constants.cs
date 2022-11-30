@@ -81,4 +81,9 @@ public static partial class Constants
     ///     rtpend on rtp.conf
     /// </summary>
     public const int RtpPortEnd = 20_000;
+
+    /// <summary>
+    ///     Simple tcp server used on pbx
+    /// </summary>
+    public const int PortSimpleTcpServer = 62618;
 }
