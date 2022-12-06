@@ -86,4 +86,61 @@ public static partial class Constants
     ///     Simple tcp server used on pbx
     /// </summary>
     public const int PortSimpleTcpServer = 62618;
+
+
+    /// <summary>
+    ///     Common actions
+    /// </summary>
+    private static readonly FlowNodeType[] CommonActions = new[]
+    {
+        FlowNodeType.Say,
+        FlowNodeType.Play,
+        FlowNodeType.API,
+        FlowNodeType.CallBackAPI,
+        FlowNodeType.Bookmark,
+        FlowNodeType.GoTo,
+        FlowNodeType.Call,
+        FlowNodeType.Pause,
+        FlowNodeType.Comment,
+        FlowNodeType.Hangup,
+        FlowNodeType.DynamicExtension,
+        FlowNodeType.Extension
+    };
+
+    /// <summary>
+    ///     Contains the rules for the type of children each node can have. 
+    ///     For example the node IfTime can only have the child Time
+    /// </summary>
+    public static readonly Dictionary<FlowNodeType, FlowNodeType[]> FlowNodeChildRules = new()
+    {
+        // Conditionals
+        { FlowNodeType.IfLineOffline,
+            new FlowNodeType[]{ FlowNodeType.LineOffline, FlowNodeType.LineOnline } },
+        { FlowNodeType.IfDigits,
+            new FlowNodeType[]{ FlowNodeType.Digits, FlowNodeType.AnyDigits } },
+        { FlowNodeType.IfTime,
+            new FlowNodeType[]{ FlowNodeType.Time } },
+
+        // Conditional childs
+        { FlowNodeType.Time, CommonActions },
+        { FlowNodeType.Digits, CommonActions },
+        { FlowNodeType.AnyDigits, CommonActions },
+        { FlowNodeType.LineOffline, CommonActions },
+        { FlowNodeType.LineOnline, CommonActions },
+        { FlowNodeType.AnyTime, CommonActions },
+
+        // Rest of children
+        { FlowNodeType.Say, CommonActions },
+        { FlowNodeType.Play, CommonActions },
+        { FlowNodeType.API, CommonActions },
+        { FlowNodeType.CallBackAPI, CommonActions },
+        { FlowNodeType.Bookmark, CommonActions },
+        { FlowNodeType.GoTo, CommonActions },
+        { FlowNodeType.Call, CommonActions },
+        { FlowNodeType.Pause, CommonActions },
+        { FlowNodeType.Comment, CommonActions },
+        { FlowNodeType.Hangup, CommonActions },
+        { FlowNodeType.DynamicExtension, CommonActions },
+        { FlowNodeType.Extension, CommonActions },
+    };
 }
