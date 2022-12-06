@@ -104,7 +104,11 @@ public static partial class Constants
         FlowNodeType.Comment,
         FlowNodeType.Hangup,
         FlowNodeType.DynamicExtension,
-        FlowNodeType.Extension
+        FlowNodeType.Extension,
+
+        FlowNodeType.IfLineOffline,
+        FlowNodeType.IfDigits,
+        FlowNodeType.IfTime
     };
 
     /// <summary>

@@ -1592,6 +1592,8 @@ public class CloudFileUpdateRequest // : IUbluxDocumentId
 
 /// <summary>
 /// Category
+/// </summary><summary>
+/// Category
 /// </summary>
 public class TagUpdateRequest // : IUbluxDocumentId
 {

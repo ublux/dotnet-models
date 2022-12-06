@@ -411,8 +411,16 @@ public enum UbluxRole
     /// <summary> Has access to the webhooks endpoint with only read/create permissions </summary>
     webhooks_create,
 
-
-
+    /// <summary> Has access to the tags endpoint with full permissions </summary>
+    tags = 360,
+    /// <summary> Has access to the tags endpoint with only read permissions </summary>
+    tags_readonly,
+    /// <summary> Has access to the tags endpoint with only read/update permissions </summary>
+    tags_update,
+    /// <summary> Has access to the tags endpoint with only read/delete permissions </summary>
+    tags_delete,
+    /// <summary> Has access to the tags endpoint with only read/create permissions </summary>
+    tags_create,
 
 
     #endregion
