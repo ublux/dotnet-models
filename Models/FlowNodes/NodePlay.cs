@@ -1,17 +1,12 @@
 ﻿namespace Ublux.Communications.Models.FlowNodes;
 
 /// <summary></summary>
-public partial class NodeSay : INodePlay
+public partial class NodePlay : INodePlay
 {
     /// <summary>
-    ///     Type of voice. Example: US English - Joanna
+    ///     Audio to play
     /// </summary>
-    public required string Voice { get; set; }
-
-    /// <summary>
-    ///     Text to say
-    /// </summary>
-    public required string Text { get; set; }
+    public required string IdAudio { get; set; }
 
     #region INodePlay
 

@@ -1,20 +1,10 @@
 ﻿namespace Ublux.Communications.Models.FlowNodes;
 
-/// <summary></summary>
-public partial class NodeSay : INodePlay
+/// <summary>
+///     Play an audio
+/// </summary>
+public interface INodePlay
 {
-    /// <summary>
-    ///     Type of voice. Example: US English - Joanna
-    /// </summary>
-    public required string Voice { get; set; }
-
-    /// <summary>
-    ///     Text to say
-    /// </summary>
-    public required string Text { get; set; }
-
-    #region INodePlay
-
     /// <summary>
     ///     Save and collect digits user enters
     /// </summary>
@@ -29,6 +19,4 @@ public partial class NodeSay : INodePlay
     ///     Time to wait to collect digits after text is said
     /// </summary>
     public int Timeout { get; set; }
-
-    #endregion
 }
