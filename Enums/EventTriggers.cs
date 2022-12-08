@@ -19,6 +19,14 @@ public enum EventTrigger
 
     #endregion
 
+    #region Calls
+
+    /// <summary/>
+    event_call_placed_on_hold_for_too_long,
+
+    #endregion
+
+
     #region Line connected/disconnected
 
     /// <summary/>
@@ -28,28 +36,17 @@ public enum EventTrigger
 
     #endregion
 
-    #region Extension dial
+    #region Extension
 
     /// <summary/>
-    event_extension_dial_not_answered,
+    event_extension_not_answered,   
+    
+    /// <summary/>
+    event_extension_took_to_long_to_be_answered,
 
     #endregion
 
-    #region Extension Queue
-
-    /// <summary/>
-    event_extension_queue_not_answered,
-    /// <summary/>
-    event_extension_queue_took_to_long_to_be_answered,
-
-    #endregion
-
-    #region Calls
-
-    /// <summary/>
-    event_call_placed_on_hold_for_too_long,
-
-    #endregion
+   
 
 
     ///// <summary/>
