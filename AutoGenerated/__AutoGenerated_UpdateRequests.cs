@@ -413,9 +413,9 @@ public class ContactUpdateRequest // : IUbluxDocumentId
     /// </summary>
     public List<Ublux.Communications.Models.ContactEmail>? ContactEmails { get; set; }
     /// <summary>
-    /// Who owns the contact. If null it will belong to entire account
+    /// Mailing Addresses of contact
     /// </summary>
-    public String? Owner { get; set; }
+    public List<Ublux.Communications.Models.MailingAddress>? MailingAddresses { get; set; }
     /// <summary>
     /// Contact first name
     /// </summary>
@@ -447,8 +447,8 @@ public class ContactUpdateRequest // : IUbluxDocumentId
             contact.ContactNumbers = this.ContactNumbers;
         if(this.ContactEmails!=null)
             contact.ContactEmails = this.ContactEmails;
-        if(this.Owner!=null)
-            contact.Owner = this.Owner;
+        if(this.MailingAddresses!=null)
+            contact.MailingAddresses = this.MailingAddresses;
         if(this.FirstName!=null)
             contact.FirstName = this.FirstName;
         if(this.LastName!=null)

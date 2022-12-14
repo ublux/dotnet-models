@@ -14,10 +14,12 @@ public partial class Contact : UbluxDocument, IReferencesTags
     /// <summary>
     ///     If null it can be seen by entire account. In other words it is a global contact. 
     ///     Otherwise it will only be visible to a specific identity (user)
+    ///     
+    ///     Who owns the contact. If null it will belong to entire account
     /// </summary>
     [AllowUpdate(false)]
     [References(typeof(Identity))]
-    public string? IdIdentityUser { get; set; }
+    public string? IdIdentityUserOwner { get; set; }
 
     /// <summary>
     ///     Ids of tags
@@ -44,13 +46,19 @@ public partial class Contact : UbluxDocument, IReferencesTags
     [AllowUpdate(true)]
     public List<ContactEmail> ContactEmails { get; set; } = new();
 
-    #endregion
-
     /// <summary>
-    ///     Who owns the contact. If null it will belong to entire account
+    ///     Mailing Addresses of contact
     /// </summary>
     [AllowUpdate(true)]
-    public string? Owner { get; set; }
+    public List<MailingAddress> MailingAddresses { get; set; } = new();
+
+    #endregion
+
+    ///// <summary>
+    /////     Who owns the contact. If null it will belong to entire account
+    ///// </summary>
+    //[AllowUpdate(true)]
+    //public string? Owner { get; set; }
 
     /// <summary>
     ///     Contact first name

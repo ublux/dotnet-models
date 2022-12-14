@@ -49,5 +49,4 @@ public class MailingAddress
     ///     Country
     /// </summary>
     public required CountryIsoCode Country { get; set; } = CountryIsoCode.US;
-
 }

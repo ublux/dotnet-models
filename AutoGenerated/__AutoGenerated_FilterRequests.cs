@@ -725,15 +725,15 @@ public class CallIncomingToCallFlowLogicFilterRequest
     [JsonProperty("callType_reg")]
     public string? CallType_REG { get; set; }
 
-    /// <summary> Contact.IdIdentityUser equals </summary>
-    [JsonProperty("contact_idIdentityUser_eq")]
-    public string? Contact_IdIdentityUser_EQ { get; set; }
-    /// <summary> Contact.IdIdentityUser contains </summary>
-    [JsonProperty("contact_idIdentityUser_con")]
-    public string? Contact_IdIdentityUser_CON { get; set; }
-    /// <summary> Contact.IdIdentityUser regex </summary>
-    [JsonProperty("contact_idIdentityUser_reg")]
-    public string? Contact_IdIdentityUser_REG { get; set; }
+    /// <summary> Contact.IdIdentityUserOwner equals </summary>
+    [JsonProperty("contact_idIdentityUserOwner_eq")]
+    public string? Contact_IdIdentityUserOwner_EQ { get; set; }
+    /// <summary> Contact.IdIdentityUserOwner contains </summary>
+    [JsonProperty("contact_idIdentityUserOwner_con")]
+    public string? Contact_IdIdentityUserOwner_CON { get; set; }
+    /// <summary> Contact.IdIdentityUserOwner regex </summary>
+    [JsonProperty("contact_idIdentityUserOwner_reg")]
+    public string? Contact_IdIdentityUserOwner_REG { get; set; }
 
     /// <summary> Contact.Tags equals </summary>
     [JsonProperty("contact_tags_eq")]
@@ -807,15 +807,86 @@ public class CallIncomingToCallFlowLogicFilterRequest
     public string? Contact_ContactEmails_Label_REG { get; set; }
 
 
-    /// <summary> Contact.Owner equals </summary>
-    [JsonProperty("contact_owner_eq")]
-    public string? Contact_Owner_EQ { get; set; }
-    /// <summary> Contact.Owner contains </summary>
-    [JsonProperty("contact_owner_con")]
-    public string? Contact_Owner_CON { get; set; }
-    /// <summary> Contact.Owner regex </summary>
-    [JsonProperty("contact_owner_reg")]
-    public string? Contact_Owner_REG { get; set; }
+    /// <summary> Contact.MailingAddresses.RecipientName equals </summary>
+    [JsonProperty("contact_mailingAddresses_recipientName_eq")]
+    public string? Contact_MailingAddresses_RecipientName_EQ { get; set; }
+    /// <summary> Contact.MailingAddresses.RecipientName contains </summary>
+    [JsonProperty("contact_mailingAddresses_recipientName_con")]
+    public string? Contact_MailingAddresses_RecipientName_CON { get; set; }
+    /// <summary> Contact.MailingAddresses.RecipientName regex </summary>
+    [JsonProperty("contact_mailingAddresses_recipientName_reg")]
+    public string? Contact_MailingAddresses_RecipientName_REG { get; set; }
+
+    /// <summary> Contact.MailingAddresses.BusinessName equals </summary>
+    [JsonProperty("contact_mailingAddresses_businessName_eq")]
+    public string? Contact_MailingAddresses_BusinessName_EQ { get; set; }
+    /// <summary> Contact.MailingAddresses.BusinessName contains </summary>
+    [JsonProperty("contact_mailingAddresses_businessName_con")]
+    public string? Contact_MailingAddresses_BusinessName_CON { get; set; }
+    /// <summary> Contact.MailingAddresses.BusinessName regex </summary>
+    [JsonProperty("contact_mailingAddresses_businessName_reg")]
+    public string? Contact_MailingAddresses_BusinessName_REG { get; set; }
+
+    /// <summary> Contact.MailingAddresses.StreetAddress equals </summary>
+    [JsonProperty("contact_mailingAddresses_streetAddress_eq")]
+    public string? Contact_MailingAddresses_StreetAddress_EQ { get; set; }
+    /// <summary> Contact.MailingAddresses.StreetAddress contains </summary>
+    [JsonProperty("contact_mailingAddresses_streetAddress_con")]
+    public string? Contact_MailingAddresses_StreetAddress_CON { get; set; }
+    /// <summary> Contact.MailingAddresses.StreetAddress regex </summary>
+    [JsonProperty("contact_mailingAddresses_streetAddress_reg")]
+    public string? Contact_MailingAddresses_StreetAddress_REG { get; set; }
+
+    /// <summary> Contact.MailingAddresses.ApparmentOrSuiteNumber equals </summary>
+    [JsonProperty("contact_mailingAddresses_apparmentOrSuiteNumber_eq")]
+    public string? Contact_MailingAddresses_ApparmentOrSuiteNumber_EQ { get; set; }
+    /// <summary> Contact.MailingAddresses.ApparmentOrSuiteNumber contains </summary>
+    [JsonProperty("contact_mailingAddresses_apparmentOrSuiteNumber_con")]
+    public string? Contact_MailingAddresses_ApparmentOrSuiteNumber_CON { get; set; }
+    /// <summary> Contact.MailingAddresses.ApparmentOrSuiteNumber regex </summary>
+    [JsonProperty("contact_mailingAddresses_apparmentOrSuiteNumber_reg")]
+    public string? Contact_MailingAddresses_ApparmentOrSuiteNumber_REG { get; set; }
+
+    /// <summary> Contact.MailingAddresses.City equals </summary>
+    [JsonProperty("contact_mailingAddresses_city_eq")]
+    public string? Contact_MailingAddresses_City_EQ { get; set; }
+    /// <summary> Contact.MailingAddresses.City contains </summary>
+    [JsonProperty("contact_mailingAddresses_city_con")]
+    public string? Contact_MailingAddresses_City_CON { get; set; }
+    /// <summary> Contact.MailingAddresses.City regex </summary>
+    [JsonProperty("contact_mailingAddresses_city_reg")]
+    public string? Contact_MailingAddresses_City_REG { get; set; }
+
+    /// <summary> Contact.MailingAddresses.State equals </summary>
+    [JsonProperty("contact_mailingAddresses_state_eq")]
+    public string? Contact_MailingAddresses_State_EQ { get; set; }
+    /// <summary> Contact.MailingAddresses.State contains </summary>
+    [JsonProperty("contact_mailingAddresses_state_con")]
+    public string? Contact_MailingAddresses_State_CON { get; set; }
+    /// <summary> Contact.MailingAddresses.State regex </summary>
+    [JsonProperty("contact_mailingAddresses_state_reg")]
+    public string? Contact_MailingAddresses_State_REG { get; set; }
+
+    /// <summary> Contact.MailingAddresses.ZipCode equals </summary>
+    [JsonProperty("contact_mailingAddresses_zipCode_eq")]
+    public string? Contact_MailingAddresses_ZipCode_EQ { get; set; }
+    /// <summary> Contact.MailingAddresses.ZipCode contains </summary>
+    [JsonProperty("contact_mailingAddresses_zipCode_con")]
+    public string? Contact_MailingAddresses_ZipCode_CON { get; set; }
+    /// <summary> Contact.MailingAddresses.ZipCode regex </summary>
+    [JsonProperty("contact_mailingAddresses_zipCode_reg")]
+    public string? Contact_MailingAddresses_ZipCode_REG { get; set; }
+
+    /// <summary> Contact.MailingAddresses.Country equals </summary>
+    [JsonProperty("contact_mailingAddresses_country_eq")]
+    public string? Contact_MailingAddresses_Country_EQ { get; set; }
+    /// <summary> Contact.MailingAddresses.Country contains </summary>
+    [JsonProperty("contact_mailingAddresses_country_con")]
+    public string? Contact_MailingAddresses_Country_CON { get; set; }
+    /// <summary> Contact.MailingAddresses.Country regex </summary>
+    [JsonProperty("contact_mailingAddresses_country_reg")]
+    public string? Contact_MailingAddresses_Country_REG { get; set; }
+
 
     /// <summary> Contact.FirstName equals </summary>
     [JsonProperty("contact_firstName_eq")]
@@ -1803,15 +1874,15 @@ public class CallIncomingToExtensionFilterRequest
     [JsonProperty("callType_reg")]
     public string? CallType_REG { get; set; }
 
-    /// <summary> Contact.IdIdentityUser equals </summary>
-    [JsonProperty("contact_idIdentityUser_eq")]
-    public string? Contact_IdIdentityUser_EQ { get; set; }
-    /// <summary> Contact.IdIdentityUser contains </summary>
-    [JsonProperty("contact_idIdentityUser_con")]
-    public string? Contact_IdIdentityUser_CON { get; set; }
-    /// <summary> Contact.IdIdentityUser regex </summary>
-    [JsonProperty("contact_idIdentityUser_reg")]
-    public string? Contact_IdIdentityUser_REG { get; set; }
+    /// <summary> Contact.IdIdentityUserOwner equals </summary>
+    [JsonProperty("contact_idIdentityUserOwner_eq")]
+    public string? Contact_IdIdentityUserOwner_EQ { get; set; }
+    /// <summary> Contact.IdIdentityUserOwner contains </summary>
+    [JsonProperty("contact_idIdentityUserOwner_con")]
+    public string? Contact_IdIdentityUserOwner_CON { get; set; }
+    /// <summary> Contact.IdIdentityUserOwner regex </summary>
+    [JsonProperty("contact_idIdentityUserOwner_reg")]
+    public string? Contact_IdIdentityUserOwner_REG { get; set; }
 
     /// <summary> Contact.Tags equals </summary>
     [JsonProperty("contact_tags_eq")]
@@ -1885,15 +1956,86 @@ public class CallIncomingToExtensionFilterRequest
     public string? Contact_ContactEmails_Label_REG { get; set; }
 
 
-    /// <summary> Contact.Owner equals </summary>
-    [JsonProperty("contact_owner_eq")]
-    public string? Contact_Owner_EQ { get; set; }
-    /// <summary> Contact.Owner contains </summary>
-    [JsonProperty("contact_owner_con")]
-    public string? Contact_Owner_CON { get; set; }
-    /// <summary> Contact.Owner regex </summary>
-    [JsonProperty("contact_owner_reg")]
-    public string? Contact_Owner_REG { get; set; }
+    /// <summary> Contact.MailingAddresses.RecipientName equals </summary>
+    [JsonProperty("contact_mailingAddresses_recipientName_eq")]
+    public string? Contact_MailingAddresses_RecipientName_EQ { get; set; }
+    /// <summary> Contact.MailingAddresses.RecipientName contains </summary>
+    [JsonProperty("contact_mailingAddresses_recipientName_con")]
+    public string? Contact_MailingAddresses_RecipientName_CON { get; set; }
+    /// <summary> Contact.MailingAddresses.RecipientName regex </summary>
+    [JsonProperty("contact_mailingAddresses_recipientName_reg")]
+    public string? Contact_MailingAddresses_RecipientName_REG { get; set; }
+
+    /// <summary> Contact.MailingAddresses.BusinessName equals </summary>
+    [JsonProperty("contact_mailingAddresses_businessName_eq")]
+    public string? Contact_MailingAddresses_BusinessName_EQ { get; set; }
+    /// <summary> Contact.MailingAddresses.BusinessName contains </summary>
+    [JsonProperty("contact_mailingAddresses_businessName_con")]
+    public string? Contact_MailingAddresses_BusinessName_CON { get; set; }
+    /// <summary> Contact.MailingAddresses.BusinessName regex </summary>
+    [JsonProperty("contact_mailingAddresses_businessName_reg")]
+    public string? Contact_MailingAddresses_BusinessName_REG { get; set; }
+
+    /// <summary> Contact.MailingAddresses.StreetAddress equals </summary>
+    [JsonProperty("contact_mailingAddresses_streetAddress_eq")]
+    public string? Contact_MailingAddresses_StreetAddress_EQ { get; set; }
+    /// <summary> Contact.MailingAddresses.StreetAddress contains </summary>
+    [JsonProperty("contact_mailingAddresses_streetAddress_con")]
+    public string? Contact_MailingAddresses_StreetAddress_CON { get; set; }
+    /// <summary> Contact.MailingAddresses.StreetAddress regex </summary>
+    [JsonProperty("contact_mailingAddresses_streetAddress_reg")]
+    public string? Contact_MailingAddresses_StreetAddress_REG { get; set; }
+
+    /// <summary> Contact.MailingAddresses.ApparmentOrSuiteNumber equals </summary>
+    [JsonProperty("contact_mailingAddresses_apparmentOrSuiteNumber_eq")]
+    public string? Contact_MailingAddresses_ApparmentOrSuiteNumber_EQ { get; set; }
+    /// <summary> Contact.MailingAddresses.ApparmentOrSuiteNumber contains </summary>
+    [JsonProperty("contact_mailingAddresses_apparmentOrSuiteNumber_con")]
+    public string? Contact_MailingAddresses_ApparmentOrSuiteNumber_CON { get; set; }
+    /// <summary> Contact.MailingAddresses.ApparmentOrSuiteNumber regex </summary>
+    [JsonProperty("contact_mailingAddresses_apparmentOrSuiteNumber_reg")]
+    public string? Contact_MailingAddresses_ApparmentOrSuiteNumber_REG { get; set; }
+
+    /// <summary> Contact.MailingAddresses.City equals </summary>
+    [JsonProperty("contact_mailingAddresses_city_eq")]
+    public string? Contact_MailingAddresses_City_EQ { get; set; }
+    /// <summary> Contact.MailingAddresses.City contains </summary>
+    [JsonProperty("contact_mailingAddresses_city_con")]
+    public string? Contact_MailingAddresses_City_CON { get; set; }
+    /// <summary> Contact.MailingAddresses.City regex </summary>
+    [JsonProperty("contact_mailingAddresses_city_reg")]
+    public string? Contact_MailingAddresses_City_REG { get; set; }
+
+    /// <summary> Contact.MailingAddresses.State equals </summary>
+    [JsonProperty("contact_mailingAddresses_state_eq")]
+    public string? Contact_MailingAddresses_State_EQ { get; set; }
+    /// <summary> Contact.MailingAddresses.State contains </summary>
+    [JsonProperty("contact_mailingAddresses_state_con")]
+    public string? Contact_MailingAddresses_State_CON { get; set; }
+    /// <summary> Contact.MailingAddresses.State regex </summary>
+    [JsonProperty("contact_mailingAddresses_state_reg")]
+    public string? Contact_MailingAddresses_State_REG { get; set; }
+
+    /// <summary> Contact.MailingAddresses.ZipCode equals </summary>
+    [JsonProperty("contact_mailingAddresses_zipCode_eq")]
+    public string? Contact_MailingAddresses_ZipCode_EQ { get; set; }
+    /// <summary> Contact.MailingAddresses.ZipCode contains </summary>
+    [JsonProperty("contact_mailingAddresses_zipCode_con")]
+    public string? Contact_MailingAddresses_ZipCode_CON { get; set; }
+    /// <summary> Contact.MailingAddresses.ZipCode regex </summary>
+    [JsonProperty("contact_mailingAddresses_zipCode_reg")]
+    public string? Contact_MailingAddresses_ZipCode_REG { get; set; }
+
+    /// <summary> Contact.MailingAddresses.Country equals </summary>
+    [JsonProperty("contact_mailingAddresses_country_eq")]
+    public string? Contact_MailingAddresses_Country_EQ { get; set; }
+    /// <summary> Contact.MailingAddresses.Country contains </summary>
+    [JsonProperty("contact_mailingAddresses_country_con")]
+    public string? Contact_MailingAddresses_Country_CON { get; set; }
+    /// <summary> Contact.MailingAddresses.Country regex </summary>
+    [JsonProperty("contact_mailingAddresses_country_reg")]
+    public string? Contact_MailingAddresses_Country_REG { get; set; }
+
 
     /// <summary> Contact.FirstName equals </summary>
     [JsonProperty("contact_firstName_eq")]
@@ -2881,15 +3023,15 @@ public class CallOutgoingToExtensionFilterRequest
     [JsonProperty("callType_reg")]
     public string? CallType_REG { get; set; }
 
-    /// <summary> Contact.IdIdentityUser equals </summary>
-    [JsonProperty("contact_idIdentityUser_eq")]
-    public string? Contact_IdIdentityUser_EQ { get; set; }
-    /// <summary> Contact.IdIdentityUser contains </summary>
-    [JsonProperty("contact_idIdentityUser_con")]
-    public string? Contact_IdIdentityUser_CON { get; set; }
-    /// <summary> Contact.IdIdentityUser regex </summary>
-    [JsonProperty("contact_idIdentityUser_reg")]
-    public string? Contact_IdIdentityUser_REG { get; set; }
+    /// <summary> Contact.IdIdentityUserOwner equals </summary>
+    [JsonProperty("contact_idIdentityUserOwner_eq")]
+    public string? Contact_IdIdentityUserOwner_EQ { get; set; }
+    /// <summary> Contact.IdIdentityUserOwner contains </summary>
+    [JsonProperty("contact_idIdentityUserOwner_con")]
+    public string? Contact_IdIdentityUserOwner_CON { get; set; }
+    /// <summary> Contact.IdIdentityUserOwner regex </summary>
+    [JsonProperty("contact_idIdentityUserOwner_reg")]
+    public string? Contact_IdIdentityUserOwner_REG { get; set; }
 
     /// <summary> Contact.Tags equals </summary>
     [JsonProperty("contact_tags_eq")]
@@ -2963,15 +3105,86 @@ public class CallOutgoingToExtensionFilterRequest
     public string? Contact_ContactEmails_Label_REG { get; set; }
 
 
-    /// <summary> Contact.Owner equals </summary>
-    [JsonProperty("contact_owner_eq")]
-    public string? Contact_Owner_EQ { get; set; }
-    /// <summary> Contact.Owner contains </summary>
-    [JsonProperty("contact_owner_con")]
-    public string? Contact_Owner_CON { get; set; }
-    /// <summary> Contact.Owner regex </summary>
-    [JsonProperty("contact_owner_reg")]
-    public string? Contact_Owner_REG { get; set; }
+    /// <summary> Contact.MailingAddresses.RecipientName equals </summary>
+    [JsonProperty("contact_mailingAddresses_recipientName_eq")]
+    public string? Contact_MailingAddresses_RecipientName_EQ { get; set; }
+    /// <summary> Contact.MailingAddresses.RecipientName contains </summary>
+    [JsonProperty("contact_mailingAddresses_recipientName_con")]
+    public string? Contact_MailingAddresses_RecipientName_CON { get; set; }
+    /// <summary> Contact.MailingAddresses.RecipientName regex </summary>
+    [JsonProperty("contact_mailingAddresses_recipientName_reg")]
+    public string? Contact_MailingAddresses_RecipientName_REG { get; set; }
+
+    /// <summary> Contact.MailingAddresses.BusinessName equals </summary>
+    [JsonProperty("contact_mailingAddresses_businessName_eq")]
+    public string? Contact_MailingAddresses_BusinessName_EQ { get; set; }
+    /// <summary> Contact.MailingAddresses.BusinessName contains </summary>
+    [JsonProperty("contact_mailingAddresses_businessName_con")]
+    public string? Contact_MailingAddresses_BusinessName_CON { get; set; }
+    /// <summary> Contact.MailingAddresses.BusinessName regex </summary>
+    [JsonProperty("contact_mailingAddresses_businessName_reg")]
+    public string? Contact_MailingAddresses_BusinessName_REG { get; set; }
+
+    /// <summary> Contact.MailingAddresses.StreetAddress equals </summary>
+    [JsonProperty("contact_mailingAddresses_streetAddress_eq")]
+    public string? Contact_MailingAddresses_StreetAddress_EQ { get; set; }
+    /// <summary> Contact.MailingAddresses.StreetAddress contains </summary>
+    [JsonProperty("contact_mailingAddresses_streetAddress_con")]
+    public string? Contact_MailingAddresses_StreetAddress_CON { get; set; }
+    /// <summary> Contact.MailingAddresses.StreetAddress regex </summary>
+    [JsonProperty("contact_mailingAddresses_streetAddress_reg")]
+    public string? Contact_MailingAddresses_StreetAddress_REG { get; set; }
+
+    /// <summary> Contact.MailingAddresses.ApparmentOrSuiteNumber equals </summary>
+    [JsonProperty("contact_mailingAddresses_apparmentOrSuiteNumber_eq")]
+    public string? Contact_MailingAddresses_ApparmentOrSuiteNumber_EQ { get; set; }
+    /// <summary> Contact.MailingAddresses.ApparmentOrSuiteNumber contains </summary>
+    [JsonProperty("contact_mailingAddresses_apparmentOrSuiteNumber_con")]
+    public string? Contact_MailingAddresses_ApparmentOrSuiteNumber_CON { get; set; }
+    /// <summary> Contact.MailingAddresses.ApparmentOrSuiteNumber regex </summary>
+    [JsonProperty("contact_mailingAddresses_apparmentOrSuiteNumber_reg")]
+    public string? Contact_MailingAddresses_ApparmentOrSuiteNumber_REG { get; set; }
+
+    /// <summary> Contact.MailingAddresses.City equals </summary>
+    [JsonProperty("contact_mailingAddresses_city_eq")]
+    public string? Contact_MailingAddresses_City_EQ { get; set; }
+    /// <summary> Contact.MailingAddresses.City contains </summary>
+    [JsonProperty("contact_mailingAddresses_city_con")]
+    public string? Contact_MailingAddresses_City_CON { get; set; }
+    /// <summary> Contact.MailingAddresses.City regex </summary>
+    [JsonProperty("contact_mailingAddresses_city_reg")]
+    public string? Contact_MailingAddresses_City_REG { get; set; }
+
+    /// <summary> Contact.MailingAddresses.State equals </summary>
+    [JsonProperty("contact_mailingAddresses_state_eq")]
+    public string? Contact_MailingAddresses_State_EQ { get; set; }
+    /// <summary> Contact.MailingAddresses.State contains </summary>
+    [JsonProperty("contact_mailingAddresses_state_con")]
+    public string? Contact_MailingAddresses_State_CON { get; set; }
+    /// <summary> Contact.MailingAddresses.State regex </summary>
+    [JsonProperty("contact_mailingAddresses_state_reg")]
+    public string? Contact_MailingAddresses_State_REG { get; set; }
+
+    /// <summary> Contact.MailingAddresses.ZipCode equals </summary>
+    [JsonProperty("contact_mailingAddresses_zipCode_eq")]
+    public string? Contact_MailingAddresses_ZipCode_EQ { get; set; }
+    /// <summary> Contact.MailingAddresses.ZipCode contains </summary>
+    [JsonProperty("contact_mailingAddresses_zipCode_con")]
+    public string? Contact_MailingAddresses_ZipCode_CON { get; set; }
+    /// <summary> Contact.MailingAddresses.ZipCode regex </summary>
+    [JsonProperty("contact_mailingAddresses_zipCode_reg")]
+    public string? Contact_MailingAddresses_ZipCode_REG { get; set; }
+
+    /// <summary> Contact.MailingAddresses.Country equals </summary>
+    [JsonProperty("contact_mailingAddresses_country_eq")]
+    public string? Contact_MailingAddresses_Country_EQ { get; set; }
+    /// <summary> Contact.MailingAddresses.Country contains </summary>
+    [JsonProperty("contact_mailingAddresses_country_con")]
+    public string? Contact_MailingAddresses_Country_CON { get; set; }
+    /// <summary> Contact.MailingAddresses.Country regex </summary>
+    [JsonProperty("contact_mailingAddresses_country_reg")]
+    public string? Contact_MailingAddresses_Country_REG { get; set; }
+
 
     /// <summary> Contact.FirstName equals </summary>
     [JsonProperty("contact_firstName_eq")]
@@ -3606,15 +3819,15 @@ public class CallOutgoingToPSTNFilterRequest
     [JsonProperty("toInternationalFormat_reg")]
     public string? ToInternationalFormat_REG { get; set; }
 
-    /// <summary> Contact.IdIdentityUser equals </summary>
-    [JsonProperty("contact_idIdentityUser_eq")]
-    public string? Contact_IdIdentityUser_EQ { get; set; }
-    /// <summary> Contact.IdIdentityUser contains </summary>
-    [JsonProperty("contact_idIdentityUser_con")]
-    public string? Contact_IdIdentityUser_CON { get; set; }
-    /// <summary> Contact.IdIdentityUser regex </summary>
-    [JsonProperty("contact_idIdentityUser_reg")]
-    public string? Contact_IdIdentityUser_REG { get; set; }
+    /// <summary> Contact.IdIdentityUserOwner equals </summary>
+    [JsonProperty("contact_idIdentityUserOwner_eq")]
+    public string? Contact_IdIdentityUserOwner_EQ { get; set; }
+    /// <summary> Contact.IdIdentityUserOwner contains </summary>
+    [JsonProperty("contact_idIdentityUserOwner_con")]
+    public string? Contact_IdIdentityUserOwner_CON { get; set; }
+    /// <summary> Contact.IdIdentityUserOwner regex </summary>
+    [JsonProperty("contact_idIdentityUserOwner_reg")]
+    public string? Contact_IdIdentityUserOwner_REG { get; set; }
 
     /// <summary> Contact.Tags equals </summary>
     [JsonProperty("contact_tags_eq")]
@@ -3688,15 +3901,86 @@ public class CallOutgoingToPSTNFilterRequest
     public string? Contact_ContactEmails_Label_REG { get; set; }
 
 
-    /// <summary> Contact.Owner equals </summary>
-    [JsonProperty("contact_owner_eq")]
-    public string? Contact_Owner_EQ { get; set; }
-    /// <summary> Contact.Owner contains </summary>
-    [JsonProperty("contact_owner_con")]
-    public string? Contact_Owner_CON { get; set; }
-    /// <summary> Contact.Owner regex </summary>
-    [JsonProperty("contact_owner_reg")]
-    public string? Contact_Owner_REG { get; set; }
+    /// <summary> Contact.MailingAddresses.RecipientName equals </summary>
+    [JsonProperty("contact_mailingAddresses_recipientName_eq")]
+    public string? Contact_MailingAddresses_RecipientName_EQ { get; set; }
+    /// <summary> Contact.MailingAddresses.RecipientName contains </summary>
+    [JsonProperty("contact_mailingAddresses_recipientName_con")]
+    public string? Contact_MailingAddresses_RecipientName_CON { get; set; }
+    /// <summary> Contact.MailingAddresses.RecipientName regex </summary>
+    [JsonProperty("contact_mailingAddresses_recipientName_reg")]
+    public string? Contact_MailingAddresses_RecipientName_REG { get; set; }
+
+    /// <summary> Contact.MailingAddresses.BusinessName equals </summary>
+    [JsonProperty("contact_mailingAddresses_businessName_eq")]
+    public string? Contact_MailingAddresses_BusinessName_EQ { get; set; }
+    /// <summary> Contact.MailingAddresses.BusinessName contains </summary>
+    [JsonProperty("contact_mailingAddresses_businessName_con")]
+    public string? Contact_MailingAddresses_BusinessName_CON { get; set; }
+    /// <summary> Contact.MailingAddresses.BusinessName regex </summary>
+    [JsonProperty("contact_mailingAddresses_businessName_reg")]
+    public string? Contact_MailingAddresses_BusinessName_REG { get; set; }
+
+    /// <summary> Contact.MailingAddresses.StreetAddress equals </summary>
+    [JsonProperty("contact_mailingAddresses_streetAddress_eq")]
+    public string? Contact_MailingAddresses_StreetAddress_EQ { get; set; }
+    /// <summary> Contact.MailingAddresses.StreetAddress contains </summary>
+    [JsonProperty("contact_mailingAddresses_streetAddress_con")]
+    public string? Contact_MailingAddresses_StreetAddress_CON { get; set; }
+    /// <summary> Contact.MailingAddresses.StreetAddress regex </summary>
+    [JsonProperty("contact_mailingAddresses_streetAddress_reg")]
+    public string? Contact_MailingAddresses_StreetAddress_REG { get; set; }
+
+    /// <summary> Contact.MailingAddresses.ApparmentOrSuiteNumber equals </summary>
+    [JsonProperty("contact_mailingAddresses_apparmentOrSuiteNumber_eq")]
+    public string? Contact_MailingAddresses_ApparmentOrSuiteNumber_EQ { get; set; }
+    /// <summary> Contact.MailingAddresses.ApparmentOrSuiteNumber contains </summary>
+    [JsonProperty("contact_mailingAddresses_apparmentOrSuiteNumber_con")]
+    public string? Contact_MailingAddresses_ApparmentOrSuiteNumber_CON { get; set; }
+    /// <summary> Contact.MailingAddresses.ApparmentOrSuiteNumber regex </summary>
+    [JsonProperty("contact_mailingAddresses_apparmentOrSuiteNumber_reg")]
+    public string? Contact_MailingAddresses_ApparmentOrSuiteNumber_REG { get; set; }
+
+    /// <summary> Contact.MailingAddresses.City equals </summary>
+    [JsonProperty("contact_mailingAddresses_city_eq")]
+    public string? Contact_MailingAddresses_City_EQ { get; set; }
+    /// <summary> Contact.MailingAddresses.City contains </summary>
+    [JsonProperty("contact_mailingAddresses_city_con")]
+    public string? Contact_MailingAddresses_City_CON { get; set; }
+    /// <summary> Contact.MailingAddresses.City regex </summary>
+    [JsonProperty("contact_mailingAddresses_city_reg")]
+    public string? Contact_MailingAddresses_City_REG { get; set; }
+
+    /// <summary> Contact.MailingAddresses.State equals </summary>
+    [JsonProperty("contact_mailingAddresses_state_eq")]
+    public string? Contact_MailingAddresses_State_EQ { get; set; }
+    /// <summary> Contact.MailingAddresses.State contains </summary>
+    [JsonProperty("contact_mailingAddresses_state_con")]
+    public string? Contact_MailingAddresses_State_CON { get; set; }
+    /// <summary> Contact.MailingAddresses.State regex </summary>
+    [JsonProperty("contact_mailingAddresses_state_reg")]
+    public string? Contact_MailingAddresses_State_REG { get; set; }
+
+    /// <summary> Contact.MailingAddresses.ZipCode equals </summary>
+    [JsonProperty("contact_mailingAddresses_zipCode_eq")]
+    public string? Contact_MailingAddresses_ZipCode_EQ { get; set; }
+    /// <summary> Contact.MailingAddresses.ZipCode contains </summary>
+    [JsonProperty("contact_mailingAddresses_zipCode_con")]
+    public string? Contact_MailingAddresses_ZipCode_CON { get; set; }
+    /// <summary> Contact.MailingAddresses.ZipCode regex </summary>
+    [JsonProperty("contact_mailingAddresses_zipCode_reg")]
+    public string? Contact_MailingAddresses_ZipCode_REG { get; set; }
+
+    /// <summary> Contact.MailingAddresses.Country equals </summary>
+    [JsonProperty("contact_mailingAddresses_country_eq")]
+    public string? Contact_MailingAddresses_Country_EQ { get; set; }
+    /// <summary> Contact.MailingAddresses.Country contains </summary>
+    [JsonProperty("contact_mailingAddresses_country_con")]
+    public string? Contact_MailingAddresses_Country_CON { get; set; }
+    /// <summary> Contact.MailingAddresses.Country regex </summary>
+    [JsonProperty("contact_mailingAddresses_country_reg")]
+    public string? Contact_MailingAddresses_Country_REG { get; set; }
+
 
     /// <summary> Contact.FirstName equals </summary>
     [JsonProperty("contact_firstName_eq")]
@@ -4623,15 +4907,15 @@ public class CloudServiceWebHostFilterRequest
 /// <summary> Enables searching for Contacts </summary>
 public class ContactFilterRequest 
 {
-    /// <summary> IdIdentityUser equals </summary>
-    [JsonProperty("idIdentityUser_eq")]
-    public string? IdIdentityUser_EQ { get; set; }
-    /// <summary> IdIdentityUser contains </summary>
-    [JsonProperty("idIdentityUser_con")]
-    public string? IdIdentityUser_CON { get; set; }
-    /// <summary> IdIdentityUser regex </summary>
-    [JsonProperty("idIdentityUser_reg")]
-    public string? IdIdentityUser_REG { get; set; }
+    /// <summary> IdIdentityUserOwner equals </summary>
+    [JsonProperty("idIdentityUserOwner_eq")]
+    public string? IdIdentityUserOwner_EQ { get; set; }
+    /// <summary> IdIdentityUserOwner contains </summary>
+    [JsonProperty("idIdentityUserOwner_con")]
+    public string? IdIdentityUserOwner_CON { get; set; }
+    /// <summary> IdIdentityUserOwner regex </summary>
+    [JsonProperty("idIdentityUserOwner_reg")]
+    public string? IdIdentityUserOwner_REG { get; set; }
 
     /// <summary> Tags equals </summary>
     [JsonProperty("tags_eq")]
@@ -4705,15 +4989,86 @@ public class ContactFilterRequest
     public string? ContactEmails_Label_REG { get; set; }
 
 
-    /// <summary> Owner equals </summary>
-    [JsonProperty("owner_eq")]
-    public string? Owner_EQ { get; set; }
-    /// <summary> Owner contains </summary>
-    [JsonProperty("owner_con")]
-    public string? Owner_CON { get; set; }
-    /// <summary> Owner regex </summary>
-    [JsonProperty("owner_reg")]
-    public string? Owner_REG { get; set; }
+    /// <summary> MailingAddresses.RecipientName equals </summary>
+    [JsonProperty("mailingAddresses_recipientName_eq")]
+    public string? MailingAddresses_RecipientName_EQ { get; set; }
+    /// <summary> MailingAddresses.RecipientName contains </summary>
+    [JsonProperty("mailingAddresses_recipientName_con")]
+    public string? MailingAddresses_RecipientName_CON { get; set; }
+    /// <summary> MailingAddresses.RecipientName regex </summary>
+    [JsonProperty("mailingAddresses_recipientName_reg")]
+    public string? MailingAddresses_RecipientName_REG { get; set; }
+
+    /// <summary> MailingAddresses.BusinessName equals </summary>
+    [JsonProperty("mailingAddresses_businessName_eq")]
+    public string? MailingAddresses_BusinessName_EQ { get; set; }
+    /// <summary> MailingAddresses.BusinessName contains </summary>
+    [JsonProperty("mailingAddresses_businessName_con")]
+    public string? MailingAddresses_BusinessName_CON { get; set; }
+    /// <summary> MailingAddresses.BusinessName regex </summary>
+    [JsonProperty("mailingAddresses_businessName_reg")]
+    public string? MailingAddresses_BusinessName_REG { get; set; }
+
+    /// <summary> MailingAddresses.StreetAddress equals </summary>
+    [JsonProperty("mailingAddresses_streetAddress_eq")]
+    public string? MailingAddresses_StreetAddress_EQ { get; set; }
+    /// <summary> MailingAddresses.StreetAddress contains </summary>
+    [JsonProperty("mailingAddresses_streetAddress_con")]
+    public string? MailingAddresses_StreetAddress_CON { get; set; }
+    /// <summary> MailingAddresses.StreetAddress regex </summary>
+    [JsonProperty("mailingAddresses_streetAddress_reg")]
+    public string? MailingAddresses_StreetAddress_REG { get; set; }
+
+    /// <summary> MailingAddresses.ApparmentOrSuiteNumber equals </summary>
+    [JsonProperty("mailingAddresses_apparmentOrSuiteNumber_eq")]
+    public string? MailingAddresses_ApparmentOrSuiteNumber_EQ { get; set; }
+    /// <summary> MailingAddresses.ApparmentOrSuiteNumber contains </summary>
+    [JsonProperty("mailingAddresses_apparmentOrSuiteNumber_con")]
+    public string? MailingAddresses_ApparmentOrSuiteNumber_CON { get; set; }
+    /// <summary> MailingAddresses.ApparmentOrSuiteNumber regex </summary>
+    [JsonProperty("mailingAddresses_apparmentOrSuiteNumber_reg")]
+    public string? MailingAddresses_ApparmentOrSuiteNumber_REG { get; set; }
+
+    /// <summary> MailingAddresses.City equals </summary>
+    [JsonProperty("mailingAddresses_city_eq")]
+    public string? MailingAddresses_City_EQ { get; set; }
+    /// <summary> MailingAddresses.City contains </summary>
+    [JsonProperty("mailingAddresses_city_con")]
+    public string? MailingAddresses_City_CON { get; set; }
+    /// <summary> MailingAddresses.City regex </summary>
+    [JsonProperty("mailingAddresses_city_reg")]
+    public string? MailingAddresses_City_REG { get; set; }
+
+    /// <summary> MailingAddresses.State equals </summary>
+    [JsonProperty("mailingAddresses_state_eq")]
+    public string? MailingAddresses_State_EQ { get; set; }
+    /// <summary> MailingAddresses.State contains </summary>
+    [JsonProperty("mailingAddresses_state_con")]
+    public string? MailingAddresses_State_CON { get; set; }
+    /// <summary> MailingAddresses.State regex </summary>
+    [JsonProperty("mailingAddresses_state_reg")]
+    public string? MailingAddresses_State_REG { get; set; }
+
+    /// <summary> MailingAddresses.ZipCode equals </summary>
+    [JsonProperty("mailingAddresses_zipCode_eq")]
+    public string? MailingAddresses_ZipCode_EQ { get; set; }
+    /// <summary> MailingAddresses.ZipCode contains </summary>
+    [JsonProperty("mailingAddresses_zipCode_con")]
+    public string? MailingAddresses_ZipCode_CON { get; set; }
+    /// <summary> MailingAddresses.ZipCode regex </summary>
+    [JsonProperty("mailingAddresses_zipCode_reg")]
+    public string? MailingAddresses_ZipCode_REG { get; set; }
+
+    /// <summary> MailingAddresses.Country equals </summary>
+    [JsonProperty("mailingAddresses_country_eq")]
+    public string? MailingAddresses_Country_EQ { get; set; }
+    /// <summary> MailingAddresses.Country contains </summary>
+    [JsonProperty("mailingAddresses_country_con")]
+    public string? MailingAddresses_Country_CON { get; set; }
+    /// <summary> MailingAddresses.Country regex </summary>
+    [JsonProperty("mailingAddresses_country_reg")]
+    public string? MailingAddresses_Country_REG { get; set; }
+
 
     /// <summary> FirstName equals </summary>
     [JsonProperty("firstName_eq")]
@@ -7429,15 +7784,15 @@ public class SMSFilterRequest
     [JsonProperty("tags_reg")]
     public string? Tags_REG { get; set; }
 
-    /// <summary> Contact.IdIdentityUser equals </summary>
-    [JsonProperty("contact_idIdentityUser_eq")]
-    public string? Contact_IdIdentityUser_EQ { get; set; }
-    /// <summary> Contact.IdIdentityUser contains </summary>
-    [JsonProperty("contact_idIdentityUser_con")]
-    public string? Contact_IdIdentityUser_CON { get; set; }
-    /// <summary> Contact.IdIdentityUser regex </summary>
-    [JsonProperty("contact_idIdentityUser_reg")]
-    public string? Contact_IdIdentityUser_REG { get; set; }
+    /// <summary> Contact.IdIdentityUserOwner equals </summary>
+    [JsonProperty("contact_idIdentityUserOwner_eq")]
+    public string? Contact_IdIdentityUserOwner_EQ { get; set; }
+    /// <summary> Contact.IdIdentityUserOwner contains </summary>
+    [JsonProperty("contact_idIdentityUserOwner_con")]
+    public string? Contact_IdIdentityUserOwner_CON { get; set; }
+    /// <summary> Contact.IdIdentityUserOwner regex </summary>
+    [JsonProperty("contact_idIdentityUserOwner_reg")]
+    public string? Contact_IdIdentityUserOwner_REG { get; set; }
 
     /// <summary> Contact.Tags equals </summary>
     [JsonProperty("contact_tags_eq")]
@@ -7511,15 +7866,86 @@ public class SMSFilterRequest
     public string? Contact_ContactEmails_Label_REG { get; set; }
 
 
-    /// <summary> Contact.Owner equals </summary>
-    [JsonProperty("contact_owner_eq")]
-    public string? Contact_Owner_EQ { get; set; }
-    /// <summary> Contact.Owner contains </summary>
-    [JsonProperty("contact_owner_con")]
-    public string? Contact_Owner_CON { get; set; }
-    /// <summary> Contact.Owner regex </summary>
-    [JsonProperty("contact_owner_reg")]
-    public string? Contact_Owner_REG { get; set; }
+    /// <summary> Contact.MailingAddresses.RecipientName equals </summary>
+    [JsonProperty("contact_mailingAddresses_recipientName_eq")]
+    public string? Contact_MailingAddresses_RecipientName_EQ { get; set; }
+    /// <summary> Contact.MailingAddresses.RecipientName contains </summary>
+    [JsonProperty("contact_mailingAddresses_recipientName_con")]
+    public string? Contact_MailingAddresses_RecipientName_CON { get; set; }
+    /// <summary> Contact.MailingAddresses.RecipientName regex </summary>
+    [JsonProperty("contact_mailingAddresses_recipientName_reg")]
+    public string? Contact_MailingAddresses_RecipientName_REG { get; set; }
+
+    /// <summary> Contact.MailingAddresses.BusinessName equals </summary>
+    [JsonProperty("contact_mailingAddresses_businessName_eq")]
+    public string? Contact_MailingAddresses_BusinessName_EQ { get; set; }
+    /// <summary> Contact.MailingAddresses.BusinessName contains </summary>
+    [JsonProperty("contact_mailingAddresses_businessName_con")]
+    public string? Contact_MailingAddresses_BusinessName_CON { get; set; }
+    /// <summary> Contact.MailingAddresses.BusinessName regex </summary>
+    [JsonProperty("contact_mailingAddresses_businessName_reg")]
+    public string? Contact_MailingAddresses_BusinessName_REG { get; set; }
+
+    /// <summary> Contact.MailingAddresses.StreetAddress equals </summary>
+    [JsonProperty("contact_mailingAddresses_streetAddress_eq")]
+    public string? Contact_MailingAddresses_StreetAddress_EQ { get; set; }
+    /// <summary> Contact.MailingAddresses.StreetAddress contains </summary>
+    [JsonProperty("contact_mailingAddresses_streetAddress_con")]
+    public string? Contact_MailingAddresses_StreetAddress_CON { get; set; }
+    /// <summary> Contact.MailingAddresses.StreetAddress regex </summary>
+    [JsonProperty("contact_mailingAddresses_streetAddress_reg")]
+    public string? Contact_MailingAddresses_StreetAddress_REG { get; set; }
+
+    /// <summary> Contact.MailingAddresses.ApparmentOrSuiteNumber equals </summary>
+    [JsonProperty("contact_mailingAddresses_apparmentOrSuiteNumber_eq")]
+    public string? Contact_MailingAddresses_ApparmentOrSuiteNumber_EQ { get; set; }
+    /// <summary> Contact.MailingAddresses.ApparmentOrSuiteNumber contains </summary>
+    [JsonProperty("contact_mailingAddresses_apparmentOrSuiteNumber_con")]
+    public string? Contact_MailingAddresses_ApparmentOrSuiteNumber_CON { get; set; }
+    /// <summary> Contact.MailingAddresses.ApparmentOrSuiteNumber regex </summary>
+    [JsonProperty("contact_mailingAddresses_apparmentOrSuiteNumber_reg")]
+    public string? Contact_MailingAddresses_ApparmentOrSuiteNumber_REG { get; set; }
+
+    /// <summary> Contact.MailingAddresses.City equals </summary>
+    [JsonProperty("contact_mailingAddresses_city_eq")]
+    public string? Contact_MailingAddresses_City_EQ { get; set; }
+    /// <summary> Contact.MailingAddresses.City contains </summary>
+    [JsonProperty("contact_mailingAddresses_city_con")]
+    public string? Contact_MailingAddresses_City_CON { get; set; }
+    /// <summary> Contact.MailingAddresses.City regex </summary>
+    [JsonProperty("contact_mailingAddresses_city_reg")]
+    public string? Contact_MailingAddresses_City_REG { get; set; }
+
+    /// <summary> Contact.MailingAddresses.State equals </summary>
+    [JsonProperty("contact_mailingAddresses_state_eq")]
+    public string? Contact_MailingAddresses_State_EQ { get; set; }
+    /// <summary> Contact.MailingAddresses.State contains </summary>
+    [JsonProperty("contact_mailingAddresses_state_con")]
+    public string? Contact_MailingAddresses_State_CON { get; set; }
+    /// <summary> Contact.MailingAddresses.State regex </summary>
+    [JsonProperty("contact_mailingAddresses_state_reg")]
+    public string? Contact_MailingAddresses_State_REG { get; set; }
+
+    /// <summary> Contact.MailingAddresses.ZipCode equals </summary>
+    [JsonProperty("contact_mailingAddresses_zipCode_eq")]
+    public string? Contact_MailingAddresses_ZipCode_EQ { get; set; }
+    /// <summary> Contact.MailingAddresses.ZipCode contains </summary>
+    [JsonProperty("contact_mailingAddresses_zipCode_con")]
+    public string? Contact_MailingAddresses_ZipCode_CON { get; set; }
+    /// <summary> Contact.MailingAddresses.ZipCode regex </summary>
+    [JsonProperty("contact_mailingAddresses_zipCode_reg")]
+    public string? Contact_MailingAddresses_ZipCode_REG { get; set; }
+
+    /// <summary> Contact.MailingAddresses.Country equals </summary>
+    [JsonProperty("contact_mailingAddresses_country_eq")]
+    public string? Contact_MailingAddresses_Country_EQ { get; set; }
+    /// <summary> Contact.MailingAddresses.Country contains </summary>
+    [JsonProperty("contact_mailingAddresses_country_con")]
+    public string? Contact_MailingAddresses_Country_CON { get; set; }
+    /// <summary> Contact.MailingAddresses.Country regex </summary>
+    [JsonProperty("contact_mailingAddresses_country_reg")]
+    public string? Contact_MailingAddresses_Country_REG { get; set; }
+
 
     /// <summary> Contact.FirstName equals </summary>
     [JsonProperty("contact_firstName_eq")]
@@ -9568,15 +9994,15 @@ public class CallFilterRequest
     public System.Int32? ChildCalls_SecondsItTookToAnswer_GTE { get; set; }
 
 
-    /// <summary> Contact.IdIdentityUser equals </summary>
-    [JsonProperty("contact_idIdentityUser_eq")]
-    public string? Contact_IdIdentityUser_EQ { get; set; }
-    /// <summary> Contact.IdIdentityUser contains </summary>
-    [JsonProperty("contact_idIdentityUser_con")]
-    public string? Contact_IdIdentityUser_CON { get; set; }
-    /// <summary> Contact.IdIdentityUser regex </summary>
-    [JsonProperty("contact_idIdentityUser_reg")]
-    public string? Contact_IdIdentityUser_REG { get; set; }
+    /// <summary> Contact.IdIdentityUserOwner equals </summary>
+    [JsonProperty("contact_idIdentityUserOwner_eq")]
+    public string? Contact_IdIdentityUserOwner_EQ { get; set; }
+    /// <summary> Contact.IdIdentityUserOwner contains </summary>
+    [JsonProperty("contact_idIdentityUserOwner_con")]
+    public string? Contact_IdIdentityUserOwner_CON { get; set; }
+    /// <summary> Contact.IdIdentityUserOwner regex </summary>
+    [JsonProperty("contact_idIdentityUserOwner_reg")]
+    public string? Contact_IdIdentityUserOwner_REG { get; set; }
 
     /// <summary> Contact.Tags equals </summary>
     [JsonProperty("contact_tags_eq")]
@@ -9650,15 +10076,86 @@ public class CallFilterRequest
     public string? Contact_ContactEmails_Label_REG { get; set; }
 
 
-    /// <summary> Contact.Owner equals </summary>
-    [JsonProperty("contact_owner_eq")]
-    public string? Contact_Owner_EQ { get; set; }
-    /// <summary> Contact.Owner contains </summary>
-    [JsonProperty("contact_owner_con")]
-    public string? Contact_Owner_CON { get; set; }
-    /// <summary> Contact.Owner regex </summary>
-    [JsonProperty("contact_owner_reg")]
-    public string? Contact_Owner_REG { get; set; }
+    /// <summary> Contact.MailingAddresses.RecipientName equals </summary>
+    [JsonProperty("contact_mailingAddresses_recipientName_eq")]
+    public string? Contact_MailingAddresses_RecipientName_EQ { get; set; }
+    /// <summary> Contact.MailingAddresses.RecipientName contains </summary>
+    [JsonProperty("contact_mailingAddresses_recipientName_con")]
+    public string? Contact_MailingAddresses_RecipientName_CON { get; set; }
+    /// <summary> Contact.MailingAddresses.RecipientName regex </summary>
+    [JsonProperty("contact_mailingAddresses_recipientName_reg")]
+    public string? Contact_MailingAddresses_RecipientName_REG { get; set; }
+
+    /// <summary> Contact.MailingAddresses.BusinessName equals </summary>
+    [JsonProperty("contact_mailingAddresses_businessName_eq")]
+    public string? Contact_MailingAddresses_BusinessName_EQ { get; set; }
+    /// <summary> Contact.MailingAddresses.BusinessName contains </summary>
+    [JsonProperty("contact_mailingAddresses_businessName_con")]
+    public string? Contact_MailingAddresses_BusinessName_CON { get; set; }
+    /// <summary> Contact.MailingAddresses.BusinessName regex </summary>
+    [JsonProperty("contact_mailingAddresses_businessName_reg")]
+    public string? Contact_MailingAddresses_BusinessName_REG { get; set; }
+
+    /// <summary> Contact.MailingAddresses.StreetAddress equals </summary>
+    [JsonProperty("contact_mailingAddresses_streetAddress_eq")]
+    public string? Contact_MailingAddresses_StreetAddress_EQ { get; set; }
+    /// <summary> Contact.MailingAddresses.StreetAddress contains </summary>
+    [JsonProperty("contact_mailingAddresses_streetAddress_con")]
+    public string? Contact_MailingAddresses_StreetAddress_CON { get; set; }
+    /// <summary> Contact.MailingAddresses.StreetAddress regex </summary>
+    [JsonProperty("contact_mailingAddresses_streetAddress_reg")]
+    public string? Contact_MailingAddresses_StreetAddress_REG { get; set; }
+
+    /// <summary> Contact.MailingAddresses.ApparmentOrSuiteNumber equals </summary>
+    [JsonProperty("contact_mailingAddresses_apparmentOrSuiteNumber_eq")]
+    public string? Contact_MailingAddresses_ApparmentOrSuiteNumber_EQ { get; set; }
+    /// <summary> Contact.MailingAddresses.ApparmentOrSuiteNumber contains </summary>
+    [JsonProperty("contact_mailingAddresses_apparmentOrSuiteNumber_con")]
+    public string? Contact_MailingAddresses_ApparmentOrSuiteNumber_CON { get; set; }
+    /// <summary> Contact.MailingAddresses.ApparmentOrSuiteNumber regex </summary>
+    [JsonProperty("contact_mailingAddresses_apparmentOrSuiteNumber_reg")]
+    public string? Contact_MailingAddresses_ApparmentOrSuiteNumber_REG { get; set; }
+
+    /// <summary> Contact.MailingAddresses.City equals </summary>
+    [JsonProperty("contact_mailingAddresses_city_eq")]
+    public string? Contact_MailingAddresses_City_EQ { get; set; }
+    /// <summary> Contact.MailingAddresses.City contains </summary>
+    [JsonProperty("contact_mailingAddresses_city_con")]
+    public string? Contact_MailingAddresses_City_CON { get; set; }
+    /// <summary> Contact.MailingAddresses.City regex </summary>
+    [JsonProperty("contact_mailingAddresses_city_reg")]
+    public string? Contact_MailingAddresses_City_REG { get; set; }
+
+    /// <summary> Contact.MailingAddresses.State equals </summary>
+    [JsonProperty("contact_mailingAddresses_state_eq")]
+    public string? Contact_MailingAddresses_State_EQ { get; set; }
+    /// <summary> Contact.MailingAddresses.State contains </summary>
+    [JsonProperty("contact_mailingAddresses_state_con")]
+    public string? Contact_MailingAddresses_State_CON { get; set; }
+    /// <summary> Contact.MailingAddresses.State regex </summary>
+    [JsonProperty("contact_mailingAddresses_state_reg")]
+    public string? Contact_MailingAddresses_State_REG { get; set; }
+
+    /// <summary> Contact.MailingAddresses.ZipCode equals </summary>
+    [JsonProperty("contact_mailingAddresses_zipCode_eq")]
+    public string? Contact_MailingAddresses_ZipCode_EQ { get; set; }
+    /// <summary> Contact.MailingAddresses.ZipCode contains </summary>
+    [JsonProperty("contact_mailingAddresses_zipCode_con")]
+    public string? Contact_MailingAddresses_ZipCode_CON { get; set; }
+    /// <summary> Contact.MailingAddresses.ZipCode regex </summary>
+    [JsonProperty("contact_mailingAddresses_zipCode_reg")]
+    public string? Contact_MailingAddresses_ZipCode_REG { get; set; }
+
+    /// <summary> Contact.MailingAddresses.Country equals </summary>
+    [JsonProperty("contact_mailingAddresses_country_eq")]
+    public string? Contact_MailingAddresses_Country_EQ { get; set; }
+    /// <summary> Contact.MailingAddresses.Country contains </summary>
+    [JsonProperty("contact_mailingAddresses_country_con")]
+    public string? Contact_MailingAddresses_Country_CON { get; set; }
+    /// <summary> Contact.MailingAddresses.Country regex </summary>
+    [JsonProperty("contact_mailingAddresses_country_reg")]
+    public string? Contact_MailingAddresses_Country_REG { get; set; }
+
 
     /// <summary> Contact.FirstName equals </summary>
     [JsonProperty("contact_firstName_eq")]
@@ -10017,15 +10514,15 @@ public class CallFilterRequest
 /// <summary> Enables searching for CallIncomings </summary>
 public class CallIncomingFilterRequest 
 {
-    /// <summary> Contact.IdIdentityUser equals </summary>
-    [JsonProperty("contact_idIdentityUser_eq")]
-    public string? Contact_IdIdentityUser_EQ { get; set; }
-    /// <summary> Contact.IdIdentityUser contains </summary>
-    [JsonProperty("contact_idIdentityUser_con")]
-    public string? Contact_IdIdentityUser_CON { get; set; }
-    /// <summary> Contact.IdIdentityUser regex </summary>
-    [JsonProperty("contact_idIdentityUser_reg")]
-    public string? Contact_IdIdentityUser_REG { get; set; }
+    /// <summary> Contact.IdIdentityUserOwner equals </summary>
+    [JsonProperty("contact_idIdentityUserOwner_eq")]
+    public string? Contact_IdIdentityUserOwner_EQ { get; set; }
+    /// <summary> Contact.IdIdentityUserOwner contains </summary>
+    [JsonProperty("contact_idIdentityUserOwner_con")]
+    public string? Contact_IdIdentityUserOwner_CON { get; set; }
+    /// <summary> Contact.IdIdentityUserOwner regex </summary>
+    [JsonProperty("contact_idIdentityUserOwner_reg")]
+    public string? Contact_IdIdentityUserOwner_REG { get; set; }
 
     /// <summary> Contact.Tags equals </summary>
     [JsonProperty("contact_tags_eq")]
@@ -10099,15 +10596,86 @@ public class CallIncomingFilterRequest
     public string? Contact_ContactEmails_Label_REG { get; set; }
 
 
-    /// <summary> Contact.Owner equals </summary>
-    [JsonProperty("contact_owner_eq")]
-    public string? Contact_Owner_EQ { get; set; }
-    /// <summary> Contact.Owner contains </summary>
-    [JsonProperty("contact_owner_con")]
-    public string? Contact_Owner_CON { get; set; }
-    /// <summary> Contact.Owner regex </summary>
-    [JsonProperty("contact_owner_reg")]
-    public string? Contact_Owner_REG { get; set; }
+    /// <summary> Contact.MailingAddresses.RecipientName equals </summary>
+    [JsonProperty("contact_mailingAddresses_recipientName_eq")]
+    public string? Contact_MailingAddresses_RecipientName_EQ { get; set; }
+    /// <summary> Contact.MailingAddresses.RecipientName contains </summary>
+    [JsonProperty("contact_mailingAddresses_recipientName_con")]
+    public string? Contact_MailingAddresses_RecipientName_CON { get; set; }
+    /// <summary> Contact.MailingAddresses.RecipientName regex </summary>
+    [JsonProperty("contact_mailingAddresses_recipientName_reg")]
+    public string? Contact_MailingAddresses_RecipientName_REG { get; set; }
+
+    /// <summary> Contact.MailingAddresses.BusinessName equals </summary>
+    [JsonProperty("contact_mailingAddresses_businessName_eq")]
+    public string? Contact_MailingAddresses_BusinessName_EQ { get; set; }
+    /// <summary> Contact.MailingAddresses.BusinessName contains </summary>
+    [JsonProperty("contact_mailingAddresses_businessName_con")]
+    public string? Contact_MailingAddresses_BusinessName_CON { get; set; }
+    /// <summary> Contact.MailingAddresses.BusinessName regex </summary>
+    [JsonProperty("contact_mailingAddresses_businessName_reg")]
+    public string? Contact_MailingAddresses_BusinessName_REG { get; set; }
+
+    /// <summary> Contact.MailingAddresses.StreetAddress equals </summary>
+    [JsonProperty("contact_mailingAddresses_streetAddress_eq")]
+    public string? Contact_MailingAddresses_StreetAddress_EQ { get; set; }
+    /// <summary> Contact.MailingAddresses.StreetAddress contains </summary>
+    [JsonProperty("contact_mailingAddresses_streetAddress_con")]
+    public string? Contact_MailingAddresses_StreetAddress_CON { get; set; }
+    /// <summary> Contact.MailingAddresses.StreetAddress regex </summary>
+    [JsonProperty("contact_mailingAddresses_streetAddress_reg")]
+    public string? Contact_MailingAddresses_StreetAddress_REG { get; set; }
+
+    /// <summary> Contact.MailingAddresses.ApparmentOrSuiteNumber equals </summary>
+    [JsonProperty("contact_mailingAddresses_apparmentOrSuiteNumber_eq")]
+    public string? Contact_MailingAddresses_ApparmentOrSuiteNumber_EQ { get; set; }
+    /// <summary> Contact.MailingAddresses.ApparmentOrSuiteNumber contains </summary>
+    [JsonProperty("contact_mailingAddresses_apparmentOrSuiteNumber_con")]
+    public string? Contact_MailingAddresses_ApparmentOrSuiteNumber_CON { get; set; }
+    /// <summary> Contact.MailingAddresses.ApparmentOrSuiteNumber regex </summary>
+    [JsonProperty("contact_mailingAddresses_apparmentOrSuiteNumber_reg")]
+    public string? Contact_MailingAddresses_ApparmentOrSuiteNumber_REG { get; set; }
+
+    /// <summary> Contact.MailingAddresses.City equals </summary>
+    [JsonProperty("contact_mailingAddresses_city_eq")]
+    public string? Contact_MailingAddresses_City_EQ { get; set; }
+    /// <summary> Contact.MailingAddresses.City contains </summary>
+    [JsonProperty("contact_mailingAddresses_city_con")]
+    public string? Contact_MailingAddresses_City_CON { get; set; }
+    /// <summary> Contact.MailingAddresses.City regex </summary>
+    [JsonProperty("contact_mailingAddresses_city_reg")]
+    public string? Contact_MailingAddresses_City_REG { get; set; }
+
+    /// <summary> Contact.MailingAddresses.State equals </summary>
+    [JsonProperty("contact_mailingAddresses_state_eq")]
+    public string? Contact_MailingAddresses_State_EQ { get; set; }
+    /// <summary> Contact.MailingAddresses.State contains </summary>
+    [JsonProperty("contact_mailingAddresses_state_con")]
+    public string? Contact_MailingAddresses_State_CON { get; set; }
+    /// <summary> Contact.MailingAddresses.State regex </summary>
+    [JsonProperty("contact_mailingAddresses_state_reg")]
+    public string? Contact_MailingAddresses_State_REG { get; set; }
+
+    /// <summary> Contact.MailingAddresses.ZipCode equals </summary>
+    [JsonProperty("contact_mailingAddresses_zipCode_eq")]
+    public string? Contact_MailingAddresses_ZipCode_EQ { get; set; }
+    /// <summary> Contact.MailingAddresses.ZipCode contains </summary>
+    [JsonProperty("contact_mailingAddresses_zipCode_con")]
+    public string? Contact_MailingAddresses_ZipCode_CON { get; set; }
+    /// <summary> Contact.MailingAddresses.ZipCode regex </summary>
+    [JsonProperty("contact_mailingAddresses_zipCode_reg")]
+    public string? Contact_MailingAddresses_ZipCode_REG { get; set; }
+
+    /// <summary> Contact.MailingAddresses.Country equals </summary>
+    [JsonProperty("contact_mailingAddresses_country_eq")]
+    public string? Contact_MailingAddresses_Country_EQ { get; set; }
+    /// <summary> Contact.MailingAddresses.Country contains </summary>
+    [JsonProperty("contact_mailingAddresses_country_con")]
+    public string? Contact_MailingAddresses_Country_CON { get; set; }
+    /// <summary> Contact.MailingAddresses.Country regex </summary>
+    [JsonProperty("contact_mailingAddresses_country_reg")]
+    public string? Contact_MailingAddresses_Country_REG { get; set; }
+
 
     /// <summary> Contact.FirstName equals </summary>
     [JsonProperty("contact_firstName_eq")]
@@ -10608,15 +11176,15 @@ public class CallIncomingFilterRequest
 /// <summary> Enables searching for CallOutgoings </summary>
 public class CallOutgoingFilterRequest 
 {
-    /// <summary> Contact.IdIdentityUser equals </summary>
-    [JsonProperty("contact_idIdentityUser_eq")]
-    public string? Contact_IdIdentityUser_EQ { get; set; }
-    /// <summary> Contact.IdIdentityUser contains </summary>
-    [JsonProperty("contact_idIdentityUser_con")]
-    public string? Contact_IdIdentityUser_CON { get; set; }
-    /// <summary> Contact.IdIdentityUser regex </summary>
-    [JsonProperty("contact_idIdentityUser_reg")]
-    public string? Contact_IdIdentityUser_REG { get; set; }
+    /// <summary> Contact.IdIdentityUserOwner equals </summary>
+    [JsonProperty("contact_idIdentityUserOwner_eq")]
+    public string? Contact_IdIdentityUserOwner_EQ { get; set; }
+    /// <summary> Contact.IdIdentityUserOwner contains </summary>
+    [JsonProperty("contact_idIdentityUserOwner_con")]
+    public string? Contact_IdIdentityUserOwner_CON { get; set; }
+    /// <summary> Contact.IdIdentityUserOwner regex </summary>
+    [JsonProperty("contact_idIdentityUserOwner_reg")]
+    public string? Contact_IdIdentityUserOwner_REG { get; set; }
 
     /// <summary> Contact.Tags equals </summary>
     [JsonProperty("contact_tags_eq")]
@@ -10690,15 +11258,86 @@ public class CallOutgoingFilterRequest
     public string? Contact_ContactEmails_Label_REG { get; set; }
 
 
-    /// <summary> Contact.Owner equals </summary>
-    [JsonProperty("contact_owner_eq")]
-    public string? Contact_Owner_EQ { get; set; }
-    /// <summary> Contact.Owner contains </summary>
-    [JsonProperty("contact_owner_con")]
-    public string? Contact_Owner_CON { get; set; }
-    /// <summary> Contact.Owner regex </summary>
-    [JsonProperty("contact_owner_reg")]
-    public string? Contact_Owner_REG { get; set; }
+    /// <summary> Contact.MailingAddresses.RecipientName equals </summary>
+    [JsonProperty("contact_mailingAddresses_recipientName_eq")]
+    public string? Contact_MailingAddresses_RecipientName_EQ { get; set; }
+    /// <summary> Contact.MailingAddresses.RecipientName contains </summary>
+    [JsonProperty("contact_mailingAddresses_recipientName_con")]
+    public string? Contact_MailingAddresses_RecipientName_CON { get; set; }
+    /// <summary> Contact.MailingAddresses.RecipientName regex </summary>
+    [JsonProperty("contact_mailingAddresses_recipientName_reg")]
+    public string? Contact_MailingAddresses_RecipientName_REG { get; set; }
+
+    /// <summary> Contact.MailingAddresses.BusinessName equals </summary>
+    [JsonProperty("contact_mailingAddresses_businessName_eq")]
+    public string? Contact_MailingAddresses_BusinessName_EQ { get; set; }
+    /// <summary> Contact.MailingAddresses.BusinessName contains </summary>
+    [JsonProperty("contact_mailingAddresses_businessName_con")]
+    public string? Contact_MailingAddresses_BusinessName_CON { get; set; }
+    /// <summary> Contact.MailingAddresses.BusinessName regex </summary>
+    [JsonProperty("contact_mailingAddresses_businessName_reg")]
+    public string? Contact_MailingAddresses_BusinessName_REG { get; set; }
+
+    /// <summary> Contact.MailingAddresses.StreetAddress equals </summary>
+    [JsonProperty("contact_mailingAddresses_streetAddress_eq")]
+    public string? Contact_MailingAddresses_StreetAddress_EQ { get; set; }
+    /// <summary> Contact.MailingAddresses.StreetAddress contains </summary>
+    [JsonProperty("contact_mailingAddresses_streetAddress_con")]
+    public string? Contact_MailingAddresses_StreetAddress_CON { get; set; }
+    /// <summary> Contact.MailingAddresses.StreetAddress regex </summary>
+    [JsonProperty("contact_mailingAddresses_streetAddress_reg")]
+    public string? Contact_MailingAddresses_StreetAddress_REG { get; set; }
+
+    /// <summary> Contact.MailingAddresses.ApparmentOrSuiteNumber equals </summary>
+    [JsonProperty("contact_mailingAddresses_apparmentOrSuiteNumber_eq")]
+    public string? Contact_MailingAddresses_ApparmentOrSuiteNumber_EQ { get; set; }
+    /// <summary> Contact.MailingAddresses.ApparmentOrSuiteNumber contains </summary>
+    [JsonProperty("contact_mailingAddresses_apparmentOrSuiteNumber_con")]
+    public string? Contact_MailingAddresses_ApparmentOrSuiteNumber_CON { get; set; }
+    /// <summary> Contact.MailingAddresses.ApparmentOrSuiteNumber regex </summary>
+    [JsonProperty("contact_mailingAddresses_apparmentOrSuiteNumber_reg")]
+    public string? Contact_MailingAddresses_ApparmentOrSuiteNumber_REG { get; set; }
+
+    /// <summary> Contact.MailingAddresses.City equals </summary>
+    [JsonProperty("contact_mailingAddresses_city_eq")]
+    public string? Contact_MailingAddresses_City_EQ { get; set; }
+    /// <summary> Contact.MailingAddresses.City contains </summary>
+    [JsonProperty("contact_mailingAddresses_city_con")]
+    public string? Contact_MailingAddresses_City_CON { get; set; }
+    /// <summary> Contact.MailingAddresses.City regex </summary>
+    [JsonProperty("contact_mailingAddresses_city_reg")]
+    public string? Contact_MailingAddresses_City_REG { get; set; }
+
+    /// <summary> Contact.MailingAddresses.State equals </summary>
+    [JsonProperty("contact_mailingAddresses_state_eq")]
+    public string? Contact_MailingAddresses_State_EQ { get; set; }
+    /// <summary> Contact.MailingAddresses.State contains </summary>
+    [JsonProperty("contact_mailingAddresses_state_con")]
+    public string? Contact_MailingAddresses_State_CON { get; set; }
+    /// <summary> Contact.MailingAddresses.State regex </summary>
+    [JsonProperty("contact_mailingAddresses_state_reg")]
+    public string? Contact_MailingAddresses_State_REG { get; set; }
+
+    /// <summary> Contact.MailingAddresses.ZipCode equals </summary>
+    [JsonProperty("contact_mailingAddresses_zipCode_eq")]
+    public string? Contact_MailingAddresses_ZipCode_EQ { get; set; }
+    /// <summary> Contact.MailingAddresses.ZipCode contains </summary>
+    [JsonProperty("contact_mailingAddresses_zipCode_con")]
+    public string? Contact_MailingAddresses_ZipCode_CON { get; set; }
+    /// <summary> Contact.MailingAddresses.ZipCode regex </summary>
+    [JsonProperty("contact_mailingAddresses_zipCode_reg")]
+    public string? Contact_MailingAddresses_ZipCode_REG { get; set; }
+
+    /// <summary> Contact.MailingAddresses.Country equals </summary>
+    [JsonProperty("contact_mailingAddresses_country_eq")]
+    public string? Contact_MailingAddresses_Country_EQ { get; set; }
+    /// <summary> Contact.MailingAddresses.Country contains </summary>
+    [JsonProperty("contact_mailingAddresses_country_con")]
+    public string? Contact_MailingAddresses_Country_CON { get; set; }
+    /// <summary> Contact.MailingAddresses.Country regex </summary>
+    [JsonProperty("contact_mailingAddresses_country_reg")]
+    public string? Contact_MailingAddresses_Country_REG { get; set; }
+
 
     /// <summary> Contact.FirstName equals </summary>
     [JsonProperty("contact_firstName_eq")]
