@@ -2,7 +2,7 @@
 namespace Ublux.Communications.Models;
 
 /// <summary>
-///     Used to be statis. Made it a singleton in order to be able to construct unit tests.
+///     Used to be static. Made it a singleton in order to be able to construct unit tests.
 ///     Instance that is currently running. Every instance should have a different id
 ///     Could service instance. Before we used to have this id on a file. Now it is part of IoC container in order to make unit tests better
 /// </summary>
