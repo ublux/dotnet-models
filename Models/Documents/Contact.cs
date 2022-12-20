@@ -83,13 +83,13 @@ public partial class Contact : UbluxDocument, IReferencesTags
     [AllowUpdate(true)]
     public string? Company { get; set; }
 
-    /// <summary>
-    ///     Used to know if contact changed or not. Contacts service is responsible (Julio) for generating this hash
-    /// </summary>
-    [AllowUpdate(false)]
-    // [IsUbluxRequired]
-    [HideForCreateRequest]
-    public string? Hash { get; set; }
+    ///// <summary>
+    /////     Used to know if contact changed or not. Contacts service is responsible (Julio) for generating this hash
+    ///// </summary>
+    //[AllowUpdate(false)]
+    //// [IsUbluxRequired]
+    //[HideForCreateRequest]
+    //public string? Hash { get; set; }
 
     /// <summary>
     ///     Contact Notes
@@ -130,46 +130,44 @@ public partial class Contact : UbluxDocument, IReferencesTags
     }
 
 
-    /// <summary>
-    ///     Compute hash of contacts. Needed so that we can sync them
-    /// </summary>
-    public string GetHash()
-    {
-        var val = string.Join(null, GetValuesNeededToHash());
-        var bytes = System.Text.Encoding.UTF8.GetBytes(val);
-        var hash = xxHash64.ComputeHash(bytes) >> 22;
-        return RunningApplicationInstance.ToBase62(hash);
-    }
+    ///// <summary>
+    /////     Compute hash of contacts. Needed so that we can sync them
+    ///// </summary>
+    //public string GetHash()
+    //{
+    //    var val = string.Join(null, GetValuesNeededToHash());
+    //    var bytes = Encoding.UTF8.GetBytes(val);
+    //    var hash = xxHash64.ComputeHash(bytes) >> 22;
+    //    return RunningApplicationInstance.ToBase62(hash);
+    //}
+    //IEnumerable<string> GetValuesNeededToHash()
+    //{
+    //    if (FirstName != null)
+    //        yield return FirstName;
+    //    if (LastName != null)
+    //        yield return LastName;
+    //    if (JobTittle != null)
+    //        yield return JobTittle;
+    //    if (Company != null)
+    //        yield return Company;
+    //    if (Notes != null)
+    //        yield return Notes;
+    //    foreach (var cn in ContactNumbers)
+    //    {
+    //        if (cn.NumberInternationalFormat is not null)
+    //            yield return cn.NumberInternationalFormat;
 
-    IEnumerable<string> GetValuesNeededToHash()
-    {
-        if (FirstName != null)
-            yield return FirstName;
-        if (LastName != null)
-            yield return LastName;
-        if (JobTittle != null)
-            yield return JobTittle;
-        if (Company != null)
-            yield return Company;
-        if (Notes != null)
-            yield return Notes;
+    //        yield return cn.Label.ToString();
+    //    }
 
-        foreach (var cn in ContactNumbers)
-        {
-            if (cn.NumberInternationalFormat is not null)
-                yield return cn.NumberInternationalFormat;
+    //    foreach (var ce in ContactEmails)
+    //    {
+    //        if (ce.Email is not null)
+    //            yield return ce.Email;
 
-            yield return cn.Label.ToString();
-        }
-
-        foreach (var ce in ContactEmails)
-        {
-            if (ce.Email is not null)
-                yield return ce.Email;
-
-            yield return ce.Label.ToString();
-        }
-    }
+    //        yield return ce.Label.ToString();
+    //    }
+    //}
 
     #endregion
 }

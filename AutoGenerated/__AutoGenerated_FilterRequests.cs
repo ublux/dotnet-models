@@ -928,16 +928,6 @@ public class CallIncomingToCallFlowLogicFilterRequest
     [JsonProperty("contact_company_reg")]
     public string? Contact_Company_REG { get; set; }
 
-    /// <summary> Contact.Hash equals </summary>
-    [JsonProperty("contact_hash_eq")]
-    public string? Contact_Hash_EQ { get; set; }
-    /// <summary> Contact.Hash contains </summary>
-    [JsonProperty("contact_hash_con")]
-    public string? Contact_Hash_CON { get; set; }
-    /// <summary> Contact.Hash regex </summary>
-    [JsonProperty("contact_hash_reg")]
-    public string? Contact_Hash_REG { get; set; }
-
     /// <summary> Contact.Notes equals </summary>
     [JsonProperty("contact_notes_eq")]
     public string? Contact_Notes_EQ { get; set; }
@@ -2076,16 +2066,6 @@ public class CallIncomingToExtensionFilterRequest
     /// <summary> Contact.Company regex </summary>
     [JsonProperty("contact_company_reg")]
     public string? Contact_Company_REG { get; set; }
-
-    /// <summary> Contact.Hash equals </summary>
-    [JsonProperty("contact_hash_eq")]
-    public string? Contact_Hash_EQ { get; set; }
-    /// <summary> Contact.Hash contains </summary>
-    [JsonProperty("contact_hash_con")]
-    public string? Contact_Hash_CON { get; set; }
-    /// <summary> Contact.Hash regex </summary>
-    [JsonProperty("contact_hash_reg")]
-    public string? Contact_Hash_REG { get; set; }
 
     /// <summary> Contact.Notes equals </summary>
     [JsonProperty("contact_notes_eq")]
@@ -3226,16 +3206,6 @@ public class CallOutgoingToExtensionFilterRequest
     [JsonProperty("contact_company_reg")]
     public string? Contact_Company_REG { get; set; }
 
-    /// <summary> Contact.Hash equals </summary>
-    [JsonProperty("contact_hash_eq")]
-    public string? Contact_Hash_EQ { get; set; }
-    /// <summary> Contact.Hash contains </summary>
-    [JsonProperty("contact_hash_con")]
-    public string? Contact_Hash_CON { get; set; }
-    /// <summary> Contact.Hash regex </summary>
-    [JsonProperty("contact_hash_reg")]
-    public string? Contact_Hash_REG { get; set; }
-
     /// <summary> Contact.Notes equals </summary>
     [JsonProperty("contact_notes_eq")]
     public string? Contact_Notes_EQ { get; set; }
@@ -4021,16 +3991,6 @@ public class CallOutgoingToPSTNFilterRequest
     /// <summary> Contact.Company regex </summary>
     [JsonProperty("contact_company_reg")]
     public string? Contact_Company_REG { get; set; }
-
-    /// <summary> Contact.Hash equals </summary>
-    [JsonProperty("contact_hash_eq")]
-    public string? Contact_Hash_EQ { get; set; }
-    /// <summary> Contact.Hash contains </summary>
-    [JsonProperty("contact_hash_con")]
-    public string? Contact_Hash_CON { get; set; }
-    /// <summary> Contact.Hash regex </summary>
-    [JsonProperty("contact_hash_reg")]
-    public string? Contact_Hash_REG { get; set; }
 
     /// <summary> Contact.Notes equals </summary>
     [JsonProperty("contact_notes_eq")]
@@ -5109,16 +5069,6 @@ public class ContactFilterRequest
     /// <summary> Company regex </summary>
     [JsonProperty("company_reg")]
     public string? Company_REG { get; set; }
-
-    /// <summary> Hash equals </summary>
-    [JsonProperty("hash_eq")]
-    public string? Hash_EQ { get; set; }
-    /// <summary> Hash contains </summary>
-    [JsonProperty("hash_con")]
-    public string? Hash_CON { get; set; }
-    /// <summary> Hash regex </summary>
-    [JsonProperty("hash_reg")]
-    public string? Hash_REG { get; set; }
 
     /// <summary> Notes equals </summary>
     [JsonProperty("notes_eq")]
@@ -7987,16 +7937,6 @@ public class SMSFilterRequest
     [JsonProperty("contact_company_reg")]
     public string? Contact_Company_REG { get; set; }
 
-    /// <summary> Contact.Hash equals </summary>
-    [JsonProperty("contact_hash_eq")]
-    public string? Contact_Hash_EQ { get; set; }
-    /// <summary> Contact.Hash contains </summary>
-    [JsonProperty("contact_hash_con")]
-    public string? Contact_Hash_CON { get; set; }
-    /// <summary> Contact.Hash regex </summary>
-    [JsonProperty("contact_hash_reg")]
-    public string? Contact_Hash_REG { get; set; }
-
     /// <summary> Contact.Notes equals </summary>
     [JsonProperty("contact_notes_eq")]
     public string? Contact_Notes_EQ { get; set; }
@@ -10197,16 +10137,6 @@ public class CallFilterRequest
     [JsonProperty("contact_company_reg")]
     public string? Contact_Company_REG { get; set; }
 
-    /// <summary> Contact.Hash equals </summary>
-    [JsonProperty("contact_hash_eq")]
-    public string? Contact_Hash_EQ { get; set; }
-    /// <summary> Contact.Hash contains </summary>
-    [JsonProperty("contact_hash_con")]
-    public string? Contact_Hash_CON { get; set; }
-    /// <summary> Contact.Hash regex </summary>
-    [JsonProperty("contact_hash_reg")]
-    public string? Contact_Hash_REG { get; set; }
-
     /// <summary> Contact.Notes equals </summary>
     [JsonProperty("contact_notes_eq")]
     public string? Contact_Notes_EQ { get; set; }
@@ -10716,16 +10646,6 @@ public class CallIncomingFilterRequest
     /// <summary> Contact.Company regex </summary>
     [JsonProperty("contact_company_reg")]
     public string? Contact_Company_REG { get; set; }
-
-    /// <summary> Contact.Hash equals </summary>
-    [JsonProperty("contact_hash_eq")]
-    public string? Contact_Hash_EQ { get; set; }
-    /// <summary> Contact.Hash contains </summary>
-    [JsonProperty("contact_hash_con")]
-    public string? Contact_Hash_CON { get; set; }
-    /// <summary> Contact.Hash regex </summary>
-    [JsonProperty("contact_hash_reg")]
-    public string? Contact_Hash_REG { get; set; }
 
     /// <summary> Contact.Notes equals </summary>
     [JsonProperty("contact_notes_eq")]
@@ -11378,16 +11298,6 @@ public class CallOutgoingFilterRequest
     /// <summary> Contact.Company regex </summary>
     [JsonProperty("contact_company_reg")]
     public string? Contact_Company_REG { get; set; }
-
-    /// <summary> Contact.Hash equals </summary>
-    [JsonProperty("contact_hash_eq")]
-    public string? Contact_Hash_EQ { get; set; }
-    /// <summary> Contact.Hash contains </summary>
-    [JsonProperty("contact_hash_con")]
-    public string? Contact_Hash_CON { get; set; }
-    /// <summary> Contact.Hash regex </summary>
-    [JsonProperty("contact_hash_reg")]
-    public string? Contact_Hash_REG { get; set; }
 
     /// <summary> Contact.Notes equals </summary>
     [JsonProperty("contact_notes_eq")]
