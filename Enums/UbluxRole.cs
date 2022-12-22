@@ -455,14 +455,14 @@ public enum UbluxRole
 
     #endregion
 
-    #region Web phone priority
+    //#region Web phone priority
 
-    /// <summary>
-    ///     Used to get webphone password. Ends with 1 because its readonly
-    /// </summary>
-    webphonepass_readonly = 100_001,
+    ///// <summary>
+    /////     Used to get webphone password. Ends with 1 because its readonly
+    ///// </summary>
+    //webphonepass_readonly = 100_001,
 
-    #endregion
+    //#endregion
 
     #region Protected High Priority
 

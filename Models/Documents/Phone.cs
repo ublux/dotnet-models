@@ -22,7 +22,7 @@ public partial class Phone : UbluxDocument, IReferencesTags
     [References(typeof(CloudServicePbx))]
     [AllowUpdate(true)]
     [IsUbluxRequired]
-    public required string IdCloudServicePbx { get; set; }
+    public required string IdCloudServicePbx { get; set; } = "";
 
     /// <summary>
     ///     Configuration phone will use

@@ -97,12 +97,7 @@ public abstract partial class CloudService : UbluxDocument
     [AllowUpdate(false)]
     public required string InstanceId { get => instanceId; set => instanceId = value.ToUpper(); }
     private string instanceId = "";
-
-    /// <summary>
-    ///     Http port where it is listening. For example PBX listens on port 8181
-    /// </summary>
-    [AllowUpdate(false)]
-    public int HttpListenPort { get; set; }
+    
 
     #endregion     
 }

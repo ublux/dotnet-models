@@ -171,5 +171,23 @@ public abstract partial class Call : UbluxDocument, ICall, IReferencesTags
     [AllowUpdate(true)]
     public CallResult CallResult { get; set; }
 
+    /// <summary>
+    ///     If there is a language it means there is a transcription
+    /// </summary>
+    [AllowUpdate(false)]
+    public string? TranscriptionLanguage { get; set; }
+
+    /// <summary>
+    ///     Audio of agent converted to text
+    /// </summary>
+    [AllowUpdate(false)]
+    public List<Transcription> TranscriptionAgent { get; set; } = new();
+
+    /// <summary>
+    ///     Audio of client converted to text
+    /// </summary>
+    [AllowUpdate(false)]
+    public List<Transcription> TranscriptionClient { get; set; } = new();
+
     #endregion
 }

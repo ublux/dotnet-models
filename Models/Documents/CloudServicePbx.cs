@@ -32,4 +32,10 @@ public partial class CloudServicePbx : CloudService
     /// </summary>
     [AllowUpdate(true)]
     public bool DisableMonitoring { get; set; }
+
+    /// <summary>
+    ///     Http port where it is listening on SimpleTcpServer. For example PBX listens on port 8181
+    /// </summary>
+    [AllowUpdate(false)]
+    public int HttpListenPort { get; set; }
 }

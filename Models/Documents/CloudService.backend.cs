@@ -13,7 +13,7 @@ public abstract partial class CloudService : UbluxDocument
     [IsUbluxRequired]
     [IgnoreDataMember]
     [AllowUpdate(true)]
-    public required string ProviderInstanceId { get; set; }
+    public required string ProviderInstanceId { get; set; } = "";
 
     /// <summary>
     ///     Example AWS for amazon web services
