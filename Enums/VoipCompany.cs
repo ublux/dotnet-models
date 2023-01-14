@@ -14,4 +14,9 @@ public enum VoipCompany
     ///     https://twilio.com
     /// </summary>
     Twilio,
+
+    /// <summary>
+    ///     Netbox solutions
+    /// </summary>
+    Netbox,
 }

@@ -86,6 +86,14 @@ public partial class TrunkTermination : UbluxDocument
     //[AllowUpdate(false)]
     //public bool IsSecure { get; set; }
 
+    /// <summary>
+    ///     Company of this provider for example Twilio
+    /// </summary>
+    [IgnoreDataMember]
+    [AllowUpdate(false)]
+    [IsUbluxRequired]
+    public required VoipCompany VoipCompany { get; set; } 
+
     #endregion
 
     #region Helper methods

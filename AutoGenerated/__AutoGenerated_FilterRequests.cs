@@ -9279,6 +9279,16 @@ public class VoipNumberAvailableForPurchaseFilterRequest
     [JsonProperty("tags_reg")]
     public string? Tags_REG { get; set; }
 
+    /// <summary> IdMusicOnHoldGroup equals </summary>
+    [JsonProperty("idMusicOnHoldGroup_eq")]
+    public string? IdMusicOnHoldGroup_EQ { get; set; }
+    /// <summary> IdMusicOnHoldGroup contains </summary>
+    [JsonProperty("idMusicOnHoldGroup_con")]
+    public string? IdMusicOnHoldGroup_CON { get; set; }
+    /// <summary> IdMusicOnHoldGroup regex </summary>
+    [JsonProperty("idMusicOnHoldGroup_reg")]
+    public string? IdMusicOnHoldGroup_REG { get; set; }
+
     /// <summary> InjectFriendlyNameToCallerId equals </summary>
     [JsonProperty("injectFriendlyNameToCallerId_eq")]
     public bool? InjectFriendlyNameToCallerId_EQ { get; set; }
@@ -9484,6 +9494,16 @@ public class VoipNumberFaxFilterRequest
     [JsonProperty("tags_reg")]
     public string? Tags_REG { get; set; }
 
+    /// <summary> IdMusicOnHoldGroup equals </summary>
+    [JsonProperty("idMusicOnHoldGroup_eq")]
+    public string? IdMusicOnHoldGroup_EQ { get; set; }
+    /// <summary> IdMusicOnHoldGroup contains </summary>
+    [JsonProperty("idMusicOnHoldGroup_con")]
+    public string? IdMusicOnHoldGroup_CON { get; set; }
+    /// <summary> IdMusicOnHoldGroup regex </summary>
+    [JsonProperty("idMusicOnHoldGroup_reg")]
+    public string? IdMusicOnHoldGroup_REG { get; set; }
+
     /// <summary> InjectFriendlyNameToCallerId equals </summary>
     [JsonProperty("injectFriendlyNameToCallerId_eq")]
     public bool? InjectFriendlyNameToCallerId_EQ { get; set; }
@@ -9688,6 +9708,16 @@ public class VoipNumberPhoneFilterRequest
     /// <summary> Tags regex </summary>
     [JsonProperty("tags_reg")]
     public string? Tags_REG { get; set; }
+
+    /// <summary> IdMusicOnHoldGroup equals </summary>
+    [JsonProperty("idMusicOnHoldGroup_eq")]
+    public string? IdMusicOnHoldGroup_EQ { get; set; }
+    /// <summary> IdMusicOnHoldGroup contains </summary>
+    [JsonProperty("idMusicOnHoldGroup_con")]
+    public string? IdMusicOnHoldGroup_CON { get; set; }
+    /// <summary> IdMusicOnHoldGroup regex </summary>
+    [JsonProperty("idMusicOnHoldGroup_reg")]
+    public string? IdMusicOnHoldGroup_REG { get; set; }
 
     /// <summary> InjectFriendlyNameToCallerId equals </summary>
     [JsonProperty("injectFriendlyNameToCallerId_eq")]
@@ -12597,6 +12627,16 @@ public class VoipNumberFilterRequest
     /// <summary> Tags regex </summary>
     [JsonProperty("tags_reg")]
     public string? Tags_REG { get; set; }
+
+    /// <summary> IdMusicOnHoldGroup equals </summary>
+    [JsonProperty("idMusicOnHoldGroup_eq")]
+    public string? IdMusicOnHoldGroup_EQ { get; set; }
+    /// <summary> IdMusicOnHoldGroup contains </summary>
+    [JsonProperty("idMusicOnHoldGroup_con")]
+    public string? IdMusicOnHoldGroup_CON { get; set; }
+    /// <summary> IdMusicOnHoldGroup regex </summary>
+    [JsonProperty("idMusicOnHoldGroup_reg")]
+    public string? IdMusicOnHoldGroup_REG { get; set; }
 
     /// <summary> RulesPhone.IdCallFlowLogic equals </summary>
     [JsonProperty("rulesPhone_idCallFlowLogic_eq")]

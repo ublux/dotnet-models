@@ -1329,6 +1329,10 @@ public class VoipNumberAvailableForPurchaseUpdateRequest // : IUbluxDocumentId
     /// </summary>
     public List<System.String>? Tags { get; set; }
     /// <summary>
+    /// Music on hold to use for outgoing calls to PSTN only
+    /// </summary>
+    public String? IdMusicOnHoldGroup { get; set; }
+    /// <summary>
     /// This is only for external incoming calls
     /// If the friendly name of this VoipNumber is "Spanish Support" then "Spanish Support"
     /// will be injected to the caller id allowing the agent to know that she has to answer in Spanish for example
@@ -1359,6 +1363,8 @@ public class VoipNumberAvailableForPurchaseUpdateRequest // : IUbluxDocumentId
     {
         if(this.Tags!=null)
             voipNumberAvailableForPurchase.Tags = this.Tags;
+        if(this.IdMusicOnHoldGroup!=null)
+            voipNumberAvailableForPurchase.IdMusicOnHoldGroup = this.IdMusicOnHoldGroup;
         if(this.InjectFriendlyNameToCallerId!=null)
             voipNumberAvailableForPurchase.InjectFriendlyNameToCallerId = this.InjectFriendlyNameToCallerId.Value;
         if(this.RecordIncomingCalls!=null)
@@ -1398,6 +1404,10 @@ public class VoipNumberFaxUpdateRequest // : IUbluxDocumentId
     /// </summary>
     public List<System.String>? Tags { get; set; }
     /// <summary>
+    /// Music on hold to use for outgoing calls to PSTN only
+    /// </summary>
+    public String? IdMusicOnHoldGroup { get; set; }
+    /// <summary>
     /// This is only for external incoming calls
     /// If the friendly name of this VoipNumber is "Spanish Support" then "Spanish Support"
     /// will be injected to the caller id allowing the agent to know that she has to answer in Spanish for example
@@ -1434,6 +1444,8 @@ public class VoipNumberFaxUpdateRequest // : IUbluxDocumentId
             voipNumberFax.RulesFax = this.RulesFax;
         if(this.Tags!=null)
             voipNumberFax.Tags = this.Tags;
+        if(this.IdMusicOnHoldGroup!=null)
+            voipNumberFax.IdMusicOnHoldGroup = this.IdMusicOnHoldGroup;
         if(this.InjectFriendlyNameToCallerId!=null)
             voipNumberFax.InjectFriendlyNameToCallerId = this.InjectFriendlyNameToCallerId.Value;
         if(this.RecordIncomingCalls!=null)
@@ -1473,6 +1485,10 @@ public class VoipNumberPhoneUpdateRequest // : IUbluxDocumentId
     /// </summary>
     public List<System.String>? Tags { get; set; }
     /// <summary>
+    /// Music on hold to use for outgoing calls to PSTN only
+    /// </summary>
+    public String? IdMusicOnHoldGroup { get; set; }
+    /// <summary>
     /// This is only for external incoming calls
     /// If the friendly name of this VoipNumber is "Spanish Support" then "Spanish Support"
     /// will be injected to the caller id allowing the agent to know that she has to answer in Spanish for example
@@ -1509,6 +1525,8 @@ public class VoipNumberPhoneUpdateRequest // : IUbluxDocumentId
             voipNumberPhone.RulesFax = this.RulesFax;
         if(this.Tags!=null)
             voipNumberPhone.Tags = this.Tags;
+        if(this.IdMusicOnHoldGroup!=null)
+            voipNumberPhone.IdMusicOnHoldGroup = this.IdMusicOnHoldGroup;
         if(this.InjectFriendlyNameToCallerId!=null)
             voipNumberPhone.InjectFriendlyNameToCallerId = this.InjectFriendlyNameToCallerId.Value;
         if(this.RecordIncomingCalls!=null)

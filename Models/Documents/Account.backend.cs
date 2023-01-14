@@ -31,9 +31,6 @@ public partial class Account : UbluxDocument
     ///     Trunks that will be used for outgoing calls ordered by priority. Points to collection Group_TrunkTerminations
     ///     Reference to another entity on database. 
     ///     Example: GP-CANALPARK-PRODUCTION-1
-    ///     
-    ///     ON PBX THIS CONTAINS THE IDS SEPARATED BY COMMA. When pbx requests for Accounts WS will modify this property and perform the join
-    ///     Example: Production-CanalPark-Twilio-US-1,Production-CanalPark-Netbox-MX-1,Production-CanalPark-Netbox-All-1
     /// </summary>
     [IgnoreDataMember]
     [References(typeof(TrunkTerminationGroup))]

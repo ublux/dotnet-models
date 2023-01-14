@@ -25,6 +25,13 @@ public abstract partial class VoipNumber : UbluxDocument, IReferencesTags
     [References(typeof(Tag))]
     public List<string> Tags { get; set; } = new();
 
+    /// <summary>
+    ///     Music on hold to use for outgoing calls to PSTN only
+    /// </summary>
+    [References(typeof(MusicOnHoldGroup))]
+    [AllowUpdate(true)]
+    public string? IdMusicOnHoldGroup { get; set; } 
+
     #endregion
 
     #region abstract
