@@ -4011,6 +4011,16 @@ public class CallOutgoingToPSTNFilterRequest
     [JsonProperty("toInternationalFormat_reg")]
     public string? ToInternationalFormat_REG { get; set; }
 
+    /// <summary> DateAnswered equals </summary>
+    [JsonProperty("dateAnswered_eq")]
+    public DateTime? DateAnswered_EQ { get; set; }
+    /// <summary> DateAnswered less than or equal to </summary>
+    [JsonProperty("dateAnswered_lte")]
+    public DateTime? DateAnswered_LTE { get; set; }
+    /// <summary> DateAnswered greater than or equal to </summary>
+    [JsonProperty("dateAnswered_gte")]
+    public DateTime? DateAnswered_GTE { get; set; }
+
     /// <summary> Contact.IdIdentityUserOwner equals </summary>
     [JsonProperty("contact_idIdentityUserOwner_eq")]
     public string? Contact_IdIdentityUserOwner_EQ { get; set; }
