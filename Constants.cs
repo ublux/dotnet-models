@@ -54,10 +54,11 @@ public static partial class Constants
     //public static partial Regex RegexLineContact();
 
 
-    ///// <summary>
-    /////     Port used for UDP
-    ///// </summary>
-    //public const int AsteriskPortUdp = 5060;
+    /// <summary>
+    ///     Port used for UDP (only use this for providers)
+    /// </summary>
+    public const int AsteriskPortUdp = 5060;
+
     /// <summary>
     ///     Port used by asterisk on TCP
     /// </summary>
