@@ -1,6 +1,4 @@
-﻿using Standart.Hash.xxHash;
-
-namespace Ublux.Communications.Models.Documents;
+﻿namespace Ublux.Communications.Models.Documents;
 
 /// <summary>
 ///     Contact
@@ -128,7 +126,6 @@ public partial class Contact : UbluxDocument, IReferencesTags
 
         return sb.ToString();
     }
-
 
     ///// <summary>
     /////     Compute hash of contacts. Needed so that we can sync them
