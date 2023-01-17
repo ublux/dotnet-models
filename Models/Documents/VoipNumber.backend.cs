@@ -44,7 +44,7 @@ public abstract partial class VoipNumber : UbluxDocument, IReferncesAccount
     #endregion
 
     /// <summary>
-    ///     Provider id
+    ///     The id that the provider has for this DID. For example PN7e1d91934f11a9444f47c2de2cd354fa for a Twilio phone number
     /// </summary>
     [IgnoreDataMember]
     [AllowUpdate(false)]

@@ -19,4 +19,9 @@ public enum VoipCompany
     ///     Netbox solutions
     /// </summary>
     Netbox,
+
+    /// <summary>
+    ///     Provider from Spain with victor
+    /// </summary>
+    AirNetworks,
 }
