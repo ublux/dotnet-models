@@ -3,7 +3,7 @@
 /// <summary>
 ///     Converted audio to text
 /// </summary>
-public partial class Transcription
+public partial class AiTranscription
 {
     /// <summary>
     ///     Transcription text
@@ -47,33 +47,10 @@ public partial class Transcription
     /// <summary>
     ///     Detected entities. For example if in the phrase
     /// </summary>
-    public List<EntityDetection> Entities { get; set; } = new();
+    public List<AiEntityDetection> Entities { get; set; } = new();
 
     /// <summary>
     ///     Examples: Football, tennis
     /// </summary>
-    public List<TopicModeling> Topics { get; set; } = new();
+    public List<AiTopicModeling> Topics { get; set; } = new();
 }
-
-public class EntityDetection
-{
-    public int StartPosition { get; set; }
-    public int EndPosition { get; set; }
-    public EntityType EntityType { get; set; }
-    public string? EntityName { get; set; }
-}
-
-public enum EntityType
-{
-    Unknown,
-    Person
-}
-
-public class TopicModeling
-{
-    public string? Name { get; set; }
-    public List<string> RelatedPhrases { get; set; } = new();
-    public List<double> Weight { get; set; } = new();
-}
-
-

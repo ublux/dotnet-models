@@ -181,13 +181,13 @@ public abstract partial class Call : UbluxDocument, ICall, IReferencesTags
     ///     Audio of agent converted to text
     /// </summary>
     [AllowUpdate(false)]
-    public List<Transcription> TranscriptionAgent { get; set; } = new();
+    public List<AiTranscription> TranscriptionAgent { get; set; } = new();
 
     /// <summary>
     ///     Audio of client converted to text
     /// </summary>
     [AllowUpdate(false)]
-    public List<Transcription> TranscriptionClient { get; set; } = new();
+    public List<AiTranscription> TranscriptionClient { get; set; } = new();
 
     #endregion
 }
