@@ -1741,6 +1741,14 @@ public class CallIncomingToExtensionFilterRequest
     [JsonProperty("lineThatAnswered_recordInternalCalls_eq")]
     public bool? LineThatAnswered_RecordInternalCalls_EQ { get; set; }
 
+    /// <summary> LineThatAnswered.UseAiForExternalCalls equals </summary>
+    [JsonProperty("lineThatAnswered_useAiForExternalCalls_eq")]
+    public bool? LineThatAnswered_UseAiForExternalCalls_EQ { get; set; }
+
+    /// <summary> LineThatAnswered.UseAiForOutgoingCallsToExtensions equals </summary>
+    [JsonProperty("lineThatAnswered_useAiForOutgoingCallsToExtensions_eq")]
+    public bool? LineThatAnswered_UseAiForOutgoingCallsToExtensions_EQ { get; set; }
+
     /// <summary> LineThatAnswered.Language equals </summary>
     [JsonProperty("lineThatAnswered_language_eq")]
     public string? LineThatAnswered_Language_EQ { get; set; }
@@ -1875,6 +1883,14 @@ public class CallIncomingToExtensionFilterRequest
     [JsonProperty("linesThatRing_recordInternalCalls_eq")]
     public bool? LinesThatRing_RecordInternalCalls_EQ { get; set; }
 
+    /// <summary> LinesThatRing.UseAiForExternalCalls equals </summary>
+    [JsonProperty("linesThatRing_useAiForExternalCalls_eq")]
+    public bool? LinesThatRing_UseAiForExternalCalls_EQ { get; set; }
+
+    /// <summary> LinesThatRing.UseAiForOutgoingCallsToExtensions equals </summary>
+    [JsonProperty("linesThatRing_useAiForOutgoingCallsToExtensions_eq")]
+    public bool? LinesThatRing_UseAiForOutgoingCallsToExtensions_EQ { get; set; }
+
     /// <summary> LinesThatRing.Language equals </summary>
     [JsonProperty("linesThatRing_language_eq")]
     public string? LinesThatRing_Language_EQ { get; set; }
@@ -2008,6 +2024,14 @@ public class CallIncomingToExtensionFilterRequest
     /// <summary> LinesThatDidNotRing.RecordInternalCalls equals </summary>
     [JsonProperty("linesThatDidNotRing_recordInternalCalls_eq")]
     public bool? LinesThatDidNotRing_RecordInternalCalls_EQ { get; set; }
+
+    /// <summary> LinesThatDidNotRing.UseAiForExternalCalls equals </summary>
+    [JsonProperty("linesThatDidNotRing_useAiForExternalCalls_eq")]
+    public bool? LinesThatDidNotRing_UseAiForExternalCalls_EQ { get; set; }
+
+    /// <summary> LinesThatDidNotRing.UseAiForOutgoingCallsToExtensions equals </summary>
+    [JsonProperty("linesThatDidNotRing_useAiForOutgoingCallsToExtensions_eq")]
+    public bool? LinesThatDidNotRing_UseAiForOutgoingCallsToExtensions_EQ { get; set; }
 
     /// <summary> LinesThatDidNotRing.Language equals </summary>
     [JsonProperty("linesThatDidNotRing_language_eq")]
@@ -3056,6 +3080,14 @@ public class CallOutgoingToExtensionFilterRequest
     [JsonProperty("lineThatAnswered_recordInternalCalls_eq")]
     public bool? LineThatAnswered_RecordInternalCalls_EQ { get; set; }
 
+    /// <summary> LineThatAnswered.UseAiForExternalCalls equals </summary>
+    [JsonProperty("lineThatAnswered_useAiForExternalCalls_eq")]
+    public bool? LineThatAnswered_UseAiForExternalCalls_EQ { get; set; }
+
+    /// <summary> LineThatAnswered.UseAiForOutgoingCallsToExtensions equals </summary>
+    [JsonProperty("lineThatAnswered_useAiForOutgoingCallsToExtensions_eq")]
+    public bool? LineThatAnswered_UseAiForOutgoingCallsToExtensions_EQ { get; set; }
+
     /// <summary> LineThatAnswered.Language equals </summary>
     [JsonProperty("lineThatAnswered_language_eq")]
     public string? LineThatAnswered_Language_EQ { get; set; }
@@ -3190,6 +3222,14 @@ public class CallOutgoingToExtensionFilterRequest
     [JsonProperty("linesThatRing_recordInternalCalls_eq")]
     public bool? LinesThatRing_RecordInternalCalls_EQ { get; set; }
 
+    /// <summary> LinesThatRing.UseAiForExternalCalls equals </summary>
+    [JsonProperty("linesThatRing_useAiForExternalCalls_eq")]
+    public bool? LinesThatRing_UseAiForExternalCalls_EQ { get; set; }
+
+    /// <summary> LinesThatRing.UseAiForOutgoingCallsToExtensions equals </summary>
+    [JsonProperty("linesThatRing_useAiForOutgoingCallsToExtensions_eq")]
+    public bool? LinesThatRing_UseAiForOutgoingCallsToExtensions_EQ { get; set; }
+
     /// <summary> LinesThatRing.Language equals </summary>
     [JsonProperty("linesThatRing_language_eq")]
     public string? LinesThatRing_Language_EQ { get; set; }
@@ -3323,6 +3363,14 @@ public class CallOutgoingToExtensionFilterRequest
     /// <summary> LinesThatDidNotRing.RecordInternalCalls equals </summary>
     [JsonProperty("linesThatDidNotRing_recordInternalCalls_eq")]
     public bool? LinesThatDidNotRing_RecordInternalCalls_EQ { get; set; }
+
+    /// <summary> LinesThatDidNotRing.UseAiForExternalCalls equals </summary>
+    [JsonProperty("linesThatDidNotRing_useAiForExternalCalls_eq")]
+    public bool? LinesThatDidNotRing_UseAiForExternalCalls_EQ { get; set; }
+
+    /// <summary> LinesThatDidNotRing.UseAiForOutgoingCallsToExtensions equals </summary>
+    [JsonProperty("linesThatDidNotRing_useAiForOutgoingCallsToExtensions_eq")]
+    public bool? LinesThatDidNotRing_UseAiForOutgoingCallsToExtensions_EQ { get; set; }
 
     /// <summary> LinesThatDidNotRing.Language equals </summary>
     [JsonProperty("linesThatDidNotRing_language_eq")]
@@ -3732,6 +3780,14 @@ public class CallOutgoingToExtensionFilterRequest
     /// <summary> LineThatInitiatedCall.RecordInternalCalls equals </summary>
     [JsonProperty("lineThatInitiatedCall_recordInternalCalls_eq")]
     public bool? LineThatInitiatedCall_RecordInternalCalls_EQ { get; set; }
+
+    /// <summary> LineThatInitiatedCall.UseAiForExternalCalls equals </summary>
+    [JsonProperty("lineThatInitiatedCall_useAiForExternalCalls_eq")]
+    public bool? LineThatInitiatedCall_UseAiForExternalCalls_EQ { get; set; }
+
+    /// <summary> LineThatInitiatedCall.UseAiForOutgoingCallsToExtensions equals </summary>
+    [JsonProperty("lineThatInitiatedCall_useAiForOutgoingCallsToExtensions_eq")]
+    public bool? LineThatInitiatedCall_UseAiForOutgoingCallsToExtensions_EQ { get; set; }
 
     /// <summary> LineThatInitiatedCall.Language equals </summary>
     [JsonProperty("lineThatInitiatedCall_language_eq")]
@@ -4704,6 +4760,14 @@ public class CallOutgoingToPSTNFilterRequest
     /// <summary> LineThatInitiatedCall.RecordInternalCalls equals </summary>
     [JsonProperty("lineThatInitiatedCall_recordInternalCalls_eq")]
     public bool? LineThatInitiatedCall_RecordInternalCalls_EQ { get; set; }
+
+    /// <summary> LineThatInitiatedCall.UseAiForExternalCalls equals </summary>
+    [JsonProperty("lineThatInitiatedCall_useAiForExternalCalls_eq")]
+    public bool? LineThatInitiatedCall_UseAiForExternalCalls_EQ { get; set; }
+
+    /// <summary> LineThatInitiatedCall.UseAiForOutgoingCallsToExtensions equals </summary>
+    [JsonProperty("lineThatInitiatedCall_useAiForOutgoingCallsToExtensions_eq")]
+    public bool? LineThatInitiatedCall_UseAiForOutgoingCallsToExtensions_EQ { get; set; }
 
     /// <summary> LineThatInitiatedCall.Language equals </summary>
     [JsonProperty("lineThatInitiatedCall_language_eq")]
@@ -6858,6 +6922,14 @@ public class FaxEmailInfoFilterRequest
     [JsonProperty("lineThatValidatedEmail_recordInternalCalls_eq")]
     public bool? LineThatValidatedEmail_RecordInternalCalls_EQ { get; set; }
 
+    /// <summary> LineThatValidatedEmail.UseAiForExternalCalls equals </summary>
+    [JsonProperty("lineThatValidatedEmail_useAiForExternalCalls_eq")]
+    public bool? LineThatValidatedEmail_UseAiForExternalCalls_EQ { get; set; }
+
+    /// <summary> LineThatValidatedEmail.UseAiForOutgoingCallsToExtensions equals </summary>
+    [JsonProperty("lineThatValidatedEmail_useAiForOutgoingCallsToExtensions_eq")]
+    public bool? LineThatValidatedEmail_UseAiForOutgoingCallsToExtensions_EQ { get; set; }
+
     /// <summary> LineThatValidatedEmail.Language equals </summary>
     [JsonProperty("lineThatValidatedEmail_language_eq")]
     public string? LineThatValidatedEmail_Language_EQ { get; set; }
@@ -8029,6 +8101,14 @@ public class PhoneFilterRequest
     /// <summary> Lines.RecordInternalCalls equals </summary>
     [JsonProperty("lines_recordInternalCalls_eq")]
     public bool? Lines_RecordInternalCalls_EQ { get; set; }
+
+    /// <summary> Lines.UseAiForExternalCalls equals </summary>
+    [JsonProperty("lines_useAiForExternalCalls_eq")]
+    public bool? Lines_UseAiForExternalCalls_EQ { get; set; }
+
+    /// <summary> Lines.UseAiForOutgoingCallsToExtensions equals </summary>
+    [JsonProperty("lines_useAiForOutgoingCallsToExtensions_eq")]
+    public bool? Lines_UseAiForOutgoingCallsToExtensions_EQ { get; set; }
 
     /// <summary> Lines.Language equals </summary>
     [JsonProperty("lines_language_eq")]
@@ -9330,6 +9410,14 @@ public class VoicemailForwardedFilterRequest
     [JsonProperty("lineThatForwardedVoicemail_recordInternalCalls_eq")]
     public bool? LineThatForwardedVoicemail_RecordInternalCalls_EQ { get; set; }
 
+    /// <summary> LineThatForwardedVoicemail.UseAiForExternalCalls equals </summary>
+    [JsonProperty("lineThatForwardedVoicemail_useAiForExternalCalls_eq")]
+    public bool? LineThatForwardedVoicemail_UseAiForExternalCalls_EQ { get; set; }
+
+    /// <summary> LineThatForwardedVoicemail.UseAiForOutgoingCallsToExtensions equals </summary>
+    [JsonProperty("lineThatForwardedVoicemail_useAiForOutgoingCallsToExtensions_eq")]
+    public bool? LineThatForwardedVoicemail_UseAiForOutgoingCallsToExtensions_EQ { get; set; }
+
     /// <summary> LineThatForwardedVoicemail.Language equals </summary>
     [JsonProperty("lineThatForwardedVoicemail_language_eq")]
     public string? LineThatForwardedVoicemail_Language_EQ { get; set; }
@@ -9715,6 +9803,10 @@ public class VoipNumberAvailableForPurchaseFilterRequest
     [JsonProperty("recordIncomingCalls_eq")]
     public bool? RecordIncomingCalls_EQ { get; set; }
 
+    /// <summary> UseAiForIncomingCalls equals </summary>
+    [JsonProperty("useAiForIncomingCalls_eq")]
+    public bool? UseAiForIncomingCalls_EQ { get; set; }
+
     /// <summary> Number equals </summary>
     [JsonProperty("number_eq")]
     public string? Number_EQ { get; set; }
@@ -9930,6 +10022,10 @@ public class VoipNumberFaxFilterRequest
     [JsonProperty("recordIncomingCalls_eq")]
     public bool? RecordIncomingCalls_EQ { get; set; }
 
+    /// <summary> UseAiForIncomingCalls equals </summary>
+    [JsonProperty("useAiForIncomingCalls_eq")]
+    public bool? UseAiForIncomingCalls_EQ { get; set; }
+
     /// <summary> Number equals </summary>
     [JsonProperty("number_eq")]
     public string? Number_EQ { get; set; }
@@ -10144,6 +10240,10 @@ public class VoipNumberPhoneFilterRequest
     /// <summary> RecordIncomingCalls equals </summary>
     [JsonProperty("recordIncomingCalls_eq")]
     public bool? RecordIncomingCalls_EQ { get; set; }
+
+    /// <summary> UseAiForIncomingCalls equals </summary>
+    [JsonProperty("useAiForIncomingCalls_eq")]
+    public bool? UseAiForIncomingCalls_EQ { get; set; }
 
     /// <summary> Number equals </summary>
     [JsonProperty("number_eq")]
@@ -12550,6 +12650,14 @@ public class CallOutgoingFilterRequest
     [JsonProperty("lineThatInitiatedCall_recordInternalCalls_eq")]
     public bool? LineThatInitiatedCall_RecordInternalCalls_EQ { get; set; }
 
+    /// <summary> LineThatInitiatedCall.UseAiForExternalCalls equals </summary>
+    [JsonProperty("lineThatInitiatedCall_useAiForExternalCalls_eq")]
+    public bool? LineThatInitiatedCall_UseAiForExternalCalls_EQ { get; set; }
+
+    /// <summary> LineThatInitiatedCall.UseAiForOutgoingCallsToExtensions equals </summary>
+    [JsonProperty("lineThatInitiatedCall_useAiForOutgoingCallsToExtensions_eq")]
+    public bool? LineThatInitiatedCall_UseAiForOutgoingCallsToExtensions_EQ { get; set; }
+
     /// <summary> LineThatInitiatedCall.Language equals </summary>
     [JsonProperty("lineThatInitiatedCall_language_eq")]
     public string? LineThatInitiatedCall_Language_EQ { get; set; }
@@ -13426,6 +13534,10 @@ public class VoipNumberFilterRequest
     /// <summary> RecordIncomingCalls equals </summary>
     [JsonProperty("recordIncomingCalls_eq")]
     public bool? RecordIncomingCalls_EQ { get; set; }
+
+    /// <summary> UseAiForIncomingCalls equals </summary>
+    [JsonProperty("useAiForIncomingCalls_eq")]
+    public bool? UseAiForIncomingCalls_EQ { get; set; }
 
     /// <summary> Number equals </summary>
     [JsonProperty("number_eq")]

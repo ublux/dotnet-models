@@ -1343,6 +1343,10 @@ public class VoipNumberAvailableForPurchaseUpdateRequest // : IUbluxDocumentId
     /// </summary>
     public Boolean? RecordIncomingCalls { get; set; }
     /// <summary>
+    /// Users will be charged extra for AI transcriptions. If this is true call will be recorded in order to do AI work
+    /// </summary>
+    public Boolean? UseAiForIncomingCalls { get; set; }
+    /// <summary>
     /// Incoming phone number friendly name
     /// </summary>
     public String? FriendlyName { get; set; }
@@ -1369,6 +1373,8 @@ public class VoipNumberAvailableForPurchaseUpdateRequest // : IUbluxDocumentId
             voipNumberAvailableForPurchase.InjectFriendlyNameToCallerId = this.InjectFriendlyNameToCallerId.Value;
         if(this.RecordIncomingCalls!=null)
             voipNumberAvailableForPurchase.RecordIncomingCalls = this.RecordIncomingCalls.Value;
+        if(this.UseAiForIncomingCalls!=null)
+            voipNumberAvailableForPurchase.UseAiForIncomingCalls = this.UseAiForIncomingCalls.Value;
         if(this.FriendlyName!=null)
             voipNumberAvailableForPurchase.FriendlyName = this.FriendlyName;
         if(this.Description!=null)
@@ -1418,6 +1424,10 @@ public class VoipNumberFaxUpdateRequest // : IUbluxDocumentId
     /// </summary>
     public Boolean? RecordIncomingCalls { get; set; }
     /// <summary>
+    /// Users will be charged extra for AI transcriptions. If this is true call will be recorded in order to do AI work
+    /// </summary>
+    public Boolean? UseAiForIncomingCalls { get; set; }
+    /// <summary>
     /// Incoming phone number friendly name
     /// </summary>
     public String? FriendlyName { get; set; }
@@ -1450,6 +1460,8 @@ public class VoipNumberFaxUpdateRequest // : IUbluxDocumentId
             voipNumberFax.InjectFriendlyNameToCallerId = this.InjectFriendlyNameToCallerId.Value;
         if(this.RecordIncomingCalls!=null)
             voipNumberFax.RecordIncomingCalls = this.RecordIncomingCalls.Value;
+        if(this.UseAiForIncomingCalls!=null)
+            voipNumberFax.UseAiForIncomingCalls = this.UseAiForIncomingCalls.Value;
         if(this.FriendlyName!=null)
             voipNumberFax.FriendlyName = this.FriendlyName;
         if(this.Description!=null)
@@ -1499,6 +1511,10 @@ public class VoipNumberPhoneUpdateRequest // : IUbluxDocumentId
     /// </summary>
     public Boolean? RecordIncomingCalls { get; set; }
     /// <summary>
+    /// Users will be charged extra for AI transcriptions. If this is true call will be recorded in order to do AI work
+    /// </summary>
+    public Boolean? UseAiForIncomingCalls { get; set; }
+    /// <summary>
     /// Incoming phone number friendly name
     /// </summary>
     public String? FriendlyName { get; set; }
@@ -1531,6 +1547,8 @@ public class VoipNumberPhoneUpdateRequest // : IUbluxDocumentId
             voipNumberPhone.InjectFriendlyNameToCallerId = this.InjectFriendlyNameToCallerId.Value;
         if(this.RecordIncomingCalls!=null)
             voipNumberPhone.RecordIncomingCalls = this.RecordIncomingCalls.Value;
+        if(this.UseAiForIncomingCalls!=null)
+            voipNumberPhone.UseAiForIncomingCalls = this.UseAiForIncomingCalls.Value;
         if(this.FriendlyName!=null)
             voipNumberPhone.FriendlyName = this.FriendlyName;
         if(this.Description!=null)
@@ -1656,6 +1674,14 @@ public class LineUpdateRequest // : IUbluxDocumentId
     /// </summary>
     public Boolean? RecordInternalCalls { get; set; }
     /// <summary>
+    /// Users will be charged extra for AI transcriptions. If this is true external calls to PSTN will be recorded.
+    /// </summary>
+    public Boolean? UseAiForExternalCalls { get; set; }
+    /// <summary>
+    /// Users will be charged extra for AI transcriptions. If this is true internal calls to extensions will be recorded.
+    /// </summary>
+    public Boolean? UseAiForOutgoingCallsToExtensions { get; set; }
+    /// <summary>
     /// Langage to use when playing messages
     /// </summary>
     public Language? Language { get; set; }
@@ -1670,6 +1696,10 @@ public class LineUpdateRequest // : IUbluxDocumentId
             line.RecordExternalCalls = this.RecordExternalCalls.Value;
         if(this.RecordInternalCalls!=null)
             line.RecordInternalCalls = this.RecordInternalCalls.Value;
+        if(this.UseAiForExternalCalls!=null)
+            line.UseAiForExternalCalls = this.UseAiForExternalCalls.Value;
+        if(this.UseAiForOutgoingCallsToExtensions!=null)
+            line.UseAiForOutgoingCallsToExtensions = this.UseAiForOutgoingCallsToExtensions.Value;
         if(this.Language!=null)
             line.Language = this.Language.Value;
     }

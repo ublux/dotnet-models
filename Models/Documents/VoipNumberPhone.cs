@@ -35,5 +35,5 @@ public partial class VoipNumberPhone : VoipNumber
         get => VoipNumberType.Phone;
         [Obsolete("set method is only used to so that field is stored on mongo DB")]
         internal set { }
-    }
+    }   
 }

@@ -37,6 +37,21 @@ public partial class Line : UbluxSubDocument
     [AllowUpdate(true)]
     public bool RecordInternalCalls { get; set; }
 
+    #region AI
+
+    /// <summary>
+    ///     Users will be charged extra for AI transcriptions. If this is true external calls to PSTN will be recorded.
+    /// </summary>
+    [AllowUpdate(true)]
+    public bool UseAiForExternalCalls { get; set; }
+    /// <summary>
+    ///     Users will be charged extra for AI transcriptions. If this is true internal calls to extensions will be recorded.
+    /// </summary>
+    [AllowUpdate(true)]
+    public bool UseAiForOutgoingCallsToExtensions { get; set; }
+
+    #endregion
+
     /// <summary>
     ///     Langage to use when playing messages
     /// </summary>

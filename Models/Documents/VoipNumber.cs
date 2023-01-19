@@ -84,6 +84,12 @@ public abstract partial class VoipNumber : UbluxDocument, IReferencesTags
     public bool RecordIncomingCalls { get; set; }
 
     /// <summary>
+    ///     Users will be charged extra for AI transcriptions. If this is true call will be recorded in order to do AI work
+    /// </summary>
+    [AllowUpdate(true)]
+    public bool UseAiForIncomingCalls { get; set; }
+
+    /// <summary>
     ///     Phone number
     /// </summary>
     [AllowUpdate(false)]
