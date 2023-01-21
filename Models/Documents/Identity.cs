@@ -32,6 +32,13 @@ public partial class Identity : UbluxDocument, IReferencesTags
     #endregion    
 
     /// <summary>
+    ///     What type of user is this? Is this a PBX? WA?
+    /// </summary>
+    [AllowUpdate(false)]
+    [IsUbluxRequired]
+    public required IdentityType IdentityType { get; set; }
+
+    /// <summary>
     ///     Username needed to authenticate. This is usually an email address in lowercase
     ///     If its a PBX/WA then it is the instance id in lowercase
     /// </summary>

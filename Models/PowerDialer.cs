@@ -10,7 +10,7 @@
     typeof(PowerDialerAdvance),
     typeof(PowerDialerSimple)
 )]
-public abstract class PowerDialer
+public abstract class PowerDialer 
 {
     ///// <summary>
     /////     Id of power dialer
@@ -80,5 +80,3 @@ public abstract class PowerDialer
     /// </summary>
     public string? ContactName { get; set; }
 }
-
-

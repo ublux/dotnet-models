@@ -422,7 +422,6 @@ public enum UbluxRole
     /// <summary> Has access to the tags endpoint with only read/create permissions </summary>
     tags_create,
 
-
     #endregion
 
     #region Medium Priority
@@ -455,15 +454,6 @@ public enum UbluxRole
 
     #endregion
 
-    //#region Web phone priority
-
-    ///// <summary>
-    /////     Used to get webphone password. Ends with 1 because its readonly
-    ///// </summary>
-    //webphonepass_readonly = 100_001,
-
-    //#endregion
-
     #region Protected High Priority
 
     /// <summary>
@@ -482,7 +472,7 @@ public enum UbluxRole
     wa = 3000000,
 
     /// <summary>
-    ///     We have this because now we can have multiple Web Services
+    ///     We have this because a WS can talk to another WS
     /// </summary>
     ws = 4000000,
 

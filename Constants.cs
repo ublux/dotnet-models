@@ -148,4 +148,9 @@ public static partial class Constants
         { FlowNodeType.DynamicExtension, CommonActions },
         { FlowNodeType.Extension, CommonActions },
     };
+
+    /// <summary>
+    ///     Valid characters for an instance id
+    /// </summary>
+    public static HashSet<char> InstanceIdValidChars = new ("ABCDEFGHIJKLMNOPQRSTUVWXYZ-0123456789".ToCharArray());
 }

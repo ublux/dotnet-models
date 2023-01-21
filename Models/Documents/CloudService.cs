@@ -18,13 +18,14 @@ public abstract partial class CloudService : UbluxDocument
 {
     #region Properties
 
-    ///// <summary>
-    /////     Identity that can login to this PBX. Must point to an identity of type PBX
-    ///// </summary>
-    //[AllowUpdate(false)]
-    //[References(typeof(Identity))]
-    //[IsUbluxRequired]
-    //public string required IdIdentity { get; set; }
+    /// <summary>
+    ///     TODO. Place index on this field on DB
+    ///     Thanks to the identity it can login
+    /// </summary>
+    [References(typeof(Identity))]
+    [AllowUpdate(false)]
+    [IsUbluxRequired]
+    public required string IdIdentity { get; set; } = "";
 
     /// <summary>
     ///     Type of cloud service
@@ -96,8 +97,7 @@ public abstract partial class CloudService : UbluxDocument
     /// </summary>
     [AllowUpdate(false)]
     public required string InstanceId { get => instanceId; set => instanceId = value.ToUpper(); }
-    private string instanceId = "";
-    
+    private string instanceId = "";    
 
     #endregion     
 }

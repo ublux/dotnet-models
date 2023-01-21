@@ -33,22 +33,17 @@ public enum IdentityType
     PBX = 2,
 
     /// <summary>
-    ///     Web hosting. This is where ublux static website is hosted.
-    /// </summary>
-    WH = 4,
-
-    /// <summary>
     ///     WebApp. This is where chat and web-phone runs
     /// </summary>
-    WA = 8,
+    WA = 4,
 
     /// <summary>
-    ///     We have this because now we can have multiple Web Services
+    ///     Web hosting. This is where ublux static website is hosted.
     /// </summary>
-    WS = 16,
+    WH = 8,
 
-    ///// <summary>
-    /////     This is the master service that determines a user what WS will use to consume the API
-    ///// </summary>
-    //MS = 32,
+    /// <summary>
+    ///     This is used by WS to send a request to the other WS to monitor its statuses
+    /// </summary>
+    WS = 16
 }

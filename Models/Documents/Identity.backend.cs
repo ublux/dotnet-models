@@ -16,16 +16,7 @@ public partial class Identity : UbluxDocument, IReferncesAccount
     [IgnoreDataMember]
     [HideForCreateRequest]
     // virtual because of unit tests so that it can mock this object
-    public required virtual string IdAccount { get; set; }
-
-    /// <summary>
-    ///     What type of user is this? Is this a PBX? WA?
-    /// </summary>
-    [AllowUpdate(false)]
-    [IsUbluxRequired]
-    [HideForCreateRequest] // remember to add this on admin service!
-    // virtual because of unit tests so that it can mock this object
-    public required IdentityType IdentityType { get; set; }
+    public required virtual string IdAccount { get; set; } = string.Empty;
 }
 
 #endif

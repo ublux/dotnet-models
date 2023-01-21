@@ -5347,6 +5347,16 @@ public class CloudServicePbxFilterRequest
     [JsonProperty("httpListenPort_gte")]
     public System.Int32? HttpListenPort_GTE { get; set; }
 
+    /// <summary> IdIdentity equals </summary>
+    [JsonProperty("idIdentity_eq")]
+    public string? IdIdentity_EQ { get; set; }
+    /// <summary> IdIdentity contains </summary>
+    [JsonProperty("idIdentity_con")]
+    public string? IdIdentity_CON { get; set; }
+    /// <summary> IdIdentity regex </summary>
+    [JsonProperty("idIdentity_reg")]
+    public string? IdIdentity_REG { get; set; }
+
     /// <summary> CountryIsoCode equals </summary>
     [JsonProperty("countryIsoCode_eq")]
     public string? CountryIsoCode_EQ { get; set; }
@@ -5443,6 +5453,16 @@ public class CloudServiceWebAppFilterRequest
     [JsonProperty("cloudServiceType_reg")]
     public string? CloudServiceType_REG { get; set; }
 
+    /// <summary> IdIdentity equals </summary>
+    [JsonProperty("idIdentity_eq")]
+    public string? IdIdentity_EQ { get; set; }
+    /// <summary> IdIdentity contains </summary>
+    [JsonProperty("idIdentity_con")]
+    public string? IdIdentity_CON { get; set; }
+    /// <summary> IdIdentity regex </summary>
+    [JsonProperty("idIdentity_reg")]
+    public string? IdIdentity_REG { get; set; }
+
     /// <summary> CountryIsoCode equals </summary>
     [JsonProperty("countryIsoCode_eq")]
     public string? CountryIsoCode_EQ { get; set; }
@@ -5538,6 +5558,16 @@ public class CloudServiceWebHostFilterRequest
     /// <summary> CloudServiceType regex </summary>
     [JsonProperty("cloudServiceType_reg")]
     public string? CloudServiceType_REG { get; set; }
+
+    /// <summary> IdIdentity equals </summary>
+    [JsonProperty("idIdentity_eq")]
+    public string? IdIdentity_EQ { get; set; }
+    /// <summary> IdIdentity contains </summary>
+    [JsonProperty("idIdentity_con")]
+    public string? IdIdentity_CON { get; set; }
+    /// <summary> IdIdentity regex </summary>
+    [JsonProperty("idIdentity_reg")]
+    public string? IdIdentity_REG { get; set; }
 
     /// <summary> CountryIsoCode equals </summary>
     [JsonProperty("countryIsoCode_eq")]
@@ -7435,16 +7465,6 @@ public class FaxOutgoingGroupFilterRequest
 /// <summary> Enables searching for Identitys </summary>
 public class IdentityFilterRequest 
 {
-    /// <summary> IdentityType equals </summary>
-    [JsonProperty("identityType_eq")]
-    public string? IdentityType_EQ { get; set; }
-    /// <summary> IdentityType contains </summary>
-    [JsonProperty("identityType_con")]
-    public string? IdentityType_CON { get; set; }
-    /// <summary> IdentityType regex </summary>
-    [JsonProperty("identityType_reg")]
-    public string? IdentityType_REG { get; set; }
-
     /// <summary> Tags equals </summary>
     [JsonProperty("tags_eq")]
     public string? Tags_EQ { get; set; }
@@ -7458,6 +7478,16 @@ public class IdentityFilterRequest
     /// <summary> UbluxRoles contains </summary>
     [JsonProperty("ubluxRoles_con")]
     public UbluxRole? UbluxRoles_CON { get; set; }
+
+    /// <summary> IdentityType equals </summary>
+    [JsonProperty("identityType_eq")]
+    public string? IdentityType_EQ { get; set; }
+    /// <summary> IdentityType contains </summary>
+    [JsonProperty("identityType_con")]
+    public string? IdentityType_CON { get; set; }
+    /// <summary> IdentityType regex </summary>
+    [JsonProperty("identityType_reg")]
+    public string? IdentityType_REG { get; set; }
 
     /// <summary> Username equals </summary>
     [JsonProperty("username_eq")]
@@ -13222,6 +13252,16 @@ public class CallOutgoingFilterRequest
 /// <summary> Enables searching for CloudServices </summary>
 public class CloudServiceFilterRequest 
 {
+    /// <summary> IdIdentity equals </summary>
+    [JsonProperty("idIdentity_eq")]
+    public string? IdIdentity_EQ { get; set; }
+    /// <summary> IdIdentity contains </summary>
+    [JsonProperty("idIdentity_con")]
+    public string? IdIdentity_CON { get; set; }
+    /// <summary> IdIdentity regex </summary>
+    [JsonProperty("idIdentity_reg")]
+    public string? IdIdentity_REG { get; set; }
+
     /// <summary> CloudServiceType equals </summary>
     [JsonProperty("cloudServiceType_eq")]
     public string? CloudServiceType_EQ { get; set; }
