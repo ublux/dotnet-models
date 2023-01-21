@@ -2,7 +2,7 @@
 
 namespace Ublux.Communications.Models.EventTriggersModels;
 
-public partial class EventIncomingCallTerminated
+public partial class EventOutgoingCallTerminated
 {
     /// <summary>
     ///     From phone number
@@ -35,7 +35,7 @@ public partial class EventIncomingCallTerminated
     public DateTime DateEnded { get; set; }
 
     /// <summary>
-    ///     Id of contact that made phone call
+    ///     Id of contact to whom call was made
     /// </summary>
     [AllowUpdate(false)]
     public string? IdContact { get; set; }
@@ -49,14 +49,14 @@ public partial class EventIncomingCallTerminated
     /// <summary>
     ///     Return a random object
     /// </summary>
-    public override EventIncomingCallTerminated BuildRandomFakeObject()
+    public override EventOutgoingCallTerminated BuildRandomFakeObject()
     {
         var randInstanceId = new RunningApplicationInstance() { Id = "1", CloudServiceType = CloudServiceType.WS };
         var randChannel = Random.Shared.Next(100000, 999999);
-        var randomId = CallIncomingToExtension.BuildId(randInstanceId, $"{randChannel}.0").Id;
+        var randomId = CallOutgoingToPSTN.BuildId(randInstanceId, $"{randChannel}.0").Id;
         var randomIdContact = Contact.BuildId(randInstanceId).Id;
 
-        var f = new Faker<EventIncomingCallTerminated>()
+        var f = new Faker<EventOutgoingCallTerminated>()
             .RuleFor(x => x.Id, randomId)
             .RuleFor(x => x.From, x => x.Phone.PhoneNumberFormat(0))
             .RuleFor(x => x.To, x => x.Phone.PhoneNumberFormat(0))
@@ -64,7 +64,7 @@ public partial class EventIncomingCallTerminated
             .RuleFor(x => x.ContactFullName, x=>x.Name.FullName())
             ;
 
-        EventIncomingCallTerminated obj = f.Generate();
+        EventOutgoingCallTerminated obj = f.Generate();
         
         // set dates
         obj.DateStart = DateTime.UtcNow.AddHours(-1);

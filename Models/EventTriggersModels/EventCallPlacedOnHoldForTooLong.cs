@@ -2,7 +2,7 @@
 
 namespace Ublux.Communications.Models.EventTriggersModels;
 
-public partial class EventIncomingCallTerminated
+public partial class EventCallPlacedOnHoldForTooLong
 {
     /// <summary>
     ///     From phone number
@@ -11,7 +11,7 @@ public partial class EventIncomingCallTerminated
     public required string From { get; set; }
 
     /// <summary>
-    ///     From phone number
+    ///     To phone number
     /// </summary>
     [AllowUpdate(false)]
     public required string To { get; set; }
@@ -23,16 +23,10 @@ public partial class EventIncomingCallTerminated
     public DateTime DateStart { get; set; }
 
     /// <summary>
-    ///     Date when call was answered
+    ///     Date when call was answered. If null it means it has not been answered
     /// </summary>
     [AllowUpdate(false)]
-    public DateTime? DateAnswer { get; set; }
-
-    /// <summary>
-    ///     Date when call was ended
-    /// </summary>
-    [AllowUpdate(false)]
-    public DateTime DateEnded { get; set; }
+    public DateTime? DateAnswer { get; set; }    
 
     /// <summary>
     ///     Id of contact that made phone call
@@ -44,19 +38,25 @@ public partial class EventIncomingCallTerminated
     ///     Name of contact
     /// </summary>
     [AllowUpdate(false)]
-    public string? ContactFullName { get; set; } 
+    public string? ContactFullName { get; set; }
+
+    /// <summary>
+    ///     Number of seconds call has been on hold
+    /// </summary>
+    [AllowUpdate(false)]
+    public int NumberOfSecondsCallOnHold { get; set; }
 
     /// <summary>
     ///     Return a random object
     /// </summary>
-    public override EventIncomingCallTerminated BuildRandomFakeObject()
+    public override EventCallPlacedOnHoldForTooLong BuildRandomFakeObject()
     {
         var randInstanceId = new RunningApplicationInstance() { Id = "1", CloudServiceType = CloudServiceType.WS };
         var randChannel = Random.Shared.Next(100000, 999999);
         var randomId = CallIncomingToExtension.BuildId(randInstanceId, $"{randChannel}.0").Id;
         var randomIdContact = Contact.BuildId(randInstanceId).Id;
 
-        var f = new Faker<EventIncomingCallTerminated>()
+        var f = new Faker<EventCallPlacedOnHoldForTooLong>()
             .RuleFor(x => x.Id, randomId)
             .RuleFor(x => x.From, x => x.Phone.PhoneNumberFormat(0))
             .RuleFor(x => x.To, x => x.Phone.PhoneNumberFormat(0))
@@ -64,12 +64,13 @@ public partial class EventIncomingCallTerminated
             .RuleFor(x => x.ContactFullName, x=>x.Name.FullName())
             ;
 
-        EventIncomingCallTerminated obj = f.Generate();
+        EventCallPlacedOnHoldForTooLong obj = f.Generate();
         
         // set dates
         obj.DateStart = DateTime.UtcNow.AddHours(-1);
         obj.DateAnswer = obj.DateStart.AddSeconds(10);
-        obj.DateEnded = obj.DateAnswer.Value.AddSeconds(Random.Shared.Next(10, 3600));
+        obj.NumberOfSecondsCallOnHold = Random.Shared.Next(60, 3600);
+        //obj.DateEnded = obj.DateAnswer.Value.AddSeconds(Random.Shared.Next(10, 3600));
 
         return obj;
     }

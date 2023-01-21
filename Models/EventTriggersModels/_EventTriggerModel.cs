@@ -50,5 +50,11 @@ public abstract class EventTriggerModel
         var className = nameSb.ToString();
         return className;
     }
+
+    /// <summary>
+    ///     Return fake object used by Zapier to be shown as an example
+    /// </summary>
+    /// <returns></returns>
+    public abstract EventTriggerModel BuildRandomFakeObject();    
 }
 

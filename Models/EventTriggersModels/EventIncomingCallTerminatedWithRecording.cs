@@ -2,7 +2,7 @@
 
 namespace Ublux.Communications.Models.EventTriggersModels;
 
-public partial class EventIncomingCallTerminated
+public partial class EventIncomingCallTerminatedWithRecording
 {
     /// <summary>
     ///     From phone number
@@ -44,19 +44,25 @@ public partial class EventIncomingCallTerminated
     ///     Name of contact
     /// </summary>
     [AllowUpdate(false)]
-    public string? ContactFullName { get; set; } 
+    public string? ContactFullName { get; set; }
+
+    /// <summary>
+    ///     Url of recording
+    /// </summary>
+    [AllowUpdate(false)]
+    public string? RecordingUrl { get; set; }
 
     /// <summary>
     ///     Return a random object
     /// </summary>
-    public override EventIncomingCallTerminated BuildRandomFakeObject()
+    public override EventIncomingCallTerminatedWithRecording BuildRandomFakeObject()
     {
         var randInstanceId = new RunningApplicationInstance() { Id = "1", CloudServiceType = CloudServiceType.WS };
         var randChannel = Random.Shared.Next(100000, 999999);
         var randomId = CallIncomingToExtension.BuildId(randInstanceId, $"{randChannel}.0").Id;
         var randomIdContact = Contact.BuildId(randInstanceId).Id;
 
-        var f = new Faker<EventIncomingCallTerminated>()
+        var f = new Faker<EventIncomingCallTerminatedWithRecording>()
             .RuleFor(x => x.Id, randomId)
             .RuleFor(x => x.From, x => x.Phone.PhoneNumberFormat(0))
             .RuleFor(x => x.To, x => x.Phone.PhoneNumberFormat(0))
@@ -64,12 +70,13 @@ public partial class EventIncomingCallTerminated
             .RuleFor(x => x.ContactFullName, x=>x.Name.FullName())
             ;
 
-        EventIncomingCallTerminated obj = f.Generate();
+        EventIncomingCallTerminatedWithRecording obj = f.Generate();
         
         // set dates
         obj.DateStart = DateTime.UtcNow.AddHours(-1);
         obj.DateAnswer = obj.DateStart.AddSeconds(10);
         obj.DateEnded = obj.DateAnswer.Value.AddSeconds(Random.Shared.Next(10, 3600));
+        obj.RecordingUrl = $"https://api.{Constants.Domain}/some-url";
 
         return obj;
     }
