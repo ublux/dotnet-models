@@ -16,6 +16,14 @@ public partial class ApiKey : UbluxDocument, IReferencesTags
     [References(typeof(Tag))]
     public List<string> Tags { get; set; } = new();
 
+    /// <summary>
+    ///     Identity that created this key. 
+    /// </summary>
+    [IsUbluxRequired]
+    [AllowUpdate(false)]
+    [References(typeof(Identity))]
+    public required string IdIdentity { get; set; } = string.Empty;
+
     #endregion
 
     #region Subdocuments
@@ -32,12 +40,21 @@ public partial class ApiKey : UbluxDocument, IReferencesTags
     #endregion    
 
     /// <summary>
-    ///     Date when this user was last authenticated
+    ///     Api key
+    ///     TODO place index on database on this field
+    /// </summary>
+    [IsUbluxRequired]
+    [AllowUpdate(false)]
+    [IgnoreDataMember]
+    public required string Key { get; set; } = string.Empty;
+
+    /// <summary>
+    ///     Date last authenticated
     /// </summary>
     [AllowUpdate(false)]
-    [HideForCreateRequest]
-    // virtual because of unit tests so that it can mock this object
-    public virtual DateTime? DateAuthenticated { get; set; }
+    public DateTime? DateLastUsed { get; set; }
 
     #endregion
+
+    
 }

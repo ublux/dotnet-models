@@ -1,23 +1,10 @@
 ﻿namespace Ublux.Communications.Enums;
 
-// Old code so it could not be AND or OR
-// Now we order them based on priority
-// 1000 0000 0000 0000 0000 0000 0000 0001 = 2,147,483,649
-// 0100 0000 0000 0000 0000 0000 0000 0010 = 1,073,741,826
-// 0010 0000 0000 0000 0000 0000 0000 0100 = 536,870,916
-// 0001 0000 0000 0000 0000 0000 0000 1000 = 268,435,464
-// 0000 1000 0000 0000 0000 0000 0001 0000 = 134,217,744
-// 0000 0100 0000 0000 0000 0000 0010 0000 = 67,108,896
-// 0000 0010 0000 0000 0000 0000 0100 0000 = 33,554,496
-// 0000 0001 0000 0000 0000 0000 1000 0000 = 16,777,344
-// 0000 0000 1000 0000 0000 0001 0000 0000 = 8,388,864
-// 0000 0000 0100 0000 0000 0010 0000 0000 = 4,194,816 
-// 0000 0000 0010 0000 0000 0100 0000 0000 = 2,098,176
-// 0000 0000 0001 0000 0000 1000 0000 0000 = 1,050,624
-// 0000 0000 0000 1000 0001 0000 0000 0000 = 528,384
-// 0000 0000 0000 0100 0010 0000 0000 0000 = 270,336
-// 0000 0000 0000 0010 0100 0000 0000 0000 = 147,456
-// 0000 0000 0000 0001 1000 0000 0000 0000 = 98,304
+// If value ends in 0 it means it has CRUD
+// if value ends in 1 it means it is readonly
+// if value ends in 2 it means it can update/read
+// if value ends in 3 it means it can delete/read
+// if value ends in 4 it means it can create/read
 
 /// <summary>
 ///     A ublux user has this roles. They are sorted in order of priority
@@ -421,6 +408,17 @@ public enum UbluxRole
     tags_delete,
     /// <summary> Has access to the tags endpoint with only read/create permissions </summary>
     tags_create,
+
+    /// <summary> Has access to the apikeys endpoint with full permissions </summary>
+    apikeys = 370,
+    /// <summary> Has access to the apikeys endpoint with only read permissions </summary>
+    apikeys_readonly,
+    /// <summary> Has access to the apikeys endpoint with only read/update permissions </summary>
+    apikeys_update,
+    /// <summary> Has access to the apikeys endpoint with only read/delete permissions </summary>
+    apikeys_delete,
+    /// <summary> Has access to the apikeys endpoint with only read/create permissions </summary>
+    apikeys_create,
 
     #endregion
 

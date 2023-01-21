@@ -16,6 +16,11 @@ public partial class ApiKey : UbluxDocument, IReferncesAccount
     [IgnoreDataMember]
     [HideForCreateRequest]
     public required string IdAccount { get; set; } = string.Empty;
+
+    /// <summary>
+    ///     Generate random api key
+    /// </summary>
+    public static string GenerateRandmKey() => $"K{RunningApplicationInstance.ToBase62(BitConverter.ToUInt64(Guid.NewGuid().ToByteArray()))}{RunningApplicationInstance.ToBase62(BitConverter.ToUInt64(Guid.NewGuid().ToByteArray()))}";
 }
 
 #endif

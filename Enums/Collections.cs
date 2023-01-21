@@ -109,5 +109,8 @@ public enum Collections
     CloudFiles,
 
     /// <summary> Categories </summary>
-    Tags
+    Tags,
+
+    /// <summary> ApiKeys </summary>
+    ApiKeys
 }

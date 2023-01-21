@@ -8,6 +8,33 @@ namespace Ublux.Communications.Models.Documents;
 
 
 /// <summary>
+/// Someone that has access to consume Ublux Web Api. It can be a PBX, WA, or UbluxUser
+/// </summary><summary>
+/// Only users can have api keys. Everyone else should have a JWT
+/// </summary>
+public class ApiKeyUpdateRequest // : IUbluxDocumentId
+{
+    /// <summary>
+    /// Ids of tags
+    /// </summary>
+    public List<System.String>? Tags { get; set; }
+    /// <summary>
+    /// Key = service/role such as Phone. The phone role probably will have access to the PhoneController service
+    /// Value = Permissions it has on that role. Maybe it can only read data from that service but it cannot update, create or modify.
+    /// </summary>
+    public List<Ublux.Communications.Enums.UbluxRole>? UbluxRoles { get; set; }
+    /// <summary> Set values on actual document </summary>
+    public void SetValuesOnApiKey(ApiKey apiKey)
+    {
+        if(this.Tags!=null)
+            apiKey.Tags = this.Tags;
+        if(this.UbluxRoles!=null)
+            apiKey.UbluxRoles = this.UbluxRoles;
+    }
+
+}
+
+/// <summary>
 /// Ublux Account
 /// </summary><summary>
 /// Ublux Account

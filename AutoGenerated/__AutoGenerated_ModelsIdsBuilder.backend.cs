@@ -5,15 +5,13 @@
 
 namespace Ublux.Communications.Models.Documents {
 
-    public partial class ApiKey
-    {
+    public partial class ApiKey {
         /// <summary> Id prefix </summary>
-        public const string DocumentPrefix = "Ap";
+        public const string DocumentPrefix = "AK";
 
         /// <summary> Build Id </summary>
-        public static BuiltId BuildId(RunningApplicationInstance instance) => new($"{DocumentPrefix}.{RunningApplicationInstance.ToBase62(BitConverter.ToUInt64(Guid.NewGuid().ToByteArray()))}{RunningApplicationInstance.ToBase62(BitConverter.ToUInt64(Guid.NewGuid().ToByteArray()))}");
+        public static BuiltId BuildId(RunningApplicationInstance instance) => new($"{DocumentPrefix}.{instance.Id}.{instance.IdGlobalAutoIncrement()}");
     }
-
     public partial class Account {
         /// <summary> Id prefix </summary>
         public const string DocumentPrefix = "Ac";

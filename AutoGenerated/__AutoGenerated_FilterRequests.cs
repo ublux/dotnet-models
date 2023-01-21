@@ -4,6 +4,74 @@
 
 namespace Ublux.Communications.Models.Documents;
 
+/// <summary> Enables searching for ApiKeys </summary>
+public class ApiKeyFilterRequest 
+{
+    /// <summary> Tags equals </summary>
+    [JsonProperty("tags_eq")]
+    public string? Tags_EQ { get; set; }
+    /// <summary> Tags contains </summary>
+    [JsonProperty("tags_con")]
+    public string? Tags_CON { get; set; }
+    /// <summary> Tags regex </summary>
+    [JsonProperty("tags_reg")]
+    public string? Tags_REG { get; set; }
+
+    /// <summary> IdIdentity equals </summary>
+    [JsonProperty("idIdentity_eq")]
+    public string? IdIdentity_EQ { get; set; }
+    /// <summary> IdIdentity contains </summary>
+    [JsonProperty("idIdentity_con")]
+    public string? IdIdentity_CON { get; set; }
+    /// <summary> IdIdentity regex </summary>
+    [JsonProperty("idIdentity_reg")]
+    public string? IdIdentity_REG { get; set; }
+
+    /// <summary> UbluxRoles contains </summary>
+    [JsonProperty("ubluxRoles_con")]
+    public UbluxRole? UbluxRoles_CON { get; set; }
+
+    /// <summary> DateLastUsed equals </summary>
+    [JsonProperty("dateLastUsed_eq")]
+    public DateTime? DateLastUsed_EQ { get; set; }
+    /// <summary> DateLastUsed less than or equal to </summary>
+    [JsonProperty("dateLastUsed_lte")]
+    public DateTime? DateLastUsed_LTE { get; set; }
+    /// <summary> DateLastUsed greater than or equal to </summary>
+    [JsonProperty("dateLastUsed_gte")]
+    public DateTime? DateLastUsed_GTE { get; set; }
+
+    /// <summary> Id equals </summary>
+    [JsonProperty("id_eq")]
+    public string? Id_EQ { get; set; }
+    /// <summary> Id contains </summary>
+    [JsonProperty("id_con")]
+    public string? Id_CON { get; set; }
+    /// <summary> Id regex </summary>
+    [JsonProperty("id_reg")]
+    public string? Id_REG { get; set; }
+
+    /// <summary> DateCreated equals </summary>
+    [JsonProperty("dateCreated_eq")]
+    public DateTime? DateCreated_EQ { get; set; }
+    /// <summary> DateCreated less than or equal to </summary>
+    [JsonProperty("dateCreated_lte")]
+    public DateTime? DateCreated_LTE { get; set; }
+    /// <summary> DateCreated greater than or equal to </summary>
+    [JsonProperty("dateCreated_gte")]
+    public DateTime? DateCreated_GTE { get; set; }
+
+    /// <summary> DateUpdated equals </summary>
+    [JsonProperty("dateUpdated_eq")]
+    public DateTime? DateUpdated_EQ { get; set; }
+    /// <summary> DateUpdated less than or equal to </summary>
+    [JsonProperty("dateUpdated_lte")]
+    public DateTime? DateUpdated_LTE { get; set; }
+    /// <summary> DateUpdated greater than or equal to </summary>
+    [JsonProperty("dateUpdated_gte")]
+    public DateTime? DateUpdated_GTE { get; set; }
+
+}
 /// <summary> Enables searching for Accounts </summary>
 public class AccountFilterRequest 
 {
