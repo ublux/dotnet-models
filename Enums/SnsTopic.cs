@@ -19,4 +19,9 @@ public enum SnsTopic
     ///     Item deleted
     /// </summary>
     Collection_Deleted,
+
+    /// <summary>
+    ///     If a call terminates
+    /// </summary>
+    Call_Terminated,
 }
