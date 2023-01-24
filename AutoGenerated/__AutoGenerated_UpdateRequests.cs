@@ -354,6 +354,10 @@ public class CloudServicePbxUpdateRequest // : IUbluxDocumentId
     /// </summary>
     public String? ProviderInstanceId { get; set; }
     /// <summary>
+    /// Region is needed to connect to EC2 instance when using AWS for example: USEast1 or EUWest3 for europe paris
+    /// </summary>
+    public String? ProviderRegion { get; set; }
+    /// <summary>
     /// Example AWS for amazon web services
     /// </summary>
     public CloudServiceProviderType? ProviderType { get; set; }
@@ -364,6 +368,8 @@ public class CloudServicePbxUpdateRequest // : IUbluxDocumentId
             cloudServicePbx.DisableMonitoring = this.DisableMonitoring.Value;
         if(this.ProviderInstanceId!=null)
             cloudServicePbx.ProviderInstanceId = this.ProviderInstanceId;
+        if(this.ProviderRegion!=null)
+            cloudServicePbx.ProviderRegion = this.ProviderRegion;
         if(this.ProviderType!=null)
             cloudServicePbx.ProviderType = this.ProviderType.Value;
     }
@@ -376,9 +382,17 @@ public class CloudServicePbxUpdateRequest // : IUbluxDocumentId
 public class CloudServiceWebAppUpdateRequest // : IUbluxDocumentId
 {
     /// <summary>
+    /// In case web-app fails point it to another one
+    /// </summary>
+    public String? IdCloudServiceWebAppFailover { get; set; }
+    /// <summary>
     /// We need instance id in order to reboot cloud service for example. Example: i-0655b45b8134e6425
     /// </summary>
     public String? ProviderInstanceId { get; set; }
+    /// <summary>
+    /// Region is needed to connect to EC2 instance when using AWS for example: USEast1 or EUWest3 for europe paris
+    /// </summary>
+    public String? ProviderRegion { get; set; }
     /// <summary>
     /// Example AWS for amazon web services
     /// </summary>
@@ -386,8 +400,12 @@ public class CloudServiceWebAppUpdateRequest // : IUbluxDocumentId
     /// <summary> Set values on actual document </summary>
     public void SetValuesOnCloudServiceWebApp(CloudServiceWebApp cloudServiceWebApp)
     {
+        if(this.IdCloudServiceWebAppFailover!=null)
+            cloudServiceWebApp.IdCloudServiceWebAppFailover = this.IdCloudServiceWebAppFailover;
         if(this.ProviderInstanceId!=null)
             cloudServiceWebApp.ProviderInstanceId = this.ProviderInstanceId;
+        if(this.ProviderRegion!=null)
+            cloudServiceWebApp.ProviderRegion = this.ProviderRegion;
         if(this.ProviderType!=null)
             cloudServiceWebApp.ProviderType = this.ProviderType.Value;
     }
@@ -404,6 +422,10 @@ public class CloudServiceWebHostUpdateRequest // : IUbluxDocumentId
     /// </summary>
     public String? ProviderInstanceId { get; set; }
     /// <summary>
+    /// Region is needed to connect to EC2 instance when using AWS for example: USEast1 or EUWest3 for europe paris
+    /// </summary>
+    public String? ProviderRegion { get; set; }
+    /// <summary>
     /// Example AWS for amazon web services
     /// </summary>
     public CloudServiceProviderType? ProviderType { get; set; }
@@ -412,6 +434,8 @@ public class CloudServiceWebHostUpdateRequest // : IUbluxDocumentId
     {
         if(this.ProviderInstanceId!=null)
             cloudServiceWebHost.ProviderInstanceId = this.ProviderInstanceId;
+        if(this.ProviderRegion!=null)
+            cloudServiceWebHost.ProviderRegion = this.ProviderRegion;
         if(this.ProviderType!=null)
             cloudServiceWebHost.ProviderType = this.ProviderType.Value;
     }

@@ -30,8 +30,8 @@ public abstract partial class CloudService : UbluxDocument
     /// <summary>
     ///     Type of cloud service
     /// </summary>
-    [AllowUpdate(false)]
     [IsUbluxRequired]
+    [AllowUpdate(false)]
     [HideForCreateRequest]
     public abstract CloudServiceType CloudServiceType
     {

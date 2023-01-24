@@ -17,4 +17,11 @@ public partial class CloudServiceWebApp : CloudService
         [Obsolete("set method is only used to so that field is stored on mongo DB")]
         internal set { }
     }
+
+    /// <summary>
+    ///     In case web-app fails point it to another one
+    /// </summary>
+    [References(typeof(CloudServiceWebApp))]
+    [AllowUpdate(true)]
+    public string? IdCloudServiceWebAppFailover { get; set; }
 }

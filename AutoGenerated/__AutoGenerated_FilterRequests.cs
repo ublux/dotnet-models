@@ -5521,6 +5521,16 @@ public class CloudServiceWebAppFilterRequest
     [JsonProperty("cloudServiceType_reg")]
     public string? CloudServiceType_REG { get; set; }
 
+    /// <summary> IdCloudServiceWebAppFailover equals </summary>
+    [JsonProperty("idCloudServiceWebAppFailover_eq")]
+    public string? IdCloudServiceWebAppFailover_EQ { get; set; }
+    /// <summary> IdCloudServiceWebAppFailover contains </summary>
+    [JsonProperty("idCloudServiceWebAppFailover_con")]
+    public string? IdCloudServiceWebAppFailover_CON { get; set; }
+    /// <summary> IdCloudServiceWebAppFailover regex </summary>
+    [JsonProperty("idCloudServiceWebAppFailover_reg")]
+    public string? IdCloudServiceWebAppFailover_REG { get; set; }
+
     /// <summary> IdIdentity equals </summary>
     [JsonProperty("idIdentity_eq")]
     public string? IdIdentity_EQ { get; set; }
