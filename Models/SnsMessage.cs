@@ -3,13 +3,19 @@
 /// <summary>
 ///     Simple notification service message
 /// </summary>
-public class SnsMessage 
+public class SnsMessage
 {
     /// <summary>
     ///     Id of message
     /// </summary>
     [IsUbluxRequired]
-    public string Id { get; set; } = Guid.NewGuid().ToString();
+    public string Id
+    {
+        get;
+        
+        [Obsolete("Use default setter")]
+        set;
+    } = Guid.NewGuid().ToString();
 
     /// <summary>
     ///     Date when message was created in UTC

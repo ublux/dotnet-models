@@ -24,4 +24,14 @@ public enum SnsTopic
     ///     If a call terminates
     /// </summary>
     Call_Terminated,
+
+    /// <summary>
+    ///     When a line is disconnected
+    /// </summary>
+    Line_Disconnected,
+
+    /// <summary>
+    ///     When a line is connected
+    /// </summary>
+    Line_Connected
 }
