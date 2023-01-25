@@ -93,7 +93,7 @@ public abstract partial class CloudService : UbluxDocument
     public bool IsHealthy { get; set; }
 
     /// <summary>
-    ///     Instance Id. Example US-A for CSP.US-A
+    ///     Instance Id. Example PBX-US-1 for CSP.PBX-US-1
     /// </summary>
     [AllowUpdate(false)]
     public required string InstanceId { get => instanceId; set => instanceId = value.ToUpper(); }
