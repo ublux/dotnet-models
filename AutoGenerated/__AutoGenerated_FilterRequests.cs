@@ -1577,6 +1577,26 @@ public class CallIncomingToCallFlowLogicFilterRequest
 
 
 
+    /// <summary> TranscriptionAgentSummary equals </summary>
+    [JsonProperty("transcriptionAgentSummary_eq")]
+    public string? TranscriptionAgentSummary_EQ { get; set; }
+    /// <summary> TranscriptionAgentSummary contains </summary>
+    [JsonProperty("transcriptionAgentSummary_con")]
+    public string? TranscriptionAgentSummary_CON { get; set; }
+    /// <summary> TranscriptionAgentSummary regex </summary>
+    [JsonProperty("transcriptionAgentSummary_reg")]
+    public string? TranscriptionAgentSummary_REG { get; set; }
+
+    /// <summary> TranscriptionClientSummary equals </summary>
+    [JsonProperty("transcriptionClientSummary_eq")]
+    public string? TranscriptionClientSummary_EQ { get; set; }
+    /// <summary> TranscriptionClientSummary contains </summary>
+    [JsonProperty("transcriptionClientSummary_con")]
+    public string? TranscriptionClientSummary_CON { get; set; }
+    /// <summary> TranscriptionClientSummary regex </summary>
+    [JsonProperty("transcriptionClientSummary_reg")]
+    public string? TranscriptionClientSummary_REG { get; set; }
+
     /// <summary> Id equals </summary>
     [JsonProperty("id_eq")]
     public string? Id_EQ { get; set; }
@@ -2915,6 +2935,26 @@ public class CallIncomingToExtensionFilterRequest
 
 
 
+
+    /// <summary> TranscriptionAgentSummary equals </summary>
+    [JsonProperty("transcriptionAgentSummary_eq")]
+    public string? TranscriptionAgentSummary_EQ { get; set; }
+    /// <summary> TranscriptionAgentSummary contains </summary>
+    [JsonProperty("transcriptionAgentSummary_con")]
+    public string? TranscriptionAgentSummary_CON { get; set; }
+    /// <summary> TranscriptionAgentSummary regex </summary>
+    [JsonProperty("transcriptionAgentSummary_reg")]
+    public string? TranscriptionAgentSummary_REG { get; set; }
+
+    /// <summary> TranscriptionClientSummary equals </summary>
+    [JsonProperty("transcriptionClientSummary_eq")]
+    public string? TranscriptionClientSummary_EQ { get; set; }
+    /// <summary> TranscriptionClientSummary contains </summary>
+    [JsonProperty("transcriptionClientSummary_con")]
+    public string? TranscriptionClientSummary_CON { get; set; }
+    /// <summary> TranscriptionClientSummary regex </summary>
+    [JsonProperty("transcriptionClientSummary_reg")]
+    public string? TranscriptionClientSummary_REG { get; set; }
 
     /// <summary> Id equals </summary>
     [JsonProperty("id_eq")]
@@ -4377,6 +4417,26 @@ public class CallOutgoingToExtensionFilterRequest
 
 
 
+    /// <summary> TranscriptionAgentSummary equals </summary>
+    [JsonProperty("transcriptionAgentSummary_eq")]
+    public string? TranscriptionAgentSummary_EQ { get; set; }
+    /// <summary> TranscriptionAgentSummary contains </summary>
+    [JsonProperty("transcriptionAgentSummary_con")]
+    public string? TranscriptionAgentSummary_CON { get; set; }
+    /// <summary> TranscriptionAgentSummary regex </summary>
+    [JsonProperty("transcriptionAgentSummary_reg")]
+    public string? TranscriptionAgentSummary_REG { get; set; }
+
+    /// <summary> TranscriptionClientSummary equals </summary>
+    [JsonProperty("transcriptionClientSummary_eq")]
+    public string? TranscriptionClientSummary_EQ { get; set; }
+    /// <summary> TranscriptionClientSummary contains </summary>
+    [JsonProperty("transcriptionClientSummary_con")]
+    public string? TranscriptionClientSummary_CON { get; set; }
+    /// <summary> TranscriptionClientSummary regex </summary>
+    [JsonProperty("transcriptionClientSummary_reg")]
+    public string? TranscriptionClientSummary_REG { get; set; }
+
     /// <summary> Id equals </summary>
     [JsonProperty("id_eq")]
     public string? Id_EQ { get; set; }
@@ -5356,6 +5416,26 @@ public class CallOutgoingToPSTNFilterRequest
 
 
 
+
+    /// <summary> TranscriptionAgentSummary equals </summary>
+    [JsonProperty("transcriptionAgentSummary_eq")]
+    public string? TranscriptionAgentSummary_EQ { get; set; }
+    /// <summary> TranscriptionAgentSummary contains </summary>
+    [JsonProperty("transcriptionAgentSummary_con")]
+    public string? TranscriptionAgentSummary_CON { get; set; }
+    /// <summary> TranscriptionAgentSummary regex </summary>
+    [JsonProperty("transcriptionAgentSummary_reg")]
+    public string? TranscriptionAgentSummary_REG { get; set; }
+
+    /// <summary> TranscriptionClientSummary equals </summary>
+    [JsonProperty("transcriptionClientSummary_eq")]
+    public string? TranscriptionClientSummary_EQ { get; set; }
+    /// <summary> TranscriptionClientSummary contains </summary>
+    [JsonProperty("transcriptionClientSummary_con")]
+    public string? TranscriptionClientSummary_CON { get; set; }
+    /// <summary> TranscriptionClientSummary regex </summary>
+    [JsonProperty("transcriptionClientSummary_reg")]
+    public string? TranscriptionClientSummary_REG { get; set; }
 
     /// <summary> Id equals </summary>
     [JsonProperty("id_eq")]
@@ -11518,6 +11598,26 @@ public class CallFilterRequest
 
 
 
+    /// <summary> TranscriptionAgentSummary equals </summary>
+    [JsonProperty("transcriptionAgentSummary_eq")]
+    public string? TranscriptionAgentSummary_EQ { get; set; }
+    /// <summary> TranscriptionAgentSummary contains </summary>
+    [JsonProperty("transcriptionAgentSummary_con")]
+    public string? TranscriptionAgentSummary_CON { get; set; }
+    /// <summary> TranscriptionAgentSummary regex </summary>
+    [JsonProperty("transcriptionAgentSummary_reg")]
+    public string? TranscriptionAgentSummary_REG { get; set; }
+
+    /// <summary> TranscriptionClientSummary equals </summary>
+    [JsonProperty("transcriptionClientSummary_eq")]
+    public string? TranscriptionClientSummary_EQ { get; set; }
+    /// <summary> TranscriptionClientSummary contains </summary>
+    [JsonProperty("transcriptionClientSummary_con")]
+    public string? TranscriptionClientSummary_CON { get; set; }
+    /// <summary> TranscriptionClientSummary regex </summary>
+    [JsonProperty("transcriptionClientSummary_reg")]
+    public string? TranscriptionClientSummary_REG { get; set; }
+
     /// <summary> Id equals </summary>
     [JsonProperty("id_eq")]
     public string? Id_EQ { get; set; }
@@ -12345,6 +12445,26 @@ public class CallIncomingFilterRequest
 
 
 
+
+    /// <summary> TranscriptionAgentSummary equals </summary>
+    [JsonProperty("transcriptionAgentSummary_eq")]
+    public string? TranscriptionAgentSummary_EQ { get; set; }
+    /// <summary> TranscriptionAgentSummary contains </summary>
+    [JsonProperty("transcriptionAgentSummary_con")]
+    public string? TranscriptionAgentSummary_CON { get; set; }
+    /// <summary> TranscriptionAgentSummary regex </summary>
+    [JsonProperty("transcriptionAgentSummary_reg")]
+    public string? TranscriptionAgentSummary_REG { get; set; }
+
+    /// <summary> TranscriptionClientSummary equals </summary>
+    [JsonProperty("transcriptionClientSummary_eq")]
+    public string? TranscriptionClientSummary_EQ { get; set; }
+    /// <summary> TranscriptionClientSummary contains </summary>
+    [JsonProperty("transcriptionClientSummary_con")]
+    public string? TranscriptionClientSummary_CON { get; set; }
+    /// <summary> TranscriptionClientSummary regex </summary>
+    [JsonProperty("transcriptionClientSummary_reg")]
+    public string? TranscriptionClientSummary_REG { get; set; }
 
     /// <summary> Id equals </summary>
     [JsonProperty("id_eq")]
@@ -13295,6 +13415,26 @@ public class CallOutgoingFilterRequest
 
 
 
+
+    /// <summary> TranscriptionAgentSummary equals </summary>
+    [JsonProperty("transcriptionAgentSummary_eq")]
+    public string? TranscriptionAgentSummary_EQ { get; set; }
+    /// <summary> TranscriptionAgentSummary contains </summary>
+    [JsonProperty("transcriptionAgentSummary_con")]
+    public string? TranscriptionAgentSummary_CON { get; set; }
+    /// <summary> TranscriptionAgentSummary regex </summary>
+    [JsonProperty("transcriptionAgentSummary_reg")]
+    public string? TranscriptionAgentSummary_REG { get; set; }
+
+    /// <summary> TranscriptionClientSummary equals </summary>
+    [JsonProperty("transcriptionClientSummary_eq")]
+    public string? TranscriptionClientSummary_EQ { get; set; }
+    /// <summary> TranscriptionClientSummary contains </summary>
+    [JsonProperty("transcriptionClientSummary_con")]
+    public string? TranscriptionClientSummary_CON { get; set; }
+    /// <summary> TranscriptionClientSummary regex </summary>
+    [JsonProperty("transcriptionClientSummary_reg")]
+    public string? TranscriptionClientSummary_REG { get; set; }
 
     /// <summary> Id equals </summary>
     [JsonProperty("id_eq")]
