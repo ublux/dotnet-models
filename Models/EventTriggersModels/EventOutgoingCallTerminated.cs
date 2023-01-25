@@ -26,7 +26,7 @@ public partial class EventOutgoingCallTerminated
     ///     Date when call was answered
     /// </summary>
     [AllowUpdate(false)]
-    public DateTime? DateAnswer { get; set; }
+    public int? SecondsItTookToAnswer { get; set; }
 
     /// <summary>
     ///     Date when call was ended
@@ -68,8 +68,8 @@ public partial class EventOutgoingCallTerminated
         
         // set dates
         obj.DateStart = DateTime.UtcNow.AddHours(-1);
-        obj.DateAnswer = obj.DateStart.AddSeconds(10);
-        obj.DateEnded = obj.DateAnswer.Value.AddSeconds(Random.Shared.Next(10, 3600));
+        obj.SecondsItTookToAnswer = 10;
+        obj.DateEnded = obj.DateStart.AddSeconds(Random.Shared.Next(20, 3600));
 
         return obj;
     }

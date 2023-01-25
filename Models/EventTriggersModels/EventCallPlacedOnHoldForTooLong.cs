@@ -26,7 +26,7 @@ public partial class EventCallPlacedOnHoldForTooLong
     ///     Date when call was answered. If null it means it has not been answered
     /// </summary>
     [AllowUpdate(false)]
-    public DateTime? DateAnswer { get; set; }    
+    public int? SecondsItTookToAnswer { get; set; }    
 
     /// <summary>
     ///     Id of contact that made phone call
@@ -68,7 +68,7 @@ public partial class EventCallPlacedOnHoldForTooLong
         
         // set dates
         obj.DateStart = DateTime.UtcNow.AddHours(-1);
-        obj.DateAnswer = obj.DateStart.AddSeconds(10);
+        obj.SecondsItTookToAnswer = 10;
         obj.NumberOfSecondsCallOnHold = Random.Shared.Next(60, 3600);
         //obj.DateEnded = obj.DateAnswer.Value.AddSeconds(Random.Shared.Next(10, 3600));
 

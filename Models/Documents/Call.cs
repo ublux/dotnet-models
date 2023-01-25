@@ -189,5 +189,17 @@ public abstract partial class Call : UbluxDocument, ICall, IReferencesTags
     [AllowUpdate(false)]
     public List<AiTranscription> TranscriptionClient { get; set; } = new();
 
+    /// <summary>
+    ///     Summary of agent transcription
+    /// </summary>
+    [AllowUpdate(false)]
+    public string? TranscriptionAgentSummary { get; set; }
+
+    /// <summary>
+    ///     Summary of client transcription
+    /// </summary>
+    [AllowUpdate(false)]
+    public string? TranscriptionClientSummary { get; set; }
+
     #endregion
 }
