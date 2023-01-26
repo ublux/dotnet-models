@@ -40,13 +40,13 @@ public partial class ExtensionQueue : Extension
     ///     Send email notification if call is not answered
     /// </summary>
     [AllowUpdate(true)]
-    public SendEmailNotificationIfCallIsNotAnswered? SendEmailNotificationIfCallIsNotAnswered { get; set; }
-
+    public SendEmailNotificationIfNotAnswered? SendEmailNotificationIfNotAnswered { get; set; }
+    
     /// <summary>
     ///     Send email notification if call takes to long to be answered
     /// </summary>
     [AllowUpdate(true)]
-    public SendEmailNotificationIfCallTakesToLongToBeAnswered? SendEmailNotificationIfCallTakesToLongToBeAnswered
+    public SendEmailNotificationIfItTakesToLongToBeAnswered? SendEmailNotificationIfItTakesToLongToBeAnswered
     {
         get;
         set;

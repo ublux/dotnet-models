@@ -1,9 +1,9 @@
 ﻿namespace Ublux.Communications.Models;
 
 /// <summary>
-///     Send email notification if call is not answered
+///     Send email notification if call or extension is not answered
 /// </summary>
-public class SendEmailNotificationIfCallIsNotAnswered
+public class SendEmailNotificationIfNotAnswered
 {
     /// <summary>
     ///     Email addresses where to send notification in case call is not answered.
@@ -16,5 +16,6 @@ public class SendEmailNotificationIfCallIsNotAnswered
     ///     If a caller calls and hung up right away then maybe we don't want to send a notification.
     /// </summary>    
     [AllowUpdate(true)]
-    public int PreventSendingNotificationIfCallLastsLessThanNSeconds { get; set; } = 5;
+    public int PreventSendingNotificationIfLastLessThanNSeconds { get; set; } = 5;
 }
+ 

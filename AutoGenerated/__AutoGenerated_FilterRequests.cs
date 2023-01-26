@@ -6507,36 +6507,36 @@ public class ExtensionDialFilterRequest
     [JsonProperty("idsLines_reg")]
     public string? IdsLines_REG { get; set; }
 
-    /// <summary> EventActionToExecuteIfCallIsNotAnswered.EventActionType equals </summary>
-    [JsonProperty("eventActionToExecuteIfCallIsNotAnswered_eventActionType_eq")]
-    public string? EventActionToExecuteIfCallIsNotAnswered_EventActionType_EQ { get; set; }
-    /// <summary> EventActionToExecuteIfCallIsNotAnswered.EventActionType contains </summary>
-    [JsonProperty("eventActionToExecuteIfCallIsNotAnswered_eventActionType_con")]
-    public string? EventActionToExecuteIfCallIsNotAnswered_EventActionType_CON { get; set; }
-    /// <summary> EventActionToExecuteIfCallIsNotAnswered.EventActionType regex </summary>
-    [JsonProperty("eventActionToExecuteIfCallIsNotAnswered_eventActionType_reg")]
-    public string? EventActionToExecuteIfCallIsNotAnswered_EventActionType_REG { get; set; }
+    /// <summary> EventActionToExecuteIfNotAnswered.EventActionType equals </summary>
+    [JsonProperty("eventActionToExecuteIfNotAnswered_eventActionType_eq")]
+    public string? EventActionToExecuteIfNotAnswered_EventActionType_EQ { get; set; }
+    /// <summary> EventActionToExecuteIfNotAnswered.EventActionType contains </summary>
+    [JsonProperty("eventActionToExecuteIfNotAnswered_eventActionType_con")]
+    public string? EventActionToExecuteIfNotAnswered_EventActionType_CON { get; set; }
+    /// <summary> EventActionToExecuteIfNotAnswered.EventActionType regex </summary>
+    [JsonProperty("eventActionToExecuteIfNotAnswered_eventActionType_reg")]
+    public string? EventActionToExecuteIfNotAnswered_EventActionType_REG { get; set; }
 
 
-    /// <summary> SendEmailNotificationIfCallIsNotAnswered.Emails equals </summary>
-    [JsonProperty("sendEmailNotificationIfCallIsNotAnswered_emails_eq")]
-    public string? SendEmailNotificationIfCallIsNotAnswered_Emails_EQ { get; set; }
-    /// <summary> SendEmailNotificationIfCallIsNotAnswered.Emails contains </summary>
-    [JsonProperty("sendEmailNotificationIfCallIsNotAnswered_emails_con")]
-    public string? SendEmailNotificationIfCallIsNotAnswered_Emails_CON { get; set; }
-    /// <summary> SendEmailNotificationIfCallIsNotAnswered.Emails regex </summary>
-    [JsonProperty("sendEmailNotificationIfCallIsNotAnswered_emails_reg")]
-    public string? SendEmailNotificationIfCallIsNotAnswered_Emails_REG { get; set; }
+    /// <summary> SendEmailNotificationIfNotAnswered.Emails equals </summary>
+    [JsonProperty("sendEmailNotificationIfNotAnswered_emails_eq")]
+    public string? SendEmailNotificationIfNotAnswered_Emails_EQ { get; set; }
+    /// <summary> SendEmailNotificationIfNotAnswered.Emails contains </summary>
+    [JsonProperty("sendEmailNotificationIfNotAnswered_emails_con")]
+    public string? SendEmailNotificationIfNotAnswered_Emails_CON { get; set; }
+    /// <summary> SendEmailNotificationIfNotAnswered.Emails regex </summary>
+    [JsonProperty("sendEmailNotificationIfNotAnswered_emails_reg")]
+    public string? SendEmailNotificationIfNotAnswered_Emails_REG { get; set; }
 
-    /// <summary> SendEmailNotificationIfCallIsNotAnswered.PreventSendingNotificationIfCallLastsLessThanNSeconds equals </summary>
-    [JsonProperty("sendEmailNotificationIfCallIsNotAnswered_preventSendingNotificationIfCallLastsLessThanNSeconds_eq")]
-    public System.Int32? SendEmailNotificationIfCallIsNotAnswered_PreventSendingNotificationIfCallLastsLessThanNSeconds_EQ { get; set; }
-    /// <summary> SendEmailNotificationIfCallIsNotAnswered.PreventSendingNotificationIfCallLastsLessThanNSeconds less than or equal to </summary>
-    [JsonProperty("sendEmailNotificationIfCallIsNotAnswered_preventSendingNotificationIfCallLastsLessThanNSeconds_lte")]
-    public System.Int32? SendEmailNotificationIfCallIsNotAnswered_PreventSendingNotificationIfCallLastsLessThanNSeconds_LTE { get; set; }
-    /// <summary> SendEmailNotificationIfCallIsNotAnswered.PreventSendingNotificationIfCallLastsLessThanNSeconds greater than or equal to </summary>
-    [JsonProperty("sendEmailNotificationIfCallIsNotAnswered_preventSendingNotificationIfCallLastsLessThanNSeconds_gte")]
-    public System.Int32? SendEmailNotificationIfCallIsNotAnswered_PreventSendingNotificationIfCallLastsLessThanNSeconds_GTE { get; set; }
+    /// <summary> SendEmailNotificationIfNotAnswered.PreventSendingNotificationIfLastLessThanNSeconds equals </summary>
+    [JsonProperty("sendEmailNotificationIfNotAnswered_preventSendingNotificationIfLastLessThanNSeconds_eq")]
+    public System.Int32? SendEmailNotificationIfNotAnswered_PreventSendingNotificationIfLastLessThanNSeconds_EQ { get; set; }
+    /// <summary> SendEmailNotificationIfNotAnswered.PreventSendingNotificationIfLastLessThanNSeconds less than or equal to </summary>
+    [JsonProperty("sendEmailNotificationIfNotAnswered_preventSendingNotificationIfLastLessThanNSeconds_lte")]
+    public System.Int32? SendEmailNotificationIfNotAnswered_PreventSendingNotificationIfLastLessThanNSeconds_LTE { get; set; }
+    /// <summary> SendEmailNotificationIfNotAnswered.PreventSendingNotificationIfLastLessThanNSeconds greater than or equal to </summary>
+    [JsonProperty("sendEmailNotificationIfNotAnswered_preventSendingNotificationIfLastLessThanNSeconds_gte")]
+    public System.Int32? SendEmailNotificationIfNotAnswered_PreventSendingNotificationIfLastLessThanNSeconds_GTE { get; set; }
 
 
     /// <summary> RingTimeInSeconds equals </summary>
@@ -6667,46 +6667,46 @@ public class ExtensionQueueFilterRequest
     [JsonProperty("idsAudios_reg")]
     public string? IdsAudios_REG { get; set; }
 
-    /// <summary> SendEmailNotificationIfCallIsNotAnswered.Emails equals </summary>
-    [JsonProperty("sendEmailNotificationIfCallIsNotAnswered_emails_eq")]
-    public string? SendEmailNotificationIfCallIsNotAnswered_Emails_EQ { get; set; }
-    /// <summary> SendEmailNotificationIfCallIsNotAnswered.Emails contains </summary>
-    [JsonProperty("sendEmailNotificationIfCallIsNotAnswered_emails_con")]
-    public string? SendEmailNotificationIfCallIsNotAnswered_Emails_CON { get; set; }
-    /// <summary> SendEmailNotificationIfCallIsNotAnswered.Emails regex </summary>
-    [JsonProperty("sendEmailNotificationIfCallIsNotAnswered_emails_reg")]
-    public string? SendEmailNotificationIfCallIsNotAnswered_Emails_REG { get; set; }
+    /// <summary> SendEmailNotificationIfNotAnswered.Emails equals </summary>
+    [JsonProperty("sendEmailNotificationIfNotAnswered_emails_eq")]
+    public string? SendEmailNotificationIfNotAnswered_Emails_EQ { get; set; }
+    /// <summary> SendEmailNotificationIfNotAnswered.Emails contains </summary>
+    [JsonProperty("sendEmailNotificationIfNotAnswered_emails_con")]
+    public string? SendEmailNotificationIfNotAnswered_Emails_CON { get; set; }
+    /// <summary> SendEmailNotificationIfNotAnswered.Emails regex </summary>
+    [JsonProperty("sendEmailNotificationIfNotAnswered_emails_reg")]
+    public string? SendEmailNotificationIfNotAnswered_Emails_REG { get; set; }
 
-    /// <summary> SendEmailNotificationIfCallIsNotAnswered.PreventSendingNotificationIfCallLastsLessThanNSeconds equals </summary>
-    [JsonProperty("sendEmailNotificationIfCallIsNotAnswered_preventSendingNotificationIfCallLastsLessThanNSeconds_eq")]
-    public System.Int32? SendEmailNotificationIfCallIsNotAnswered_PreventSendingNotificationIfCallLastsLessThanNSeconds_EQ { get; set; }
-    /// <summary> SendEmailNotificationIfCallIsNotAnswered.PreventSendingNotificationIfCallLastsLessThanNSeconds less than or equal to </summary>
-    [JsonProperty("sendEmailNotificationIfCallIsNotAnswered_preventSendingNotificationIfCallLastsLessThanNSeconds_lte")]
-    public System.Int32? SendEmailNotificationIfCallIsNotAnswered_PreventSendingNotificationIfCallLastsLessThanNSeconds_LTE { get; set; }
-    /// <summary> SendEmailNotificationIfCallIsNotAnswered.PreventSendingNotificationIfCallLastsLessThanNSeconds greater than or equal to </summary>
-    [JsonProperty("sendEmailNotificationIfCallIsNotAnswered_preventSendingNotificationIfCallLastsLessThanNSeconds_gte")]
-    public System.Int32? SendEmailNotificationIfCallIsNotAnswered_PreventSendingNotificationIfCallLastsLessThanNSeconds_GTE { get; set; }
+    /// <summary> SendEmailNotificationIfNotAnswered.PreventSendingNotificationIfLastLessThanNSeconds equals </summary>
+    [JsonProperty("sendEmailNotificationIfNotAnswered_preventSendingNotificationIfLastLessThanNSeconds_eq")]
+    public System.Int32? SendEmailNotificationIfNotAnswered_PreventSendingNotificationIfLastLessThanNSeconds_EQ { get; set; }
+    /// <summary> SendEmailNotificationIfNotAnswered.PreventSendingNotificationIfLastLessThanNSeconds less than or equal to </summary>
+    [JsonProperty("sendEmailNotificationIfNotAnswered_preventSendingNotificationIfLastLessThanNSeconds_lte")]
+    public System.Int32? SendEmailNotificationIfNotAnswered_PreventSendingNotificationIfLastLessThanNSeconds_LTE { get; set; }
+    /// <summary> SendEmailNotificationIfNotAnswered.PreventSendingNotificationIfLastLessThanNSeconds greater than or equal to </summary>
+    [JsonProperty("sendEmailNotificationIfNotAnswered_preventSendingNotificationIfLastLessThanNSeconds_gte")]
+    public System.Int32? SendEmailNotificationIfNotAnswered_PreventSendingNotificationIfLastLessThanNSeconds_GTE { get; set; }
 
 
-    /// <summary> SendEmailNotificationIfCallTakesToLongToBeAnswered.TimeInSeconds equals </summary>
-    [JsonProperty("sendEmailNotificationIfCallTakesToLongToBeAnswered_timeInSeconds_eq")]
-    public System.Int32? SendEmailNotificationIfCallTakesToLongToBeAnswered_TimeInSeconds_EQ { get; set; }
-    /// <summary> SendEmailNotificationIfCallTakesToLongToBeAnswered.TimeInSeconds less than or equal to </summary>
-    [JsonProperty("sendEmailNotificationIfCallTakesToLongToBeAnswered_timeInSeconds_lte")]
-    public System.Int32? SendEmailNotificationIfCallTakesToLongToBeAnswered_TimeInSeconds_LTE { get; set; }
-    /// <summary> SendEmailNotificationIfCallTakesToLongToBeAnswered.TimeInSeconds greater than or equal to </summary>
-    [JsonProperty("sendEmailNotificationIfCallTakesToLongToBeAnswered_timeInSeconds_gte")]
-    public System.Int32? SendEmailNotificationIfCallTakesToLongToBeAnswered_TimeInSeconds_GTE { get; set; }
+    /// <summary> SendEmailNotificationIfItTakesToLongToBeAnswered.TimeInSeconds equals </summary>
+    [JsonProperty("sendEmailNotificationIfItTakesToLongToBeAnswered_timeInSeconds_eq")]
+    public System.Int32? SendEmailNotificationIfItTakesToLongToBeAnswered_TimeInSeconds_EQ { get; set; }
+    /// <summary> SendEmailNotificationIfItTakesToLongToBeAnswered.TimeInSeconds less than or equal to </summary>
+    [JsonProperty("sendEmailNotificationIfItTakesToLongToBeAnswered_timeInSeconds_lte")]
+    public System.Int32? SendEmailNotificationIfItTakesToLongToBeAnswered_TimeInSeconds_LTE { get; set; }
+    /// <summary> SendEmailNotificationIfItTakesToLongToBeAnswered.TimeInSeconds greater than or equal to </summary>
+    [JsonProperty("sendEmailNotificationIfItTakesToLongToBeAnswered_timeInSeconds_gte")]
+    public System.Int32? SendEmailNotificationIfItTakesToLongToBeAnswered_TimeInSeconds_GTE { get; set; }
 
-    /// <summary> SendEmailNotificationIfCallTakesToLongToBeAnswered.Email equals </summary>
-    [JsonProperty("sendEmailNotificationIfCallTakesToLongToBeAnswered_email_eq")]
-    public string? SendEmailNotificationIfCallTakesToLongToBeAnswered_Email_EQ { get; set; }
-    /// <summary> SendEmailNotificationIfCallTakesToLongToBeAnswered.Email contains </summary>
-    [JsonProperty("sendEmailNotificationIfCallTakesToLongToBeAnswered_email_con")]
-    public string? SendEmailNotificationIfCallTakesToLongToBeAnswered_Email_CON { get; set; }
-    /// <summary> SendEmailNotificationIfCallTakesToLongToBeAnswered.Email regex </summary>
-    [JsonProperty("sendEmailNotificationIfCallTakesToLongToBeAnswered_email_reg")]
-    public string? SendEmailNotificationIfCallTakesToLongToBeAnswered_Email_REG { get; set; }
+    /// <summary> SendEmailNotificationIfItTakesToLongToBeAnswered.Email equals </summary>
+    [JsonProperty("sendEmailNotificationIfItTakesToLongToBeAnswered_email_eq")]
+    public string? SendEmailNotificationIfItTakesToLongToBeAnswered_Email_EQ { get; set; }
+    /// <summary> SendEmailNotificationIfItTakesToLongToBeAnswered.Email contains </summary>
+    [JsonProperty("sendEmailNotificationIfItTakesToLongToBeAnswered_email_con")]
+    public string? SendEmailNotificationIfItTakesToLongToBeAnswered_Email_CON { get; set; }
+    /// <summary> SendEmailNotificationIfItTakesToLongToBeAnswered.Email regex </summary>
+    [JsonProperty("sendEmailNotificationIfItTakesToLongToBeAnswered_email_reg")]
+    public string? SendEmailNotificationIfItTakesToLongToBeAnswered_Email_REG { get; set; }
 
 
     /// <summary> RingTimeInSeconds equals </summary>

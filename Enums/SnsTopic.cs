@@ -5,6 +5,8 @@
 /// </summary>
 public enum SnsTopic
 {
+    #region WS
+
     /// <summary>
     ///     Item Created
     /// </summary>
@@ -20,18 +22,32 @@ public enum SnsTopic
     /// </summary>
     Collection_Deleted,
 
+    #endregion
+
+    #region PBX
+
     /// <summary>
-    ///     If a call terminates
+    ///     If a call terminates (enqueues)
     /// </summary>
     Call_Terminated,
 
     /// <summary>
-    ///     When a line is disconnected
+    ///     When a line is disconnected (enqueues)
     /// </summary>
     Line_Disconnected,
 
     /// <summary>
-    ///     When a line is connected
+    ///     When a line is connected. (enqueues)
     /// </summary>
-    Line_Connected
+    Line_Connected,
+
+    /// <summary>
+    ///     If an extension is not answered
+    /// </summary>
+    Extension_Unanswered
+
+
+
+
+    #endregion
 }

@@ -22,7 +22,13 @@ public enum EventTrigger
     #region Calls
 
     /// <summary/>
-    event_call_placed_on_hold_for_too_long,
+    event_call_placed_on_hold_for_1_min,
+    /// <summary/>
+    event_call_placed_on_hold_for_2_min,
+    /// <summary/>
+    event_call_placed_on_hold_for_4_min,
+    /// <summary/>
+    event_call_placed_on_hold_for_8_min,
 
     #endregion
 
@@ -39,14 +45,20 @@ public enum EventTrigger
     #region Extension
 
     /// <summary/>
-    event_extension_not_answered,   
-    
+    event_extension_not_answered,
+
     /// <summary/>
-    event_extension_took_to_long_to_be_answered,
+    event_extension_took_to_longer_than_1_min_to_be_answered,
+    /// <summary/>
+    event_extension_took_to_longer_than_2_min_to_be_answered,
+    /// <summary/>
+    event_extension_took_to_longer_than_4_min_to_be_answered,
+    /// <summary/>
+    event_extension_took_to_longer_than_8_min_to_be_answered,
 
     #endregion
 
-   
+
 
 
     ///// <summary/>

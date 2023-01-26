@@ -2,20 +2,8 @@
 
 namespace Ublux.Communications.Models.EventTriggersModels;
 
-public partial class EventExtensionTookToLongToBeAnswered
+public partial class EventCallPlacedOnHoldFor1Min
 {
-    /// <summary>
-    ///     Extension friendly name
-    /// </summary>
-    [AllowUpdate(false)]
-    public required string FriendlyName { get; set; }
-
-    /// <summary>
-    ///     Extension number
-    /// </summary>
-    [AllowUpdate(false)]
-    public required string Number { get; set; }
-
     /// <summary>
     ///     From phone number
     /// </summary>
@@ -32,7 +20,13 @@ public partial class EventExtensionTookToLongToBeAnswered
     ///     Date when call started
     /// </summary>
     [AllowUpdate(false)]
-    public DateTime DateStart { get; set; }       
+    public DateTime DateStart { get; set; }
+
+    /// <summary>
+    ///     Date when call was answered. If null it means it has not been answered
+    /// </summary>
+    [AllowUpdate(false)]
+    public int? SecondsItTookToAnswer { get; set; }    
 
     /// <summary>
     ///     Id of contact that made phone call
@@ -46,37 +40,38 @@ public partial class EventExtensionTookToLongToBeAnswered
     [AllowUpdate(false)]
     public string? ContactFullName { get; set; }
 
-    /// <summary>
-    ///     How long extension rang
-    /// </summary>
-    [AllowUpdate(false)]
-    public int NumberOfSecondsItRang { get; set; }
+    // its one min
+    ///// <summary>
+    /////     Number of seconds call has been on hold
+    ///// </summary>
+    //[AllowUpdate(false)]
+    //public int NumberOfSecondsCallOnHold { get; set; }
 
     /// <summary>
     ///     Return a random object
     /// </summary>
-    public override EventExtensionTookToLongToBeAnswered BuildRandomFakeObject()
+    public override EventCallPlacedOnHoldFor1Min BuildRandomFakeObject()
     {
         var randInstanceId = new RunningApplicationInstance() { Id = "1", CloudServiceType = CloudServiceType.WS };
-        var randomId = ExtensionQueue.BuildId(randInstanceId).Id;
+        var randChannel = Random.Shared.Next(100000, 999999);
+        var randomId = CallIncomingToExtension.BuildId(randInstanceId, $"{randChannel}.0").Id;
         var randomIdContact = Contact.BuildId(randInstanceId).Id;
 
-        var f = new Faker<EventExtensionTookToLongToBeAnswered>()
+        var f = new Faker<EventCallPlacedOnHoldFor1Min>()
             .RuleFor(x => x.Id, randomId)
             .RuleFor(x => x.From, x => x.Phone.PhoneNumberFormat(0))
             .RuleFor(x => x.To, x => x.Phone.PhoneNumberFormat(0))
             .RuleFor(x => x.IdContact, randomIdContact)
             .RuleFor(x => x.ContactFullName, x=>x.Name.FullName())
-            .RuleFor(x => x.FriendlyName, x=>x.Name.FullName())
             ;
 
-        EventExtensionTookToLongToBeAnswered obj = f.Generate();
-
-        obj.Number = Random.Shared.Next(60, 1000).ToString();
-        obj.NumberOfSecondsItRang = Random.Shared.Next(0, 60);
-
+        EventCallPlacedOnHoldFor1Min obj = f.Generate();
+        
         // set dates
         obj.DateStart = DateTime.UtcNow.AddHours(-1);
+        obj.SecondsItTookToAnswer = 10;
+        // obj.NumberOfSecondsCallOnHold = Random.Shared.Next(60, 3600);
+        //obj.DateEnded = obj.DateAnswer.Value.AddSeconds(Random.Shared.Next(10, 3600));
 
         return obj;
     }

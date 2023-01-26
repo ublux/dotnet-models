@@ -682,11 +682,11 @@ public class ExtensionDialUpdateRequest // : IUbluxDocumentId
     /// <summary>
     /// EventAction to execute if call is not answered
     /// </summary>
-    public EventAction? EventActionToExecuteIfCallIsNotAnswered { get; set; }
+    public EventAction? EventActionToExecuteIfNotAnswered { get; set; }
     /// <summary>
     /// Send email notification if call is not answered
     /// </summary>
-    public SendEmailNotificationIfCallIsNotAnswered? SendEmailNotificationIfCallIsNotAnswered { get; set; }
+    public SendEmailNotificationIfNotAnswered? SendEmailNotificationIfNotAnswered { get; set; }
     /// <summary>
     /// Number of seconds each line will ring
     /// </summary>
@@ -716,10 +716,10 @@ public class ExtensionDialUpdateRequest // : IUbluxDocumentId
     {
         if(this.IdsLines!=null)
             extensionDial.IdsLines = this.IdsLines;
-        if(this.EventActionToExecuteIfCallIsNotAnswered!=null)
-            extensionDial.EventActionToExecuteIfCallIsNotAnswered = this.EventActionToExecuteIfCallIsNotAnswered;
-        if(this.SendEmailNotificationIfCallIsNotAnswered!=null)
-            extensionDial.SendEmailNotificationIfCallIsNotAnswered = this.SendEmailNotificationIfCallIsNotAnswered;
+        if(this.EventActionToExecuteIfNotAnswered!=null)
+            extensionDial.EventActionToExecuteIfNotAnswered = this.EventActionToExecuteIfNotAnswered;
+        if(this.SendEmailNotificationIfNotAnswered!=null)
+            extensionDial.SendEmailNotificationIfNotAnswered = this.SendEmailNotificationIfNotAnswered;
         if(this.RingTimeInSeconds!=null)
             extensionDial.RingTimeInSeconds = this.RingTimeInSeconds.Value;
         if(this.IdMusicOnHoldGroup!=null)
@@ -756,11 +756,11 @@ public class ExtensionQueueUpdateRequest // : IUbluxDocumentId
     /// <summary>
     /// Send email notification if call is not answered
     /// </summary>
-    public SendEmailNotificationIfCallIsNotAnswered? SendEmailNotificationIfCallIsNotAnswered { get; set; }
+    public SendEmailNotificationIfNotAnswered? SendEmailNotificationIfNotAnswered { get; set; }
     /// <summary>
     /// Send email notification if call takes to long to be answered
     /// </summary>
-    public SendEmailNotificationIfCallTakesToLongToBeAnswered? SendEmailNotificationIfCallTakesToLongToBeAnswered { get; set; }
+    public SendEmailNotificationIfItTakesToLongToBeAnswered? SendEmailNotificationIfItTakesToLongToBeAnswered { get; set; }
     /// <summary>
     /// Time that lines will ring in seconds until answered
     /// </summary>
@@ -822,10 +822,10 @@ public class ExtensionQueueUpdateRequest // : IUbluxDocumentId
             extensionQueue.IdExtensionIfTimeout = this.IdExtensionIfTimeout;
         if(this.IdsAudios!=null)
             extensionQueue.IdsAudios = this.IdsAudios;
-        if(this.SendEmailNotificationIfCallIsNotAnswered!=null)
-            extensionQueue.SendEmailNotificationIfCallIsNotAnswered = this.SendEmailNotificationIfCallIsNotAnswered;
-        if(this.SendEmailNotificationIfCallTakesToLongToBeAnswered!=null)
-            extensionQueue.SendEmailNotificationIfCallTakesToLongToBeAnswered = this.SendEmailNotificationIfCallTakesToLongToBeAnswered;
+        if(this.SendEmailNotificationIfNotAnswered!=null)
+            extensionQueue.SendEmailNotificationIfNotAnswered = this.SendEmailNotificationIfNotAnswered;
+        if(this.SendEmailNotificationIfItTakesToLongToBeAnswered!=null)
+            extensionQueue.SendEmailNotificationIfItTakesToLongToBeAnswered = this.SendEmailNotificationIfItTakesToLongToBeAnswered;
         if(this.RingTimeInSeconds!=null)
             extensionQueue.RingTimeInSeconds = this.RingTimeInSeconds.Value;
         if(this.RingInUse!=null)

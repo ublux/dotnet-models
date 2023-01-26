@@ -25,13 +25,13 @@ public partial class ExtensionDial : Extension
     ///     EventAction to execute if call is not answered
     /// </summary>
     [AllowUpdate(true)]
-    public EventAction? EventActionToExecuteIfCallIsNotAnswered { get; set; }
+    public EventAction? EventActionToExecuteIfNotAnswered { get; set; }
 
     /// <summary>
     ///     Send email notification if call is not answered
     /// </summary>
     [AllowUpdate(true)]
-    public SendEmailNotificationIfCallIsNotAnswered? SendEmailNotificationIfCallIsNotAnswered { get; set; }
+    public SendEmailNotificationIfNotAnswered? SendEmailNotificationIfNotAnswered { get; set; }
 
     #endregion
 

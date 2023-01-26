@@ -33,14 +33,14 @@ public partial class Account : UbluxDocument
     /// </summary>
     [AllowUpdate(true)]
     [IsUbluxRequired]
-    public required AccountSecrets AccountSecrets { get; set; } 
+    public required AccountSecrets AccountSecrets { get; set; }
 
     /// <summary>
     ///     Customizable settings
     /// </summary>    
     [AllowUpdate(true)]
     [IsUbluxRequired]
-    public required AccountSettings AccountSettings { get; set; } 
+    public required AccountSettings AccountSettings { get; set; }
 
     #endregion
 
@@ -118,4 +118,3 @@ public partial class Account : UbluxDocument
 
     #endregion
 }
-

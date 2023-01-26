@@ -56,13 +56,52 @@ public partial class EventIncomingCallTerminatedWithRecording : EventTriggerMode
 }
 
 /// <summary />
-public partial class EventCallPlacedOnHoldForTooLong : EventTriggerModel
+public partial class EventCallPlacedOnHoldFor1Min : EventTriggerModel
 {
     /// <inheritdoc />
     [AllowUpdate(false)]
     public override EventTrigger EventTrigger
     {
-        get => EventTrigger.event_call_placed_on_hold_for_too_long;
+        get => EventTrigger.event_call_placed_on_hold_for_1_min;
+        [Obsolete("set method is only used to so that field is stored on mongo DB")]
+        internal set { }
+    }
+}
+
+/// <summary />
+public partial class EventCallPlacedOnHoldFor2Min : EventTriggerModel
+{
+    /// <inheritdoc />
+    [AllowUpdate(false)]
+    public override EventTrigger EventTrigger
+    {
+        get => EventTrigger.event_call_placed_on_hold_for_2_min;
+        [Obsolete("set method is only used to so that field is stored on mongo DB")]
+        internal set { }
+    }
+}
+
+/// <summary />
+public partial class EventCallPlacedOnHoldFor4Min : EventTriggerModel
+{
+    /// <inheritdoc />
+    [AllowUpdate(false)]
+    public override EventTrigger EventTrigger
+    {
+        get => EventTrigger.event_call_placed_on_hold_for_4_min;
+        [Obsolete("set method is only used to so that field is stored on mongo DB")]
+        internal set { }
+    }
+}
+
+/// <summary />
+public partial class EventCallPlacedOnHoldFor8Min : EventTriggerModel
+{
+    /// <inheritdoc />
+    [AllowUpdate(false)]
+    public override EventTrigger EventTrigger
+    {
+        get => EventTrigger.event_call_placed_on_hold_for_8_min;
         [Obsolete("set method is only used to so that field is stored on mongo DB")]
         internal set { }
     }
@@ -108,13 +147,52 @@ public partial class EventExtensionNotAnswered : EventTriggerModel
 }
 
 /// <summary />
-public partial class EventExtensionTookToLongToBeAnswered : EventTriggerModel
+public partial class EventExtensionTookToLongerThan1MinToBeAnswered : EventTriggerModel
 {
     /// <inheritdoc />
     [AllowUpdate(false)]
     public override EventTrigger EventTrigger
     {
-        get => EventTrigger.event_extension_took_to_long_to_be_answered;
+        get => EventTrigger.event_extension_took_to_longer_than_1_min_to_be_answered;
+        [Obsolete("set method is only used to so that field is stored on mongo DB")]
+        internal set { }
+    }
+}
+
+/// <summary />
+public partial class EventExtensionTookToLongerThan2MinToBeAnswered : EventTriggerModel
+{
+    /// <inheritdoc />
+    [AllowUpdate(false)]
+    public override EventTrigger EventTrigger
+    {
+        get => EventTrigger.event_extension_took_to_longer_than_2_min_to_be_answered;
+        [Obsolete("set method is only used to so that field is stored on mongo DB")]
+        internal set { }
+    }
+}
+
+/// <summary />
+public partial class EventExtensionTookToLongerThan4MinToBeAnswered : EventTriggerModel
+{
+    /// <inheritdoc />
+    [AllowUpdate(false)]
+    public override EventTrigger EventTrigger
+    {
+        get => EventTrigger.event_extension_took_to_longer_than_4_min_to_be_answered;
+        [Obsolete("set method is only used to so that field is stored on mongo DB")]
+        internal set { }
+    }
+}
+
+/// <summary />
+public partial class EventExtensionTookToLongerThan8MinToBeAnswered : EventTriggerModel
+{
+    /// <inheritdoc />
+    [AllowUpdate(false)]
+    public override EventTrigger EventTrigger
+    {
+        get => EventTrigger.event_extension_took_to_longer_than_8_min_to_be_answered;
         [Obsolete("set method is only used to so that field is stored on mongo DB")]
         internal set { }
     }

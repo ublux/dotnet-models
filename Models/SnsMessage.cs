@@ -62,4 +62,19 @@ public class SnsMessage
     ///     Created by instance id
     /// </summary>
     public required string Origin { get; set; }
+
+    ///// <summary>
+    /////     Is this associated to an event trigger. This are the events we send to Zapier
+    ///// </summary>
+    //public required EventTrigger? EventTrigger { get; set; }
+
+    /// <summary>
+    ///     Any helpful data
+    /// </summary>
+    public object? Tag { get; set; }
+
+    /// <summary>
+    ///     If there is a Tag then its type
+    /// </summary>
+    public string? TagType { get; set; }
 }

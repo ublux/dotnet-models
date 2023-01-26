@@ -3,7 +3,7 @@
 /// <summary>
 ///     Send email notification if call takes to long to be answered. This is used for extension queue
 /// </summary>
-public class SendEmailNotificationIfCallTakesToLongToBeAnswered
+public class SendEmailNotificationIfItTakesToLongToBeAnswered
 {
     /// <summary>
     ///     Send email notification if call takes more than this amount of time to be answered
