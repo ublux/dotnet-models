@@ -1,5 +1,7 @@
 ﻿#if UBLUX_BACKEND
 
+using System.Text.RegularExpressions;
+
 namespace Ublux.Communications.Models.Documents;
 
 /// <summary>
@@ -23,6 +25,12 @@ public partial class Phone : UbluxDocument, IReferncesAccount
     [AllowUpdate(false)]
     [IgnoreDataMember]
     public required string Password { get; set; } = string.Empty;
+
+    /// <summary>
+    ///     For now it is: Li\.[a-zA-Z0-9\.]+
+    /// </summary>
+    [GeneratedRegex($@"{Line.DocumentPrefix}{RedisConstants.DelimeterEscaped}[a-zA-Z0-9{RedisConstants.DelimeterEscaped}]+")]
+    public static partial Regex Regex_GetIdOfLine();
 }
 
 #endif

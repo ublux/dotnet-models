@@ -86,7 +86,7 @@ public static partial class Constants
     /// <summary>
     ///     Simple tcp server used on pbx
     /// </summary>
-    public const int PortSimpleTcpServer = 62618;
+    public const int PortBinaryTcpServer = 62618;
 
 
     /// <summary>
@@ -152,5 +152,5 @@ public static partial class Constants
     /// <summary>
     ///     Valid characters for an instance id
     /// </summary>
-    public static HashSet<char> InstanceIdValidChars = new ("ABCDEFGHIJKLMNOPQRSTUVWXYZ-0123456789".ToCharArray());
+    public static readonly HashSet<char> InstanceIdValidChars = new("ABCDEFGHIJKLMNOPQRSTUVWXYZ-0123456789".ToCharArray());
 }
