@@ -22,7 +22,7 @@ public partial interface IUbluxDocument : IUbluxDocumentId
     /// </summary>
     [AllowUpdate(false)]
     [JsonProperty(Order = 1002)]
-    DateTime? DateUpdated { get; set; }
+    DateTime DateUpdated { get; set; }
 }
 
 /// <summary>
@@ -51,22 +51,48 @@ public abstract partial class UbluxDocument : IUbluxDocument, IUbluxDocumentId
         init => id = value;
     }
     private string id = string.Empty;
-    
+
+
     /// <summary>
-    ///     Creation date
+    ///     Creation date. Sets DateUpdated if it does not have a value
     /// </summary>
     [JsonProperty(Order = 1000)]
     [AllowUpdate(false)]
     [HideForCreateRequest]
-    public DateTime DateCreated { get; set; }
+    public required DateTime DateCreated
+    {
+        get => dateCreated;
+        set
+        {
+            dateCreated = value;
+
+            // if created date is greater than date updated. Make dateUpdated the same
+            if (value > dateUpdated)
+                dateUpdated = value;
+        }
+    }
+    private DateTime dateCreated;
+
 
     /// <summary>
-    ///     Updated date
+    ///     Updated date. When item is created on database this date will be set too. This is important so that we can sync contacts
+    ///     TODO: Very important to place index in this field. 
     /// </summary>
     [JsonProperty(Order = 1002)]
     [AllowUpdate(false)]
     [HideForCreateRequest]
-    public DateTime? DateUpdated { get; set; }
-
-    
+    // [Obsolete("Just a reminder that when setting the DateCreated it will also set this same value")]
+    public DateTime DateUpdated
+    {
+        get
+        {
+            return dateUpdated;
+        }
+        set
+        {
+            // this must be greater or equal to dateCreated
+            dateUpdated = value;
+        }
+    }
+    private DateTime dateUpdated;
 }

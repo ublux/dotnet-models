@@ -18,7 +18,6 @@ public partial class CloudFile : UbluxDocument
             BuiltId = CloudFile.BuildId(sf),
             DateCreated = DateTime.UtcNow,
             DateDeleted = null,
-            DateUpdated = null,
             IdDocument = sf.Id,
             StoredFile = sf,
             IsBackup = false,
