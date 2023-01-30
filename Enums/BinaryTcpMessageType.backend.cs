@@ -15,7 +15,12 @@ public enum BinaryTcpMessageType : byte
     /// <summary>
     ///     Prints a message to the console. So it only takes a string. The same string is sent as a resposne
     /// </summary>
-    PrintMessage
+    PrintMessage,
+
+    /// <summary>
+    ///     Insert or update item on memory database
+    /// </summary>
+    Upsert,
 }
 
 #endif
