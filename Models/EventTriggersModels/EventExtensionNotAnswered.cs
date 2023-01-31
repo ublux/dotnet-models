@@ -2,6 +2,9 @@
 
 namespace Ublux.Communications.Models.EventTriggersModels;
 
+/// <summary>
+///     <see cref="EventTrigger.EventExtensionNotAnswered"/>
+/// </summary>
 public partial class EventExtensionNotAnswered
 {
     /// <summary>

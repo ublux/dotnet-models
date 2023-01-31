@@ -2,6 +2,9 @@
 
 namespace Ublux.Communications.Models.EventTriggersModels;
 
+/// <summary>
+///     <see cref="EventTrigger.EventCallPlacedOnHoldFor1Min"/>
+/// </summary>
 public partial class EventCallPlacedOnHoldFor1Min
 {
     /// <summary>

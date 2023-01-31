@@ -2,7 +2,10 @@
 
 namespace Ublux.Communications.Models.EventTriggersModels;
 
-public partial class EventExtensionTookToLongerThan2MinToBeAnswered
+/// <summary>
+///     <see cref="EventTrigger.EventCallPlacedOnHoldFor1Min"/>
+/// </summary>
+public partial class EventExtensionTookLongerThan8MinToBeAnswered
 {
     /// <summary>
     ///     Extension friendly name
@@ -55,13 +58,13 @@ public partial class EventExtensionTookToLongerThan2MinToBeAnswered
     /// <summary>
     ///     Return a random object
     /// </summary>
-    public override EventExtensionTookToLongerThan2MinToBeAnswered BuildRandomFakeObject()
+    public override EventExtensionTookLongerThan8MinToBeAnswered BuildRandomFakeObject()
     {
         var randInstanceId = new RunningApplicationInstance() { Id = "1", CloudServiceType = CloudServiceType.WS };
         var randomId = ExtensionQueue.BuildId(randInstanceId).Id;
         var randomIdContact = Contact.BuildId(randInstanceId).Id;
 
-        var f = new Faker<EventExtensionTookToLongerThan2MinToBeAnswered>()
+        var f = new Faker<EventExtensionTookLongerThan8MinToBeAnswered>()
             .RuleFor(x => x.Id, randomId)
             .RuleFor(x => x.From, x => x.Phone.PhoneNumberFormat(0))
             .RuleFor(x => x.To, x => x.Phone.PhoneNumberFormat(0))
@@ -70,10 +73,10 @@ public partial class EventExtensionTookToLongerThan2MinToBeAnswered
             .RuleFor(x => x.FriendlyName, x=>x.Name.FullName())
             ;
 
-        EventExtensionTookToLongerThan2MinToBeAnswered obj = f.Generate();
+        EventExtensionTookLongerThan8MinToBeAnswered obj = f.Generate();
 
         obj.Number = Random.Shared.Next(60, 1000).ToString();
-        obj.NumberOfSecondsItRang = Random.Shared.Next(120, 1000);
+        obj.NumberOfSecondsItRang = Random.Shared.Next(120 * 2 * 2, 1000);
 
         // set dates
         obj.DateStart = DateTime.UtcNow.AddHours(-1);

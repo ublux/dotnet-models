@@ -21,7 +21,7 @@ public abstract class EventTriggerModel
     public required string Id { get; set; }
 
     /// <summary>
-    ///     Converts event_outgoing_call_terminated to OutgoingCallTerminated
+    ///     Converts EventOutgoingCallTerminated to OutgoingCallTerminated
     /// </summary>
     public static string EventTriggerToClassName(string webHookType)
     {

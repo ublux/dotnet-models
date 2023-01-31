@@ -8,27 +8,27 @@ public enum EventTrigger
     #region Call terminated
 
     /// <summary/>
-    event_outgoing_call_terminated,
+    EventOutgoingCallTerminated,
     /// <summary/>
-    event_incoming_call_terminated,
+    EventIncomingCallTerminated,
 
     /// <summary/>
-    event_outgoing_call_terminated_with_recording,
+    EventOutgoingCallTerminatedWithRecording,
     /// <summary/>
-    event_incoming_call_terminated_with_recording,
+    EventIncomingCallTerminatedWithRecording,
 
     #endregion
 
     #region Calls
 
     /// <summary/>
-    event_call_placed_on_hold_for_1_min,
+    EventCallPlacedOnHoldFor1Min,
     /// <summary/>
-    event_call_placed_on_hold_for_2_min,
+    EventCallPlacedOnHoldFor2Min,
     /// <summary/>
-    event_call_placed_on_hold_for_4_min,
+    EventCallPlacedOnHoldFor4Min,
     /// <summary/>
-    event_call_placed_on_hold_for_8_min,
+    EventCallPlacedOnHoldFor8Min,
 
     #endregion
 
@@ -36,25 +36,25 @@ public enum EventTrigger
     #region Line connected/disconnected
 
     /// <summary/>
-    event_line_disconnected,
+    EventLineDisconnected,
     /// <summary/>
-    event_line_connected,
+    EventLineConnected,
 
     #endregion
 
     #region Extension
 
     /// <summary/>
-    event_extension_not_answered,
+    EventExtensionNotAnswered,
 
     /// <summary/>
-    event_extension_took_to_longer_than_1_min_to_be_answered,
+    EventExtensionTookLongerThan1MinToBeAnswered,
     /// <summary/>
-    event_extension_took_to_longer_than_2_min_to_be_answered,
+    EventExtensionTookLongerThan2MinToBeAnswered,
     /// <summary/>
-    event_extension_took_to_longer_than_4_min_to_be_answered,
+    EventExtensionTookLongerThan4MinToBeAnswered,
     /// <summary/>
-    event_extension_took_to_longer_than_8_min_to_be_answered,
+    EventExtensionTookLongerThan8MinToBeAnswered,
 
     #endregion
 

@@ -2,7 +2,10 @@
 
 namespace Ublux.Communications.Models.EventTriggersModels;
 
-public partial class EventExtensionTookToLongerThan4MinToBeAnswered
+/// <summary>
+///     <see cref="EventTrigger.EventCallPlacedOnHoldFor1Min"/>
+/// </summary>
+public partial class EventExtensionTookLongerThan4MinToBeAnswered
 {
     /// <summary>
     ///     Extension friendly name
@@ -55,13 +58,13 @@ public partial class EventExtensionTookToLongerThan4MinToBeAnswered
     /// <summary>
     ///     Return a random object
     /// </summary>
-    public override EventExtensionTookToLongerThan4MinToBeAnswered BuildRandomFakeObject()
+    public override EventExtensionTookLongerThan4MinToBeAnswered BuildRandomFakeObject()
     {
         var randInstanceId = new RunningApplicationInstance() { Id = "1", CloudServiceType = CloudServiceType.WS };
         var randomId = ExtensionQueue.BuildId(randInstanceId).Id;
         var randomIdContact = Contact.BuildId(randInstanceId).Id;
 
-        var f = new Faker<EventExtensionTookToLongerThan4MinToBeAnswered>()
+        var f = new Faker<EventExtensionTookLongerThan4MinToBeAnswered>()
             .RuleFor(x => x.Id, randomId)
             .RuleFor(x => x.From, x => x.Phone.PhoneNumberFormat(0))
             .RuleFor(x => x.To, x => x.Phone.PhoneNumberFormat(0))
@@ -70,7 +73,7 @@ public partial class EventExtensionTookToLongerThan4MinToBeAnswered
             .RuleFor(x => x.FriendlyName, x=>x.Name.FullName())
             ;
 
-        EventExtensionTookToLongerThan4MinToBeAnswered obj = f.Generate();
+        EventExtensionTookLongerThan4MinToBeAnswered obj = f.Generate();
 
         obj.Number = Random.Shared.Next(60, 1000).ToString();
         obj.NumberOfSecondsItRang = Random.Shared.Next(120 * 2, 1000);

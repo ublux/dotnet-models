@@ -2,6 +2,9 @@
 
 namespace Ublux.Communications.Models.EventTriggersModels;
 
+/// <summary>
+///     <see cref="EventTrigger.EventLineDisconnected"/>
+/// </summary>
 public partial class EventLineDisconnected
 {
     /// <summary>

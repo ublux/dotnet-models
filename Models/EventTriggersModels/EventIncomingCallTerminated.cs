@@ -2,6 +2,9 @@
 
 namespace Ublux.Communications.Models.EventTriggersModels;
 
+/// <summary>
+///     <see cref="EventTrigger.EventIncomingCallTerminated"/>
+/// </summary>
 public partial class EventIncomingCallTerminated
 {
     /// <summary>

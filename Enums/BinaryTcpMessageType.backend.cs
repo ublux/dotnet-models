@@ -21,6 +21,11 @@ public enum BinaryTcpMessageType : byte
     ///     Insert or update item on memory database
     /// </summary>
     Upsert,
+
+    /// <summary>
+    ///     Execute a bash script
+    /// </summary>
+    ExecuteBashScript,
 }
 
 #endif
