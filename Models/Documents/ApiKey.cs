@@ -55,6 +55,4 @@ public partial class ApiKey : UbluxDocument, IReferencesTags
     public DateTime? DateLastUsed { get; set; }
 
     #endregion
-
-    
 }

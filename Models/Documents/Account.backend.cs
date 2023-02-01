@@ -38,7 +38,6 @@ public partial class Account : UbluxDocument
     [IsUbluxRequired]
     public required string IdGTrunkTerminationGroup { get; set; }
 
-
     #endregion
 
     /// <summary>
