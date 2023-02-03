@@ -8,7 +8,8 @@ public class ChildCallAttendantTransferToExtension : ChildCall, IAttendantTransf
     /// <summary>
     ///     Extension to whom it was transferred
     /// </summary>
-    public Extension? Extension { get; set; }
+    [References(typeof(Extension))]
+    public string? IdExtension { get; set; }
 
     /// <summary>
     ///     AttendantTransferToExtension
@@ -21,8 +22,7 @@ public class ChildCallAttendantTransferToExtension : ChildCall, IAttendantTransf
         internal set { }
     }
 
-
     /// <summary> Id of call that attendant transfered this call </summary>
-
+    [References(typeof(Call))]
     public required string IdCallAttendantTransfer { get; set; }
 }

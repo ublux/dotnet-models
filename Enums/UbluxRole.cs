@@ -420,6 +420,17 @@ public enum UbluxRole
     /// <summary> Has access to the apikeys endpoint with only read/create permissions </summary>
     apikeys_create,
 
+    /// <summary> Has access to the aicalltranscriptions endpoint with full permissions </summary>
+    aicalltranscriptions = 380,
+    /// <summary> Has access to the aicalltranscriptions endpoint with only read permissions </summary>
+    aicalltranscriptions_readonly,
+    /// <summary> Has access to the aicalltranscriptions endpoint with only read/update permissions </summary>
+    aicalltranscriptions_update,
+    /// <summary> Has access to the aicalltranscriptions endpoint with only read/delete permissions </summary>
+    aicalltranscriptions_delete,
+    /// <summary> Has access to the aicalltranscriptions endpoint with only read/create permissions </summary>
+    aicalltranscriptions_create,
+
     #endregion
 
     #region Medium Priority

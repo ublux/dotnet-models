@@ -9,23 +9,27 @@ public class ChildCallForwardToExtension : ChildCall, ICallToExtension
     /// <summary>
     ///     Extension being called
     /// </summary>
+    [References(typeof(Extension))]
     // [IsUbluxRequired]
-    public Extension? Extension { get; set; }
+    public string? IdExtension { get; set; }
 
     /// <summary>
     ///     Line that answered
     /// </summary>    
-    public Line? LineThatAnswered { get; set; }
+    [References(typeof(Line))]
+    public string? IdLineThatAnswered { get; set; }
 
     /// <summary>
     ///     Lines that rang
     /// </summary>
-    public List<Line> LinesThatRing { get; set; } = new();
+    [References(typeof(Line))]
+    public List<string> IdsLinesThatRing { get; set; } = new();
 
     /// <summary>
     ///     Lines that did not ring
     /// </summary>
-    public List<Line> LinesThatDidNotRing { get; set; } = new();
+    [References(typeof(Line))]
+    public List<string> IdsLinesThatDidNotRing { get; set; } = new();
 
     /// <summary>
     ///     ForwardToExtension

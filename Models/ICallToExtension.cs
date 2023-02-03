@@ -8,29 +8,29 @@ public interface ICallToExtension : ICall
     /// <summary>
     ///     Extension being called
     /// </summary>
-    //[References(typeof(Extension))]
+    [References(typeof(Extension))]
     [AllowUpdate(false)]
     //[IsUbluxRequired]
-    Extension? Extension { get; set; }
+    string? IdExtension { get; set; }
 
     /// <summary>
     ///     Line that answered
     /// </summary>
-    //[References(typeof(Line))]
+    [References(typeof(Line))]
     [AllowUpdate(false)]
-    Line? LineThatAnswered { get; set; }
+    string? IdLineThatAnswered { get; set; }
 
     /// <summary>
     ///     Lines that ring
     /// </summary>
-    //[References(typeof(Line))]
+    [References(typeof(Line))]
     [AllowUpdate(false)]
-    List<Line> LinesThatRing { get; set; }
+    List<string> IdsLinesThatRing { get; set; }
 
     /// <summary>
     ///     Lines that did not ring
     /// </summary>
-    //[References(typeof(Line))]
+    [References(typeof(Line))]
     [AllowUpdate(false)]
-    List<Line> LinesThatDidNotRing { get; set; }
+    List<string> IdsLinesThatDidNotRing { get; set; }
 }

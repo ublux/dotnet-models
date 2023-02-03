@@ -50,10 +50,10 @@ public static class ModelsExtensionMethods
             Collections.CloudFiles => typeof(CloudFile),
             Collections.Tags => typeof(Tag),
             Collections.ApiKeys => typeof(ApiKey),
+            Collections.AiCallTranscriptions => typeof(AiCallTranscription),
             _ => throw new Exception($"Missing collection type: {collection}"),// should never hit this point because this is tested in SouceCode Unit tests
         };
     }
-
 
     // used for faster results
     private static ConcurrentDictionary<Type, Collections> _getCollectionUsedByTypeCache = new();
@@ -277,6 +277,12 @@ public static class ModelsExtensionMethods
             // store on cache so next time it is faster
             _getCollectionUsedByTypeCache[type] = Collections.ApiKeys;
             return Collections.ApiKeys;
+        }
+        if (typeof(AiCallTranscription).IsAssignableFrom(type))
+        {
+            // store on cache so next time it is faster
+            _getCollectionUsedByTypeCache[type] = Collections.AiCallTranscriptions;
+            return Collections.AiCallTranscriptions;
         }
         throw new Exception("Invalid Type");
     }

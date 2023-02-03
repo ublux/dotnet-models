@@ -14,7 +14,7 @@ public partial class Phone : UbluxDocument, IReferencesTags
     /// </summary>
     [AllowUpdate(true)]
     [References(typeof(Tag))]
-    public List<string> Tags { get; set; } = new();
+    public List<string> IdsTags { get; set; } = new();
 
     /// <summary>
     ///     This specifies to what PBX it will be connected to

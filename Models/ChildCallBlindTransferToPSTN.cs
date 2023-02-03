@@ -13,6 +13,7 @@ public class ChildCallBlindTransferToPSTN : ChildCallBlindTransfer
     /// <summary>
     ///     Trunk used to make call
     /// </summary>
+    [References(typeof(TrunkTermination))]
     public string? IdTrunkTermination { get; set; }
 
     /// <summary>

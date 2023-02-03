@@ -8,5 +8,5 @@ public interface IReferencesTags
     /// <summary>
     ///     Everything that references an account may have tags. List of id tags
     /// </summary>
-    public List<string> Tags { get; set; }
+    public List<string> IdsTags { get; set; }
 }

@@ -23,7 +23,7 @@ public abstract partial class VoipNumber : UbluxDocument, IReferencesTags
     /// </summary>
     [AllowUpdate(true)]
     [References(typeof(Tag))]
-    public List<string> Tags { get; set; } = new();
+    public List<string> IdsTags { get; set; } = new();
 
     /// <summary>
     ///     Music on hold to use for outgoing calls to PSTN only

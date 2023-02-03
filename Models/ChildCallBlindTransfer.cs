@@ -9,5 +9,6 @@ public abstract class ChildCallBlindTransfer : ChildCall
     ///     Id of call that originated blind transfer
     /// </summary>
     [IsUbluxRequired]
+    [References(typeof(Call))]
     public required string IdCall { get; set; } 
 }

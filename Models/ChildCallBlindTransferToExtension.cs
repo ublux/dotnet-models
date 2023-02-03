@@ -8,8 +8,8 @@ public class ChildCallBlindTransferToExtension : ChildCallBlindTransfer
     /// <summary>
     ///     Extension where it was blind transferred to
     /// </summary>
-    //[IsUbluxRequired]
-    public Extension? Extension { get; set; }
+    [References(typeof(Extension))]
+    public string? IdExtension { get; set; }
 
     /// <summary>
     ///     BlindTransferToExtension

@@ -40,7 +40,24 @@ public abstract partial class Call : UbluxDocument, ICall, IReferencesTags
     /// </summary>
     [AllowUpdate(true)]
     [References(typeof(Tag))]
-    public List<string> Tags { get; set; } = new();
+    public List<string> IdsTags { get; set; } = new();
+
+    /// <summary>
+    ///     If outgoing:
+    ///         Reference of contact that we are calling
+    ///     If incoming:
+    ///         Reference of of Contact that called us        
+    /// </summary>
+    [AllowUpdate(false)]
+    [References(typeof(Contact))]
+    public string? IdContact { get; set; }
+
+    /// <summary>
+    ///     Refernce to AI call transcription
+    /// </summary>
+    [AllowUpdate(false)]
+    [References(typeof(AiCallTranscription))]
+    public string? IdAiCallTranscription { get; set; }
 
     #endregion
 
@@ -58,15 +75,6 @@ public abstract partial class Call : UbluxDocument, ICall, IReferencesTags
     /// </summary>
     [AllowUpdate(false)]
     public List<ChildCall> ChildCalls { get; set; } = new();
-
-    /// <summary>
-    ///     If outgoing:
-    ///         Contact that we are calling
-    ///     If incoming:
-    ///         Contact that called us        
-    /// </summary>
-    [AllowUpdate(false)]
-    public abstract Contact? Contact { get; set; }
 
     #endregion
 
@@ -171,35 +179,7 @@ public abstract partial class Call : UbluxDocument, ICall, IReferencesTags
     [AllowUpdate(true)]
     public CallResult CallResult { get; set; }
 
-    /// <summary>
-    ///     If there is a language it means there is a transcription
-    /// </summary>
-    [AllowUpdate(false)]
-    public string? TranscriptionLanguage { get; set; }
-
-    /// <summary>
-    ///     Audio of agent converted to text
-    /// </summary>
-    [AllowUpdate(false)]
-    public List<AiTranscription> TranscriptionAgent { get; set; } = new();
-
-    /// <summary>
-    ///     Audio of client converted to text
-    /// </summary>
-    [AllowUpdate(false)]
-    public List<AiTranscription> TranscriptionClient { get; set; } = new();
-
-    /// <summary>
-    ///     Summary of agent transcription
-    /// </summary>
-    [AllowUpdate(false)]
-    public string? TranscriptionAgentSummary { get; set; }
-
-    /// <summary>
-    ///     Summary of client transcription
-    /// </summary>
-    [AllowUpdate(false)]
-    public string? TranscriptionClientSummary { get; set; }
+    
 
     #endregion
 }

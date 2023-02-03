@@ -112,5 +112,8 @@ public enum Collections
     Tags,
 
     /// <summary> ApiKeys </summary>
-    ApiKeys
+    ApiKeys,
+
+    /// <summary> ApiKeys </summary>
+    AiCallTranscriptions
 }

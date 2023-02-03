@@ -13,31 +13,31 @@ public partial class CallOutgoingToExtension : CallOutgoing, ICallToExtension
     /// <summary>
     ///     Extension being called
     /// </summary>
-    //[References(typeof(Extension))]
+    [References(typeof(Extension))]
     [AllowUpdate(false)]
-    //[IsUbluxRequired]
-    public Extension? Extension { get; set; }
+    // [IsUbluxRequired]
+    public string? IdExtension { get; set; }
 
     /// <summary>
     ///     Line that answered
     /// </summary>
-    //[References(typeof(Line))]
+    [References(typeof(Line))]
     [AllowUpdate(false)]
-    public Line? LineThatAnswered { get; set; }
+    public string? IdLineThatAnswered { get; set; }
 
     /// <summary>
     ///     Lines that ring
     /// </summary>
-    //[References(typeof(Line))]
+    [References(typeof(Line))]
     [AllowUpdate(false)]
-    public List<Line> LinesThatRing { get; set; } = new();
+    public List<string> IdsLinesThatRing { get; set; } = new();
 
     /// <summary>
     ///     Lines that did not ring
     /// </summary>
-    //[References(typeof(Line))]
+    [References(typeof(Line))]
     [AllowUpdate(false)]
-    public List<Line> LinesThatDidNotRing { get; set; } = new();
+    public List<string> IdsLinesThatDidNotRing { get; set; } = new();
 
     #endregion
 

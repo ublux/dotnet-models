@@ -12,7 +12,7 @@ public partial class CallFlowLogic : UbluxDocument, IReferencesTags
     /// </summary>
     [AllowUpdate(true)]
     [References(typeof(Tag))]
-    public List<string> Tags { get; set; } = new();
+    public List<string> IdsTags { get; set; } = new();
 
     /// <summary>
     ///     Name of virtual receptionist

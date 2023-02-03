@@ -23,6 +23,6 @@ public class ChildCallAttendantTransferToPSTN : ChildCall, IAttendantTransfer
     }
 
     /// <summary> Id of call that attendant transfered this call </summary>
-
+    [References(typeof(Call))]
     public required string IdCallAttendantTransfer { get; set; }
 }

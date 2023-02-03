@@ -345,6 +345,13 @@ namespace Ublux.Communications.Models.Documents {
         /// <summary> Build Id </summary>
         public static BuiltId BuildId(RunningApplicationInstance instance) => new($"{DocumentPrefix}.{instance.Id}.{instance.IdGlobalAutoIncrement()}");
     }
+    public partial class AiCallTranscription {
+        /// <summary> Id prefix </summary>
+        public const string DocumentPrefix = "ACT";
+
+        /// <summary> Build Id </summary>
+        public static BuiltId BuildId(RunningApplicationInstance instance) => new($"{DocumentPrefix}.{instance.Id}.{instance.IdGlobalAutoIncrement()}");
+    }
 }
 
 

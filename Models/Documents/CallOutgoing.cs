@@ -16,19 +16,20 @@
 )]
 public abstract partial class CallOutgoing : Call
 {
-    /// <summary>    
-    ///     Contact to whom we are calling
-    /// </summary>
-    [AllowUpdate(false)]
-    public override Contact? Contact { get; set; }
+    ///// <summary>    
+    /////     Contact to whom we are calling
+    ///// </summary>
+    //[AllowUpdate(false)]
+    //[References(typeof(Contact))]
+    //public override string? IdContact { get; set; }
 
     /// <summary>
     ///     Line that started phone call
     /// </summary>
     [AllowUpdate(false)]
-    //[References(typeof(Line))]
+    [References(typeof(Line))]
     [IsUbluxRequired]
-    public required Line LineThatInitiatedCall { get; set; }
+    public required string IdLineThatInitiatedCall { get; set; }
 }
 
 
