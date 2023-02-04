@@ -13,6 +13,11 @@ public static partial class Constants
     //public const string SipPacketLineId = "sip:Li.";
 
     /// <summary>
+    ///     We will send all notification emails from this account
+    /// </summary>
+    public const string EmailUbluxNoReply = $"no-reply@{Domain}";
+
+    /// <summary>
     ///     Domain for application
     /// </summary>
     public const string Domain = "ublux.com";

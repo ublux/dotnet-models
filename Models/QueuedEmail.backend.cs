@@ -6,21 +6,21 @@ namespace Ublux.Communications.Models;
 ///     Every time we send an email we queued on disk so that it is not lost
 /// </summary>
 public class QueuedEmail : IUbluxDocumentId
-{    
+{
     /// <summary>
     ///     Id of queued email. This will be the file name if stored on a file system
     /// </summary>    
     public string Id { get; init; } = BuildId();
-   
+
     /// <summary>
     ///     Id builder
     /// </summary>
     public static string BuildId() => $"{DateTime.UtcNow.Ticks}-{Guid.NewGuid().ToString()[..4]}.bin";
 
-    /// <summary>
-    ///     Thanks to this enum we know from what email to send the email
-    /// </summary>
-    public required UbluxEmail UbluxEmail { get; set; }
+    ///// <summary>
+    /////     Thanks to this enum we know from what email to send the email
+    ///// </summary>
+    //public required UbluxEmail UbluxEmail { get; set; }
 
     /// <summary>
     ///     Example: Ublux Team
@@ -30,7 +30,7 @@ public class QueuedEmail : IUbluxDocumentId
     /// <summary>
     ///     To whom to send the email. It can be multiple recepients
     /// </summary>
-    public required List<string> To { get; set; }
+    public required List<string> To { get; set; } = new();
 
     /// <summary>
     ///     Subject of email
