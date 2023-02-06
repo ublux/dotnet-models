@@ -21,14 +21,14 @@ public partial class AutoProvisionReference : UbluxDocument
     [IsUbluxRequired]
     public required string IdPhone { get; set; }
 
-    /// <summary>
-    ///     When phone is connected to case27 and it wants to connect to a new phone. It will do so but when phone requests cfg file
-    ///     (Note: phone may be deleted and do not exist!)
-    /// </summary>
-    [IgnoreDataMember]
-    [AllowUpdate(false)]
-    [References(typeof(Phone))]
-    public string? IdPhoneToExchangeWith { get; set; }
+    ///// <summary>
+    /////     When phone is connected to case27 and it wants to connect to a new phone. It will do so but when phone requests cfg file
+    /////     (Note: phone may be deleted and do not exist!)
+    ///// </summary>
+    //[IgnoreDataMember]
+    //[AllowUpdate(false)]
+    //[References(typeof(Phone))]
+    //public string? IdPhoneToExchangeWith { get; set; }
 
     #endregion
 

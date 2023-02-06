@@ -5373,6 +5373,26 @@ public class PhoneFilterRequest
     [JsonProperty("disableEncryption_eq")]
     public bool? DisableEncryption_EQ { get; set; }
 
+    /// <summary> DateAutoProvision equals </summary>
+    [JsonProperty("dateAutoProvision_eq")]
+    public DateTime? DateAutoProvision_EQ { get; set; }
+    /// <summary> DateAutoProvision less than or equal to </summary>
+    [JsonProperty("dateAutoProvision_lte")]
+    public DateTime? DateAutoProvision_LTE { get; set; }
+    /// <summary> DateAutoProvision greater than or equal to </summary>
+    [JsonProperty("dateAutoProvision_gte")]
+    public DateTime? DateAutoProvision_GTE { get; set; }
+
+    /// <summary> MacAddress equals </summary>
+    [JsonProperty("macAddress_eq")]
+    public string? MacAddress_EQ { get; set; }
+    /// <summary> MacAddress contains </summary>
+    [JsonProperty("macAddress_con")]
+    public string? MacAddress_CON { get; set; }
+    /// <summary> MacAddress regex </summary>
+    [JsonProperty("macAddress_reg")]
+    public string? MacAddress_REG { get; set; }
+
     /// <summary> Id equals </summary>
     [JsonProperty("id_eq")]
     public string? Id_EQ { get; set; }

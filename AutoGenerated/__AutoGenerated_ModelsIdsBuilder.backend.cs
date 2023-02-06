@@ -46,8 +46,8 @@ namespace Ublux.Communications.Models.Documents {
         /// <summary> Id prefix </summary>
         public const string DocumentPrefix = "APR";
 
-        /// <summary> Build Id </summary>
-        public static BuiltId BuildId(RunningApplicationInstance instance) => new($"{DocumentPrefix}.{instance.Id}.{instance.IdGlobalAutoIncrement()}");
+        /// <summary> Id is the mac address </summary>
+        public static BuiltId BuildId(string macAddress) => new($"{DocumentPrefix}.{macAddress}");
     }
     public partial class BlackListPhoneNumber {
         /// <summary> Id prefix </summary>

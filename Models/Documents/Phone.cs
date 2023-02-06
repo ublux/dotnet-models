@@ -74,4 +74,16 @@ public partial class Phone : UbluxDocument, IReferencesTags
     [IsUbluxRequired]
     [AllowUpdate(true)]
     public bool DisableEncryption { get; set; }
+
+    /// <summary>
+    ///     Date when phone downloaded configuration from api.ublux.com in order to connect to Ublux
+    /// </summary>
+    [AllowUpdate(false)]
+    public DateTime? DateAutoProvision { get; set; }
+
+    /// <summary>
+    ///     Mac address of phone in case it is a phisical phone that autoprovisions with Ublux.
+    /// </summary>
+    [AllowUpdate(false)]
+    public string? MacAddress { get; set; }
 }

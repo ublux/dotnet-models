@@ -57,6 +57,14 @@ public partial class Account : UbluxDocument
     [AllowUpdate(false)]
     [IsUbluxRequired]
     public UbluxPartner UbluxPartner { get; set; }
+
+    /// <summary>
+    ///     Id of account where phones that are TBD connect.
+    /// </summary>
+    public static string GetIdCase27()
+    {
+        return Account.BuildId("27").Id;
+    }
 }
 
 #endif
