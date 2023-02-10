@@ -56,8 +56,8 @@ public enum Collections
     /// <summary>Voicemails</summary>
     Voicemails,
 
-    /// <summary>Identities</summary>
-    Identities,
+    /// <summary>Users</summary>
+    Users,
 
     ///// <summary>IPs</summary>
     //IPs,

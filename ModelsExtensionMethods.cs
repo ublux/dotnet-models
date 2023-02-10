@@ -31,7 +31,7 @@ public static class ModelsExtensionMethods
             Collections.FaxesIncoming => typeof(FaxIncoming),
             Collections.FaxOutgoingGroups => typeof(FaxOutgoingGroup),
             Collections.Voicemails => typeof(Voicemail),
-            Collections.Identities => typeof(User),
+            Collections.Users => typeof(User),
             // Collections.IPs => typeof(IP),
             Collections.LineKeyGroups => typeof(LineKeyGroup),
             Collections.LogWebServiceRequests => typeof(LogWebServiceRequest),
@@ -173,8 +173,8 @@ public static class ModelsExtensionMethods
         if (typeof(User).IsAssignableFrom(type))
         {
             // store on cache so next time it is faster
-            _getCollectionUsedByTypeCache[type] = Collections.Identities;
-            return Collections.Identities;
+            _getCollectionUsedByTypeCache[type] = Collections.Users;
+            return Collections.Users;
         }
         if (typeof(LineKeyGroup).IsAssignableFrom(type))
         {

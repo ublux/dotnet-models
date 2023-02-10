@@ -2843,15 +2843,15 @@ public class CloudServiceWebHostFilterRequest
 /// <summary> Enables searching for Contacts </summary>
 public class ContactFilterRequest 
 {
-    /// <summary> IdUserUserOwner equals </summary>
-    [JsonProperty("idUserUserOwner_eq")]
-    public string? IdUserUserOwner_EQ { get; set; }
-    /// <summary> IdUserUserOwner contains </summary>
-    [JsonProperty("idUserUserOwner_con")]
-    public string? IdUserUserOwner_CON { get; set; }
-    /// <summary> IdUserUserOwner regex </summary>
-    [JsonProperty("idUserUserOwner_reg")]
-    public string? IdUserUserOwner_REG { get; set; }
+    /// <summary> IdUserOwner equals </summary>
+    [JsonProperty("idUserOwner_eq")]
+    public string? IdUserOwner_EQ { get; set; }
+    /// <summary> IdUserOwner contains </summary>
+    [JsonProperty("idUserOwner_con")]
+    public string? IdUserOwner_CON { get; set; }
+    /// <summary> IdUserOwner regex </summary>
+    [JsonProperty("idUserOwner_reg")]
+    public string? IdUserOwner_REG { get; set; }
 
     /// <summary> IdsTags equals </summary>
     [JsonProperty("idsTags_eq")]
@@ -3027,14 +3027,14 @@ public class ContactFilterRequest
     public string? LastName_REG { get; set; }
 
     /// <summary> JobTitle equals </summary>
-    [JsonProperty("jobTittle_eq")]
-    public string? JobTittle_EQ { get; set; }
+    [JsonProperty("jobTitle_eq")]
+    public string? JobTitle_EQ { get; set; }
     /// <summary> JobTitle contains </summary>
-    [JsonProperty("jobTittle_con")]
-    public string? JobTittle_CON { get; set; }
+    [JsonProperty("jobTitle_con")]
+    public string? JobTitle_CON { get; set; }
     /// <summary> JobTitle regex </summary>
-    [JsonProperty("jobTittle_reg")]
-    public string? JobTittle_REG { get; set; }
+    [JsonProperty("jobTitle_reg")]
+    public string? JobTitle_REG { get; set; }
 
     /// <summary> Company equals </summary>
     [JsonProperty("company_eq")]
@@ -5393,6 +5393,16 @@ public class PhoneFilterRequest
     [JsonProperty("macAddress_reg")]
     public string? MacAddress_REG { get; set; }
 
+    /// <summary> Pin equals </summary>
+    [JsonProperty("pin_eq")]
+    public string? Pin_EQ { get; set; }
+    /// <summary> Pin contains </summary>
+    [JsonProperty("pin_con")]
+    public string? Pin_CON { get; set; }
+    /// <summary> Pin regex </summary>
+    [JsonProperty("pin_reg")]
+    public string? Pin_REG { get; set; }
+
     /// <summary> Id equals </summary>
     [JsonProperty("id_eq")]
     public string? Id_EQ { get; set; }
@@ -5746,15 +5756,15 @@ public class SMSFilterRequest
     [JsonProperty("idsTags_reg")]
     public string? IdsTags_REG { get; set; }
 
-    /// <summary> Contact.IdUserUserOwner equals </summary>
-    [JsonProperty("contact_idUserUserOwner_eq")]
-    public string? Contact_IdUserUserOwner_EQ { get; set; }
-    /// <summary> Contact.IdUserUserOwner contains </summary>
-    [JsonProperty("contact_idUserUserOwner_con")]
-    public string? Contact_IdUserUserOwner_CON { get; set; }
-    /// <summary> Contact.IdUserUserOwner regex </summary>
-    [JsonProperty("contact_idUserUserOwner_reg")]
-    public string? Contact_IdUserUserOwner_REG { get; set; }
+    /// <summary> Contact.IdUserOwner equals </summary>
+    [JsonProperty("contact_idUserOwner_eq")]
+    public string? Contact_IdUserOwner_EQ { get; set; }
+    /// <summary> Contact.IdUserOwner contains </summary>
+    [JsonProperty("contact_idUserOwner_con")]
+    public string? Contact_IdUserOwner_CON { get; set; }
+    /// <summary> Contact.IdUserOwner regex </summary>
+    [JsonProperty("contact_idUserOwner_reg")]
+    public string? Contact_IdUserOwner_REG { get; set; }
 
     /// <summary> Contact.IdsTags equals </summary>
     [JsonProperty("contact_idsTags_eq")]
@@ -5930,14 +5940,14 @@ public class SMSFilterRequest
     public string? Contact_LastName_REG { get; set; }
 
     /// <summary> Contact.JobTitle equals </summary>
-    [JsonProperty("contact_jobTittle_eq")]
-    public string? Contact_JobTittle_EQ { get; set; }
+    [JsonProperty("contact_jobTitle_eq")]
+    public string? Contact_JobTitle_EQ { get; set; }
     /// <summary> Contact.JobTitle contains </summary>
-    [JsonProperty("contact_jobTittle_con")]
-    public string? Contact_JobTittle_CON { get; set; }
+    [JsonProperty("contact_jobTitle_con")]
+    public string? Contact_JobTitle_CON { get; set; }
     /// <summary> Contact.JobTitle regex </summary>
-    [JsonProperty("contact_jobTittle_reg")]
-    public string? Contact_JobTittle_REG { get; set; }
+    [JsonProperty("contact_jobTitle_reg")]
+    public string? Contact_JobTitle_REG { get; set; }
 
     /// <summary> Contact.Company equals </summary>
     [JsonProperty("contact_company_eq")]

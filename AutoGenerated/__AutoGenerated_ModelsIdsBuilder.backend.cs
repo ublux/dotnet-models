@@ -191,7 +191,7 @@ namespace Ublux.Communications.Models.Documents {
     }
     public partial class User {
         /// <summary> Id prefix </summary>
-        public const string DocumentPrefix = "Id";
+        public const string DocumentPrefix = "Us";
 
         /// <summary> Custom: prefix and the amail address. Example Id.antonio@ublux.com, or Id.PBX.UST </summary>
         public static BuiltId BuildId(string emailOrCloudServiceName) => new($"{DocumentPrefix}.{emailOrCloudServiceName}");

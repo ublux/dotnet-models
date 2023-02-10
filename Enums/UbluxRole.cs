@@ -255,16 +255,16 @@ public enum UbluxRole
     /// <summary> Has access to the faxoutgoinggroups endpoint with only read/create permissions </summary>
     faxoutgoinggroups_create,
 
-    /// <summary> Has access to the identities endpoint with full permissions </summary>
-    identities = 230,
-    /// <summary> Has access to the identities endpoint with only read permissions </summary>
-    identities_readonly,
-    /// <summary> Has access to the identities endpoint with only read/update permissions </summary>
-    identities_update,
-    /// <summary> Has access to the identities endpoint with only read/delete permissions </summary>
-    identities_delete,
-    /// <summary> Has access to the identities endpoint with only read/create permissions </summary>
-    identities_create,
+    /// <summary> Has access to the users endpoint with full permissions </summary>
+    users = 230,
+    /// <summary> Has access to the users endpoint with only read permissions </summary>
+    users_readonly,
+    /// <summary> Has access to the users endpoint with only read/update permissions </summary>
+    users_update,
+    /// <summary> Has access to the users endpoint with only read/delete permissions </summary>
+    users_delete,
+    /// <summary> Has access to the users endpoint with only read/create permissions </summary>
+    users_create,
 
     /// <summary> Has access to the linekeygroups endpoint with full permissions </summary>
     linekeygroups = 240,
