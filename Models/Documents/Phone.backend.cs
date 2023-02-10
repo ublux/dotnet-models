@@ -49,6 +49,14 @@ public partial class Phone : UbluxDocument, IReferncesAccount
             p[i] = alphanumericCharacters[RandomNumberGenerator.GetInt32(0, alphanumericCharacters.Length)];
         return new string(p);
     }
+
+    /// <summary>
+    ///     Generates a random phone pin
+    /// </summary>
+    public static string GenerateRandomPhonePin()
+    {
+        return Random.Shared.Next(10000, 99999).ToString();
+    }
 }
 
 #endif

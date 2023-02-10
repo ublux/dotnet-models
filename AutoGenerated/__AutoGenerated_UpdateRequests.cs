@@ -478,7 +478,7 @@ public class ContactUpdateRequest // : IUbluxDocumentId
     /// <summary>
     /// Contact job tittle
     /// </summary>
-    public String? JobTittle { get; set; }
+    public String? JobTitle { get; set; }
     /// <summary></summary>
     public String? Company { get; set; }
     /// <summary>
@@ -504,8 +504,8 @@ public class ContactUpdateRequest // : IUbluxDocumentId
             contact.FirstName = this.FirstName;
         if(this.LastName!=null)
             contact.LastName = this.LastName;
-        if(this.JobTittle!=null)
-            contact.JobTittle = this.JobTittle;
+        if(this.JobTitle!=null)
+            contact.JobTitle = this.JobTitle;
         if(this.Company!=null)
             contact.Company = this.Company;
         if(this.Notes!=null)

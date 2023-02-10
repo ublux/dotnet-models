@@ -74,7 +74,7 @@ public partial class Contact : UbluxDocument, IReferencesTags
     ///     Contact job tittle
     /// </summary>
     [AllowUpdate(true)]
-    public string? JobTittle { get; set; }
+    public string? JobTitle { get; set; }
 
     /// <summary>
     /// </summary>
@@ -143,8 +143,8 @@ public partial class Contact : UbluxDocument, IReferencesTags
     //        yield return FirstName;
     //    if (LastName != null)
     //        yield return LastName;
-    //    if (JobTittle != null)
-    //        yield return JobTittle;
+    //    if (JobTitle != null)
+    //        yield return JobTitle;
     //    if (Company != null)
     //        yield return Company;
     //    if (Notes != null)

@@ -3026,13 +3026,13 @@ public class ContactFilterRequest
     [JsonProperty("lastName_reg")]
     public string? LastName_REG { get; set; }
 
-    /// <summary> JobTittle equals </summary>
+    /// <summary> JobTitle equals </summary>
     [JsonProperty("jobTittle_eq")]
     public string? JobTittle_EQ { get; set; }
-    /// <summary> JobTittle contains </summary>
+    /// <summary> JobTitle contains </summary>
     [JsonProperty("jobTittle_con")]
     public string? JobTittle_CON { get; set; }
-    /// <summary> JobTittle regex </summary>
+    /// <summary> JobTitle regex </summary>
     [JsonProperty("jobTittle_reg")]
     public string? JobTittle_REG { get; set; }
 
@@ -5929,13 +5929,13 @@ public class SMSFilterRequest
     [JsonProperty("contact_lastName_reg")]
     public string? Contact_LastName_REG { get; set; }
 
-    /// <summary> Contact.JobTittle equals </summary>
+    /// <summary> Contact.JobTitle equals </summary>
     [JsonProperty("contact_jobTittle_eq")]
     public string? Contact_JobTittle_EQ { get; set; }
-    /// <summary> Contact.JobTittle contains </summary>
+    /// <summary> Contact.JobTitle contains </summary>
     [JsonProperty("contact_jobTittle_con")]
     public string? Contact_JobTittle_CON { get; set; }
-    /// <summary> Contact.JobTittle regex </summary>
+    /// <summary> Contact.JobTitle regex </summary>
     [JsonProperty("contact_jobTittle_reg")]
     public string? Contact_JobTittle_REG { get; set; }
 

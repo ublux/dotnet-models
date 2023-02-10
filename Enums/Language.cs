@@ -16,6 +16,11 @@ public enum Language
     EN_US,
 
     /// <summary>
+    ///     English UK
+    /// </summary>
+    EN_GB,
+
+    /// <summary>
     ///     Spanish Spain
     /// </summary>
     ES_ES,
