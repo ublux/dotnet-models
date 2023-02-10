@@ -9,7 +9,7 @@ namespace Ublux.Communications.Models.Documents;
 public partial class ApiKey : UbluxDocument, IReferncesAccount
 {
     /// <summary>
-    ///     If value is "0" or null it means it can use multiple accounts. For example a PBX identity can be used by multiple accounts.
+    ///     If value is "0" or null it means it can use multiple accounts. For example a PBX user can be used by multiple accounts.
     /// </summary>
     [AllowUpdate(false)]
     [References(typeof(Account))]

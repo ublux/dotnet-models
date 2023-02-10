@@ -11,13 +11,13 @@ public partial class Contact : UbluxDocument, IReferencesTags
 
     /// <summary>
     ///     If null it can be seen by entire account. In other words it is a global contact. 
-    ///     Otherwise it will only be visible to a specific identity (user)
+    ///     Otherwise it will only be visible to a specific user (user)
     ///     
     ///     Who owns the contact. If null it will belong to entire account
     /// </summary>
     [AllowUpdate(false)]
-    [References(typeof(Identity))]
-    public string? IdIdentityUserOwner { get; set; }
+    [References(typeof(User))]
+    public string? IdUserOwner { get; set; }
 
     /// <summary>
     ///     Ids of tags

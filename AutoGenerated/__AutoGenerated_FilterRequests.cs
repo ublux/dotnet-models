@@ -17,15 +17,15 @@ public class ApiKeyFilterRequest
     [JsonProperty("idsTags_reg")]
     public string? IdsTags_REG { get; set; }
 
-    /// <summary> IdIdentity equals </summary>
-    [JsonProperty("idIdentity_eq")]
-    public string? IdIdentity_EQ { get; set; }
-    /// <summary> IdIdentity contains </summary>
-    [JsonProperty("idIdentity_con")]
-    public string? IdIdentity_CON { get; set; }
-    /// <summary> IdIdentity regex </summary>
-    [JsonProperty("idIdentity_reg")]
-    public string? IdIdentity_REG { get; set; }
+    /// <summary> IdUser equals </summary>
+    [JsonProperty("idUser_eq")]
+    public string? IdUser_EQ { get; set; }
+    /// <summary> IdUser contains </summary>
+    [JsonProperty("idUser_con")]
+    public string? IdUser_CON { get; set; }
+    /// <summary> IdUser regex </summary>
+    [JsonProperty("idUser_reg")]
+    public string? IdUser_REG { get; set; }
 
     /// <summary> UbluxRoles contains </summary>
     [JsonProperty("ubluxRoles_con")]
@@ -2525,15 +2525,15 @@ public class CloudServicePbxFilterRequest
     [JsonProperty("httpListenPort_gte")]
     public System.Int32? HttpListenPort_GTE { get; set; }
 
-    /// <summary> IdIdentity equals </summary>
-    [JsonProperty("idIdentity_eq")]
-    public string? IdIdentity_EQ { get; set; }
-    /// <summary> IdIdentity contains </summary>
-    [JsonProperty("idIdentity_con")]
-    public string? IdIdentity_CON { get; set; }
-    /// <summary> IdIdentity regex </summary>
-    [JsonProperty("idIdentity_reg")]
-    public string? IdIdentity_REG { get; set; }
+    /// <summary> IdUser equals </summary>
+    [JsonProperty("idUser_eq")]
+    public string? IdUser_EQ { get; set; }
+    /// <summary> IdUser contains </summary>
+    [JsonProperty("idUser_con")]
+    public string? IdUser_CON { get; set; }
+    /// <summary> IdUser regex </summary>
+    [JsonProperty("idUser_reg")]
+    public string? IdUser_REG { get; set; }
 
     /// <summary> CountryIsoCode equals </summary>
     [JsonProperty("countryIsoCode_eq")]
@@ -2641,15 +2641,15 @@ public class CloudServiceWebAppFilterRequest
     [JsonProperty("idCloudServiceWebAppFailover_reg")]
     public string? IdCloudServiceWebAppFailover_REG { get; set; }
 
-    /// <summary> IdIdentity equals </summary>
-    [JsonProperty("idIdentity_eq")]
-    public string? IdIdentity_EQ { get; set; }
-    /// <summary> IdIdentity contains </summary>
-    [JsonProperty("idIdentity_con")]
-    public string? IdIdentity_CON { get; set; }
-    /// <summary> IdIdentity regex </summary>
-    [JsonProperty("idIdentity_reg")]
-    public string? IdIdentity_REG { get; set; }
+    /// <summary> IdUser equals </summary>
+    [JsonProperty("idUser_eq")]
+    public string? IdUser_EQ { get; set; }
+    /// <summary> IdUser contains </summary>
+    [JsonProperty("idUser_con")]
+    public string? IdUser_CON { get; set; }
+    /// <summary> IdUser regex </summary>
+    [JsonProperty("idUser_reg")]
+    public string? IdUser_REG { get; set; }
 
     /// <summary> CountryIsoCode equals </summary>
     [JsonProperty("countryIsoCode_eq")]
@@ -2747,15 +2747,15 @@ public class CloudServiceWebHostFilterRequest
     [JsonProperty("cloudServiceType_reg")]
     public string? CloudServiceType_REG { get; set; }
 
-    /// <summary> IdIdentity equals </summary>
-    [JsonProperty("idIdentity_eq")]
-    public string? IdIdentity_EQ { get; set; }
-    /// <summary> IdIdentity contains </summary>
-    [JsonProperty("idIdentity_con")]
-    public string? IdIdentity_CON { get; set; }
-    /// <summary> IdIdentity regex </summary>
-    [JsonProperty("idIdentity_reg")]
-    public string? IdIdentity_REG { get; set; }
+    /// <summary> IdUser equals </summary>
+    [JsonProperty("idUser_eq")]
+    public string? IdUser_EQ { get; set; }
+    /// <summary> IdUser contains </summary>
+    [JsonProperty("idUser_con")]
+    public string? IdUser_CON { get; set; }
+    /// <summary> IdUser regex </summary>
+    [JsonProperty("idUser_reg")]
+    public string? IdUser_REG { get; set; }
 
     /// <summary> CountryIsoCode equals </summary>
     [JsonProperty("countryIsoCode_eq")]
@@ -2843,15 +2843,15 @@ public class CloudServiceWebHostFilterRequest
 /// <summary> Enables searching for Contacts </summary>
 public class ContactFilterRequest 
 {
-    /// <summary> IdIdentityUserOwner equals </summary>
-    [JsonProperty("idIdentityUserOwner_eq")]
-    public string? IdIdentityUserOwner_EQ { get; set; }
-    /// <summary> IdIdentityUserOwner contains </summary>
-    [JsonProperty("idIdentityUserOwner_con")]
-    public string? IdIdentityUserOwner_CON { get; set; }
-    /// <summary> IdIdentityUserOwner regex </summary>
-    [JsonProperty("idIdentityUserOwner_reg")]
-    public string? IdIdentityUserOwner_REG { get; set; }
+    /// <summary> IdUserUserOwner equals </summary>
+    [JsonProperty("idUserUserOwner_eq")]
+    public string? IdUserUserOwner_EQ { get; set; }
+    /// <summary> IdUserUserOwner contains </summary>
+    [JsonProperty("idUserUserOwner_con")]
+    public string? IdUserUserOwner_CON { get; set; }
+    /// <summary> IdUserUserOwner regex </summary>
+    [JsonProperty("idUserUserOwner_reg")]
+    public string? IdUserUserOwner_REG { get; set; }
 
     /// <summary> IdsTags equals </summary>
     [JsonProperty("idsTags_eq")]
@@ -4650,8 +4650,8 @@ public class FaxOutgoingGroupFilterRequest
     public DateTime? DateUpdated_GTE { get; set; }
 
 }
-/// <summary> Enables searching for Identitys </summary>
-public class IdentityFilterRequest 
+/// <summary> Enables searching for Users </summary>
+public class UserFilterRequest 
 {
     /// <summary> IdsTags equals </summary>
     [JsonProperty("idsTags_eq")]
@@ -4667,15 +4667,15 @@ public class IdentityFilterRequest
     [JsonProperty("ubluxRoles_con")]
     public UbluxRole? UbluxRoles_CON { get; set; }
 
-    /// <summary> IdentityType equals </summary>
-    [JsonProperty("identityType_eq")]
-    public string? IdentityType_EQ { get; set; }
-    /// <summary> IdentityType contains </summary>
-    [JsonProperty("identityType_con")]
-    public string? IdentityType_CON { get; set; }
-    /// <summary> IdentityType regex </summary>
-    [JsonProperty("identityType_reg")]
-    public string? IdentityType_REG { get; set; }
+    /// <summary> UserType equals </summary>
+    [JsonProperty("userType_eq")]
+    public string? UserType_EQ { get; set; }
+    /// <summary> UserType contains </summary>
+    [JsonProperty("userType_con")]
+    public string? UserType_CON { get; set; }
+    /// <summary> UserType regex </summary>
+    [JsonProperty("userType_reg")]
+    public string? UserType_REG { get; set; }
 
     /// <summary> Username equals </summary>
     [JsonProperty("username_eq")]
@@ -4880,25 +4880,25 @@ public class LineKeyGroupFilterRequest
 /// <summary> Enables searching for LogWebServiceRequests </summary>
 public class LogWebServiceRequestFilterRequest 
 {
-    /// <summary> UbluxSession.IdIdentity equals </summary>
-    [JsonProperty("ubluxSession_idIdentity_eq")]
-    public string? UbluxSession_IdIdentity_EQ { get; set; }
-    /// <summary> UbluxSession.IdIdentity contains </summary>
-    [JsonProperty("ubluxSession_idIdentity_con")]
-    public string? UbluxSession_IdIdentity_CON { get; set; }
-    /// <summary> UbluxSession.IdIdentity regex </summary>
-    [JsonProperty("ubluxSession_idIdentity_reg")]
-    public string? UbluxSession_IdIdentity_REG { get; set; }
+    /// <summary> UbluxSession.IdUser equals </summary>
+    [JsonProperty("ubluxSession_idUser_eq")]
+    public string? UbluxSession_IdUser_EQ { get; set; }
+    /// <summary> UbluxSession.IdUser contains </summary>
+    [JsonProperty("ubluxSession_idUser_con")]
+    public string? UbluxSession_IdUser_CON { get; set; }
+    /// <summary> UbluxSession.IdUser regex </summary>
+    [JsonProperty("ubluxSession_idUser_reg")]
+    public string? UbluxSession_IdUser_REG { get; set; }
 
-    /// <summary> UbluxSession.IdentityType equals </summary>
-    [JsonProperty("ubluxSession_identityType_eq")]
-    public string? UbluxSession_IdentityType_EQ { get; set; }
-    /// <summary> UbluxSession.IdentityType contains </summary>
-    [JsonProperty("ubluxSession_identityType_con")]
-    public string? UbluxSession_IdentityType_CON { get; set; }
-    /// <summary> UbluxSession.IdentityType regex </summary>
-    [JsonProperty("ubluxSession_identityType_reg")]
-    public string? UbluxSession_IdentityType_REG { get; set; }
+    /// <summary> UbluxSession.UserType equals </summary>
+    [JsonProperty("ubluxSession_userType_eq")]
+    public string? UbluxSession_UserType_EQ { get; set; }
+    /// <summary> UbluxSession.UserType contains </summary>
+    [JsonProperty("ubluxSession_userType_con")]
+    public string? UbluxSession_UserType_CON { get; set; }
+    /// <summary> UbluxSession.UserType regex </summary>
+    [JsonProperty("ubluxSession_userType_reg")]
+    public string? UbluxSession_UserType_REG { get; set; }
 
     /// <summary> UbluxSession.IdAccount equals </summary>
     [JsonProperty("ubluxSession_idAccount_eq")]
@@ -5197,15 +5197,15 @@ public class PhoneFilterRequest
     [JsonProperty("idPhoneConfiguration_reg")]
     public string? IdPhoneConfiguration_REG { get; set; }
 
-    /// <summary> IdIdentity equals </summary>
-    [JsonProperty("idIdentity_eq")]
-    public string? IdIdentity_EQ { get; set; }
-    /// <summary> IdIdentity contains </summary>
-    [JsonProperty("idIdentity_con")]
-    public string? IdIdentity_CON { get; set; }
-    /// <summary> IdIdentity regex </summary>
-    [JsonProperty("idIdentity_reg")]
-    public string? IdIdentity_REG { get; set; }
+    /// <summary> IdUser equals </summary>
+    [JsonProperty("idUser_eq")]
+    public string? IdUser_EQ { get; set; }
+    /// <summary> IdUser contains </summary>
+    [JsonProperty("idUser_con")]
+    public string? IdUser_CON { get; set; }
+    /// <summary> IdUser regex </summary>
+    [JsonProperty("idUser_reg")]
+    public string? IdUser_REG { get; set; }
 
     /// <summary> Lines.FriendlyName equals </summary>
     [JsonProperty("lines_friendlyName_eq")]
@@ -5746,15 +5746,15 @@ public class SMSFilterRequest
     [JsonProperty("idsTags_reg")]
     public string? IdsTags_REG { get; set; }
 
-    /// <summary> Contact.IdIdentityUserOwner equals </summary>
-    [JsonProperty("contact_idIdentityUserOwner_eq")]
-    public string? Contact_IdIdentityUserOwner_EQ { get; set; }
-    /// <summary> Contact.IdIdentityUserOwner contains </summary>
-    [JsonProperty("contact_idIdentityUserOwner_con")]
-    public string? Contact_IdIdentityUserOwner_CON { get; set; }
-    /// <summary> Contact.IdIdentityUserOwner regex </summary>
-    [JsonProperty("contact_idIdentityUserOwner_reg")]
-    public string? Contact_IdIdentityUserOwner_REG { get; set; }
+    /// <summary> Contact.IdUserUserOwner equals </summary>
+    [JsonProperty("contact_idUserUserOwner_eq")]
+    public string? Contact_IdUserUserOwner_EQ { get; set; }
+    /// <summary> Contact.IdUserUserOwner contains </summary>
+    [JsonProperty("contact_idUserUserOwner_con")]
+    public string? Contact_IdUserUserOwner_CON { get; set; }
+    /// <summary> Contact.IdUserUserOwner regex </summary>
+    [JsonProperty("contact_idUserUserOwner_reg")]
+    public string? Contact_IdUserUserOwner_REG { get; set; }
 
     /// <summary> Contact.IdsTags equals </summary>
     [JsonProperty("contact_idsTags_eq")]
@@ -6265,15 +6265,15 @@ public class UnauthorizedTokenFilterRequest
     [JsonProperty("jwt_reg")]
     public string? Jwt_REG { get; set; }
 
-    /// <summary> IdIdentity equals </summary>
-    [JsonProperty("idIdentity_eq")]
-    public string? IdIdentity_EQ { get; set; }
-    /// <summary> IdIdentity contains </summary>
-    [JsonProperty("idIdentity_con")]
-    public string? IdIdentity_CON { get; set; }
-    /// <summary> IdIdentity regex </summary>
-    [JsonProperty("idIdentity_reg")]
-    public string? IdIdentity_REG { get; set; }
+    /// <summary> IdUser equals </summary>
+    [JsonProperty("idUser_eq")]
+    public string? IdUser_EQ { get; set; }
+    /// <summary> IdUser contains </summary>
+    [JsonProperty("idUser_con")]
+    public string? IdUser_CON { get; set; }
+    /// <summary> IdUser regex </summary>
+    [JsonProperty("idUser_reg")]
+    public string? IdUser_REG { get; set; }
 
     /// <summary> ExpirationDate equals </summary>
     [JsonProperty("expirationDate_eq")]
@@ -9419,15 +9419,15 @@ public class CallOutgoingFilterRequest
 /// <summary> Enables searching for CloudServices </summary>
 public class CloudServiceFilterRequest 
 {
-    /// <summary> IdIdentity equals </summary>
-    [JsonProperty("idIdentity_eq")]
-    public string? IdIdentity_EQ { get; set; }
-    /// <summary> IdIdentity contains </summary>
-    [JsonProperty("idIdentity_con")]
-    public string? IdIdentity_CON { get; set; }
-    /// <summary> IdIdentity regex </summary>
-    [JsonProperty("idIdentity_reg")]
-    public string? IdIdentity_REG { get; set; }
+    /// <summary> IdUser equals </summary>
+    [JsonProperty("idUser_eq")]
+    public string? IdUser_EQ { get; set; }
+    /// <summary> IdUser contains </summary>
+    [JsonProperty("idUser_con")]
+    public string? IdUser_CON { get; set; }
+    /// <summary> IdUser regex </summary>
+    [JsonProperty("idUser_reg")]
+    public string? IdUser_REG { get; set; }
 
     /// <summary> CloudServiceType equals </summary>
     [JsonProperty("cloudServiceType_eq")]

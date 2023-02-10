@@ -11,9 +11,9 @@
 //    ///     In case there is a session the ublux user that has this ip
 //    /// </summary>
 //    [IgnoreDataMember]
-//    [References(typeof(Identity))]
+//    [References(typeof(User))]
 //    [AllowUpdate(false)]
-//    public string? IdIdentity { get; set; }
+//    public string? IdUser { get; set; }
     
 //    /// <summary>
 //    ///     PBX or device that block this ip. We set this when uploading this ip to WS.

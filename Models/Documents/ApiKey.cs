@@ -17,12 +17,12 @@ public partial class ApiKey : UbluxDocument, IReferencesTags
     public List<string> IdsTags { get; set; } = new();
 
     /// <summary>
-    ///     Identity that created this key. 
+    ///     User that created this key. 
     /// </summary>
     [IsUbluxRequired]
     [AllowUpdate(false)]
-    [References(typeof(Identity))]
-    public required string IdIdentity { get; set; } = string.Empty;
+    [References(typeof(User))]
+    public required string IdUser { get; set; } = string.Empty;
 
     #endregion
 

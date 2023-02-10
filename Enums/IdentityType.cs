@@ -4,7 +4,7 @@
 ///     Use flags in case we may need to specify multiple UserTypes
 /// </summary>
 // [Flags]
-public enum IdentityType
+public enum UserType
 {
     /// <summary>
     ///     Unknown user type
@@ -21,7 +21,7 @@ public enum IdentityType
     /// </summary>
     User = 1,
 
-    // Identity points to phone instead
+    // User points to phone instead
     ///// <summary>
     /////     This user is the one that uses webphone for example
     ///// </summary>

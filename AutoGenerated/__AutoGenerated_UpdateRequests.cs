@@ -995,7 +995,7 @@ public class FaxOutgoingGroupUpdateRequest // : IUbluxDocumentId
 /// </summary><summary>
 /// Someone that has access to consume Ublux Web Api. It can be a PBX, WA, or UbluxUser
 /// </summary>
-public class IdentityUpdateRequest // : IUbluxDocumentId
+public class UserUpdateRequest // : IUbluxDocumentId
 {
     /// <summary>
     /// Ids of tags
@@ -1016,16 +1016,16 @@ public class IdentityUpdateRequest // : IUbluxDocumentId
     /// </summary>
     public Boolean? PreventConnectingIfIpChanges { get; set; }
     /// <summary> Set values on actual document </summary>
-    public void SetValuesOnIdentity(Identity identity)
+    public void SetValuesOnUser(User user)
     {
         if(this.IdsTags!=null)
-            identity.IdsTags = this.IdsTags;
+            user.IdsTags = this.IdsTags;
         if(this.UbluxRoles!=null)
-            identity.UbluxRoles = this.UbluxRoles;
+            user.UbluxRoles = this.UbluxRoles;
         if(this.AllowConnectingFromIpRegex!=null)
-            identity.AllowConnectingFromIpRegex = this.AllowConnectingFromIpRegex;
+            user.AllowConnectingFromIpRegex = this.AllowConnectingFromIpRegex;
         if(this.PreventConnectingIfIpChanges!=null)
-            identity.PreventConnectingIfIpChanges = this.PreventConnectingIfIpChanges.Value;
+            user.PreventConnectingIfIpChanges = this.PreventConnectingIfIpChanges.Value;
     }
 
 }
@@ -1142,13 +1142,13 @@ public class PhoneUpdateRequest // : IUbluxDocumentId
     /// <summary>
     /// Username and password to login to web-app
     /// </summary>
-    public String? IdIdentity { get; set; }
+    public String? IdUser { get; set; }
     /// <summary>
     /// Descriptive name of phone
     /// </summary>
     public String? FriendlyName { get; set; }
     /// <summary>
-    /// Type of phone. If its of type web and identity (username and password) must exist in order for phone to connect.
+    /// Type of phone. If its of type web and user (username and password) must exist in order for phone to connect.
     /// </summary>
     public PhoneType? PhoneType { get; set; }
     /// <summary>
@@ -1164,8 +1164,8 @@ public class PhoneUpdateRequest // : IUbluxDocumentId
             phone.IdCloudServicePbx = this.IdCloudServicePbx;
         if(this.IdPhoneConfiguration!=null)
             phone.IdPhoneConfiguration = this.IdPhoneConfiguration;
-        if(this.IdIdentity!=null)
-            phone.IdIdentity = this.IdIdentity;
+        if(this.IdUser!=null)
+            phone.IdUser = this.IdUser;
         if(this.FriendlyName!=null)
             phone.FriendlyName = this.FriendlyName;
         if(this.PhoneType!=null)

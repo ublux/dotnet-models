@@ -3,7 +3,7 @@
 /// <summary>
 ///     Someone that has access to consume Ublux Web Api. It can be a PBX, WA, or UbluxUser
 /// </summary>
-public partial class Identity : UbluxDocument, IReferencesTags
+public partial class User : UbluxDocument, IReferencesTags
 {
     #region Properties
 
@@ -36,7 +36,7 @@ public partial class Identity : UbluxDocument, IReferencesTags
     /// </summary>
     [AllowUpdate(false)]
     [IsUbluxRequired]
-    public required IdentityType IdentityType { get; set; }
+    public required UserType UserType { get; set; }
 
     /// <summary>
     ///     Username needed to authenticate. This is usually an email address in lowercase

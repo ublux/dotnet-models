@@ -1,22 +1,22 @@
 ﻿namespace Ublux.Communications.Models;
 
 /// <summary> 
-///     Session is a logged in Identity (user). We use JWT Security tokens to store this Session.
+///     Session is a logged in User (user). We use JWT Security tokens to store this Session.
 /// </summary>
 public partial class UbluxSession 
 {
     /// <summary> sub property from JWT. Logged in by what user? This may be a PBX </summary>
-    [References(typeof(Identity))]
+    [References(typeof(User))]
     [IsUbluxRequired]
     [AllowUpdate(false)]
-    public required string IdIdentity { get; set; }
+    public required string IdUser { get; set; }
 
     /// <summary>
-    ///     aud property from JWT. Audience identity type
+    ///     aud property from JWT. Audience user type
     /// </summary>
     [IsUbluxRequired]
     [AllowUpdate(false)]
-    public required IdentityType IdentityType { get; set; }
+    public required UserType UserType { get; set; }
 
     /// <summary>
     ///     acc property from JWT. Id of account. This is not a backend field

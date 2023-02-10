@@ -189,7 +189,7 @@ namespace Ublux.Communications.Models.Documents {
         /// <summary> Build Id </summary>
         public static BuiltId BuildId(RunningApplicationInstance instance) => new($"{DocumentPrefix}.{instance.Id}.{instance.IdGlobalAutoIncrement()}");
     }
-    public partial class Identity {
+    public partial class User {
         /// <summary> Id prefix </summary>
         public const string DocumentPrefix = "Id";
 

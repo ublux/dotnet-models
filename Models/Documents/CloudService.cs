@@ -20,12 +20,12 @@ public abstract partial class CloudService : UbluxDocument
 
     /// <summary>
     ///     TODO. Place index on this field on DB
-    ///     Thanks to the identity it can login
+    ///     Thanks to the user it can login
     /// </summary>
-    [References(typeof(Identity))]
+    [References(typeof(User))]
     [AllowUpdate(false)]
     [IsUbluxRequired]
-    public required string IdIdentity { get; set; } = "";
+    public required string IdUser { get; set; } = "";
 
     /// <summary>
     ///     Type of cloud service

@@ -18,9 +18,9 @@ public partial class UnauthorizedToken : UbluxDocument, IReferencesTags
     ///     Id user
     /// </summary>
     [AllowUpdate(false)]
-    [References(typeof(Identity))]
+    [References(typeof(User))]
     [IsUbluxRequired]
-    public required string IdIdentity { get; set; }
+    public required string IdUser { get; set; }
 
     /// <summary>
     ///     Date when JWT expires

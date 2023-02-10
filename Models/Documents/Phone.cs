@@ -35,8 +35,8 @@ public partial class Phone : UbluxDocument, IReferencesTags
     ///     Username and password to login to web-app
     /// </summary>
     [AllowUpdate(true)]
-    [References(typeof(Identity))]
-    public string? IdIdentity { get; set; }
+    [References(typeof(User))]
+    public string? IdUser { get; set; }
 
     #endregion
 
@@ -62,7 +62,7 @@ public partial class Phone : UbluxDocument, IReferencesTags
     #endregion
 
     /// <summary>
-    ///     Type of phone. If its of type web and identity (username and password) must exist in order for phone to connect.
+    ///     Type of phone. If its of type web and user (username and password) must exist in order for phone to connect.
     /// </summary>
     [IsUbluxRequired]
     [AllowUpdate(true)]

@@ -34,15 +34,15 @@ public partial class LogWebServiceRequest : UbluxDocument
     public uint Charge { get; set; }
 
     ///// <summary>
-    /////     Keep track of the sum of charges of each identity. 
-    /////     For example the identity a.namnum@gmail.com may have a current charge of 1282732
+    /////     Keep track of the sum of charges of each user. 
+    /////     For example the user a.namnum@gmail.com may have a current charge of 1282732
     /////     This is not needed but will save us to have to execute a SUM query to find this charge
     ///// </summary>
-    //// todo add index on mongo db. this key index should be combined with id_Id_Identity!
+    //// todo add index on mongo db. this key index should be combined with id_Id_User!
     //[AllowUpdate(false)]
     //[Obsolete(
     //    "Marked as obsolete only to remember that it should never be set only by service that keeps track of sum")]
-    //public ulong IdentityChargeSum { get; set; }
+    //public ulong UserChargeSum { get; set; }
 
     /// <summary>
     ///     Current penalty of ip address when this request was made

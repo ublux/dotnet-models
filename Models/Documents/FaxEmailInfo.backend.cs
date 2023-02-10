@@ -22,7 +22,7 @@ public partial class FaxEmailInfo : UbluxDocument, IReferncesAccount
     #endregion
 
     /// <summary>
-    ///     It is a 4 digit random code that the user must call in his Ublux phone in order to identify his identity.
+    ///     It is a 4 digit random code that the user must call in his Ublux phone in order to identify his user.
     ///     The code the user dials will start with *9 followed by this 4 digit number
     /// </summary>
     [AllowUpdate(false)]
