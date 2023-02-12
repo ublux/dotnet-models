@@ -98,7 +98,8 @@ public partial class NodeSay : FlowNode, IOneChild
     }
 
     /// <inheritdoc />
-    [AllowUpdate(false)]
+    [AllowUpdate(false)] 
+    [SwaggerSchema(ReadOnly = true)] 
     [References(typeof(FlowNode))]
     public FlowNode? Child { get; set; }
 }
@@ -115,7 +116,8 @@ public partial class NodePlay : FlowNode, IOneChild
     }
 
     /// <inheritdoc />
-    [AllowUpdate(false)]
+    [AllowUpdate(false)] 
+    [SwaggerSchema(ReadOnly = true)] 
     [References(typeof(FlowNode))]
     public FlowNode? Child { get; set; }
 }
@@ -132,7 +134,8 @@ public partial class NodeIfDigits : FlowNode, IMultipleChildren
     }
 
     /// <inheritdoc />
-    [AllowUpdate(false)]
+    [AllowUpdate(false)] 
+    [SwaggerSchema(ReadOnly = true)] 
     [References(typeof(FlowNode))]
     public List<FlowNode> Children { get; set; } = new List<FlowNode>();
 }
@@ -149,7 +152,8 @@ public partial class NodeDigits : FlowNode, IOneChild
     }
 
     /// <inheritdoc />
-    [AllowUpdate(false)]
+    [AllowUpdate(false)] 
+    [SwaggerSchema(ReadOnly = true)] 
     [References(typeof(FlowNode))]
     public FlowNode? Child { get; set; }
 }
@@ -166,7 +170,8 @@ public partial class NodeAnyDigits : FlowNode, IOneChild
     }
 
     /// <inheritdoc />
-    [AllowUpdate(false)]
+    [AllowUpdate(false)] 
+    [SwaggerSchema(ReadOnly = true)] 
     [References(typeof(FlowNode))]
     public FlowNode? Child { get; set; }
 }
@@ -183,7 +188,8 @@ public partial class NodeIfTime : FlowNode, IMultipleChildren
     }
 
     /// <inheritdoc />
-    [AllowUpdate(false)]
+    [AllowUpdate(false)] 
+    [SwaggerSchema(ReadOnly = true)] 
     [References(typeof(FlowNode))]
     public List<FlowNode> Children { get; set; } = new List<FlowNode>();
 }
@@ -200,7 +206,8 @@ public partial class NodeTime : FlowNode, IOneChild
     }
 
     /// <inheritdoc />
-    [AllowUpdate(false)]
+    [AllowUpdate(false)] 
+    [SwaggerSchema(ReadOnly = true)] 
     [References(typeof(FlowNode))]
     public FlowNode? Child { get; set; }
 }
@@ -217,7 +224,8 @@ public partial class NodeAnyTime : FlowNode, IOneChild
     }
 
     /// <inheritdoc />
-    [AllowUpdate(false)]
+    [AllowUpdate(false)] 
+    [SwaggerSchema(ReadOnly = true)] 
     [References(typeof(FlowNode))]
     public FlowNode? Child { get; set; }
 }
@@ -234,7 +242,8 @@ public partial class NodeExtension : FlowNode, IOneChild
     }
 
     /// <inheritdoc />
-    [AllowUpdate(false)]
+    [AllowUpdate(false)] 
+    [SwaggerSchema(ReadOnly = true)] 
     [References(typeof(FlowNode))]
     public FlowNode? Child { get; set; }
 }
@@ -251,7 +260,8 @@ public partial class NodeDynamicExtension : FlowNode, IOneChild
     }
 
     /// <inheritdoc />
-    [AllowUpdate(false)]
+    [AllowUpdate(false)] 
+    [SwaggerSchema(ReadOnly = true)] 
     [References(typeof(FlowNode))]
     public FlowNode? Child { get; set; }
 }
@@ -268,7 +278,8 @@ public partial class NodeIfLineOffline : FlowNode, IMultipleChildren
     }
 
     /// <inheritdoc />
-    [AllowUpdate(false)]
+    [AllowUpdate(false)] 
+    [SwaggerSchema(ReadOnly = true)] 
     [References(typeof(FlowNode))]
     public List<FlowNode> Children { get; set; } = new List<FlowNode>();
 }
@@ -285,7 +296,8 @@ public partial class NodeLineOnline : FlowNode, IOneChild
     }
 
     /// <inheritdoc />
-    [AllowUpdate(false)]
+    [AllowUpdate(false)] 
+    [SwaggerSchema(ReadOnly = true)] 
     [References(typeof(FlowNode))]
     public FlowNode? Child { get; set; }
 }
@@ -302,7 +314,8 @@ public partial class NodeLineOffline : FlowNode, IOneChild
     }
 
     /// <inheritdoc />
-    [AllowUpdate(false)]
+    [AllowUpdate(false)] 
+    [SwaggerSchema(ReadOnly = true)] 
     [References(typeof(FlowNode))]
     public FlowNode? Child { get; set; }
 }
@@ -319,7 +332,8 @@ public partial class NodeCall : FlowNode, IOneChild
     }
 
     /// <inheritdoc />
-    [AllowUpdate(false)]
+    [AllowUpdate(false)] 
+    [SwaggerSchema(ReadOnly = true)] 
     [References(typeof(FlowNode))]
     public FlowNode? Child { get; set; }
 }
@@ -336,7 +350,8 @@ public partial class NodePause : FlowNode, IOneChild
     }
 
     /// <inheritdoc />
-    [AllowUpdate(false)]
+    [AllowUpdate(false)] 
+    [SwaggerSchema(ReadOnly = true)] 
     [References(typeof(FlowNode))]
     public FlowNode? Child { get; set; }
 }
@@ -353,7 +368,8 @@ public partial class NodeGoTo : FlowNode, IOneChild
     }
 
     /// <inheritdoc />
-    [AllowUpdate(false)]
+    [AllowUpdate(false)] 
+    [SwaggerSchema(ReadOnly = true)] 
     [References(typeof(FlowNode))]
     public FlowNode? Child { get; set; }
 }
@@ -370,7 +386,8 @@ public partial class NodeBookmark : FlowNode, IOneChild
     }
 
     /// <inheritdoc />
-    [AllowUpdate(false)]
+    [AllowUpdate(false)] 
+    [SwaggerSchema(ReadOnly = true)] 
     [References(typeof(FlowNode))]
     public FlowNode? Child { get; set; }
 }
@@ -387,7 +404,8 @@ public partial class NodeComment : FlowNode, IOneChild
     }
 
     /// <inheritdoc />
-    [AllowUpdate(false)]
+    [AllowUpdate(false)] 
+    [SwaggerSchema(ReadOnly = true)] 
     [References(typeof(FlowNode))]
     public FlowNode? Child { get; set; }
 }
@@ -404,7 +422,8 @@ public partial class NodeAPI : FlowNode, IOneChild
     }
 
     /// <inheritdoc />
-    [AllowUpdate(false)]
+    [AllowUpdate(false)] 
+    [SwaggerSchema(ReadOnly = true)] 
     [References(typeof(FlowNode))]
     public FlowNode? Child { get; set; }
 }
@@ -421,7 +440,8 @@ public partial class NodeCallBackAPI : FlowNode, IOneChild
     }
 
     /// <inheritdoc />
-    [AllowUpdate(false)]
+    [AllowUpdate(false)] 
+    [SwaggerSchema(ReadOnly = true)] 
     [References(typeof(FlowNode))]
     public FlowNode? Child { get; set; }
 }
@@ -438,7 +458,8 @@ public partial class NodeHangup : FlowNode, IOneChild
     }
 
     /// <inheritdoc />
-    [AllowUpdate(false)]
+    [AllowUpdate(false)] 
+    [SwaggerSchema(ReadOnly = true)] 
     [References(typeof(FlowNode))]
     public FlowNode? Child { get; set; }
 }

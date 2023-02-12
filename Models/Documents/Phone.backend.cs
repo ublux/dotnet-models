@@ -1,5 +1,6 @@
 ﻿#if UBLUX_BACKEND
 
+using Swashbuckle.AspNetCore.Annotations;
 using System.Security.Cryptography;
 using System.Text.RegularExpressions;
 
@@ -16,6 +17,7 @@ public partial class Phone : UbluxDocument, IReferncesAccount
     [References(typeof(Account))]
     [IgnoreDataMember]
     [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     [IsUbluxRequired]
     public required string IdAccount { get; set; } = string.Empty;
 
@@ -24,6 +26,7 @@ public partial class Phone : UbluxDocument, IReferncesAccount
     /// </summary>
     [IsUbluxRequired]
     [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     [IgnoreDataMember]
     public required string Password { get; set; } = string.Empty;
 

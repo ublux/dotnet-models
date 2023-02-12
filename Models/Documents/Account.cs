@@ -1,4 +1,6 @@
-﻿namespace Ublux.Communications.Models.Documents;
+﻿using Swashbuckle.AspNetCore.Annotations;
+
+namespace Ublux.Communications.Models.Documents;
 
 /// <summary>
 ///     Ublux Account
@@ -14,6 +16,7 @@ public partial class Account : UbluxDocument
     ///     Must have at least one
     /// </summary>
     [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     [References(typeof(CloudServicePbx))]
     [IsUbluxRequired]
     public required List<string> IdsCloudServicePbxs { get; set; }
@@ -55,12 +58,14 @@ public partial class Account : UbluxDocument
     ///     If client has granted access to support to make changes to account
     /// </summary>
     [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     public bool HasGrantedSupportAccess { get; set; }
 
     /// <summary>
     ///     Countries on this list will not be marked as international calls
     /// </summary>
     [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     [IsUbluxRequired]
     [BsonRepresentation(BsonType.String)]
     public List<CountryIsoCode> CountriesThatCanCallLocally { get; set; } = new();
@@ -69,6 +74,7 @@ public partial class Account : UbluxDocument
     ///     If CountriesThatCanCallLocally does not contain country then ublux will attempt to find country on this list.
     /// </summary>
     [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     [BsonRepresentation(BsonType.String)]
     public List<CountryIsoCode> CountriesThatCanCallInternationally { get; set; } = new();
 

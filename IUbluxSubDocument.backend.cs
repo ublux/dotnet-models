@@ -1,5 +1,7 @@
 ﻿#if UBLUX_BACKEND
 
+using Swashbuckle.AspNetCore.Annotations;
+
 namespace Ublux.Communications.Models;
 
 /// <summary>
@@ -15,6 +17,7 @@ public abstract partial class UbluxSubDocument
     [JsonIgnore]
     [IgnoreDataMember]
     [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     public BuiltId BuiltId
     {
         set

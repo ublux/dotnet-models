@@ -10,7 +10,8 @@ public partial class LineKeyGroup : UbluxDocument, IReferncesAccount
     /// <inheritdoc/>
     [References(typeof(Account))]
     [IgnoreDataMember]
-    [AllowUpdate(false)]
+    [AllowUpdate(false)] 
+    [SwaggerSchema(ReadOnly = true)] 
     [IsUbluxRequired]
     [HideForCreateRequest]
     public required string IdAccount { get; set; } = String.Empty;

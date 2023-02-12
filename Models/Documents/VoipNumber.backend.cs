@@ -1,5 +1,7 @@
 ﻿#if UBLUX_BACKEND
 
+using Swashbuckle.AspNetCore.Annotations;
+
 namespace Ublux.Communications.Models.Documents;
 
 /// <summary>
@@ -13,6 +15,7 @@ public abstract partial class VoipNumber : UbluxDocument, IReferncesAccount
     [References(typeof(Account))]
     [IgnoreDataMember]
     [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     [IsUbluxRequired]
     public required string IdAccount { get; set; } = String.Empty;
 
@@ -21,6 +24,7 @@ public abstract partial class VoipNumber : UbluxDocument, IReferncesAccount
     /// </summary>
     [References(typeof(CustomerInfo))]
     [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     [IgnoreDataMember]
     public string? IdCustomerInfo { get; set; }
 
@@ -29,7 +33,8 @@ public abstract partial class VoipNumber : UbluxDocument, IReferncesAccount
     /// </summary>
     [References(typeof(TrunkOrigination))]
     [IgnoreDataMember]
-    [AllowUpdate(false)]
+    [AllowUpdate(false)] 
+    [SwaggerSchema(ReadOnly = true)] 
     public string? IdTrunkOrigination { get; set; }
 
     /// <summary>
@@ -38,6 +43,7 @@ public abstract partial class VoipNumber : UbluxDocument, IReferncesAccount
     [References(typeof(VoipProvider))]
     [IgnoreDataMember]
     [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     [IsUbluxRequired]
     public required string IdVoipProvider { get; set; } = string.Empty;
 
@@ -48,6 +54,7 @@ public abstract partial class VoipNumber : UbluxDocument, IReferncesAccount
     /// </summary>
     [IgnoreDataMember]
     [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     [IsUbluxRequired]
     public required string ProviderId { get; set; } = string.Empty;
 }

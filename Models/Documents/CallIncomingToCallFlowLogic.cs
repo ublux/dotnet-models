@@ -10,14 +10,16 @@ public partial class CallIncomingToCallFlowLogic : CallIncoming
     ///     Id of Call Flow (IVR) to execute
     /// </summary>
     [References(typeof(CallFlowLogic))]
-    [AllowUpdate(false)]
+    [AllowUpdate(false)] 
+    [SwaggerSchema(ReadOnly = true)] 
     [IsUbluxRequired]
     public required string IdCallFlowLogic { get; set; }
 
     /// <summary>
     ///     Type of call
     /// </summary>
-    [AllowUpdate(false)]
+    [AllowUpdate(false)] 
+    [SwaggerSchema(ReadOnly = true)] 
     public override CallType CallType
     {
         get => CallType.IncomingToCallFlowLogic;

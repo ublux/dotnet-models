@@ -15,7 +15,8 @@ public class PowerDialerAdvance : PowerDialer
     /// <summary>
     ///     Type of power dialer
     /// </summary>
-    [AllowUpdate(false)]
+    [AllowUpdate(false)] 
+    [SwaggerSchema(ReadOnly = true)] 
     [IsUbluxRequired]
     public override PowerDialerType PowerDialerType
     {

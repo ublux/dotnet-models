@@ -8,7 +8,8 @@ namespace Ublux.Communications.Models.Documents;
 public partial class FaxIncoming : UbluxDocument, IReferncesAccount
 {
     /// <inheritdoc />
-    [AllowUpdate(false)]
+    [AllowUpdate(false)] 
+    [SwaggerSchema(ReadOnly = true)] 
     [IgnoreDataMember]
     [References(typeof(Account))]
     [IsUbluxRequired]

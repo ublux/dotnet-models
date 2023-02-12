@@ -1,5 +1,7 @@
 ﻿#if UBLUX_BACKEND
 
+using Swashbuckle.AspNetCore.Annotations;
+
 namespace Ublux.Communications.Models.Documents;
 
 /// <summary>
@@ -10,12 +12,14 @@ public abstract partial class Call : UbluxDocument, IReferncesAccount
     /// <inheritdoc/>
     [References(typeof(Account))]
     [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     [IgnoreDataMember]
     [IsUbluxRequired]
     public required string IdAccount { get; set; } = String.Empty;
 
     /// <inheritdoc />
     [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     [IgnoreDataMember]
     public required string ChannelFrom { get; set; } = string.Empty;
 
@@ -23,6 +27,7 @@ public abstract partial class Call : UbluxDocument, IReferncesAccount
     ///     List because a call can call multiple persons. 
     /// </summary>
     [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     [IgnoreDataMember]
     public List<string> ChannelsTo { get; set; } = new();
 
@@ -31,6 +36,7 @@ public abstract partial class Call : UbluxDocument, IReferncesAccount
     /// </summary>
     [IgnoreDataMember]
     [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     public string? ChannelToAnswer { get; set; }
 
     /// <summary>

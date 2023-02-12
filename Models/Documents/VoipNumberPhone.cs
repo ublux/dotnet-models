@@ -1,4 +1,6 @@
-﻿namespace Ublux.Communications.Models.Documents;
+﻿using Swashbuckle.AspNetCore.Annotations;
+
+namespace Ublux.Communications.Models.Documents;
 
 /// <summary>
 ///     Incoming phone number configured to receive phone calls
@@ -29,6 +31,7 @@ public partial class VoipNumberPhone : VoipNumber
     ///     Type of VOIP number
     /// </summary>
     [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     [HideForCreateRequest]
     public override VoipNumberType VoipNumberType
     {

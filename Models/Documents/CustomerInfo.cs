@@ -30,7 +30,8 @@ public partial class CustomerInfo : UbluxDocument, IReferencesTags
     /// <summary>
     ///     If its a VoipNumber from provider AirNetworks then this information is required
     /// </summary>
-    [AllowUpdate(false)]
+    [AllowUpdate(false)] 
+    [SwaggerSchema(ReadOnly = true)] 
     public AirNetworksCustomerInfo? AirNetworksCustomerInfo { get; set; }
 
     #endregion

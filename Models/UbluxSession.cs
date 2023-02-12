@@ -8,14 +8,16 @@ public partial class UbluxSession
     /// <summary> sub property from JWT. Logged in by what user? This may be a PBX </summary>
     [References(typeof(User))]
     [IsUbluxRequired]
-    [AllowUpdate(false)]
+    [AllowUpdate(false)] 
+    [SwaggerSchema(ReadOnly = true)] 
     public required string IdUser { get; set; }
 
     /// <summary>
     ///     aud property from JWT. Audience user type
     /// </summary>
     [IsUbluxRequired]
-    [AllowUpdate(false)]
+    [AllowUpdate(false)] 
+    [SwaggerSchema(ReadOnly = true)] 
     public required UserType UserType { get; set; }
 
     /// <summary>
@@ -23,7 +25,8 @@ public partial class UbluxSession
     /// </summary>
     [References(typeof(Account))]
     [IsUbluxRequired]
-    [AllowUpdate(false)]
+    [AllowUpdate(false)] 
+    [SwaggerSchema(ReadOnly = true)] 
     public required string IdAccount { get; set; } = String.Empty;
 
     ///// <summary>
@@ -37,13 +40,15 @@ public partial class UbluxSession
     ///     role properties from JWT. Permissions
     /// </summary>
     [IsUbluxRequired]
-    [AllowUpdate(false)]
+    [AllowUpdate(false)] 
+    [SwaggerSchema(ReadOnly = true)] 
     [BsonRepresentation(BsonType.String)]
     public required List<UbluxRole> UbluxRoles { get; set; }
 
     /// <summary> exp property from JWT. Date when session expires </summary>
     [IsUbluxRequired]
-    [AllowUpdate(false)]
+    [AllowUpdate(false)] 
+    [SwaggerSchema(ReadOnly = true)] 
     public required DateTime ExpirationDate { get; set; }
 }
 

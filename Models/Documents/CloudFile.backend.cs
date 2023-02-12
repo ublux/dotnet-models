@@ -27,13 +27,15 @@ public partial class CloudFile : UbluxDocument
     /// <summary>
     ///     Id of document containing this Stored File. Example Audio1234
     /// </summary>
-    [AllowUpdate(false)]
+    [AllowUpdate(false)] 
+    [SwaggerSchema(ReadOnly = true)] 
     public required string IdDocument { get; set; }
 
     /// <summary>
     ///     Stored file such as an Audio MP3 file
     /// </summary>    
-    [AllowUpdate(false)]
+    [AllowUpdate(false)] 
+    [SwaggerSchema(ReadOnly = true)] 
     public required StoredFile StoredFile { get; set; }
 
     // Remove because PBX cannot set this
@@ -45,7 +47,8 @@ public partial class CloudFile : UbluxDocument
     /// <summary>
     ///     Is this Cloud file backed up
     /// </summary>
-    [AllowUpdate(false)]
+    [AllowUpdate(false)] 
+    [SwaggerSchema(ReadOnly = true)] 
     public required bool IsBackup { get; set; }
 }
 

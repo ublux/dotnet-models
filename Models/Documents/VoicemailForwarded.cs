@@ -1,4 +1,6 @@
-﻿namespace Ublux.Communications.Models.Documents;
+﻿using Swashbuckle.AspNetCore.Annotations;
+
+namespace Ublux.Communications.Models.Documents;
 
 /// <summary>
 ///     Voicemail that was forwarded from one extension to another
@@ -9,6 +11,7 @@ public partial class VoicemailForwarded : Voicemail
     ///     Type of voicemail
     /// </summary>
     [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     [IsUbluxRequired]
     [HideForCreateRequest]
     public override VoicemailType VoicemailType => VoicemailType.Forwarded;
@@ -17,6 +20,7 @@ public partial class VoicemailForwarded : Voicemail
     ///     Line that forwarded this voicemail in case voicemail was forwarded
     /// </summary>
     [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     [References(typeof(Line))]
     [IsUbluxRequired]
     public required Line LineThatForwardedVoicemail { get; set; }
@@ -26,6 +30,7 @@ public partial class VoicemailForwarded : Voicemail
     ///     To what extension was this voicemail forwarded to?
     /// </summary>
     [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     [References(typeof(Extension))]
     //[IsUbluxRequired]
     public Extension? ExtensionForwarded { get; set; }

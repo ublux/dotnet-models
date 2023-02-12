@@ -1,4 +1,6 @@
-﻿namespace Ublux.Communications.Models.Documents; 
+﻿using Swashbuckle.AspNetCore.Annotations;
+
+namespace Ublux.Communications.Models.Documents; 
 
 /// <summary>
 ///     SMS message
@@ -13,6 +15,7 @@ public partial class SMS : UbluxDocument, IReferencesTags
     ///     VOIP number that sent/received SMS message
     /// </summary>
     [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     [References(typeof(VoipNumber))]
     [IsUbluxRequired]
     public required string IdVoipNumber { get; set; }
@@ -31,7 +34,8 @@ public partial class SMS : UbluxDocument, IReferencesTags
     /// <summary>
     ///     Contact
     /// </summary>
-    [AllowUpdate(false)]
+    [AllowUpdate(false)] 
+    [SwaggerSchema(ReadOnly = true)] 
     public Contact? Contact { get; set; }
 
     #endregion
@@ -39,13 +43,15 @@ public partial class SMS : UbluxDocument, IReferencesTags
     /// <summary>
     ///     True if SMS was received false otherwise
     /// </summary>
-    [AllowUpdate(false)]
+    [AllowUpdate(false)] 
+    [SwaggerSchema(ReadOnly = true)] 
     public bool IsIncoming { get; set; }
 
     /// <summary>
     ///     SMS message
     /// </summary>
     [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     [IsUbluxRequired]
     public required string Body { get; set; }
 
@@ -56,13 +62,15 @@ public partial class SMS : UbluxDocument, IReferencesTags
     ///     If a SMS body is to large, it will be sent in multiple chunks/segments
     /// </summary>
     [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     [IsUbluxRequired]
     public required int NumSegments { get; set; }
 
     /// <summary>
     ///     Status of SMS
     /// </summary>
-    [AllowUpdate(false)]
+    [AllowUpdate(false)] 
+    [SwaggerSchema(ReadOnly = true)] 
     public string? Status { get; set; }
 
     //    // [AllowUpdate(false)]
@@ -84,6 +92,7 @@ public partial class SMS : UbluxDocument, IReferencesTags
     ///     Number that sent SMS
     /// </summary>
     [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     [IsUbluxRequired]
     public required string From { get; set; }
 
@@ -91,6 +100,7 @@ public partial class SMS : UbluxDocument, IReferencesTags
     ///     Number to whom SMS was sent to 
     /// </summary>
     [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     [IsUbluxRequired]
     public required string To { get; set; }
 

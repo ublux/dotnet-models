@@ -1,4 +1,6 @@
-﻿namespace Ublux.Communications.Models;
+﻿using Swashbuckle.AspNetCore.Annotations;
+
+namespace Ublux.Communications.Models;
 
 /// <summary>
 ///     All collections on database must contain this attribute.
@@ -13,14 +15,16 @@ public partial interface IUbluxDocument : IUbluxDocumentId
     ///     Creation date
     /// </summary>
     [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     [JsonProperty(Order = 1000)]
-    [IsUbluxRequired]
+    [IsUbluxRequired]    
     DateTime DateCreated { get; set; }
 
     /// <summary>
     ///     If collection is immutable this is not needed but we have it regardless
     /// </summary>
     [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     [JsonProperty(Order = 1002)]
     DateTime DateUpdated { get; set; }
 }
@@ -38,9 +42,10 @@ public abstract partial class UbluxDocument : IUbluxDocument, IUbluxDocumentId
     [BsonId]
     [BsonElement(Order = -1000000)]
     [JsonProperty(Order = -1000)]
-    [IsUbluxRequired]
-    [HideForCreateRequest]
-    [AllowUpdate(true)] // allow update will include property.
+    // [IsUbluxRequired]
+    // [HideForCreateRequest]
+    [SwaggerSchema(ReadOnly = true)]
+    [AllowUpdate(false)] // allow update will include property.
                         // This property is needed in order to know what document will be updated
     public string Id
     {
@@ -58,6 +63,7 @@ public abstract partial class UbluxDocument : IUbluxDocument, IUbluxDocumentId
     /// </summary>
     [JsonProperty(Order = 1000)]
     [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     [HideForCreateRequest]
     public required DateTime DateCreated
     {
@@ -80,8 +86,9 @@ public abstract partial class UbluxDocument : IUbluxDocument, IUbluxDocumentId
     /// </summary>
     [JsonProperty(Order = 1002)]
     [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     [HideForCreateRequest]
-    // [Obsolete("Just a reminder that when setting the DateCreated it will also set this same value")]
+    // [Obsolete("Just a reminder that when setting the DateCreated it will also set this same value")]    
     public DateTime DateUpdated
     {
         get

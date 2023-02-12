@@ -1,4 +1,6 @@
-﻿namespace Ublux.Communications.Models;
+﻿using Swashbuckle.AspNetCore.Annotations;
+
+namespace Ublux.Communications.Models;
 
 /// <summary>
 ///     Converted audio to text
@@ -9,6 +11,7 @@ public partial class AiTranscription
     ///     Transcription text
     /// </summary>
     [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     [IsUbluxRequired]
     public required string Text { get; set; } = "";
 

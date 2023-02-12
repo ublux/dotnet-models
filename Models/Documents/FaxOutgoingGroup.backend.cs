@@ -10,7 +10,8 @@ public partial class FaxOutgoingGroup : UbluxDocument, IReferncesAccount
     /// <inheritdoc/>
     [References(typeof(Account))]
     [IgnoreDataMember]
-    [AllowUpdate(false)]
+    [AllowUpdate(false)] 
+    [SwaggerSchema(ReadOnly = true)] 
     [IsUbluxRequired]
     public required string IdAccount { get; set; } = String.Empty;
 }

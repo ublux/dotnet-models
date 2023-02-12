@@ -1,5 +1,7 @@
 ﻿#if UBLUX_BACKEND
 
+using Swashbuckle.AspNetCore.Annotations;
+
 namespace Ublux.Communications.Models;
 
 /// <summary>
@@ -12,6 +14,8 @@ public interface IReferncesAccount
     /// </summary>
     [References(typeof(Account))]
     [HideForCreateRequest]
+    [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     public string IdAccount { get; set; }
 }
 

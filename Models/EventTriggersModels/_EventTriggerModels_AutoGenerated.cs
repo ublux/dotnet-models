@@ -8,6 +8,7 @@ public partial class EventOutgoingCallTerminated : EventTriggerModel
 {
     /// <inheritdoc />
     [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     public override EventTrigger EventTrigger
     {
         get => EventTrigger.EventOutgoingCallTerminated;
@@ -21,6 +22,7 @@ public partial class EventIncomingCallTerminated : EventTriggerModel
 {
     /// <inheritdoc />
     [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     public override EventTrigger EventTrigger
     {
         get => EventTrigger.EventIncomingCallTerminated;
@@ -34,6 +36,7 @@ public partial class EventOutgoingCallTerminatedWithRecording : EventTriggerMode
 {
     /// <inheritdoc />
     [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     public override EventTrigger EventTrigger
     {
         get => EventTrigger.EventOutgoingCallTerminatedWithRecording;
@@ -47,6 +50,7 @@ public partial class EventIncomingCallTerminatedWithRecording : EventTriggerMode
 {
     /// <inheritdoc />
     [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     public override EventTrigger EventTrigger
     {
         get => EventTrigger.EventIncomingCallTerminatedWithRecording;
@@ -60,6 +64,7 @@ public partial class EventCallPlacedOnHoldFor1Min : EventTriggerModel
 {
     /// <inheritdoc />
     [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     public override EventTrigger EventTrigger
     {
         get => EventTrigger.EventCallPlacedOnHoldFor1Min;
@@ -73,6 +78,7 @@ public partial class EventCallPlacedOnHoldFor2Min : EventTriggerModel
 {
     /// <inheritdoc />
     [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     public override EventTrigger EventTrigger
     {
         get => EventTrigger.EventCallPlacedOnHoldFor2Min;
@@ -86,6 +92,7 @@ public partial class EventCallPlacedOnHoldFor4Min : EventTriggerModel
 {
     /// <inheritdoc />
     [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     public override EventTrigger EventTrigger
     {
         get => EventTrigger.EventCallPlacedOnHoldFor4Min;
@@ -99,6 +106,7 @@ public partial class EventCallPlacedOnHoldFor8Min : EventTriggerModel
 {
     /// <inheritdoc />
     [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     public override EventTrigger EventTrigger
     {
         get => EventTrigger.EventCallPlacedOnHoldFor8Min;
@@ -112,6 +120,7 @@ public partial class EventLineDisconnected : EventTriggerModel
 {
     /// <inheritdoc />
     [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     public override EventTrigger EventTrigger
     {
         get => EventTrigger.EventLineDisconnected;
@@ -125,6 +134,7 @@ public partial class EventLineConnected : EventTriggerModel
 {
     /// <inheritdoc />
     [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     public override EventTrigger EventTrigger
     {
         get => EventTrigger.EventLineConnected;
@@ -138,6 +148,7 @@ public partial class EventExtensionNotAnswered : EventTriggerModel
 {
     /// <inheritdoc />
     [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     public override EventTrigger EventTrigger
     {
         get => EventTrigger.EventExtensionNotAnswered;
@@ -151,6 +162,7 @@ public partial class EventExtensionTookLongerThan1MinToBeAnswered : EventTrigger
 {
     /// <inheritdoc />
     [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     public override EventTrigger EventTrigger
     {
         get => EventTrigger.EventExtensionTookLongerThan1MinToBeAnswered;
@@ -164,6 +176,7 @@ public partial class EventExtensionTookLongerThan2MinToBeAnswered : EventTrigger
 {
     /// <inheritdoc />
     [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     public override EventTrigger EventTrigger
     {
         get => EventTrigger.EventExtensionTookLongerThan2MinToBeAnswered;
@@ -177,6 +190,7 @@ public partial class EventExtensionTookLongerThan4MinToBeAnswered : EventTrigger
 {
     /// <inheritdoc />
     [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     public override EventTrigger EventTrigger
     {
         get => EventTrigger.EventExtensionTookLongerThan4MinToBeAnswered;
@@ -190,6 +204,7 @@ public partial class EventExtensionTookLongerThan8MinToBeAnswered : EventTrigger
 {
     /// <inheritdoc />
     [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     public override EventTrigger EventTrigger
     {
         get => EventTrigger.EventExtensionTookLongerThan8MinToBeAnswered;

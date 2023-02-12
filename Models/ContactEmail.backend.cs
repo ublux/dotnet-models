@@ -11,7 +11,8 @@ public partial class ContactEmail
     ///     Thanks to this index we can search fast on database. This index consists of: Account followed by the email address
     ///     TODO: make this an index on database. Do not make it unique only and index because we can have two contacts with the same email address
     /// </summary>
-    [AllowUpdate(false)]
+    [AllowUpdate(false)] 
+    [SwaggerSchema(ReadOnly = true)] 
     [Obsolete("Set via SetSearchIndex method")]
     public string SearchIndex
     {

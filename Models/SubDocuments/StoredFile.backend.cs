@@ -1,5 +1,7 @@
 ﻿#if UBLUX_BACKEND
 
+using Swashbuckle.AspNetCore.Annotations;
+
 namespace Ublux.Communications.Models.SubDocuments;
 
 // Previously called SaveOnAwsBucket
@@ -30,6 +32,7 @@ public partial class StoredFile : UbluxSubDocument, IReferncesAccount
     [References(typeof(Account))]
     [IgnoreDataMember]
     [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     [IsUbluxRequired]
     public required string IdAccount { get; set; } = String.Empty;
 
@@ -38,6 +41,7 @@ public partial class StoredFile : UbluxSubDocument, IReferncesAccount
     /// </summary>
     [IgnoreDataMember]
     [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     [IsUbluxRequired]
     public required StorageFolderName FolderName { get; set; }
 
@@ -46,6 +50,7 @@ public partial class StoredFile : UbluxSubDocument, IReferncesAccount
     ///// </summary>
     //[IgnoreDataMember]
     //[AllowUpdate(false)]
+    //[SwaggerSchema(ReadOnly = true)]
     //[IsUbluxRequired]
     //public required string FileName { get; set; }
 
@@ -53,6 +58,7 @@ public partial class StoredFile : UbluxSubDocument, IReferncesAccount
     ///     Server that stored this file so that other servers can download it. Example W for work. Thus it can be downloaded from w.ublux.com    
     /// </summary>
     [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     public required string InstanceId { get; set; } = string.Empty;
 
 

@@ -1,4 +1,6 @@
-﻿namespace Ublux.Communications.Models;
+﻿using Swashbuckle.AspNetCore.Annotations;
+
+namespace Ublux.Communications.Models;
 
 /// <summary>
 ///     MongoDB supports subdocuments
@@ -12,8 +14,9 @@ public abstract partial class UbluxSubDocument
     ///     Id of entity
     /// </summary>
     [AllowUpdate(false)] // subdocuments should be updated separately
-    [IsUbluxRequired]
-    [HideForCreateRequest]
+    [SwaggerSchema(ReadOnly = true)]
+    //[IsUbluxRequired]
+    //[HideForCreateRequest]
     public string Id
     {
         get => id;

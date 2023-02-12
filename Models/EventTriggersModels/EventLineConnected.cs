@@ -10,31 +10,36 @@ public partial class EventLineConnected
     /// <summary>
     ///     Line friendly name
     /// </summary>
-    [AllowUpdate(false)]
+    [AllowUpdate(false)] 
+    [SwaggerSchema(ReadOnly = true)] 
     public string? FriendlyName { get; set; }
 
     /// <summary>
     ///     Id of phone
     /// </summary>
-    [AllowUpdate(false)]
+    [AllowUpdate(false)] 
+    [SwaggerSchema(ReadOnly = true)] 
     public string? IdPhone { get; set; }
 
     /// <summary>
     ///     Name of phone
     /// </summary>
-    [AllowUpdate(false)]
+    [AllowUpdate(false)] 
+    [SwaggerSchema(ReadOnly = true)] 
     public string? PhoneName { get; set; }
 
     /// <summary>
     ///     To what extension this line belongs
     /// </summary>
-    [AllowUpdate(false)]
+    [AllowUpdate(false)] 
+    [SwaggerSchema(ReadOnly = true)] 
     public string? Extension { get; set; }
 
     /// <summary>
     ///     Its last connection status state
     /// </summary>
-    [AllowUpdate(false)]
+    [AllowUpdate(false)] 
+    [SwaggerSchema(ReadOnly = true)] 
     public LineConnectionStatus? ConnectionStatus { get; set; }
 
     /// <summary>

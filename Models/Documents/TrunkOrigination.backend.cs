@@ -1,5 +1,7 @@
 ﻿#if UBLUX_BACKEND
 
+using Swashbuckle.AspNetCore.Annotations;
+
 namespace Ublux.Communications.Models.Documents;
 
 /// <summary>
@@ -24,6 +26,7 @@ public abstract class TrunkOrigination : UbluxDocument
     [IgnoreDataMember]
     [References(typeof(VoipProvider))]
     [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     [IsUbluxRequired]
     public required string IdVoipProvider { get; set; }
 
@@ -33,6 +36,7 @@ public abstract class TrunkOrigination : UbluxDocument
     /// </summary>
     [IgnoreDataMember]
     [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     [References(typeof(CloudServicePbx))]
     [IsUbluxRequired]
     public required string IdCloudServicePbx { get; set; }
@@ -43,6 +47,7 @@ public abstract class TrunkOrigination : UbluxDocument
     /// </summary>
     [IgnoreDataMember]
     [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     [References(typeof(CloudServicePbx))]
     [IsUbluxRequired]
     public required string IdCloudServicePbxFailover { get; set; }
@@ -65,6 +70,7 @@ public abstract class TrunkOrigination : UbluxDocument
     ///     Type of trunk origination
     /// </summary>
     [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     [HideForCreateRequest]
     [IsUbluxRequired]
     public abstract TrunkOriginationType TrunkOriginationType
@@ -87,6 +93,7 @@ public abstract class TrunkOrigination : UbluxDocument
     /// </summary>
     [IgnoreDataMember]
     [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     [IsUbluxRequired]
     public required string ProviderId { get; set; }
 
@@ -100,6 +107,7 @@ public abstract class TrunkOrigination : UbluxDocument
     /// </summary>
     [IgnoreDataMember]
     [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     [IsUbluxRequired]
     public required string FriendlyName { get; set; }
 

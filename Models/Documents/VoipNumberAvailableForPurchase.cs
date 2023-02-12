@@ -1,4 +1,6 @@
-﻿namespace Ublux.Communications.Models.Documents;
+﻿using Swashbuckle.AspNetCore.Annotations;
+
+namespace Ublux.Communications.Models.Documents;
 
 /// <summary>
 ///     Incoming phone number available for purchase
@@ -11,31 +13,36 @@ public partial class VoipNumberAvailableForPurchase : VoipNumber
     ///     key = id of logic OR id of extension.  
     ///     value = day of week when it executes
     /// </summary>    
-    [AllowUpdate(false)]
+    [AllowUpdate(false)] 
+    [SwaggerSchema(ReadOnly = true)] 
     public override List<RulePhone> RulesPhone { get; set; } = new();
 
     /// <summary>
     ///     Incoming SMS will be sent to these email addresses
     /// </summary>
-    [AllowUpdate(false)]
+    [AllowUpdate(false)] 
+    [SwaggerSchema(ReadOnly = true)] 
     public override List<RuleSms> RulesSms { get; set; } = new();
 
     /// <summary>
     ///     Incoming Faxes will be sent to this email addresses
     /// </summary>
-    [AllowUpdate(false)]
+    [AllowUpdate(false)] 
+    [SwaggerSchema(ReadOnly = true)] 
     public override List<RuleFax> RulesFax { get; set; } = new();
 
     /// <summary>
     ///     Requires customer info in order to be purchased
     /// </summary>
-    [AllowUpdate(false)]
+    [AllowUpdate(false)] 
+    [SwaggerSchema(ReadOnly = true)] 
     public bool RequiresCustomerInfo { get; set; }
 
     /// <summary>
     ///     Phone numbers from AirNetwoks for example must be configured on their portal for them to work
     /// </summary>
-    [AllowUpdate(false)]
+    [AllowUpdate(false)] 
+    [SwaggerSchema(ReadOnly = true)] 
     public bool PendingToBeConfigured { get; set; }
 
     #endregion
@@ -44,6 +51,7 @@ public partial class VoipNumberAvailableForPurchase : VoipNumber
     ///     Type of VOIP number
     /// </summary>
     [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     [HideForCreateRequest]
     public override VoipNumberType VoipNumberType
     {

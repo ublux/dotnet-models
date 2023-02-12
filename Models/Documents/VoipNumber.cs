@@ -1,4 +1,6 @@
-﻿namespace Ublux.Communications.Models.Documents;
+﻿using Swashbuckle.AspNetCore.Annotations;
+
+namespace Ublux.Communications.Models.Documents;
 
 /// <summary>
 ///     Incoming phone number (VoipNumber)
@@ -40,19 +42,19 @@ public abstract partial class VoipNumber : UbluxDocument, IReferencesTags
     ///     key = id of logic OR id of extension.  
     ///     value = day of week when it executes
     /// </summary>   
-    [AllowUpdate(false)]
+    [AllowUpdate(true)] 
     public abstract List<RulePhone> RulesPhone { get; set; }
 
     /// <summary>
     ///     Incoming SMS will be sent to these email addresses
     /// </summary>
-    [AllowUpdate(false)]
+    [AllowUpdate(true)]
     public abstract List<RuleSms> RulesSms { get; set; }
 
     /// <summary>
     ///     Incoming Faxes will be sent to this email addresses
     /// </summary>
-    [AllowUpdate(false)]
+    [AllowUpdate(true)] 
     public abstract List<RuleFax> RulesFax { get; set; }
 
     #endregion
@@ -61,6 +63,7 @@ public abstract partial class VoipNumber : UbluxDocument, IReferencesTags
     ///     Type of VOIP number
     /// </summary>
     [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     [HideForCreateRequest]
     public abstract VoipNumberType VoipNumberType
     {
@@ -93,6 +96,7 @@ public abstract partial class VoipNumber : UbluxDocument, IReferencesTags
     ///     Phone number
     /// </summary>
     [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     [IsUbluxRequired]
     public required string Number { get; set; }
 
@@ -120,6 +124,7 @@ public abstract partial class VoipNumber : UbluxDocument, IReferencesTags
     ///     City of incoming phone number
     /// </summary>    
     [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     [IsUbluxRequired]
     public required string City { get; set; }
 
@@ -127,6 +132,7 @@ public abstract partial class VoipNumber : UbluxDocument, IReferencesTags
     ///     State of incoming phone number
     /// </summary>
     [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     [IsUbluxRequired]
     public required string State { get; set; }
 
@@ -134,6 +140,7 @@ public abstract partial class VoipNumber : UbluxDocument, IReferencesTags
     ///     Country of incoming phone number
     /// </summary>
     [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     [IsUbluxRequired]
     public required CountryIsoCode CountryIsoCode { get; set; }
 
@@ -141,6 +148,7 @@ public abstract partial class VoipNumber : UbluxDocument, IReferencesTags
     ///     Does this phone number have SMS capabilities?
     /// </summary>
     [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     [IsUbluxRequired]
     public required bool IsSmsEnabled { get; set; }
 
@@ -148,6 +156,7 @@ public abstract partial class VoipNumber : UbluxDocument, IReferencesTags
     ///     Does this phone number have calling capabilities?
     /// </summary>
     [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     [IsUbluxRequired]
     public required bool IsVoiceEnabled { get; set; }
 
@@ -155,6 +164,7 @@ public abstract partial class VoipNumber : UbluxDocument, IReferencesTags
     ///     Is this phone number toll free?
     /// </summary>
     [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     [IsUbluxRequired]
     public required bool IsTollFree { get; set; }
 
@@ -162,6 +172,7 @@ public abstract partial class VoipNumber : UbluxDocument, IReferencesTags
     ///     Does this number support WhatsApp?
     /// </summary>
     [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     [IsUbluxRequired]
     public required bool IsWhatsappEnabled { get; set; }
 

@@ -1,5 +1,7 @@
 ﻿#if UBLUX_BACKEND
 
+using Swashbuckle.AspNetCore.Annotations;
+
 namespace Ublux.Communications.Models.Documents; 
 
 /// <summary>
@@ -16,6 +18,7 @@ public partial class AgreementToTermsAndConditions : UbluxDocument
     /// </summary>
     [IgnoreDataMember]
     [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     [IsUbluxRequired]
     public required UbluxSession UbluxSession { get; set; }
 
@@ -26,6 +29,7 @@ public partial class AgreementToTermsAndConditions : UbluxDocument
     /// </summary>
     [IgnoreDataMember]
     [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     [IsUbluxRequired]
     public required string Ip { get; set; }
 
@@ -34,6 +38,7 @@ public partial class AgreementToTermsAndConditions : UbluxDocument
     /// </summary>
     [IgnoreDataMember]
     [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     [IsUbluxRequired]
     public required string HttpRequestHeaders { get; set; }
 
@@ -42,6 +47,7 @@ public partial class AgreementToTermsAndConditions : UbluxDocument
     /// </summary>
     [IgnoreDataMember]
     [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     [IsUbluxRequired]
     public required TermsAndConditionsCategory TermsAndConditionsCategory { get; set; }
 
@@ -50,6 +56,7 @@ public partial class AgreementToTermsAndConditions : UbluxDocument
     /// </summary>
     [IgnoreDataMember]
     [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     public string? Description { get; set; }
 
     #endregion

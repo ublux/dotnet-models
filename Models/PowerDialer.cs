@@ -20,7 +20,8 @@ public abstract class PowerDialer
     /// <summary>
     ///     Type of power dialer
     /// </summary>
-    [AllowUpdate(false)]
+    [AllowUpdate(false)] 
+    [SwaggerSchema(ReadOnly = true)] 
     [IsUbluxRequired]
     public abstract PowerDialerType PowerDialerType
     {
@@ -38,14 +39,16 @@ public abstract class PowerDialer
     /// <summary>
     ///     Country ISO code of phone number to call
     /// </summary>
-    [AllowUpdate(false)]
+    [AllowUpdate(false)] 
+    [SwaggerSchema(ReadOnly = true)] 
     [IsUbluxRequired]
     public required CountryIsoCode CountryIsoCode { get; set; }
 
     /// <summary>
     ///     Id of contact
     /// </summary>
-    [AllowUpdate(false)]
+    [AllowUpdate(false)] 
+    [SwaggerSchema(ReadOnly = true)] 
     public string? IdContact { get; set; }
 
     /// <summary>

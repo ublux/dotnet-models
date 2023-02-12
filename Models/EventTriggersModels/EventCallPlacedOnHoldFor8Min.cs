@@ -10,37 +10,43 @@ public partial class EventCallPlacedOnHoldFor8Min
     /// <summary>
     ///     From phone number
     /// </summary>
-    [AllowUpdate(false)]
+    [AllowUpdate(false)] 
+    [SwaggerSchema(ReadOnly = true)] 
     public required string From { get; set; }
 
     /// <summary>
     ///     To phone number
     /// </summary>
-    [AllowUpdate(false)]
+    [AllowUpdate(false)] 
+    [SwaggerSchema(ReadOnly = true)] 
     public required string To { get; set; }
 
     /// <summary>
     ///     Date when call started
     /// </summary>
-    [AllowUpdate(false)]
+    [AllowUpdate(false)] 
+    [SwaggerSchema(ReadOnly = true)] 
     public DateTime DateStart { get; set; }
 
     /// <summary>
     ///     Date when call was answered. If null it means it has not been answered
     /// </summary>
-    [AllowUpdate(false)]
+    [AllowUpdate(false)] 
+    [SwaggerSchema(ReadOnly = true)] 
     public int? SecondsItTookToAnswer { get; set; }    
 
     /// <summary>
     ///     Id of contact that made phone call
     /// </summary>
-    [AllowUpdate(false)]
+    [AllowUpdate(false)] 
+    [SwaggerSchema(ReadOnly = true)] 
     public string? IdContact { get; set; }
 
     /// <summary>
     ///     Name of contact
     /// </summary>
-    [AllowUpdate(false)]
+    [AllowUpdate(false)] 
+    [SwaggerSchema(ReadOnly = true)] 
     public string? ContactFullName { get; set; }
 
     // its one min

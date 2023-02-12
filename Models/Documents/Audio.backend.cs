@@ -1,5 +1,7 @@
 ﻿#if UBLUX_BACKEND
 
+using Swashbuckle.AspNetCore.Annotations;
+
 namespace Ublux.Communications.Models.Documents;
 
 /// <summary>
@@ -11,6 +13,7 @@ public partial class Audio : UbluxDocument, IReferncesAccount
 
     /// <inheritdoc/>
     [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     [IgnoreDataMember]
     [References(typeof(Account))]
     [IsUbluxRequired]
@@ -22,6 +25,7 @@ public partial class Audio : UbluxDocument, IReferncesAccount
     ///     Audio in sln format
     /// </summary>
     [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     [IgnoreDataMember] // client does not need to see sln format
     [IsUbluxRequired]
     public required StoredFile AudioSln { get; set; }

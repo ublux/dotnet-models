@@ -1,4 +1,6 @@
-﻿namespace Ublux.Communications.Models;
+﻿using Swashbuckle.AspNetCore.Annotations;
+
+namespace Ublux.Communications.Models;
 
 /// <summary>
 ///     All ublux documents should have this id
@@ -14,5 +16,6 @@ public interface IUbluxDocumentId
     [AllowUpdate(true)] // set to true because property id is needed on auto-generated objects    
     [IsUbluxRequired]
     [HideForCreateRequest]
+    [SwaggerSchema(ReadOnly = true)]
     string Id { get; init; }
 }

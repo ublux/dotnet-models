@@ -1,4 +1,6 @@
-﻿namespace Ublux.Communications.Models.Documents;
+﻿using Swashbuckle.AspNetCore.Annotations;
+
+namespace Ublux.Communications.Models.Documents;
 
 /// <summary>
 ///     When a customer purchases a Phone Number from AirNetworks Provider from Spain he needs to feel the province and population info
@@ -11,6 +13,7 @@ public partial class AirNetworksProvince : UbluxDocument
     ///     Example: ALAVA
     /// </summary>
     [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     [IsUbluxRequired]
     public required string Name { get; set; }
 
@@ -18,6 +21,7 @@ public partial class AirNetworksProvince : UbluxDocument
     ///     List of "poblaciones". Example: ABENGIBRE, ABUZADERAS, AGRA....
     /// </summary>
     [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     [IsUbluxRequired]
     public List<string> Populations { get; set; } = new();
 

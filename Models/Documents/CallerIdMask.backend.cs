@@ -1,5 +1,7 @@
 ﻿#if UBLUX_BACKEND
 
+using Swashbuckle.AspNetCore.Annotations;
+
 namespace Ublux.Communications.Models.Documents;
 
 /// <summary>
@@ -15,6 +17,7 @@ public partial class CallerIdMask : UbluxDocument, IReferncesAccount
     [References(typeof(Account))]
     [IgnoreDataMember]
     [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     [IsUbluxRequired]
     public required string IdAccount { get; set; } = String.Empty;
 
@@ -25,6 +28,7 @@ public partial class CallerIdMask : UbluxDocument, IReferncesAccount
     /// </summary>
     [IgnoreDataMember]
     [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     [IsUbluxRequired]
     public required string RandomVerificationCode { get; set; } = string.Empty;
 

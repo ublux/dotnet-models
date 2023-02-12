@@ -1,4 +1,6 @@
-﻿namespace Ublux.Communications.Models.Documents;
+﻿using Swashbuckle.AspNetCore.Annotations;
+
+namespace Ublux.Communications.Models.Documents;
 
 /// <summary>
 ///     Previously called IpPhone. Represents a phone in UBLUX
@@ -47,6 +49,7 @@ public partial class Phone : UbluxDocument, IReferencesTags
     /// </summary>
     [JsonProperty(Order = 10000)]
     [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     [IsUbluxRequired]
     public required List<Line> Lines { get; set; }
 
@@ -78,13 +81,15 @@ public partial class Phone : UbluxDocument, IReferencesTags
     /// <summary>
     ///     Date when phone downloaded configuration from api.ublux.com in order to connect to Ublux
     /// </summary>
-    [AllowUpdate(false)]
+    [AllowUpdate(false)]    
+    [SwaggerSchema(ReadOnly = true)]
     public DateTime? DateAutoProvision { get; set; }
 
     /// <summary>
     ///     Mac address of phone in case it is a phisical phone that autoprovisions with Ublux.
     /// </summary>
     [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     public string? MacAddress { get; set; }
 
     /// <summary>
@@ -92,6 +97,7 @@ public partial class Phone : UbluxDocument, IReferencesTags
     ///     Random.Shared.Next(10000, 99999).ToString()
     /// </summary>
     [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     [IsUbluxRequired]
     public required string Pin { get; set; } = string.Empty;
 }

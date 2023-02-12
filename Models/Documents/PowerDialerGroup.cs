@@ -1,4 +1,6 @@
-﻿namespace Ublux.Communications.Models.Documents;
+﻿using Swashbuckle.AspNetCore.Annotations;
+
+namespace Ublux.Communications.Models.Documents;
 
 /// <summary>
 ///     Group used to call multiple parties
@@ -13,28 +15,32 @@ public partial class PowerDialerGroup : UbluxDocument, IReferencesTags
     ///     From what phone number we will make call. 
     /// </summary>
     [References(typeof(VoipNumberPhone))]
-    [AllowUpdate(false)]
+    [AllowUpdate(false)] 
+    [SwaggerSchema(ReadOnly = true)] 
     public string? IdVoipNumberPhone { get; set; }
 
     /// <summary>
     ///     Override caller id?
     /// </summary>
     [References(typeof(CallerIdMask))]
-    [AllowUpdate(false)]
+    [AllowUpdate(false)] 
+    [SwaggerSchema(ReadOnly = true)] 
     public string? IdCallerIdMask { get; set; }
 
     /// <summary>
     ///     What IVR to execute
     /// </summary>
     [References(typeof(CallFlowLogic))]
-    [AllowUpdate(false)]
+    [AllowUpdate(false)] 
+    [SwaggerSchema(ReadOnly = true)] 
     public string? IdCallFlowLogic { get; set; }
 
     /// <summary>
     ///     If on mode simple what extensions will ring to take phone calls
     /// </summary>
     [References(typeof(Extension))]
-    [AllowUpdate(false)]
+    [AllowUpdate(false)] 
+    [SwaggerSchema(ReadOnly = true)] 
     public string? IdExtension { get; set; }
 
     /// <summary>
@@ -52,6 +58,7 @@ public partial class PowerDialerGroup : UbluxDocument, IReferencesTags
     ///     Subdocument
     /// </summary>
     [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     [IsUbluxRequired]
     public required List<PowerDialer> PowerDialers { get; set; }
 
@@ -74,6 +81,7 @@ public partial class PowerDialerGroup : UbluxDocument, IReferencesTags
     ///     Status of power dialer
     /// </summary>
     [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     [IsUbluxRequired]
     [HideForCreateRequest]
     public PowerDialerGroupStatus PowerDialerGroupStatus  // added for convenience
@@ -87,6 +95,7 @@ public partial class PowerDialerGroup : UbluxDocument, IReferencesTags
     ///     If there is an error then what error?
     /// </summary>
     [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     [HideForCreateRequest]
     public string? ErrorMessage { get; set; }
 
@@ -99,6 +108,7 @@ public partial class PowerDialerGroup : UbluxDocument, IReferencesTags
     ///     Used by pbx to know what is the current item that is executing. Also by web service to let front know what index is being executed.
     /// </summary>
     [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     [HideForCreateRequest]
     public int PowerDialerExecutingRecordIndex { get; set; }
 
@@ -107,6 +117,7 @@ public partial class PowerDialerGroup : UbluxDocument, IReferencesTags
     ///     When power dialer was first created only one call at a time existed. When that call ended the next call was made.
     /// </summary>
     [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     [IsUbluxRequired]
     public int NumberOfConcurrentCalls { get; set; }
 

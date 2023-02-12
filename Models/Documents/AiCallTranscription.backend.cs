@@ -1,4 +1,6 @@
-﻿namespace Ublux.Communications.Models.Documents;
+﻿using Swashbuckle.AspNetCore.Annotations;
+
+namespace Ublux.Communications.Models.Documents;
 
 /// <summary>
 ///     Phone numbers that will be blocked
@@ -13,6 +15,7 @@ public partial class AiCallTranscription : UbluxDocument, IReferencesTags, IRefe
     [References(typeof(Account))]
     [IgnoreDataMember]
     [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     [IsUbluxRequired]
     public required string IdAccount { get; set; } = String.Empty;
 

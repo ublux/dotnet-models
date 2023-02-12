@@ -1,4 +1,6 @@
-﻿namespace Ublux.Communications.Models.Documents;
+﻿using Swashbuckle.AspNetCore.Annotations;
+
+namespace Ublux.Communications.Models.Documents;
 
 /// <summary>
 ///     Tokens that are not authorized. Perhaps a token has been stolen
@@ -11,6 +13,7 @@ public partial class UnauthorizedToken : UbluxDocument, IReferencesTags
     ///     Full token
     /// </summary>
     [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     [IsUbluxRequired]
     public required string Jwt { get; set; }
 
@@ -18,6 +21,7 @@ public partial class UnauthorizedToken : UbluxDocument, IReferencesTags
     ///     Id user
     /// </summary>
     [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     [References(typeof(User))]
     [IsUbluxRequired]
     public required string IdUser { get; set; }
@@ -26,6 +30,7 @@ public partial class UnauthorizedToken : UbluxDocument, IReferencesTags
     ///     Date when JWT expires
     /// </summary>
     [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     [IsUbluxRequired]
     public required DateTime ExpirationDate { get; set; }
 

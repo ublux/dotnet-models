@@ -10,18 +10,21 @@ public class ValidationError
     ///     Name of property containing error.
     /// </summary>
     //[IsUbluxRequired]
-    [AllowUpdate(false)]
+    [AllowUpdate(false)] 
+    [SwaggerSchema(ReadOnly = true)] 
     public string? PropertyName { get; set; }
 
     /// <summary>
     ///     Value of property containing error.
     /// </summary>    
-    [AllowUpdate(false)]
+    [AllowUpdate(false)] 
+    [SwaggerSchema(ReadOnly = true)] 
     public object? PropertyValue { get; set; }
 
     /// <summary>
     ///     Error message
     /// </summary>    
-    [AllowUpdate(false)]
+    [AllowUpdate(false)] 
+    [SwaggerSchema(ReadOnly = true)] 
     public string? ErrorMessage { get; set; }
 }

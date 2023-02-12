@@ -13,7 +13,8 @@ public partial class FaxOutgoingGroup : UbluxDocument, IReferencesTags
     ///     Id of Fax VoipNumber (virtual number) that sent the fax
     /// </summary>    
     [References(typeof(VoipNumberFax))]
-    [AllowUpdate(false)]
+    [AllowUpdate(false)] 
+    [SwaggerSchema(ReadOnly = true)] 
     [IsUbluxRequired]
     public required string IdVoipNumberFax { get; set; }
 
@@ -31,14 +32,16 @@ public partial class FaxOutgoingGroup : UbluxDocument, IReferencesTags
     /// <summary>
     ///     There must be at least one fax attachment
     /// </summary>
-    [AllowUpdate(false)]
+    [AllowUpdate(false)] 
+    [SwaggerSchema(ReadOnly = true)] 
     [IsUbluxRequired]
     public List<FaxOutgoing> FaxesOutgoing { get; set; } = new();
 
     /// <summary>
     ///     Email that was sent to fax@ublux.com
     /// </summary>
-    [AllowUpdate(false)]
+    [AllowUpdate(false)] 
+    [SwaggerSchema(ReadOnly = true)] 
     [IsUbluxRequired]
     public required FaxEmail FaxEmail { get; set; }
 
@@ -47,21 +50,24 @@ public partial class FaxOutgoingGroup : UbluxDocument, IReferencesTags
     /// <summary>
     ///     Phone number where fax is sent
     /// </summary>
-    [AllowUpdate(false)]
+    [AllowUpdate(false)] 
+    [SwaggerSchema(ReadOnly = true)] 
     [IsUbluxRequired]
     public required string From { get; set; }
 
     /// <summary>
     ///     If fax is sent successfully then send confirmation to this emails
     /// </summary>
-    [AllowUpdate(false)]
+    [AllowUpdate(false)] 
+    [SwaggerSchema(ReadOnly = true)] 
     [IsUbluxRequired]
     public required List<string> SendConfirmationToEmails { get; set; }
 
     /// <summary>
     ///     True if there is an error
     /// </summary>
-    [AllowUpdate(false)]
+    [AllowUpdate(false)] 
+    [SwaggerSchema(ReadOnly = true)] 
     public bool ContainsError { get; set; }
 
     #endregion

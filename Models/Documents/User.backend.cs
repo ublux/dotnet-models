@@ -1,5 +1,7 @@
 ﻿#if UBLUX_BACKEND
 
+using Swashbuckle.AspNetCore.Annotations;
+
 namespace Ublux.Communications.Models.Documents;
 
 /// <summary>
@@ -12,6 +14,7 @@ public partial class User : UbluxDocument, IReferncesAccount
     ///     If value is "0" or null it means it can use multiple accounts. For example a PBX user can be used by multiple accounts.
     /// </summary>
     [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     [References(typeof(Account))]
     [IgnoreDataMember]
     [HideForCreateRequest]

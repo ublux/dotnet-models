@@ -1,4 +1,6 @@
-﻿namespace Ublux.Communications.Models.SubDocuments;
+﻿using Swashbuckle.AspNetCore.Annotations;
+
+namespace Ublux.Communications.Models.SubDocuments;
 
 /// <summary>
 ///     Outgoing fax
@@ -9,6 +11,7 @@ public partial class FaxOutgoing : UbluxSubDocument
     ///     Number of pages that Pdf contains
     /// </summary>
     [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     [IsUbluxRequired]
     public required int NumberOfPages { get; set; }
 
@@ -16,6 +19,7 @@ public partial class FaxOutgoing : UbluxSubDocument
     ///     Status of fax sent
     /// </summary>
     [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     [IsUbluxRequired]
     public required string FaxStatus { get; set; }
 
@@ -23,6 +27,7 @@ public partial class FaxOutgoing : UbluxSubDocument
     ///     Fax number to where fax was sent
     /// </summary>
     [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     [IsUbluxRequired]
     public required string To { get; set; }
 
@@ -30,6 +35,7 @@ public partial class FaxOutgoing : UbluxSubDocument
     ///     Description of error
     /// </summary>
     [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     public string? ErrorMessage { get; set; }
 
     /// <summary>
@@ -50,6 +56,7 @@ public partial class FaxOutgoing : UbluxSubDocument
     ///     Pdf to be sent as a fax
     /// </summary>
     [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     [IsUbluxRequired]
     public required StoredFile Pdf { get; set; }
 
@@ -57,18 +64,21 @@ public partial class FaxOutgoing : UbluxSubDocument
     ///     Number of pages that where actually sent
     /// </summary>
     [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     public int NumberOfPagesSent { get; set; }
 
     /// <summary>
     ///     Is pdf in portrait or landscape mode?
     /// </summary>
     [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     public bool? IsPortrait { get; set; }
 
     /// <summary>
     ///     File name of attachment
     /// </summary>
     [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     [IsUbluxRequired]
     public required string Name { get; set; }
 
@@ -76,6 +86,7 @@ public partial class FaxOutgoing : UbluxSubDocument
     ///     Used in case the line is busy to retry again
     /// </summary>
     [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     [IsUbluxRequired]
     public int NumberOfAttempts { get; set; }
 }

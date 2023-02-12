@@ -1,4 +1,6 @@
-﻿namespace Ublux.Communications.Models.Documents;
+﻿using Swashbuckle.AspNetCore.Annotations;
+
+namespace Ublux.Communications.Models.Documents;
 
 /// <summary>
 ///     Mp3 or Wav audio file. Previously called Audio Greeting
@@ -23,13 +25,15 @@ public partial class Audio : UbluxDocument, IReferencesTags
     /// <summary>
     ///     Audio in mp3 format
     /// </summary>
-    [AllowUpdate(false)]
+    [AllowUpdate(false)]    
+    [SwaggerSchema(ReadOnly = true)]
     public StoredFile? AudioMp3 { get; set; }
 
     /// <summary>
     ///     Audio in wav format
     /// </summary>
-    [AllowUpdate(false)]
+    [AllowUpdate(false)]    
+    [SwaggerSchema(ReadOnly = true)]
     public required StoredFile? AudioWav { get; set; }
 
     #endregion
@@ -45,6 +49,7 @@ public partial class Audio : UbluxDocument, IReferencesTags
     ///     Duration of audio in seconds
     /// </summary>
     [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     [IsUbluxRequired]
     [HideForCreateRequest]
     public required int DurationInSeconds { get; set; }

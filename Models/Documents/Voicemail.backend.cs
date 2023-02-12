@@ -1,5 +1,7 @@
 ﻿#if UBLUX_BACKEND
 
+using Swashbuckle.AspNetCore.Annotations;
+
 namespace Ublux.Communications.Models.Documents;
 
 public partial class Voicemail : IReferncesAccount
@@ -9,6 +11,7 @@ public partial class Voicemail : IReferncesAccount
     /// <inheritdoc />
     [IgnoreDataMember]
     [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     [References(typeof(Account))]
     [IsUbluxRequired]
     public required string IdAccount { get; set; } = String.Empty;

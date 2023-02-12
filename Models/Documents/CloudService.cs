@@ -23,7 +23,8 @@ public abstract partial class CloudService : UbluxDocument
     ///     Thanks to the user it can login
     /// </summary>
     [References(typeof(User))]
-    [AllowUpdate(false)]
+    [AllowUpdate(false)] 
+    [SwaggerSchema(ReadOnly = true)] 
     [IsUbluxRequired]
     public required string IdUser { get; set; } = "";
 
@@ -31,7 +32,8 @@ public abstract partial class CloudService : UbluxDocument
     ///     Type of cloud service
     /// </summary>
     [IsUbluxRequired]
-    [AllowUpdate(false)]
+    [AllowUpdate(false)] 
+    [SwaggerSchema(ReadOnly = true)] 
     [HideForCreateRequest]
     public abstract CloudServiceType CloudServiceType
     {
@@ -44,7 +46,8 @@ public abstract partial class CloudService : UbluxDocument
     ///     Country where this system is located
     ///     Example: US, MX
     /// </summary>
-    [AllowUpdate(false)]
+    [AllowUpdate(false)] 
+    [SwaggerSchema(ReadOnly = true)] 
     [IsUbluxRequired]
     public required CountryIsoCode CountryIsoCode { get; set; }
 
@@ -52,7 +55,8 @@ public abstract partial class CloudService : UbluxDocument
     ///     If this service is inside a nat what is the local ip address?
     ///     This is needed by asterisk sip.conf file
     /// </summary>
-    [AllowUpdate(false)]
+    [AllowUpdate(false)] 
+    [SwaggerSchema(ReadOnly = true)] 
     public string? Localnet { get; set; }
 
     ///// <summary>
@@ -69,33 +73,38 @@ public abstract partial class CloudService : UbluxDocument
     ///     It can have multipe ips but only one should be used.
     ///     Hard host name should point to this
     /// </summary>
-    [AllowUpdate(false)]
+    [AllowUpdate(false)] 
+    [SwaggerSchema(ReadOnly = true)] 
     public string? ExternalIp { get; set; }
 
     /// <summary>
     ///     Is this service used as a backup pbx? Failover and NonFailover servers should NEVER overlap.         
     /// </summary>
-    [AllowUpdate(false)]
+    [AllowUpdate(false)] 
+    [SwaggerSchema(ReadOnly = true)] 
     [IsUbluxRequired]
     public required bool IsFailover { get; set; }
 
     /// <summary>
     ///     Is there a router? For example on Divieto this will be true. On Canal Park this will be false
     /// </summary>
-    [AllowUpdate(false)]
+    [AllowUpdate(false)] 
+    [SwaggerSchema(ReadOnly = true)] 
     [IsUbluxRequired]
     public required bool Nat { get; set; }
 
     /// <summary>
     ///     Send this constantly to web service when polling. The pbx sends this
     /// </summary>
-    [AllowUpdate(false)]
+    [AllowUpdate(false)] 
+    [SwaggerSchema(ReadOnly = true)] 
     public bool IsHealthy { get; set; }
 
     /// <summary>
     ///     Instance Id. Example PBX-US-1 for CSP.PBX-US-1
     /// </summary>
-    [AllowUpdate(false)]
+    [AllowUpdate(false)] 
+    [SwaggerSchema(ReadOnly = true)] 
     public required string InstanceId { get => instanceId; set => instanceId = value.ToUpper(); }
     private string instanceId = "";    
 

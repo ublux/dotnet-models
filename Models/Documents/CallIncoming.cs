@@ -20,14 +20,16 @@ public abstract partial class CallIncoming : Call
     ///     VOIP phone number that received the phone call
     /// </summary>
     [References(typeof(VoipNumberPhone))]
-    [AllowUpdate(false)]
+    [AllowUpdate(false)] 
+    [SwaggerSchema(ReadOnly = true)] 
     [IsUbluxRequired]
     public required string IdVoipNumberPhone { get; set; } // idDID
 
     /// <summary>
     ///     Phone number that received phone call in international format
     /// </summary>
-    [AllowUpdate(false)]
+    [AllowUpdate(false)] 
+    [SwaggerSchema(ReadOnly = true)] 
     [IsUbluxRequired]
     public required string FromInternationalFormat { get; set; }
 }

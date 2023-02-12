@@ -12,7 +12,8 @@ public partial class LogWebServiceRequest : UbluxDocument
     /// <summary>
     ///     Authenticated client
     /// </summary>
-    [AllowUpdate(false)]
+    [AllowUpdate(false)] 
+    [SwaggerSchema(ReadOnly = true)] 
     public UbluxSession? UbluxSession { get; set; }
 
     #endregion
@@ -21,7 +22,8 @@ public partial class LogWebServiceRequest : UbluxDocument
     ///     Number of concurrent requests when this log message was created. 
     ///     For example if 5 reques are made at the same time this count may be equal to 5.
     /// </summary>
-    [AllowUpdate(false)]
+    [AllowUpdate(false)] 
+    [SwaggerSchema(ReadOnly = true)] 
     public int ConcurrentRequests { get; set; }
 
     /// <summary>
@@ -30,7 +32,8 @@ public partial class LogWebServiceRequest : UbluxDocument
     ///     Ever time a user consumes the api it will have a cost. 
     ///     At the end of each month we will charge the customer based on this sum.
     /// </summary>
-    [AllowUpdate(false)]
+    [AllowUpdate(false)] 
+    [SwaggerSchema(ReadOnly = true)] 
     public uint Charge { get; set; }
 
     ///// <summary>
@@ -47,39 +50,45 @@ public partial class LogWebServiceRequest : UbluxDocument
     /// <summary>
     ///     Current penalty of ip address when this request was made
     /// </summary>
-    [AllowUpdate(false)]
+    [AllowUpdate(false)] 
+    [SwaggerSchema(ReadOnly = true)] 
     public long CurrentPenalty { get; set; }
 
     /// <summary>
     ///     Total penalty of ip address when this request was made
     /// </summary>
-    [AllowUpdate(false)]
+    [AllowUpdate(false)] 
+    [SwaggerSchema(ReadOnly = true)] 
     public long TotalPenalty { get; set; }
 
     /// <summary>
     ///     Is it a GET,POST,DELETE or PATCH request?
     /// </summary>
-    [AllowUpdate(false)]
+    [AllowUpdate(false)] 
+    [SwaggerSchema(ReadOnly = true)] 
     [IsUbluxRequired]
     public required string HttpMethod { get; set; }
 
     /// <summary>
     ///     User agent
     /// </summary>
-    [AllowUpdate(false)]
+    [AllowUpdate(false)] 
+    [SwaggerSchema(ReadOnly = true)] 
     public string? UserAgent { get; set; }
 
     /// <summary>
     ///     Ip address where request came from
     /// </summary>
-    [AllowUpdate(false)]
+    [AllowUpdate(false)] 
+    [SwaggerSchema(ReadOnly = true)] 
     [IsUbluxRequired]
     public required string Ip { get; set; }
 
     /// <summary>
     ///     Request url without query string
     /// </summary>
-    [AllowUpdate(false)]
+    [AllowUpdate(false)] 
+    [SwaggerSchema(ReadOnly = true)] 
     [IsUbluxRequired]
     public required string RequestUrl { get; set; }
 
@@ -87,31 +96,36 @@ public partial class LogWebServiceRequest : UbluxDocument
     ///     Save query string?
     /// </summary>
     [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     //[BsonIgnore] // gives problesm with unit test. Just include it
     public bool SaveQueryString { get; set; } = true;
 
     /// <summary>
     ///     Parameters send on query string. A post may also contain a query string!
     /// </summary>
-    [AllowUpdate(false)]
+    [AllowUpdate(false)] 
+    [SwaggerSchema(ReadOnly = true)] 
     public string? QueryString { get; set; }
 
     /// <summary>
     ///     Post data sent by user. GET methods will have this empty.
     /// </summary>
-    [AllowUpdate(false)]
+    [AllowUpdate(false)] 
+    [SwaggerSchema(ReadOnly = true)] 
     public string? RequestBody { get; set; }
 
     /// <summary>
     ///     We only store response body on POST,DELETE and PATCH commands
     /// </summary>
-    [AllowUpdate(false)]
+    [AllowUpdate(false)] 
+    [SwaggerSchema(ReadOnly = true)] 
     public string? ResponseBody { get; set; }
 
     /// <summary>
     ///     Response status code
     /// </summary>
-    [AllowUpdate(false)]
+    [AllowUpdate(false)] 
+    [SwaggerSchema(ReadOnly = true)] 
     [IsUbluxRequired]
     public required HttpResponseStatusCode HttpResponseStatusCode { get; set; }
 
@@ -119,7 +133,8 @@ public partial class LogWebServiceRequest : UbluxDocument
     ///     Response time in milliseconds. 
     ///     This is the duration of the request
     /// </summary>
-    [AllowUpdate(false)]
+    [AllowUpdate(false)] 
+    [SwaggerSchema(ReadOnly = true)] 
     [IsUbluxRequired]
     public int ResponseTime { get; set; }
 

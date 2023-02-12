@@ -26,7 +26,8 @@ public abstract partial class CallOutgoing : Call
     /// <summary>
     ///     Line that started phone call
     /// </summary>
-    [AllowUpdate(false)]
+    [AllowUpdate(false)] 
+    [SwaggerSchema(ReadOnly = true)] 
     [References(typeof(Line))]
     [IsUbluxRequired]
     public required string IdLineThatInitiatedCall { get; set; }

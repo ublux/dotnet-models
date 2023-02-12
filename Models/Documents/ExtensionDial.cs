@@ -47,7 +47,8 @@ public partial class ExtensionDial : Extension
     /// <summary>
     ///     Type of extension
     /// </summary>
-    [AllowUpdate(false)]
+    [AllowUpdate(false)] 
+    [SwaggerSchema(ReadOnly = true)] 
     [IsUbluxRequired]
     [HideForCreateRequest]
     public override ExtensionType ExtensionType

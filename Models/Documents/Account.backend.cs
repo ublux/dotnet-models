@@ -1,5 +1,7 @@
 ﻿#if UBLUX_BACKEND
 
+using Swashbuckle.AspNetCore.Annotations;
+
 namespace Ublux.Communications.Models.Documents;
 
 /// <summary>
@@ -14,6 +16,7 @@ public partial class Account : UbluxDocument
     ///// </summary>
     //[IgnoreDataMember]
     //[AllowUpdate(false)]
+    // [SwaggerSchema(ReadOnly = true)]
     //[References(typeof(CloudServicePbx))]
     //[IsUbluxRequired]
     //public required string IdCloudServicePbxFailover { get; set; }
@@ -23,6 +26,7 @@ public partial class Account : UbluxDocument
     ///// </summary>
     //[IgnoreDataMember]
     //[AllowUpdate(false)]
+    // [SwaggerSchema(ReadOnly = true)]
     //[References(typeof(CloudServiceWebApp))]
     //[IsUbluxRequired]
     //public required string IdCloudServiceWebApp { get; set; }
@@ -35,6 +39,7 @@ public partial class Account : UbluxDocument
     [IgnoreDataMember]
     [References(typeof(TrunkTerminationGroup))]
     [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     [IsUbluxRequired]
     public required string IdGTrunkTerminationGroup { get; set; }
 
@@ -47,6 +52,7 @@ public partial class Account : UbluxDocument
     ///     For example value {3,4} will reserver accounts 3 and 4 for personal use of Continental assist
     /// </summary>
     [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     [IgnoreDataMember]
     public List<int> ReserveAccountsOnPhone { get; set; } = new();
 
@@ -55,6 +61,7 @@ public partial class Account : UbluxDocument
     /// </summary>
     [IgnoreDataMember]
     [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     [IsUbluxRequired]
     public UbluxPartner UbluxPartner { get; set; }
 

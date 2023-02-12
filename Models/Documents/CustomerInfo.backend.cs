@@ -12,7 +12,8 @@ public partial class CustomerInfo : IReferncesAccount
     /// <inheritdoc/>
     [IgnoreDataMember]
     [References(typeof(Account))]
-    [AllowUpdate(false)]
+    [AllowUpdate(false)] 
+    [SwaggerSchema(ReadOnly = true)] 
     [IsUbluxRequired]
     public required string IdAccount { get; set; } = String.Empty;
 

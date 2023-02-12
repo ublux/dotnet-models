@@ -10,49 +10,57 @@ public partial class EventExtensionTookLongerThan8MinToBeAnswered
     /// <summary>
     ///     Extension friendly name
     /// </summary>
-    [AllowUpdate(false)]
+    [AllowUpdate(false)] 
+    [SwaggerSchema(ReadOnly = true)] 
     public required string FriendlyName { get; set; }
 
     /// <summary>
     ///     Extension number
     /// </summary>
-    [AllowUpdate(false)]
+    [AllowUpdate(false)] 
+    [SwaggerSchema(ReadOnly = true)] 
     public required string Number { get; set; }
 
     /// <summary>
     ///     From phone number
     /// </summary>
-    [AllowUpdate(false)]
+    [AllowUpdate(false)] 
+    [SwaggerSchema(ReadOnly = true)] 
     public required string From { get; set; }
 
     /// <summary>
     ///     To phone number
     /// </summary>
-    [AllowUpdate(false)]
+    [AllowUpdate(false)] 
+    [SwaggerSchema(ReadOnly = true)] 
     public required string To { get; set; }
 
     /// <summary>
     ///     Date when call started
     /// </summary>
-    [AllowUpdate(false)]
+    [AllowUpdate(false)] 
+    [SwaggerSchema(ReadOnly = true)] 
     public DateTime DateStart { get; set; }       
 
     /// <summary>
     ///     Id of contact that made phone call
     /// </summary>
-    [AllowUpdate(false)]
+    [AllowUpdate(false)] 
+    [SwaggerSchema(ReadOnly = true)] 
     public string? IdContact { get; set; }
 
     /// <summary>
     ///     Name of contact
     /// </summary>
-    [AllowUpdate(false)]
+    [AllowUpdate(false)] 
+    [SwaggerSchema(ReadOnly = true)] 
     public string? ContactFullName { get; set; }
 
     /// <summary>
     ///     How long extension rang
     /// </summary>
-    [AllowUpdate(false)]
+    [AllowUpdate(false)] 
+    [SwaggerSchema(ReadOnly = true)] 
     public int NumberOfSecondsItRang { get; set; }
 
     /// <summary>

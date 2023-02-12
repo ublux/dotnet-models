@@ -1,5 +1,7 @@
 ﻿#if UBLUX_BACKEND
 
+using Swashbuckle.AspNetCore.Annotations;
+
 namespace Ublux.Communications.Models.Documents;
 
 /// <summary>
@@ -10,7 +12,8 @@ public partial class MusicOnHoldGroup : UbluxDocument, IReferncesAccount
     /// <inheritdoc/>
     [IgnoreDataMember]
     [References(typeof(Account))]
-    [AllowUpdate(false)]
+    [AllowUpdate(false)] 
+    [SwaggerSchema(ReadOnly = true)] 
     [IsUbluxRequired]
     [HideForCreateRequest]
     public required string IdAccount { get; set; } = String.Empty;

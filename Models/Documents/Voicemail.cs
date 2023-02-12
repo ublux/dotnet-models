@@ -1,4 +1,6 @@
-﻿namespace Ublux.Communications.Models.Documents;
+﻿using Swashbuckle.AspNetCore.Annotations;
+
+namespace Ublux.Communications.Models.Documents;
 
 /// <summary>
 ///     Extensions may forward an existing voicemail to another extension
@@ -25,6 +27,7 @@ public partial class Voicemail : UbluxDocument, IReferencesTags
     ///     Ids of lines that can listen to voicemail
     /// </summary>
     [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     [References(typeof(Line))]
     public List<string> IdsLinesThatCanListenToVoicemail { get; set; } = new();
 
@@ -34,6 +37,7 @@ public partial class Voicemail : UbluxDocument, IReferencesTags
     ///     Type of voicemail
     /// </summary>
     [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     [IsUbluxRequired]
     [HideForCreateRequest]
     public virtual VoicemailType VoicemailType => VoicemailType.Regular;
@@ -42,6 +46,7 @@ public partial class Voicemail : UbluxDocument, IReferencesTags
     ///     Email where voicemail was sent
     /// </summary>
     [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     [IsUbluxRequired]
     public required string Email { get; set; }
 
@@ -49,24 +54,28 @@ public partial class Voicemail : UbluxDocument, IReferencesTags
     ///     Voicemail duration in seconds
     /// </summary>
     [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     [IsUbluxRequired]
     public required int DurationInSeconds { get; set; }
 
     /// <summary>
     ///     Voicemail in wav format. Optional because there may be an error
     /// </summary>
-    [AllowUpdate(false)]
+    [AllowUpdate(false)] 
+    [SwaggerSchema(ReadOnly = true)] 
     public StoredFile? VoicemailWav { get; set; }
 
     /// <summary>
     ///     Voicemail in mp3 format. Optional because there may be an error
     /// </summary>
-    [AllowUpdate(false)]
+    [AllowUpdate(false)] 
+    [SwaggerSchema(ReadOnly = true)] 
     public StoredFile? VoicemailMp3 { get; set; }
 
     /// <summary>
     ///     If there is an error sending the voicemail then the error description
     /// </summary>
-    [AllowUpdate(false)]
+    [AllowUpdate(false)] 
+    [SwaggerSchema(ReadOnly = true)] 
     public string? ErrorMessage { get; set; }
 }

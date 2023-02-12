@@ -1,5 +1,7 @@
 ﻿#if UBLUX_BACKEND
 
+using Swashbuckle.AspNetCore.Annotations;
+
 namespace Ublux.Communications.Models.Documents;
 
 /// <summary>
@@ -13,6 +15,7 @@ public partial class TrunkTerminationGroup : UbluxDocument
     /// </summary>
     [IgnoreDataMember]
     [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     [References(typeof(TrunkTermination))]
     [IsUbluxRequired]
     public required List<string> IdsTrunkTerminationsOrderedByPriority { get; set; }

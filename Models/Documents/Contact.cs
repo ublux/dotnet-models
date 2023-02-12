@@ -15,7 +15,8 @@ public partial class Contact : UbluxDocument, IReferencesTags
     ///     
     ///     Who owns the contact. If null it will belong to entire account
     /// </summary>
-    [AllowUpdate(false)]
+    [AllowUpdate(false)] 
+    [SwaggerSchema(ReadOnly = true)] 
     [References(typeof(User))]
     public string? IdUserOwner { get; set; }
 

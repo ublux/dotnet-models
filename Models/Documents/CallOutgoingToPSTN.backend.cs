@@ -12,7 +12,8 @@ public partial class CallOutgoingToPSTN : CallOutgoing
     /// </summary>
     [IgnoreDataMember]
     [References(typeof(TrunkTermination))]
-    [AllowUpdate(false)]
+    [AllowUpdate(false)] 
+    [SwaggerSchema(ReadOnly = true)] 
     public string? IdTrunkTermination { get; set; }
 }
 

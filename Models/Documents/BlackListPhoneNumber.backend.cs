@@ -1,5 +1,7 @@
 ﻿#if UBLUX_BACKEND
 
+using Swashbuckle.AspNetCore.Annotations;
+
 namespace Ublux.Communications.Models.Documents;
 
 /// <summary>
@@ -14,6 +16,7 @@ public partial class BlackListPhoneNumber : UbluxDocument, IReferncesAccount
     ///     TODO: make this an index on database. Do not make it unique only and index because we can have two contacts with the same phone number
     /// </summary>
     [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     [IgnoreDataMember]
     public string SearchIndex
     {
@@ -82,6 +85,7 @@ public partial class BlackListPhoneNumber : UbluxDocument, IReferncesAccount
     [References(typeof(Account))]
     [IgnoreDataMember]
     [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     [IsUbluxRequired]
     public required string IdAccount { get; set; } = String.Empty;
 

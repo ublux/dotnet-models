@@ -16,7 +16,8 @@ public partial class FaxEmailInfo : UbluxDocument, IReferencesTags
     ///     If email was validated with phone then what line validated this email?
     ///     Line that validated email
     /// </summary>
-    [AllowUpdate(false)]
+    [AllowUpdate(false)] 
+    [SwaggerSchema(ReadOnly = true)] 
     [References(typeof(Line))]
     public Line? LineThatValidatedEmail { get; set; }
 
@@ -32,14 +33,16 @@ public partial class FaxEmailInfo : UbluxDocument, IReferencesTags
     /// <summary>
     ///     Number of emails received
     /// </summary>
-    [AllowUpdate(false)]
+    [AllowUpdate(false)] 
+    [SwaggerSchema(ReadOnly = true)] 
     [IsUbluxRequired] /* at least one email should be received */
     public required int NumberOfEmailsReceived { get; set; }
 
     /// <summary>
     ///     Current status of authenticating email
     /// </summary>
-    [AllowUpdate(false)]
+    [AllowUpdate(false)] 
+    [SwaggerSchema(ReadOnly = true)] 
     [IsUbluxRequired]
     public required LinkFaxToEmailStatus ReplyStatus { get; set; }
 

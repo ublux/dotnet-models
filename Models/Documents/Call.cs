@@ -1,4 +1,6 @@
-﻿namespace Ublux.Communications.Models.Documents;
+﻿using Swashbuckle.AspNetCore.Annotations;
+
+namespace Ublux.Communications.Models.Documents;
 
 /// <summary>
 ///     Ublux phone call
@@ -24,6 +26,7 @@ public abstract partial class Call : UbluxDocument, ICall, IReferencesTags
     ///     Id of voicemail in case there is one
     /// </summary>
     [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     [References(typeof(Voicemail))]
     public string? IdVoicemail { get; set; }
 
@@ -32,6 +35,7 @@ public abstract partial class Call : UbluxDocument, ICall, IReferencesTags
     ///     When this variable is set the call is marked as completed
     /// </summary>
     [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     [References(typeof(Call))]
     public string? IdCallThatTerminatedThisCallDoToAttendantTransfer { get; set; }
 
@@ -49,6 +53,7 @@ public abstract partial class Call : UbluxDocument, ICall, IReferencesTags
     ///         Reference of of Contact that called us        
     /// </summary>
     [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     [References(typeof(Contact))]
     public string? IdContact { get; set; }
 
@@ -56,6 +61,7 @@ public abstract partial class Call : UbluxDocument, ICall, IReferencesTags
     ///     Refernce to AI call transcription
     /// </summary>
     [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     [References(typeof(AiCallTranscription))]
     public string? IdAiCallTranscription { get; set; }
 
@@ -67,6 +73,7 @@ public abstract partial class Call : UbluxDocument, ICall, IReferencesTags
     ///     Call channel variables. Language, MOH, CallerId etc
     /// </summary>
     [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     [IsUbluxRequired]
     public required ChannelVariables ChannelVariables { get; set; }
 
@@ -74,6 +81,7 @@ public abstract partial class Call : UbluxDocument, ICall, IReferencesTags
     ///     Child calls
     /// </summary>
     [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     public List<ChildCall> ChildCalls { get; set; } = new();
 
     #endregion
@@ -90,24 +98,28 @@ public abstract partial class Call : UbluxDocument, ICall, IReferencesTags
     ///     INVALIDARGS: Error parsing Dial command arguments (added for Asterisk 1.4.1, SVN r53135-53136)
     /// </summary>
     [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     public required string DialStatus { get; set; }
 
     /// <summary>
     ///     Number of seconds it took to answer
     /// </summary>
     [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     public int? SecondsItTookToAnswer { get; set; }
 
     /// <summary>
     ///     Dates when call is placed on hold
     /// </summary>
     [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     public List<TimeWhenCallPlacedOnHold> TimesWhenCallPlacedOnHold { get; set; } = new();
 
     /// <summary>
     ///     Caller id
     /// </summary>
     [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     [IsUbluxRequired]
     public required string From { get; set; }
 
@@ -115,6 +127,7 @@ public abstract partial class Call : UbluxDocument, ICall, IReferencesTags
     ///     Country that initiated phone call
     /// </summary>
     [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     [IsUbluxRequired]
     public required CountryIsoCode FromCountry { get; set; }
 
@@ -122,6 +135,7 @@ public abstract partial class Call : UbluxDocument, ICall, IReferencesTags
     ///     Phone number called
     /// </summary>
     [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     [IsUbluxRequired]
     public required string To { get; set; }
 
@@ -129,6 +143,7 @@ public abstract partial class Call : UbluxDocument, ICall, IReferencesTags
     ///     Country that initiated phone call
     /// </summary>
     [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     [IsUbluxRequired]
     public required CountryIsoCode ToCountry { get; set; }
 
@@ -137,6 +152,7 @@ public abstract partial class Call : UbluxDocument, ICall, IReferencesTags
     ///     TODO: Create index on DB
     /// </summary>
     [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     public abstract CallType CallType
     {
         get;
@@ -148,18 +164,21 @@ public abstract partial class Call : UbluxDocument, ICall, IReferencesTags
     ///     True if call has recording
     /// </summary>
     [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     public Recording? Recording { get; set; }
 
     /// <summary>
     ///     Was video disabled on call?
     /// </summary>
     [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     public bool DisabledVideo { get; set; }
 
     /// <summary>
     ///     List because user can send digits multiple times
     /// </summary>
     [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     public List<string> DigitsSent { get; set; } = new();
 
     /// <summary>
@@ -167,10 +186,12 @@ public abstract partial class Call : UbluxDocument, ICall, IReferencesTags
     ///     Also note that an incoming call can be international too!
     /// </summary>               
     [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     public bool IsInternational { get; set; }
 
     /// <inheritdoc />
     [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     public DateTime? DateEnded { get; set; }
 
     /// <summary>

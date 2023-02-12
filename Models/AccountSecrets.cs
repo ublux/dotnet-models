@@ -1,4 +1,6 @@
-﻿namespace Ublux.Communications.Models;
+﻿using Swashbuckle.AspNetCore.Annotations;
+
+namespace Ublux.Communications.Models;
 
 /// <summary>
 ///     Account secrets
@@ -11,6 +13,7 @@ public class AccountSecrets
     /////     EAB24
     ///// </summary>
     //[AllowUpdate(false)]
+    //[SwaggerSchema(ReadOnly = true)]
     //[IsUbluxRequired]
     //public required string PinFax { get; set; }
 
@@ -18,6 +21,7 @@ public class AccountSecrets
     ///     9 digit number that a customer must dial in order to link his phone to a new account. 
     /// </summary>
     [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     [IsUbluxRequired]
     public required string PinPhone { get; set; } 
 
@@ -26,6 +30,7 @@ public class AccountSecrets
     ///     9 digits now to make it more secure
     /// </summary>
     [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     [IsUbluxRequired]
     public required string PinSpy { get; set; } 
 

@@ -1,5 +1,7 @@
 ﻿#if UBLUX_BACKEND
 
+using Swashbuckle.AspNetCore.Annotations;
+
 namespace Ublux.Communications.Models;
 
 /// <summary>
@@ -15,6 +17,7 @@ public partial interface IUbluxDocument : IUbluxDocumentId
     ///     Date when item was deleted
     /// </summary>
     [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     [JsonProperty(Order = 1001)]
     [IgnoreDataMember]
     DateTime? DateDeleted { get; set; }
@@ -43,6 +46,7 @@ public abstract partial class UbluxDocument : IUbluxDocument, IUbluxDocumentId
     [JsonIgnore]
     [IgnoreDataMember]
     [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     public /*required*/ BuiltId BuiltId
     {
         set
@@ -57,6 +61,7 @@ public abstract partial class UbluxDocument : IUbluxDocument, IUbluxDocumentId
     [JsonProperty(Order = 1001)]
     [IgnoreDataMember]
     [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     [HideForCreateRequest]
     public DateTime? DateDeleted { get; set; }
     

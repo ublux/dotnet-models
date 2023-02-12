@@ -11,7 +11,8 @@ public partial class ContactNumber
     ///     Thanks to this index we can search fast on database. This index consists of: Account and last 8 numbers of phone number.
     ///     TODO: make this an index on database. Do not make it unique only and index because we can have two contacts with the same phone number
     /// </summary>
-    [AllowUpdate(false)]
+    [AllowUpdate(false)] 
+    [SwaggerSchema(ReadOnly = true)] 
     [IgnoreDataMember]
     public string SearchIndex
     {

@@ -1,4 +1,6 @@
-﻿namespace Ublux.Communications.Models.Documents;
+﻿using Swashbuckle.AspNetCore.Annotations;
+
+namespace Ublux.Communications.Models.Documents;
 
 /// <summary>
 ///     Phone numbers that will be blocked
@@ -11,13 +13,14 @@ public partial class CallerIdMask : UbluxDocument, IReferencesTags
     ///     The phone that will be used as caller id
     /// </summary>
     [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     [IsUbluxRequired]
     public required string PhoneNumber { get; set; }
 
     /// <summary>
     ///     Name of this caller id mask
     /// </summary>
-    [AllowUpdate(true)]
+    [AllowUpdate(true)]    
     [IsUbluxRequired]
     public required string FriendlyName { get; set; }
 

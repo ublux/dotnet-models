@@ -1,5 +1,7 @@
 ﻿#if UBLUX_BACKEND
 
+using Swashbuckle.AspNetCore.Annotations;
+
 namespace Ublux.Communications.Models.SubDocuments;
 
 /// <summary>
@@ -12,6 +14,7 @@ public partial class FaxOutgoing : UbluxSubDocument
     /// </summary>
     [IgnoreDataMember]
     [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     [References(typeof(FaxOutgoingGroup))]
     [IsUbluxRequired]
     public required string IdFaxOutgoingGroup { get; set; }
@@ -20,6 +23,7 @@ public partial class FaxOutgoing : UbluxSubDocument
     ///     Email attachment that was converted to fax
     /// </summary>
     [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     [IgnoreDataMember]
     [IsUbluxRequired]
     public required EmailAttachment EmailAttachment { get; set; }
@@ -28,6 +32,7 @@ public partial class FaxOutgoing : UbluxSubDocument
     ///     True when done sending fax
     /// </summary>
     [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     [IgnoreDataMember]
     public bool IsComplete { get; set; }
 

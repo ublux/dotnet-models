@@ -1,5 +1,7 @@
 ﻿#if UBLUX_BACKEND
 
+using Swashbuckle.AspNetCore.Annotations;
+
 namespace Ublux.Communications.Models.Documents;
 
 /// <summary>
@@ -15,6 +17,7 @@ public partial class TrunkOriginationForward : TrunkOrigination
     ///     Url where to forward traffic
     /// </summary>
     [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     [IgnoreDataMember]
     [IsUbluxRequired]
     public required string SipUri { get; set; }
@@ -23,6 +26,7 @@ public partial class TrunkOriginationForward : TrunkOrigination
     ///     Sip URI where to send traffic in case primary SipUri fails
     /// </summary>
     [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     [IgnoreDataMember]
     [IsUbluxRequired]
     public required string SipUriFailover { get; set; }

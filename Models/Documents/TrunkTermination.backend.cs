@@ -1,5 +1,7 @@
 ﻿#if UBLUX_BACKEND
 
+using Swashbuckle.AspNetCore.Annotations;
+
 namespace Ublux.Communications.Models.Documents;
 
 /// <summary>
@@ -18,6 +20,7 @@ public partial class TrunkTermination : UbluxDocument
     [References(typeof(VoipProvider))]
     [IgnoreDataMember]
     [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     [IsUbluxRequired]
     public required string IdVoipProvider { get; set; }
 
@@ -36,6 +39,7 @@ public partial class TrunkTermination : UbluxDocument
     /// </summary>
     [IgnoreDataMember]
     [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     [IsUbluxRequired]
     public required string ProviderId { get; set; }
 
@@ -45,6 +49,7 @@ public partial class TrunkTermination : UbluxDocument
     //[JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [IgnoreDataMember]
     [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     [IsUbluxRequired]
     public required string TerminationUri { get; set; }
 
@@ -52,14 +57,16 @@ public partial class TrunkTermination : UbluxDocument
     ///     Username that provider requires in order to authenticate. Optional because provider may validate us via ip address
     /// </summary>
     [IgnoreDataMember]
-    [AllowUpdate(false)]
+    [AllowUpdate(false)] 
+    [SwaggerSchema(ReadOnly = true)] 
     public string? Username { get; set; }
 
     /// <summary>
     ///     Password that provider requires in order to authenticate
     /// </summary>
     [IgnoreDataMember]
-    [AllowUpdate(false)]
+    [AllowUpdate(false)] 
+    [SwaggerSchema(ReadOnly = true)] 
     public string? Password { get; set; }
 
     /// <summary>
@@ -67,6 +74,7 @@ public partial class TrunkTermination : UbluxDocument
     /// </summary>
     [IgnoreDataMember]
     [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     [IsUbluxRequired]
     [BsonRepresentation(BsonType.String)]
     public required List<CountryIsoCode> CountryIsoCodesThatCanCall { get; set; }
@@ -76,6 +84,7 @@ public partial class TrunkTermination : UbluxDocument
     /// </summary>
     [IgnoreDataMember]
     [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     [IsUbluxRequired]
     public required string FriendlyName { get; set; }
 
@@ -91,6 +100,7 @@ public partial class TrunkTermination : UbluxDocument
     /// </summary>
     [IgnoreDataMember]
     [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     [IsUbluxRequired]
     public required VoipCompany VoipCompany { get; set; } 
 

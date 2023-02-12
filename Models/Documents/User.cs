@@ -1,4 +1,6 @@
-﻿namespace Ublux.Communications.Models.Documents;
+﻿using Swashbuckle.AspNetCore.Annotations;
+
+namespace Ublux.Communications.Models.Documents;
 
 /// <summary>
 ///     Someone that has access to consume Ublux Web Api. It can be a PBX, WA, or UbluxUser
@@ -35,6 +37,7 @@ public partial class User : UbluxDocument, IReferencesTags
     ///     What type of user is this? Is this a PBX? WA?
     /// </summary>
     [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     [IsUbluxRequired]
     public required UserType UserType { get; set; }
 
@@ -43,6 +46,7 @@ public partial class User : UbluxDocument, IReferencesTags
     ///     If its a PBX/WA then it is the instance id in lowercase
     /// </summary>
     [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     [IsUbluxRequired]
     public required string Username
     {
@@ -61,6 +65,7 @@ public partial class User : UbluxDocument, IReferencesTags
     ///     Password needed to authenticate. This is different than the Authorization.
     /// </summary>
     [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     [IsUbluxRequired]
     [HideForCreateRequest]
     // virtual because of unit tests so that it can mock this object
@@ -85,6 +90,7 @@ public partial class User : UbluxDocument, IReferencesTags
     ///     Ip address where it was last authenticated
     /// </summary>
     [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     [HideForCreateRequest]
     public virtual string? IpAddressWhereAuthenticated { get; set; }
     // virtual because of unit tests so that it can mock this object
@@ -93,6 +99,7 @@ public partial class User : UbluxDocument, IReferencesTags
     ///     Date when this user was last authenticated
     /// </summary>
     [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     [HideForCreateRequest]
     // virtual because of unit tests so that it can mock this object
     public virtual DateTime? DateAuthenticated { get; set; }

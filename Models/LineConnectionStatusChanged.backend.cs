@@ -10,7 +10,8 @@ public class LineConnectionStatusChanged
     /// <summary>
     ///     Id of line that was modified
     /// </summary>
-    [AllowUpdate(false)]    
+    [AllowUpdate(false)] 
+    [SwaggerSchema(ReadOnly = true)]     
     public required string IdLine { get; set; } = String.Empty;
 
     /// <summary>
@@ -27,13 +28,15 @@ public class LineConnectionStatusChanged
     /// <summary>
     ///     Id of Account
     /// </summary>
-    [AllowUpdate(false)]
+    [AllowUpdate(false)] 
+    [SwaggerSchema(ReadOnly = true)] 
     public required string IdAccount { get; set; } = String.Empty;
 
     /// <summary>
     ///     Clone this to avoid sync problems.
     /// </summary>
-    [AllowUpdate(false)]
+    [AllowUpdate(false)] 
+    [SwaggerSchema(ReadOnly = true)] 
     public required LineConnectionStatus NewLineConnectionStatus { get; set; }
 }
 

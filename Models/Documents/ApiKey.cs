@@ -1,4 +1,6 @@
-﻿namespace Ublux.Communications.Models.Documents;
+﻿using Swashbuckle.AspNetCore.Annotations;
+
+namespace Ublux.Communications.Models.Documents;
 
 /// <summary>
 ///     Only users can have api keys. Everyone else should have a JWT
@@ -21,6 +23,7 @@ public partial class ApiKey : UbluxDocument, IReferencesTags
     /// </summary>
     [IsUbluxRequired]
     [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     [References(typeof(User))]
     public required string IdUser { get; set; } = string.Empty;
 
@@ -45,6 +48,7 @@ public partial class ApiKey : UbluxDocument, IReferencesTags
     /// </summary>
     [IsUbluxRequired]
     [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     [IgnoreDataMember]
     public required string Key { get; set; } = string.Empty;
 
@@ -52,6 +56,7 @@ public partial class ApiKey : UbluxDocument, IReferencesTags
     ///     Date last authenticated
     /// </summary>
     [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     public DateTime? DateLastUsed { get; set; }
 
     #endregion

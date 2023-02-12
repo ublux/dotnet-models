@@ -1,5 +1,7 @@
 ﻿#if UBLUX_BACKEND
 
+using Swashbuckle.AspNetCore.Annotations;
+
 namespace Ublux.Communications.Models.Documents;
 
 /// <summary>
@@ -17,6 +19,7 @@ public partial class AutoProvisionReference : UbluxDocument
     /// </summary>
     [IgnoreDataMember]
     [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     [References(typeof(Phone))]
     [IsUbluxRequired]
     public required string IdPhone { get; set; }
@@ -27,6 +30,7 @@ public partial class AutoProvisionReference : UbluxDocument
     ///// </summary>
     //[IgnoreDataMember]
     //[AllowUpdate(false)]
+    //[SwaggerSchema(ReadOnly = true)]
     //[References(typeof(Phone))]
     //public string? IdPhoneToExchangeWith { get; set; }
 
@@ -37,6 +41,7 @@ public partial class AutoProvisionReference : UbluxDocument
     /// </summary>
     [IgnoreDataMember]
     [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     public bool RequestedDisconnect { get; set; }
 
     #endregion

@@ -42,7 +42,8 @@ public abstract partial class Extension : UbluxDocument, IReferencesTags
     /// <summary>
     ///     Type of extension
     /// </summary>
-    [AllowUpdate(false)]
+    [AllowUpdate(false)] 
+    [SwaggerSchema(ReadOnly = true)] 
     [IsUbluxRequired]
     [HideForCreateRequest]
     public abstract ExtensionType ExtensionType

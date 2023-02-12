@@ -20,7 +20,8 @@ public abstract partial class CallIncoming : Call
     ///     Provider that received and sent us the phone call
     /// </summary>
     [References(typeof(VoipProvider))]
-    [AllowUpdate(false)]
+    [AllowUpdate(false)] 
+    [SwaggerSchema(ReadOnly = true)] 
     [IgnoreDataMember]
     [IsUbluxRequired]
     public required string IdVoipProvider { get; set; }

@@ -15,28 +15,31 @@ public partial class CallOutgoingToExtension : CallOutgoing, ICallToExtension
     /// </summary>
     [References(typeof(Extension))]
     [AllowUpdate(false)]
-    // [IsUbluxRequired]
+    [SwaggerSchema(ReadOnly = true)]
     public string? IdExtension { get; set; }
 
     /// <summary>
     ///     Line that answered
     /// </summary>
     [References(typeof(Line))]
-    [AllowUpdate(false)]
+    [AllowUpdate(false)] 
+    [SwaggerSchema(ReadOnly = true)] 
     public string? IdLineThatAnswered { get; set; }
 
     /// <summary>
     ///     Lines that ring
     /// </summary>
     [References(typeof(Line))]
-    [AllowUpdate(false)]
+    [AllowUpdate(false)] 
+    [SwaggerSchema(ReadOnly = true)] 
     public List<string> IdsLinesThatRing { get; set; } = new();
 
     /// <summary>
     ///     Lines that did not ring
     /// </summary>
     [References(typeof(Line))]
-    [AllowUpdate(false)]
+    [AllowUpdate(false)] 
+    [SwaggerSchema(ReadOnly = true)] 
     public List<string> IdsLinesThatDidNotRing { get; set; } = new();
 
     #endregion
@@ -47,6 +50,7 @@ public partial class CallOutgoingToExtension : CallOutgoing, ICallToExtension
     /////     Extension number that was called
     ///// </summary>
     //[AllowUpdate(false)]
+    //[SwaggerSchema(ReadOnly = true)]
     //[IsUbluxRequired]
     //public required string ExtensionNumber { get; set; }
 
@@ -54,13 +58,15 @@ public partial class CallOutgoingToExtension : CallOutgoing, ICallToExtension
     /////     Name of extension
     ///// </summary>
     //[AllowUpdate(false)]
+    //[SwaggerSchema(ReadOnly = true)]
     //[IsUbluxRequired]
     //public required string ExtensionFriendlyName { get; set; }
 
     /// <summary>
     ///     Type of call
     /// </summary>
-    [AllowUpdate(false)]
+    [AllowUpdate(false)] 
+    [SwaggerSchema(ReadOnly = true)] 
     public override CallType CallType
     {
         get => CallType.OutgoingToExtension;
