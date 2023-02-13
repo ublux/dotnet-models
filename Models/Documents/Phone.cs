@@ -93,6 +93,13 @@ public partial class Phone : UbluxDocument, IReferencesTags
     public string? MacAddress { get; set; }
 
     /// <summary>
+    ///     User Agent
+    /// </summary>
+    [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
+    public string? UserAgent { get; set; }
+
+    /// <summary>
     ///     Device pin of 5 random digits used to connect phone in case extension is used by multiple phones
     ///     Random.Shared.Next(10000, 99999).ToString()
     /// </summary>

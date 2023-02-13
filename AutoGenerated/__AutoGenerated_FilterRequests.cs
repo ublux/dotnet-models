@@ -5393,6 +5393,16 @@ public class PhoneFilterRequest
     [JsonProperty("macAddress_reg")]
     public string? MacAddress_REG { get; set; }
 
+    /// <summary> UserAgent equals </summary>
+    [JsonProperty("userAgent_eq")]
+    public string? UserAgent_EQ { get; set; }
+    /// <summary> UserAgent contains </summary>
+    [JsonProperty("userAgent_con")]
+    public string? UserAgent_CON { get; set; }
+    /// <summary> UserAgent regex </summary>
+    [JsonProperty("userAgent_reg")]
+    public string? UserAgent_REG { get; set; }
+
     /// <summary> Pin equals </summary>
     [JsonProperty("pin_eq")]
     public string? Pin_EQ { get; set; }

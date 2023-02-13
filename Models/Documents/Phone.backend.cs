@@ -36,21 +36,34 @@ public partial class Phone : UbluxDocument, IReferncesAccount
     [GeneratedRegex($@"{Line.DocumentPrefix}{RedisConstants.DelimeterEscaped}[a-zA-Z0-9{RedisConstants.DelimeterEscaped}]+")]
     public static partial Regex Regex_GetIdOfLine();
 
-    private const string alphanumericCharacters =
+    internal const string alphanumericMainCharacters =
            "ABCDEFGHIJKLMNOPQRSTUVWXYZ" +
            "abcdefghijklmnopqrstuvwxyz" +
-           "0123456789" +
+           "0123456789"
+           ;
+
+    internal const string alphanumericSpecialCharacters =
            "!@#$%.-_"
            ;
+
+    internal const string alphanumericAllCharacters =
+           alphanumericMainCharacters +
+           alphanumericSpecialCharacters
+           ;
+
     /// <summary>
     ///     Generate a new random password for a phone
     /// </summary>
     public static string GetRandomPassword(int length = 16)
     {
-        char[] p = new char[length];
-        for (int i = 0; i < length; i++)
-            p[i] = alphanumericCharacters[RandomNumberGenerator.GetInt32(0, alphanumericCharacters.Length)];
-        return new string(p);
+        // Maybe RandomNumberGenerator is thread safe but just to be sure
+        lock (alphanumericMainCharacters)
+        {
+            char[] p = new char[length];
+            for (int i = 0; i < length; i++)
+                p[i] = alphanumericAllCharacters[RandomNumberGenerator.GetInt32(0, alphanumericAllCharacters.Length)];
+            return new string(p);
+        }
     }
 
     /// <summary>
@@ -58,8 +71,11 @@ public partial class Phone : UbluxDocument, IReferncesAccount
     /// </summary>
     public static string GenerateRandomPhonePin()
     {
+        // This is thread safe
         return Random.Shared.Next(10000, 99999).ToString();
     }
+
+    
 }
 
 #endif
