@@ -1144,6 +1144,10 @@ public class PhoneUpdateRequest // : IUbluxDocumentId
     /// </summary>
     public String? IdUser { get; set; }
     /// <summary>
+    /// Phone lines. Should never be null
+    /// </summary>
+    public List<Ublux.Communications.Models.SubDocuments.Line>? Lines { get; set; }
+    /// <summary>
     /// Descriptive name of phone
     /// </summary>
     public String? FriendlyName { get; set; }
@@ -1166,6 +1170,8 @@ public class PhoneUpdateRequest // : IUbluxDocumentId
             phone.IdPhoneConfiguration = this.IdPhoneConfiguration;
         if(this.IdUser!=null)
             phone.IdUser = this.IdUser;
+        if(this.Lines!=null)
+            phone.Lines = this.Lines;
         if(this.FriendlyName!=null)
             phone.FriendlyName = this.FriendlyName;
         if(this.PhoneType!=null)

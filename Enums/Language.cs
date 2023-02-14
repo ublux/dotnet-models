@@ -16,7 +16,7 @@ public enum Language
     EN_US,
 
     /// <summary>
-    ///     English UK
+    ///     English U.K.
     /// </summary>
     EN_GB,
 

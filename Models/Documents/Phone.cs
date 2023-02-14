@@ -46,8 +46,8 @@ public partial class Phone : UbluxDocument, IReferencesTags
     ///     Phone lines. Should never be null
     /// </summary>
     [JsonProperty(Order = 10000)]
-    [AllowUpdate(false)]
-    [SwaggerSchema(ReadOnly = true)]
+    [AllowUpdate(true)]
+    //[SwaggerSchema(ReadOnly = true)]
     [IsUbluxRequired]
     public required List<Line> Lines { get; set; }
 
