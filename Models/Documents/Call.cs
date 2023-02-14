@@ -1,6 +1,4 @@
-﻿using Swashbuckle.AspNetCore.Annotations;
-
-namespace Ublux.Communications.Models.Documents;
+﻿namespace Ublux.Communications.Models.Documents;
 
 /// <summary>
 ///     Ublux phone call

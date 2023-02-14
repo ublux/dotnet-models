@@ -1,6 +1,4 @@
-﻿using Swashbuckle.AspNetCore.Annotations;
-
-namespace Ublux.Communications.Models;
+﻿namespace Ublux.Communications.Models;
 
 /// <summary>
 ///     All ublux documents should have this id

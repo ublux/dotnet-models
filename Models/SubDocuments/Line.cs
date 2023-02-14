@@ -1,6 +1,4 @@
-﻿using Swashbuckle.AspNetCore.Annotations;
-
-namespace Ublux.Communications.Models.SubDocuments;
+﻿namespace Ublux.Communications.Models.SubDocuments;
 
 /// <summary>
 ///     It is part of a phone. Lines are needed in order to make and receive phone calls.

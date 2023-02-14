@@ -1,8 +1,7 @@
 ﻿#if UBLUX_BACKEND
 
-using Swashbuckle.AspNetCore.Annotations;
 
-namespace Ublux.Communications.Models.Documents; 
+namespace Ublux.Communications.Models.Documents;
 
 /// <summary>
 ///     Store when user agreed to UBLUX terms and conditions for legal reasons.

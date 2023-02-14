@@ -1,6 +1,4 @@
-﻿using Swashbuckle.AspNetCore.Annotations;
-
-namespace Ublux.Communications.Models.Documents;
+﻿namespace Ublux.Communications.Models.Documents;
 
 /// <summary>
 ///     Only users can have api keys. Everyone else should have a JWT

@@ -1,6 +1,4 @@
-﻿using Swashbuckle.AspNetCore.Annotations;
-
-namespace Ublux.Communications.Models.Documents;
+﻿namespace Ublux.Communications.Models.Documents;
 
 /// <summary>
 ///     Ublux Account
@@ -19,7 +17,7 @@ public partial class Account : UbluxDocument
     [SwaggerSchema(ReadOnly = true)]
     [References(typeof(CloudServicePbx))]
     [IsUbluxRequired]
-    public required List<string> IdsCloudServicePbxs { get; set; }
+    public required List<string> IdsCloudServicePbxs { get; set; } = new();
 
     #endregion
 

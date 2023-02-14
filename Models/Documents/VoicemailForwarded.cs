@@ -1,6 +1,4 @@
-﻿using Swashbuckle.AspNetCore.Annotations;
-
-namespace Ublux.Communications.Models.Documents;
+﻿namespace Ublux.Communications.Models.Documents;
 
 /// <summary>
 ///     Voicemail that was forwarded from one extension to another
@@ -21,7 +19,7 @@ public partial class VoicemailForwarded : Voicemail
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [References(typeof(Line))]
+    //[References(typeof(Line))]
     [IsUbluxRequired]
     public required Line LineThatForwardedVoicemail { get; set; }
 
@@ -31,7 +29,7 @@ public partial class VoicemailForwarded : Voicemail
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [References(typeof(Extension))]
+    //[References(typeof(Extension))]
     //[IsUbluxRequired]
     public Extension? ExtensionForwarded { get; set; }
 }

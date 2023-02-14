@@ -1,6 +1,4 @@
-﻿using Swashbuckle.AspNetCore.Annotations;
-
-namespace Ublux.Communications.Models.SubDocuments;
+﻿namespace Ublux.Communications.Models.SubDocuments;
 
 /// <summary>
 ///     Outgoing fax

@@ -1,6 +1,5 @@
 ﻿#if UBLUX_BACKEND
 
-using Swashbuckle.AspNetCore.Annotations;
 using System.Security.Cryptography;
 
 namespace Ublux.Communications.Models.Documents;

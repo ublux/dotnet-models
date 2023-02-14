@@ -1,6 +1,4 @@
-﻿using Swashbuckle.AspNetCore.Annotations;
-
-namespace Ublux.Communications.Models;
+﻿namespace Ublux.Communications.Models;
 
 /// <summary>
 ///     All collections on database must contain this attribute.
@@ -17,7 +15,7 @@ public partial interface IUbluxDocument : IUbluxDocumentId
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
     [JsonProperty(Order = 1000)]
-    [IsUbluxRequired]    
+    [IsUbluxRequired]
     DateTime DateCreated { get; set; }
 
     /// <summary>
@@ -44,9 +42,9 @@ public abstract partial class UbluxDocument : IUbluxDocument, IUbluxDocumentId
     [JsonProperty(Order = -1000)]
     // [IsUbluxRequired]
     // [HideForCreateRequest]
-    [SwaggerSchema(ReadOnly = true)]
+    [SwaggerSchema(ReadOnly = true, Nullable = false)]
     [AllowUpdate(false)] // allow update will include property.
-                        // This property is needed in order to know what document will be updated
+                         // This property is needed in order to know what document will be updated
     public string Id
     {
         get => id;
