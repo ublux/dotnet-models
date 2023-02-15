@@ -16,14 +16,8 @@
 	<ItemGroup>
 		<!--<PackageReference Include="FluentValidation.AspNetCore" Version="10.3.6" />-->
 		<PackageReference Include="JsonSubTypes" Version="2.0.1" />
-		<PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="7.0.0" />
-		<PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="7.0.0" />
 		<PackageReference Include="MongoDB.Driver" Version="2.18.0" />
 		<!--<PackageReference Include="MongoDB.Bson" Version="2.15.1" />-->
-
-
-		<PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
-		<PackageReference Include="Standart.Hash.xxHash" Version="4.0.5" />
 
 		<!-- Used to generate fake event triggers -->
 		<PackageReference Include="Bogus" Version="34.0.2" />
