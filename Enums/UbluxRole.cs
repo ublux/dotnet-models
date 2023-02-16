@@ -222,16 +222,16 @@ public enum UbluxRole
     /// <summary> Has access to the extensionvoicemails endpoint with only read/create permissions </summary>
     extensionvoicemails_create,
 
-    /// <summary> Has access to the faxemailinfos endpoint with full permissions </summary>
-    faxemailinfos = 200,
-    /// <summary> Has access to the faxemailinfos endpoint with only read permissions </summary>
-    faxemailinfos_readonly,
-    /// <summary> Has access to the faxemailinfos endpoint with only read/update permissions </summary>
-    faxemailinfos_update,
-    /// <summary> Has access to the faxemailinfos endpoint with only read/delete permissions </summary>
-    faxemailinfos_delete,
-    /// <summary> Has access to the faxemailinfos endpoint with only read/create permissions </summary>
-    faxemailinfos_create,
+    /// <summary> Has access to the emails endpoint with full permissions </summary>
+    emails = 200,
+    /// <summary> Has access to the emails endpoint with only read permissions </summary>
+    emails_readonly,
+    /// <summary> Has access to the emails endpoint with only read/update permissions </summary>
+    emails_update,
+    /// <summary> Has access to the emails endpoint with only read/delete permissions </summary>
+    emails_delete,
+    /// <summary> Has access to the emails endpoint with only read/create permissions </summary>
+    emails_create,
 
     /// <summary> Has access to the faxincomings endpoint with full permissions </summary>
     faxincomings = 210,

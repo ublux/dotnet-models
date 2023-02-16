@@ -8,12 +8,11 @@ namespace Ublux.Communications.Models.Documents;
 public partial class FaxIncoming : UbluxDocument, IReferncesAccount
 {
     /// <inheritdoc />
-    [AllowUpdate(false)] 
-    [SwaggerSchema(ReadOnly = true)] 
-    [IgnoreDataMember]
     [References(typeof(Account))]
-    [IsUbluxRequired]
-    public required string IdAccount { get; set; } = String.Empty;
+    [IgnoreDataMember]
+    [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
+    public required string? IdAccount { get; set; }
 }
 
 #endif

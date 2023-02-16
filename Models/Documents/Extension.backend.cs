@@ -8,13 +8,11 @@ namespace Ublux.Communications.Models.Documents;
 public abstract partial class Extension : UbluxDocument, IReferncesAccount
 {
     /// <inheritdoc/>
-    [IgnoreDataMember]
     [References(typeof(Account))]
-    [AllowUpdate(false)] 
-    [SwaggerSchema(ReadOnly = true)] 
-    [IsUbluxRequired]
-    [HideForCreateRequest]    
-    public required string IdAccount { get; set; } = string.Empty;    
+    [IgnoreDataMember]
+    [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
+    public required string? IdAccount { get; set; }
 }
 
 #endif

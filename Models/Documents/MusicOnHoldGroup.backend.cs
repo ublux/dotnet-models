@@ -9,13 +9,11 @@ namespace Ublux.Communications.Models.Documents;
 public partial class MusicOnHoldGroup : UbluxDocument, IReferncesAccount
 {
     /// <inheritdoc/>
-    [IgnoreDataMember]
     [References(typeof(Account))]
-    [AllowUpdate(false)] 
-    [SwaggerSchema(ReadOnly = true)] 
-    [IsUbluxRequired]
-    [HideForCreateRequest]
-    public required string IdAccount { get; set; } = String.Empty;
+    [IgnoreDataMember]
+    [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
+    public required string? IdAccount { get; set; }
 }
 
 #endif

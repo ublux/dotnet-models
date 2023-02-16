@@ -73,6 +73,26 @@ public class AccountUpdateRequest // : IUbluxDocumentId
 }
 
 /// <summary>
+/// Contact
+/// </summary><summary>
+/// Ublux Account
+/// </summary>
+public class EmailUpdateRequest // : IUbluxDocumentId
+{
+    /// <summary>
+    /// Ids of tags
+    /// </summary>
+    public List<System.String>? IdsTags { get; set; }
+    /// <summary> Set values on actual document </summary>
+    public void SetValuesOnEmail(Email email)
+    {
+        if(this.IdsTags!=null)
+            email.IdsTags = this.IdsTags;
+    }
+
+}
+
+/// <summary>
 /// Store when user agreed to UBLUX terms and conditions for legal reasons.
 /// </summary>
 public class AgreementToTermsAndConditionsUpdateRequest // : IUbluxDocumentId
@@ -872,7 +892,7 @@ public class ExtensionVoicemailUpdateRequest // : IUbluxDocumentId
     /// <summary>
     /// Emails where to send the voicemail
     /// </summary>
-    public List<System.String>? Email { get; set; }
+    public String? IdEmail { get; set; }
     /// <summary>
     /// This text will be converted to audio and be played before leaving voicemail
     /// </summary>
@@ -908,8 +928,8 @@ public class ExtensionVoicemailUpdateRequest // : IUbluxDocumentId
             extensionVoicemail.IdAudio = this.IdAudio;
         if(this.IdsLinesThatCanListenToVoicemail!=null)
             extensionVoicemail.IdsLinesThatCanListenToVoicemail = this.IdsLinesThatCanListenToVoicemail;
-        if(this.Email!=null)
-            extensionVoicemail.Email = this.Email;
+        if(this.IdEmail!=null)
+            extensionVoicemail.IdEmail = this.IdEmail;
         if(this.TextToSpeech!=null)
             extensionVoicemail.TextToSpeech = this.TextToSpeech;
         if(this.TextToSpeechVoiceId!=null)
@@ -924,28 +944,6 @@ public class ExtensionVoicemailUpdateRequest // : IUbluxDocumentId
             extensionVoicemail.Number = this.Number;
         if(this.InjectExtensionNameToCallerId!=null)
             extensionVoicemail.InjectExtensionNameToCallerId = this.InjectExtensionNameToCallerId.Value;
-    }
-
-}
-
-/// <summary>
-/// Ublux sends and receives faxes via email. This class enables to know the relationship between an email and a fax.
-/// For example email foo@gmail.com will send faxes through VoipFax with id XXXX-XXXX
-/// </summary><summary>
-/// Ublux sends and receives faxes via email. This class enables to know the relationship between an email and a fax.
-/// For example email foo@gmail.com will send faxes through VoipFax with id XXXX-XXXX
-/// </summary>
-public class FaxEmailInfoUpdateRequest // : IUbluxDocumentId
-{
-    /// <summary>
-    /// Ids of tags
-    /// </summary>
-    public List<System.String>? IdsTags { get; set; }
-    /// <summary> Set values on actual document </summary>
-    public void SetValuesOnFaxEmailInfo(FaxEmailInfo faxEmailInfo)
-    {
-        if(this.IdsTags!=null)
-            faxEmailInfo.IdsTags = this.IdsTags;
     }
 
 }

@@ -37,13 +37,13 @@ public partial class FaxOutgoingGroup : UbluxDocument, IReferencesTags
     [IsUbluxRequired]
     public List<FaxOutgoing> FaxesOutgoing { get; set; } = new();
 
-    /// <summary>
-    ///     Email that was sent to fax@ublux.com
-    /// </summary>
-    [AllowUpdate(false)] 
-    [SwaggerSchema(ReadOnly = true)] 
-    [IsUbluxRequired]
-    public required FaxEmail FaxEmail { get; set; }
+    ///// <summary>
+    /////     Email that was sent to fax@ublux.com
+    ///// </summary>
+    //[AllowUpdate(false)] 
+    //[SwaggerSchema(ReadOnly = true)] 
+    //[IsUbluxRequired]
+    //public required FaxEmail FaxEmail { get; set; }
 
     #endregion
 
@@ -58,10 +58,11 @@ public partial class FaxOutgoingGroup : UbluxDocument, IReferencesTags
     /// <summary>
     ///     If fax is sent successfully then send confirmation to this emails
     /// </summary>
-    [AllowUpdate(false)] 
-    [SwaggerSchema(ReadOnly = true)] 
+    [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     [IsUbluxRequired]
-    public required List<string> SendConfirmationToEmails { get; set; }
+    [References(typeof(Email))]
+    public required List<string> IdsEmailsSendConfirmation { get; set; } = new();
 
     /// <summary>
     ///     True if there is an error

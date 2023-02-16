@@ -24,10 +24,10 @@ public partial class UbluxSession
     ///     acc property from JWT. Id of account. This is not a backend field
     /// </summary>
     [References(typeof(Account))]
-    [IsUbluxRequired]
-    [AllowUpdate(false)] 
-    [SwaggerSchema(ReadOnly = true)] 
-    public required string IdAccount { get; set; } = String.Empty;
+    [IgnoreDataMember]
+    [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
+    public required string? IdAccount { get; set; }
 
     ///// <summary>
     /////     Ids of tags

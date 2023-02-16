@@ -11,13 +11,11 @@ public partial class WebHook : UbluxDocument, IReferncesAccount
     #region References
 
     /// <inheritdoc/>
-    [IgnoreDataMember]
     [References(typeof(Account))]
+    [IgnoreDataMember]
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [IsUbluxRequired]
-    [HideForCreateRequest]
-    public required string IdAccount { get; set; } = "";
+    public required string? IdAccount { get; set; }
 
     #endregion
 }

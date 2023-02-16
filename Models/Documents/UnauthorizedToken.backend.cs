@@ -11,12 +11,11 @@ public partial class UnauthorizedToken : UbluxDocument, IReferncesAccount
     /// <summary>
     ///     Id of account
     /// </summary>
-    [IgnoreDataMember]
     [References(typeof(Account))]
+    [IgnoreDataMember]
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [IsUbluxRequired]
-    public required string IdAccount { get; set; } = String.Empty;
+    public required string? IdAccount { get; set; }
 }
 
 #endif

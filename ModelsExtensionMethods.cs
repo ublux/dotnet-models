@@ -27,7 +27,7 @@ public static class ModelsExtensionMethods
             Collections.Contacts => typeof(Contact),
             Collections.CustomerInfos => typeof(CustomerInfo),
             Collections.Extensions => typeof(Extension),
-            Collections.FaxEmailInfos => typeof(FaxEmailInfo),
+            //Collections.FaxEmailInfos => typeof(FaxEmailInfo),
             Collections.FaxesIncoming => typeof(FaxIncoming),
             Collections.FaxOutgoingGroups => typeof(FaxOutgoingGroup),
             Collections.Voicemails => typeof(Voicemail),
@@ -51,12 +51,13 @@ public static class ModelsExtensionMethods
             Collections.Tags => typeof(Tag),
             Collections.ApiKeys => typeof(ApiKey),
             Collections.AiCallTranscriptions => typeof(AiCallTranscription),
+            Collections.Emails => typeof(Email),
             _ => throw new Exception($"Missing collection type: {collection}"),// should never hit this point because this is tested in SouceCode Unit tests
         };
     }
 
     // used for faster results
-    private static ConcurrentDictionary<Type, Collections> _getCollectionUsedByTypeCache = new();
+    private static readonly ConcurrentDictionary<Type, Collections> _getCollectionUsedByTypeCache = new();
 
     /// <summary>
     ///     For example if the type is Phone it will return Phones collection
@@ -146,12 +147,12 @@ public static class ModelsExtensionMethods
             _getCollectionUsedByTypeCache[type] = Collections.Extensions;
             return Collections.Extensions;
         }
-        if (typeof(FaxEmailInfo).IsAssignableFrom(type))
-        {
-            // store on cache so next time it is faster
-            _getCollectionUsedByTypeCache[type] = Collections.FaxEmailInfos;
-            return Collections.FaxEmailInfos;
-        }
+        //if (typeof(FaxEmailInfo).IsAssignableFrom(type))
+        //{
+        //    // store on cache so next time it is faster
+        //    _getCollectionUsedByTypeCache[type] = Collections.FaxEmailInfos;
+        //    return Collections.FaxEmailInfos;
+        //}
         if (typeof(FaxIncoming).IsAssignableFrom(type))
         {
             // store on cache so next time it is faster
@@ -283,6 +284,12 @@ public static class ModelsExtensionMethods
             // store on cache so next time it is faster
             _getCollectionUsedByTypeCache[type] = Collections.AiCallTranscriptions;
             return Collections.AiCallTranscriptions;
+        }
+        if (typeof(Email).IsAssignableFrom(type))
+        {
+            // store on cache so next time it is faster
+            _getCollectionUsedByTypeCache[type] = Collections.Emails;
+            return Collections.Emails;
         }
         throw new Exception("Invalid Type");
     }

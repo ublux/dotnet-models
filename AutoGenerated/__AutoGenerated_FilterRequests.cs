@@ -259,6 +259,222 @@ public class AccountFilterRequest
     public DateTime? DateUpdated_GTE { get; set; }
 
 }
+/// <summary> Enables searching for Emails </summary>
+public class EmailFilterRequest 
+{
+    /// <summary> Address equals </summary>
+    [JsonProperty("address_eq")]
+    public string? Address_EQ { get; set; }
+    /// <summary> Address contains </summary>
+    [JsonProperty("address_con")]
+    public string? Address_CON { get; set; }
+    /// <summary> Address regex </summary>
+    [JsonProperty("address_reg")]
+    public string? Address_REG { get; set; }
+
+    /// <summary> DateVerified equals </summary>
+    [JsonProperty("dateVerified_eq")]
+    public DateTime? DateVerified_EQ { get; set; }
+    /// <summary> DateVerified less than or equal to </summary>
+    [JsonProperty("dateVerified_lte")]
+    public DateTime? DateVerified_LTE { get; set; }
+    /// <summary> DateVerified greater than or equal to </summary>
+    [JsonProperty("dateVerified_gte")]
+    public DateTime? DateVerified_GTE { get; set; }
+
+    /// <summary> IpAddress equals </summary>
+    [JsonProperty("ipAddress_eq")]
+    public string? IpAddress_EQ { get; set; }
+    /// <summary> IpAddress contains </summary>
+    [JsonProperty("ipAddress_con")]
+    public string? IpAddress_CON { get; set; }
+    /// <summary> IpAddress regex </summary>
+    [JsonProperty("ipAddress_reg")]
+    public string? IpAddress_REG { get; set; }
+
+    /// <summary> IdsTags equals </summary>
+    [JsonProperty("idsTags_eq")]
+    public string? IdsTags_EQ { get; set; }
+    /// <summary> IdsTags contains </summary>
+    [JsonProperty("idsTags_con")]
+    public string? IdsTags_CON { get; set; }
+    /// <summary> IdsTags regex </summary>
+    [JsonProperty("idsTags_reg")]
+    public string? IdsTags_REG { get; set; }
+
+    /// <summary> IdLineThatValidatedEmail.FriendlyName equals </summary>
+    [JsonProperty("idLineThatValidatedEmail_friendlyName_eq")]
+    public string? IdLineThatValidatedEmail_FriendlyName_EQ { get; set; }
+    /// <summary> IdLineThatValidatedEmail.FriendlyName contains </summary>
+    [JsonProperty("idLineThatValidatedEmail_friendlyName_con")]
+    public string? IdLineThatValidatedEmail_FriendlyName_CON { get; set; }
+    /// <summary> IdLineThatValidatedEmail.FriendlyName regex </summary>
+    [JsonProperty("idLineThatValidatedEmail_friendlyName_reg")]
+    public string? IdLineThatValidatedEmail_FriendlyName_REG { get; set; }
+
+    /// <summary> IdLineThatValidatedEmail.LineConnectionStatus.IpWAN equals </summary>
+    [JsonProperty("idLineThatValidatedEmail_lineConnectionStatus_ipWAN_eq")]
+    public string? IdLineThatValidatedEmail_LineConnectionStatus_IpWAN_EQ { get; set; }
+    /// <summary> IdLineThatValidatedEmail.LineConnectionStatus.IpWAN contains </summary>
+    [JsonProperty("idLineThatValidatedEmail_lineConnectionStatus_ipWAN_con")]
+    public string? IdLineThatValidatedEmail_LineConnectionStatus_IpWAN_CON { get; set; }
+    /// <summary> IdLineThatValidatedEmail.LineConnectionStatus.IpWAN regex </summary>
+    [JsonProperty("idLineThatValidatedEmail_lineConnectionStatus_ipWAN_reg")]
+    public string? IdLineThatValidatedEmail_LineConnectionStatus_IpWAN_REG { get; set; }
+
+    /// <summary> IdLineThatValidatedEmail.LineConnectionStatus.PortWAN equals </summary>
+    [JsonProperty("idLineThatValidatedEmail_lineConnectionStatus_portWAN_eq")]
+    public System.Int32? IdLineThatValidatedEmail_LineConnectionStatus_PortWAN_EQ { get; set; }
+    /// <summary> IdLineThatValidatedEmail.LineConnectionStatus.PortWAN less than or equal to </summary>
+    [JsonProperty("idLineThatValidatedEmail_lineConnectionStatus_portWAN_lte")]
+    public System.Int32? IdLineThatValidatedEmail_LineConnectionStatus_PortWAN_LTE { get; set; }
+    /// <summary> IdLineThatValidatedEmail.LineConnectionStatus.PortWAN greater than or equal to </summary>
+    [JsonProperty("idLineThatValidatedEmail_lineConnectionStatus_portWAN_gte")]
+    public System.Int32? IdLineThatValidatedEmail_LineConnectionStatus_PortWAN_GTE { get; set; }
+
+    /// <summary> IdLineThatValidatedEmail.LineConnectionStatus.IpLAN equals </summary>
+    [JsonProperty("idLineThatValidatedEmail_lineConnectionStatus_ipLAN_eq")]
+    public string? IdLineThatValidatedEmail_LineConnectionStatus_IpLAN_EQ { get; set; }
+    /// <summary> IdLineThatValidatedEmail.LineConnectionStatus.IpLAN contains </summary>
+    [JsonProperty("idLineThatValidatedEmail_lineConnectionStatus_ipLAN_con")]
+    public string? IdLineThatValidatedEmail_LineConnectionStatus_IpLAN_CON { get; set; }
+    /// <summary> IdLineThatValidatedEmail.LineConnectionStatus.IpLAN regex </summary>
+    [JsonProperty("idLineThatValidatedEmail_lineConnectionStatus_ipLAN_reg")]
+    public string? IdLineThatValidatedEmail_LineConnectionStatus_IpLAN_REG { get; set; }
+
+    /// <summary> IdLineThatValidatedEmail.LineConnectionStatus.PortLAN equals </summary>
+    [JsonProperty("idLineThatValidatedEmail_lineConnectionStatus_portLAN_eq")]
+    public System.Int32? IdLineThatValidatedEmail_LineConnectionStatus_PortLAN_EQ { get; set; }
+    /// <summary> IdLineThatValidatedEmail.LineConnectionStatus.PortLAN less than or equal to </summary>
+    [JsonProperty("idLineThatValidatedEmail_lineConnectionStatus_portLAN_lte")]
+    public System.Int32? IdLineThatValidatedEmail_LineConnectionStatus_PortLAN_LTE { get; set; }
+    /// <summary> IdLineThatValidatedEmail.LineConnectionStatus.PortLAN greater than or equal to </summary>
+    [JsonProperty("idLineThatValidatedEmail_lineConnectionStatus_portLAN_gte")]
+    public System.Int32? IdLineThatValidatedEmail_LineConnectionStatus_PortLAN_GTE { get; set; }
+
+    /// <summary> IdLineThatValidatedEmail.LineConnectionStatus.UserAgent equals </summary>
+    [JsonProperty("idLineThatValidatedEmail_lineConnectionStatus_userAgent_eq")]
+    public string? IdLineThatValidatedEmail_LineConnectionStatus_UserAgent_EQ { get; set; }
+    /// <summary> IdLineThatValidatedEmail.LineConnectionStatus.UserAgent contains </summary>
+    [JsonProperty("idLineThatValidatedEmail_lineConnectionStatus_userAgent_con")]
+    public string? IdLineThatValidatedEmail_LineConnectionStatus_UserAgent_CON { get; set; }
+    /// <summary> IdLineThatValidatedEmail.LineConnectionStatus.UserAgent regex </summary>
+    [JsonProperty("idLineThatValidatedEmail_lineConnectionStatus_userAgent_reg")]
+    public string? IdLineThatValidatedEmail_LineConnectionStatus_UserAgent_REG { get; set; }
+
+    /// <summary> IdLineThatValidatedEmail.LineConnectionStatus.IsConnected equals </summary>
+    [JsonProperty("idLineThatValidatedEmail_lineConnectionStatus_isConnected_eq")]
+    public bool? IdLineThatValidatedEmail_LineConnectionStatus_IsConnected_EQ { get; set; }
+
+    /// <summary> IdLineThatValidatedEmail.LineConnectionStatus.DisconnectedReason equals </summary>
+    [JsonProperty("idLineThatValidatedEmail_lineConnectionStatus_disconnectedReason_eq")]
+    public string? IdLineThatValidatedEmail_LineConnectionStatus_DisconnectedReason_EQ { get; set; }
+    /// <summary> IdLineThatValidatedEmail.LineConnectionStatus.DisconnectedReason contains </summary>
+    [JsonProperty("idLineThatValidatedEmail_lineConnectionStatus_disconnectedReason_con")]
+    public string? IdLineThatValidatedEmail_LineConnectionStatus_DisconnectedReason_CON { get; set; }
+    /// <summary> IdLineThatValidatedEmail.LineConnectionStatus.DisconnectedReason regex </summary>
+    [JsonProperty("idLineThatValidatedEmail_lineConnectionStatus_disconnectedReason_reg")]
+    public string? IdLineThatValidatedEmail_LineConnectionStatus_DisconnectedReason_REG { get; set; }
+
+    /// <summary> IdLineThatValidatedEmail.LineConnectionStatus.DateConnected equals </summary>
+    [JsonProperty("idLineThatValidatedEmail_lineConnectionStatus_dateConnected_eq")]
+    public DateTime? IdLineThatValidatedEmail_LineConnectionStatus_DateConnected_EQ { get; set; }
+    /// <summary> IdLineThatValidatedEmail.LineConnectionStatus.DateConnected less than or equal to </summary>
+    [JsonProperty("idLineThatValidatedEmail_lineConnectionStatus_dateConnected_lte")]
+    public DateTime? IdLineThatValidatedEmail_LineConnectionStatus_DateConnected_LTE { get; set; }
+    /// <summary> IdLineThatValidatedEmail.LineConnectionStatus.DateConnected greater than or equal to </summary>
+    [JsonProperty("idLineThatValidatedEmail_lineConnectionStatus_dateConnected_gte")]
+    public DateTime? IdLineThatValidatedEmail_LineConnectionStatus_DateConnected_GTE { get; set; }
+
+    /// <summary> IdLineThatValidatedEmail.LineConnectionStatus.DateDisconnected equals </summary>
+    [JsonProperty("idLineThatValidatedEmail_lineConnectionStatus_dateDisconnected_eq")]
+    public DateTime? IdLineThatValidatedEmail_LineConnectionStatus_DateDisconnected_EQ { get; set; }
+    /// <summary> IdLineThatValidatedEmail.LineConnectionStatus.DateDisconnected less than or equal to </summary>
+    [JsonProperty("idLineThatValidatedEmail_lineConnectionStatus_dateDisconnected_lte")]
+    public DateTime? IdLineThatValidatedEmail_LineConnectionStatus_DateDisconnected_LTE { get; set; }
+    /// <summary> IdLineThatValidatedEmail.LineConnectionStatus.DateDisconnected greater than or equal to </summary>
+    [JsonProperty("idLineThatValidatedEmail_lineConnectionStatus_dateDisconnected_gte")]
+    public DateTime? IdLineThatValidatedEmail_LineConnectionStatus_DateDisconnected_GTE { get; set; }
+
+
+    /// <summary> IdLineThatValidatedEmail.CallerIdNumber equals </summary>
+    [JsonProperty("idLineThatValidatedEmail_callerIdNumber_eq")]
+    public string? IdLineThatValidatedEmail_CallerIdNumber_EQ { get; set; }
+    /// <summary> IdLineThatValidatedEmail.CallerIdNumber contains </summary>
+    [JsonProperty("idLineThatValidatedEmail_callerIdNumber_con")]
+    public string? IdLineThatValidatedEmail_CallerIdNumber_CON { get; set; }
+    /// <summary> IdLineThatValidatedEmail.CallerIdNumber regex </summary>
+    [JsonProperty("idLineThatValidatedEmail_callerIdNumber_reg")]
+    public string? IdLineThatValidatedEmail_CallerIdNumber_REG { get; set; }
+
+    /// <summary> IdLineThatValidatedEmail.RecordExternalCalls equals </summary>
+    [JsonProperty("idLineThatValidatedEmail_recordExternalCalls_eq")]
+    public bool? IdLineThatValidatedEmail_RecordExternalCalls_EQ { get; set; }
+
+    /// <summary> IdLineThatValidatedEmail.RecordInternalCalls equals </summary>
+    [JsonProperty("idLineThatValidatedEmail_recordInternalCalls_eq")]
+    public bool? IdLineThatValidatedEmail_RecordInternalCalls_EQ { get; set; }
+
+    /// <summary> IdLineThatValidatedEmail.UseAiForExternalCalls equals </summary>
+    [JsonProperty("idLineThatValidatedEmail_useAiForExternalCalls_eq")]
+    public bool? IdLineThatValidatedEmail_UseAiForExternalCalls_EQ { get; set; }
+
+    /// <summary> IdLineThatValidatedEmail.UseAiForOutgoingCallsToExtensions equals </summary>
+    [JsonProperty("idLineThatValidatedEmail_useAiForOutgoingCallsToExtensions_eq")]
+    public bool? IdLineThatValidatedEmail_UseAiForOutgoingCallsToExtensions_EQ { get; set; }
+
+    /// <summary> IdLineThatValidatedEmail.Language equals </summary>
+    [JsonProperty("idLineThatValidatedEmail_language_eq")]
+    public string? IdLineThatValidatedEmail_Language_EQ { get; set; }
+    /// <summary> IdLineThatValidatedEmail.Language contains </summary>
+    [JsonProperty("idLineThatValidatedEmail_language_con")]
+    public string? IdLineThatValidatedEmail_Language_CON { get; set; }
+    /// <summary> IdLineThatValidatedEmail.Language regex </summary>
+    [JsonProperty("idLineThatValidatedEmail_language_reg")]
+    public string? IdLineThatValidatedEmail_Language_REG { get; set; }
+
+    /// <summary> IdLineThatValidatedEmail.Id equals </summary>
+    [JsonProperty("idLineThatValidatedEmail_id_eq")]
+    public string? IdLineThatValidatedEmail_Id_EQ { get; set; }
+    /// <summary> IdLineThatValidatedEmail.Id contains </summary>
+    [JsonProperty("idLineThatValidatedEmail_id_con")]
+    public string? IdLineThatValidatedEmail_Id_CON { get; set; }
+    /// <summary> IdLineThatValidatedEmail.Id regex </summary>
+    [JsonProperty("idLineThatValidatedEmail_id_reg")]
+    public string? IdLineThatValidatedEmail_Id_REG { get; set; }
+
+
+    /// <summary> Id equals </summary>
+    [JsonProperty("id_eq")]
+    public string? Id_EQ { get; set; }
+    /// <summary> Id contains </summary>
+    [JsonProperty("id_con")]
+    public string? Id_CON { get; set; }
+    /// <summary> Id regex </summary>
+    [JsonProperty("id_reg")]
+    public string? Id_REG { get; set; }
+
+    /// <summary> DateCreated equals </summary>
+    [JsonProperty("dateCreated_eq")]
+    public DateTime? DateCreated_EQ { get; set; }
+    /// <summary> DateCreated less than or equal to </summary>
+    [JsonProperty("dateCreated_lte")]
+    public DateTime? DateCreated_LTE { get; set; }
+    /// <summary> DateCreated greater than or equal to </summary>
+    [JsonProperty("dateCreated_gte")]
+    public DateTime? DateCreated_GTE { get; set; }
+
+    /// <summary> DateUpdated equals </summary>
+    [JsonProperty("dateUpdated_eq")]
+    public DateTime? DateUpdated_EQ { get; set; }
+    /// <summary> DateUpdated less than or equal to </summary>
+    [JsonProperty("dateUpdated_lte")]
+    public DateTime? DateUpdated_LTE { get; set; }
+    /// <summary> DateUpdated greater than or equal to </summary>
+    [JsonProperty("dateUpdated_gte")]
+    public DateTime? DateUpdated_GTE { get; set; }
+
+}
 /// <summary> Enables searching for AgreementToTermsAndConditionss </summary>
 public class AgreementToTermsAndConditionsFilterRequest 
 {
@@ -3548,15 +3764,15 @@ public class ExtensionDialFilterRequest
     public string? EventActionToExecuteIfNotAnswered_EventActionType_REG { get; set; }
 
 
-    /// <summary> SendEmailNotificationIfNotAnswered.Emails equals </summary>
-    [JsonProperty("sendEmailNotificationIfNotAnswered_emails_eq")]
-    public string? SendEmailNotificationIfNotAnswered_Emails_EQ { get; set; }
-    /// <summary> SendEmailNotificationIfNotAnswered.Emails contains </summary>
-    [JsonProperty("sendEmailNotificationIfNotAnswered_emails_con")]
-    public string? SendEmailNotificationIfNotAnswered_Emails_CON { get; set; }
-    /// <summary> SendEmailNotificationIfNotAnswered.Emails regex </summary>
-    [JsonProperty("sendEmailNotificationIfNotAnswered_emails_reg")]
-    public string? SendEmailNotificationIfNotAnswered_Emails_REG { get; set; }
+    /// <summary> SendEmailNotificationIfNotAnswered.IdsEmails equals </summary>
+    [JsonProperty("sendEmailNotificationIfNotAnswered_idsEmails_eq")]
+    public string? SendEmailNotificationIfNotAnswered_IdsEmails_EQ { get; set; }
+    /// <summary> SendEmailNotificationIfNotAnswered.IdsEmails contains </summary>
+    [JsonProperty("sendEmailNotificationIfNotAnswered_idsEmails_con")]
+    public string? SendEmailNotificationIfNotAnswered_IdsEmails_CON { get; set; }
+    /// <summary> SendEmailNotificationIfNotAnswered.IdsEmails regex </summary>
+    [JsonProperty("sendEmailNotificationIfNotAnswered_idsEmails_reg")]
+    public string? SendEmailNotificationIfNotAnswered_IdsEmails_REG { get; set; }
 
     /// <summary> SendEmailNotificationIfNotAnswered.PreventSendingNotificationIfLastLessThanNSeconds equals </summary>
     [JsonProperty("sendEmailNotificationIfNotAnswered_preventSendingNotificationIfLastLessThanNSeconds_eq")]
@@ -3697,15 +3913,15 @@ public class ExtensionQueueFilterRequest
     [JsonProperty("idsAudios_reg")]
     public string? IdsAudios_REG { get; set; }
 
-    /// <summary> SendEmailNotificationIfNotAnswered.Emails equals </summary>
-    [JsonProperty("sendEmailNotificationIfNotAnswered_emails_eq")]
-    public string? SendEmailNotificationIfNotAnswered_Emails_EQ { get; set; }
-    /// <summary> SendEmailNotificationIfNotAnswered.Emails contains </summary>
-    [JsonProperty("sendEmailNotificationIfNotAnswered_emails_con")]
-    public string? SendEmailNotificationIfNotAnswered_Emails_CON { get; set; }
-    /// <summary> SendEmailNotificationIfNotAnswered.Emails regex </summary>
-    [JsonProperty("sendEmailNotificationIfNotAnswered_emails_reg")]
-    public string? SendEmailNotificationIfNotAnswered_Emails_REG { get; set; }
+    /// <summary> SendEmailNotificationIfNotAnswered.IdsEmails equals </summary>
+    [JsonProperty("sendEmailNotificationIfNotAnswered_idsEmails_eq")]
+    public string? SendEmailNotificationIfNotAnswered_IdsEmails_EQ { get; set; }
+    /// <summary> SendEmailNotificationIfNotAnswered.IdsEmails contains </summary>
+    [JsonProperty("sendEmailNotificationIfNotAnswered_idsEmails_con")]
+    public string? SendEmailNotificationIfNotAnswered_IdsEmails_CON { get; set; }
+    /// <summary> SendEmailNotificationIfNotAnswered.IdsEmails regex </summary>
+    [JsonProperty("sendEmailNotificationIfNotAnswered_idsEmails_reg")]
+    public string? SendEmailNotificationIfNotAnswered_IdsEmails_REG { get; set; }
 
     /// <summary> SendEmailNotificationIfNotAnswered.PreventSendingNotificationIfLastLessThanNSeconds equals </summary>
     [JsonProperty("sendEmailNotificationIfNotAnswered_preventSendingNotificationIfLastLessThanNSeconds_eq")]
@@ -3728,15 +3944,15 @@ public class ExtensionQueueFilterRequest
     [JsonProperty("sendEmailNotificationIfItTakesToLongToBeAnswered_timeInSeconds_gte")]
     public System.Int32? SendEmailNotificationIfItTakesToLongToBeAnswered_TimeInSeconds_GTE { get; set; }
 
-    /// <summary> SendEmailNotificationIfItTakesToLongToBeAnswered.Email equals </summary>
-    [JsonProperty("sendEmailNotificationIfItTakesToLongToBeAnswered_email_eq")]
-    public string? SendEmailNotificationIfItTakesToLongToBeAnswered_Email_EQ { get; set; }
-    /// <summary> SendEmailNotificationIfItTakesToLongToBeAnswered.Email contains </summary>
-    [JsonProperty("sendEmailNotificationIfItTakesToLongToBeAnswered_email_con")]
-    public string? SendEmailNotificationIfItTakesToLongToBeAnswered_Email_CON { get; set; }
-    /// <summary> SendEmailNotificationIfItTakesToLongToBeAnswered.Email regex </summary>
-    [JsonProperty("sendEmailNotificationIfItTakesToLongToBeAnswered_email_reg")]
-    public string? SendEmailNotificationIfItTakesToLongToBeAnswered_Email_REG { get; set; }
+    /// <summary> SendEmailNotificationIfItTakesToLongToBeAnswered.IdsEmails equals </summary>
+    [JsonProperty("sendEmailNotificationIfItTakesToLongToBeAnswered_idsEmails_eq")]
+    public string? SendEmailNotificationIfItTakesToLongToBeAnswered_IdsEmails_EQ { get; set; }
+    /// <summary> SendEmailNotificationIfItTakesToLongToBeAnswered.IdsEmails contains </summary>
+    [JsonProperty("sendEmailNotificationIfItTakesToLongToBeAnswered_idsEmails_con")]
+    public string? SendEmailNotificationIfItTakesToLongToBeAnswered_IdsEmails_CON { get; set; }
+    /// <summary> SendEmailNotificationIfItTakesToLongToBeAnswered.IdsEmails regex </summary>
+    [JsonProperty("sendEmailNotificationIfItTakesToLongToBeAnswered_idsEmails_reg")]
+    public string? SendEmailNotificationIfItTakesToLongToBeAnswered_IdsEmails_REG { get; set; }
 
 
     /// <summary> RingTimeInSeconds equals </summary>
@@ -3909,15 +4125,15 @@ public class ExtensionVoicemailFilterRequest
     [JsonProperty("idsLinesThatCanListenToVoicemail_reg")]
     public string? IdsLinesThatCanListenToVoicemail_REG { get; set; }
 
-    /// <summary> Email equals </summary>
-    [JsonProperty("email_eq")]
-    public string? Email_EQ { get; set; }
-    /// <summary> Email contains </summary>
-    [JsonProperty("email_con")]
-    public string? Email_CON { get; set; }
-    /// <summary> Email regex </summary>
-    [JsonProperty("email_reg")]
-    public string? Email_REG { get; set; }
+    /// <summary> IdEmail equals </summary>
+    [JsonProperty("idEmail_eq")]
+    public string? IdEmail_EQ { get; set; }
+    /// <summary> IdEmail contains </summary>
+    [JsonProperty("idEmail_con")]
+    public string? IdEmail_CON { get; set; }
+    /// <summary> IdEmail regex </summary>
+    [JsonProperty("idEmail_reg")]
+    public string? IdEmail_REG { get; set; }
 
     /// <summary> TextToSpeech equals </summary>
     [JsonProperty("textToSpeech_eq")]
@@ -3992,212 +4208,6 @@ public class ExtensionVoicemailFilterRequest
     /// <summary> InjectExtensionNameToCallerId equals </summary>
     [JsonProperty("injectExtensionNameToCallerId_eq")]
     public bool? InjectExtensionNameToCallerId_EQ { get; set; }
-
-    /// <summary> Id equals </summary>
-    [JsonProperty("id_eq")]
-    public string? Id_EQ { get; set; }
-    /// <summary> Id contains </summary>
-    [JsonProperty("id_con")]
-    public string? Id_CON { get; set; }
-    /// <summary> Id regex </summary>
-    [JsonProperty("id_reg")]
-    public string? Id_REG { get; set; }
-
-    /// <summary> DateCreated equals </summary>
-    [JsonProperty("dateCreated_eq")]
-    public DateTime? DateCreated_EQ { get; set; }
-    /// <summary> DateCreated less than or equal to </summary>
-    [JsonProperty("dateCreated_lte")]
-    public DateTime? DateCreated_LTE { get; set; }
-    /// <summary> DateCreated greater than or equal to </summary>
-    [JsonProperty("dateCreated_gte")]
-    public DateTime? DateCreated_GTE { get; set; }
-
-    /// <summary> DateUpdated equals </summary>
-    [JsonProperty("dateUpdated_eq")]
-    public DateTime? DateUpdated_EQ { get; set; }
-    /// <summary> DateUpdated less than or equal to </summary>
-    [JsonProperty("dateUpdated_lte")]
-    public DateTime? DateUpdated_LTE { get; set; }
-    /// <summary> DateUpdated greater than or equal to </summary>
-    [JsonProperty("dateUpdated_gte")]
-    public DateTime? DateUpdated_GTE { get; set; }
-
-}
-/// <summary> Enables searching for FaxEmailInfos </summary>
-public class FaxEmailInfoFilterRequest 
-{
-    /// <summary> LineThatValidatedEmail.FriendlyName equals </summary>
-    [JsonProperty("lineThatValidatedEmail_friendlyName_eq")]
-    public string? LineThatValidatedEmail_FriendlyName_EQ { get; set; }
-    /// <summary> LineThatValidatedEmail.FriendlyName contains </summary>
-    [JsonProperty("lineThatValidatedEmail_friendlyName_con")]
-    public string? LineThatValidatedEmail_FriendlyName_CON { get; set; }
-    /// <summary> LineThatValidatedEmail.FriendlyName regex </summary>
-    [JsonProperty("lineThatValidatedEmail_friendlyName_reg")]
-    public string? LineThatValidatedEmail_FriendlyName_REG { get; set; }
-
-    /// <summary> LineThatValidatedEmail.LineConnectionStatus.IpWAN equals </summary>
-    [JsonProperty("lineThatValidatedEmail_lineConnectionStatus_ipWAN_eq")]
-    public string? LineThatValidatedEmail_LineConnectionStatus_IpWAN_EQ { get; set; }
-    /// <summary> LineThatValidatedEmail.LineConnectionStatus.IpWAN contains </summary>
-    [JsonProperty("lineThatValidatedEmail_lineConnectionStatus_ipWAN_con")]
-    public string? LineThatValidatedEmail_LineConnectionStatus_IpWAN_CON { get; set; }
-    /// <summary> LineThatValidatedEmail.LineConnectionStatus.IpWAN regex </summary>
-    [JsonProperty("lineThatValidatedEmail_lineConnectionStatus_ipWAN_reg")]
-    public string? LineThatValidatedEmail_LineConnectionStatus_IpWAN_REG { get; set; }
-
-    /// <summary> LineThatValidatedEmail.LineConnectionStatus.PortWAN equals </summary>
-    [JsonProperty("lineThatValidatedEmail_lineConnectionStatus_portWAN_eq")]
-    public System.Int32? LineThatValidatedEmail_LineConnectionStatus_PortWAN_EQ { get; set; }
-    /// <summary> LineThatValidatedEmail.LineConnectionStatus.PortWAN less than or equal to </summary>
-    [JsonProperty("lineThatValidatedEmail_lineConnectionStatus_portWAN_lte")]
-    public System.Int32? LineThatValidatedEmail_LineConnectionStatus_PortWAN_LTE { get; set; }
-    /// <summary> LineThatValidatedEmail.LineConnectionStatus.PortWAN greater than or equal to </summary>
-    [JsonProperty("lineThatValidatedEmail_lineConnectionStatus_portWAN_gte")]
-    public System.Int32? LineThatValidatedEmail_LineConnectionStatus_PortWAN_GTE { get; set; }
-
-    /// <summary> LineThatValidatedEmail.LineConnectionStatus.IpLAN equals </summary>
-    [JsonProperty("lineThatValidatedEmail_lineConnectionStatus_ipLAN_eq")]
-    public string? LineThatValidatedEmail_LineConnectionStatus_IpLAN_EQ { get; set; }
-    /// <summary> LineThatValidatedEmail.LineConnectionStatus.IpLAN contains </summary>
-    [JsonProperty("lineThatValidatedEmail_lineConnectionStatus_ipLAN_con")]
-    public string? LineThatValidatedEmail_LineConnectionStatus_IpLAN_CON { get; set; }
-    /// <summary> LineThatValidatedEmail.LineConnectionStatus.IpLAN regex </summary>
-    [JsonProperty("lineThatValidatedEmail_lineConnectionStatus_ipLAN_reg")]
-    public string? LineThatValidatedEmail_LineConnectionStatus_IpLAN_REG { get; set; }
-
-    /// <summary> LineThatValidatedEmail.LineConnectionStatus.PortLAN equals </summary>
-    [JsonProperty("lineThatValidatedEmail_lineConnectionStatus_portLAN_eq")]
-    public System.Int32? LineThatValidatedEmail_LineConnectionStatus_PortLAN_EQ { get; set; }
-    /// <summary> LineThatValidatedEmail.LineConnectionStatus.PortLAN less than or equal to </summary>
-    [JsonProperty("lineThatValidatedEmail_lineConnectionStatus_portLAN_lte")]
-    public System.Int32? LineThatValidatedEmail_LineConnectionStatus_PortLAN_LTE { get; set; }
-    /// <summary> LineThatValidatedEmail.LineConnectionStatus.PortLAN greater than or equal to </summary>
-    [JsonProperty("lineThatValidatedEmail_lineConnectionStatus_portLAN_gte")]
-    public System.Int32? LineThatValidatedEmail_LineConnectionStatus_PortLAN_GTE { get; set; }
-
-    /// <summary> LineThatValidatedEmail.LineConnectionStatus.UserAgent equals </summary>
-    [JsonProperty("lineThatValidatedEmail_lineConnectionStatus_userAgent_eq")]
-    public string? LineThatValidatedEmail_LineConnectionStatus_UserAgent_EQ { get; set; }
-    /// <summary> LineThatValidatedEmail.LineConnectionStatus.UserAgent contains </summary>
-    [JsonProperty("lineThatValidatedEmail_lineConnectionStatus_userAgent_con")]
-    public string? LineThatValidatedEmail_LineConnectionStatus_UserAgent_CON { get; set; }
-    /// <summary> LineThatValidatedEmail.LineConnectionStatus.UserAgent regex </summary>
-    [JsonProperty("lineThatValidatedEmail_lineConnectionStatus_userAgent_reg")]
-    public string? LineThatValidatedEmail_LineConnectionStatus_UserAgent_REG { get; set; }
-
-    /// <summary> LineThatValidatedEmail.LineConnectionStatus.IsConnected equals </summary>
-    [JsonProperty("lineThatValidatedEmail_lineConnectionStatus_isConnected_eq")]
-    public bool? LineThatValidatedEmail_LineConnectionStatus_IsConnected_EQ { get; set; }
-
-    /// <summary> LineThatValidatedEmail.LineConnectionStatus.DisconnectedReason equals </summary>
-    [JsonProperty("lineThatValidatedEmail_lineConnectionStatus_disconnectedReason_eq")]
-    public string? LineThatValidatedEmail_LineConnectionStatus_DisconnectedReason_EQ { get; set; }
-    /// <summary> LineThatValidatedEmail.LineConnectionStatus.DisconnectedReason contains </summary>
-    [JsonProperty("lineThatValidatedEmail_lineConnectionStatus_disconnectedReason_con")]
-    public string? LineThatValidatedEmail_LineConnectionStatus_DisconnectedReason_CON { get; set; }
-    /// <summary> LineThatValidatedEmail.LineConnectionStatus.DisconnectedReason regex </summary>
-    [JsonProperty("lineThatValidatedEmail_lineConnectionStatus_disconnectedReason_reg")]
-    public string? LineThatValidatedEmail_LineConnectionStatus_DisconnectedReason_REG { get; set; }
-
-    /// <summary> LineThatValidatedEmail.LineConnectionStatus.DateConnected equals </summary>
-    [JsonProperty("lineThatValidatedEmail_lineConnectionStatus_dateConnected_eq")]
-    public DateTime? LineThatValidatedEmail_LineConnectionStatus_DateConnected_EQ { get; set; }
-    /// <summary> LineThatValidatedEmail.LineConnectionStatus.DateConnected less than or equal to </summary>
-    [JsonProperty("lineThatValidatedEmail_lineConnectionStatus_dateConnected_lte")]
-    public DateTime? LineThatValidatedEmail_LineConnectionStatus_DateConnected_LTE { get; set; }
-    /// <summary> LineThatValidatedEmail.LineConnectionStatus.DateConnected greater than or equal to </summary>
-    [JsonProperty("lineThatValidatedEmail_lineConnectionStatus_dateConnected_gte")]
-    public DateTime? LineThatValidatedEmail_LineConnectionStatus_DateConnected_GTE { get; set; }
-
-    /// <summary> LineThatValidatedEmail.LineConnectionStatus.DateDisconnected equals </summary>
-    [JsonProperty("lineThatValidatedEmail_lineConnectionStatus_dateDisconnected_eq")]
-    public DateTime? LineThatValidatedEmail_LineConnectionStatus_DateDisconnected_EQ { get; set; }
-    /// <summary> LineThatValidatedEmail.LineConnectionStatus.DateDisconnected less than or equal to </summary>
-    [JsonProperty("lineThatValidatedEmail_lineConnectionStatus_dateDisconnected_lte")]
-    public DateTime? LineThatValidatedEmail_LineConnectionStatus_DateDisconnected_LTE { get; set; }
-    /// <summary> LineThatValidatedEmail.LineConnectionStatus.DateDisconnected greater than or equal to </summary>
-    [JsonProperty("lineThatValidatedEmail_lineConnectionStatus_dateDisconnected_gte")]
-    public DateTime? LineThatValidatedEmail_LineConnectionStatus_DateDisconnected_GTE { get; set; }
-
-
-    /// <summary> LineThatValidatedEmail.CallerIdNumber equals </summary>
-    [JsonProperty("lineThatValidatedEmail_callerIdNumber_eq")]
-    public string? LineThatValidatedEmail_CallerIdNumber_EQ { get; set; }
-    /// <summary> LineThatValidatedEmail.CallerIdNumber contains </summary>
-    [JsonProperty("lineThatValidatedEmail_callerIdNumber_con")]
-    public string? LineThatValidatedEmail_CallerIdNumber_CON { get; set; }
-    /// <summary> LineThatValidatedEmail.CallerIdNumber regex </summary>
-    [JsonProperty("lineThatValidatedEmail_callerIdNumber_reg")]
-    public string? LineThatValidatedEmail_CallerIdNumber_REG { get; set; }
-
-    /// <summary> LineThatValidatedEmail.RecordExternalCalls equals </summary>
-    [JsonProperty("lineThatValidatedEmail_recordExternalCalls_eq")]
-    public bool? LineThatValidatedEmail_RecordExternalCalls_EQ { get; set; }
-
-    /// <summary> LineThatValidatedEmail.RecordInternalCalls equals </summary>
-    [JsonProperty("lineThatValidatedEmail_recordInternalCalls_eq")]
-    public bool? LineThatValidatedEmail_RecordInternalCalls_EQ { get; set; }
-
-    /// <summary> LineThatValidatedEmail.UseAiForExternalCalls equals </summary>
-    [JsonProperty("lineThatValidatedEmail_useAiForExternalCalls_eq")]
-    public bool? LineThatValidatedEmail_UseAiForExternalCalls_EQ { get; set; }
-
-    /// <summary> LineThatValidatedEmail.UseAiForOutgoingCallsToExtensions equals </summary>
-    [JsonProperty("lineThatValidatedEmail_useAiForOutgoingCallsToExtensions_eq")]
-    public bool? LineThatValidatedEmail_UseAiForOutgoingCallsToExtensions_EQ { get; set; }
-
-    /// <summary> LineThatValidatedEmail.Language equals </summary>
-    [JsonProperty("lineThatValidatedEmail_language_eq")]
-    public string? LineThatValidatedEmail_Language_EQ { get; set; }
-    /// <summary> LineThatValidatedEmail.Language contains </summary>
-    [JsonProperty("lineThatValidatedEmail_language_con")]
-    public string? LineThatValidatedEmail_Language_CON { get; set; }
-    /// <summary> LineThatValidatedEmail.Language regex </summary>
-    [JsonProperty("lineThatValidatedEmail_language_reg")]
-    public string? LineThatValidatedEmail_Language_REG { get; set; }
-
-    /// <summary> LineThatValidatedEmail.Id equals </summary>
-    [JsonProperty("lineThatValidatedEmail_id_eq")]
-    public string? LineThatValidatedEmail_Id_EQ { get; set; }
-    /// <summary> LineThatValidatedEmail.Id contains </summary>
-    [JsonProperty("lineThatValidatedEmail_id_con")]
-    public string? LineThatValidatedEmail_Id_CON { get; set; }
-    /// <summary> LineThatValidatedEmail.Id regex </summary>
-    [JsonProperty("lineThatValidatedEmail_id_reg")]
-    public string? LineThatValidatedEmail_Id_REG { get; set; }
-
-
-    /// <summary> IdsTags equals </summary>
-    [JsonProperty("idsTags_eq")]
-    public string? IdsTags_EQ { get; set; }
-    /// <summary> IdsTags contains </summary>
-    [JsonProperty("idsTags_con")]
-    public string? IdsTags_CON { get; set; }
-    /// <summary> IdsTags regex </summary>
-    [JsonProperty("idsTags_reg")]
-    public string? IdsTags_REG { get; set; }
-
-    /// <summary> NumberOfEmailsReceived equals </summary>
-    [JsonProperty("numberOfEmailsReceived_eq")]
-    public System.Int32? NumberOfEmailsReceived_EQ { get; set; }
-    /// <summary> NumberOfEmailsReceived less than or equal to </summary>
-    [JsonProperty("numberOfEmailsReceived_lte")]
-    public System.Int32? NumberOfEmailsReceived_LTE { get; set; }
-    /// <summary> NumberOfEmailsReceived greater than or equal to </summary>
-    [JsonProperty("numberOfEmailsReceived_gte")]
-    public System.Int32? NumberOfEmailsReceived_GTE { get; set; }
-
-    /// <summary> ReplyStatus equals </summary>
-    [JsonProperty("replyStatus_eq")]
-    public string? ReplyStatus_EQ { get; set; }
-    /// <summary> ReplyStatus contains </summary>
-    [JsonProperty("replyStatus_con")]
-    public string? ReplyStatus_CON { get; set; }
-    /// <summary> ReplyStatus regex </summary>
-    [JsonProperty("replyStatus_reg")]
-    public string? ReplyStatus_REG { get; set; }
 
     /// <summary> Id equals </summary>
     [JsonProperty("id_eq")]
@@ -4544,57 +4554,6 @@ public class FaxOutgoingGroupFilterRequest
     public string? FaxesOutgoing_Id_REG { get; set; }
 
 
-    /// <summary> FaxEmail.Id equals </summary>
-    [JsonProperty("faxEmail_id_eq")]
-    public string? FaxEmail_Id_EQ { get; set; }
-    /// <summary> FaxEmail.Id contains </summary>
-    [JsonProperty("faxEmail_id_con")]
-    public string? FaxEmail_Id_CON { get; set; }
-    /// <summary> FaxEmail.Id regex </summary>
-    [JsonProperty("faxEmail_id_reg")]
-    public string? FaxEmail_Id_REG { get; set; }
-
-    /// <summary> FaxEmail.MessageID equals </summary>
-    [JsonProperty("faxEmail_messageID_eq")]
-    public string? FaxEmail_MessageID_EQ { get; set; }
-    /// <summary> FaxEmail.MessageID contains </summary>
-    [JsonProperty("faxEmail_messageID_con")]
-    public string? FaxEmail_MessageID_CON { get; set; }
-    /// <summary> FaxEmail.MessageID regex </summary>
-    [JsonProperty("faxEmail_messageID_reg")]
-    public string? FaxEmail_MessageID_REG { get; set; }
-
-    /// <summary> FaxEmail.ThreadId equals </summary>
-    [JsonProperty("faxEmail_threadId_eq")]
-    public string? FaxEmail_ThreadId_EQ { get; set; }
-    /// <summary> FaxEmail.ThreadId contains </summary>
-    [JsonProperty("faxEmail_threadId_con")]
-    public string? FaxEmail_ThreadId_CON { get; set; }
-    /// <summary> FaxEmail.ThreadId regex </summary>
-    [JsonProperty("faxEmail_threadId_reg")]
-    public string? FaxEmail_ThreadId_REG { get; set; }
-
-    /// <summary> FaxEmail.Subject equals </summary>
-    [JsonProperty("faxEmail_subject_eq")]
-    public string? FaxEmail_Subject_EQ { get; set; }
-    /// <summary> FaxEmail.Subject contains </summary>
-    [JsonProperty("faxEmail_subject_con")]
-    public string? FaxEmail_Subject_CON { get; set; }
-    /// <summary> FaxEmail.Subject regex </summary>
-    [JsonProperty("faxEmail_subject_reg")]
-    public string? FaxEmail_Subject_REG { get; set; }
-
-    /// <summary> FaxEmail.From equals </summary>
-    [JsonProperty("faxEmail_from_eq")]
-    public string? FaxEmail_From_EQ { get; set; }
-    /// <summary> FaxEmail.From contains </summary>
-    [JsonProperty("faxEmail_from_con")]
-    public string? FaxEmail_From_CON { get; set; }
-    /// <summary> FaxEmail.From regex </summary>
-    [JsonProperty("faxEmail_from_reg")]
-    public string? FaxEmail_From_REG { get; set; }
-
-
     /// <summary> From equals </summary>
     [JsonProperty("from_eq")]
     public string? From_EQ { get; set; }
@@ -4605,15 +4564,15 @@ public class FaxOutgoingGroupFilterRequest
     [JsonProperty("from_reg")]
     public string? From_REG { get; set; }
 
-    /// <summary> SendConfirmationToEmails equals </summary>
-    [JsonProperty("sendConfirmationToEmails_eq")]
-    public string? SendConfirmationToEmails_EQ { get; set; }
-    /// <summary> SendConfirmationToEmails contains </summary>
-    [JsonProperty("sendConfirmationToEmails_con")]
-    public string? SendConfirmationToEmails_CON { get; set; }
-    /// <summary> SendConfirmationToEmails regex </summary>
-    [JsonProperty("sendConfirmationToEmails_reg")]
-    public string? SendConfirmationToEmails_REG { get; set; }
+    /// <summary> IdsEmailsSendConfirmation equals </summary>
+    [JsonProperty("idsEmailsSendConfirmation_eq")]
+    public string? IdsEmailsSendConfirmation_EQ { get; set; }
+    /// <summary> IdsEmailsSendConfirmation contains </summary>
+    [JsonProperty("idsEmailsSendConfirmation_con")]
+    public string? IdsEmailsSendConfirmation_CON { get; set; }
+    /// <summary> IdsEmailsSendConfirmation regex </summary>
+    [JsonProperty("idsEmailsSendConfirmation_reg")]
+    public string? IdsEmailsSendConfirmation_REG { get; set; }
 
     /// <summary> ContainsError equals </summary>
     [JsonProperty("containsError_eq")]
@@ -6369,6 +6328,16 @@ public class VoicemailFilterRequest
     [JsonProperty("idsLinesThatCanListenToVoicemail_reg")]
     public string? IdsLinesThatCanListenToVoicemail_REG { get; set; }
 
+    /// <summary> IdEmail equals </summary>
+    [JsonProperty("idEmail_eq")]
+    public string? IdEmail_EQ { get; set; }
+    /// <summary> IdEmail contains </summary>
+    [JsonProperty("idEmail_con")]
+    public string? IdEmail_CON { get; set; }
+    /// <summary> IdEmail regex </summary>
+    [JsonProperty("idEmail_reg")]
+    public string? IdEmail_REG { get; set; }
+
     /// <summary> VoicemailType equals </summary>
     [JsonProperty("voicemailType_eq")]
     public string? VoicemailType_EQ { get; set; }
@@ -6378,16 +6347,6 @@ public class VoicemailFilterRequest
     /// <summary> VoicemailType regex </summary>
     [JsonProperty("voicemailType_reg")]
     public string? VoicemailType_REG { get; set; }
-
-    /// <summary> Email equals </summary>
-    [JsonProperty("email_eq")]
-    public string? Email_EQ { get; set; }
-    /// <summary> Email contains </summary>
-    [JsonProperty("email_con")]
-    public string? Email_CON { get; set; }
-    /// <summary> Email regex </summary>
-    [JsonProperty("email_reg")]
-    public string? Email_REG { get; set; }
 
     /// <summary> DurationInSeconds equals </summary>
     [JsonProperty("durationInSeconds_eq")]
@@ -6802,15 +6761,15 @@ public class VoicemailForwardedFilterRequest
     [JsonProperty("idsLinesThatCanListenToVoicemail_reg")]
     public string? IdsLinesThatCanListenToVoicemail_REG { get; set; }
 
-    /// <summary> Email equals </summary>
-    [JsonProperty("email_eq")]
-    public string? Email_EQ { get; set; }
-    /// <summary> Email contains </summary>
-    [JsonProperty("email_con")]
-    public string? Email_CON { get; set; }
-    /// <summary> Email regex </summary>
-    [JsonProperty("email_reg")]
-    public string? Email_REG { get; set; }
+    /// <summary> IdEmail equals </summary>
+    [JsonProperty("idEmail_eq")]
+    public string? IdEmail_EQ { get; set; }
+    /// <summary> IdEmail contains </summary>
+    [JsonProperty("idEmail_con")]
+    public string? IdEmail_CON { get; set; }
+    /// <summary> IdEmail regex </summary>
+    [JsonProperty("idEmail_reg")]
+    public string? IdEmail_REG { get; set; }
 
     /// <summary> DurationInSeconds equals </summary>
     [JsonProperty("durationInSeconds_eq")]
@@ -6993,26 +6952,26 @@ public class VoipNumberAvailableForPurchaseFilterRequest
     public DayOfWeek? RulesPhone_DaysOfWeek_CON { get; set; }
 
 
-    /// <summary> RulesSms.ForwardToEmailAddress equals </summary>
-    [JsonProperty("rulesSms_forwardToEmailAddress_eq")]
-    public string? RulesSms_ForwardToEmailAddress_EQ { get; set; }
-    /// <summary> RulesSms.ForwardToEmailAddress contains </summary>
-    [JsonProperty("rulesSms_forwardToEmailAddress_con")]
-    public string? RulesSms_ForwardToEmailAddress_CON { get; set; }
-    /// <summary> RulesSms.ForwardToEmailAddress regex </summary>
-    [JsonProperty("rulesSms_forwardToEmailAddress_reg")]
-    public string? RulesSms_ForwardToEmailAddress_REG { get; set; }
+    /// <summary> RulesSms.IdEmail equals </summary>
+    [JsonProperty("rulesSms_idEmail_eq")]
+    public string? RulesSms_IdEmail_EQ { get; set; }
+    /// <summary> RulesSms.IdEmail contains </summary>
+    [JsonProperty("rulesSms_idEmail_con")]
+    public string? RulesSms_IdEmail_CON { get; set; }
+    /// <summary> RulesSms.IdEmail regex </summary>
+    [JsonProperty("rulesSms_idEmail_reg")]
+    public string? RulesSms_IdEmail_REG { get; set; }
 
 
-    /// <summary> RulesFax.ForwardToEmailAddress equals </summary>
-    [JsonProperty("rulesFax_forwardToEmailAddress_eq")]
-    public string? RulesFax_ForwardToEmailAddress_EQ { get; set; }
-    /// <summary> RulesFax.ForwardToEmailAddress contains </summary>
-    [JsonProperty("rulesFax_forwardToEmailAddress_con")]
-    public string? RulesFax_ForwardToEmailAddress_CON { get; set; }
-    /// <summary> RulesFax.ForwardToEmailAddress regex </summary>
-    [JsonProperty("rulesFax_forwardToEmailAddress_reg")]
-    public string? RulesFax_ForwardToEmailAddress_REG { get; set; }
+    /// <summary> RulesFax.IdEmail equals </summary>
+    [JsonProperty("rulesFax_idEmail_eq")]
+    public string? RulesFax_IdEmail_EQ { get; set; }
+    /// <summary> RulesFax.IdEmail contains </summary>
+    [JsonProperty("rulesFax_idEmail_con")]
+    public string? RulesFax_IdEmail_CON { get; set; }
+    /// <summary> RulesFax.IdEmail regex </summary>
+    [JsonProperty("rulesFax_idEmail_reg")]
+    public string? RulesFax_IdEmail_REG { get; set; }
 
 
     /// <summary> RequiresCustomerInfo equals </summary>
@@ -7220,26 +7179,26 @@ public class VoipNumberFaxFilterRequest
     public DayOfWeek? RulesPhone_DaysOfWeek_CON { get; set; }
 
 
-    /// <summary> RulesSms.ForwardToEmailAddress equals </summary>
-    [JsonProperty("rulesSms_forwardToEmailAddress_eq")]
-    public string? RulesSms_ForwardToEmailAddress_EQ { get; set; }
-    /// <summary> RulesSms.ForwardToEmailAddress contains </summary>
-    [JsonProperty("rulesSms_forwardToEmailAddress_con")]
-    public string? RulesSms_ForwardToEmailAddress_CON { get; set; }
-    /// <summary> RulesSms.ForwardToEmailAddress regex </summary>
-    [JsonProperty("rulesSms_forwardToEmailAddress_reg")]
-    public string? RulesSms_ForwardToEmailAddress_REG { get; set; }
+    /// <summary> RulesSms.IdEmail equals </summary>
+    [JsonProperty("rulesSms_idEmail_eq")]
+    public string? RulesSms_IdEmail_EQ { get; set; }
+    /// <summary> RulesSms.IdEmail contains </summary>
+    [JsonProperty("rulesSms_idEmail_con")]
+    public string? RulesSms_IdEmail_CON { get; set; }
+    /// <summary> RulesSms.IdEmail regex </summary>
+    [JsonProperty("rulesSms_idEmail_reg")]
+    public string? RulesSms_IdEmail_REG { get; set; }
 
 
-    /// <summary> RulesFax.ForwardToEmailAddress equals </summary>
-    [JsonProperty("rulesFax_forwardToEmailAddress_eq")]
-    public string? RulesFax_ForwardToEmailAddress_EQ { get; set; }
-    /// <summary> RulesFax.ForwardToEmailAddress contains </summary>
-    [JsonProperty("rulesFax_forwardToEmailAddress_con")]
-    public string? RulesFax_ForwardToEmailAddress_CON { get; set; }
-    /// <summary> RulesFax.ForwardToEmailAddress regex </summary>
-    [JsonProperty("rulesFax_forwardToEmailAddress_reg")]
-    public string? RulesFax_ForwardToEmailAddress_REG { get; set; }
+    /// <summary> RulesFax.IdEmail equals </summary>
+    [JsonProperty("rulesFax_idEmail_eq")]
+    public string? RulesFax_IdEmail_EQ { get; set; }
+    /// <summary> RulesFax.IdEmail contains </summary>
+    [JsonProperty("rulesFax_idEmail_con")]
+    public string? RulesFax_IdEmail_CON { get; set; }
+    /// <summary> RulesFax.IdEmail regex </summary>
+    [JsonProperty("rulesFax_idEmail_reg")]
+    public string? RulesFax_IdEmail_REG { get; set; }
 
 
     /// <summary> VoipNumberType equals </summary>
@@ -7439,26 +7398,26 @@ public class VoipNumberPhoneFilterRequest
     public DayOfWeek? RulesPhone_DaysOfWeek_CON { get; set; }
 
 
-    /// <summary> RulesSms.ForwardToEmailAddress equals </summary>
-    [JsonProperty("rulesSms_forwardToEmailAddress_eq")]
-    public string? RulesSms_ForwardToEmailAddress_EQ { get; set; }
-    /// <summary> RulesSms.ForwardToEmailAddress contains </summary>
-    [JsonProperty("rulesSms_forwardToEmailAddress_con")]
-    public string? RulesSms_ForwardToEmailAddress_CON { get; set; }
-    /// <summary> RulesSms.ForwardToEmailAddress regex </summary>
-    [JsonProperty("rulesSms_forwardToEmailAddress_reg")]
-    public string? RulesSms_ForwardToEmailAddress_REG { get; set; }
+    /// <summary> RulesSms.IdEmail equals </summary>
+    [JsonProperty("rulesSms_idEmail_eq")]
+    public string? RulesSms_IdEmail_EQ { get; set; }
+    /// <summary> RulesSms.IdEmail contains </summary>
+    [JsonProperty("rulesSms_idEmail_con")]
+    public string? RulesSms_IdEmail_CON { get; set; }
+    /// <summary> RulesSms.IdEmail regex </summary>
+    [JsonProperty("rulesSms_idEmail_reg")]
+    public string? RulesSms_IdEmail_REG { get; set; }
 
 
-    /// <summary> RulesFax.ForwardToEmailAddress equals </summary>
-    [JsonProperty("rulesFax_forwardToEmailAddress_eq")]
-    public string? RulesFax_ForwardToEmailAddress_EQ { get; set; }
-    /// <summary> RulesFax.ForwardToEmailAddress contains </summary>
-    [JsonProperty("rulesFax_forwardToEmailAddress_con")]
-    public string? RulesFax_ForwardToEmailAddress_CON { get; set; }
-    /// <summary> RulesFax.ForwardToEmailAddress regex </summary>
-    [JsonProperty("rulesFax_forwardToEmailAddress_reg")]
-    public string? RulesFax_ForwardToEmailAddress_REG { get; set; }
+    /// <summary> RulesFax.IdEmail equals </summary>
+    [JsonProperty("rulesFax_idEmail_eq")]
+    public string? RulesFax_IdEmail_EQ { get; set; }
+    /// <summary> RulesFax.IdEmail contains </summary>
+    [JsonProperty("rulesFax_idEmail_con")]
+    public string? RulesFax_IdEmail_CON { get; set; }
+    /// <summary> RulesFax.IdEmail regex </summary>
+    [JsonProperty("rulesFax_idEmail_reg")]
+    public string? RulesFax_IdEmail_REG { get; set; }
 
 
     /// <summary> VoipNumberType equals </summary>
@@ -9722,26 +9681,26 @@ public class VoipNumberFilterRequest
     public DayOfWeek? RulesPhone_DaysOfWeek_CON { get; set; }
 
 
-    /// <summary> RulesSms.ForwardToEmailAddress equals </summary>
-    [JsonProperty("rulesSms_forwardToEmailAddress_eq")]
-    public string? RulesSms_ForwardToEmailAddress_EQ { get; set; }
-    /// <summary> RulesSms.ForwardToEmailAddress contains </summary>
-    [JsonProperty("rulesSms_forwardToEmailAddress_con")]
-    public string? RulesSms_ForwardToEmailAddress_CON { get; set; }
-    /// <summary> RulesSms.ForwardToEmailAddress regex </summary>
-    [JsonProperty("rulesSms_forwardToEmailAddress_reg")]
-    public string? RulesSms_ForwardToEmailAddress_REG { get; set; }
+    /// <summary> RulesSms.IdEmail equals </summary>
+    [JsonProperty("rulesSms_idEmail_eq")]
+    public string? RulesSms_IdEmail_EQ { get; set; }
+    /// <summary> RulesSms.IdEmail contains </summary>
+    [JsonProperty("rulesSms_idEmail_con")]
+    public string? RulesSms_IdEmail_CON { get; set; }
+    /// <summary> RulesSms.IdEmail regex </summary>
+    [JsonProperty("rulesSms_idEmail_reg")]
+    public string? RulesSms_IdEmail_REG { get; set; }
 
 
-    /// <summary> RulesFax.ForwardToEmailAddress equals </summary>
-    [JsonProperty("rulesFax_forwardToEmailAddress_eq")]
-    public string? RulesFax_ForwardToEmailAddress_EQ { get; set; }
-    /// <summary> RulesFax.ForwardToEmailAddress contains </summary>
-    [JsonProperty("rulesFax_forwardToEmailAddress_con")]
-    public string? RulesFax_ForwardToEmailAddress_CON { get; set; }
-    /// <summary> RulesFax.ForwardToEmailAddress regex </summary>
-    [JsonProperty("rulesFax_forwardToEmailAddress_reg")]
-    public string? RulesFax_ForwardToEmailAddress_REG { get; set; }
+    /// <summary> RulesFax.IdEmail equals </summary>
+    [JsonProperty("rulesFax_idEmail_eq")]
+    public string? RulesFax_IdEmail_EQ { get; set; }
+    /// <summary> RulesFax.IdEmail contains </summary>
+    [JsonProperty("rulesFax_idEmail_con")]
+    public string? RulesFax_IdEmail_CON { get; set; }
+    /// <summary> RulesFax.IdEmail regex </summary>
+    [JsonProperty("rulesFax_idEmail_reg")]
+    public string? RulesFax_IdEmail_REG { get; set; }
 
 
     /// <summary> VoipNumberType equals </summary>

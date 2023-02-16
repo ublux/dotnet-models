@@ -10,7 +10,8 @@ public class SendEmailNotificationIfNotAnswered
     /// </summary>
     [IsUbluxRequired]
     [AllowUpdate(true)]
-    public required List<string> Emails { get; set; }
+    [References(typeof(Email))]
+    public required List<string> IdsEmails { get; set; } = new();
 
     /// <summary>
     ///     If a caller calls and hung up right away then maybe we don't want to send a notification.

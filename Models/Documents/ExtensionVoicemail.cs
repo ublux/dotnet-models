@@ -30,7 +30,8 @@ public partial class ExtensionVoicemail : Extension
     /// </summary>
     [AllowUpdate(true)]
     [IsUbluxRequired]
-    public required List<string> Email { get; set; }
+    [References(typeof(Email))]
+    public required string IdEmail { get; set; } = "";
 
     /// <summary>
     ///     This text will be converted to audio and be played before leaving voicemail
@@ -49,8 +50,8 @@ public partial class ExtensionVoicemail : Extension
     /// <summary>
     ///     Type of extension
     /// </summary>
-    [AllowUpdate(false)] 
-    [SwaggerSchema(ReadOnly = true)] 
+    [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     [IsUbluxRequired]
     [HideForCreateRequest]
     public override ExtensionType ExtensionType

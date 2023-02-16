@@ -10,12 +10,11 @@ public partial class CustomerInfo : IReferncesAccount
     #region References
 
     /// <inheritdoc/>
-    [IgnoreDataMember]
     [References(typeof(Account))]
-    [AllowUpdate(false)] 
-    [SwaggerSchema(ReadOnly = true)] 
-    [IsUbluxRequired]
-    public required string IdAccount { get; set; } = String.Empty;
+    [IgnoreDataMember]
+    [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
+    public required string? IdAccount { get; set; }
 
     #endregion
 }

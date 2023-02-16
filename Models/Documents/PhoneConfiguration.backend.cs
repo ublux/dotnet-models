@@ -9,12 +9,11 @@ namespace Ublux.Communications.Models.Documents;
 public partial class PhoneConfiguration : UbluxDocument, IReferncesAccount
 {
     /// <inheritdoc/>
-    [IgnoreDataMember]
     [References(typeof(Account))]
+    [IgnoreDataMember]
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [IsUbluxRequired]
-    public required string IdAccount { get; set; } = String.Empty;
+    public required string? IdAccount { get; set; }
 }
 
 #endif

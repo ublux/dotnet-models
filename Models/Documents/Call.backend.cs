@@ -10,11 +10,10 @@ public abstract partial class Call : UbluxDocument, IReferncesAccount
 {
     /// <inheritdoc/>
     [References(typeof(Account))]
+    [IgnoreDataMember]
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [IgnoreDataMember]
-    [IsUbluxRequired]
-    public required string IdAccount { get; set; } = String.Empty;
+    public required string? IdAccount { get; set; }
 
     /// <inheritdoc />
     [AllowUpdate(false)]

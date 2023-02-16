@@ -15,8 +15,7 @@ public abstract partial class VoipNumber : UbluxDocument, IReferncesAccount
     [IgnoreDataMember]
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [IsUbluxRequired]
-    public required string IdAccount { get; set; } = String.Empty;
+    public required string? IdAccount { get; set; }
 
     /// <summary>
     ///     Information about customer. This may be required by some providers.

@@ -9,13 +9,14 @@ namespace Ublux.Communications.Models;
 public interface IReferncesAccount
 {
     /// <summary>
-    ///     The convention Name underscore denotes that there is a reference
+    ///     It is nullable because there are cases where it makes no sense to point to an account. 
+    ///     For example a CloudService user will point to no account
     /// </summary>
     [References(typeof(Account))]
-    [HideForCreateRequest]
+    [IgnoreDataMember]
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    public string IdAccount { get; set; }
+    public string? IdAccount { get; set; }
 }
 
 #endif

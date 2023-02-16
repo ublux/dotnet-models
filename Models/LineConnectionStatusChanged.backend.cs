@@ -28,9 +28,11 @@ public class LineConnectionStatusChanged
     /// <summary>
     ///     Id of Account
     /// </summary>
-    [AllowUpdate(false)] 
-    [SwaggerSchema(ReadOnly = true)] 
-    public required string IdAccount { get; set; } = String.Empty;
+    [References(typeof(Account))]
+    [IgnoreDataMember]
+    [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
+    public required string? IdAccount { get; set; }
 
     /// <summary>
     ///     Clone this to avoid sync problems.

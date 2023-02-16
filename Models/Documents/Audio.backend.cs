@@ -11,12 +11,11 @@ public partial class Audio : UbluxDocument, IReferncesAccount
     #region References
 
     /// <inheritdoc/>
+    [References(typeof(Account))]
+    [IgnoreDataMember]
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [IgnoreDataMember]
-    [References(typeof(Account))]
-    [IsUbluxRequired]
-    public required string IdAccount { get; set; } = String.Empty;
+    public required string? IdAccount { get; set; }
 
     #endregion
 

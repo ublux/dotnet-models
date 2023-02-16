@@ -10,5 +10,6 @@ public class RuleFax : Rule
     /// </summary>
     [IsUbluxRequired]
     [AllowUpdate(true)]
-    public required string ForwardToEmailAddress { get; set; }
+    [References(typeof(Email))]
+    public required string IdEmail { get; set; }
 }

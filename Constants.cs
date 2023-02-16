@@ -18,6 +18,11 @@ public static partial class Constants
     public const string EmailUbluxNoReply = $"no-reply@{Domain}";
 
     /// <summary>
+    ///     Used on footer of emails for example
+    /// </summary>
+    public const string EmailUbluxSupport = $"support@{Domain}";
+
+    /// <summary>
     ///     Domain for application
     /// </summary>
     public const string Domain = "ublux.com";

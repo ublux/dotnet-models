@@ -36,7 +36,11 @@ public class SnsMessage
     /// <summary>
     ///     Id of account
     /// </summary>
-    public string? IdAccount { get; set; }
+    [References(typeof(Account))]
+    [IgnoreDataMember]
+    [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
+    public required string? IdAccount { get; set; }
 
     /// <summary>
     ///     If a phone was modified then the id of the phone

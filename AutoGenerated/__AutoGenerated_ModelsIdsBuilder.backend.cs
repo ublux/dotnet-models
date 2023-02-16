@@ -21,6 +21,13 @@ namespace Ublux.Communications.Models.Documents {
         /// <summary> Custom: overload </summary>
         public static BuiltId BuildId(uint accountNumber) => new($"{DocumentPrefix}.{accountNumber}");
     }
+    public partial class Email {
+        /// <summary> Id prefix </summary>
+        public const string DocumentPrefix = "Em";
+
+        /// <summary> Custom: Prefix followed by email in lowercase </summary>
+        public static BuiltId BuildId(string emailAddress) => new($"{DocumentPrefix}.{emailAddress.ToLower()}");
+    }
     public partial class AgreementToTermsAndConditions {
         /// <summary> Id prefix </summary>
         public const string DocumentPrefix = "ATTAC";
@@ -164,13 +171,6 @@ namespace Ublux.Communications.Models.Documents {
     public partial class ExtensionVoicemail {
         /// <summary> Id prefix </summary>
         public const string DocumentPrefix = "EV";
-
-        /// <summary> Build Id </summary>
-        public static BuiltId BuildId(RunningApplicationInstance instance) => new($"{DocumentPrefix}.{instance.Id}.{instance.IdGlobalAutoIncrement()}");
-    }
-    public partial class FaxEmailInfo {
-        /// <summary> Id prefix </summary>
-        public const string DocumentPrefix = "FEI";
 
         /// <summary> Build Id </summary>
         public static BuiltId BuildId(RunningApplicationInstance instance) => new($"{DocumentPrefix}.{instance.Id}.{instance.IdGlobalAutoIncrement()}");

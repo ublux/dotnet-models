@@ -17,8 +17,7 @@ public partial class Phone : UbluxDocument, IReferncesAccount
     [IgnoreDataMember]
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [IsUbluxRequired]
-    public required string IdAccount { get; set; } = string.Empty;
+    public required string? IdAccount { get; set; }
 
     /// <summary>
     ///     Password of phone used to authenticate with asterisk

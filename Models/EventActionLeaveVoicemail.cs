@@ -15,10 +15,12 @@ public class EventActionLeaveVoicemail : EventAction
     }
 
     /// <summary>
-    ///     Email where to send voicemail
+    ///     Emails where to send voicemails
     /// </summary>
     [IsUbluxRequired]
-    public required string Email { get; set; }
+    [References(typeof(Email))]
+    [AllowUpdate(true)]
+    public required string IdEmail { get; set; } = "";
 
     /// <summary>
     ///     Optional audio to play to instruct caller how to leave a voicemail. 
@@ -26,5 +28,6 @@ public class EventActionLeaveVoicemail : EventAction
     ///     The audio will say "Hello! You have reached the voicemail of ${NameOfExtension}. Please leave a detailed message after the beep. Thank you."
     /// </summary>
     [References(typeof(Audio))]
+    [AllowUpdate(true)]
     public string? IdAudio { get; set; }
 }

@@ -44,8 +44,8 @@ public enum Collections
     /// <summary>Extensions</summary>
     Extensions,
 
-    /// <summary>FaxEmailInfos</summary>
-    FaxEmailInfos,
+    ///// <summary>FaxEmailInfos</summary>
+    //FaxEmailInfos,
 
     /// <summary>FaxesIncoming</summary>
     FaxesIncoming,
@@ -114,6 +114,9 @@ public enum Collections
     /// <summary> ApiKeys </summary>
     ApiKeys,
 
-    /// <summary> ApiKeys </summary>
-    AiCallTranscriptions
+    /// <summary> AiCallTranscriptions </summary>
+    AiCallTranscriptions,
+
+    /// <summary> Emails </summary>
+    Emails
 }

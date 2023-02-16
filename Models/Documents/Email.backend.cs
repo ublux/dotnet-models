@@ -1,20 +1,18 @@
 ﻿#if UBLUX_BACKEND
 
-
 namespace Ublux.Communications.Models.Documents;
 
-public partial class Voicemail : IReferncesAccount
+/// <summary>
+///     Contact
+/// </summary>
+public partial class Email : UbluxDocument, IReferncesAccount
 {
-    #region References
-
-    /// <inheritdoc />
+    /// <inheritdoc/>
     [References(typeof(Account))]
     [IgnoreDataMember]
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
     public required string? IdAccount { get; set; }
-
-    #endregion
 }
 
 #endif

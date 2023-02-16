@@ -28,9 +28,10 @@ public class QueuedEmail : IUbluxDocumentId
     public required string FromName { get; set; }
 
     /// <summary>
-    ///     To whom to send the email. It can be multiple recepients
+    ///     Cannot be an IdEmail because we may be sending an email to verify an email address for example.
+    ///     List of emails where to send email
     /// </summary>
-    public required List<string> To { get; set; } = new();
+    public required List<string> Emails { get; set; } = new();
 
     /// <summary>
     ///     Subject of email

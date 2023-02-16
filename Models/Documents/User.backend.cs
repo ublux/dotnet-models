@@ -12,13 +12,11 @@ public partial class User : UbluxDocument, IReferncesAccount
     /// <summary>
     ///     If value is "0" or null it means it can use multiple accounts. For example a PBX user can be used by multiple accounts.
     /// </summary>
-    [AllowUpdate(false)]
-    [SwaggerSchema(ReadOnly = true)]
     [References(typeof(Account))]
     [IgnoreDataMember]
-    [HideForCreateRequest]
-    // virtual because of unit tests so that it can mock this object
-    public required virtual string IdAccount { get; set; } = string.Empty;
+    [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
+    public required string? IdAccount { get; set; }
 }
 
 #endif
