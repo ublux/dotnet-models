@@ -49,7 +49,7 @@ public partial class Phone : UbluxDocument, IReferencesTags
     [AllowUpdate(true)]
     //[SwaggerSchema(ReadOnly = true)]
     [IsUbluxRequired]
-    public required List<Line> Lines { get; set; }
+    public required List<Line> Lines { get; set; } = new();
 
     #endregion
 
