@@ -46,7 +46,7 @@ public static class ModelsExtensionMethods
             Collections.VoipNumbers => typeof(VoipNumber),
             Collections.VoipProviders => typeof(VoipProvider),
             Collections.WebHooks => typeof(WebHook),
-            Collections.UnauthorizedTokens => typeof(UnauthorizedToken),
+            //Collections.UnauthorizedTokens => typeof(UnauthorizedToken),
             Collections.CloudFiles => typeof(CloudFile),
             Collections.Tags => typeof(Tag),
             Collections.ApiKeys => typeof(ApiKey),
@@ -255,12 +255,12 @@ public static class ModelsExtensionMethods
             _getCollectionUsedByTypeCache[type] = Collections.WebHooks;
             return Collections.WebHooks;
         }
-        if (typeof(UnauthorizedToken).IsAssignableFrom(type))
-        {
-            // store on cache so next time it is faster
-            _getCollectionUsedByTypeCache[type] = Collections.UnauthorizedTokens;
-            return Collections.UnauthorizedTokens;
-        }
+        //if (typeof(UnauthorizedToken).IsAssignableFrom(type))
+        //{
+        //    // store on cache so next time it is faster
+        //    _getCollectionUsedByTypeCache[type] = Collections.UnauthorizedTokens;
+        //    return Collections.UnauthorizedTokens;
+        //}
         if (typeof(CloudFile).IsAssignableFrom(type))
         {
             // store on cache so next time it is faster

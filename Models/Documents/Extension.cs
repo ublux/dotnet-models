@@ -17,7 +17,7 @@
     typeof(ExtensionVoicemail)
 )]
 [DebuggerDisplay("Name:{FriendlyName} Number:{Number} ExtensionType:{ExtensionType}")]
-public abstract partial class Extension : UbluxDocument, IReferencesTags
+public abstract partial class Extension : UbluxDocument_ReferenceAccount_ReferenceTags
 {
     #region Properties
 
@@ -28,14 +28,7 @@ public abstract partial class Extension : UbluxDocument, IReferencesTags
     /// </summary>
     [References(typeof(MusicOnHoldGroup))]
     [AllowUpdate(true)]
-    public string? IdMusicOnHoldGroup { get; set; }
-
-    /// <summary>
-    ///     Ids of tags
-    /// </summary>
-    [AllowUpdate(true)]
-    [References(typeof(Tag))]
-    public List<string> IdsTags { get; set; } = new();
+    public string? IdMusicOnHoldGroup { get; set; }   
 
     #endregion
 

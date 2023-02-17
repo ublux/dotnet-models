@@ -55,7 +55,6 @@ public abstract partial class UbluxDocument : IUbluxDocument, IUbluxDocumentId
     }
     private string id = string.Empty;
 
-
     /// <summary>
     ///     Creation date. Sets DateUpdated if it does not have a value
     /// </summary>
@@ -76,7 +75,6 @@ public abstract partial class UbluxDocument : IUbluxDocument, IUbluxDocumentId
         }
     }
     private DateTime dateCreated;
-
 
     /// <summary>
     ///     Updated date. When item is created on database this date will be set too. This is important so that we can sync contacts
@@ -101,3 +99,36 @@ public abstract partial class UbluxDocument : IUbluxDocument, IUbluxDocumentId
     }
     private DateTime dateUpdated;
 }
+
+/// <summary>
+///     Ublux document that references an account
+/// </summary>
+public abstract partial class UbluxDocument_ReferenceAccount : UbluxDocument, IReferncesAccount
+{
+    /// <summary>
+    ///     It is nullable because there are cases where it makes no sense to point to an account. 
+    ///     For example a CloudService user will point to no account
+    /// </summary>
+    [References(typeof(Account))]
+    [IgnoreDataMember]
+    [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
+    [IsUbluxRequired]
+    public required string IdAccount { get; set; }
+}
+
+/// <summary>
+///     Ublux document that references an account and have tags
+/// </summary>
+public abstract partial class UbluxDocument_ReferenceAccount_ReferenceTags : UbluxDocument_ReferenceAccount, IReferencesTags
+{
+    /// <summary>
+    ///     It is nullable because there are cases where it makes no sense to point to an account. 
+    ///     For example a CloudService user will point to no account
+    /// </summary>
+    [References(typeof(Tag))]
+    [AllowUpdate(true)]
+    public List<string> IdsTags { get; set; } = new ();
+}
+
+

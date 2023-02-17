@@ -15,21 +15,22 @@ namespace Ublux.Communications.Models.Documents;
 public class ApiKeyUpdateRequest // : IUbluxDocumentId
 {
     /// <summary>
-    /// Ids of tags
-    /// </summary>
-    public List<System.String>? IdsTags { get; set; }
-    /// <summary>
     /// Key = service/role such as Phone. The phone role probably will have access to the PhoneController service
     /// Value = Permissions it has on that role. Maybe it can only read data from that service but it cannot update, create or modify.
     /// </summary>
     public List<Ublux.Communications.Enums.UbluxRole>? UbluxRoles { get; set; }
+    /// <summary>
+    /// It is nullable because there are cases where it makes no sense to point to an account.
+    /// For example a CloudService user will point to no account
+    /// </summary>
+    public List<System.String>? IdsTags { get; set; }
     /// <summary> Set values on actual document </summary>
     public void SetValuesOnApiKey(ApiKey apiKey)
     {
-        if(this.IdsTags!=null)
-            apiKey.IdsTags = this.IdsTags;
         if(this.UbluxRoles!=null)
             apiKey.UbluxRoles = this.UbluxRoles;
+        if(this.IdsTags!=null)
+            apiKey.IdsTags = this.IdsTags;
     }
 
 }
@@ -73,14 +74,13 @@ public class AccountUpdateRequest // : IUbluxDocumentId
 }
 
 /// <summary>
-/// Contact
-/// </summary><summary>
 /// Ublux Account
 /// </summary>
 public class EmailUpdateRequest // : IUbluxDocumentId
 {
     /// <summary>
-    /// Ids of tags
+    /// It is nullable because there are cases where it makes no sense to point to an account.
+    /// For example a CloudService user will point to no account
     /// </summary>
     public List<System.String>? IdsTags { get; set; }
     /// <summary> Set values on actual document </summary>
@@ -124,10 +124,6 @@ public class AirNetworksProvinceUpdateRequest // : IUbluxDocumentId
 public class AudioUpdateRequest // : IUbluxDocumentId
 {
     /// <summary>
-    /// Ids of tags
-    /// </summary>
-    public List<System.String>? IdsTags { get; set; }
-    /// <summary>
     /// Name of audio
     /// </summary>
     public String? FriendlyName { get; set; }
@@ -135,15 +131,20 @@ public class AudioUpdateRequest // : IUbluxDocumentId
     /// Description of audio
     /// </summary>
     public String? Description { get; set; }
+    /// <summary>
+    /// It is nullable because there are cases where it makes no sense to point to an account.
+    /// For example a CloudService user will point to no account
+    /// </summary>
+    public List<System.String>? IdsTags { get; set; }
     /// <summary> Set values on actual document </summary>
     public void SetValuesOnAudio(Audio audio)
     {
-        if(this.IdsTags!=null)
-            audio.IdsTags = this.IdsTags;
         if(this.FriendlyName!=null)
             audio.FriendlyName = this.FriendlyName;
         if(this.Description!=null)
             audio.Description = this.Description;
+        if(this.IdsTags!=null)
+            audio.IdsTags = this.IdsTags;
     }
 
 }
@@ -172,10 +173,6 @@ public class BlackListPhoneNumberUpdateRequest // : IUbluxDocumentId
     /// </summary>
     public String? IdAudioToPlayIfCallIsBlocked { get; set; }
     /// <summary>
-    /// Ids of tags
-    /// </summary>
-    public List<System.String>? IdsTags { get; set; }
-    /// <summary>
     /// The phone number that will be blocked
     /// </summary>
     public String? Number { get; set; }
@@ -183,17 +180,22 @@ public class BlackListPhoneNumberUpdateRequest // : IUbluxDocumentId
     /// Friendly name of this rule
     /// </summary>
     public String? FriendlyName { get; set; }
+    /// <summary>
+    /// It is nullable because there are cases where it makes no sense to point to an account.
+    /// For example a CloudService user will point to no account
+    /// </summary>
+    public List<System.String>? IdsTags { get; set; }
     /// <summary> Set values on actual document </summary>
     public void SetValuesOnBlackListPhoneNumber(BlackListPhoneNumber blackListPhoneNumber)
     {
         if(this.IdAudioToPlayIfCallIsBlocked!=null)
             blackListPhoneNumber.IdAudioToPlayIfCallIsBlocked = this.IdAudioToPlayIfCallIsBlocked;
-        if(this.IdsTags!=null)
-            blackListPhoneNumber.IdsTags = this.IdsTags;
         if(this.Number!=null)
             blackListPhoneNumber.Number = this.Number;
         if(this.FriendlyName!=null)
             blackListPhoneNumber.FriendlyName = this.FriendlyName;
+        if(this.IdsTags!=null)
+            blackListPhoneNumber.IdsTags = this.IdsTags;
     }
 
 }
@@ -210,7 +212,8 @@ public class CallerIdMaskUpdateRequest // : IUbluxDocumentId
     /// </summary>
     public String? FriendlyName { get; set; }
     /// <summary>
-    /// Ids of tags
+    /// It is nullable because there are cases where it makes no sense to point to an account.
+    /// For example a CloudService user will point to no account
     /// </summary>
     public List<System.String>? IdsTags { get; set; }
     /// <summary> Set values on actual document </summary>
@@ -232,10 +235,6 @@ public class CallerIdMaskUpdateRequest // : IUbluxDocumentId
 public class CallFlowLogicUpdateRequest // : IUbluxDocumentId
 {
     /// <summary>
-    /// Ids of tags
-    /// </summary>
-    public List<System.String>? IdsTags { get; set; }
-    /// <summary>
     /// Name of virtual receptionist
     /// </summary>
     public String? FriendlyName { get; set; }
@@ -247,17 +246,22 @@ public class CallFlowLogicUpdateRequest // : IUbluxDocumentId
     /// XML containing the call flow rules
     /// </summary>
     public FlowNode? Tree { get; set; }
+    /// <summary>
+    /// It is nullable because there are cases where it makes no sense to point to an account.
+    /// For example a CloudService user will point to no account
+    /// </summary>
+    public List<System.String>? IdsTags { get; set; }
     /// <summary> Set values on actual document </summary>
     public void SetValuesOnCallFlowLogic(CallFlowLogic callFlowLogic)
     {
-        if(this.IdsTags!=null)
-            callFlowLogic.IdsTags = this.IdsTags;
         if(this.FriendlyName!=null)
             callFlowLogic.FriendlyName = this.FriendlyName;
         if(this.Description!=null)
             callFlowLogic.Description = this.Description;
         if(this.Tree!=null)
             callFlowLogic.Tree = this.Tree;
+        if(this.IdsTags!=null)
+            callFlowLogic.IdsTags = this.IdsTags;
     }
 
 }
@@ -268,20 +272,21 @@ public class CallFlowLogicUpdateRequest // : IUbluxDocumentId
 public class CallIncomingToCallFlowLogicUpdateRequest // : IUbluxDocumentId
 {
     /// <summary>
-    /// Ids of tags
-    /// </summary>
-    public List<System.String>? IdsTags { get; set; }
-    /// <summary>
     /// Result of a call
     /// </summary>
     public CallResult? CallResult { get; set; }
+    /// <summary>
+    /// It is nullable because there are cases where it makes no sense to point to an account.
+    /// For example a CloudService user will point to no account
+    /// </summary>
+    public List<System.String>? IdsTags { get; set; }
     /// <summary> Set values on actual document </summary>
     public void SetValuesOnCallIncomingToCallFlowLogic(CallIncomingToCallFlowLogic callIncomingToCallFlowLogic)
     {
-        if(this.IdsTags!=null)
-            callIncomingToCallFlowLogic.IdsTags = this.IdsTags;
         if(this.CallResult!=null)
             callIncomingToCallFlowLogic.CallResult = this.CallResult.Value;
+        if(this.IdsTags!=null)
+            callIncomingToCallFlowLogic.IdsTags = this.IdsTags;
     }
 
 }
@@ -292,20 +297,21 @@ public class CallIncomingToCallFlowLogicUpdateRequest // : IUbluxDocumentId
 public class CallIncomingToExtensionUpdateRequest // : IUbluxDocumentId
 {
     /// <summary>
-    /// Ids of tags
-    /// </summary>
-    public List<System.String>? IdsTags { get; set; }
-    /// <summary>
     /// Result of a call
     /// </summary>
     public CallResult? CallResult { get; set; }
+    /// <summary>
+    /// It is nullable because there are cases where it makes no sense to point to an account.
+    /// For example a CloudService user will point to no account
+    /// </summary>
+    public List<System.String>? IdsTags { get; set; }
     /// <summary> Set values on actual document </summary>
     public void SetValuesOnCallIncomingToExtension(CallIncomingToExtension callIncomingToExtension)
     {
-        if(this.IdsTags!=null)
-            callIncomingToExtension.IdsTags = this.IdsTags;
         if(this.CallResult!=null)
             callIncomingToExtension.CallResult = this.CallResult.Value;
+        if(this.IdsTags!=null)
+            callIncomingToExtension.IdsTags = this.IdsTags;
     }
 
 }
@@ -316,20 +322,21 @@ public class CallIncomingToExtensionUpdateRequest // : IUbluxDocumentId
 public class CallOutgoingToExtensionUpdateRequest // : IUbluxDocumentId
 {
     /// <summary>
-    /// Ids of tags
-    /// </summary>
-    public List<System.String>? IdsTags { get; set; }
-    /// <summary>
     /// Result of a call
     /// </summary>
     public CallResult? CallResult { get; set; }
+    /// <summary>
+    /// It is nullable because there are cases where it makes no sense to point to an account.
+    /// For example a CloudService user will point to no account
+    /// </summary>
+    public List<System.String>? IdsTags { get; set; }
     /// <summary> Set values on actual document </summary>
     public void SetValuesOnCallOutgoingToExtension(CallOutgoingToExtension callOutgoingToExtension)
     {
-        if(this.IdsTags!=null)
-            callOutgoingToExtension.IdsTags = this.IdsTags;
         if(this.CallResult!=null)
             callOutgoingToExtension.CallResult = this.CallResult.Value;
+        if(this.IdsTags!=null)
+            callOutgoingToExtension.IdsTags = this.IdsTags;
     }
 
 }
@@ -342,20 +349,21 @@ public class CallOutgoingToExtensionUpdateRequest // : IUbluxDocumentId
 public class CallOutgoingToPSTNUpdateRequest // : IUbluxDocumentId
 {
     /// <summary>
-    /// Ids of tags
-    /// </summary>
-    public List<System.String>? IdsTags { get; set; }
-    /// <summary>
     /// Result of a call
     /// </summary>
     public CallResult? CallResult { get; set; }
+    /// <summary>
+    /// It is nullable because there are cases where it makes no sense to point to an account.
+    /// For example a CloudService user will point to no account
+    /// </summary>
+    public List<System.String>? IdsTags { get; set; }
     /// <summary> Set values on actual document </summary>
     public void SetValuesOnCallOutgoingToPSTN(CallOutgoingToPSTN callOutgoingToPSTN)
     {
-        if(this.IdsTags!=null)
-            callOutgoingToPSTN.IdsTags = this.IdsTags;
         if(this.CallResult!=null)
             callOutgoingToPSTN.CallResult = this.CallResult.Value;
+        if(this.IdsTags!=null)
+            callOutgoingToPSTN.IdsTags = this.IdsTags;
     }
 
 }
@@ -464,15 +472,9 @@ public class CloudServiceWebHostUpdateRequest // : IUbluxDocumentId
 
 /// <summary>
 /// Contact
-/// </summary><summary>
-/// Contact
 /// </summary>
 public class ContactUpdateRequest // : IUbluxDocumentId
 {
-    /// <summary>
-    /// Ids of tags
-    /// </summary>
-    public List<System.String>? IdsTags { get; set; }
     /// <summary>
     /// Phone numbers of contact
     /// Key = phone number
@@ -509,11 +511,14 @@ public class ContactUpdateRequest // : IUbluxDocumentId
     /// Customer custom data
     /// </summary>
     public List<Ublux.Communications.Models.Variable>? Variables { get; set; }
+    /// <summary>
+    /// It is nullable because there are cases where it makes no sense to point to an account.
+    /// For example a CloudService user will point to no account
+    /// </summary>
+    public List<System.String>? IdsTags { get; set; }
     /// <summary> Set values on actual document </summary>
     public void SetValuesOnContact(Contact contact)
     {
-        if(this.IdsTags!=null)
-            contact.IdsTags = this.IdsTags;
         if(this.ContactNumbers!=null)
             contact.ContactNumbers = this.ContactNumbers;
         if(this.ContactEmails!=null)
@@ -532,21 +537,17 @@ public class ContactUpdateRequest // : IUbluxDocumentId
             contact.Notes = this.Notes;
         if(this.Variables!=null)
             contact.Variables = this.Variables;
+        if(this.IdsTags!=null)
+            contact.IdsTags = this.IdsTags;
     }
 
 }
 
 /// <summary>
 /// Needed because some providers like the one from Spain require customers info in order to purchase VoipNumber
-/// </summary><summary>
-/// Needed because some providers like the one from Spain require customers info in order to purchase VoipNumber
 /// </summary>
 public class CustomerInfoUpdateRequest // : IUbluxDocumentId
 {
-    /// <summary>
-    /// Ids of tags
-    /// </summary>
-    public List<System.String>? IdsTags { get; set; }
     /// <summary>
     /// Address where this phone number is intended to be used
     /// </summary>
@@ -555,15 +556,20 @@ public class CustomerInfoUpdateRequest // : IUbluxDocumentId
     /// Full legal name
     /// </summary>
     public String? FullName { get; set; }
+    /// <summary>
+    /// It is nullable because there are cases where it makes no sense to point to an account.
+    /// For example a CloudService user will point to no account
+    /// </summary>
+    public List<System.String>? IdsTags { get; set; }
     /// <summary> Set values on actual document </summary>
     public void SetValuesOnCustomerInfo(CustomerInfo customerInfo)
     {
-        if(this.IdsTags!=null)
-            customerInfo.IdsTags = this.IdsTags;
         if(this.MailingAddress!=null)
             customerInfo.MailingAddress = this.MailingAddress;
         if(this.FullName!=null)
             customerInfo.FullName = this.FullName;
+        if(this.IdsTags!=null)
+            customerInfo.IdsTags = this.IdsTags;
     }
 
 }
@@ -591,10 +597,6 @@ public class ExtensionCallFlowLogicUpdateRequest // : IUbluxDocumentId
     /// </summary>
     public String? IdMusicOnHoldGroup { get; set; }
     /// <summary>
-    /// Ids of tags
-    /// </summary>
-    public List<System.String>? IdsTags { get; set; }
-    /// <summary>
     /// Extension friendly name
     /// </summary>
     public String? FriendlyName { get; set; }
@@ -606,6 +608,11 @@ public class ExtensionCallFlowLogicUpdateRequest // : IUbluxDocumentId
     /// Inject extension name to caller id
     /// </summary>
     public Boolean? InjectExtensionNameToCallerId { get; set; }
+    /// <summary>
+    /// It is nullable because there are cases where it makes no sense to point to an account.
+    /// For example a CloudService user will point to no account
+    /// </summary>
+    public List<System.String>? IdsTags { get; set; }
     /// <summary> Set values on actual document </summary>
     public void SetValuesOnExtensionCallFlowLogic(ExtensionCallFlowLogic extensionCallFlowLogic)
     {
@@ -617,14 +624,14 @@ public class ExtensionCallFlowLogicUpdateRequest // : IUbluxDocumentId
             extensionCallFlowLogic.TimeZone = this.TimeZone;
         if(this.IdMusicOnHoldGroup!=null)
             extensionCallFlowLogic.IdMusicOnHoldGroup = this.IdMusicOnHoldGroup;
-        if(this.IdsTags!=null)
-            extensionCallFlowLogic.IdsTags = this.IdsTags;
         if(this.FriendlyName!=null)
             extensionCallFlowLogic.FriendlyName = this.FriendlyName;
         if(this.Number!=null)
             extensionCallFlowLogic.Number = this.Number;
         if(this.InjectExtensionNameToCallerId!=null)
             extensionCallFlowLogic.InjectExtensionNameToCallerId = this.InjectExtensionNameToCallerId.Value;
+        if(this.IdsTags!=null)
+            extensionCallFlowLogic.IdsTags = this.IdsTags;
     }
 
 }
@@ -652,10 +659,6 @@ public class ExtensionConferenceUpdateRequest // : IUbluxDocumentId
     /// </summary>
     public String? IdMusicOnHoldGroup { get; set; }
     /// <summary>
-    /// Ids of tags
-    /// </summary>
-    public List<System.String>? IdsTags { get; set; }
-    /// <summary>
     /// Extension friendly name
     /// </summary>
     public String? FriendlyName { get; set; }
@@ -667,6 +670,11 @@ public class ExtensionConferenceUpdateRequest // : IUbluxDocumentId
     /// Inject extension name to caller id
     /// </summary>
     public Boolean? InjectExtensionNameToCallerId { get; set; }
+    /// <summary>
+    /// It is nullable because there are cases where it makes no sense to point to an account.
+    /// For example a CloudService user will point to no account
+    /// </summary>
+    public List<System.String>? IdsTags { get; set; }
     /// <summary> Set values on actual document </summary>
     public void SetValuesOnExtensionConference(ExtensionConference extensionConference)
     {
@@ -678,14 +686,14 @@ public class ExtensionConferenceUpdateRequest // : IUbluxDocumentId
             extensionConference.Pin = this.Pin;
         if(this.IdMusicOnHoldGroup!=null)
             extensionConference.IdMusicOnHoldGroup = this.IdMusicOnHoldGroup;
-        if(this.IdsTags!=null)
-            extensionConference.IdsTags = this.IdsTags;
         if(this.FriendlyName!=null)
             extensionConference.FriendlyName = this.FriendlyName;
         if(this.Number!=null)
             extensionConference.Number = this.Number;
         if(this.InjectExtensionNameToCallerId!=null)
             extensionConference.InjectExtensionNameToCallerId = this.InjectExtensionNameToCallerId.Value;
+        if(this.IdsTags!=null)
+            extensionConference.IdsTags = this.IdsTags;
     }
 
 }
@@ -716,10 +724,6 @@ public class ExtensionDialUpdateRequest // : IUbluxDocumentId
     /// </summary>
     public String? IdMusicOnHoldGroup { get; set; }
     /// <summary>
-    /// Ids of tags
-    /// </summary>
-    public List<System.String>? IdsTags { get; set; }
-    /// <summary>
     /// Extension friendly name
     /// </summary>
     public String? FriendlyName { get; set; }
@@ -731,6 +735,11 @@ public class ExtensionDialUpdateRequest // : IUbluxDocumentId
     /// Inject extension name to caller id
     /// </summary>
     public Boolean? InjectExtensionNameToCallerId { get; set; }
+    /// <summary>
+    /// It is nullable because there are cases where it makes no sense to point to an account.
+    /// For example a CloudService user will point to no account
+    /// </summary>
+    public List<System.String>? IdsTags { get; set; }
     /// <summary> Set values on actual document </summary>
     public void SetValuesOnExtensionDial(ExtensionDial extensionDial)
     {
@@ -744,14 +753,14 @@ public class ExtensionDialUpdateRequest // : IUbluxDocumentId
             extensionDial.RingTimeInSeconds = this.RingTimeInSeconds.Value;
         if(this.IdMusicOnHoldGroup!=null)
             extensionDial.IdMusicOnHoldGroup = this.IdMusicOnHoldGroup;
-        if(this.IdsTags!=null)
-            extensionDial.IdsTags = this.IdsTags;
         if(this.FriendlyName!=null)
             extensionDial.FriendlyName = this.FriendlyName;
         if(this.Number!=null)
             extensionDial.Number = this.Number;
         if(this.InjectExtensionNameToCallerId!=null)
             extensionDial.InjectExtensionNameToCallerId = this.InjectExtensionNameToCallerId.Value;
+        if(this.IdsTags!=null)
+            extensionDial.IdsTags = this.IdsTags;
     }
 
 }
@@ -818,10 +827,6 @@ public class ExtensionQueueUpdateRequest // : IUbluxDocumentId
     /// </summary>
     public String? IdMusicOnHoldGroup { get; set; }
     /// <summary>
-    /// Ids of tags
-    /// </summary>
-    public List<System.String>? IdsTags { get; set; }
-    /// <summary>
     /// Extension friendly name
     /// </summary>
     public String? FriendlyName { get; set; }
@@ -833,6 +838,11 @@ public class ExtensionQueueUpdateRequest // : IUbluxDocumentId
     /// Inject extension name to caller id
     /// </summary>
     public Boolean? InjectExtensionNameToCallerId { get; set; }
+    /// <summary>
+    /// It is nullable because there are cases where it makes no sense to point to an account.
+    /// For example a CloudService user will point to no account
+    /// </summary>
+    public List<System.String>? IdsTags { get; set; }
     /// <summary> Set values on actual document </summary>
     public void SetValuesOnExtensionQueue(ExtensionQueue extensionQueue)
     {
@@ -864,14 +874,14 @@ public class ExtensionQueueUpdateRequest // : IUbluxDocumentId
             extensionQueue.RingStrategy = this.RingStrategy.Value;
         if(this.IdMusicOnHoldGroup!=null)
             extensionQueue.IdMusicOnHoldGroup = this.IdMusicOnHoldGroup;
-        if(this.IdsTags!=null)
-            extensionQueue.IdsTags = this.IdsTags;
         if(this.FriendlyName!=null)
             extensionQueue.FriendlyName = this.FriendlyName;
         if(this.Number!=null)
             extensionQueue.Number = this.Number;
         if(this.InjectExtensionNameToCallerId!=null)
             extensionQueue.InjectExtensionNameToCallerId = this.InjectExtensionNameToCallerId.Value;
+        if(this.IdsTags!=null)
+            extensionQueue.IdsTags = this.IdsTags;
     }
 
 }
@@ -906,10 +916,6 @@ public class ExtensionVoicemailUpdateRequest // : IUbluxDocumentId
     /// </summary>
     public String? IdMusicOnHoldGroup { get; set; }
     /// <summary>
-    /// Ids of tags
-    /// </summary>
-    public List<System.String>? IdsTags { get; set; }
-    /// <summary>
     /// Extension friendly name
     /// </summary>
     public String? FriendlyName { get; set; }
@@ -921,6 +927,11 @@ public class ExtensionVoicemailUpdateRequest // : IUbluxDocumentId
     /// Inject extension name to caller id
     /// </summary>
     public Boolean? InjectExtensionNameToCallerId { get; set; }
+    /// <summary>
+    /// It is nullable because there are cases where it makes no sense to point to an account.
+    /// For example a CloudService user will point to no account
+    /// </summary>
+    public List<System.String>? IdsTags { get; set; }
     /// <summary> Set values on actual document </summary>
     public void SetValuesOnExtensionVoicemail(ExtensionVoicemail extensionVoicemail)
     {
@@ -936,27 +947,26 @@ public class ExtensionVoicemailUpdateRequest // : IUbluxDocumentId
             extensionVoicemail.TextToSpeechVoiceId = this.TextToSpeechVoiceId;
         if(this.IdMusicOnHoldGroup!=null)
             extensionVoicemail.IdMusicOnHoldGroup = this.IdMusicOnHoldGroup;
-        if(this.IdsTags!=null)
-            extensionVoicemail.IdsTags = this.IdsTags;
         if(this.FriendlyName!=null)
             extensionVoicemail.FriendlyName = this.FriendlyName;
         if(this.Number!=null)
             extensionVoicemail.Number = this.Number;
         if(this.InjectExtensionNameToCallerId!=null)
             extensionVoicemail.InjectExtensionNameToCallerId = this.InjectExtensionNameToCallerId.Value;
+        if(this.IdsTags!=null)
+            extensionVoicemail.IdsTags = this.IdsTags;
     }
 
 }
 
 /// <summary>
 /// Incoming fax
-/// </summary><summary>
-/// Incoming fax
 /// </summary>
 public class FaxIncomingUpdateRequest // : IUbluxDocumentId
 {
     /// <summary>
-    /// Ids of tags
+    /// It is nullable because there are cases where it makes no sense to point to an account.
+    /// For example a CloudService user will point to no account
     /// </summary>
     public List<System.String>? IdsTags { get; set; }
     /// <summary> Set values on actual document </summary>
@@ -970,13 +980,12 @@ public class FaxIncomingUpdateRequest // : IUbluxDocumentId
 
 /// <summary>
 /// Group of faxes sent as a group via email
-/// </summary><summary>
-/// Group of faxes sent as a group via email
 /// </summary>
 public class FaxOutgoingGroupUpdateRequest // : IUbluxDocumentId
 {
     /// <summary>
-    /// Ids of tags
+    /// It is nullable because there are cases where it makes no sense to point to an account.
+    /// For example a CloudService user will point to no account
     /// </summary>
     public List<System.String>? IdsTags { get; set; }
     /// <summary> Set values on actual document </summary>
@@ -989,16 +998,11 @@ public class FaxOutgoingGroupUpdateRequest // : IUbluxDocumentId
 }
 
 /// <summary>
-/// Someone that has access to consume Ublux Web Api. It can be a PBX, WA, or UbluxUser
-/// </summary><summary>
-/// Someone that has access to consume Ublux Web Api. It can be a PBX, WA, or UbluxUser
+/// Someone that has access to consume Ublux Web Api. It can be a PBX, WA,
+/// If its a PBX user for example it must point to account tbd 27
 /// </summary>
 public class UserUpdateRequest // : IUbluxDocumentId
 {
-    /// <summary>
-    /// Ids of tags
-    /// </summary>
-    public List<System.String>? IdsTags { get; set; }
     /// <summary>
     /// Key = service/role such as Phone. The phone role probably will have access to the PhoneController service
     /// Value = Permissions it has on that role. Maybe it can only read data from that service but it cannot update, create or modify.
@@ -1013,32 +1017,31 @@ public class UserUpdateRequest // : IUbluxDocumentId
     /// If IpAddressLastAuthenticated is null then this will be allowed.
     /// </summary>
     public Boolean? PreventConnectingIfIpChanges { get; set; }
+    /// <summary>
+    /// It is nullable because there are cases where it makes no sense to point to an account.
+    /// For example a CloudService user will point to no account
+    /// </summary>
+    public List<System.String>? IdsTags { get; set; }
     /// <summary> Set values on actual document </summary>
     public void SetValuesOnUser(User user)
     {
-        if(this.IdsTags!=null)
-            user.IdsTags = this.IdsTags;
         if(this.UbluxRoles!=null)
             user.UbluxRoles = this.UbluxRoles;
         if(this.AllowConnectingFromIpRegex!=null)
             user.AllowConnectingFromIpRegex = this.AllowConnectingFromIpRegex;
         if(this.PreventConnectingIfIpChanges!=null)
             user.PreventConnectingIfIpChanges = this.PreventConnectingIfIpChanges.Value;
+        if(this.IdsTags!=null)
+            user.IdsTags = this.IdsTags;
     }
 
 }
 
 /// <summary>
 /// Group of line keys
-/// </summary><summary>
-/// Group of line keys
 /// </summary>
 public class LineKeyGroupUpdateRequest // : IUbluxDocumentId
 {
-    /// <summary>
-    /// Ids of tags
-    /// </summary>
-    public List<System.String>? IdsTags { get; set; }
     /// <summary>
     /// Group of speed dial keys. Must have at least one
     /// </summary>
@@ -1051,17 +1054,22 @@ public class LineKeyGroupUpdateRequest // : IUbluxDocumentId
     /// Description of line key group
     /// </summary>
     public String? Description { get; set; }
+    /// <summary>
+    /// It is nullable because there are cases where it makes no sense to point to an account.
+    /// For example a CloudService user will point to no account
+    /// </summary>
+    public List<System.String>? IdsTags { get; set; }
     /// <summary> Set values on actual document </summary>
     public void SetValuesOnLineKeyGroup(LineKeyGroup lineKeyGroup)
     {
-        if(this.IdsTags!=null)
-            lineKeyGroup.IdsTags = this.IdsTags;
         if(this.LineKeys!=null)
             lineKeyGroup.LineKeys = this.LineKeys;
         if(this.FriendlyName!=null)
             lineKeyGroup.FriendlyName = this.FriendlyName;
         if(this.Description!=null)
             lineKeyGroup.Description = this.Description;
+        if(this.IdsTags!=null)
+            lineKeyGroup.IdsTags = this.IdsTags;
     }
 
 }
@@ -1082,8 +1090,6 @@ public class LogWebServiceRequestUpdateRequest // : IUbluxDocumentId
 
 /// <summary>
 /// Multiple audios to be used as music on hold
-/// </summary><summary>
-/// Multiple audios to be used as music on hold
 /// </summary>
 public class MusicOnHoldGroupUpdateRequest // : IUbluxDocumentId
 {
@@ -1092,10 +1098,6 @@ public class MusicOnHoldGroupUpdateRequest // : IUbluxDocumentId
     /// </summary>
     public List<System.String>? IdsAudios { get; set; }
     /// <summary>
-    /// Ids of tags
-    /// </summary>
-    public List<System.String>? IdsTags { get; set; }
-    /// <summary>
     /// Name of music on hold group
     /// </summary>
     public String? FriendlyName { get; set; }
@@ -1103,17 +1105,22 @@ public class MusicOnHoldGroupUpdateRequest // : IUbluxDocumentId
     /// Description of music on hold group
     /// </summary>
     public String? Description { get; set; }
+    /// <summary>
+    /// It is nullable because there are cases where it makes no sense to point to an account.
+    /// For example a CloudService user will point to no account
+    /// </summary>
+    public List<System.String>? IdsTags { get; set; }
     /// <summary> Set values on actual document </summary>
     public void SetValuesOnMusicOnHoldGroup(MusicOnHoldGroup musicOnHoldGroup)
     {
         if(this.IdsAudios!=null)
             musicOnHoldGroup.IdsAudios = this.IdsAudios;
-        if(this.IdsTags!=null)
-            musicOnHoldGroup.IdsTags = this.IdsTags;
         if(this.FriendlyName!=null)
             musicOnHoldGroup.FriendlyName = this.FriendlyName;
         if(this.Description!=null)
             musicOnHoldGroup.Description = this.Description;
+        if(this.IdsTags!=null)
+            musicOnHoldGroup.IdsTags = this.IdsTags;
     }
 
 }
@@ -1125,10 +1132,6 @@ public class MusicOnHoldGroupUpdateRequest // : IUbluxDocumentId
 /// </summary>
 public class PhoneUpdateRequest // : IUbluxDocumentId
 {
-    /// <summary>
-    /// Ids of tags
-    /// </summary>
-    public List<System.String>? IdsTags { get; set; }
     /// <summary>
     /// This specifies to what PBX it will be connected to
     /// </summary>
@@ -1157,11 +1160,14 @@ public class PhoneUpdateRequest // : IUbluxDocumentId
     /// Disable encryption in case device does not support it
     /// </summary>
     public Boolean? DisableEncryption { get; set; }
+    /// <summary>
+    /// It is nullable because there are cases where it makes no sense to point to an account.
+    /// For example a CloudService user will point to no account
+    /// </summary>
+    public List<System.String>? IdsTags { get; set; }
     /// <summary> Set values on actual document </summary>
     public void SetValuesOnPhone(Phone phone)
     {
-        if(this.IdsTags!=null)
-            phone.IdsTags = this.IdsTags;
         if(this.IdCloudServicePbx!=null)
             phone.IdCloudServicePbx = this.IdCloudServicePbx;
         if(this.IdPhoneConfiguration!=null)
@@ -1176,13 +1182,13 @@ public class PhoneUpdateRequest // : IUbluxDocumentId
             phone.PhoneType = this.PhoneType.Value;
         if(this.DisableEncryption!=null)
             phone.DisableEncryption = this.DisableEncryption.Value;
+        if(this.IdsTags!=null)
+            phone.IdsTags = this.IdsTags;
     }
 
 }
 
 /// <summary>
-/// Configuration of a phone
-/// </summary><summary>
 /// Configuration of a phone
 /// </summary>
 public class PhoneConfigurationUpdateRequest // : IUbluxDocumentId
@@ -1192,10 +1198,6 @@ public class PhoneConfigurationUpdateRequest // : IUbluxDocumentId
     /// </summary>
     public String? IdLineKeyGroup { get; set; }
     /// <summary>
-    /// Ids of tags
-    /// </summary>
-    public List<System.String>? IdsTags { get; set; }
-    /// <summary>
     /// Phone configuration name
     /// </summary>
     public String? FrienlyName { get; set; }
@@ -1203,32 +1205,31 @@ public class PhoneConfigurationUpdateRequest // : IUbluxDocumentId
     /// Phone configuration description
     /// </summary>
     public String? Description { get; set; }
+    /// <summary>
+    /// It is nullable because there are cases where it makes no sense to point to an account.
+    /// For example a CloudService user will point to no account
+    /// </summary>
+    public List<System.String>? IdsTags { get; set; }
     /// <summary> Set values on actual document </summary>
     public void SetValuesOnPhoneConfiguration(PhoneConfiguration phoneConfiguration)
     {
         if(this.IdLineKeyGroup!=null)
             phoneConfiguration.IdLineKeyGroup = this.IdLineKeyGroup;
-        if(this.IdsTags!=null)
-            phoneConfiguration.IdsTags = this.IdsTags;
         if(this.FrienlyName!=null)
             phoneConfiguration.FrienlyName = this.FrienlyName;
         if(this.Description!=null)
             phoneConfiguration.Description = this.Description;
+        if(this.IdsTags!=null)
+            phoneConfiguration.IdsTags = this.IdsTags;
     }
 
 }
 
 /// <summary>
 /// Group used to call multiple parties
-/// </summary><summary>
-/// Group used to call multiple parties
 /// </summary>
 public class PowerDialerGroupUpdateRequest // : IUbluxDocumentId
 {
-    /// <summary>
-    /// Ids of tags
-    /// </summary>
-    public List<System.String>? IdsTags { get; set; }
     /// <summary>
     /// Friendly name of power dialer group
     /// </summary>
@@ -1237,28 +1238,32 @@ public class PowerDialerGroupUpdateRequest // : IUbluxDocumentId
     /// Description of power dialer group
     /// </summary>
     public String? Description { get; set; }
+    /// <summary>
+    /// It is nullable because there are cases where it makes no sense to point to an account.
+    /// For example a CloudService user will point to no account
+    /// </summary>
+    public List<System.String>? IdsTags { get; set; }
     /// <summary> Set values on actual document </summary>
     public void SetValuesOnPowerDialerGroup(PowerDialerGroup powerDialerGroup)
     {
-        if(this.IdsTags!=null)
-            powerDialerGroup.IdsTags = this.IdsTags;
         if(this.FriendlyName!=null)
             powerDialerGroup.FriendlyName = this.FriendlyName;
         if(this.Description!=null)
             powerDialerGroup.Description = this.Description;
+        if(this.IdsTags!=null)
+            powerDialerGroup.IdsTags = this.IdsTags;
     }
 
 }
 
 /// <summary>
 /// SMS message
-/// </summary><summary>
-/// SMS message
 /// </summary>
 public class SMSUpdateRequest // : IUbluxDocumentId
 {
     /// <summary>
-    /// Ids of tags
+    /// It is nullable because there are cases where it makes no sense to point to an account.
+    /// For example a CloudService user will point to no account
     /// </summary>
     public List<System.String>? IdsTags { get; set; }
     /// <summary> Set values on actual document </summary>
@@ -1319,32 +1324,13 @@ public class TrunkTerminationGroupUpdateRequest // : IUbluxDocumentId
 }
 
 /// <summary>
-/// Tokens that are not authorized. Perhaps a token has been stolen
-/// </summary><summary>
-/// Tokens that are not authorized. Perhaps a token has been stolen
-/// </summary>
-public class UnauthorizedTokenUpdateRequest // : IUbluxDocumentId
-{
-    /// <summary>
-    /// Ids of tags
-    /// </summary>
-    public List<System.String>? IdsTags { get; set; }
-    /// <summary> Set values on actual document </summary>
-    public void SetValuesOnUnauthorizedToken(UnauthorizedToken unauthorizedToken)
-    {
-        if(this.IdsTags!=null)
-            unauthorizedToken.IdsTags = this.IdsTags;
-    }
-
-}
-
-/// <summary>
 /// Extensions may forward an existing voicemail to another extension
 /// </summary>
 public class VoicemailUpdateRequest // : IUbluxDocumentId
 {
     /// <summary>
-    /// Ids of tags
+    /// It is nullable because there are cases where it makes no sense to point to an account.
+    /// For example a CloudService user will point to no account
     /// </summary>
     public List<System.String>? IdsTags { get; set; }
     /// <summary> Set values on actual document </summary>
@@ -1362,7 +1348,8 @@ public class VoicemailUpdateRequest // : IUbluxDocumentId
 public class VoicemailForwardedUpdateRequest // : IUbluxDocumentId
 {
     /// <summary>
-    /// Ids of tags
+    /// It is nullable because there are cases where it makes no sense to point to an account.
+    /// For example a CloudService user will point to no account
     /// </summary>
     public List<System.String>? IdsTags { get; set; }
     /// <summary> Set values on actual document </summary>
@@ -1379,10 +1366,6 @@ public class VoicemailForwardedUpdateRequest // : IUbluxDocumentId
 /// </summary>
 public class VoipNumberAvailableForPurchaseUpdateRequest // : IUbluxDocumentId
 {
-    /// <summary>
-    /// Ids of tags
-    /// </summary>
-    public List<System.String>? IdsTags { get; set; }
     /// <summary>
     /// Music on hold to use for outgoing calls to PSTN only
     /// </summary>
@@ -1417,11 +1400,14 @@ public class VoipNumberAvailableForPurchaseUpdateRequest // : IUbluxDocumentId
     /// TimeZone of this phone number
     /// </summary>
     public String? TimeZone { get; set; }
+    /// <summary>
+    /// It is nullable because there are cases where it makes no sense to point to an account.
+    /// For example a CloudService user will point to no account
+    /// </summary>
+    public List<System.String>? IdsTags { get; set; }
     /// <summary> Set values on actual document </summary>
     public void SetValuesOnVoipNumberAvailableForPurchase(VoipNumberAvailableForPurchase voipNumberAvailableForPurchase)
     {
-        if(this.IdsTags!=null)
-            voipNumberAvailableForPurchase.IdsTags = this.IdsTags;
         if(this.IdMusicOnHoldGroup!=null)
             voipNumberAvailableForPurchase.IdMusicOnHoldGroup = this.IdMusicOnHoldGroup;
         if(this.InjectFriendlyNameToCallerId!=null)
@@ -1438,6 +1424,8 @@ public class VoipNumberAvailableForPurchaseUpdateRequest // : IUbluxDocumentId
             voipNumberAvailableForPurchase.Language = this.Language.Value;
         if(this.TimeZone!=null)
             voipNumberAvailableForPurchase.TimeZone = this.TimeZone;
+        if(this.IdsTags!=null)
+            voipNumberAvailableForPurchase.IdsTags = this.IdsTags;
     }
 
 }
@@ -1461,10 +1449,6 @@ public class VoipNumberFaxUpdateRequest // : IUbluxDocumentId
     /// </summary>
     public List<Ublux.Communications.Models.RuleFax>? RulesFax { get; set; }
     /// <summary>
-    /// Ids of tags
-    /// </summary>
-    public List<System.String>? IdsTags { get; set; }
-    /// <summary>
     /// Music on hold to use for outgoing calls to PSTN only
     /// </summary>
     public String? IdMusicOnHoldGroup { get; set; }
@@ -1498,6 +1482,11 @@ public class VoipNumberFaxUpdateRequest // : IUbluxDocumentId
     /// TimeZone of this phone number
     /// </summary>
     public String? TimeZone { get; set; }
+    /// <summary>
+    /// It is nullable because there are cases where it makes no sense to point to an account.
+    /// For example a CloudService user will point to no account
+    /// </summary>
+    public List<System.String>? IdsTags { get; set; }
     /// <summary> Set values on actual document </summary>
     public void SetValuesOnVoipNumberFax(VoipNumberFax voipNumberFax)
     {
@@ -1507,8 +1496,6 @@ public class VoipNumberFaxUpdateRequest // : IUbluxDocumentId
             voipNumberFax.RulesSms = this.RulesSms;
         if(this.RulesFax!=null)
             voipNumberFax.RulesFax = this.RulesFax;
-        if(this.IdsTags!=null)
-            voipNumberFax.IdsTags = this.IdsTags;
         if(this.IdMusicOnHoldGroup!=null)
             voipNumberFax.IdMusicOnHoldGroup = this.IdMusicOnHoldGroup;
         if(this.InjectFriendlyNameToCallerId!=null)
@@ -1525,6 +1512,8 @@ public class VoipNumberFaxUpdateRequest // : IUbluxDocumentId
             voipNumberFax.Language = this.Language.Value;
         if(this.TimeZone!=null)
             voipNumberFax.TimeZone = this.TimeZone;
+        if(this.IdsTags!=null)
+            voipNumberFax.IdsTags = this.IdsTags;
     }
 
 }
@@ -1548,10 +1537,6 @@ public class VoipNumberPhoneUpdateRequest // : IUbluxDocumentId
     /// </summary>
     public List<Ublux.Communications.Models.RuleFax>? RulesFax { get; set; }
     /// <summary>
-    /// Ids of tags
-    /// </summary>
-    public List<System.String>? IdsTags { get; set; }
-    /// <summary>
     /// Music on hold to use for outgoing calls to PSTN only
     /// </summary>
     public String? IdMusicOnHoldGroup { get; set; }
@@ -1585,6 +1570,11 @@ public class VoipNumberPhoneUpdateRequest // : IUbluxDocumentId
     /// TimeZone of this phone number
     /// </summary>
     public String? TimeZone { get; set; }
+    /// <summary>
+    /// It is nullable because there are cases where it makes no sense to point to an account.
+    /// For example a CloudService user will point to no account
+    /// </summary>
+    public List<System.String>? IdsTags { get; set; }
     /// <summary> Set values on actual document </summary>
     public void SetValuesOnVoipNumberPhone(VoipNumberPhone voipNumberPhone)
     {
@@ -1594,8 +1584,6 @@ public class VoipNumberPhoneUpdateRequest // : IUbluxDocumentId
             voipNumberPhone.RulesSms = this.RulesSms;
         if(this.RulesFax!=null)
             voipNumberPhone.RulesFax = this.RulesFax;
-        if(this.IdsTags!=null)
-            voipNumberPhone.IdsTags = this.IdsTags;
         if(this.IdMusicOnHoldGroup!=null)
             voipNumberPhone.IdMusicOnHoldGroup = this.IdMusicOnHoldGroup;
         if(this.InjectFriendlyNameToCallerId!=null)
@@ -1612,6 +1600,8 @@ public class VoipNumberPhoneUpdateRequest // : IUbluxDocumentId
             voipNumberPhone.Language = this.Language.Value;
         if(this.TimeZone!=null)
             voipNumberPhone.TimeZone = this.TimeZone;
+        if(this.IdsTags!=null)
+            voipNumberPhone.IdsTags = this.IdsTags;
     }
 
 }
@@ -1631,15 +1621,9 @@ public class VoipProviderUpdateRequest // : IUbluxDocumentId
 
 /// <summary>
 /// Web callback that will be fired when a custom event of interest occurs.
-/// </summary><summary>
-/// Web callback that will be fired when a custom event of interest occurs.
 /// </summary>
 public class WebHookUpdateRequest // : IUbluxDocumentId
 {
-    /// <summary>
-    /// Ids of tags
-    /// </summary>
-    public List<System.String>? IdsTags { get; set; }
     /// <summary>
     /// Points to enum and not database!
     /// </summary>
@@ -1653,17 +1637,22 @@ public class WebHookUpdateRequest // : IUbluxDocumentId
     /// Custom headers to inject on request. Example: x-token:1234,user:user1
     /// </summary>
     public List<System.String>? Headers { get; set; }
+    /// <summary>
+    /// It is nullable because there are cases where it makes no sense to point to an account.
+    /// For example a CloudService user will point to no account
+    /// </summary>
+    public List<System.String>? IdsTags { get; set; }
     /// <summary> Set values on actual document </summary>
     public void SetValuesOnWebHook(WebHook webHook)
     {
-        if(this.IdsTags!=null)
-            webHook.IdsTags = this.IdsTags;
         if(this.EventTrigger!=null)
             webHook.EventTrigger = this.EventTrigger.Value;
         if(this.Url!=null)
             webHook.Url = this.Url;
         if(this.Headers!=null)
             webHook.Headers = this.Headers;
+        if(this.IdsTags!=null)
+            webHook.IdsTags = this.IdsTags;
     }
 
 }
@@ -1682,8 +1671,6 @@ public class CloudFileUpdateRequest // : IUbluxDocumentId
 }
 
 /// <summary>
-/// Category
-/// </summary><summary>
 /// Category
 /// </summary>
 public class TagUpdateRequest // : IUbluxDocumentId
@@ -1709,13 +1696,12 @@ public class TagUpdateRequest // : IUbluxDocumentId
 
 /// <summary>
 /// Phone numbers that will be blocked
-/// </summary><summary>
-/// Phone numbers that will be blocked
 /// </summary>
 public class AiCallTranscriptionUpdateRequest // : IUbluxDocumentId
 {
     /// <summary>
-    /// Ids of tags
+    /// It is nullable because there are cases where it makes no sense to point to an account.
+    /// For example a CloudService user will point to no account
     /// </summary>
     public List<System.String>? IdsTags { get; set; }
     /// <summary> Set values on actual document </summary>

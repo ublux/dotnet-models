@@ -6,7 +6,7 @@ namespace Ublux.Communications.Models.Documents;
 /// <summary>
 ///     Phone numbers that will be blocked
 /// </summary>
-public partial class BlackListPhoneNumber : UbluxDocument, IReferncesAccount
+public partial class BlackListPhoneNumber 
 {
     #region SearchIndex
 
@@ -17,6 +17,7 @@ public partial class BlackListPhoneNumber : UbluxDocument, IReferncesAccount
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
     [IgnoreDataMember]
+    [IsUbluxRequired]
     public string SearchIndex
     {
         get => searchIndex;
@@ -74,20 +75,7 @@ public partial class BlackListPhoneNumber : UbluxDocument, IReferncesAccount
         return new string(buf[..index]);
     }
 
-    #endregion
-
-    #region References
-
-    /// <summary>
-    ///     Account that is blocking this phone number
-    /// </summary>
-    [References(typeof(Account))]
-    [IgnoreDataMember]
-    [AllowUpdate(false)]
-    [SwaggerSchema(ReadOnly = true)]
-    public required string? IdAccount { get; set; }
-
-    #endregion
+    #endregion    
 }
 
 #endif

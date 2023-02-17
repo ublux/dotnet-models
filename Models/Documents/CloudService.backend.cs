@@ -10,10 +10,9 @@ public abstract partial class CloudService : UbluxDocument
     /// <summary>
     ///     We need instance id in order to reboot cloud service for example. Example: i-0655b45b8134e6425 
     /// </summary>
-    [IsUbluxRequired]
     [IgnoreDataMember]
     [AllowUpdate(true)]
-    public required string ProviderInstanceId { get; set; } = "";
+    public string? ProviderInstanceId { get; set; }
 
     /// <summary>
     ///     Region is needed to connect to EC2 instance when using AWS for example: USEast1 or EUWest3 for europe paris

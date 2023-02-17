@@ -8,25 +8,17 @@ namespace Ublux.Communications.Models.Documents;
 /// <summary>
 ///     Previously called IpPhone. Represents a phone in UBLUX
 /// </summary>
-public partial class Phone : UbluxDocument, IReferncesAccount
+public partial class Phone 
 {
-    /// <summary>
-    ///     Points to what account?
-    /// </summary>
-    [References(typeof(Account))]
-    [IgnoreDataMember]
-    [AllowUpdate(false)]
-    [SwaggerSchema(ReadOnly = true)]
-    public required string? IdAccount { get; set; }
-
     /// <summary>
     ///     Password of phone used to authenticate with asterisk
     /// </summary>
     [IsUbluxRequired]
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [IgnoreDataMember]
+    [IgnoreDataMember]    
     public required string Password { get; set; } = string.Empty;
+    
 
     /// <summary>
     ///     For now it is: Li\.[a-zA-Z0-9\.]+

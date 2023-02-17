@@ -25,7 +25,6 @@ public partial class LogWebServiceRequest : UbluxDocument
     //[BsonIgnore] // gives problesm with unit test. Just include it
     [IgnoreDataMember]
     public bool SaveResponseBody { get; set; }
-
 }
 
 #endif

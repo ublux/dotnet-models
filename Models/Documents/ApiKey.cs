@@ -3,18 +3,11 @@
 /// <summary>
 ///     Only users can have api keys. Everyone else should have a JWT
 /// </summary>
-public partial class ApiKey : UbluxDocument, IReferencesTags
+public partial class ApiKey : UbluxDocument_ReferenceAccount_ReferenceTags
 {
     #region Properties
 
-    #region References
-
-    /// <summary>
-    ///     Ids of tags
-    /// </summary>
-    [AllowUpdate(true)]
-    [References(typeof(Tag))]
-    public List<string> IdsTags { get; set; } = new();
+    #region References    
 
     /// <summary>
     ///     User that created this key. 

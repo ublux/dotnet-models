@@ -3,18 +3,11 @@
 /// <summary>
 ///     Previously called IpPhone. Represents a phone in UBLUX
 /// </summary>
-public partial class Phone : UbluxDocument, IReferencesTags
+public partial class Phone : UbluxDocument_ReferenceAccount_ReferenceTags
 {
     #region Properties
 
     #region References
-
-    /// <summary>
-    ///     Ids of tags
-    /// </summary>
-    [AllowUpdate(true)]
-    [References(typeof(Tag))]
-    public List<string> IdsTags { get; set; } = new();
 
     /// <summary>
     ///     This specifies to what PBX it will be connected to

@@ -10,16 +10,9 @@
 [BsonKnownTypes(
     typeof(Voicemail),
     typeof(VoicemailForwarded))]
-public partial class Voicemail : UbluxDocument, IReferencesTags
+public partial class Voicemail : UbluxDocument_ReferenceAccount_ReferenceTags
 {
-    #region References
-
-    /// <summary>
-    ///     Ids of tags
-    /// </summary>
-    [AllowUpdate(true)]
-    [References(typeof(Tag))]
-    public List<string> IdsTags { get; set; } = new();
+    #region References   
 
     /// <summary>
     ///     Ids of lines that can listen to voicemail

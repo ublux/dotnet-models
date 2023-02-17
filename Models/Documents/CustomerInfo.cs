@@ -3,20 +3,9 @@
 /// <summary>
 ///     Needed because some providers like the one from Spain require customers info in order to purchase VoipNumber
 /// </summary>
-public partial class CustomerInfo : UbluxDocument, IReferencesTags
+public partial class CustomerInfo : UbluxDocument_ReferenceAccount_ReferenceTags
 {
-    #region Properties
-
-    #region References
-
-    /// <summary>
-    ///     Ids of tags
-    /// </summary>
-    [AllowUpdate(true)]
-    [References(typeof(Tag))]
-    public List<string> IdsTags { get; set; }  = new();
-
-    #endregion
+    #region Properties   
 
     #region Subdocuments
 

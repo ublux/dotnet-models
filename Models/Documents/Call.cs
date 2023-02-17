@@ -14,7 +14,7 @@
     typeof(CallOutgoingToExtension),
     typeof(CallOutgoingToPSTN)
 )]
-public abstract partial class Call : UbluxDocument, ICall, IReferencesTags
+public abstract partial class Call : UbluxDocument_ReferenceAccount_ReferenceTags, ICall
 {
     #region Properties
 
@@ -35,14 +35,7 @@ public abstract partial class Call : UbluxDocument, ICall, IReferencesTags
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
     [References(typeof(Call))]
-    public string? IdCallThatTerminatedThisCallDoToAttendantTransfer { get; set; }
-
-    /// <summary>
-    ///     Ids of tags
-    /// </summary>
-    [AllowUpdate(true)]
-    [References(typeof(Tag))]
-    public List<string> IdsTags { get; set; } = new();
+    public string? IdCallThatTerminatedThisCallDoToAttendantTransfer { get; set; }    
 
     /// <summary>
     ///     If outgoing:

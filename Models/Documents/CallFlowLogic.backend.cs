@@ -6,15 +6,8 @@ namespace Ublux.Communications.Models.Documents;
 /// <summary>
 ///     Virtual receptionist
 /// </summary>
-public partial class CallFlowLogic : UbluxDocument, IReferncesAccount
-{
-    /// <inheritdoc/>
-    [References(typeof(Account))]
-    [IgnoreDataMember]
-    [AllowUpdate(false)]
-    [SwaggerSchema(ReadOnly = true)]
-    public required string? IdAccount { get; set; }
-
+public partial class CallFlowLogic 
+{    
     /// <summary>
     ///     Traverse tree
     /// </summary>

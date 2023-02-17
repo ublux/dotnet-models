@@ -12,11 +12,7 @@
 
 //    #region References
 
-//[References(typeof(Account))]
-//[IgnoreDataMember]
-//[AllowUpdate(false)]
-//[SwaggerSchema(ReadOnly = true)]
-//public required string? IdAccount { get; set; }
+
 
 //    #endregion
 

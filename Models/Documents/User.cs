@@ -1,22 +1,12 @@
 ﻿namespace Ublux.Communications.Models.Documents;
 
 /// <summary>
-///     Someone that has access to consume Ublux Web Api. It can be a PBX, WA, or UbluxUser
+///     Someone that has access to consume Ublux Web Api. It can be a PBX, WA, 
+///     If its a PBX user for example it must point to account tbd 27
 /// </summary>
-public partial class User : UbluxDocument, IReferencesTags
+public partial class User : UbluxDocument_ReferenceAccount_ReferenceTags
 {
-    #region Properties
-
-    #region References
-
-    /// <summary>
-    ///     Ids of tags
-    /// </summary>
-    [AllowUpdate(true)]
-    [References(typeof(Tag))]
-    public List<string> IdsTags { get; set; } = new();
-
-    #endregion
+    #region Properties   
 
     #region Subdocuments
 

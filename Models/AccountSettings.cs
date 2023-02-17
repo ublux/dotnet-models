@@ -15,10 +15,10 @@ public class AccountSettings
     /// </summary>
     public bool TurnOnRecordingOfInternalCallsWhenCreatingLine { get; set; }
 
-    /// <summary>
-    ///     Example: Antonio Namnum (Ublux)
-    /// </summary>
-    [IsUbluxRequired]
-    public string ContactCallerIdTemplate { get; set; } = "{FullName} ({Company})";
-
+    ///// <summary>
+    /////     Example: Antonio Namnum (Ublux)
+    ///// </summary>
+    //[IsUbluxRequired]
+    //public string ContactCallerIdTemplate { get; set; } = DefaultContactCallerIdTemplate;
+    //public const string DefaultContactCallerIdTemplate = "{FullName} ({Company})";
 }

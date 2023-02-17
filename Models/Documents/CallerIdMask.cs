@@ -3,7 +3,7 @@
 /// <summary>
 ///     Phone numbers that will be blocked
 /// </summary>
-public partial class CallerIdMask : UbluxDocument, IReferencesTags
+public partial class CallerIdMask : UbluxDocument_ReferenceAccount_ReferenceTags
 {
     #region Properties
 
@@ -20,14 +20,7 @@ public partial class CallerIdMask : UbluxDocument, IReferencesTags
     /// </summary>
     [AllowUpdate(true)]    
     [IsUbluxRequired]
-    public required string FriendlyName { get; set; }
-
-    /// <summary>
-    ///     Ids of tags
-    /// </summary>
-    [AllowUpdate(true)]
-    [References(typeof(Tag))]
-    public List<string> IdsTags { get; set; } = new();
+    public required string FriendlyName { get; set; }    
 
     #endregion
 }

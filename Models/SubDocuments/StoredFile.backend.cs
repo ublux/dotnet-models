@@ -26,13 +26,13 @@ public partial class StoredFile : UbluxSubDocument, IReferncesAccount
     }
 
     /// <summary>
-    ///     Id of account it references
+    ///     Id of account it references. If its an internal account use Account.GetIdTbdCase27()
     /// </summary>
     [References(typeof(Account))]
     [IgnoreDataMember]
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    public required string? IdAccount { get; set; }
+    public required string IdAccount { get; set; }
 
     /// <summary>
     ///     Example incoming-faxes

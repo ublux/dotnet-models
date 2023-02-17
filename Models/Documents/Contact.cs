@@ -3,7 +3,7 @@
 /// <summary>
 ///     Contact
 /// </summary>
-public partial class Contact : UbluxDocument, IReferencesTags
+public partial class Contact : UbluxDocument_ReferenceAccount_ReferenceTags
 {
     #region Properties
 
@@ -18,14 +18,7 @@ public partial class Contact : UbluxDocument, IReferencesTags
     [AllowUpdate(false)] 
     [SwaggerSchema(ReadOnly = true)] 
     [References(typeof(User))]
-    public string? IdUserOwner { get; set; }
-
-    /// <summary>
-    ///     Ids of tags
-    /// </summary>
-    [AllowUpdate(true)]
-    [References(typeof(Tag))]
-    public List<string> IdsTags { get; set; } = new();
+    public string? IdUserOwner { get; set; }    
 
     #endregion
 

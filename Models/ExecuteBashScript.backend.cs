@@ -1,6 +1,6 @@
 ﻿#if UBLUX_BACKEND
 
-namespace Ublux.Communications.Models.Models;
+namespace Ublux.Communications.Models;
 
 /// <summary>
 ///     Sends as SNS

@@ -12,18 +12,11 @@
     typeof(VoipNumberFax),
     typeof(VoipNumberPhone)
 )]
-public abstract partial class VoipNumber : UbluxDocument, IReferencesTags
+public abstract partial class VoipNumber : UbluxDocument_ReferenceAccount_ReferenceTags
 {
     #region Properties
 
-    #region References
-
-    /// <summary>
-    ///     Ids of tags
-    /// </summary>
-    [AllowUpdate(true)]
-    [References(typeof(Tag))]
-    public List<string> IdsTags { get; set; } = new();
+    #region References    
 
     /// <summary>
     ///     Music on hold to use for outgoing calls to PSTN only

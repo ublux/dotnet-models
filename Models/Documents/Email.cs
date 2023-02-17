@@ -3,7 +3,7 @@
 /// <summary>
 ///     Ublux Account
 /// </summary>
-public partial class Email : UbluxDocument, IReferencesTags
+public partial class Email : UbluxDocument_ReferenceAccount_ReferenceTags
 {
     #region Properties
 
@@ -29,25 +29,15 @@ public partial class Email : UbluxDocument, IReferencesTags
     [SwaggerSchema(ReadOnly = true)]
     public string? IpAddress { get; set; }
 
-    #region References
+    #region References    
 
-    /// <summary>
-    ///     Ids of tags
-    /// </summary>
-    [AllowUpdate(true)]
-    [References(typeof(Tag))]
-    public List<string> IdsTags { get; set; } = new();
-
-    /// <summary>
-    ///     When sending email we may send a code on the email that the user may dial from his phone to validate
-    /// </summary>
-    [AllowUpdate(false)]
-    [SwaggerSchema(ReadOnly = true)]
-    [References(typeof(Line))]
-    public Line? IdLineThatValidatedEmail { get; set; }
-
-
-
+    ///// <summary>
+    /////     When sending email we may send a code on the email that the user may dial from his phone to validate
+    ///// </summary>
+    //[AllowUpdate(false)]
+    //[SwaggerSchema(ReadOnly = true)]
+    //[References(typeof(Line))]
+    //public string IdLineThatValidatedEmail { get; set; }
 
     #endregion
 

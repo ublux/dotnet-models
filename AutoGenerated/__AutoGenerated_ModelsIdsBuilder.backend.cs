@@ -273,13 +273,6 @@ namespace Ublux.Communications.Models.Documents {
         /// <summary> Custom: Prefix follwed by trunk termination group name. Example TTG.CanalPark.Production </summary>
         public static BuiltId BuildId(string groupName) => new($"{DocumentPrefix}.{groupName}");
     }
-    public partial class UnauthorizedToken {
-        /// <summary> Id prefix </summary>
-        public const string DocumentPrefix = "UT";
-
-        /// <summary> Custom: prefix and last 16 characters of JWT </summary>
-        public static BuiltId BuildId(string jwt) => new($"{DocumentPrefix}.{jwt[^16..]}");
-    }
     public partial class Voicemail {
         /// <summary> Id prefix </summary>
         public const string DocumentPrefix = "Vo";

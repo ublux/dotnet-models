@@ -21,20 +21,13 @@ public partial class UbluxSession
     public required UserType UserType { get; set; }
 
     /// <summary>
-    ///     acc property from JWT. Id of account. This is not a backend field
+    ///     acc property from JWT. Id of account. 
     /// </summary>
     [References(typeof(Account))]
     [IgnoreDataMember]
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    public required string? IdAccount { get; set; }
-
-    ///// <summary>
-    /////     Ids of tags
-    ///// </summary>
-    //[AllowUpdate(true)]
-    //[References(typeof(Tag))]
-    //public List<string> IdsTags { get; set; } = new();
+    public required string IdAccount { get; set; }
 
     /// <summary>
     ///     role properties from JWT. Permissions

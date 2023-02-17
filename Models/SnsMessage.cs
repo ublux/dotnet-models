@@ -34,13 +34,13 @@ public class SnsMessage
     public string? Message { get; set; }
 
     /// <summary>
-    ///     Id of account
+    ///     Id of account. Use account 27 for internal events
     /// </summary>
     [References(typeof(Account))]
     [IgnoreDataMember]
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    public required string? IdAccount { get; set; }
+    public required string IdAccount { get; set; }
 
     /// <summary>
     ///     If a phone was modified then the id of the phone

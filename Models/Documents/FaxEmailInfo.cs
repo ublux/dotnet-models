@@ -27,12 +27,7 @@
 //    [References(typeof(Line))]
 //    public Line? LineThatValidatedEmail { get; set; }
 
-//    /// <summary>
-//    ///     Ids of tags
-//    /// </summary>
-//    [AllowUpdate(true)]
-//    [References(typeof(Tag))]
-//    public List<string> IdsTags { get; set; } = new();
+
 
 //    #endregion
 

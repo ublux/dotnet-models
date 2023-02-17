@@ -3,7 +3,7 @@
 /// <summary>
 ///     SMS message
 /// </summary>
-public partial class SMS : UbluxDocument, IReferencesTags
+public partial class SMS : UbluxDocument_ReferenceAccount_ReferenceTags
 {
     #region Properties
 
@@ -16,14 +16,7 @@ public partial class SMS : UbluxDocument, IReferencesTags
     [SwaggerSchema(ReadOnly = true)]
     [References(typeof(VoipNumber))]
     [IsUbluxRequired]
-    public required string IdVoipNumber { get; set; }
-
-    /// <summary>
-    ///     Ids of tags
-    /// </summary>
-    [AllowUpdate(true)]
-    [References(typeof(Tag))]
-    public List<string> IdsTags { get; set; } = new();
+    public required string IdVoipNumber { get; set; }   
 
     #endregion
 

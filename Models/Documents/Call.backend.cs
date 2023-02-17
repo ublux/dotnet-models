@@ -6,19 +6,13 @@ namespace Ublux.Communications.Models.Documents;
 /// <summary>
 ///     Ublux phone call
 /// </summary>
-public abstract partial class Call : UbluxDocument, IReferncesAccount
-{
-    /// <inheritdoc/>
-    [References(typeof(Account))]
-    [IgnoreDataMember]
-    [AllowUpdate(false)]
-    [SwaggerSchema(ReadOnly = true)]
-    public required string? IdAccount { get; set; }
-
+public abstract partial class Call 
+{   
     /// <inheritdoc />
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
     [IgnoreDataMember]
+    [IsUbluxRequired]
     public required string ChannelFrom { get; set; } = string.Empty;
 
     /// <summary>

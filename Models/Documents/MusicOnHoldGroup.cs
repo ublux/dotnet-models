@@ -3,7 +3,7 @@
 /// <summary>
 ///     Multiple audios to be used as music on hold
 /// </summary>
-public partial class MusicOnHoldGroup : UbluxDocument, IReferencesTags
+public partial class MusicOnHoldGroup : UbluxDocument_ReferenceAccount_ReferenceTags
 {
     #region Properties
 
@@ -15,14 +15,7 @@ public partial class MusicOnHoldGroup : UbluxDocument, IReferencesTags
     [References(typeof(Audio))]
     [AllowUpdate(true)]
     [IsUbluxRequired]
-    public required List<string> IdsAudios { get; set; }
-
-    /// <summary>
-    ///     Ids of tags
-    /// </summary>
-    [AllowUpdate(true)]
-    [References(typeof(Tag))]
-    public List<string> IdsTags { get; set; } = new();
+    public required List<string> IdsAudios { get; set; }    
 
     #endregion
 

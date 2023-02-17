@@ -3,7 +3,7 @@
 /// <summary>
 ///     Category
 /// </summary>
-public partial class Tag : UbluxDocument
+public partial class Tag : UbluxDocument_ReferenceAccount
 {
     /// <summary>
     ///     Name of tag

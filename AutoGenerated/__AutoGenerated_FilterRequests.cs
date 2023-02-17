@@ -7,16 +7,6 @@ namespace Ublux.Communications.Models.Documents;
 /// <summary> Enables searching for ApiKeys </summary>
 public class ApiKeyFilterRequest 
 {
-    /// <summary> IdsTags equals </summary>
-    [JsonProperty("idsTags_eq")]
-    public string? IdsTags_EQ { get; set; }
-    /// <summary> IdsTags contains </summary>
-    [JsonProperty("idsTags_con")]
-    public string? IdsTags_CON { get; set; }
-    /// <summary> IdsTags regex </summary>
-    [JsonProperty("idsTags_reg")]
-    public string? IdsTags_REG { get; set; }
-
     /// <summary> IdUser equals </summary>
     [JsonProperty("idUser_eq")]
     public string? IdUser_EQ { get; set; }
@@ -40,6 +30,16 @@ public class ApiKeyFilterRequest
     /// <summary> DateLastUsed greater than or equal to </summary>
     [JsonProperty("dateLastUsed_gte")]
     public DateTime? DateLastUsed_GTE { get; set; }
+
+    /// <summary> IdsTags equals </summary>
+    [JsonProperty("idsTags_eq")]
+    public string? IdsTags_EQ { get; set; }
+    /// <summary> IdsTags contains </summary>
+    [JsonProperty("idsTags_con")]
+    public string? IdsTags_CON { get; set; }
+    /// <summary> IdsTags regex </summary>
+    [JsonProperty("idsTags_reg")]
+    public string? IdsTags_REG { get; set; }
 
     /// <summary> Id equals </summary>
     [JsonProperty("id_eq")]
@@ -195,16 +195,6 @@ public class AccountFilterRequest
     [JsonProperty("accountSettings_turnOnRecordingOfInternalCallsWhenCreatingLine_eq")]
     public bool? AccountSettings_TurnOnRecordingOfInternalCallsWhenCreatingLine_EQ { get; set; }
 
-    /// <summary> AccountSettings.ContactCallerIdTemplate equals </summary>
-    [JsonProperty("accountSettings_contactCallerIdTemplate_eq")]
-    public string? AccountSettings_ContactCallerIdTemplate_EQ { get; set; }
-    /// <summary> AccountSettings.ContactCallerIdTemplate contains </summary>
-    [JsonProperty("accountSettings_contactCallerIdTemplate_con")]
-    public string? AccountSettings_ContactCallerIdTemplate_CON { get; set; }
-    /// <summary> AccountSettings.ContactCallerIdTemplate regex </summary>
-    [JsonProperty("accountSettings_contactCallerIdTemplate_reg")]
-    public string? AccountSettings_ContactCallerIdTemplate_REG { get; set; }
-
 
     /// <summary> CompanyName equals </summary>
     [JsonProperty("companyName_eq")]
@@ -301,148 +291,6 @@ public class EmailFilterRequest
     /// <summary> IdsTags regex </summary>
     [JsonProperty("idsTags_reg")]
     public string? IdsTags_REG { get; set; }
-
-    /// <summary> IdLineThatValidatedEmail.FriendlyName equals </summary>
-    [JsonProperty("idLineThatValidatedEmail_friendlyName_eq")]
-    public string? IdLineThatValidatedEmail_FriendlyName_EQ { get; set; }
-    /// <summary> IdLineThatValidatedEmail.FriendlyName contains </summary>
-    [JsonProperty("idLineThatValidatedEmail_friendlyName_con")]
-    public string? IdLineThatValidatedEmail_FriendlyName_CON { get; set; }
-    /// <summary> IdLineThatValidatedEmail.FriendlyName regex </summary>
-    [JsonProperty("idLineThatValidatedEmail_friendlyName_reg")]
-    public string? IdLineThatValidatedEmail_FriendlyName_REG { get; set; }
-
-    /// <summary> IdLineThatValidatedEmail.LineConnectionStatus.IpWAN equals </summary>
-    [JsonProperty("idLineThatValidatedEmail_lineConnectionStatus_ipWAN_eq")]
-    public string? IdLineThatValidatedEmail_LineConnectionStatus_IpWAN_EQ { get; set; }
-    /// <summary> IdLineThatValidatedEmail.LineConnectionStatus.IpWAN contains </summary>
-    [JsonProperty("idLineThatValidatedEmail_lineConnectionStatus_ipWAN_con")]
-    public string? IdLineThatValidatedEmail_LineConnectionStatus_IpWAN_CON { get; set; }
-    /// <summary> IdLineThatValidatedEmail.LineConnectionStatus.IpWAN regex </summary>
-    [JsonProperty("idLineThatValidatedEmail_lineConnectionStatus_ipWAN_reg")]
-    public string? IdLineThatValidatedEmail_LineConnectionStatus_IpWAN_REG { get; set; }
-
-    /// <summary> IdLineThatValidatedEmail.LineConnectionStatus.PortWAN equals </summary>
-    [JsonProperty("idLineThatValidatedEmail_lineConnectionStatus_portWAN_eq")]
-    public System.Int32? IdLineThatValidatedEmail_LineConnectionStatus_PortWAN_EQ { get; set; }
-    /// <summary> IdLineThatValidatedEmail.LineConnectionStatus.PortWAN less than or equal to </summary>
-    [JsonProperty("idLineThatValidatedEmail_lineConnectionStatus_portWAN_lte")]
-    public System.Int32? IdLineThatValidatedEmail_LineConnectionStatus_PortWAN_LTE { get; set; }
-    /// <summary> IdLineThatValidatedEmail.LineConnectionStatus.PortWAN greater than or equal to </summary>
-    [JsonProperty("idLineThatValidatedEmail_lineConnectionStatus_portWAN_gte")]
-    public System.Int32? IdLineThatValidatedEmail_LineConnectionStatus_PortWAN_GTE { get; set; }
-
-    /// <summary> IdLineThatValidatedEmail.LineConnectionStatus.IpLAN equals </summary>
-    [JsonProperty("idLineThatValidatedEmail_lineConnectionStatus_ipLAN_eq")]
-    public string? IdLineThatValidatedEmail_LineConnectionStatus_IpLAN_EQ { get; set; }
-    /// <summary> IdLineThatValidatedEmail.LineConnectionStatus.IpLAN contains </summary>
-    [JsonProperty("idLineThatValidatedEmail_lineConnectionStatus_ipLAN_con")]
-    public string? IdLineThatValidatedEmail_LineConnectionStatus_IpLAN_CON { get; set; }
-    /// <summary> IdLineThatValidatedEmail.LineConnectionStatus.IpLAN regex </summary>
-    [JsonProperty("idLineThatValidatedEmail_lineConnectionStatus_ipLAN_reg")]
-    public string? IdLineThatValidatedEmail_LineConnectionStatus_IpLAN_REG { get; set; }
-
-    /// <summary> IdLineThatValidatedEmail.LineConnectionStatus.PortLAN equals </summary>
-    [JsonProperty("idLineThatValidatedEmail_lineConnectionStatus_portLAN_eq")]
-    public System.Int32? IdLineThatValidatedEmail_LineConnectionStatus_PortLAN_EQ { get; set; }
-    /// <summary> IdLineThatValidatedEmail.LineConnectionStatus.PortLAN less than or equal to </summary>
-    [JsonProperty("idLineThatValidatedEmail_lineConnectionStatus_portLAN_lte")]
-    public System.Int32? IdLineThatValidatedEmail_LineConnectionStatus_PortLAN_LTE { get; set; }
-    /// <summary> IdLineThatValidatedEmail.LineConnectionStatus.PortLAN greater than or equal to </summary>
-    [JsonProperty("idLineThatValidatedEmail_lineConnectionStatus_portLAN_gte")]
-    public System.Int32? IdLineThatValidatedEmail_LineConnectionStatus_PortLAN_GTE { get; set; }
-
-    /// <summary> IdLineThatValidatedEmail.LineConnectionStatus.UserAgent equals </summary>
-    [JsonProperty("idLineThatValidatedEmail_lineConnectionStatus_userAgent_eq")]
-    public string? IdLineThatValidatedEmail_LineConnectionStatus_UserAgent_EQ { get; set; }
-    /// <summary> IdLineThatValidatedEmail.LineConnectionStatus.UserAgent contains </summary>
-    [JsonProperty("idLineThatValidatedEmail_lineConnectionStatus_userAgent_con")]
-    public string? IdLineThatValidatedEmail_LineConnectionStatus_UserAgent_CON { get; set; }
-    /// <summary> IdLineThatValidatedEmail.LineConnectionStatus.UserAgent regex </summary>
-    [JsonProperty("idLineThatValidatedEmail_lineConnectionStatus_userAgent_reg")]
-    public string? IdLineThatValidatedEmail_LineConnectionStatus_UserAgent_REG { get; set; }
-
-    /// <summary> IdLineThatValidatedEmail.LineConnectionStatus.IsConnected equals </summary>
-    [JsonProperty("idLineThatValidatedEmail_lineConnectionStatus_isConnected_eq")]
-    public bool? IdLineThatValidatedEmail_LineConnectionStatus_IsConnected_EQ { get; set; }
-
-    /// <summary> IdLineThatValidatedEmail.LineConnectionStatus.DisconnectedReason equals </summary>
-    [JsonProperty("idLineThatValidatedEmail_lineConnectionStatus_disconnectedReason_eq")]
-    public string? IdLineThatValidatedEmail_LineConnectionStatus_DisconnectedReason_EQ { get; set; }
-    /// <summary> IdLineThatValidatedEmail.LineConnectionStatus.DisconnectedReason contains </summary>
-    [JsonProperty("idLineThatValidatedEmail_lineConnectionStatus_disconnectedReason_con")]
-    public string? IdLineThatValidatedEmail_LineConnectionStatus_DisconnectedReason_CON { get; set; }
-    /// <summary> IdLineThatValidatedEmail.LineConnectionStatus.DisconnectedReason regex </summary>
-    [JsonProperty("idLineThatValidatedEmail_lineConnectionStatus_disconnectedReason_reg")]
-    public string? IdLineThatValidatedEmail_LineConnectionStatus_DisconnectedReason_REG { get; set; }
-
-    /// <summary> IdLineThatValidatedEmail.LineConnectionStatus.DateConnected equals </summary>
-    [JsonProperty("idLineThatValidatedEmail_lineConnectionStatus_dateConnected_eq")]
-    public DateTime? IdLineThatValidatedEmail_LineConnectionStatus_DateConnected_EQ { get; set; }
-    /// <summary> IdLineThatValidatedEmail.LineConnectionStatus.DateConnected less than or equal to </summary>
-    [JsonProperty("idLineThatValidatedEmail_lineConnectionStatus_dateConnected_lte")]
-    public DateTime? IdLineThatValidatedEmail_LineConnectionStatus_DateConnected_LTE { get; set; }
-    /// <summary> IdLineThatValidatedEmail.LineConnectionStatus.DateConnected greater than or equal to </summary>
-    [JsonProperty("idLineThatValidatedEmail_lineConnectionStatus_dateConnected_gte")]
-    public DateTime? IdLineThatValidatedEmail_LineConnectionStatus_DateConnected_GTE { get; set; }
-
-    /// <summary> IdLineThatValidatedEmail.LineConnectionStatus.DateDisconnected equals </summary>
-    [JsonProperty("idLineThatValidatedEmail_lineConnectionStatus_dateDisconnected_eq")]
-    public DateTime? IdLineThatValidatedEmail_LineConnectionStatus_DateDisconnected_EQ { get; set; }
-    /// <summary> IdLineThatValidatedEmail.LineConnectionStatus.DateDisconnected less than or equal to </summary>
-    [JsonProperty("idLineThatValidatedEmail_lineConnectionStatus_dateDisconnected_lte")]
-    public DateTime? IdLineThatValidatedEmail_LineConnectionStatus_DateDisconnected_LTE { get; set; }
-    /// <summary> IdLineThatValidatedEmail.LineConnectionStatus.DateDisconnected greater than or equal to </summary>
-    [JsonProperty("idLineThatValidatedEmail_lineConnectionStatus_dateDisconnected_gte")]
-    public DateTime? IdLineThatValidatedEmail_LineConnectionStatus_DateDisconnected_GTE { get; set; }
-
-
-    /// <summary> IdLineThatValidatedEmail.CallerIdNumber equals </summary>
-    [JsonProperty("idLineThatValidatedEmail_callerIdNumber_eq")]
-    public string? IdLineThatValidatedEmail_CallerIdNumber_EQ { get; set; }
-    /// <summary> IdLineThatValidatedEmail.CallerIdNumber contains </summary>
-    [JsonProperty("idLineThatValidatedEmail_callerIdNumber_con")]
-    public string? IdLineThatValidatedEmail_CallerIdNumber_CON { get; set; }
-    /// <summary> IdLineThatValidatedEmail.CallerIdNumber regex </summary>
-    [JsonProperty("idLineThatValidatedEmail_callerIdNumber_reg")]
-    public string? IdLineThatValidatedEmail_CallerIdNumber_REG { get; set; }
-
-    /// <summary> IdLineThatValidatedEmail.RecordExternalCalls equals </summary>
-    [JsonProperty("idLineThatValidatedEmail_recordExternalCalls_eq")]
-    public bool? IdLineThatValidatedEmail_RecordExternalCalls_EQ { get; set; }
-
-    /// <summary> IdLineThatValidatedEmail.RecordInternalCalls equals </summary>
-    [JsonProperty("idLineThatValidatedEmail_recordInternalCalls_eq")]
-    public bool? IdLineThatValidatedEmail_RecordInternalCalls_EQ { get; set; }
-
-    /// <summary> IdLineThatValidatedEmail.UseAiForExternalCalls equals </summary>
-    [JsonProperty("idLineThatValidatedEmail_useAiForExternalCalls_eq")]
-    public bool? IdLineThatValidatedEmail_UseAiForExternalCalls_EQ { get; set; }
-
-    /// <summary> IdLineThatValidatedEmail.UseAiForOutgoingCallsToExtensions equals </summary>
-    [JsonProperty("idLineThatValidatedEmail_useAiForOutgoingCallsToExtensions_eq")]
-    public bool? IdLineThatValidatedEmail_UseAiForOutgoingCallsToExtensions_EQ { get; set; }
-
-    /// <summary> IdLineThatValidatedEmail.Language equals </summary>
-    [JsonProperty("idLineThatValidatedEmail_language_eq")]
-    public string? IdLineThatValidatedEmail_Language_EQ { get; set; }
-    /// <summary> IdLineThatValidatedEmail.Language contains </summary>
-    [JsonProperty("idLineThatValidatedEmail_language_con")]
-    public string? IdLineThatValidatedEmail_Language_CON { get; set; }
-    /// <summary> IdLineThatValidatedEmail.Language regex </summary>
-    [JsonProperty("idLineThatValidatedEmail_language_reg")]
-    public string? IdLineThatValidatedEmail_Language_REG { get; set; }
-
-    /// <summary> IdLineThatValidatedEmail.Id equals </summary>
-    [JsonProperty("idLineThatValidatedEmail_id_eq")]
-    public string? IdLineThatValidatedEmail_Id_EQ { get; set; }
-    /// <summary> IdLineThatValidatedEmail.Id contains </summary>
-    [JsonProperty("idLineThatValidatedEmail_id_con")]
-    public string? IdLineThatValidatedEmail_Id_CON { get; set; }
-    /// <summary> IdLineThatValidatedEmail.Id regex </summary>
-    [JsonProperty("idLineThatValidatedEmail_id_reg")]
-    public string? IdLineThatValidatedEmail_Id_REG { get; set; }
-
 
     /// <summary> Id equals </summary>
     [JsonProperty("id_eq")]
@@ -566,16 +414,6 @@ public class AirNetworksProvinceFilterRequest
 /// <summary> Enables searching for Audios </summary>
 public class AudioFilterRequest 
 {
-    /// <summary> IdsTags equals </summary>
-    [JsonProperty("idsTags_eq")]
-    public string? IdsTags_EQ { get; set; }
-    /// <summary> IdsTags contains </summary>
-    [JsonProperty("idsTags_con")]
-    public string? IdsTags_CON { get; set; }
-    /// <summary> IdsTags regex </summary>
-    [JsonProperty("idsTags_reg")]
-    public string? IdsTags_REG { get; set; }
-
     /// <summary> AudioMp3.InstanceId equals </summary>
     [JsonProperty("audioMp3_instanceId_eq")]
     public string? AudioMp3_InstanceId_EQ { get; set; }
@@ -708,6 +546,16 @@ public class AudioFilterRequest
     [JsonProperty("description_reg")]
     public string? Description_REG { get; set; }
 
+    /// <summary> IdsTags equals </summary>
+    [JsonProperty("idsTags_eq")]
+    public string? IdsTags_EQ { get; set; }
+    /// <summary> IdsTags contains </summary>
+    [JsonProperty("idsTags_con")]
+    public string? IdsTags_CON { get; set; }
+    /// <summary> IdsTags regex </summary>
+    [JsonProperty("idsTags_reg")]
+    public string? IdsTags_REG { get; set; }
+
     /// <summary> Id equals </summary>
     [JsonProperty("id_eq")]
     public string? Id_EQ { get; set; }
@@ -786,16 +634,6 @@ public class BlackListPhoneNumberFilterRequest
     [JsonProperty("idAudioToPlayIfCallIsBlocked_reg")]
     public string? IdAudioToPlayIfCallIsBlocked_REG { get; set; }
 
-    /// <summary> IdsTags equals </summary>
-    [JsonProperty("idsTags_eq")]
-    public string? IdsTags_EQ { get; set; }
-    /// <summary> IdsTags contains </summary>
-    [JsonProperty("idsTags_con")]
-    public string? IdsTags_CON { get; set; }
-    /// <summary> IdsTags regex </summary>
-    [JsonProperty("idsTags_reg")]
-    public string? IdsTags_REG { get; set; }
-
     /// <summary> Number equals </summary>
     [JsonProperty("number_eq")]
     public string? Number_EQ { get; set; }
@@ -815,6 +653,16 @@ public class BlackListPhoneNumberFilterRequest
     /// <summary> FriendlyName regex </summary>
     [JsonProperty("friendlyName_reg")]
     public string? FriendlyName_REG { get; set; }
+
+    /// <summary> IdsTags equals </summary>
+    [JsonProperty("idsTags_eq")]
+    public string? IdsTags_EQ { get; set; }
+    /// <summary> IdsTags contains </summary>
+    [JsonProperty("idsTags_con")]
+    public string? IdsTags_CON { get; set; }
+    /// <summary> IdsTags regex </summary>
+    [JsonProperty("idsTags_reg")]
+    public string? IdsTags_REG { get; set; }
 
     /// <summary> Id equals </summary>
     [JsonProperty("id_eq")]
@@ -914,16 +762,6 @@ public class CallerIdMaskFilterRequest
 /// <summary> Enables searching for CallFlowLogics </summary>
 public class CallFlowLogicFilterRequest 
 {
-    /// <summary> IdsTags equals </summary>
-    [JsonProperty("idsTags_eq")]
-    public string? IdsTags_EQ { get; set; }
-    /// <summary> IdsTags contains </summary>
-    [JsonProperty("idsTags_con")]
-    public string? IdsTags_CON { get; set; }
-    /// <summary> IdsTags regex </summary>
-    [JsonProperty("idsTags_reg")]
-    public string? IdsTags_REG { get; set; }
-
     /// <summary> FriendlyName equals </summary>
     [JsonProperty("friendlyName_eq")]
     public string? FriendlyName_EQ { get; set; }
@@ -954,6 +792,16 @@ public class CallFlowLogicFilterRequest
     [JsonProperty("tree_flowNodeType_reg")]
     public string? Tree_FlowNodeType_REG { get; set; }
 
+
+    /// <summary> IdsTags equals </summary>
+    [JsonProperty("idsTags_eq")]
+    public string? IdsTags_EQ { get; set; }
+    /// <summary> IdsTags contains </summary>
+    [JsonProperty("idsTags_con")]
+    public string? IdsTags_CON { get; set; }
+    /// <summary> IdsTags regex </summary>
+    [JsonProperty("idsTags_reg")]
+    public string? IdsTags_REG { get; set; }
 
     /// <summary> Id equals </summary>
     [JsonProperty("id_eq")]
@@ -1048,16 +896,6 @@ public class CallIncomingToCallFlowLogicFilterRequest
     /// <summary> IdCallThatTerminatedThisCallDoToAttendantTransfer regex </summary>
     [JsonProperty("idCallThatTerminatedThisCallDoToAttendantTransfer_reg")]
     public string? IdCallThatTerminatedThisCallDoToAttendantTransfer_REG { get; set; }
-
-    /// <summary> IdsTags equals </summary>
-    [JsonProperty("idsTags_eq")]
-    public string? IdsTags_EQ { get; set; }
-    /// <summary> IdsTags contains </summary>
-    [JsonProperty("idsTags_con")]
-    public string? IdsTags_CON { get; set; }
-    /// <summary> IdsTags regex </summary>
-    [JsonProperty("idsTags_reg")]
-    public string? IdsTags_REG { get; set; }
 
     /// <summary> IdContact equals </summary>
     [JsonProperty("idContact_eq")]
@@ -1371,6 +1209,16 @@ public class CallIncomingToCallFlowLogicFilterRequest
     /// <summary> CallResult regex </summary>
     [JsonProperty("callResult_reg")]
     public string? CallResult_REG { get; set; }
+
+    /// <summary> IdsTags equals </summary>
+    [JsonProperty("idsTags_eq")]
+    public string? IdsTags_EQ { get; set; }
+    /// <summary> IdsTags contains </summary>
+    [JsonProperty("idsTags_con")]
+    public string? IdsTags_CON { get; set; }
+    /// <summary> IdsTags regex </summary>
+    [JsonProperty("idsTags_reg")]
+    public string? IdsTags_REG { get; set; }
 
     /// <summary> Id equals </summary>
     [JsonProperty("id_eq")]
@@ -1496,16 +1344,6 @@ public class CallIncomingToExtensionFilterRequest
     [JsonProperty("idCallThatTerminatedThisCallDoToAttendantTransfer_reg")]
     public string? IdCallThatTerminatedThisCallDoToAttendantTransfer_REG { get; set; }
 
-    /// <summary> IdsTags equals </summary>
-    [JsonProperty("idsTags_eq")]
-    public string? IdsTags_EQ { get; set; }
-    /// <summary> IdsTags contains </summary>
-    [JsonProperty("idsTags_con")]
-    public string? IdsTags_CON { get; set; }
-    /// <summary> IdsTags regex </summary>
-    [JsonProperty("idsTags_reg")]
-    public string? IdsTags_REG { get; set; }
-
     /// <summary> IdContact equals </summary>
     [JsonProperty("idContact_eq")]
     public string? IdContact_EQ { get; set; }
@@ -1818,6 +1656,16 @@ public class CallIncomingToExtensionFilterRequest
     /// <summary> CallResult regex </summary>
     [JsonProperty("callResult_reg")]
     public string? CallResult_REG { get; set; }
+
+    /// <summary> IdsTags equals </summary>
+    [JsonProperty("idsTags_eq")]
+    public string? IdsTags_EQ { get; set; }
+    /// <summary> IdsTags contains </summary>
+    [JsonProperty("idsTags_con")]
+    public string? IdsTags_CON { get; set; }
+    /// <summary> IdsTags regex </summary>
+    [JsonProperty("idsTags_reg")]
+    public string? IdsTags_REG { get; set; }
 
     /// <summary> Id equals </summary>
     [JsonProperty("id_eq")]
@@ -1933,16 +1781,6 @@ public class CallOutgoingToExtensionFilterRequest
     [JsonProperty("idCallThatTerminatedThisCallDoToAttendantTransfer_reg")]
     public string? IdCallThatTerminatedThisCallDoToAttendantTransfer_REG { get; set; }
 
-    /// <summary> IdsTags equals </summary>
-    [JsonProperty("idsTags_eq")]
-    public string? IdsTags_EQ { get; set; }
-    /// <summary> IdsTags contains </summary>
-    [JsonProperty("idsTags_con")]
-    public string? IdsTags_CON { get; set; }
-    /// <summary> IdsTags regex </summary>
-    [JsonProperty("idsTags_reg")]
-    public string? IdsTags_REG { get; set; }
-
     /// <summary> IdContact equals </summary>
     [JsonProperty("idContact_eq")]
     public string? IdContact_EQ { get; set; }
@@ -2255,6 +2093,16 @@ public class CallOutgoingToExtensionFilterRequest
     /// <summary> CallResult regex </summary>
     [JsonProperty("callResult_reg")]
     public string? CallResult_REG { get; set; }
+
+    /// <summary> IdsTags equals </summary>
+    [JsonProperty("idsTags_eq")]
+    public string? IdsTags_EQ { get; set; }
+    /// <summary> IdsTags contains </summary>
+    [JsonProperty("idsTags_con")]
+    public string? IdsTags_CON { get; set; }
+    /// <summary> IdsTags regex </summary>
+    [JsonProperty("idsTags_reg")]
+    public string? IdsTags_REG { get; set; }
 
     /// <summary> Id equals </summary>
     [JsonProperty("id_eq")]
@@ -2360,16 +2208,6 @@ public class CallOutgoingToPSTNFilterRequest
     [JsonProperty("idCallThatTerminatedThisCallDoToAttendantTransfer_reg")]
     public string? IdCallThatTerminatedThisCallDoToAttendantTransfer_REG { get; set; }
 
-    /// <summary> IdsTags equals </summary>
-    [JsonProperty("idsTags_eq")]
-    public string? IdsTags_EQ { get; set; }
-    /// <summary> IdsTags contains </summary>
-    [JsonProperty("idsTags_con")]
-    public string? IdsTags_CON { get; set; }
-    /// <summary> IdsTags regex </summary>
-    [JsonProperty("idsTags_reg")]
-    public string? IdsTags_REG { get; set; }
-
     /// <summary> IdContact equals </summary>
     [JsonProperty("idContact_eq")]
     public string? IdContact_EQ { get; set; }
@@ -2682,6 +2520,16 @@ public class CallOutgoingToPSTNFilterRequest
     /// <summary> CallResult regex </summary>
     [JsonProperty("callResult_reg")]
     public string? CallResult_REG { get; set; }
+
+    /// <summary> IdsTags equals </summary>
+    [JsonProperty("idsTags_eq")]
+    public string? IdsTags_EQ { get; set; }
+    /// <summary> IdsTags contains </summary>
+    [JsonProperty("idsTags_con")]
+    public string? IdsTags_CON { get; set; }
+    /// <summary> IdsTags regex </summary>
+    [JsonProperty("idsTags_reg")]
+    public string? IdsTags_REG { get; set; }
 
     /// <summary> Id equals </summary>
     [JsonProperty("id_eq")]
@@ -3069,16 +2917,6 @@ public class ContactFilterRequest
     [JsonProperty("idUserOwner_reg")]
     public string? IdUserOwner_REG { get; set; }
 
-    /// <summary> IdsTags equals </summary>
-    [JsonProperty("idsTags_eq")]
-    public string? IdsTags_EQ { get; set; }
-    /// <summary> IdsTags contains </summary>
-    [JsonProperty("idsTags_con")]
-    public string? IdsTags_CON { get; set; }
-    /// <summary> IdsTags regex </summary>
-    [JsonProperty("idsTags_reg")]
-    public string? IdsTags_REG { get; set; }
-
     /// <summary> ContactNumbers.Number equals </summary>
     [JsonProperty("contactNumbers_number_eq")]
     public string? ContactNumbers_Number_EQ { get; set; }
@@ -3293,6 +3131,16 @@ public class ContactFilterRequest
     public string? Variables_JsonValue_REG { get; set; }
 
 
+    /// <summary> IdsTags equals </summary>
+    [JsonProperty("idsTags_eq")]
+    public string? IdsTags_EQ { get; set; }
+    /// <summary> IdsTags contains </summary>
+    [JsonProperty("idsTags_con")]
+    public string? IdsTags_CON { get; set; }
+    /// <summary> IdsTags regex </summary>
+    [JsonProperty("idsTags_reg")]
+    public string? IdsTags_REG { get; set; }
+
     /// <summary> Id equals </summary>
     [JsonProperty("id_eq")]
     public string? Id_EQ { get; set; }
@@ -3327,16 +3175,6 @@ public class ContactFilterRequest
 /// <summary> Enables searching for CustomerInfos </summary>
 public class CustomerInfoFilterRequest 
 {
-    /// <summary> IdsTags equals </summary>
-    [JsonProperty("idsTags_eq")]
-    public string? IdsTags_EQ { get; set; }
-    /// <summary> IdsTags contains </summary>
-    [JsonProperty("idsTags_con")]
-    public string? IdsTags_CON { get; set; }
-    /// <summary> IdsTags regex </summary>
-    [JsonProperty("idsTags_reg")]
-    public string? IdsTags_REG { get; set; }
-
     /// <summary> MailingAddress.RecipientName equals </summary>
     [JsonProperty("mailingAddress_recipientName_eq")]
     public string? MailingAddress_RecipientName_EQ { get; set; }
@@ -3479,6 +3317,16 @@ public class CustomerInfoFilterRequest
     [JsonProperty("fullName_reg")]
     public string? FullName_REG { get; set; }
 
+    /// <summary> IdsTags equals </summary>
+    [JsonProperty("idsTags_eq")]
+    public string? IdsTags_EQ { get; set; }
+    /// <summary> IdsTags contains </summary>
+    [JsonProperty("idsTags_con")]
+    public string? IdsTags_CON { get; set; }
+    /// <summary> IdsTags regex </summary>
+    [JsonProperty("idsTags_reg")]
+    public string? IdsTags_REG { get; set; }
+
     /// <summary> Id equals </summary>
     [JsonProperty("id_eq")]
     public string? Id_EQ { get; set; }
@@ -3563,16 +3411,6 @@ public class ExtensionCallFlowLogicFilterRequest
     [JsonProperty("idMusicOnHoldGroup_reg")]
     public string? IdMusicOnHoldGroup_REG { get; set; }
 
-    /// <summary> IdsTags equals </summary>
-    [JsonProperty("idsTags_eq")]
-    public string? IdsTags_EQ { get; set; }
-    /// <summary> IdsTags contains </summary>
-    [JsonProperty("idsTags_con")]
-    public string? IdsTags_CON { get; set; }
-    /// <summary> IdsTags regex </summary>
-    [JsonProperty("idsTags_reg")]
-    public string? IdsTags_REG { get; set; }
-
     /// <summary> FriendlyName equals </summary>
     [JsonProperty("friendlyName_eq")]
     public string? FriendlyName_EQ { get; set; }
@@ -3596,6 +3434,16 @@ public class ExtensionCallFlowLogicFilterRequest
     /// <summary> InjectExtensionNameToCallerId equals </summary>
     [JsonProperty("injectExtensionNameToCallerId_eq")]
     public bool? InjectExtensionNameToCallerId_EQ { get; set; }
+
+    /// <summary> IdsTags equals </summary>
+    [JsonProperty("idsTags_eq")]
+    public string? IdsTags_EQ { get; set; }
+    /// <summary> IdsTags contains </summary>
+    [JsonProperty("idsTags_con")]
+    public string? IdsTags_CON { get; set; }
+    /// <summary> IdsTags regex </summary>
+    [JsonProperty("idsTags_reg")]
+    public string? IdsTags_REG { get; set; }
 
     /// <summary> Id equals </summary>
     [JsonProperty("id_eq")]
@@ -3675,16 +3523,6 @@ public class ExtensionConferenceFilterRequest
     [JsonProperty("idMusicOnHoldGroup_reg")]
     public string? IdMusicOnHoldGroup_REG { get; set; }
 
-    /// <summary> IdsTags equals </summary>
-    [JsonProperty("idsTags_eq")]
-    public string? IdsTags_EQ { get; set; }
-    /// <summary> IdsTags contains </summary>
-    [JsonProperty("idsTags_con")]
-    public string? IdsTags_CON { get; set; }
-    /// <summary> IdsTags regex </summary>
-    [JsonProperty("idsTags_reg")]
-    public string? IdsTags_REG { get; set; }
-
     /// <summary> FriendlyName equals </summary>
     [JsonProperty("friendlyName_eq")]
     public string? FriendlyName_EQ { get; set; }
@@ -3708,6 +3546,16 @@ public class ExtensionConferenceFilterRequest
     /// <summary> InjectExtensionNameToCallerId equals </summary>
     [JsonProperty("injectExtensionNameToCallerId_eq")]
     public bool? InjectExtensionNameToCallerId_EQ { get; set; }
+
+    /// <summary> IdsTags equals </summary>
+    [JsonProperty("idsTags_eq")]
+    public string? IdsTags_EQ { get; set; }
+    /// <summary> IdsTags contains </summary>
+    [JsonProperty("idsTags_con")]
+    public string? IdsTags_CON { get; set; }
+    /// <summary> IdsTags regex </summary>
+    [JsonProperty("idsTags_reg")]
+    public string? IdsTags_REG { get; set; }
 
     /// <summary> Id equals </summary>
     [JsonProperty("id_eq")]
@@ -3815,16 +3663,6 @@ public class ExtensionDialFilterRequest
     [JsonProperty("idMusicOnHoldGroup_reg")]
     public string? IdMusicOnHoldGroup_REG { get; set; }
 
-    /// <summary> IdsTags equals </summary>
-    [JsonProperty("idsTags_eq")]
-    public string? IdsTags_EQ { get; set; }
-    /// <summary> IdsTags contains </summary>
-    [JsonProperty("idsTags_con")]
-    public string? IdsTags_CON { get; set; }
-    /// <summary> IdsTags regex </summary>
-    [JsonProperty("idsTags_reg")]
-    public string? IdsTags_REG { get; set; }
-
     /// <summary> FriendlyName equals </summary>
     [JsonProperty("friendlyName_eq")]
     public string? FriendlyName_EQ { get; set; }
@@ -3848,6 +3686,16 @@ public class ExtensionDialFilterRequest
     /// <summary> InjectExtensionNameToCallerId equals </summary>
     [JsonProperty("injectExtensionNameToCallerId_eq")]
     public bool? InjectExtensionNameToCallerId_EQ { get; set; }
+
+    /// <summary> IdsTags equals </summary>
+    [JsonProperty("idsTags_eq")]
+    public string? IdsTags_EQ { get; set; }
+    /// <summary> IdsTags contains </summary>
+    [JsonProperty("idsTags_con")]
+    public string? IdsTags_CON { get; set; }
+    /// <summary> IdsTags regex </summary>
+    [JsonProperty("idsTags_reg")]
+    public string? IdsTags_REG { get; set; }
 
     /// <summary> Id equals </summary>
     [JsonProperty("id_eq")]
@@ -4037,16 +3885,6 @@ public class ExtensionQueueFilterRequest
     [JsonProperty("idMusicOnHoldGroup_reg")]
     public string? IdMusicOnHoldGroup_REG { get; set; }
 
-    /// <summary> IdsTags equals </summary>
-    [JsonProperty("idsTags_eq")]
-    public string? IdsTags_EQ { get; set; }
-    /// <summary> IdsTags contains </summary>
-    [JsonProperty("idsTags_con")]
-    public string? IdsTags_CON { get; set; }
-    /// <summary> IdsTags regex </summary>
-    [JsonProperty("idsTags_reg")]
-    public string? IdsTags_REG { get; set; }
-
     /// <summary> FriendlyName equals </summary>
     [JsonProperty("friendlyName_eq")]
     public string? FriendlyName_EQ { get; set; }
@@ -4070,6 +3908,16 @@ public class ExtensionQueueFilterRequest
     /// <summary> InjectExtensionNameToCallerId equals </summary>
     [JsonProperty("injectExtensionNameToCallerId_eq")]
     public bool? InjectExtensionNameToCallerId_EQ { get; set; }
+
+    /// <summary> IdsTags equals </summary>
+    [JsonProperty("idsTags_eq")]
+    public string? IdsTags_EQ { get; set; }
+    /// <summary> IdsTags contains </summary>
+    [JsonProperty("idsTags_con")]
+    public string? IdsTags_CON { get; set; }
+    /// <summary> IdsTags regex </summary>
+    [JsonProperty("idsTags_reg")]
+    public string? IdsTags_REG { get; set; }
 
     /// <summary> Id equals </summary>
     [JsonProperty("id_eq")]
@@ -4175,16 +4023,6 @@ public class ExtensionVoicemailFilterRequest
     [JsonProperty("idMusicOnHoldGroup_reg")]
     public string? IdMusicOnHoldGroup_REG { get; set; }
 
-    /// <summary> IdsTags equals </summary>
-    [JsonProperty("idsTags_eq")]
-    public string? IdsTags_EQ { get; set; }
-    /// <summary> IdsTags contains </summary>
-    [JsonProperty("idsTags_con")]
-    public string? IdsTags_CON { get; set; }
-    /// <summary> IdsTags regex </summary>
-    [JsonProperty("idsTags_reg")]
-    public string? IdsTags_REG { get; set; }
-
     /// <summary> FriendlyName equals </summary>
     [JsonProperty("friendlyName_eq")]
     public string? FriendlyName_EQ { get; set; }
@@ -4208,6 +4046,16 @@ public class ExtensionVoicemailFilterRequest
     /// <summary> InjectExtensionNameToCallerId equals </summary>
     [JsonProperty("injectExtensionNameToCallerId_eq")]
     public bool? InjectExtensionNameToCallerId_EQ { get; set; }
+
+    /// <summary> IdsTags equals </summary>
+    [JsonProperty("idsTags_eq")]
+    public string? IdsTags_EQ { get; set; }
+    /// <summary> IdsTags contains </summary>
+    [JsonProperty("idsTags_con")]
+    public string? IdsTags_CON { get; set; }
+    /// <summary> IdsTags regex </summary>
+    [JsonProperty("idsTags_reg")]
+    public string? IdsTags_REG { get; set; }
 
     /// <summary> Id equals </summary>
     [JsonProperty("id_eq")]
@@ -4252,16 +4100,6 @@ public class FaxIncomingFilterRequest
     /// <summary> IdVoipNumberFax regex </summary>
     [JsonProperty("idVoipNumberFax_reg")]
     public string? IdVoipNumberFax_REG { get; set; }
-
-    /// <summary> IdsTags equals </summary>
-    [JsonProperty("idsTags_eq")]
-    public string? IdsTags_EQ { get; set; }
-    /// <summary> IdsTags contains </summary>
-    [JsonProperty("idsTags_con")]
-    public string? IdsTags_CON { get; set; }
-    /// <summary> IdsTags regex </summary>
-    [JsonProperty("idsTags_reg")]
-    public string? IdsTags_REG { get; set; }
 
     /// <summary> Pdf.InstanceId equals </summary>
     [JsonProperty("pdf_instanceId_eq")]
@@ -4364,6 +4202,16 @@ public class FaxIncomingFilterRequest
     [JsonProperty("errorMessage_reg")]
     public string? ErrorMessage_REG { get; set; }
 
+    /// <summary> IdsTags equals </summary>
+    [JsonProperty("idsTags_eq")]
+    public string? IdsTags_EQ { get; set; }
+    /// <summary> IdsTags contains </summary>
+    [JsonProperty("idsTags_con")]
+    public string? IdsTags_CON { get; set; }
+    /// <summary> IdsTags regex </summary>
+    [JsonProperty("idsTags_reg")]
+    public string? IdsTags_REG { get; set; }
+
     /// <summary> Id equals </summary>
     [JsonProperty("id_eq")]
     public string? Id_EQ { get; set; }
@@ -4407,16 +4255,6 @@ public class FaxOutgoingGroupFilterRequest
     /// <summary> IdVoipNumberFax regex </summary>
     [JsonProperty("idVoipNumberFax_reg")]
     public string? IdVoipNumberFax_REG { get; set; }
-
-    /// <summary> IdsTags equals </summary>
-    [JsonProperty("idsTags_eq")]
-    public string? IdsTags_EQ { get; set; }
-    /// <summary> IdsTags contains </summary>
-    [JsonProperty("idsTags_con")]
-    public string? IdsTags_CON { get; set; }
-    /// <summary> IdsTags regex </summary>
-    [JsonProperty("idsTags_reg")]
-    public string? IdsTags_REG { get; set; }
 
     /// <summary> FaxesOutgoing.NumberOfPages equals </summary>
     [JsonProperty("faxesOutgoing_numberOfPages_eq")]
@@ -4578,6 +4416,16 @@ public class FaxOutgoingGroupFilterRequest
     [JsonProperty("containsError_eq")]
     public bool? ContainsError_EQ { get; set; }
 
+    /// <summary> IdsTags equals </summary>
+    [JsonProperty("idsTags_eq")]
+    public string? IdsTags_EQ { get; set; }
+    /// <summary> IdsTags contains </summary>
+    [JsonProperty("idsTags_con")]
+    public string? IdsTags_CON { get; set; }
+    /// <summary> IdsTags regex </summary>
+    [JsonProperty("idsTags_reg")]
+    public string? IdsTags_REG { get; set; }
+
     /// <summary> Id equals </summary>
     [JsonProperty("id_eq")]
     public string? Id_EQ { get; set; }
@@ -4612,16 +4460,6 @@ public class FaxOutgoingGroupFilterRequest
 /// <summary> Enables searching for Users </summary>
 public class UserFilterRequest 
 {
-    /// <summary> IdsTags equals </summary>
-    [JsonProperty("idsTags_eq")]
-    public string? IdsTags_EQ { get; set; }
-    /// <summary> IdsTags contains </summary>
-    [JsonProperty("idsTags_con")]
-    public string? IdsTags_CON { get; set; }
-    /// <summary> IdsTags regex </summary>
-    [JsonProperty("idsTags_reg")]
-    public string? IdsTags_REG { get; set; }
-
     /// <summary> UbluxRoles contains </summary>
     [JsonProperty("ubluxRoles_con")]
     public UbluxRole? UbluxRoles_CON { get; set; }
@@ -4690,6 +4528,16 @@ public class UserFilterRequest
     [JsonProperty("dateAuthenticated_gte")]
     public DateTime? DateAuthenticated_GTE { get; set; }
 
+    /// <summary> IdsTags equals </summary>
+    [JsonProperty("idsTags_eq")]
+    public string? IdsTags_EQ { get; set; }
+    /// <summary> IdsTags contains </summary>
+    [JsonProperty("idsTags_con")]
+    public string? IdsTags_CON { get; set; }
+    /// <summary> IdsTags regex </summary>
+    [JsonProperty("idsTags_reg")]
+    public string? IdsTags_REG { get; set; }
+
     /// <summary> Id equals </summary>
     [JsonProperty("id_eq")]
     public string? Id_EQ { get; set; }
@@ -4724,16 +4572,6 @@ public class UserFilterRequest
 /// <summary> Enables searching for LineKeyGroups </summary>
 public class LineKeyGroupFilterRequest 
 {
-    /// <summary> IdsTags equals </summary>
-    [JsonProperty("idsTags_eq")]
-    public string? IdsTags_EQ { get; set; }
-    /// <summary> IdsTags contains </summary>
-    [JsonProperty("idsTags_con")]
-    public string? IdsTags_CON { get; set; }
-    /// <summary> IdsTags regex </summary>
-    [JsonProperty("idsTags_reg")]
-    public string? IdsTags_REG { get; set; }
-
     /// <summary> LineKeys.LineKeyType equals </summary>
     [JsonProperty("lineKeys_lineKeyType_eq")]
     public string? LineKeys_LineKeyType_EQ { get; set; }
@@ -4805,6 +4643,16 @@ public class LineKeyGroupFilterRequest
     [JsonProperty("description_reg")]
     public string? Description_REG { get; set; }
 
+    /// <summary> IdsTags equals </summary>
+    [JsonProperty("idsTags_eq")]
+    public string? IdsTags_EQ { get; set; }
+    /// <summary> IdsTags contains </summary>
+    [JsonProperty("idsTags_con")]
+    public string? IdsTags_CON { get; set; }
+    /// <summary> IdsTags regex </summary>
+    [JsonProperty("idsTags_reg")]
+    public string? IdsTags_REG { get; set; }
+
     /// <summary> Id equals </summary>
     [JsonProperty("id_eq")]
     public string? Id_EQ { get; set; }
@@ -4858,16 +4706,6 @@ public class LogWebServiceRequestFilterRequest
     /// <summary> UbluxSession.UserType regex </summary>
     [JsonProperty("ubluxSession_userType_reg")]
     public string? UbluxSession_UserType_REG { get; set; }
-
-    /// <summary> UbluxSession.IdAccount equals </summary>
-    [JsonProperty("ubluxSession_idAccount_eq")]
-    public string? UbluxSession_IdAccount_EQ { get; set; }
-    /// <summary> UbluxSession.IdAccount contains </summary>
-    [JsonProperty("ubluxSession_idAccount_con")]
-    public string? UbluxSession_IdAccount_CON { get; set; }
-    /// <summary> UbluxSession.IdAccount regex </summary>
-    [JsonProperty("ubluxSession_idAccount_reg")]
-    public string? UbluxSession_IdAccount_REG { get; set; }
 
     /// <summary> UbluxSession.UbluxRoles contains </summary>
     [JsonProperty("ubluxSession_ubluxRoles_con")]
@@ -5062,16 +4900,6 @@ public class MusicOnHoldGroupFilterRequest
     [JsonProperty("idsAudios_reg")]
     public string? IdsAudios_REG { get; set; }
 
-    /// <summary> IdsTags equals </summary>
-    [JsonProperty("idsTags_eq")]
-    public string? IdsTags_EQ { get; set; }
-    /// <summary> IdsTags contains </summary>
-    [JsonProperty("idsTags_con")]
-    public string? IdsTags_CON { get; set; }
-    /// <summary> IdsTags regex </summary>
-    [JsonProperty("idsTags_reg")]
-    public string? IdsTags_REG { get; set; }
-
     /// <summary> FriendlyName equals </summary>
     [JsonProperty("friendlyName_eq")]
     public string? FriendlyName_EQ { get; set; }
@@ -5091,6 +4919,16 @@ public class MusicOnHoldGroupFilterRequest
     /// <summary> Description regex </summary>
     [JsonProperty("description_reg")]
     public string? Description_REG { get; set; }
+
+    /// <summary> IdsTags equals </summary>
+    [JsonProperty("idsTags_eq")]
+    public string? IdsTags_EQ { get; set; }
+    /// <summary> IdsTags contains </summary>
+    [JsonProperty("idsTags_con")]
+    public string? IdsTags_CON { get; set; }
+    /// <summary> IdsTags regex </summary>
+    [JsonProperty("idsTags_reg")]
+    public string? IdsTags_REG { get; set; }
 
     /// <summary> Id equals </summary>
     [JsonProperty("id_eq")]
@@ -5126,16 +4964,6 @@ public class MusicOnHoldGroupFilterRequest
 /// <summary> Enables searching for Phones </summary>
 public class PhoneFilterRequest 
 {
-    /// <summary> IdsTags equals </summary>
-    [JsonProperty("idsTags_eq")]
-    public string? IdsTags_EQ { get; set; }
-    /// <summary> IdsTags contains </summary>
-    [JsonProperty("idsTags_con")]
-    public string? IdsTags_CON { get; set; }
-    /// <summary> IdsTags regex </summary>
-    [JsonProperty("idsTags_reg")]
-    public string? IdsTags_REG { get; set; }
-
     /// <summary> IdCloudServicePbx equals </summary>
     [JsonProperty("idCloudServicePbx_eq")]
     public string? IdCloudServicePbx_EQ { get; set; }
@@ -5372,6 +5200,16 @@ public class PhoneFilterRequest
     [JsonProperty("pin_reg")]
     public string? Pin_REG { get; set; }
 
+    /// <summary> IdsTags equals </summary>
+    [JsonProperty("idsTags_eq")]
+    public string? IdsTags_EQ { get; set; }
+    /// <summary> IdsTags contains </summary>
+    [JsonProperty("idsTags_con")]
+    public string? IdsTags_CON { get; set; }
+    /// <summary> IdsTags regex </summary>
+    [JsonProperty("idsTags_reg")]
+    public string? IdsTags_REG { get; set; }
+
     /// <summary> Id equals </summary>
     [JsonProperty("id_eq")]
     public string? Id_EQ { get; set; }
@@ -5416,16 +5254,6 @@ public class PhoneConfigurationFilterRequest
     [JsonProperty("idLineKeyGroup_reg")]
     public string? IdLineKeyGroup_REG { get; set; }
 
-    /// <summary> IdsTags equals </summary>
-    [JsonProperty("idsTags_eq")]
-    public string? IdsTags_EQ { get; set; }
-    /// <summary> IdsTags contains </summary>
-    [JsonProperty("idsTags_con")]
-    public string? IdsTags_CON { get; set; }
-    /// <summary> IdsTags regex </summary>
-    [JsonProperty("idsTags_reg")]
-    public string? IdsTags_REG { get; set; }
-
     /// <summary> FrienlyName equals </summary>
     [JsonProperty("frienlyName_eq")]
     public string? FrienlyName_EQ { get; set; }
@@ -5445,6 +5273,16 @@ public class PhoneConfigurationFilterRequest
     /// <summary> Description regex </summary>
     [JsonProperty("description_reg")]
     public string? Description_REG { get; set; }
+
+    /// <summary> IdsTags equals </summary>
+    [JsonProperty("idsTags_eq")]
+    public string? IdsTags_EQ { get; set; }
+    /// <summary> IdsTags contains </summary>
+    [JsonProperty("idsTags_con")]
+    public string? IdsTags_CON { get; set; }
+    /// <summary> IdsTags regex </summary>
+    [JsonProperty("idsTags_reg")]
+    public string? IdsTags_REG { get; set; }
 
     /// <summary> Id equals </summary>
     [JsonProperty("id_eq")]
@@ -5519,16 +5357,6 @@ public class PowerDialerGroupFilterRequest
     /// <summary> IdExtension regex </summary>
     [JsonProperty("idExtension_reg")]
     public string? IdExtension_REG { get; set; }
-
-    /// <summary> IdsTags equals </summary>
-    [JsonProperty("idsTags_eq")]
-    public string? IdsTags_EQ { get; set; }
-    /// <summary> IdsTags contains </summary>
-    [JsonProperty("idsTags_con")]
-    public string? IdsTags_CON { get; set; }
-    /// <summary> IdsTags regex </summary>
-    [JsonProperty("idsTags_reg")]
-    public string? IdsTags_REG { get; set; }
 
     /// <summary> PowerDialers.PowerDialerType equals </summary>
     [JsonProperty("powerDialers_powerDialerType_eq")]
@@ -5671,6 +5499,16 @@ public class PowerDialerGroupFilterRequest
     [JsonProperty("numberOfConcurrentCalls_gte")]
     public System.Int32? NumberOfConcurrentCalls_GTE { get; set; }
 
+    /// <summary> IdsTags equals </summary>
+    [JsonProperty("idsTags_eq")]
+    public string? IdsTags_EQ { get; set; }
+    /// <summary> IdsTags contains </summary>
+    [JsonProperty("idsTags_con")]
+    public string? IdsTags_CON { get; set; }
+    /// <summary> IdsTags regex </summary>
+    [JsonProperty("idsTags_reg")]
+    public string? IdsTags_REG { get; set; }
+
     /// <summary> Id equals </summary>
     [JsonProperty("id_eq")]
     public string? Id_EQ { get; set; }
@@ -5715,16 +5553,6 @@ public class SMSFilterRequest
     [JsonProperty("idVoipNumber_reg")]
     public string? IdVoipNumber_REG { get; set; }
 
-    /// <summary> IdsTags equals </summary>
-    [JsonProperty("idsTags_eq")]
-    public string? IdsTags_EQ { get; set; }
-    /// <summary> IdsTags contains </summary>
-    [JsonProperty("idsTags_con")]
-    public string? IdsTags_CON { get; set; }
-    /// <summary> IdsTags regex </summary>
-    [JsonProperty("idsTags_reg")]
-    public string? IdsTags_REG { get; set; }
-
     /// <summary> Contact.IdUserOwner equals </summary>
     [JsonProperty("contact_idUserOwner_eq")]
     public string? Contact_IdUserOwner_EQ { get; set; }
@@ -5734,16 +5562,6 @@ public class SMSFilterRequest
     /// <summary> Contact.IdUserOwner regex </summary>
     [JsonProperty("contact_idUserOwner_reg")]
     public string? Contact_IdUserOwner_REG { get; set; }
-
-    /// <summary> Contact.IdsTags equals </summary>
-    [JsonProperty("contact_idsTags_eq")]
-    public string? Contact_IdsTags_EQ { get; set; }
-    /// <summary> Contact.IdsTags contains </summary>
-    [JsonProperty("contact_idsTags_con")]
-    public string? Contact_IdsTags_CON { get; set; }
-    /// <summary> Contact.IdsTags regex </summary>
-    [JsonProperty("contact_idsTags_reg")]
-    public string? Contact_IdsTags_REG { get; set; }
 
     /// <summary> Contact.ContactNumbers.Number equals </summary>
     [JsonProperty("contact_contactNumbers_number_eq")]
@@ -5959,6 +5777,16 @@ public class SMSFilterRequest
     public string? Contact_Variables_JsonValue_REG { get; set; }
 
 
+    /// <summary> Contact.IdsTags equals </summary>
+    [JsonProperty("contact_idsTags_eq")]
+    public string? Contact_IdsTags_EQ { get; set; }
+    /// <summary> Contact.IdsTags contains </summary>
+    [JsonProperty("contact_idsTags_con")]
+    public string? Contact_IdsTags_CON { get; set; }
+    /// <summary> Contact.IdsTags regex </summary>
+    [JsonProperty("contact_idsTags_reg")]
+    public string? Contact_IdsTags_REG { get; set; }
+
     /// <summary> Contact.Id equals </summary>
     [JsonProperty("contact_id_eq")]
     public string? Contact_Id_EQ { get; set; }
@@ -6043,6 +5871,16 @@ public class SMSFilterRequest
     /// <summary> To regex </summary>
     [JsonProperty("to_reg")]
     public string? To_REG { get; set; }
+
+    /// <summary> IdsTags equals </summary>
+    [JsonProperty("idsTags_eq")]
+    public string? IdsTags_EQ { get; set; }
+    /// <summary> IdsTags contains </summary>
+    [JsonProperty("idsTags_con")]
+    public string? IdsTags_CON { get; set; }
+    /// <summary> IdsTags regex </summary>
+    [JsonProperty("idsTags_reg")]
+    public string? IdsTags_REG { get; set; }
 
     /// <summary> Id equals </summary>
     [JsonProperty("id_eq")]
@@ -6231,93 +6069,9 @@ public class TrunkTerminationGroupFilterRequest
     public DateTime? DateUpdated_GTE { get; set; }
 
 }
-/// <summary> Enables searching for UnauthorizedTokens </summary>
-public class UnauthorizedTokenFilterRequest 
-{
-    /// <summary> Jwt equals </summary>
-    [JsonProperty("jwt_eq")]
-    public string? Jwt_EQ { get; set; }
-    /// <summary> Jwt contains </summary>
-    [JsonProperty("jwt_con")]
-    public string? Jwt_CON { get; set; }
-    /// <summary> Jwt regex </summary>
-    [JsonProperty("jwt_reg")]
-    public string? Jwt_REG { get; set; }
-
-    /// <summary> IdUser equals </summary>
-    [JsonProperty("idUser_eq")]
-    public string? IdUser_EQ { get; set; }
-    /// <summary> IdUser contains </summary>
-    [JsonProperty("idUser_con")]
-    public string? IdUser_CON { get; set; }
-    /// <summary> IdUser regex </summary>
-    [JsonProperty("idUser_reg")]
-    public string? IdUser_REG { get; set; }
-
-    /// <summary> ExpirationDate equals </summary>
-    [JsonProperty("expirationDate_eq")]
-    public DateTime? ExpirationDate_EQ { get; set; }
-    /// <summary> ExpirationDate less than or equal to </summary>
-    [JsonProperty("expirationDate_lte")]
-    public DateTime? ExpirationDate_LTE { get; set; }
-    /// <summary> ExpirationDate greater than or equal to </summary>
-    [JsonProperty("expirationDate_gte")]
-    public DateTime? ExpirationDate_GTE { get; set; }
-
-    /// <summary> IdsTags equals </summary>
-    [JsonProperty("idsTags_eq")]
-    public string? IdsTags_EQ { get; set; }
-    /// <summary> IdsTags contains </summary>
-    [JsonProperty("idsTags_con")]
-    public string? IdsTags_CON { get; set; }
-    /// <summary> IdsTags regex </summary>
-    [JsonProperty("idsTags_reg")]
-    public string? IdsTags_REG { get; set; }
-
-    /// <summary> Id equals </summary>
-    [JsonProperty("id_eq")]
-    public string? Id_EQ { get; set; }
-    /// <summary> Id contains </summary>
-    [JsonProperty("id_con")]
-    public string? Id_CON { get; set; }
-    /// <summary> Id regex </summary>
-    [JsonProperty("id_reg")]
-    public string? Id_REG { get; set; }
-
-    /// <summary> DateCreated equals </summary>
-    [JsonProperty("dateCreated_eq")]
-    public DateTime? DateCreated_EQ { get; set; }
-    /// <summary> DateCreated less than or equal to </summary>
-    [JsonProperty("dateCreated_lte")]
-    public DateTime? DateCreated_LTE { get; set; }
-    /// <summary> DateCreated greater than or equal to </summary>
-    [JsonProperty("dateCreated_gte")]
-    public DateTime? DateCreated_GTE { get; set; }
-
-    /// <summary> DateUpdated equals </summary>
-    [JsonProperty("dateUpdated_eq")]
-    public DateTime? DateUpdated_EQ { get; set; }
-    /// <summary> DateUpdated less than or equal to </summary>
-    [JsonProperty("dateUpdated_lte")]
-    public DateTime? DateUpdated_LTE { get; set; }
-    /// <summary> DateUpdated greater than or equal to </summary>
-    [JsonProperty("dateUpdated_gte")]
-    public DateTime? DateUpdated_GTE { get; set; }
-
-}
 /// <summary> Enables searching for Voicemails </summary>
 public class VoicemailFilterRequest 
 {
-    /// <summary> IdsTags equals </summary>
-    [JsonProperty("idsTags_eq")]
-    public string? IdsTags_EQ { get; set; }
-    /// <summary> IdsTags contains </summary>
-    [JsonProperty("idsTags_con")]
-    public string? IdsTags_CON { get; set; }
-    /// <summary> IdsTags regex </summary>
-    [JsonProperty("idsTags_reg")]
-    public string? IdsTags_REG { get; set; }
-
     /// <summary> IdsLinesThatCanListenToVoicemail equals </summary>
     [JsonProperty("idsLinesThatCanListenToVoicemail_eq")]
     public string? IdsLinesThatCanListenToVoicemail_EQ { get; set; }
@@ -6469,6 +6223,16 @@ public class VoicemailFilterRequest
     /// <summary> ErrorMessage regex </summary>
     [JsonProperty("errorMessage_reg")]
     public string? ErrorMessage_REG { get; set; }
+
+    /// <summary> IdsTags equals </summary>
+    [JsonProperty("idsTags_eq")]
+    public string? IdsTags_EQ { get; set; }
+    /// <summary> IdsTags contains </summary>
+    [JsonProperty("idsTags_con")]
+    public string? IdsTags_CON { get; set; }
+    /// <summary> IdsTags regex </summary>
+    [JsonProperty("idsTags_reg")]
+    public string? IdsTags_REG { get; set; }
 
     /// <summary> Id equals </summary>
     [JsonProperty("id_eq")]
@@ -6666,16 +6430,6 @@ public class VoicemailForwardedFilterRequest
     [JsonProperty("extensionForwarded_idMusicOnHoldGroup_reg")]
     public string? ExtensionForwarded_IdMusicOnHoldGroup_REG { get; set; }
 
-    /// <summary> ExtensionForwarded.IdsTags equals </summary>
-    [JsonProperty("extensionForwarded_idsTags_eq")]
-    public string? ExtensionForwarded_IdsTags_EQ { get; set; }
-    /// <summary> ExtensionForwarded.IdsTags contains </summary>
-    [JsonProperty("extensionForwarded_idsTags_con")]
-    public string? ExtensionForwarded_IdsTags_CON { get; set; }
-    /// <summary> ExtensionForwarded.IdsTags regex </summary>
-    [JsonProperty("extensionForwarded_idsTags_reg")]
-    public string? ExtensionForwarded_IdsTags_REG { get; set; }
-
     /// <summary> ExtensionForwarded.ExtensionType equals </summary>
     [JsonProperty("extensionForwarded_extensionType_eq")]
     public string? ExtensionForwarded_ExtensionType_EQ { get; set; }
@@ -6710,6 +6464,16 @@ public class VoicemailForwardedFilterRequest
     [JsonProperty("extensionForwarded_injectExtensionNameToCallerId_eq")]
     public bool? ExtensionForwarded_InjectExtensionNameToCallerId_EQ { get; set; }
 
+    /// <summary> ExtensionForwarded.IdsTags equals </summary>
+    [JsonProperty("extensionForwarded_idsTags_eq")]
+    public string? ExtensionForwarded_IdsTags_EQ { get; set; }
+    /// <summary> ExtensionForwarded.IdsTags contains </summary>
+    [JsonProperty("extensionForwarded_idsTags_con")]
+    public string? ExtensionForwarded_IdsTags_CON { get; set; }
+    /// <summary> ExtensionForwarded.IdsTags regex </summary>
+    [JsonProperty("extensionForwarded_idsTags_reg")]
+    public string? ExtensionForwarded_IdsTags_REG { get; set; }
+
     /// <summary> ExtensionForwarded.Id equals </summary>
     [JsonProperty("extensionForwarded_id_eq")]
     public string? ExtensionForwarded_Id_EQ { get; set; }
@@ -6740,16 +6504,6 @@ public class VoicemailForwardedFilterRequest
     [JsonProperty("extensionForwarded_dateUpdated_gte")]
     public DateTime? ExtensionForwarded_DateUpdated_GTE { get; set; }
 
-
-    /// <summary> IdsTags equals </summary>
-    [JsonProperty("idsTags_eq")]
-    public string? IdsTags_EQ { get; set; }
-    /// <summary> IdsTags contains </summary>
-    [JsonProperty("idsTags_con")]
-    public string? IdsTags_CON { get; set; }
-    /// <summary> IdsTags regex </summary>
-    [JsonProperty("idsTags_reg")]
-    public string? IdsTags_REG { get; set; }
 
     /// <summary> IdsLinesThatCanListenToVoicemail equals </summary>
     [JsonProperty("idsLinesThatCanListenToVoicemail_eq")]
@@ -6893,6 +6647,16 @@ public class VoicemailForwardedFilterRequest
     [JsonProperty("errorMessage_reg")]
     public string? ErrorMessage_REG { get; set; }
 
+    /// <summary> IdsTags equals </summary>
+    [JsonProperty("idsTags_eq")]
+    public string? IdsTags_EQ { get; set; }
+    /// <summary> IdsTags contains </summary>
+    [JsonProperty("idsTags_con")]
+    public string? IdsTags_CON { get; set; }
+    /// <summary> IdsTags regex </summary>
+    [JsonProperty("idsTags_reg")]
+    public string? IdsTags_REG { get; set; }
+
     /// <summary> Id equals </summary>
     [JsonProperty("id_eq")]
     public string? Id_EQ { get; set; }
@@ -6992,16 +6756,6 @@ public class VoipNumberAvailableForPurchaseFilterRequest
     [JsonProperty("voipNumberType_reg")]
     public string? VoipNumberType_REG { get; set; }
 
-    /// <summary> IdsTags equals </summary>
-    [JsonProperty("idsTags_eq")]
-    public string? IdsTags_EQ { get; set; }
-    /// <summary> IdsTags contains </summary>
-    [JsonProperty("idsTags_con")]
-    public string? IdsTags_CON { get; set; }
-    /// <summary> IdsTags regex </summary>
-    [JsonProperty("idsTags_reg")]
-    public string? IdsTags_REG { get; set; }
-
     /// <summary> IdMusicOnHoldGroup equals </summary>
     [JsonProperty("idMusicOnHoldGroup_eq")]
     public string? IdMusicOnHoldGroup_EQ { get; set; }
@@ -7119,6 +6873,16 @@ public class VoipNumberAvailableForPurchaseFilterRequest
     /// <summary> TimeZone regex </summary>
     [JsonProperty("timeZone_reg")]
     public string? TimeZone_REG { get; set; }
+
+    /// <summary> IdsTags equals </summary>
+    [JsonProperty("idsTags_eq")]
+    public string? IdsTags_EQ { get; set; }
+    /// <summary> IdsTags contains </summary>
+    [JsonProperty("idsTags_con")]
+    public string? IdsTags_CON { get; set; }
+    /// <summary> IdsTags regex </summary>
+    [JsonProperty("idsTags_reg")]
+    public string? IdsTags_REG { get; set; }
 
     /// <summary> Id equals </summary>
     [JsonProperty("id_eq")]
@@ -7211,16 +6975,6 @@ public class VoipNumberFaxFilterRequest
     [JsonProperty("voipNumberType_reg")]
     public string? VoipNumberType_REG { get; set; }
 
-    /// <summary> IdsTags equals </summary>
-    [JsonProperty("idsTags_eq")]
-    public string? IdsTags_EQ { get; set; }
-    /// <summary> IdsTags contains </summary>
-    [JsonProperty("idsTags_con")]
-    public string? IdsTags_CON { get; set; }
-    /// <summary> IdsTags regex </summary>
-    [JsonProperty("idsTags_reg")]
-    public string? IdsTags_REG { get; set; }
-
     /// <summary> IdMusicOnHoldGroup equals </summary>
     [JsonProperty("idMusicOnHoldGroup_eq")]
     public string? IdMusicOnHoldGroup_EQ { get; set; }
@@ -7338,6 +7092,16 @@ public class VoipNumberFaxFilterRequest
     /// <summary> TimeZone regex </summary>
     [JsonProperty("timeZone_reg")]
     public string? TimeZone_REG { get; set; }
+
+    /// <summary> IdsTags equals </summary>
+    [JsonProperty("idsTags_eq")]
+    public string? IdsTags_EQ { get; set; }
+    /// <summary> IdsTags contains </summary>
+    [JsonProperty("idsTags_con")]
+    public string? IdsTags_CON { get; set; }
+    /// <summary> IdsTags regex </summary>
+    [JsonProperty("idsTags_reg")]
+    public string? IdsTags_REG { get; set; }
 
     /// <summary> Id equals </summary>
     [JsonProperty("id_eq")]
@@ -7430,16 +7194,6 @@ public class VoipNumberPhoneFilterRequest
     [JsonProperty("voipNumberType_reg")]
     public string? VoipNumberType_REG { get; set; }
 
-    /// <summary> IdsTags equals </summary>
-    [JsonProperty("idsTags_eq")]
-    public string? IdsTags_EQ { get; set; }
-    /// <summary> IdsTags contains </summary>
-    [JsonProperty("idsTags_con")]
-    public string? IdsTags_CON { get; set; }
-    /// <summary> IdsTags regex </summary>
-    [JsonProperty("idsTags_reg")]
-    public string? IdsTags_REG { get; set; }
-
     /// <summary> IdMusicOnHoldGroup equals </summary>
     [JsonProperty("idMusicOnHoldGroup_eq")]
     public string? IdMusicOnHoldGroup_EQ { get; set; }
@@ -7558,6 +7312,16 @@ public class VoipNumberPhoneFilterRequest
     [JsonProperty("timeZone_reg")]
     public string? TimeZone_REG { get; set; }
 
+    /// <summary> IdsTags equals </summary>
+    [JsonProperty("idsTags_eq")]
+    public string? IdsTags_EQ { get; set; }
+    /// <summary> IdsTags contains </summary>
+    [JsonProperty("idsTags_con")]
+    public string? IdsTags_CON { get; set; }
+    /// <summary> IdsTags regex </summary>
+    [JsonProperty("idsTags_reg")]
+    public string? IdsTags_REG { get; set; }
+
     /// <summary> Id equals </summary>
     [JsonProperty("id_eq")]
     public string? Id_EQ { get; set; }
@@ -7626,16 +7390,6 @@ public class VoipProviderFilterRequest
 /// <summary> Enables searching for WebHooks </summary>
 public class WebHookFilterRequest 
 {
-    /// <summary> IdsTags equals </summary>
-    [JsonProperty("idsTags_eq")]
-    public string? IdsTags_EQ { get; set; }
-    /// <summary> IdsTags contains </summary>
-    [JsonProperty("idsTags_con")]
-    public string? IdsTags_CON { get; set; }
-    /// <summary> IdsTags regex </summary>
-    [JsonProperty("idsTags_reg")]
-    public string? IdsTags_REG { get; set; }
-
     /// <summary> EventTrigger equals </summary>
     [JsonProperty("eventTrigger_eq")]
     public string? EventTrigger_EQ { get; set; }
@@ -7665,6 +7419,16 @@ public class WebHookFilterRequest
     /// <summary> Headers regex </summary>
     [JsonProperty("headers_reg")]
     public string? Headers_REG { get; set; }
+
+    /// <summary> IdsTags equals </summary>
+    [JsonProperty("idsTags_eq")]
+    public string? IdsTags_EQ { get; set; }
+    /// <summary> IdsTags contains </summary>
+    [JsonProperty("idsTags_con")]
+    public string? IdsTags_CON { get; set; }
+    /// <summary> IdsTags regex </summary>
+    [JsonProperty("idsTags_reg")]
+    public string? IdsTags_REG { get; set; }
 
     /// <summary> Id equals </summary>
     [JsonProperty("id_eq")]
@@ -7853,16 +7617,6 @@ public class TagFilterRequest
 /// <summary> Enables searching for AiCallTranscriptions </summary>
 public class AiCallTranscriptionFilterRequest 
 {
-    /// <summary> IdsTags equals </summary>
-    [JsonProperty("idsTags_eq")]
-    public string? IdsTags_EQ { get; set; }
-    /// <summary> IdsTags contains </summary>
-    [JsonProperty("idsTags_con")]
-    public string? IdsTags_CON { get; set; }
-    /// <summary> IdsTags regex </summary>
-    [JsonProperty("idsTags_reg")]
-    public string? IdsTags_REG { get; set; }
-
     /// <summary> IdCall equals </summary>
     [JsonProperty("idCall_eq")]
     public string? IdCall_EQ { get; set; }
@@ -8173,6 +7927,16 @@ public class AiCallTranscriptionFilterRequest
 
 
 
+    /// <summary> IdsTags equals </summary>
+    [JsonProperty("idsTags_eq")]
+    public string? IdsTags_EQ { get; set; }
+    /// <summary> IdsTags contains </summary>
+    [JsonProperty("idsTags_con")]
+    public string? IdsTags_CON { get; set; }
+    /// <summary> IdsTags regex </summary>
+    [JsonProperty("idsTags_reg")]
+    public string? IdsTags_REG { get; set; }
+
     /// <summary> Id equals </summary>
     [JsonProperty("id_eq")]
     public string? Id_EQ { get; set; }
@@ -8226,16 +7990,6 @@ public class CallFilterRequest
     /// <summary> IdCallThatTerminatedThisCallDoToAttendantTransfer regex </summary>
     [JsonProperty("idCallThatTerminatedThisCallDoToAttendantTransfer_reg")]
     public string? IdCallThatTerminatedThisCallDoToAttendantTransfer_REG { get; set; }
-
-    /// <summary> IdsTags equals </summary>
-    [JsonProperty("idsTags_eq")]
-    public string? IdsTags_EQ { get; set; }
-    /// <summary> IdsTags contains </summary>
-    [JsonProperty("idsTags_con")]
-    public string? IdsTags_CON { get; set; }
-    /// <summary> IdsTags regex </summary>
-    [JsonProperty("idsTags_reg")]
-    public string? IdsTags_REG { get; set; }
 
     /// <summary> IdContact equals </summary>
     [JsonProperty("idContact_eq")]
@@ -8559,6 +8313,16 @@ public class CallFilterRequest
     /// <summary> CallResult regex </summary>
     [JsonProperty("callResult_reg")]
     public string? CallResult_REG { get; set; }
+
+    /// <summary> IdsTags equals </summary>
+    [JsonProperty("idsTags_eq")]
+    public string? IdsTags_EQ { get; set; }
+    /// <summary> IdsTags contains </summary>
+    [JsonProperty("idsTags_con")]
+    public string? IdsTags_CON { get; set; }
+    /// <summary> IdsTags regex </summary>
+    [JsonProperty("idsTags_reg")]
+    public string? IdsTags_REG { get; set; }
 
     /// <summary> Id equals </summary>
     [JsonProperty("id_eq")]
@@ -8634,16 +8398,6 @@ public class CallIncomingFilterRequest
     [JsonProperty("idCallThatTerminatedThisCallDoToAttendantTransfer_reg")]
     public string? IdCallThatTerminatedThisCallDoToAttendantTransfer_REG { get; set; }
 
-    /// <summary> IdsTags equals </summary>
-    [JsonProperty("idsTags_eq")]
-    public string? IdsTags_EQ { get; set; }
-    /// <summary> IdsTags contains </summary>
-    [JsonProperty("idsTags_con")]
-    public string? IdsTags_CON { get; set; }
-    /// <summary> IdsTags regex </summary>
-    [JsonProperty("idsTags_reg")]
-    public string? IdsTags_REG { get; set; }
-
     /// <summary> IdContact equals </summary>
     [JsonProperty("idContact_eq")]
     public string? IdContact_EQ { get; set; }
@@ -8966,6 +8720,16 @@ public class CallIncomingFilterRequest
     /// <summary> CallResult regex </summary>
     [JsonProperty("callResult_reg")]
     public string? CallResult_REG { get; set; }
+
+    /// <summary> IdsTags equals </summary>
+    [JsonProperty("idsTags_eq")]
+    public string? IdsTags_EQ { get; set; }
+    /// <summary> IdsTags contains </summary>
+    [JsonProperty("idsTags_con")]
+    public string? IdsTags_CON { get; set; }
+    /// <summary> IdsTags regex </summary>
+    [JsonProperty("idsTags_reg")]
+    public string? IdsTags_REG { get; set; }
 
     /// <summary> Id equals </summary>
     [JsonProperty("id_eq")]
@@ -9031,16 +8795,6 @@ public class CallOutgoingFilterRequest
     [JsonProperty("idCallThatTerminatedThisCallDoToAttendantTransfer_reg")]
     public string? IdCallThatTerminatedThisCallDoToAttendantTransfer_REG { get; set; }
 
-    /// <summary> IdsTags equals </summary>
-    [JsonProperty("idsTags_eq")]
-    public string? IdsTags_EQ { get; set; }
-    /// <summary> IdsTags contains </summary>
-    [JsonProperty("idsTags_con")]
-    public string? IdsTags_CON { get; set; }
-    /// <summary> IdsTags regex </summary>
-    [JsonProperty("idsTags_reg")]
-    public string? IdsTags_REG { get; set; }
-
     /// <summary> IdContact equals </summary>
     [JsonProperty("idContact_eq")]
     public string? IdContact_EQ { get; set; }
@@ -9363,6 +9117,16 @@ public class CallOutgoingFilterRequest
     /// <summary> CallResult regex </summary>
     [JsonProperty("callResult_reg")]
     public string? CallResult_REG { get; set; }
+
+    /// <summary> IdsTags equals </summary>
+    [JsonProperty("idsTags_eq")]
+    public string? IdsTags_EQ { get; set; }
+    /// <summary> IdsTags contains </summary>
+    [JsonProperty("idsTags_con")]
+    public string? IdsTags_CON { get; set; }
+    /// <summary> IdsTags regex </summary>
+    [JsonProperty("idsTags_reg")]
+    public string? IdsTags_REG { get; set; }
 
     /// <summary> Id equals </summary>
     [JsonProperty("id_eq")]
@@ -9514,16 +9278,6 @@ public class ExtensionFilterRequest
     [JsonProperty("idMusicOnHoldGroup_reg")]
     public string? IdMusicOnHoldGroup_REG { get; set; }
 
-    /// <summary> IdsTags equals </summary>
-    [JsonProperty("idsTags_eq")]
-    public string? IdsTags_EQ { get; set; }
-    /// <summary> IdsTags contains </summary>
-    [JsonProperty("idsTags_con")]
-    public string? IdsTags_CON { get; set; }
-    /// <summary> IdsTags regex </summary>
-    [JsonProperty("idsTags_reg")]
-    public string? IdsTags_REG { get; set; }
-
     /// <summary> ExtensionType equals </summary>
     [JsonProperty("extensionType_eq")]
     public string? ExtensionType_EQ { get; set; }
@@ -9557,6 +9311,16 @@ public class ExtensionFilterRequest
     /// <summary> InjectExtensionNameToCallerId equals </summary>
     [JsonProperty("injectExtensionNameToCallerId_eq")]
     public bool? InjectExtensionNameToCallerId_EQ { get; set; }
+
+    /// <summary> IdsTags equals </summary>
+    [JsonProperty("idsTags_eq")]
+    public string? IdsTags_EQ { get; set; }
+    /// <summary> IdsTags contains </summary>
+    [JsonProperty("idsTags_con")]
+    public string? IdsTags_CON { get; set; }
+    /// <summary> IdsTags regex </summary>
+    [JsonProperty("idsTags_reg")]
+    public string? IdsTags_REG { get; set; }
 
     /// <summary> Id equals </summary>
     [JsonProperty("id_eq")]
@@ -9636,16 +9400,6 @@ public class TrunkOriginationFilterRequest
 /// <summary> Enables searching for VoipNumbers </summary>
 public class VoipNumberFilterRequest 
 {
-    /// <summary> IdsTags equals </summary>
-    [JsonProperty("idsTags_eq")]
-    public string? IdsTags_EQ { get; set; }
-    /// <summary> IdsTags contains </summary>
-    [JsonProperty("idsTags_con")]
-    public string? IdsTags_CON { get; set; }
-    /// <summary> IdsTags regex </summary>
-    [JsonProperty("idsTags_reg")]
-    public string? IdsTags_REG { get; set; }
-
     /// <summary> IdMusicOnHoldGroup equals </summary>
     [JsonProperty("idMusicOnHoldGroup_eq")]
     public string? IdMusicOnHoldGroup_EQ { get; set; }
@@ -9820,6 +9574,16 @@ public class VoipNumberFilterRequest
     /// <summary> TimeZone regex </summary>
     [JsonProperty("timeZone_reg")]
     public string? TimeZone_REG { get; set; }
+
+    /// <summary> IdsTags equals </summary>
+    [JsonProperty("idsTags_eq")]
+    public string? IdsTags_EQ { get; set; }
+    /// <summary> IdsTags contains </summary>
+    [JsonProperty("idsTags_con")]
+    public string? IdsTags_CON { get; set; }
+    /// <summary> IdsTags regex </summary>
+    [JsonProperty("idsTags_reg")]
+    public string? IdsTags_REG { get; set; }
 
     /// <summary> Id equals </summary>
     [JsonProperty("id_eq")]

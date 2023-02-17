@@ -3,7 +3,7 @@
 /// <summary>
 ///     Configuration of a phone
 /// </summary>
-public partial class PhoneConfiguration : UbluxDocument, IReferencesTags
+public partial class PhoneConfiguration : UbluxDocument_ReferenceAccount_ReferenceTags
 {
     #region Properties
 
@@ -15,13 +15,6 @@ public partial class PhoneConfiguration : UbluxDocument, IReferencesTags
     [References(typeof(LineKeyGroup))]
     [AllowUpdate(true)]
     public string? IdLineKeyGroup { get; set; }
-
-    /// <summary>
-    ///     Ids of tags
-    /// </summary>
-    [AllowUpdate(true)]
-    [References(typeof(Tag))]
-    public List<string> IdsTags { get; set; } = new();
 
     #endregion
 

@@ -101,8 +101,8 @@ public enum Collections
     /// <summary>WebHooks</summary>
     WebHooks,
 
-    /// <summary>UnauthorizedTokens</summary>
-    UnauthorizedTokens,
+    ///// <summary>UnauthorizedTokens</summary>
+    //UnauthorizedTokens,
 
     // Al StoredFile object must have a clone on this table
     /// <summary>DiskFiles</summary>

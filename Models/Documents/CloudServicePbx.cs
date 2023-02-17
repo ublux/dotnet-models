@@ -12,8 +12,8 @@ public partial class CloudServicePbx : CloudService
     [AllowUpdate(false)] 
     [SwaggerSchema(ReadOnly = true)] 
     [References(typeof(CloudServicePbx))]
-    [IsUbluxRequired]
-    public required string IdCloudServicePbxFailover { get; set; }
+    // [IsUbluxRequired]
+    public required string? IdCloudServicePbxFailover { get; set; }
 
     /// <summary>
     ///     Type of cloud service

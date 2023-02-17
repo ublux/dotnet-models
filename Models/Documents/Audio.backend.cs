@@ -6,19 +6,8 @@ namespace Ublux.Communications.Models.Documents;
 /// <summary>
 ///     Mp3 or Wav audio file. Previously called Audio Greeting
 /// </summary>
-public partial class Audio : UbluxDocument, IReferncesAccount
-{
-    #region References
-
-    /// <inheritdoc/>
-    [References(typeof(Account))]
-    [IgnoreDataMember]
-    [AllowUpdate(false)]
-    [SwaggerSchema(ReadOnly = true)]
-    public required string? IdAccount { get; set; }
-
-    #endregion
-
+public partial class Audio 
+{    
     /// <summary>
     ///     Audio in sln format
     /// </summary>

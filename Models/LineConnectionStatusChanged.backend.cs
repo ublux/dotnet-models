@@ -32,7 +32,7 @@ public class LineConnectionStatusChanged
     [IgnoreDataMember]
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    public required string? IdAccount { get; set; }
+    public required string IdAccount { get; set; }
 
     /// <summary>
     ///     Clone this to avoid sync problems.
