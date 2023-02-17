@@ -3,7 +3,7 @@
 namespace Ublux.Communications.Models;
 
 /// <summary>
-///     Sends as SNS
+///     Sends this to pbx via UbluxTcpBinarySerializer
 /// </summary>
 public class ExecuteBashScript
 {

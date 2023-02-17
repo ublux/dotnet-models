@@ -114,7 +114,7 @@ public abstract partial class UbluxDocument_ReferenceAccount : UbluxDocument, IR
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
     [IsUbluxRequired]
-    public required string IdAccount { get; set; }
+    public required string IdAccount { get; set; } = "";
 }
 
 /// <summary>
