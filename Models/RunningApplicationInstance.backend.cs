@@ -65,8 +65,6 @@ public class RunningApplicationInstance
         return Interlocked.Decrement(ref _numberOfOperationsExecuting);
     }
 
-
-
     /// <summary>
     ///     Returns false if timeout. true otherwise
     /// </summary>

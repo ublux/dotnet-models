@@ -62,9 +62,7 @@ public abstract partial class UbluxDocument : IUbluxDocument, IUbluxDocumentId
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
     [HideForCreateRequest]
-    public DateTime? DateDeleted { get; set; }
-    
-    
+    public DateTime? DateDeleted { get; set; }        
 }
 
 #endif

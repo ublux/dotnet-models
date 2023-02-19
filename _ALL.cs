@@ -38,6 +38,8 @@ public abstract partial class UbluxDocument : IUbluxDocument, IUbluxDocumentId
     ///     Id of document
     /// </summary>
     [BsonId]
+    //[BsonRepresentation(BsonType.ObjectId)]
+    [BsonRepresentation(BsonType.String)] // store id as string
     [BsonElement(Order = -1000000)]
     [JsonProperty(Order = -1000)]
     // [IsUbluxRequired]
