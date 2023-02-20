@@ -67,6 +67,14 @@ public partial class AutoProvisionReference : UbluxDocument
     [IgnoreDataMember]
     public string? AdminPassword { get; set; }
 
+    /// <summary>
+    ///     Phone was autoprovisioned by whom? This is the session that gave permission to the phone to autoprovision.
+    ///     The phone makes autoprovision with a pin. With the pin we retrive the session of the user that had that pin.
+    /// </summary>
+    [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
+    public UbluxSession? AutoprovisionSession { get; set; }
+
     #endregion
 
     /// <summary>

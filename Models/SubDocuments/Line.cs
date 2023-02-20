@@ -79,6 +79,7 @@ public partial class Line : UbluxSubDocument
     public bool IsConnectionStatusChanged;
 
     /// <summary>
+    ///     Used by PBX
     ///     Example: 1.1.1.1.5060
     ///     This is the ip and port that we get from tcpdump captured packets. Note it uses "." instead of ":" to separate the port
     /// </summary>

@@ -72,7 +72,7 @@ public partial class Phone : UbluxDocument_ReferenceAccount_ReferenceTags
     /// <summary>
     ///     Date when phone downloaded configuration from api.ublux.com in order to connect to Ublux
     /// </summary>
-    [AllowUpdate(false)]    
+    [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
     public DateTime? DateAutoProvision { get; set; }
 

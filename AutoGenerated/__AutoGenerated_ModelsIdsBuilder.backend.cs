@@ -362,8 +362,8 @@ namespace Ublux.Communications.Models.SubDocuments {
         /// <summary> Id prefix </summary>
         public const string DocumentPrefix = "Li";
 
-        /// <summary> Custom: prefix.lineNumber.parentPhoneId. Example Li.1.Po.100 </summary>
-        public static BuiltId BuildId(RunningApplicationInstance instance, Phone parent) => new($"{DocumentPrefix}.{instance.IdGlobalAutoIncrement()}.{parent.Id}");
+        /// <summary> Custom: prefix.lineNumber.parentPhoneId. Example Li.1001.Po.100 </summary>
+        public static BuiltId BuildId(RunningApplicationInstance instance, Phone parent) => new($"{DocumentPrefix}.{parent.Id}.{instance.IdGlobalAutoIncrement()}");
     }
     public partial class Recording {
         /// <summary> Id prefix </summary>

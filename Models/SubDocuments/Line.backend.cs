@@ -1,5 +1,7 @@
 ﻿#if UBLUX_BACKEND
 
+using Microsoft.Toolkit.HighPerformance;
+
 namespace Ublux.Communications.Models.SubDocuments;
 
 /// <summary>
@@ -8,7 +10,7 @@ namespace Ublux.Communications.Models.SubDocuments;
 public partial class Line : UbluxSubDocument
 {
     /// <summary>
-    ///     Id of line is composed of prefix:lineIndex:{phoneId}. Because of this reason it is posible to obain id of phone
+    ///     Id of line is composed of prefix:{phoneId}.lineIndex Because of this reason it is posible to obain id of phone
     /// </summary>
     public string GetIdPhone()
     {
@@ -20,16 +22,23 @@ public partial class Line : UbluxSubDocument
     /// </summary>
     public static string? GetIdPhone(string idLine)
     {
-        // Example of line id:   Li.AZ100.Ph.1.23
-        // this will return therefore Ph.1.23
+        // Example of line id:   Li.Ph.1.AZ100.23
+        // this will return therefore Ph.1.AZ100  that means Phone created by instance 1 and idcounter AZ100
         if (idLine == null)
             return null;
 
-        var index = idLine.IndexOf(RedisConstants.DelimeterId, DocumentPrefix.Length + 1);
-        if (index > 0)
-            return idLine[(index + 1)..];
-        else
+        var numDots = idLine.Count('.');
+        if (numDots < 4)
+        {
+            // invalid id of line
             return null;
+        }
+
+        int firstDotIndex = DocumentPrefix.Length + 1;
+        int lastDotIndex = idLine.LastIndexOf(RedisConstants.DelimeterId);
+        string result = idLine.Substring(firstDotIndex, lastDotIndex - firstDotIndex);
+
+        return result;
     }
 }
 
