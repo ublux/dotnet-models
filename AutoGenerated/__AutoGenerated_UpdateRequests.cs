@@ -20,6 +20,10 @@ public class ApiKeyUpdateRequest // : IUbluxDocumentId
     /// </summary>
     public List<Ublux.Communications.Enums.UbluxRole>? UbluxRoles { get; set; }
     /// <summary>
+    /// If true it will be marked as deleted after it was used
+    /// </summary>
+    public Boolean? UseOnce { get; set; }
+    /// <summary>
     /// It is nullable because there are cases where it makes no sense to point to an account.
     /// For example a CloudService user will point to no account
     /// </summary>
@@ -29,6 +33,8 @@ public class ApiKeyUpdateRequest // : IUbluxDocumentId
     {
         if(this.UbluxRoles!=null)
             apiKey.UbluxRoles = this.UbluxRoles;
+        if(this.UseOnce!=null)
+            apiKey.UseOnce = this.UseOnce.Value;
         if(this.IdsTags!=null)
             apiKey.IdsTags = this.IdsTags;
     }

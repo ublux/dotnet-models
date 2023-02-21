@@ -31,6 +31,10 @@ public class ApiKeyFilterRequest
     [JsonProperty("dateLastUsed_gte")]
     public DateTime? DateLastUsed_GTE { get; set; }
 
+    /// <summary> UseOnce equals </summary>
+    [JsonProperty("useOnce_eq")]
+    public bool? UseOnce_EQ { get; set; }
+
     /// <summary> IdsTags equals </summary>
     [JsonProperty("idsTags_eq")]
     public string? IdsTags_EQ { get; set; }
@@ -590,6 +594,41 @@ public class AudioFilterRequest
 /// <summary> Enables searching for AutoProvisionReferences </summary>
 public class AutoProvisionReferenceFilterRequest 
 {
+    /// <summary> AutoprovisionSession.IdUser equals </summary>
+    [JsonProperty("autoprovisionSession_idUser_eq")]
+    public string? AutoprovisionSession_IdUser_EQ { get; set; }
+    /// <summary> AutoprovisionSession.IdUser contains </summary>
+    [JsonProperty("autoprovisionSession_idUser_con")]
+    public string? AutoprovisionSession_IdUser_CON { get; set; }
+    /// <summary> AutoprovisionSession.IdUser regex </summary>
+    [JsonProperty("autoprovisionSession_idUser_reg")]
+    public string? AutoprovisionSession_IdUser_REG { get; set; }
+
+    /// <summary> AutoprovisionSession.UserType equals </summary>
+    [JsonProperty("autoprovisionSession_userType_eq")]
+    public string? AutoprovisionSession_UserType_EQ { get; set; }
+    /// <summary> AutoprovisionSession.UserType contains </summary>
+    [JsonProperty("autoprovisionSession_userType_con")]
+    public string? AutoprovisionSession_UserType_CON { get; set; }
+    /// <summary> AutoprovisionSession.UserType regex </summary>
+    [JsonProperty("autoprovisionSession_userType_reg")]
+    public string? AutoprovisionSession_UserType_REG { get; set; }
+
+    /// <summary> AutoprovisionSession.UbluxRoles contains </summary>
+    [JsonProperty("autoprovisionSession_ubluxRoles_con")]
+    public UbluxRole? AutoprovisionSession_UbluxRoles_CON { get; set; }
+
+    /// <summary> AutoprovisionSession.ExpirationDate equals </summary>
+    [JsonProperty("autoprovisionSession_expirationDate_eq")]
+    public DateTime? AutoprovisionSession_ExpirationDate_EQ { get; set; }
+    /// <summary> AutoprovisionSession.ExpirationDate less than or equal to </summary>
+    [JsonProperty("autoprovisionSession_expirationDate_lte")]
+    public DateTime? AutoprovisionSession_ExpirationDate_LTE { get; set; }
+    /// <summary> AutoprovisionSession.ExpirationDate greater than or equal to </summary>
+    [JsonProperty("autoprovisionSession_expirationDate_gte")]
+    public DateTime? AutoprovisionSession_ExpirationDate_GTE { get; set; }
+
+
     /// <summary> Id equals </summary>
     [JsonProperty("id_eq")]
     public string? Id_EQ { get; set; }

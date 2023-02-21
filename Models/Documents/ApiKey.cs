@@ -3,6 +3,7 @@
 /// <summary>
 ///     Only users can have api keys. Everyone else should have a JWT
 /// </summary>
+[BsonIgnoreExtraElements]
 public partial class ApiKey : UbluxDocument_ReferenceAccount_ReferenceTags
 {
     #region Properties
@@ -49,6 +50,12 @@ public partial class ApiKey : UbluxDocument_ReferenceAccount_ReferenceTags
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
     public DateTime? DateLastUsed { get; set; }
+
+    /// <summary>
+    ///     If true it will be marked as deleted after it was used
+    /// </summary>
+    [AllowUpdate(true)]
+    public bool UseOnce { get; set; }
 
     #endregion
 }
