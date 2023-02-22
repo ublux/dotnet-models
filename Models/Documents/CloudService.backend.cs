@@ -76,6 +76,14 @@ public abstract partial class CloudService : UbluxDocument
     {
         return $"{cloudServiceType}-{country}-F".ToUpper();
     }
+
+    /// <summary>
+    ///     Example: pbx-us-f
+    /// </summary>
+    public static string BuildInstanceIdTest(CloudServiceType cloudServiceType, CountryIsoCode country)
+    {
+        return $"{cloudServiceType}-{country}-T".ToUpper();
+    }
 }
 
 #endif

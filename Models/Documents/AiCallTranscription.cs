@@ -30,14 +30,9 @@ public partial class AiCallTranscription : UbluxDocument_ReferenceAccount_Refere
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    public List<AiTranscription> TranscriptionAgent { get; set; } = new();
+    public List<AiTranscription> Transcription { get; set; } = new();
 
-    /// <summary>
-    ///     Audio of client converted to text
-    /// </summary>
-    [AllowUpdate(false)]
-    [SwaggerSchema(ReadOnly = true)]
-    public List<AiTranscription> TranscriptionClient { get; set; } = new();
+   
 
     /// <summary>
     ///     Summary of agent transcription

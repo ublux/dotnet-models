@@ -6,6 +6,14 @@
 public partial class AiTranscription
 {
     /// <summary>
+    ///     Is it Agent or Client?
+    /// </summary>
+    [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
+    [IsUbluxRequired]
+    public required string Speaker { get; set; } = "";
+
+    /// <summary>
     ///     Transcription text
     /// </summary>
     [AllowUpdate(false)]

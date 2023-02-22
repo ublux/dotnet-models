@@ -32,7 +32,7 @@ public class QueuedCloudFile : IUbluxDocumentId, IDisposable
     /// </summary>
     public void Dispose()
     {
-        if (DeleteFileWhenUploaded)
+        if (DeleteFileWhenUploaded)            
             File.Delete(PathToFile);
     }
 }

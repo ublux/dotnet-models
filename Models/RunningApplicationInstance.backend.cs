@@ -20,6 +20,27 @@ public class RunningApplicationInstance
     public CloudServiceType CloudServiceType { get; set; }
 
     /// <summary>
+    ///     Used throughout entire application to stop application gracefully
+    /// </summary>
+    private readonly CancellationTokenSource _cts = new ();
+
+    /// <summary>
+    ///     Stop application gracefully
+    /// </summary>
+    public void StopApplicationGracefully()
+    {
+        if (_cts.IsCancellationRequested) return;
+        if (_cts.Token.IsCancellationRequested) return;
+
+        _cts.Cancel();
+    }
+
+    /// <summary>
+    ///     Token used to stop application gracefully
+    /// </summary>
+    public CancellationToken GracefullStopToken => _cts.Token;
+
+    /// <summary>
     ///     Application will end with this exit code
     /// </summary>
     public int ExitCode { get; set; }
@@ -87,11 +108,6 @@ public class RunningApplicationInstance
 
     #endregion
 
-    /// <summary>
-    ///     Problems with cloud service
-    /// </summary>
-    public HashSet<CloudServiceFlag> Flags { get; set; } = new();
-
     #region IdGlobal
 
     /// <summary>
@@ -127,7 +143,7 @@ public class RunningApplicationInstance
             if (Debugger.IsAttached) Debugger.Break();
             throw new Exception("IdGlobal should only be set once!");
         }
-        
+
         _idGlobalCounter = v;
     }
     // Make sure global counter has been set and only once by application

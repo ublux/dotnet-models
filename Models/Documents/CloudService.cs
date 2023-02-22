@@ -106,7 +106,15 @@ public abstract partial class CloudService : UbluxDocument
     [AllowUpdate(false)] 
     [SwaggerSchema(ReadOnly = true)] 
     public required string InstanceId { get => instanceId; set => instanceId = value.ToUpper(); }
-    private string instanceId = "";    
+    private string instanceId = "";
+
+    /// <summary>
+    ///     Is this a test cloud serviec
+    /// </summary>
+    [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
+    [IsUbluxRequired]
+    public bool IsTest { get; set; }
 
     #endregion     
 }
