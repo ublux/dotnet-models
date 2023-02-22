@@ -294,8 +294,27 @@ public static class ModelsExtensionMethods
         throw new Exception("Invalid Type");
     }
 
+    /// <summary>
+    ///     For example if we pass the id Ph.90 this will know it uses the Phones collection because of the prefix
+    /// </summary>
+    public static Collections GetCollectionUsedById(this ReadOnlySpan<char> id)
+    {
+        int dotIndex = id.IndexOf(RedisConstants.DelimeterId);
+        if (dotIndex < 0)
+        {
+            if (Debugger.IsAttached) Debugger.Break();
+            throw new Exception("Invalid ID" + "[_Guid_]");
+        }
 
-    private static readonly Dictionary<string, Collections> CollectionMap = new Dictionary<string, Collections>()
+        var str = Microsoft.Toolkit.HighPerformance.Buffers.StringPool.Shared.GetOrAdd(id[..dotIndex]);
+        if (_collectionMap.TryGetValue(str, out var v) == false)
+        {
+            if (Debugger.IsAttached) Debugger.Break();
+            throw new Exception("Ensure CollectionMap dictionary contains all mappings. " + "[_Guid_]");
+        }
+        return v;
+    }
+    private static readonly Dictionary<string, Collections> _collectionMap = new()
     {
         { Account.DocumentPrefix, Collections.Accounts },
         { AgreementToTermsAndConditions.DocumentPrefix, Collections.AgreementsToTermsAndConditions },
@@ -346,126 +365,4 @@ public static class ModelsExtensionMethods
         { AiCallTranscription.DocumentPrefix, Collections.AiCallTranscriptions },
         { Email.DocumentPrefix, Collections.Emails }
     };
-
-    /// <summary>
-    ///     For example if we pass the id Ph.90 this will know it uses the Phones collection because of the prefix
-    /// </summary>
-    public static Collections GetCollectionUsedById(this ReadOnlySpan<char> id)
-    {
-        int dotIndex = id.IndexOf(RedisConstants.DelimeterId);
-        if (dotIndex < 0)
-        {
-            if (Debugger.IsAttached) Debugger.Break();
-            throw new Exception("Invalid ID" + "[_Guid_]");
-        }
-
-        var str = Microsoft.Toolkit.HighPerformance.Buffers.StringPool.Shared.GetOrAdd(id[..dotIndex]);
-        if(CollectionMap.TryGetValue(str, out var v) == false)
-        {
-            if (Debugger.IsAttached) Debugger.Break();
-            throw new Exception("Ensure CollectionMap dictionary contains all mappings. " + "[_Guid_]");
-        }
-        return v;
-
-        //ReadOnlySpan<char> prefix = id[..dotIndex];
-        //return CollectionMap[prefix.ToString()];
-
-        //if (id.StartsWith(Account.DocumentPrefix))
-        //    return Collections.Accounts;
-        //if (id.StartsWith(AgreementToTermsAndConditions.DocumentPrefix))
-        //    return Collections.AgreementsToTermsAndConditions;
-        //if (id.StartsWith(AirNetworksProvince.DocumentPrefix))
-        //    return Collections.AirNetworksProvinces;
-        //if (id.StartsWith(Audio.DocumentPrefix))
-        //    return Collections.Audios;
-        //if (id.StartsWith(AutoProvisionReference.DocumentPrefix))
-        //    return Collections.AutoProvisionReferences;
-        //if (id.StartsWith(BlackListPhoneNumber.DocumentPrefix))
-        //    return Collections.BlackListPhoneNumbers;
-        //if (
-        //    id.StartsWith(CallIncomingToCallFlowLogic.DocumentPrefix) ||
-        //    id.StartsWith(CallIncomingToExtension.DocumentPrefix) ||
-        //    id.StartsWith(CallOutgoingToExtension.DocumentPrefix) ||
-        //    id.StartsWith(CallOutgoingToPSTN.DocumentPrefix)
-        //    )
-        //    return Collections.Calls;
-        //if (id.StartsWith(CallerIdMask.DocumentPrefix))
-        //    return Collections.CallerIdMasks;
-        //if (id.StartsWith(CallFlowLogic.DocumentPrefix))
-        //    return Collections.CallFlowLogics;
-        //if (
-        //    id.StartsWith(CloudServicePbx.DocumentPrefix) ||
-        //    id.StartsWith(CloudServiceWebApp.DocumentPrefix) ||
-        //    id.StartsWith(CloudServiceWebHost.DocumentPrefix)
-        //    )
-        //    return Collections.CloudServices;
-        //if (id.StartsWith(Contact.DocumentPrefix))
-        //    return Collections.Contacts;
-        //if (id.StartsWith(CustomerInfo.DocumentPrefix))
-        //    return Collections.CustomerInfos;
-        //if (
-        //    id.StartsWith(ExtensionDial.DocumentPrefix) ||
-        //    id.StartsWith(ExtensionQueue.DocumentPrefix) ||
-        //    id.StartsWith(ExtensionVoicemail.DocumentPrefix) ||
-        //    id.StartsWith(ExtensionCallFlowLogic.DocumentPrefix) ||
-        //    id.StartsWith(ExtensionConference.DocumentPrefix)
-        //    )
-        //    return Collections.Extensions;
-        //if (id.StartsWith(FaxIncoming.DocumentPrefix))
-        //    return Collections.FaxesIncoming;
-        //if (id.StartsWith(FaxOutgoingGroup.DocumentPrefix))
-        //    return Collections.FaxOutgoingGroups;
-        //if (
-        //    id.StartsWith(VoicemailForwarded.DocumentPrefix) ||
-        //    id.StartsWith(Voicemail.DocumentPrefix)
-        //    )
-        //    return Collections.Voicemails;
-        //if (id.StartsWith(User.DocumentPrefix))
-        //    return Collections.Users;
-        //if (id.StartsWith(LineKeyGroup.DocumentPrefix))
-        //    return Collections.LineKeyGroups;
-        //if (id.StartsWith(LogWebServiceRequest.DocumentPrefix))
-        //    return Collections.LogWebServiceRequests;
-        //if (id.StartsWith(MusicOnHoldGroup.DocumentPrefix))
-        //    return Collections.MusicOnHoldGroups;
-        //if (id.StartsWith(Phone.DocumentPrefix))
-        //    return Collections.Phones;
-        //if (id.StartsWith(PhoneConfiguration.DocumentPrefix))
-        //    return Collections.PhoneConfigurations;
-        //if (id.StartsWith(PowerDialerGroup.DocumentPrefix))
-        //    return Collections.PowerDialerGroups;
-        //if (id.StartsWith(SMS.DocumentPrefix))
-        //    return Collections.SMS;
-        //if (
-        //    id.StartsWith(TrunkOriginationForward.DocumentPrefix) ||
-        //    id.StartsWith(TrunkOriginationRegister.DocumentPrefix)
-        //    )
-        //    return Collections.TrunkOriginations;
-        //if (id.StartsWith(TrunkTerminationGroup.DocumentPrefix))
-        //    return Collections.TrunkTerminationGroups;
-        //if (id.StartsWith(TrunkTermination.DocumentPrefix))
-        //    return Collections.TrunkTerminations;
-        //if (
-        //    id.StartsWith(VoipNumberPhone.DocumentPrefix) ||
-        //    id.StartsWith(VoipNumberFax.DocumentPrefix) ||
-        //    id.StartsWith(VoipNumberAvailableForPurchase.DocumentPrefix)
-        //    )
-        //    return Collections.VoipNumbers;
-        //if (id.StartsWith(VoipProvider.DocumentPrefix))
-        //    return Collections.VoipProviders;
-        //if (id.StartsWith(WebHook.DocumentPrefix))
-        //    return Collections.WebHooks;
-        //if (id.StartsWith(CloudFile.DocumentPrefix))
-        //    return Collections.CloudFiles;
-        //if (id.StartsWith(Tag.DocumentPrefix))
-        //    return Collections.Tags;
-        //if (id.StartsWith(ApiKey.DocumentPrefix))
-        //    return Collections.ApiKeys;
-        //if (id.StartsWith(AiCallTranscription.DocumentPrefix))
-        //    return Collections.AiCallTranscriptions;
-        //if (id.StartsWith(Email.DocumentPrefix))
-        //    return Collections.Emails;
-
-        //throw new Exception("Invalid Type Id" + "[_Guid_]");
-    }
 }
