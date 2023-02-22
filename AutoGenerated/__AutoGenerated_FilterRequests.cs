@@ -2690,6 +2690,10 @@ public class CloudServicePbxFilterRequest
     [JsonProperty("instanceId_reg")]
     public string? InstanceId_REG { get; set; }
 
+    /// <summary> IsTest equals </summary>
+    [JsonProperty("isTest_eq")]
+    public bool? IsTest_EQ { get; set; }
+
     /// <summary> Id equals </summary>
     [JsonProperty("id_eq")]
     public string? Id_EQ { get; set; }
@@ -2806,6 +2810,10 @@ public class CloudServiceWebAppFilterRequest
     [JsonProperty("instanceId_reg")]
     public string? InstanceId_REG { get; set; }
 
+    /// <summary> IsTest equals </summary>
+    [JsonProperty("isTest_eq")]
+    public bool? IsTest_EQ { get; set; }
+
     /// <summary> Id equals </summary>
     [JsonProperty("id_eq")]
     public string? Id_EQ { get; set; }
@@ -2911,6 +2919,10 @@ public class CloudServiceWebHostFilterRequest
     /// <summary> InstanceId regex </summary>
     [JsonProperty("instanceId_reg")]
     public string? InstanceId_REG { get; set; }
+
+    /// <summary> IsTest equals </summary>
+    [JsonProperty("isTest_eq")]
+    public bool? IsTest_EQ { get; set; }
 
     /// <summary> Id equals </summary>
     [JsonProperty("id_eq")]
@@ -7676,168 +7688,95 @@ public class AiCallTranscriptionFilterRequest
     [JsonProperty("transcriptionLanguage_reg")]
     public string? TranscriptionLanguage_REG { get; set; }
 
-    /// <summary> TranscriptionAgent.Text equals </summary>
-    [JsonProperty("transcriptionAgent_text_eq")]
-    public string? TranscriptionAgent_Text_EQ { get; set; }
-    /// <summary> TranscriptionAgent.Text contains </summary>
-    [JsonProperty("transcriptionAgent_text_con")]
-    public string? TranscriptionAgent_Text_CON { get; set; }
-    /// <summary> TranscriptionAgent.Text regex </summary>
-    [JsonProperty("transcriptionAgent_text_reg")]
-    public string? TranscriptionAgent_Text_REG { get; set; }
+    /// <summary> Transcription.Speaker equals </summary>
+    [JsonProperty("transcription_speaker_eq")]
+    public string? Transcription_Speaker_EQ { get; set; }
+    /// <summary> Transcription.Speaker contains </summary>
+    [JsonProperty("transcription_speaker_con")]
+    public string? Transcription_Speaker_CON { get; set; }
+    /// <summary> Transcription.Speaker regex </summary>
+    [JsonProperty("transcription_speaker_reg")]
+    public string? Transcription_Speaker_REG { get; set; }
+
+    /// <summary> Transcription.Text equals </summary>
+    [JsonProperty("transcription_text_eq")]
+    public string? Transcription_Text_EQ { get; set; }
+    /// <summary> Transcription.Text contains </summary>
+    [JsonProperty("transcription_text_con")]
+    public string? Transcription_Text_CON { get; set; }
+    /// <summary> Transcription.Text regex </summary>
+    [JsonProperty("transcription_text_reg")]
+    public string? Transcription_Text_REG { get; set; }
 
 
 
 
 
 
-    /// <summary> TranscriptionAgent.IsPositive equals </summary>
-    [JsonProperty("transcriptionAgent_isPositive_eq")]
-    public bool? TranscriptionAgent_IsPositive_EQ { get; set; }
+    /// <summary> Transcription.IsPositive equals </summary>
+    [JsonProperty("transcription_isPositive_eq")]
+    public bool? Transcription_IsPositive_EQ { get; set; }
 
-    /// <summary> TranscriptionAgent.Entities.EntityType equals </summary>
-    [JsonProperty("transcriptionAgent_entities_entityType_eq")]
-    public string? TranscriptionAgent_Entities_EntityType_EQ { get; set; }
-    /// <summary> TranscriptionAgent.Entities.EntityType contains </summary>
-    [JsonProperty("transcriptionAgent_entities_entityType_con")]
-    public string? TranscriptionAgent_Entities_EntityType_CON { get; set; }
-    /// <summary> TranscriptionAgent.Entities.EntityType regex </summary>
-    [JsonProperty("transcriptionAgent_entities_entityType_reg")]
-    public string? TranscriptionAgent_Entities_EntityType_REG { get; set; }
+    /// <summary> Transcription.Entities.EntityType equals </summary>
+    [JsonProperty("transcription_entities_entityType_eq")]
+    public string? Transcription_Entities_EntityType_EQ { get; set; }
+    /// <summary> Transcription.Entities.EntityType contains </summary>
+    [JsonProperty("transcription_entities_entityType_con")]
+    public string? Transcription_Entities_EntityType_CON { get; set; }
+    /// <summary> Transcription.Entities.EntityType regex </summary>
+    [JsonProperty("transcription_entities_entityType_reg")]
+    public string? Transcription_Entities_EntityType_REG { get; set; }
 
-    /// <summary> TranscriptionAgent.Entities.StartPosition equals </summary>
-    [JsonProperty("transcriptionAgent_entities_startPosition_eq")]
-    public System.Int32? TranscriptionAgent_Entities_StartPosition_EQ { get; set; }
-    /// <summary> TranscriptionAgent.Entities.StartPosition less than or equal to </summary>
-    [JsonProperty("transcriptionAgent_entities_startPosition_lte")]
-    public System.Int32? TranscriptionAgent_Entities_StartPosition_LTE { get; set; }
-    /// <summary> TranscriptionAgent.Entities.StartPosition greater than or equal to </summary>
-    [JsonProperty("transcriptionAgent_entities_startPosition_gte")]
-    public System.Int32? TranscriptionAgent_Entities_StartPosition_GTE { get; set; }
+    /// <summary> Transcription.Entities.StartPosition equals </summary>
+    [JsonProperty("transcription_entities_startPosition_eq")]
+    public System.Int32? Transcription_Entities_StartPosition_EQ { get; set; }
+    /// <summary> Transcription.Entities.StartPosition less than or equal to </summary>
+    [JsonProperty("transcription_entities_startPosition_lte")]
+    public System.Int32? Transcription_Entities_StartPosition_LTE { get; set; }
+    /// <summary> Transcription.Entities.StartPosition greater than or equal to </summary>
+    [JsonProperty("transcription_entities_startPosition_gte")]
+    public System.Int32? Transcription_Entities_StartPosition_GTE { get; set; }
 
-    /// <summary> TranscriptionAgent.Entities.EndPosition equals </summary>
-    [JsonProperty("transcriptionAgent_entities_endPosition_eq")]
-    public System.Int32? TranscriptionAgent_Entities_EndPosition_EQ { get; set; }
-    /// <summary> TranscriptionAgent.Entities.EndPosition less than or equal to </summary>
-    [JsonProperty("transcriptionAgent_entities_endPosition_lte")]
-    public System.Int32? TranscriptionAgent_Entities_EndPosition_LTE { get; set; }
-    /// <summary> TranscriptionAgent.Entities.EndPosition greater than or equal to </summary>
-    [JsonProperty("transcriptionAgent_entities_endPosition_gte")]
-    public System.Int32? TranscriptionAgent_Entities_EndPosition_GTE { get; set; }
+    /// <summary> Transcription.Entities.EndPosition equals </summary>
+    [JsonProperty("transcription_entities_endPosition_eq")]
+    public System.Int32? Transcription_Entities_EndPosition_EQ { get; set; }
+    /// <summary> Transcription.Entities.EndPosition less than or equal to </summary>
+    [JsonProperty("transcription_entities_endPosition_lte")]
+    public System.Int32? Transcription_Entities_EndPosition_LTE { get; set; }
+    /// <summary> Transcription.Entities.EndPosition greater than or equal to </summary>
+    [JsonProperty("transcription_entities_endPosition_gte")]
+    public System.Int32? Transcription_Entities_EndPosition_GTE { get; set; }
 
-    /// <summary> TranscriptionAgent.Entities.EntityName equals </summary>
-    [JsonProperty("transcriptionAgent_entities_entityName_eq")]
-    public string? TranscriptionAgent_Entities_EntityName_EQ { get; set; }
-    /// <summary> TranscriptionAgent.Entities.EntityName contains </summary>
-    [JsonProperty("transcriptionAgent_entities_entityName_con")]
-    public string? TranscriptionAgent_Entities_EntityName_CON { get; set; }
-    /// <summary> TranscriptionAgent.Entities.EntityName regex </summary>
-    [JsonProperty("transcriptionAgent_entities_entityName_reg")]
-    public string? TranscriptionAgent_Entities_EntityName_REG { get; set; }
-
-
-    /// <summary> TranscriptionAgent.Topics.Name equals </summary>
-    [JsonProperty("transcriptionAgent_topics_name_eq")]
-    public string? TranscriptionAgent_Topics_Name_EQ { get; set; }
-    /// <summary> TranscriptionAgent.Topics.Name contains </summary>
-    [JsonProperty("transcriptionAgent_topics_name_con")]
-    public string? TranscriptionAgent_Topics_Name_CON { get; set; }
-    /// <summary> TranscriptionAgent.Topics.Name regex </summary>
-    [JsonProperty("transcriptionAgent_topics_name_reg")]
-    public string? TranscriptionAgent_Topics_Name_REG { get; set; }
-
-    /// <summary> TranscriptionAgent.Topics.RelatedPhrases equals </summary>
-    [JsonProperty("transcriptionAgent_topics_relatedPhrases_eq")]
-    public string? TranscriptionAgent_Topics_RelatedPhrases_EQ { get; set; }
-    /// <summary> TranscriptionAgent.Topics.RelatedPhrases contains </summary>
-    [JsonProperty("transcriptionAgent_topics_relatedPhrases_con")]
-    public string? TranscriptionAgent_Topics_RelatedPhrases_CON { get; set; }
-    /// <summary> TranscriptionAgent.Topics.RelatedPhrases regex </summary>
-    [JsonProperty("transcriptionAgent_topics_relatedPhrases_reg")]
-    public string? TranscriptionAgent_Topics_RelatedPhrases_REG { get; set; }
+    /// <summary> Transcription.Entities.EntityName equals </summary>
+    [JsonProperty("transcription_entities_entityName_eq")]
+    public string? Transcription_Entities_EntityName_EQ { get; set; }
+    /// <summary> Transcription.Entities.EntityName contains </summary>
+    [JsonProperty("transcription_entities_entityName_con")]
+    public string? Transcription_Entities_EntityName_CON { get; set; }
+    /// <summary> Transcription.Entities.EntityName regex </summary>
+    [JsonProperty("transcription_entities_entityName_reg")]
+    public string? Transcription_Entities_EntityName_REG { get; set; }
 
 
+    /// <summary> Transcription.Topics.Name equals </summary>
+    [JsonProperty("transcription_topics_name_eq")]
+    public string? Transcription_Topics_Name_EQ { get; set; }
+    /// <summary> Transcription.Topics.Name contains </summary>
+    [JsonProperty("transcription_topics_name_con")]
+    public string? Transcription_Topics_Name_CON { get; set; }
+    /// <summary> Transcription.Topics.Name regex </summary>
+    [JsonProperty("transcription_topics_name_reg")]
+    public string? Transcription_Topics_Name_REG { get; set; }
 
-
-    /// <summary> TranscriptionClient.Text equals </summary>
-    [JsonProperty("transcriptionClient_text_eq")]
-    public string? TranscriptionClient_Text_EQ { get; set; }
-    /// <summary> TranscriptionClient.Text contains </summary>
-    [JsonProperty("transcriptionClient_text_con")]
-    public string? TranscriptionClient_Text_CON { get; set; }
-    /// <summary> TranscriptionClient.Text regex </summary>
-    [JsonProperty("transcriptionClient_text_reg")]
-    public string? TranscriptionClient_Text_REG { get; set; }
-
-
-
-
-
-
-    /// <summary> TranscriptionClient.IsPositive equals </summary>
-    [JsonProperty("transcriptionClient_isPositive_eq")]
-    public bool? TranscriptionClient_IsPositive_EQ { get; set; }
-
-    /// <summary> TranscriptionClient.Entities.EntityType equals </summary>
-    [JsonProperty("transcriptionClient_entities_entityType_eq")]
-    public string? TranscriptionClient_Entities_EntityType_EQ { get; set; }
-    /// <summary> TranscriptionClient.Entities.EntityType contains </summary>
-    [JsonProperty("transcriptionClient_entities_entityType_con")]
-    public string? TranscriptionClient_Entities_EntityType_CON { get; set; }
-    /// <summary> TranscriptionClient.Entities.EntityType regex </summary>
-    [JsonProperty("transcriptionClient_entities_entityType_reg")]
-    public string? TranscriptionClient_Entities_EntityType_REG { get; set; }
-
-    /// <summary> TranscriptionClient.Entities.StartPosition equals </summary>
-    [JsonProperty("transcriptionClient_entities_startPosition_eq")]
-    public System.Int32? TranscriptionClient_Entities_StartPosition_EQ { get; set; }
-    /// <summary> TranscriptionClient.Entities.StartPosition less than or equal to </summary>
-    [JsonProperty("transcriptionClient_entities_startPosition_lte")]
-    public System.Int32? TranscriptionClient_Entities_StartPosition_LTE { get; set; }
-    /// <summary> TranscriptionClient.Entities.StartPosition greater than or equal to </summary>
-    [JsonProperty("transcriptionClient_entities_startPosition_gte")]
-    public System.Int32? TranscriptionClient_Entities_StartPosition_GTE { get; set; }
-
-    /// <summary> TranscriptionClient.Entities.EndPosition equals </summary>
-    [JsonProperty("transcriptionClient_entities_endPosition_eq")]
-    public System.Int32? TranscriptionClient_Entities_EndPosition_EQ { get; set; }
-    /// <summary> TranscriptionClient.Entities.EndPosition less than or equal to </summary>
-    [JsonProperty("transcriptionClient_entities_endPosition_lte")]
-    public System.Int32? TranscriptionClient_Entities_EndPosition_LTE { get; set; }
-    /// <summary> TranscriptionClient.Entities.EndPosition greater than or equal to </summary>
-    [JsonProperty("transcriptionClient_entities_endPosition_gte")]
-    public System.Int32? TranscriptionClient_Entities_EndPosition_GTE { get; set; }
-
-    /// <summary> TranscriptionClient.Entities.EntityName equals </summary>
-    [JsonProperty("transcriptionClient_entities_entityName_eq")]
-    public string? TranscriptionClient_Entities_EntityName_EQ { get; set; }
-    /// <summary> TranscriptionClient.Entities.EntityName contains </summary>
-    [JsonProperty("transcriptionClient_entities_entityName_con")]
-    public string? TranscriptionClient_Entities_EntityName_CON { get; set; }
-    /// <summary> TranscriptionClient.Entities.EntityName regex </summary>
-    [JsonProperty("transcriptionClient_entities_entityName_reg")]
-    public string? TranscriptionClient_Entities_EntityName_REG { get; set; }
-
-
-    /// <summary> TranscriptionClient.Topics.Name equals </summary>
-    [JsonProperty("transcriptionClient_topics_name_eq")]
-    public string? TranscriptionClient_Topics_Name_EQ { get; set; }
-    /// <summary> TranscriptionClient.Topics.Name contains </summary>
-    [JsonProperty("transcriptionClient_topics_name_con")]
-    public string? TranscriptionClient_Topics_Name_CON { get; set; }
-    /// <summary> TranscriptionClient.Topics.Name regex </summary>
-    [JsonProperty("transcriptionClient_topics_name_reg")]
-    public string? TranscriptionClient_Topics_Name_REG { get; set; }
-
-    /// <summary> TranscriptionClient.Topics.RelatedPhrases equals </summary>
-    [JsonProperty("transcriptionClient_topics_relatedPhrases_eq")]
-    public string? TranscriptionClient_Topics_RelatedPhrases_EQ { get; set; }
-    /// <summary> TranscriptionClient.Topics.RelatedPhrases contains </summary>
-    [JsonProperty("transcriptionClient_topics_relatedPhrases_con")]
-    public string? TranscriptionClient_Topics_RelatedPhrases_CON { get; set; }
-    /// <summary> TranscriptionClient.Topics.RelatedPhrases regex </summary>
-    [JsonProperty("transcriptionClient_topics_relatedPhrases_reg")]
-    public string? TranscriptionClient_Topics_RelatedPhrases_REG { get; set; }
+    /// <summary> Transcription.Topics.RelatedPhrases equals </summary>
+    [JsonProperty("transcription_topics_relatedPhrases_eq")]
+    public string? Transcription_Topics_RelatedPhrases_EQ { get; set; }
+    /// <summary> Transcription.Topics.RelatedPhrases contains </summary>
+    [JsonProperty("transcription_topics_relatedPhrases_con")]
+    public string? Transcription_Topics_RelatedPhrases_CON { get; set; }
+    /// <summary> Transcription.Topics.RelatedPhrases regex </summary>
+    [JsonProperty("transcription_topics_relatedPhrases_reg")]
+    public string? Transcription_Topics_RelatedPhrases_REG { get; set; }
 
 
 
@@ -9272,6 +9211,10 @@ public class CloudServiceFilterRequest
     /// <summary> InstanceId regex </summary>
     [JsonProperty("instanceId_reg")]
     public string? InstanceId_REG { get; set; }
+
+    /// <summary> IsTest equals </summary>
+    [JsonProperty("isTest_eq")]
+    public bool? IsTest_EQ { get; set; }
 
     /// <summary> Id equals </summary>
     [JsonProperty("id_eq")]
