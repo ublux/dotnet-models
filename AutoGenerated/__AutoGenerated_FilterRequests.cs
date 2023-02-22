@@ -21,6 +21,16 @@ public class ApiKeyFilterRequest
     [JsonProperty("ubluxRoles_con")]
     public UbluxRole? UbluxRoles_CON { get; set; }
 
+    /// <summary> DateExpire equals </summary>
+    [JsonProperty("dateExpire_eq")]
+    public DateTime? DateExpire_EQ { get; set; }
+    /// <summary> DateExpire less than or equal to </summary>
+    [JsonProperty("dateExpire_lte")]
+    public DateTime? DateExpire_LTE { get; set; }
+    /// <summary> DateExpire greater than or equal to </summary>
+    [JsonProperty("dateExpire_gte")]
+    public DateTime? DateExpire_GTE { get; set; }
+
     /// <summary> DateLastUsed equals </summary>
     [JsonProperty("dateLastUsed_eq")]
     public DateTime? DateLastUsed_EQ { get; set; }

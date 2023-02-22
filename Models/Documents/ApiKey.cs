@@ -45,6 +45,12 @@ public partial class ApiKey : UbluxDocument_ReferenceAccount_ReferenceTags
     public required string Key { get; set; } = string.Empty;
 
     /// <summary>
+    ///     If null it will never expire. Else it will have an expiration
+    /// </summary>
+    [AllowUpdate(true)]
+    public DateTime? DateExpire { get; set; }
+
+    /// <summary>
     ///     Date last authenticated
     /// </summary>
     [AllowUpdate(false)]

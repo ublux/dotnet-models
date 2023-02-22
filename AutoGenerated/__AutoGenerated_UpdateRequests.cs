@@ -20,6 +20,10 @@ public class ApiKeyUpdateRequest // : IUbluxDocumentId
     /// </summary>
     public List<Ublux.Communications.Enums.UbluxRole>? UbluxRoles { get; set; }
     /// <summary>
+    /// If null it will never expire. Else it will have an expiration
+    /// </summary>
+    public DateTime? DateExpire { get; set; }
+    /// <summary>
     /// If true it will be marked as deleted after it was used
     /// </summary>
     public Boolean? UseOnce { get; set; }
@@ -33,6 +37,8 @@ public class ApiKeyUpdateRequest // : IUbluxDocumentId
     {
         if(this.UbluxRoles!=null)
             apiKey.UbluxRoles = this.UbluxRoles;
+        if(this.DateExpire!=null)
+            apiKey.DateExpire = this.DateExpire.Value;
         if(this.UseOnce!=null)
             apiKey.UseOnce = this.UseOnce.Value;
         if(this.IdsTags!=null)
