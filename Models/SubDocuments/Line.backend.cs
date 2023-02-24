@@ -36,6 +36,7 @@ public partial class Line : UbluxSubDocument
 
         // id phone will be the index from dot 3 to 6
         var idPhone = idLine[(dots[2] + 1)..dots[5]];
+        
         return idPhone;
 
         //// Example of line id:   Li.Ph.1.AZ100.23

@@ -46,7 +46,15 @@ public abstract partial class UbluxDocument : IUbluxDocument, IUbluxDocumentId
     [IgnoreDataMember]
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    public required BuiltId BuiltId
+    public
+
+    // only required on debug mode
+#if UBLUX_Release || RELEASE
+        required
+#else
+        required 
+#endif
+    BuiltId BuiltId
     {
         set
         {

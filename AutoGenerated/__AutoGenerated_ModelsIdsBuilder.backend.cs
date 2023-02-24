@@ -384,6 +384,7 @@ namespace Ublux.Communications.Models.SubDocuments {
         public static BuiltId BuildId(string idAcc, StorageFolderName folderName) => new($"{DocumentPrefix}.{idAcc}.{folderName}.{RunningApplicationInstance.ToBase62(BitConverter.ToUInt64(Guid.NewGuid().ToByteArray()))}{RunningApplicationInstance.ToBase62(BitConverter.ToUInt64(Guid.NewGuid().ToByteArray())/2)}");
         /// <summary> oveload </summary>
         public static BuiltId BuildId(BuiltId builtId, string fileExtension) => new($"{builtId.Id}.{fileExtension}");
+        /// <summary> custom </summary>
         public static BuiltId BuildId(string custom) => new(custom);
     }
 }
