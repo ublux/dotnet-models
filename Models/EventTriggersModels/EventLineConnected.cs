@@ -55,7 +55,7 @@ public partial class EventLineConnected
             .RuleFor(x => x.FriendlyName, x => x.Name.FullName())
             .Generate();
 
-        var idLine = Line.BuildId(randInstanceId, phone);
+        var idLine = Line.BuildId(randInstanceId, phone.IdAccount, phone.Id);
 
         var f = new Faker<EventLineConnected>()
             .RuleFor(x => x.Id, idLine.Id)

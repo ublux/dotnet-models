@@ -16,7 +16,21 @@ public partial class Recording : UbluxSubDocument
     public string? ErrorMessage { get; set; }
 
     /// <summary>
-    ///     Recording in Mp3 format
+    ///     Recording in client in Mp3 format
+    /// </summary>
+    [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
+    public StoredFile? RecordingClientMp3 { get; set; }
+
+    /// <summary>
+    ///     Recording in agent in Mp3 format
+    /// </summary>
+    [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
+    public StoredFile? RecordingAgentMp3 { get; set; }
+
+    /// <summary>
+    ///     Recording of agent and client
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
@@ -27,6 +41,6 @@ public partial class Recording : UbluxSubDocument
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    public int RecordingDurationInSeconds { get; set; }
+    public double RecordingDurationInSeconds { get; set; }
 
 }

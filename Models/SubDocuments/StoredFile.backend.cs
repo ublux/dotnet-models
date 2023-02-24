@@ -1,5 +1,6 @@
 ﻿#if UBLUX_BACKEND
 
+using System.Security.Cryptography;
 
 namespace Ublux.Communications.Models.SubDocuments;
 
@@ -13,16 +14,16 @@ public partial class StoredFile : UbluxSubDocument, IReferncesAccount
     /// <summary>
     ///     Get id of cloud file
     /// </summary>
-    public string GetIdCloudFile()
+    public string GetIdStoredFileReference()
     {
-        return CloudFile.BuildId(this).Id;
+        return StoredFileReference.BuildId(this).Id;
     }
     /// <summary>
     ///     Static implementation
     /// </summary>
-    public static string GetIdCloudFile(string idStoredFile)
+    public static string GetIdStoredFileReference(string idStoredFile)
     {
-        return CloudFile.BuildId(idStoredFile).Id;
+        return StoredFileReference.BuildId(idStoredFile).Id;
     }
 
     /// <summary>
@@ -32,7 +33,7 @@ public partial class StoredFile : UbluxSubDocument, IReferncesAccount
     [IgnoreDataMember]
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    public required string IdAccount { get; set; }
+    public required string IdAccount { get; set; } = "";
 
     /// <summary>
     ///     Example incoming-faxes
@@ -43,15 +44,6 @@ public partial class StoredFile : UbluxSubDocument, IReferncesAccount
     [IsUbluxRequired]
     public required StorageFolderName FolderName { get; set; }
 
-    ///// <summary>
-    /////     Usually id followed by extension. Example:  CL-I-XXXXX.mp3
-    ///// </summary>
-    //[IgnoreDataMember]
-    //[AllowUpdate(false)]
-    //[SwaggerSchema(ReadOnly = true)]
-    //[IsUbluxRequired]
-    //public required string FileName { get; set; }
-
     /// <summary>
     ///     Server that stored this file so that other servers can download it. Example W for work. Thus it can be downloaded from w.ublux.com    
     /// </summary>
@@ -59,38 +51,18 @@ public partial class StoredFile : UbluxSubDocument, IReferncesAccount
     [SwaggerSchema(ReadOnly = true)]
     public required string InstanceId { get; set; } = string.Empty;
 
-
-    /// <summary> /usr/share/ublux/accounts-files </summary>
-    public static string GetTempDir(bool createDirectoryIfNotExists)
-    {
-        string path;
-        if(Environment.OSVersion.Platform == PlatformID.Unix)
-        {
-            path = "/usr/share/ublux/tmp";
-        }
-        else
-        {
-            path = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
-        }
-
-        if (createDirectoryIfNotExists)
-            if (Directory.Exists(path) == false)
-                Directory.CreateDirectory(path);
-
-        return path;
-    }
-
     /// <summary>
     ///     Helper to get hash
     /// </summary>
-    public static string GetHash(byte[] hash)
+    public static string ComputeMd5Hash(string filePath)
     {
-        var result = new StringBuilder(hash.Length * 2);
-
-        for (int i = 0; i < hash.Length; i++)
-            result.Append(hash[i].ToString("X2"));
-
-        return result.ToString();
+        // compute md5 hash
+        byte[] hash;
+        using MD5 md5 = MD5.Create();
+        using var stream = System.IO.File.OpenRead(filePath);
+        hash = md5.ComputeHash(stream);
+        string hex = BitConverter.ToString(hash).Replace("-", string.Empty).ToLower();
+        return hex;
     }
 
 }

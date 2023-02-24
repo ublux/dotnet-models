@@ -1,4 +1,6 @@
-﻿namespace Ublux.Communications.Models.SubDocuments;
+﻿using System.Security.Cryptography;
+
+namespace Ublux.Communications.Models.SubDocuments;
 
 /// <summary>
 ///     Represents a stored file in ublux. 
@@ -48,6 +50,8 @@ public partial class StoredFile : UbluxSubDocument
     {
         return $"{webserviceBaseUrl}/{nameof(StoredFile)}/{idstoredfile}";
     }
+
+    
 
     #endregion
 }

@@ -1671,12 +1671,13 @@ public class WebHookUpdateRequest // : IUbluxDocumentId
 
 /// <summary>
 /// File stored on the cloud
-/// This collection should not be stored on redis and be created with TTL of one month
+/// This collection should not be stored on redis and be created with TTL
+/// Thanks to this collection we can keep track of all StoredFiles
 /// </summary>
-public class CloudFileUpdateRequest // : IUbluxDocumentId
+public class StoredFileReferenceUpdateRequest // : IUbluxDocumentId
 {
     /// <summary> Set values on actual document </summary>
-    public void SetValuesOnCloudFile(CloudFile cloudFile)
+    public void SetValuesOnStoredFileReference(StoredFileReference storedFileReference)
     {
     }
 

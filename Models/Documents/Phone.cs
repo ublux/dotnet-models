@@ -97,5 +97,5 @@ public partial class Phone : UbluxDocument_ReferenceAccount_ReferenceTags
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
     [IsUbluxRequired]
-    public required string Pin { get; set; } = string.Empty;
+    public required string Pin { get; set; } = string.Empty;    
 }

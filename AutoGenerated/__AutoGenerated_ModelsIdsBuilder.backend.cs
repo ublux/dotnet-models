@@ -322,9 +322,9 @@ namespace Ublux.Communications.Models.Documents {
         /// <summary> Build Id </summary>
         public static BuiltId BuildId(RunningApplicationInstance instance) => new($"{DocumentPrefix}.{instance.Id}.{instance.IdGlobalAutoIncrement()}");
     }
-    public partial class CloudFile {
+    public partial class StoredFileReference {
         /// <summary> Id prefix </summary>
-        public const string DocumentPrefix = "CF";
+        public const string DocumentPrefix = "SFR";
 
         /// <summary> Prefix followed by stored file id Example DF.SF.1232 </summary>
         public static BuiltId BuildId(StoredFile storedFile) => new($"{DocumentPrefix}.{storedFile.Id}");
@@ -362,8 +362,10 @@ namespace Ublux.Communications.Models.SubDocuments {
         /// <summary> Id prefix </summary>
         public const string DocumentPrefix = "Li";
 
-        /// <summary> Custom: prefix.parentPhoneId.lineNumber. Example Li.Po.100.1 </summary>
-        public static BuiltId BuildId(RunningApplicationInstance instance, Phone parent) => new($"{DocumentPrefix}.{parent.Id}.{instance.IdGlobalAutoIncrement()}");
+        /// <summary> Custom: prefix.parentAccountId.parentPhoneId.IdGlobalCounter. Li | Ac.1 | Ph.WS1.* | *  where * means IdGlobal Counter. Example: Li.Ac.1.Ph.WS1.8.9 </summary>
+        public static BuiltId BuildId(RunningApplicationInstance instance, string idAcc, string idPhone) => new($"{DocumentPrefix}.{idAcc}.{idPhone}.{instance.IdGlobalAutoIncrement()}");
+        /// <summary> Custom: prefix.parentAccountId.parentPhoneId.IdGlobalCounter. Li | Ac.1 | Ph.WS1.* | *  where * means IdGlobal Counter. Example: Li.Ac.1.Ph.WS1.8.9 </summary>
+        public static BuiltId BuildId(RunningApplicationInstance instance, Phone parentPhone) => new($"{DocumentPrefix}.{parentPhone.IdAccount}.{parentPhone.Id}.{instance.IdGlobalAutoIncrement()}");
     }
     public partial class Recording {
         /// <summary> Id prefix </summary>
@@ -382,6 +384,7 @@ namespace Ublux.Communications.Models.SubDocuments {
         public static BuiltId BuildId(string idAcc, StorageFolderName folderName) => new($"{DocumentPrefix}.{idAcc}.{folderName}.{RunningApplicationInstance.ToBase62(BitConverter.ToUInt64(Guid.NewGuid().ToByteArray()))}{RunningApplicationInstance.ToBase62(BitConverter.ToUInt64(Guid.NewGuid().ToByteArray())/2)}");
         /// <summary> oveload </summary>
         public static BuiltId BuildId(BuiltId builtId, string fileExtension) => new($"{builtId.Id}.{fileExtension}");
+        public static BuiltId BuildId(string custom) => new(custom);
     }
 }
 

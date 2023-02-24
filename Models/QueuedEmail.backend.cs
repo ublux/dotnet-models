@@ -10,12 +10,19 @@ public class QueuedEmail : IUbluxDocumentId
     /// <summary>
     ///     Id of queued email. This will be the file name if stored on a file system
     /// </summary>    
-    public string Id { get; init; } = BuildId();
+    public string Id
+    {
+        get;
+#if UBLUX_Release || RELEASE
+        set;
+#else
+#endif
+    } = BuildId();
 
     /// <summary>
     ///     Id builder
     /// </summary>
-    public static string BuildId() => $"{DateTime.UtcNow.Ticks}-{Guid.NewGuid().ToString()[..4]}.bin";
+    public static string BuildId() => $"{DateTime.UtcNow.Ticks / 10_000}-{Guid.NewGuid().ToString()[..4]}.bin";
 
     ///// <summary>
     /////     Thanks to this enum we know from what email to send the email

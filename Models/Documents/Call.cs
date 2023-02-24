@@ -191,7 +191,18 @@ public abstract partial class Call : UbluxDocument_ReferenceAccount_ReferenceTag
     [AllowUpdate(true)]
     public CallResult CallResult { get; set; }
 
-    
+    /// <summary>
+    ///     Returns -1 if call has not completed
+    ///     Returns -2 if date started is larger than date ended
+    /// </summary>
+    public double GetDurationInSeconds()
+    {
+        if(this.DateEnded.HasValue == false) return -1;
+        if (this.DateEnded < this.DateCreated) return -2;
+        return (this.DateEnded.Value - this.DateCreated).TotalSeconds;
+    }
+
+
 
     #endregion
 }

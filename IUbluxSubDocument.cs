@@ -18,10 +18,9 @@ public abstract partial class UbluxSubDocument
     public string Id
     {
         get => id;
-#if UBLUX_BACKEND
-        [Obsolete("Use SetId method. Do not set manually")]
-#endif
+#if UBLUX_Release || RELEASE
         set => id = value;
+#endif
     }
     private string id = string.Empty;
 

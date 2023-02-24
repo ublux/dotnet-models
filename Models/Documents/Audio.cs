@@ -39,7 +39,7 @@ public partial class Audio : UbluxDocument_ReferenceAccount_ReferenceTags
     [SwaggerSchema(ReadOnly = true)]
     [IsUbluxRequired]
     [HideForCreateRequest]
-    public required int DurationInSeconds { get; set; }
+    public required double DurationInSeconds { get; set; }
 
     /// <summary>
     ///     Description of audio

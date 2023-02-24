@@ -41,12 +41,12 @@ public abstract partial class UbluxDocument : IUbluxDocument, IUbluxDocumentId
     ///     Set id
     /// </summary>
     [System.Text.Json.Serialization.JsonIgnore]
-    [BsonIgnore]
     [JsonIgnore]
+    [BsonIgnore]
     [IgnoreDataMember]
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    public /*required*/ BuiltId BuiltId
+    public required BuiltId BuiltId
     {
         set
         {

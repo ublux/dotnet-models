@@ -17,5 +17,14 @@ public interface IUbluxDocumentId
     [IsUbluxRequired]
     [HideForCreateRequest]
     [SwaggerSchema(ReadOnly = true)]
-    string Id { get; init; }
+    string Id
+    {
+        get;
+#if UBLUX_Release || RELEASE
+        set;
+#else
+#endif
+    }
+
+
 }

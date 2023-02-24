@@ -540,15 +540,6 @@ public class AudioFilterRequest
     [JsonProperty("friendlyName_reg")]
     public string? FriendlyName_REG { get; set; }
 
-    /// <summary> DurationInSeconds equals </summary>
-    [JsonProperty("durationInSeconds_eq")]
-    public System.Int32? DurationInSeconds_EQ { get; set; }
-    /// <summary> DurationInSeconds less than or equal to </summary>
-    [JsonProperty("durationInSeconds_lte")]
-    public System.Int32? DurationInSeconds_LTE { get; set; }
-    /// <summary> DurationInSeconds greater than or equal to </summary>
-    [JsonProperty("durationInSeconds_gte")]
-    public System.Int32? DurationInSeconds_GTE { get; set; }
 
     /// <summary> Description equals </summary>
     [JsonProperty("description_eq")]
@@ -1149,6 +1140,108 @@ public class CallIncomingToCallFlowLogicFilterRequest
     [JsonProperty("recording_errorMessage_reg")]
     public string? Recording_ErrorMessage_REG { get; set; }
 
+    /// <summary> Recording.RecordingClientMp3.InstanceId equals </summary>
+    [JsonProperty("recording_recordingClientMp3_instanceId_eq")]
+    public string? Recording_RecordingClientMp3_InstanceId_EQ { get; set; }
+    /// <summary> Recording.RecordingClientMp3.InstanceId contains </summary>
+    [JsonProperty("recording_recordingClientMp3_instanceId_con")]
+    public string? Recording_RecordingClientMp3_InstanceId_CON { get; set; }
+    /// <summary> Recording.RecordingClientMp3.InstanceId regex </summary>
+    [JsonProperty("recording_recordingClientMp3_instanceId_reg")]
+    public string? Recording_RecordingClientMp3_InstanceId_REG { get; set; }
+
+    /// <summary> Recording.RecordingClientMp3.FileSizeInBytes equals </summary>
+    [JsonProperty("recording_recordingClientMp3_fileSizeInBytes_eq")]
+    public System.Int32? Recording_RecordingClientMp3_FileSizeInBytes_EQ { get; set; }
+    /// <summary> Recording.RecordingClientMp3.FileSizeInBytes less than or equal to </summary>
+    [JsonProperty("recording_recordingClientMp3_fileSizeInBytes_lte")]
+    public System.Int32? Recording_RecordingClientMp3_FileSizeInBytes_LTE { get; set; }
+    /// <summary> Recording.RecordingClientMp3.FileSizeInBytes greater than or equal to </summary>
+    [JsonProperty("recording_recordingClientMp3_fileSizeInBytes_gte")]
+    public System.Int32? Recording_RecordingClientMp3_FileSizeInBytes_GTE { get; set; }
+
+    /// <summary> Recording.RecordingClientMp3.Md5Hash equals </summary>
+    [JsonProperty("recording_recordingClientMp3_md5Hash_eq")]
+    public string? Recording_RecordingClientMp3_Md5Hash_EQ { get; set; }
+    /// <summary> Recording.RecordingClientMp3.Md5Hash contains </summary>
+    [JsonProperty("recording_recordingClientMp3_md5Hash_con")]
+    public string? Recording_RecordingClientMp3_Md5Hash_CON { get; set; }
+    /// <summary> Recording.RecordingClientMp3.Md5Hash regex </summary>
+    [JsonProperty("recording_recordingClientMp3_md5Hash_reg")]
+    public string? Recording_RecordingClientMp3_Md5Hash_REG { get; set; }
+
+    /// <summary> Recording.RecordingClientMp3.Url equals </summary>
+    [JsonProperty("recording_recordingClientMp3_url_eq")]
+    public string? Recording_RecordingClientMp3_Url_EQ { get; set; }
+    /// <summary> Recording.RecordingClientMp3.Url contains </summary>
+    [JsonProperty("recording_recordingClientMp3_url_con")]
+    public string? Recording_RecordingClientMp3_Url_CON { get; set; }
+    /// <summary> Recording.RecordingClientMp3.Url regex </summary>
+    [JsonProperty("recording_recordingClientMp3_url_reg")]
+    public string? Recording_RecordingClientMp3_Url_REG { get; set; }
+
+    /// <summary> Recording.RecordingClientMp3.Id equals </summary>
+    [JsonProperty("recording_recordingClientMp3_id_eq")]
+    public string? Recording_RecordingClientMp3_Id_EQ { get; set; }
+    /// <summary> Recording.RecordingClientMp3.Id contains </summary>
+    [JsonProperty("recording_recordingClientMp3_id_con")]
+    public string? Recording_RecordingClientMp3_Id_CON { get; set; }
+    /// <summary> Recording.RecordingClientMp3.Id regex </summary>
+    [JsonProperty("recording_recordingClientMp3_id_reg")]
+    public string? Recording_RecordingClientMp3_Id_REG { get; set; }
+
+
+    /// <summary> Recording.RecordingAgentMp3.InstanceId equals </summary>
+    [JsonProperty("recording_recordingAgentMp3_instanceId_eq")]
+    public string? Recording_RecordingAgentMp3_InstanceId_EQ { get; set; }
+    /// <summary> Recording.RecordingAgentMp3.InstanceId contains </summary>
+    [JsonProperty("recording_recordingAgentMp3_instanceId_con")]
+    public string? Recording_RecordingAgentMp3_InstanceId_CON { get; set; }
+    /// <summary> Recording.RecordingAgentMp3.InstanceId regex </summary>
+    [JsonProperty("recording_recordingAgentMp3_instanceId_reg")]
+    public string? Recording_RecordingAgentMp3_InstanceId_REG { get; set; }
+
+    /// <summary> Recording.RecordingAgentMp3.FileSizeInBytes equals </summary>
+    [JsonProperty("recording_recordingAgentMp3_fileSizeInBytes_eq")]
+    public System.Int32? Recording_RecordingAgentMp3_FileSizeInBytes_EQ { get; set; }
+    /// <summary> Recording.RecordingAgentMp3.FileSizeInBytes less than or equal to </summary>
+    [JsonProperty("recording_recordingAgentMp3_fileSizeInBytes_lte")]
+    public System.Int32? Recording_RecordingAgentMp3_FileSizeInBytes_LTE { get; set; }
+    /// <summary> Recording.RecordingAgentMp3.FileSizeInBytes greater than or equal to </summary>
+    [JsonProperty("recording_recordingAgentMp3_fileSizeInBytes_gte")]
+    public System.Int32? Recording_RecordingAgentMp3_FileSizeInBytes_GTE { get; set; }
+
+    /// <summary> Recording.RecordingAgentMp3.Md5Hash equals </summary>
+    [JsonProperty("recording_recordingAgentMp3_md5Hash_eq")]
+    public string? Recording_RecordingAgentMp3_Md5Hash_EQ { get; set; }
+    /// <summary> Recording.RecordingAgentMp3.Md5Hash contains </summary>
+    [JsonProperty("recording_recordingAgentMp3_md5Hash_con")]
+    public string? Recording_RecordingAgentMp3_Md5Hash_CON { get; set; }
+    /// <summary> Recording.RecordingAgentMp3.Md5Hash regex </summary>
+    [JsonProperty("recording_recordingAgentMp3_md5Hash_reg")]
+    public string? Recording_RecordingAgentMp3_Md5Hash_REG { get; set; }
+
+    /// <summary> Recording.RecordingAgentMp3.Url equals </summary>
+    [JsonProperty("recording_recordingAgentMp3_url_eq")]
+    public string? Recording_RecordingAgentMp3_Url_EQ { get; set; }
+    /// <summary> Recording.RecordingAgentMp3.Url contains </summary>
+    [JsonProperty("recording_recordingAgentMp3_url_con")]
+    public string? Recording_RecordingAgentMp3_Url_CON { get; set; }
+    /// <summary> Recording.RecordingAgentMp3.Url regex </summary>
+    [JsonProperty("recording_recordingAgentMp3_url_reg")]
+    public string? Recording_RecordingAgentMp3_Url_REG { get; set; }
+
+    /// <summary> Recording.RecordingAgentMp3.Id equals </summary>
+    [JsonProperty("recording_recordingAgentMp3_id_eq")]
+    public string? Recording_RecordingAgentMp3_Id_EQ { get; set; }
+    /// <summary> Recording.RecordingAgentMp3.Id contains </summary>
+    [JsonProperty("recording_recordingAgentMp3_id_con")]
+    public string? Recording_RecordingAgentMp3_Id_CON { get; set; }
+    /// <summary> Recording.RecordingAgentMp3.Id regex </summary>
+    [JsonProperty("recording_recordingAgentMp3_id_reg")]
+    public string? Recording_RecordingAgentMp3_Id_REG { get; set; }
+
+
     /// <summary> Recording.RecordingMp3.InstanceId equals </summary>
     [JsonProperty("recording_recordingMp3_instanceId_eq")]
     public string? Recording_RecordingMp3_InstanceId_EQ { get; set; }
@@ -1200,15 +1293,6 @@ public class CallIncomingToCallFlowLogicFilterRequest
     public string? Recording_RecordingMp3_Id_REG { get; set; }
 
 
-    /// <summary> Recording.RecordingDurationInSeconds equals </summary>
-    [JsonProperty("recording_recordingDurationInSeconds_eq")]
-    public System.Int32? Recording_RecordingDurationInSeconds_EQ { get; set; }
-    /// <summary> Recording.RecordingDurationInSeconds less than or equal to </summary>
-    [JsonProperty("recording_recordingDurationInSeconds_lte")]
-    public System.Int32? Recording_RecordingDurationInSeconds_LTE { get; set; }
-    /// <summary> Recording.RecordingDurationInSeconds greater than or equal to </summary>
-    [JsonProperty("recording_recordingDurationInSeconds_gte")]
-    public System.Int32? Recording_RecordingDurationInSeconds_GTE { get; set; }
 
     /// <summary> Recording.Id equals </summary>
     [JsonProperty("recording_id_eq")]
@@ -1596,6 +1680,108 @@ public class CallIncomingToExtensionFilterRequest
     [JsonProperty("recording_errorMessage_reg")]
     public string? Recording_ErrorMessage_REG { get; set; }
 
+    /// <summary> Recording.RecordingClientMp3.InstanceId equals </summary>
+    [JsonProperty("recording_recordingClientMp3_instanceId_eq")]
+    public string? Recording_RecordingClientMp3_InstanceId_EQ { get; set; }
+    /// <summary> Recording.RecordingClientMp3.InstanceId contains </summary>
+    [JsonProperty("recording_recordingClientMp3_instanceId_con")]
+    public string? Recording_RecordingClientMp3_InstanceId_CON { get; set; }
+    /// <summary> Recording.RecordingClientMp3.InstanceId regex </summary>
+    [JsonProperty("recording_recordingClientMp3_instanceId_reg")]
+    public string? Recording_RecordingClientMp3_InstanceId_REG { get; set; }
+
+    /// <summary> Recording.RecordingClientMp3.FileSizeInBytes equals </summary>
+    [JsonProperty("recording_recordingClientMp3_fileSizeInBytes_eq")]
+    public System.Int32? Recording_RecordingClientMp3_FileSizeInBytes_EQ { get; set; }
+    /// <summary> Recording.RecordingClientMp3.FileSizeInBytes less than or equal to </summary>
+    [JsonProperty("recording_recordingClientMp3_fileSizeInBytes_lte")]
+    public System.Int32? Recording_RecordingClientMp3_FileSizeInBytes_LTE { get; set; }
+    /// <summary> Recording.RecordingClientMp3.FileSizeInBytes greater than or equal to </summary>
+    [JsonProperty("recording_recordingClientMp3_fileSizeInBytes_gte")]
+    public System.Int32? Recording_RecordingClientMp3_FileSizeInBytes_GTE { get; set; }
+
+    /// <summary> Recording.RecordingClientMp3.Md5Hash equals </summary>
+    [JsonProperty("recording_recordingClientMp3_md5Hash_eq")]
+    public string? Recording_RecordingClientMp3_Md5Hash_EQ { get; set; }
+    /// <summary> Recording.RecordingClientMp3.Md5Hash contains </summary>
+    [JsonProperty("recording_recordingClientMp3_md5Hash_con")]
+    public string? Recording_RecordingClientMp3_Md5Hash_CON { get; set; }
+    /// <summary> Recording.RecordingClientMp3.Md5Hash regex </summary>
+    [JsonProperty("recording_recordingClientMp3_md5Hash_reg")]
+    public string? Recording_RecordingClientMp3_Md5Hash_REG { get; set; }
+
+    /// <summary> Recording.RecordingClientMp3.Url equals </summary>
+    [JsonProperty("recording_recordingClientMp3_url_eq")]
+    public string? Recording_RecordingClientMp3_Url_EQ { get; set; }
+    /// <summary> Recording.RecordingClientMp3.Url contains </summary>
+    [JsonProperty("recording_recordingClientMp3_url_con")]
+    public string? Recording_RecordingClientMp3_Url_CON { get; set; }
+    /// <summary> Recording.RecordingClientMp3.Url regex </summary>
+    [JsonProperty("recording_recordingClientMp3_url_reg")]
+    public string? Recording_RecordingClientMp3_Url_REG { get; set; }
+
+    /// <summary> Recording.RecordingClientMp3.Id equals </summary>
+    [JsonProperty("recording_recordingClientMp3_id_eq")]
+    public string? Recording_RecordingClientMp3_Id_EQ { get; set; }
+    /// <summary> Recording.RecordingClientMp3.Id contains </summary>
+    [JsonProperty("recording_recordingClientMp3_id_con")]
+    public string? Recording_RecordingClientMp3_Id_CON { get; set; }
+    /// <summary> Recording.RecordingClientMp3.Id regex </summary>
+    [JsonProperty("recording_recordingClientMp3_id_reg")]
+    public string? Recording_RecordingClientMp3_Id_REG { get; set; }
+
+
+    /// <summary> Recording.RecordingAgentMp3.InstanceId equals </summary>
+    [JsonProperty("recording_recordingAgentMp3_instanceId_eq")]
+    public string? Recording_RecordingAgentMp3_InstanceId_EQ { get; set; }
+    /// <summary> Recording.RecordingAgentMp3.InstanceId contains </summary>
+    [JsonProperty("recording_recordingAgentMp3_instanceId_con")]
+    public string? Recording_RecordingAgentMp3_InstanceId_CON { get; set; }
+    /// <summary> Recording.RecordingAgentMp3.InstanceId regex </summary>
+    [JsonProperty("recording_recordingAgentMp3_instanceId_reg")]
+    public string? Recording_RecordingAgentMp3_InstanceId_REG { get; set; }
+
+    /// <summary> Recording.RecordingAgentMp3.FileSizeInBytes equals </summary>
+    [JsonProperty("recording_recordingAgentMp3_fileSizeInBytes_eq")]
+    public System.Int32? Recording_RecordingAgentMp3_FileSizeInBytes_EQ { get; set; }
+    /// <summary> Recording.RecordingAgentMp3.FileSizeInBytes less than or equal to </summary>
+    [JsonProperty("recording_recordingAgentMp3_fileSizeInBytes_lte")]
+    public System.Int32? Recording_RecordingAgentMp3_FileSizeInBytes_LTE { get; set; }
+    /// <summary> Recording.RecordingAgentMp3.FileSizeInBytes greater than or equal to </summary>
+    [JsonProperty("recording_recordingAgentMp3_fileSizeInBytes_gte")]
+    public System.Int32? Recording_RecordingAgentMp3_FileSizeInBytes_GTE { get; set; }
+
+    /// <summary> Recording.RecordingAgentMp3.Md5Hash equals </summary>
+    [JsonProperty("recording_recordingAgentMp3_md5Hash_eq")]
+    public string? Recording_RecordingAgentMp3_Md5Hash_EQ { get; set; }
+    /// <summary> Recording.RecordingAgentMp3.Md5Hash contains </summary>
+    [JsonProperty("recording_recordingAgentMp3_md5Hash_con")]
+    public string? Recording_RecordingAgentMp3_Md5Hash_CON { get; set; }
+    /// <summary> Recording.RecordingAgentMp3.Md5Hash regex </summary>
+    [JsonProperty("recording_recordingAgentMp3_md5Hash_reg")]
+    public string? Recording_RecordingAgentMp3_Md5Hash_REG { get; set; }
+
+    /// <summary> Recording.RecordingAgentMp3.Url equals </summary>
+    [JsonProperty("recording_recordingAgentMp3_url_eq")]
+    public string? Recording_RecordingAgentMp3_Url_EQ { get; set; }
+    /// <summary> Recording.RecordingAgentMp3.Url contains </summary>
+    [JsonProperty("recording_recordingAgentMp3_url_con")]
+    public string? Recording_RecordingAgentMp3_Url_CON { get; set; }
+    /// <summary> Recording.RecordingAgentMp3.Url regex </summary>
+    [JsonProperty("recording_recordingAgentMp3_url_reg")]
+    public string? Recording_RecordingAgentMp3_Url_REG { get; set; }
+
+    /// <summary> Recording.RecordingAgentMp3.Id equals </summary>
+    [JsonProperty("recording_recordingAgentMp3_id_eq")]
+    public string? Recording_RecordingAgentMp3_Id_EQ { get; set; }
+    /// <summary> Recording.RecordingAgentMp3.Id contains </summary>
+    [JsonProperty("recording_recordingAgentMp3_id_con")]
+    public string? Recording_RecordingAgentMp3_Id_CON { get; set; }
+    /// <summary> Recording.RecordingAgentMp3.Id regex </summary>
+    [JsonProperty("recording_recordingAgentMp3_id_reg")]
+    public string? Recording_RecordingAgentMp3_Id_REG { get; set; }
+
+
     /// <summary> Recording.RecordingMp3.InstanceId equals </summary>
     [JsonProperty("recording_recordingMp3_instanceId_eq")]
     public string? Recording_RecordingMp3_InstanceId_EQ { get; set; }
@@ -1647,15 +1833,6 @@ public class CallIncomingToExtensionFilterRequest
     public string? Recording_RecordingMp3_Id_REG { get; set; }
 
 
-    /// <summary> Recording.RecordingDurationInSeconds equals </summary>
-    [JsonProperty("recording_recordingDurationInSeconds_eq")]
-    public System.Int32? Recording_RecordingDurationInSeconds_EQ { get; set; }
-    /// <summary> Recording.RecordingDurationInSeconds less than or equal to </summary>
-    [JsonProperty("recording_recordingDurationInSeconds_lte")]
-    public System.Int32? Recording_RecordingDurationInSeconds_LTE { get; set; }
-    /// <summary> Recording.RecordingDurationInSeconds greater than or equal to </summary>
-    [JsonProperty("recording_recordingDurationInSeconds_gte")]
-    public System.Int32? Recording_RecordingDurationInSeconds_GTE { get; set; }
 
     /// <summary> Recording.Id equals </summary>
     [JsonProperty("recording_id_eq")]
@@ -2033,6 +2210,108 @@ public class CallOutgoingToExtensionFilterRequest
     [JsonProperty("recording_errorMessage_reg")]
     public string? Recording_ErrorMessage_REG { get; set; }
 
+    /// <summary> Recording.RecordingClientMp3.InstanceId equals </summary>
+    [JsonProperty("recording_recordingClientMp3_instanceId_eq")]
+    public string? Recording_RecordingClientMp3_InstanceId_EQ { get; set; }
+    /// <summary> Recording.RecordingClientMp3.InstanceId contains </summary>
+    [JsonProperty("recording_recordingClientMp3_instanceId_con")]
+    public string? Recording_RecordingClientMp3_InstanceId_CON { get; set; }
+    /// <summary> Recording.RecordingClientMp3.InstanceId regex </summary>
+    [JsonProperty("recording_recordingClientMp3_instanceId_reg")]
+    public string? Recording_RecordingClientMp3_InstanceId_REG { get; set; }
+
+    /// <summary> Recording.RecordingClientMp3.FileSizeInBytes equals </summary>
+    [JsonProperty("recording_recordingClientMp3_fileSizeInBytes_eq")]
+    public System.Int32? Recording_RecordingClientMp3_FileSizeInBytes_EQ { get; set; }
+    /// <summary> Recording.RecordingClientMp3.FileSizeInBytes less than or equal to </summary>
+    [JsonProperty("recording_recordingClientMp3_fileSizeInBytes_lte")]
+    public System.Int32? Recording_RecordingClientMp3_FileSizeInBytes_LTE { get; set; }
+    /// <summary> Recording.RecordingClientMp3.FileSizeInBytes greater than or equal to </summary>
+    [JsonProperty("recording_recordingClientMp3_fileSizeInBytes_gte")]
+    public System.Int32? Recording_RecordingClientMp3_FileSizeInBytes_GTE { get; set; }
+
+    /// <summary> Recording.RecordingClientMp3.Md5Hash equals </summary>
+    [JsonProperty("recording_recordingClientMp3_md5Hash_eq")]
+    public string? Recording_RecordingClientMp3_Md5Hash_EQ { get; set; }
+    /// <summary> Recording.RecordingClientMp3.Md5Hash contains </summary>
+    [JsonProperty("recording_recordingClientMp3_md5Hash_con")]
+    public string? Recording_RecordingClientMp3_Md5Hash_CON { get; set; }
+    /// <summary> Recording.RecordingClientMp3.Md5Hash regex </summary>
+    [JsonProperty("recording_recordingClientMp3_md5Hash_reg")]
+    public string? Recording_RecordingClientMp3_Md5Hash_REG { get; set; }
+
+    /// <summary> Recording.RecordingClientMp3.Url equals </summary>
+    [JsonProperty("recording_recordingClientMp3_url_eq")]
+    public string? Recording_RecordingClientMp3_Url_EQ { get; set; }
+    /// <summary> Recording.RecordingClientMp3.Url contains </summary>
+    [JsonProperty("recording_recordingClientMp3_url_con")]
+    public string? Recording_RecordingClientMp3_Url_CON { get; set; }
+    /// <summary> Recording.RecordingClientMp3.Url regex </summary>
+    [JsonProperty("recording_recordingClientMp3_url_reg")]
+    public string? Recording_RecordingClientMp3_Url_REG { get; set; }
+
+    /// <summary> Recording.RecordingClientMp3.Id equals </summary>
+    [JsonProperty("recording_recordingClientMp3_id_eq")]
+    public string? Recording_RecordingClientMp3_Id_EQ { get; set; }
+    /// <summary> Recording.RecordingClientMp3.Id contains </summary>
+    [JsonProperty("recording_recordingClientMp3_id_con")]
+    public string? Recording_RecordingClientMp3_Id_CON { get; set; }
+    /// <summary> Recording.RecordingClientMp3.Id regex </summary>
+    [JsonProperty("recording_recordingClientMp3_id_reg")]
+    public string? Recording_RecordingClientMp3_Id_REG { get; set; }
+
+
+    /// <summary> Recording.RecordingAgentMp3.InstanceId equals </summary>
+    [JsonProperty("recording_recordingAgentMp3_instanceId_eq")]
+    public string? Recording_RecordingAgentMp3_InstanceId_EQ { get; set; }
+    /// <summary> Recording.RecordingAgentMp3.InstanceId contains </summary>
+    [JsonProperty("recording_recordingAgentMp3_instanceId_con")]
+    public string? Recording_RecordingAgentMp3_InstanceId_CON { get; set; }
+    /// <summary> Recording.RecordingAgentMp3.InstanceId regex </summary>
+    [JsonProperty("recording_recordingAgentMp3_instanceId_reg")]
+    public string? Recording_RecordingAgentMp3_InstanceId_REG { get; set; }
+
+    /// <summary> Recording.RecordingAgentMp3.FileSizeInBytes equals </summary>
+    [JsonProperty("recording_recordingAgentMp3_fileSizeInBytes_eq")]
+    public System.Int32? Recording_RecordingAgentMp3_FileSizeInBytes_EQ { get; set; }
+    /// <summary> Recording.RecordingAgentMp3.FileSizeInBytes less than or equal to </summary>
+    [JsonProperty("recording_recordingAgentMp3_fileSizeInBytes_lte")]
+    public System.Int32? Recording_RecordingAgentMp3_FileSizeInBytes_LTE { get; set; }
+    /// <summary> Recording.RecordingAgentMp3.FileSizeInBytes greater than or equal to </summary>
+    [JsonProperty("recording_recordingAgentMp3_fileSizeInBytes_gte")]
+    public System.Int32? Recording_RecordingAgentMp3_FileSizeInBytes_GTE { get; set; }
+
+    /// <summary> Recording.RecordingAgentMp3.Md5Hash equals </summary>
+    [JsonProperty("recording_recordingAgentMp3_md5Hash_eq")]
+    public string? Recording_RecordingAgentMp3_Md5Hash_EQ { get; set; }
+    /// <summary> Recording.RecordingAgentMp3.Md5Hash contains </summary>
+    [JsonProperty("recording_recordingAgentMp3_md5Hash_con")]
+    public string? Recording_RecordingAgentMp3_Md5Hash_CON { get; set; }
+    /// <summary> Recording.RecordingAgentMp3.Md5Hash regex </summary>
+    [JsonProperty("recording_recordingAgentMp3_md5Hash_reg")]
+    public string? Recording_RecordingAgentMp3_Md5Hash_REG { get; set; }
+
+    /// <summary> Recording.RecordingAgentMp3.Url equals </summary>
+    [JsonProperty("recording_recordingAgentMp3_url_eq")]
+    public string? Recording_RecordingAgentMp3_Url_EQ { get; set; }
+    /// <summary> Recording.RecordingAgentMp3.Url contains </summary>
+    [JsonProperty("recording_recordingAgentMp3_url_con")]
+    public string? Recording_RecordingAgentMp3_Url_CON { get; set; }
+    /// <summary> Recording.RecordingAgentMp3.Url regex </summary>
+    [JsonProperty("recording_recordingAgentMp3_url_reg")]
+    public string? Recording_RecordingAgentMp3_Url_REG { get; set; }
+
+    /// <summary> Recording.RecordingAgentMp3.Id equals </summary>
+    [JsonProperty("recording_recordingAgentMp3_id_eq")]
+    public string? Recording_RecordingAgentMp3_Id_EQ { get; set; }
+    /// <summary> Recording.RecordingAgentMp3.Id contains </summary>
+    [JsonProperty("recording_recordingAgentMp3_id_con")]
+    public string? Recording_RecordingAgentMp3_Id_CON { get; set; }
+    /// <summary> Recording.RecordingAgentMp3.Id regex </summary>
+    [JsonProperty("recording_recordingAgentMp3_id_reg")]
+    public string? Recording_RecordingAgentMp3_Id_REG { get; set; }
+
+
     /// <summary> Recording.RecordingMp3.InstanceId equals </summary>
     [JsonProperty("recording_recordingMp3_instanceId_eq")]
     public string? Recording_RecordingMp3_InstanceId_EQ { get; set; }
@@ -2084,15 +2363,6 @@ public class CallOutgoingToExtensionFilterRequest
     public string? Recording_RecordingMp3_Id_REG { get; set; }
 
 
-    /// <summary> Recording.RecordingDurationInSeconds equals </summary>
-    [JsonProperty("recording_recordingDurationInSeconds_eq")]
-    public System.Int32? Recording_RecordingDurationInSeconds_EQ { get; set; }
-    /// <summary> Recording.RecordingDurationInSeconds less than or equal to </summary>
-    [JsonProperty("recording_recordingDurationInSeconds_lte")]
-    public System.Int32? Recording_RecordingDurationInSeconds_LTE { get; set; }
-    /// <summary> Recording.RecordingDurationInSeconds greater than or equal to </summary>
-    [JsonProperty("recording_recordingDurationInSeconds_gte")]
-    public System.Int32? Recording_RecordingDurationInSeconds_GTE { get; set; }
 
     /// <summary> Recording.Id equals </summary>
     [JsonProperty("recording_id_eq")]
@@ -2460,6 +2730,108 @@ public class CallOutgoingToPSTNFilterRequest
     [JsonProperty("recording_errorMessage_reg")]
     public string? Recording_ErrorMessage_REG { get; set; }
 
+    /// <summary> Recording.RecordingClientMp3.InstanceId equals </summary>
+    [JsonProperty("recording_recordingClientMp3_instanceId_eq")]
+    public string? Recording_RecordingClientMp3_InstanceId_EQ { get; set; }
+    /// <summary> Recording.RecordingClientMp3.InstanceId contains </summary>
+    [JsonProperty("recording_recordingClientMp3_instanceId_con")]
+    public string? Recording_RecordingClientMp3_InstanceId_CON { get; set; }
+    /// <summary> Recording.RecordingClientMp3.InstanceId regex </summary>
+    [JsonProperty("recording_recordingClientMp3_instanceId_reg")]
+    public string? Recording_RecordingClientMp3_InstanceId_REG { get; set; }
+
+    /// <summary> Recording.RecordingClientMp3.FileSizeInBytes equals </summary>
+    [JsonProperty("recording_recordingClientMp3_fileSizeInBytes_eq")]
+    public System.Int32? Recording_RecordingClientMp3_FileSizeInBytes_EQ { get; set; }
+    /// <summary> Recording.RecordingClientMp3.FileSizeInBytes less than or equal to </summary>
+    [JsonProperty("recording_recordingClientMp3_fileSizeInBytes_lte")]
+    public System.Int32? Recording_RecordingClientMp3_FileSizeInBytes_LTE { get; set; }
+    /// <summary> Recording.RecordingClientMp3.FileSizeInBytes greater than or equal to </summary>
+    [JsonProperty("recording_recordingClientMp3_fileSizeInBytes_gte")]
+    public System.Int32? Recording_RecordingClientMp3_FileSizeInBytes_GTE { get; set; }
+
+    /// <summary> Recording.RecordingClientMp3.Md5Hash equals </summary>
+    [JsonProperty("recording_recordingClientMp3_md5Hash_eq")]
+    public string? Recording_RecordingClientMp3_Md5Hash_EQ { get; set; }
+    /// <summary> Recording.RecordingClientMp3.Md5Hash contains </summary>
+    [JsonProperty("recording_recordingClientMp3_md5Hash_con")]
+    public string? Recording_RecordingClientMp3_Md5Hash_CON { get; set; }
+    /// <summary> Recording.RecordingClientMp3.Md5Hash regex </summary>
+    [JsonProperty("recording_recordingClientMp3_md5Hash_reg")]
+    public string? Recording_RecordingClientMp3_Md5Hash_REG { get; set; }
+
+    /// <summary> Recording.RecordingClientMp3.Url equals </summary>
+    [JsonProperty("recording_recordingClientMp3_url_eq")]
+    public string? Recording_RecordingClientMp3_Url_EQ { get; set; }
+    /// <summary> Recording.RecordingClientMp3.Url contains </summary>
+    [JsonProperty("recording_recordingClientMp3_url_con")]
+    public string? Recording_RecordingClientMp3_Url_CON { get; set; }
+    /// <summary> Recording.RecordingClientMp3.Url regex </summary>
+    [JsonProperty("recording_recordingClientMp3_url_reg")]
+    public string? Recording_RecordingClientMp3_Url_REG { get; set; }
+
+    /// <summary> Recording.RecordingClientMp3.Id equals </summary>
+    [JsonProperty("recording_recordingClientMp3_id_eq")]
+    public string? Recording_RecordingClientMp3_Id_EQ { get; set; }
+    /// <summary> Recording.RecordingClientMp3.Id contains </summary>
+    [JsonProperty("recording_recordingClientMp3_id_con")]
+    public string? Recording_RecordingClientMp3_Id_CON { get; set; }
+    /// <summary> Recording.RecordingClientMp3.Id regex </summary>
+    [JsonProperty("recording_recordingClientMp3_id_reg")]
+    public string? Recording_RecordingClientMp3_Id_REG { get; set; }
+
+
+    /// <summary> Recording.RecordingAgentMp3.InstanceId equals </summary>
+    [JsonProperty("recording_recordingAgentMp3_instanceId_eq")]
+    public string? Recording_RecordingAgentMp3_InstanceId_EQ { get; set; }
+    /// <summary> Recording.RecordingAgentMp3.InstanceId contains </summary>
+    [JsonProperty("recording_recordingAgentMp3_instanceId_con")]
+    public string? Recording_RecordingAgentMp3_InstanceId_CON { get; set; }
+    /// <summary> Recording.RecordingAgentMp3.InstanceId regex </summary>
+    [JsonProperty("recording_recordingAgentMp3_instanceId_reg")]
+    public string? Recording_RecordingAgentMp3_InstanceId_REG { get; set; }
+
+    /// <summary> Recording.RecordingAgentMp3.FileSizeInBytes equals </summary>
+    [JsonProperty("recording_recordingAgentMp3_fileSizeInBytes_eq")]
+    public System.Int32? Recording_RecordingAgentMp3_FileSizeInBytes_EQ { get; set; }
+    /// <summary> Recording.RecordingAgentMp3.FileSizeInBytes less than or equal to </summary>
+    [JsonProperty("recording_recordingAgentMp3_fileSizeInBytes_lte")]
+    public System.Int32? Recording_RecordingAgentMp3_FileSizeInBytes_LTE { get; set; }
+    /// <summary> Recording.RecordingAgentMp3.FileSizeInBytes greater than or equal to </summary>
+    [JsonProperty("recording_recordingAgentMp3_fileSizeInBytes_gte")]
+    public System.Int32? Recording_RecordingAgentMp3_FileSizeInBytes_GTE { get; set; }
+
+    /// <summary> Recording.RecordingAgentMp3.Md5Hash equals </summary>
+    [JsonProperty("recording_recordingAgentMp3_md5Hash_eq")]
+    public string? Recording_RecordingAgentMp3_Md5Hash_EQ { get; set; }
+    /// <summary> Recording.RecordingAgentMp3.Md5Hash contains </summary>
+    [JsonProperty("recording_recordingAgentMp3_md5Hash_con")]
+    public string? Recording_RecordingAgentMp3_Md5Hash_CON { get; set; }
+    /// <summary> Recording.RecordingAgentMp3.Md5Hash regex </summary>
+    [JsonProperty("recording_recordingAgentMp3_md5Hash_reg")]
+    public string? Recording_RecordingAgentMp3_Md5Hash_REG { get; set; }
+
+    /// <summary> Recording.RecordingAgentMp3.Url equals </summary>
+    [JsonProperty("recording_recordingAgentMp3_url_eq")]
+    public string? Recording_RecordingAgentMp3_Url_EQ { get; set; }
+    /// <summary> Recording.RecordingAgentMp3.Url contains </summary>
+    [JsonProperty("recording_recordingAgentMp3_url_con")]
+    public string? Recording_RecordingAgentMp3_Url_CON { get; set; }
+    /// <summary> Recording.RecordingAgentMp3.Url regex </summary>
+    [JsonProperty("recording_recordingAgentMp3_url_reg")]
+    public string? Recording_RecordingAgentMp3_Url_REG { get; set; }
+
+    /// <summary> Recording.RecordingAgentMp3.Id equals </summary>
+    [JsonProperty("recording_recordingAgentMp3_id_eq")]
+    public string? Recording_RecordingAgentMp3_Id_EQ { get; set; }
+    /// <summary> Recording.RecordingAgentMp3.Id contains </summary>
+    [JsonProperty("recording_recordingAgentMp3_id_con")]
+    public string? Recording_RecordingAgentMp3_Id_CON { get; set; }
+    /// <summary> Recording.RecordingAgentMp3.Id regex </summary>
+    [JsonProperty("recording_recordingAgentMp3_id_reg")]
+    public string? Recording_RecordingAgentMp3_Id_REG { get; set; }
+
+
     /// <summary> Recording.RecordingMp3.InstanceId equals </summary>
     [JsonProperty("recording_recordingMp3_instanceId_eq")]
     public string? Recording_RecordingMp3_InstanceId_EQ { get; set; }
@@ -2511,15 +2883,6 @@ public class CallOutgoingToPSTNFilterRequest
     public string? Recording_RecordingMp3_Id_REG { get; set; }
 
 
-    /// <summary> Recording.RecordingDurationInSeconds equals </summary>
-    [JsonProperty("recording_recordingDurationInSeconds_eq")]
-    public System.Int32? Recording_RecordingDurationInSeconds_EQ { get; set; }
-    /// <summary> Recording.RecordingDurationInSeconds less than or equal to </summary>
-    [JsonProperty("recording_recordingDurationInSeconds_lte")]
-    public System.Int32? Recording_RecordingDurationInSeconds_LTE { get; set; }
-    /// <summary> Recording.RecordingDurationInSeconds greater than or equal to </summary>
-    [JsonProperty("recording_recordingDurationInSeconds_gte")]
-    public System.Int32? Recording_RecordingDurationInSeconds_GTE { get; set; }
 
     /// <summary> Recording.Id equals </summary>
     [JsonProperty("recording_id_eq")]
@@ -7522,8 +7885,8 @@ public class WebHookFilterRequest
     public DateTime? DateUpdated_GTE { get; set; }
 
 }
-/// <summary> Enables searching for CloudFiles </summary>
-public class CloudFileFilterRequest 
+/// <summary> Enables searching for StoredFileReferences </summary>
+public class StoredFileReferenceFilterRequest 
 {
     /// <summary> IdDocument equals </summary>
     [JsonProperty("idDocument_eq")]
@@ -8192,6 +8555,108 @@ public class CallFilterRequest
     [JsonProperty("recording_errorMessage_reg")]
     public string? Recording_ErrorMessage_REG { get; set; }
 
+    /// <summary> Recording.RecordingClientMp3.InstanceId equals </summary>
+    [JsonProperty("recording_recordingClientMp3_instanceId_eq")]
+    public string? Recording_RecordingClientMp3_InstanceId_EQ { get; set; }
+    /// <summary> Recording.RecordingClientMp3.InstanceId contains </summary>
+    [JsonProperty("recording_recordingClientMp3_instanceId_con")]
+    public string? Recording_RecordingClientMp3_InstanceId_CON { get; set; }
+    /// <summary> Recording.RecordingClientMp3.InstanceId regex </summary>
+    [JsonProperty("recording_recordingClientMp3_instanceId_reg")]
+    public string? Recording_RecordingClientMp3_InstanceId_REG { get; set; }
+
+    /// <summary> Recording.RecordingClientMp3.FileSizeInBytes equals </summary>
+    [JsonProperty("recording_recordingClientMp3_fileSizeInBytes_eq")]
+    public System.Int32? Recording_RecordingClientMp3_FileSizeInBytes_EQ { get; set; }
+    /// <summary> Recording.RecordingClientMp3.FileSizeInBytes less than or equal to </summary>
+    [JsonProperty("recording_recordingClientMp3_fileSizeInBytes_lte")]
+    public System.Int32? Recording_RecordingClientMp3_FileSizeInBytes_LTE { get; set; }
+    /// <summary> Recording.RecordingClientMp3.FileSizeInBytes greater than or equal to </summary>
+    [JsonProperty("recording_recordingClientMp3_fileSizeInBytes_gte")]
+    public System.Int32? Recording_RecordingClientMp3_FileSizeInBytes_GTE { get; set; }
+
+    /// <summary> Recording.RecordingClientMp3.Md5Hash equals </summary>
+    [JsonProperty("recording_recordingClientMp3_md5Hash_eq")]
+    public string? Recording_RecordingClientMp3_Md5Hash_EQ { get; set; }
+    /// <summary> Recording.RecordingClientMp3.Md5Hash contains </summary>
+    [JsonProperty("recording_recordingClientMp3_md5Hash_con")]
+    public string? Recording_RecordingClientMp3_Md5Hash_CON { get; set; }
+    /// <summary> Recording.RecordingClientMp3.Md5Hash regex </summary>
+    [JsonProperty("recording_recordingClientMp3_md5Hash_reg")]
+    public string? Recording_RecordingClientMp3_Md5Hash_REG { get; set; }
+
+    /// <summary> Recording.RecordingClientMp3.Url equals </summary>
+    [JsonProperty("recording_recordingClientMp3_url_eq")]
+    public string? Recording_RecordingClientMp3_Url_EQ { get; set; }
+    /// <summary> Recording.RecordingClientMp3.Url contains </summary>
+    [JsonProperty("recording_recordingClientMp3_url_con")]
+    public string? Recording_RecordingClientMp3_Url_CON { get; set; }
+    /// <summary> Recording.RecordingClientMp3.Url regex </summary>
+    [JsonProperty("recording_recordingClientMp3_url_reg")]
+    public string? Recording_RecordingClientMp3_Url_REG { get; set; }
+
+    /// <summary> Recording.RecordingClientMp3.Id equals </summary>
+    [JsonProperty("recording_recordingClientMp3_id_eq")]
+    public string? Recording_RecordingClientMp3_Id_EQ { get; set; }
+    /// <summary> Recording.RecordingClientMp3.Id contains </summary>
+    [JsonProperty("recording_recordingClientMp3_id_con")]
+    public string? Recording_RecordingClientMp3_Id_CON { get; set; }
+    /// <summary> Recording.RecordingClientMp3.Id regex </summary>
+    [JsonProperty("recording_recordingClientMp3_id_reg")]
+    public string? Recording_RecordingClientMp3_Id_REG { get; set; }
+
+
+    /// <summary> Recording.RecordingAgentMp3.InstanceId equals </summary>
+    [JsonProperty("recording_recordingAgentMp3_instanceId_eq")]
+    public string? Recording_RecordingAgentMp3_InstanceId_EQ { get; set; }
+    /// <summary> Recording.RecordingAgentMp3.InstanceId contains </summary>
+    [JsonProperty("recording_recordingAgentMp3_instanceId_con")]
+    public string? Recording_RecordingAgentMp3_InstanceId_CON { get; set; }
+    /// <summary> Recording.RecordingAgentMp3.InstanceId regex </summary>
+    [JsonProperty("recording_recordingAgentMp3_instanceId_reg")]
+    public string? Recording_RecordingAgentMp3_InstanceId_REG { get; set; }
+
+    /// <summary> Recording.RecordingAgentMp3.FileSizeInBytes equals </summary>
+    [JsonProperty("recording_recordingAgentMp3_fileSizeInBytes_eq")]
+    public System.Int32? Recording_RecordingAgentMp3_FileSizeInBytes_EQ { get; set; }
+    /// <summary> Recording.RecordingAgentMp3.FileSizeInBytes less than or equal to </summary>
+    [JsonProperty("recording_recordingAgentMp3_fileSizeInBytes_lte")]
+    public System.Int32? Recording_RecordingAgentMp3_FileSizeInBytes_LTE { get; set; }
+    /// <summary> Recording.RecordingAgentMp3.FileSizeInBytes greater than or equal to </summary>
+    [JsonProperty("recording_recordingAgentMp3_fileSizeInBytes_gte")]
+    public System.Int32? Recording_RecordingAgentMp3_FileSizeInBytes_GTE { get; set; }
+
+    /// <summary> Recording.RecordingAgentMp3.Md5Hash equals </summary>
+    [JsonProperty("recording_recordingAgentMp3_md5Hash_eq")]
+    public string? Recording_RecordingAgentMp3_Md5Hash_EQ { get; set; }
+    /// <summary> Recording.RecordingAgentMp3.Md5Hash contains </summary>
+    [JsonProperty("recording_recordingAgentMp3_md5Hash_con")]
+    public string? Recording_RecordingAgentMp3_Md5Hash_CON { get; set; }
+    /// <summary> Recording.RecordingAgentMp3.Md5Hash regex </summary>
+    [JsonProperty("recording_recordingAgentMp3_md5Hash_reg")]
+    public string? Recording_RecordingAgentMp3_Md5Hash_REG { get; set; }
+
+    /// <summary> Recording.RecordingAgentMp3.Url equals </summary>
+    [JsonProperty("recording_recordingAgentMp3_url_eq")]
+    public string? Recording_RecordingAgentMp3_Url_EQ { get; set; }
+    /// <summary> Recording.RecordingAgentMp3.Url contains </summary>
+    [JsonProperty("recording_recordingAgentMp3_url_con")]
+    public string? Recording_RecordingAgentMp3_Url_CON { get; set; }
+    /// <summary> Recording.RecordingAgentMp3.Url regex </summary>
+    [JsonProperty("recording_recordingAgentMp3_url_reg")]
+    public string? Recording_RecordingAgentMp3_Url_REG { get; set; }
+
+    /// <summary> Recording.RecordingAgentMp3.Id equals </summary>
+    [JsonProperty("recording_recordingAgentMp3_id_eq")]
+    public string? Recording_RecordingAgentMp3_Id_EQ { get; set; }
+    /// <summary> Recording.RecordingAgentMp3.Id contains </summary>
+    [JsonProperty("recording_recordingAgentMp3_id_con")]
+    public string? Recording_RecordingAgentMp3_Id_CON { get; set; }
+    /// <summary> Recording.RecordingAgentMp3.Id regex </summary>
+    [JsonProperty("recording_recordingAgentMp3_id_reg")]
+    public string? Recording_RecordingAgentMp3_Id_REG { get; set; }
+
+
     /// <summary> Recording.RecordingMp3.InstanceId equals </summary>
     [JsonProperty("recording_recordingMp3_instanceId_eq")]
     public string? Recording_RecordingMp3_InstanceId_EQ { get; set; }
@@ -8243,15 +8708,6 @@ public class CallFilterRequest
     public string? Recording_RecordingMp3_Id_REG { get; set; }
 
 
-    /// <summary> Recording.RecordingDurationInSeconds equals </summary>
-    [JsonProperty("recording_recordingDurationInSeconds_eq")]
-    public System.Int32? Recording_RecordingDurationInSeconds_EQ { get; set; }
-    /// <summary> Recording.RecordingDurationInSeconds less than or equal to </summary>
-    [JsonProperty("recording_recordingDurationInSeconds_lte")]
-    public System.Int32? Recording_RecordingDurationInSeconds_LTE { get; set; }
-    /// <summary> Recording.RecordingDurationInSeconds greater than or equal to </summary>
-    [JsonProperty("recording_recordingDurationInSeconds_gte")]
-    public System.Int32? Recording_RecordingDurationInSeconds_GTE { get; set; }
 
     /// <summary> Recording.Id equals </summary>
     [JsonProperty("recording_id_eq")]
@@ -8599,6 +9055,108 @@ public class CallIncomingFilterRequest
     [JsonProperty("recording_errorMessage_reg")]
     public string? Recording_ErrorMessage_REG { get; set; }
 
+    /// <summary> Recording.RecordingClientMp3.InstanceId equals </summary>
+    [JsonProperty("recording_recordingClientMp3_instanceId_eq")]
+    public string? Recording_RecordingClientMp3_InstanceId_EQ { get; set; }
+    /// <summary> Recording.RecordingClientMp3.InstanceId contains </summary>
+    [JsonProperty("recording_recordingClientMp3_instanceId_con")]
+    public string? Recording_RecordingClientMp3_InstanceId_CON { get; set; }
+    /// <summary> Recording.RecordingClientMp3.InstanceId regex </summary>
+    [JsonProperty("recording_recordingClientMp3_instanceId_reg")]
+    public string? Recording_RecordingClientMp3_InstanceId_REG { get; set; }
+
+    /// <summary> Recording.RecordingClientMp3.FileSizeInBytes equals </summary>
+    [JsonProperty("recording_recordingClientMp3_fileSizeInBytes_eq")]
+    public System.Int32? Recording_RecordingClientMp3_FileSizeInBytes_EQ { get; set; }
+    /// <summary> Recording.RecordingClientMp3.FileSizeInBytes less than or equal to </summary>
+    [JsonProperty("recording_recordingClientMp3_fileSizeInBytes_lte")]
+    public System.Int32? Recording_RecordingClientMp3_FileSizeInBytes_LTE { get; set; }
+    /// <summary> Recording.RecordingClientMp3.FileSizeInBytes greater than or equal to </summary>
+    [JsonProperty("recording_recordingClientMp3_fileSizeInBytes_gte")]
+    public System.Int32? Recording_RecordingClientMp3_FileSizeInBytes_GTE { get; set; }
+
+    /// <summary> Recording.RecordingClientMp3.Md5Hash equals </summary>
+    [JsonProperty("recording_recordingClientMp3_md5Hash_eq")]
+    public string? Recording_RecordingClientMp3_Md5Hash_EQ { get; set; }
+    /// <summary> Recording.RecordingClientMp3.Md5Hash contains </summary>
+    [JsonProperty("recording_recordingClientMp3_md5Hash_con")]
+    public string? Recording_RecordingClientMp3_Md5Hash_CON { get; set; }
+    /// <summary> Recording.RecordingClientMp3.Md5Hash regex </summary>
+    [JsonProperty("recording_recordingClientMp3_md5Hash_reg")]
+    public string? Recording_RecordingClientMp3_Md5Hash_REG { get; set; }
+
+    /// <summary> Recording.RecordingClientMp3.Url equals </summary>
+    [JsonProperty("recording_recordingClientMp3_url_eq")]
+    public string? Recording_RecordingClientMp3_Url_EQ { get; set; }
+    /// <summary> Recording.RecordingClientMp3.Url contains </summary>
+    [JsonProperty("recording_recordingClientMp3_url_con")]
+    public string? Recording_RecordingClientMp3_Url_CON { get; set; }
+    /// <summary> Recording.RecordingClientMp3.Url regex </summary>
+    [JsonProperty("recording_recordingClientMp3_url_reg")]
+    public string? Recording_RecordingClientMp3_Url_REG { get; set; }
+
+    /// <summary> Recording.RecordingClientMp3.Id equals </summary>
+    [JsonProperty("recording_recordingClientMp3_id_eq")]
+    public string? Recording_RecordingClientMp3_Id_EQ { get; set; }
+    /// <summary> Recording.RecordingClientMp3.Id contains </summary>
+    [JsonProperty("recording_recordingClientMp3_id_con")]
+    public string? Recording_RecordingClientMp3_Id_CON { get; set; }
+    /// <summary> Recording.RecordingClientMp3.Id regex </summary>
+    [JsonProperty("recording_recordingClientMp3_id_reg")]
+    public string? Recording_RecordingClientMp3_Id_REG { get; set; }
+
+
+    /// <summary> Recording.RecordingAgentMp3.InstanceId equals </summary>
+    [JsonProperty("recording_recordingAgentMp3_instanceId_eq")]
+    public string? Recording_RecordingAgentMp3_InstanceId_EQ { get; set; }
+    /// <summary> Recording.RecordingAgentMp3.InstanceId contains </summary>
+    [JsonProperty("recording_recordingAgentMp3_instanceId_con")]
+    public string? Recording_RecordingAgentMp3_InstanceId_CON { get; set; }
+    /// <summary> Recording.RecordingAgentMp3.InstanceId regex </summary>
+    [JsonProperty("recording_recordingAgentMp3_instanceId_reg")]
+    public string? Recording_RecordingAgentMp3_InstanceId_REG { get; set; }
+
+    /// <summary> Recording.RecordingAgentMp3.FileSizeInBytes equals </summary>
+    [JsonProperty("recording_recordingAgentMp3_fileSizeInBytes_eq")]
+    public System.Int32? Recording_RecordingAgentMp3_FileSizeInBytes_EQ { get; set; }
+    /// <summary> Recording.RecordingAgentMp3.FileSizeInBytes less than or equal to </summary>
+    [JsonProperty("recording_recordingAgentMp3_fileSizeInBytes_lte")]
+    public System.Int32? Recording_RecordingAgentMp3_FileSizeInBytes_LTE { get; set; }
+    /// <summary> Recording.RecordingAgentMp3.FileSizeInBytes greater than or equal to </summary>
+    [JsonProperty("recording_recordingAgentMp3_fileSizeInBytes_gte")]
+    public System.Int32? Recording_RecordingAgentMp3_FileSizeInBytes_GTE { get; set; }
+
+    /// <summary> Recording.RecordingAgentMp3.Md5Hash equals </summary>
+    [JsonProperty("recording_recordingAgentMp3_md5Hash_eq")]
+    public string? Recording_RecordingAgentMp3_Md5Hash_EQ { get; set; }
+    /// <summary> Recording.RecordingAgentMp3.Md5Hash contains </summary>
+    [JsonProperty("recording_recordingAgentMp3_md5Hash_con")]
+    public string? Recording_RecordingAgentMp3_Md5Hash_CON { get; set; }
+    /// <summary> Recording.RecordingAgentMp3.Md5Hash regex </summary>
+    [JsonProperty("recording_recordingAgentMp3_md5Hash_reg")]
+    public string? Recording_RecordingAgentMp3_Md5Hash_REG { get; set; }
+
+    /// <summary> Recording.RecordingAgentMp3.Url equals </summary>
+    [JsonProperty("recording_recordingAgentMp3_url_eq")]
+    public string? Recording_RecordingAgentMp3_Url_EQ { get; set; }
+    /// <summary> Recording.RecordingAgentMp3.Url contains </summary>
+    [JsonProperty("recording_recordingAgentMp3_url_con")]
+    public string? Recording_RecordingAgentMp3_Url_CON { get; set; }
+    /// <summary> Recording.RecordingAgentMp3.Url regex </summary>
+    [JsonProperty("recording_recordingAgentMp3_url_reg")]
+    public string? Recording_RecordingAgentMp3_Url_REG { get; set; }
+
+    /// <summary> Recording.RecordingAgentMp3.Id equals </summary>
+    [JsonProperty("recording_recordingAgentMp3_id_eq")]
+    public string? Recording_RecordingAgentMp3_Id_EQ { get; set; }
+    /// <summary> Recording.RecordingAgentMp3.Id contains </summary>
+    [JsonProperty("recording_recordingAgentMp3_id_con")]
+    public string? Recording_RecordingAgentMp3_Id_CON { get; set; }
+    /// <summary> Recording.RecordingAgentMp3.Id regex </summary>
+    [JsonProperty("recording_recordingAgentMp3_id_reg")]
+    public string? Recording_RecordingAgentMp3_Id_REG { get; set; }
+
+
     /// <summary> Recording.RecordingMp3.InstanceId equals </summary>
     [JsonProperty("recording_recordingMp3_instanceId_eq")]
     public string? Recording_RecordingMp3_InstanceId_EQ { get; set; }
@@ -8650,15 +9208,6 @@ public class CallIncomingFilterRequest
     public string? Recording_RecordingMp3_Id_REG { get; set; }
 
 
-    /// <summary> Recording.RecordingDurationInSeconds equals </summary>
-    [JsonProperty("recording_recordingDurationInSeconds_eq")]
-    public System.Int32? Recording_RecordingDurationInSeconds_EQ { get; set; }
-    /// <summary> Recording.RecordingDurationInSeconds less than or equal to </summary>
-    [JsonProperty("recording_recordingDurationInSeconds_lte")]
-    public System.Int32? Recording_RecordingDurationInSeconds_LTE { get; set; }
-    /// <summary> Recording.RecordingDurationInSeconds greater than or equal to </summary>
-    [JsonProperty("recording_recordingDurationInSeconds_gte")]
-    public System.Int32? Recording_RecordingDurationInSeconds_GTE { get; set; }
 
     /// <summary> Recording.Id equals </summary>
     [JsonProperty("recording_id_eq")]
@@ -8996,6 +9545,108 @@ public class CallOutgoingFilterRequest
     [JsonProperty("recording_errorMessage_reg")]
     public string? Recording_ErrorMessage_REG { get; set; }
 
+    /// <summary> Recording.RecordingClientMp3.InstanceId equals </summary>
+    [JsonProperty("recording_recordingClientMp3_instanceId_eq")]
+    public string? Recording_RecordingClientMp3_InstanceId_EQ { get; set; }
+    /// <summary> Recording.RecordingClientMp3.InstanceId contains </summary>
+    [JsonProperty("recording_recordingClientMp3_instanceId_con")]
+    public string? Recording_RecordingClientMp3_InstanceId_CON { get; set; }
+    /// <summary> Recording.RecordingClientMp3.InstanceId regex </summary>
+    [JsonProperty("recording_recordingClientMp3_instanceId_reg")]
+    public string? Recording_RecordingClientMp3_InstanceId_REG { get; set; }
+
+    /// <summary> Recording.RecordingClientMp3.FileSizeInBytes equals </summary>
+    [JsonProperty("recording_recordingClientMp3_fileSizeInBytes_eq")]
+    public System.Int32? Recording_RecordingClientMp3_FileSizeInBytes_EQ { get; set; }
+    /// <summary> Recording.RecordingClientMp3.FileSizeInBytes less than or equal to </summary>
+    [JsonProperty("recording_recordingClientMp3_fileSizeInBytes_lte")]
+    public System.Int32? Recording_RecordingClientMp3_FileSizeInBytes_LTE { get; set; }
+    /// <summary> Recording.RecordingClientMp3.FileSizeInBytes greater than or equal to </summary>
+    [JsonProperty("recording_recordingClientMp3_fileSizeInBytes_gte")]
+    public System.Int32? Recording_RecordingClientMp3_FileSizeInBytes_GTE { get; set; }
+
+    /// <summary> Recording.RecordingClientMp3.Md5Hash equals </summary>
+    [JsonProperty("recording_recordingClientMp3_md5Hash_eq")]
+    public string? Recording_RecordingClientMp3_Md5Hash_EQ { get; set; }
+    /// <summary> Recording.RecordingClientMp3.Md5Hash contains </summary>
+    [JsonProperty("recording_recordingClientMp3_md5Hash_con")]
+    public string? Recording_RecordingClientMp3_Md5Hash_CON { get; set; }
+    /// <summary> Recording.RecordingClientMp3.Md5Hash regex </summary>
+    [JsonProperty("recording_recordingClientMp3_md5Hash_reg")]
+    public string? Recording_RecordingClientMp3_Md5Hash_REG { get; set; }
+
+    /// <summary> Recording.RecordingClientMp3.Url equals </summary>
+    [JsonProperty("recording_recordingClientMp3_url_eq")]
+    public string? Recording_RecordingClientMp3_Url_EQ { get; set; }
+    /// <summary> Recording.RecordingClientMp3.Url contains </summary>
+    [JsonProperty("recording_recordingClientMp3_url_con")]
+    public string? Recording_RecordingClientMp3_Url_CON { get; set; }
+    /// <summary> Recording.RecordingClientMp3.Url regex </summary>
+    [JsonProperty("recording_recordingClientMp3_url_reg")]
+    public string? Recording_RecordingClientMp3_Url_REG { get; set; }
+
+    /// <summary> Recording.RecordingClientMp3.Id equals </summary>
+    [JsonProperty("recording_recordingClientMp3_id_eq")]
+    public string? Recording_RecordingClientMp3_Id_EQ { get; set; }
+    /// <summary> Recording.RecordingClientMp3.Id contains </summary>
+    [JsonProperty("recording_recordingClientMp3_id_con")]
+    public string? Recording_RecordingClientMp3_Id_CON { get; set; }
+    /// <summary> Recording.RecordingClientMp3.Id regex </summary>
+    [JsonProperty("recording_recordingClientMp3_id_reg")]
+    public string? Recording_RecordingClientMp3_Id_REG { get; set; }
+
+
+    /// <summary> Recording.RecordingAgentMp3.InstanceId equals </summary>
+    [JsonProperty("recording_recordingAgentMp3_instanceId_eq")]
+    public string? Recording_RecordingAgentMp3_InstanceId_EQ { get; set; }
+    /// <summary> Recording.RecordingAgentMp3.InstanceId contains </summary>
+    [JsonProperty("recording_recordingAgentMp3_instanceId_con")]
+    public string? Recording_RecordingAgentMp3_InstanceId_CON { get; set; }
+    /// <summary> Recording.RecordingAgentMp3.InstanceId regex </summary>
+    [JsonProperty("recording_recordingAgentMp3_instanceId_reg")]
+    public string? Recording_RecordingAgentMp3_InstanceId_REG { get; set; }
+
+    /// <summary> Recording.RecordingAgentMp3.FileSizeInBytes equals </summary>
+    [JsonProperty("recording_recordingAgentMp3_fileSizeInBytes_eq")]
+    public System.Int32? Recording_RecordingAgentMp3_FileSizeInBytes_EQ { get; set; }
+    /// <summary> Recording.RecordingAgentMp3.FileSizeInBytes less than or equal to </summary>
+    [JsonProperty("recording_recordingAgentMp3_fileSizeInBytes_lte")]
+    public System.Int32? Recording_RecordingAgentMp3_FileSizeInBytes_LTE { get; set; }
+    /// <summary> Recording.RecordingAgentMp3.FileSizeInBytes greater than or equal to </summary>
+    [JsonProperty("recording_recordingAgentMp3_fileSizeInBytes_gte")]
+    public System.Int32? Recording_RecordingAgentMp3_FileSizeInBytes_GTE { get; set; }
+
+    /// <summary> Recording.RecordingAgentMp3.Md5Hash equals </summary>
+    [JsonProperty("recording_recordingAgentMp3_md5Hash_eq")]
+    public string? Recording_RecordingAgentMp3_Md5Hash_EQ { get; set; }
+    /// <summary> Recording.RecordingAgentMp3.Md5Hash contains </summary>
+    [JsonProperty("recording_recordingAgentMp3_md5Hash_con")]
+    public string? Recording_RecordingAgentMp3_Md5Hash_CON { get; set; }
+    /// <summary> Recording.RecordingAgentMp3.Md5Hash regex </summary>
+    [JsonProperty("recording_recordingAgentMp3_md5Hash_reg")]
+    public string? Recording_RecordingAgentMp3_Md5Hash_REG { get; set; }
+
+    /// <summary> Recording.RecordingAgentMp3.Url equals </summary>
+    [JsonProperty("recording_recordingAgentMp3_url_eq")]
+    public string? Recording_RecordingAgentMp3_Url_EQ { get; set; }
+    /// <summary> Recording.RecordingAgentMp3.Url contains </summary>
+    [JsonProperty("recording_recordingAgentMp3_url_con")]
+    public string? Recording_RecordingAgentMp3_Url_CON { get; set; }
+    /// <summary> Recording.RecordingAgentMp3.Url regex </summary>
+    [JsonProperty("recording_recordingAgentMp3_url_reg")]
+    public string? Recording_RecordingAgentMp3_Url_REG { get; set; }
+
+    /// <summary> Recording.RecordingAgentMp3.Id equals </summary>
+    [JsonProperty("recording_recordingAgentMp3_id_eq")]
+    public string? Recording_RecordingAgentMp3_Id_EQ { get; set; }
+    /// <summary> Recording.RecordingAgentMp3.Id contains </summary>
+    [JsonProperty("recording_recordingAgentMp3_id_con")]
+    public string? Recording_RecordingAgentMp3_Id_CON { get; set; }
+    /// <summary> Recording.RecordingAgentMp3.Id regex </summary>
+    [JsonProperty("recording_recordingAgentMp3_id_reg")]
+    public string? Recording_RecordingAgentMp3_Id_REG { get; set; }
+
+
     /// <summary> Recording.RecordingMp3.InstanceId equals </summary>
     [JsonProperty("recording_recordingMp3_instanceId_eq")]
     public string? Recording_RecordingMp3_InstanceId_EQ { get; set; }
@@ -9047,15 +9698,6 @@ public class CallOutgoingFilterRequest
     public string? Recording_RecordingMp3_Id_REG { get; set; }
 
 
-    /// <summary> Recording.RecordingDurationInSeconds equals </summary>
-    [JsonProperty("recording_recordingDurationInSeconds_eq")]
-    public System.Int32? Recording_RecordingDurationInSeconds_EQ { get; set; }
-    /// <summary> Recording.RecordingDurationInSeconds less than or equal to </summary>
-    [JsonProperty("recording_recordingDurationInSeconds_lte")]
-    public System.Int32? Recording_RecordingDurationInSeconds_LTE { get; set; }
-    /// <summary> Recording.RecordingDurationInSeconds greater than or equal to </summary>
-    [JsonProperty("recording_recordingDurationInSeconds_gte")]
-    public System.Int32? Recording_RecordingDurationInSeconds_GTE { get; set; }
 
     /// <summary> Recording.Id equals </summary>
     [JsonProperty("recording_id_eq")]

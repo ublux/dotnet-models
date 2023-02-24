@@ -47,7 +47,7 @@ public static class ModelsExtensionMethods
             Collections.VoipProviders => typeof(VoipProvider),
             Collections.WebHooks => typeof(WebHook),
             //Collections.UnauthorizedTokens => typeof(UnauthorizedToken),
-            Collections.CloudFiles => typeof(CloudFile),
+            Collections.StoredFileReferences => typeof(StoredFileReference),
             Collections.Tags => typeof(Tag),
             Collections.ApiKeys => typeof(ApiKey),
             Collections.AiCallTranscriptions => typeof(AiCallTranscription),
@@ -261,11 +261,11 @@ public static class ModelsExtensionMethods
         //    _getCollectionUsedByTypeCache[type] = Collections.UnauthorizedTokens;
         //    return Collections.UnauthorizedTokens;
         //}
-        if (typeof(CloudFile).IsAssignableFrom(type))
+        if (typeof(StoredFileReference).IsAssignableFrom(type))
         {
             // store on cache so next time it is faster
-            _getCollectionUsedByTypeCache[type] = Collections.CloudFiles;
-            return Collections.CloudFiles;
+            _getCollectionUsedByTypeCache[type] = Collections.StoredFileReferences;
+            return Collections.StoredFileReferences;
         }
         if (typeof(Tag).IsAssignableFrom(type))
         {
@@ -359,7 +359,7 @@ public static class ModelsExtensionMethods
         { VoipNumberAvailableForPurchase.DocumentPrefix, Collections.VoipNumbers },
         { VoipProvider.DocumentPrefix, Collections.VoipProviders },
         { WebHook.DocumentPrefix, Collections.WebHooks },
-        { CloudFile.DocumentPrefix, Collections.CloudFiles },
+        { StoredFileReference.DocumentPrefix, Collections.StoredFileReferences },
         { Tag.DocumentPrefix, Collections.Tags },
         { ApiKey.DocumentPrefix, Collections.ApiKeys },
         { AiCallTranscription.DocumentPrefix, Collections.AiCallTranscriptions },

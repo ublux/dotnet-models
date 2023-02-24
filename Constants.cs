@@ -13,6 +13,43 @@ public static partial class Constants
     //public const string SipPacketLineId = "sip:Li.";
 
     /// <summary>
+    ///     /usr/share/ublux
+    /// </summary>
+    public static string PathApp
+    {
+        get
+        {
+            if (Environment.OSVersion.Platform == PlatformID.Win32NT)
+            {
+                var path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "ublux");
+                if (Directory.Exists(path) == false)
+                    Directory.CreateDirectory(path);
+                return path;
+            }
+            else
+            {
+                return "/usr/share/ublux";
+            }
+        }
+    }
+    /// <summary>
+    ///     Stuff in here can be deleted and app should still be able to work
+    ///     /usr/share/ublux/tmp
+    /// </summary>
+    public static string PathTempUblux()
+    {
+        var path = Path.Combine(PathApp, "tmp");
+        if (__PathTempUblux__HasBeenChecked == false)
+        {
+            __PathTempUblux__HasBeenChecked = true;
+            if (Directory.Exists(path) == false)
+                Directory.CreateDirectory(path);
+        }
+        return path;
+    }
+    private static bool __PathTempUblux__HasBeenChecked = false;
+
+    /// <summary>
     ///     We will send all notification emails from this account
     /// </summary>
     public const string EmailUbluxNoReply = $"no-reply@{Domain}";

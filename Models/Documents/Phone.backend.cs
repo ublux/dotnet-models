@@ -65,7 +65,34 @@ public partial class Phone
         return Random.Shared.Next(10000, 99999).ToString();
     }
 
-    
+    /// <summary>
+    ///     Helper method to see if any of the lines are connected
+    ///     null means we do not know
+    /// </summary>
+    public bool? IsConnected()
+    {
+        if (this.Lines is null)
+            return false;
+
+        // if any of the lines is marked as connected return true
+        foreach(var ln in this.Lines)
+        {
+            if(ln.LineConnectionStatus is null) continue;
+
+            if(ln.LineConnectionStatus.IsConnected == true) return true;
+        }
+
+        // if any of the lines connection status is marked as null return null
+        foreach (var ln in this.Lines)
+        {
+            if (ln.LineConnectionStatus is null) continue;
+
+            if (ln.LineConnectionStatus.IsConnected == null) return null;
+        }
+
+        return false;
+    }
+
 }
 
 #endif
