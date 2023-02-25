@@ -14,22 +14,21 @@ public partial class StoredFileReference : UbluxDocument
     /// <summary>
     ///     Factory Pattern
     /// </summary>
-    public static StoredFileReference Create(StoredFile sf)
+    public static StoredFileReference Create(StoredFile sf, string idParentDocument)
     {
-        
         return new StoredFileReference()
         {
             BuiltId = StoredFileReference.BuildId(sf),
             DateCreated = DateTime.UtcNow,
             DateDeleted = null,
-            IdDocument = sf.Id,
+            IdDocument = idParentDocument,
             StoredFile = sf,
             IsBackup = false,
         };
     }
 
     /// <summary>
-    ///     Id of document containing this Stored File. Example Audio1234
+    ///     Id of document containing this Stored File. It should be the parent document not the SotedFileObject!
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]

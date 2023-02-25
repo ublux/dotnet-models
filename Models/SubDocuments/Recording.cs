@@ -30,7 +30,7 @@ public partial class Recording : UbluxSubDocument
     public StoredFile? RecordingAgentMp3 { get; set; }
 
     /// <summary>
-    ///     Recording of agent and client
+    ///     Recording of agent and client mixed.
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]

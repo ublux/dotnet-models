@@ -57,14 +57,19 @@ public partial class StoredFile : UbluxSubDocument, IReferncesAccount
     public static string ComputeMd5Hash(string filePath)
     {
         // compute md5 hash
-        byte[] hash;
-        using MD5 md5 = MD5.Create();
-        using var stream = System.IO.File.OpenRead(filePath);
-        hash = md5.ComputeHash(stream);
-        string hex = BitConverter.ToString(hash).Replace("-", string.Empty).ToLower();
-        return hex;
+        try
+        {
+            using MD5 md5 = MD5.Create();
+            using var stream = File.OpenRead(filePath);
+            var hash = md5.ComputeHash(stream);
+            string hex = BitConverter.ToString(hash).Replace("-", string.Empty).ToLower();
+            return hex;
+        }
+        catch
+        {
+            return "";
+        }
     }
-
 }
 
 #endif

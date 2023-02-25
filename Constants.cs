@@ -15,23 +15,23 @@ public static partial class Constants
     /// <summary>
     ///     /usr/share/ublux
     /// </summary>
-    public static string PathApp
+    public static readonly string PathApp = GetPathApp();
+    private static string GetPathApp()
     {
-        get
+        if (Environment.OSVersion.Platform == PlatformID.Win32NT)
         {
-            if (Environment.OSVersion.Platform == PlatformID.Win32NT)
-            {
-                var path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "ublux");
-                if (Directory.Exists(path) == false)
-                    Directory.CreateDirectory(path);
-                return path;
-            }
-            else
-            {
-                return "/usr/share/ublux";
-            }
+            var appData = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+            var path = Path.Combine(appData, "ublux");
+            if (Directory.Exists(path) == false)
+                Directory.CreateDirectory(path);
+            return path;
+        }
+        else
+        {
+            return "/usr/share/ublux";
         }
     }
+
     /// <summary>
     ///     Stuff in here can be deleted and app should still be able to work
     ///     /usr/share/ublux/tmp
@@ -197,4 +197,43 @@ public static partial class Constants
     ///     Valid characters for an instance id
     /// </summary>
     public static readonly HashSet<char> InstanceIdValidChars = new("ABCDEFGHIJKLMNOPQRSTUVWXYZ-0123456789".ToCharArray());
+
+    /// <summary>
+    ///     Pbx specific constants
+    /// </summary>
+    public static class Pbx
+    {
+        // Initialze before others!!!
+        /// <summary>
+        ///     Base directory. 
+        /// </summary>
+        public static readonly string BaseDirPbxFiles = Path.Combine(PathApp, "pbx-files");
+
+        /// <summary>
+        ///     Store in array so that when pbx initializes it ensures this directories exist
+        /// </summary>
+        public static readonly string[] AllPaths = new string[]
+        {
+            Path.Combine(BaseDirPbxFiles, "completed-calls"),
+            Path.Combine(BaseDirPbxFiles, "completed-calls-errors"),
+            Path.Combine(BaseDirPbxFiles, "recordings")
+        };
+
+        /// <summary>
+        ///     One service is responsible for searching for completed calls and placing them serialized in here
+        ///     /usr/share/ublux/pbx-files/recordings/completed-calls
+        /// </summary>
+        public static readonly string PathCompletedCalls = AllPaths[0];
+
+        /// <summary>
+        ///     If a call cannot be uploaded it will be moved to this directory
+        ///     /usr/share/ublux/pbx-files/recordings/completed-calls-errors
+        /// </summary>
+        public static readonly string PathCompletedCallsErrors = AllPaths[1];
+
+        /// <summary>
+        ///     Location where to store call recordings. /usr/share/ublux/pbx-files/recordings
+        /// </summary>
+        public static readonly string PathRecordings = AllPaths[2];
+    }
 }

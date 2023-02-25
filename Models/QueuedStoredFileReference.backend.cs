@@ -10,6 +10,7 @@ public class QueuedStoredFileReference : IUbluxDocumentId
 {
 
 #if UBLUX_Release || RELEASE
+#pragma warning disable CS8618 
 
     // This constructor is needed by mongo. 
     /// <summary /> 
@@ -17,6 +18,7 @@ public class QueuedStoredFileReference : IUbluxDocumentId
     {
     }
 
+#pragma warning restore CS8618 
 #endif
 
     /// <summary>

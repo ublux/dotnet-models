@@ -1,7 +1,7 @@
 ﻿namespace Ublux.Communications.Models.Documents;
 
 /// <summary>
-///     Phone numbers that will be blocked
+///     AI transcription of a phone call
 /// </summary>
 public partial class AiCallTranscription : UbluxDocument_ReferenceAccount_ReferenceTags
 {
@@ -68,4 +68,11 @@ public partial class AiCallTranscription : UbluxDocument_ReferenceAccount_Refere
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
     public List<AiTopicModelingSummary> AiTopicModelingSummary { get; set; } = new();
+
+    /// <summary>
+    ///     If the transcription contains an error
+    /// </summary>
+    [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
+    public string? ErrorMessage { get; set; }
 }
