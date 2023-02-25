@@ -9,13 +9,15 @@ public partial class CallOutgoingToPSTN : CallOutgoing
     /// <summary>
     ///     Type of call
     /// </summary>
-    [AllowUpdate(false)] 
-    [SwaggerSchema(ReadOnly = true)] 
+    [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     public override CallType CallType
     {
         get => CallType.OutgoingToPSTN;
-        [Obsolete("set method is only used to so that field is stored on mongo DB")]
-        internal set { }
+#if UBLUX_Release || RELEASE
+        set { }
+#else
+#endif
     }
 
     ///// <summary>
@@ -27,23 +29,23 @@ public partial class CallOutgoingToPSTN : CallOutgoing
     /// <summary>
     ///     Country called
     /// </summary>
-    [AllowUpdate(false)] 
-    [SwaggerSchema(ReadOnly = true)] 
+    [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     [IsUbluxRequired]
     public required CountryIsoCode Country { get; set; }
 
     /// <summary>
     ///     Phone number dialed in international format. Property To should contain number that was actually dialed
     /// </summary>
-    [AllowUpdate(false)] 
-    [SwaggerSchema(ReadOnly = true)] 
+    [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     [IsUbluxRequired]
     public required string ToInternationalFormat { get; set; }
 
     /// <summary>
     ///     When call is answered. Note that if call is sent to voicemail this will be marked when call is answered by voicemail.
     /// </summary>
-    [AllowUpdate(false)] 
-    [SwaggerSchema(ReadOnly = true)] 
+    [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     public DateTime? DateAnswered { get; set; }
 }

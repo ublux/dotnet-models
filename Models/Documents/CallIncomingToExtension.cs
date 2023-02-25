@@ -21,32 +21,32 @@ public partial class CallIncomingToExtension : CallIncoming, ICallToExtension
     ///     Extension being called
     /// </summary>
     [References(typeof(Extension))]
-    [AllowUpdate(false)] 
-    [SwaggerSchema(ReadOnly = true)] 
-    public string? IdExtension { get; set; } 
+    [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
+    public string? IdExtension { get; set; }
 
     /// <summary>
     ///     Line that answered
     /// </summary>
     [References(typeof(Line))]
-    [AllowUpdate(false)] 
-    [SwaggerSchema(ReadOnly = true)] 
+    [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     public string? IdLineThatAnswered { get; set; }
 
     /// <summary>
     ///     Lines that ring
     /// </summary>
     [References(typeof(Line))]
-    [AllowUpdate(false)] 
-    [SwaggerSchema(ReadOnly = true)] 
+    [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     public List<string> IdsLinesThatRing { get; set; } = new();
 
     /// <summary>
     ///     Lines that did not ring
     /// </summary>
     [References(typeof(Line))]
-    [AllowUpdate(false)] 
-    [SwaggerSchema(ReadOnly = true)] 
+    [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     public List<string> IdsLinesThatDidNotRing { get; set; } = new();
 
     #endregion
@@ -56,13 +56,15 @@ public partial class CallIncomingToExtension : CallIncoming, ICallToExtension
     /// <summary>
     ///     Type of call
     /// </summary>
-    [AllowUpdate(false)] 
-    [SwaggerSchema(ReadOnly = true)] 
+    [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     public override CallType CallType
     {
         get => CallType.IncomingToExtension;
-        [Obsolete("set method is only used to so that field is stored on mongo DB")]
-        internal set { }
+#if UBLUX_Release || RELEASE
+        set { }
+#else
+#endif
     }
 }
 

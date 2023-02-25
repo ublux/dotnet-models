@@ -14,9 +14,11 @@ public partial class CloudServiceWebApp : CloudService
     [HideForCreateRequest]
     public override CloudServiceType CloudServiceType
     {
-        get => CloudServiceType.WA;
-        [Obsolete("set method is only used to so that field is stored on mongo DB")]
-        internal set { }
+        get => CloudServiceType.WA;        
+#if UBLUX_Release || RELEASE
+        set { }
+#else
+#endif
     }
 
     /// <summary>

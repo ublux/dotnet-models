@@ -70,8 +70,10 @@ public partial class CallOutgoingToExtension : CallOutgoing, ICallToExtension
     public override CallType CallType
     {
         get => CallType.OutgoingToExtension;
-        [Obsolete("set method is only used to so that field is stored on mongo DB")]
-        internal set { }
+#if UBLUX_Release || RELEASE
+        set { }
+#else
+#endif
     }
 }
 

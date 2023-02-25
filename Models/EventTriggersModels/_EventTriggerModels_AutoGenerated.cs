@@ -12,8 +12,10 @@ public partial class EventOutgoingCallTerminated : EventTriggerModel
     public override EventTrigger EventTrigger
     {
         get => EventTrigger.EventOutgoingCallTerminated;
-        [Obsolete("set method is only used to so that field is stored on mongo DB")]
-        internal set { }
+        #if UBLUX_Release || RELEASE
+        set { }
+        #else
+        #endif
     }
 }
 
@@ -26,8 +28,10 @@ public partial class EventIncomingCallTerminated : EventTriggerModel
     public override EventTrigger EventTrigger
     {
         get => EventTrigger.EventIncomingCallTerminated;
-        [Obsolete("set method is only used to so that field is stored on mongo DB")]
-        internal set { }
+        #if UBLUX_Release || RELEASE
+        set { }
+        #else
+        #endif
     }
 }
 
@@ -40,8 +44,10 @@ public partial class EventOutgoingCallTerminatedWithRecording : EventTriggerMode
     public override EventTrigger EventTrigger
     {
         get => EventTrigger.EventOutgoingCallTerminatedWithRecording;
-        [Obsolete("set method is only used to so that field is stored on mongo DB")]
-        internal set { }
+        #if UBLUX_Release || RELEASE
+        set { }
+        #else
+        #endif
     }
 }
 
@@ -54,8 +60,10 @@ public partial class EventIncomingCallTerminatedWithRecording : EventTriggerMode
     public override EventTrigger EventTrigger
     {
         get => EventTrigger.EventIncomingCallTerminatedWithRecording;
-        [Obsolete("set method is only used to so that field is stored on mongo DB")]
-        internal set { }
+        #if UBLUX_Release || RELEASE
+        set { }
+        #else
+        #endif
     }
 }
 
@@ -68,8 +76,10 @@ public partial class EventCallPlacedOnHoldFor1Min : EventTriggerModel
     public override EventTrigger EventTrigger
     {
         get => EventTrigger.EventCallPlacedOnHoldFor1Min;
-        [Obsolete("set method is only used to so that field is stored on mongo DB")]
-        internal set { }
+        #if UBLUX_Release || RELEASE
+        set { }
+        #else
+        #endif
     }
 }
 
@@ -82,8 +92,10 @@ public partial class EventCallPlacedOnHoldFor2Min : EventTriggerModel
     public override EventTrigger EventTrigger
     {
         get => EventTrigger.EventCallPlacedOnHoldFor2Min;
-        [Obsolete("set method is only used to so that field is stored on mongo DB")]
-        internal set { }
+        #if UBLUX_Release || RELEASE
+        set { }
+        #else
+        #endif
     }
 }
 
@@ -96,8 +108,10 @@ public partial class EventCallPlacedOnHoldFor4Min : EventTriggerModel
     public override EventTrigger EventTrigger
     {
         get => EventTrigger.EventCallPlacedOnHoldFor4Min;
-        [Obsolete("set method is only used to so that field is stored on mongo DB")]
-        internal set { }
+        #if UBLUX_Release || RELEASE
+        set { }
+        #else
+        #endif
     }
 }
 
@@ -110,8 +124,10 @@ public partial class EventCallPlacedOnHoldFor8Min : EventTriggerModel
     public override EventTrigger EventTrigger
     {
         get => EventTrigger.EventCallPlacedOnHoldFor8Min;
-        [Obsolete("set method is only used to so that field is stored on mongo DB")]
-        internal set { }
+        #if UBLUX_Release || RELEASE
+        set { }
+        #else
+        #endif
     }
 }
 
@@ -124,8 +140,10 @@ public partial class EventLineDisconnected : EventTriggerModel
     public override EventTrigger EventTrigger
     {
         get => EventTrigger.EventLineDisconnected;
-        [Obsolete("set method is only used to so that field is stored on mongo DB")]
-        internal set { }
+        #if UBLUX_Release || RELEASE
+        set { }
+        #else
+        #endif
     }
 }
 
@@ -138,8 +156,10 @@ public partial class EventLineConnected : EventTriggerModel
     public override EventTrigger EventTrigger
     {
         get => EventTrigger.EventLineConnected;
-        [Obsolete("set method is only used to so that field is stored on mongo DB")]
-        internal set { }
+        #if UBLUX_Release || RELEASE
+        set { }
+        #else
+        #endif
     }
 }
 
@@ -152,8 +172,10 @@ public partial class EventExtensionNotAnswered : EventTriggerModel
     public override EventTrigger EventTrigger
     {
         get => EventTrigger.EventExtensionNotAnswered;
-        [Obsolete("set method is only used to so that field is stored on mongo DB")]
-        internal set { }
+        #if UBLUX_Release || RELEASE
+        set { }
+        #else
+        #endif
     }
 }
 
@@ -166,8 +188,10 @@ public partial class EventExtensionTookLongerThan1MinToBeAnswered : EventTrigger
     public override EventTrigger EventTrigger
     {
         get => EventTrigger.EventExtensionTookLongerThan1MinToBeAnswered;
-        [Obsolete("set method is only used to so that field is stored on mongo DB")]
-        internal set { }
+        #if UBLUX_Release || RELEASE
+        set { }
+        #else
+        #endif
     }
 }
 
@@ -180,8 +204,10 @@ public partial class EventExtensionTookLongerThan2MinToBeAnswered : EventTrigger
     public override EventTrigger EventTrigger
     {
         get => EventTrigger.EventExtensionTookLongerThan2MinToBeAnswered;
-        [Obsolete("set method is only used to so that field is stored on mongo DB")]
-        internal set { }
+        #if UBLUX_Release || RELEASE
+        set { }
+        #else
+        #endif
     }
 }
 
@@ -194,8 +220,10 @@ public partial class EventExtensionTookLongerThan4MinToBeAnswered : EventTrigger
     public override EventTrigger EventTrigger
     {
         get => EventTrigger.EventExtensionTookLongerThan4MinToBeAnswered;
-        [Obsolete("set method is only used to so that field is stored on mongo DB")]
-        internal set { }
+        #if UBLUX_Release || RELEASE
+        set { }
+        #else
+        #endif
     }
 }
 
@@ -208,8 +236,9 @@ public partial class EventExtensionTookLongerThan8MinToBeAnswered : EventTrigger
     public override EventTrigger EventTrigger
     {
         get => EventTrigger.EventExtensionTookLongerThan8MinToBeAnswered;
-        [Obsolete("set method is only used to so that field is stored on mongo DB")]
-        internal set { }
+        #if UBLUX_Release || RELEASE
+        set { }
+        #endif
     }
 }
 

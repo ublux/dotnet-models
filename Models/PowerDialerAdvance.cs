@@ -21,7 +21,9 @@ public class PowerDialerAdvance : PowerDialer
     public override PowerDialerType PowerDialerType
     {
         get => PowerDialerType.Advanced;
-        [Obsolete("set method is only used to so that field is stored on mongo DB")]
-        internal set { }
+#if UBLUX_Release || RELEASE
+        set { }
+#else
+#endif
     }
 }

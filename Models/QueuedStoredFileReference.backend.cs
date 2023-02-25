@@ -24,12 +24,12 @@ public class QueuedStoredFileReference : IUbluxDocumentId
     /// <summary>
     ///     Constructor
     /// </summary>
-    public QueuedStoredFileReference(string pathToFileOnDisk, StoredFileReference sfr, bool deleteDileWhenDisposing = true)        
+    public QueuedStoredFileReference(string pathToFileOnDisk, StoredFileReference sfr, bool deleteDileWhenDisposing = true)
     {
         this.PathToFile = pathToFileOnDisk;
         this.StoredFileReference = sfr;
         this.DeleteFileWhenUploaded = deleteDileWhenDisposing;
-        this.Id = sfr.id;
+        this.id = sfr.id;
     }
 
     /// <summary>
@@ -37,12 +37,12 @@ public class QueuedStoredFileReference : IUbluxDocumentId
     /// </summary>    
     public string Id
     {
-        get;
+        get => this.id;
 #if UBLUX_Release || RELEASE
-        set;
-#else
+        set { }
 #endif
     }
+    private readonly string id;
 
     /// <summary>
     ///     Thanks to this enum we know from what email to send the email

@@ -9,8 +9,8 @@ public partial class CloudServicePbx : CloudService
     ///     If its NOT failover the the id of pbx that will act as failover. Else string empty string
     /// </summary>
     [IgnoreDataMember]
-    [AllowUpdate(false)] 
-    [SwaggerSchema(ReadOnly = true)] 
+    [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     [References(typeof(CloudServicePbx))]
     // [IsUbluxRequired]
     public required string? IdCloudServicePbxFailover { get; set; }
@@ -18,15 +18,17 @@ public partial class CloudServicePbx : CloudService
     /// <summary>
     ///     Type of cloud service
     /// </summary>
-    [AllowUpdate(false)] 
-    [SwaggerSchema(ReadOnly = true)] 
+    [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     [IsUbluxRequired]
     [HideForCreateRequest]
     public override CloudServiceType CloudServiceType
     {
         get => CloudServiceType.PBX;
-        [Obsolete("set method is only used to so that field is stored on mongo DB")]
-        internal set { }
+#if UBLUX_Release || RELEASE
+        set { }
+#else
+#endif
     }
 
     /// <summary>
@@ -38,7 +40,7 @@ public partial class CloudServicePbx : CloudService
     /// <summary>
     ///     Http port where it is listening on SimpleTcpServer. For example PBX listens on port 8181
     /// </summary>
-    [AllowUpdate(false)] 
-    [SwaggerSchema(ReadOnly = true)] 
+    [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     public int HttpListenPort { get; set; }
 }

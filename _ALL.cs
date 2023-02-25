@@ -50,12 +50,8 @@ public abstract partial class UbluxDocument : IUbluxDocument, IUbluxDocumentId
     public string Id
     {
         get => id;
-#if UBLUX_Release || RELEASE
-        [Obsolete($"Set via {nameof(BuiltId)}")]
+#if UBLUX_Release || RELEASE        
         set => id = value;
-#else
-        // id of a document should never change. Only have it release mode so that mongo can initialize it.
-        // set => id = value;
 #endif
     }
     // internal because sometimes we need to set this via unit tests

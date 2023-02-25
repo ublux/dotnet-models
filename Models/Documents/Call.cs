@@ -147,8 +147,10 @@ public abstract partial class Call : UbluxDocument_ReferenceAccount_ReferenceTag
     public abstract CallType CallType
     {
         get;
-        [Obsolete("set method is only used to so that field is stored on mongo DB")]
-        internal set;
+#if UBLUX_Release || RELEASE
+        set;
+#else
+#endif
     }
 
     /// <summary>

@@ -18,13 +18,13 @@ public partial class Phone
     [SwaggerSchema(ReadOnly = true)]
     [IgnoreDataMember]    
     public required string Password { get; set; } = string.Empty;
-    
 
     /// <summary>
-    ///     For now it is: Li\.[a-zA-Z0-9\.]+
+    ///     For now it is: Li.Ac.1111.Ph.WS-1111.81111.91111
+    ///     It is ok to hard code it. If prefixis change unit tests will fail. It is very important to keep running unit tests!
     /// </summary>
-    [GeneratedRegex($@"{Line.DocumentPrefix}{RedisConstants.DelimeterEscaped}[a-zA-Z0-9{RedisConstants.DelimeterEscaped}]+")]
-    public static partial Regex Regex_GetIdOfLine();
+    [GeneratedRegex(@"Li\.Ac\.\w+\.Ph\.[\w-]+\.\w+\.\w{1,10}")]
+    public static partial Regex Regex_GetIdOfLine();    
 
     internal const string alphanumericMainCharacters =
            "ABCDEFGHIJKLMNOPQRSTUVWXYZ" +

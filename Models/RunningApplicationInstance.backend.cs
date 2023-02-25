@@ -52,7 +52,7 @@ public class RunningApplicationInstance
     {
         return new RunningApplicationInstance()
         {
-            Id = (type + "." + Guid.NewGuid().ToString()[..4]).ToUpper(),
+            Id = (type + "-" + Guid.NewGuid().ToString()[..3]).ToUpper(),
             CloudServiceType = type
         };
     }

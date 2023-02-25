@@ -10,6 +10,7 @@
 		<!--Needed by swagger to generate comments. GUID: FKGJ7-RUNNGHT44-JFKEIRK -->
 		<GenerateDocumentationFile>true</GenerateDocumentationFile>
 		<DefineConstants>UBLUX_BACKEND,UBLUX_Release,$(ExtraDefineConstants)</DefineConstants>
+		<!--,UBLUX_Release-->
 	</PropertyGroup>
 
 	<ItemGroup>

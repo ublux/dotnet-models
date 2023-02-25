@@ -38,8 +38,10 @@ public class ChildCallForwardToExtension : ChildCall, ICallToExtension
     public override ChildCallType ChildCallType
     {
         get => ChildCallType.ForwardToExtension;
-        [Obsolete("set method is only used to so that field is stored on mongo DB")]
-        internal set { }
+#if UBLUX_Release || RELEASE
+        set { }
+#else
+#endif
     }
 }
 

@@ -40,8 +40,10 @@ public partial class TrunkOriginationForward : TrunkOrigination
     public override TrunkOriginationType TrunkOriginationType
     {
         get => TrunkOriginationType.Forward;
-        [Obsolete("set method is only used to so that field is stored on mongo DB")]
-        internal set { }
+#if UBLUX_Release || RELEASE
+        set { }
+#else
+#endif
     }
 }
 

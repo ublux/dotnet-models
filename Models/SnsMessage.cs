@@ -12,9 +12,10 @@ public class SnsMessage
     public string Id
     {
         get;
-        
-        [Obsolete("Use default setter")]
+#if UBLUX_Release || RELEASE
         set;
+#else
+#endif
     } = Guid.NewGuid().ToString();
 
     /// <summary>

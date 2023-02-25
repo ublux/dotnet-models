@@ -21,8 +21,10 @@ public abstract partial class EventAction
     public abstract EventActionType EventActionType
     {
         get;
-        [Obsolete("set method is only used to so that field is stored on mongo DB")]
-        internal set;
+#if UBLUX_Release || RELEASE
+        set;
+#else
+#endif
     }
 }
 

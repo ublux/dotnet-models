@@ -59,8 +59,10 @@ public abstract partial class FlowNode
     public abstract FlowNodeType FlowNodeType
     {
         get;
-        [Obsolete("set method is only used to so that field is stored on mongo DB")]
-        internal set;
+        #if UBLUX_Release || RELEASE
+        set;
+        #else
+        #endif
     }
 }
 
@@ -93,8 +95,10 @@ public partial class NodeSay : FlowNode, IOneChild
     public override FlowNodeType FlowNodeType
     {
         get => FlowNodeType.Say;
-        [Obsolete("set method is only used to so that field is stored on mongo DB")]
-        internal set { }
+        #if UBLUX_Release || RELEASE
+        set { }
+        #else
+        #endif
     }
 
     /// <inheritdoc />
@@ -111,8 +115,10 @@ public partial class NodePlay : FlowNode, IOneChild
     public override FlowNodeType FlowNodeType
     {
         get => FlowNodeType.Play;
-        [Obsolete("set method is only used to so that field is stored on mongo DB")]
-        internal set { }
+        #if UBLUX_Release || RELEASE
+        set { }
+        #else
+        #endif
     }
 
     /// <inheritdoc />
@@ -129,8 +135,10 @@ public partial class NodeIfDigits : FlowNode, IMultipleChildren
     public override FlowNodeType FlowNodeType
     {
         get => FlowNodeType.IfDigits;
-        [Obsolete("set method is only used to so that field is stored on mongo DB")]
-        internal set { }
+        #if UBLUX_Release || RELEASE
+        set { }
+        #else
+        #endif
     }
 
     /// <inheritdoc />
@@ -147,8 +155,10 @@ public partial class NodeDigits : FlowNode, IOneChild
     public override FlowNodeType FlowNodeType
     {
         get => FlowNodeType.Digits;
-        [Obsolete("set method is only used to so that field is stored on mongo DB")]
-        internal set { }
+        #if UBLUX_Release || RELEASE
+        set { }
+        #else
+        #endif
     }
 
     /// <inheritdoc />
@@ -165,8 +175,10 @@ public partial class NodeAnyDigits : FlowNode, IOneChild
     public override FlowNodeType FlowNodeType
     {
         get => FlowNodeType.AnyDigits;
-        [Obsolete("set method is only used to so that field is stored on mongo DB")]
-        internal set { }
+        #if UBLUX_Release || RELEASE
+        set { }
+        #else
+        #endif
     }
 
     /// <inheritdoc />
@@ -183,8 +195,10 @@ public partial class NodeIfTime : FlowNode, IMultipleChildren
     public override FlowNodeType FlowNodeType
     {
         get => FlowNodeType.IfTime;
-        [Obsolete("set method is only used to so that field is stored on mongo DB")]
-        internal set { }
+        #if UBLUX_Release || RELEASE
+        set { }
+        #else
+        #endif
     }
 
     /// <inheritdoc />
@@ -201,8 +215,10 @@ public partial class NodeTime : FlowNode, IOneChild
     public override FlowNodeType FlowNodeType
     {
         get => FlowNodeType.Time;
-        [Obsolete("set method is only used to so that field is stored on mongo DB")]
-        internal set { }
+        #if UBLUX_Release || RELEASE
+        set { }
+        #else
+        #endif
     }
 
     /// <inheritdoc />
@@ -219,8 +235,10 @@ public partial class NodeAnyTime : FlowNode, IOneChild
     public override FlowNodeType FlowNodeType
     {
         get => FlowNodeType.AnyTime;
-        [Obsolete("set method is only used to so that field is stored on mongo DB")]
-        internal set { }
+        #if UBLUX_Release || RELEASE
+        set { }
+        #else
+        #endif
     }
 
     /// <inheritdoc />
@@ -237,8 +255,10 @@ public partial class NodeExtension : FlowNode, IOneChild
     public override FlowNodeType FlowNodeType
     {
         get => FlowNodeType.Extension;
-        [Obsolete("set method is only used to so that field is stored on mongo DB")]
-        internal set { }
+        #if UBLUX_Release || RELEASE
+        set { }
+        #else
+        #endif
     }
 
     /// <inheritdoc />
@@ -255,8 +275,10 @@ public partial class NodeDynamicExtension : FlowNode, IOneChild
     public override FlowNodeType FlowNodeType
     {
         get => FlowNodeType.DynamicExtension;
-        [Obsolete("set method is only used to so that field is stored on mongo DB")]
-        internal set { }
+        #if UBLUX_Release || RELEASE
+        set { }
+        #else
+        #endif
     }
 
     /// <inheritdoc />
@@ -273,8 +295,10 @@ public partial class NodeIfLineOffline : FlowNode, IMultipleChildren
     public override FlowNodeType FlowNodeType
     {
         get => FlowNodeType.IfLineOffline;
-        [Obsolete("set method is only used to so that field is stored on mongo DB")]
-        internal set { }
+        #if UBLUX_Release || RELEASE
+        set { }
+        #else
+        #endif
     }
 
     /// <inheritdoc />
@@ -291,8 +315,10 @@ public partial class NodeLineOnline : FlowNode, IOneChild
     public override FlowNodeType FlowNodeType
     {
         get => FlowNodeType.LineOnline;
-        [Obsolete("set method is only used to so that field is stored on mongo DB")]
-        internal set { }
+        #if UBLUX_Release || RELEASE
+        set { }
+        #else
+        #endif
     }
 
     /// <inheritdoc />
@@ -309,8 +335,10 @@ public partial class NodeLineOffline : FlowNode, IOneChild
     public override FlowNodeType FlowNodeType
     {
         get => FlowNodeType.LineOffline;
-        [Obsolete("set method is only used to so that field is stored on mongo DB")]
-        internal set { }
+        #if UBLUX_Release || RELEASE
+        set { }
+        #else
+        #endif
     }
 
     /// <inheritdoc />
@@ -327,8 +355,10 @@ public partial class NodeCall : FlowNode, IOneChild
     public override FlowNodeType FlowNodeType
     {
         get => FlowNodeType.Call;
-        [Obsolete("set method is only used to so that field is stored on mongo DB")]
-        internal set { }
+        #if UBLUX_Release || RELEASE
+        set { }
+        #else
+        #endif
     }
 
     /// <inheritdoc />
@@ -345,8 +375,10 @@ public partial class NodePause : FlowNode, IOneChild
     public override FlowNodeType FlowNodeType
     {
         get => FlowNodeType.Pause;
-        [Obsolete("set method is only used to so that field is stored on mongo DB")]
-        internal set { }
+        #if UBLUX_Release || RELEASE
+        set { }
+        #else
+        #endif
     }
 
     /// <inheritdoc />
@@ -363,8 +395,10 @@ public partial class NodeGoTo : FlowNode, IOneChild
     public override FlowNodeType FlowNodeType
     {
         get => FlowNodeType.GoTo;
-        [Obsolete("set method is only used to so that field is stored on mongo DB")]
-        internal set { }
+        #if UBLUX_Release || RELEASE
+        set { }
+        #else
+        #endif
     }
 
     /// <inheritdoc />
@@ -381,8 +415,10 @@ public partial class NodeBookmark : FlowNode, IOneChild
     public override FlowNodeType FlowNodeType
     {
         get => FlowNodeType.Bookmark;
-        [Obsolete("set method is only used to so that field is stored on mongo DB")]
-        internal set { }
+        #if UBLUX_Release || RELEASE
+        set { }
+        #else
+        #endif
     }
 
     /// <inheritdoc />
@@ -399,8 +435,10 @@ public partial class NodeComment : FlowNode, IOneChild
     public override FlowNodeType FlowNodeType
     {
         get => FlowNodeType.Comment;
-        [Obsolete("set method is only used to so that field is stored on mongo DB")]
-        internal set { }
+        #if UBLUX_Release || RELEASE
+        set { }
+        #else
+        #endif
     }
 
     /// <inheritdoc />
@@ -417,8 +455,10 @@ public partial class NodeAPI : FlowNode, IOneChild
     public override FlowNodeType FlowNodeType
     {
         get => FlowNodeType.API;
-        [Obsolete("set method is only used to so that field is stored on mongo DB")]
-        internal set { }
+        #if UBLUX_Release || RELEASE
+        set { }
+        #else
+        #endif
     }
 
     /// <inheritdoc />
@@ -435,8 +475,10 @@ public partial class NodeCallBackAPI : FlowNode, IOneChild
     public override FlowNodeType FlowNodeType
     {
         get => FlowNodeType.CallBackAPI;
-        [Obsolete("set method is only used to so that field is stored on mongo DB")]
-        internal set { }
+        #if UBLUX_Release || RELEASE
+        set { }
+        #else
+        #endif
     }
 
     /// <inheritdoc />
@@ -453,8 +495,10 @@ public partial class NodeHangup : FlowNode, IOneChild
     public override FlowNodeType FlowNodeType
     {
         get => FlowNodeType.Hangup;
-        [Obsolete("set method is only used to so that field is stored on mongo DB")]
-        internal set { }
+        #if UBLUX_Release || RELEASE
+        set { }
+        #else
+        #endif
     }
 
     /// <inheritdoc />

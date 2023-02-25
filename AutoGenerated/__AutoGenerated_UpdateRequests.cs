@@ -1708,7 +1708,7 @@ public class TagUpdateRequest // : IUbluxDocumentId
 }
 
 /// <summary>
-/// Phone numbers that will be blocked
+/// AI transcription of a phone call
 /// </summary>
 public class AiCallTranscriptionUpdateRequest // : IUbluxDocumentId
 {

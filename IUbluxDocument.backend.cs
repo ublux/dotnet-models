@@ -30,12 +30,10 @@ public partial interface IUbluxDocument : IUbluxDocumentId
 public abstract partial class UbluxDocument : IUbluxDocument, IUbluxDocumentId
 {
     /// <summary>
-    ///     Only used in unit tests
+    ///     We need to use a lock because we store a lot of data on the cache. 
+    ///     There is the posibility that the same object is attempted to be modified at the same time.
     /// </summary>
-    internal void UnitTest_SetId(string id)
-    {
-        this.id = id;
-    }
+    protected readonly ReaderWriterLockSlim _lock = new();
 
     /// <summary>
     ///     Set id
@@ -47,10 +45,7 @@ public abstract partial class UbluxDocument : IUbluxDocument, IUbluxDocumentId
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
     public
-
-    // only required on debug mode
 #if UBLUX_Release || RELEASE
-        required
 #else
         required 
 #endif
@@ -70,7 +65,15 @@ public abstract partial class UbluxDocument : IUbluxDocument, IUbluxDocumentId
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
     [HideForCreateRequest]
-    public DateTime? DateDeleted { get; set; }        
+    public DateTime? DateDeleted
+    {
+        get { try { _lock.EnterReadLock(); return dateDeleted; } finally { _lock.ExitReadLock(); } }
+        set { try { _lock.EnterWriteLock(); dateDeleted = value; } finally { _lock.ExitWriteLock(); } }
+    }
+    private DateTime? dateDeleted;      
 }
+/*
+
+ */
 
 #endif

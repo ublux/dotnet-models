@@ -194,7 +194,7 @@ public static partial class Constants
     };
 
     /// <summary>
-    ///     Valid characters for an instance id
+    ///     Valid characters for an instance id. It cannot contain . it will make method GetLineId from phone not work!
     /// </summary>
     public static readonly HashSet<char> InstanceIdValidChars = new("ABCDEFGHIJKLMNOPQRSTUVWXYZ-0123456789".ToCharArray());
 

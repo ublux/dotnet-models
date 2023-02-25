@@ -23,7 +23,11 @@ public partial class VoipProvider : UbluxDocument
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
     [IgnoreDataMember]
-    public string? ProviderOwnerAccountId { get; set; }
+    public string? ProviderOwnerAccountId {
+        get { try { /*custom-get-code*/ _lock.EnterReadLock(); return _ProviderOwnerAccountId; } finally { _lock.ExitReadLock(); } }
+        set { try { _lock.EnterWriteLock(); _ProviderOwnerAccountId = value; /*custom-set-code*/ } finally { _lock.ExitWriteLock(); }}
+    }
+    private string? _ProviderOwnerAccountId;
 
     /// <summary>
     ///     Twilio calls this authority token
@@ -31,7 +35,11 @@ public partial class VoipProvider : UbluxDocument
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
     [IgnoreDataMember]
-    public string? ProviderAccessToken { get; set; }
+    public string? ProviderAccessToken {
+        get { try { /*custom-get-code*/ _lock.EnterReadLock(); return _ProviderAccessToken; } finally { _lock.ExitReadLock(); } }
+        set { try { _lock.EnterWriteLock(); _ProviderAccessToken = value; /*custom-set-code*/ } finally { _lock.ExitWriteLock(); }}
+    }
+    private string? _ProviderAccessToken;
 
     /// <summary>
     ///     Ublux partner
@@ -57,7 +65,11 @@ public partial class VoipProvider : UbluxDocument
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
     [IgnoreDataMember]
-    public string? Status { get; set; }
+    public string? Status {
+        get { try { /*custom-get-code*/ _lock.EnterReadLock(); return _Status; } finally { _lock.ExitReadLock(); } }
+        set { try { _lock.EnterWriteLock(); _Status = value; /*custom-set-code*/ } finally { _lock.ExitWriteLock(); }}
+    }
+    private string? _Status;
 
     /// <summary>
     ///     Country of this provider

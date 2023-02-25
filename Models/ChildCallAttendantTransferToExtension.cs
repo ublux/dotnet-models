@@ -18,8 +18,10 @@ public class ChildCallAttendantTransferToExtension : ChildCall, IAttendantTransf
     public override ChildCallType ChildCallType
     {
         get => ChildCallType.AttendantTransferToExtension;
-        [Obsolete("set method is only used to so that field is stored on mongo DB")]
-        internal set { }
+#if UBLUX_Release || RELEASE
+        set { }
+#else
+#endif
     }
 
     /// <summary> Id of call that attendant transfered this call </summary>

@@ -8278,6 +8278,16 @@ public class AiCallTranscriptionFilterRequest
 
 
 
+    /// <summary> ErrorMessage equals </summary>
+    [JsonProperty("errorMessage_eq")]
+    public string? ErrorMessage_EQ { get; set; }
+    /// <summary> ErrorMessage contains </summary>
+    [JsonProperty("errorMessage_con")]
+    public string? ErrorMessage_CON { get; set; }
+    /// <summary> ErrorMessage regex </summary>
+    [JsonProperty("errorMessage_reg")]
+    public string? ErrorMessage_REG { get; set; }
+
     /// <summary> IdsTags equals </summary>
     [JsonProperty("idsTags_eq")]
     public string? IdsTags_EQ { get; set; }

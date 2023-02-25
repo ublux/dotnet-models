@@ -57,7 +57,9 @@ public partial class ExtensionVoicemail : Extension
     public override ExtensionType ExtensionType
     {
         get => ExtensionType.Voicemail;
-        [Obsolete("set method is only used to so that field is stored on mongo DB")]
-        internal set { }
+#if UBLUX_Release || RELEASE
+        set { }
+#else
+#endif
     }
 }

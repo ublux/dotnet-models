@@ -82,8 +82,10 @@ allow=alaw
     public override TrunkOriginationType TrunkOriginationType
     {
         get => TrunkOriginationType.Register;
-        [Obsolete("set method is only used to so that field is stored on mongo DB")]
-        internal set { }
+#if UBLUX_Release || RELEASE
+        set { }
+#else
+#endif
     }
 
     // todo check status. For example if trunk is not registered then register on failover pbx

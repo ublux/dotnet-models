@@ -17,8 +17,10 @@ public partial class ContactNumber
     public string SearchIndex
     {
         get => searchIndex;
-        [Obsolete("Set via SetSearchIndex method")]
+#if UBLUX_Release || RELEASE
         set => searchIndex = value;
+#else
+#endif        
     }
     private string searchIndex = string.Empty;
 

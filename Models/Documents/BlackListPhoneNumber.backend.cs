@@ -21,8 +21,10 @@ public partial class BlackListPhoneNumber
     public string SearchIndex
     {
         get => searchIndex;
-        [Obsolete("Set via SetSearchIndex method")]
-        set => searchIndex = value;
+#if UBLUX_Release || RELEASE
+        set { searchIndex = value; }
+#else
+#endif
     }
     private string searchIndex = string.Empty;
 

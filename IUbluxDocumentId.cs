@@ -22,7 +22,6 @@ public interface IUbluxDocumentId
         get;
 #if UBLUX_Release || RELEASE
         set;
-#else
 #endif
     }
 

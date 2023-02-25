@@ -10,8 +10,10 @@ public class EventActionForwardToPhoneNumber : EventAction
     public override EventActionType EventActionType
     {
         get => EventActionType.ForwardToPhoneNumber;
-        [Obsolete("set method is only used to so that field is stored on mongo DB")]
-        internal set { }
+#if UBLUX_Release || RELEASE
+        set { }
+#else
+#endif
     }
 
     /// <summary>

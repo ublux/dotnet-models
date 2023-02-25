@@ -6,21 +6,26 @@ public partial class ContactEmail
 {
     #region Search index
 
+
+
     /// <summary>
     ///     This cannot be the id because if the email address changes we should not change the id.
     ///     Thanks to this index we can search fast on database. This index consists of: Account followed by the email address
     ///     TODO: make this an index on database. Do not make it unique only and index because we can have two contacts with the same email address
     /// </summary>
     [AllowUpdate(false)] 
-    [SwaggerSchema(ReadOnly = true)] 
-    [Obsolete("Set via SetSearchIndex method")]
+    [SwaggerSchema(ReadOnly = true)]     
     public string SearchIndex
     {
         get => searchIndex;
-        [Obsolete("Set via SetSearchIndex method")]
+#if UBLUX_Release || RELEASE
         set => searchIndex = value;
+#else
+#endif
     }
     private string searchIndex = string.Empty;
+
+
 
     /// <summary>
     ///     Set value of search index

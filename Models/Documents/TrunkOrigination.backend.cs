@@ -75,8 +75,10 @@ public abstract class TrunkOrigination : UbluxDocument
     public abstract TrunkOriginationType TrunkOriginationType
     {
         get;
-        [Obsolete("set method is only used to so that field is stored on mongo DB")]
-        internal set;
+#if UBLUX_Release || RELEASE
+        set;
+#else
+#endif
     }
 
     ///// <summary>

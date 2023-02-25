@@ -18,8 +18,10 @@ public class ChildCallAttendantTransferToPSTN : ChildCall, IAttendantTransfer
     public override ChildCallType ChildCallType
     {
         get => ChildCallType.AttendantTransferToPSTN;
-        [Obsolete("set method is only used to so that field is stored on mongo DB")]
-        internal set { }
+#if UBLUX_Release || RELEASE
+        set { }
+#else
+#endif
     }
 
     /// <summary> Id of call that attendant transfered this call </summary>

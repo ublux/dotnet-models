@@ -63,16 +63,14 @@ public partial class User : UbluxDocument_ReferenceAccount_ReferenceTags
     ///     Only allow connections from this regex. Default is "*"
     /// </summary>
     [AllowUpdate(true)]
-    // virtual because of unit tests so that it can mock this object
-    public virtual string? AllowConnectingFromIpRegex { get; set; }
+    public string? AllowConnectingFromIpRegex { get; set; }
 
     /// <summary>
     ///     Only allow authentication if ip address stays the same.
     ///     If IpAddressLastAuthenticated is null then this will be allowed.
     /// </summary>
     [AllowUpdate(true)]
-    // virtual because of unit tests so that it can mock this object
-    public virtual bool PreventConnectingIfIpChanges { get; set; }
+    public bool PreventConnectingIfIpChanges { get; set; }
 
     /// <summary>
     ///     Ip address where it was last authenticated
@@ -80,8 +78,7 @@ public partial class User : UbluxDocument_ReferenceAccount_ReferenceTags
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
     [HideForCreateRequest]
-    public virtual string? IpAddressWhereAuthenticated { get; set; }
-    // virtual because of unit tests so that it can mock this object
+    public string? IpAddressWhereAuthenticated { get; set; }
 
     /// <summary>
     ///     Date when this user was last authenticated
@@ -89,8 +86,7 @@ public partial class User : UbluxDocument_ReferenceAccount_ReferenceTags
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
     [HideForCreateRequest]
-    // virtual because of unit tests so that it can mock this object
-    public virtual DateTime? DateAuthenticated { get; set; }
+    public DateTime? DateAuthenticated { get; set; }
 
     #endregion
 }

@@ -22,22 +22,32 @@ public partial class Line : UbluxSubDocument
     /// </summary>
     public static string? GetIdPhone(string idLine)
     {
-        // string input = "Li.Ac.1.Ph.WS1.8.9";
-        byte dotCount = 0;
-        byte[] dots = new byte[6];
+        if (idLine.StartsWith("Li.Ac.") == false)
+            return null;
 
-        for (byte i = 2; i < idLine.Length; i++)
-            if (idLine[i] == '.')
-            {
-                dots[dotCount++] = i;
-                if (dotCount == dots.Length)
-                    break;
-            }
+        try
+        {
+            // string input = "Li.Ac.1.Ph.WS1.8.9";
+            byte dotCount = 0;
+            byte[] dots = new byte[6];
 
-        // id phone will be the index from dot 3 to 6
-        var idPhone = idLine[(dots[2] + 1)..dots[5]];
-        
-        return idPhone;
+            for (byte i = 2; i < idLine.Length; i++)
+                if (idLine[i] == '.')
+                {
+                    dots[dotCount++] = i;
+                    if (dotCount == dots.Length)
+                        break;
+                }
+
+            // id phone will be the index from dot 3 to 6
+            var idPhone = idLine[(dots[2] + 1)..dots[5]];
+
+            return idPhone;
+        }
+        catch
+        {
+            return null;
+        }
 
         //// Example of line id:   Li.Ph.1.AZ100.23
         //// this will return therefore Ph.1.AZ100  that means Phone created by instance 1 and idcounter AZ100
