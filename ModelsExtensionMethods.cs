@@ -365,4 +365,77 @@ public static class ModelsExtensionMethods
         { AiCallTranscription.DocumentPrefix, Collections.AiCallTranscriptions },
         { Email.DocumentPrefix, Collections.Emails }
     };
+
+    #region GetExtensionsUsedByLine ordered by priority
+
+    /// <summary>
+    ///     Get extensions used by line ordered by prioroty
+    /// </summary>
+    public static IEnumerable<Extension> GetExtensionsUsedByLine(this IEnumerable<Extension> extensions, string idLine)
+    {
+        return extensions
+            .Order(new ExtensionPriorityComparer(idLine))
+            .TakeWhile(x => IsExtensionUsedByLine(x, idLine, out _));
+    }
+    private class ExtensionPriorityComparer : IComparer<Extension>
+    {
+        private readonly string idLine;
+
+        public ExtensionPriorityComparer(string idLine)
+        {
+            this.idLine = idLine;
+        }
+
+        public int Compare(Extension? x, Extension? y)
+        {
+            // less than 0.     x is less than y
+            // 0.     x == y
+            // more than 0.     x is greater than y
+
+            var isXUsed = IsExtensionUsedByLine(x, idLine, out var weightX);
+            var isYUsed = IsExtensionUsedByLine(y, idLine, out var weightY);
+
+            if (isXUsed == false && isYUsed == false)
+                return 0;
+            if (isXUsed == true && isYUsed == false)
+                return -1;
+            if (isXUsed == false && isYUsed == true)
+                return 1;
+
+            // at this point we know line is being used by both extensions. so complare the weights
+            if (weightX < weightY) return -1;
+            if (weightX == weightY) return 0;
+            return 1;
+        }
+    }
+
+    // Weight. The lower the higher the priority
+    private static bool IsExtensionUsedByLine(Extension? e, string idLine, out int weight)
+    {
+        if (e is null)
+        {
+            weight = 0;
+            return false;
+        }
+
+        if (e is ExtensionDial dial)
+        {
+            weight = dial.IdsLines.Count * 2;
+            return dial.IdsLines.Contains(idLine);
+        }
+        if (e is ExtensionQueue queue)
+        {
+            weight = (queue.IdsLines.Count * 2) + 1;
+            return queue.IdsLines.Contains(idLine);
+        }
+        if (e is ExtensionVoicemail vm)
+        {
+            weight = (vm.IdsLinesThatCanListenToVoicemail.Count * 2) + 4;
+            return vm.IdsLinesThatCanListenToVoicemail.Contains(idLine);
+        }
+        weight = 0;
+        return false;
+    }
+
+    #endregion
 }
