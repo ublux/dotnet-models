@@ -72,18 +72,18 @@ public partial class User : UbluxDocument_ReferenceAccount_ReferenceTags
     // virtual because of unit tests so that it can mock this object
     public required string Password { get; set; }
 
-    /// <summary>
-    ///     Only allow connections from this regex. Default is "*"
-    /// </summary>
-    [AllowUpdate(true)]
-    public string? AllowConnectingFromIpRegex { get; set; }
+    ///// <summary>
+    /////     Only allow connections from this regex. Default is "*"
+    ///// </summary>
+    //[AllowUpdate(true)]
+    //public string? AllowConnectingFromIpRegex { get; set; }
 
-    /// <summary>
-    ///     Only allow authentication if ip address stays the same.
-    ///     If IpAddressLastAuthenticated is null then this will be allowed.
-    /// </summary>
-    [AllowUpdate(true)]
-    public bool PreventConnectingIfIpChanges { get; set; }
+    ///// <summary>
+    /////     Only allow authentication if ip address stays the same.
+    /////     If IpAddressLastAuthenticated is null then this will be allowed.
+    ///// </summary>
+    //[AllowUpdate(true)]
+    //public bool PreventConnectingIfIpChanges { get; set; }
 
     /// <summary>
     ///     Ip address where it was last authenticated

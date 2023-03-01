@@ -4934,20 +4934,6 @@ public class UserFilterRequest
     [JsonProperty("password_reg")]
     public string? Password_REG { get; set; }
 
-    /// <summary> AllowConnectingFromIpRegex equals </summary>
-    [JsonProperty("allowConnectingFromIpRegex_eq")]
-    public string? AllowConnectingFromIpRegex_EQ { get; set; }
-    /// <summary> AllowConnectingFromIpRegex contains </summary>
-    [JsonProperty("allowConnectingFromIpRegex_con")]
-    public string? AllowConnectingFromIpRegex_CON { get; set; }
-    /// <summary> AllowConnectingFromIpRegex regex </summary>
-    [JsonProperty("allowConnectingFromIpRegex_reg")]
-    public string? AllowConnectingFromIpRegex_REG { get; set; }
-
-    /// <summary> PreventConnectingIfIpChanges equals </summary>
-    [JsonProperty("preventConnectingIfIpChanges_eq")]
-    public bool? PreventConnectingIfIpChanges_EQ { get; set; }
-
     /// <summary> IpAddressWhereAuthenticated equals </summary>
     [JsonProperty("ipAddressWhereAuthenticated_eq")]
     public string? IpAddressWhereAuthenticated_EQ { get; set; }

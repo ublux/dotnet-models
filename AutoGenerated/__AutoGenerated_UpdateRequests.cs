@@ -1021,15 +1021,6 @@ public class UserUpdateRequest // : IUbluxDocumentId
     /// </summary>
     public List<Ublux.Communications.Enums.UbluxRole>? UbluxRoles { get; set; }
     /// <summary>
-    /// Only allow connections from this regex. Default is "*"
-    /// </summary>
-    public String? AllowConnectingFromIpRegex { get; set; }
-    /// <summary>
-    /// Only allow authentication if ip address stays the same.
-    /// If IpAddressLastAuthenticated is null then this will be allowed.
-    /// </summary>
-    public Boolean? PreventConnectingIfIpChanges { get; set; }
-    /// <summary>
     /// It is nullable because there are cases where it makes no sense to point to an account.
     /// For example a CloudService user will point to no account
     /// </summary>
@@ -1039,10 +1030,6 @@ public class UserUpdateRequest // : IUbluxDocumentId
     {
         if(this.UbluxRoles!=null)
             user.UbluxRoles = this.UbluxRoles;
-        if(this.AllowConnectingFromIpRegex!=null)
-            user.AllowConnectingFromIpRegex = this.AllowConnectingFromIpRegex;
-        if(this.PreventConnectingIfIpChanges!=null)
-            user.PreventConnectingIfIpChanges = this.PreventConnectingIfIpChanges.Value;
         if(this.IdsTags!=null)
             user.IdsTags = this.IdsTags;
     }
