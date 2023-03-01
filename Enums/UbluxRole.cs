@@ -438,28 +438,28 @@ public enum UbluxRole
     /// <summary>
     ///     Can execute all endpoints the default user can execute
     /// </summary>
-    user = 1000,
+    admin = 1000,
     /// <summary> user with only read permissions </summary>
-    user_readonly,
+    admin_readonly,
     /// <summary> user with only read/update permissions </summary>
-    user_update,
+    admin_update,
     /// <summary> user with only read/delete permissions </summary>
-    user_delete,
+    admin_delete,
     /// <summary> user with only read/create permissions </summary>
-    user_create,
+    admin_create,
 
     /// <summary>
     ///     Can execute admin services. For example it can reboot a PBX. Can also execute user role
     /// </summary>
-    admin = 1010,
+    support = 1010,
     /// <summary> admin with only read permissions </summary>
-    admin_readonly,
+    support_readonly,
     /// <summary> admin with only read/update permissions </summary>
-    admin_update,
+    support_update,
     /// <summary> admin with only read/delete permissions </summary>
-    admin_delete,
+    support_delete,
     /// <summary> admin with only read/create permissions </summary>
-    admin_create,
+    support_create,
 
     #endregion
 

@@ -53,7 +53,8 @@ public partial class Account : UbluxDocument
     public required string CompanyName { get; set; }
 
     /// <summary>
-    ///     If client has granted access to support to make changes to account
+    ///     If client has granted access to support to make changes to account. 
+    ///     This can only be changed by an ownder of the account.
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
@@ -121,4 +122,6 @@ public partial class Account : UbluxDocument
     }
 
     #endregion
+
+    
 }
