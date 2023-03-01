@@ -5,6 +5,7 @@
 ///     If its a PBX user for example it must point to account tbd 27
 /// </summary>
 [DebuggerDisplay("Username: {Username}")]
+[BsonIgnoreExtraElements]
 public partial class User : UbluxDocument_ReferenceAccount_ReferenceTags
 {
     #region Properties   
