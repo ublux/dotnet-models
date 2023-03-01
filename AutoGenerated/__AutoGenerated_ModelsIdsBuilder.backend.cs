@@ -25,8 +25,8 @@ namespace Ublux.Communications.Models.Documents {
         /// <summary> Id prefix </summary>
         public const string DocumentPrefix = "Em";
 
-        /// <summary> Custom: Prefix followed by email in lowercase </summary>
-        public static BuiltId BuildId(string emailAddress) => new($"{DocumentPrefix}.{emailAddress.ToLower()}");
+        /// <summary> Build Id </summary>
+        public static BuiltId BuildId(RunningApplicationInstance instance) => new($"{DocumentPrefix}.{instance.Id}.{instance.IdGlobalAutoIncrement()}");
     }
     public partial class AgreementToTermsAndConditions {
         /// <summary> Id prefix </summary>
@@ -193,8 +193,8 @@ namespace Ublux.Communications.Models.Documents {
         /// <summary> Id prefix </summary>
         public const string DocumentPrefix = "Us";
 
-        /// <summary> Custom: prefix and the amail address. Example Id.antonio@ublux.com, or Id.PBX.UST </summary>
-        public static BuiltId BuildId(string emailOrCloudServiceName) => new($"{DocumentPrefix}.{emailOrCloudServiceName}");
+        /// <summary> Build Id </summary>
+        public static BuiltId BuildId(RunningApplicationInstance instance) => new($"{DocumentPrefix}.{instance.Id}.{instance.IdGlobalAutoIncrement()}");
     }
     public partial class LineKeyGroup {
         /// <summary> Id prefix </summary>

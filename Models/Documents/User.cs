@@ -4,9 +4,22 @@
 ///     Someone that has access to consume Ublux Web Api. It can be a PBX, WA, 
 ///     If its a PBX user for example it must point to account tbd 27
 /// </summary>
+[DebuggerDisplay("Username: {Username}")]
 public partial class User : UbluxDocument_ReferenceAccount_ReferenceTags
 {
     #region Properties   
+
+    #region References
+
+    /// <summary>
+    ///     Email of user. Note this is the Id not the email address. 
+    /// </summary>
+    [AllowUpdate(false)]
+    [IsUbluxRequired]
+    [References(typeof(Email))]
+    public required string IdEmail { get; set; } = "";
+
+    #endregion
 
     #region Subdocuments
 

@@ -24,9 +24,9 @@ public class ApiKeyUpdateRequest // : IUbluxDocumentId
     /// </summary>
     public DateTime? DateExpire { get; set; }
     /// <summary>
-    /// If true it will be marked as deleted after it was used
+    /// Description or notes of API key
     /// </summary>
-    public Boolean? UseOnce { get; set; }
+    public String? Description { get; set; }
     /// <summary>
     /// It is nullable because there are cases where it makes no sense to point to an account.
     /// For example a CloudService user will point to no account
@@ -39,8 +39,8 @@ public class ApiKeyUpdateRequest // : IUbluxDocumentId
             apiKey.UbluxRoles = this.UbluxRoles;
         if(this.DateExpire!=null)
             apiKey.DateExpire = this.DateExpire.Value;
-        if(this.UseOnce!=null)
-            apiKey.UseOnce = this.UseOnce.Value;
+        if(this.Description!=null)
+            apiKey.Description = this.Description;
         if(this.IdsTags!=null)
             apiKey.IdsTags = this.IdsTags;
     }

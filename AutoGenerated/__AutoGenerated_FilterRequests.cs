@@ -41,9 +41,15 @@ public class ApiKeyFilterRequest
     [JsonProperty("dateLastUsed_gte")]
     public DateTime? DateLastUsed_GTE { get; set; }
 
-    /// <summary> UseOnce equals </summary>
-    [JsonProperty("useOnce_eq")]
-    public bool? UseOnce_EQ { get; set; }
+    /// <summary> Description equals </summary>
+    [JsonProperty("description_eq")]
+    public string? Description_EQ { get; set; }
+    /// <summary> Description contains </summary>
+    [JsonProperty("description_con")]
+    public string? Description_CON { get; set; }
+    /// <summary> Description regex </summary>
+    [JsonProperty("description_reg")]
+    public string? Description_REG { get; set; }
 
     /// <summary> IdsTags equals </summary>
     [JsonProperty("idsTags_eq")]
@@ -4884,6 +4890,16 @@ public class FaxOutgoingGroupFilterRequest
 /// <summary> Enables searching for Users </summary>
 public class UserFilterRequest 
 {
+    /// <summary> IdEmail equals </summary>
+    [JsonProperty("idEmail_eq")]
+    public string? IdEmail_EQ { get; set; }
+    /// <summary> IdEmail contains </summary>
+    [JsonProperty("idEmail_con")]
+    public string? IdEmail_CON { get; set; }
+    /// <summary> IdEmail regex </summary>
+    [JsonProperty("idEmail_reg")]
+    public string? IdEmail_REG { get; set; }
+
     /// <summary> UbluxRoles contains </summary>
     [JsonProperty("ubluxRoles_con")]
     public UbluxRole? UbluxRoles_CON { get; set; }

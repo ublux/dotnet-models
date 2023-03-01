@@ -40,7 +40,6 @@ public partial class Email : UbluxDocument_ReferenceAccount_ReferenceTags
     //public string IdLineThatValidatedEmail { get; set; }
 
     #endregion
-
-
+    
     #endregion
 }
