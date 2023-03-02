@@ -1,7 +1,5 @@
 ﻿#if UBLUX_BACKEND
 
-using System.Runtime.CompilerServices;
-
 namespace Ublux.Communications.Models.Documents;
 
 /// <summary>

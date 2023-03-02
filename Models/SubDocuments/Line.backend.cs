@@ -1,7 +1,5 @@
 ﻿#if UBLUX_BACKEND
 
-using Microsoft.Toolkit.HighPerformance;
-
 namespace Ublux.Communications.Models.SubDocuments;
 
 /// <summary>

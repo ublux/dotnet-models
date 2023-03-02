@@ -1,6 +1,4 @@
-﻿using System.Security.Cryptography;
-
-namespace Ublux.Communications.Models.SubDocuments;
+﻿namespace Ublux.Communications.Models.SubDocuments;
 
 /// <summary>
 ///     Represents a stored file in ublux. 
