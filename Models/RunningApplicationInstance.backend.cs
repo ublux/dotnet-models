@@ -54,7 +54,7 @@ public class RunningApplicationInstance
         {
             Id = (type + "-" + Guid.NewGuid().ToString()[..3]).ToUpper(),
             CloudServiceType = type
-        };
+        };        
     }
 
     #region NumberOfOperationsExecuting

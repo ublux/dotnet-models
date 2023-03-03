@@ -27,7 +27,7 @@ public abstract class TrunkOrigination : UbluxDocument
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
     [IsUbluxRequired]
-    public required string IdVoipProvider { get; set; }
+    public required string IdVoipProvider { get; set; } = string.Empty;
 
     /// <summary>
     ///     Used by what PBX?
@@ -38,7 +38,7 @@ public abstract class TrunkOrigination : UbluxDocument
     [SwaggerSchema(ReadOnly = true)]
     [References(typeof(CloudServicePbx))]
     [IsUbluxRequired]
-    public required string IdCloudServicePbx { get; set; }
+    public required string IdCloudServicePbx { get; set; } = string.Empty;
 
     /// <summary>
     ///     Backup pbx
@@ -49,7 +49,7 @@ public abstract class TrunkOrigination : UbluxDocument
     [SwaggerSchema(ReadOnly = true)]
     [References(typeof(CloudServicePbx))]
     [IsUbluxRequired]
-    public required string IdCloudServicePbxFailover { get; set; }
+    public required string IdCloudServicePbxFailover { get; set; } = string.Empty;
 
     // This can be ontained quering database
     ///// <summary>
@@ -96,7 +96,7 @@ public abstract class TrunkOrigination : UbluxDocument
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
     [IsUbluxRequired]
-    public required string ProviderId { get; set; }
+    public required string ProviderId { get; set; } = string.Empty;
 
     ///// <summary>
     /////     DIDs associated with this trunk
@@ -110,7 +110,7 @@ public abstract class TrunkOrigination : UbluxDocument
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
     [IsUbluxRequired]
-    public required string FriendlyName { get; set; }
+    public required string FriendlyName { get; set; } = string.Empty;
 
     ///// <summary>
     /////     Is connection secure?

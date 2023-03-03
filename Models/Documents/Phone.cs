@@ -15,7 +15,7 @@ public partial class Phone : UbluxDocument_ReferenceAccount_ReferenceTags
     [References(typeof(CloudServicePbx))]
     [AllowUpdate(true)]
     [IsUbluxRequired]
-    public required string IdCloudServicePbx { get; set; } = "";
+    public required string IdCloudServicePbx { get; set; } = string.Empty;
 
     /// <summary>
     ///     Configuration phone will use
@@ -51,7 +51,7 @@ public partial class Phone : UbluxDocument_ReferenceAccount_ReferenceTags
     /// </summary>
     [AllowUpdate(true)]
     [IsUbluxRequired]
-    public required string FriendlyName { get; set; }
+    public required string FriendlyName { get; set; } = string.Empty;
 
     #endregion
 
@@ -92,7 +92,6 @@ public partial class Phone : UbluxDocument_ReferenceAccount_ReferenceTags
 
     /// <summary>
     ///     Device pin of 5 random digits used to connect phone in case extension is used by multiple phones
-    ///     Random.Shared.Next(10000, 99999).ToString()
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]

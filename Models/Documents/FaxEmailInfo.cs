@@ -14,7 +14,7 @@
 //    // [References(typeof(Email))]
 //    [AllowUpdate(false)]
 //    [SwaggerSchema(ReadOnly = true)]
-//    public required string EmailAddress { get; set; } = "";
+//    public required string EmailAddress { get; set; } = string.Empty;
 
 //    #region References
 

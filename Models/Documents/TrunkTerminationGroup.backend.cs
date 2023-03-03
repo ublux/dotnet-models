@@ -17,7 +17,7 @@ public partial class TrunkTerminationGroup : UbluxDocument
     [SwaggerSchema(ReadOnly = true)]
     [References(typeof(TrunkTermination))]
     [IsUbluxRequired]
-    public required List<string> IdsTrunkTerminationsOrderedByPriority { get; set; }
+    public required List<string> IdsTrunkTerminationsOrderedByPriority { get; set; } = new();
 }
 
 #endif

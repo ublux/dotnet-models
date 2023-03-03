@@ -19,7 +19,7 @@ public partial class TrunkOriginationForward : TrunkOrigination
     [SwaggerSchema(ReadOnly = true)]
     [IgnoreDataMember]
     [IsUbluxRequired]
-    public required string SipUri { get; set; }
+    public required string SipUri { get; set; } = string.Empty;
 
     /// <summary>
     ///     Sip URI where to send traffic in case primary SipUri fails
@@ -28,7 +28,7 @@ public partial class TrunkOriginationForward : TrunkOrigination
     [SwaggerSchema(ReadOnly = true)]
     [IgnoreDataMember]
     [IsUbluxRequired]
-    public required string SipUriFailover { get; set; }
+    public required string SipUriFailover { get; set; } = string.Empty;
 
     /// <summary>
     ///     Type of trunk origination

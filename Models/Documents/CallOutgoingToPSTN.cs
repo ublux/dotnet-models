@@ -40,7 +40,7 @@ public partial class CallOutgoingToPSTN : CallOutgoing
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
     [IsUbluxRequired]
-    public required string ToInternationalFormat { get; set; }
+    public required string ToInternationalFormat { get; set; } = string.Empty;
 
     /// <summary>
     ///     When call is answered. Note that if call is sent to voicemail this will be marked when call is answered by voicemail.

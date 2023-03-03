@@ -31,7 +31,7 @@ public partial class ExtensionVoicemail : Extension
     [AllowUpdate(true)]
     [IsUbluxRequired]
     [References(typeof(Email))]
-    public required string IdEmail { get; set; } = "";
+    public required string IdEmail { get; set; } = string.Empty;
 
     /// <summary>
     ///     This text will be converted to audio and be played before leaving voicemail

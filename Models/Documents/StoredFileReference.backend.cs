@@ -30,7 +30,7 @@ public partial class StoredFileReference : UbluxDocument
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    public required string IdDocument { get; set; } = "";
+    public required string IdDocument { get; set; } = string.Empty;
 
     /// <summary>
     ///     Stored file such as an Audio MP3 file

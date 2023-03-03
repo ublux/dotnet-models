@@ -18,7 +18,7 @@ public partial class Account : UbluxDocument
     // [SwaggerSchema(ReadOnly = true)]
     //[References(typeof(CloudServicePbx))]
     //[IsUbluxRequired]
-    //public required string IdCloudServicePbxFailover { get; set; }
+    //public required string IdCloudServicePbxFailover { get; set; } = string.Empty;
 
     ///// <summary>
     /////     Reference to webAppCloudService. Thanks to this we know where to send events. For example on pbx when we receive a new phone call we send that event to CloudServicePbx
@@ -28,7 +28,7 @@ public partial class Account : UbluxDocument
     // [SwaggerSchema(ReadOnly = true)]
     //[References(typeof(CloudServiceWebApp))]
     //[IsUbluxRequired]
-    //public required string IdCloudServiceWebApp { get; set; }
+    //public required string IdCloudServiceWebApp { get; set; } = string.Empty;
 
     /// <summary>
     ///     Trunks that will be used for outgoing calls ordered by priority. Points to collection Group_TrunkTerminations
@@ -40,7 +40,7 @@ public partial class Account : UbluxDocument
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
     [IsUbluxRequired]
-    public required string IdGTrunkTerminationGroup { get; set; }
+    public required string IdGTrunkTerminationGroup { get; set; } = string.Empty;
 
     #endregion
 

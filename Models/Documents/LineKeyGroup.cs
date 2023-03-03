@@ -22,14 +22,14 @@ public partial class LineKeyGroup : UbluxDocument_ReferenceAccount_ReferenceTags
     /// </summary>
     [AllowUpdate(true)]
     [IsUbluxRequired]
-    public required string FriendlyName { get; set; }
+    public required string FriendlyName { get; set; } = string.Empty;
 
     /// <summary>
     ///     Description of line key group
     /// </summary>
 
     [AllowUpdate(true)]
-    public string? Description { get; set; }
+    public string? Description { get; set; } = string.Empty;
 
     #endregion
 }

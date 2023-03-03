@@ -23,7 +23,7 @@ public partial class ExtensionQueue : Extension
     [References(typeof(Extension))]
     [AllowUpdate(true)]
     [IsUbluxRequired]
-    public required string IdExtensionIfTimeout { get; set; }
+    public required string IdExtensionIfTimeout { get; set; } = string.Empty;
 
     /// <summary>
     ///     Audios to play meanwhile caller is waiting to be attended

@@ -15,7 +15,7 @@ public partial class MusicOnHoldGroup : UbluxDocument_ReferenceAccount_Reference
     [References(typeof(Audio))]
     [AllowUpdate(true)]
     [IsUbluxRequired]
-    public required List<string> IdsAudios { get; set; }    
+    public required List<string> IdsAudios { get; set; } = new();
 
     #endregion
 
@@ -24,7 +24,7 @@ public partial class MusicOnHoldGroup : UbluxDocument_ReferenceAccount_Reference
     /// </summary>
     [AllowUpdate(true)]
     [IsUbluxRequired]
-    public required string FriendlyName { get; set; }
+    public required string FriendlyName { get; set; } = string.Empty;
 
     /// <summary>
     ///     Description of music on hold group

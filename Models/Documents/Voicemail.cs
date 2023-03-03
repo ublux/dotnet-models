@@ -29,7 +29,7 @@ public partial class Voicemail : UbluxDocument_ReferenceAccount_ReferenceTags
     [SwaggerSchema(ReadOnly = true)]
     [IsUbluxRequired]
     [References(typeof(Email))]
-    public required string IdEmail { get; set; } = "";
+    public required string IdEmail { get; set; } = string.Empty;
 
     #endregion
 

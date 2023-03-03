@@ -16,9 +16,10 @@ public partial class User : UbluxDocument_ReferenceAccount_ReferenceTags
     ///     Email of user. Note this is the Id not the email address. 
     /// </summary>
     [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     [IsUbluxRequired]
     [References(typeof(Email))]
-    public required string IdEmail { get; set; } = "";
+    public required string IdEmail { get; set; } = string.Empty;
 
     #endregion
 
@@ -31,7 +32,7 @@ public partial class User : UbluxDocument_ReferenceAccount_ReferenceTags
     [AllowUpdate(true)]
     [IsUbluxRequired]
     [BsonRepresentation(BsonType.String)]
-    public required List<UbluxRole> UbluxRoles { get; set; }
+    public required List<UbluxRole> UbluxRoles { get; set; } = new();
 
     #endregion    
 
@@ -70,8 +71,7 @@ public partial class User : UbluxDocument_ReferenceAccount_ReferenceTags
     [SwaggerSchema(ReadOnly = true)]
     [IsUbluxRequired]
     [HideForCreateRequest]
-    // virtual because of unit tests so that it can mock this object
-    public required string Password { get; set; }
+    public required string Password { get; set; } = string.Empty;
 
     ///// <summary>
     /////     Only allow connections from this regex. Default is "*"

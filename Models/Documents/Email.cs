@@ -13,7 +13,7 @@ public partial class Email : UbluxDocument_ReferenceAccount_ReferenceTags
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
     public required string Address { get => address; set => address = value.ToLower(); }
-    private string address = "";
+    private string address = string.Empty;
 
     /// <summary>
     ///     Date when email was verified

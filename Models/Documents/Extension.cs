@@ -53,14 +53,14 @@ public abstract partial class Extension : UbluxDocument_ReferenceAccount_Referen
     /// </summary>
     [AllowUpdate(true)]
     [IsUbluxRequired]
-    public required string FriendlyName { get; set; }
+    public required string FriendlyName { get; set; } = string.Empty;
 
     /// <summary>
     ///     Extension number
     /// </summary>
     [AllowUpdate(true)]
     [IsUbluxRequired]
-    public required string Number { get; set; }
+    public required string Number { get; set; } = string.Empty;
 
     /// <summary>
     ///     Inject extension name to caller id

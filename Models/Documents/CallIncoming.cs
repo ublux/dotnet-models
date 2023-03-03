@@ -23,7 +23,7 @@ public abstract partial class CallIncoming : Call
     [AllowUpdate(false)] 
     [SwaggerSchema(ReadOnly = true)] 
     [IsUbluxRequired]
-    public required string IdVoipNumberPhone { get; set; } // idDID
+    public required string IdVoipNumberPhone { get; set; } = string.Empty; // idDID
 
     /// <summary>
     ///     Phone number that received phone call in international format
@@ -31,5 +31,5 @@ public abstract partial class CallIncoming : Call
     [AllowUpdate(false)] 
     [SwaggerSchema(ReadOnly = true)] 
     [IsUbluxRequired]
-    public required string FromInternationalFormat { get; set; }
+    public required string FromInternationalFormat { get; set; } = string.Empty;
 }

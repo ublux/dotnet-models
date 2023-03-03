@@ -29,7 +29,7 @@ public partial class CustomerInfo : UbluxDocument_ReferenceAccount_ReferenceTags
     ///     Full legal name
     /// </summary>
     [AllowUpdate(true)]
-    public required string FullName { get; set; }
+    public required string FullName { get; set; } = string.Empty;
 
     #endregion
 }

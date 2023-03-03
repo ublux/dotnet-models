@@ -24,7 +24,7 @@ public abstract partial class CallIncoming : Call
     [SwaggerSchema(ReadOnly = true)] 
     [IgnoreDataMember]
     [IsUbluxRequired]
-    public required string IdVoipProvider { get; set; }
+    public required string IdVoipProvider { get; set; } = string.Empty;
 }
 
 #endif

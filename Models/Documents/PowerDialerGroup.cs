@@ -51,7 +51,7 @@ public partial class PowerDialerGroup : UbluxDocument_ReferenceAccount_Reference
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
     [IsUbluxRequired]
-    public required List<PowerDialer> PowerDialers { get; set; }
+    public required List<PowerDialer> PowerDialers { get; set; } = new();
 
     #endregion
 
@@ -60,7 +60,7 @@ public partial class PowerDialerGroup : UbluxDocument_ReferenceAccount_Reference
     /// </summary>
     [AllowUpdate(true)]
     [IsUbluxRequired]
-    public required string FriendlyName { get; set; }
+    public required string FriendlyName { get; set; } = string.Empty;
 
     /// <summary>
     ///     Description of power dialer group

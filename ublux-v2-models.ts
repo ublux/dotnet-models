@@ -4431,8 +4431,7 @@ export interface Phone {
     readonly macAddress?: string | null;
     /** User Agent */
     readonly userAgent?: string | null;
-    /** Device pin of 5 random digits used to connect phone in case extension is used by multiple phones
-Random.Shared.Next(10000, 99999).ToString() */
+    /** Device pin of 5 random digits used to connect phone in case extension is used by multiple phones */
     readonly pin?: string;
     /** It is nullable because there are cases where it makes no sense to point to an account. 
 For example a CloudService user will point to no account */

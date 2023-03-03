@@ -92,14 +92,14 @@ public abstract partial class VoipNumber : UbluxDocument_ReferenceAccount_Refere
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
     [IsUbluxRequired]
-    public required string Number { get; set; }
+    public required string Number { get; set; } = string.Empty;
 
     /// <summary>
     ///     Incoming phone number friendly name
     /// </summary>
     [AllowUpdate(true)]
     [IsUbluxRequired]
-    public required string FriendlyName { get; set; }
+    public required string FriendlyName { get; set; } = string.Empty;
 
     /// <summary>
     ///     Incoming phone number description
@@ -120,7 +120,7 @@ public abstract partial class VoipNumber : UbluxDocument_ReferenceAccount_Refere
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
     [IsUbluxRequired]
-    public required string City { get; set; }
+    public required string City { get; set; } = string.Empty;
 
     /// <summary>
     ///     State of incoming phone number
@@ -128,7 +128,7 @@ public abstract partial class VoipNumber : UbluxDocument_ReferenceAccount_Refere
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
     [IsUbluxRequired]
-    public required string State { get; set; }
+    public required string State { get; set; } = string.Empty;
 
     /// <summary>
     ///     Country of incoming phone number

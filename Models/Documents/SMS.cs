@@ -16,7 +16,7 @@ public partial class SMS : UbluxDocument_ReferenceAccount_ReferenceTags
     [SwaggerSchema(ReadOnly = true)]
     [References(typeof(VoipNumber))]
     [IsUbluxRequired]
-    public required string IdVoipNumber { get; set; }   
+    public required string IdVoipNumber { get; set; } = string.Empty;
 
     #endregion
 
@@ -44,7 +44,7 @@ public partial class SMS : UbluxDocument_ReferenceAccount_ReferenceTags
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
     [IsUbluxRequired]
-    public required string Body { get; set; }
+    public required string Body { get; set; } = string.Empty;
 
     //    // [AllowUpdate(false)]
     //public int? ZipCode { get; set; }
@@ -85,7 +85,7 @@ public partial class SMS : UbluxDocument_ReferenceAccount_ReferenceTags
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
     [IsUbluxRequired]
-    public required string From { get; set; }
+    public required string From { get; set; } = string.Empty;
 
     /// <summary>
     ///     Number to whom SMS was sent to 
@@ -93,7 +93,7 @@ public partial class SMS : UbluxDocument_ReferenceAccount_ReferenceTags
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
     [IsUbluxRequired]
-    public required string To { get; set; }
+    public required string To { get; set; } = string.Empty;
 
     #endregion
 }

@@ -16,7 +16,7 @@ public partial class FaxOutgoingGroup : UbluxDocument_ReferenceAccount_Reference
     [AllowUpdate(false)] 
     [SwaggerSchema(ReadOnly = true)] 
     [IsUbluxRequired]
-    public required string IdVoipNumberFax { get; set; }
+    public required string IdVoipNumberFax { get; set; } = string.Empty;
 
     #endregion
 
@@ -46,7 +46,7 @@ public partial class FaxOutgoingGroup : UbluxDocument_ReferenceAccount_Reference
     [AllowUpdate(false)] 
     [SwaggerSchema(ReadOnly = true)] 
     [IsUbluxRequired]
-    public required string From { get; set; }
+    public required string From { get; set; } = string.Empty;
 
     /// <summary>
     ///     If fax is sent successfully then send confirmation to this emails

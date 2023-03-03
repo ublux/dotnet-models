@@ -131,7 +131,7 @@ public static partial class Constants
     /// <summary>
     ///     Simple tcp server used on pbx
     /// </summary>
-    public const int PortBinaryTcpServer = 62618;
+    public const int PortBinaryTcpServer = 8181;
 
     /// <summary>
     ///     Common actions

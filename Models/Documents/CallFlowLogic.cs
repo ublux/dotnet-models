@@ -12,7 +12,7 @@ public partial class CallFlowLogic : UbluxDocument_ReferenceAccount_ReferenceTag
     /// </summary>
     [AllowUpdate(true)]
     [IsUbluxRequired]
-    public required string FriendlyName { get; set; }
+    public required string FriendlyName { get; set; } = string.Empty;
 
     /// <summary>
     ///     Description of virtual receptionist
@@ -25,7 +25,7 @@ public partial class CallFlowLogic : UbluxDocument_ReferenceAccount_ReferenceTag
     ///// </summary>
     //[AllowUpdate(true)]
     //[IsUbluxRequired]
-    //public required string XmlTree { get; set; }
+    //public required string XmlTree { get; set; } = string.Empty;
 
     /// <summary>
     ///     XML containing the call flow rules

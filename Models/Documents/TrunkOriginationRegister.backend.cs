@@ -35,7 +35,7 @@ allow=alaw
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
     [IsUbluxRequired]
-    public required string Reg_username { get; set; }
+    public required string Reg_username { get; set; } = string.Empty;
 
     /// <summary>
     ///     Registration password
@@ -44,7 +44,7 @@ allow=alaw
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
     [IsUbluxRequired]
-    public required string Reg_password { get; set; }
+    public required string Reg_password { get; set; } = string.Empty;
 
     /// <summary>
     ///     Registration host
@@ -53,7 +53,7 @@ allow=alaw
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
     [IsUbluxRequired]
-    public required string Reg_host { get; set; }
+    public required string Reg_host { get; set; } = string.Empty;
 
     /// <summary>
     ///     Registration port

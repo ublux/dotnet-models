@@ -67,7 +67,7 @@ public partial class LogWebServiceRequest : UbluxDocument
     [AllowUpdate(false)] 
     [SwaggerSchema(ReadOnly = true)] 
     [IsUbluxRequired]
-    public required string HttpMethod { get; set; }
+    public required string HttpMethod { get; set; } = string.Empty;
 
     /// <summary>
     ///     User agent
@@ -82,7 +82,7 @@ public partial class LogWebServiceRequest : UbluxDocument
     [AllowUpdate(false)] 
     [SwaggerSchema(ReadOnly = true)] 
     [IsUbluxRequired]
-    public required string Ip { get; set; }
+    public required string Ip { get; set; } = string.Empty;
 
     /// <summary>
     ///     Request url without query string
@@ -90,7 +90,7 @@ public partial class LogWebServiceRequest : UbluxDocument
     [AllowUpdate(false)] 
     [SwaggerSchema(ReadOnly = true)] 
     [IsUbluxRequired]
-    public required string RequestUrl { get; set; }
+    public required string RequestUrl { get; set; } = string.Empty;
 
     /// <summary>
     ///     Save query string?

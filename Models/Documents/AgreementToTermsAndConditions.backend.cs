@@ -30,7 +30,7 @@ public partial class AgreementToTermsAndConditions : UbluxDocument
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
     [IsUbluxRequired]
-    public required string Ip { get; set; }
+    public required string Ip { get; set; } = string.Empty;
 
     /// <summary>
     ///     Headers of client
@@ -39,7 +39,7 @@ public partial class AgreementToTermsAndConditions : UbluxDocument
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
     [IsUbluxRequired]
-    public required string HttpRequestHeaders { get; set; }
+    public required string HttpRequestHeaders { get; set; } = string.Empty;
 
     /// <summary>
     ///     Section to terms and conditions that user agreed to

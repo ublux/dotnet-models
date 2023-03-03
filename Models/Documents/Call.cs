@@ -90,7 +90,7 @@ public abstract partial class Call : UbluxDocument_ReferenceAccount_ReferenceTag
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    public required string DialStatus { get; set; }
+    public required string DialStatus { get; set; } = string.Empty;
 
     /// <summary>
     ///     Number of seconds it took to answer
@@ -112,7 +112,7 @@ public abstract partial class Call : UbluxDocument_ReferenceAccount_ReferenceTag
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
     [IsUbluxRequired]
-    public required string From { get; set; }
+    public required string From { get; set; } = string.Empty;
 
     /// <summary>
     ///     Country that initiated phone call
@@ -128,7 +128,7 @@ public abstract partial class Call : UbluxDocument_ReferenceAccount_ReferenceTag
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
     [IsUbluxRequired]
-    public required string To { get; set; }
+    public required string To { get; set; } = string.Empty;
 
     /// <summary>
     ///     Country that initiated phone call

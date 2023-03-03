@@ -26,7 +26,7 @@ public abstract partial class CloudService : UbluxDocument
     [AllowUpdate(false)] 
     [SwaggerSchema(ReadOnly = true)] 
     [IsUbluxRequired]
-    public required string IdUser { get; set; } = "";
+    public required string IdUser { get; set; } = string.Empty;
 
     /// <summary>
     ///     Type of cloud service
@@ -108,7 +108,7 @@ public abstract partial class CloudService : UbluxDocument
     [AllowUpdate(false)] 
     [SwaggerSchema(ReadOnly = true)] 
     public required string InstanceId { get => instanceId; set => instanceId = value.ToUpper(); }
-    private string instanceId = "";
+    private string instanceId = string.Empty;
 
     /// <summary>
     ///     Is this a test cloud serviec

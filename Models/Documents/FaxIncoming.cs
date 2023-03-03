@@ -16,7 +16,7 @@ public partial class FaxIncoming : UbluxDocument_ReferenceAccount_ReferenceTags
     [SwaggerSchema(ReadOnly = true)] 
     [References(typeof(VoipNumberFax))]
     [IsUbluxRequired]
-    public required string IdVoipNumberFax { get; set; }    
+    public required string IdVoipNumberFax { get; set; } = string.Empty;
 
     #endregion
 
@@ -44,7 +44,7 @@ public partial class FaxIncoming : UbluxDocument_ReferenceAccount_ReferenceTags
     [AllowUpdate(false)] 
     [SwaggerSchema(ReadOnly = true)] 
     [IsUbluxRequired]
-    public required string FaxStatus { get; set; }
+    public required string FaxStatus { get; set; } = string.Empty;
 
     /// <summary>
     ///     Fax number of sender
@@ -52,7 +52,7 @@ public partial class FaxIncoming : UbluxDocument_ReferenceAccount_ReferenceTags
     [AllowUpdate(false)] 
     [SwaggerSchema(ReadOnly = true)] 
     [IsUbluxRequired]
-    public required string From { get; set; }
+    public required string From { get; set; } = string.Empty;
 
     /// <summary>
     ///     Fax number that received the fax
@@ -60,7 +60,7 @@ public partial class FaxIncoming : UbluxDocument_ReferenceAccount_ReferenceTags
     [AllowUpdate(false)] 
     [SwaggerSchema(ReadOnly = true)] 
     [IsUbluxRequired]
-    public required string To { get; set; }
+    public required string To { get; set; } = string.Empty;
 
     /// <summary>
     ///     Description of error if there is one

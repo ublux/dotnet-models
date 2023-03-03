@@ -13,7 +13,7 @@ public partial class CallIncomingToCallFlowLogic : CallIncoming
     [AllowUpdate(false)] 
     [SwaggerSchema(ReadOnly = true)] 
     [IsUbluxRequired]
-    public required string IdCallFlowLogic { get; set; }
+    public required string IdCallFlowLogic { get; set; } = string.Empty;
 
     /// <summary>
     ///     Type of call

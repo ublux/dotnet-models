@@ -50,7 +50,7 @@ public partial class Account : UbluxDocument
     /// </summary>    
     [AllowUpdate(true)]
     [IsUbluxRequired]
-    public required string CompanyName { get; set; }
+    public required string CompanyName { get; set; } = string.Empty;
 
     /// <summary>
     ///     If client has granted access to support to make changes to account. 

@@ -21,7 +21,7 @@ public partial class TrunkTermination : UbluxDocument
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
     [IsUbluxRequired]
-    public required string IdVoipProvider { get; set; }
+    public required string IdVoipProvider { get; set; } = string.Empty;
 
     ///// <summary>
     /////     Needed so that we do not create two trunk terminations that are actually the same on sip.conf. One will be able to call China and the other not but they are the same
@@ -40,7 +40,7 @@ public partial class TrunkTermination : UbluxDocument
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
     [IsUbluxRequired]
-    public required string ProviderId { get; set; }
+    public required string ProviderId { get; set; } = string.Empty;
 
     /// <summary>
     ///     Url where to send calls
@@ -50,7 +50,7 @@ public partial class TrunkTermination : UbluxDocument
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
     [IsUbluxRequired]
-    public required string TerminationUri { get; set; }
+    public required string TerminationUri { get; set; } = string.Empty;
 
     /// <summary>
     ///     Username that provider requires in order to authenticate. Optional because provider may validate us via ip address
@@ -76,7 +76,7 @@ public partial class TrunkTermination : UbluxDocument
     [SwaggerSchema(ReadOnly = true)]
     [IsUbluxRequired]
     [BsonRepresentation(BsonType.String)]
-    public required List<CountryIsoCode> CountryIsoCodesThatCanCall { get; set; }
+    public required List<CountryIsoCode> CountryIsoCodesThatCanCall { get; set; } = new();
 
     /// <summary>
     ///     Friendly name
@@ -85,7 +85,7 @@ public partial class TrunkTermination : UbluxDocument
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
     [IsUbluxRequired]
-    public required string FriendlyName { get; set; }
+    public required string FriendlyName { get; set; } = string.Empty;
 
     ///// <summary>
     /////     Is trunk encrypted?

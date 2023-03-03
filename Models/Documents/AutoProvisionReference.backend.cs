@@ -22,7 +22,7 @@ public partial class AutoProvisionReference : UbluxDocument
     [SwaggerSchema(ReadOnly = true)]
     [References(typeof(Phone))]
     [IsUbluxRequired]
-    public required string IdPhone { get; set; }
+    public required string IdPhone { get; set; } = string.Empty;
 
     ///// <summary>
     /////     When phone is connected to case27 and it wants to connect to a new phone. It will do so but when phone requests cfg file

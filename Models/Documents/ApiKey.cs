@@ -30,7 +30,7 @@ public partial class ApiKey : UbluxDocument_ReferenceAccount_ReferenceTags
     [AllowUpdate(true)]
     [IsUbluxRequired]
     [BsonRepresentation(BsonType.String)]
-    public required List<UbluxRole> UbluxRoles { get; set; }
+    public required List<UbluxRole> UbluxRoles { get; set; } = new();
 
     #endregion    
 

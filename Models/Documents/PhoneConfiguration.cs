@@ -23,7 +23,7 @@ public partial class PhoneConfiguration : UbluxDocument_ReferenceAccount_Referen
     /// </summary>
     [AllowUpdate(true)]
     [IsUbluxRequired]
-    public required string FrienlyName { get; set; }
+    public required string FrienlyName { get; set; } = string.Empty;
 
     /// <summary>
     ///     Phone configuration description

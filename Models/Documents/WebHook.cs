@@ -20,7 +20,7 @@ public partial class WebHook : UbluxDocument_ReferenceAccount_ReferenceTags
     /// </summary>
     [AllowUpdate(true)]
     [IsUbluxRequired]
-    public required string Url { get; set; }
+    public required string Url { get; set; } = string.Empty;
 
     /// <summary>
     ///     Custom headers to inject on request. Example: x-token:1234,user:user1

@@ -10,7 +10,7 @@ public partial class Tag : UbluxDocument_ReferenceAccount
     /// </summary>
     [IsUbluxRequired]
     [AllowUpdate(true)]
-    public required string FriendlyName { get; set; }
+    public required string FriendlyName { get; set; } = string.Empty;
 
     /// <summary>
     ///     Color of tag

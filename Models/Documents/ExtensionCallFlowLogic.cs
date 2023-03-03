@@ -15,7 +15,7 @@ public partial class ExtensionCallFlowLogic : Extension
     [References(typeof(CallFlowLogic))]
     [AllowUpdate(true)]
     [IsUbluxRequired]
-    public required string IdCallFlowLogic { get; set; }
+    public required string IdCallFlowLogic { get; set; } = string.Empty;
 
     #endregion
 

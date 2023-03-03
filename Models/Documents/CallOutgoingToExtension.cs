@@ -52,7 +52,7 @@ public partial class CallOutgoingToExtension : CallOutgoing, ICallToExtension
     //[AllowUpdate(false)]
     //[SwaggerSchema(ReadOnly = true)]
     //[IsUbluxRequired]
-    //public required string ExtensionNumber { get; set; }
+    //public required string ExtensionNumber { get; set; } = string.Empty;
 
     ///// <summary>
     /////     Name of extension
@@ -60,7 +60,7 @@ public partial class CallOutgoingToExtension : CallOutgoing, ICallToExtension
     //[AllowUpdate(false)]
     //[SwaggerSchema(ReadOnly = true)]
     //[IsUbluxRequired]
-    //public required string ExtensionFriendlyName { get; set; }
+    //public required string ExtensionFriendlyName { get; set; } = string.Empty;
 
     /// <summary>
     ///     Type of call

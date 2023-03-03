@@ -11,19 +11,19 @@ public partial class VoipNumberPhone : VoipNumber
     /// </summary>    
     [AllowUpdate(true)]
     [IsUbluxRequired]
-    public required override List<RulePhone> RulesPhone { get; set; }
+    public required override List<RulePhone> RulesPhone { get; set; } = new();
 
     /// <summary>
     ///     Incoming SMS will be sent to these email addresses
     /// </summary>
     [AllowUpdate(true)]
-    public required override List<RuleSms> RulesSms { get; set; }
+    public required override List<RuleSms> RulesSms { get; set; } = new();
 
     /// <summary>
     ///     Incoming Faxes will be sent to this email addresses
     /// </summary>
     [AllowUpdate(true)]
-    public required override List<RuleFax> RulesFax { get; set; }
+    public required override List<RuleFax> RulesFax { get; set; } = new();
 
     /// <summary>
     ///     Type of VOIP number
