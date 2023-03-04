@@ -5717,7 +5717,7 @@ export interface User {
     /** Id of document */
     readonly id?: string;
     /** Email of user. Note this is the Id not the email address. */
-    idEmail?: string;
+    readonly idEmail?: string;
     /** Key = service/role such as Phone. The phone role probably will have access to the PhoneController service
 Value = Permissions it has on that role. Maybe it can only read data from that service but it cannot update, create or modify. */
     ubluxRoles?: UbluxRole[];
