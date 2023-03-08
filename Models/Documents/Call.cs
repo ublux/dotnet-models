@@ -194,6 +194,12 @@ public abstract partial class Call : UbluxDocument_ReferenceAccount_ReferenceTag
     public CallResult CallResult { get; set; }
 
     /// <summary>
+    ///     AI analysis of the call
+    /// </summary>
+    [AllowUpdate(false)]
+    public AiAnalysis? Analysis { get; set; }
+
+    /// <summary>
     ///     Returns -1 if call has not completed
     ///     Returns -2 if date started is larger than date ended
     /// </summary>

@@ -366,6 +366,57 @@ public static class ModelsExtensionMethods
         { Email.DocumentPrefix, Collections.Emails }
     };
 
+    /// <summary>
+    ///     Collections used on pbx. for example collection ApiKey is not used on PBX
+    /// </summary>
+    private static readonly HashSet<Collections> collectionsUsedByPBX = new()
+    {
+                Collections.Accounts,
+                // Collections.AgreementsToTermsAndConditions,
+                // Collections.AirNetworksProvinces,
+                Collections.Audios,
+                // Collections.AutoProvisionReferences,
+                Collections.BlackListPhoneNumbers,
+                // Collections.Calls,
+                // Collections.CallerIdMasks,
+                Collections.CallFlowLogics,
+                Collections.CloudServices,
+                Collections.Contacts,
+                // Collections.CustomerInfos,
+                Collections.Extensions,
+                // Collections.FaxesIncoming,
+                // Collections.FaxOutgoingGroups,
+                // Collections.Voicemails,
+                // Collections.Users,
+                //Collections.LineKeyGroups,
+                // Collections.LogWebServiceRequests,
+                Collections.MusicOnHoldGroups,
+                Collections.Phones,
+                //Collections.PhoneConfigurations,
+                // Collections.PowerDialerGroups,
+                // Collections.SMS,
+                Collections.TrunkOriginations,
+                Collections.TrunkTerminations,
+                Collections.TrunkTerminationGroups,
+                Collections.VoipNumbers,
+                // Collections.VoipProviders,
+                Collections.WebHooks,
+                // Collections.StoredFileReferences,
+                // Collections.Tags,
+                // Collections.ApiKeys,
+                // Collections.AiCallTranscriptions,
+                Collections.Emails,
+    };
+
+    /// <summary>
+    ///     Is collection used by pbx
+    /// </summary>
+    public static bool IsCollectionUsedByPBX(this Collections collection)
+    {
+        return collectionsUsedByPBX.Contains(collection);
+    }
+
+
     #region GetExtensionsUsedByLine ordered by priority
 
     /// <summary>
