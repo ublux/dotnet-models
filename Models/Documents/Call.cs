@@ -197,6 +197,7 @@ public abstract partial class Call : UbluxDocument_ReferenceAccount_ReferenceTag
     ///     AI analysis of the call
     /// </summary>
     [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     public AiAnalysis? Analysis { get; set; }
 
     /// <summary>
