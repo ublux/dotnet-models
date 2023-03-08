@@ -30,6 +30,12 @@ public class QueuedStoredFileReference : IUbluxDocumentId
         this.StoredFileReference = sfr;
         this.DeleteFileWhenUploaded = deleteDileWhenDisposing;
         this.id = sfr.id;
+
+        if(sfr.id is null)
+        {
+            if (Debugger.IsAttached) Debugger.Break();
+            throw new ArgumentNullException(nameof(sfr.id));
+        }
     }
 
     /// <summary>
@@ -39,10 +45,10 @@ public class QueuedStoredFileReference : IUbluxDocumentId
     {
         get => this.id;
 #if UBLUX_Release || RELEASE
-        set { }
+        set { this.id = value; }
 #endif
     }
-    private readonly string id;
+    private string id;
 
     /// <summary>
     ///     Thanks to this enum we know from what email to send the email
