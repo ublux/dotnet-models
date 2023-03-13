@@ -306,7 +306,8 @@ public static class ModelsExtensionMethods
             throw new Exception("Invalid ID" + "[_Guid_]");
         }
 
-        var str = Microsoft.Toolkit.HighPerformance.Buffers.StringPool.Shared.GetOrAdd(id[..dotIndex]);
+        var str = id[..dotIndex].ToString();
+        // var str = Microsoft.Toolkit.HighPerformance.Buffers.StringPool.Shared.GetOrAdd(id[..dotIndex]);
         if (_collectionMap.TryGetValue(str, out var v) == false)
         {
             if (Debugger.IsAttached) Debugger.Break();

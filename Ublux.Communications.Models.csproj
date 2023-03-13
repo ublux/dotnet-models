@@ -22,7 +22,6 @@
 		<!-- Used to generate fake event triggers -->
 		<PackageReference Include="Bogus" Version="34.0.2" />
 		<PackageReference Include="Swashbuckle.AspNetCore.Annotations" Version="6.5.0" />
-		<PackageReference Include="Microsoft.Toolkit.HighPerformance" Version="7.1.2" />
 	</ItemGroup>
 
 </Project>
