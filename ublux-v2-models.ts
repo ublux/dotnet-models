@@ -652,24 +652,12 @@ export interface CallFilterRequest {
     childCalls_dateEnded_lte?: Date | null;
     /** ChildCalls.DateEnded greater than or equal to */
     childCalls_dateEnded_gte?: Date | null;
-    /** ChildCalls.SecondsItTookToAnswer equals */
-    childCalls_secondsItTookToAnswer_eq?: number | null;
-    /** ChildCalls.SecondsItTookToAnswer less than or equal to */
-    childCalls_secondsItTookToAnswer_lte?: number | null;
-    /** ChildCalls.SecondsItTookToAnswer greater than or equal to */
-    childCalls_secondsItTookToAnswer_gte?: number | null;
     /** DialStatus equals */
     dialStatus_eq?: string | null;
     /** DialStatus contains */
     dialStatus_con?: string | null;
     /** DialStatus regex */
     dialStatus_reg?: string | null;
-    /** SecondsItTookToAnswer equals */
-    secondsItTookToAnswer_eq?: number | null;
-    /** SecondsItTookToAnswer less than or equal to */
-    secondsItTookToAnswer_lte?: number | null;
-    /** SecondsItTookToAnswer greater than or equal to */
-    secondsItTookToAnswer_gte?: number | null;
     /** TimesWhenCallPlacedOnHold.SecondsElapsedWhenPlacedOnHold equals */
     timesWhenCallPlacedOnHold_secondsElapsedWhenPlacedOnHold_eq?: number | null;
     /** TimesWhenCallPlacedOnHold.SecondsElapsedWhenPlacedOnHold less than or equal to */
@@ -1194,8 +1182,6 @@ export interface CallOutgoingToPSTN {
     country?: CountryIsoCode;
     /** Phone number dialed in international format. Property To should contain number that was actually dialed */
     readonly toInternationalFormat?: string;
-    /** When call is answered. Note that if call is sent to voicemail this will be marked when call is answered by voicemail. */
-    readonly dateAnswered?: Date | null;
     /** Line that started phone call */
     readonly idLineThatInitiatedCall?: string;
     /** Id of voicemail in case there is one */

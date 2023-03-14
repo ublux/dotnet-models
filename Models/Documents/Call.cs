@@ -97,7 +97,7 @@ public abstract partial class Call : UbluxDocument_ReferenceAccount_ReferenceTag
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    public int? SecondsItTookToAnswer { get; set; }
+    public double? SecondsItTookToAnswer { get; set; }
 
     /// <summary>
     ///     Dates when call is placed on hold

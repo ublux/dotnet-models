@@ -33,7 +33,7 @@ public partial class EventIncomingCallTerminated
     /// </summary>
     [AllowUpdate(false)] 
     [SwaggerSchema(ReadOnly = true)] 
-    public int? SecondsItTookToAnswer { get; set; }
+    public double? SecondsItTookToAnswer { get; set; }
 
     /// <summary>
     ///     Date when call was ended

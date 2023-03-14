@@ -42,10 +42,11 @@ public partial class CallOutgoingToPSTN : CallOutgoing
     [IsUbluxRequired]
     public required string ToInternationalFormat { get; set; } = string.Empty;
 
-    /// <summary>
-    ///     When call is answered. Note that if call is sent to voicemail this will be marked when call is answered by voicemail.
-    /// </summary>
-    [AllowUpdate(false)]
-    [SwaggerSchema(ReadOnly = true)]
-    public DateTime? DateAnswered { get; set; }
+    // Use seconds it took to be answered instead
+    ///// <summary>
+    /////     When call is answered. Note that if call is sent to voicemail this will be marked when call is answered by voicemail.
+    ///// </summary>
+    //[AllowUpdate(false)]
+    //[SwaggerSchema(ReadOnly = true)]
+    //public DateTime? DateAnswered { get; set; }
 }

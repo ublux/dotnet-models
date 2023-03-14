@@ -78,17 +78,17 @@ public partial class Line : UbluxSubDocument
     [HideForCreateRequest]
     public bool IsConnectionStatusChanged;
 
-    /// <summary>
-    ///     Used by PBX
-    ///     Example: 1.1.1.1.5060
-    ///     This is the ip and port that we get from tcpdump captured packets. Note it uses "." instead of ":" to separate the port
-    /// </summary>
-    public string? GetTcpDumpSourceEndpointKey()
-    {
-        if (this.LineConnectionStatus?.IpWAN is null)
-            return null;
+    ///// <summary>
+    /////     Used by PBX
+    /////     Example: 1.1.1.1.5060
+    /////     This is the ip and port that we get from tcpdump captured packets. Note it uses "." instead of ":" to separate the port
+    ///// </summary>
+    //public string? GetTcpDumpSourceEndpointKey()
+    //{
+    //    if (this.LineConnectionStatus?.IpWAN is null)
+    //        return null;
 
-        // Example: 1.1.1.1.5060
-        return $"{this.LineConnectionStatus.IpWAN}.{this.LineConnectionStatus.PortWAN}";
-    }
+    //    // Example: 1.1.1.1.5060
+    //    return $"{this.LineConnectionStatus.IpWAN}.{this.LineConnectionStatus.PortWAN}";
+    //}
 }

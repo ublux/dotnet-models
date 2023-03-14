@@ -22,7 +22,7 @@ public partial class Audio
     /// </summary>
     public string GetDirectoryWhereToSaveOnPBX(bool createDirIfItDoesNotExist)
     {
-        var path = $"/usr/share/ublux/audios/{this.IdAccount}";
+        var path = $"/usr/share/ublux/pbx-files/audios/{this.IdAccount}";
         if (createDirIfItDoesNotExist)
             if (Directory.Exists(path) == false)
                 Directory.CreateDirectory(path);

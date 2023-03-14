@@ -72,5 +72,5 @@ public abstract partial class ChildCall : ICall
     /// <summary>
     ///     Number of seconds it took to answer
     /// </summary>
-    public int? SecondsItTookToAnswer { get; set; }
+    public double? SecondsItTookToAnswer { get; set; }
 }

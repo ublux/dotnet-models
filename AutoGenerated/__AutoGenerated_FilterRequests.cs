@@ -1044,15 +1044,6 @@ public class CallIncomingToCallFlowLogicFilterRequest
     [JsonProperty("childCalls_dateEnded_gte")]
     public DateTime? ChildCalls_DateEnded_GTE { get; set; }
 
-    /// <summary> ChildCalls.SecondsItTookToAnswer equals </summary>
-    [JsonProperty("childCalls_secondsItTookToAnswer_eq")]
-    public System.Int32? ChildCalls_SecondsItTookToAnswer_EQ { get; set; }
-    /// <summary> ChildCalls.SecondsItTookToAnswer less than or equal to </summary>
-    [JsonProperty("childCalls_secondsItTookToAnswer_lte")]
-    public System.Int32? ChildCalls_SecondsItTookToAnswer_LTE { get; set; }
-    /// <summary> ChildCalls.SecondsItTookToAnswer greater than or equal to </summary>
-    [JsonProperty("childCalls_secondsItTookToAnswer_gte")]
-    public System.Int32? ChildCalls_SecondsItTookToAnswer_GTE { get; set; }
 
 
     /// <summary> DialStatus equals </summary>
@@ -1065,15 +1056,6 @@ public class CallIncomingToCallFlowLogicFilterRequest
     [JsonProperty("dialStatus_reg")]
     public string? DialStatus_REG { get; set; }
 
-    /// <summary> SecondsItTookToAnswer equals </summary>
-    [JsonProperty("secondsItTookToAnswer_eq")]
-    public System.Int32? SecondsItTookToAnswer_EQ { get; set; }
-    /// <summary> SecondsItTookToAnswer less than or equal to </summary>
-    [JsonProperty("secondsItTookToAnswer_lte")]
-    public System.Int32? SecondsItTookToAnswer_LTE { get; set; }
-    /// <summary> SecondsItTookToAnswer greater than or equal to </summary>
-    [JsonProperty("secondsItTookToAnswer_gte")]
-    public System.Int32? SecondsItTookToAnswer_GTE { get; set; }
 
     /// <summary> TimesWhenCallPlacedOnHold.SecondsElapsedWhenPlacedOnHold equals </summary>
     [JsonProperty("timesWhenCallPlacedOnHold_secondsElapsedWhenPlacedOnHold_eq")]
@@ -1651,15 +1633,6 @@ public class CallIncomingToExtensionFilterRequest
     [JsonProperty("childCalls_dateEnded_gte")]
     public DateTime? ChildCalls_DateEnded_GTE { get; set; }
 
-    /// <summary> ChildCalls.SecondsItTookToAnswer equals </summary>
-    [JsonProperty("childCalls_secondsItTookToAnswer_eq")]
-    public System.Int32? ChildCalls_SecondsItTookToAnswer_EQ { get; set; }
-    /// <summary> ChildCalls.SecondsItTookToAnswer less than or equal to </summary>
-    [JsonProperty("childCalls_secondsItTookToAnswer_lte")]
-    public System.Int32? ChildCalls_SecondsItTookToAnswer_LTE { get; set; }
-    /// <summary> ChildCalls.SecondsItTookToAnswer greater than or equal to </summary>
-    [JsonProperty("childCalls_secondsItTookToAnswer_gte")]
-    public System.Int32? ChildCalls_SecondsItTookToAnswer_GTE { get; set; }
 
 
     /// <summary> DialStatus equals </summary>
@@ -1672,15 +1645,6 @@ public class CallIncomingToExtensionFilterRequest
     [JsonProperty("dialStatus_reg")]
     public string? DialStatus_REG { get; set; }
 
-    /// <summary> SecondsItTookToAnswer equals </summary>
-    [JsonProperty("secondsItTookToAnswer_eq")]
-    public System.Int32? SecondsItTookToAnswer_EQ { get; set; }
-    /// <summary> SecondsItTookToAnswer less than or equal to </summary>
-    [JsonProperty("secondsItTookToAnswer_lte")]
-    public System.Int32? SecondsItTookToAnswer_LTE { get; set; }
-    /// <summary> SecondsItTookToAnswer greater than or equal to </summary>
-    [JsonProperty("secondsItTookToAnswer_gte")]
-    public System.Int32? SecondsItTookToAnswer_GTE { get; set; }
 
     /// <summary> TimesWhenCallPlacedOnHold.SecondsElapsedWhenPlacedOnHold equals </summary>
     [JsonProperty("timesWhenCallPlacedOnHold_secondsElapsedWhenPlacedOnHold_eq")]
@@ -2248,15 +2212,6 @@ public class CallOutgoingToExtensionFilterRequest
     [JsonProperty("childCalls_dateEnded_gte")]
     public DateTime? ChildCalls_DateEnded_GTE { get; set; }
 
-    /// <summary> ChildCalls.SecondsItTookToAnswer equals </summary>
-    [JsonProperty("childCalls_secondsItTookToAnswer_eq")]
-    public System.Int32? ChildCalls_SecondsItTookToAnswer_EQ { get; set; }
-    /// <summary> ChildCalls.SecondsItTookToAnswer less than or equal to </summary>
-    [JsonProperty("childCalls_secondsItTookToAnswer_lte")]
-    public System.Int32? ChildCalls_SecondsItTookToAnswer_LTE { get; set; }
-    /// <summary> ChildCalls.SecondsItTookToAnswer greater than or equal to </summary>
-    [JsonProperty("childCalls_secondsItTookToAnswer_gte")]
-    public System.Int32? ChildCalls_SecondsItTookToAnswer_GTE { get; set; }
 
 
     /// <summary> DialStatus equals </summary>
@@ -2269,15 +2224,6 @@ public class CallOutgoingToExtensionFilterRequest
     [JsonProperty("dialStatus_reg")]
     public string? DialStatus_REG { get; set; }
 
-    /// <summary> SecondsItTookToAnswer equals </summary>
-    [JsonProperty("secondsItTookToAnswer_eq")]
-    public System.Int32? SecondsItTookToAnswer_EQ { get; set; }
-    /// <summary> SecondsItTookToAnswer less than or equal to </summary>
-    [JsonProperty("secondsItTookToAnswer_lte")]
-    public System.Int32? SecondsItTookToAnswer_LTE { get; set; }
-    /// <summary> SecondsItTookToAnswer greater than or equal to </summary>
-    [JsonProperty("secondsItTookToAnswer_gte")]
-    public System.Int32? SecondsItTookToAnswer_GTE { get; set; }
 
     /// <summary> TimesWhenCallPlacedOnHold.SecondsElapsedWhenPlacedOnHold equals </summary>
     [JsonProperty("timesWhenCallPlacedOnHold_secondsElapsedWhenPlacedOnHold_eq")]
@@ -2694,16 +2640,6 @@ public class CallOutgoingToPSTNFilterRequest
     [JsonProperty("toInternationalFormat_reg")]
     public string? ToInternationalFormat_REG { get; set; }
 
-    /// <summary> DateAnswered equals </summary>
-    [JsonProperty("dateAnswered_eq")]
-    public DateTime? DateAnswered_EQ { get; set; }
-    /// <summary> DateAnswered less than or equal to </summary>
-    [JsonProperty("dateAnswered_lte")]
-    public DateTime? DateAnswered_LTE { get; set; }
-    /// <summary> DateAnswered greater than or equal to </summary>
-    [JsonProperty("dateAnswered_gte")]
-    public DateTime? DateAnswered_GTE { get; set; }
-
     /// <summary> IdLineThatInitiatedCall equals </summary>
     [JsonProperty("idLineThatInitiatedCall_eq")]
     public string? IdLineThatInitiatedCall_EQ { get; set; }
@@ -2835,15 +2771,6 @@ public class CallOutgoingToPSTNFilterRequest
     [JsonProperty("childCalls_dateEnded_gte")]
     public DateTime? ChildCalls_DateEnded_GTE { get; set; }
 
-    /// <summary> ChildCalls.SecondsItTookToAnswer equals </summary>
-    [JsonProperty("childCalls_secondsItTookToAnswer_eq")]
-    public System.Int32? ChildCalls_SecondsItTookToAnswer_EQ { get; set; }
-    /// <summary> ChildCalls.SecondsItTookToAnswer less than or equal to </summary>
-    [JsonProperty("childCalls_secondsItTookToAnswer_lte")]
-    public System.Int32? ChildCalls_SecondsItTookToAnswer_LTE { get; set; }
-    /// <summary> ChildCalls.SecondsItTookToAnswer greater than or equal to </summary>
-    [JsonProperty("childCalls_secondsItTookToAnswer_gte")]
-    public System.Int32? ChildCalls_SecondsItTookToAnswer_GTE { get; set; }
 
 
     /// <summary> DialStatus equals </summary>
@@ -2856,15 +2783,6 @@ public class CallOutgoingToPSTNFilterRequest
     [JsonProperty("dialStatus_reg")]
     public string? DialStatus_REG { get; set; }
 
-    /// <summary> SecondsItTookToAnswer equals </summary>
-    [JsonProperty("secondsItTookToAnswer_eq")]
-    public System.Int32? SecondsItTookToAnswer_EQ { get; set; }
-    /// <summary> SecondsItTookToAnswer less than or equal to </summary>
-    [JsonProperty("secondsItTookToAnswer_lte")]
-    public System.Int32? SecondsItTookToAnswer_LTE { get; set; }
-    /// <summary> SecondsItTookToAnswer greater than or equal to </summary>
-    [JsonProperty("secondsItTookToAnswer_gte")]
-    public System.Int32? SecondsItTookToAnswer_GTE { get; set; }
 
     /// <summary> TimesWhenCallPlacedOnHold.SecondsElapsedWhenPlacedOnHold equals </summary>
     [JsonProperty("timesWhenCallPlacedOnHold_secondsElapsedWhenPlacedOnHold_eq")]
@@ -8529,15 +8447,6 @@ public class CallFilterRequest
     [JsonProperty("childCalls_dateEnded_gte")]
     public DateTime? ChildCalls_DateEnded_GTE { get; set; }
 
-    /// <summary> ChildCalls.SecondsItTookToAnswer equals </summary>
-    [JsonProperty("childCalls_secondsItTookToAnswer_eq")]
-    public System.Int32? ChildCalls_SecondsItTookToAnswer_EQ { get; set; }
-    /// <summary> ChildCalls.SecondsItTookToAnswer less than or equal to </summary>
-    [JsonProperty("childCalls_secondsItTookToAnswer_lte")]
-    public System.Int32? ChildCalls_SecondsItTookToAnswer_LTE { get; set; }
-    /// <summary> ChildCalls.SecondsItTookToAnswer greater than or equal to </summary>
-    [JsonProperty("childCalls_secondsItTookToAnswer_gte")]
-    public System.Int32? ChildCalls_SecondsItTookToAnswer_GTE { get; set; }
 
 
     /// <summary> DialStatus equals </summary>
@@ -8550,15 +8459,6 @@ public class CallFilterRequest
     [JsonProperty("dialStatus_reg")]
     public string? DialStatus_REG { get; set; }
 
-    /// <summary> SecondsItTookToAnswer equals </summary>
-    [JsonProperty("secondsItTookToAnswer_eq")]
-    public System.Int32? SecondsItTookToAnswer_EQ { get; set; }
-    /// <summary> SecondsItTookToAnswer less than or equal to </summary>
-    [JsonProperty("secondsItTookToAnswer_lte")]
-    public System.Int32? SecondsItTookToAnswer_LTE { get; set; }
-    /// <summary> SecondsItTookToAnswer greater than or equal to </summary>
-    [JsonProperty("secondsItTookToAnswer_gte")]
-    public System.Int32? SecondsItTookToAnswer_GTE { get; set; }
 
     /// <summary> TimesWhenCallPlacedOnHold.SecondsElapsedWhenPlacedOnHold equals </summary>
     [JsonProperty("timesWhenCallPlacedOnHold_secondsElapsedWhenPlacedOnHold_eq")]
@@ -9096,15 +8996,6 @@ public class CallIncomingFilterRequest
     [JsonProperty("childCalls_dateEnded_gte")]
     public DateTime? ChildCalls_DateEnded_GTE { get; set; }
 
-    /// <summary> ChildCalls.SecondsItTookToAnswer equals </summary>
-    [JsonProperty("childCalls_secondsItTookToAnswer_eq")]
-    public System.Int32? ChildCalls_SecondsItTookToAnswer_EQ { get; set; }
-    /// <summary> ChildCalls.SecondsItTookToAnswer less than or equal to </summary>
-    [JsonProperty("childCalls_secondsItTookToAnswer_lte")]
-    public System.Int32? ChildCalls_SecondsItTookToAnswer_LTE { get; set; }
-    /// <summary> ChildCalls.SecondsItTookToAnswer greater than or equal to </summary>
-    [JsonProperty("childCalls_secondsItTookToAnswer_gte")]
-    public System.Int32? ChildCalls_SecondsItTookToAnswer_GTE { get; set; }
 
 
     /// <summary> DialStatus equals </summary>
@@ -9117,15 +9008,6 @@ public class CallIncomingFilterRequest
     [JsonProperty("dialStatus_reg")]
     public string? DialStatus_REG { get; set; }
 
-    /// <summary> SecondsItTookToAnswer equals </summary>
-    [JsonProperty("secondsItTookToAnswer_eq")]
-    public System.Int32? SecondsItTookToAnswer_EQ { get; set; }
-    /// <summary> SecondsItTookToAnswer less than or equal to </summary>
-    [JsonProperty("secondsItTookToAnswer_lte")]
-    public System.Int32? SecondsItTookToAnswer_LTE { get; set; }
-    /// <summary> SecondsItTookToAnswer greater than or equal to </summary>
-    [JsonProperty("secondsItTookToAnswer_gte")]
-    public System.Int32? SecondsItTookToAnswer_GTE { get; set; }
 
     /// <summary> TimesWhenCallPlacedOnHold.SecondsElapsedWhenPlacedOnHold equals </summary>
     [JsonProperty("timesWhenCallPlacedOnHold_secondsElapsedWhenPlacedOnHold_eq")]
@@ -9653,15 +9535,6 @@ public class CallOutgoingFilterRequest
     [JsonProperty("childCalls_dateEnded_gte")]
     public DateTime? ChildCalls_DateEnded_GTE { get; set; }
 
-    /// <summary> ChildCalls.SecondsItTookToAnswer equals </summary>
-    [JsonProperty("childCalls_secondsItTookToAnswer_eq")]
-    public System.Int32? ChildCalls_SecondsItTookToAnswer_EQ { get; set; }
-    /// <summary> ChildCalls.SecondsItTookToAnswer less than or equal to </summary>
-    [JsonProperty("childCalls_secondsItTookToAnswer_lte")]
-    public System.Int32? ChildCalls_SecondsItTookToAnswer_LTE { get; set; }
-    /// <summary> ChildCalls.SecondsItTookToAnswer greater than or equal to </summary>
-    [JsonProperty("childCalls_secondsItTookToAnswer_gte")]
-    public System.Int32? ChildCalls_SecondsItTookToAnswer_GTE { get; set; }
 
 
     /// <summary> DialStatus equals </summary>
@@ -9674,15 +9547,6 @@ public class CallOutgoingFilterRequest
     [JsonProperty("dialStatus_reg")]
     public string? DialStatus_REG { get; set; }
 
-    /// <summary> SecondsItTookToAnswer equals </summary>
-    [JsonProperty("secondsItTookToAnswer_eq")]
-    public System.Int32? SecondsItTookToAnswer_EQ { get; set; }
-    /// <summary> SecondsItTookToAnswer less than or equal to </summary>
-    [JsonProperty("secondsItTookToAnswer_lte")]
-    public System.Int32? SecondsItTookToAnswer_LTE { get; set; }
-    /// <summary> SecondsItTookToAnswer greater than or equal to </summary>
-    [JsonProperty("secondsItTookToAnswer_gte")]
-    public System.Int32? SecondsItTookToAnswer_GTE { get; set; }
 
     /// <summary> TimesWhenCallPlacedOnHold.SecondsElapsedWhenPlacedOnHold equals </summary>
     [JsonProperty("timesWhenCallPlacedOnHold_secondsElapsedWhenPlacedOnHold_eq")]
