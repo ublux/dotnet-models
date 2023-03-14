@@ -62,6 +62,27 @@ export interface AccountUpdateRequest {
     companyName?: string | null;
 }
 
+/** AI analysis of conversation in a phone call */
+export interface AiAnalysis {
+    sentiment?: AiSentiment;
+    /** Entities mentioned in the conversation */
+    readonly entities?: string[] | null;
+    /** Topics mentioned in the conversation */
+    readonly topics?: string[] | null;
+    /** Intention of client summarized */
+    readonly clientIntention?: string | null;
+    /** Intention of agent summarized */
+    readonly agentIntention?: string | null;
+    /** Summary of conversation */
+    readonly summary?: string | null;
+    /** Problem of the conversation */
+    readonly problem?: string | null;
+    /** Was client polite? This is a value between 0 and 1 representing a percentage. */
+    readonly clientPolite?: number | null;
+    /** Was agent polite? This is a value between 0 and 1 representing a percentage. */
+    readonly agentPolite?: number | null;
+}
+
 /** AI transcription of a phone call */
 export interface AiCallTranscription {
     /** Id of document */
@@ -72,16 +93,6 @@ export interface AiCallTranscription {
     readonly transcriptionLanguage?: string | null;
     /** Audio of agent converted to text */
     readonly transcription?: AiTranscription[];
-    /** Summary of agent transcription */
-    readonly transcriptionAgentSummary?: string | null;
-    /** Summary of client transcription */
-    readonly transcriptionClientSummary?: string | null;
-    /** Entity detection summary for client */
-    readonly aiSentimentAnalysisClientSummary?: AiEntityDetection[];
-    /** Entity detection summary for agent */
-    readonly aiSentimentAnalysisAgentSummary?: AiEntityDetection[];
-    /** AI Topic Modeling Summary */
-    readonly aiTopicModelingSummary?: AiTopicModelingSummary[];
     /** If the transcription contains an error */
     readonly errorMessage?: string | null;
     /** It is nullable because there are cases where it makes no sense to point to an account. 
@@ -120,116 +131,6 @@ export interface AiCallTranscriptionFilterRequest {
     transcription_text_con?: string | null;
     /** Transcription.Text regex */
     transcription_text_reg?: string | null;
-    /** Transcription.IsPositive equals */
-    transcription_isPositive_eq?: boolean | null;
-    /** Transcription.Entities.EntityType equals */
-    transcription_entities_entityType_eq?: string | null;
-    /** Transcription.Entities.EntityType contains */
-    transcription_entities_entityType_con?: string | null;
-    /** Transcription.Entities.EntityType regex */
-    transcription_entities_entityType_reg?: string | null;
-    /** Transcription.Entities.StartPosition equals */
-    transcription_entities_startPosition_eq?: number | null;
-    /** Transcription.Entities.StartPosition less than or equal to */
-    transcription_entities_startPosition_lte?: number | null;
-    /** Transcription.Entities.StartPosition greater than or equal to */
-    transcription_entities_startPosition_gte?: number | null;
-    /** Transcription.Entities.EndPosition equals */
-    transcription_entities_endPosition_eq?: number | null;
-    /** Transcription.Entities.EndPosition less than or equal to */
-    transcription_entities_endPosition_lte?: number | null;
-    /** Transcription.Entities.EndPosition greater than or equal to */
-    transcription_entities_endPosition_gte?: number | null;
-    /** Transcription.Entities.EntityName equals */
-    transcription_entities_entityName_eq?: string | null;
-    /** Transcription.Entities.EntityName contains */
-    transcription_entities_entityName_con?: string | null;
-    /** Transcription.Entities.EntityName regex */
-    transcription_entities_entityName_reg?: string | null;
-    /** Transcription.Topics.Name equals */
-    transcription_topics_name_eq?: string | null;
-    /** Transcription.Topics.Name contains */
-    transcription_topics_name_con?: string | null;
-    /** Transcription.Topics.Name regex */
-    transcription_topics_name_reg?: string | null;
-    /** Transcription.Topics.RelatedPhrases equals */
-    transcription_topics_relatedPhrases_eq?: string | null;
-    /** Transcription.Topics.RelatedPhrases contains */
-    transcription_topics_relatedPhrases_con?: string | null;
-    /** Transcription.Topics.RelatedPhrases regex */
-    transcription_topics_relatedPhrases_reg?: string | null;
-    /** TranscriptionAgentSummary equals */
-    transcriptionAgentSummary_eq?: string | null;
-    /** TranscriptionAgentSummary contains */
-    transcriptionAgentSummary_con?: string | null;
-    /** TranscriptionAgentSummary regex */
-    transcriptionAgentSummary_reg?: string | null;
-    /** TranscriptionClientSummary equals */
-    transcriptionClientSummary_eq?: string | null;
-    /** TranscriptionClientSummary contains */
-    transcriptionClientSummary_con?: string | null;
-    /** TranscriptionClientSummary regex */
-    transcriptionClientSummary_reg?: string | null;
-    /** AiSentimentAnalysisClientSummary.EntityType equals */
-    aiSentimentAnalysisClientSummary_entityType_eq?: string | null;
-    /** AiSentimentAnalysisClientSummary.EntityType contains */
-    aiSentimentAnalysisClientSummary_entityType_con?: string | null;
-    /** AiSentimentAnalysisClientSummary.EntityType regex */
-    aiSentimentAnalysisClientSummary_entityType_reg?: string | null;
-    /** AiSentimentAnalysisClientSummary.StartPosition equals */
-    aiSentimentAnalysisClientSummary_startPosition_eq?: number | null;
-    /** AiSentimentAnalysisClientSummary.StartPosition less than or equal to */
-    aiSentimentAnalysisClientSummary_startPosition_lte?: number | null;
-    /** AiSentimentAnalysisClientSummary.StartPosition greater than or equal to */
-    aiSentimentAnalysisClientSummary_startPosition_gte?: number | null;
-    /** AiSentimentAnalysisClientSummary.EndPosition equals */
-    aiSentimentAnalysisClientSummary_endPosition_eq?: number | null;
-    /** AiSentimentAnalysisClientSummary.EndPosition less than or equal to */
-    aiSentimentAnalysisClientSummary_endPosition_lte?: number | null;
-    /** AiSentimentAnalysisClientSummary.EndPosition greater than or equal to */
-    aiSentimentAnalysisClientSummary_endPosition_gte?: number | null;
-    /** AiSentimentAnalysisClientSummary.EntityName equals */
-    aiSentimentAnalysisClientSummary_entityName_eq?: string | null;
-    /** AiSentimentAnalysisClientSummary.EntityName contains */
-    aiSentimentAnalysisClientSummary_entityName_con?: string | null;
-    /** AiSentimentAnalysisClientSummary.EntityName regex */
-    aiSentimentAnalysisClientSummary_entityName_reg?: string | null;
-    /** AiSentimentAnalysisAgentSummary.EntityType equals */
-    aiSentimentAnalysisAgentSummary_entityType_eq?: string | null;
-    /** AiSentimentAnalysisAgentSummary.EntityType contains */
-    aiSentimentAnalysisAgentSummary_entityType_con?: string | null;
-    /** AiSentimentAnalysisAgentSummary.EntityType regex */
-    aiSentimentAnalysisAgentSummary_entityType_reg?: string | null;
-    /** AiSentimentAnalysisAgentSummary.StartPosition equals */
-    aiSentimentAnalysisAgentSummary_startPosition_eq?: number | null;
-    /** AiSentimentAnalysisAgentSummary.StartPosition less than or equal to */
-    aiSentimentAnalysisAgentSummary_startPosition_lte?: number | null;
-    /** AiSentimentAnalysisAgentSummary.StartPosition greater than or equal to */
-    aiSentimentAnalysisAgentSummary_startPosition_gte?: number | null;
-    /** AiSentimentAnalysisAgentSummary.EndPosition equals */
-    aiSentimentAnalysisAgentSummary_endPosition_eq?: number | null;
-    /** AiSentimentAnalysisAgentSummary.EndPosition less than or equal to */
-    aiSentimentAnalysisAgentSummary_endPosition_lte?: number | null;
-    /** AiSentimentAnalysisAgentSummary.EndPosition greater than or equal to */
-    aiSentimentAnalysisAgentSummary_endPosition_gte?: number | null;
-    /** AiSentimentAnalysisAgentSummary.EntityName equals */
-    aiSentimentAnalysisAgentSummary_entityName_eq?: string | null;
-    /** AiSentimentAnalysisAgentSummary.EntityName contains */
-    aiSentimentAnalysisAgentSummary_entityName_con?: string | null;
-    /** AiSentimentAnalysisAgentSummary.EntityName regex */
-    aiSentimentAnalysisAgentSummary_entityName_reg?: string | null;
-    /** AiTopicModelingSummary.Name equals */
-    aiTopicModelingSummary_name_eq?: string | null;
-    /** AiTopicModelingSummary.Name contains */
-    aiTopicModelingSummary_name_con?: string | null;
-    /** AiTopicModelingSummary.Name regex */
-    aiTopicModelingSummary_name_reg?: string | null;
-    /** AiTopicModelingSummary.RelatedPhrases equals */
-    aiTopicModelingSummary_relatedPhrases_eq?: string | null;
-    /** AiTopicModelingSummary.RelatedPhrases contains */
-    aiTopicModelingSummary_relatedPhrases_con?: string | null;
-    /** AiTopicModelingSummary.RelatedPhrases regex */
-    aiTopicModelingSummary_relatedPhrases_reg?: string | null;
     /** ErrorMessage equals */
     errorMessage_eq?: string | null;
     /** ErrorMessage contains */
@@ -269,57 +170,14 @@ For example a CloudService user will point to no account */
     idsTags?: string[] | null;
 }
 
-/** Used for AI to detect entities such as Persons */
-export interface AiEntityDetection {
-    entityType?: AiEntityType;
-    /** Index on text where entity exists. For example "hello Antonio" the entity Antonio has index 6 */
-    startPosition?: number;
-    /** Index on text where entity ends. For example "hello Antonio" the entity Antonio has end index 13 */
-    endPosition?: number;
-    /** Name of entity. This can be found by searching the text too */
-    entityName?: string | null;
-}
-
-/** AI entity detection entity types */
-export enum AiEntityType {
-    PERSON = "PERSON",
-    NORP = "NORP",
-    FAC = "FAC",
-    ORG = "ORG",
-    GPE = "GPE",
-    LOC = "LOC",
-    PRODUCT = "PRODUCT",
-    EVENT = "EVENT",
-    WORK_OF_ART = "WORK_OF_ART",
-    LAW = "LAW",
-    LANGUAGE = "LANGUAGE",
-    DATE = "DATE",
-    TIME = "TIME",
-    PERCENT = "PERCENT",
-    MONEY = "MONEY",
-    QUANTITY = "QUANTITY",
-    ORDINAL = "ORDINAL",
-    CARDINAL = "CARDINAL",
-}
-
-/** Used by AI on calls */
-export interface AiTopicModeling {
-    /** Topic Name */
-    name?: string | null;
-    /** Phrases related */
-    relatedPhrases?: string[];
-    /** Weight */
-    weight?: number[];
-}
-
-/** AI Topic modeling summary */
-export interface AiTopicModelingSummary {
-    /** Name */
-    name?: string | null;
-    /** Related phrases */
-    relatedPhrases?: string[];
-    /** Weight */
-    weight?: number[];
+/** Sentiment of phrase or conversation */
+export interface AiSentiment {
+    /** Positive sentiment. This is a value between 0 and 1 representing a percentage. */
+    readonly positive?: number;
+    /** Negative sentiment. This is a value between 0 and 1 representing a percentage. */
+    readonly negative?: number;
+    /** Neutral sentiment. This is a value between 0 and 1 representing a percentage. */
+    readonly neutral?: number;
 }
 
 /** Converted audio to text */
@@ -332,20 +190,6 @@ export interface AiTranscription {
     startTime?: number;
     /** Number of seconds when this text ended being said */
     endTime?: number;
-    /** How positive is this text? Percentage between 0 and 1. For example .27 means 27 percent */
-    sentimentPositive?: number;
-    /** Percent of this text being Neutral */
-    sentimentNeutral?: number;
-    /** Percent of this text being Negative */
-    sentimentNegative?: number;
-    /** True =  Positive
-null =  Neutral
-False = Negative */
-    isPositive?: boolean | null;
-    /** Detected entities. For example if in the phrase */
-    entities?: AiEntityDetection[];
-    /** Examples: Football, tennis */
-    topics?: AiTopicModeling[];
 }
 
 /** Provider AirNetworks requests this information for every customer */
@@ -723,6 +567,7 @@ Also note that an incoming call can be international too! */
     readonly isInternational?: boolean;
     readonly dateEnded?: Date | null;
     callResult?: CallResult;
+    analysis?: AiAnalysis;
     /** It is nullable because there are cases where it makes no sense to point to an account. 
 For example a CloudService user will point to no account */
     idsTags?: string[];
@@ -991,6 +836,42 @@ export interface CallFilterRequest {
     callResult_con?: string | null;
     /** CallResult regex */
     callResult_reg?: string | null;
+    /** Analysis.Entities equals */
+    analysis_entities_eq?: string | null;
+    /** Analysis.Entities contains */
+    analysis_entities_con?: string | null;
+    /** Analysis.Entities regex */
+    analysis_entities_reg?: string | null;
+    /** Analysis.Topics equals */
+    analysis_topics_eq?: string | null;
+    /** Analysis.Topics contains */
+    analysis_topics_con?: string | null;
+    /** Analysis.Topics regex */
+    analysis_topics_reg?: string | null;
+    /** Analysis.ClientIntention equals */
+    analysis_clientIntention_eq?: string | null;
+    /** Analysis.ClientIntention contains */
+    analysis_clientIntention_con?: string | null;
+    /** Analysis.ClientIntention regex */
+    analysis_clientIntention_reg?: string | null;
+    /** Analysis.AgentIntention equals */
+    analysis_agentIntention_eq?: string | null;
+    /** Analysis.AgentIntention contains */
+    analysis_agentIntention_con?: string | null;
+    /** Analysis.AgentIntention regex */
+    analysis_agentIntention_reg?: string | null;
+    /** Analysis.Summary equals */
+    analysis_summary_eq?: string | null;
+    /** Analysis.Summary contains */
+    analysis_summary_con?: string | null;
+    /** Analysis.Summary regex */
+    analysis_summary_reg?: string | null;
+    /** Analysis.Problem equals */
+    analysis_problem_eq?: string | null;
+    /** Analysis.Problem contains */
+    analysis_problem_con?: string | null;
+    /** Analysis.Problem regex */
+    analysis_problem_reg?: string | null;
     /** IdsTags equals */
     idsTags_eq?: string | null;
     /** IdsTags contains */
@@ -1150,6 +1031,7 @@ Also note that an incoming call can be international too! */
     readonly isInternational?: boolean;
     readonly dateEnded?: Date | null;
     callResult?: CallResult;
+    analysis?: AiAnalysis;
     /** It is nullable because there are cases where it makes no sense to point to an account. 
 For example a CloudService user will point to no account */
     idsTags?: string[];
@@ -1222,6 +1104,7 @@ Also note that an incoming call can be international too! */
     readonly isInternational?: boolean;
     readonly dateEnded?: Date | null;
     callResult?: CallResult;
+    analysis?: AiAnalysis;
     /** It is nullable because there are cases where it makes no sense to point to an account. 
 For example a CloudService user will point to no account */
     idsTags?: string[];
@@ -1292,6 +1175,7 @@ Also note that an incoming call can be international too! */
     readonly isInternational?: boolean;
     readonly dateEnded?: Date | null;
     callResult?: CallResult;
+    analysis?: AiAnalysis;
     /** It is nullable because there are cases where it makes no sense to point to an account. 
 For example a CloudService user will point to no account */
     idsTags?: string[];
@@ -1359,6 +1243,7 @@ Also note that an incoming call can be international too! */
     readonly isInternational?: boolean;
     readonly dateEnded?: Date | null;
     callResult?: CallResult;
+    analysis?: AiAnalysis;
     /** It is nullable because there are cases where it makes no sense to point to an account. 
 For example a CloudService user will point to no account */
     idsTags?: string[];

@@ -31,9 +31,9 @@ public partial class BlackListPhoneNumber
     /// <summary>
     ///     Set value of search index
     /// </summary>
-    public void SetSearchIndex(BuiltId accountId)
+    public void SetSearchIndex(string idAccount)
     {
-        this.searchIndex = BuildSearchIndexCommon(accountId.Id, this.Number);
+        this.searchIndex = BuildSearchIndexCommon(idAccount, this.Number);
     }
 
     /// <summary>
