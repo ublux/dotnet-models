@@ -5769,12 +5769,6 @@ export interface VoicemailFilterRequest {
     voicemailType_con?: string | null;
     /** VoicemailType regex */
     voicemailType_reg?: string | null;
-    /** DurationInSeconds equals */
-    durationInSeconds_eq?: number | null;
-    /** DurationInSeconds less than or equal to */
-    durationInSeconds_lte?: number | null;
-    /** DurationInSeconds greater than or equal to */
-    durationInSeconds_gte?: number | null;
     /** VoicemailWav.InstanceId equals */
     voicemailWav_instanceId_eq?: string | null;
     /** VoicemailWav.InstanceId contains */

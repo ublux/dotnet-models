@@ -28,6 +28,14 @@ public partial class Audio
                 Directory.CreateDirectory(path);
         return path;
     }
+
+    /// <summary>
+    ///     Used for PBX to get path where audio exists
+    /// </summary>
+    public string GetFullPathWithoutExtension()
+    {
+        return Path.Combine(GetDirectoryWhereToSaveOnPBX(false), AudioSln.Id)[..^4];
+    }
 }
 
 #endif

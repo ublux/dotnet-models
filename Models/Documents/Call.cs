@@ -20,13 +20,14 @@ public abstract partial class Call : UbluxDocument_ReferenceAccount_ReferenceTag
 
     #region References
 
+    // on PBX this will be the full path where voicemail was left. Once call is processed this should be fixed
     /// <summary>
     ///     Id of voicemail in case there is one
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
     [References(typeof(Voicemail))]
-    public string? IdVoicemail { get; set; }
+    public string? IdVoicemail { get; set; } 
 
     /// <summary>
     ///     This call was originated with the purpose of tranfering another call with this id    

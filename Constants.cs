@@ -13,6 +13,15 @@ public static partial class Constants
     //public const string SipPacketLineId = "sip:Li.";
 
     /// <summary>
+    ///     Stun server to use
+    /// </summary>
+    public const string StunServerDomain = "stun3.l.google.com";
+    /// <summary>
+    ///     Stun server port to use
+    /// </summary>
+    public const ushort StunServerPort = 19302;
+
+    /// <summary>
     ///     /usr/share/ublux
     /// </summary>
     public static readonly string PathApp = GetPathApp();
@@ -216,7 +225,8 @@ public static partial class Constants
         {
             Path.Combine(BaseDirPbxFiles, "completed-calls"),
             Path.Combine(BaseDirPbxFiles, "completed-calls-errors"),
-            Path.Combine(BaseDirPbxFiles, "recordings")
+            Path.Combine(BaseDirPbxFiles, "recordings"),
+            Path.Combine(BaseDirPbxFiles, "voicemails")
         };
 
         /// <summary>
@@ -235,5 +245,10 @@ public static partial class Constants
         ///     Location where to store call recordings. /usr/share/ublux/pbx-files/recordings
         /// </summary>
         public static readonly string PathRecordings = AllPaths[2];
+
+        /// <summary>
+        ///     Location where to store call recordings. /usr/share/ublux/pbx-files/voicemails
+        /// </summary>
+        public static readonly string PathVoicemails = AllPaths[3];
     }
 }

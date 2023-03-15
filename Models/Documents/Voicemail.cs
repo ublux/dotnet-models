@@ -48,7 +48,7 @@ public partial class Voicemail : UbluxDocument_ReferenceAccount_ReferenceTags
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
     [IsUbluxRequired]
-    public required int DurationInSeconds { get; set; }
+    public required double DurationInSeconds { get; set; }
 
     /// <summary>
     ///     Voicemail in wav format. Optional because there may be an error

@@ -30,12 +30,6 @@ public class QueuedStoredFileReference : IUbluxDocumentId
         this.StoredFileReference = sfr;
         this.DeleteFileWhenUploaded = deleteDileWhenDisposing;
         this.id = sfr.id;
-
-        if(sfr.id is null)
-        {
-            if (Debugger.IsAttached) Debugger.Break();
-            throw new ArgumentNullException(nameof(sfr.id));
-        }
     }
 
     /// <summary>

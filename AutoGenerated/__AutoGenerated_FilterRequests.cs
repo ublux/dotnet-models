@@ -6714,15 +6714,6 @@ public class VoicemailFilterRequest
     [JsonProperty("voicemailType_reg")]
     public string? VoicemailType_REG { get; set; }
 
-    /// <summary> DurationInSeconds equals </summary>
-    [JsonProperty("durationInSeconds_eq")]
-    public System.Int32? DurationInSeconds_EQ { get; set; }
-    /// <summary> DurationInSeconds less than or equal to </summary>
-    [JsonProperty("durationInSeconds_lte")]
-    public System.Int32? DurationInSeconds_LTE { get; set; }
-    /// <summary> DurationInSeconds greater than or equal to </summary>
-    [JsonProperty("durationInSeconds_gte")]
-    public System.Int32? DurationInSeconds_GTE { get; set; }
 
     /// <summary> VoicemailWav.InstanceId equals </summary>
     [JsonProperty("voicemailWav_instanceId_eq")]
@@ -7137,15 +7128,6 @@ public class VoicemailForwardedFilterRequest
     [JsonProperty("idEmail_reg")]
     public string? IdEmail_REG { get; set; }
 
-    /// <summary> DurationInSeconds equals </summary>
-    [JsonProperty("durationInSeconds_eq")]
-    public System.Int32? DurationInSeconds_EQ { get; set; }
-    /// <summary> DurationInSeconds less than or equal to </summary>
-    [JsonProperty("durationInSeconds_lte")]
-    public System.Int32? DurationInSeconds_LTE { get; set; }
-    /// <summary> DurationInSeconds greater than or equal to </summary>
-    [JsonProperty("durationInSeconds_gte")]
-    public System.Int32? DurationInSeconds_GTE { get; set; }
 
     /// <summary> VoicemailWav.InstanceId equals </summary>
     [JsonProperty("voicemailWav_instanceId_eq")]
