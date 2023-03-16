@@ -24,15 +24,14 @@ public partial class AutoProvisionReference : UbluxDocument
     [IsUbluxRequired]
     public required string IdPhone { get; set; } = string.Empty;
 
-    ///// <summary>
-    /////     When phone is connected to case27 and it wants to connect to a new phone. It will do so but when phone requests cfg file
-    /////     (Note: phone may be deleted and do not exist!)
-    ///// </summary>
-    //[IgnoreDataMember]
-    //[AllowUpdate(false)]
-    //[SwaggerSchema(ReadOnly = true)]
-    //[References(typeof(Phone))]
-    //public string? IdPhoneToExchangeWith { get; set; }
+
+    /// <summary>
+    ///     Ip address where it was autoprovisioned
+    /// </summary>
+    [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
+    [IsUbluxRequired]
+    public required string Ip { get; set; }
 
     #endregion
 
@@ -43,7 +42,6 @@ public partial class AutoProvisionReference : UbluxDocument
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
     public bool RequestedDisconnect { get; set; }
-
 
     /// <summary>
     ///     We need this to send autoprovision encrypted to phone. Example: y5b0K3z0h3Kw0h03
@@ -74,7 +72,6 @@ public partial class AutoProvisionReference : UbluxDocument
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
     public UbluxSession? AutoprovisionSession { get; set; }
-
 
     #endregion
 

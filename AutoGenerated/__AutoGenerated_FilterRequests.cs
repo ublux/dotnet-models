@@ -601,6 +601,16 @@ public class AudioFilterRequest
 /// <summary> Enables searching for AutoProvisionReferences </summary>
 public class AutoProvisionReferenceFilterRequest 
 {
+    /// <summary> Ip equals </summary>
+    [JsonProperty("ip_eq")]
+    public string? Ip_EQ { get; set; }
+    /// <summary> Ip contains </summary>
+    [JsonProperty("ip_con")]
+    public string? Ip_CON { get; set; }
+    /// <summary> Ip regex </summary>
+    [JsonProperty("ip_reg")]
+    public string? Ip_REG { get; set; }
+
     /// <summary> AutoprovisionSession.IdUser equals </summary>
     [JsonProperty("autoprovisionSession_idUser_eq")]
     public string? AutoprovisionSession_IdUser_EQ { get; set; }

@@ -438,6 +438,20 @@ For example a CloudService user will point to no account */
     idsTags?: string[] | null;
 }
 
+/** Id is the mac address of a phone. It should point to an ip phone */
+export interface AutoProvisionReference {
+    /** Id of document */
+    readonly id?: string;
+    /** Ip address where it was autoprovisioned */
+    readonly ip?: string;
+    autoprovisionSession?: UbluxSession;
+    /** Creation date. Sets DateUpdated if it does not have a value */
+    readonly dateCreated?: Date;
+    /** Updated date. When item is created on database this date will be set too. This is important so that we can sync contacts
+TODO: Very important to place index in this field. */
+    readonly dateUpdated?: Date;
+}
+
 /** Phone numbers that will be blocked */
 export interface BlackListPhoneNumber {
     /** Id of document */
@@ -5581,6 +5595,17 @@ export enum UbluxRole {
     Wa = "wa",
     Ws = "ws",
     Root = "root",
+}
+
+/** Session is a logged in User (user). We use JWT Security tokens to store this Session. */
+export interface UbluxSession {
+    /** sub property from JWT. Logged in by what user? This may be a PBX */
+    readonly idUser?: string;
+    userType?: UserType;
+    /** role properties from JWT. Permissions */
+    readonly ubluxRoles?: UbluxRole[];
+    /** exp property from JWT. Date when session expires */
+    readonly expirationDate?: Date;
 }
 
 /** Someone that has access to consume Ublux Web Api. It can be a PBX, WA, If its a PBX user for example it must point to account tbd 27 */

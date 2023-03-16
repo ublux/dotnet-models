@@ -449,16 +449,16 @@ public enum UbluxRole
     admin_create,
 
     /// <summary>
-    ///     Can execute admin services. For example it can reboot a PBX. Can also execute user role
+    ///     Can execute support services. For example it can reboot a PBX. Can also execute user role
     /// </summary>
     support = 1010,
-    /// <summary> admin with only read permissions </summary>
+    /// <summary> support with only read permissions </summary>
     support_readonly,
-    /// <summary> admin with only read/update permissions </summary>
+    /// <summary> support with only read/update permissions </summary>
     support_update,
-    /// <summary> admin with only read/delete permissions </summary>
+    /// <summary> support with only read/delete permissions </summary>
     support_delete,
-    /// <summary> admin with only read/create permissions </summary>
+    /// <summary> support with only read/create permissions </summary>
     support_create,
 
     #endregion

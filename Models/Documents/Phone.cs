@@ -76,6 +76,13 @@ public partial class Phone : UbluxDocument_ReferenceAccount_ReferenceTags
     [SwaggerSchema(ReadOnly = true)]
     public DateTime? DateAutoProvision { get; set; }
 
+    ///// <summary>
+    /////     Ip address of phone when autoprovisioned
+    ///// </summary>
+    //[AllowUpdate(false)]
+    //[SwaggerSchema(ReadOnly = true)]
+    //public string? IpAutoProvision { get; set; }
+
     /// <summary>
     ///     Mac address of phone in case it is a phisical phone that autoprovisions with Ublux.
     /// </summary>
