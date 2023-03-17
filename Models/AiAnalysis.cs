@@ -96,6 +96,13 @@ public class AiAnalysis
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
     public double? AgentPolite { get; set; }
+
+    /// <summary>
+    ///     Client satisfaction from 1 to 5.
+    /// </summary>
+    [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
+    public int ClientSatisfaction { get; set; }
 }
 
 /// <summary>

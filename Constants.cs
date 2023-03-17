@@ -17,7 +17,7 @@ public static partial class Constants
     /// </summary>
     public const string StunServerDomain = "stun3.l.google.com";
     /// <summary>
-    ///     Stun server port to use
+    ///     Stun server port to use. Fanvil uses port 3478
     /// </summary>
     public const ushort StunServerPort = 19302;
 
@@ -67,6 +67,16 @@ public static partial class Constants
     ///     Used on footer of emails for example
     /// </summary>
     public const string EmailUbluxSupport = $"support@{Domain}";
+
+    /// <summary>
+    ///     Use this DNS on phones
+    /// </summary>
+    public const string DNS_Primary = "8.8.8.8";
+
+    /// <summary>
+    ///     Use this DNS on phones
+    /// </summary>
+    public const string DNS_Secondary = "8.8.4.4";
 
     /// <summary>
     ///     Domain for application

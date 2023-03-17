@@ -24,7 +24,13 @@ public partial interface IUbluxDocument : IUbluxDocumentId
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
     [JsonProperty(Order = 1002)]
-    DateTime DateUpdated { get; set; }
+    DateTime DateUpdated
+    {
+        get;
+#if UBLUX_Release || RELEASE
+        set;
+#endif
+    }
 }
 
 /// <summary>
@@ -50,7 +56,7 @@ public abstract partial class UbluxDocument : IUbluxDocument, IUbluxDocumentId
     public string Id
     {
         get => id;
-#if UBLUX_Release || RELEASE        
+#if UBLUX_Release || RELEASE
         set => id = value;
 #endif
     }
@@ -93,11 +99,13 @@ public abstract partial class UbluxDocument : IUbluxDocument, IUbluxDocumentId
         {
             return dateUpdated;
         }
+#if UBLUX_Release || RELEASE
         set
         {
             // this must be greater or equal to dateCreated
             dateUpdated = value;
         }
+#endif
     }
     private DateTime dateUpdated;
 }
@@ -130,7 +138,7 @@ public abstract partial class UbluxDocument_ReferenceAccount_ReferenceTags : Ubl
     /// </summary>
     [References(typeof(Tag))]
     [AllowUpdate(true)]
-    public List<string> IdsTags { get; set; } = new ();
+    public List<string> IdsTags { get; set; } = new();
 }
 
 

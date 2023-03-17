@@ -81,6 +81,8 @@ export interface AiAnalysis {
     readonly clientPolite?: number | null;
     /** Was agent polite? This is a value between 0 and 1 representing a percentage. */
     readonly agentPolite?: number | null;
+    /** Client satisfaction from 1 to 5. */
+    readonly clientSatisfaction?: number;
 }
 
 /** AI transcription of a phone call */
@@ -444,7 +446,11 @@ export interface AutoProvisionReference {
     readonly id?: string;
     /** Ip address where it was autoprovisioned */
     readonly ip?: string;
-    autoprovisionSession?: UbluxSession;
+    /** Ip address where it was autoprovisioned */
+    readonly userAgent?: string;
+    /** Phone was autoprovisioned by whom? This is the session that gave permission to the phone to autoprovision.
+The phone makes autoprovision with a pin. With the pin we retrive the session of the user that had that pin. */
+    readonly idUserThatAllowedAutoprovision?: string | null;
     /** Creation date. Sets DateUpdated if it does not have a value */
     readonly dateCreated?: Date;
     /** Updated date. When item is created on database this date will be set too. This is important so that we can sync contacts
@@ -874,6 +880,12 @@ export interface CallFilterRequest {
     analysis_problem_con?: string | null;
     /** Analysis.Problem regex */
     analysis_problem_reg?: string | null;
+    /** Analysis.ClientSatisfaction equals */
+    analysis_clientSatisfaction_eq?: number | null;
+    /** Analysis.ClientSatisfaction less than or equal to */
+    analysis_clientSatisfaction_lte?: number | null;
+    /** Analysis.ClientSatisfaction greater than or equal to */
+    analysis_clientSatisfaction_gte?: number | null;
     /** IdsTags equals */
     idsTags_eq?: string | null;
     /** IdsTags contains */
@@ -5595,17 +5607,6 @@ export enum UbluxRole {
     Wa = "wa",
     Ws = "ws",
     Root = "root",
-}
-
-/** Session is a logged in User (user). We use JWT Security tokens to store this Session. */
-export interface UbluxSession {
-    /** sub property from JWT. Logged in by what user? This may be a PBX */
-    readonly idUser?: string;
-    userType?: UserType;
-    /** role properties from JWT. Permissions */
-    readonly ubluxRoles?: UbluxRole[];
-    /** exp property from JWT. Date when session expires */
-    readonly expirationDate?: Date;
 }
 
 /** Someone that has access to consume Ublux Web Api. It can be a PBX, WA, If its a PBX user for example it must point to account tbd 27 */

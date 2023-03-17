@@ -31,7 +31,15 @@ public partial class AutoProvisionReference : UbluxDocument
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
     [IsUbluxRequired]
-    public required string Ip { get; set; }
+    public required string Ip { get; set; } = string.Empty;
+
+    /// <summary>
+    ///     Ip address where it was autoprovisioned
+    /// </summary>
+    [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
+    [IsUbluxRequired]
+    public required string UserAgent { get; set; } = string.Empty;
 
     #endregion
 
@@ -43,18 +51,27 @@ public partial class AutoProvisionReference : UbluxDocument
     [SwaggerSchema(ReadOnly = true)]
     public bool RequestedDisconnect { get; set; }
 
+    ///// <summary>
+    /////     We need this to send autoprovision encrypted to phone. Example: y5b0K3z0h3Kw0h03
+    /////     Even though we send it through https a hacker can send us a request with the phones mac address and we will send the password.
+    /////     
+    /////     On yealink phones this is the configuration needed:
+    /////     static.auto_provision.aes_key.com
+    /////     static.auto_provision.aes_key.mac
+    ///// </summary>
+    //[AllowUpdate(false)]
+    //[SwaggerSchema(ReadOnly = true)]
+    //[IgnoreDataMember]
+    //public string? CommonAesKey { get; set; }
+
     /// <summary>
-    ///     We need this to send autoprovision encrypted to phone. Example: y5b0K3z0h3Kw0h03
-    ///     Even though we send it through https a hacker can send us a request with the phones mac address and we will send the password.
-    ///     
-    ///     On yealink phones this is the configuration needed:
-    ///     static.auto_provision.aes_key.com
-    ///     static.auto_provision.aes_key.mac
+    ///     Password of the phone. We will send the password to the phone only the first time if we have an autoprovision pin.
+    ///     To avoid having to require an autoprovision pin this password should be the same allways per phyisical phone. 
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
     [IgnoreDataMember]
-    public string? CommonAesKey { get; set; }
+    public required string Password { get; set; } = "";
 
     /// <summary>
     ///     This is the password needed to enter the yealink phone in order to make manual modifications. Our goal is to never have to enter.
@@ -71,7 +88,8 @@ public partial class AutoProvisionReference : UbluxDocument
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    public UbluxSession? AutoprovisionSession { get; set; }
+    [References(typeof(User))]
+    public string? IdUserThatAllowedAutoprovision { get; set; }
 
     #endregion
 

@@ -611,40 +611,25 @@ public class AutoProvisionReferenceFilterRequest
     [JsonProperty("ip_reg")]
     public string? Ip_REG { get; set; }
 
-    /// <summary> AutoprovisionSession.IdUser equals </summary>
-    [JsonProperty("autoprovisionSession_idUser_eq")]
-    public string? AutoprovisionSession_IdUser_EQ { get; set; }
-    /// <summary> AutoprovisionSession.IdUser contains </summary>
-    [JsonProperty("autoprovisionSession_idUser_con")]
-    public string? AutoprovisionSession_IdUser_CON { get; set; }
-    /// <summary> AutoprovisionSession.IdUser regex </summary>
-    [JsonProperty("autoprovisionSession_idUser_reg")]
-    public string? AutoprovisionSession_IdUser_REG { get; set; }
+    /// <summary> UserAgent equals </summary>
+    [JsonProperty("userAgent_eq")]
+    public string? UserAgent_EQ { get; set; }
+    /// <summary> UserAgent contains </summary>
+    [JsonProperty("userAgent_con")]
+    public string? UserAgent_CON { get; set; }
+    /// <summary> UserAgent regex </summary>
+    [JsonProperty("userAgent_reg")]
+    public string? UserAgent_REG { get; set; }
 
-    /// <summary> AutoprovisionSession.UserType equals </summary>
-    [JsonProperty("autoprovisionSession_userType_eq")]
-    public string? AutoprovisionSession_UserType_EQ { get; set; }
-    /// <summary> AutoprovisionSession.UserType contains </summary>
-    [JsonProperty("autoprovisionSession_userType_con")]
-    public string? AutoprovisionSession_UserType_CON { get; set; }
-    /// <summary> AutoprovisionSession.UserType regex </summary>
-    [JsonProperty("autoprovisionSession_userType_reg")]
-    public string? AutoprovisionSession_UserType_REG { get; set; }
-
-    /// <summary> AutoprovisionSession.UbluxRoles contains </summary>
-    [JsonProperty("autoprovisionSession_ubluxRoles_con")]
-    public UbluxRole? AutoprovisionSession_UbluxRoles_CON { get; set; }
-
-    /// <summary> AutoprovisionSession.ExpirationDate equals </summary>
-    [JsonProperty("autoprovisionSession_expirationDate_eq")]
-    public DateTime? AutoprovisionSession_ExpirationDate_EQ { get; set; }
-    /// <summary> AutoprovisionSession.ExpirationDate less than or equal to </summary>
-    [JsonProperty("autoprovisionSession_expirationDate_lte")]
-    public DateTime? AutoprovisionSession_ExpirationDate_LTE { get; set; }
-    /// <summary> AutoprovisionSession.ExpirationDate greater than or equal to </summary>
-    [JsonProperty("autoprovisionSession_expirationDate_gte")]
-    public DateTime? AutoprovisionSession_ExpirationDate_GTE { get; set; }
-
+    /// <summary> IdUserThatAllowedAutoprovision equals </summary>
+    [JsonProperty("idUserThatAllowedAutoprovision_eq")]
+    public string? IdUserThatAllowedAutoprovision_EQ { get; set; }
+    /// <summary> IdUserThatAllowedAutoprovision contains </summary>
+    [JsonProperty("idUserThatAllowedAutoprovision_con")]
+    public string? IdUserThatAllowedAutoprovision_CON { get; set; }
+    /// <summary> IdUserThatAllowedAutoprovision regex </summary>
+    [JsonProperty("idUserThatAllowedAutoprovision_reg")]
+    public string? IdUserThatAllowedAutoprovision_REG { get; set; }
 
     /// <summary> Id equals </summary>
     [JsonProperty("id_eq")]
@@ -1407,6 +1392,16 @@ public class CallIncomingToCallFlowLogicFilterRequest
 
 
 
+    /// <summary> Analysis.ClientSatisfaction equals </summary>
+    [JsonProperty("analysis_clientSatisfaction_eq")]
+    public System.Int32? Analysis_ClientSatisfaction_EQ { get; set; }
+    /// <summary> Analysis.ClientSatisfaction less than or equal to </summary>
+    [JsonProperty("analysis_clientSatisfaction_lte")]
+    public System.Int32? Analysis_ClientSatisfaction_LTE { get; set; }
+    /// <summary> Analysis.ClientSatisfaction greater than or equal to </summary>
+    [JsonProperty("analysis_clientSatisfaction_gte")]
+    public System.Int32? Analysis_ClientSatisfaction_GTE { get; set; }
+
 
     /// <summary> IdsTags equals </summary>
     [JsonProperty("idsTags_eq")]
@@ -1996,6 +1991,16 @@ public class CallIncomingToExtensionFilterRequest
 
 
 
+    /// <summary> Analysis.ClientSatisfaction equals </summary>
+    [JsonProperty("analysis_clientSatisfaction_eq")]
+    public System.Int32? Analysis_ClientSatisfaction_EQ { get; set; }
+    /// <summary> Analysis.ClientSatisfaction less than or equal to </summary>
+    [JsonProperty("analysis_clientSatisfaction_lte")]
+    public System.Int32? Analysis_ClientSatisfaction_LTE { get; set; }
+    /// <summary> Analysis.ClientSatisfaction greater than or equal to </summary>
+    [JsonProperty("analysis_clientSatisfaction_gte")]
+    public System.Int32? Analysis_ClientSatisfaction_GTE { get; set; }
+
 
     /// <summary> IdsTags equals </summary>
     [JsonProperty("idsTags_eq")]
@@ -2575,6 +2580,16 @@ public class CallOutgoingToExtensionFilterRequest
 
 
 
+    /// <summary> Analysis.ClientSatisfaction equals </summary>
+    [JsonProperty("analysis_clientSatisfaction_eq")]
+    public System.Int32? Analysis_ClientSatisfaction_EQ { get; set; }
+    /// <summary> Analysis.ClientSatisfaction less than or equal to </summary>
+    [JsonProperty("analysis_clientSatisfaction_lte")]
+    public System.Int32? Analysis_ClientSatisfaction_LTE { get; set; }
+    /// <summary> Analysis.ClientSatisfaction greater than or equal to </summary>
+    [JsonProperty("analysis_clientSatisfaction_gte")]
+    public System.Int32? Analysis_ClientSatisfaction_GTE { get; set; }
+
 
     /// <summary> IdsTags equals </summary>
     [JsonProperty("idsTags_eq")]
@@ -3133,6 +3148,16 @@ public class CallOutgoingToPSTNFilterRequest
     public string? Analysis_Problem_REG { get; set; }
 
 
+
+    /// <summary> Analysis.ClientSatisfaction equals </summary>
+    [JsonProperty("analysis_clientSatisfaction_eq")]
+    public System.Int32? Analysis_ClientSatisfaction_EQ { get; set; }
+    /// <summary> Analysis.ClientSatisfaction less than or equal to </summary>
+    [JsonProperty("analysis_clientSatisfaction_lte")]
+    public System.Int32? Analysis_ClientSatisfaction_LTE { get; set; }
+    /// <summary> Analysis.ClientSatisfaction greater than or equal to </summary>
+    [JsonProperty("analysis_clientSatisfaction_gte")]
+    public System.Int32? Analysis_ClientSatisfaction_GTE { get; set; }
 
 
     /// <summary> IdsTags equals </summary>
@@ -8802,6 +8827,16 @@ public class CallFilterRequest
 
 
 
+    /// <summary> Analysis.ClientSatisfaction equals </summary>
+    [JsonProperty("analysis_clientSatisfaction_eq")]
+    public System.Int32? Analysis_ClientSatisfaction_EQ { get; set; }
+    /// <summary> Analysis.ClientSatisfaction less than or equal to </summary>
+    [JsonProperty("analysis_clientSatisfaction_lte")]
+    public System.Int32? Analysis_ClientSatisfaction_LTE { get; set; }
+    /// <summary> Analysis.ClientSatisfaction greater than or equal to </summary>
+    [JsonProperty("analysis_clientSatisfaction_gte")]
+    public System.Int32? Analysis_ClientSatisfaction_GTE { get; set; }
+
 
     /// <summary> IdsTags equals </summary>
     [JsonProperty("idsTags_eq")]
@@ -9351,6 +9386,16 @@ public class CallIncomingFilterRequest
 
 
 
+    /// <summary> Analysis.ClientSatisfaction equals </summary>
+    [JsonProperty("analysis_clientSatisfaction_eq")]
+    public System.Int32? Analysis_ClientSatisfaction_EQ { get; set; }
+    /// <summary> Analysis.ClientSatisfaction less than or equal to </summary>
+    [JsonProperty("analysis_clientSatisfaction_lte")]
+    public System.Int32? Analysis_ClientSatisfaction_LTE { get; set; }
+    /// <summary> Analysis.ClientSatisfaction greater than or equal to </summary>
+    [JsonProperty("analysis_clientSatisfaction_gte")]
+    public System.Int32? Analysis_ClientSatisfaction_GTE { get; set; }
+
 
     /// <summary> IdsTags equals </summary>
     [JsonProperty("idsTags_eq")]
@@ -9889,6 +9934,16 @@ public class CallOutgoingFilterRequest
     public string? Analysis_Problem_REG { get; set; }
 
 
+
+    /// <summary> Analysis.ClientSatisfaction equals </summary>
+    [JsonProperty("analysis_clientSatisfaction_eq")]
+    public System.Int32? Analysis_ClientSatisfaction_EQ { get; set; }
+    /// <summary> Analysis.ClientSatisfaction less than or equal to </summary>
+    [JsonProperty("analysis_clientSatisfaction_lte")]
+    public System.Int32? Analysis_ClientSatisfaction_LTE { get; set; }
+    /// <summary> Analysis.ClientSatisfaction greater than or equal to </summary>
+    [JsonProperty("analysis_clientSatisfaction_gte")]
+    public System.Int32? Analysis_ClientSatisfaction_GTE { get; set; }
 
 
     /// <summary> IdsTags equals </summary>
