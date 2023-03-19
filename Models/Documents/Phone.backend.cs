@@ -1,5 +1,6 @@
 ﻿#if UBLUX_BACKEND
 
+using Microsoft.AspNetCore.Http.HttpResults;
 using System.Security.Cryptography;
 using System.Text.RegularExpressions;
 
@@ -19,11 +20,17 @@ public partial class Phone
     [IgnoreDataMember]    
     public required string Password { get; set; } = string.Empty;
 
+
+    /// <summary>
+    ///     It is ok to have it hardcoded. If we change id of line unit tests will fail
+    /// </summary>
+    public const string Regex_GetIdOfLinePattern = @"Li\.Ac\.\w+\.Ph\.[\w-]+\.\w+\.\w{1,12}";
+
     /// <summary>
     ///     For now it is: Li.Ac.1111.Ph.WS-1111.81111.91111
     ///     It is ok to hard code it. If prefixis change unit tests will fail. It is very important to keep running unit tests!
     /// </summary>
-    [GeneratedRegex(@"Li\.Ac\.\w+\.Ph\.[\w-]+\.\w+\.\w{1,10}")]
+    [GeneratedRegex(Regex_GetIdOfLinePattern)]
     public static partial Regex Regex_GetIdOfLine();    
 
     internal const string alphanumericMainCharacters =
