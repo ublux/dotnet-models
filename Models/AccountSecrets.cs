@@ -1,4 +1,6 @@
-﻿namespace Ublux.Communications.Models;
+﻿using System.Security.Cryptography;
+
+namespace Ublux.Communications.Models;
 
 /// <summary>
 ///     Account secrets
@@ -32,7 +34,32 @@ public class AccountSecrets
     [IsUbluxRequired]
     public required string PinSpy { get; set; } 
 
+    /// <summary>
+    ///     Helps generate new random Pin for phone and spy
+    /// </summary>
+    public static AccountSecrets GenerateRandom()
+    {
+        static int GenerateRandomInt(int minValue, int maxValueNoneInclusive)
+        {
+            if (minValue > maxValueNoneInclusive)
+                throw new Exception("VBZI-C19R");
 
+            // range of possible values
+            UInt32 range = (UInt32)(maxValueNoneInclusive - minValue);
+            Span<byte> randBytes = stackalloc byte[4];
+            using RandomNumberGenerator rng = RandomNumberGenerator.Create();
+            rng.GetBytes(randBytes);
+            UInt32 randomUnsignedInt = BitConverter.ToUInt32(randBytes);
+            UInt32 randomIntInRange = randomUnsignedInt % range;
+            return (int)(minValue + randomIntInRange);
+        }
+
+        return new AccountSecrets()
+        {
+            PinPhone = GenerateRandomInt(100000000, 999999999).ToString(),
+            PinSpy = GenerateRandomInt(100000000, 999999999).ToString()
+        };
+    }
 
 
 }

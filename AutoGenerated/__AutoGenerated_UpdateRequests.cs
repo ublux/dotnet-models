@@ -63,13 +63,13 @@ public class AccountUpdateRequest // : IUbluxDocumentId
     /// </summary>
     public AccountSecrets? AccountSecrets { get; set; }
     /// <summary>
-    /// Customizable settings
-    /// </summary>
-    public AccountSettings? AccountSettings { get; set; }
-    /// <summary>
     /// Name of company
     /// </summary>
     public String? CompanyName { get; set; }
+    /// <summary>
+    /// Sector
+    /// </summary>
+    public Industry? Industry { get; set; }
     /// <summary> Set values on actual document </summary>
     public void SetValuesOnAccount(Account account)
     {
@@ -77,16 +77,16 @@ public class AccountUpdateRequest // : IUbluxDocumentId
             account.MailingAddress = this.MailingAddress;
         if(this.AccountSecrets!=null)
             account.AccountSecrets = this.AccountSecrets;
-        if(this.AccountSettings!=null)
-            account.AccountSettings = this.AccountSettings;
         if(this.CompanyName!=null)
             account.CompanyName = this.CompanyName;
+        if(this.Industry!=null)
+            account.Industry = this.Industry.Value;
     }
 
 }
 
 /// <summary>
-/// Ublux Account
+/// Email address. Two users may use the same email address
 /// </summary>
 public class EmailUpdateRequest // : IUbluxDocumentId
 {
@@ -1010,7 +1010,7 @@ public class FaxOutgoingGroupUpdateRequest // : IUbluxDocumentId
 }
 
 /// <summary>
-/// Someone that has access to consume Ublux Web Api. It can be a PBX, WA,
+/// Someone that has access to consume Ublux Web Api. It can be a PBX, WA, or Admin.
 /// If its a PBX user for example it must point to account tbd 27
 /// </summary>
 public class UserUpdateRequest // : IUbluxDocumentId

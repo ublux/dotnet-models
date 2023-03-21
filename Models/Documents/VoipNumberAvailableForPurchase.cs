@@ -40,16 +40,16 @@ public partial class VoipNumberAvailableForPurchase : VoipNumber
     }
     private bool _RequiresCustomerInfo;
 
-    /// <summary>
-    ///     Phone numbers from AirNetwoks for example must be configured on their portal for them to work
-    /// </summary>
-    [AllowUpdate(false)] 
-    [SwaggerSchema(ReadOnly = true)] 
-    public bool PendingToBeConfigured {
-        get { try { /*custom-get-code*/ _lock.EnterReadLock(); return _PendingToBeConfigured; } finally { _lock.ExitReadLock(); } }
-        set { try { _lock.EnterWriteLock(); _PendingToBeConfigured = value; /*custom-set-code*/ } finally { _lock.ExitWriteLock(); }}
-    }
-    private bool _PendingToBeConfigured;
+    ///// <summary>
+    /////     Phone numbers from AirNetwoks for example must be configured on their portal for them to work
+    ///// </summary>
+    //[AllowUpdate(false)] 
+    //[SwaggerSchema(ReadOnly = true)] 
+    //public bool PendingToBeConfigured {
+    //    get { try { /*custom-get-code*/ _lock.EnterReadLock(); return _PendingToBeConfigured; } finally { _lock.ExitReadLock(); } }
+    //    set { try { _lock.EnterWriteLock(); _PendingToBeConfigured = value; /*custom-set-code*/ } finally { _lock.ExitWriteLock(); }}
+    //}
+    //private bool _PendingToBeConfigured;
 
     #endregion
 

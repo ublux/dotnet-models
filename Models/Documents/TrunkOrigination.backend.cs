@@ -4,7 +4,7 @@
 namespace Ublux.Communications.Models.Documents;
 
 /// <summary>
-///     Trunk used to receive phone calls
+///     Trunk used to receive phone calls. Multiple VoipNumbers can point to the same trunk origination.
 /// </summary>
 [JsonConverter(typeof(JsonSubtypes), nameof(TrunkOriginationType))]
 [JsonSubtypes.KnownSubType(typeof(TrunkOriginationForward), nameof(TrunkOriginationType.Forward))]

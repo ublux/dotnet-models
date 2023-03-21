@@ -162,13 +162,13 @@ public abstract partial class VoipNumber : UbluxDocument_ReferenceAccount_Refere
     [IsUbluxRequired]
     public required bool IsTollFree { get; set; }
 
-    /// <summary>
-    ///     Does this number support WhatsApp?
-    /// </summary>
-    [AllowUpdate(false)]
-    [SwaggerSchema(ReadOnly = true)]
-    [IsUbluxRequired]
-    public required bool IsWhatsappEnabled { get; set; }
+    ///// <summary>
+    /////     Does this number support WhatsApp?
+    ///// </summary>
+    //[AllowUpdate(false)]
+    //[SwaggerSchema(ReadOnly = true)]
+    //[IsUbluxRequired]
+    //public required bool IsWhatsappEnabled { get; set; }
 
     /// <summary>
     ///     TimeZone of this phone number

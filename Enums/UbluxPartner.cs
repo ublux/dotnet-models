@@ -21,10 +21,10 @@ public enum UbluxPartner
     /// </summary>
     Victor,
 
-    /// <summary>
-    ///     Clients with Daniel Mosquera
-    /// </summary>
-    Daniel,
+    ///// <summary>
+    /////     Clients with Daniel Mosquera
+    ///// </summary>
+    //Daniel,
 
     //DanielAndFernando,
     //Fernando

@@ -1,7 +1,7 @@
 ﻿namespace Ublux.Communications.Models.Documents;
 
 /// <summary>
-///     Ublux Account
+///     Email address. Two users may use the same email address
 /// </summary>
 public partial class Email : UbluxDocument_ReferenceAccount_ReferenceTags
 {

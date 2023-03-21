@@ -19,13 +19,13 @@ public abstract partial class VoipNumber
     public string? IdCustomerInfo { get; set; }
 
     /// <summary>
-    ///     Responsible for receiving phone calls. May be null because phone number may not be activated (AvailableForPurcahse)
+    ///     Responsible for receiving phone calls. If (AvailableForPurcahse) it should point to support TBD account.
     /// </summary>
     [References(typeof(TrunkOrigination))]
     [IgnoreDataMember]
-    [AllowUpdate(false)] 
-    [SwaggerSchema(ReadOnly = true)] 
-    public string? IdTrunkOrigination { get; set; }
+    [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
+    public required string IdTrunkOrigination { get; set; } = "";
 
     /// <summary>
     ///     To what provider this belongs. Thanks to the provider we can use its API.

@@ -36,7 +36,6 @@ public partial class VoipNumberPhone : VoipNumber
         get => VoipNumberType.Phone;
 #if UBLUX_Release || RELEASE
         set { }
-#else
 #endif
     }
 }

@@ -19,7 +19,6 @@ Must have at least one */
     readonly idsCloudServicePbxs?: string[];
     mailingAddress?: MailingAddress;
     accountSecrets?: AccountSecrets;
-    accountSettings?: AccountSettings;
     /** Name of company */
     companyName?: string;
     /** If client has granted access to support to make changes to account. 
@@ -29,6 +28,7 @@ This can only be changed by an ownder of the account. */
     readonly countriesThatCanCallLocally?: CountryIsoCode[];
     /** If CountriesThatCanCallLocally does not contain country then ublux will attempt to find country on this list. */
     readonly countriesThatCanCallInternationally?: CountryIsoCode[];
+    industry?: Industry;
     /** Creation date. Sets DateUpdated if it does not have a value */
     readonly dateCreated?: Date;
     /** Updated date. When item is created on database this date will be set too. This is important so that we can sync contacts
@@ -45,21 +45,13 @@ export interface AccountSecrets {
     readonly pinSpy?: string;
 }
 
-/** Customizable settings of an account */
-export interface AccountSettings {
-    /** When creating a new line for this account what option do we assign to RecordExternalCalls? */
-    turnOnRecordingOfExternalCallsWhenCreatingLine?: boolean;
-    /** When creating a new line for this account what option do we assign to RecordInternalCalls? */
-    turnOnRecordingOfInternalCallsWhenCreatingLine?: boolean;
-}
-
 /** Ublux Account */
 export interface AccountUpdateRequest {
     mailingAddress?: MailingAddress;
     accountSecrets?: AccountSecrets;
-    accountSettings?: AccountSettings;
     /** Name of company */
     companyName?: string | null;
+    industry?: Industry;
 }
 
 /** AI analysis of conversation in a phone call */
@@ -2102,7 +2094,7 @@ export enum DayOfWeek {
     Saturday = "Saturday",
 }
 
-/** Ublux Account */
+/** Email address. Two users may use the same email address */
 export interface Email {
     /** Id of document */
     readonly id?: string;
@@ -3851,6 +3843,26 @@ export interface HttpResponseValidationErrorsResponse {
     title?: string | null;
 }
 
+/** Sector */
+export enum Industry {
+    Other = "Other",
+    Hotels = "Hotels",
+    HR = "HR",
+    Pharmacies = "Pharmacies",
+    Restaurants = "Restaurants",
+    Healthcare = "Healthcare",
+    Finance = "Finance",
+    Startups = "Startups",
+    Edtech = "Edtech",
+    Schools = "Schools",
+    Ecommerce = "Ecommerce",
+    Sports_Centers = "Sports_Centers",
+    Insurances = "Insurances",
+    Attorneys = "Attorneys",
+    Call_Centers = "Call_Centers",
+    Automotive = "Automotive",
+}
+
 /** Type of email address */
 export enum LabelEmailType {
     Other = "Other",
@@ -5400,6 +5412,57 @@ export interface TimeWhenCallPlacedOnHold {
     readonly secondsElapsedWhenRemovedFromHold?: number | null;
 }
 
+/** Trunk used to receive phone calls. Multiple VoipNumbers can point to the same trunk origination. */
+export interface TrunkOrigination {
+    /** Id of document */
+    readonly id?: string;
+    trunkOriginationType?: TrunkOriginationType;
+    /** Creation date. Sets DateUpdated if it does not have a value */
+    readonly dateCreated?: Date;
+    /** Updated date. When item is created on database this date will be set too. This is important so that we can sync contacts
+TODO: Very important to place index in this field. */
+    readonly dateUpdated?: Date;
+}
+
+/** Types of trunk originations */
+export enum TrunkOriginationType {
+    Forward = "Forward",
+    Register = "Register",
+}
+
+/** Trunk used to receive phone calls */
+export interface TrunkTermination {
+    /** Id of document */
+    readonly id?: string;
+    /** Creation date. Sets DateUpdated if it does not have a value */
+    readonly dateCreated?: Date;
+    /** Updated date. When item is created on database this date will be set too. This is important so that we can sync contacts
+TODO: Very important to place index in this field. */
+    readonly dateUpdated?: Date;
+}
+
+/** Group of trunk terminations ordered by priority */
+export interface TrunkTerminationGroup {
+    /** Id of document */
+    readonly id?: string;
+    /** Note: points to a shared_trunktermination and not a trunk termination
+Example. ID of a twilio trunk to call US, then a trunk from victor to call Spain, then trunk */
+    readonly trunkTerminationRulesOrderedByPriority?: TrunkTerminationRule[];
+    /** Creation date. Sets DateUpdated if it does not have a value */
+    readonly dateCreated?: Date;
+    /** Updated date. When item is created on database this date will be set too. This is important so that we can sync contacts
+TODO: Very important to place index in this field. */
+    readonly dateUpdated?: Date;
+}
+
+/** Trunk termination allowed to call */
+export interface TrunkTerminationRule {
+    /** Trunk termination to use */
+    readonly idTrunkTermination?: string;
+    /** Countries that can be called */
+    readonly countriesThatCanCall?: CountryIsoCode[];
+}
+
 /** A ublux user has this roles. They are sorted in order of priority */
 export enum UbluxRole {
     Audios = "audios",
@@ -5609,11 +5672,13 @@ export enum UbluxRole {
     Root = "root",
 }
 
-/** Someone that has access to consume Ublux Web Api. It can be a PBX, WA, If its a PBX user for example it must point to account tbd 27 */
+/** Someone that has access to consume Ublux Web Api. It can be a PBX, WA, or Admin. If its a PBX user for example it must point to account tbd 27 */
 export interface User {
     /** Id of document */
     readonly id?: string;
-    /** Email of user. Note this is the Id not the email address. */
+    /** Email of user. This is the Id not the email address.
+Two users cannot use the same email. It is a one to one relationship.
+An email may exists without it pointing to a user. For example you may want to send an email notification if a call is not answered to a specific email. */
     readonly idEmail?: string;
     /** Key = service/role such as Phone. The phone role probably will have access to the PhoneController service
 Value = Permissions it has on that role. Maybe it can only read data from that service but it cannot update, create or modify. */
@@ -5714,7 +5779,7 @@ export enum UserType {
     WS = "WS",
 }
 
-/** Someone that has access to consume Ublux Web Api. It can be a PBX, WA, If its a PBX user for example it must point to account tbd 27 */
+/** Someone that has access to consume Ublux Web Api. It can be a PBX, WA, or Admin. If its a PBX user for example it must point to account tbd 27 */
 export interface UserUpdateRequest {
     /** Key = service/role such as Phone. The phone role probably will have access to the PhoneController service
 Value = Permissions it has on that role. Maybe it can only read data from that service but it cannot update, create or modify. */
@@ -5940,8 +6005,6 @@ will be injected to the caller id allowing the agent to know that she has to ans
     readonly isVoiceEnabled?: boolean;
     /** Is this phone number toll free? */
     readonly isTollFree?: boolean;
-    /** Does this number support WhatsApp? */
-    readonly isWhatsappEnabled?: boolean;
     /** TimeZone of this phone number */
     timeZone?: string;
     /** It is nullable because there are cases where it makes no sense to point to an account. 
@@ -5967,8 +6030,6 @@ value = day of week when it executes */
     readonly rulesFax?: RuleFax[];
     /** Requires customer info in order to be purchased */
     readonly requiresCustomerInfo?: boolean;
-    /** Phone numbers from AirNetwoks for example must be configured on their portal for them to work */
-    readonly pendingToBeConfigured?: boolean;
     voipNumberType?: VoipNumberType;
     /** Music on hold to use for outgoing calls to PSTN only */
     idMusicOnHoldGroup?: string | null;
@@ -5998,8 +6059,6 @@ will be injected to the caller id allowing the agent to know that she has to ans
     readonly isVoiceEnabled?: boolean;
     /** Is this phone number toll free? */
     readonly isTollFree?: boolean;
-    /** Does this number support WhatsApp? */
-    readonly isWhatsappEnabled?: boolean;
     /** TimeZone of this phone number */
     timeZone?: string;
     /** It is nullable because there are cases where it makes no sense to point to an account. 
@@ -6041,8 +6100,6 @@ export interface VoipNumberAvailableForPurchaseFilterRequest {
     rulesFax_idEmail_reg?: string | null;
     /** RequiresCustomerInfo equals */
     requiresCustomerInfo_eq?: boolean | null;
-    /** PendingToBeConfigured equals */
-    pendingToBeConfigured_eq?: boolean | null;
     /** VoipNumberType equals */
     voipNumberType_eq?: string | null;
     /** VoipNumberType contains */
@@ -6109,8 +6166,6 @@ export interface VoipNumberAvailableForPurchaseFilterRequest {
     isVoiceEnabled_eq?: boolean | null;
     /** IsTollFree equals */
     isTollFree_eq?: boolean | null;
-    /** IsWhatsappEnabled equals */
-    isWhatsappEnabled_eq?: boolean | null;
     /** TimeZone equals */
     timeZone_eq?: string | null;
     /** TimeZone contains */
@@ -6207,8 +6262,6 @@ will be injected to the caller id allowing the agent to know that she has to ans
     readonly isVoiceEnabled?: boolean;
     /** Is this phone number toll free? */
     readonly isTollFree?: boolean;
-    /** Does this number support WhatsApp? */
-    readonly isWhatsappEnabled?: boolean;
     /** TimeZone of this phone number */
     timeZone?: string;
     /** It is nullable because there are cases where it makes no sense to point to an account. 
@@ -6314,8 +6367,6 @@ export interface VoipNumberFaxFilterRequest {
     isVoiceEnabled_eq?: boolean | null;
     /** IsTollFree equals */
     isTollFree_eq?: boolean | null;
-    /** IsWhatsappEnabled equals */
-    isWhatsappEnabled_eq?: boolean | null;
     /** TimeZone equals */
     timeZone_eq?: string | null;
     /** TimeZone contains */
@@ -6472,8 +6523,6 @@ export interface VoipNumberFilterRequest {
     isVoiceEnabled_eq?: boolean | null;
     /** IsTollFree equals */
     isTollFree_eq?: boolean | null;
-    /** IsWhatsappEnabled equals */
-    isWhatsappEnabled_eq?: boolean | null;
     /** TimeZone equals */
     timeZone_eq?: string | null;
     /** TimeZone contains */
@@ -6546,8 +6595,6 @@ will be injected to the caller id allowing the agent to know that she has to ans
     readonly isVoiceEnabled?: boolean;
     /** Is this phone number toll free? */
     readonly isTollFree?: boolean;
-    /** Does this number support WhatsApp? */
-    readonly isWhatsappEnabled?: boolean;
     /** TimeZone of this phone number */
     timeZone?: string;
     /** It is nullable because there are cases where it makes no sense to point to an account. 
@@ -6653,8 +6700,6 @@ export interface VoipNumberPhoneFilterRequest {
     isVoiceEnabled_eq?: boolean | null;
     /** IsTollFree equals */
     isTollFree_eq?: boolean | null;
-    /** IsWhatsappEnabled equals */
-    isWhatsappEnabled_eq?: boolean | null;
     /** TimeZone equals */
     timeZone_eq?: string | null;
     /** TimeZone contains */

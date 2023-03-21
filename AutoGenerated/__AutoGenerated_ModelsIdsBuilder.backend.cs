@@ -379,7 +379,7 @@ namespace Ublux.Communications.Models.SubDocuments {
         public const string DocumentPrefix = "SF";
 
         /// <summary> Example: SF | IdAcc | IdDocument | end. Example: SF.Ac.1.COTPSTN.PBX-US-1.1677268873.0-mix.wav</summary>
-        public static BuiltId BuildId(string idAcc, string idDocument, string end) => new($"{DocumentPrefix}.{idAcc}.{end}");
+        public static BuiltId BuildId(string idAcc, string idDocument, string end) => new($"{DocumentPrefix}.{idAcc}.{idDocument}.{end}");
     }
 }
 

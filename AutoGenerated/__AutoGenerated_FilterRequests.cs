@@ -207,15 +207,6 @@ public class AccountFilterRequest
     public string? AccountSecrets_PinSpy_REG { get; set; }
 
 
-    /// <summary> AccountSettings.TurnOnRecordingOfExternalCallsWhenCreatingLine equals </summary>
-    [JsonProperty("accountSettings_turnOnRecordingOfExternalCallsWhenCreatingLine_eq")]
-    public bool? AccountSettings_TurnOnRecordingOfExternalCallsWhenCreatingLine_EQ { get; set; }
-
-    /// <summary> AccountSettings.TurnOnRecordingOfInternalCallsWhenCreatingLine equals </summary>
-    [JsonProperty("accountSettings_turnOnRecordingOfInternalCallsWhenCreatingLine_eq")]
-    public bool? AccountSettings_TurnOnRecordingOfInternalCallsWhenCreatingLine_EQ { get; set; }
-
-
     /// <summary> CompanyName equals </summary>
     [JsonProperty("companyName_eq")]
     public string? CompanyName_EQ { get; set; }
@@ -237,6 +228,16 @@ public class AccountFilterRequest
     /// <summary> CountriesThatCanCallInternationally contains </summary>
     [JsonProperty("countriesThatCanCallInternationally_con")]
     public CountryIsoCode? CountriesThatCanCallInternationally_CON { get; set; }
+
+    /// <summary> Industry equals </summary>
+    [JsonProperty("industry_eq")]
+    public string? Industry_EQ { get; set; }
+    /// <summary> Industry contains </summary>
+    [JsonProperty("industry_con")]
+    public string? Industry_CON { get; set; }
+    /// <summary> Industry regex </summary>
+    [JsonProperty("industry_reg")]
+    public string? Industry_REG { get; set; }
 
     /// <summary> Id equals </summary>
     [JsonProperty("id_eq")]
@@ -6685,6 +6686,21 @@ public class TrunkTerminationFilterRequest
 /// <summary> Enables searching for TrunkTerminationGroups </summary>
 public class TrunkTerminationGroupFilterRequest 
 {
+    /// <summary> TrunkTerminationRulesOrderedByPriority.IdTrunkTermination equals </summary>
+    [JsonProperty("trunkTerminationRulesOrderedByPriority_idTrunkTermination_eq")]
+    public string? TrunkTerminationRulesOrderedByPriority_IdTrunkTermination_EQ { get; set; }
+    /// <summary> TrunkTerminationRulesOrderedByPriority.IdTrunkTermination contains </summary>
+    [JsonProperty("trunkTerminationRulesOrderedByPriority_idTrunkTermination_con")]
+    public string? TrunkTerminationRulesOrderedByPriority_IdTrunkTermination_CON { get; set; }
+    /// <summary> TrunkTerminationRulesOrderedByPriority.IdTrunkTermination regex </summary>
+    [JsonProperty("trunkTerminationRulesOrderedByPriority_idTrunkTermination_reg")]
+    public string? TrunkTerminationRulesOrderedByPriority_IdTrunkTermination_REG { get; set; }
+
+    /// <summary> TrunkTerminationRulesOrderedByPriority.CountriesThatCanCall contains </summary>
+    [JsonProperty("trunkTerminationRulesOrderedByPriority_countriesThatCanCall_con")]
+    public CountryIsoCode? TrunkTerminationRulesOrderedByPriority_CountriesThatCanCall_CON { get; set; }
+
+
     /// <summary> Id equals </summary>
     [JsonProperty("id_eq")]
     public string? Id_EQ { get; set; }
@@ -7371,10 +7387,6 @@ public class VoipNumberAvailableForPurchaseFilterRequest
     [JsonProperty("requiresCustomerInfo_eq")]
     public bool? RequiresCustomerInfo_EQ { get; set; }
 
-    /// <summary> PendingToBeConfigured equals </summary>
-    [JsonProperty("pendingToBeConfigured_eq")]
-    public bool? PendingToBeConfigured_EQ { get; set; }
-
     /// <summary> VoipNumberType equals </summary>
     [JsonProperty("voipNumberType_eq")]
     public string? VoipNumberType_EQ { get; set; }
@@ -7488,10 +7500,6 @@ public class VoipNumberAvailableForPurchaseFilterRequest
     /// <summary> IsTollFree equals </summary>
     [JsonProperty("isTollFree_eq")]
     public bool? IsTollFree_EQ { get; set; }
-
-    /// <summary> IsWhatsappEnabled equals </summary>
-    [JsonProperty("isWhatsappEnabled_eq")]
-    public bool? IsWhatsappEnabled_EQ { get; set; }
 
     /// <summary> TimeZone equals </summary>
     [JsonProperty("timeZone_eq")]
@@ -7708,10 +7716,6 @@ public class VoipNumberFaxFilterRequest
     [JsonProperty("isTollFree_eq")]
     public bool? IsTollFree_EQ { get; set; }
 
-    /// <summary> IsWhatsappEnabled equals </summary>
-    [JsonProperty("isWhatsappEnabled_eq")]
-    public bool? IsWhatsappEnabled_EQ { get; set; }
-
     /// <summary> TimeZone equals </summary>
     [JsonProperty("timeZone_eq")]
     public string? TimeZone_EQ { get; set; }
@@ -7926,10 +7930,6 @@ public class VoipNumberPhoneFilterRequest
     /// <summary> IsTollFree equals </summary>
     [JsonProperty("isTollFree_eq")]
     public bool? IsTollFree_EQ { get; set; }
-
-    /// <summary> IsWhatsappEnabled equals </summary>
-    [JsonProperty("isWhatsappEnabled_eq")]
-    public bool? IsWhatsappEnabled_EQ { get; set; }
 
     /// <summary> TimeZone equals </summary>
     [JsonProperty("timeZone_eq")]
@@ -10392,10 +10392,6 @@ public class VoipNumberFilterRequest
     /// <summary> IsTollFree equals </summary>
     [JsonProperty("isTollFree_eq")]
     public bool? IsTollFree_EQ { get; set; }
-
-    /// <summary> IsWhatsappEnabled equals </summary>
-    [JsonProperty("isWhatsappEnabled_eq")]
-    public bool? IsWhatsappEnabled_EQ { get; set; }
 
     /// <summary> TimeZone equals </summary>
     [JsonProperty("timeZone_eq")]

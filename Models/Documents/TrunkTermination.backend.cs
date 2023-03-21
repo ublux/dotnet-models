@@ -56,16 +56,16 @@ public partial class TrunkTermination : UbluxDocument
     ///     Username that provider requires in order to authenticate. Optional because provider may validate us via ip address
     /// </summary>
     [IgnoreDataMember]
-    [AllowUpdate(false)] 
-    [SwaggerSchema(ReadOnly = true)] 
+    [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     public string? Username { get; set; }
 
     /// <summary>
     ///     Password that provider requires in order to authenticate
     /// </summary>
     [IgnoreDataMember]
-    [AllowUpdate(false)] 
-    [SwaggerSchema(ReadOnly = true)] 
+    [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     public string? Password { get; set; }
 
     /// <summary>
@@ -101,7 +101,7 @@ public partial class TrunkTermination : UbluxDocument
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
     [IsUbluxRequired]
-    public required VoipCompany VoipCompany { get; set; } 
+    public required VoipCompany VoipCompany { get; set; }
 
     #endregion
 
@@ -110,18 +110,18 @@ public partial class TrunkTermination : UbluxDocument
     /// <summary>
     ///     Can call country
     /// </summary>
-    public bool CanCallCountry(CountryIsoCode country)
+    public static bool CanCallCountry(IList<CountryIsoCode> countryIsoCodes, CountryIsoCode country)
     {
-        if (CountryIsoCodesThatCanCall == null)
+        if (countryIsoCodes == null)
             return false;
 
-        if (CountryIsoCodesThatCanCall.Count < 1)
+        if (countryIsoCodes.Count < 1)
             return false;
 
-        if (CountryIsoCodesThatCanCall[0] == CountryIsoCode.All)
+        if (countryIsoCodes.Any(x => x == CountryIsoCode.All))
             return true;
 
-        return CountryIsoCodesThatCanCall.Contains(country);
+        return countryIsoCodes.Contains(country);
     }
 
     #endregion

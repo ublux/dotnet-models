@@ -12,23 +12,23 @@ public partial class TrunkOriginationForward : TrunkOrigination
     // example: Twilio-CanalPark:UST
     // can have the same id as trunk termination!
 
-    /// <summary>
-    ///     Url where to forward traffic
-    /// </summary>
-    [AllowUpdate(false)]
-    [SwaggerSchema(ReadOnly = true)]
-    [IgnoreDataMember]
-    [IsUbluxRequired]
-    public required string SipUri { get; set; } = string.Empty;
+    ///// <summary>
+    /////     Url where to forward traffic
+    ///// </summary>
+    //[AllowUpdate(false)]
+    //[SwaggerSchema(ReadOnly = true)]
+    //[IgnoreDataMember]
+    //[IsUbluxRequired]
+    //public required string SipUri { get; set; } = string.Empty;
 
-    /// <summary>
-    ///     Sip URI where to send traffic in case primary SipUri fails
-    /// </summary>
-    [AllowUpdate(false)]
-    [SwaggerSchema(ReadOnly = true)]
-    [IgnoreDataMember]
-    [IsUbluxRequired]
-    public required string SipUriFailover { get; set; } = string.Empty;
+    ///// <summary>
+    /////     Sip URI where to send traffic in case primary SipUri fails
+    ///// </summary>
+    //[AllowUpdate(false)]
+    //[SwaggerSchema(ReadOnly = true)]
+    //[IgnoreDataMember]
+    //[IsUbluxRequired]
+    //public required string SipUriFailover { get; set; } = string.Empty;
 
     /// <summary>
     ///     Type of trunk origination

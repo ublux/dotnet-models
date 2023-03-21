@@ -1,7 +1,7 @@
 ﻿namespace Ublux.Communications.Models.Documents;
 
 /// <summary>
-///     Someone that has access to consume Ublux Web Api. It can be a PBX, WA, 
+///     Someone that has access to consume Ublux Web Api. It can be a PBX, WA, or Admin.
 ///     If its a PBX user for example it must point to account tbd 27
 /// </summary>
 [DebuggerDisplay("Username: {Username}")]
@@ -13,7 +13,9 @@ public partial class User : UbluxDocument_ReferenceAccount_ReferenceTags
     #region References
 
     /// <summary>
-    ///     Email of user. Note this is the Id not the email address. 
+    ///     Email of user. This is the Id not the email address.
+    ///     Two users cannot use the same email. It is a one to one relationship.
+    ///     An email may exists without it pointing to a user. For example you may want to send an email notification if a call is not answered to a specific email.
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
