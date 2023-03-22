@@ -27,7 +27,7 @@ public abstract partial class Call : UbluxDocument_ReferenceAccount_ReferenceTag
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
     [References(typeof(Voicemail))]
-    public string? IdVoicemail { get; set; } 
+    public string? IdVoicemail { get; set; }
 
     /// <summary>
     ///     This call was originated with the purpose of tranfering another call with this id    
@@ -36,7 +36,7 @@ public abstract partial class Call : UbluxDocument_ReferenceAccount_ReferenceTag
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
     [References(typeof(Call))]
-    public string? IdCallThatTerminatedThisCallDoToAttendantTransfer { get; set; }    
+    public string? IdCallThatTerminatedThisCallDoToAttendantTransfer { get; set; }
 
     /// <summary>
     ///     If outgoing:
@@ -202,17 +202,22 @@ public abstract partial class Call : UbluxDocument_ReferenceAccount_ReferenceTag
     public AiAnalysis? Analysis { get; set; }
 
     /// <summary>
+    ///     Lines that participated in this call
+    /// </summary>
+    [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
+    public List<string> ParticipantLines { get; set; } = new();
+
+    /// <summary>
     ///     Returns -1 if call has not completed
     ///     Returns -2 if date started is larger than date ended
     /// </summary>
     public double GetDurationInSeconds()
     {
-        if(this.DateEnded.HasValue == false) return -1;
+        if (this.DateEnded.HasValue == false) return -1;
         if (this.DateEnded < this.DateCreated) return -2;
         return (this.DateEnded.Value - this.DateCreated).TotalSeconds;
     }
-
-
 
     #endregion
 }

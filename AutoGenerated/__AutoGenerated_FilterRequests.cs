@@ -1404,6 +1404,16 @@ public class CallIncomingToCallFlowLogicFilterRequest
     public System.Int32? Analysis_ClientSatisfaction_GTE { get; set; }
 
 
+    /// <summary> ParticipantLines equals </summary>
+    [JsonProperty("participantLines_eq")]
+    public string? ParticipantLines_EQ { get; set; }
+    /// <summary> ParticipantLines contains </summary>
+    [JsonProperty("participantLines_con")]
+    public string? ParticipantLines_CON { get; set; }
+    /// <summary> ParticipantLines regex </summary>
+    [JsonProperty("participantLines_reg")]
+    public string? ParticipantLines_REG { get; set; }
+
     /// <summary> IdsTags equals </summary>
     [JsonProperty("idsTags_eq")]
     public string? IdsTags_EQ { get; set; }
@@ -2003,6 +2013,16 @@ public class CallIncomingToExtensionFilterRequest
     public System.Int32? Analysis_ClientSatisfaction_GTE { get; set; }
 
 
+    /// <summary> ParticipantLines equals </summary>
+    [JsonProperty("participantLines_eq")]
+    public string? ParticipantLines_EQ { get; set; }
+    /// <summary> ParticipantLines contains </summary>
+    [JsonProperty("participantLines_con")]
+    public string? ParticipantLines_CON { get; set; }
+    /// <summary> ParticipantLines regex </summary>
+    [JsonProperty("participantLines_reg")]
+    public string? ParticipantLines_REG { get; set; }
+
     /// <summary> IdsTags equals </summary>
     [JsonProperty("idsTags_eq")]
     public string? IdsTags_EQ { get; set; }
@@ -2592,6 +2612,16 @@ public class CallOutgoingToExtensionFilterRequest
     public System.Int32? Analysis_ClientSatisfaction_GTE { get; set; }
 
 
+    /// <summary> ParticipantLines equals </summary>
+    [JsonProperty("participantLines_eq")]
+    public string? ParticipantLines_EQ { get; set; }
+    /// <summary> ParticipantLines contains </summary>
+    [JsonProperty("participantLines_con")]
+    public string? ParticipantLines_CON { get; set; }
+    /// <summary> ParticipantLines regex </summary>
+    [JsonProperty("participantLines_reg")]
+    public string? ParticipantLines_REG { get; set; }
+
     /// <summary> IdsTags equals </summary>
     [JsonProperty("idsTags_eq")]
     public string? IdsTags_EQ { get; set; }
@@ -3160,6 +3190,16 @@ public class CallOutgoingToPSTNFilterRequest
     [JsonProperty("analysis_clientSatisfaction_gte")]
     public System.Int32? Analysis_ClientSatisfaction_GTE { get; set; }
 
+
+    /// <summary> ParticipantLines equals </summary>
+    [JsonProperty("participantLines_eq")]
+    public string? ParticipantLines_EQ { get; set; }
+    /// <summary> ParticipantLines contains </summary>
+    [JsonProperty("participantLines_con")]
+    public string? ParticipantLines_CON { get; set; }
+    /// <summary> ParticipantLines regex </summary>
+    [JsonProperty("participantLines_reg")]
+    public string? ParticipantLines_REG { get; set; }
 
     /// <summary> IdsTags equals </summary>
     [JsonProperty("idsTags_eq")]
@@ -8838,6 +8878,16 @@ public class CallFilterRequest
     public System.Int32? Analysis_ClientSatisfaction_GTE { get; set; }
 
 
+    /// <summary> ParticipantLines equals </summary>
+    [JsonProperty("participantLines_eq")]
+    public string? ParticipantLines_EQ { get; set; }
+    /// <summary> ParticipantLines contains </summary>
+    [JsonProperty("participantLines_con")]
+    public string? ParticipantLines_CON { get; set; }
+    /// <summary> ParticipantLines regex </summary>
+    [JsonProperty("participantLines_reg")]
+    public string? ParticipantLines_REG { get; set; }
+
     /// <summary> IdsTags equals </summary>
     [JsonProperty("idsTags_eq")]
     public string? IdsTags_EQ { get; set; }
@@ -9397,6 +9447,16 @@ public class CallIncomingFilterRequest
     public System.Int32? Analysis_ClientSatisfaction_GTE { get; set; }
 
 
+    /// <summary> ParticipantLines equals </summary>
+    [JsonProperty("participantLines_eq")]
+    public string? ParticipantLines_EQ { get; set; }
+    /// <summary> ParticipantLines contains </summary>
+    [JsonProperty("participantLines_con")]
+    public string? ParticipantLines_CON { get; set; }
+    /// <summary> ParticipantLines regex </summary>
+    [JsonProperty("participantLines_reg")]
+    public string? ParticipantLines_REG { get; set; }
+
     /// <summary> IdsTags equals </summary>
     [JsonProperty("idsTags_eq")]
     public string? IdsTags_EQ { get; set; }
@@ -9945,6 +10005,16 @@ public class CallOutgoingFilterRequest
     [JsonProperty("analysis_clientSatisfaction_gte")]
     public System.Int32? Analysis_ClientSatisfaction_GTE { get; set; }
 
+
+    /// <summary> ParticipantLines equals </summary>
+    [JsonProperty("participantLines_eq")]
+    public string? ParticipantLines_EQ { get; set; }
+    /// <summary> ParticipantLines contains </summary>
+    [JsonProperty("participantLines_con")]
+    public string? ParticipantLines_CON { get; set; }
+    /// <summary> ParticipantLines regex </summary>
+    [JsonProperty("participantLines_reg")]
+    public string? ParticipantLines_REG { get; set; }
 
     /// <summary> IdsTags equals </summary>
     [JsonProperty("idsTags_eq")]

@@ -580,6 +580,8 @@ Also note that an incoming call can be international too! */
     readonly dateEnded?: Date | null;
     callResult?: CallResult;
     analysis?: AiAnalysis;
+    /** Lines that participated in this call */
+    readonly participantLines?: string[];
     /** It is nullable because there are cases where it makes no sense to point to an account. 
 For example a CloudService user will point to no account */
     idsTags?: string[];
@@ -878,6 +880,12 @@ export interface CallFilterRequest {
     analysis_clientSatisfaction_lte?: number | null;
     /** Analysis.ClientSatisfaction greater than or equal to */
     analysis_clientSatisfaction_gte?: number | null;
+    /** ParticipantLines equals */
+    participantLines_eq?: string | null;
+    /** ParticipantLines contains */
+    participantLines_con?: string | null;
+    /** ParticipantLines regex */
+    participantLines_reg?: string | null;
     /** IdsTags equals */
     idsTags_eq?: string | null;
     /** IdsTags contains */
@@ -1038,6 +1046,8 @@ Also note that an incoming call can be international too! */
     readonly dateEnded?: Date | null;
     callResult?: CallResult;
     analysis?: AiAnalysis;
+    /** Lines that participated in this call */
+    readonly participantLines?: string[];
     /** It is nullable because there are cases where it makes no sense to point to an account. 
 For example a CloudService user will point to no account */
     idsTags?: string[];
@@ -1111,6 +1121,8 @@ Also note that an incoming call can be international too! */
     readonly dateEnded?: Date | null;
     callResult?: CallResult;
     analysis?: AiAnalysis;
+    /** Lines that participated in this call */
+    readonly participantLines?: string[];
     /** It is nullable because there are cases where it makes no sense to point to an account. 
 For example a CloudService user will point to no account */
     idsTags?: string[];
@@ -1182,6 +1194,8 @@ Also note that an incoming call can be international too! */
     readonly dateEnded?: Date | null;
     callResult?: CallResult;
     analysis?: AiAnalysis;
+    /** Lines that participated in this call */
+    readonly participantLines?: string[];
     /** It is nullable because there are cases where it makes no sense to point to an account. 
 For example a CloudService user will point to no account */
     idsTags?: string[];
@@ -1248,6 +1262,8 @@ Also note that an incoming call can be international too! */
     readonly dateEnded?: Date | null;
     callResult?: CallResult;
     analysis?: AiAnalysis;
+    /** Lines that participated in this call */
+    readonly participantLines?: string[];
     /** It is nullable because there are cases where it makes no sense to point to an account. 
 For example a CloudService user will point to no account */
     idsTags?: string[];
