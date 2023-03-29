@@ -3,6 +3,8 @@
 
 #pragma warning disable CA1822 // Mark members as static
 #pragma warning disable IDE0060 // Remove unused parameter
+#pragma warning disable CS8601 // Possible null reference assignment.
+#pragma warning disable CS8629 // Nullable value type may be null.
 
 namespace Ublux.Communications.Models.Documents;
 
@@ -33,15 +35,15 @@ public class ApiKeyUpdateRequest // : IUbluxDocumentId
     /// </summary>
     public List<System.String>? IdsTags { get; set; }
     /// <summary> Set values on actual document </summary>
-    public void SetValuesOnApiKey(ApiKey apiKey)
+    public void SetValuesOnApiKey(ApiKey apiKey, string jsonRaw)
     {
-        if(this.UbluxRoles != null)
+        if(jsonRaw.Contains($@"""{nameof(this.UbluxRoles)}""", StringComparison.OrdinalIgnoreCase))
             apiKey.UbluxRoles = this.UbluxRoles;
-        if(this.DateExpire != null)
+        if(jsonRaw.Contains($@"""{nameof(this.DateExpire)}""", StringComparison.OrdinalIgnoreCase))
             apiKey.DateExpire = this.DateExpire.Value;
-        if(this.Description != null)
+        if(jsonRaw.Contains($@"""{nameof(this.Description)}""", StringComparison.OrdinalIgnoreCase))
             apiKey.Description = this.Description;
-        if(this.IdsTags != null)
+        if(jsonRaw.Contains($@"""{nameof(this.IdsTags)}""", StringComparison.OrdinalIgnoreCase))
             apiKey.IdsTags = this.IdsTags;
     }
 
@@ -71,15 +73,15 @@ public class AccountUpdateRequest // : IUbluxDocumentId
     /// </summary>
     public Industry? Industry { get; set; }
     /// <summary> Set values on actual document </summary>
-    public void SetValuesOnAccount(Account account)
+    public void SetValuesOnAccount(Account account, string jsonRaw)
     {
-        if(this.MailingAddress != null)
+        if(jsonRaw.Contains($@"""{nameof(this.MailingAddress)}""", StringComparison.OrdinalIgnoreCase))
             account.MailingAddress = this.MailingAddress;
-        if(this.AccountSecrets != null)
+        if(jsonRaw.Contains($@"""{nameof(this.AccountSecrets)}""", StringComparison.OrdinalIgnoreCase))
             account.AccountSecrets = this.AccountSecrets;
-        if(this.CompanyName != null)
+        if(jsonRaw.Contains($@"""{nameof(this.CompanyName)}""", StringComparison.OrdinalIgnoreCase))
             account.CompanyName = this.CompanyName;
-        if(this.Industry != null)
+        if(jsonRaw.Contains($@"""{nameof(this.Industry)}""", StringComparison.OrdinalIgnoreCase))
             account.Industry = this.Industry.Value;
     }
 
@@ -96,9 +98,9 @@ public class EmailUpdateRequest // : IUbluxDocumentId
     /// </summary>
     public List<System.String>? IdsTags { get; set; }
     /// <summary> Set values on actual document </summary>
-    public void SetValuesOnEmail(Email email)
+    public void SetValuesOnEmail(Email email, string jsonRaw)
     {
-        if(this.IdsTags != null)
+        if(jsonRaw.Contains($@"""{nameof(this.IdsTags)}""", StringComparison.OrdinalIgnoreCase))
             email.IdsTags = this.IdsTags;
     }
 
@@ -110,7 +112,7 @@ public class EmailUpdateRequest // : IUbluxDocumentId
 public class AgreementToTermsAndConditionsUpdateRequest // : IUbluxDocumentId
 {
     /// <summary> Set values on actual document </summary>
-    public void SetValuesOnAgreementToTermsAndConditions(AgreementToTermsAndConditions agreementToTermsAndConditions)
+    public void SetValuesOnAgreementToTermsAndConditions(AgreementToTermsAndConditions agreementToTermsAndConditions, string jsonRaw)
     {
     }
 
@@ -122,7 +124,7 @@ public class AgreementToTermsAndConditionsUpdateRequest // : IUbluxDocumentId
 public class AirNetworksProvinceUpdateRequest // : IUbluxDocumentId
 {
     /// <summary> Set values on actual document </summary>
-    public void SetValuesOnAirNetworksProvince(AirNetworksProvince airNetworksProvince)
+    public void SetValuesOnAirNetworksProvince(AirNetworksProvince airNetworksProvince, string jsonRaw)
     {
     }
 
@@ -149,13 +151,13 @@ public class AudioUpdateRequest // : IUbluxDocumentId
     /// </summary>
     public List<System.String>? IdsTags { get; set; }
     /// <summary> Set values on actual document </summary>
-    public void SetValuesOnAudio(Audio audio)
+    public void SetValuesOnAudio(Audio audio, string jsonRaw)
     {
-        if(this.FriendlyName != null)
+        if(jsonRaw.Contains($@"""{nameof(this.FriendlyName)}""", StringComparison.OrdinalIgnoreCase))
             audio.FriendlyName = this.FriendlyName;
-        if(this.Description != null)
+        if(jsonRaw.Contains($@"""{nameof(this.Description)}""", StringComparison.OrdinalIgnoreCase))
             audio.Description = this.Description;
-        if(this.IdsTags != null)
+        if(jsonRaw.Contains($@"""{nameof(this.IdsTags)}""", StringComparison.OrdinalIgnoreCase))
             audio.IdsTags = this.IdsTags;
     }
 
@@ -167,7 +169,7 @@ public class AudioUpdateRequest // : IUbluxDocumentId
 public class AutoProvisionReferenceUpdateRequest // : IUbluxDocumentId
 {
     /// <summary> Set values on actual document </summary>
-    public void SetValuesOnAutoProvisionReference(AutoProvisionReference autoProvisionReference)
+    public void SetValuesOnAutoProvisionReference(AutoProvisionReference autoProvisionReference, string jsonRaw)
     {
     }
 
@@ -198,15 +200,15 @@ public class BlackListPhoneNumberUpdateRequest // : IUbluxDocumentId
     /// </summary>
     public List<System.String>? IdsTags { get; set; }
     /// <summary> Set values on actual document </summary>
-    public void SetValuesOnBlackListPhoneNumber(BlackListPhoneNumber blackListPhoneNumber)
+    public void SetValuesOnBlackListPhoneNumber(BlackListPhoneNumber blackListPhoneNumber, string jsonRaw)
     {
-        if(this.IdAudioToPlayIfCallIsBlocked != null)
+        if(jsonRaw.Contains($@"""{nameof(this.IdAudioToPlayIfCallIsBlocked)}""", StringComparison.OrdinalIgnoreCase))
             blackListPhoneNumber.IdAudioToPlayIfCallIsBlocked = this.IdAudioToPlayIfCallIsBlocked;
-        if(this.Number != null)
+        if(jsonRaw.Contains($@"""{nameof(this.Number)}""", StringComparison.OrdinalIgnoreCase))
             blackListPhoneNumber.Number = this.Number;
-        if(this.FriendlyName != null)
+        if(jsonRaw.Contains($@"""{nameof(this.FriendlyName)}""", StringComparison.OrdinalIgnoreCase))
             blackListPhoneNumber.FriendlyName = this.FriendlyName;
-        if(this.IdsTags != null)
+        if(jsonRaw.Contains($@"""{nameof(this.IdsTags)}""", StringComparison.OrdinalIgnoreCase))
             blackListPhoneNumber.IdsTags = this.IdsTags;
     }
 
@@ -229,11 +231,11 @@ public class CallerIdMaskUpdateRequest // : IUbluxDocumentId
     /// </summary>
     public List<System.String>? IdsTags { get; set; }
     /// <summary> Set values on actual document </summary>
-    public void SetValuesOnCallerIdMask(CallerIdMask callerIdMask)
+    public void SetValuesOnCallerIdMask(CallerIdMask callerIdMask, string jsonRaw)
     {
-        if(this.FriendlyName != null)
+        if(jsonRaw.Contains($@"""{nameof(this.FriendlyName)}""", StringComparison.OrdinalIgnoreCase))
             callerIdMask.FriendlyName = this.FriendlyName;
-        if(this.IdsTags != null)
+        if(jsonRaw.Contains($@"""{nameof(this.IdsTags)}""", StringComparison.OrdinalIgnoreCase))
             callerIdMask.IdsTags = this.IdsTags;
     }
 
@@ -264,15 +266,15 @@ public class CallFlowLogicUpdateRequest // : IUbluxDocumentId
     /// </summary>
     public List<System.String>? IdsTags { get; set; }
     /// <summary> Set values on actual document </summary>
-    public void SetValuesOnCallFlowLogic(CallFlowLogic callFlowLogic)
+    public void SetValuesOnCallFlowLogic(CallFlowLogic callFlowLogic, string jsonRaw)
     {
-        if(this.FriendlyName != null)
+        if(jsonRaw.Contains($@"""{nameof(this.FriendlyName)}""", StringComparison.OrdinalIgnoreCase))
             callFlowLogic.FriendlyName = this.FriendlyName;
-        if(this.Description != null)
+        if(jsonRaw.Contains($@"""{nameof(this.Description)}""", StringComparison.OrdinalIgnoreCase))
             callFlowLogic.Description = this.Description;
-        if(this.Tree != null)
+        if(jsonRaw.Contains($@"""{nameof(this.Tree)}""", StringComparison.OrdinalIgnoreCase))
             callFlowLogic.Tree = this.Tree;
-        if(this.IdsTags != null)
+        if(jsonRaw.Contains($@"""{nameof(this.IdsTags)}""", StringComparison.OrdinalIgnoreCase))
             callFlowLogic.IdsTags = this.IdsTags;
     }
 
@@ -293,11 +295,11 @@ public class CallIncomingToCallFlowLogicUpdateRequest // : IUbluxDocumentId
     /// </summary>
     public List<System.String>? IdsTags { get; set; }
     /// <summary> Set values on actual document </summary>
-    public void SetValuesOnCallIncomingToCallFlowLogic(CallIncomingToCallFlowLogic callIncomingToCallFlowLogic)
+    public void SetValuesOnCallIncomingToCallFlowLogic(CallIncomingToCallFlowLogic callIncomingToCallFlowLogic, string jsonRaw)
     {
-        if(this.CallResult != null)
+        if(jsonRaw.Contains($@"""{nameof(this.CallResult)}""", StringComparison.OrdinalIgnoreCase))
             callIncomingToCallFlowLogic.CallResult = this.CallResult.Value;
-        if(this.IdsTags != null)
+        if(jsonRaw.Contains($@"""{nameof(this.IdsTags)}""", StringComparison.OrdinalIgnoreCase))
             callIncomingToCallFlowLogic.IdsTags = this.IdsTags;
     }
 
@@ -318,11 +320,11 @@ public class CallIncomingToExtensionUpdateRequest // : IUbluxDocumentId
     /// </summary>
     public List<System.String>? IdsTags { get; set; }
     /// <summary> Set values on actual document </summary>
-    public void SetValuesOnCallIncomingToExtension(CallIncomingToExtension callIncomingToExtension)
+    public void SetValuesOnCallIncomingToExtension(CallIncomingToExtension callIncomingToExtension, string jsonRaw)
     {
-        if(this.CallResult != null)
+        if(jsonRaw.Contains($@"""{nameof(this.CallResult)}""", StringComparison.OrdinalIgnoreCase))
             callIncomingToExtension.CallResult = this.CallResult.Value;
-        if(this.IdsTags != null)
+        if(jsonRaw.Contains($@"""{nameof(this.IdsTags)}""", StringComparison.OrdinalIgnoreCase))
             callIncomingToExtension.IdsTags = this.IdsTags;
     }
 
@@ -343,11 +345,11 @@ public class CallOutgoingToExtensionUpdateRequest // : IUbluxDocumentId
     /// </summary>
     public List<System.String>? IdsTags { get; set; }
     /// <summary> Set values on actual document </summary>
-    public void SetValuesOnCallOutgoingToExtension(CallOutgoingToExtension callOutgoingToExtension)
+    public void SetValuesOnCallOutgoingToExtension(CallOutgoingToExtension callOutgoingToExtension, string jsonRaw)
     {
-        if(this.CallResult != null)
+        if(jsonRaw.Contains($@"""{nameof(this.CallResult)}""", StringComparison.OrdinalIgnoreCase))
             callOutgoingToExtension.CallResult = this.CallResult.Value;
-        if(this.IdsTags != null)
+        if(jsonRaw.Contains($@"""{nameof(this.IdsTags)}""", StringComparison.OrdinalIgnoreCase))
             callOutgoingToExtension.IdsTags = this.IdsTags;
     }
 
@@ -370,11 +372,11 @@ public class CallOutgoingToPSTNUpdateRequest // : IUbluxDocumentId
     /// </summary>
     public List<System.String>? IdsTags { get; set; }
     /// <summary> Set values on actual document </summary>
-    public void SetValuesOnCallOutgoingToPSTN(CallOutgoingToPSTN callOutgoingToPSTN)
+    public void SetValuesOnCallOutgoingToPSTN(CallOutgoingToPSTN callOutgoingToPSTN, string jsonRaw)
     {
-        if(this.CallResult != null)
+        if(jsonRaw.Contains($@"""{nameof(this.CallResult)}""", StringComparison.OrdinalIgnoreCase))
             callOutgoingToPSTN.CallResult = this.CallResult.Value;
-        if(this.IdsTags != null)
+        if(jsonRaw.Contains($@"""{nameof(this.IdsTags)}""", StringComparison.OrdinalIgnoreCase))
             callOutgoingToPSTN.IdsTags = this.IdsTags;
     }
 
@@ -402,15 +404,15 @@ public class CloudServicePbxUpdateRequest // : IUbluxDocumentId
     /// </summary>
     public CloudServiceProviderType? ProviderType { get; set; }
     /// <summary> Set values on actual document </summary>
-    public void SetValuesOnCloudServicePbx(CloudServicePbx cloudServicePbx)
+    public void SetValuesOnCloudServicePbx(CloudServicePbx cloudServicePbx, string jsonRaw)
     {
-        if(this.DisableMonitoring != null)
+        if(jsonRaw.Contains($@"""{nameof(this.DisableMonitoring)}""", StringComparison.OrdinalIgnoreCase))
             cloudServicePbx.DisableMonitoring = this.DisableMonitoring.Value;
-        if(this.ProviderInstanceId != null)
+        if(jsonRaw.Contains($@"""{nameof(this.ProviderInstanceId)}""", StringComparison.OrdinalIgnoreCase))
             cloudServicePbx.ProviderInstanceId = this.ProviderInstanceId;
-        if(this.ProviderRegion != null)
+        if(jsonRaw.Contains($@"""{nameof(this.ProviderRegion)}""", StringComparison.OrdinalIgnoreCase))
             cloudServicePbx.ProviderRegion = this.ProviderRegion;
-        if(this.ProviderType != null)
+        if(jsonRaw.Contains($@"""{nameof(this.ProviderType)}""", StringComparison.OrdinalIgnoreCase))
             cloudServicePbx.ProviderType = this.ProviderType.Value;
     }
 
@@ -438,15 +440,15 @@ public class CloudServiceWebAppUpdateRequest // : IUbluxDocumentId
     /// </summary>
     public CloudServiceProviderType? ProviderType { get; set; }
     /// <summary> Set values on actual document </summary>
-    public void SetValuesOnCloudServiceWebApp(CloudServiceWebApp cloudServiceWebApp)
+    public void SetValuesOnCloudServiceWebApp(CloudServiceWebApp cloudServiceWebApp, string jsonRaw)
     {
-        if(this.IdCloudServiceWebAppFailover != null)
+        if(jsonRaw.Contains($@"""{nameof(this.IdCloudServiceWebAppFailover)}""", StringComparison.OrdinalIgnoreCase))
             cloudServiceWebApp.IdCloudServiceWebAppFailover = this.IdCloudServiceWebAppFailover;
-        if(this.ProviderInstanceId != null)
+        if(jsonRaw.Contains($@"""{nameof(this.ProviderInstanceId)}""", StringComparison.OrdinalIgnoreCase))
             cloudServiceWebApp.ProviderInstanceId = this.ProviderInstanceId;
-        if(this.ProviderRegion != null)
+        if(jsonRaw.Contains($@"""{nameof(this.ProviderRegion)}""", StringComparison.OrdinalIgnoreCase))
             cloudServiceWebApp.ProviderRegion = this.ProviderRegion;
-        if(this.ProviderType != null)
+        if(jsonRaw.Contains($@"""{nameof(this.ProviderType)}""", StringComparison.OrdinalIgnoreCase))
             cloudServiceWebApp.ProviderType = this.ProviderType.Value;
     }
 
@@ -470,13 +472,13 @@ public class CloudServiceWebHostUpdateRequest // : IUbluxDocumentId
     /// </summary>
     public CloudServiceProviderType? ProviderType { get; set; }
     /// <summary> Set values on actual document </summary>
-    public void SetValuesOnCloudServiceWebHost(CloudServiceWebHost cloudServiceWebHost)
+    public void SetValuesOnCloudServiceWebHost(CloudServiceWebHost cloudServiceWebHost, string jsonRaw)
     {
-        if(this.ProviderInstanceId != null)
+        if(jsonRaw.Contains($@"""{nameof(this.ProviderInstanceId)}""", StringComparison.OrdinalIgnoreCase))
             cloudServiceWebHost.ProviderInstanceId = this.ProviderInstanceId;
-        if(this.ProviderRegion != null)
+        if(jsonRaw.Contains($@"""{nameof(this.ProviderRegion)}""", StringComparison.OrdinalIgnoreCase))
             cloudServiceWebHost.ProviderRegion = this.ProviderRegion;
-        if(this.ProviderType != null)
+        if(jsonRaw.Contains($@"""{nameof(this.ProviderType)}""", StringComparison.OrdinalIgnoreCase))
             cloudServiceWebHost.ProviderType = this.ProviderType.Value;
     }
 
@@ -529,27 +531,27 @@ public class ContactUpdateRequest // : IUbluxDocumentId
     /// </summary>
     public List<System.String>? IdsTags { get; set; }
     /// <summary> Set values on actual document </summary>
-    public void SetValuesOnContact(Contact contact)
+    public void SetValuesOnContact(Contact contact, string jsonRaw)
     {
-        if(this.ContactNumbers != null)
+        if(jsonRaw.Contains($@"""{nameof(this.ContactNumbers)}""", StringComparison.OrdinalIgnoreCase))
             contact.ContactNumbers = this.ContactNumbers;
-        if(this.ContactEmails != null)
+        if(jsonRaw.Contains($@"""{nameof(this.ContactEmails)}""", StringComparison.OrdinalIgnoreCase))
             contact.ContactEmails = this.ContactEmails;
-        if(this.MailingAddresses != null)
+        if(jsonRaw.Contains($@"""{nameof(this.MailingAddresses)}""", StringComparison.OrdinalIgnoreCase))
             contact.MailingAddresses = this.MailingAddresses;
-        if(this.FirstName != null)
+        if(jsonRaw.Contains($@"""{nameof(this.FirstName)}""", StringComparison.OrdinalIgnoreCase))
             contact.FirstName = this.FirstName;
-        if(this.LastName != null)
+        if(jsonRaw.Contains($@"""{nameof(this.LastName)}""", StringComparison.OrdinalIgnoreCase))
             contact.LastName = this.LastName;
-        if(this.JobTitle != null)
+        if(jsonRaw.Contains($@"""{nameof(this.JobTitle)}""", StringComparison.OrdinalIgnoreCase))
             contact.JobTitle = this.JobTitle;
-        if(this.Company != null)
+        if(jsonRaw.Contains($@"""{nameof(this.Company)}""", StringComparison.OrdinalIgnoreCase))
             contact.Company = this.Company;
-        if(this.Notes != null)
+        if(jsonRaw.Contains($@"""{nameof(this.Notes)}""", StringComparison.OrdinalIgnoreCase))
             contact.Notes = this.Notes;
-        if(this.Variables != null)
+        if(jsonRaw.Contains($@"""{nameof(this.Variables)}""", StringComparison.OrdinalIgnoreCase))
             contact.Variables = this.Variables;
-        if(this.IdsTags != null)
+        if(jsonRaw.Contains($@"""{nameof(this.IdsTags)}""", StringComparison.OrdinalIgnoreCase))
             contact.IdsTags = this.IdsTags;
     }
 
@@ -574,13 +576,13 @@ public class CustomerInfoUpdateRequest // : IUbluxDocumentId
     /// </summary>
     public List<System.String>? IdsTags { get; set; }
     /// <summary> Set values on actual document </summary>
-    public void SetValuesOnCustomerInfo(CustomerInfo customerInfo)
+    public void SetValuesOnCustomerInfo(CustomerInfo customerInfo, string jsonRaw)
     {
-        if(this.MailingAddress != null)
+        if(jsonRaw.Contains($@"""{nameof(this.MailingAddress)}""", StringComparison.OrdinalIgnoreCase))
             customerInfo.MailingAddress = this.MailingAddress;
-        if(this.FullName != null)
+        if(jsonRaw.Contains($@"""{nameof(this.FullName)}""", StringComparison.OrdinalIgnoreCase))
             customerInfo.FullName = this.FullName;
-        if(this.IdsTags != null)
+        if(jsonRaw.Contains($@"""{nameof(this.IdsTags)}""", StringComparison.OrdinalIgnoreCase))
             customerInfo.IdsTags = this.IdsTags;
     }
 
@@ -626,23 +628,23 @@ public class ExtensionCallFlowLogicUpdateRequest // : IUbluxDocumentId
     /// </summary>
     public List<System.String>? IdsTags { get; set; }
     /// <summary> Set values on actual document </summary>
-    public void SetValuesOnExtensionCallFlowLogic(ExtensionCallFlowLogic extensionCallFlowLogic)
+    public void SetValuesOnExtensionCallFlowLogic(ExtensionCallFlowLogic extensionCallFlowLogic, string jsonRaw)
     {
-        if(this.IdCallFlowLogic != null)
+        if(jsonRaw.Contains($@"""{nameof(this.IdCallFlowLogic)}""", StringComparison.OrdinalIgnoreCase))
             extensionCallFlowLogic.IdCallFlowLogic = this.IdCallFlowLogic;
-        if(this.CallFlowLabel != null)
+        if(jsonRaw.Contains($@"""{nameof(this.CallFlowLabel)}""", StringComparison.OrdinalIgnoreCase))
             extensionCallFlowLogic.CallFlowLabel = this.CallFlowLabel;
-        if(this.TimeZone != null)
+        if(jsonRaw.Contains($@"""{nameof(this.TimeZone)}""", StringComparison.OrdinalIgnoreCase))
             extensionCallFlowLogic.TimeZone = this.TimeZone;
-        if(this.IdMusicOnHoldGroup != null)
+        if(jsonRaw.Contains($@"""{nameof(this.IdMusicOnHoldGroup)}""", StringComparison.OrdinalIgnoreCase))
             extensionCallFlowLogic.IdMusicOnHoldGroup = this.IdMusicOnHoldGroup;
-        if(this.FriendlyName != null)
+        if(jsonRaw.Contains($@"""{nameof(this.FriendlyName)}""", StringComparison.OrdinalIgnoreCase))
             extensionCallFlowLogic.FriendlyName = this.FriendlyName;
-        if(this.Number != null)
+        if(jsonRaw.Contains($@"""{nameof(this.Number)}""", StringComparison.OrdinalIgnoreCase))
             extensionCallFlowLogic.Number = this.Number;
-        if(this.InjectExtensionNameToCallerId != null)
+        if(jsonRaw.Contains($@"""{nameof(this.InjectExtensionNameToCallerId)}""", StringComparison.OrdinalIgnoreCase))
             extensionCallFlowLogic.InjectExtensionNameToCallerId = this.InjectExtensionNameToCallerId.Value;
-        if(this.IdsTags != null)
+        if(jsonRaw.Contains($@"""{nameof(this.IdsTags)}""", StringComparison.OrdinalIgnoreCase))
             extensionCallFlowLogic.IdsTags = this.IdsTags;
     }
 
@@ -688,23 +690,23 @@ public class ExtensionConferenceUpdateRequest // : IUbluxDocumentId
     /// </summary>
     public List<System.String>? IdsTags { get; set; }
     /// <summary> Set values on actual document </summary>
-    public void SetValuesOnExtensionConference(ExtensionConference extensionConference)
+    public void SetValuesOnExtensionConference(ExtensionConference extensionConference, string jsonRaw)
     {
-        if(this.IdsAudiosWhenOneParticipant != null)
+        if(jsonRaw.Contains($@"""{nameof(this.IdsAudiosWhenOneParticipant)}""", StringComparison.OrdinalIgnoreCase))
             extensionConference.IdsAudiosWhenOneParticipant = this.IdsAudiosWhenOneParticipant;
-        if(this.AnnounceParticipants != null)
+        if(jsonRaw.Contains($@"""{nameof(this.AnnounceParticipants)}""", StringComparison.OrdinalIgnoreCase))
             extensionConference.AnnounceParticipants = this.AnnounceParticipants.Value;
-        if(this.Pin != null)
+        if(jsonRaw.Contains($@"""{nameof(this.Pin)}""", StringComparison.OrdinalIgnoreCase))
             extensionConference.Pin = this.Pin;
-        if(this.IdMusicOnHoldGroup != null)
+        if(jsonRaw.Contains($@"""{nameof(this.IdMusicOnHoldGroup)}""", StringComparison.OrdinalIgnoreCase))
             extensionConference.IdMusicOnHoldGroup = this.IdMusicOnHoldGroup;
-        if(this.FriendlyName != null)
+        if(jsonRaw.Contains($@"""{nameof(this.FriendlyName)}""", StringComparison.OrdinalIgnoreCase))
             extensionConference.FriendlyName = this.FriendlyName;
-        if(this.Number != null)
+        if(jsonRaw.Contains($@"""{nameof(this.Number)}""", StringComparison.OrdinalIgnoreCase))
             extensionConference.Number = this.Number;
-        if(this.InjectExtensionNameToCallerId != null)
+        if(jsonRaw.Contains($@"""{nameof(this.InjectExtensionNameToCallerId)}""", StringComparison.OrdinalIgnoreCase))
             extensionConference.InjectExtensionNameToCallerId = this.InjectExtensionNameToCallerId.Value;
-        if(this.IdsTags != null)
+        if(jsonRaw.Contains($@"""{nameof(this.IdsTags)}""", StringComparison.OrdinalIgnoreCase))
             extensionConference.IdsTags = this.IdsTags;
     }
 
@@ -753,25 +755,25 @@ public class ExtensionDialUpdateRequest // : IUbluxDocumentId
     /// </summary>
     public List<System.String>? IdsTags { get; set; }
     /// <summary> Set values on actual document </summary>
-    public void SetValuesOnExtensionDial(ExtensionDial extensionDial)
+    public void SetValuesOnExtensionDial(ExtensionDial extensionDial, string jsonRaw)
     {
-        if(this.IdsLines != null)
+        if(jsonRaw.Contains($@"""{nameof(this.IdsLines)}""", StringComparison.OrdinalIgnoreCase))
             extensionDial.IdsLines = this.IdsLines;
-        if(this.EventActionToExecuteIfNotAnswered != null)
+        if(jsonRaw.Contains($@"""{nameof(this.EventActionToExecuteIfNotAnswered)}""", StringComparison.OrdinalIgnoreCase))
             extensionDial.EventActionToExecuteIfNotAnswered = this.EventActionToExecuteIfNotAnswered;
-        if(this.SendEmailNotificationIfNotAnswered != null)
+        if(jsonRaw.Contains($@"""{nameof(this.SendEmailNotificationIfNotAnswered)}""", StringComparison.OrdinalIgnoreCase))
             extensionDial.SendEmailNotificationIfNotAnswered = this.SendEmailNotificationIfNotAnswered;
-        if(this.RingTimeInSeconds != null)
+        if(jsonRaw.Contains($@"""{nameof(this.RingTimeInSeconds)}""", StringComparison.OrdinalIgnoreCase))
             extensionDial.RingTimeInSeconds = this.RingTimeInSeconds.Value;
-        if(this.IdMusicOnHoldGroup != null)
+        if(jsonRaw.Contains($@"""{nameof(this.IdMusicOnHoldGroup)}""", StringComparison.OrdinalIgnoreCase))
             extensionDial.IdMusicOnHoldGroup = this.IdMusicOnHoldGroup;
-        if(this.FriendlyName != null)
+        if(jsonRaw.Contains($@"""{nameof(this.FriendlyName)}""", StringComparison.OrdinalIgnoreCase))
             extensionDial.FriendlyName = this.FriendlyName;
-        if(this.Number != null)
+        if(jsonRaw.Contains($@"""{nameof(this.Number)}""", StringComparison.OrdinalIgnoreCase))
             extensionDial.Number = this.Number;
-        if(this.InjectExtensionNameToCallerId != null)
+        if(jsonRaw.Contains($@"""{nameof(this.InjectExtensionNameToCallerId)}""", StringComparison.OrdinalIgnoreCase))
             extensionDial.InjectExtensionNameToCallerId = this.InjectExtensionNameToCallerId.Value;
-        if(this.IdsTags != null)
+        if(jsonRaw.Contains($@"""{nameof(this.IdsTags)}""", StringComparison.OrdinalIgnoreCase))
             extensionDial.IdsTags = this.IdsTags;
     }
 
@@ -856,43 +858,43 @@ public class ExtensionQueueUpdateRequest // : IUbluxDocumentId
     /// </summary>
     public List<System.String>? IdsTags { get; set; }
     /// <summary> Set values on actual document </summary>
-    public void SetValuesOnExtensionQueue(ExtensionQueue extensionQueue)
+    public void SetValuesOnExtensionQueue(ExtensionQueue extensionQueue, string jsonRaw)
     {
-        if(this.IdsLines != null)
+        if(jsonRaw.Contains($@"""{nameof(this.IdsLines)}""", StringComparison.OrdinalIgnoreCase))
             extensionQueue.IdsLines = this.IdsLines;
-        if(this.IdExtensionIfTimeout != null)
+        if(jsonRaw.Contains($@"""{nameof(this.IdExtensionIfTimeout)}""", StringComparison.OrdinalIgnoreCase))
             extensionQueue.IdExtensionIfTimeout = this.IdExtensionIfTimeout;
-        if(this.IdsAudios != null)
+        if(jsonRaw.Contains($@"""{nameof(this.IdsAudios)}""", StringComparison.OrdinalIgnoreCase))
             extensionQueue.IdsAudios = this.IdsAudios;
-        if(this.SendEmailNotificationIfNotAnswered != null)
+        if(jsonRaw.Contains($@"""{nameof(this.SendEmailNotificationIfNotAnswered)}""", StringComparison.OrdinalIgnoreCase))
             extensionQueue.SendEmailNotificationIfNotAnswered = this.SendEmailNotificationIfNotAnswered;
-        if(this.SendEmailNotificationIfItTakesToLongToBeAnswered != null)
+        if(jsonRaw.Contains($@"""{nameof(this.SendEmailNotificationIfItTakesToLongToBeAnswered)}""", StringComparison.OrdinalIgnoreCase))
             extensionQueue.SendEmailNotificationIfItTakesToLongToBeAnswered = this.SendEmailNotificationIfItTakesToLongToBeAnswered;
-        if(this.RingTimeInSeconds != null)
+        if(jsonRaw.Contains($@"""{nameof(this.RingTimeInSeconds)}""", StringComparison.OrdinalIgnoreCase))
             extensionQueue.RingTimeInSeconds = this.RingTimeInSeconds.Value;
-        if(this.RingInUse != null)
+        if(jsonRaw.Contains($@"""{nameof(this.RingInUse)}""", StringComparison.OrdinalIgnoreCase))
             extensionQueue.RingInUse = this.RingInUse.Value;
-        if(this.QueueTimeoutInMinutes != null)
+        if(jsonRaw.Contains($@"""{nameof(this.QueueTimeoutInMinutes)}""", StringComparison.OrdinalIgnoreCase))
             extensionQueue.QueueTimeoutInMinutes = this.QueueTimeoutInMinutes.Value;
-        if(this.AnnouncePosition != null)
+        if(jsonRaw.Contains($@"""{nameof(this.AnnouncePosition)}""", StringComparison.OrdinalIgnoreCase))
             extensionQueue.AnnouncePosition = this.AnnouncePosition.Value;
-        if(this.AnnounceHoldTime != null)
+        if(jsonRaw.Contains($@"""{nameof(this.AnnounceHoldTime)}""", StringComparison.OrdinalIgnoreCase))
             extensionQueue.AnnounceHoldTime = this.AnnounceHoldTime.Value;
-        if(this.AnnounceFrequency != null)
+        if(jsonRaw.Contains($@"""{nameof(this.AnnounceFrequency)}""", StringComparison.OrdinalIgnoreCase))
             extensionQueue.AnnounceFrequency = this.AnnounceFrequency.Value;
-        if(this.RetryFrequency != null)
+        if(jsonRaw.Contains($@"""{nameof(this.RetryFrequency)}""", StringComparison.OrdinalIgnoreCase))
             extensionQueue.RetryFrequency = this.RetryFrequency.Value;
-        if(this.RingStrategy != null)
+        if(jsonRaw.Contains($@"""{nameof(this.RingStrategy)}""", StringComparison.OrdinalIgnoreCase))
             extensionQueue.RingStrategy = this.RingStrategy.Value;
-        if(this.IdMusicOnHoldGroup != null)
+        if(jsonRaw.Contains($@"""{nameof(this.IdMusicOnHoldGroup)}""", StringComparison.OrdinalIgnoreCase))
             extensionQueue.IdMusicOnHoldGroup = this.IdMusicOnHoldGroup;
-        if(this.FriendlyName != null)
+        if(jsonRaw.Contains($@"""{nameof(this.FriendlyName)}""", StringComparison.OrdinalIgnoreCase))
             extensionQueue.FriendlyName = this.FriendlyName;
-        if(this.Number != null)
+        if(jsonRaw.Contains($@"""{nameof(this.Number)}""", StringComparison.OrdinalIgnoreCase))
             extensionQueue.Number = this.Number;
-        if(this.InjectExtensionNameToCallerId != null)
+        if(jsonRaw.Contains($@"""{nameof(this.InjectExtensionNameToCallerId)}""", StringComparison.OrdinalIgnoreCase))
             extensionQueue.InjectExtensionNameToCallerId = this.InjectExtensionNameToCallerId.Value;
-        if(this.IdsTags != null)
+        if(jsonRaw.Contains($@"""{nameof(this.IdsTags)}""", StringComparison.OrdinalIgnoreCase))
             extensionQueue.IdsTags = this.IdsTags;
     }
 
@@ -945,27 +947,27 @@ public class ExtensionVoicemailUpdateRequest // : IUbluxDocumentId
     /// </summary>
     public List<System.String>? IdsTags { get; set; }
     /// <summary> Set values on actual document </summary>
-    public void SetValuesOnExtensionVoicemail(ExtensionVoicemail extensionVoicemail)
+    public void SetValuesOnExtensionVoicemail(ExtensionVoicemail extensionVoicemail, string jsonRaw)
     {
-        if(this.IdAudio != null)
+        if(jsonRaw.Contains($@"""{nameof(this.IdAudio)}""", StringComparison.OrdinalIgnoreCase))
             extensionVoicemail.IdAudio = this.IdAudio;
-        if(this.IdsLinesThatCanListenToVoicemail != null)
+        if(jsonRaw.Contains($@"""{nameof(this.IdsLinesThatCanListenToVoicemail)}""", StringComparison.OrdinalIgnoreCase))
             extensionVoicemail.IdsLinesThatCanListenToVoicemail = this.IdsLinesThatCanListenToVoicemail;
-        if(this.IdEmail != null)
+        if(jsonRaw.Contains($@"""{nameof(this.IdEmail)}""", StringComparison.OrdinalIgnoreCase))
             extensionVoicemail.IdEmail = this.IdEmail;
-        if(this.TextToSpeech != null)
+        if(jsonRaw.Contains($@"""{nameof(this.TextToSpeech)}""", StringComparison.OrdinalIgnoreCase))
             extensionVoicemail.TextToSpeech = this.TextToSpeech;
-        if(this.TextToSpeechVoiceId != null)
+        if(jsonRaw.Contains($@"""{nameof(this.TextToSpeechVoiceId)}""", StringComparison.OrdinalIgnoreCase))
             extensionVoicemail.TextToSpeechVoiceId = this.TextToSpeechVoiceId;
-        if(this.IdMusicOnHoldGroup != null)
+        if(jsonRaw.Contains($@"""{nameof(this.IdMusicOnHoldGroup)}""", StringComparison.OrdinalIgnoreCase))
             extensionVoicemail.IdMusicOnHoldGroup = this.IdMusicOnHoldGroup;
-        if(this.FriendlyName != null)
+        if(jsonRaw.Contains($@"""{nameof(this.FriendlyName)}""", StringComparison.OrdinalIgnoreCase))
             extensionVoicemail.FriendlyName = this.FriendlyName;
-        if(this.Number != null)
+        if(jsonRaw.Contains($@"""{nameof(this.Number)}""", StringComparison.OrdinalIgnoreCase))
             extensionVoicemail.Number = this.Number;
-        if(this.InjectExtensionNameToCallerId != null)
+        if(jsonRaw.Contains($@"""{nameof(this.InjectExtensionNameToCallerId)}""", StringComparison.OrdinalIgnoreCase))
             extensionVoicemail.InjectExtensionNameToCallerId = this.InjectExtensionNameToCallerId.Value;
-        if(this.IdsTags != null)
+        if(jsonRaw.Contains($@"""{nameof(this.IdsTags)}""", StringComparison.OrdinalIgnoreCase))
             extensionVoicemail.IdsTags = this.IdsTags;
     }
 
@@ -982,9 +984,9 @@ public class FaxIncomingUpdateRequest // : IUbluxDocumentId
     /// </summary>
     public List<System.String>? IdsTags { get; set; }
     /// <summary> Set values on actual document </summary>
-    public void SetValuesOnFaxIncoming(FaxIncoming faxIncoming)
+    public void SetValuesOnFaxIncoming(FaxIncoming faxIncoming, string jsonRaw)
     {
-        if(this.IdsTags != null)
+        if(jsonRaw.Contains($@"""{nameof(this.IdsTags)}""", StringComparison.OrdinalIgnoreCase))
             faxIncoming.IdsTags = this.IdsTags;
     }
 
@@ -1001,9 +1003,9 @@ public class FaxOutgoingGroupUpdateRequest // : IUbluxDocumentId
     /// </summary>
     public List<System.String>? IdsTags { get; set; }
     /// <summary> Set values on actual document </summary>
-    public void SetValuesOnFaxOutgoingGroup(FaxOutgoingGroup faxOutgoingGroup)
+    public void SetValuesOnFaxOutgoingGroup(FaxOutgoingGroup faxOutgoingGroup, string jsonRaw)
     {
-        if(this.IdsTags != null)
+        if(jsonRaw.Contains($@"""{nameof(this.IdsTags)}""", StringComparison.OrdinalIgnoreCase))
             faxOutgoingGroup.IdsTags = this.IdsTags;
     }
 
@@ -1026,11 +1028,11 @@ public class UserUpdateRequest // : IUbluxDocumentId
     /// </summary>
     public List<System.String>? IdsTags { get; set; }
     /// <summary> Set values on actual document </summary>
-    public void SetValuesOnUser(User user)
+    public void SetValuesOnUser(User user, string jsonRaw)
     {
-        if(this.UbluxRoles != null)
+        if(jsonRaw.Contains($@"""{nameof(this.UbluxRoles)}""", StringComparison.OrdinalIgnoreCase))
             user.UbluxRoles = this.UbluxRoles;
-        if(this.IdsTags != null)
+        if(jsonRaw.Contains($@"""{nameof(this.IdsTags)}""", StringComparison.OrdinalIgnoreCase))
             user.IdsTags = this.IdsTags;
     }
 
@@ -1059,15 +1061,15 @@ public class LineKeyGroupUpdateRequest // : IUbluxDocumentId
     /// </summary>
     public List<System.String>? IdsTags { get; set; }
     /// <summary> Set values on actual document </summary>
-    public void SetValuesOnLineKeyGroup(LineKeyGroup lineKeyGroup)
+    public void SetValuesOnLineKeyGroup(LineKeyGroup lineKeyGroup, string jsonRaw)
     {
-        if(this.LineKeys != null)
+        if(jsonRaw.Contains($@"""{nameof(this.LineKeys)}""", StringComparison.OrdinalIgnoreCase))
             lineKeyGroup.LineKeys = this.LineKeys;
-        if(this.FriendlyName != null)
+        if(jsonRaw.Contains($@"""{nameof(this.FriendlyName)}""", StringComparison.OrdinalIgnoreCase))
             lineKeyGroup.FriendlyName = this.FriendlyName;
-        if(this.Description != null)
+        if(jsonRaw.Contains($@"""{nameof(this.Description)}""", StringComparison.OrdinalIgnoreCase))
             lineKeyGroup.Description = this.Description;
-        if(this.IdsTags != null)
+        if(jsonRaw.Contains($@"""{nameof(this.IdsTags)}""", StringComparison.OrdinalIgnoreCase))
             lineKeyGroup.IdsTags = this.IdsTags;
     }
 
@@ -1081,7 +1083,7 @@ public class LineKeyGroupUpdateRequest // : IUbluxDocumentId
 public class LogWebServiceRequestUpdateRequest // : IUbluxDocumentId
 {
     /// <summary> Set values on actual document </summary>
-    public void SetValuesOnLogWebServiceRequest(LogWebServiceRequest logWebServiceRequest)
+    public void SetValuesOnLogWebServiceRequest(LogWebServiceRequest logWebServiceRequest, string jsonRaw)
     {
     }
 
@@ -1110,15 +1112,15 @@ public class MusicOnHoldGroupUpdateRequest // : IUbluxDocumentId
     /// </summary>
     public List<System.String>? IdsTags { get; set; }
     /// <summary> Set values on actual document </summary>
-    public void SetValuesOnMusicOnHoldGroup(MusicOnHoldGroup musicOnHoldGroup)
+    public void SetValuesOnMusicOnHoldGroup(MusicOnHoldGroup musicOnHoldGroup, string jsonRaw)
     {
-        if(this.IdsAudios != null)
+        if(jsonRaw.Contains($@"""{nameof(this.IdsAudios)}""", StringComparison.OrdinalIgnoreCase))
             musicOnHoldGroup.IdsAudios = this.IdsAudios;
-        if(this.FriendlyName != null)
+        if(jsonRaw.Contains($@"""{nameof(this.FriendlyName)}""", StringComparison.OrdinalIgnoreCase))
             musicOnHoldGroup.FriendlyName = this.FriendlyName;
-        if(this.Description != null)
+        if(jsonRaw.Contains($@"""{nameof(this.Description)}""", StringComparison.OrdinalIgnoreCase))
             musicOnHoldGroup.Description = this.Description;
-        if(this.IdsTags != null)
+        if(jsonRaw.Contains($@"""{nameof(this.IdsTags)}""", StringComparison.OrdinalIgnoreCase))
             musicOnHoldGroup.IdsTags = this.IdsTags;
     }
 
@@ -1165,23 +1167,23 @@ public class PhoneUpdateRequest // : IUbluxDocumentId
     /// </summary>
     public List<System.String>? IdsTags { get; set; }
     /// <summary> Set values on actual document </summary>
-    public void SetValuesOnPhone(Phone phone)
+    public void SetValuesOnPhone(Phone phone, string jsonRaw)
     {
-        if(this.IdCloudServicePbx != null)
+        if(jsonRaw.Contains($@"""{nameof(this.IdCloudServicePbx)}""", StringComparison.OrdinalIgnoreCase))
             phone.IdCloudServicePbx = this.IdCloudServicePbx;
-        if(this.IdPhoneConfiguration != null)
+        if(jsonRaw.Contains($@"""{nameof(this.IdPhoneConfiguration)}""", StringComparison.OrdinalIgnoreCase))
             phone.IdPhoneConfiguration = this.IdPhoneConfiguration;
-        if(this.IdUser != null)
+        if(jsonRaw.Contains($@"""{nameof(this.IdUser)}""", StringComparison.OrdinalIgnoreCase))
             phone.IdUser = this.IdUser;
-        if(this.Lines != null)
+        if(jsonRaw.Contains($@"""{nameof(this.Lines)}""", StringComparison.OrdinalIgnoreCase))
             phone.Lines = this.Lines;
-        if(this.FriendlyName != null)
+        if(jsonRaw.Contains($@"""{nameof(this.FriendlyName)}""", StringComparison.OrdinalIgnoreCase))
             phone.FriendlyName = this.FriendlyName;
-        if(this.PhoneType != null)
+        if(jsonRaw.Contains($@"""{nameof(this.PhoneType)}""", StringComparison.OrdinalIgnoreCase))
             phone.PhoneType = this.PhoneType.Value;
-        if(this.DisableEncryption != null)
+        if(jsonRaw.Contains($@"""{nameof(this.DisableEncryption)}""", StringComparison.OrdinalIgnoreCase))
             phone.DisableEncryption = this.DisableEncryption.Value;
-        if(this.IdsTags != null)
+        if(jsonRaw.Contains($@"""{nameof(this.IdsTags)}""", StringComparison.OrdinalIgnoreCase))
             phone.IdsTags = this.IdsTags;
     }
 
@@ -1210,15 +1212,15 @@ public class PhoneConfigurationUpdateRequest // : IUbluxDocumentId
     /// </summary>
     public List<System.String>? IdsTags { get; set; }
     /// <summary> Set values on actual document </summary>
-    public void SetValuesOnPhoneConfiguration(PhoneConfiguration phoneConfiguration)
+    public void SetValuesOnPhoneConfiguration(PhoneConfiguration phoneConfiguration, string jsonRaw)
     {
-        if(this.IdLineKeyGroup != null)
+        if(jsonRaw.Contains($@"""{nameof(this.IdLineKeyGroup)}""", StringComparison.OrdinalIgnoreCase))
             phoneConfiguration.IdLineKeyGroup = this.IdLineKeyGroup;
-        if(this.FrienlyName != null)
+        if(jsonRaw.Contains($@"""{nameof(this.FrienlyName)}""", StringComparison.OrdinalIgnoreCase))
             phoneConfiguration.FrienlyName = this.FrienlyName;
-        if(this.Description != null)
+        if(jsonRaw.Contains($@"""{nameof(this.Description)}""", StringComparison.OrdinalIgnoreCase))
             phoneConfiguration.Description = this.Description;
-        if(this.IdsTags != null)
+        if(jsonRaw.Contains($@"""{nameof(this.IdsTags)}""", StringComparison.OrdinalIgnoreCase))
             phoneConfiguration.IdsTags = this.IdsTags;
     }
 
@@ -1243,13 +1245,13 @@ public class PowerDialerGroupUpdateRequest // : IUbluxDocumentId
     /// </summary>
     public List<System.String>? IdsTags { get; set; }
     /// <summary> Set values on actual document </summary>
-    public void SetValuesOnPowerDialerGroup(PowerDialerGroup powerDialerGroup)
+    public void SetValuesOnPowerDialerGroup(PowerDialerGroup powerDialerGroup, string jsonRaw)
     {
-        if(this.FriendlyName != null)
+        if(jsonRaw.Contains($@"""{nameof(this.FriendlyName)}""", StringComparison.OrdinalIgnoreCase))
             powerDialerGroup.FriendlyName = this.FriendlyName;
-        if(this.Description != null)
+        if(jsonRaw.Contains($@"""{nameof(this.Description)}""", StringComparison.OrdinalIgnoreCase))
             powerDialerGroup.Description = this.Description;
-        if(this.IdsTags != null)
+        if(jsonRaw.Contains($@"""{nameof(this.IdsTags)}""", StringComparison.OrdinalIgnoreCase))
             powerDialerGroup.IdsTags = this.IdsTags;
     }
 
@@ -1266,9 +1268,9 @@ public class SMSUpdateRequest // : IUbluxDocumentId
     /// </summary>
     public List<System.String>? IdsTags { get; set; }
     /// <summary> Set values on actual document </summary>
-    public void SetValuesOnSMS(SMS sMS)
+    public void SetValuesOnSMS(SMS sMS, string jsonRaw)
     {
-        if(this.IdsTags != null)
+        if(jsonRaw.Contains($@"""{nameof(this.IdsTags)}""", StringComparison.OrdinalIgnoreCase))
             sMS.IdsTags = this.IdsTags;
     }
 
@@ -1280,7 +1282,7 @@ public class SMSUpdateRequest // : IUbluxDocumentId
 public class TrunkOriginationForwardUpdateRequest // : IUbluxDocumentId
 {
     /// <summary> Set values on actual document </summary>
-    public void SetValuesOnTrunkOriginationForward(TrunkOriginationForward trunkOriginationForward)
+    public void SetValuesOnTrunkOriginationForward(TrunkOriginationForward trunkOriginationForward, string jsonRaw)
     {
     }
 
@@ -1292,7 +1294,7 @@ public class TrunkOriginationForwardUpdateRequest // : IUbluxDocumentId
 public class TrunkOriginationRegisterUpdateRequest // : IUbluxDocumentId
 {
     /// <summary> Set values on actual document </summary>
-    public void SetValuesOnTrunkOriginationRegister(TrunkOriginationRegister trunkOriginationRegister)
+    public void SetValuesOnTrunkOriginationRegister(TrunkOriginationRegister trunkOriginationRegister, string jsonRaw)
     {
     }
 
@@ -1304,7 +1306,7 @@ public class TrunkOriginationRegisterUpdateRequest // : IUbluxDocumentId
 public class TrunkTerminationUpdateRequest // : IUbluxDocumentId
 {
     /// <summary> Set values on actual document </summary>
-    public void SetValuesOnTrunkTermination(TrunkTermination trunkTermination)
+    public void SetValuesOnTrunkTermination(TrunkTermination trunkTermination, string jsonRaw)
     {
     }
 
@@ -1316,7 +1318,7 @@ public class TrunkTerminationUpdateRequest // : IUbluxDocumentId
 public class TrunkTerminationGroupUpdateRequest // : IUbluxDocumentId
 {
     /// <summary> Set values on actual document </summary>
-    public void SetValuesOnTrunkTerminationGroup(TrunkTerminationGroup trunkTerminationGroup)
+    public void SetValuesOnTrunkTerminationGroup(TrunkTerminationGroup trunkTerminationGroup, string jsonRaw)
     {
     }
 
@@ -1333,9 +1335,9 @@ public class VoicemailUpdateRequest // : IUbluxDocumentId
     /// </summary>
     public List<System.String>? IdsTags { get; set; }
     /// <summary> Set values on actual document </summary>
-    public void SetValuesOnVoicemail(Voicemail voicemail)
+    public void SetValuesOnVoicemail(Voicemail voicemail, string jsonRaw)
     {
-        if(this.IdsTags != null)
+        if(jsonRaw.Contains($@"""{nameof(this.IdsTags)}""", StringComparison.OrdinalIgnoreCase))
             voicemail.IdsTags = this.IdsTags;
     }
 
@@ -1352,9 +1354,9 @@ public class VoicemailForwardedUpdateRequest // : IUbluxDocumentId
     /// </summary>
     public List<System.String>? IdsTags { get; set; }
     /// <summary> Set values on actual document </summary>
-    public void SetValuesOnVoicemailForwarded(VoicemailForwarded voicemailForwarded)
+    public void SetValuesOnVoicemailForwarded(VoicemailForwarded voicemailForwarded, string jsonRaw)
     {
-        if(this.IdsTags != null)
+        if(jsonRaw.Contains($@"""{nameof(this.IdsTags)}""", StringComparison.OrdinalIgnoreCase))
             voicemailForwarded.IdsTags = this.IdsTags;
     }
 
@@ -1405,25 +1407,25 @@ public class VoipNumberAvailableForPurchaseUpdateRequest // : IUbluxDocumentId
     /// </summary>
     public List<System.String>? IdsTags { get; set; }
     /// <summary> Set values on actual document </summary>
-    public void SetValuesOnVoipNumberAvailableForPurchase(VoipNumberAvailableForPurchase voipNumberAvailableForPurchase)
+    public void SetValuesOnVoipNumberAvailableForPurchase(VoipNumberAvailableForPurchase voipNumberAvailableForPurchase, string jsonRaw)
     {
-        if(this.IdMusicOnHoldGroup != null)
+        if(jsonRaw.Contains($@"""{nameof(this.IdMusicOnHoldGroup)}""", StringComparison.OrdinalIgnoreCase))
             voipNumberAvailableForPurchase.IdMusicOnHoldGroup = this.IdMusicOnHoldGroup;
-        if(this.InjectFriendlyNameToCallerId != null)
+        if(jsonRaw.Contains($@"""{nameof(this.InjectFriendlyNameToCallerId)}""", StringComparison.OrdinalIgnoreCase))
             voipNumberAvailableForPurchase.InjectFriendlyNameToCallerId = this.InjectFriendlyNameToCallerId.Value;
-        if(this.RecordIncomingCalls != null)
+        if(jsonRaw.Contains($@"""{nameof(this.RecordIncomingCalls)}""", StringComparison.OrdinalIgnoreCase))
             voipNumberAvailableForPurchase.RecordIncomingCalls = this.RecordIncomingCalls.Value;
-        if(this.UseAiForIncomingCalls != null)
+        if(jsonRaw.Contains($@"""{nameof(this.UseAiForIncomingCalls)}""", StringComparison.OrdinalIgnoreCase))
             voipNumberAvailableForPurchase.UseAiForIncomingCalls = this.UseAiForIncomingCalls.Value;
-        if(this.FriendlyName != null)
+        if(jsonRaw.Contains($@"""{nameof(this.FriendlyName)}""", StringComparison.OrdinalIgnoreCase))
             voipNumberAvailableForPurchase.FriendlyName = this.FriendlyName;
-        if(this.Description != null)
+        if(jsonRaw.Contains($@"""{nameof(this.Description)}""", StringComparison.OrdinalIgnoreCase))
             voipNumberAvailableForPurchase.Description = this.Description;
-        if(this.Language != null)
+        if(jsonRaw.Contains($@"""{nameof(this.Language)}""", StringComparison.OrdinalIgnoreCase))
             voipNumberAvailableForPurchase.Language = this.Language.Value;
-        if(this.TimeZone != null)
+        if(jsonRaw.Contains($@"""{nameof(this.TimeZone)}""", StringComparison.OrdinalIgnoreCase))
             voipNumberAvailableForPurchase.TimeZone = this.TimeZone;
-        if(this.IdsTags != null)
+        if(jsonRaw.Contains($@"""{nameof(this.IdsTags)}""", StringComparison.OrdinalIgnoreCase))
             voipNumberAvailableForPurchase.IdsTags = this.IdsTags;
     }
 
@@ -1487,31 +1489,31 @@ public class VoipNumberFaxUpdateRequest // : IUbluxDocumentId
     /// </summary>
     public List<System.String>? IdsTags { get; set; }
     /// <summary> Set values on actual document </summary>
-    public void SetValuesOnVoipNumberFax(VoipNumberFax voipNumberFax)
+    public void SetValuesOnVoipNumberFax(VoipNumberFax voipNumberFax, string jsonRaw)
     {
-        if(this.RulesPhone != null)
+        if(jsonRaw.Contains($@"""{nameof(this.RulesPhone)}""", StringComparison.OrdinalIgnoreCase))
             voipNumberFax.RulesPhone = this.RulesPhone;
-        if(this.RulesSms != null)
+        if(jsonRaw.Contains($@"""{nameof(this.RulesSms)}""", StringComparison.OrdinalIgnoreCase))
             voipNumberFax.RulesSms = this.RulesSms;
-        if(this.RulesFax != null)
+        if(jsonRaw.Contains($@"""{nameof(this.RulesFax)}""", StringComparison.OrdinalIgnoreCase))
             voipNumberFax.RulesFax = this.RulesFax;
-        if(this.IdMusicOnHoldGroup != null)
+        if(jsonRaw.Contains($@"""{nameof(this.IdMusicOnHoldGroup)}""", StringComparison.OrdinalIgnoreCase))
             voipNumberFax.IdMusicOnHoldGroup = this.IdMusicOnHoldGroup;
-        if(this.InjectFriendlyNameToCallerId != null)
+        if(jsonRaw.Contains($@"""{nameof(this.InjectFriendlyNameToCallerId)}""", StringComparison.OrdinalIgnoreCase))
             voipNumberFax.InjectFriendlyNameToCallerId = this.InjectFriendlyNameToCallerId.Value;
-        if(this.RecordIncomingCalls != null)
+        if(jsonRaw.Contains($@"""{nameof(this.RecordIncomingCalls)}""", StringComparison.OrdinalIgnoreCase))
             voipNumberFax.RecordIncomingCalls = this.RecordIncomingCalls.Value;
-        if(this.UseAiForIncomingCalls != null)
+        if(jsonRaw.Contains($@"""{nameof(this.UseAiForIncomingCalls)}""", StringComparison.OrdinalIgnoreCase))
             voipNumberFax.UseAiForIncomingCalls = this.UseAiForIncomingCalls.Value;
-        if(this.FriendlyName != null)
+        if(jsonRaw.Contains($@"""{nameof(this.FriendlyName)}""", StringComparison.OrdinalIgnoreCase))
             voipNumberFax.FriendlyName = this.FriendlyName;
-        if(this.Description != null)
+        if(jsonRaw.Contains($@"""{nameof(this.Description)}""", StringComparison.OrdinalIgnoreCase))
             voipNumberFax.Description = this.Description;
-        if(this.Language != null)
+        if(jsonRaw.Contains($@"""{nameof(this.Language)}""", StringComparison.OrdinalIgnoreCase))
             voipNumberFax.Language = this.Language.Value;
-        if(this.TimeZone != null)
+        if(jsonRaw.Contains($@"""{nameof(this.TimeZone)}""", StringComparison.OrdinalIgnoreCase))
             voipNumberFax.TimeZone = this.TimeZone;
-        if(this.IdsTags != null)
+        if(jsonRaw.Contains($@"""{nameof(this.IdsTags)}""", StringComparison.OrdinalIgnoreCase))
             voipNumberFax.IdsTags = this.IdsTags;
     }
 
@@ -1575,31 +1577,31 @@ public class VoipNumberPhoneUpdateRequest // : IUbluxDocumentId
     /// </summary>
     public List<System.String>? IdsTags { get; set; }
     /// <summary> Set values on actual document </summary>
-    public void SetValuesOnVoipNumberPhone(VoipNumberPhone voipNumberPhone)
+    public void SetValuesOnVoipNumberPhone(VoipNumberPhone voipNumberPhone, string jsonRaw)
     {
-        if(this.RulesPhone != null)
+        if(jsonRaw.Contains($@"""{nameof(this.RulesPhone)}""", StringComparison.OrdinalIgnoreCase))
             voipNumberPhone.RulesPhone = this.RulesPhone;
-        if(this.RulesSms != null)
+        if(jsonRaw.Contains($@"""{nameof(this.RulesSms)}""", StringComparison.OrdinalIgnoreCase))
             voipNumberPhone.RulesSms = this.RulesSms;
-        if(this.RulesFax != null)
+        if(jsonRaw.Contains($@"""{nameof(this.RulesFax)}""", StringComparison.OrdinalIgnoreCase))
             voipNumberPhone.RulesFax = this.RulesFax;
-        if(this.IdMusicOnHoldGroup != null)
+        if(jsonRaw.Contains($@"""{nameof(this.IdMusicOnHoldGroup)}""", StringComparison.OrdinalIgnoreCase))
             voipNumberPhone.IdMusicOnHoldGroup = this.IdMusicOnHoldGroup;
-        if(this.InjectFriendlyNameToCallerId != null)
+        if(jsonRaw.Contains($@"""{nameof(this.InjectFriendlyNameToCallerId)}""", StringComparison.OrdinalIgnoreCase))
             voipNumberPhone.InjectFriendlyNameToCallerId = this.InjectFriendlyNameToCallerId.Value;
-        if(this.RecordIncomingCalls != null)
+        if(jsonRaw.Contains($@"""{nameof(this.RecordIncomingCalls)}""", StringComparison.OrdinalIgnoreCase))
             voipNumberPhone.RecordIncomingCalls = this.RecordIncomingCalls.Value;
-        if(this.UseAiForIncomingCalls != null)
+        if(jsonRaw.Contains($@"""{nameof(this.UseAiForIncomingCalls)}""", StringComparison.OrdinalIgnoreCase))
             voipNumberPhone.UseAiForIncomingCalls = this.UseAiForIncomingCalls.Value;
-        if(this.FriendlyName != null)
+        if(jsonRaw.Contains($@"""{nameof(this.FriendlyName)}""", StringComparison.OrdinalIgnoreCase))
             voipNumberPhone.FriendlyName = this.FriendlyName;
-        if(this.Description != null)
+        if(jsonRaw.Contains($@"""{nameof(this.Description)}""", StringComparison.OrdinalIgnoreCase))
             voipNumberPhone.Description = this.Description;
-        if(this.Language != null)
+        if(jsonRaw.Contains($@"""{nameof(this.Language)}""", StringComparison.OrdinalIgnoreCase))
             voipNumberPhone.Language = this.Language.Value;
-        if(this.TimeZone != null)
+        if(jsonRaw.Contains($@"""{nameof(this.TimeZone)}""", StringComparison.OrdinalIgnoreCase))
             voipNumberPhone.TimeZone = this.TimeZone;
-        if(this.IdsTags != null)
+        if(jsonRaw.Contains($@"""{nameof(this.IdsTags)}""", StringComparison.OrdinalIgnoreCase))
             voipNumberPhone.IdsTags = this.IdsTags;
     }
 
@@ -1612,7 +1614,7 @@ public class VoipNumberPhoneUpdateRequest // : IUbluxDocumentId
 public class VoipProviderUpdateRequest // : IUbluxDocumentId
 {
     /// <summary> Set values on actual document </summary>
-    public void SetValuesOnVoipProvider(VoipProvider voipProvider)
+    public void SetValuesOnVoipProvider(VoipProvider voipProvider, string jsonRaw)
     {
     }
 
@@ -1642,15 +1644,15 @@ public class WebHookUpdateRequest // : IUbluxDocumentId
     /// </summary>
     public List<System.String>? IdsTags { get; set; }
     /// <summary> Set values on actual document </summary>
-    public void SetValuesOnWebHook(WebHook webHook)
+    public void SetValuesOnWebHook(WebHook webHook, string jsonRaw)
     {
-        if(this.EventTrigger != null)
+        if(jsonRaw.Contains($@"""{nameof(this.EventTrigger)}""", StringComparison.OrdinalIgnoreCase))
             webHook.EventTrigger = this.EventTrigger.Value;
-        if(this.Url != null)
+        if(jsonRaw.Contains($@"""{nameof(this.Url)}""", StringComparison.OrdinalIgnoreCase))
             webHook.Url = this.Url;
-        if(this.Headers != null)
+        if(jsonRaw.Contains($@"""{nameof(this.Headers)}""", StringComparison.OrdinalIgnoreCase))
             webHook.Headers = this.Headers;
-        if(this.IdsTags != null)
+        if(jsonRaw.Contains($@"""{nameof(this.IdsTags)}""", StringComparison.OrdinalIgnoreCase))
             webHook.IdsTags = this.IdsTags;
     }
 
@@ -1664,7 +1666,7 @@ public class WebHookUpdateRequest // : IUbluxDocumentId
 public class StoredFileReferenceUpdateRequest // : IUbluxDocumentId
 {
     /// <summary> Set values on actual document </summary>
-    public void SetValuesOnStoredFileReference(StoredFileReference storedFileReference)
+    public void SetValuesOnStoredFileReference(StoredFileReference storedFileReference, string jsonRaw)
     {
     }
 
@@ -1684,11 +1686,11 @@ public class TagUpdateRequest // : IUbluxDocumentId
     /// </summary>
     public TagColor? TagColor { get; set; }
     /// <summary> Set values on actual document </summary>
-    public void SetValuesOnTag(Tag tag)
+    public void SetValuesOnTag(Tag tag, string jsonRaw)
     {
-        if(this.FriendlyName != null)
+        if(jsonRaw.Contains($@"""{nameof(this.FriendlyName)}""", StringComparison.OrdinalIgnoreCase))
             tag.FriendlyName = this.FriendlyName;
-        if(this.TagColor != null)
+        if(jsonRaw.Contains($@"""{nameof(this.TagColor)}""", StringComparison.OrdinalIgnoreCase))
             tag.TagColor = this.TagColor.Value;
     }
 
@@ -1705,9 +1707,9 @@ public class AiCallTranscriptionUpdateRequest // : IUbluxDocumentId
     /// </summary>
     public List<System.String>? IdsTags { get; set; }
     /// <summary> Set values on actual document </summary>
-    public void SetValuesOnAiCallTranscription(AiCallTranscription aiCallTranscription)
+    public void SetValuesOnAiCallTranscription(AiCallTranscription aiCallTranscription, string jsonRaw)
     {
-        if(this.IdsTags != null)
+        if(jsonRaw.Contains($@"""{nameof(this.IdsTags)}""", StringComparison.OrdinalIgnoreCase))
             aiCallTranscription.IdsTags = this.IdsTags;
     }
 
@@ -1747,24 +1749,22 @@ public class LineUpdateRequest // : IUbluxDocumentId
     /// </summary>
     public Language? Language { get; set; }
     /// <summary> Set values on actual document </summary>
-    public void SetValuesOnLine(Line line)
+    public void SetValuesOnLine(Line line, string jsonRaw)
     {
-        if(this.FriendlyName != null)
+        if(jsonRaw.Contains($@"""{nameof(this.FriendlyName)}""", StringComparison.OrdinalIgnoreCase))
             line.FriendlyName = this.FriendlyName;
-        if(this.CallerIdNumber != null)
+        if(jsonRaw.Contains($@"""{nameof(this.CallerIdNumber)}""", StringComparison.OrdinalIgnoreCase))
             line.CallerIdNumber = this.CallerIdNumber;
-        if(this.RecordExternalCalls != null)
+        if(jsonRaw.Contains($@"""{nameof(this.RecordExternalCalls)}""", StringComparison.OrdinalIgnoreCase))
             line.RecordExternalCalls = this.RecordExternalCalls.Value;
-        if(this.RecordInternalCalls != null)
+        if(jsonRaw.Contains($@"""{nameof(this.RecordInternalCalls)}""", StringComparison.OrdinalIgnoreCase))
             line.RecordInternalCalls = this.RecordInternalCalls.Value;
-        if(this.UseAiForExternalCalls != null)
+        if(jsonRaw.Contains($@"""{nameof(this.UseAiForExternalCalls)}""", StringComparison.OrdinalIgnoreCase))
             line.UseAiForExternalCalls = this.UseAiForExternalCalls.Value;
-        if(this.UseAiForOutgoingCallsToExtensions != null)
+        if(jsonRaw.Contains($@"""{nameof(this.UseAiForOutgoingCallsToExtensions)}""", StringComparison.OrdinalIgnoreCase))
             line.UseAiForOutgoingCallsToExtensions = this.UseAiForOutgoingCallsToExtensions.Value;
-        if(this.Language != null)
+        if(jsonRaw.Contains($@"""{nameof(this.Language)}""", StringComparison.OrdinalIgnoreCase))
             line.Language = this.Language.Value;
     }
 
 }
-#pragma warning restore CA1822 // Mark members as static
-#pragma warning restore IDE0060 // Remove unused parameter
