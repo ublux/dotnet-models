@@ -3,7 +3,7 @@
 /// <summary>
 ///     Call is blind transferred to an extension
 /// </summary>
-public class ChildCallBlindTransferToExtension : ChildCallBlindTransfer
+public class ChildCallBlindTransferToExtension : ChildCallBlindTransfer, ICallToExtension
 {
     /// <summary>
     ///     Extension where it was blind transferred to
@@ -23,4 +23,25 @@ public class ChildCallBlindTransferToExtension : ChildCallBlindTransfer
 #else
 #endif
     }
+
+    /// <summary>
+    ///     Id of line that answered
+    /// </summary>
+    [AllowUpdate(false)]
+    [References(typeof(Line))]
+    public string? IdLineThatAnswered { get; set; }
+
+    /// <summary>
+    ///     Ids of lines that rang
+    /// </summary>
+    [AllowUpdate(false)]
+    [References(typeof(Line))]
+    public List<string> IdsLinesThatRing { get; set; } = new();
+
+    /// <summary>
+    ///     Ids of lines that where supposed to ring and did not ring because phone was offline or disconnected.
+    /// </summary>
+    [AllowUpdate(false)]
+    [References(typeof(Line))]
+    public List<string> IdsLinesThatDidNotRing { get; set; } = new();
 }

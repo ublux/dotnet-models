@@ -25,6 +25,13 @@ public abstract partial class ChildCall : ICall
     [AllowUpdate(false)] 
     [SwaggerSchema(ReadOnly = true)] 
     public string? ChannelToAnswer { get; set; }
+
+    /// <summary>
+    ///     Call duration in seconds
+    /// </summary>
+    [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
+    public double? DurationInSeconds { get; set; }
 }
 
 #endif

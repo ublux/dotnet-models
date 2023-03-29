@@ -35,13 +35,13 @@ public class ApiKeyUpdateRequest // : IUbluxDocumentId
     /// <summary> Set values on actual document </summary>
     public void SetValuesOnApiKey(ApiKey apiKey)
     {
-        if(this.UbluxRoles!=null)
+        if(this.UbluxRoles != null)
             apiKey.UbluxRoles = this.UbluxRoles;
-        if(this.DateExpire!=null)
+        if(this.DateExpire != null)
             apiKey.DateExpire = this.DateExpire.Value;
-        if(this.Description!=null)
+        if(this.Description != null)
             apiKey.Description = this.Description;
-        if(this.IdsTags!=null)
+        if(this.IdsTags != null)
             apiKey.IdsTags = this.IdsTags;
     }
 
@@ -73,13 +73,13 @@ public class AccountUpdateRequest // : IUbluxDocumentId
     /// <summary> Set values on actual document </summary>
     public void SetValuesOnAccount(Account account)
     {
-        if(this.MailingAddress!=null)
+        if(this.MailingAddress != null)
             account.MailingAddress = this.MailingAddress;
-        if(this.AccountSecrets!=null)
+        if(this.AccountSecrets != null)
             account.AccountSecrets = this.AccountSecrets;
-        if(this.CompanyName!=null)
+        if(this.CompanyName != null)
             account.CompanyName = this.CompanyName;
-        if(this.Industry!=null)
+        if(this.Industry != null)
             account.Industry = this.Industry.Value;
     }
 
@@ -98,7 +98,7 @@ public class EmailUpdateRequest // : IUbluxDocumentId
     /// <summary> Set values on actual document </summary>
     public void SetValuesOnEmail(Email email)
     {
-        if(this.IdsTags!=null)
+        if(this.IdsTags != null)
             email.IdsTags = this.IdsTags;
     }
 
@@ -151,11 +151,11 @@ public class AudioUpdateRequest // : IUbluxDocumentId
     /// <summary> Set values on actual document </summary>
     public void SetValuesOnAudio(Audio audio)
     {
-        if(this.FriendlyName!=null)
+        if(this.FriendlyName != null)
             audio.FriendlyName = this.FriendlyName;
-        if(this.Description!=null)
+        if(this.Description != null)
             audio.Description = this.Description;
-        if(this.IdsTags!=null)
+        if(this.IdsTags != null)
             audio.IdsTags = this.IdsTags;
     }
 
@@ -200,13 +200,13 @@ public class BlackListPhoneNumberUpdateRequest // : IUbluxDocumentId
     /// <summary> Set values on actual document </summary>
     public void SetValuesOnBlackListPhoneNumber(BlackListPhoneNumber blackListPhoneNumber)
     {
-        if(this.IdAudioToPlayIfCallIsBlocked!=null)
+        if(this.IdAudioToPlayIfCallIsBlocked != null)
             blackListPhoneNumber.IdAudioToPlayIfCallIsBlocked = this.IdAudioToPlayIfCallIsBlocked;
-        if(this.Number!=null)
+        if(this.Number != null)
             blackListPhoneNumber.Number = this.Number;
-        if(this.FriendlyName!=null)
+        if(this.FriendlyName != null)
             blackListPhoneNumber.FriendlyName = this.FriendlyName;
-        if(this.IdsTags!=null)
+        if(this.IdsTags != null)
             blackListPhoneNumber.IdsTags = this.IdsTags;
     }
 
@@ -231,9 +231,9 @@ public class CallerIdMaskUpdateRequest // : IUbluxDocumentId
     /// <summary> Set values on actual document </summary>
     public void SetValuesOnCallerIdMask(CallerIdMask callerIdMask)
     {
-        if(this.FriendlyName!=null)
+        if(this.FriendlyName != null)
             callerIdMask.FriendlyName = this.FriendlyName;
-        if(this.IdsTags!=null)
+        if(this.IdsTags != null)
             callerIdMask.IdsTags = this.IdsTags;
     }
 
@@ -266,13 +266,13 @@ public class CallFlowLogicUpdateRequest // : IUbluxDocumentId
     /// <summary> Set values on actual document </summary>
     public void SetValuesOnCallFlowLogic(CallFlowLogic callFlowLogic)
     {
-        if(this.FriendlyName!=null)
+        if(this.FriendlyName != null)
             callFlowLogic.FriendlyName = this.FriendlyName;
-        if(this.Description!=null)
+        if(this.Description != null)
             callFlowLogic.Description = this.Description;
-        if(this.Tree!=null)
+        if(this.Tree != null)
             callFlowLogic.Tree = this.Tree;
-        if(this.IdsTags!=null)
+        if(this.IdsTags != null)
             callFlowLogic.IdsTags = this.IdsTags;
     }
 
@@ -295,9 +295,9 @@ public class CallIncomingToCallFlowLogicUpdateRequest // : IUbluxDocumentId
     /// <summary> Set values on actual document </summary>
     public void SetValuesOnCallIncomingToCallFlowLogic(CallIncomingToCallFlowLogic callIncomingToCallFlowLogic)
     {
-        if(this.CallResult!=null)
+        if(this.CallResult != null)
             callIncomingToCallFlowLogic.CallResult = this.CallResult.Value;
-        if(this.IdsTags!=null)
+        if(this.IdsTags != null)
             callIncomingToCallFlowLogic.IdsTags = this.IdsTags;
     }
 
@@ -320,9 +320,9 @@ public class CallIncomingToExtensionUpdateRequest // : IUbluxDocumentId
     /// <summary> Set values on actual document </summary>
     public void SetValuesOnCallIncomingToExtension(CallIncomingToExtension callIncomingToExtension)
     {
-        if(this.CallResult!=null)
+        if(this.CallResult != null)
             callIncomingToExtension.CallResult = this.CallResult.Value;
-        if(this.IdsTags!=null)
+        if(this.IdsTags != null)
             callIncomingToExtension.IdsTags = this.IdsTags;
     }
 
@@ -345,9 +345,9 @@ public class CallOutgoingToExtensionUpdateRequest // : IUbluxDocumentId
     /// <summary> Set values on actual document </summary>
     public void SetValuesOnCallOutgoingToExtension(CallOutgoingToExtension callOutgoingToExtension)
     {
-        if(this.CallResult!=null)
+        if(this.CallResult != null)
             callOutgoingToExtension.CallResult = this.CallResult.Value;
-        if(this.IdsTags!=null)
+        if(this.IdsTags != null)
             callOutgoingToExtension.IdsTags = this.IdsTags;
     }
 
@@ -372,9 +372,9 @@ public class CallOutgoingToPSTNUpdateRequest // : IUbluxDocumentId
     /// <summary> Set values on actual document </summary>
     public void SetValuesOnCallOutgoingToPSTN(CallOutgoingToPSTN callOutgoingToPSTN)
     {
-        if(this.CallResult!=null)
+        if(this.CallResult != null)
             callOutgoingToPSTN.CallResult = this.CallResult.Value;
-        if(this.IdsTags!=null)
+        if(this.IdsTags != null)
             callOutgoingToPSTN.IdsTags = this.IdsTags;
     }
 
@@ -404,13 +404,13 @@ public class CloudServicePbxUpdateRequest // : IUbluxDocumentId
     /// <summary> Set values on actual document </summary>
     public void SetValuesOnCloudServicePbx(CloudServicePbx cloudServicePbx)
     {
-        if(this.DisableMonitoring!=null)
+        if(this.DisableMonitoring != null)
             cloudServicePbx.DisableMonitoring = this.DisableMonitoring.Value;
-        if(this.ProviderInstanceId!=null)
+        if(this.ProviderInstanceId != null)
             cloudServicePbx.ProviderInstanceId = this.ProviderInstanceId;
-        if(this.ProviderRegion!=null)
+        if(this.ProviderRegion != null)
             cloudServicePbx.ProviderRegion = this.ProviderRegion;
-        if(this.ProviderType!=null)
+        if(this.ProviderType != null)
             cloudServicePbx.ProviderType = this.ProviderType.Value;
     }
 
@@ -440,13 +440,13 @@ public class CloudServiceWebAppUpdateRequest // : IUbluxDocumentId
     /// <summary> Set values on actual document </summary>
     public void SetValuesOnCloudServiceWebApp(CloudServiceWebApp cloudServiceWebApp)
     {
-        if(this.IdCloudServiceWebAppFailover!=null)
+        if(this.IdCloudServiceWebAppFailover != null)
             cloudServiceWebApp.IdCloudServiceWebAppFailover = this.IdCloudServiceWebAppFailover;
-        if(this.ProviderInstanceId!=null)
+        if(this.ProviderInstanceId != null)
             cloudServiceWebApp.ProviderInstanceId = this.ProviderInstanceId;
-        if(this.ProviderRegion!=null)
+        if(this.ProviderRegion != null)
             cloudServiceWebApp.ProviderRegion = this.ProviderRegion;
-        if(this.ProviderType!=null)
+        if(this.ProviderType != null)
             cloudServiceWebApp.ProviderType = this.ProviderType.Value;
     }
 
@@ -472,11 +472,11 @@ public class CloudServiceWebHostUpdateRequest // : IUbluxDocumentId
     /// <summary> Set values on actual document </summary>
     public void SetValuesOnCloudServiceWebHost(CloudServiceWebHost cloudServiceWebHost)
     {
-        if(this.ProviderInstanceId!=null)
+        if(this.ProviderInstanceId != null)
             cloudServiceWebHost.ProviderInstanceId = this.ProviderInstanceId;
-        if(this.ProviderRegion!=null)
+        if(this.ProviderRegion != null)
             cloudServiceWebHost.ProviderRegion = this.ProviderRegion;
-        if(this.ProviderType!=null)
+        if(this.ProviderType != null)
             cloudServiceWebHost.ProviderType = this.ProviderType.Value;
     }
 
@@ -531,25 +531,25 @@ public class ContactUpdateRequest // : IUbluxDocumentId
     /// <summary> Set values on actual document </summary>
     public void SetValuesOnContact(Contact contact)
     {
-        if(this.ContactNumbers!=null)
+        if(this.ContactNumbers != null)
             contact.ContactNumbers = this.ContactNumbers;
-        if(this.ContactEmails!=null)
+        if(this.ContactEmails != null)
             contact.ContactEmails = this.ContactEmails;
-        if(this.MailingAddresses!=null)
+        if(this.MailingAddresses != null)
             contact.MailingAddresses = this.MailingAddresses;
-        if(this.FirstName!=null)
+        if(this.FirstName != null)
             contact.FirstName = this.FirstName;
-        if(this.LastName!=null)
+        if(this.LastName != null)
             contact.LastName = this.LastName;
-        if(this.JobTitle!=null)
+        if(this.JobTitle != null)
             contact.JobTitle = this.JobTitle;
-        if(this.Company!=null)
+        if(this.Company != null)
             contact.Company = this.Company;
-        if(this.Notes!=null)
+        if(this.Notes != null)
             contact.Notes = this.Notes;
-        if(this.Variables!=null)
+        if(this.Variables != null)
             contact.Variables = this.Variables;
-        if(this.IdsTags!=null)
+        if(this.IdsTags != null)
             contact.IdsTags = this.IdsTags;
     }
 
@@ -576,11 +576,11 @@ public class CustomerInfoUpdateRequest // : IUbluxDocumentId
     /// <summary> Set values on actual document </summary>
     public void SetValuesOnCustomerInfo(CustomerInfo customerInfo)
     {
-        if(this.MailingAddress!=null)
+        if(this.MailingAddress != null)
             customerInfo.MailingAddress = this.MailingAddress;
-        if(this.FullName!=null)
+        if(this.FullName != null)
             customerInfo.FullName = this.FullName;
-        if(this.IdsTags!=null)
+        if(this.IdsTags != null)
             customerInfo.IdsTags = this.IdsTags;
     }
 
@@ -628,21 +628,21 @@ public class ExtensionCallFlowLogicUpdateRequest // : IUbluxDocumentId
     /// <summary> Set values on actual document </summary>
     public void SetValuesOnExtensionCallFlowLogic(ExtensionCallFlowLogic extensionCallFlowLogic)
     {
-        if(this.IdCallFlowLogic!=null)
+        if(this.IdCallFlowLogic != null)
             extensionCallFlowLogic.IdCallFlowLogic = this.IdCallFlowLogic;
-        if(this.CallFlowLabel!=null)
+        if(this.CallFlowLabel != null)
             extensionCallFlowLogic.CallFlowLabel = this.CallFlowLabel;
-        if(this.TimeZone!=null)
+        if(this.TimeZone != null)
             extensionCallFlowLogic.TimeZone = this.TimeZone;
-        if(this.IdMusicOnHoldGroup!=null)
+        if(this.IdMusicOnHoldGroup != null)
             extensionCallFlowLogic.IdMusicOnHoldGroup = this.IdMusicOnHoldGroup;
-        if(this.FriendlyName!=null)
+        if(this.FriendlyName != null)
             extensionCallFlowLogic.FriendlyName = this.FriendlyName;
-        if(this.Number!=null)
+        if(this.Number != null)
             extensionCallFlowLogic.Number = this.Number;
-        if(this.InjectExtensionNameToCallerId!=null)
+        if(this.InjectExtensionNameToCallerId != null)
             extensionCallFlowLogic.InjectExtensionNameToCallerId = this.InjectExtensionNameToCallerId.Value;
-        if(this.IdsTags!=null)
+        if(this.IdsTags != null)
             extensionCallFlowLogic.IdsTags = this.IdsTags;
     }
 
@@ -690,21 +690,21 @@ public class ExtensionConferenceUpdateRequest // : IUbluxDocumentId
     /// <summary> Set values on actual document </summary>
     public void SetValuesOnExtensionConference(ExtensionConference extensionConference)
     {
-        if(this.IdsAudiosWhenOneParticipant!=null)
+        if(this.IdsAudiosWhenOneParticipant != null)
             extensionConference.IdsAudiosWhenOneParticipant = this.IdsAudiosWhenOneParticipant;
-        if(this.AnnounceParticipants!=null)
+        if(this.AnnounceParticipants != null)
             extensionConference.AnnounceParticipants = this.AnnounceParticipants.Value;
-        if(this.Pin!=null)
+        if(this.Pin != null)
             extensionConference.Pin = this.Pin;
-        if(this.IdMusicOnHoldGroup!=null)
+        if(this.IdMusicOnHoldGroup != null)
             extensionConference.IdMusicOnHoldGroup = this.IdMusicOnHoldGroup;
-        if(this.FriendlyName!=null)
+        if(this.FriendlyName != null)
             extensionConference.FriendlyName = this.FriendlyName;
-        if(this.Number!=null)
+        if(this.Number != null)
             extensionConference.Number = this.Number;
-        if(this.InjectExtensionNameToCallerId!=null)
+        if(this.InjectExtensionNameToCallerId != null)
             extensionConference.InjectExtensionNameToCallerId = this.InjectExtensionNameToCallerId.Value;
-        if(this.IdsTags!=null)
+        if(this.IdsTags != null)
             extensionConference.IdsTags = this.IdsTags;
     }
 
@@ -755,23 +755,23 @@ public class ExtensionDialUpdateRequest // : IUbluxDocumentId
     /// <summary> Set values on actual document </summary>
     public void SetValuesOnExtensionDial(ExtensionDial extensionDial)
     {
-        if(this.IdsLines!=null)
+        if(this.IdsLines != null)
             extensionDial.IdsLines = this.IdsLines;
-        if(this.EventActionToExecuteIfNotAnswered!=null)
+        if(this.EventActionToExecuteIfNotAnswered != null)
             extensionDial.EventActionToExecuteIfNotAnswered = this.EventActionToExecuteIfNotAnswered;
-        if(this.SendEmailNotificationIfNotAnswered!=null)
+        if(this.SendEmailNotificationIfNotAnswered != null)
             extensionDial.SendEmailNotificationIfNotAnswered = this.SendEmailNotificationIfNotAnswered;
-        if(this.RingTimeInSeconds!=null)
+        if(this.RingTimeInSeconds != null)
             extensionDial.RingTimeInSeconds = this.RingTimeInSeconds.Value;
-        if(this.IdMusicOnHoldGroup!=null)
+        if(this.IdMusicOnHoldGroup != null)
             extensionDial.IdMusicOnHoldGroup = this.IdMusicOnHoldGroup;
-        if(this.FriendlyName!=null)
+        if(this.FriendlyName != null)
             extensionDial.FriendlyName = this.FriendlyName;
-        if(this.Number!=null)
+        if(this.Number != null)
             extensionDial.Number = this.Number;
-        if(this.InjectExtensionNameToCallerId!=null)
+        if(this.InjectExtensionNameToCallerId != null)
             extensionDial.InjectExtensionNameToCallerId = this.InjectExtensionNameToCallerId.Value;
-        if(this.IdsTags!=null)
+        if(this.IdsTags != null)
             extensionDial.IdsTags = this.IdsTags;
     }
 
@@ -858,41 +858,41 @@ public class ExtensionQueueUpdateRequest // : IUbluxDocumentId
     /// <summary> Set values on actual document </summary>
     public void SetValuesOnExtensionQueue(ExtensionQueue extensionQueue)
     {
-        if(this.IdsLines!=null)
+        if(this.IdsLines != null)
             extensionQueue.IdsLines = this.IdsLines;
-        if(this.IdExtensionIfTimeout!=null)
+        if(this.IdExtensionIfTimeout != null)
             extensionQueue.IdExtensionIfTimeout = this.IdExtensionIfTimeout;
-        if(this.IdsAudios!=null)
+        if(this.IdsAudios != null)
             extensionQueue.IdsAudios = this.IdsAudios;
-        if(this.SendEmailNotificationIfNotAnswered!=null)
+        if(this.SendEmailNotificationIfNotAnswered != null)
             extensionQueue.SendEmailNotificationIfNotAnswered = this.SendEmailNotificationIfNotAnswered;
-        if(this.SendEmailNotificationIfItTakesToLongToBeAnswered!=null)
+        if(this.SendEmailNotificationIfItTakesToLongToBeAnswered != null)
             extensionQueue.SendEmailNotificationIfItTakesToLongToBeAnswered = this.SendEmailNotificationIfItTakesToLongToBeAnswered;
-        if(this.RingTimeInSeconds!=null)
+        if(this.RingTimeInSeconds != null)
             extensionQueue.RingTimeInSeconds = this.RingTimeInSeconds.Value;
-        if(this.RingInUse!=null)
+        if(this.RingInUse != null)
             extensionQueue.RingInUse = this.RingInUse.Value;
-        if(this.QueueTimeoutInMinutes!=null)
+        if(this.QueueTimeoutInMinutes != null)
             extensionQueue.QueueTimeoutInMinutes = this.QueueTimeoutInMinutes.Value;
-        if(this.AnnouncePosition!=null)
+        if(this.AnnouncePosition != null)
             extensionQueue.AnnouncePosition = this.AnnouncePosition.Value;
-        if(this.AnnounceHoldTime!=null)
+        if(this.AnnounceHoldTime != null)
             extensionQueue.AnnounceHoldTime = this.AnnounceHoldTime.Value;
-        if(this.AnnounceFrequency!=null)
+        if(this.AnnounceFrequency != null)
             extensionQueue.AnnounceFrequency = this.AnnounceFrequency.Value;
-        if(this.RetryFrequency!=null)
+        if(this.RetryFrequency != null)
             extensionQueue.RetryFrequency = this.RetryFrequency.Value;
-        if(this.RingStrategy!=null)
+        if(this.RingStrategy != null)
             extensionQueue.RingStrategy = this.RingStrategy.Value;
-        if(this.IdMusicOnHoldGroup!=null)
+        if(this.IdMusicOnHoldGroup != null)
             extensionQueue.IdMusicOnHoldGroup = this.IdMusicOnHoldGroup;
-        if(this.FriendlyName!=null)
+        if(this.FriendlyName != null)
             extensionQueue.FriendlyName = this.FriendlyName;
-        if(this.Number!=null)
+        if(this.Number != null)
             extensionQueue.Number = this.Number;
-        if(this.InjectExtensionNameToCallerId!=null)
+        if(this.InjectExtensionNameToCallerId != null)
             extensionQueue.InjectExtensionNameToCallerId = this.InjectExtensionNameToCallerId.Value;
-        if(this.IdsTags!=null)
+        if(this.IdsTags != null)
             extensionQueue.IdsTags = this.IdsTags;
     }
 
@@ -947,25 +947,25 @@ public class ExtensionVoicemailUpdateRequest // : IUbluxDocumentId
     /// <summary> Set values on actual document </summary>
     public void SetValuesOnExtensionVoicemail(ExtensionVoicemail extensionVoicemail)
     {
-        if(this.IdAudio!=null)
+        if(this.IdAudio != null)
             extensionVoicemail.IdAudio = this.IdAudio;
-        if(this.IdsLinesThatCanListenToVoicemail!=null)
+        if(this.IdsLinesThatCanListenToVoicemail != null)
             extensionVoicemail.IdsLinesThatCanListenToVoicemail = this.IdsLinesThatCanListenToVoicemail;
-        if(this.IdEmail!=null)
+        if(this.IdEmail != null)
             extensionVoicemail.IdEmail = this.IdEmail;
-        if(this.TextToSpeech!=null)
+        if(this.TextToSpeech != null)
             extensionVoicemail.TextToSpeech = this.TextToSpeech;
-        if(this.TextToSpeechVoiceId!=null)
+        if(this.TextToSpeechVoiceId != null)
             extensionVoicemail.TextToSpeechVoiceId = this.TextToSpeechVoiceId;
-        if(this.IdMusicOnHoldGroup!=null)
+        if(this.IdMusicOnHoldGroup != null)
             extensionVoicemail.IdMusicOnHoldGroup = this.IdMusicOnHoldGroup;
-        if(this.FriendlyName!=null)
+        if(this.FriendlyName != null)
             extensionVoicemail.FriendlyName = this.FriendlyName;
-        if(this.Number!=null)
+        if(this.Number != null)
             extensionVoicemail.Number = this.Number;
-        if(this.InjectExtensionNameToCallerId!=null)
+        if(this.InjectExtensionNameToCallerId != null)
             extensionVoicemail.InjectExtensionNameToCallerId = this.InjectExtensionNameToCallerId.Value;
-        if(this.IdsTags!=null)
+        if(this.IdsTags != null)
             extensionVoicemail.IdsTags = this.IdsTags;
     }
 
@@ -984,7 +984,7 @@ public class FaxIncomingUpdateRequest // : IUbluxDocumentId
     /// <summary> Set values on actual document </summary>
     public void SetValuesOnFaxIncoming(FaxIncoming faxIncoming)
     {
-        if(this.IdsTags!=null)
+        if(this.IdsTags != null)
             faxIncoming.IdsTags = this.IdsTags;
     }
 
@@ -1003,7 +1003,7 @@ public class FaxOutgoingGroupUpdateRequest // : IUbluxDocumentId
     /// <summary> Set values on actual document </summary>
     public void SetValuesOnFaxOutgoingGroup(FaxOutgoingGroup faxOutgoingGroup)
     {
-        if(this.IdsTags!=null)
+        if(this.IdsTags != null)
             faxOutgoingGroup.IdsTags = this.IdsTags;
     }
 
@@ -1028,9 +1028,9 @@ public class UserUpdateRequest // : IUbluxDocumentId
     /// <summary> Set values on actual document </summary>
     public void SetValuesOnUser(User user)
     {
-        if(this.UbluxRoles!=null)
+        if(this.UbluxRoles != null)
             user.UbluxRoles = this.UbluxRoles;
-        if(this.IdsTags!=null)
+        if(this.IdsTags != null)
             user.IdsTags = this.IdsTags;
     }
 
@@ -1061,13 +1061,13 @@ public class LineKeyGroupUpdateRequest // : IUbluxDocumentId
     /// <summary> Set values on actual document </summary>
     public void SetValuesOnLineKeyGroup(LineKeyGroup lineKeyGroup)
     {
-        if(this.LineKeys!=null)
+        if(this.LineKeys != null)
             lineKeyGroup.LineKeys = this.LineKeys;
-        if(this.FriendlyName!=null)
+        if(this.FriendlyName != null)
             lineKeyGroup.FriendlyName = this.FriendlyName;
-        if(this.Description!=null)
+        if(this.Description != null)
             lineKeyGroup.Description = this.Description;
-        if(this.IdsTags!=null)
+        if(this.IdsTags != null)
             lineKeyGroup.IdsTags = this.IdsTags;
     }
 
@@ -1112,13 +1112,13 @@ public class MusicOnHoldGroupUpdateRequest // : IUbluxDocumentId
     /// <summary> Set values on actual document </summary>
     public void SetValuesOnMusicOnHoldGroup(MusicOnHoldGroup musicOnHoldGroup)
     {
-        if(this.IdsAudios!=null)
+        if(this.IdsAudios != null)
             musicOnHoldGroup.IdsAudios = this.IdsAudios;
-        if(this.FriendlyName!=null)
+        if(this.FriendlyName != null)
             musicOnHoldGroup.FriendlyName = this.FriendlyName;
-        if(this.Description!=null)
+        if(this.Description != null)
             musicOnHoldGroup.Description = this.Description;
-        if(this.IdsTags!=null)
+        if(this.IdsTags != null)
             musicOnHoldGroup.IdsTags = this.IdsTags;
     }
 
@@ -1167,21 +1167,21 @@ public class PhoneUpdateRequest // : IUbluxDocumentId
     /// <summary> Set values on actual document </summary>
     public void SetValuesOnPhone(Phone phone)
     {
-        if(this.IdCloudServicePbx!=null)
+        if(this.IdCloudServicePbx != null)
             phone.IdCloudServicePbx = this.IdCloudServicePbx;
-        if(this.IdPhoneConfiguration!=null)
+        if(this.IdPhoneConfiguration != null)
             phone.IdPhoneConfiguration = this.IdPhoneConfiguration;
-        if(this.IdUser!=null)
+        if(this.IdUser != null)
             phone.IdUser = this.IdUser;
-        if(this.Lines!=null)
+        if(this.Lines != null)
             phone.Lines = this.Lines;
-        if(this.FriendlyName!=null)
+        if(this.FriendlyName != null)
             phone.FriendlyName = this.FriendlyName;
-        if(this.PhoneType!=null)
+        if(this.PhoneType != null)
             phone.PhoneType = this.PhoneType.Value;
-        if(this.DisableEncryption!=null)
+        if(this.DisableEncryption != null)
             phone.DisableEncryption = this.DisableEncryption.Value;
-        if(this.IdsTags!=null)
+        if(this.IdsTags != null)
             phone.IdsTags = this.IdsTags;
     }
 
@@ -1212,13 +1212,13 @@ public class PhoneConfigurationUpdateRequest // : IUbluxDocumentId
     /// <summary> Set values on actual document </summary>
     public void SetValuesOnPhoneConfiguration(PhoneConfiguration phoneConfiguration)
     {
-        if(this.IdLineKeyGroup!=null)
+        if(this.IdLineKeyGroup != null)
             phoneConfiguration.IdLineKeyGroup = this.IdLineKeyGroup;
-        if(this.FrienlyName!=null)
+        if(this.FrienlyName != null)
             phoneConfiguration.FrienlyName = this.FrienlyName;
-        if(this.Description!=null)
+        if(this.Description != null)
             phoneConfiguration.Description = this.Description;
-        if(this.IdsTags!=null)
+        if(this.IdsTags != null)
             phoneConfiguration.IdsTags = this.IdsTags;
     }
 
@@ -1245,11 +1245,11 @@ public class PowerDialerGroupUpdateRequest // : IUbluxDocumentId
     /// <summary> Set values on actual document </summary>
     public void SetValuesOnPowerDialerGroup(PowerDialerGroup powerDialerGroup)
     {
-        if(this.FriendlyName!=null)
+        if(this.FriendlyName != null)
             powerDialerGroup.FriendlyName = this.FriendlyName;
-        if(this.Description!=null)
+        if(this.Description != null)
             powerDialerGroup.Description = this.Description;
-        if(this.IdsTags!=null)
+        if(this.IdsTags != null)
             powerDialerGroup.IdsTags = this.IdsTags;
     }
 
@@ -1268,7 +1268,7 @@ public class SMSUpdateRequest // : IUbluxDocumentId
     /// <summary> Set values on actual document </summary>
     public void SetValuesOnSMS(SMS sMS)
     {
-        if(this.IdsTags!=null)
+        if(this.IdsTags != null)
             sMS.IdsTags = this.IdsTags;
     }
 
@@ -1335,7 +1335,7 @@ public class VoicemailUpdateRequest // : IUbluxDocumentId
     /// <summary> Set values on actual document </summary>
     public void SetValuesOnVoicemail(Voicemail voicemail)
     {
-        if(this.IdsTags!=null)
+        if(this.IdsTags != null)
             voicemail.IdsTags = this.IdsTags;
     }
 
@@ -1354,7 +1354,7 @@ public class VoicemailForwardedUpdateRequest // : IUbluxDocumentId
     /// <summary> Set values on actual document </summary>
     public void SetValuesOnVoicemailForwarded(VoicemailForwarded voicemailForwarded)
     {
-        if(this.IdsTags!=null)
+        if(this.IdsTags != null)
             voicemailForwarded.IdsTags = this.IdsTags;
     }
 
@@ -1407,23 +1407,23 @@ public class VoipNumberAvailableForPurchaseUpdateRequest // : IUbluxDocumentId
     /// <summary> Set values on actual document </summary>
     public void SetValuesOnVoipNumberAvailableForPurchase(VoipNumberAvailableForPurchase voipNumberAvailableForPurchase)
     {
-        if(this.IdMusicOnHoldGroup!=null)
+        if(this.IdMusicOnHoldGroup != null)
             voipNumberAvailableForPurchase.IdMusicOnHoldGroup = this.IdMusicOnHoldGroup;
-        if(this.InjectFriendlyNameToCallerId!=null)
+        if(this.InjectFriendlyNameToCallerId != null)
             voipNumberAvailableForPurchase.InjectFriendlyNameToCallerId = this.InjectFriendlyNameToCallerId.Value;
-        if(this.RecordIncomingCalls!=null)
+        if(this.RecordIncomingCalls != null)
             voipNumberAvailableForPurchase.RecordIncomingCalls = this.RecordIncomingCalls.Value;
-        if(this.UseAiForIncomingCalls!=null)
+        if(this.UseAiForIncomingCalls != null)
             voipNumberAvailableForPurchase.UseAiForIncomingCalls = this.UseAiForIncomingCalls.Value;
-        if(this.FriendlyName!=null)
+        if(this.FriendlyName != null)
             voipNumberAvailableForPurchase.FriendlyName = this.FriendlyName;
-        if(this.Description!=null)
+        if(this.Description != null)
             voipNumberAvailableForPurchase.Description = this.Description;
-        if(this.Language!=null)
+        if(this.Language != null)
             voipNumberAvailableForPurchase.Language = this.Language.Value;
-        if(this.TimeZone!=null)
+        if(this.TimeZone != null)
             voipNumberAvailableForPurchase.TimeZone = this.TimeZone;
-        if(this.IdsTags!=null)
+        if(this.IdsTags != null)
             voipNumberAvailableForPurchase.IdsTags = this.IdsTags;
     }
 
@@ -1489,29 +1489,29 @@ public class VoipNumberFaxUpdateRequest // : IUbluxDocumentId
     /// <summary> Set values on actual document </summary>
     public void SetValuesOnVoipNumberFax(VoipNumberFax voipNumberFax)
     {
-        if(this.RulesPhone!=null)
+        if(this.RulesPhone != null)
             voipNumberFax.RulesPhone = this.RulesPhone;
-        if(this.RulesSms!=null)
+        if(this.RulesSms != null)
             voipNumberFax.RulesSms = this.RulesSms;
-        if(this.RulesFax!=null)
+        if(this.RulesFax != null)
             voipNumberFax.RulesFax = this.RulesFax;
-        if(this.IdMusicOnHoldGroup!=null)
+        if(this.IdMusicOnHoldGroup != null)
             voipNumberFax.IdMusicOnHoldGroup = this.IdMusicOnHoldGroup;
-        if(this.InjectFriendlyNameToCallerId!=null)
+        if(this.InjectFriendlyNameToCallerId != null)
             voipNumberFax.InjectFriendlyNameToCallerId = this.InjectFriendlyNameToCallerId.Value;
-        if(this.RecordIncomingCalls!=null)
+        if(this.RecordIncomingCalls != null)
             voipNumberFax.RecordIncomingCalls = this.RecordIncomingCalls.Value;
-        if(this.UseAiForIncomingCalls!=null)
+        if(this.UseAiForIncomingCalls != null)
             voipNumberFax.UseAiForIncomingCalls = this.UseAiForIncomingCalls.Value;
-        if(this.FriendlyName!=null)
+        if(this.FriendlyName != null)
             voipNumberFax.FriendlyName = this.FriendlyName;
-        if(this.Description!=null)
+        if(this.Description != null)
             voipNumberFax.Description = this.Description;
-        if(this.Language!=null)
+        if(this.Language != null)
             voipNumberFax.Language = this.Language.Value;
-        if(this.TimeZone!=null)
+        if(this.TimeZone != null)
             voipNumberFax.TimeZone = this.TimeZone;
-        if(this.IdsTags!=null)
+        if(this.IdsTags != null)
             voipNumberFax.IdsTags = this.IdsTags;
     }
 
@@ -1577,29 +1577,29 @@ public class VoipNumberPhoneUpdateRequest // : IUbluxDocumentId
     /// <summary> Set values on actual document </summary>
     public void SetValuesOnVoipNumberPhone(VoipNumberPhone voipNumberPhone)
     {
-        if(this.RulesPhone!=null)
+        if(this.RulesPhone != null)
             voipNumberPhone.RulesPhone = this.RulesPhone;
-        if(this.RulesSms!=null)
+        if(this.RulesSms != null)
             voipNumberPhone.RulesSms = this.RulesSms;
-        if(this.RulesFax!=null)
+        if(this.RulesFax != null)
             voipNumberPhone.RulesFax = this.RulesFax;
-        if(this.IdMusicOnHoldGroup!=null)
+        if(this.IdMusicOnHoldGroup != null)
             voipNumberPhone.IdMusicOnHoldGroup = this.IdMusicOnHoldGroup;
-        if(this.InjectFriendlyNameToCallerId!=null)
+        if(this.InjectFriendlyNameToCallerId != null)
             voipNumberPhone.InjectFriendlyNameToCallerId = this.InjectFriendlyNameToCallerId.Value;
-        if(this.RecordIncomingCalls!=null)
+        if(this.RecordIncomingCalls != null)
             voipNumberPhone.RecordIncomingCalls = this.RecordIncomingCalls.Value;
-        if(this.UseAiForIncomingCalls!=null)
+        if(this.UseAiForIncomingCalls != null)
             voipNumberPhone.UseAiForIncomingCalls = this.UseAiForIncomingCalls.Value;
-        if(this.FriendlyName!=null)
+        if(this.FriendlyName != null)
             voipNumberPhone.FriendlyName = this.FriendlyName;
-        if(this.Description!=null)
+        if(this.Description != null)
             voipNumberPhone.Description = this.Description;
-        if(this.Language!=null)
+        if(this.Language != null)
             voipNumberPhone.Language = this.Language.Value;
-        if(this.TimeZone!=null)
+        if(this.TimeZone != null)
             voipNumberPhone.TimeZone = this.TimeZone;
-        if(this.IdsTags!=null)
+        if(this.IdsTags != null)
             voipNumberPhone.IdsTags = this.IdsTags;
     }
 
@@ -1644,13 +1644,13 @@ public class WebHookUpdateRequest // : IUbluxDocumentId
     /// <summary> Set values on actual document </summary>
     public void SetValuesOnWebHook(WebHook webHook)
     {
-        if(this.EventTrigger!=null)
+        if(this.EventTrigger != null)
             webHook.EventTrigger = this.EventTrigger.Value;
-        if(this.Url!=null)
+        if(this.Url != null)
             webHook.Url = this.Url;
-        if(this.Headers!=null)
+        if(this.Headers != null)
             webHook.Headers = this.Headers;
-        if(this.IdsTags!=null)
+        if(this.IdsTags != null)
             webHook.IdsTags = this.IdsTags;
     }
 
@@ -1686,9 +1686,9 @@ public class TagUpdateRequest // : IUbluxDocumentId
     /// <summary> Set values on actual document </summary>
     public void SetValuesOnTag(Tag tag)
     {
-        if(this.FriendlyName!=null)
+        if(this.FriendlyName != null)
             tag.FriendlyName = this.FriendlyName;
-        if(this.TagColor!=null)
+        if(this.TagColor != null)
             tag.TagColor = this.TagColor.Value;
     }
 
@@ -1707,7 +1707,7 @@ public class AiCallTranscriptionUpdateRequest // : IUbluxDocumentId
     /// <summary> Set values on actual document </summary>
     public void SetValuesOnAiCallTranscription(AiCallTranscription aiCallTranscription)
     {
-        if(this.IdsTags!=null)
+        if(this.IdsTags != null)
             aiCallTranscription.IdsTags = this.IdsTags;
     }
 
@@ -1749,19 +1749,19 @@ public class LineUpdateRequest // : IUbluxDocumentId
     /// <summary> Set values on actual document </summary>
     public void SetValuesOnLine(Line line)
     {
-        if(this.FriendlyName!=null)
+        if(this.FriendlyName != null)
             line.FriendlyName = this.FriendlyName;
-        if(this.CallerIdNumber!=null)
+        if(this.CallerIdNumber != null)
             line.CallerIdNumber = this.CallerIdNumber;
-        if(this.RecordExternalCalls!=null)
+        if(this.RecordExternalCalls != null)
             line.RecordExternalCalls = this.RecordExternalCalls.Value;
-        if(this.RecordInternalCalls!=null)
+        if(this.RecordInternalCalls != null)
             line.RecordInternalCalls = this.RecordInternalCalls.Value;
-        if(this.UseAiForExternalCalls!=null)
+        if(this.UseAiForExternalCalls != null)
             line.UseAiForExternalCalls = this.UseAiForExternalCalls.Value;
-        if(this.UseAiForOutgoingCallsToExtensions!=null)
+        if(this.UseAiForOutgoingCallsToExtensions != null)
             line.UseAiForOutgoingCallsToExtensions = this.UseAiForOutgoingCallsToExtensions.Value;
-        if(this.Language!=null)
+        if(this.Language != null)
             line.Language = this.Language.Value;
     }
 

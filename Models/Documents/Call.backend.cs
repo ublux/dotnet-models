@@ -6,8 +6,8 @@ namespace Ublux.Communications.Models.Documents;
 /// <summary>
 ///     Ublux phone call
 /// </summary>
-public abstract partial class Call 
-{   
+public abstract partial class Call
+{
     /// <inheritdoc />
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
@@ -36,16 +36,17 @@ public abstract partial class Call
     /// </summary>
     public void SetAllEndDatesToUtcNow()
     {
-        this.DateEnded ??= DateTime.UtcNow;
-        
+        var now = DateTime.UtcNow;
+        this.DurationInSeconds ??= (now - this.DateCreated).TotalSeconds;
+
         if (this.ChildCalls != null)
         {
-            foreach(var cc in this.ChildCalls)
+            foreach (var cc in this.ChildCalls)
             {
                 if (cc is null)
                     continue;
 
-                cc.DateEnded ??= DateTime.UtcNow;
+                cc.DurationInSeconds ??= (now - cc.DateCreated).TotalSeconds;
             }
         }
     }

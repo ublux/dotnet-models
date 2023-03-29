@@ -40,7 +40,7 @@ public partial class EventIncomingCallTerminatedWithRecording
     /// </summary>
     [AllowUpdate(false)] 
     [SwaggerSchema(ReadOnly = true)] 
-    public DateTime DateEnded { get; set; }
+    public double DurationInSeconds { get; set; }
 
     /// <summary>
     ///     Id of contact that made phone call
@@ -86,7 +86,7 @@ public partial class EventIncomingCallTerminatedWithRecording
         // set dates
         obj.DateStart = DateTime.UtcNow.AddHours(-1);
         obj.SecondsItTookToAnswer = 10;
-        obj.DateEnded = obj.DateStart.AddSeconds(Random.Shared.Next(20, 3600));
+        obj.DurationInSeconds = Random.Shared.Next(20, 3600);
         obj.RecordingUrl = $"https://api.{Constants.Domain}/some-url";
 
         return obj;

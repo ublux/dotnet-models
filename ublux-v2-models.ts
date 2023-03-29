@@ -75,6 +75,8 @@ export interface AiAnalysis {
     readonly agentPolite?: number | null;
     /** Client satisfaction from 1 to 5. */
     readonly clientSatisfaction?: number;
+    /** Detected language */
+    readonly language?: string;
 }
 
 /** AI transcription of a phone call */
@@ -543,6 +545,8 @@ When this variable is set the call is marked as completed */
 If incoming:
     Reference of of Contact that called us */
     readonly idContact?: string | null;
+    /** Contact full name */
+    readonly contactFullName?: string | null;
     /** Refernce to AI call transcription */
     readonly idAiCallTranscription?: string | null;
     channelVariables?: ChannelVariables;
@@ -553,10 +557,7 @@ BUSY: Busy signal. The dial command reached its number but the number is busy.
 NOANSWER: No answer. The dial command reached its number, the number rang for too long, then the dial timed out.
 CANCEL: Call is canceled. The dial command reached its number but the caller hung up before the callee picked up.
 CONGESTION: Congestion. This status is usually a sign that the dialed number is not recognized.
-CHANUNAVAIL: Channel unavailable. On SIP, peer may not be registered.
-DONTCALL: Privacy mode, callee rejected the call
-TORTURE: Privacy mode, callee chose to send caller to torture menu
-INVALIDARGS: Error parsing Dial command arguments (added for Asterisk 1.4.1, SVN r53135-53136) */
+CHANUNAVAIL: Channel unavailable. On SIP, peer may not be registered. */
     readonly dialStatus?: string;
     /** Number of seconds it took to answer */
     readonly secondsItTookToAnswer?: number | null;
@@ -577,11 +578,12 @@ INVALIDARGS: Error parsing Dial command arguments (added for Asterisk 1.4.1, SVN
     /** Is the call international. This is true if any of the child calls is international
 Also note that an incoming call can be international too! */
     readonly isInternational?: boolean;
-    readonly dateEnded?: Date | null;
     callResult?: CallResult;
     analysis?: AiAnalysis;
     /** Lines that participated in this call */
     readonly participantLines?: string[];
+    /** If not null it means the call is ended */
+    readonly durationInSeconds?: number | null;
     /** It is nullable because there are cases where it makes no sense to point to an account. 
 For example a CloudService user will point to no account */
     idsTags?: string[];
@@ -612,6 +614,12 @@ export interface CallFilterRequest {
     idContact_con?: string | null;
     /** IdContact regex */
     idContact_reg?: string | null;
+    /** ContactFullName equals */
+    contactFullName_eq?: string | null;
+    /** ContactFullName contains */
+    contactFullName_con?: string | null;
+    /** ContactFullName regex */
+    contactFullName_reg?: string | null;
     /** IdAiCallTranscription equals */
     idAiCallTranscription_eq?: string | null;
     /** IdAiCallTranscription contains */
@@ -660,12 +668,6 @@ export interface CallFilterRequest {
     childCalls_dateCreated_lte?: Date | null;
     /** ChildCalls.DateCreated greater than or equal to */
     childCalls_dateCreated_gte?: Date | null;
-    /** ChildCalls.DateEnded equals */
-    childCalls_dateEnded_eq?: Date | null;
-    /** ChildCalls.DateEnded less than or equal to */
-    childCalls_dateEnded_lte?: Date | null;
-    /** ChildCalls.DateEnded greater than or equal to */
-    childCalls_dateEnded_gte?: Date | null;
     /** DialStatus equals */
     dialStatus_eq?: string | null;
     /** DialStatus contains */
@@ -826,12 +828,6 @@ export interface CallFilterRequest {
     digitsSent_reg?: string | null;
     /** IsInternational equals */
     isInternational_eq?: boolean | null;
-    /** DateEnded equals */
-    dateEnded_eq?: Date | null;
-    /** DateEnded less than or equal to */
-    dateEnded_lte?: Date | null;
-    /** DateEnded greater than or equal to */
-    dateEnded_gte?: Date | null;
     /** CallResult equals */
     callResult_eq?: string | null;
     /** CallResult contains */
@@ -880,6 +876,12 @@ export interface CallFilterRequest {
     analysis_clientSatisfaction_lte?: number | null;
     /** Analysis.ClientSatisfaction greater than or equal to */
     analysis_clientSatisfaction_gte?: number | null;
+    /** Analysis.Language equals */
+    analysis_language_eq?: string | null;
+    /** Analysis.Language contains */
+    analysis_language_con?: string | null;
+    /** Analysis.Language regex */
+    analysis_language_reg?: string | null;
     /** ParticipantLines equals */
     participantLines_eq?: string | null;
     /** ParticipantLines contains */
@@ -1010,6 +1012,8 @@ When this variable is set the call is marked as completed */
 If incoming:
     Reference of of Contact that called us */
     readonly idContact?: string | null;
+    /** Contact full name */
+    readonly contactFullName?: string | null;
     /** Refernce to AI call transcription */
     readonly idAiCallTranscription?: string | null;
     channelVariables?: ChannelVariables;
@@ -1020,10 +1024,7 @@ BUSY: Busy signal. The dial command reached its number but the number is busy.
 NOANSWER: No answer. The dial command reached its number, the number rang for too long, then the dial timed out.
 CANCEL: Call is canceled. The dial command reached its number but the caller hung up before the callee picked up.
 CONGESTION: Congestion. This status is usually a sign that the dialed number is not recognized.
-CHANUNAVAIL: Channel unavailable. On SIP, peer may not be registered.
-DONTCALL: Privacy mode, callee rejected the call
-TORTURE: Privacy mode, callee chose to send caller to torture menu
-INVALIDARGS: Error parsing Dial command arguments (added for Asterisk 1.4.1, SVN r53135-53136) */
+CHANUNAVAIL: Channel unavailable. On SIP, peer may not be registered. */
     readonly dialStatus?: string;
     /** Number of seconds it took to answer */
     readonly secondsItTookToAnswer?: number | null;
@@ -1043,11 +1044,12 @@ INVALIDARGS: Error parsing Dial command arguments (added for Asterisk 1.4.1, SVN
     /** Is the call international. This is true if any of the child calls is international
 Also note that an incoming call can be international too! */
     readonly isInternational?: boolean;
-    readonly dateEnded?: Date | null;
     callResult?: CallResult;
     analysis?: AiAnalysis;
     /** Lines that participated in this call */
     readonly participantLines?: string[];
+    /** If not null it means the call is ended */
+    readonly durationInSeconds?: number | null;
     /** It is nullable because there are cases where it makes no sense to point to an account. 
 For example a CloudService user will point to no account */
     idsTags?: string[];
@@ -1085,6 +1087,8 @@ When this variable is set the call is marked as completed */
 If incoming:
     Reference of of Contact that called us */
     readonly idContact?: string | null;
+    /** Contact full name */
+    readonly contactFullName?: string | null;
     /** Refernce to AI call transcription */
     readonly idAiCallTranscription?: string | null;
     channelVariables?: ChannelVariables;
@@ -1095,10 +1099,7 @@ BUSY: Busy signal. The dial command reached its number but the number is busy.
 NOANSWER: No answer. The dial command reached its number, the number rang for too long, then the dial timed out.
 CANCEL: Call is canceled. The dial command reached its number but the caller hung up before the callee picked up.
 CONGESTION: Congestion. This status is usually a sign that the dialed number is not recognized.
-CHANUNAVAIL: Channel unavailable. On SIP, peer may not be registered.
-DONTCALL: Privacy mode, callee rejected the call
-TORTURE: Privacy mode, callee chose to send caller to torture menu
-INVALIDARGS: Error parsing Dial command arguments (added for Asterisk 1.4.1, SVN r53135-53136) */
+CHANUNAVAIL: Channel unavailable. On SIP, peer may not be registered. */
     readonly dialStatus?: string;
     /** Number of seconds it took to answer */
     readonly secondsItTookToAnswer?: number | null;
@@ -1118,11 +1119,12 @@ INVALIDARGS: Error parsing Dial command arguments (added for Asterisk 1.4.1, SVN
     /** Is the call international. This is true if any of the child calls is international
 Also note that an incoming call can be international too! */
     readonly isInternational?: boolean;
-    readonly dateEnded?: Date | null;
     callResult?: CallResult;
     analysis?: AiAnalysis;
     /** Lines that participated in this call */
     readonly participantLines?: string[];
+    /** If not null it means the call is ended */
+    readonly durationInSeconds?: number | null;
     /** It is nullable because there are cases where it makes no sense to point to an account. 
 For example a CloudService user will point to no account */
     idsTags?: string[];
@@ -1158,6 +1160,8 @@ When this variable is set the call is marked as completed */
 If incoming:
     Reference of of Contact that called us */
     readonly idContact?: string | null;
+    /** Contact full name */
+    readonly contactFullName?: string | null;
     /** Refernce to AI call transcription */
     readonly idAiCallTranscription?: string | null;
     channelVariables?: ChannelVariables;
@@ -1168,10 +1172,7 @@ BUSY: Busy signal. The dial command reached its number but the number is busy.
 NOANSWER: No answer. The dial command reached its number, the number rang for too long, then the dial timed out.
 CANCEL: Call is canceled. The dial command reached its number but the caller hung up before the callee picked up.
 CONGESTION: Congestion. This status is usually a sign that the dialed number is not recognized.
-CHANUNAVAIL: Channel unavailable. On SIP, peer may not be registered.
-DONTCALL: Privacy mode, callee rejected the call
-TORTURE: Privacy mode, callee chose to send caller to torture menu
-INVALIDARGS: Error parsing Dial command arguments (added for Asterisk 1.4.1, SVN r53135-53136) */
+CHANUNAVAIL: Channel unavailable. On SIP, peer may not be registered. */
     readonly dialStatus?: string;
     /** Number of seconds it took to answer */
     readonly secondsItTookToAnswer?: number | null;
@@ -1191,11 +1192,12 @@ INVALIDARGS: Error parsing Dial command arguments (added for Asterisk 1.4.1, SVN
     /** Is the call international. This is true if any of the child calls is international
 Also note that an incoming call can be international too! */
     readonly isInternational?: boolean;
-    readonly dateEnded?: Date | null;
     callResult?: CallResult;
     analysis?: AiAnalysis;
     /** Lines that participated in this call */
     readonly participantLines?: string[];
+    /** If not null it means the call is ended */
+    readonly durationInSeconds?: number | null;
     /** It is nullable because there are cases where it makes no sense to point to an account. 
 For example a CloudService user will point to no account */
     idsTags?: string[];
@@ -1226,6 +1228,8 @@ When this variable is set the call is marked as completed */
 If incoming:
     Reference of of Contact that called us */
     readonly idContact?: string | null;
+    /** Contact full name */
+    readonly contactFullName?: string | null;
     /** Refernce to AI call transcription */
     readonly idAiCallTranscription?: string | null;
     channelVariables?: ChannelVariables;
@@ -1236,10 +1240,7 @@ BUSY: Busy signal. The dial command reached its number but the number is busy.
 NOANSWER: No answer. The dial command reached its number, the number rang for too long, then the dial timed out.
 CANCEL: Call is canceled. The dial command reached its number but the caller hung up before the callee picked up.
 CONGESTION: Congestion. This status is usually a sign that the dialed number is not recognized.
-CHANUNAVAIL: Channel unavailable. On SIP, peer may not be registered.
-DONTCALL: Privacy mode, callee rejected the call
-TORTURE: Privacy mode, callee chose to send caller to torture menu
-INVALIDARGS: Error parsing Dial command arguments (added for Asterisk 1.4.1, SVN r53135-53136) */
+CHANUNAVAIL: Channel unavailable. On SIP, peer may not be registered. */
     readonly dialStatus?: string;
     /** Number of seconds it took to answer */
     readonly secondsItTookToAnswer?: number | null;
@@ -1259,11 +1260,12 @@ INVALIDARGS: Error parsing Dial command arguments (added for Asterisk 1.4.1, SVN
     /** Is the call international. This is true if any of the child calls is international
 Also note that an incoming call can be international too! */
     readonly isInternational?: boolean;
-    readonly dateEnded?: Date | null;
     callResult?: CallResult;
     analysis?: AiAnalysis;
     /** Lines that participated in this call */
     readonly participantLines?: string[];
+    /** If not null it means the call is ended */
+    readonly durationInSeconds?: number | null;
     /** It is nullable because there are cases where it makes no sense to point to an account. 
 For example a CloudService user will point to no account */
     idsTags?: string[];
@@ -1373,11 +1375,12 @@ export interface ChannelVariables {
 
 /** This attributes are needed so that deserialization works. Newtonsoft.Json deserializer must be used. */
 export interface ChildCall {
+    /** Call duration in seconds */
+    readonly durationInSeconds?: number | null;
     childCallType?: ChildCallType;
     /** Status of call */
     dialStatus?: string;
     dateCreated?: Date;
-    dateEnded?: Date | null;
     /** Number of seconds it took to answer */
     secondsItTookToAnswer?: number | null;
 }
@@ -3410,8 +3413,6 @@ export interface HttpResponsePaginationResultOfAiCallTranscription {
     pageSize?: number;
     /** Number of records */
     readonly recordsCount?: number;
-    /** Url that contains next results */
-    nextPage?: string | null;
     /** Results */
     records?: AiCallTranscription[] | null;
 }
@@ -3424,8 +3425,6 @@ export interface HttpResponsePaginationResultOfApiKey {
     pageSize?: number;
     /** Number of records */
     readonly recordsCount?: number;
-    /** Url that contains next results */
-    nextPage?: string | null;
     /** Results */
     records?: ApiKey[] | null;
 }
@@ -3438,8 +3437,6 @@ export interface HttpResponsePaginationResultOfAudio {
     pageSize?: number;
     /** Number of records */
     readonly recordsCount?: number;
-    /** Url that contains next results */
-    nextPage?: string | null;
     /** Results */
     records?: Audio[] | null;
 }
@@ -3452,8 +3449,6 @@ export interface HttpResponsePaginationResultOfBlackListPhoneNumber {
     pageSize?: number;
     /** Number of records */
     readonly recordsCount?: number;
-    /** Url that contains next results */
-    nextPage?: string | null;
     /** Results */
     records?: BlackListPhoneNumber[] | null;
 }
@@ -3466,8 +3461,6 @@ export interface HttpResponsePaginationResultOfCall {
     pageSize?: number;
     /** Number of records */
     readonly recordsCount?: number;
-    /** Url that contains next results */
-    nextPage?: string | null;
     /** Results */
     records?: Call[] | null;
 }
@@ -3480,8 +3473,6 @@ export interface HttpResponsePaginationResultOfCallFlowLogic {
     pageSize?: number;
     /** Number of records */
     readonly recordsCount?: number;
-    /** Url that contains next results */
-    nextPage?: string | null;
     /** Results */
     records?: CallFlowLogic[] | null;
 }
@@ -3494,8 +3485,6 @@ export interface HttpResponsePaginationResultOfCallerIdMask {
     pageSize?: number;
     /** Number of records */
     readonly recordsCount?: number;
-    /** Url that contains next results */
-    nextPage?: string | null;
     /** Results */
     records?: CallerIdMask[] | null;
 }
@@ -3508,8 +3497,6 @@ export interface HttpResponsePaginationResultOfContact {
     pageSize?: number;
     /** Number of records */
     readonly recordsCount?: number;
-    /** Url that contains next results */
-    nextPage?: string | null;
     /** Results */
     records?: Contact[] | null;
 }
@@ -3522,8 +3509,6 @@ export interface HttpResponsePaginationResultOfCustomerInfo {
     pageSize?: number;
     /** Number of records */
     readonly recordsCount?: number;
-    /** Url that contains next results */
-    nextPage?: string | null;
     /** Results */
     records?: CustomerInfo[] | null;
 }
@@ -3536,8 +3521,6 @@ export interface HttpResponsePaginationResultOfEmail {
     pageSize?: number;
     /** Number of records */
     readonly recordsCount?: number;
-    /** Url that contains next results */
-    nextPage?: string | null;
     /** Results */
     records?: Email[] | null;
 }
@@ -3550,8 +3533,6 @@ export interface HttpResponsePaginationResultOfExtension {
     pageSize?: number;
     /** Number of records */
     readonly recordsCount?: number;
-    /** Url that contains next results */
-    nextPage?: string | null;
     /** Results */
     records?: Extension[] | null;
 }
@@ -3564,8 +3545,6 @@ export interface HttpResponsePaginationResultOfExtensionCallFlowLogic {
     pageSize?: number;
     /** Number of records */
     readonly recordsCount?: number;
-    /** Url that contains next results */
-    nextPage?: string | null;
     /** Results */
     records?: ExtensionCallFlowLogic[] | null;
 }
@@ -3578,8 +3557,6 @@ export interface HttpResponsePaginationResultOfExtensionConference {
     pageSize?: number;
     /** Number of records */
     readonly recordsCount?: number;
-    /** Url that contains next results */
-    nextPage?: string | null;
     /** Results */
     records?: ExtensionConference[] | null;
 }
@@ -3592,8 +3569,6 @@ export interface HttpResponsePaginationResultOfExtensionDial {
     pageSize?: number;
     /** Number of records */
     readonly recordsCount?: number;
-    /** Url that contains next results */
-    nextPage?: string | null;
     /** Results */
     records?: ExtensionDial[] | null;
 }
@@ -3606,8 +3581,6 @@ export interface HttpResponsePaginationResultOfExtensionQueue {
     pageSize?: number;
     /** Number of records */
     readonly recordsCount?: number;
-    /** Url that contains next results */
-    nextPage?: string | null;
     /** Results */
     records?: ExtensionQueue[] | null;
 }
@@ -3620,8 +3593,6 @@ export interface HttpResponsePaginationResultOfExtensionVoicemail {
     pageSize?: number;
     /** Number of records */
     readonly recordsCount?: number;
-    /** Url that contains next results */
-    nextPage?: string | null;
     /** Results */
     records?: ExtensionVoicemail[] | null;
 }
@@ -3634,8 +3605,6 @@ export interface HttpResponsePaginationResultOfFaxIncoming {
     pageSize?: number;
     /** Number of records */
     readonly recordsCount?: number;
-    /** Url that contains next results */
-    nextPage?: string | null;
     /** Results */
     records?: FaxIncoming[] | null;
 }
@@ -3648,8 +3617,6 @@ export interface HttpResponsePaginationResultOfFaxOutgoingGroup {
     pageSize?: number;
     /** Number of records */
     readonly recordsCount?: number;
-    /** Url that contains next results */
-    nextPage?: string | null;
     /** Results */
     records?: FaxOutgoingGroup[] | null;
 }
@@ -3662,8 +3629,6 @@ export interface HttpResponsePaginationResultOfLineKeyGroup {
     pageSize?: number;
     /** Number of records */
     readonly recordsCount?: number;
-    /** Url that contains next results */
-    nextPage?: string | null;
     /** Results */
     records?: LineKeyGroup[] | null;
 }
@@ -3676,8 +3641,6 @@ export interface HttpResponsePaginationResultOfMusicOnHoldGroup {
     pageSize?: number;
     /** Number of records */
     readonly recordsCount?: number;
-    /** Url that contains next results */
-    nextPage?: string | null;
     /** Results */
     records?: MusicOnHoldGroup[] | null;
 }
@@ -3690,8 +3653,6 @@ export interface HttpResponsePaginationResultOfPhone {
     pageSize?: number;
     /** Number of records */
     readonly recordsCount?: number;
-    /** Url that contains next results */
-    nextPage?: string | null;
     /** Results */
     records?: Phone[] | null;
 }
@@ -3704,8 +3665,6 @@ export interface HttpResponsePaginationResultOfPhoneConfiguration {
     pageSize?: number;
     /** Number of records */
     readonly recordsCount?: number;
-    /** Url that contains next results */
-    nextPage?: string | null;
     /** Results */
     records?: PhoneConfiguration[] | null;
 }
@@ -3718,8 +3677,6 @@ export interface HttpResponsePaginationResultOfPowerDialerGroup {
     pageSize?: number;
     /** Number of records */
     readonly recordsCount?: number;
-    /** Url that contains next results */
-    nextPage?: string | null;
     /** Results */
     records?: PowerDialerGroup[] | null;
 }
@@ -3732,8 +3689,6 @@ export interface HttpResponsePaginationResultOfSMS {
     pageSize?: number;
     /** Number of records */
     readonly recordsCount?: number;
-    /** Url that contains next results */
-    nextPage?: string | null;
     /** Results */
     records?: SMS[] | null;
 }
@@ -3746,8 +3701,6 @@ export interface HttpResponsePaginationResultOfTag {
     pageSize?: number;
     /** Number of records */
     readonly recordsCount?: number;
-    /** Url that contains next results */
-    nextPage?: string | null;
     /** Results */
     records?: Tag[] | null;
 }
@@ -3760,8 +3713,6 @@ export interface HttpResponsePaginationResultOfUser {
     pageSize?: number;
     /** Number of records */
     readonly recordsCount?: number;
-    /** Url that contains next results */
-    nextPage?: string | null;
     /** Results */
     records?: User[] | null;
 }
@@ -3774,8 +3725,6 @@ export interface HttpResponsePaginationResultOfVoicemail {
     pageSize?: number;
     /** Number of records */
     readonly recordsCount?: number;
-    /** Url that contains next results */
-    nextPage?: string | null;
     /** Results */
     records?: Voicemail[] | null;
 }
@@ -3788,8 +3737,6 @@ export interface HttpResponsePaginationResultOfVoipNumber {
     pageSize?: number;
     /** Number of records */
     readonly recordsCount?: number;
-    /** Url that contains next results */
-    nextPage?: string | null;
     /** Results */
     records?: VoipNumber[] | null;
 }
@@ -3802,8 +3749,6 @@ export interface HttpResponsePaginationResultOfVoipNumberAvailableForPurchase {
     pageSize?: number;
     /** Number of records */
     readonly recordsCount?: number;
-    /** Url that contains next results */
-    nextPage?: string | null;
     /** Results */
     records?: VoipNumberAvailableForPurchase[] | null;
 }
@@ -3816,8 +3761,6 @@ export interface HttpResponsePaginationResultOfVoipNumberFax {
     pageSize?: number;
     /** Number of records */
     readonly recordsCount?: number;
-    /** Url that contains next results */
-    nextPage?: string | null;
     /** Results */
     records?: VoipNumberFax[] | null;
 }
@@ -3830,8 +3773,6 @@ export interface HttpResponsePaginationResultOfVoipNumberPhone {
     pageSize?: number;
     /** Number of records */
     readonly recordsCount?: number;
-    /** Url that contains next results */
-    nextPage?: string | null;
     /** Results */
     records?: VoipNumberPhone[] | null;
 }
@@ -3844,8 +3785,6 @@ export interface HttpResponsePaginationResultOfWebHook {
     pageSize?: number;
     /** Number of records */
     readonly recordsCount?: number;
-    /** Url that contains next results */
-    nextPage?: string | null;
     /** Results */
     records?: WebHook[] | null;
 }

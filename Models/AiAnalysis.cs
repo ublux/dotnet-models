@@ -103,6 +103,13 @@ public class AiAnalysis
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
     public int ClientSatisfaction { get; set; }
+
+    /// <summary>
+    ///     Detected language
+    /// </summary>
+    [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
+    public required string Language { get; set; } = "";
 }
 
 /// <summary>

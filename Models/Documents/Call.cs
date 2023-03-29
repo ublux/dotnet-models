@@ -50,6 +50,13 @@ public abstract partial class Call : UbluxDocument_ReferenceAccount_ReferenceTag
     public string? IdContact { get; set; }
 
     /// <summary>
+    ///     Contact full name    
+    /// </summary>
+    [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
+    public string? ContactFullName { get; set; }
+
+    /// <summary>
     ///     Refernce to AI call transcription
     /// </summary>
     [AllowUpdate(false)]
@@ -85,10 +92,10 @@ public abstract partial class Call : UbluxDocument_ReferenceAccount_ReferenceTag
     ///     CANCEL: Call is canceled. The dial command reached its number but the caller hung up before the callee picked up.
     ///     CONGESTION: Congestion. This status is usually a sign that the dialed number is not recognized.
     ///     CHANUNAVAIL: Channel unavailable. On SIP, peer may not be registered.
-    ///     DONTCALL: Privacy mode, callee rejected the call
-    ///     TORTURE: Privacy mode, callee chose to send caller to torture menu
-    ///     INVALIDARGS: Error parsing Dial command arguments (added for Asterisk 1.4.1, SVN r53135-53136)
     /// </summary>
+    //     DONTCALL: Privacy mode, callee rejected the call
+    //     TORTURE: Privacy mode, callee chose to send caller to torture menu
+    //     INVALIDARGS: Error parsing Dial command arguments (added for Asterisk 1.4.1, SVN r53135-53136)
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
     public required string DialStatus { get; set; } = string.Empty;
@@ -183,10 +190,10 @@ public abstract partial class Call : UbluxDocument_ReferenceAccount_ReferenceTag
     [SwaggerSchema(ReadOnly = true)]
     public bool IsInternational { get; set; }
 
-    /// <inheritdoc />
-    [AllowUpdate(false)]
-    [SwaggerSchema(ReadOnly = true)]
-    public DateTime? DateEnded { get; set; }
+    ///// <inheritdoc />
+    //[AllowUpdate(false)]
+    //[SwaggerSchema(ReadOnly = true)]
+    //public DateTime? DateEnded { get; set; }
 
     /// <summary>
     ///     Result of a call
@@ -209,15 +216,22 @@ public abstract partial class Call : UbluxDocument_ReferenceAccount_ReferenceTag
     public List<string> ParticipantLines { get; set; } = new();
 
     /// <summary>
-    ///     Returns -1 if call has not completed
-    ///     Returns -2 if date started is larger than date ended
+    ///     If not null it means the call is ended
     /// </summary>
-    public double GetDurationInSeconds()
-    {
-        if (this.DateEnded.HasValue == false) return -1;
-        if (this.DateEnded < this.DateCreated) return -2;
-        return (this.DateEnded.Value - this.DateCreated).TotalSeconds;
-    }
+    [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
+    public double? DurationInSeconds { get; set; }
+
+    ///// <summary>
+    /////     Returns -1 if call has not completed
+    /////     Returns -2 if date started is larger than date ended
+    ///// </summary>
+    //public double GetDurationInSeconds()
+    //{
+    //    if (this.DateEnded.HasValue == false) return -1;
+    //    if (this.DateEnded < this.DateCreated) return -2;
+    //    return (this.DateEnded.Value - this.DateCreated).TotalSeconds;
+    //}
 
     #endregion
 }

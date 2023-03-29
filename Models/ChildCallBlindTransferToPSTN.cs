@@ -16,7 +16,7 @@ public class ChildCallBlindTransferToPSTN : ChildCallBlindTransfer
     [References(typeof(TrunkTermination))]
     public string? IdTrunkTermination { get; set; }
 
-    /// <summary>
+/// <summary>
     ///     BlindTransferToPSTN
     /// </summary>
     [IsUbluxRequired]
@@ -28,4 +28,19 @@ public class ChildCallBlindTransferToPSTN : ChildCallBlindTransfer
 #else
 #endif
     }
+
+    /// <summary>
+    ///     Id of contact to whom call is being transfered
+    /// </summary>
+    [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
+    [References(typeof(Contact))]
+    public string? IdContact { get; set; }
+
+    /// <summary>
+    ///     Contact full name    
+    /// </summary>
+    [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
+    public string? ContactFullName { get; set; }
 }

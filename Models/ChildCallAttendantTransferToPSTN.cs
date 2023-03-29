@@ -27,4 +27,19 @@ public class ChildCallAttendantTransferToPSTN : ChildCall, IAttendantTransfer
     /// <summary> Id of call that attendant transfered this call </summary>
     [References(typeof(Call))]
     public required string IdCallAttendantTransfer { get; set; }
+
+    /// <summary>
+    ///     Id of contact to whom call is being transfered
+    /// </summary>
+    [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
+    [References(typeof(Contact))]
+    public string? IdContact { get; set; }
+
+    /// <summary>
+    ///     Contact full name    
+    /// </summary>
+    [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
+    public string? ContactFullName { get; set; }
 }

@@ -11,11 +11,18 @@ public partial interface ICall
     [AllowUpdate(false)]
     DateTime DateCreated { get; set; }
 
+    ///// <summary>
+    /////     DateEnded - DateCreated will let you know the duration of call
+    ///// </summary>
+    //[AllowUpdate(false)]
+    //DateTime? DateEnded { get; set; }
+
     /// <summary>
-    ///     DateEnded - DateCreated will let you know the duration of call
+    ///     If not null it means the call is ended.
     /// </summary>
     [AllowUpdate(false)]
-    DateTime? DateEnded { get; set; }
+    [SwaggerSchema(ReadOnly = true)]
+    public double? DurationInSeconds { get; set; }
 
     /// <summary>
     ///     ANSWER: Call is answered. A successful dial. The caller reached the callee.

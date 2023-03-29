@@ -1,4 +1,5 @@
 ﻿using Bogus;
+using System;
 
 namespace Ublux.Communications.Models.EventTriggersModels;
 
@@ -40,14 +41,14 @@ public partial class EventIncomingCallTerminated
     /// </summary>
     [AllowUpdate(false)] 
     [SwaggerSchema(ReadOnly = true)] 
-    public DateTime DateEnded { get; set; }
+    public double DurationInSeconds { get; set; }
 
     /// <summary>
     ///     Id of contact that made phone call
     /// </summary>
     [AllowUpdate(false)] 
     [SwaggerSchema(ReadOnly = true)] 
-    public string? IdContact { get; set; }
+    public string? IdContact { get; set; }    
 
     /// <summary>
     ///     Name of contact
@@ -79,7 +80,7 @@ public partial class EventIncomingCallTerminated
         // set dates
         obj.DateStart = DateTime.UtcNow.AddHours(-1);
         obj.SecondsItTookToAnswer = 10;
-        obj.DateEnded = obj.DateStart.AddSeconds(Random.Shared.Next(20, 3600));
+        obj.DurationInSeconds = Random.Shared.Next(20, 3600);
 
         return obj;
     }
