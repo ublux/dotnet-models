@@ -209,6 +209,20 @@ public abstract partial class Call : UbluxDocument_ReferenceAccount_ReferenceTag
     public AiAnalysis? Analysis { get; set; }
 
     /// <summary>
+    ///     AI analysis of the call
+    /// </summary>
+    [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
+    public AiAnalysis? Analysis2 { get; set; }
+
+    /// <summary>
+    ///     AI analysis of the call
+    /// </summary>
+    [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
+    public AiAnalysis? Analysis3 { get; set; }
+
+    /// <summary>
     ///     Lines that participated in this call
     /// </summary>
     [AllowUpdate(false)]

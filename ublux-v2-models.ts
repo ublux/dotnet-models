@@ -58,9 +58,9 @@ export interface AccountUpdateRequest {
 export interface AiAnalysis {
     sentiment?: AiSentiment;
     /** Entities mentioned in the conversation */
-    readonly entities?: string[] | null;
+    readonly entities?: AiEntity[];
     /** Topics mentioned in the conversation */
-    readonly topics?: string[] | null;
+    readonly topics?: AiTopic[];
     /** Intention of client summarized */
     readonly clientIntention?: string | null;
     /** Intention of agent summarized */
@@ -77,6 +77,8 @@ export interface AiAnalysis {
     readonly clientSatisfaction?: number;
     /** Detected language */
     readonly language?: string;
+    /** Example: gpt-3.5-turbo */
+    model?: string | null;
 }
 
 /** AI transcription of a phone call */
@@ -166,6 +168,12 @@ For example a CloudService user will point to no account */
     idsTags?: string[] | null;
 }
 
+/** AI Entity. Example: Date with value January 1, 2023 */
+export interface AiEntity {
+    readonly entityType?: string;
+    readonly entityName?: string;
+}
+
 /** Sentiment of phrase or conversation */
 export interface AiSentiment {
     /** Positive sentiment. This is a value between 0 and 1 representing a percentage. */
@@ -174,6 +182,12 @@ export interface AiSentiment {
     readonly negative?: number;
     /** Neutral sentiment. This is a value between 0 and 1 representing a percentage. */
     readonly neutral?: number;
+}
+
+/** AI Topic. Example: Noise with weight .8 */
+export interface AiTopic {
+    readonly name?: string;
+    readonly weight?: number;
 }
 
 /** Converted audio to text */
@@ -580,6 +594,8 @@ Also note that an incoming call can be international too! */
     readonly isInternational?: boolean;
     callResult?: CallResult;
     analysis?: AiAnalysis;
+    analysis2?: AiAnalysis;
+    analysis3?: AiAnalysis;
     /** Lines that participated in this call */
     readonly participantLines?: string[];
     /** If not null it means the call is ended */
@@ -834,18 +850,42 @@ export interface CallFilterRequest {
     callResult_con?: string | null;
     /** CallResult regex */
     callResult_reg?: string | null;
-    /** Analysis.Entities equals */
-    analysis_entities_eq?: string | null;
-    /** Analysis.Entities contains */
-    analysis_entities_con?: string | null;
-    /** Analysis.Entities regex */
-    analysis_entities_reg?: string | null;
-    /** Analysis.Topics equals */
-    analysis_topics_eq?: string | null;
-    /** Analysis.Topics contains */
-    analysis_topics_con?: string | null;
-    /** Analysis.Topics regex */
-    analysis_topics_reg?: string | null;
+    /** Analysis.Sentiment.Positive equals */
+    analysis_sentiment_positive_eq?: number | null;
+    /** Analysis.Sentiment.Positive less than or equal to */
+    analysis_sentiment_positive_lte?: number | null;
+    /** Analysis.Sentiment.Positive greater than or equal to */
+    analysis_sentiment_positive_gte?: number | null;
+    /** Analysis.Sentiment.Negative equals */
+    analysis_sentiment_negative_eq?: number | null;
+    /** Analysis.Sentiment.Negative less than or equal to */
+    analysis_sentiment_negative_lte?: number | null;
+    /** Analysis.Sentiment.Negative greater than or equal to */
+    analysis_sentiment_negative_gte?: number | null;
+    /** Analysis.Sentiment.Neutral equals */
+    analysis_sentiment_neutral_eq?: number | null;
+    /** Analysis.Sentiment.Neutral less than or equal to */
+    analysis_sentiment_neutral_lte?: number | null;
+    /** Analysis.Sentiment.Neutral greater than or equal to */
+    analysis_sentiment_neutral_gte?: number | null;
+    /** Analysis.Entities.EntityType equals */
+    analysis_entities_entityType_eq?: string | null;
+    /** Analysis.Entities.EntityType contains */
+    analysis_entities_entityType_con?: string | null;
+    /** Analysis.Entities.EntityType regex */
+    analysis_entities_entityType_reg?: string | null;
+    /** Analysis.Entities.EntityName equals */
+    analysis_entities_entityName_eq?: string | null;
+    /** Analysis.Entities.EntityName contains */
+    analysis_entities_entityName_con?: string | null;
+    /** Analysis.Entities.EntityName regex */
+    analysis_entities_entityName_reg?: string | null;
+    /** Analysis.Topics.Name equals */
+    analysis_topics_name_eq?: string | null;
+    /** Analysis.Topics.Name contains */
+    analysis_topics_name_con?: string | null;
+    /** Analysis.Topics.Name regex */
+    analysis_topics_name_reg?: string | null;
     /** Analysis.ClientIntention equals */
     analysis_clientIntention_eq?: string | null;
     /** Analysis.ClientIntention contains */
@@ -882,6 +922,168 @@ export interface CallFilterRequest {
     analysis_language_con?: string | null;
     /** Analysis.Language regex */
     analysis_language_reg?: string | null;
+    /** Analysis.Model equals */
+    analysis_model_eq?: string | null;
+    /** Analysis.Model contains */
+    analysis_model_con?: string | null;
+    /** Analysis.Model regex */
+    analysis_model_reg?: string | null;
+    /** Analysis2.Sentiment.Positive equals */
+    analysis2_sentiment_positive_eq?: number | null;
+    /** Analysis2.Sentiment.Positive less than or equal to */
+    analysis2_sentiment_positive_lte?: number | null;
+    /** Analysis2.Sentiment.Positive greater than or equal to */
+    analysis2_sentiment_positive_gte?: number | null;
+    /** Analysis2.Sentiment.Negative equals */
+    analysis2_sentiment_negative_eq?: number | null;
+    /** Analysis2.Sentiment.Negative less than or equal to */
+    analysis2_sentiment_negative_lte?: number | null;
+    /** Analysis2.Sentiment.Negative greater than or equal to */
+    analysis2_sentiment_negative_gte?: number | null;
+    /** Analysis2.Sentiment.Neutral equals */
+    analysis2_sentiment_neutral_eq?: number | null;
+    /** Analysis2.Sentiment.Neutral less than or equal to */
+    analysis2_sentiment_neutral_lte?: number | null;
+    /** Analysis2.Sentiment.Neutral greater than or equal to */
+    analysis2_sentiment_neutral_gte?: number | null;
+    /** Analysis2.Entities.EntityType equals */
+    analysis2_entities_entityType_eq?: string | null;
+    /** Analysis2.Entities.EntityType contains */
+    analysis2_entities_entityType_con?: string | null;
+    /** Analysis2.Entities.EntityType regex */
+    analysis2_entities_entityType_reg?: string | null;
+    /** Analysis2.Entities.EntityName equals */
+    analysis2_entities_entityName_eq?: string | null;
+    /** Analysis2.Entities.EntityName contains */
+    analysis2_entities_entityName_con?: string | null;
+    /** Analysis2.Entities.EntityName regex */
+    analysis2_entities_entityName_reg?: string | null;
+    /** Analysis2.Topics.Name equals */
+    analysis2_topics_name_eq?: string | null;
+    /** Analysis2.Topics.Name contains */
+    analysis2_topics_name_con?: string | null;
+    /** Analysis2.Topics.Name regex */
+    analysis2_topics_name_reg?: string | null;
+    /** Analysis2.ClientIntention equals */
+    analysis2_clientIntention_eq?: string | null;
+    /** Analysis2.ClientIntention contains */
+    analysis2_clientIntention_con?: string | null;
+    /** Analysis2.ClientIntention regex */
+    analysis2_clientIntention_reg?: string | null;
+    /** Analysis2.AgentIntention equals */
+    analysis2_agentIntention_eq?: string | null;
+    /** Analysis2.AgentIntention contains */
+    analysis2_agentIntention_con?: string | null;
+    /** Analysis2.AgentIntention regex */
+    analysis2_agentIntention_reg?: string | null;
+    /** Analysis2.Summary equals */
+    analysis2_summary_eq?: string | null;
+    /** Analysis2.Summary contains */
+    analysis2_summary_con?: string | null;
+    /** Analysis2.Summary regex */
+    analysis2_summary_reg?: string | null;
+    /** Analysis2.Problem equals */
+    analysis2_problem_eq?: string | null;
+    /** Analysis2.Problem contains */
+    analysis2_problem_con?: string | null;
+    /** Analysis2.Problem regex */
+    analysis2_problem_reg?: string | null;
+    /** Analysis2.ClientSatisfaction equals */
+    analysis2_clientSatisfaction_eq?: number | null;
+    /** Analysis2.ClientSatisfaction less than or equal to */
+    analysis2_clientSatisfaction_lte?: number | null;
+    /** Analysis2.ClientSatisfaction greater than or equal to */
+    analysis2_clientSatisfaction_gte?: number | null;
+    /** Analysis2.Language equals */
+    analysis2_language_eq?: string | null;
+    /** Analysis2.Language contains */
+    analysis2_language_con?: string | null;
+    /** Analysis2.Language regex */
+    analysis2_language_reg?: string | null;
+    /** Analysis2.Model equals */
+    analysis2_model_eq?: string | null;
+    /** Analysis2.Model contains */
+    analysis2_model_con?: string | null;
+    /** Analysis2.Model regex */
+    analysis2_model_reg?: string | null;
+    /** Analysis3.Sentiment.Positive equals */
+    analysis3_sentiment_positive_eq?: number | null;
+    /** Analysis3.Sentiment.Positive less than or equal to */
+    analysis3_sentiment_positive_lte?: number | null;
+    /** Analysis3.Sentiment.Positive greater than or equal to */
+    analysis3_sentiment_positive_gte?: number | null;
+    /** Analysis3.Sentiment.Negative equals */
+    analysis3_sentiment_negative_eq?: number | null;
+    /** Analysis3.Sentiment.Negative less than or equal to */
+    analysis3_sentiment_negative_lte?: number | null;
+    /** Analysis3.Sentiment.Negative greater than or equal to */
+    analysis3_sentiment_negative_gte?: number | null;
+    /** Analysis3.Sentiment.Neutral equals */
+    analysis3_sentiment_neutral_eq?: number | null;
+    /** Analysis3.Sentiment.Neutral less than or equal to */
+    analysis3_sentiment_neutral_lte?: number | null;
+    /** Analysis3.Sentiment.Neutral greater than or equal to */
+    analysis3_sentiment_neutral_gte?: number | null;
+    /** Analysis3.Entities.EntityType equals */
+    analysis3_entities_entityType_eq?: string | null;
+    /** Analysis3.Entities.EntityType contains */
+    analysis3_entities_entityType_con?: string | null;
+    /** Analysis3.Entities.EntityType regex */
+    analysis3_entities_entityType_reg?: string | null;
+    /** Analysis3.Entities.EntityName equals */
+    analysis3_entities_entityName_eq?: string | null;
+    /** Analysis3.Entities.EntityName contains */
+    analysis3_entities_entityName_con?: string | null;
+    /** Analysis3.Entities.EntityName regex */
+    analysis3_entities_entityName_reg?: string | null;
+    /** Analysis3.Topics.Name equals */
+    analysis3_topics_name_eq?: string | null;
+    /** Analysis3.Topics.Name contains */
+    analysis3_topics_name_con?: string | null;
+    /** Analysis3.Topics.Name regex */
+    analysis3_topics_name_reg?: string | null;
+    /** Analysis3.ClientIntention equals */
+    analysis3_clientIntention_eq?: string | null;
+    /** Analysis3.ClientIntention contains */
+    analysis3_clientIntention_con?: string | null;
+    /** Analysis3.ClientIntention regex */
+    analysis3_clientIntention_reg?: string | null;
+    /** Analysis3.AgentIntention equals */
+    analysis3_agentIntention_eq?: string | null;
+    /** Analysis3.AgentIntention contains */
+    analysis3_agentIntention_con?: string | null;
+    /** Analysis3.AgentIntention regex */
+    analysis3_agentIntention_reg?: string | null;
+    /** Analysis3.Summary equals */
+    analysis3_summary_eq?: string | null;
+    /** Analysis3.Summary contains */
+    analysis3_summary_con?: string | null;
+    /** Analysis3.Summary regex */
+    analysis3_summary_reg?: string | null;
+    /** Analysis3.Problem equals */
+    analysis3_problem_eq?: string | null;
+    /** Analysis3.Problem contains */
+    analysis3_problem_con?: string | null;
+    /** Analysis3.Problem regex */
+    analysis3_problem_reg?: string | null;
+    /** Analysis3.ClientSatisfaction equals */
+    analysis3_clientSatisfaction_eq?: number | null;
+    /** Analysis3.ClientSatisfaction less than or equal to */
+    analysis3_clientSatisfaction_lte?: number | null;
+    /** Analysis3.ClientSatisfaction greater than or equal to */
+    analysis3_clientSatisfaction_gte?: number | null;
+    /** Analysis3.Language equals */
+    analysis3_language_eq?: string | null;
+    /** Analysis3.Language contains */
+    analysis3_language_con?: string | null;
+    /** Analysis3.Language regex */
+    analysis3_language_reg?: string | null;
+    /** Analysis3.Model equals */
+    analysis3_model_eq?: string | null;
+    /** Analysis3.Model contains */
+    analysis3_model_con?: string | null;
+    /** Analysis3.Model regex */
+    analysis3_model_reg?: string | null;
     /** ParticipantLines equals */
     participantLines_eq?: string | null;
     /** ParticipantLines contains */
@@ -1046,6 +1248,8 @@ Also note that an incoming call can be international too! */
     readonly isInternational?: boolean;
     callResult?: CallResult;
     analysis?: AiAnalysis;
+    analysis2?: AiAnalysis;
+    analysis3?: AiAnalysis;
     /** Lines that participated in this call */
     readonly participantLines?: string[];
     /** If not null it means the call is ended */
@@ -1121,6 +1325,8 @@ Also note that an incoming call can be international too! */
     readonly isInternational?: boolean;
     callResult?: CallResult;
     analysis?: AiAnalysis;
+    analysis2?: AiAnalysis;
+    analysis3?: AiAnalysis;
     /** Lines that participated in this call */
     readonly participantLines?: string[];
     /** If not null it means the call is ended */
@@ -1194,6 +1400,8 @@ Also note that an incoming call can be international too! */
     readonly isInternational?: boolean;
     callResult?: CallResult;
     analysis?: AiAnalysis;
+    analysis2?: AiAnalysis;
+    analysis3?: AiAnalysis;
     /** Lines that participated in this call */
     readonly participantLines?: string[];
     /** If not null it means the call is ended */
@@ -1262,6 +1470,8 @@ Also note that an incoming call can be international too! */
     readonly isInternational?: boolean;
     callResult?: CallResult;
     analysis?: AiAnalysis;
+    analysis2?: AiAnalysis;
+    analysis3?: AiAnalysis;
     /** Lines that participated in this call */
     readonly participantLines?: string[];
     /** If not null it means the call is ended */
@@ -1378,6 +1588,106 @@ export interface ChildCall {
     /** Call duration in seconds */
     readonly durationInSeconds?: number | null;
     childCallType?: ChildCallType;
+    /** Status of call */
+    dialStatus?: string;
+    dateCreated?: Date;
+    /** Number of seconds it took to answer */
+    secondsItTookToAnswer?: number | null;
+}
+
+/** Call is attended transferred to extension */
+export interface ChildCallAttendantTransferToExtension {
+    /** Extension to whom it was transferred */
+    idExtension?: string | null;
+    childCallType?: ChildCallType;
+    /** Id of call that attendant transfered this call */
+    idCallAttendantTransfer?: string;
+    /** Call duration in seconds */
+    readonly durationInSeconds?: number | null;
+    /** Status of call */
+    dialStatus?: string;
+    dateCreated?: Date;
+    /** Number of seconds it took to answer */
+    secondsItTookToAnswer?: number | null;
+}
+
+/** Call is attended transferred to land-line or cell-phone */
+export interface ChildCallAttendantTransferToPSTN {
+    /** Phone number where call was transferred to */
+    phoneNumber?: string;
+    childCallType?: ChildCallType;
+    /** Id of call that attendant transfered this call */
+    idCallAttendantTransfer?: string;
+    /** Id of contact to whom call is being transfered */
+    readonly idContact?: string | null;
+    /** Contact full name */
+    readonly contactFullName?: string | null;
+    /** Call duration in seconds */
+    readonly durationInSeconds?: number | null;
+    /** Status of call */
+    dialStatus?: string;
+    dateCreated?: Date;
+    /** Number of seconds it took to answer */
+    secondsItTookToAnswer?: number | null;
+}
+
+/** Call is blind transferred to an extension */
+export interface ChildCallBlindTransferToExtension {
+    /** Extension where it was blind transferred to */
+    idExtension?: string | null;
+    childCallType?: ChildCallType;
+    /** Id of line that answered */
+    idLineThatAnswered?: string | null;
+    /** Ids of lines that rang */
+    idsLinesThatRing?: string[];
+    /** Ids of lines that where supposed to ring and did not ring because phone was offline or disconnected. */
+    idsLinesThatDidNotRing?: string[];
+    /** Id of call that originated blind transfer */
+    idCall?: string;
+    /** Call duration in seconds */
+    readonly durationInSeconds?: number | null;
+    /** Status of call */
+    dialStatus?: string;
+    dateCreated?: Date;
+    /** Number of seconds it took to answer */
+    secondsItTookToAnswer?: number | null;
+}
+
+/** Call is blind transferred to land-line or cell-phone */
+export interface ChildCallBlindTransferToPSTN {
+    /** Phone number where call was transferred to */
+    phoneNumber?: string;
+    /** Trunk used to make call */
+    idTrunkTermination?: string | null;
+    childCallType?: ChildCallType;
+    /** Id of contact to whom call is being transfered */
+    readonly idContact?: string | null;
+    /** Contact full name */
+    readonly contactFullName?: string | null;
+    /** Id of call that originated blind transfer */
+    idCall?: string;
+    /** Call duration in seconds */
+    readonly durationInSeconds?: number | null;
+    /** Status of call */
+    dialStatus?: string;
+    dateCreated?: Date;
+    /** Number of seconds it took to answer */
+    secondsItTookToAnswer?: number | null;
+}
+
+/** If a call is forwarded to an extension. For example if call is made to an extension dial that is configured to be forwarded to another extension if not answered this child call will be created */
+export interface ChildCallForwardToExtension {
+    /** Extension being called */
+    idExtension?: string | null;
+    /** Line that answered */
+    idLineThatAnswered?: string | null;
+    /** Lines that rang */
+    idsLinesThatRing?: string[];
+    /** Lines that did not ring */
+    idsLinesThatDidNotRing?: string[];
+    childCallType?: ChildCallType;
+    /** Call duration in seconds */
+    readonly durationInSeconds?: number | null;
     /** Status of call */
     dialStatus?: string;
     dateCreated?: Date;
