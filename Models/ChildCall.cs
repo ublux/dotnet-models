@@ -73,4 +73,48 @@ public abstract partial class ChildCall : ICall
     ///     Number of seconds it took to answer
     /// </summary>
     public double? SecondsItTookToAnswer { get; set; }
+
+
+
+
+
+    /// <summary>
+    ///     Caller id
+    /// </summary>
+    [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
+    [IsUbluxRequired]
+    public required string From { get; set; } = string.Empty;
+
+    /// <summary>
+    ///     Country that initiated phone call
+    /// </summary>
+    [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
+    [IsUbluxRequired]
+    public required CountryIsoCode FromCountry { get; set; }
+
+    /// <summary>
+    ///     Phone number called
+    /// </summary>
+    [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
+    [IsUbluxRequired]
+    public required string To { get; set; } = string.Empty;
+
+    /// <summary>
+    ///     Country that initiated phone call
+    /// </summary>
+    [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
+    [IsUbluxRequired]
+    public required CountryIsoCode ToCountry { get; set; }
+
+    /// <summary>
+    ///     Is this call international
+    /// </summary>
+    [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
+    [IsUbluxRequired]
+    public required bool IsInternational { get; set; }
 }

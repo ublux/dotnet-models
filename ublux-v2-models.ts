@@ -589,9 +589,10 @@ CHANUNAVAIL: Channel unavailable. On SIP, peer may not be registered. */
     readonly disabledVideo?: boolean;
     /** List because user can send digits multiple times */
     readonly digitsSent?: string[];
-    /** Is the call international. This is true if any of the child calls is international
-Also note that an incoming call can be international too! */
+    /** Is call international. This does not include child calls. */
     readonly isInternational?: boolean;
+    /** True if it contains any child call or master call international */
+    readonly containsInternationalCall?: boolean;
     callResult?: CallResult;
     analysis?: AiAnalysis;
     analysis2?: AiAnalysis;
@@ -684,6 +685,32 @@ export interface CallFilterRequest {
     childCalls_dateCreated_lte?: Date | null;
     /** ChildCalls.DateCreated greater than or equal to */
     childCalls_dateCreated_gte?: Date | null;
+    /** ChildCalls.From equals */
+    childCalls_from_eq?: string | null;
+    /** ChildCalls.From contains */
+    childCalls_from_con?: string | null;
+    /** ChildCalls.From regex */
+    childCalls_from_reg?: string | null;
+    /** ChildCalls.FromCountry equals */
+    childCalls_fromCountry_eq?: string | null;
+    /** ChildCalls.FromCountry contains */
+    childCalls_fromCountry_con?: string | null;
+    /** ChildCalls.FromCountry regex */
+    childCalls_fromCountry_reg?: string | null;
+    /** ChildCalls.To equals */
+    childCalls_to_eq?: string | null;
+    /** ChildCalls.To contains */
+    childCalls_to_con?: string | null;
+    /** ChildCalls.To regex */
+    childCalls_to_reg?: string | null;
+    /** ChildCalls.ToCountry equals */
+    childCalls_toCountry_eq?: string | null;
+    /** ChildCalls.ToCountry contains */
+    childCalls_toCountry_con?: string | null;
+    /** ChildCalls.ToCountry regex */
+    childCalls_toCountry_reg?: string | null;
+    /** ChildCalls.IsInternational equals */
+    childCalls_isInternational_eq?: boolean | null;
     /** DialStatus equals */
     dialStatus_eq?: string | null;
     /** DialStatus contains */
@@ -844,6 +871,8 @@ export interface CallFilterRequest {
     digitsSent_reg?: string | null;
     /** IsInternational equals */
     isInternational_eq?: boolean | null;
+    /** ContainsInternationalCall equals */
+    containsInternationalCall_eq?: boolean | null;
     /** CallResult equals */
     callResult_eq?: string | null;
     /** CallResult contains */
@@ -1243,9 +1272,10 @@ CHANUNAVAIL: Channel unavailable. On SIP, peer may not be registered. */
     readonly disabledVideo?: boolean;
     /** List because user can send digits multiple times */
     readonly digitsSent?: string[];
-    /** Is the call international. This is true if any of the child calls is international
-Also note that an incoming call can be international too! */
+    /** Is call international. This does not include child calls. */
     readonly isInternational?: boolean;
+    /** True if it contains any child call or master call international */
+    readonly containsInternationalCall?: boolean;
     callResult?: CallResult;
     analysis?: AiAnalysis;
     analysis2?: AiAnalysis;
@@ -1320,9 +1350,10 @@ CHANUNAVAIL: Channel unavailable. On SIP, peer may not be registered. */
     readonly disabledVideo?: boolean;
     /** List because user can send digits multiple times */
     readonly digitsSent?: string[];
-    /** Is the call international. This is true if any of the child calls is international
-Also note that an incoming call can be international too! */
+    /** Is call international. This does not include child calls. */
     readonly isInternational?: boolean;
+    /** True if it contains any child call or master call international */
+    readonly containsInternationalCall?: boolean;
     callResult?: CallResult;
     analysis?: AiAnalysis;
     analysis2?: AiAnalysis;
@@ -1395,9 +1426,10 @@ CHANUNAVAIL: Channel unavailable. On SIP, peer may not be registered. */
     readonly disabledVideo?: boolean;
     /** List because user can send digits multiple times */
     readonly digitsSent?: string[];
-    /** Is the call international. This is true if any of the child calls is international
-Also note that an incoming call can be international too! */
+    /** Is call international. This does not include child calls. */
     readonly isInternational?: boolean;
+    /** True if it contains any child call or master call international */
+    readonly containsInternationalCall?: boolean;
     callResult?: CallResult;
     analysis?: AiAnalysis;
     analysis2?: AiAnalysis;
@@ -1421,7 +1453,6 @@ export interface CallOutgoingToPSTN {
     /** Id of document */
     readonly id?: string;
     callType?: CallType;
-    country?: CountryIsoCode;
     /** Phone number dialed in international format. Property To should contain number that was actually dialed */
     readonly toInternationalFormat?: string;
     /** Line that started phone call */
@@ -1465,9 +1496,10 @@ CHANUNAVAIL: Channel unavailable. On SIP, peer may not be registered. */
     readonly disabledVideo?: boolean;
     /** List because user can send digits multiple times */
     readonly digitsSent?: string[];
-    /** Is the call international. This is true if any of the child calls is international
-Also note that an incoming call can be international too! */
+    /** Is call international. This does not include child calls. */
     readonly isInternational?: boolean;
+    /** True if it contains any child call or master call international */
+    readonly containsInternationalCall?: boolean;
     callResult?: CallResult;
     analysis?: AiAnalysis;
     analysis2?: AiAnalysis;
@@ -1593,6 +1625,14 @@ export interface ChildCall {
     dateCreated?: Date;
     /** Number of seconds it took to answer */
     secondsItTookToAnswer?: number | null;
+    /** Caller id */
+    readonly from?: string;
+    fromCountry?: CountryIsoCode;
+    /** Phone number called */
+    readonly to?: string;
+    toCountry?: CountryIsoCode;
+    /** Is this call international */
+    readonly isInternational?: boolean;
 }
 
 /** Call is attended transferred to extension */
@@ -1609,6 +1649,14 @@ export interface ChildCallAttendantTransferToExtension {
     dateCreated?: Date;
     /** Number of seconds it took to answer */
     secondsItTookToAnswer?: number | null;
+    /** Caller id */
+    readonly from?: string;
+    fromCountry?: CountryIsoCode;
+    /** Phone number called */
+    readonly to?: string;
+    toCountry?: CountryIsoCode;
+    /** Is this call international */
+    readonly isInternational?: boolean;
 }
 
 /** Call is attended transferred to land-line or cell-phone */
@@ -1629,6 +1677,14 @@ export interface ChildCallAttendantTransferToPSTN {
     dateCreated?: Date;
     /** Number of seconds it took to answer */
     secondsItTookToAnswer?: number | null;
+    /** Caller id */
+    readonly from?: string;
+    fromCountry?: CountryIsoCode;
+    /** Phone number called */
+    readonly to?: string;
+    toCountry?: CountryIsoCode;
+    /** Is this call international */
+    readonly isInternational?: boolean;
 }
 
 /** Call is blind transferred to an extension */
@@ -1651,6 +1707,14 @@ export interface ChildCallBlindTransferToExtension {
     dateCreated?: Date;
     /** Number of seconds it took to answer */
     secondsItTookToAnswer?: number | null;
+    /** Caller id */
+    readonly from?: string;
+    fromCountry?: CountryIsoCode;
+    /** Phone number called */
+    readonly to?: string;
+    toCountry?: CountryIsoCode;
+    /** Is this call international */
+    readonly isInternational?: boolean;
 }
 
 /** Call is blind transferred to land-line or cell-phone */
@@ -1673,6 +1737,14 @@ export interface ChildCallBlindTransferToPSTN {
     dateCreated?: Date;
     /** Number of seconds it took to answer */
     secondsItTookToAnswer?: number | null;
+    /** Caller id */
+    readonly from?: string;
+    fromCountry?: CountryIsoCode;
+    /** Phone number called */
+    readonly to?: string;
+    toCountry?: CountryIsoCode;
+    /** Is this call international */
+    readonly isInternational?: boolean;
 }
 
 /** If a call is forwarded to an extension. For example if call is made to an extension dial that is configured to be forwarded to another extension if not answered this child call will be created */
@@ -1693,6 +1765,14 @@ export interface ChildCallForwardToExtension {
     dateCreated?: Date;
     /** Number of seconds it took to answer */
     secondsItTookToAnswer?: number | null;
+    /** Caller id */
+    readonly from?: string;
+    fromCountry?: CountryIsoCode;
+    /** Phone number called */
+    readonly to?: string;
+    toCountry?: CountryIsoCode;
+    /** Is this call international */
+    readonly isInternational?: boolean;
 }
 
 /** Type of child call */

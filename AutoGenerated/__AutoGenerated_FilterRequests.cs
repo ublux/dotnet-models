@@ -1042,6 +1042,50 @@ public class CallIncomingToCallFlowLogicFilterRequest
     public DateTime? ChildCalls_DateCreated_GTE { get; set; }
 
 
+    /// <summary> ChildCalls.From equals </summary>
+    [JsonProperty("childCalls_from_eq")]
+    public string? ChildCalls_From_EQ { get; set; }
+    /// <summary> ChildCalls.From contains </summary>
+    [JsonProperty("childCalls_from_con")]
+    public string? ChildCalls_From_CON { get; set; }
+    /// <summary> ChildCalls.From regex </summary>
+    [JsonProperty("childCalls_from_reg")]
+    public string? ChildCalls_From_REG { get; set; }
+
+    /// <summary> ChildCalls.FromCountry equals </summary>
+    [JsonProperty("childCalls_fromCountry_eq")]
+    public string? ChildCalls_FromCountry_EQ { get; set; }
+    /// <summary> ChildCalls.FromCountry contains </summary>
+    [JsonProperty("childCalls_fromCountry_con")]
+    public string? ChildCalls_FromCountry_CON { get; set; }
+    /// <summary> ChildCalls.FromCountry regex </summary>
+    [JsonProperty("childCalls_fromCountry_reg")]
+    public string? ChildCalls_FromCountry_REG { get; set; }
+
+    /// <summary> ChildCalls.To equals </summary>
+    [JsonProperty("childCalls_to_eq")]
+    public string? ChildCalls_To_EQ { get; set; }
+    /// <summary> ChildCalls.To contains </summary>
+    [JsonProperty("childCalls_to_con")]
+    public string? ChildCalls_To_CON { get; set; }
+    /// <summary> ChildCalls.To regex </summary>
+    [JsonProperty("childCalls_to_reg")]
+    public string? ChildCalls_To_REG { get; set; }
+
+    /// <summary> ChildCalls.ToCountry equals </summary>
+    [JsonProperty("childCalls_toCountry_eq")]
+    public string? ChildCalls_ToCountry_EQ { get; set; }
+    /// <summary> ChildCalls.ToCountry contains </summary>
+    [JsonProperty("childCalls_toCountry_con")]
+    public string? ChildCalls_ToCountry_CON { get; set; }
+    /// <summary> ChildCalls.ToCountry regex </summary>
+    [JsonProperty("childCalls_toCountry_reg")]
+    public string? ChildCalls_ToCountry_REG { get; set; }
+
+    /// <summary> ChildCalls.IsInternational equals </summary>
+    [JsonProperty("childCalls_isInternational_eq")]
+    public bool? ChildCalls_IsInternational_EQ { get; set; }
+
 
     /// <summary> DialStatus equals </summary>
     [JsonProperty("dialStatus_eq")]
@@ -1307,6 +1351,10 @@ public class CallIncomingToCallFlowLogicFilterRequest
     /// <summary> IsInternational equals </summary>
     [JsonProperty("isInternational_eq")]
     public bool? IsInternational_EQ { get; set; }
+
+    /// <summary> ContainsInternationalCall equals </summary>
+    [JsonProperty("containsInternationalCall_eq")]
+    public bool? ContainsInternationalCall_EQ { get; set; }
 
     /// <summary> CallResult equals </summary>
     [JsonProperty("callResult_eq")]
@@ -1977,6 +2025,50 @@ public class CallIncomingToExtensionFilterRequest
     public DateTime? ChildCalls_DateCreated_GTE { get; set; }
 
 
+    /// <summary> ChildCalls.From equals </summary>
+    [JsonProperty("childCalls_from_eq")]
+    public string? ChildCalls_From_EQ { get; set; }
+    /// <summary> ChildCalls.From contains </summary>
+    [JsonProperty("childCalls_from_con")]
+    public string? ChildCalls_From_CON { get; set; }
+    /// <summary> ChildCalls.From regex </summary>
+    [JsonProperty("childCalls_from_reg")]
+    public string? ChildCalls_From_REG { get; set; }
+
+    /// <summary> ChildCalls.FromCountry equals </summary>
+    [JsonProperty("childCalls_fromCountry_eq")]
+    public string? ChildCalls_FromCountry_EQ { get; set; }
+    /// <summary> ChildCalls.FromCountry contains </summary>
+    [JsonProperty("childCalls_fromCountry_con")]
+    public string? ChildCalls_FromCountry_CON { get; set; }
+    /// <summary> ChildCalls.FromCountry regex </summary>
+    [JsonProperty("childCalls_fromCountry_reg")]
+    public string? ChildCalls_FromCountry_REG { get; set; }
+
+    /// <summary> ChildCalls.To equals </summary>
+    [JsonProperty("childCalls_to_eq")]
+    public string? ChildCalls_To_EQ { get; set; }
+    /// <summary> ChildCalls.To contains </summary>
+    [JsonProperty("childCalls_to_con")]
+    public string? ChildCalls_To_CON { get; set; }
+    /// <summary> ChildCalls.To regex </summary>
+    [JsonProperty("childCalls_to_reg")]
+    public string? ChildCalls_To_REG { get; set; }
+
+    /// <summary> ChildCalls.ToCountry equals </summary>
+    [JsonProperty("childCalls_toCountry_eq")]
+    public string? ChildCalls_ToCountry_EQ { get; set; }
+    /// <summary> ChildCalls.ToCountry contains </summary>
+    [JsonProperty("childCalls_toCountry_con")]
+    public string? ChildCalls_ToCountry_CON { get; set; }
+    /// <summary> ChildCalls.ToCountry regex </summary>
+    [JsonProperty("childCalls_toCountry_reg")]
+    public string? ChildCalls_ToCountry_REG { get; set; }
+
+    /// <summary> ChildCalls.IsInternational equals </summary>
+    [JsonProperty("childCalls_isInternational_eq")]
+    public bool? ChildCalls_IsInternational_EQ { get; set; }
+
 
     /// <summary> DialStatus equals </summary>
     [JsonProperty("dialStatus_eq")]
@@ -2242,6 +2334,10 @@ public class CallIncomingToExtensionFilterRequest
     /// <summary> IsInternational equals </summary>
     [JsonProperty("isInternational_eq")]
     public bool? IsInternational_EQ { get; set; }
+
+    /// <summary> ContainsInternationalCall equals </summary>
+    [JsonProperty("containsInternationalCall_eq")]
+    public bool? ContainsInternationalCall_EQ { get; set; }
 
     /// <summary> CallResult equals </summary>
     [JsonProperty("callResult_eq")]
@@ -2902,6 +2998,50 @@ public class CallOutgoingToExtensionFilterRequest
     public DateTime? ChildCalls_DateCreated_GTE { get; set; }
 
 
+    /// <summary> ChildCalls.From equals </summary>
+    [JsonProperty("childCalls_from_eq")]
+    public string? ChildCalls_From_EQ { get; set; }
+    /// <summary> ChildCalls.From contains </summary>
+    [JsonProperty("childCalls_from_con")]
+    public string? ChildCalls_From_CON { get; set; }
+    /// <summary> ChildCalls.From regex </summary>
+    [JsonProperty("childCalls_from_reg")]
+    public string? ChildCalls_From_REG { get; set; }
+
+    /// <summary> ChildCalls.FromCountry equals </summary>
+    [JsonProperty("childCalls_fromCountry_eq")]
+    public string? ChildCalls_FromCountry_EQ { get; set; }
+    /// <summary> ChildCalls.FromCountry contains </summary>
+    [JsonProperty("childCalls_fromCountry_con")]
+    public string? ChildCalls_FromCountry_CON { get; set; }
+    /// <summary> ChildCalls.FromCountry regex </summary>
+    [JsonProperty("childCalls_fromCountry_reg")]
+    public string? ChildCalls_FromCountry_REG { get; set; }
+
+    /// <summary> ChildCalls.To equals </summary>
+    [JsonProperty("childCalls_to_eq")]
+    public string? ChildCalls_To_EQ { get; set; }
+    /// <summary> ChildCalls.To contains </summary>
+    [JsonProperty("childCalls_to_con")]
+    public string? ChildCalls_To_CON { get; set; }
+    /// <summary> ChildCalls.To regex </summary>
+    [JsonProperty("childCalls_to_reg")]
+    public string? ChildCalls_To_REG { get; set; }
+
+    /// <summary> ChildCalls.ToCountry equals </summary>
+    [JsonProperty("childCalls_toCountry_eq")]
+    public string? ChildCalls_ToCountry_EQ { get; set; }
+    /// <summary> ChildCalls.ToCountry contains </summary>
+    [JsonProperty("childCalls_toCountry_con")]
+    public string? ChildCalls_ToCountry_CON { get; set; }
+    /// <summary> ChildCalls.ToCountry regex </summary>
+    [JsonProperty("childCalls_toCountry_reg")]
+    public string? ChildCalls_ToCountry_REG { get; set; }
+
+    /// <summary> ChildCalls.IsInternational equals </summary>
+    [JsonProperty("childCalls_isInternational_eq")]
+    public bool? ChildCalls_IsInternational_EQ { get; set; }
+
 
     /// <summary> DialStatus equals </summary>
     [JsonProperty("dialStatus_eq")]
@@ -3167,6 +3307,10 @@ public class CallOutgoingToExtensionFilterRequest
     /// <summary> IsInternational equals </summary>
     [JsonProperty("isInternational_eq")]
     public bool? IsInternational_EQ { get; set; }
+
+    /// <summary> ContainsInternationalCall equals </summary>
+    [JsonProperty("containsInternationalCall_eq")]
+    public bool? ContainsInternationalCall_EQ { get; set; }
 
     /// <summary> CallResult equals </summary>
     [JsonProperty("callResult_eq")]
@@ -3654,16 +3798,6 @@ public class CallOutgoingToPSTNFilterRequest
     [JsonProperty("callType_reg")]
     public string? CallType_REG { get; set; }
 
-    /// <summary> Country equals </summary>
-    [JsonProperty("country_eq")]
-    public string? Country_EQ { get; set; }
-    /// <summary> Country contains </summary>
-    [JsonProperty("country_con")]
-    public string? Country_CON { get; set; }
-    /// <summary> Country regex </summary>
-    [JsonProperty("country_reg")]
-    public string? Country_REG { get; set; }
-
     /// <summary> ToInternationalFormat equals </summary>
     [JsonProperty("toInternationalFormat_eq")]
     public string? ToInternationalFormat_EQ { get; set; }
@@ -3806,6 +3940,50 @@ public class CallOutgoingToPSTNFilterRequest
     [JsonProperty("childCalls_dateCreated_gte")]
     public DateTime? ChildCalls_DateCreated_GTE { get; set; }
 
+
+    /// <summary> ChildCalls.From equals </summary>
+    [JsonProperty("childCalls_from_eq")]
+    public string? ChildCalls_From_EQ { get; set; }
+    /// <summary> ChildCalls.From contains </summary>
+    [JsonProperty("childCalls_from_con")]
+    public string? ChildCalls_From_CON { get; set; }
+    /// <summary> ChildCalls.From regex </summary>
+    [JsonProperty("childCalls_from_reg")]
+    public string? ChildCalls_From_REG { get; set; }
+
+    /// <summary> ChildCalls.FromCountry equals </summary>
+    [JsonProperty("childCalls_fromCountry_eq")]
+    public string? ChildCalls_FromCountry_EQ { get; set; }
+    /// <summary> ChildCalls.FromCountry contains </summary>
+    [JsonProperty("childCalls_fromCountry_con")]
+    public string? ChildCalls_FromCountry_CON { get; set; }
+    /// <summary> ChildCalls.FromCountry regex </summary>
+    [JsonProperty("childCalls_fromCountry_reg")]
+    public string? ChildCalls_FromCountry_REG { get; set; }
+
+    /// <summary> ChildCalls.To equals </summary>
+    [JsonProperty("childCalls_to_eq")]
+    public string? ChildCalls_To_EQ { get; set; }
+    /// <summary> ChildCalls.To contains </summary>
+    [JsonProperty("childCalls_to_con")]
+    public string? ChildCalls_To_CON { get; set; }
+    /// <summary> ChildCalls.To regex </summary>
+    [JsonProperty("childCalls_to_reg")]
+    public string? ChildCalls_To_REG { get; set; }
+
+    /// <summary> ChildCalls.ToCountry equals </summary>
+    [JsonProperty("childCalls_toCountry_eq")]
+    public string? ChildCalls_ToCountry_EQ { get; set; }
+    /// <summary> ChildCalls.ToCountry contains </summary>
+    [JsonProperty("childCalls_toCountry_con")]
+    public string? ChildCalls_ToCountry_CON { get; set; }
+    /// <summary> ChildCalls.ToCountry regex </summary>
+    [JsonProperty("childCalls_toCountry_reg")]
+    public string? ChildCalls_ToCountry_REG { get; set; }
+
+    /// <summary> ChildCalls.IsInternational equals </summary>
+    [JsonProperty("childCalls_isInternational_eq")]
+    public bool? ChildCalls_IsInternational_EQ { get; set; }
 
 
     /// <summary> DialStatus equals </summary>
@@ -4072,6 +4250,10 @@ public class CallOutgoingToPSTNFilterRequest
     /// <summary> IsInternational equals </summary>
     [JsonProperty("isInternational_eq")]
     public bool? IsInternational_EQ { get; set; }
+
+    /// <summary> ContainsInternationalCall equals </summary>
+    [JsonProperty("containsInternationalCall_eq")]
+    public bool? ContainsInternationalCall_EQ { get; set; }
 
     /// <summary> CallResult equals </summary>
     [JsonProperty("callResult_eq")]
@@ -9810,6 +9992,50 @@ public class CallFilterRequest
     public DateTime? ChildCalls_DateCreated_GTE { get; set; }
 
 
+    /// <summary> ChildCalls.From equals </summary>
+    [JsonProperty("childCalls_from_eq")]
+    public string? ChildCalls_From_EQ { get; set; }
+    /// <summary> ChildCalls.From contains </summary>
+    [JsonProperty("childCalls_from_con")]
+    public string? ChildCalls_From_CON { get; set; }
+    /// <summary> ChildCalls.From regex </summary>
+    [JsonProperty("childCalls_from_reg")]
+    public string? ChildCalls_From_REG { get; set; }
+
+    /// <summary> ChildCalls.FromCountry equals </summary>
+    [JsonProperty("childCalls_fromCountry_eq")]
+    public string? ChildCalls_FromCountry_EQ { get; set; }
+    /// <summary> ChildCalls.FromCountry contains </summary>
+    [JsonProperty("childCalls_fromCountry_con")]
+    public string? ChildCalls_FromCountry_CON { get; set; }
+    /// <summary> ChildCalls.FromCountry regex </summary>
+    [JsonProperty("childCalls_fromCountry_reg")]
+    public string? ChildCalls_FromCountry_REG { get; set; }
+
+    /// <summary> ChildCalls.To equals </summary>
+    [JsonProperty("childCalls_to_eq")]
+    public string? ChildCalls_To_EQ { get; set; }
+    /// <summary> ChildCalls.To contains </summary>
+    [JsonProperty("childCalls_to_con")]
+    public string? ChildCalls_To_CON { get; set; }
+    /// <summary> ChildCalls.To regex </summary>
+    [JsonProperty("childCalls_to_reg")]
+    public string? ChildCalls_To_REG { get; set; }
+
+    /// <summary> ChildCalls.ToCountry equals </summary>
+    [JsonProperty("childCalls_toCountry_eq")]
+    public string? ChildCalls_ToCountry_EQ { get; set; }
+    /// <summary> ChildCalls.ToCountry contains </summary>
+    [JsonProperty("childCalls_toCountry_con")]
+    public string? ChildCalls_ToCountry_CON { get; set; }
+    /// <summary> ChildCalls.ToCountry regex </summary>
+    [JsonProperty("childCalls_toCountry_reg")]
+    public string? ChildCalls_ToCountry_REG { get; set; }
+
+    /// <summary> ChildCalls.IsInternational equals </summary>
+    [JsonProperty("childCalls_isInternational_eq")]
+    public bool? ChildCalls_IsInternational_EQ { get; set; }
+
 
     /// <summary> DialStatus equals </summary>
     [JsonProperty("dialStatus_eq")]
@@ -10085,6 +10311,10 @@ public class CallFilterRequest
     /// <summary> IsInternational equals </summary>
     [JsonProperty("isInternational_eq")]
     public bool? IsInternational_EQ { get; set; }
+
+    /// <summary> ContainsInternationalCall equals </summary>
+    [JsonProperty("containsInternationalCall_eq")]
+    public bool? ContainsInternationalCall_EQ { get; set; }
 
     /// <summary> CallResult equals </summary>
     [JsonProperty("callResult_eq")]
@@ -10705,6 +10935,50 @@ public class CallIncomingFilterRequest
     public DateTime? ChildCalls_DateCreated_GTE { get; set; }
 
 
+    /// <summary> ChildCalls.From equals </summary>
+    [JsonProperty("childCalls_from_eq")]
+    public string? ChildCalls_From_EQ { get; set; }
+    /// <summary> ChildCalls.From contains </summary>
+    [JsonProperty("childCalls_from_con")]
+    public string? ChildCalls_From_CON { get; set; }
+    /// <summary> ChildCalls.From regex </summary>
+    [JsonProperty("childCalls_from_reg")]
+    public string? ChildCalls_From_REG { get; set; }
+
+    /// <summary> ChildCalls.FromCountry equals </summary>
+    [JsonProperty("childCalls_fromCountry_eq")]
+    public string? ChildCalls_FromCountry_EQ { get; set; }
+    /// <summary> ChildCalls.FromCountry contains </summary>
+    [JsonProperty("childCalls_fromCountry_con")]
+    public string? ChildCalls_FromCountry_CON { get; set; }
+    /// <summary> ChildCalls.FromCountry regex </summary>
+    [JsonProperty("childCalls_fromCountry_reg")]
+    public string? ChildCalls_FromCountry_REG { get; set; }
+
+    /// <summary> ChildCalls.To equals </summary>
+    [JsonProperty("childCalls_to_eq")]
+    public string? ChildCalls_To_EQ { get; set; }
+    /// <summary> ChildCalls.To contains </summary>
+    [JsonProperty("childCalls_to_con")]
+    public string? ChildCalls_To_CON { get; set; }
+    /// <summary> ChildCalls.To regex </summary>
+    [JsonProperty("childCalls_to_reg")]
+    public string? ChildCalls_To_REG { get; set; }
+
+    /// <summary> ChildCalls.ToCountry equals </summary>
+    [JsonProperty("childCalls_toCountry_eq")]
+    public string? ChildCalls_ToCountry_EQ { get; set; }
+    /// <summary> ChildCalls.ToCountry contains </summary>
+    [JsonProperty("childCalls_toCountry_con")]
+    public string? ChildCalls_ToCountry_CON { get; set; }
+    /// <summary> ChildCalls.ToCountry regex </summary>
+    [JsonProperty("childCalls_toCountry_reg")]
+    public string? ChildCalls_ToCountry_REG { get; set; }
+
+    /// <summary> ChildCalls.IsInternational equals </summary>
+    [JsonProperty("childCalls_isInternational_eq")]
+    public bool? ChildCalls_IsInternational_EQ { get; set; }
+
 
     /// <summary> DialStatus equals </summary>
     [JsonProperty("dialStatus_eq")]
@@ -10980,6 +11254,10 @@ public class CallIncomingFilterRequest
     /// <summary> IsInternational equals </summary>
     [JsonProperty("isInternational_eq")]
     public bool? IsInternational_EQ { get; set; }
+
+    /// <summary> ContainsInternationalCall equals </summary>
+    [JsonProperty("containsInternationalCall_eq")]
+    public bool? ContainsInternationalCall_EQ { get; set; }
 
     /// <summary> CallResult equals </summary>
     [JsonProperty("callResult_eq")]
@@ -11590,6 +11868,50 @@ public class CallOutgoingFilterRequest
     public DateTime? ChildCalls_DateCreated_GTE { get; set; }
 
 
+    /// <summary> ChildCalls.From equals </summary>
+    [JsonProperty("childCalls_from_eq")]
+    public string? ChildCalls_From_EQ { get; set; }
+    /// <summary> ChildCalls.From contains </summary>
+    [JsonProperty("childCalls_from_con")]
+    public string? ChildCalls_From_CON { get; set; }
+    /// <summary> ChildCalls.From regex </summary>
+    [JsonProperty("childCalls_from_reg")]
+    public string? ChildCalls_From_REG { get; set; }
+
+    /// <summary> ChildCalls.FromCountry equals </summary>
+    [JsonProperty("childCalls_fromCountry_eq")]
+    public string? ChildCalls_FromCountry_EQ { get; set; }
+    /// <summary> ChildCalls.FromCountry contains </summary>
+    [JsonProperty("childCalls_fromCountry_con")]
+    public string? ChildCalls_FromCountry_CON { get; set; }
+    /// <summary> ChildCalls.FromCountry regex </summary>
+    [JsonProperty("childCalls_fromCountry_reg")]
+    public string? ChildCalls_FromCountry_REG { get; set; }
+
+    /// <summary> ChildCalls.To equals </summary>
+    [JsonProperty("childCalls_to_eq")]
+    public string? ChildCalls_To_EQ { get; set; }
+    /// <summary> ChildCalls.To contains </summary>
+    [JsonProperty("childCalls_to_con")]
+    public string? ChildCalls_To_CON { get; set; }
+    /// <summary> ChildCalls.To regex </summary>
+    [JsonProperty("childCalls_to_reg")]
+    public string? ChildCalls_To_REG { get; set; }
+
+    /// <summary> ChildCalls.ToCountry equals </summary>
+    [JsonProperty("childCalls_toCountry_eq")]
+    public string? ChildCalls_ToCountry_EQ { get; set; }
+    /// <summary> ChildCalls.ToCountry contains </summary>
+    [JsonProperty("childCalls_toCountry_con")]
+    public string? ChildCalls_ToCountry_CON { get; set; }
+    /// <summary> ChildCalls.ToCountry regex </summary>
+    [JsonProperty("childCalls_toCountry_reg")]
+    public string? ChildCalls_ToCountry_REG { get; set; }
+
+    /// <summary> ChildCalls.IsInternational equals </summary>
+    [JsonProperty("childCalls_isInternational_eq")]
+    public bool? ChildCalls_IsInternational_EQ { get; set; }
+
 
     /// <summary> DialStatus equals </summary>
     [JsonProperty("dialStatus_eq")]
@@ -11865,6 +12187,10 @@ public class CallOutgoingFilterRequest
     /// <summary> IsInternational equals </summary>
     [JsonProperty("isInternational_eq")]
     public bool? IsInternational_EQ { get; set; }
+
+    /// <summary> ContainsInternationalCall equals </summary>
+    [JsonProperty("containsInternationalCall_eq")]
+    public bool? ContainsInternationalCall_EQ { get; set; }
 
     /// <summary> CallResult equals </summary>
     [JsonProperty("callResult_eq")]

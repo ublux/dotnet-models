@@ -26,13 +26,13 @@ public partial class CallOutgoingToPSTN : CallOutgoing
     //[AllowUpdate(false)]
     //    //public bool IsInternational { get; set; }
 
-    /// <summary>
-    ///     Country called
-    /// </summary>
-    [AllowUpdate(false)]
-    [SwaggerSchema(ReadOnly = true)]
-    [IsUbluxRequired]
-    public required CountryIsoCode Country { get; set; }
+    ///// <summary>
+    /////     Country called
+    ///// </summary>
+    //[AllowUpdate(false)]
+    //[SwaggerSchema(ReadOnly = true)]
+    //[IsUbluxRequired]
+    //public required CountryIsoCode Country { get; set; }
 
     /// <summary>
     ///     Phone number dialed in international format. Property To should contain number that was actually dialed

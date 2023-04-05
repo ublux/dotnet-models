@@ -43,5 +43,46 @@ public partial interface ICall
     /// </summary>
     [AllowUpdate(false)]
     double? SecondsItTookToAnswer { get; set; }
+
+
+
+    /// <summary>
+    ///     Caller id
+    /// </summary>
+    [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
+    [IsUbluxRequired]
+    string From { get; set; }
+
+    /// <summary>
+    ///     Country that initiated phone call
+    /// </summary>
+    [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
+    [IsUbluxRequired]
+    CountryIsoCode FromCountry { get; set; }
+
+    /// <summary>
+    ///     Phone number called
+    /// </summary>
+    [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
+    [IsUbluxRequired]
+    string To { get; set; }
+
+    /// <summary>
+    ///     Country that initiated phone call
+    /// </summary>
+    [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
+    [IsUbluxRequired]
+    CountryIsoCode ToCountry { get; set; }
+
+    /// <summary>
+    ///     Is call international. This does not include child calls.
+    /// </summary>               
+    [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
+    bool IsInternational { get; set; }    
 }
 

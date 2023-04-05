@@ -183,12 +183,33 @@ public abstract partial class Call : UbluxDocument_ReferenceAccount_ReferenceTag
     public List<string> DigitsSent { get; set; } = new();
 
     /// <summary>
-    ///     Is the call international. This is true if any of the child calls is international
-    ///     Also note that an incoming call can be international too!
+    ///     Is call international. This does not include child calls.
     /// </summary>               
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    public bool IsInternational { get; set; }
+    public required bool IsInternational { get; set; }
+
+    /// <summary>
+    ///     True if it contains any child call or master call international
+    /// </summary>
+    [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
+    public bool ContainsInternationalCall
+    {
+        get
+        {
+            if (this.IsInternational)
+                return true;
+
+            if (this.ChildCalls is null)
+                return false;
+
+            return this.ChildCalls.Any(x => x.IsInternational);
+        }
+#if UBLUX_Release || RELEASE
+        set { }
+#endif        
+    }
 
     ///// <inheritdoc />
     //[AllowUpdate(false)]
