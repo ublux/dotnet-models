@@ -1,7 +1,7 @@
 ﻿namespace Ublux.Communications.Models.Documents;
 
 /// <summary>
-///     AI transcription of a phone call
+///     AI transcription of a phone call. This is the convertion from audio to text only.
 /// </summary>
 public partial class AiCallTranscription : UbluxDocument_ReferenceAccount_ReferenceTags
 {
@@ -73,4 +73,11 @@ public partial class AiCallTranscription : UbluxDocument_ReferenceAccount_Refere
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
     public string? ErrorMessage { get; set; }
+
+    /// <summary>
+    ///     Status of AI call transcription
+    /// </summary>
+    [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
+    public AiProcessStatus Status { get; set; }
 }

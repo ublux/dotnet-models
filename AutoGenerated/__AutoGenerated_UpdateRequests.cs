@@ -1697,7 +1697,7 @@ public class TagUpdateRequest // : IUbluxDocumentId
 }
 
 /// <summary>
-/// AI transcription of a phone call
+/// AI transcription of a phone call. This is the convertion from audio to text only.
 /// </summary>
 public class AiCallTranscriptionUpdateRequest // : IUbluxDocumentId
 {

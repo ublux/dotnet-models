@@ -1,5 +1,4 @@
 ﻿using Bogus;
-using System;
 
 namespace Ublux.Communications.Models.EventTriggersModels;
 

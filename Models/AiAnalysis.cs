@@ -86,7 +86,16 @@ public class AiAnalysis
     /// <summary>
     ///     Example: gpt-3.5-turbo
     /// </summary>
+    [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     public string? Model { get; set; }
+
+    /// <summary>
+    ///     If there is an error message analysing the call
+    /// </summary>
+    [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
+    public string? ErrorMessage { get; set; }
 }
 
 /// <summary>
