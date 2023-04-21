@@ -22,7 +22,7 @@ public class RunningApplicationInstance
     /// <summary>
     ///     Used throughout entire application to stop application gracefully
     /// </summary>
-    private readonly CancellationTokenSource _cts = new ();
+    private readonly CancellationTokenSource _cts = new();
 
     /// <summary>
     ///     Stop application gracefully
@@ -54,7 +54,7 @@ public class RunningApplicationInstance
         {
             Id = (type + "-" + Guid.NewGuid().ToString()[..3]).ToUpper(),
             CloudServiceType = type
-        };        
+        };
     }
 
     #region NumberOfOperationsExecuting
@@ -120,6 +120,12 @@ public class RunningApplicationInstance
     /// </summary>    
     public string IdGlobalAutoIncrement()
     {
+        if (!hasBeenInitialized)
+        {
+            if (Debugger.IsAttached) Debugger.Break();
+            throw new Exception("IdGlobalSetValue must be initialized");
+        }
+
         return ToBase62(Interlocked.Increment(ref _idGlobalCounter));
     }
 
@@ -144,10 +150,15 @@ public class RunningApplicationInstance
             throw new Exception("IdGlobal should only be set once!");
         }
 
+        hasBeenInitialized = true;
+
         _idGlobalCounter = v;
     }
     // Make sure global counter has been set and only once by application
     private int numberOfTimesIdGlobalSetValueHasBeenSet;
+
+    // Ensures that IdGlobalSetValue value has been set
+    private bool hasBeenInitialized = false;
 
     #endregion
 

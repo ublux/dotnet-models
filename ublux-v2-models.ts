@@ -617,6 +617,8 @@ CHANUNAVAIL: Channel unavailable. On SIP, peer may not be registered. */
     readonly participantLines?: string[];
     /** If not null it means the call is ended */
     readonly durationInSeconds?: number | null;
+    /** If there is an error message with the call. */
+    readonly errorMessage?: string | null;
     /** It is nullable because there are cases where it makes no sense to point to an account. 
 For example a CloudService user will point to no account */
     idsTags?: string[];
@@ -1153,6 +1155,12 @@ export interface CallFilterRequest {
     participantLines_con?: string | null;
     /** ParticipantLines regex */
     participantLines_reg?: string | null;
+    /** ErrorMessage equals */
+    errorMessage_eq?: string | null;
+    /** ErrorMessage contains */
+    errorMessage_con?: string | null;
+    /** ErrorMessage regex */
+    errorMessage_reg?: string | null;
     /** IdsTags equals */
     idsTags_eq?: string | null;
     /** IdsTags contains */
@@ -1318,6 +1326,8 @@ CHANUNAVAIL: Channel unavailable. On SIP, peer may not be registered. */
     readonly participantLines?: string[];
     /** If not null it means the call is ended */
     readonly durationInSeconds?: number | null;
+    /** If there is an error message with the call. */
+    readonly errorMessage?: string | null;
     /** It is nullable because there are cases where it makes no sense to point to an account. 
 For example a CloudService user will point to no account */
     idsTags?: string[];
@@ -1396,6 +1406,8 @@ CHANUNAVAIL: Channel unavailable. On SIP, peer may not be registered. */
     readonly participantLines?: string[];
     /** If not null it means the call is ended */
     readonly durationInSeconds?: number | null;
+    /** If there is an error message with the call. */
+    readonly errorMessage?: string | null;
     /** It is nullable because there are cases where it makes no sense to point to an account. 
 For example a CloudService user will point to no account */
     idsTags?: string[];
@@ -1472,6 +1484,8 @@ CHANUNAVAIL: Channel unavailable. On SIP, peer may not be registered. */
     readonly participantLines?: string[];
     /** If not null it means the call is ended */
     readonly durationInSeconds?: number | null;
+    /** If there is an error message with the call. */
+    readonly errorMessage?: string | null;
     /** It is nullable because there are cases where it makes no sense to point to an account. 
 For example a CloudService user will point to no account */
     idsTags?: string[];
@@ -1542,6 +1556,8 @@ CHANUNAVAIL: Channel unavailable. On SIP, peer may not be registered. */
     readonly participantLines?: string[];
     /** If not null it means the call is ended */
     readonly durationInSeconds?: number | null;
+    /** If there is an error message with the call. */
+    readonly errorMessage?: string | null;
     /** It is nullable because there are cases where it makes no sense to point to an account. 
 For example a CloudService user will point to no account */
     idsTags?: string[];
@@ -2632,24 +2648,6 @@ export enum EventTrigger {
     EventExtensionTookLongerThan2MinToBeAnswered = "EventExtensionTookLongerThan2MinToBeAnswered",
     EventExtensionTookLongerThan4MinToBeAnswered = "EventExtensionTookLongerThan4MinToBeAnswered",
     EventExtensionTookLongerThan8MinToBeAnswered = "EventExtensionTookLongerThan8MinToBeAnswered",
-}
-
-/** Sends this to pbx via UbluxTcpBinarySerializer */
-export interface ExecuteBashScript {
-    /** Wait for output. Try to avoid this as pbx can consume one message at a time. */
-    waitForOutput?: boolean;
-    /** Wiat maximum of 10 seconds */
-    waitForOutputTimeout?: number;
-    /** Capture standard output? */
-    captureStdOutput?: boolean;
-    /** Bash scrip to execute */
-    script?: string | null;
-    /** Standard output of process */
-    stdOutput?: string | null;
-    /** Exit code of process */
-    exitCode?: number;
-    /** If there is an exception running the program */
-    exception?: string | null;
 }
 
 /** Extension could be of type basic,queue,conference,voicemail or callFlowLogic */

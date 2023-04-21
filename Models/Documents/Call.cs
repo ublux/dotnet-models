@@ -269,4 +269,26 @@ public abstract partial class Call : UbluxDocument_ReferenceAccount_ReferenceTag
     //}
 
     #endregion
+
+    /// <summary>
+    ///     If there is an error message with the call.
+    /// </summary>
+    [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
+    public string? ErrorMessage { get; set; }
+
+    /// <summary>
+    ///     Add error message to list of errors
+    /// </summary>
+    public void AddErrorMessage(string message)
+    {
+        if(this.ErrorMessage is null)
+        {
+            this.ErrorMessage = message; 
+        }
+        else
+        {
+            this.ErrorMessage += "\n" + message;
+        }
+    }
 }
