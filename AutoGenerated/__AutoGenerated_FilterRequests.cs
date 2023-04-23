@@ -1502,16 +1502,6 @@ public class CallIncomingToCallFlowLogicFilterRequest
     [JsonProperty("analysis_model_reg")]
     public string? Analysis_Model_REG { get; set; }
 
-    /// <summary> Analysis.ErrorMessage equals </summary>
-    [JsonProperty("analysis_errorMessage_eq")]
-    public string? Analysis_ErrorMessage_EQ { get; set; }
-    /// <summary> Analysis.ErrorMessage contains </summary>
-    [JsonProperty("analysis_errorMessage_con")]
-    public string? Analysis_ErrorMessage_CON { get; set; }
-    /// <summary> Analysis.ErrorMessage regex </summary>
-    [JsonProperty("analysis_errorMessage_reg")]
-    public string? Analysis_ErrorMessage_REG { get; set; }
-
 
     /// <summary> Analysis2.Sentiment.Positive equals </summary>
     [JsonProperty("analysis2_sentiment_positive_eq")]
@@ -1648,16 +1638,6 @@ public class CallIncomingToCallFlowLogicFilterRequest
     /// <summary> Analysis2.Model regex </summary>
     [JsonProperty("analysis2_model_reg")]
     public string? Analysis2_Model_REG { get; set; }
-
-    /// <summary> Analysis2.ErrorMessage equals </summary>
-    [JsonProperty("analysis2_errorMessage_eq")]
-    public string? Analysis2_ErrorMessage_EQ { get; set; }
-    /// <summary> Analysis2.ErrorMessage contains </summary>
-    [JsonProperty("analysis2_errorMessage_con")]
-    public string? Analysis2_ErrorMessage_CON { get; set; }
-    /// <summary> Analysis2.ErrorMessage regex </summary>
-    [JsonProperty("analysis2_errorMessage_reg")]
-    public string? Analysis2_ErrorMessage_REG { get; set; }
 
 
     /// <summary> Analysis3.Sentiment.Positive equals </summary>
@@ -1796,16 +1776,6 @@ public class CallIncomingToCallFlowLogicFilterRequest
     [JsonProperty("analysis3_model_reg")]
     public string? Analysis3_Model_REG { get; set; }
 
-    /// <summary> Analysis3.ErrorMessage equals </summary>
-    [JsonProperty("analysis3_errorMessage_eq")]
-    public string? Analysis3_ErrorMessage_EQ { get; set; }
-    /// <summary> Analysis3.ErrorMessage contains </summary>
-    [JsonProperty("analysis3_errorMessage_con")]
-    public string? Analysis3_ErrorMessage_CON { get; set; }
-    /// <summary> Analysis3.ErrorMessage regex </summary>
-    [JsonProperty("analysis3_errorMessage_reg")]
-    public string? Analysis3_ErrorMessage_REG { get; set; }
-
 
     /// <summary> ParticipantLines equals </summary>
     [JsonProperty("participantLines_eq")]
@@ -1828,15 +1798,25 @@ public class CallIncomingToCallFlowLogicFilterRequest
     [JsonProperty("errorMessage_reg")]
     public string? ErrorMessage_REG { get; set; }
 
-    /// <summary> AiProcessStatus equals </summary>
-    [JsonProperty("aiProcessStatus_eq")]
-    public string? AiProcessStatus_EQ { get; set; }
-    /// <summary> AiProcessStatus contains </summary>
-    [JsonProperty("aiProcessStatus_con")]
-    public string? AiProcessStatus_CON { get; set; }
-    /// <summary> AiProcessStatus regex </summary>
-    [JsonProperty("aiProcessStatus_reg")]
-    public string? AiProcessStatus_REG { get; set; }
+    /// <summary> AiTranscriptionStatus equals </summary>
+    [JsonProperty("aiTranscriptionStatus_eq")]
+    public string? AiTranscriptionStatus_EQ { get; set; }
+    /// <summary> AiTranscriptionStatus contains </summary>
+    [JsonProperty("aiTranscriptionStatus_con")]
+    public string? AiTranscriptionStatus_CON { get; set; }
+    /// <summary> AiTranscriptionStatus regex </summary>
+    [JsonProperty("aiTranscriptionStatus_reg")]
+    public string? AiTranscriptionStatus_REG { get; set; }
+
+    /// <summary> AiAnalysisStatus equals </summary>
+    [JsonProperty("aiAnalysisStatus_eq")]
+    public string? AiAnalysisStatus_EQ { get; set; }
+    /// <summary> AiAnalysisStatus contains </summary>
+    [JsonProperty("aiAnalysisStatus_con")]
+    public string? AiAnalysisStatus_CON { get; set; }
+    /// <summary> AiAnalysisStatus regex </summary>
+    [JsonProperty("aiAnalysisStatus_reg")]
+    public string? AiAnalysisStatus_REG { get; set; }
 
     /// <summary> IdsTags equals </summary>
     [JsonProperty("idsTags_eq")]
@@ -2535,16 +2515,6 @@ public class CallIncomingToExtensionFilterRequest
     [JsonProperty("analysis_model_reg")]
     public string? Analysis_Model_REG { get; set; }
 
-    /// <summary> Analysis.ErrorMessage equals </summary>
-    [JsonProperty("analysis_errorMessage_eq")]
-    public string? Analysis_ErrorMessage_EQ { get; set; }
-    /// <summary> Analysis.ErrorMessage contains </summary>
-    [JsonProperty("analysis_errorMessage_con")]
-    public string? Analysis_ErrorMessage_CON { get; set; }
-    /// <summary> Analysis.ErrorMessage regex </summary>
-    [JsonProperty("analysis_errorMessage_reg")]
-    public string? Analysis_ErrorMessage_REG { get; set; }
-
 
     /// <summary> Analysis2.Sentiment.Positive equals </summary>
     [JsonProperty("analysis2_sentiment_positive_eq")]
@@ -2681,16 +2651,6 @@ public class CallIncomingToExtensionFilterRequest
     /// <summary> Analysis2.Model regex </summary>
     [JsonProperty("analysis2_model_reg")]
     public string? Analysis2_Model_REG { get; set; }
-
-    /// <summary> Analysis2.ErrorMessage equals </summary>
-    [JsonProperty("analysis2_errorMessage_eq")]
-    public string? Analysis2_ErrorMessage_EQ { get; set; }
-    /// <summary> Analysis2.ErrorMessage contains </summary>
-    [JsonProperty("analysis2_errorMessage_con")]
-    public string? Analysis2_ErrorMessage_CON { get; set; }
-    /// <summary> Analysis2.ErrorMessage regex </summary>
-    [JsonProperty("analysis2_errorMessage_reg")]
-    public string? Analysis2_ErrorMessage_REG { get; set; }
 
 
     /// <summary> Analysis3.Sentiment.Positive equals </summary>
@@ -2829,16 +2789,6 @@ public class CallIncomingToExtensionFilterRequest
     [JsonProperty("analysis3_model_reg")]
     public string? Analysis3_Model_REG { get; set; }
 
-    /// <summary> Analysis3.ErrorMessage equals </summary>
-    [JsonProperty("analysis3_errorMessage_eq")]
-    public string? Analysis3_ErrorMessage_EQ { get; set; }
-    /// <summary> Analysis3.ErrorMessage contains </summary>
-    [JsonProperty("analysis3_errorMessage_con")]
-    public string? Analysis3_ErrorMessage_CON { get; set; }
-    /// <summary> Analysis3.ErrorMessage regex </summary>
-    [JsonProperty("analysis3_errorMessage_reg")]
-    public string? Analysis3_ErrorMessage_REG { get; set; }
-
 
     /// <summary> ParticipantLines equals </summary>
     [JsonProperty("participantLines_eq")]
@@ -2861,15 +2811,25 @@ public class CallIncomingToExtensionFilterRequest
     [JsonProperty("errorMessage_reg")]
     public string? ErrorMessage_REG { get; set; }
 
-    /// <summary> AiProcessStatus equals </summary>
-    [JsonProperty("aiProcessStatus_eq")]
-    public string? AiProcessStatus_EQ { get; set; }
-    /// <summary> AiProcessStatus contains </summary>
-    [JsonProperty("aiProcessStatus_con")]
-    public string? AiProcessStatus_CON { get; set; }
-    /// <summary> AiProcessStatus regex </summary>
-    [JsonProperty("aiProcessStatus_reg")]
-    public string? AiProcessStatus_REG { get; set; }
+    /// <summary> AiTranscriptionStatus equals </summary>
+    [JsonProperty("aiTranscriptionStatus_eq")]
+    public string? AiTranscriptionStatus_EQ { get; set; }
+    /// <summary> AiTranscriptionStatus contains </summary>
+    [JsonProperty("aiTranscriptionStatus_con")]
+    public string? AiTranscriptionStatus_CON { get; set; }
+    /// <summary> AiTranscriptionStatus regex </summary>
+    [JsonProperty("aiTranscriptionStatus_reg")]
+    public string? AiTranscriptionStatus_REG { get; set; }
+
+    /// <summary> AiAnalysisStatus equals </summary>
+    [JsonProperty("aiAnalysisStatus_eq")]
+    public string? AiAnalysisStatus_EQ { get; set; }
+    /// <summary> AiAnalysisStatus contains </summary>
+    [JsonProperty("aiAnalysisStatus_con")]
+    public string? AiAnalysisStatus_CON { get; set; }
+    /// <summary> AiAnalysisStatus regex </summary>
+    [JsonProperty("aiAnalysisStatus_reg")]
+    public string? AiAnalysisStatus_REG { get; set; }
 
     /// <summary> IdsTags equals </summary>
     [JsonProperty("idsTags_eq")]
@@ -3558,16 +3518,6 @@ public class CallOutgoingToExtensionFilterRequest
     [JsonProperty("analysis_model_reg")]
     public string? Analysis_Model_REG { get; set; }
 
-    /// <summary> Analysis.ErrorMessage equals </summary>
-    [JsonProperty("analysis_errorMessage_eq")]
-    public string? Analysis_ErrorMessage_EQ { get; set; }
-    /// <summary> Analysis.ErrorMessage contains </summary>
-    [JsonProperty("analysis_errorMessage_con")]
-    public string? Analysis_ErrorMessage_CON { get; set; }
-    /// <summary> Analysis.ErrorMessage regex </summary>
-    [JsonProperty("analysis_errorMessage_reg")]
-    public string? Analysis_ErrorMessage_REG { get; set; }
-
 
     /// <summary> Analysis2.Sentiment.Positive equals </summary>
     [JsonProperty("analysis2_sentiment_positive_eq")]
@@ -3704,16 +3654,6 @@ public class CallOutgoingToExtensionFilterRequest
     /// <summary> Analysis2.Model regex </summary>
     [JsonProperty("analysis2_model_reg")]
     public string? Analysis2_Model_REG { get; set; }
-
-    /// <summary> Analysis2.ErrorMessage equals </summary>
-    [JsonProperty("analysis2_errorMessage_eq")]
-    public string? Analysis2_ErrorMessage_EQ { get; set; }
-    /// <summary> Analysis2.ErrorMessage contains </summary>
-    [JsonProperty("analysis2_errorMessage_con")]
-    public string? Analysis2_ErrorMessage_CON { get; set; }
-    /// <summary> Analysis2.ErrorMessage regex </summary>
-    [JsonProperty("analysis2_errorMessage_reg")]
-    public string? Analysis2_ErrorMessage_REG { get; set; }
 
 
     /// <summary> Analysis3.Sentiment.Positive equals </summary>
@@ -3852,16 +3792,6 @@ public class CallOutgoingToExtensionFilterRequest
     [JsonProperty("analysis3_model_reg")]
     public string? Analysis3_Model_REG { get; set; }
 
-    /// <summary> Analysis3.ErrorMessage equals </summary>
-    [JsonProperty("analysis3_errorMessage_eq")]
-    public string? Analysis3_ErrorMessage_EQ { get; set; }
-    /// <summary> Analysis3.ErrorMessage contains </summary>
-    [JsonProperty("analysis3_errorMessage_con")]
-    public string? Analysis3_ErrorMessage_CON { get; set; }
-    /// <summary> Analysis3.ErrorMessage regex </summary>
-    [JsonProperty("analysis3_errorMessage_reg")]
-    public string? Analysis3_ErrorMessage_REG { get; set; }
-
 
     /// <summary> ParticipantLines equals </summary>
     [JsonProperty("participantLines_eq")]
@@ -3884,15 +3814,25 @@ public class CallOutgoingToExtensionFilterRequest
     [JsonProperty("errorMessage_reg")]
     public string? ErrorMessage_REG { get; set; }
 
-    /// <summary> AiProcessStatus equals </summary>
-    [JsonProperty("aiProcessStatus_eq")]
-    public string? AiProcessStatus_EQ { get; set; }
-    /// <summary> AiProcessStatus contains </summary>
-    [JsonProperty("aiProcessStatus_con")]
-    public string? AiProcessStatus_CON { get; set; }
-    /// <summary> AiProcessStatus regex </summary>
-    [JsonProperty("aiProcessStatus_reg")]
-    public string? AiProcessStatus_REG { get; set; }
+    /// <summary> AiTranscriptionStatus equals </summary>
+    [JsonProperty("aiTranscriptionStatus_eq")]
+    public string? AiTranscriptionStatus_EQ { get; set; }
+    /// <summary> AiTranscriptionStatus contains </summary>
+    [JsonProperty("aiTranscriptionStatus_con")]
+    public string? AiTranscriptionStatus_CON { get; set; }
+    /// <summary> AiTranscriptionStatus regex </summary>
+    [JsonProperty("aiTranscriptionStatus_reg")]
+    public string? AiTranscriptionStatus_REG { get; set; }
+
+    /// <summary> AiAnalysisStatus equals </summary>
+    [JsonProperty("aiAnalysisStatus_eq")]
+    public string? AiAnalysisStatus_EQ { get; set; }
+    /// <summary> AiAnalysisStatus contains </summary>
+    [JsonProperty("aiAnalysisStatus_con")]
+    public string? AiAnalysisStatus_CON { get; set; }
+    /// <summary> AiAnalysisStatus regex </summary>
+    [JsonProperty("aiAnalysisStatus_reg")]
+    public string? AiAnalysisStatus_REG { get; set; }
 
     /// <summary> IdsTags equals </summary>
     [JsonProperty("idsTags_eq")]
@@ -4551,16 +4491,6 @@ public class CallOutgoingToPSTNFilterRequest
     [JsonProperty("analysis_model_reg")]
     public string? Analysis_Model_REG { get; set; }
 
-    /// <summary> Analysis.ErrorMessage equals </summary>
-    [JsonProperty("analysis_errorMessage_eq")]
-    public string? Analysis_ErrorMessage_EQ { get; set; }
-    /// <summary> Analysis.ErrorMessage contains </summary>
-    [JsonProperty("analysis_errorMessage_con")]
-    public string? Analysis_ErrorMessage_CON { get; set; }
-    /// <summary> Analysis.ErrorMessage regex </summary>
-    [JsonProperty("analysis_errorMessage_reg")]
-    public string? Analysis_ErrorMessage_REG { get; set; }
-
 
     /// <summary> Analysis2.Sentiment.Positive equals </summary>
     [JsonProperty("analysis2_sentiment_positive_eq")]
@@ -4697,16 +4627,6 @@ public class CallOutgoingToPSTNFilterRequest
     /// <summary> Analysis2.Model regex </summary>
     [JsonProperty("analysis2_model_reg")]
     public string? Analysis2_Model_REG { get; set; }
-
-    /// <summary> Analysis2.ErrorMessage equals </summary>
-    [JsonProperty("analysis2_errorMessage_eq")]
-    public string? Analysis2_ErrorMessage_EQ { get; set; }
-    /// <summary> Analysis2.ErrorMessage contains </summary>
-    [JsonProperty("analysis2_errorMessage_con")]
-    public string? Analysis2_ErrorMessage_CON { get; set; }
-    /// <summary> Analysis2.ErrorMessage regex </summary>
-    [JsonProperty("analysis2_errorMessage_reg")]
-    public string? Analysis2_ErrorMessage_REG { get; set; }
 
 
     /// <summary> Analysis3.Sentiment.Positive equals </summary>
@@ -4845,16 +4765,6 @@ public class CallOutgoingToPSTNFilterRequest
     [JsonProperty("analysis3_model_reg")]
     public string? Analysis3_Model_REG { get; set; }
 
-    /// <summary> Analysis3.ErrorMessage equals </summary>
-    [JsonProperty("analysis3_errorMessage_eq")]
-    public string? Analysis3_ErrorMessage_EQ { get; set; }
-    /// <summary> Analysis3.ErrorMessage contains </summary>
-    [JsonProperty("analysis3_errorMessage_con")]
-    public string? Analysis3_ErrorMessage_CON { get; set; }
-    /// <summary> Analysis3.ErrorMessage regex </summary>
-    [JsonProperty("analysis3_errorMessage_reg")]
-    public string? Analysis3_ErrorMessage_REG { get; set; }
-
 
     /// <summary> ParticipantLines equals </summary>
     [JsonProperty("participantLines_eq")]
@@ -4877,15 +4787,25 @@ public class CallOutgoingToPSTNFilterRequest
     [JsonProperty("errorMessage_reg")]
     public string? ErrorMessage_REG { get; set; }
 
-    /// <summary> AiProcessStatus equals </summary>
-    [JsonProperty("aiProcessStatus_eq")]
-    public string? AiProcessStatus_EQ { get; set; }
-    /// <summary> AiProcessStatus contains </summary>
-    [JsonProperty("aiProcessStatus_con")]
-    public string? AiProcessStatus_CON { get; set; }
-    /// <summary> AiProcessStatus regex </summary>
-    [JsonProperty("aiProcessStatus_reg")]
-    public string? AiProcessStatus_REG { get; set; }
+    /// <summary> AiTranscriptionStatus equals </summary>
+    [JsonProperty("aiTranscriptionStatus_eq")]
+    public string? AiTranscriptionStatus_EQ { get; set; }
+    /// <summary> AiTranscriptionStatus contains </summary>
+    [JsonProperty("aiTranscriptionStatus_con")]
+    public string? AiTranscriptionStatus_CON { get; set; }
+    /// <summary> AiTranscriptionStatus regex </summary>
+    [JsonProperty("aiTranscriptionStatus_reg")]
+    public string? AiTranscriptionStatus_REG { get; set; }
+
+    /// <summary> AiAnalysisStatus equals </summary>
+    [JsonProperty("aiAnalysisStatus_eq")]
+    public string? AiAnalysisStatus_EQ { get; set; }
+    /// <summary> AiAnalysisStatus contains </summary>
+    [JsonProperty("aiAnalysisStatus_con")]
+    public string? AiAnalysisStatus_CON { get; set; }
+    /// <summary> AiAnalysisStatus regex </summary>
+    [JsonProperty("aiAnalysisStatus_reg")]
+    public string? AiAnalysisStatus_REG { get; set; }
 
     /// <summary> IdsTags equals </summary>
     [JsonProperty("idsTags_eq")]
@@ -10025,16 +9945,6 @@ public class AiCallTranscriptionFilterRequest
     [JsonProperty("errorMessage_reg")]
     public string? ErrorMessage_REG { get; set; }
 
-    /// <summary> Status equals </summary>
-    [JsonProperty("status_eq")]
-    public string? Status_EQ { get; set; }
-    /// <summary> Status contains </summary>
-    [JsonProperty("status_con")]
-    public string? Status_CON { get; set; }
-    /// <summary> Status regex </summary>
-    [JsonProperty("status_reg")]
-    public string? Status_REG { get; set; }
-
     /// <summary> IdsTags equals </summary>
     [JsonProperty("idsTags_eq")]
     public string? IdsTags_EQ { get; set; }
@@ -10672,16 +10582,6 @@ public class CallFilterRequest
     [JsonProperty("analysis_model_reg")]
     public string? Analysis_Model_REG { get; set; }
 
-    /// <summary> Analysis.ErrorMessage equals </summary>
-    [JsonProperty("analysis_errorMessage_eq")]
-    public string? Analysis_ErrorMessage_EQ { get; set; }
-    /// <summary> Analysis.ErrorMessage contains </summary>
-    [JsonProperty("analysis_errorMessage_con")]
-    public string? Analysis_ErrorMessage_CON { get; set; }
-    /// <summary> Analysis.ErrorMessage regex </summary>
-    [JsonProperty("analysis_errorMessage_reg")]
-    public string? Analysis_ErrorMessage_REG { get; set; }
-
 
     /// <summary> Analysis2.Sentiment.Positive equals </summary>
     [JsonProperty("analysis2_sentiment_positive_eq")]
@@ -10818,16 +10718,6 @@ public class CallFilterRequest
     /// <summary> Analysis2.Model regex </summary>
     [JsonProperty("analysis2_model_reg")]
     public string? Analysis2_Model_REG { get; set; }
-
-    /// <summary> Analysis2.ErrorMessage equals </summary>
-    [JsonProperty("analysis2_errorMessage_eq")]
-    public string? Analysis2_ErrorMessage_EQ { get; set; }
-    /// <summary> Analysis2.ErrorMessage contains </summary>
-    [JsonProperty("analysis2_errorMessage_con")]
-    public string? Analysis2_ErrorMessage_CON { get; set; }
-    /// <summary> Analysis2.ErrorMessage regex </summary>
-    [JsonProperty("analysis2_errorMessage_reg")]
-    public string? Analysis2_ErrorMessage_REG { get; set; }
 
 
     /// <summary> Analysis3.Sentiment.Positive equals </summary>
@@ -10966,16 +10856,6 @@ public class CallFilterRequest
     [JsonProperty("analysis3_model_reg")]
     public string? Analysis3_Model_REG { get; set; }
 
-    /// <summary> Analysis3.ErrorMessage equals </summary>
-    [JsonProperty("analysis3_errorMessage_eq")]
-    public string? Analysis3_ErrorMessage_EQ { get; set; }
-    /// <summary> Analysis3.ErrorMessage contains </summary>
-    [JsonProperty("analysis3_errorMessage_con")]
-    public string? Analysis3_ErrorMessage_CON { get; set; }
-    /// <summary> Analysis3.ErrorMessage regex </summary>
-    [JsonProperty("analysis3_errorMessage_reg")]
-    public string? Analysis3_ErrorMessage_REG { get; set; }
-
 
     /// <summary> ParticipantLines equals </summary>
     [JsonProperty("participantLines_eq")]
@@ -10998,15 +10878,25 @@ public class CallFilterRequest
     [JsonProperty("errorMessage_reg")]
     public string? ErrorMessage_REG { get; set; }
 
-    /// <summary> AiProcessStatus equals </summary>
-    [JsonProperty("aiProcessStatus_eq")]
-    public string? AiProcessStatus_EQ { get; set; }
-    /// <summary> AiProcessStatus contains </summary>
-    [JsonProperty("aiProcessStatus_con")]
-    public string? AiProcessStatus_CON { get; set; }
-    /// <summary> AiProcessStatus regex </summary>
-    [JsonProperty("aiProcessStatus_reg")]
-    public string? AiProcessStatus_REG { get; set; }
+    /// <summary> AiTranscriptionStatus equals </summary>
+    [JsonProperty("aiTranscriptionStatus_eq")]
+    public string? AiTranscriptionStatus_EQ { get; set; }
+    /// <summary> AiTranscriptionStatus contains </summary>
+    [JsonProperty("aiTranscriptionStatus_con")]
+    public string? AiTranscriptionStatus_CON { get; set; }
+    /// <summary> AiTranscriptionStatus regex </summary>
+    [JsonProperty("aiTranscriptionStatus_reg")]
+    public string? AiTranscriptionStatus_REG { get; set; }
+
+    /// <summary> AiAnalysisStatus equals </summary>
+    [JsonProperty("aiAnalysisStatus_eq")]
+    public string? AiAnalysisStatus_EQ { get; set; }
+    /// <summary> AiAnalysisStatus contains </summary>
+    [JsonProperty("aiAnalysisStatus_con")]
+    public string? AiAnalysisStatus_CON { get; set; }
+    /// <summary> AiAnalysisStatus regex </summary>
+    [JsonProperty("aiAnalysisStatus_reg")]
+    public string? AiAnalysisStatus_REG { get; set; }
 
     /// <summary> IdsTags equals </summary>
     [JsonProperty("idsTags_eq")]
@@ -11665,16 +11555,6 @@ public class CallIncomingFilterRequest
     [JsonProperty("analysis_model_reg")]
     public string? Analysis_Model_REG { get; set; }
 
-    /// <summary> Analysis.ErrorMessage equals </summary>
-    [JsonProperty("analysis_errorMessage_eq")]
-    public string? Analysis_ErrorMessage_EQ { get; set; }
-    /// <summary> Analysis.ErrorMessage contains </summary>
-    [JsonProperty("analysis_errorMessage_con")]
-    public string? Analysis_ErrorMessage_CON { get; set; }
-    /// <summary> Analysis.ErrorMessage regex </summary>
-    [JsonProperty("analysis_errorMessage_reg")]
-    public string? Analysis_ErrorMessage_REG { get; set; }
-
 
     /// <summary> Analysis2.Sentiment.Positive equals </summary>
     [JsonProperty("analysis2_sentiment_positive_eq")]
@@ -11811,16 +11691,6 @@ public class CallIncomingFilterRequest
     /// <summary> Analysis2.Model regex </summary>
     [JsonProperty("analysis2_model_reg")]
     public string? Analysis2_Model_REG { get; set; }
-
-    /// <summary> Analysis2.ErrorMessage equals </summary>
-    [JsonProperty("analysis2_errorMessage_eq")]
-    public string? Analysis2_ErrorMessage_EQ { get; set; }
-    /// <summary> Analysis2.ErrorMessage contains </summary>
-    [JsonProperty("analysis2_errorMessage_con")]
-    public string? Analysis2_ErrorMessage_CON { get; set; }
-    /// <summary> Analysis2.ErrorMessage regex </summary>
-    [JsonProperty("analysis2_errorMessage_reg")]
-    public string? Analysis2_ErrorMessage_REG { get; set; }
 
 
     /// <summary> Analysis3.Sentiment.Positive equals </summary>
@@ -11959,16 +11829,6 @@ public class CallIncomingFilterRequest
     [JsonProperty("analysis3_model_reg")]
     public string? Analysis3_Model_REG { get; set; }
 
-    /// <summary> Analysis3.ErrorMessage equals </summary>
-    [JsonProperty("analysis3_errorMessage_eq")]
-    public string? Analysis3_ErrorMessage_EQ { get; set; }
-    /// <summary> Analysis3.ErrorMessage contains </summary>
-    [JsonProperty("analysis3_errorMessage_con")]
-    public string? Analysis3_ErrorMessage_CON { get; set; }
-    /// <summary> Analysis3.ErrorMessage regex </summary>
-    [JsonProperty("analysis3_errorMessage_reg")]
-    public string? Analysis3_ErrorMessage_REG { get; set; }
-
 
     /// <summary> ParticipantLines equals </summary>
     [JsonProperty("participantLines_eq")]
@@ -11991,15 +11851,25 @@ public class CallIncomingFilterRequest
     [JsonProperty("errorMessage_reg")]
     public string? ErrorMessage_REG { get; set; }
 
-    /// <summary> AiProcessStatus equals </summary>
-    [JsonProperty("aiProcessStatus_eq")]
-    public string? AiProcessStatus_EQ { get; set; }
-    /// <summary> AiProcessStatus contains </summary>
-    [JsonProperty("aiProcessStatus_con")]
-    public string? AiProcessStatus_CON { get; set; }
-    /// <summary> AiProcessStatus regex </summary>
-    [JsonProperty("aiProcessStatus_reg")]
-    public string? AiProcessStatus_REG { get; set; }
+    /// <summary> AiTranscriptionStatus equals </summary>
+    [JsonProperty("aiTranscriptionStatus_eq")]
+    public string? AiTranscriptionStatus_EQ { get; set; }
+    /// <summary> AiTranscriptionStatus contains </summary>
+    [JsonProperty("aiTranscriptionStatus_con")]
+    public string? AiTranscriptionStatus_CON { get; set; }
+    /// <summary> AiTranscriptionStatus regex </summary>
+    [JsonProperty("aiTranscriptionStatus_reg")]
+    public string? AiTranscriptionStatus_REG { get; set; }
+
+    /// <summary> AiAnalysisStatus equals </summary>
+    [JsonProperty("aiAnalysisStatus_eq")]
+    public string? AiAnalysisStatus_EQ { get; set; }
+    /// <summary> AiAnalysisStatus contains </summary>
+    [JsonProperty("aiAnalysisStatus_con")]
+    public string? AiAnalysisStatus_CON { get; set; }
+    /// <summary> AiAnalysisStatus regex </summary>
+    [JsonProperty("aiAnalysisStatus_reg")]
+    public string? AiAnalysisStatus_REG { get; set; }
 
     /// <summary> IdsTags equals </summary>
     [JsonProperty("idsTags_eq")]
@@ -12648,16 +12518,6 @@ public class CallOutgoingFilterRequest
     [JsonProperty("analysis_model_reg")]
     public string? Analysis_Model_REG { get; set; }
 
-    /// <summary> Analysis.ErrorMessage equals </summary>
-    [JsonProperty("analysis_errorMessage_eq")]
-    public string? Analysis_ErrorMessage_EQ { get; set; }
-    /// <summary> Analysis.ErrorMessage contains </summary>
-    [JsonProperty("analysis_errorMessage_con")]
-    public string? Analysis_ErrorMessage_CON { get; set; }
-    /// <summary> Analysis.ErrorMessage regex </summary>
-    [JsonProperty("analysis_errorMessage_reg")]
-    public string? Analysis_ErrorMessage_REG { get; set; }
-
 
     /// <summary> Analysis2.Sentiment.Positive equals </summary>
     [JsonProperty("analysis2_sentiment_positive_eq")]
@@ -12794,16 +12654,6 @@ public class CallOutgoingFilterRequest
     /// <summary> Analysis2.Model regex </summary>
     [JsonProperty("analysis2_model_reg")]
     public string? Analysis2_Model_REG { get; set; }
-
-    /// <summary> Analysis2.ErrorMessage equals </summary>
-    [JsonProperty("analysis2_errorMessage_eq")]
-    public string? Analysis2_ErrorMessage_EQ { get; set; }
-    /// <summary> Analysis2.ErrorMessage contains </summary>
-    [JsonProperty("analysis2_errorMessage_con")]
-    public string? Analysis2_ErrorMessage_CON { get; set; }
-    /// <summary> Analysis2.ErrorMessage regex </summary>
-    [JsonProperty("analysis2_errorMessage_reg")]
-    public string? Analysis2_ErrorMessage_REG { get; set; }
 
 
     /// <summary> Analysis3.Sentiment.Positive equals </summary>
@@ -12942,16 +12792,6 @@ public class CallOutgoingFilterRequest
     [JsonProperty("analysis3_model_reg")]
     public string? Analysis3_Model_REG { get; set; }
 
-    /// <summary> Analysis3.ErrorMessage equals </summary>
-    [JsonProperty("analysis3_errorMessage_eq")]
-    public string? Analysis3_ErrorMessage_EQ { get; set; }
-    /// <summary> Analysis3.ErrorMessage contains </summary>
-    [JsonProperty("analysis3_errorMessage_con")]
-    public string? Analysis3_ErrorMessage_CON { get; set; }
-    /// <summary> Analysis3.ErrorMessage regex </summary>
-    [JsonProperty("analysis3_errorMessage_reg")]
-    public string? Analysis3_ErrorMessage_REG { get; set; }
-
 
     /// <summary> ParticipantLines equals </summary>
     [JsonProperty("participantLines_eq")]
@@ -12974,15 +12814,25 @@ public class CallOutgoingFilterRequest
     [JsonProperty("errorMessage_reg")]
     public string? ErrorMessage_REG { get; set; }
 
-    /// <summary> AiProcessStatus equals </summary>
-    [JsonProperty("aiProcessStatus_eq")]
-    public string? AiProcessStatus_EQ { get; set; }
-    /// <summary> AiProcessStatus contains </summary>
-    [JsonProperty("aiProcessStatus_con")]
-    public string? AiProcessStatus_CON { get; set; }
-    /// <summary> AiProcessStatus regex </summary>
-    [JsonProperty("aiProcessStatus_reg")]
-    public string? AiProcessStatus_REG { get; set; }
+    /// <summary> AiTranscriptionStatus equals </summary>
+    [JsonProperty("aiTranscriptionStatus_eq")]
+    public string? AiTranscriptionStatus_EQ { get; set; }
+    /// <summary> AiTranscriptionStatus contains </summary>
+    [JsonProperty("aiTranscriptionStatus_con")]
+    public string? AiTranscriptionStatus_CON { get; set; }
+    /// <summary> AiTranscriptionStatus regex </summary>
+    [JsonProperty("aiTranscriptionStatus_reg")]
+    public string? AiTranscriptionStatus_REG { get; set; }
+
+    /// <summary> AiAnalysisStatus equals </summary>
+    [JsonProperty("aiAnalysisStatus_eq")]
+    public string? AiAnalysisStatus_EQ { get; set; }
+    /// <summary> AiAnalysisStatus contains </summary>
+    [JsonProperty("aiAnalysisStatus_con")]
+    public string? AiAnalysisStatus_CON { get; set; }
+    /// <summary> AiAnalysisStatus regex </summary>
+    [JsonProperty("aiAnalysisStatus_reg")]
+    public string? AiAnalysisStatus_REG { get; set; }
 
     /// <summary> IdsTags equals </summary>
     [JsonProperty("idsTags_eq")]

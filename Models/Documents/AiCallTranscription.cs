@@ -74,10 +74,10 @@ public partial class AiCallTranscription : UbluxDocument_ReferenceAccount_Refere
     [SwaggerSchema(ReadOnly = true)]
     public string? ErrorMessage { get; set; }
 
-    /// <summary>
-    ///     Status of AI call transcription
-    /// </summary>
-    [AllowUpdate(false)]
-    [SwaggerSchema(ReadOnly = true)]
-    public required AiProcessStatus Status { get; set; }
+    ///// <summary>
+    /////     Status of AI call transcription
+    ///// </summary>
+    //[AllowUpdate(false)]
+    //[SwaggerSchema(ReadOnly = true)]
+    //public required AiProcessStatus Status { get; set; }
 }

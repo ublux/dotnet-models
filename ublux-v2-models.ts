@@ -79,8 +79,6 @@ export interface AiAnalysis {
     readonly language?: string;
     /** Example: gpt-3.5-turbo */
     readonly model?: string | null;
-    /** If there is an error message analysing the call */
-    readonly errorMessage?: string | null;
 }
 
 /** AI transcription of a phone call. This is the convertion from audio to text only. */
@@ -95,7 +93,6 @@ export interface AiCallTranscription {
     readonly transcription?: AiTranscription[];
     /** If the transcription contains an error */
     readonly errorMessage?: string | null;
-    status?: AiProcessStatus;
     /** It is nullable because there are cases where it makes no sense to point to an account. 
 For example a CloudService user will point to no account */
     idsTags?: string[];
@@ -138,12 +135,6 @@ export interface AiCallTranscriptionFilterRequest {
     errorMessage_con?: string | null;
     /** ErrorMessage regex */
     errorMessage_reg?: string | null;
-    /** Status equals */
-    status_eq?: string | null;
-    /** Status contains */
-    status_con?: string | null;
-    /** Status regex */
-    status_reg?: string | null;
     /** IdsTags equals */
     idsTags_eq?: string | null;
     /** IdsTags contains */
@@ -620,7 +611,8 @@ CHANUNAVAIL: Channel unavailable. On SIP, peer may not be registered. */
     readonly durationInSeconds?: number | null;
     /** If there is an error message with the call. */
     readonly errorMessage?: string | null;
-    aiProcessStatus?: AiProcessStatus;
+    aiTranscriptionStatus?: AiProcessStatus;
+    aiAnalysisStatus?: AiProcessStatus;
     /** It is nullable because there are cases where it makes no sense to point to an account. 
 For example a CloudService user will point to no account */
     idsTags?: string[];
@@ -977,12 +969,6 @@ export interface CallFilterRequest {
     analysis_model_con?: string | null;
     /** Analysis.Model regex */
     analysis_model_reg?: string | null;
-    /** Analysis.ErrorMessage equals */
-    analysis_errorMessage_eq?: string | null;
-    /** Analysis.ErrorMessage contains */
-    analysis_errorMessage_con?: string | null;
-    /** Analysis.ErrorMessage regex */
-    analysis_errorMessage_reg?: string | null;
     /** Analysis2.Sentiment.Positive equals */
     analysis2_sentiment_positive_eq?: number | null;
     /** Analysis2.Sentiment.Positive less than or equal to */
@@ -1061,12 +1047,6 @@ export interface CallFilterRequest {
     analysis2_model_con?: string | null;
     /** Analysis2.Model regex */
     analysis2_model_reg?: string | null;
-    /** Analysis2.ErrorMessage equals */
-    analysis2_errorMessage_eq?: string | null;
-    /** Analysis2.ErrorMessage contains */
-    analysis2_errorMessage_con?: string | null;
-    /** Analysis2.ErrorMessage regex */
-    analysis2_errorMessage_reg?: string | null;
     /** Analysis3.Sentiment.Positive equals */
     analysis3_sentiment_positive_eq?: number | null;
     /** Analysis3.Sentiment.Positive less than or equal to */
@@ -1145,12 +1125,6 @@ export interface CallFilterRequest {
     analysis3_model_con?: string | null;
     /** Analysis3.Model regex */
     analysis3_model_reg?: string | null;
-    /** Analysis3.ErrorMessage equals */
-    analysis3_errorMessage_eq?: string | null;
-    /** Analysis3.ErrorMessage contains */
-    analysis3_errorMessage_con?: string | null;
-    /** Analysis3.ErrorMessage regex */
-    analysis3_errorMessage_reg?: string | null;
     /** ParticipantLines equals */
     participantLines_eq?: string | null;
     /** ParticipantLines contains */
@@ -1163,12 +1137,18 @@ export interface CallFilterRequest {
     errorMessage_con?: string | null;
     /** ErrorMessage regex */
     errorMessage_reg?: string | null;
-    /** AiProcessStatus equals */
-    aiProcessStatus_eq?: string | null;
-    /** AiProcessStatus contains */
-    aiProcessStatus_con?: string | null;
-    /** AiProcessStatus regex */
-    aiProcessStatus_reg?: string | null;
+    /** AiTranscriptionStatus equals */
+    aiTranscriptionStatus_eq?: string | null;
+    /** AiTranscriptionStatus contains */
+    aiTranscriptionStatus_con?: string | null;
+    /** AiTranscriptionStatus regex */
+    aiTranscriptionStatus_reg?: string | null;
+    /** AiAnalysisStatus equals */
+    aiAnalysisStatus_eq?: string | null;
+    /** AiAnalysisStatus contains */
+    aiAnalysisStatus_con?: string | null;
+    /** AiAnalysisStatus regex */
+    aiAnalysisStatus_reg?: string | null;
     /** IdsTags equals */
     idsTags_eq?: string | null;
     /** IdsTags contains */
@@ -1336,7 +1316,8 @@ CHANUNAVAIL: Channel unavailable. On SIP, peer may not be registered. */
     readonly durationInSeconds?: number | null;
     /** If there is an error message with the call. */
     readonly errorMessage?: string | null;
-    aiProcessStatus?: AiProcessStatus;
+    aiTranscriptionStatus?: AiProcessStatus;
+    aiAnalysisStatus?: AiProcessStatus;
     /** It is nullable because there are cases where it makes no sense to point to an account. 
 For example a CloudService user will point to no account */
     idsTags?: string[];
@@ -1417,7 +1398,8 @@ CHANUNAVAIL: Channel unavailable. On SIP, peer may not be registered. */
     readonly durationInSeconds?: number | null;
     /** If there is an error message with the call. */
     readonly errorMessage?: string | null;
-    aiProcessStatus?: AiProcessStatus;
+    aiTranscriptionStatus?: AiProcessStatus;
+    aiAnalysisStatus?: AiProcessStatus;
     /** It is nullable because there are cases where it makes no sense to point to an account. 
 For example a CloudService user will point to no account */
     idsTags?: string[];
@@ -1496,7 +1478,8 @@ CHANUNAVAIL: Channel unavailable. On SIP, peer may not be registered. */
     readonly durationInSeconds?: number | null;
     /** If there is an error message with the call. */
     readonly errorMessage?: string | null;
-    aiProcessStatus?: AiProcessStatus;
+    aiTranscriptionStatus?: AiProcessStatus;
+    aiAnalysisStatus?: AiProcessStatus;
     /** It is nullable because there are cases where it makes no sense to point to an account. 
 For example a CloudService user will point to no account */
     idsTags?: string[];
@@ -1569,7 +1552,8 @@ CHANUNAVAIL: Channel unavailable. On SIP, peer may not be registered. */
     readonly durationInSeconds?: number | null;
     /** If there is an error message with the call. */
     readonly errorMessage?: string | null;
-    aiProcessStatus?: AiProcessStatus;
+    aiTranscriptionStatus?: AiProcessStatus;
+    aiAnalysisStatus?: AiProcessStatus;
     /** It is nullable because there are cases where it makes no sense to point to an account. 
 For example a CloudService user will point to no account */
     idsTags?: string[];

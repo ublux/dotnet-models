@@ -293,9 +293,18 @@ public abstract partial class Call : UbluxDocument_ReferenceAccount_ReferenceTag
     }
 
     /// <summary>
-    ///     Null if it is not going to be AI processed
+    ///     Null if it is not going to be AI processed. This is for transcriptions. Converting audio to text.
+    ///     TODO: create index
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    public AiProcessStatus AiProcessStatus { get;set; }
+    public AiProcessStatus AiTranscriptionStatus { get;set; }
+
+    /// <summary>
+    ///     Null if it is not going to be AI processed. This is for analysys. ChatGPT performs the analysis of the transcription
+    ///     TODO: create index
+    /// </summary>
+    [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
+    public AiProcessStatus AiAnalysisStatus { get; set; }
 }
