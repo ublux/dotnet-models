@@ -48,13 +48,18 @@ public class RunningApplicationInstance
     /// <summary>
     ///     Generate a random Instance. Used for unit tests 
     /// </summary>
-    public static RunningApplicationInstance GenerateRandom(CloudServiceType type)
+    public static RunningApplicationInstance GenerateRandom(CloudServiceType type, bool initIdGlobalCounter)
     {
-        return new RunningApplicationInstance()
+        var t = new RunningApplicationInstance()
         {
             Id = (type + "-" + Guid.NewGuid().ToString()[..3]).ToUpper(),
             CloudServiceType = type
         };
+#pragma warning disable CS0618 // Type or member is obsolete
+        if (initIdGlobalCounter)
+            t.IdGlobalSetValue(1);
+#pragma warning restore CS0618 // Type or member is obsolete
+        return t;
     }
 
     #region NumberOfOperationsExecuting

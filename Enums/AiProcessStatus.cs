@@ -5,7 +5,12 @@
 ///     For example the transcription of a call using whisper or analysis of call using chat GPT.
 /// </summary>
 public enum AiProcessStatus
-{    
+{   
+    /// <summary>
+    ///     If its not being processed
+    /// </summary>
+    None,
+
     /// <summary>
     ///     Pending to be processed
     /// </summary>

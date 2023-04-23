@@ -291,4 +291,11 @@ public abstract partial class Call : UbluxDocument_ReferenceAccount_ReferenceTag
             this.ErrorMessage += "\n" + message;
         }
     }
+
+    /// <summary>
+    ///     Null if it is not going to be AI processed
+    /// </summary>
+    [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
+    public AiProcessStatus AiProcessStatus { get;set; }
 }

@@ -185,6 +185,7 @@ export interface AiEntity {
 
 /** Status of something that is AI processed. For example the transcription of a call using whisper or analysis of call using chat GPT. */
 export enum AiProcessStatus {
+    None = "None",
     Pending = "Pending",
     Processing = "Processing",
     Complete = "Complete",
@@ -619,6 +620,7 @@ CHANUNAVAIL: Channel unavailable. On SIP, peer may not be registered. */
     readonly durationInSeconds?: number | null;
     /** If there is an error message with the call. */
     readonly errorMessage?: string | null;
+    aiProcessStatus?: AiProcessStatus;
     /** It is nullable because there are cases where it makes no sense to point to an account. 
 For example a CloudService user will point to no account */
     idsTags?: string[];
@@ -1161,6 +1163,12 @@ export interface CallFilterRequest {
     errorMessage_con?: string | null;
     /** ErrorMessage regex */
     errorMessage_reg?: string | null;
+    /** AiProcessStatus equals */
+    aiProcessStatus_eq?: string | null;
+    /** AiProcessStatus contains */
+    aiProcessStatus_con?: string | null;
+    /** AiProcessStatus regex */
+    aiProcessStatus_reg?: string | null;
     /** IdsTags equals */
     idsTags_eq?: string | null;
     /** IdsTags contains */
@@ -1328,6 +1336,7 @@ CHANUNAVAIL: Channel unavailable. On SIP, peer may not be registered. */
     readonly durationInSeconds?: number | null;
     /** If there is an error message with the call. */
     readonly errorMessage?: string | null;
+    aiProcessStatus?: AiProcessStatus;
     /** It is nullable because there are cases where it makes no sense to point to an account. 
 For example a CloudService user will point to no account */
     idsTags?: string[];
@@ -1408,6 +1417,7 @@ CHANUNAVAIL: Channel unavailable. On SIP, peer may not be registered. */
     readonly durationInSeconds?: number | null;
     /** If there is an error message with the call. */
     readonly errorMessage?: string | null;
+    aiProcessStatus?: AiProcessStatus;
     /** It is nullable because there are cases where it makes no sense to point to an account. 
 For example a CloudService user will point to no account */
     idsTags?: string[];
@@ -1486,6 +1496,7 @@ CHANUNAVAIL: Channel unavailable. On SIP, peer may not be registered. */
     readonly durationInSeconds?: number | null;
     /** If there is an error message with the call. */
     readonly errorMessage?: string | null;
+    aiProcessStatus?: AiProcessStatus;
     /** It is nullable because there are cases where it makes no sense to point to an account. 
 For example a CloudService user will point to no account */
     idsTags?: string[];
@@ -1558,6 +1569,7 @@ CHANUNAVAIL: Channel unavailable. On SIP, peer may not be registered. */
     readonly durationInSeconds?: number | null;
     /** If there is an error message with the call. */
     readonly errorMessage?: string | null;
+    aiProcessStatus?: AiProcessStatus;
     /** It is nullable because there are cases where it makes no sense to point to an account. 
 For example a CloudService user will point to no account */
     idsTags?: string[];

@@ -79,5 +79,5 @@ public partial class AiCallTranscription : UbluxDocument_ReferenceAccount_Refere
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    public AiProcessStatus Status { get; set; }
+    public required AiProcessStatus Status { get; set; }
 }

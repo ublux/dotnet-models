@@ -1828,6 +1828,16 @@ public class CallIncomingToCallFlowLogicFilterRequest
     [JsonProperty("errorMessage_reg")]
     public string? ErrorMessage_REG { get; set; }
 
+    /// <summary> AiProcessStatus equals </summary>
+    [JsonProperty("aiProcessStatus_eq")]
+    public string? AiProcessStatus_EQ { get; set; }
+    /// <summary> AiProcessStatus contains </summary>
+    [JsonProperty("aiProcessStatus_con")]
+    public string? AiProcessStatus_CON { get; set; }
+    /// <summary> AiProcessStatus regex </summary>
+    [JsonProperty("aiProcessStatus_reg")]
+    public string? AiProcessStatus_REG { get; set; }
+
     /// <summary> IdsTags equals </summary>
     [JsonProperty("idsTags_eq")]
     public string? IdsTags_EQ { get; set; }
@@ -2851,6 +2861,16 @@ public class CallIncomingToExtensionFilterRequest
     [JsonProperty("errorMessage_reg")]
     public string? ErrorMessage_REG { get; set; }
 
+    /// <summary> AiProcessStatus equals </summary>
+    [JsonProperty("aiProcessStatus_eq")]
+    public string? AiProcessStatus_EQ { get; set; }
+    /// <summary> AiProcessStatus contains </summary>
+    [JsonProperty("aiProcessStatus_con")]
+    public string? AiProcessStatus_CON { get; set; }
+    /// <summary> AiProcessStatus regex </summary>
+    [JsonProperty("aiProcessStatus_reg")]
+    public string? AiProcessStatus_REG { get; set; }
+
     /// <summary> IdsTags equals </summary>
     [JsonProperty("idsTags_eq")]
     public string? IdsTags_EQ { get; set; }
@@ -3864,6 +3884,16 @@ public class CallOutgoingToExtensionFilterRequest
     [JsonProperty("errorMessage_reg")]
     public string? ErrorMessage_REG { get; set; }
 
+    /// <summary> AiProcessStatus equals </summary>
+    [JsonProperty("aiProcessStatus_eq")]
+    public string? AiProcessStatus_EQ { get; set; }
+    /// <summary> AiProcessStatus contains </summary>
+    [JsonProperty("aiProcessStatus_con")]
+    public string? AiProcessStatus_CON { get; set; }
+    /// <summary> AiProcessStatus regex </summary>
+    [JsonProperty("aiProcessStatus_reg")]
+    public string? AiProcessStatus_REG { get; set; }
+
     /// <summary> IdsTags equals </summary>
     [JsonProperty("idsTags_eq")]
     public string? IdsTags_EQ { get; set; }
@@ -4846,6 +4876,16 @@ public class CallOutgoingToPSTNFilterRequest
     /// <summary> ErrorMessage regex </summary>
     [JsonProperty("errorMessage_reg")]
     public string? ErrorMessage_REG { get; set; }
+
+    /// <summary> AiProcessStatus equals </summary>
+    [JsonProperty("aiProcessStatus_eq")]
+    public string? AiProcessStatus_EQ { get; set; }
+    /// <summary> AiProcessStatus contains </summary>
+    [JsonProperty("aiProcessStatus_con")]
+    public string? AiProcessStatus_CON { get; set; }
+    /// <summary> AiProcessStatus regex </summary>
+    [JsonProperty("aiProcessStatus_reg")]
+    public string? AiProcessStatus_REG { get; set; }
 
     /// <summary> IdsTags equals </summary>
     [JsonProperty("idsTags_eq")]
@@ -10958,6 +10998,16 @@ public class CallFilterRequest
     [JsonProperty("errorMessage_reg")]
     public string? ErrorMessage_REG { get; set; }
 
+    /// <summary> AiProcessStatus equals </summary>
+    [JsonProperty("aiProcessStatus_eq")]
+    public string? AiProcessStatus_EQ { get; set; }
+    /// <summary> AiProcessStatus contains </summary>
+    [JsonProperty("aiProcessStatus_con")]
+    public string? AiProcessStatus_CON { get; set; }
+    /// <summary> AiProcessStatus regex </summary>
+    [JsonProperty("aiProcessStatus_reg")]
+    public string? AiProcessStatus_REG { get; set; }
+
     /// <summary> IdsTags equals </summary>
     [JsonProperty("idsTags_eq")]
     public string? IdsTags_EQ { get; set; }
@@ -11941,6 +11991,16 @@ public class CallIncomingFilterRequest
     [JsonProperty("errorMessage_reg")]
     public string? ErrorMessage_REG { get; set; }
 
+    /// <summary> AiProcessStatus equals </summary>
+    [JsonProperty("aiProcessStatus_eq")]
+    public string? AiProcessStatus_EQ { get; set; }
+    /// <summary> AiProcessStatus contains </summary>
+    [JsonProperty("aiProcessStatus_con")]
+    public string? AiProcessStatus_CON { get; set; }
+    /// <summary> AiProcessStatus regex </summary>
+    [JsonProperty("aiProcessStatus_reg")]
+    public string? AiProcessStatus_REG { get; set; }
+
     /// <summary> IdsTags equals </summary>
     [JsonProperty("idsTags_eq")]
     public string? IdsTags_EQ { get; set; }
@@ -12913,6 +12973,16 @@ public class CallOutgoingFilterRequest
     /// <summary> ErrorMessage regex </summary>
     [JsonProperty("errorMessage_reg")]
     public string? ErrorMessage_REG { get; set; }
+
+    /// <summary> AiProcessStatus equals </summary>
+    [JsonProperty("aiProcessStatus_eq")]
+    public string? AiProcessStatus_EQ { get; set; }
+    /// <summary> AiProcessStatus contains </summary>
+    [JsonProperty("aiProcessStatus_con")]
+    public string? AiProcessStatus_CON { get; set; }
+    /// <summary> AiProcessStatus regex </summary>
+    [JsonProperty("aiProcessStatus_reg")]
+    public string? AiProcessStatus_REG { get; set; }
 
     /// <summary> IdsTags equals </summary>
     [JsonProperty("idsTags_eq")]
