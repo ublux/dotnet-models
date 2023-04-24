@@ -11,12 +11,12 @@ public class TimeWhenCallPlacedOnHold
     [IsUbluxRequired]
     [AllowUpdate(false)] 
     [SwaggerSchema(ReadOnly = true)] 
-    public required int SecondsElapsedWhenPlacedOnHold { get; set; }
+    public required double SecondsElapsedWhenPlacedOnHold { get; set; }
 
     /// <summary>
     ///     Seconds elapsed since the call started when call was removed from hold
     /// </summary>
     [AllowUpdate(false)] 
     [SwaggerSchema(ReadOnly = true)] 
-    public int? SecondsElapsedWhenRemovedFromHold { get; set; }
+    public double? SecondsElapsedWhenRemovedFromHold { get; set; }
 }

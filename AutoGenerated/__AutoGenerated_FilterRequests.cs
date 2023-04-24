@@ -1098,25 +1098,7 @@ public class CallIncomingToCallFlowLogicFilterRequest
     public string? DialStatus_REG { get; set; }
 
 
-    /// <summary> TimesWhenCallPlacedOnHold.SecondsElapsedWhenPlacedOnHold equals </summary>
-    [JsonProperty("timesWhenCallPlacedOnHold_secondsElapsedWhenPlacedOnHold_eq")]
-    public System.Int32? TimesWhenCallPlacedOnHold_SecondsElapsedWhenPlacedOnHold_EQ { get; set; }
-    /// <summary> TimesWhenCallPlacedOnHold.SecondsElapsedWhenPlacedOnHold less than or equal to </summary>
-    [JsonProperty("timesWhenCallPlacedOnHold_secondsElapsedWhenPlacedOnHold_lte")]
-    public System.Int32? TimesWhenCallPlacedOnHold_SecondsElapsedWhenPlacedOnHold_LTE { get; set; }
-    /// <summary> TimesWhenCallPlacedOnHold.SecondsElapsedWhenPlacedOnHold greater than or equal to </summary>
-    [JsonProperty("timesWhenCallPlacedOnHold_secondsElapsedWhenPlacedOnHold_gte")]
-    public System.Int32? TimesWhenCallPlacedOnHold_SecondsElapsedWhenPlacedOnHold_GTE { get; set; }
 
-    /// <summary> TimesWhenCallPlacedOnHold.SecondsElapsedWhenRemovedFromHold equals </summary>
-    [JsonProperty("timesWhenCallPlacedOnHold_secondsElapsedWhenRemovedFromHold_eq")]
-    public System.Int32? TimesWhenCallPlacedOnHold_SecondsElapsedWhenRemovedFromHold_EQ { get; set; }
-    /// <summary> TimesWhenCallPlacedOnHold.SecondsElapsedWhenRemovedFromHold less than or equal to </summary>
-    [JsonProperty("timesWhenCallPlacedOnHold_secondsElapsedWhenRemovedFromHold_lte")]
-    public System.Int32? TimesWhenCallPlacedOnHold_SecondsElapsedWhenRemovedFromHold_LTE { get; set; }
-    /// <summary> TimesWhenCallPlacedOnHold.SecondsElapsedWhenRemovedFromHold greater than or equal to </summary>
-    [JsonProperty("timesWhenCallPlacedOnHold_secondsElapsedWhenRemovedFromHold_gte")]
-    public System.Int32? TimesWhenCallPlacedOnHold_SecondsElapsedWhenRemovedFromHold_GTE { get; set; }
 
 
     /// <summary> From equals </summary>
@@ -2111,25 +2093,7 @@ public class CallIncomingToExtensionFilterRequest
     public string? DialStatus_REG { get; set; }
 
 
-    /// <summary> TimesWhenCallPlacedOnHold.SecondsElapsedWhenPlacedOnHold equals </summary>
-    [JsonProperty("timesWhenCallPlacedOnHold_secondsElapsedWhenPlacedOnHold_eq")]
-    public System.Int32? TimesWhenCallPlacedOnHold_SecondsElapsedWhenPlacedOnHold_EQ { get; set; }
-    /// <summary> TimesWhenCallPlacedOnHold.SecondsElapsedWhenPlacedOnHold less than or equal to </summary>
-    [JsonProperty("timesWhenCallPlacedOnHold_secondsElapsedWhenPlacedOnHold_lte")]
-    public System.Int32? TimesWhenCallPlacedOnHold_SecondsElapsedWhenPlacedOnHold_LTE { get; set; }
-    /// <summary> TimesWhenCallPlacedOnHold.SecondsElapsedWhenPlacedOnHold greater than or equal to </summary>
-    [JsonProperty("timesWhenCallPlacedOnHold_secondsElapsedWhenPlacedOnHold_gte")]
-    public System.Int32? TimesWhenCallPlacedOnHold_SecondsElapsedWhenPlacedOnHold_GTE { get; set; }
 
-    /// <summary> TimesWhenCallPlacedOnHold.SecondsElapsedWhenRemovedFromHold equals </summary>
-    [JsonProperty("timesWhenCallPlacedOnHold_secondsElapsedWhenRemovedFromHold_eq")]
-    public System.Int32? TimesWhenCallPlacedOnHold_SecondsElapsedWhenRemovedFromHold_EQ { get; set; }
-    /// <summary> TimesWhenCallPlacedOnHold.SecondsElapsedWhenRemovedFromHold less than or equal to </summary>
-    [JsonProperty("timesWhenCallPlacedOnHold_secondsElapsedWhenRemovedFromHold_lte")]
-    public System.Int32? TimesWhenCallPlacedOnHold_SecondsElapsedWhenRemovedFromHold_LTE { get; set; }
-    /// <summary> TimesWhenCallPlacedOnHold.SecondsElapsedWhenRemovedFromHold greater than or equal to </summary>
-    [JsonProperty("timesWhenCallPlacedOnHold_secondsElapsedWhenRemovedFromHold_gte")]
-    public System.Int32? TimesWhenCallPlacedOnHold_SecondsElapsedWhenRemovedFromHold_GTE { get; set; }
 
 
     /// <summary> From equals </summary>
@@ -3114,25 +3078,7 @@ public class CallOutgoingToExtensionFilterRequest
     public string? DialStatus_REG { get; set; }
 
 
-    /// <summary> TimesWhenCallPlacedOnHold.SecondsElapsedWhenPlacedOnHold equals </summary>
-    [JsonProperty("timesWhenCallPlacedOnHold_secondsElapsedWhenPlacedOnHold_eq")]
-    public System.Int32? TimesWhenCallPlacedOnHold_SecondsElapsedWhenPlacedOnHold_EQ { get; set; }
-    /// <summary> TimesWhenCallPlacedOnHold.SecondsElapsedWhenPlacedOnHold less than or equal to </summary>
-    [JsonProperty("timesWhenCallPlacedOnHold_secondsElapsedWhenPlacedOnHold_lte")]
-    public System.Int32? TimesWhenCallPlacedOnHold_SecondsElapsedWhenPlacedOnHold_LTE { get; set; }
-    /// <summary> TimesWhenCallPlacedOnHold.SecondsElapsedWhenPlacedOnHold greater than or equal to </summary>
-    [JsonProperty("timesWhenCallPlacedOnHold_secondsElapsedWhenPlacedOnHold_gte")]
-    public System.Int32? TimesWhenCallPlacedOnHold_SecondsElapsedWhenPlacedOnHold_GTE { get; set; }
 
-    /// <summary> TimesWhenCallPlacedOnHold.SecondsElapsedWhenRemovedFromHold equals </summary>
-    [JsonProperty("timesWhenCallPlacedOnHold_secondsElapsedWhenRemovedFromHold_eq")]
-    public System.Int32? TimesWhenCallPlacedOnHold_SecondsElapsedWhenRemovedFromHold_EQ { get; set; }
-    /// <summary> TimesWhenCallPlacedOnHold.SecondsElapsedWhenRemovedFromHold less than or equal to </summary>
-    [JsonProperty("timesWhenCallPlacedOnHold_secondsElapsedWhenRemovedFromHold_lte")]
-    public System.Int32? TimesWhenCallPlacedOnHold_SecondsElapsedWhenRemovedFromHold_LTE { get; set; }
-    /// <summary> TimesWhenCallPlacedOnHold.SecondsElapsedWhenRemovedFromHold greater than or equal to </summary>
-    [JsonProperty("timesWhenCallPlacedOnHold_secondsElapsedWhenRemovedFromHold_gte")]
-    public System.Int32? TimesWhenCallPlacedOnHold_SecondsElapsedWhenRemovedFromHold_GTE { get; set; }
 
 
     /// <summary> From equals </summary>
@@ -4087,25 +4033,7 @@ public class CallOutgoingToPSTNFilterRequest
     public string? DialStatus_REG { get; set; }
 
 
-    /// <summary> TimesWhenCallPlacedOnHold.SecondsElapsedWhenPlacedOnHold equals </summary>
-    [JsonProperty("timesWhenCallPlacedOnHold_secondsElapsedWhenPlacedOnHold_eq")]
-    public System.Int32? TimesWhenCallPlacedOnHold_SecondsElapsedWhenPlacedOnHold_EQ { get; set; }
-    /// <summary> TimesWhenCallPlacedOnHold.SecondsElapsedWhenPlacedOnHold less than or equal to </summary>
-    [JsonProperty("timesWhenCallPlacedOnHold_secondsElapsedWhenPlacedOnHold_lte")]
-    public System.Int32? TimesWhenCallPlacedOnHold_SecondsElapsedWhenPlacedOnHold_LTE { get; set; }
-    /// <summary> TimesWhenCallPlacedOnHold.SecondsElapsedWhenPlacedOnHold greater than or equal to </summary>
-    [JsonProperty("timesWhenCallPlacedOnHold_secondsElapsedWhenPlacedOnHold_gte")]
-    public System.Int32? TimesWhenCallPlacedOnHold_SecondsElapsedWhenPlacedOnHold_GTE { get; set; }
 
-    /// <summary> TimesWhenCallPlacedOnHold.SecondsElapsedWhenRemovedFromHold equals </summary>
-    [JsonProperty("timesWhenCallPlacedOnHold_secondsElapsedWhenRemovedFromHold_eq")]
-    public System.Int32? TimesWhenCallPlacedOnHold_SecondsElapsedWhenRemovedFromHold_EQ { get; set; }
-    /// <summary> TimesWhenCallPlacedOnHold.SecondsElapsedWhenRemovedFromHold less than or equal to </summary>
-    [JsonProperty("timesWhenCallPlacedOnHold_secondsElapsedWhenRemovedFromHold_lte")]
-    public System.Int32? TimesWhenCallPlacedOnHold_SecondsElapsedWhenRemovedFromHold_LTE { get; set; }
-    /// <summary> TimesWhenCallPlacedOnHold.SecondsElapsedWhenRemovedFromHold greater than or equal to </summary>
-    [JsonProperty("timesWhenCallPlacedOnHold_secondsElapsedWhenRemovedFromHold_gte")]
-    public System.Int32? TimesWhenCallPlacedOnHold_SecondsElapsedWhenRemovedFromHold_GTE { get; set; }
 
 
     /// <summary> From equals </summary>
@@ -10168,25 +10096,7 @@ public class CallFilterRequest
     public string? DialStatus_REG { get; set; }
 
 
-    /// <summary> TimesWhenCallPlacedOnHold.SecondsElapsedWhenPlacedOnHold equals </summary>
-    [JsonProperty("timesWhenCallPlacedOnHold_secondsElapsedWhenPlacedOnHold_eq")]
-    public System.Int32? TimesWhenCallPlacedOnHold_SecondsElapsedWhenPlacedOnHold_EQ { get; set; }
-    /// <summary> TimesWhenCallPlacedOnHold.SecondsElapsedWhenPlacedOnHold less than or equal to </summary>
-    [JsonProperty("timesWhenCallPlacedOnHold_secondsElapsedWhenPlacedOnHold_lte")]
-    public System.Int32? TimesWhenCallPlacedOnHold_SecondsElapsedWhenPlacedOnHold_LTE { get; set; }
-    /// <summary> TimesWhenCallPlacedOnHold.SecondsElapsedWhenPlacedOnHold greater than or equal to </summary>
-    [JsonProperty("timesWhenCallPlacedOnHold_secondsElapsedWhenPlacedOnHold_gte")]
-    public System.Int32? TimesWhenCallPlacedOnHold_SecondsElapsedWhenPlacedOnHold_GTE { get; set; }
 
-    /// <summary> TimesWhenCallPlacedOnHold.SecondsElapsedWhenRemovedFromHold equals </summary>
-    [JsonProperty("timesWhenCallPlacedOnHold_secondsElapsedWhenRemovedFromHold_eq")]
-    public System.Int32? TimesWhenCallPlacedOnHold_SecondsElapsedWhenRemovedFromHold_EQ { get; set; }
-    /// <summary> TimesWhenCallPlacedOnHold.SecondsElapsedWhenRemovedFromHold less than or equal to </summary>
-    [JsonProperty("timesWhenCallPlacedOnHold_secondsElapsedWhenRemovedFromHold_lte")]
-    public System.Int32? TimesWhenCallPlacedOnHold_SecondsElapsedWhenRemovedFromHold_LTE { get; set; }
-    /// <summary> TimesWhenCallPlacedOnHold.SecondsElapsedWhenRemovedFromHold greater than or equal to </summary>
-    [JsonProperty("timesWhenCallPlacedOnHold_secondsElapsedWhenRemovedFromHold_gte")]
-    public System.Int32? TimesWhenCallPlacedOnHold_SecondsElapsedWhenRemovedFromHold_GTE { get; set; }
 
 
     /// <summary> From equals </summary>
@@ -11141,25 +11051,7 @@ public class CallIncomingFilterRequest
     public string? DialStatus_REG { get; set; }
 
 
-    /// <summary> TimesWhenCallPlacedOnHold.SecondsElapsedWhenPlacedOnHold equals </summary>
-    [JsonProperty("timesWhenCallPlacedOnHold_secondsElapsedWhenPlacedOnHold_eq")]
-    public System.Int32? TimesWhenCallPlacedOnHold_SecondsElapsedWhenPlacedOnHold_EQ { get; set; }
-    /// <summary> TimesWhenCallPlacedOnHold.SecondsElapsedWhenPlacedOnHold less than or equal to </summary>
-    [JsonProperty("timesWhenCallPlacedOnHold_secondsElapsedWhenPlacedOnHold_lte")]
-    public System.Int32? TimesWhenCallPlacedOnHold_SecondsElapsedWhenPlacedOnHold_LTE { get; set; }
-    /// <summary> TimesWhenCallPlacedOnHold.SecondsElapsedWhenPlacedOnHold greater than or equal to </summary>
-    [JsonProperty("timesWhenCallPlacedOnHold_secondsElapsedWhenPlacedOnHold_gte")]
-    public System.Int32? TimesWhenCallPlacedOnHold_SecondsElapsedWhenPlacedOnHold_GTE { get; set; }
 
-    /// <summary> TimesWhenCallPlacedOnHold.SecondsElapsedWhenRemovedFromHold equals </summary>
-    [JsonProperty("timesWhenCallPlacedOnHold_secondsElapsedWhenRemovedFromHold_eq")]
-    public System.Int32? TimesWhenCallPlacedOnHold_SecondsElapsedWhenRemovedFromHold_EQ { get; set; }
-    /// <summary> TimesWhenCallPlacedOnHold.SecondsElapsedWhenRemovedFromHold less than or equal to </summary>
-    [JsonProperty("timesWhenCallPlacedOnHold_secondsElapsedWhenRemovedFromHold_lte")]
-    public System.Int32? TimesWhenCallPlacedOnHold_SecondsElapsedWhenRemovedFromHold_LTE { get; set; }
-    /// <summary> TimesWhenCallPlacedOnHold.SecondsElapsedWhenRemovedFromHold greater than or equal to </summary>
-    [JsonProperty("timesWhenCallPlacedOnHold_secondsElapsedWhenRemovedFromHold_gte")]
-    public System.Int32? TimesWhenCallPlacedOnHold_SecondsElapsedWhenRemovedFromHold_GTE { get; set; }
 
 
     /// <summary> From equals </summary>
@@ -12104,25 +11996,7 @@ public class CallOutgoingFilterRequest
     public string? DialStatus_REG { get; set; }
 
 
-    /// <summary> TimesWhenCallPlacedOnHold.SecondsElapsedWhenPlacedOnHold equals </summary>
-    [JsonProperty("timesWhenCallPlacedOnHold_secondsElapsedWhenPlacedOnHold_eq")]
-    public System.Int32? TimesWhenCallPlacedOnHold_SecondsElapsedWhenPlacedOnHold_EQ { get; set; }
-    /// <summary> TimesWhenCallPlacedOnHold.SecondsElapsedWhenPlacedOnHold less than or equal to </summary>
-    [JsonProperty("timesWhenCallPlacedOnHold_secondsElapsedWhenPlacedOnHold_lte")]
-    public System.Int32? TimesWhenCallPlacedOnHold_SecondsElapsedWhenPlacedOnHold_LTE { get; set; }
-    /// <summary> TimesWhenCallPlacedOnHold.SecondsElapsedWhenPlacedOnHold greater than or equal to </summary>
-    [JsonProperty("timesWhenCallPlacedOnHold_secondsElapsedWhenPlacedOnHold_gte")]
-    public System.Int32? TimesWhenCallPlacedOnHold_SecondsElapsedWhenPlacedOnHold_GTE { get; set; }
 
-    /// <summary> TimesWhenCallPlacedOnHold.SecondsElapsedWhenRemovedFromHold equals </summary>
-    [JsonProperty("timesWhenCallPlacedOnHold_secondsElapsedWhenRemovedFromHold_eq")]
-    public System.Int32? TimesWhenCallPlacedOnHold_SecondsElapsedWhenRemovedFromHold_EQ { get; set; }
-    /// <summary> TimesWhenCallPlacedOnHold.SecondsElapsedWhenRemovedFromHold less than or equal to </summary>
-    [JsonProperty("timesWhenCallPlacedOnHold_secondsElapsedWhenRemovedFromHold_lte")]
-    public System.Int32? TimesWhenCallPlacedOnHold_SecondsElapsedWhenRemovedFromHold_LTE { get; set; }
-    /// <summary> TimesWhenCallPlacedOnHold.SecondsElapsedWhenRemovedFromHold greater than or equal to </summary>
-    [JsonProperty("timesWhenCallPlacedOnHold_secondsElapsedWhenRemovedFromHold_gte")]
-    public System.Int32? TimesWhenCallPlacedOnHold_SecondsElapsedWhenRemovedFromHold_GTE { get; set; }
 
 
     /// <summary> From equals </summary>

@@ -729,18 +729,6 @@ export interface CallFilterRequest {
     dialStatus_con?: string | null;
     /** DialStatus regex */
     dialStatus_reg?: string | null;
-    /** TimesWhenCallPlacedOnHold.SecondsElapsedWhenPlacedOnHold equals */
-    timesWhenCallPlacedOnHold_secondsElapsedWhenPlacedOnHold_eq?: number | null;
-    /** TimesWhenCallPlacedOnHold.SecondsElapsedWhenPlacedOnHold less than or equal to */
-    timesWhenCallPlacedOnHold_secondsElapsedWhenPlacedOnHold_lte?: number | null;
-    /** TimesWhenCallPlacedOnHold.SecondsElapsedWhenPlacedOnHold greater than or equal to */
-    timesWhenCallPlacedOnHold_secondsElapsedWhenPlacedOnHold_gte?: number | null;
-    /** TimesWhenCallPlacedOnHold.SecondsElapsedWhenRemovedFromHold equals */
-    timesWhenCallPlacedOnHold_secondsElapsedWhenRemovedFromHold_eq?: number | null;
-    /** TimesWhenCallPlacedOnHold.SecondsElapsedWhenRemovedFromHold less than or equal to */
-    timesWhenCallPlacedOnHold_secondsElapsedWhenRemovedFromHold_lte?: number | null;
-    /** TimesWhenCallPlacedOnHold.SecondsElapsedWhenRemovedFromHold greater than or equal to */
-    timesWhenCallPlacedOnHold_secondsElapsedWhenRemovedFromHold_gte?: number | null;
     /** From equals */
     from_eq?: string | null;
     /** From contains */
