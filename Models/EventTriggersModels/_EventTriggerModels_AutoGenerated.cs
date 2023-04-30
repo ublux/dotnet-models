@@ -68,6 +68,38 @@ public partial class EventIncomingCallTerminatedWithRecording : EventTriggerMode
 }
 
 /// <summary />
+public partial class EventOutgoingCallStarted : EventTriggerModel
+{
+    /// <inheritdoc />
+    [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
+    public override EventTrigger EventTrigger
+    {
+        get => EventTrigger.EventOutgoingCallStarted;
+        #if UBLUX_Release || RELEASE
+        set { }
+        #else
+        #endif
+    }
+}
+
+/// <summary />
+public partial class EventIncomingCallStarted : EventTriggerModel
+{
+    /// <inheritdoc />
+    [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
+    public override EventTrigger EventTrigger
+    {
+        get => EventTrigger.EventIncomingCallStarted;
+        #if UBLUX_Release || RELEASE
+        set { }
+        #else
+        #endif
+    }
+}
+
+/// <summary />
 public partial class EventCallPlacedOnHoldFor1Min : EventTriggerModel
 {
     /// <inheritdoc />

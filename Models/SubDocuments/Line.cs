@@ -5,6 +5,19 @@
 /// </summary>
 public partial class Line : UbluxSubDocument
 {
+    private static readonly ReaderWriterLockSlim _lock = new();
+
+    private LineConnectionStatus? _lineConnectionStatus;
+
+    /// <summary>
+    ///     If true it will be sync with WS because line status changed
+    /// </summary>
+    [System.Text.Json.Serialization.JsonIgnore]
+    [JsonIgnore]
+    [BsonIgnore]
+    [HideForCreateRequest]
+    public bool IsConnectionStatusChanged;
+   
     /// <summary>
     /// </summary>
     [AllowUpdate(true)]
@@ -17,7 +30,33 @@ public partial class Line : UbluxSubDocument
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
     [HideForCreateRequest]
-    public LineConnectionStatus? LineConnectionStatus { get; set; }
+    public LineConnectionStatus? LineConnectionStatus
+    {
+        get
+        {
+            _lock.EnterReadLock();
+            try
+            {
+                return _lineConnectionStatus;
+            }
+            finally
+            {
+                _lock.ExitReadLock();
+            }
+        }
+        set
+        {
+            _lock.EnterWriteLock();
+            try
+            {
+                _lineConnectionStatus = value;
+            }
+            finally
+            {
+                _lock.ExitWriteLock();
+            }
+        }
+    }
 
     /// <summary>
     ///     Caller id number that will be used to place outbound calls
@@ -68,15 +107,6 @@ public partial class Line : UbluxSubDocument
     [BsonIgnore]
     [HideForCreateRequest]
     public DateTime DateReceivedLastPacket;
-
-    /// <summary>
-    ///     If true it will be sync with WS because line status changed
-    /// </summary>
-    [System.Text.Json.Serialization.JsonIgnore]
-    [JsonIgnore]
-    [BsonIgnore]
-    [HideForCreateRequest]
-    public bool IsConnectionStatusChanged;
 
     ///// <summary>
     /////     Used by PBX

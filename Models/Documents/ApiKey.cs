@@ -36,7 +36,7 @@ public partial class ApiKey : UbluxDocument_ReferenceAccount_ReferenceTags
 
     /// <summary>
     ///     Api key
-    ///     TODO place index on database on this field
+    ///     TODO place index on database on this field as we often search by this field
     /// </summary>
     [IsUbluxRequired]
     [AllowUpdate(false)]

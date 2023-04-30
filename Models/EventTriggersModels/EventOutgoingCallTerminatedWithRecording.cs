@@ -61,7 +61,14 @@ public partial class EventOutgoingCallTerminatedWithRecording
     /// </summary>
     [AllowUpdate(false)] 
     [SwaggerSchema(ReadOnly = true)] 
-    public string? RecordingUrl { get; set; }   
+    public string? RecordingUrl { get; set; }
+
+    /// <summary>
+    ///     Times when call was placed on hold
+    /// </summary>
+    [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
+    public List<TimeWhenCallPlacedOnHold> TimesWhenCallPlacedOnHold { get; set; } = new List<TimeWhenCallPlacedOnHold>();
 
     /// <summary>
     ///     Return a random object
@@ -88,6 +95,12 @@ public partial class EventOutgoingCallTerminatedWithRecording
         obj.SecondsItTookToAnswer = 10;
         obj.DurationInSeconds = Random.Shared.Next(20, 3600);
         obj.RecordingUrl = $"https://api.{Constants.Domain}/some-url";
+        var timeWhenPlacedOnHold = Random.Shared.Next(10, ((int)obj.DurationInSeconds) - 5);
+        obj.TimesWhenCallPlacedOnHold.Add(new TimeWhenCallPlacedOnHold()
+        {
+            SecondsElapsedWhenPlacedOnHold = timeWhenPlacedOnHold + 0.1,
+            SecondsElapsedWhenRemovedFromHold = timeWhenPlacedOnHold + 5
+        });
 
         return obj;
     }

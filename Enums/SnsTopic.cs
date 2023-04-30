@@ -27,6 +27,11 @@ public enum SnsTopic
     #region PBX
 
     /// <summary>
+    ///     If there is a new call
+    /// </summary>
+    Call_Started,
+
+    /// <summary>
     ///     If a call terminates (enqueues)
     /// </summary>
     Call_Terminated,
@@ -44,10 +49,17 @@ public enum SnsTopic
     /// <summary>
     ///     If an extension is not answered
     /// </summary>
-    Extension_Unanswered
+    Extension_Unanswered,
 
+    /// <summary>
+    ///     If extension takes too long to be answered
+    /// </summary>
+    Extension_TookToLongToBeAnswered,
 
-
+    /// <summary>
+    ///     If call is placed on hold for too long
+    /// </summary>
+    Call_PlacedOnHoldForTooLong
 
     #endregion
 }

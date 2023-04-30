@@ -2615,12 +2615,14 @@ export enum EventActionType {
     LeaveVoicemail = "LeaveVoicemail",
 }
 
-/** Type of events that could trigger a custom action */
+/** Type of events that could trigger a custom action. Used by Zapier and Integromat */
 export enum EventTrigger {
     EventOutgoingCallTerminated = "EventOutgoingCallTerminated",
     EventIncomingCallTerminated = "EventIncomingCallTerminated",
     EventOutgoingCallTerminatedWithRecording = "EventOutgoingCallTerminatedWithRecording",
     EventIncomingCallTerminatedWithRecording = "EventIncomingCallTerminatedWithRecording",
+    EventOutgoingCallStarted = "EventOutgoingCallStarted",
+    EventIncomingCallStarted = "EventIncomingCallStarted",
     EventCallPlacedOnHoldFor1Min = "EventCallPlacedOnHoldFor1Min",
     EventCallPlacedOnHoldFor2Min = "EventCallPlacedOnHoldFor2Min",
     EventCallPlacedOnHoldFor4Min = "EventCallPlacedOnHoldFor4Min",

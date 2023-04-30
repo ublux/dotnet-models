@@ -3,9 +3,9 @@
 namespace Ublux.Communications.Models.EventTriggersModels;
 
 /// <summary>
-///     <see cref="EventTrigger.EventIncomingCallTerminatedWithRecording"/>
+///     <see cref="EventTrigger.EventIncomingCallStarted"/>
 /// </summary>
-public partial class EventIncomingCallTerminatedWithRecording
+public partial class EventIncomingCallStarted
 {
     /// <summary>
     ///     From phone number
@@ -29,25 +29,11 @@ public partial class EventIncomingCallTerminatedWithRecording
     public DateTime DateStart { get; set; }
 
     /// <summary>
-    ///     Date when call was answered
-    /// </summary>
-    [AllowUpdate(false)] 
-    [SwaggerSchema(ReadOnly = true)] 
-    public int? SecondsItTookToAnswer { get; set; }
-
-    /// <summary>
-    ///     Date when call was ended
-    /// </summary>
-    [AllowUpdate(false)] 
-    [SwaggerSchema(ReadOnly = true)] 
-    public double DurationInSeconds { get; set; }
-
-    /// <summary>
     ///     Id of contact that made phone call
     /// </summary>
     [AllowUpdate(false)] 
     [SwaggerSchema(ReadOnly = true)] 
-    public string? IdContact { get; set; }
+    public string? IdContact { get; set; }    
 
     /// <summary>
     ///     Name of contact
@@ -57,30 +43,16 @@ public partial class EventIncomingCallTerminatedWithRecording
     public string? ContactFullName { get; set; }
 
     /// <summary>
-    ///     Url of recording
-    /// </summary>
-    [AllowUpdate(false)] 
-    [SwaggerSchema(ReadOnly = true)] 
-    public string? RecordingUrl { get; set; }
-
-    /// <summary>
-    ///     Times when call was placed on hold
-    /// </summary>
-    [AllowUpdate(false)]
-    [SwaggerSchema(ReadOnly = true)]
-    public List<TimeWhenCallPlacedOnHold> TimesWhenCallPlacedOnHold { get; set; } = new List<TimeWhenCallPlacedOnHold>();
-
-    /// <summary>
     ///     Return a random object
     /// </summary>
-    public override EventIncomingCallTerminatedWithRecording BuildRandomFakeObject()
+    public override EventIncomingCallStarted BuildRandomFakeObject()
     {
         var randInstanceId = new RunningApplicationInstance() { Id = "1", CloudServiceType = CloudServiceType.WS };
         var randChannel = Random.Shared.Next(100000, 999999);
         var randomId = CallIncomingToExtension.BuildId(randInstanceId, $"{randChannel}.0").Id;
         var randomIdContact = Contact.BuildId(randInstanceId).Id;
 
-        var f = new Faker<EventIncomingCallTerminatedWithRecording>()
+        var f = new Faker<EventIncomingCallStarted>()
             .RuleFor(x => x.Id, randomId)
             .RuleFor(x => x.From, x => x.Phone.PhoneNumberFormat(0))
             .RuleFor(x => x.To, x => x.Phone.PhoneNumberFormat(0))
@@ -88,19 +60,10 @@ public partial class EventIncomingCallTerminatedWithRecording
             .RuleFor(x => x.ContactFullName, x=>x.Name.FullName())
             ;
 
-        EventIncomingCallTerminatedWithRecording obj = f.Generate();
+        EventIncomingCallStarted obj = f.Generate();
         
         // set dates
         obj.DateStart = DateTime.UtcNow.AddHours(-1);
-        obj.SecondsItTookToAnswer = 10;
-        obj.DurationInSeconds = Random.Shared.Next(20, 3600);
-        obj.RecordingUrl = $"https://api.{Constants.Domain}/some-url";
-        var timeWhenPlacedOnHold = Random.Shared.Next(10, ((int)obj.DurationInSeconds) - 5);
-        obj.TimesWhenCallPlacedOnHold.Add(new TimeWhenCallPlacedOnHold()
-        {
-            SecondsElapsedWhenPlacedOnHold = timeWhenPlacedOnHold + 0.1,
-            SecondsElapsedWhenRemovedFromHold = timeWhenPlacedOnHold + 5
-        });
 
         return obj;
     }

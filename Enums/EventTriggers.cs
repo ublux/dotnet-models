@@ -1,11 +1,12 @@
 ﻿namespace Ublux.Communications.Enums;
 
 /// <summary>
-///     Type of events that could trigger a custom action
+///     Type of events that could trigger a custom action. 
+///     Used by Zapier and Integromat
 /// </summary>
 public enum EventTrigger
 {
-    #region Call terminated
+    #region Call terminated/started
 
     /// <summary/>
     EventOutgoingCallTerminated,
@@ -16,6 +17,11 @@ public enum EventTrigger
     EventOutgoingCallTerminatedWithRecording,
     /// <summary/>
     EventIncomingCallTerminatedWithRecording,
+
+    /// <summary/>
+    EventOutgoingCallStarted,
+    /// <summary/>
+    EventIncomingCallStarted,
 
     #endregion
 
@@ -31,7 +37,6 @@ public enum EventTrigger
     EventCallPlacedOnHoldFor8Min,
 
     #endregion
-
 
     #region Line connected/disconnected
 
