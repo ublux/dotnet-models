@@ -33,7 +33,7 @@ public partial class EventOutgoingCallTerminatedWithRecording
     /// </summary>
     [AllowUpdate(false)] 
     [SwaggerSchema(ReadOnly = true)] 
-    public int? SecondsItTookToAnswer { get; set; }
+    public double? SecondsItTookToAnswer { get; set; }
 
     /// <summary>
     ///     Date when call was ended
@@ -73,12 +73,12 @@ public partial class EventOutgoingCallTerminatedWithRecording
     /// <summary>
     ///     Return a random object
     /// </summary>
-    public override EventOutgoingCallTerminatedWithRecording BuildRandomFakeObject()
+    public override EventOutgoingCallTerminatedWithRecording BuildRandomFakeObject(RunningApplicationInstance instance)
     {
         var randInstanceId = new RunningApplicationInstance() { Id = "1", CloudServiceType = CloudServiceType.WS };
         var randChannel = Random.Shared.Next(100000, 999999);
-        var randomId = CallOutgoingToPSTN.BuildId(randInstanceId, $"{randChannel}.0").Id;
-        var randomIdContact = Contact.BuildId(randInstanceId).Id;
+        var randomId = CallOutgoingToPSTN.BuildId(instance, $"{randChannel}.0").Id;
+        var randomIdContact = Contact.BuildId(instance).Id;
 
         var f = new Faker<EventOutgoingCallTerminatedWithRecording>()
             .RuleFor(x => x.Id, randomId)

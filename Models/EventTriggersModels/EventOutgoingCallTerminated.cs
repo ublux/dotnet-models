@@ -66,12 +66,12 @@ public partial class EventOutgoingCallTerminated
     /// <summary>
     ///     Return a random object
     /// </summary>
-    public override EventOutgoingCallTerminated BuildRandomFakeObject()
+    public override EventOutgoingCallTerminated BuildRandomFakeObject(RunningApplicationInstance instance)
     {
         var randInstanceId = new RunningApplicationInstance() { Id = "1", CloudServiceType = CloudServiceType.WS };
         var randChannel = Random.Shared.Next(100000, 999999);
-        var randomId = CallOutgoingToPSTN.BuildId(randInstanceId, $"{randChannel}.0").Id;
-        var randomIdContact = Contact.BuildId(randInstanceId).Id;
+        var randomId = CallOutgoingToPSTN.BuildId(instance, $"{randChannel}.0").Id;
+        var randomIdContact = Contact.BuildId(instance).Id;
 
         var f = new Faker<EventOutgoingCallTerminated>()
             .RuleFor(x => x.Id, randomId)

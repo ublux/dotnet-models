@@ -66,11 +66,11 @@ public partial class EventExtensionTookLongerThan1MinToBeAnswered
     /// <summary>
     ///     Return a random object
     /// </summary>
-    public override EventExtensionTookLongerThan1MinToBeAnswered BuildRandomFakeObject()
+    public override EventExtensionTookLongerThan1MinToBeAnswered BuildRandomFakeObject(RunningApplicationInstance instance)
     {
         var randInstanceId = new RunningApplicationInstance() { Id = "1", CloudServiceType = CloudServiceType.WS };
-        var randomId = ExtensionQueue.BuildId(randInstanceId).Id;
-        var randomIdContact = Contact.BuildId(randInstanceId).Id;
+        var randomId = ExtensionQueue.BuildId(instance).Id;
+        var randomIdContact = Contact.BuildId(instance).Id;
 
         var f = new Faker<EventExtensionTookLongerThan1MinToBeAnswered>()
             .RuleFor(x => x.Id, randomId)

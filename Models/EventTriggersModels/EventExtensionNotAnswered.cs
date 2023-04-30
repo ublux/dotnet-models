@@ -61,16 +61,16 @@ public partial class EventExtensionNotAnswered
     /// </summary>
     [AllowUpdate(false)] 
     [SwaggerSchema(ReadOnly = true)] 
-    public int NumberOfSecondsItRang { get; set; }
+    public double NumberOfSecondsItRang { get; set; }
 
     /// <summary>
     ///     Return a random object
     /// </summary>
-    public override EventExtensionNotAnswered BuildRandomFakeObject()
+    public override EventExtensionNotAnswered BuildRandomFakeObject(RunningApplicationInstance instance)
     {
         var randInstanceId = new RunningApplicationInstance() { Id = "1", CloudServiceType = CloudServiceType.WS };
-        var randomId = ExtensionDial.BuildId(randInstanceId).Id;
-        var randomIdContact = Contact.BuildId(randInstanceId).Id;
+        var randomId = ExtensionDial.BuildId(instance).Id;
+        var randomIdContact = Contact.BuildId(instance).Id;
 
         var f = new Faker<EventExtensionNotAnswered>()
             .RuleFor(x => x.Id, randomId)

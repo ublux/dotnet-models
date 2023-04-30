@@ -61,16 +61,16 @@ public partial class EventExtensionTookLongerThan2MinToBeAnswered
     /// </summary>
     [AllowUpdate(false)] 
     [SwaggerSchema(ReadOnly = true)] 
-    public int NumberOfSecondsItRang { get; set; }
+    public double NumberOfSecondsItRang { get; set; }
 
     /// <summary>
     ///     Return a random object
     /// </summary>
-    public override EventExtensionTookLongerThan2MinToBeAnswered BuildRandomFakeObject()
+    public override EventExtensionTookLongerThan2MinToBeAnswered BuildRandomFakeObject(RunningApplicationInstance instance)
     {
         var randInstanceId = new RunningApplicationInstance() { Id = "1", CloudServiceType = CloudServiceType.WS };
-        var randomId = ExtensionQueue.BuildId(randInstanceId).Id;
-        var randomIdContact = Contact.BuildId(randInstanceId).Id;
+        var randomId = ExtensionQueue.BuildId(instance).Id;
+        var randomIdContact = Contact.BuildId(instance).Id;
 
         var f = new Faker<EventExtensionTookLongerThan2MinToBeAnswered>()
             .RuleFor(x => x.Id, randomId)

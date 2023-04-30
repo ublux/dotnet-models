@@ -56,6 +56,6 @@ public abstract class EventTriggerModel
     ///     Return fake object used by Zapier to be shown as an example
     /// </summary>
     /// <returns></returns>
-    public abstract EventTriggerModel BuildRandomFakeObject();    
+    public abstract EventTriggerModel BuildRandomFakeObject(RunningApplicationInstance instance);    
 }
 

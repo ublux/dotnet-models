@@ -45,17 +45,17 @@ public partial class EventLineConnected
     /// <summary>
     ///     Return a random object
     /// </summary>
-    public override EventLineConnected BuildRandomFakeObject()
+    public override EventLineConnected BuildRandomFakeObject(RunningApplicationInstance instance)
     {
         var randInstanceId = new RunningApplicationInstance() { Id = "1", CloudServiceType = CloudServiceType.WS };
-        var idPhone = Phone.BuildId(randInstanceId);
+        var idPhone = Phone.BuildId(instance);
 
         Phone phone = new Faker<Phone>()
             .RuleFor(x => x.Id, idPhone.Id)
             .RuleFor(x => x.FriendlyName, x => x.Name.FullName())
             .Generate();
 
-        var idLine = Line.BuildId(randInstanceId, phone.IdAccount, phone.Id);
+        var idLine = Line.BuildId(instance, phone.IdAccount, phone.Id);
 
         var f = new Faker<EventLineConnected>()
             .RuleFor(x => x.Id, idLine.Id)

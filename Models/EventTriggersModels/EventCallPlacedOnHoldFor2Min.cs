@@ -33,7 +33,7 @@ public partial class EventCallPlacedOnHoldFor2Min
     /// </summary>
     [AllowUpdate(false)] 
     [SwaggerSchema(ReadOnly = true)] 
-    public int? SecondsItTookToAnswer { get; set; }    
+    public double? SecondsItTookToAnswer { get; set; }    
 
     /// <summary>
     ///     Id of contact that made phone call
@@ -59,12 +59,12 @@ public partial class EventCallPlacedOnHoldFor2Min
     /// <summary>
     ///     Return a random object
     /// </summary>
-    public override EventCallPlacedOnHoldFor2Min BuildRandomFakeObject()
+    public override EventCallPlacedOnHoldFor2Min BuildRandomFakeObject(RunningApplicationInstance instance)
     {
         var randInstanceId = new RunningApplicationInstance() { Id = "1", CloudServiceType = CloudServiceType.WS };
         var randChannel = Random.Shared.Next(100000, 999999);
-        var randomId = CallIncomingToExtension.BuildId(randInstanceId, $"{randChannel}.0").Id;
-        var randomIdContact = Contact.BuildId(randInstanceId).Id;
+        var randomId = CallIncomingToExtension.BuildId(instance, $"{randChannel}.0").Id;
+        var randomIdContact = Contact.BuildId(instance).Id;
 
         var f = new Faker<EventCallPlacedOnHoldFor2Min>()
             .RuleFor(x => x.Id, randomId)
