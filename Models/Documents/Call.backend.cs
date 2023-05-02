@@ -8,7 +8,9 @@ namespace Ublux.Communications.Models.Documents;
 /// </summary>
 public abstract partial class Call
 {
-    /// <inheritdoc />
+    /// <summary>
+    ///     Channel executing dialplan.
+    /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
     [IgnoreDataMember]
