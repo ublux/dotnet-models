@@ -32,7 +32,7 @@ public class ChildCallBlindTransferToExtension : ChildCallBlindTransfer, ICallTo
     public string? IdLineThatAnswered { get; set; }
 
     /// <summary>
-    ///     Ids of lines that rang
+    ///     Ids of lines that ring
     /// </summary>
     [AllowUpdate(false)]
     [References(typeof(Line))]

@@ -576,7 +576,7 @@ If incoming:
     readonly childCalls?: ChildCall[];
     /** ANSWER: Call is answered. A successful dial. The caller reached the callee.
 BUSY: Busy signal. The dial command reached its number but the number is busy.
-NOANSWER: No answer. The dial command reached its number, the number rang for too long, then the dial timed out.
+NOANSWER: No answer. The dial command reached its number, the number ring for too long, then the dial timed out.
 CANCEL: Call is canceled. The dial command reached its number but the caller hung up before the callee picked up.
 CONGESTION: Congestion. This status is usually a sign that the dialed number is not recognized.
 CHANUNAVAIL: Channel unavailable. On SIP, peer may not be registered. */
@@ -1270,7 +1270,7 @@ If incoming:
     readonly childCalls?: ChildCall[];
     /** ANSWER: Call is answered. A successful dial. The caller reached the callee.
 BUSY: Busy signal. The dial command reached its number but the number is busy.
-NOANSWER: No answer. The dial command reached its number, the number rang for too long, then the dial timed out.
+NOANSWER: No answer. The dial command reached its number, the number ring for too long, then the dial timed out.
 CANCEL: Call is canceled. The dial command reached its number but the caller hung up before the callee picked up.
 CONGESTION: Congestion. This status is usually a sign that the dialed number is not recognized.
 CHANUNAVAIL: Channel unavailable. On SIP, peer may not be registered. */
@@ -1352,7 +1352,7 @@ If incoming:
     readonly childCalls?: ChildCall[];
     /** ANSWER: Call is answered. A successful dial. The caller reached the callee.
 BUSY: Busy signal. The dial command reached its number but the number is busy.
-NOANSWER: No answer. The dial command reached its number, the number rang for too long, then the dial timed out.
+NOANSWER: No answer. The dial command reached its number, the number ring for too long, then the dial timed out.
 CANCEL: Call is canceled. The dial command reached its number but the caller hung up before the callee picked up.
 CONGESTION: Congestion. This status is usually a sign that the dialed number is not recognized.
 CHANUNAVAIL: Channel unavailable. On SIP, peer may not be registered. */
@@ -1432,7 +1432,7 @@ If incoming:
     readonly childCalls?: ChildCall[];
     /** ANSWER: Call is answered. A successful dial. The caller reached the callee.
 BUSY: Busy signal. The dial command reached its number but the number is busy.
-NOANSWER: No answer. The dial command reached its number, the number rang for too long, then the dial timed out.
+NOANSWER: No answer. The dial command reached its number, the number ring for too long, then the dial timed out.
 CANCEL: Call is canceled. The dial command reached its number but the caller hung up before the callee picked up.
 CONGESTION: Congestion. This status is usually a sign that the dialed number is not recognized.
 CHANUNAVAIL: Channel unavailable. On SIP, peer may not be registered. */
@@ -1506,7 +1506,7 @@ If incoming:
     readonly childCalls?: ChildCall[];
     /** ANSWER: Call is answered. A successful dial. The caller reached the callee.
 BUSY: Busy signal. The dial command reached its number but the number is busy.
-NOANSWER: No answer. The dial command reached its number, the number rang for too long, then the dial timed out.
+NOANSWER: No answer. The dial command reached its number, the number ring for too long, then the dial timed out.
 CANCEL: Call is canceled. The dial command reached its number but the caller hung up before the callee picked up.
 CONGESTION: Congestion. This status is usually a sign that the dialed number is not recognized.
 CHANUNAVAIL: Channel unavailable. On SIP, peer may not be registered. */
@@ -1728,7 +1728,7 @@ export interface ChildCallBlindTransferToExtension {
     childCallType?: ChildCallType;
     /** Id of line that answered */
     idLineThatAnswered?: string | null;
-    /** Ids of lines that rang */
+    /** Ids of lines that ring */
     idsLinesThatRing?: string[];
     /** Ids of lines that where supposed to ring and did not ring because phone was offline or disconnected. */
     idsLinesThatDidNotRing?: string[];
@@ -1787,7 +1787,7 @@ export interface ChildCallForwardToExtension {
     idExtension?: string | null;
     /** Line that answered */
     idLineThatAnswered?: string | null;
-    /** Lines that rang */
+    /** Lines that ring */
     idsLinesThatRing?: string[];
     /** Lines that did not ring */
     idsLinesThatDidNotRing?: string[];
@@ -2623,6 +2623,10 @@ export enum EventTrigger {
     EventIncomingCallTerminatedWithRecording = "EventIncomingCallTerminatedWithRecording",
     EventOutgoingCallStarted = "EventOutgoingCallStarted",
     EventIncomingCallStarted = "EventIncomingCallStarted",
+    EventOutgoingCallTerminatedWithTranscription = "EventOutgoingCallTerminatedWithTranscription",
+    EventIncomingCallTerminatedWithTranscription = "EventIncomingCallTerminatedWithTranscription",
+    EventOutgoingCallTerminatedWithAiAnalysis = "EventOutgoingCallTerminatedWithAiAnalysis",
+    EventIncomingCallTerminatedWithAiAnalysis = "EventIncomingCallTerminatedWithAiAnalysis",
     EventCallPlacedOnHoldFor1Min = "EventCallPlacedOnHoldFor1Min",
     EventCallPlacedOnHoldFor2Min = "EventCallPlacedOnHoldFor2Min",
     EventCallPlacedOnHoldFor4Min = "EventCallPlacedOnHoldFor4Min",

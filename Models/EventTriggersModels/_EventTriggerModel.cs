@@ -26,7 +26,7 @@ public abstract class EventTriggerModel
     /// </summary>
     public static string EventTriggerToClassName(string webHookType)
     {
-        StringBuilder nameSb = new StringBuilder();
+        var nameSb = new StringBuilder();
 
         // skip event
         int i = 0;
@@ -57,5 +57,19 @@ public abstract class EventTriggerModel
     /// </summary>
     /// <returns></returns>
     public abstract EventTriggerModel BuildRandomFakeObject(RunningApplicationInstance instance);    
+
+    /// <summary>
+    ///     Generate random id of account phone and line
+    /// </summary>
+    /// <param name="instance"></param>
+    /// <param name="idAcc"></param>
+    /// <param name="idPhone"></param>
+    /// <param name="idLine"></param>
+    protected static void GenerateRandomIdAccountPhoneAndLine(RunningApplicationInstance instance, out string idAcc, out string idPhone, out string idLine)
+    {
+        idPhone = Phone.BuildId(instance).Id;
+        idAcc = Account.BuildId(Random.Shared.Next(100, 1000).ToString()).Id;
+        idLine = Line.BuildId(instance, idAcc, idPhone).Id;
+    }
 }
 

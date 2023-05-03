@@ -20,7 +20,7 @@ public class ChildCallForwardToExtension : ChildCall, ICallToExtension
     public string? IdLineThatAnswered { get; set; }
 
     /// <summary>
-    ///     Lines that rang
+    ///     Lines that ring
     /// </summary>
     [References(typeof(Line))]
     public List<string> IdsLinesThatRing { get; set; } = new();

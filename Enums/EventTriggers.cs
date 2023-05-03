@@ -23,6 +23,16 @@ public enum EventTrigger
     /// <summary/>
     EventIncomingCallStarted,
 
+    /// <summary/>
+    EventOutgoingCallTerminatedWithTranscription,
+    /// <summary/>
+    EventIncomingCallTerminatedWithTranscription,
+
+    /// <summary/>
+    EventOutgoingCallTerminatedWithAiAnalysis,
+    /// <summary/>
+    EventIncomingCallTerminatedWithAiAnalysis,
+
     #endregion
 
     #region Calls

@@ -3,9 +3,9 @@
 namespace Ublux.Communications.Models.EventTriggersModels;
 
 /// <summary>
-///     <see cref="EventTrigger.EventOutgoingCallStarted"/>
+///     Base class for calls
 /// </summary>
-public partial class EventOutgoingCallStarted
+public abstract class EventCallStartedBase : EventTriggerModel
 {
     /// <summary>
     ///     From phone number
@@ -15,7 +15,7 @@ public partial class EventOutgoingCallStarted
     public required string From { get; set; }
 
     /// <summary>
-    ///     From phone number
+    ///     To phone number
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
@@ -29,14 +29,16 @@ public partial class EventOutgoingCallStarted
     public DateTime DateStart { get; set; }
 
     /// <summary>
-    ///     Id of contact to whom call was made
+    ///     If call is incoming then the contact that made phone call.
+    ///     If call is outgoing then the contact that we are calling.
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    public string? IdContact { get; set; }
+    public string? ContactId { get; set; }
 
     /// <summary>
-    ///     Name of contact
+    ///     If call is incoming then the name of contact that made phone call.
+    ///     If call is outgoing then the name of contact that we are calling.
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
@@ -45,26 +47,22 @@ public partial class EventOutgoingCallStarted
     /// <summary>
     ///     Return a random object
     /// </summary>
-    public override EventOutgoingCallStarted BuildRandomFakeObject(RunningApplicationInstance instance)
+    protected T GetRandomBase<T>(RunningApplicationInstance instance) where T : EventCallStartedBase
     {
-        var randInstanceId = new RunningApplicationInstance() { Id = "1", CloudServiceType = CloudServiceType.WS };
         var randChannel = Random.Shared.Next(100000, 999999);
-        var randomId = CallOutgoingToPSTN.BuildId(instance, $"{randChannel}.0").Id;
+        string randomIdCall = CallOutgoingToPSTN.BuildId(instance, randChannel + ".0").Id;
         var randomIdContact = Contact.BuildId(instance).Id;
 
-        var f = new Faker<EventOutgoingCallStarted>()
-            .RuleFor(x => x.Id, randomId)
+        var f = new Faker<T>()
+            .RuleFor(x => x.Id, randomIdCall)
             .RuleFor(x => x.From, x => x.Phone.PhoneNumberFormat(0))
             .RuleFor(x => x.To, x => x.Phone.PhoneNumberFormat(0))
-            .RuleFor(x => x.IdContact, randomIdContact)
+            .RuleFor(x => x.ContactId, randomIdContact)
             .RuleFor(x => x.ContactFullName, x => x.Name.FullName())
-            ;
+            .RuleFor(x => x.DateStart, DateTime.UtcNow.AddHours(-1))
+        ;
 
-        EventOutgoingCallStarted obj = f.Generate();
-
-        // set dates
-        obj.DateStart = DateTime.UtcNow.AddHours(-1);
-
+        var obj = f.Generate();
         return obj;
     }
 }
