@@ -22,6 +22,16 @@ public enum SnsTopic
     /// </summary>
     Collection_Deleted,
 
+    /// <summary>
+    ///     When a call transcription is complete
+    /// </summary>
+    Transcription_Complete,
+
+    /// <summary>
+    ///     When a call ai analysis is complete
+    /// </summary>
+    AiAnalysis_Complete,
+
     #endregion
 
     #region PBX
