@@ -1,6 +1,4 @@
-﻿using Bogus;
-
-namespace Ublux.Communications.Models.EventTriggersModels;
+﻿namespace Ublux.Communications.Models.EventTriggersModels;
 
 /// <summary>
 ///     Base class for outgoing calls events
