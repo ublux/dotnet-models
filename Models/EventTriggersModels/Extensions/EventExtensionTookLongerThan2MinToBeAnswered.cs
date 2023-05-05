@@ -1,6 +1,7 @@
 ﻿namespace Ublux.Communications.Models.EventTriggersModels;
 
 /// <summary>
+///     Webhook will send this data when triggered.
 ///     <see cref="EventTrigger.EventExtensionTookLongerThan2MinToBeAnswered"/>
 /// </summary>
 public class EventExtensionTookLongerThan2MinToBeAnswered : EventExtensionBase

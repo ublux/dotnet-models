@@ -1,6 +1,7 @@
 ﻿namespace Ublux.Communications.Models.EventTriggersModels;
 
 /// <summary>
+///     Webhook will send this data when triggered.
 ///     <see cref="EventTrigger.EventCallPlacedOnHoldFor4Min"/>
 /// </summary>
 public class EventCallPlacedOnHoldFor4Min : EventCallPlacedOnHoldBase
