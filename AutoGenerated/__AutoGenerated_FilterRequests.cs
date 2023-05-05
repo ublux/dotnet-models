@@ -919,6 +919,16 @@ public class CallIncomingToCallFlowLogicFilterRequest
     [JsonProperty("fromInternationalFormat_reg")]
     public string? FromInternationalFormat_REG { get; set; }
 
+    /// <summary> ForwardedBy equals </summary>
+    [JsonProperty("forwardedBy_eq")]
+    public string? ForwardedBy_EQ { get; set; }
+    /// <summary> ForwardedBy contains </summary>
+    [JsonProperty("forwardedBy_con")]
+    public string? ForwardedBy_CON { get; set; }
+    /// <summary> ForwardedBy regex </summary>
+    [JsonProperty("forwardedBy_reg")]
+    public string? ForwardedBy_REG { get; set; }
+
     /// <summary> IdVoicemail equals </summary>
     [JsonProperty("idVoicemail_eq")]
     public string? IdVoicemail_EQ { get; set; }
@@ -1913,6 +1923,16 @@ public class CallIncomingToExtensionFilterRequest
     /// <summary> FromInternationalFormat regex </summary>
     [JsonProperty("fromInternationalFormat_reg")]
     public string? FromInternationalFormat_REG { get; set; }
+
+    /// <summary> ForwardedBy equals </summary>
+    [JsonProperty("forwardedBy_eq")]
+    public string? ForwardedBy_EQ { get; set; }
+    /// <summary> ForwardedBy contains </summary>
+    [JsonProperty("forwardedBy_con")]
+    public string? ForwardedBy_CON { get; set; }
+    /// <summary> ForwardedBy regex </summary>
+    [JsonProperty("forwardedBy_reg")]
+    public string? ForwardedBy_REG { get; set; }
 
     /// <summary> IdVoicemail equals </summary>
     [JsonProperty("idVoicemail_eq")]
@@ -10871,6 +10891,16 @@ public class CallIncomingFilterRequest
     /// <summary> FromInternationalFormat regex </summary>
     [JsonProperty("fromInternationalFormat_reg")]
     public string? FromInternationalFormat_REG { get; set; }
+
+    /// <summary> ForwardedBy equals </summary>
+    [JsonProperty("forwardedBy_eq")]
+    public string? ForwardedBy_EQ { get; set; }
+    /// <summary> ForwardedBy contains </summary>
+    [JsonProperty("forwardedBy_con")]
+    public string? ForwardedBy_CON { get; set; }
+    /// <summary> ForwardedBy regex </summary>
+    [JsonProperty("forwardedBy_reg")]
+    public string? ForwardedBy_REG { get; set; }
 
     /// <summary> IdVoicemail equals </summary>
     [JsonProperty("idVoicemail_eq")]

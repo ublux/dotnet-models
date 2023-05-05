@@ -1251,6 +1251,8 @@ export interface CallIncomingToCallFlowLogic {
     readonly idVoipNumberPhone?: string;
     /** Phone number that received phone call in international format */
     readonly fromInternationalFormat?: string;
+    /** Providers send us the information if call is being forwarded. It may be helpful to store this. */
+    readonly forwardedBy?: string | null;
     /** Id of voicemail in case there is one */
     readonly idVoicemail?: string | null;
     /** This call was originated with the purpose of tranfering another call with this id    
@@ -1333,6 +1335,8 @@ export interface CallIncomingToExtension {
     readonly idVoipNumberPhone?: string;
     /** Phone number that received phone call in international format */
     readonly fromInternationalFormat?: string;
+    /** Providers send us the information if call is being forwarded. It may be helpful to store this. */
+    readonly forwardedBy?: string | null;
     /** Id of voicemail in case there is one */
     readonly idVoicemail?: string | null;
     /** This call was originated with the purpose of tranfering another call with this id    

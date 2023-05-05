@@ -32,4 +32,11 @@ public abstract partial class CallIncoming : Call
     [SwaggerSchema(ReadOnly = true)] 
     [IsUbluxRequired]
     public required string FromInternationalFormat { get; set; } = string.Empty;
+
+    /// <summary>
+    ///     Providers send us the information if call is being forwarded. It may be helpful to store this.
+    /// </summary>
+    [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
+    public string? ForwardedBy { get; set; }
 }
