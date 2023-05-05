@@ -17,12 +17,86 @@ public class EventOutgoingCallTerminatedWithAiAnalysis : EventOutgoingCallTermin
 #endif
     }
 
+    #region AI Analysis
+
     /// <summary>
-    ///     AI Analysis
+    ///     Sentiment of phone call in percentages
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    public required AiAnalysis AiAnalysis { get; set; }
+    public AiSentiment? Sentiment { get; set; }
+
+    /// <summary>
+    ///     Entities mentioned in the conversation
+    /// </summary>
+    [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
+    public List<AiEntity> Entities { get; set; } = new();
+
+    /// <summary>
+    ///     Topics mentioned in the conversation
+    /// </summary>
+    [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
+    public List<AiTopic> Topics { get; set; } = new();
+
+    /// <summary>
+    ///     Intention of client summarized
+    /// </summary>
+    [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
+    public string? ClientIntention { get; set; }
+
+    /// <summary>
+    ///     Intention of agent summarized
+    /// </summary>
+    [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
+    public string? AgentIntention { get; set; }
+
+    /// <summary>
+    ///     Summary of conversation
+    /// </summary>
+    [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
+    public string? Summary { get; set; }
+
+    /// <summary>
+    ///     Problem of the conversation
+    /// </summary>
+    [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
+    public string? Problem { get; set; }
+
+    /// <summary>
+    ///     Was client polite? This is a value between 0 and 1 representing a percentage.
+    /// </summary>
+    [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
+    public double? ClientPolite { get; set; }
+
+    /// <summary>
+    ///     Was agent polite? This is a value between 0 and 1 representing a percentage.
+    /// </summary>
+    [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
+    public double? AgentPolite { get; set; }
+
+    /// <summary>
+    ///     Client satisfaction from 1 to 5.
+    /// </summary>
+    [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
+    public int ClientSatisfaction { get; set; }
+
+    /// <summary>
+    ///     Detected language
+    /// </summary>
+    [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
+    public required string Language { get; set; } = "";
+
+    #endregion
 
     /// <summary>
     ///     Return a random object
@@ -31,15 +105,13 @@ public class EventOutgoingCallTerminatedWithAiAnalysis : EventOutgoingCallTermin
     {
         var obj = GetRandomBase<EventOutgoingCallTerminatedWithAiAnalysis>(instance);
 
-        obj.AiAnalysis = new AiAnalysis()
-        {
-            Language = "English",
-            AgentIntention = "Help client fix washing machine.",
-            ClientIntention = "Complain about washing machine not working",
-            AgentPolite = .95,
-            ClientPolite = .71,
-            ClientSatisfaction = 4,
-            Entities = new List<AiEntity>()
+        obj.Language = "English";
+        obj.AgentIntention = "Help client fix washing machine.";
+        obj.ClientIntention = "Complain about washing machine not working";
+        obj.AgentPolite = .95;
+        obj.ClientPolite = .71;
+        obj.ClientSatisfaction = 4;
+        obj.Entities = new List<AiEntity>()
             {
                 new AiEntity()
                 {
@@ -51,24 +123,22 @@ public class EventOutgoingCallTerminatedWithAiAnalysis : EventOutgoingCallTermin
                     EntityName = "Hotel",
                     EntityType = "Location"
                 },
-            },
-            Model = "gpt-3.5-turbo",
-            Problem = "Washing machine not working",
-            Sentiment = new AiSentiment()
-            {
-                Negative = 25,
-                Neutral = 5,
-                Positive = 70
+            };
+        obj.Problem = "Washing machine not working";
+        obj.Sentiment = new AiSentiment()
+        {
+            Negative = 25,
+            Neutral = 5,
+            Positive = 70
 
-            },
-            Summary = "Client is complaining about washing machine not working and agent tries to fix it.",
-            Topics = new List<AiTopic>()
+        };
+        obj.Summary = "Client is complaining about washing machine not working and agent tries to fix it.";
+        obj.Topics = new List<AiTopic>()
+        {
+            new AiTopic()
             {
-                new AiTopic()
-                {
-                    Name = "Washing Machine",
-                    Weight = .8
-                }
+                Name = "Washing Machine",
+                Weight = .8
             }
         };
         return obj;
