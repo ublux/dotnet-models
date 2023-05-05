@@ -2619,6 +2619,665 @@ export enum EventActionType {
     LeaveVoicemail = "LeaveVoicemail",
 }
 
+/** Webhook will send this data when triggered. Ublux.Communications.Enums.EventTrigger.EventCallPlacedOnHoldFor1Min */
+export interface EventCallPlacedOnHoldFor1Min {
+    eventTrigger?: EventTrigger;
+    /** Is the call incoming? If false call is outgiong */
+    readonly isIncoming?: boolean;
+    /** From phone number */
+    readonly from?: string;
+    /** To phone number */
+    readonly to?: string;
+    /** Date when call started */
+    readonly dateStart?: Date;
+    /** Date when call was answered. If null it means it has not been answered */
+    readonly secondsItTookToAnswer?: number | null;
+    /** Id of contact that made phone call */
+    readonly contactId?: string | null;
+    /** Name of contact */
+    readonly contactFullName?: string | null;
+    /** If it is an incoming call then the id of line that answered the call.
+If it is an outgiong call then the id of the line that initiated the call. */
+    readonly lineId?: string;
+    /** If it is an incoming call then the friendly name of the line that answered the call.
+If it is an outgiong call then the friendly name of the line that initiated the call. */
+    readonly lineFriendlyName?: string;
+    /** Id of document */
+    id?: string;
+}
+
+/** Webhook will send this data when triggered. Ublux.Communications.Enums.EventTrigger.EventCallPlacedOnHoldFor2Min */
+export interface EventCallPlacedOnHoldFor2Min {
+    eventTrigger?: EventTrigger;
+    /** Is the call incoming? If false call is outgiong */
+    readonly isIncoming?: boolean;
+    /** From phone number */
+    readonly from?: string;
+    /** To phone number */
+    readonly to?: string;
+    /** Date when call started */
+    readonly dateStart?: Date;
+    /** Date when call was answered. If null it means it has not been answered */
+    readonly secondsItTookToAnswer?: number | null;
+    /** Id of contact that made phone call */
+    readonly contactId?: string | null;
+    /** Name of contact */
+    readonly contactFullName?: string | null;
+    /** If it is an incoming call then the id of line that answered the call.
+If it is an outgiong call then the id of the line that initiated the call. */
+    readonly lineId?: string;
+    /** If it is an incoming call then the friendly name of the line that answered the call.
+If it is an outgiong call then the friendly name of the line that initiated the call. */
+    readonly lineFriendlyName?: string;
+    /** Id of document */
+    id?: string;
+}
+
+/** Webhook will send this data when triggered. Ublux.Communications.Enums.EventTrigger.EventCallPlacedOnHoldFor4Min */
+export interface EventCallPlacedOnHoldFor4Min {
+    eventTrigger?: EventTrigger;
+    /** Is the call incoming? If false call is outgiong */
+    readonly isIncoming?: boolean;
+    /** From phone number */
+    readonly from?: string;
+    /** To phone number */
+    readonly to?: string;
+    /** Date when call started */
+    readonly dateStart?: Date;
+    /** Date when call was answered. If null it means it has not been answered */
+    readonly secondsItTookToAnswer?: number | null;
+    /** Id of contact that made phone call */
+    readonly contactId?: string | null;
+    /** Name of contact */
+    readonly contactFullName?: string | null;
+    /** If it is an incoming call then the id of line that answered the call.
+If it is an outgiong call then the id of the line that initiated the call. */
+    readonly lineId?: string;
+    /** If it is an incoming call then the friendly name of the line that answered the call.
+If it is an outgiong call then the friendly name of the line that initiated the call. */
+    readonly lineFriendlyName?: string;
+    /** Id of document */
+    id?: string;
+}
+
+/** Webhook will send this data when triggered. Ublux.Communications.Enums.EventTrigger.EventCallPlacedOnHoldFor8Min */
+export interface EventCallPlacedOnHoldFor8Min {
+    eventTrigger?: EventTrigger;
+    /** Is the call incoming? If false call is outgiong */
+    readonly isIncoming?: boolean;
+    /** From phone number */
+    readonly from?: string;
+    /** To phone number */
+    readonly to?: string;
+    /** Date when call started */
+    readonly dateStart?: Date;
+    /** Date when call was answered. If null it means it has not been answered */
+    readonly secondsItTookToAnswer?: number | null;
+    /** Id of contact that made phone call */
+    readonly contactId?: string | null;
+    /** Name of contact */
+    readonly contactFullName?: string | null;
+    /** If it is an incoming call then the id of line that answered the call.
+If it is an outgiong call then the id of the line that initiated the call. */
+    readonly lineId?: string;
+    /** If it is an incoming call then the friendly name of the line that answered the call.
+If it is an outgiong call then the friendly name of the line that initiated the call. */
+    readonly lineFriendlyName?: string;
+    /** Id of document */
+    id?: string;
+}
+
+/** Webhook will send this data when triggered. Ublux.Communications.Enums.EventTrigger.EventExtensionNotAnswered */
+export interface EventExtensionNotAnswered {
+    eventTrigger?: EventTrigger;
+    /** Extension friendly name */
+    readonly friendlyName?: string;
+    /** Extension number */
+    readonly number?: string;
+    /** From phone number */
+    readonly from?: string;
+    /** To phone number */
+    readonly to?: string;
+    /** Date when call started */
+    readonly dateStart?: Date;
+    /** Id of contact that made phone call */
+    readonly contactId?: string | null;
+    /** Name of contact that made phone call */
+    readonly contactFullName?: string | null;
+    /** How long extension ring? */
+    readonly numberOfSecondsItRing?: number;
+    /** Id of lines that ring */
+    readonly linesThatRingIds?: string[];
+    /** Id of lines that ring dit not ring */
+    readonly linesThatDidNotRingIds?: string[];
+    /** Name of lines that ring */
+    readonly linesThatRingFriendlyNames?: string[];
+    /** Name of lines that ring dit not ring */
+    readonly linesThatDidNotRingFriendlyNames?: string[];
+    /** Id of document */
+    id?: string;
+}
+
+/** Webhook will send this data when triggered. Ublux.Communications.Enums.EventTrigger.EventExtensionTookLongerThan1MinToBeAnswered */
+export interface EventExtensionTookLongerThan1MinToBeAnswered {
+    eventTrigger?: EventTrigger;
+    /** Extension friendly name */
+    readonly friendlyName?: string;
+    /** Extension number */
+    readonly number?: string;
+    /** From phone number */
+    readonly from?: string;
+    /** To phone number */
+    readonly to?: string;
+    /** Date when call started */
+    readonly dateStart?: Date;
+    /** Id of contact that made phone call */
+    readonly contactId?: string | null;
+    /** Name of contact that made phone call */
+    readonly contactFullName?: string | null;
+    /** How long extension ring? */
+    readonly numberOfSecondsItRing?: number;
+    /** Id of lines that ring */
+    readonly linesThatRingIds?: string[];
+    /** Id of lines that ring dit not ring */
+    readonly linesThatDidNotRingIds?: string[];
+    /** Name of lines that ring */
+    readonly linesThatRingFriendlyNames?: string[];
+    /** Name of lines that ring dit not ring */
+    readonly linesThatDidNotRingFriendlyNames?: string[];
+    /** Id of document */
+    id?: string;
+}
+
+/** Webhook will send this data when triggered. Ublux.Communications.Enums.EventTrigger.EventExtensionTookLongerThan2MinToBeAnswered */
+export interface EventExtensionTookLongerThan2MinToBeAnswered {
+    eventTrigger?: EventTrigger;
+    /** Extension friendly name */
+    readonly friendlyName?: string;
+    /** Extension number */
+    readonly number?: string;
+    /** From phone number */
+    readonly from?: string;
+    /** To phone number */
+    readonly to?: string;
+    /** Date when call started */
+    readonly dateStart?: Date;
+    /** Id of contact that made phone call */
+    readonly contactId?: string | null;
+    /** Name of contact that made phone call */
+    readonly contactFullName?: string | null;
+    /** How long extension ring? */
+    readonly numberOfSecondsItRing?: number;
+    /** Id of lines that ring */
+    readonly linesThatRingIds?: string[];
+    /** Id of lines that ring dit not ring */
+    readonly linesThatDidNotRingIds?: string[];
+    /** Name of lines that ring */
+    readonly linesThatRingFriendlyNames?: string[];
+    /** Name of lines that ring dit not ring */
+    readonly linesThatDidNotRingFriendlyNames?: string[];
+    /** Id of document */
+    id?: string;
+}
+
+/** Webhook will send this data when triggered. Ublux.Communications.Enums.EventTrigger.EventExtensionTookLongerThan4MinToBeAnswered */
+export interface EventExtensionTookLongerThan4MinToBeAnswered {
+    eventTrigger?: EventTrigger;
+    /** Extension friendly name */
+    readonly friendlyName?: string;
+    /** Extension number */
+    readonly number?: string;
+    /** From phone number */
+    readonly from?: string;
+    /** To phone number */
+    readonly to?: string;
+    /** Date when call started */
+    readonly dateStart?: Date;
+    /** Id of contact that made phone call */
+    readonly contactId?: string | null;
+    /** Name of contact that made phone call */
+    readonly contactFullName?: string | null;
+    /** How long extension ring? */
+    readonly numberOfSecondsItRing?: number;
+    /** Id of lines that ring */
+    readonly linesThatRingIds?: string[];
+    /** Id of lines that ring dit not ring */
+    readonly linesThatDidNotRingIds?: string[];
+    /** Name of lines that ring */
+    readonly linesThatRingFriendlyNames?: string[];
+    /** Name of lines that ring dit not ring */
+    readonly linesThatDidNotRingFriendlyNames?: string[];
+    /** Id of document */
+    id?: string;
+}
+
+/** Webhook will send this data when triggered. Ublux.Communications.Enums.EventTrigger.EventExtensionTookLongerThan8MinToBeAnswered */
+export interface EventExtensionTookLongerThan8MinToBeAnswered {
+    eventTrigger?: EventTrigger;
+    /** Extension friendly name */
+    readonly friendlyName?: string;
+    /** Extension number */
+    readonly number?: string;
+    /** From phone number */
+    readonly from?: string;
+    /** To phone number */
+    readonly to?: string;
+    /** Date when call started */
+    readonly dateStart?: Date;
+    /** Id of contact that made phone call */
+    readonly contactId?: string | null;
+    /** Name of contact that made phone call */
+    readonly contactFullName?: string | null;
+    /** How long extension ring? */
+    readonly numberOfSecondsItRing?: number;
+    /** Id of lines that ring */
+    readonly linesThatRingIds?: string[];
+    /** Id of lines that ring dit not ring */
+    readonly linesThatDidNotRingIds?: string[];
+    /** Name of lines that ring */
+    readonly linesThatRingFriendlyNames?: string[];
+    /** Name of lines that ring dit not ring */
+    readonly linesThatDidNotRingFriendlyNames?: string[];
+    /** Id of document */
+    id?: string;
+}
+
+/** Webhook will send this data when triggered. Ublux.Communications.Enums.EventTrigger.EventIncomingCallStarted */
+export interface EventIncomingCallStarted {
+    eventTrigger?: EventTrigger;
+    /** From phone number */
+    readonly from?: string;
+    /** To phone number */
+    readonly to?: string;
+    /** Date when call started */
+    readonly dateStart?: Date;
+    /** If call is incoming then the contact that made phone call.
+If call is outgoing then the contact that we are calling. */
+    readonly contactId?: string | null;
+    /** If call is incoming then the name of contact that made phone call.
+If call is outgoing then the name of contact that we are calling. */
+    readonly contactFullName?: string | null;
+    /** Id of document */
+    id?: string;
+}
+
+/** Webhook will send this data when triggered. Ublux.Communications.Enums.EventTrigger.EventIncomingCallTerminated */
+export interface EventIncomingCallTerminated {
+    eventTrigger?: EventTrigger;
+    /** Date when call was answered */
+    readonly secondsItTookToAnswer?: number | null;
+    /** Id of line that answered */
+    readonly lineThatAnsweredId?: string | null;
+    /** Friendly name of line that answered */
+    readonly lineThatAnsweredFrienlyName?: string | null;
+    /** Date when call was ended */
+    readonly durationInSeconds?: number;
+    /** Times when call was placed on hold */
+    readonly timesWhenCallPlacedOnHold?: TimeWhenCallPlacedOnHold[];
+    /** From phone number */
+    readonly from?: string;
+    /** To phone number */
+    readonly to?: string;
+    /** Date when call started */
+    readonly dateStart?: Date;
+    /** If call is incoming then the contact that made phone call.
+If call is outgoing then the contact that we are calling. */
+    readonly contactId?: string | null;
+    /** If call is incoming then the name of contact that made phone call.
+If call is outgoing then the name of contact that we are calling. */
+    readonly contactFullName?: string | null;
+    /** Id of document */
+    id?: string;
+}
+
+/** Webhook will send this data when triggered. Ublux.Communications.Enums.EventTrigger.EventIncomingCallTerminatedWithAiAnalysis */
+export interface EventIncomingCallTerminatedWithAiAnalysis {
+    eventTrigger?: EventTrigger;
+    sentiment?: AiSentiment;
+    /** Entities mentioned in the conversation */
+    readonly entities?: AiEntity[];
+    /** Topics mentioned in the conversation */
+    readonly topics?: AiTopic[];
+    /** Intention of client summarized */
+    readonly clientIntention?: string | null;
+    /** Intention of agent summarized */
+    readonly agentIntention?: string | null;
+    /** Summary of conversation */
+    readonly summary?: string | null;
+    /** Problem of the conversation */
+    readonly problem?: string | null;
+    /** Was client polite? This is a value between 0 and 1 representing a percentage. */
+    readonly clientPolite?: number | null;
+    /** Was agent polite? This is a value between 0 and 1 representing a percentage. */
+    readonly agentPolite?: number | null;
+    /** Client satisfaction from 1 to 5. */
+    readonly clientSatisfaction?: number;
+    /** Detected language */
+    readonly language?: string;
+    /** Recording of call */
+    readonly recordingUrl?: string;
+    /** Date when call was answered */
+    readonly secondsItTookToAnswer?: number | null;
+    /** Id of line that answered */
+    readonly lineThatAnsweredId?: string | null;
+    /** Friendly name of line that answered */
+    readonly lineThatAnsweredFrienlyName?: string | null;
+    /** Date when call was ended */
+    readonly durationInSeconds?: number;
+    /** Times when call was placed on hold */
+    readonly timesWhenCallPlacedOnHold?: TimeWhenCallPlacedOnHold[];
+    /** From phone number */
+    readonly from?: string;
+    /** To phone number */
+    readonly to?: string;
+    /** Date when call started */
+    readonly dateStart?: Date;
+    /** If call is incoming then the contact that made phone call.
+If call is outgoing then the contact that we are calling. */
+    readonly contactId?: string | null;
+    /** If call is incoming then the name of contact that made phone call.
+If call is outgoing then the name of contact that we are calling. */
+    readonly contactFullName?: string | null;
+    /** Id of document */
+    id?: string;
+}
+
+/** Webhook will send this data when triggered. Ublux.Communications.Enums.EventTrigger.EventIncomingCallTerminatedWithRecording */
+export interface EventIncomingCallTerminatedWithRecording {
+    eventTrigger?: EventTrigger;
+    /** Recording of call */
+    readonly recordingUrl?: string;
+    /** Date when call was answered */
+    readonly secondsItTookToAnswer?: number | null;
+    /** Id of line that answered */
+    readonly lineThatAnsweredId?: string | null;
+    /** Friendly name of line that answered */
+    readonly lineThatAnsweredFrienlyName?: string | null;
+    /** Date when call was ended */
+    readonly durationInSeconds?: number;
+    /** Times when call was placed on hold */
+    readonly timesWhenCallPlacedOnHold?: TimeWhenCallPlacedOnHold[];
+    /** From phone number */
+    readonly from?: string;
+    /** To phone number */
+    readonly to?: string;
+    /** Date when call started */
+    readonly dateStart?: Date;
+    /** If call is incoming then the contact that made phone call.
+If call is outgoing then the contact that we are calling. */
+    readonly contactId?: string | null;
+    /** If call is incoming then the name of contact that made phone call.
+If call is outgoing then the name of contact that we are calling. */
+    readonly contactFullName?: string | null;
+    /** Id of document */
+    id?: string;
+}
+
+/** Webhook will send this data when triggered. Ublux.Communications.Enums.EventTrigger.EventIncomingCallTerminatedWithTranscription */
+export interface EventIncomingCallTerminatedWithTranscription {
+    eventTrigger?: EventTrigger;
+    /** If there is a language it means there is a transcription */
+    readonly transcriptionLanguage?: string | null;
+    /** Audio of agent converted to text */
+    readonly transcription?: AiTranscription[];
+    /** If the transcription contains an error */
+    readonly errorMessage?: string | null;
+    /** Recording of call */
+    readonly recordingUrl?: string;
+    /** Date when call was answered */
+    readonly secondsItTookToAnswer?: number | null;
+    /** Id of line that answered */
+    readonly lineThatAnsweredId?: string | null;
+    /** Friendly name of line that answered */
+    readonly lineThatAnsweredFrienlyName?: string | null;
+    /** Date when call was ended */
+    readonly durationInSeconds?: number;
+    /** Times when call was placed on hold */
+    readonly timesWhenCallPlacedOnHold?: TimeWhenCallPlacedOnHold[];
+    /** From phone number */
+    readonly from?: string;
+    /** To phone number */
+    readonly to?: string;
+    /** Date when call started */
+    readonly dateStart?: Date;
+    /** If call is incoming then the contact that made phone call.
+If call is outgoing then the contact that we are calling. */
+    readonly contactId?: string | null;
+    /** If call is incoming then the name of contact that made phone call.
+If call is outgoing then the name of contact that we are calling. */
+    readonly contactFullName?: string | null;
+    /** Id of document */
+    id?: string;
+}
+
+/** Webhook will send this data when triggered. Ublux.Communications.Enums.EventTrigger.EventLineConnected */
+export interface EventLineConnected {
+    eventTrigger?: EventTrigger;
+    /** Line friendly name */
+    readonly friendlyName?: string | null;
+    /** Id of phone */
+    readonly phoneId?: string | null;
+    /** Name of phone */
+    readonly phoneFriendly?: string | null;
+    /** To what extension this line belongs */
+    readonly extensionFriendlyName?: string | null;
+    /** To what id extension this line belongs too */
+    readonly extensionId?: string | null;
+    /** To what extension number this line belongs too */
+    readonly extensionNumber?: string | null;
+    connectionStatus?: LineConnectionStatus;
+    /** Id of document */
+    id?: string;
+}
+
+/** Webhook will send this data when triggered. Ublux.Communications.Enums.EventTrigger.EventLineDisconnected */
+export interface EventLineDisconnected {
+    eventTrigger?: EventTrigger;
+    /** Line friendly name */
+    readonly friendlyName?: string | null;
+    /** Id of phone */
+    readonly phoneId?: string | null;
+    /** Name of phone */
+    readonly phoneFriendly?: string | null;
+    /** To what extension this line belongs */
+    readonly extensionFriendlyName?: string | null;
+    /** To what id extension this line belongs too */
+    readonly extensionId?: string | null;
+    /** To what extension number this line belongs too */
+    readonly extensionNumber?: string | null;
+    connectionStatus?: LineConnectionStatus;
+    /** Id of document */
+    id?: string;
+}
+
+/** Webhook will send this data when triggered. Ublux.Communications.Enums.EventTrigger.EventOutgoingCallStarted */
+export interface EventOutgoingCallStarted {
+    eventTrigger?: EventTrigger;
+    /** Id of line that initiated phone call */
+    readonly lineThatInitiatedCallId?: string;
+    /** Friendly name of line that initiated phone call */
+    readonly lineThatInitiatedCallFrienlyName?: string;
+    /** From phone number */
+    readonly from?: string;
+    /** To phone number */
+    readonly to?: string;
+    /** Date when call started */
+    readonly dateStart?: Date;
+    /** If call is incoming then the contact that made phone call.
+If call is outgoing then the contact that we are calling. */
+    readonly contactId?: string | null;
+    /** If call is incoming then the name of contact that made phone call.
+If call is outgoing then the name of contact that we are calling. */
+    readonly contactFullName?: string | null;
+    /** Id of document */
+    id?: string;
+}
+
+/** Webhook will send this data when triggered. Ublux.Communications.Enums.EventTrigger.EventOutgoingCallTerminated */
+export interface EventOutgoingCallTerminated {
+    eventTrigger?: EventTrigger;
+    /** Date when call was answered */
+    readonly secondsItTookToAnswer?: number | null;
+    /** Id of line that answered in case it is an outgoing call to an extension */
+    readonly lineThatAnsweredId?: string | null;
+    /** Friendly name of line that answered in case it is an outgoing call to an extension */
+    readonly lineThatAnsweredFrienlyName?: string | null;
+    /** How long call lasted in seconds */
+    readonly durationInSeconds?: number;
+    /** Times when call was placed on hold */
+    readonly timesWhenCallPlacedOnHold?: TimeWhenCallPlacedOnHold[];
+    /** Id of line that initiated phone call */
+    readonly lineThatInitiatedCallId?: string;
+    /** Friendly name of line that initiated phone call */
+    readonly lineThatInitiatedCallFrienlyName?: string;
+    /** From phone number */
+    readonly from?: string;
+    /** To phone number */
+    readonly to?: string;
+    /** Date when call started */
+    readonly dateStart?: Date;
+    /** If call is incoming then the contact that made phone call.
+If call is outgoing then the contact that we are calling. */
+    readonly contactId?: string | null;
+    /** If call is incoming then the name of contact that made phone call.
+If call is outgoing then the name of contact that we are calling. */
+    readonly contactFullName?: string | null;
+    /** Id of document */
+    id?: string;
+}
+
+/** Webhook will send this data when triggered. Ublux.Communications.Enums.EventTrigger.EventOutgoingCallTerminatedWithAiAnalysis */
+export interface EventOutgoingCallTerminatedWithAiAnalysis {
+    eventTrigger?: EventTrigger;
+    sentiment?: AiSentiment;
+    /** Entities mentioned in the conversation */
+    readonly entities?: AiEntity[];
+    /** Topics mentioned in the conversation */
+    readonly topics?: AiTopic[];
+    /** Intention of client summarized */
+    readonly clientIntention?: string | null;
+    /** Intention of agent summarized */
+    readonly agentIntention?: string | null;
+    /** Summary of conversation */
+    readonly summary?: string | null;
+    /** Problem of the conversation */
+    readonly problem?: string | null;
+    /** Was client polite? This is a value between 0 and 1 representing a percentage. */
+    readonly clientPolite?: number | null;
+    /** Was agent polite? This is a value between 0 and 1 representing a percentage. */
+    readonly agentPolite?: number | null;
+    /** Client satisfaction from 1 to 5. */
+    readonly clientSatisfaction?: number;
+    /** Detected language */
+    readonly language?: string;
+    /** Recording of call */
+    readonly recordingUrl?: string;
+    /** Date when call was answered */
+    readonly secondsItTookToAnswer?: number | null;
+    /** Id of line that answered in case it is an outgoing call to an extension */
+    readonly lineThatAnsweredId?: string | null;
+    /** Friendly name of line that answered in case it is an outgoing call to an extension */
+    readonly lineThatAnsweredFrienlyName?: string | null;
+    /** How long call lasted in seconds */
+    readonly durationInSeconds?: number;
+    /** Times when call was placed on hold */
+    readonly timesWhenCallPlacedOnHold?: TimeWhenCallPlacedOnHold[];
+    /** Id of line that initiated phone call */
+    readonly lineThatInitiatedCallId?: string;
+    /** Friendly name of line that initiated phone call */
+    readonly lineThatInitiatedCallFrienlyName?: string;
+    /** From phone number */
+    readonly from?: string;
+    /** To phone number */
+    readonly to?: string;
+    /** Date when call started */
+    readonly dateStart?: Date;
+    /** If call is incoming then the contact that made phone call.
+If call is outgoing then the contact that we are calling. */
+    readonly contactId?: string | null;
+    /** If call is incoming then the name of contact that made phone call.
+If call is outgoing then the name of contact that we are calling. */
+    readonly contactFullName?: string | null;
+    /** Id of document */
+    id?: string;
+}
+
+/** Webhook will send this data when triggered. Ublux.Communications.Enums.EventTrigger.EventOutgoingCallTerminatedWithRecording */
+export interface EventOutgoingCallTerminatedWithRecording {
+    eventTrigger?: EventTrigger;
+    /** Recording of call */
+    readonly recordingUrl?: string;
+    /** Date when call was answered */
+    readonly secondsItTookToAnswer?: number | null;
+    /** Id of line that answered in case it is an outgoing call to an extension */
+    readonly lineThatAnsweredId?: string | null;
+    /** Friendly name of line that answered in case it is an outgoing call to an extension */
+    readonly lineThatAnsweredFrienlyName?: string | null;
+    /** How long call lasted in seconds */
+    readonly durationInSeconds?: number;
+    /** Times when call was placed on hold */
+    readonly timesWhenCallPlacedOnHold?: TimeWhenCallPlacedOnHold[];
+    /** Id of line that initiated phone call */
+    readonly lineThatInitiatedCallId?: string;
+    /** Friendly name of line that initiated phone call */
+    readonly lineThatInitiatedCallFrienlyName?: string;
+    /** From phone number */
+    readonly from?: string;
+    /** To phone number */
+    readonly to?: string;
+    /** Date when call started */
+    readonly dateStart?: Date;
+    /** If call is incoming then the contact that made phone call.
+If call is outgoing then the contact that we are calling. */
+    readonly contactId?: string | null;
+    /** If call is incoming then the name of contact that made phone call.
+If call is outgoing then the name of contact that we are calling. */
+    readonly contactFullName?: string | null;
+    /** Id of document */
+    id?: string;
+}
+
+/** Webhook will send this data when triggered. Ublux.Communications.Enums.EventTrigger.EventOutgoingCallTerminatedWithTranscription */
+export interface EventOutgoingCallTerminatedWithTranscription {
+    eventTrigger?: EventTrigger;
+    /** If there is a language it means there is a transcription */
+    readonly transcriptionLanguage?: string | null;
+    /** Audio of agent converted to text */
+    readonly transcription?: AiTranscription[];
+    /** If the transcription contains an error */
+    readonly errorMessage?: string | null;
+    /** Recording of call */
+    readonly recordingUrl?: string;
+    /** Date when call was answered */
+    readonly secondsItTookToAnswer?: number | null;
+    /** Id of line that answered in case it is an outgoing call to an extension */
+    readonly lineThatAnsweredId?: string | null;
+    /** Friendly name of line that answered in case it is an outgoing call to an extension */
+    readonly lineThatAnsweredFrienlyName?: string | null;
+    /** How long call lasted in seconds */
+    readonly durationInSeconds?: number;
+    /** Times when call was placed on hold */
+    readonly timesWhenCallPlacedOnHold?: TimeWhenCallPlacedOnHold[];
+    /** Id of line that initiated phone call */
+    readonly lineThatInitiatedCallId?: string;
+    /** Friendly name of line that initiated phone call */
+    readonly lineThatInitiatedCallFrienlyName?: string;
+    /** From phone number */
+    readonly from?: string;
+    /** To phone number */
+    readonly to?: string;
+    /** Date when call started */
+    readonly dateStart?: Date;
+    /** If call is incoming then the contact that made phone call.
+If call is outgoing then the contact that we are calling. */
+    readonly contactId?: string | null;
+    /** If call is incoming then the name of contact that made phone call.
+If call is outgoing then the name of contact that we are calling. */
+    readonly contactFullName?: string | null;
+    /** Id of document */
+    id?: string;
+}
+
 /** Type of events that could trigger a custom action. Used by Zapier and Integromat */
 export enum EventTrigger {
     EventOutgoingCallTerminated = "EventOutgoingCallTerminated",
