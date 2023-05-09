@@ -18,16 +18,13 @@ public partial class SMS : UbluxDocument_ReferenceAccount_ReferenceTags
     [IsUbluxRequired]
     public required string IdVoipNumber { get; set; } = string.Empty;
 
-    #endregion
-
-    #region Subdocuments
-
     /// <summary>
     ///     Contact
     /// </summary>
-    [AllowUpdate(false)] 
-    [SwaggerSchema(ReadOnly = true)] 
-    public Contact? Contact { get; set; }
+    [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
+    [References(typeof(Contact))]
+    public string? IdContact { get; set; }
 
     #endregion
 

@@ -10,26 +10,6 @@ public partial class Account : UbluxDocument
 {
     #region References
 
-    ///// <summary>
-    /////     Failover pbx that will be used for account
-    ///// </summary>
-    //[IgnoreDataMember]
-    //[AllowUpdate(false)]
-    // [SwaggerSchema(ReadOnly = true)]
-    //[References(typeof(CloudServicePbx))]
-    //[IsUbluxRequired]
-    //public required string IdCloudServicePbxFailover { get; set; } = string.Empty;
-
-    ///// <summary>
-    /////     Reference to webAppCloudService. Thanks to this we know where to send events. For example on pbx when we receive a new phone call we send that event to CloudServicePbx
-    ///// </summary>
-    //[IgnoreDataMember]
-    //[AllowUpdate(false)]
-    // [SwaggerSchema(ReadOnly = true)]
-    //[References(typeof(CloudServiceWebApp))]
-    //[IsUbluxRequired]
-    //public required string IdCloudServiceWebApp { get; set; } = string.Empty;
-
     /// <summary>
     ///     Trunks that will be used for outgoing calls ordered by priority. Points to collection Group_TrunkTerminations
     ///     Reference to another entity on database. 

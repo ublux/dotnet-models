@@ -23,23 +23,27 @@ public partial class Email : UbluxDocument_ReferenceAccount_ReferenceTags
     public DateTime? DateVerified { get; set; }
 
     /// <summary>
+    ///     Session when email was verified. This may be null and email still be verified. DateWhenVerified is the one that determines if email is verified or not
+    /// </summary>
+    [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
+    public UbluxSession? SessionWhenVerified { get; set; }
+
+    /// <summary>
+    ///     Is email verified?
+    /// </summary>
+    public bool IsVerified()
+    {
+        // SessionWhenVerified may be null and email still be verified.
+        return DateVerified != null;
+    }
+
+    /// <summary>
     ///     Ip address where email was verified
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
     public string? IpAddress { get; set; }
 
-    #region References    
-
-    ///// <summary>
-    /////     When sending email we may send a code on the email that the user may dial from his phone to validate
-    ///// </summary>
-    //[AllowUpdate(false)]
-    //[SwaggerSchema(ReadOnly = true)]
-    //[References(typeof(Line))]
-    //public string IdLineThatValidatedEmail { get; set; }
-
-    #endregion
-    
     #endregion
 }

@@ -57,12 +57,6 @@ public partial class ApiKey : UbluxDocument_ReferenceAccount_ReferenceTags
     [SwaggerSchema(ReadOnly = true)]
     public DateTime? DateLastUsed { get; set; }
 
-    ///// <summary>
-    /////     If true it will be marked as deleted after it was used
-    ///// </summary>
-    //[AllowUpdate(true)]
-    //public bool UseOnce { get; set; }
-
     /// <summary>
     ///     Description or notes of API key
     /// </summary>

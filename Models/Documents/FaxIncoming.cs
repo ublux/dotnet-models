@@ -18,6 +18,14 @@ public partial class FaxIncoming : UbluxDocument_ReferenceAccount_ReferenceTags
     [IsUbluxRequired]
     public required string IdVoipNumberFax { get; set; } = string.Empty;
 
+    /// <summary>
+    ///     Contact
+    /// </summary>
+    [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
+    [References(typeof(Contact))]
+    public string? IdContact { get; set; }
+
     #endregion
 
     #region Subdocuments

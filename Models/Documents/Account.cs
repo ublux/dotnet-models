@@ -72,10 +72,10 @@ public partial class Account : UbluxDocument
     /// <summary>
     ///     If CountriesThatCanCallLocally does not contain country then ublux will attempt to find country on this list.
     /// </summary>
-    [AllowUpdate(false)]
-    [SwaggerSchema(ReadOnly = true)]
+    [AllowUpdate(true)]
+    // [SwaggerSchema(ReadOnly = true)]
     [BsonRepresentation(BsonType.String)]
-    [IsUbluxRequired]
+    // [IsUbluxRequired]
     public List<CountryIsoCode> CountriesThatCanCallInternationally { get; set; } = new();
 
     /// <summary>

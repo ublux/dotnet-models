@@ -14,8 +14,7 @@ public partial class User : UbluxDocument_ReferenceAccount_ReferenceTags
 
     /// <summary>
     ///     Email of user. This is the Id not the email address.
-    ///     Two users cannot use the same email. It is a one to one relationship.
-    ///     An email may exists without it pointing to a user. For example you may want to send an email notification if a call is not answered to a specific email.
+    ///     Two users may user the same email address.
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]

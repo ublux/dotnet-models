@@ -24,7 +24,6 @@ public partial class AutoProvisionReference : UbluxDocument
     [IsUbluxRequired]
     public required string IdPhone { get; set; } = string.Empty;
 
-
     /// <summary>
     ///     Ip address where it was autoprovisioned
     /// </summary>

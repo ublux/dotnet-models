@@ -20,7 +20,7 @@ public abstract class TrunkOrigination : UbluxDocument
     #region References
 
     /// <summary>
-    ///     Id Provider
+    ///     Id Provider. Example: Twilio
     /// </summary>
     [IgnoreDataMember]
     [References(typeof(VoipProvider))]
@@ -51,16 +51,6 @@ public abstract class TrunkOrigination : UbluxDocument
     [IsUbluxRequired]
     public required string IdCloudServicePbxFailover { get; set; } = string.Empty;
 
-    // This can be ontained quering database
-    ///// <summary>
-    /////     Faxes and numbers used by this trunk
-    ///// </summary>
-    //[References(typeof(VoipNumber))]
-    //[IgnoreDataMember]
-    //[AllowUpdate(false)]
-    //[IsUbluxRequired]
-    //public List<string> IdsVoipNumbers { get; set; } = new();
-
     #endregion
 
     #endregion
@@ -72,7 +62,7 @@ public abstract class TrunkOrigination : UbluxDocument
     [SwaggerSchema(ReadOnly = true)]
     [HideForCreateRequest]
     [IsUbluxRequired]
-    public abstract TrunkOriginationType TrunkOriginationType
+    public abstract      TrunkOriginationType
     {
         get;
 #if UBLUX_Release || RELEASE
@@ -80,13 +70,6 @@ public abstract class TrunkOrigination : UbluxDocument
 #else
 #endif
     }
-
-    ///// <summary>
-    /////     When a pbx goes offline or is unhealthy we will move this trunk origination to failover region
-    ///// </summary>
-    //[IgnoreDataMember]
-    //[AllowUpdate(false)]
-    //public bool? IsMovedToFailoverRegion { get; set; }
 
     /// <summary>
     ///     Provider ID
@@ -98,11 +81,6 @@ public abstract class TrunkOrigination : UbluxDocument
     [IsUbluxRequired]
     public required string ProviderId { get; set; } = string.Empty;
 
-    ///// <summary>
-    /////     DIDs associated with this trunk
-    ///// </summary>
-    //public List<string> Id_DIDs { get; set; }
-
     /// <summary>
     ///     Friendly name
     /// </summary>
@@ -112,12 +90,6 @@ public abstract class TrunkOrigination : UbluxDocument
     [IsUbluxRequired]
     public required string FriendlyName { get; set; } = string.Empty;
 
-    ///// <summary>
-    /////     Is connection secure?
-    ///// </summary>
-    //[IgnoreDataMember]
-    //[AllowUpdate(false)]
-    //public bool IsSecure { get; set; }
 }
 
 #endif

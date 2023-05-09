@@ -69,6 +69,10 @@ public class AccountUpdateRequest // : IUbluxDocumentId
     /// </summary>
     public String? CompanyName { get; set; }
     /// <summary>
+    /// If CountriesThatCanCallLocally does not contain country then ublux will attempt to find country on this list.
+    /// </summary>
+    public List<Ublux.Communications.Enums.CountryIsoCode>? CountriesThatCanCallInternationally { get; set; }
+    /// <summary>
     /// Sector
     /// </summary>
     public Industry? Industry { get; set; }
@@ -81,6 +85,8 @@ public class AccountUpdateRequest // : IUbluxDocumentId
             account.AccountSecrets = this.AccountSecrets;
         if(jsonRaw.Contains($@"""{nameof(this.CompanyName)}""", StringComparison.OrdinalIgnoreCase))
             account.CompanyName = this.CompanyName;
+        if(jsonRaw.Contains($@"""{nameof(this.CountriesThatCanCallInternationally)}""", StringComparison.OrdinalIgnoreCase))
+            account.CountriesThatCanCallInternationally = this.CountriesThatCanCallInternationally;
         if(jsonRaw.Contains($@"""{nameof(this.Industry)}""", StringComparison.OrdinalIgnoreCase))
             account.Industry = this.Industry.Value;
     }

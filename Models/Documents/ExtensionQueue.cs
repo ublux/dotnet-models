@@ -110,8 +110,6 @@ public partial class ExtensionQueue : Extension
 
     #region Helper methods
 
-
-
     /// <summary>
     ///     Timeout in seconds.
     /// </summary>

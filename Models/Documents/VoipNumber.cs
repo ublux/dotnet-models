@@ -63,7 +63,6 @@ public abstract partial class VoipNumber : UbluxDocument_ReferenceAccount_Refere
         set;
 #else
 #endif
-
     }
 
     /// <summary>

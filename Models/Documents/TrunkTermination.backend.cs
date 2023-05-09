@@ -13,7 +13,7 @@ public partial class TrunkTermination : UbluxDocument
     #region References
 
     /// <summary>
-    ///     Example: AC82d45e10fd7a7681d95a49dcff596e93
+    ///     Example: VP.Twilio
     ///     The id of the provider and NOT the id of the trunk. For example
     /// </summary>
     [References(typeof(VoipProvider))]
@@ -22,14 +22,6 @@ public partial class TrunkTermination : UbluxDocument
     [SwaggerSchema(ReadOnly = true)]
     [IsUbluxRequired]
     public required string IdVoipProvider { get; set; } = string.Empty;
-
-    ///// <summary>
-    /////     Needed so that we do not create two trunk terminations that are actually the same on sip.conf. One will be able to call China and the other not but they are the same
-    ///// </summary>
-    //[References(typeof(TrunkTermination))]
-    //[IgnoreDataMember]
-    //[AllowUpdate(false)]
-    //public string? IdTrunkTerminationExisting { get; set; }
 
     #endregion
 
