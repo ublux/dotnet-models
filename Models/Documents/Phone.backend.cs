@@ -19,7 +19,6 @@ public partial class Phone
     [IgnoreDataMember]    
     public required string Password { get; set; } = string.Empty;
 
-
     /// <summary>
     ///     It is ok to have it hardcoded. If we change id of line unit tests will fail
     /// </summary>

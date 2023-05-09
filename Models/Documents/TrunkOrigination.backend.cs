@@ -62,7 +62,7 @@ public abstract class TrunkOrigination : UbluxDocument
     [SwaggerSchema(ReadOnly = true)]
     [HideForCreateRequest]
     [IsUbluxRequired]
-    public abstract      TrunkOriginationType
+    public abstract TrunkOriginationType TrunkOriginationType
     {
         get;
 #if UBLUX_Release || RELEASE
