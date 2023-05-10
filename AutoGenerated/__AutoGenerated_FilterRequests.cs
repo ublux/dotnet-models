@@ -1529,6 +1529,26 @@ public class CallIncomingToCallFlowLogicFilterRequest
     [JsonProperty("analysis_model_reg")]
     public string? Analysis_Model_REG { get; set; }
 
+    /// <summary> Analysis.ActionAgentShouldTakeNext equals </summary>
+    [JsonProperty("analysis_actionAgentShouldTakeNext_eq")]
+    public string? Analysis_ActionAgentShouldTakeNext_EQ { get; set; }
+    /// <summary> Analysis.ActionAgentShouldTakeNext contains </summary>
+    [JsonProperty("analysis_actionAgentShouldTakeNext_con")]
+    public string? Analysis_ActionAgentShouldTakeNext_CON { get; set; }
+    /// <summary> Analysis.ActionAgentShouldTakeNext regex </summary>
+    [JsonProperty("analysis_actionAgentShouldTakeNext_reg")]
+    public string? Analysis_ActionAgentShouldTakeNext_REG { get; set; }
+
+    /// <summary> Analysis.ClientInterestInProduct equals </summary>
+    [JsonProperty("analysis_clientInterestInProduct_eq")]
+    public System.Int32? Analysis_ClientInterestInProduct_EQ { get; set; }
+    /// <summary> Analysis.ClientInterestInProduct less than or equal to </summary>
+    [JsonProperty("analysis_clientInterestInProduct_lte")]
+    public System.Int32? Analysis_ClientInterestInProduct_LTE { get; set; }
+    /// <summary> Analysis.ClientInterestInProduct greater than or equal to </summary>
+    [JsonProperty("analysis_clientInterestInProduct_gte")]
+    public System.Int32? Analysis_ClientInterestInProduct_GTE { get; set; }
+
 
     /// <summary> Analysis2.Sentiment.Positive equals </summary>
     [JsonProperty("analysis2_sentiment_positive_eq")]
@@ -1666,6 +1686,26 @@ public class CallIncomingToCallFlowLogicFilterRequest
     [JsonProperty("analysis2_model_reg")]
     public string? Analysis2_Model_REG { get; set; }
 
+    /// <summary> Analysis2.ActionAgentShouldTakeNext equals </summary>
+    [JsonProperty("analysis2_actionAgentShouldTakeNext_eq")]
+    public string? Analysis2_ActionAgentShouldTakeNext_EQ { get; set; }
+    /// <summary> Analysis2.ActionAgentShouldTakeNext contains </summary>
+    [JsonProperty("analysis2_actionAgentShouldTakeNext_con")]
+    public string? Analysis2_ActionAgentShouldTakeNext_CON { get; set; }
+    /// <summary> Analysis2.ActionAgentShouldTakeNext regex </summary>
+    [JsonProperty("analysis2_actionAgentShouldTakeNext_reg")]
+    public string? Analysis2_ActionAgentShouldTakeNext_REG { get; set; }
+
+    /// <summary> Analysis2.ClientInterestInProduct equals </summary>
+    [JsonProperty("analysis2_clientInterestInProduct_eq")]
+    public System.Int32? Analysis2_ClientInterestInProduct_EQ { get; set; }
+    /// <summary> Analysis2.ClientInterestInProduct less than or equal to </summary>
+    [JsonProperty("analysis2_clientInterestInProduct_lte")]
+    public System.Int32? Analysis2_ClientInterestInProduct_LTE { get; set; }
+    /// <summary> Analysis2.ClientInterestInProduct greater than or equal to </summary>
+    [JsonProperty("analysis2_clientInterestInProduct_gte")]
+    public System.Int32? Analysis2_ClientInterestInProduct_GTE { get; set; }
+
 
     /// <summary> Analysis3.Sentiment.Positive equals </summary>
     [JsonProperty("analysis3_sentiment_positive_eq")]
@@ -1802,6 +1842,26 @@ public class CallIncomingToCallFlowLogicFilterRequest
     /// <summary> Analysis3.Model regex </summary>
     [JsonProperty("analysis3_model_reg")]
     public string? Analysis3_Model_REG { get; set; }
+
+    /// <summary> Analysis3.ActionAgentShouldTakeNext equals </summary>
+    [JsonProperty("analysis3_actionAgentShouldTakeNext_eq")]
+    public string? Analysis3_ActionAgentShouldTakeNext_EQ { get; set; }
+    /// <summary> Analysis3.ActionAgentShouldTakeNext contains </summary>
+    [JsonProperty("analysis3_actionAgentShouldTakeNext_con")]
+    public string? Analysis3_ActionAgentShouldTakeNext_CON { get; set; }
+    /// <summary> Analysis3.ActionAgentShouldTakeNext regex </summary>
+    [JsonProperty("analysis3_actionAgentShouldTakeNext_reg")]
+    public string? Analysis3_ActionAgentShouldTakeNext_REG { get; set; }
+
+    /// <summary> Analysis3.ClientInterestInProduct equals </summary>
+    [JsonProperty("analysis3_clientInterestInProduct_eq")]
+    public System.Int32? Analysis3_ClientInterestInProduct_EQ { get; set; }
+    /// <summary> Analysis3.ClientInterestInProduct less than or equal to </summary>
+    [JsonProperty("analysis3_clientInterestInProduct_lte")]
+    public System.Int32? Analysis3_ClientInterestInProduct_LTE { get; set; }
+    /// <summary> Analysis3.ClientInterestInProduct greater than or equal to </summary>
+    [JsonProperty("analysis3_clientInterestInProduct_gte")]
+    public System.Int32? Analysis3_ClientInterestInProduct_GTE { get; set; }
 
 
     /// <summary> IdsParticipantLines equals </summary>
@@ -2534,6 +2594,26 @@ public class CallIncomingToExtensionFilterRequest
     [JsonProperty("analysis_model_reg")]
     public string? Analysis_Model_REG { get; set; }
 
+    /// <summary> Analysis.ActionAgentShouldTakeNext equals </summary>
+    [JsonProperty("analysis_actionAgentShouldTakeNext_eq")]
+    public string? Analysis_ActionAgentShouldTakeNext_EQ { get; set; }
+    /// <summary> Analysis.ActionAgentShouldTakeNext contains </summary>
+    [JsonProperty("analysis_actionAgentShouldTakeNext_con")]
+    public string? Analysis_ActionAgentShouldTakeNext_CON { get; set; }
+    /// <summary> Analysis.ActionAgentShouldTakeNext regex </summary>
+    [JsonProperty("analysis_actionAgentShouldTakeNext_reg")]
+    public string? Analysis_ActionAgentShouldTakeNext_REG { get; set; }
+
+    /// <summary> Analysis.ClientInterestInProduct equals </summary>
+    [JsonProperty("analysis_clientInterestInProduct_eq")]
+    public System.Int32? Analysis_ClientInterestInProduct_EQ { get; set; }
+    /// <summary> Analysis.ClientInterestInProduct less than or equal to </summary>
+    [JsonProperty("analysis_clientInterestInProduct_lte")]
+    public System.Int32? Analysis_ClientInterestInProduct_LTE { get; set; }
+    /// <summary> Analysis.ClientInterestInProduct greater than or equal to </summary>
+    [JsonProperty("analysis_clientInterestInProduct_gte")]
+    public System.Int32? Analysis_ClientInterestInProduct_GTE { get; set; }
+
 
     /// <summary> Analysis2.Sentiment.Positive equals </summary>
     [JsonProperty("analysis2_sentiment_positive_eq")]
@@ -2671,6 +2751,26 @@ public class CallIncomingToExtensionFilterRequest
     [JsonProperty("analysis2_model_reg")]
     public string? Analysis2_Model_REG { get; set; }
 
+    /// <summary> Analysis2.ActionAgentShouldTakeNext equals </summary>
+    [JsonProperty("analysis2_actionAgentShouldTakeNext_eq")]
+    public string? Analysis2_ActionAgentShouldTakeNext_EQ { get; set; }
+    /// <summary> Analysis2.ActionAgentShouldTakeNext contains </summary>
+    [JsonProperty("analysis2_actionAgentShouldTakeNext_con")]
+    public string? Analysis2_ActionAgentShouldTakeNext_CON { get; set; }
+    /// <summary> Analysis2.ActionAgentShouldTakeNext regex </summary>
+    [JsonProperty("analysis2_actionAgentShouldTakeNext_reg")]
+    public string? Analysis2_ActionAgentShouldTakeNext_REG { get; set; }
+
+    /// <summary> Analysis2.ClientInterestInProduct equals </summary>
+    [JsonProperty("analysis2_clientInterestInProduct_eq")]
+    public System.Int32? Analysis2_ClientInterestInProduct_EQ { get; set; }
+    /// <summary> Analysis2.ClientInterestInProduct less than or equal to </summary>
+    [JsonProperty("analysis2_clientInterestInProduct_lte")]
+    public System.Int32? Analysis2_ClientInterestInProduct_LTE { get; set; }
+    /// <summary> Analysis2.ClientInterestInProduct greater than or equal to </summary>
+    [JsonProperty("analysis2_clientInterestInProduct_gte")]
+    public System.Int32? Analysis2_ClientInterestInProduct_GTE { get; set; }
+
 
     /// <summary> Analysis3.Sentiment.Positive equals </summary>
     [JsonProperty("analysis3_sentiment_positive_eq")]
@@ -2807,6 +2907,26 @@ public class CallIncomingToExtensionFilterRequest
     /// <summary> Analysis3.Model regex </summary>
     [JsonProperty("analysis3_model_reg")]
     public string? Analysis3_Model_REG { get; set; }
+
+    /// <summary> Analysis3.ActionAgentShouldTakeNext equals </summary>
+    [JsonProperty("analysis3_actionAgentShouldTakeNext_eq")]
+    public string? Analysis3_ActionAgentShouldTakeNext_EQ { get; set; }
+    /// <summary> Analysis3.ActionAgentShouldTakeNext contains </summary>
+    [JsonProperty("analysis3_actionAgentShouldTakeNext_con")]
+    public string? Analysis3_ActionAgentShouldTakeNext_CON { get; set; }
+    /// <summary> Analysis3.ActionAgentShouldTakeNext regex </summary>
+    [JsonProperty("analysis3_actionAgentShouldTakeNext_reg")]
+    public string? Analysis3_ActionAgentShouldTakeNext_REG { get; set; }
+
+    /// <summary> Analysis3.ClientInterestInProduct equals </summary>
+    [JsonProperty("analysis3_clientInterestInProduct_eq")]
+    public System.Int32? Analysis3_ClientInterestInProduct_EQ { get; set; }
+    /// <summary> Analysis3.ClientInterestInProduct less than or equal to </summary>
+    [JsonProperty("analysis3_clientInterestInProduct_lte")]
+    public System.Int32? Analysis3_ClientInterestInProduct_LTE { get; set; }
+    /// <summary> Analysis3.ClientInterestInProduct greater than or equal to </summary>
+    [JsonProperty("analysis3_clientInterestInProduct_gte")]
+    public System.Int32? Analysis3_ClientInterestInProduct_GTE { get; set; }
 
 
     /// <summary> IdsParticipantLines equals </summary>
@@ -3519,6 +3639,26 @@ public class CallOutgoingToExtensionFilterRequest
     [JsonProperty("analysis_model_reg")]
     public string? Analysis_Model_REG { get; set; }
 
+    /// <summary> Analysis.ActionAgentShouldTakeNext equals </summary>
+    [JsonProperty("analysis_actionAgentShouldTakeNext_eq")]
+    public string? Analysis_ActionAgentShouldTakeNext_EQ { get; set; }
+    /// <summary> Analysis.ActionAgentShouldTakeNext contains </summary>
+    [JsonProperty("analysis_actionAgentShouldTakeNext_con")]
+    public string? Analysis_ActionAgentShouldTakeNext_CON { get; set; }
+    /// <summary> Analysis.ActionAgentShouldTakeNext regex </summary>
+    [JsonProperty("analysis_actionAgentShouldTakeNext_reg")]
+    public string? Analysis_ActionAgentShouldTakeNext_REG { get; set; }
+
+    /// <summary> Analysis.ClientInterestInProduct equals </summary>
+    [JsonProperty("analysis_clientInterestInProduct_eq")]
+    public System.Int32? Analysis_ClientInterestInProduct_EQ { get; set; }
+    /// <summary> Analysis.ClientInterestInProduct less than or equal to </summary>
+    [JsonProperty("analysis_clientInterestInProduct_lte")]
+    public System.Int32? Analysis_ClientInterestInProduct_LTE { get; set; }
+    /// <summary> Analysis.ClientInterestInProduct greater than or equal to </summary>
+    [JsonProperty("analysis_clientInterestInProduct_gte")]
+    public System.Int32? Analysis_ClientInterestInProduct_GTE { get; set; }
+
 
     /// <summary> Analysis2.Sentiment.Positive equals </summary>
     [JsonProperty("analysis2_sentiment_positive_eq")]
@@ -3656,6 +3796,26 @@ public class CallOutgoingToExtensionFilterRequest
     [JsonProperty("analysis2_model_reg")]
     public string? Analysis2_Model_REG { get; set; }
 
+    /// <summary> Analysis2.ActionAgentShouldTakeNext equals </summary>
+    [JsonProperty("analysis2_actionAgentShouldTakeNext_eq")]
+    public string? Analysis2_ActionAgentShouldTakeNext_EQ { get; set; }
+    /// <summary> Analysis2.ActionAgentShouldTakeNext contains </summary>
+    [JsonProperty("analysis2_actionAgentShouldTakeNext_con")]
+    public string? Analysis2_ActionAgentShouldTakeNext_CON { get; set; }
+    /// <summary> Analysis2.ActionAgentShouldTakeNext regex </summary>
+    [JsonProperty("analysis2_actionAgentShouldTakeNext_reg")]
+    public string? Analysis2_ActionAgentShouldTakeNext_REG { get; set; }
+
+    /// <summary> Analysis2.ClientInterestInProduct equals </summary>
+    [JsonProperty("analysis2_clientInterestInProduct_eq")]
+    public System.Int32? Analysis2_ClientInterestInProduct_EQ { get; set; }
+    /// <summary> Analysis2.ClientInterestInProduct less than or equal to </summary>
+    [JsonProperty("analysis2_clientInterestInProduct_lte")]
+    public System.Int32? Analysis2_ClientInterestInProduct_LTE { get; set; }
+    /// <summary> Analysis2.ClientInterestInProduct greater than or equal to </summary>
+    [JsonProperty("analysis2_clientInterestInProduct_gte")]
+    public System.Int32? Analysis2_ClientInterestInProduct_GTE { get; set; }
+
 
     /// <summary> Analysis3.Sentiment.Positive equals </summary>
     [JsonProperty("analysis3_sentiment_positive_eq")]
@@ -3792,6 +3952,26 @@ public class CallOutgoingToExtensionFilterRequest
     /// <summary> Analysis3.Model regex </summary>
     [JsonProperty("analysis3_model_reg")]
     public string? Analysis3_Model_REG { get; set; }
+
+    /// <summary> Analysis3.ActionAgentShouldTakeNext equals </summary>
+    [JsonProperty("analysis3_actionAgentShouldTakeNext_eq")]
+    public string? Analysis3_ActionAgentShouldTakeNext_EQ { get; set; }
+    /// <summary> Analysis3.ActionAgentShouldTakeNext contains </summary>
+    [JsonProperty("analysis3_actionAgentShouldTakeNext_con")]
+    public string? Analysis3_ActionAgentShouldTakeNext_CON { get; set; }
+    /// <summary> Analysis3.ActionAgentShouldTakeNext regex </summary>
+    [JsonProperty("analysis3_actionAgentShouldTakeNext_reg")]
+    public string? Analysis3_ActionAgentShouldTakeNext_REG { get; set; }
+
+    /// <summary> Analysis3.ClientInterestInProduct equals </summary>
+    [JsonProperty("analysis3_clientInterestInProduct_eq")]
+    public System.Int32? Analysis3_ClientInterestInProduct_EQ { get; set; }
+    /// <summary> Analysis3.ClientInterestInProduct less than or equal to </summary>
+    [JsonProperty("analysis3_clientInterestInProduct_lte")]
+    public System.Int32? Analysis3_ClientInterestInProduct_LTE { get; set; }
+    /// <summary> Analysis3.ClientInterestInProduct greater than or equal to </summary>
+    [JsonProperty("analysis3_clientInterestInProduct_gte")]
+    public System.Int32? Analysis3_ClientInterestInProduct_GTE { get; set; }
 
 
     /// <summary> IdsParticipantLines equals </summary>
@@ -4474,6 +4654,26 @@ public class CallOutgoingToPSTNFilterRequest
     [JsonProperty("analysis_model_reg")]
     public string? Analysis_Model_REG { get; set; }
 
+    /// <summary> Analysis.ActionAgentShouldTakeNext equals </summary>
+    [JsonProperty("analysis_actionAgentShouldTakeNext_eq")]
+    public string? Analysis_ActionAgentShouldTakeNext_EQ { get; set; }
+    /// <summary> Analysis.ActionAgentShouldTakeNext contains </summary>
+    [JsonProperty("analysis_actionAgentShouldTakeNext_con")]
+    public string? Analysis_ActionAgentShouldTakeNext_CON { get; set; }
+    /// <summary> Analysis.ActionAgentShouldTakeNext regex </summary>
+    [JsonProperty("analysis_actionAgentShouldTakeNext_reg")]
+    public string? Analysis_ActionAgentShouldTakeNext_REG { get; set; }
+
+    /// <summary> Analysis.ClientInterestInProduct equals </summary>
+    [JsonProperty("analysis_clientInterestInProduct_eq")]
+    public System.Int32? Analysis_ClientInterestInProduct_EQ { get; set; }
+    /// <summary> Analysis.ClientInterestInProduct less than or equal to </summary>
+    [JsonProperty("analysis_clientInterestInProduct_lte")]
+    public System.Int32? Analysis_ClientInterestInProduct_LTE { get; set; }
+    /// <summary> Analysis.ClientInterestInProduct greater than or equal to </summary>
+    [JsonProperty("analysis_clientInterestInProduct_gte")]
+    public System.Int32? Analysis_ClientInterestInProduct_GTE { get; set; }
+
 
     /// <summary> Analysis2.Sentiment.Positive equals </summary>
     [JsonProperty("analysis2_sentiment_positive_eq")]
@@ -4611,6 +4811,26 @@ public class CallOutgoingToPSTNFilterRequest
     [JsonProperty("analysis2_model_reg")]
     public string? Analysis2_Model_REG { get; set; }
 
+    /// <summary> Analysis2.ActionAgentShouldTakeNext equals </summary>
+    [JsonProperty("analysis2_actionAgentShouldTakeNext_eq")]
+    public string? Analysis2_ActionAgentShouldTakeNext_EQ { get; set; }
+    /// <summary> Analysis2.ActionAgentShouldTakeNext contains </summary>
+    [JsonProperty("analysis2_actionAgentShouldTakeNext_con")]
+    public string? Analysis2_ActionAgentShouldTakeNext_CON { get; set; }
+    /// <summary> Analysis2.ActionAgentShouldTakeNext regex </summary>
+    [JsonProperty("analysis2_actionAgentShouldTakeNext_reg")]
+    public string? Analysis2_ActionAgentShouldTakeNext_REG { get; set; }
+
+    /// <summary> Analysis2.ClientInterestInProduct equals </summary>
+    [JsonProperty("analysis2_clientInterestInProduct_eq")]
+    public System.Int32? Analysis2_ClientInterestInProduct_EQ { get; set; }
+    /// <summary> Analysis2.ClientInterestInProduct less than or equal to </summary>
+    [JsonProperty("analysis2_clientInterestInProduct_lte")]
+    public System.Int32? Analysis2_ClientInterestInProduct_LTE { get; set; }
+    /// <summary> Analysis2.ClientInterestInProduct greater than or equal to </summary>
+    [JsonProperty("analysis2_clientInterestInProduct_gte")]
+    public System.Int32? Analysis2_ClientInterestInProduct_GTE { get; set; }
+
 
     /// <summary> Analysis3.Sentiment.Positive equals </summary>
     [JsonProperty("analysis3_sentiment_positive_eq")]
@@ -4747,6 +4967,26 @@ public class CallOutgoingToPSTNFilterRequest
     /// <summary> Analysis3.Model regex </summary>
     [JsonProperty("analysis3_model_reg")]
     public string? Analysis3_Model_REG { get; set; }
+
+    /// <summary> Analysis3.ActionAgentShouldTakeNext equals </summary>
+    [JsonProperty("analysis3_actionAgentShouldTakeNext_eq")]
+    public string? Analysis3_ActionAgentShouldTakeNext_EQ { get; set; }
+    /// <summary> Analysis3.ActionAgentShouldTakeNext contains </summary>
+    [JsonProperty("analysis3_actionAgentShouldTakeNext_con")]
+    public string? Analysis3_ActionAgentShouldTakeNext_CON { get; set; }
+    /// <summary> Analysis3.ActionAgentShouldTakeNext regex </summary>
+    [JsonProperty("analysis3_actionAgentShouldTakeNext_reg")]
+    public string? Analysis3_ActionAgentShouldTakeNext_REG { get; set; }
+
+    /// <summary> Analysis3.ClientInterestInProduct equals </summary>
+    [JsonProperty("analysis3_clientInterestInProduct_eq")]
+    public System.Int32? Analysis3_ClientInterestInProduct_EQ { get; set; }
+    /// <summary> Analysis3.ClientInterestInProduct less than or equal to </summary>
+    [JsonProperty("analysis3_clientInterestInProduct_lte")]
+    public System.Int32? Analysis3_ClientInterestInProduct_LTE { get; set; }
+    /// <summary> Analysis3.ClientInterestInProduct greater than or equal to </summary>
+    [JsonProperty("analysis3_clientInterestInProduct_gte")]
+    public System.Int32? Analysis3_ClientInterestInProduct_GTE { get; set; }
 
 
     /// <summary> IdsParticipantLines equals </summary>
@@ -10303,6 +10543,26 @@ public class CallFilterRequest
     [JsonProperty("analysis_model_reg")]
     public string? Analysis_Model_REG { get; set; }
 
+    /// <summary> Analysis.ActionAgentShouldTakeNext equals </summary>
+    [JsonProperty("analysis_actionAgentShouldTakeNext_eq")]
+    public string? Analysis_ActionAgentShouldTakeNext_EQ { get; set; }
+    /// <summary> Analysis.ActionAgentShouldTakeNext contains </summary>
+    [JsonProperty("analysis_actionAgentShouldTakeNext_con")]
+    public string? Analysis_ActionAgentShouldTakeNext_CON { get; set; }
+    /// <summary> Analysis.ActionAgentShouldTakeNext regex </summary>
+    [JsonProperty("analysis_actionAgentShouldTakeNext_reg")]
+    public string? Analysis_ActionAgentShouldTakeNext_REG { get; set; }
+
+    /// <summary> Analysis.ClientInterestInProduct equals </summary>
+    [JsonProperty("analysis_clientInterestInProduct_eq")]
+    public System.Int32? Analysis_ClientInterestInProduct_EQ { get; set; }
+    /// <summary> Analysis.ClientInterestInProduct less than or equal to </summary>
+    [JsonProperty("analysis_clientInterestInProduct_lte")]
+    public System.Int32? Analysis_ClientInterestInProduct_LTE { get; set; }
+    /// <summary> Analysis.ClientInterestInProduct greater than or equal to </summary>
+    [JsonProperty("analysis_clientInterestInProduct_gte")]
+    public System.Int32? Analysis_ClientInterestInProduct_GTE { get; set; }
+
 
     /// <summary> Analysis2.Sentiment.Positive equals </summary>
     [JsonProperty("analysis2_sentiment_positive_eq")]
@@ -10440,6 +10700,26 @@ public class CallFilterRequest
     [JsonProperty("analysis2_model_reg")]
     public string? Analysis2_Model_REG { get; set; }
 
+    /// <summary> Analysis2.ActionAgentShouldTakeNext equals </summary>
+    [JsonProperty("analysis2_actionAgentShouldTakeNext_eq")]
+    public string? Analysis2_ActionAgentShouldTakeNext_EQ { get; set; }
+    /// <summary> Analysis2.ActionAgentShouldTakeNext contains </summary>
+    [JsonProperty("analysis2_actionAgentShouldTakeNext_con")]
+    public string? Analysis2_ActionAgentShouldTakeNext_CON { get; set; }
+    /// <summary> Analysis2.ActionAgentShouldTakeNext regex </summary>
+    [JsonProperty("analysis2_actionAgentShouldTakeNext_reg")]
+    public string? Analysis2_ActionAgentShouldTakeNext_REG { get; set; }
+
+    /// <summary> Analysis2.ClientInterestInProduct equals </summary>
+    [JsonProperty("analysis2_clientInterestInProduct_eq")]
+    public System.Int32? Analysis2_ClientInterestInProduct_EQ { get; set; }
+    /// <summary> Analysis2.ClientInterestInProduct less than or equal to </summary>
+    [JsonProperty("analysis2_clientInterestInProduct_lte")]
+    public System.Int32? Analysis2_ClientInterestInProduct_LTE { get; set; }
+    /// <summary> Analysis2.ClientInterestInProduct greater than or equal to </summary>
+    [JsonProperty("analysis2_clientInterestInProduct_gte")]
+    public System.Int32? Analysis2_ClientInterestInProduct_GTE { get; set; }
+
 
     /// <summary> Analysis3.Sentiment.Positive equals </summary>
     [JsonProperty("analysis3_sentiment_positive_eq")]
@@ -10576,6 +10856,26 @@ public class CallFilterRequest
     /// <summary> Analysis3.Model regex </summary>
     [JsonProperty("analysis3_model_reg")]
     public string? Analysis3_Model_REG { get; set; }
+
+    /// <summary> Analysis3.ActionAgentShouldTakeNext equals </summary>
+    [JsonProperty("analysis3_actionAgentShouldTakeNext_eq")]
+    public string? Analysis3_ActionAgentShouldTakeNext_EQ { get; set; }
+    /// <summary> Analysis3.ActionAgentShouldTakeNext contains </summary>
+    [JsonProperty("analysis3_actionAgentShouldTakeNext_con")]
+    public string? Analysis3_ActionAgentShouldTakeNext_CON { get; set; }
+    /// <summary> Analysis3.ActionAgentShouldTakeNext regex </summary>
+    [JsonProperty("analysis3_actionAgentShouldTakeNext_reg")]
+    public string? Analysis3_ActionAgentShouldTakeNext_REG { get; set; }
+
+    /// <summary> Analysis3.ClientInterestInProduct equals </summary>
+    [JsonProperty("analysis3_clientInterestInProduct_eq")]
+    public System.Int32? Analysis3_ClientInterestInProduct_EQ { get; set; }
+    /// <summary> Analysis3.ClientInterestInProduct less than or equal to </summary>
+    [JsonProperty("analysis3_clientInterestInProduct_lte")]
+    public System.Int32? Analysis3_ClientInterestInProduct_LTE { get; set; }
+    /// <summary> Analysis3.ClientInterestInProduct greater than or equal to </summary>
+    [JsonProperty("analysis3_clientInterestInProduct_gte")]
+    public System.Int32? Analysis3_ClientInterestInProduct_GTE { get; set; }
 
 
     /// <summary> IdsParticipantLines equals </summary>
@@ -11268,6 +11568,26 @@ public class CallIncomingFilterRequest
     [JsonProperty("analysis_model_reg")]
     public string? Analysis_Model_REG { get; set; }
 
+    /// <summary> Analysis.ActionAgentShouldTakeNext equals </summary>
+    [JsonProperty("analysis_actionAgentShouldTakeNext_eq")]
+    public string? Analysis_ActionAgentShouldTakeNext_EQ { get; set; }
+    /// <summary> Analysis.ActionAgentShouldTakeNext contains </summary>
+    [JsonProperty("analysis_actionAgentShouldTakeNext_con")]
+    public string? Analysis_ActionAgentShouldTakeNext_CON { get; set; }
+    /// <summary> Analysis.ActionAgentShouldTakeNext regex </summary>
+    [JsonProperty("analysis_actionAgentShouldTakeNext_reg")]
+    public string? Analysis_ActionAgentShouldTakeNext_REG { get; set; }
+
+    /// <summary> Analysis.ClientInterestInProduct equals </summary>
+    [JsonProperty("analysis_clientInterestInProduct_eq")]
+    public System.Int32? Analysis_ClientInterestInProduct_EQ { get; set; }
+    /// <summary> Analysis.ClientInterestInProduct less than or equal to </summary>
+    [JsonProperty("analysis_clientInterestInProduct_lte")]
+    public System.Int32? Analysis_ClientInterestInProduct_LTE { get; set; }
+    /// <summary> Analysis.ClientInterestInProduct greater than or equal to </summary>
+    [JsonProperty("analysis_clientInterestInProduct_gte")]
+    public System.Int32? Analysis_ClientInterestInProduct_GTE { get; set; }
+
 
     /// <summary> Analysis2.Sentiment.Positive equals </summary>
     [JsonProperty("analysis2_sentiment_positive_eq")]
@@ -11405,6 +11725,26 @@ public class CallIncomingFilterRequest
     [JsonProperty("analysis2_model_reg")]
     public string? Analysis2_Model_REG { get; set; }
 
+    /// <summary> Analysis2.ActionAgentShouldTakeNext equals </summary>
+    [JsonProperty("analysis2_actionAgentShouldTakeNext_eq")]
+    public string? Analysis2_ActionAgentShouldTakeNext_EQ { get; set; }
+    /// <summary> Analysis2.ActionAgentShouldTakeNext contains </summary>
+    [JsonProperty("analysis2_actionAgentShouldTakeNext_con")]
+    public string? Analysis2_ActionAgentShouldTakeNext_CON { get; set; }
+    /// <summary> Analysis2.ActionAgentShouldTakeNext regex </summary>
+    [JsonProperty("analysis2_actionAgentShouldTakeNext_reg")]
+    public string? Analysis2_ActionAgentShouldTakeNext_REG { get; set; }
+
+    /// <summary> Analysis2.ClientInterestInProduct equals </summary>
+    [JsonProperty("analysis2_clientInterestInProduct_eq")]
+    public System.Int32? Analysis2_ClientInterestInProduct_EQ { get; set; }
+    /// <summary> Analysis2.ClientInterestInProduct less than or equal to </summary>
+    [JsonProperty("analysis2_clientInterestInProduct_lte")]
+    public System.Int32? Analysis2_ClientInterestInProduct_LTE { get; set; }
+    /// <summary> Analysis2.ClientInterestInProduct greater than or equal to </summary>
+    [JsonProperty("analysis2_clientInterestInProduct_gte")]
+    public System.Int32? Analysis2_ClientInterestInProduct_GTE { get; set; }
+
 
     /// <summary> Analysis3.Sentiment.Positive equals </summary>
     [JsonProperty("analysis3_sentiment_positive_eq")]
@@ -11541,6 +11881,26 @@ public class CallIncomingFilterRequest
     /// <summary> Analysis3.Model regex </summary>
     [JsonProperty("analysis3_model_reg")]
     public string? Analysis3_Model_REG { get; set; }
+
+    /// <summary> Analysis3.ActionAgentShouldTakeNext equals </summary>
+    [JsonProperty("analysis3_actionAgentShouldTakeNext_eq")]
+    public string? Analysis3_ActionAgentShouldTakeNext_EQ { get; set; }
+    /// <summary> Analysis3.ActionAgentShouldTakeNext contains </summary>
+    [JsonProperty("analysis3_actionAgentShouldTakeNext_con")]
+    public string? Analysis3_ActionAgentShouldTakeNext_CON { get; set; }
+    /// <summary> Analysis3.ActionAgentShouldTakeNext regex </summary>
+    [JsonProperty("analysis3_actionAgentShouldTakeNext_reg")]
+    public string? Analysis3_ActionAgentShouldTakeNext_REG { get; set; }
+
+    /// <summary> Analysis3.ClientInterestInProduct equals </summary>
+    [JsonProperty("analysis3_clientInterestInProduct_eq")]
+    public System.Int32? Analysis3_ClientInterestInProduct_EQ { get; set; }
+    /// <summary> Analysis3.ClientInterestInProduct less than or equal to </summary>
+    [JsonProperty("analysis3_clientInterestInProduct_lte")]
+    public System.Int32? Analysis3_ClientInterestInProduct_LTE { get; set; }
+    /// <summary> Analysis3.ClientInterestInProduct greater than or equal to </summary>
+    [JsonProperty("analysis3_clientInterestInProduct_gte")]
+    public System.Int32? Analysis3_ClientInterestInProduct_GTE { get; set; }
 
 
     /// <summary> IdsParticipantLines equals </summary>
@@ -12213,6 +12573,26 @@ public class CallOutgoingFilterRequest
     [JsonProperty("analysis_model_reg")]
     public string? Analysis_Model_REG { get; set; }
 
+    /// <summary> Analysis.ActionAgentShouldTakeNext equals </summary>
+    [JsonProperty("analysis_actionAgentShouldTakeNext_eq")]
+    public string? Analysis_ActionAgentShouldTakeNext_EQ { get; set; }
+    /// <summary> Analysis.ActionAgentShouldTakeNext contains </summary>
+    [JsonProperty("analysis_actionAgentShouldTakeNext_con")]
+    public string? Analysis_ActionAgentShouldTakeNext_CON { get; set; }
+    /// <summary> Analysis.ActionAgentShouldTakeNext regex </summary>
+    [JsonProperty("analysis_actionAgentShouldTakeNext_reg")]
+    public string? Analysis_ActionAgentShouldTakeNext_REG { get; set; }
+
+    /// <summary> Analysis.ClientInterestInProduct equals </summary>
+    [JsonProperty("analysis_clientInterestInProduct_eq")]
+    public System.Int32? Analysis_ClientInterestInProduct_EQ { get; set; }
+    /// <summary> Analysis.ClientInterestInProduct less than or equal to </summary>
+    [JsonProperty("analysis_clientInterestInProduct_lte")]
+    public System.Int32? Analysis_ClientInterestInProduct_LTE { get; set; }
+    /// <summary> Analysis.ClientInterestInProduct greater than or equal to </summary>
+    [JsonProperty("analysis_clientInterestInProduct_gte")]
+    public System.Int32? Analysis_ClientInterestInProduct_GTE { get; set; }
+
 
     /// <summary> Analysis2.Sentiment.Positive equals </summary>
     [JsonProperty("analysis2_sentiment_positive_eq")]
@@ -12350,6 +12730,26 @@ public class CallOutgoingFilterRequest
     [JsonProperty("analysis2_model_reg")]
     public string? Analysis2_Model_REG { get; set; }
 
+    /// <summary> Analysis2.ActionAgentShouldTakeNext equals </summary>
+    [JsonProperty("analysis2_actionAgentShouldTakeNext_eq")]
+    public string? Analysis2_ActionAgentShouldTakeNext_EQ { get; set; }
+    /// <summary> Analysis2.ActionAgentShouldTakeNext contains </summary>
+    [JsonProperty("analysis2_actionAgentShouldTakeNext_con")]
+    public string? Analysis2_ActionAgentShouldTakeNext_CON { get; set; }
+    /// <summary> Analysis2.ActionAgentShouldTakeNext regex </summary>
+    [JsonProperty("analysis2_actionAgentShouldTakeNext_reg")]
+    public string? Analysis2_ActionAgentShouldTakeNext_REG { get; set; }
+
+    /// <summary> Analysis2.ClientInterestInProduct equals </summary>
+    [JsonProperty("analysis2_clientInterestInProduct_eq")]
+    public System.Int32? Analysis2_ClientInterestInProduct_EQ { get; set; }
+    /// <summary> Analysis2.ClientInterestInProduct less than or equal to </summary>
+    [JsonProperty("analysis2_clientInterestInProduct_lte")]
+    public System.Int32? Analysis2_ClientInterestInProduct_LTE { get; set; }
+    /// <summary> Analysis2.ClientInterestInProduct greater than or equal to </summary>
+    [JsonProperty("analysis2_clientInterestInProduct_gte")]
+    public System.Int32? Analysis2_ClientInterestInProduct_GTE { get; set; }
+
 
     /// <summary> Analysis3.Sentiment.Positive equals </summary>
     [JsonProperty("analysis3_sentiment_positive_eq")]
@@ -12486,6 +12886,26 @@ public class CallOutgoingFilterRequest
     /// <summary> Analysis3.Model regex </summary>
     [JsonProperty("analysis3_model_reg")]
     public string? Analysis3_Model_REG { get; set; }
+
+    /// <summary> Analysis3.ActionAgentShouldTakeNext equals </summary>
+    [JsonProperty("analysis3_actionAgentShouldTakeNext_eq")]
+    public string? Analysis3_ActionAgentShouldTakeNext_EQ { get; set; }
+    /// <summary> Analysis3.ActionAgentShouldTakeNext contains </summary>
+    [JsonProperty("analysis3_actionAgentShouldTakeNext_con")]
+    public string? Analysis3_ActionAgentShouldTakeNext_CON { get; set; }
+    /// <summary> Analysis3.ActionAgentShouldTakeNext regex </summary>
+    [JsonProperty("analysis3_actionAgentShouldTakeNext_reg")]
+    public string? Analysis3_ActionAgentShouldTakeNext_REG { get; set; }
+
+    /// <summary> Analysis3.ClientInterestInProduct equals </summary>
+    [JsonProperty("analysis3_clientInterestInProduct_eq")]
+    public System.Int32? Analysis3_ClientInterestInProduct_EQ { get; set; }
+    /// <summary> Analysis3.ClientInterestInProduct less than or equal to </summary>
+    [JsonProperty("analysis3_clientInterestInProduct_lte")]
+    public System.Int32? Analysis3_ClientInterestInProduct_LTE { get; set; }
+    /// <summary> Analysis3.ClientInterestInProduct greater than or equal to </summary>
+    [JsonProperty("analysis3_clientInterestInProduct_gte")]
+    public System.Int32? Analysis3_ClientInterestInProduct_GTE { get; set; }
 
 
     /// <summary> IdsParticipantLines equals </summary>

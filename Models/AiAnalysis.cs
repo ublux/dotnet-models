@@ -96,6 +96,20 @@ public class AiAnalysis
     //[AllowUpdate(false)]
     //[SwaggerSchema(ReadOnly = true)]
     //public string? ErrorMessage { get; set; }
+
+    /// <summary>
+    ///     Based on the conversation, what action should the agent take next?
+    /// </summary>
+    [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
+    public string? ActionAgentShouldTakeNext { get; set; }
+
+    /// <summary>
+    ///     Measure the interest that the client has expressed in the product ranging from 1 to 5. 
+    /// </summary>
+    [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
+    public int? ClientInterestInProduct { get; set; }
 }
 
 /// <summary>

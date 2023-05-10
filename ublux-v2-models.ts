@@ -81,6 +81,10 @@ export interface AiAnalysis {
     readonly language?: string;
     /** Example: gpt-3.5-turbo */
     readonly model?: string | null;
+    /** Based on the conversation, what action should the agent take next? */
+    readonly actionAgentShouldTakeNext?: string | null;
+    /** Measure the interest that the client has expressed in the product ranging from 1 to 5. */
+    readonly clientInterestInProduct?: number | null;
 }
 
 /** AI transcription of a phone call. This is the convertion from audio to text only. */
@@ -959,6 +963,18 @@ export interface CallFilterRequest {
     analysis_model_con?: string | null;
     /** Analysis.Model regex */
     analysis_model_reg?: string | null;
+    /** Analysis.ActionAgentShouldTakeNext equals */
+    analysis_actionAgentShouldTakeNext_eq?: string | null;
+    /** Analysis.ActionAgentShouldTakeNext contains */
+    analysis_actionAgentShouldTakeNext_con?: string | null;
+    /** Analysis.ActionAgentShouldTakeNext regex */
+    analysis_actionAgentShouldTakeNext_reg?: string | null;
+    /** Analysis.ClientInterestInProduct equals */
+    analysis_clientInterestInProduct_eq?: number | null;
+    /** Analysis.ClientInterestInProduct less than or equal to */
+    analysis_clientInterestInProduct_lte?: number | null;
+    /** Analysis.ClientInterestInProduct greater than or equal to */
+    analysis_clientInterestInProduct_gte?: number | null;
     /** Analysis2.Sentiment.Positive equals */
     analysis2_sentiment_positive_eq?: number | null;
     /** Analysis2.Sentiment.Positive less than or equal to */
@@ -1037,6 +1053,18 @@ export interface CallFilterRequest {
     analysis2_model_con?: string | null;
     /** Analysis2.Model regex */
     analysis2_model_reg?: string | null;
+    /** Analysis2.ActionAgentShouldTakeNext equals */
+    analysis2_actionAgentShouldTakeNext_eq?: string | null;
+    /** Analysis2.ActionAgentShouldTakeNext contains */
+    analysis2_actionAgentShouldTakeNext_con?: string | null;
+    /** Analysis2.ActionAgentShouldTakeNext regex */
+    analysis2_actionAgentShouldTakeNext_reg?: string | null;
+    /** Analysis2.ClientInterestInProduct equals */
+    analysis2_clientInterestInProduct_eq?: number | null;
+    /** Analysis2.ClientInterestInProduct less than or equal to */
+    analysis2_clientInterestInProduct_lte?: number | null;
+    /** Analysis2.ClientInterestInProduct greater than or equal to */
+    analysis2_clientInterestInProduct_gte?: number | null;
     /** Analysis3.Sentiment.Positive equals */
     analysis3_sentiment_positive_eq?: number | null;
     /** Analysis3.Sentiment.Positive less than or equal to */
@@ -1115,6 +1143,18 @@ export interface CallFilterRequest {
     analysis3_model_con?: string | null;
     /** Analysis3.Model regex */
     analysis3_model_reg?: string | null;
+    /** Analysis3.ActionAgentShouldTakeNext equals */
+    analysis3_actionAgentShouldTakeNext_eq?: string | null;
+    /** Analysis3.ActionAgentShouldTakeNext contains */
+    analysis3_actionAgentShouldTakeNext_con?: string | null;
+    /** Analysis3.ActionAgentShouldTakeNext regex */
+    analysis3_actionAgentShouldTakeNext_reg?: string | null;
+    /** Analysis3.ClientInterestInProduct equals */
+    analysis3_clientInterestInProduct_eq?: number | null;
+    /** Analysis3.ClientInterestInProduct less than or equal to */
+    analysis3_clientInterestInProduct_lte?: number | null;
+    /** Analysis3.ClientInterestInProduct greater than or equal to */
+    analysis3_clientInterestInProduct_gte?: number | null;
     /** IdsParticipantLines equals */
     idsParticipantLines_eq?: string | null;
     /** IdsParticipantLines contains */

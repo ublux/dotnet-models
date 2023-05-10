@@ -7,16 +7,6 @@ namespace Ublux.Communications.Models;
 /// </summary>
 public class AccountSecrets
 {
-    ///// <summary>
-    /////     7 pin random code used to link an email with
-    /////     {RandCode}
-    /////     EAB24
-    ///// </summary>
-    //[AllowUpdate(false)]
-    //[SwaggerSchema(ReadOnly = true)]
-    //[IsUbluxRequired]
-    //public required string PinFax { get; set; }
-
     /// <summary>
     ///     9 digit number that a customer must dial in order to link his phone to a new account. 
     /// </summary>
@@ -47,6 +37,7 @@ public class AccountSecrets
             // range of possible values
             UInt32 range = (UInt32)(maxValueNoneInclusive - minValue);
             Span<byte> randBytes = stackalloc byte[4];
+            // It is cryptographic safe. Do not use Ransom.Shared!
             using RandomNumberGenerator rng = RandomNumberGenerator.Create();
             rng.GetBytes(randBytes);
             UInt32 randomUnsignedInt = BitConverter.ToUInt32(randBytes);
@@ -60,6 +51,4 @@ public class AccountSecrets
             PinSpy = GenerateRandomInt(100000000, 999999999).ToString()
         };
     }
-
-
 }
