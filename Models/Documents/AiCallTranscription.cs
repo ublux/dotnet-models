@@ -14,7 +14,7 @@ public partial class AiCallTranscription : UbluxDocument_ReferenceAccount_Refere
     [SwaggerSchema(ReadOnly = true)]
     [References(typeof(Call))]
     [IsUbluxRequired]
-    public string IdCall { get; set; } = string.Empty;
+    public string IdCall { get; set; } = string.Empty; // OK
 
     #endregion
 
@@ -30,42 +30,7 @@ public partial class AiCallTranscription : UbluxDocument_ReferenceAccount_Refere
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    public List<AiTranscription> Transcription { get; set; } = new();
-
-    ///// <summary>
-    /////     Summary of agent transcription
-    ///// </summary>
-    //[AllowUpdate(false)]
-    //[SwaggerSchema(ReadOnly = true)]
-    //public string? TranscriptionAgentSummary { get; set; }
-
-    ///// <summary>
-    /////     Summary of client transcription
-    ///// </summary>
-    //[AllowUpdate(false)]
-    //[SwaggerSchema(ReadOnly = true)]
-    //public string? TranscriptionClientSummary { get; set; }
-
-    ///// <summary>
-    /////     Entity detection summary for client
-    ///// </summary>
-    //[AllowUpdate(false)]
-    //[SwaggerSchema(ReadOnly = true)]
-    //public List<AiEntityDetection> AiSentimentAnalysisClientSummary { get; set; } = new();
-
-    ///// <summary>
-    /////     Entity detection summary for agent
-    ///// </summary>
-    //[AllowUpdate(false)]
-    //[SwaggerSchema(ReadOnly = true)]
-    //public List<AiEntityDetection> AiSentimentAnalysisAgentSummary { get; set; } = new();
-
-    ///// <summary>
-    /////     AI Topic Modeling Summary
-    ///// </summary>
-    //[AllowUpdate(false)]
-    //[SwaggerSchema(ReadOnly = true)]
-    //public List<AiTopicModelingSummary> AiTopicModelingSummary { get; set; } = new();
+    public List<AiTranscription> Transcription { get; set; } = new(); // OK
 
     /// <summary>
     ///     If the transcription contains an error
@@ -73,11 +38,5 @@ public partial class AiCallTranscription : UbluxDocument_ReferenceAccount_Refere
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
     public string? ErrorMessage { get; set; }
-
-    ///// <summary>
-    /////     Status of AI call transcription
-    ///// </summary>
-    //[AllowUpdate(false)]
-    //[SwaggerSchema(ReadOnly = true)]
-    //public required AiProcessStatus Status { get; set; }
+    
 }

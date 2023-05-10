@@ -3,27 +3,11 @@
 /// <summary>
 ///     Extension where people that call will be placed on a sequence awaiting their turn to be attended
 /// </summary>
-public partial class ExtensionQueue : Extension
+public partial class ExtensionQueue : ExtensionDial
 {
     #region Properties
 
     #region References
-
-    /// <summary>
-    ///     Lines to ring
-    /// </summary>
-    [References(typeof(Line))]
-    [AllowUpdate(true)]
-    [IsUbluxRequired]
-    public List<string> IdsLines { get; set; } = new();
-
-    /// <summary>
-    ///     If there is a timeout to what extension we will forward the call?
-    /// </summary>
-    [References(typeof(Extension))]
-    [AllowUpdate(true)]
-    [IsUbluxRequired]
-    public required string IdExtensionIfTimeout { get; set; } = string.Empty;
 
     /// <summary>
     ///     Audios to play meanwhile caller is waiting to be attended
@@ -37,12 +21,6 @@ public partial class ExtensionQueue : Extension
     #region Subdocuments
 
     /// <summary>
-    ///     Send email notification if call is not answered
-    /// </summary>
-    [AllowUpdate(true)]
-    public SendEmailNotificationIfNotAnswered? SendEmailNotificationIfNotAnswered { get; set; }
-    
-    /// <summary>
     ///     Send email notification if call takes to long to be answered
     /// </summary>
     [AllowUpdate(true)]
@@ -53,13 +31,6 @@ public partial class ExtensionQueue : Extension
     }
 
     #endregion
-
-    /// <summary>
-    ///     Time that lines will ring in seconds until answered
-    /// </summary>
-    [AllowUpdate(true)]
-    [IsUbluxRequired]
-    public required int RingTimeInSeconds { get; set; }
 
     /// <summary>
     ///     If line is busy do you still want it to ring it?
@@ -91,7 +62,6 @@ public partial class ExtensionQueue : Extension
     /// </summary>
     [AllowUpdate(true)]
     public int AnnounceFrequency { get; set; }
-
 
     /// <summary>
     ///     Number of seconds to wait in between rings. Default value if null is 20 seconds

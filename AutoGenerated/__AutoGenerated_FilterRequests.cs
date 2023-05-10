@@ -293,6 +293,41 @@ public class EmailFilterRequest
     [JsonProperty("dateVerified_gte")]
     public DateTime? DateVerified_GTE { get; set; }
 
+    /// <summary> SessionWhenVerified.IdUser equals </summary>
+    [JsonProperty("sessionWhenVerified_idUser_eq")]
+    public string? SessionWhenVerified_IdUser_EQ { get; set; }
+    /// <summary> SessionWhenVerified.IdUser contains </summary>
+    [JsonProperty("sessionWhenVerified_idUser_con")]
+    public string? SessionWhenVerified_IdUser_CON { get; set; }
+    /// <summary> SessionWhenVerified.IdUser regex </summary>
+    [JsonProperty("sessionWhenVerified_idUser_reg")]
+    public string? SessionWhenVerified_IdUser_REG { get; set; }
+
+    /// <summary> SessionWhenVerified.UserType equals </summary>
+    [JsonProperty("sessionWhenVerified_userType_eq")]
+    public string? SessionWhenVerified_UserType_EQ { get; set; }
+    /// <summary> SessionWhenVerified.UserType contains </summary>
+    [JsonProperty("sessionWhenVerified_userType_con")]
+    public string? SessionWhenVerified_UserType_CON { get; set; }
+    /// <summary> SessionWhenVerified.UserType regex </summary>
+    [JsonProperty("sessionWhenVerified_userType_reg")]
+    public string? SessionWhenVerified_UserType_REG { get; set; }
+
+    /// <summary> SessionWhenVerified.UbluxRoles contains </summary>
+    [JsonProperty("sessionWhenVerified_ubluxRoles_con")]
+    public UbluxRole? SessionWhenVerified_UbluxRoles_CON { get; set; }
+
+    /// <summary> SessionWhenVerified.ExpirationDate equals </summary>
+    [JsonProperty("sessionWhenVerified_expirationDate_eq")]
+    public DateTime? SessionWhenVerified_ExpirationDate_EQ { get; set; }
+    /// <summary> SessionWhenVerified.ExpirationDate less than or equal to </summary>
+    [JsonProperty("sessionWhenVerified_expirationDate_lte")]
+    public DateTime? SessionWhenVerified_ExpirationDate_LTE { get; set; }
+    /// <summary> SessionWhenVerified.ExpirationDate greater than or equal to </summary>
+    [JsonProperty("sessionWhenVerified_expirationDate_gte")]
+    public DateTime? SessionWhenVerified_ExpirationDate_GTE { get; set; }
+
+
     /// <summary> IpAddress equals </summary>
     [JsonProperty("ipAddress_eq")]
     public string? IpAddress_EQ { get; set; }
@@ -1769,15 +1804,15 @@ public class CallIncomingToCallFlowLogicFilterRequest
     public string? Analysis3_Model_REG { get; set; }
 
 
-    /// <summary> ParticipantLines equals </summary>
-    [JsonProperty("participantLines_eq")]
-    public string? ParticipantLines_EQ { get; set; }
-    /// <summary> ParticipantLines contains </summary>
-    [JsonProperty("participantLines_con")]
-    public string? ParticipantLines_CON { get; set; }
-    /// <summary> ParticipantLines regex </summary>
-    [JsonProperty("participantLines_reg")]
-    public string? ParticipantLines_REG { get; set; }
+    /// <summary> IdsParticipantLines equals </summary>
+    [JsonProperty("idsParticipantLines_eq")]
+    public string? IdsParticipantLines_EQ { get; set; }
+    /// <summary> IdsParticipantLines contains </summary>
+    [JsonProperty("idsParticipantLines_con")]
+    public string? IdsParticipantLines_CON { get; set; }
+    /// <summary> IdsParticipantLines regex </summary>
+    [JsonProperty("idsParticipantLines_reg")]
+    public string? IdsParticipantLines_REG { get; set; }
 
 
     /// <summary> ErrorMessage equals </summary>
@@ -2774,15 +2809,15 @@ public class CallIncomingToExtensionFilterRequest
     public string? Analysis3_Model_REG { get; set; }
 
 
-    /// <summary> ParticipantLines equals </summary>
-    [JsonProperty("participantLines_eq")]
-    public string? ParticipantLines_EQ { get; set; }
-    /// <summary> ParticipantLines contains </summary>
-    [JsonProperty("participantLines_con")]
-    public string? ParticipantLines_CON { get; set; }
-    /// <summary> ParticipantLines regex </summary>
-    [JsonProperty("participantLines_reg")]
-    public string? ParticipantLines_REG { get; set; }
+    /// <summary> IdsParticipantLines equals </summary>
+    [JsonProperty("idsParticipantLines_eq")]
+    public string? IdsParticipantLines_EQ { get; set; }
+    /// <summary> IdsParticipantLines contains </summary>
+    [JsonProperty("idsParticipantLines_con")]
+    public string? IdsParticipantLines_CON { get; set; }
+    /// <summary> IdsParticipantLines regex </summary>
+    [JsonProperty("idsParticipantLines_reg")]
+    public string? IdsParticipantLines_REG { get; set; }
 
 
     /// <summary> ErrorMessage equals </summary>
@@ -3759,15 +3794,15 @@ public class CallOutgoingToExtensionFilterRequest
     public string? Analysis3_Model_REG { get; set; }
 
 
-    /// <summary> ParticipantLines equals </summary>
-    [JsonProperty("participantLines_eq")]
-    public string? ParticipantLines_EQ { get; set; }
-    /// <summary> ParticipantLines contains </summary>
-    [JsonProperty("participantLines_con")]
-    public string? ParticipantLines_CON { get; set; }
-    /// <summary> ParticipantLines regex </summary>
-    [JsonProperty("participantLines_reg")]
-    public string? ParticipantLines_REG { get; set; }
+    /// <summary> IdsParticipantLines equals </summary>
+    [JsonProperty("idsParticipantLines_eq")]
+    public string? IdsParticipantLines_EQ { get; set; }
+    /// <summary> IdsParticipantLines contains </summary>
+    [JsonProperty("idsParticipantLines_con")]
+    public string? IdsParticipantLines_CON { get; set; }
+    /// <summary> IdsParticipantLines regex </summary>
+    [JsonProperty("idsParticipantLines_reg")]
+    public string? IdsParticipantLines_REG { get; set; }
 
 
     /// <summary> ErrorMessage equals </summary>
@@ -4714,15 +4749,15 @@ public class CallOutgoingToPSTNFilterRequest
     public string? Analysis3_Model_REG { get; set; }
 
 
-    /// <summary> ParticipantLines equals </summary>
-    [JsonProperty("participantLines_eq")]
-    public string? ParticipantLines_EQ { get; set; }
-    /// <summary> ParticipantLines contains </summary>
-    [JsonProperty("participantLines_con")]
-    public string? ParticipantLines_CON { get; set; }
-    /// <summary> ParticipantLines regex </summary>
-    [JsonProperty("participantLines_reg")]
-    public string? ParticipantLines_REG { get; set; }
+    /// <summary> IdsParticipantLines equals </summary>
+    [JsonProperty("idsParticipantLines_eq")]
+    public string? IdsParticipantLines_EQ { get; set; }
+    /// <summary> IdsParticipantLines contains </summary>
+    [JsonProperty("idsParticipantLines_con")]
+    public string? IdsParticipantLines_CON { get; set; }
+    /// <summary> IdsParticipantLines regex </summary>
+    [JsonProperty("idsParticipantLines_reg")]
+    public string? IdsParticipantLines_REG { get; set; }
 
 
     /// <summary> ErrorMessage equals </summary>
@@ -5977,26 +6012,6 @@ public class ExtensionDialFilterRequest
 /// <summary> Enables searching for ExtensionQueues </summary>
 public class ExtensionQueueFilterRequest 
 {
-    /// <summary> IdsLines equals </summary>
-    [JsonProperty("idsLines_eq")]
-    public string? IdsLines_EQ { get; set; }
-    /// <summary> IdsLines contains </summary>
-    [JsonProperty("idsLines_con")]
-    public string? IdsLines_CON { get; set; }
-    /// <summary> IdsLines regex </summary>
-    [JsonProperty("idsLines_reg")]
-    public string? IdsLines_REG { get; set; }
-
-    /// <summary> IdExtensionIfTimeout equals </summary>
-    [JsonProperty("idExtensionIfTimeout_eq")]
-    public string? IdExtensionIfTimeout_EQ { get; set; }
-    /// <summary> IdExtensionIfTimeout contains </summary>
-    [JsonProperty("idExtensionIfTimeout_con")]
-    public string? IdExtensionIfTimeout_CON { get; set; }
-    /// <summary> IdExtensionIfTimeout regex </summary>
-    [JsonProperty("idExtensionIfTimeout_reg")]
-    public string? IdExtensionIfTimeout_REG { get; set; }
-
     /// <summary> IdsAudios equals </summary>
     [JsonProperty("idsAudios_eq")]
     public string? IdsAudios_EQ { get; set; }
@@ -6006,27 +6021,6 @@ public class ExtensionQueueFilterRequest
     /// <summary> IdsAudios regex </summary>
     [JsonProperty("idsAudios_reg")]
     public string? IdsAudios_REG { get; set; }
-
-    /// <summary> SendEmailNotificationIfNotAnswered.IdsEmails equals </summary>
-    [JsonProperty("sendEmailNotificationIfNotAnswered_idsEmails_eq")]
-    public string? SendEmailNotificationIfNotAnswered_IdsEmails_EQ { get; set; }
-    /// <summary> SendEmailNotificationIfNotAnswered.IdsEmails contains </summary>
-    [JsonProperty("sendEmailNotificationIfNotAnswered_idsEmails_con")]
-    public string? SendEmailNotificationIfNotAnswered_IdsEmails_CON { get; set; }
-    /// <summary> SendEmailNotificationIfNotAnswered.IdsEmails regex </summary>
-    [JsonProperty("sendEmailNotificationIfNotAnswered_idsEmails_reg")]
-    public string? SendEmailNotificationIfNotAnswered_IdsEmails_REG { get; set; }
-
-    /// <summary> SendEmailNotificationIfNotAnswered.PreventSendingNotificationIfLastLessThanNSeconds equals </summary>
-    [JsonProperty("sendEmailNotificationIfNotAnswered_preventSendingNotificationIfLastLessThanNSeconds_eq")]
-    public System.Int32? SendEmailNotificationIfNotAnswered_PreventSendingNotificationIfLastLessThanNSeconds_EQ { get; set; }
-    /// <summary> SendEmailNotificationIfNotAnswered.PreventSendingNotificationIfLastLessThanNSeconds less than or equal to </summary>
-    [JsonProperty("sendEmailNotificationIfNotAnswered_preventSendingNotificationIfLastLessThanNSeconds_lte")]
-    public System.Int32? SendEmailNotificationIfNotAnswered_PreventSendingNotificationIfLastLessThanNSeconds_LTE { get; set; }
-    /// <summary> SendEmailNotificationIfNotAnswered.PreventSendingNotificationIfLastLessThanNSeconds greater than or equal to </summary>
-    [JsonProperty("sendEmailNotificationIfNotAnswered_preventSendingNotificationIfLastLessThanNSeconds_gte")]
-    public System.Int32? SendEmailNotificationIfNotAnswered_PreventSendingNotificationIfLastLessThanNSeconds_GTE { get; set; }
-
 
     /// <summary> SendEmailNotificationIfItTakesToLongToBeAnswered.TimeInSeconds equals </summary>
     [JsonProperty("sendEmailNotificationIfItTakesToLongToBeAnswered_timeInSeconds_eq")]
@@ -6048,16 +6042,6 @@ public class ExtensionQueueFilterRequest
     [JsonProperty("sendEmailNotificationIfItTakesToLongToBeAnswered_idsEmails_reg")]
     public string? SendEmailNotificationIfItTakesToLongToBeAnswered_IdsEmails_REG { get; set; }
 
-
-    /// <summary> RingTimeInSeconds equals </summary>
-    [JsonProperty("ringTimeInSeconds_eq")]
-    public System.Int32? RingTimeInSeconds_EQ { get; set; }
-    /// <summary> RingTimeInSeconds less than or equal to </summary>
-    [JsonProperty("ringTimeInSeconds_lte")]
-    public System.Int32? RingTimeInSeconds_LTE { get; set; }
-    /// <summary> RingTimeInSeconds greater than or equal to </summary>
-    [JsonProperty("ringTimeInSeconds_gte")]
-    public System.Int32? RingTimeInSeconds_GTE { get; set; }
 
     /// <summary> RingInUse equals </summary>
     [JsonProperty("ringInUse_eq")]
@@ -6120,6 +6104,58 @@ public class ExtensionQueueFilterRequest
     /// <summary> ExtensionType regex </summary>
     [JsonProperty("extensionType_reg")]
     public string? ExtensionType_REG { get; set; }
+
+    /// <summary> IdsLines equals </summary>
+    [JsonProperty("idsLines_eq")]
+    public string? IdsLines_EQ { get; set; }
+    /// <summary> IdsLines contains </summary>
+    [JsonProperty("idsLines_con")]
+    public string? IdsLines_CON { get; set; }
+    /// <summary> IdsLines regex </summary>
+    [JsonProperty("idsLines_reg")]
+    public string? IdsLines_REG { get; set; }
+
+    /// <summary> EventActionToExecuteIfNotAnswered.EventActionType equals </summary>
+    [JsonProperty("eventActionToExecuteIfNotAnswered_eventActionType_eq")]
+    public string? EventActionToExecuteIfNotAnswered_EventActionType_EQ { get; set; }
+    /// <summary> EventActionToExecuteIfNotAnswered.EventActionType contains </summary>
+    [JsonProperty("eventActionToExecuteIfNotAnswered_eventActionType_con")]
+    public string? EventActionToExecuteIfNotAnswered_EventActionType_CON { get; set; }
+    /// <summary> EventActionToExecuteIfNotAnswered.EventActionType regex </summary>
+    [JsonProperty("eventActionToExecuteIfNotAnswered_eventActionType_reg")]
+    public string? EventActionToExecuteIfNotAnswered_EventActionType_REG { get; set; }
+
+
+    /// <summary> SendEmailNotificationIfNotAnswered.IdsEmails equals </summary>
+    [JsonProperty("sendEmailNotificationIfNotAnswered_idsEmails_eq")]
+    public string? SendEmailNotificationIfNotAnswered_IdsEmails_EQ { get; set; }
+    /// <summary> SendEmailNotificationIfNotAnswered.IdsEmails contains </summary>
+    [JsonProperty("sendEmailNotificationIfNotAnswered_idsEmails_con")]
+    public string? SendEmailNotificationIfNotAnswered_IdsEmails_CON { get; set; }
+    /// <summary> SendEmailNotificationIfNotAnswered.IdsEmails regex </summary>
+    [JsonProperty("sendEmailNotificationIfNotAnswered_idsEmails_reg")]
+    public string? SendEmailNotificationIfNotAnswered_IdsEmails_REG { get; set; }
+
+    /// <summary> SendEmailNotificationIfNotAnswered.PreventSendingNotificationIfLastLessThanNSeconds equals </summary>
+    [JsonProperty("sendEmailNotificationIfNotAnswered_preventSendingNotificationIfLastLessThanNSeconds_eq")]
+    public System.Int32? SendEmailNotificationIfNotAnswered_PreventSendingNotificationIfLastLessThanNSeconds_EQ { get; set; }
+    /// <summary> SendEmailNotificationIfNotAnswered.PreventSendingNotificationIfLastLessThanNSeconds less than or equal to </summary>
+    [JsonProperty("sendEmailNotificationIfNotAnswered_preventSendingNotificationIfLastLessThanNSeconds_lte")]
+    public System.Int32? SendEmailNotificationIfNotAnswered_PreventSendingNotificationIfLastLessThanNSeconds_LTE { get; set; }
+    /// <summary> SendEmailNotificationIfNotAnswered.PreventSendingNotificationIfLastLessThanNSeconds greater than or equal to </summary>
+    [JsonProperty("sendEmailNotificationIfNotAnswered_preventSendingNotificationIfLastLessThanNSeconds_gte")]
+    public System.Int32? SendEmailNotificationIfNotAnswered_PreventSendingNotificationIfLastLessThanNSeconds_GTE { get; set; }
+
+
+    /// <summary> RingTimeInSeconds equals </summary>
+    [JsonProperty("ringTimeInSeconds_eq")]
+    public System.Int32? RingTimeInSeconds_EQ { get; set; }
+    /// <summary> RingTimeInSeconds less than or equal to </summary>
+    [JsonProperty("ringTimeInSeconds_lte")]
+    public System.Int32? RingTimeInSeconds_LTE { get; set; }
+    /// <summary> RingTimeInSeconds greater than or equal to </summary>
+    [JsonProperty("ringTimeInSeconds_gte")]
+    public System.Int32? RingTimeInSeconds_GTE { get; set; }
 
     /// <summary> IdMusicOnHoldGroup equals </summary>
     [JsonProperty("idMusicOnHoldGroup_eq")]
@@ -6346,6 +6382,16 @@ public class FaxIncomingFilterRequest
     /// <summary> IdVoipNumberFax regex </summary>
     [JsonProperty("idVoipNumberFax_reg")]
     public string? IdVoipNumberFax_REG { get; set; }
+
+    /// <summary> IdContact equals </summary>
+    [JsonProperty("idContact_eq")]
+    public string? IdContact_EQ { get; set; }
+    /// <summary> IdContact contains </summary>
+    [JsonProperty("idContact_con")]
+    public string? IdContact_CON { get; set; }
+    /// <summary> IdContact regex </summary>
+    [JsonProperty("idContact_reg")]
+    public string? IdContact_REG { get; set; }
 
     /// <summary> Pdf.InstanceId equals </summary>
     [JsonProperty("pdf_instanceId_eq")]
@@ -7795,270 +7841,15 @@ public class SMSFilterRequest
     [JsonProperty("idVoipNumber_reg")]
     public string? IdVoipNumber_REG { get; set; }
 
-    /// <summary> Contact.IdUserOwner equals </summary>
-    [JsonProperty("contact_idUserOwner_eq")]
-    public string? Contact_IdUserOwner_EQ { get; set; }
-    /// <summary> Contact.IdUserOwner contains </summary>
-    [JsonProperty("contact_idUserOwner_con")]
-    public string? Contact_IdUserOwner_CON { get; set; }
-    /// <summary> Contact.IdUserOwner regex </summary>
-    [JsonProperty("contact_idUserOwner_reg")]
-    public string? Contact_IdUserOwner_REG { get; set; }
-
-    /// <summary> Contact.ContactNumbers.Number equals </summary>
-    [JsonProperty("contact_contactNumbers_number_eq")]
-    public string? Contact_ContactNumbers_Number_EQ { get; set; }
-    /// <summary> Contact.ContactNumbers.Number contains </summary>
-    [JsonProperty("contact_contactNumbers_number_con")]
-    public string? Contact_ContactNumbers_Number_CON { get; set; }
-    /// <summary> Contact.ContactNumbers.Number regex </summary>
-    [JsonProperty("contact_contactNumbers_number_reg")]
-    public string? Contact_ContactNumbers_Number_REG { get; set; }
-
-    /// <summary> Contact.ContactNumbers.NumberInternationalFormat equals </summary>
-    [JsonProperty("contact_contactNumbers_numberInternationalFormat_eq")]
-    public string? Contact_ContactNumbers_NumberInternationalFormat_EQ { get; set; }
-    /// <summary> Contact.ContactNumbers.NumberInternationalFormat contains </summary>
-    [JsonProperty("contact_contactNumbers_numberInternationalFormat_con")]
-    public string? Contact_ContactNumbers_NumberInternationalFormat_CON { get; set; }
-    /// <summary> Contact.ContactNumbers.NumberInternationalFormat regex </summary>
-    [JsonProperty("contact_contactNumbers_numberInternationalFormat_reg")]
-    public string? Contact_ContactNumbers_NumberInternationalFormat_REG { get; set; }
-
-    /// <summary> Contact.ContactNumbers.Label equals </summary>
-    [JsonProperty("contact_contactNumbers_label_eq")]
-    public string? Contact_ContactNumbers_Label_EQ { get; set; }
-    /// <summary> Contact.ContactNumbers.Label contains </summary>
-    [JsonProperty("contact_contactNumbers_label_con")]
-    public string? Contact_ContactNumbers_Label_CON { get; set; }
-    /// <summary> Contact.ContactNumbers.Label regex </summary>
-    [JsonProperty("contact_contactNumbers_label_reg")]
-    public string? Contact_ContactNumbers_Label_REG { get; set; }
-
-
-    /// <summary> Contact.ContactEmails.SearchIndex equals </summary>
-    [JsonProperty("contact_contactEmails_searchIndex_eq")]
-    public string? Contact_ContactEmails_SearchIndex_EQ { get; set; }
-    /// <summary> Contact.ContactEmails.SearchIndex contains </summary>
-    [JsonProperty("contact_contactEmails_searchIndex_con")]
-    public string? Contact_ContactEmails_SearchIndex_CON { get; set; }
-    /// <summary> Contact.ContactEmails.SearchIndex regex </summary>
-    [JsonProperty("contact_contactEmails_searchIndex_reg")]
-    public string? Contact_ContactEmails_SearchIndex_REG { get; set; }
-
-    /// <summary> Contact.ContactEmails.Email equals </summary>
-    [JsonProperty("contact_contactEmails_email_eq")]
-    public string? Contact_ContactEmails_Email_EQ { get; set; }
-    /// <summary> Contact.ContactEmails.Email contains </summary>
-    [JsonProperty("contact_contactEmails_email_con")]
-    public string? Contact_ContactEmails_Email_CON { get; set; }
-    /// <summary> Contact.ContactEmails.Email regex </summary>
-    [JsonProperty("contact_contactEmails_email_reg")]
-    public string? Contact_ContactEmails_Email_REG { get; set; }
-
-    /// <summary> Contact.ContactEmails.Label equals </summary>
-    [JsonProperty("contact_contactEmails_label_eq")]
-    public string? Contact_ContactEmails_Label_EQ { get; set; }
-    /// <summary> Contact.ContactEmails.Label contains </summary>
-    [JsonProperty("contact_contactEmails_label_con")]
-    public string? Contact_ContactEmails_Label_CON { get; set; }
-    /// <summary> Contact.ContactEmails.Label regex </summary>
-    [JsonProperty("contact_contactEmails_label_reg")]
-    public string? Contact_ContactEmails_Label_REG { get; set; }
-
-
-    /// <summary> Contact.MailingAddresses.RecipientName equals </summary>
-    [JsonProperty("contact_mailingAddresses_recipientName_eq")]
-    public string? Contact_MailingAddresses_RecipientName_EQ { get; set; }
-    /// <summary> Contact.MailingAddresses.RecipientName contains </summary>
-    [JsonProperty("contact_mailingAddresses_recipientName_con")]
-    public string? Contact_MailingAddresses_RecipientName_CON { get; set; }
-    /// <summary> Contact.MailingAddresses.RecipientName regex </summary>
-    [JsonProperty("contact_mailingAddresses_recipientName_reg")]
-    public string? Contact_MailingAddresses_RecipientName_REG { get; set; }
-
-    /// <summary> Contact.MailingAddresses.BusinessName equals </summary>
-    [JsonProperty("contact_mailingAddresses_businessName_eq")]
-    public string? Contact_MailingAddresses_BusinessName_EQ { get; set; }
-    /// <summary> Contact.MailingAddresses.BusinessName contains </summary>
-    [JsonProperty("contact_mailingAddresses_businessName_con")]
-    public string? Contact_MailingAddresses_BusinessName_CON { get; set; }
-    /// <summary> Contact.MailingAddresses.BusinessName regex </summary>
-    [JsonProperty("contact_mailingAddresses_businessName_reg")]
-    public string? Contact_MailingAddresses_BusinessName_REG { get; set; }
-
-    /// <summary> Contact.MailingAddresses.StreetAddress equals </summary>
-    [JsonProperty("contact_mailingAddresses_streetAddress_eq")]
-    public string? Contact_MailingAddresses_StreetAddress_EQ { get; set; }
-    /// <summary> Contact.MailingAddresses.StreetAddress contains </summary>
-    [JsonProperty("contact_mailingAddresses_streetAddress_con")]
-    public string? Contact_MailingAddresses_StreetAddress_CON { get; set; }
-    /// <summary> Contact.MailingAddresses.StreetAddress regex </summary>
-    [JsonProperty("contact_mailingAddresses_streetAddress_reg")]
-    public string? Contact_MailingAddresses_StreetAddress_REG { get; set; }
-
-    /// <summary> Contact.MailingAddresses.ApparmentOrSuiteNumber equals </summary>
-    [JsonProperty("contact_mailingAddresses_apparmentOrSuiteNumber_eq")]
-    public string? Contact_MailingAddresses_ApparmentOrSuiteNumber_EQ { get; set; }
-    /// <summary> Contact.MailingAddresses.ApparmentOrSuiteNumber contains </summary>
-    [JsonProperty("contact_mailingAddresses_apparmentOrSuiteNumber_con")]
-    public string? Contact_MailingAddresses_ApparmentOrSuiteNumber_CON { get; set; }
-    /// <summary> Contact.MailingAddresses.ApparmentOrSuiteNumber regex </summary>
-    [JsonProperty("contact_mailingAddresses_apparmentOrSuiteNumber_reg")]
-    public string? Contact_MailingAddresses_ApparmentOrSuiteNumber_REG { get; set; }
-
-    /// <summary> Contact.MailingAddresses.City equals </summary>
-    [JsonProperty("contact_mailingAddresses_city_eq")]
-    public string? Contact_MailingAddresses_City_EQ { get; set; }
-    /// <summary> Contact.MailingAddresses.City contains </summary>
-    [JsonProperty("contact_mailingAddresses_city_con")]
-    public string? Contact_MailingAddresses_City_CON { get; set; }
-    /// <summary> Contact.MailingAddresses.City regex </summary>
-    [JsonProperty("contact_mailingAddresses_city_reg")]
-    public string? Contact_MailingAddresses_City_REG { get; set; }
-
-    /// <summary> Contact.MailingAddresses.State equals </summary>
-    [JsonProperty("contact_mailingAddresses_state_eq")]
-    public string? Contact_MailingAddresses_State_EQ { get; set; }
-    /// <summary> Contact.MailingAddresses.State contains </summary>
-    [JsonProperty("contact_mailingAddresses_state_con")]
-    public string? Contact_MailingAddresses_State_CON { get; set; }
-    /// <summary> Contact.MailingAddresses.State regex </summary>
-    [JsonProperty("contact_mailingAddresses_state_reg")]
-    public string? Contact_MailingAddresses_State_REG { get; set; }
-
-    /// <summary> Contact.MailingAddresses.ZipCode equals </summary>
-    [JsonProperty("contact_mailingAddresses_zipCode_eq")]
-    public string? Contact_MailingAddresses_ZipCode_EQ { get; set; }
-    /// <summary> Contact.MailingAddresses.ZipCode contains </summary>
-    [JsonProperty("contact_mailingAddresses_zipCode_con")]
-    public string? Contact_MailingAddresses_ZipCode_CON { get; set; }
-    /// <summary> Contact.MailingAddresses.ZipCode regex </summary>
-    [JsonProperty("contact_mailingAddresses_zipCode_reg")]
-    public string? Contact_MailingAddresses_ZipCode_REG { get; set; }
-
-    /// <summary> Contact.MailingAddresses.Country equals </summary>
-    [JsonProperty("contact_mailingAddresses_country_eq")]
-    public string? Contact_MailingAddresses_Country_EQ { get; set; }
-    /// <summary> Contact.MailingAddresses.Country contains </summary>
-    [JsonProperty("contact_mailingAddresses_country_con")]
-    public string? Contact_MailingAddresses_Country_CON { get; set; }
-    /// <summary> Contact.MailingAddresses.Country regex </summary>
-    [JsonProperty("contact_mailingAddresses_country_reg")]
-    public string? Contact_MailingAddresses_Country_REG { get; set; }
-
-
-    /// <summary> Contact.FirstName equals </summary>
-    [JsonProperty("contact_firstName_eq")]
-    public string? Contact_FirstName_EQ { get; set; }
-    /// <summary> Contact.FirstName contains </summary>
-    [JsonProperty("contact_firstName_con")]
-    public string? Contact_FirstName_CON { get; set; }
-    /// <summary> Contact.FirstName regex </summary>
-    [JsonProperty("contact_firstName_reg")]
-    public string? Contact_FirstName_REG { get; set; }
-
-    /// <summary> Contact.LastName equals </summary>
-    [JsonProperty("contact_lastName_eq")]
-    public string? Contact_LastName_EQ { get; set; }
-    /// <summary> Contact.LastName contains </summary>
-    [JsonProperty("contact_lastName_con")]
-    public string? Contact_LastName_CON { get; set; }
-    /// <summary> Contact.LastName regex </summary>
-    [JsonProperty("contact_lastName_reg")]
-    public string? Contact_LastName_REG { get; set; }
-
-    /// <summary> Contact.JobTitle equals </summary>
-    [JsonProperty("contact_jobTitle_eq")]
-    public string? Contact_JobTitle_EQ { get; set; }
-    /// <summary> Contact.JobTitle contains </summary>
-    [JsonProperty("contact_jobTitle_con")]
-    public string? Contact_JobTitle_CON { get; set; }
-    /// <summary> Contact.JobTitle regex </summary>
-    [JsonProperty("contact_jobTitle_reg")]
-    public string? Contact_JobTitle_REG { get; set; }
-
-    /// <summary> Contact.Company equals </summary>
-    [JsonProperty("contact_company_eq")]
-    public string? Contact_Company_EQ { get; set; }
-    /// <summary> Contact.Company contains </summary>
-    [JsonProperty("contact_company_con")]
-    public string? Contact_Company_CON { get; set; }
-    /// <summary> Contact.Company regex </summary>
-    [JsonProperty("contact_company_reg")]
-    public string? Contact_Company_REG { get; set; }
-
-    /// <summary> Contact.Notes equals </summary>
-    [JsonProperty("contact_notes_eq")]
-    public string? Contact_Notes_EQ { get; set; }
-    /// <summary> Contact.Notes contains </summary>
-    [JsonProperty("contact_notes_con")]
-    public string? Contact_Notes_CON { get; set; }
-    /// <summary> Contact.Notes regex </summary>
-    [JsonProperty("contact_notes_reg")]
-    public string? Contact_Notes_REG { get; set; }
-
-    /// <summary> Contact.Variables.Name equals </summary>
-    [JsonProperty("contact_variables_name_eq")]
-    public string? Contact_Variables_Name_EQ { get; set; }
-    /// <summary> Contact.Variables.Name contains </summary>
-    [JsonProperty("contact_variables_name_con")]
-    public string? Contact_Variables_Name_CON { get; set; }
-    /// <summary> Contact.Variables.Name regex </summary>
-    [JsonProperty("contact_variables_name_reg")]
-    public string? Contact_Variables_Name_REG { get; set; }
-
-    /// <summary> Contact.Variables.JsonValue equals </summary>
-    [JsonProperty("contact_variables_jsonValue_eq")]
-    public string? Contact_Variables_JsonValue_EQ { get; set; }
-    /// <summary> Contact.Variables.JsonValue contains </summary>
-    [JsonProperty("contact_variables_jsonValue_con")]
-    public string? Contact_Variables_JsonValue_CON { get; set; }
-    /// <summary> Contact.Variables.JsonValue regex </summary>
-    [JsonProperty("contact_variables_jsonValue_reg")]
-    public string? Contact_Variables_JsonValue_REG { get; set; }
-
-
-    /// <summary> Contact.IdsTags equals </summary>
-    [JsonProperty("contact_idsTags_eq")]
-    public string? Contact_IdsTags_EQ { get; set; }
-    /// <summary> Contact.IdsTags contains </summary>
-    [JsonProperty("contact_idsTags_con")]
-    public string? Contact_IdsTags_CON { get; set; }
-    /// <summary> Contact.IdsTags regex </summary>
-    [JsonProperty("contact_idsTags_reg")]
-    public string? Contact_IdsTags_REG { get; set; }
-
-    /// <summary> Contact.Id equals </summary>
-    [JsonProperty("contact_id_eq")]
-    public string? Contact_Id_EQ { get; set; }
-    /// <summary> Contact.Id contains </summary>
-    [JsonProperty("contact_id_con")]
-    public string? Contact_Id_CON { get; set; }
-    /// <summary> Contact.Id regex </summary>
-    [JsonProperty("contact_id_reg")]
-    public string? Contact_Id_REG { get; set; }
-
-    /// <summary> Contact.DateCreated equals </summary>
-    [JsonProperty("contact_dateCreated_eq")]
-    public DateTime? Contact_DateCreated_EQ { get; set; }
-    /// <summary> Contact.DateCreated less than or equal to </summary>
-    [JsonProperty("contact_dateCreated_lte")]
-    public DateTime? Contact_DateCreated_LTE { get; set; }
-    /// <summary> Contact.DateCreated greater than or equal to </summary>
-    [JsonProperty("contact_dateCreated_gte")]
-    public DateTime? Contact_DateCreated_GTE { get; set; }
-
-    /// <summary> Contact.DateUpdated equals </summary>
-    [JsonProperty("contact_dateUpdated_eq")]
-    public DateTime? Contact_DateUpdated_EQ { get; set; }
-    /// <summary> Contact.DateUpdated less than or equal to </summary>
-    [JsonProperty("contact_dateUpdated_lte")]
-    public DateTime? Contact_DateUpdated_LTE { get; set; }
-    /// <summary> Contact.DateUpdated greater than or equal to </summary>
-    [JsonProperty("contact_dateUpdated_gte")]
-    public DateTime? Contact_DateUpdated_GTE { get; set; }
-
+    /// <summary> IdContact equals </summary>
+    [JsonProperty("idContact_eq")]
+    public string? IdContact_EQ { get; set; }
+    /// <summary> IdContact contains </summary>
+    [JsonProperty("idContact_con")]
+    public string? IdContact_CON { get; set; }
+    /// <summary> IdContact regex </summary>
+    [JsonProperty("idContact_reg")]
+    public string? IdContact_REG { get; set; }
 
     /// <summary> IsIncoming equals </summary>
     [JsonProperty("isIncoming_eq")]
@@ -10787,15 +10578,15 @@ public class CallFilterRequest
     public string? Analysis3_Model_REG { get; set; }
 
 
-    /// <summary> ParticipantLines equals </summary>
-    [JsonProperty("participantLines_eq")]
-    public string? ParticipantLines_EQ { get; set; }
-    /// <summary> ParticipantLines contains </summary>
-    [JsonProperty("participantLines_con")]
-    public string? ParticipantLines_CON { get; set; }
-    /// <summary> ParticipantLines regex </summary>
-    [JsonProperty("participantLines_reg")]
-    public string? ParticipantLines_REG { get; set; }
+    /// <summary> IdsParticipantLines equals </summary>
+    [JsonProperty("idsParticipantLines_eq")]
+    public string? IdsParticipantLines_EQ { get; set; }
+    /// <summary> IdsParticipantLines contains </summary>
+    [JsonProperty("idsParticipantLines_con")]
+    public string? IdsParticipantLines_CON { get; set; }
+    /// <summary> IdsParticipantLines regex </summary>
+    [JsonProperty("idsParticipantLines_reg")]
+    public string? IdsParticipantLines_REG { get; set; }
 
 
     /// <summary> ErrorMessage equals </summary>
@@ -11752,15 +11543,15 @@ public class CallIncomingFilterRequest
     public string? Analysis3_Model_REG { get; set; }
 
 
-    /// <summary> ParticipantLines equals </summary>
-    [JsonProperty("participantLines_eq")]
-    public string? ParticipantLines_EQ { get; set; }
-    /// <summary> ParticipantLines contains </summary>
-    [JsonProperty("participantLines_con")]
-    public string? ParticipantLines_CON { get; set; }
-    /// <summary> ParticipantLines regex </summary>
-    [JsonProperty("participantLines_reg")]
-    public string? ParticipantLines_REG { get; set; }
+    /// <summary> IdsParticipantLines equals </summary>
+    [JsonProperty("idsParticipantLines_eq")]
+    public string? IdsParticipantLines_EQ { get; set; }
+    /// <summary> IdsParticipantLines contains </summary>
+    [JsonProperty("idsParticipantLines_con")]
+    public string? IdsParticipantLines_CON { get; set; }
+    /// <summary> IdsParticipantLines regex </summary>
+    [JsonProperty("idsParticipantLines_reg")]
+    public string? IdsParticipantLines_REG { get; set; }
 
 
     /// <summary> ErrorMessage equals </summary>
@@ -12697,15 +12488,15 @@ public class CallOutgoingFilterRequest
     public string? Analysis3_Model_REG { get; set; }
 
 
-    /// <summary> ParticipantLines equals </summary>
-    [JsonProperty("participantLines_eq")]
-    public string? ParticipantLines_EQ { get; set; }
-    /// <summary> ParticipantLines contains </summary>
-    [JsonProperty("participantLines_con")]
-    public string? ParticipantLines_CON { get; set; }
-    /// <summary> ParticipantLines regex </summary>
-    [JsonProperty("participantLines_reg")]
-    public string? ParticipantLines_REG { get; set; }
+    /// <summary> IdsParticipantLines equals </summary>
+    [JsonProperty("idsParticipantLines_eq")]
+    public string? IdsParticipantLines_EQ { get; set; }
+    /// <summary> IdsParticipantLines contains </summary>
+    [JsonProperty("idsParticipantLines_con")]
+    public string? IdsParticipantLines_CON { get; set; }
+    /// <summary> IdsParticipantLines regex </summary>
+    [JsonProperty("idsParticipantLines_reg")]
+    public string? IdsParticipantLines_REG { get; set; }
 
 
     /// <summary> ErrorMessage equals </summary>

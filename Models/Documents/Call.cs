@@ -248,7 +248,8 @@ public abstract partial class Call : UbluxDocument_ReferenceAccount_ReferenceTag
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    public List<string> ParticipantLines { get; set; } = new();
+    [References(typeof(Line))]
+    public List<string> IdsParticipantLines { get; set; } = new();
 
     /// <summary>
     ///     If not null it means the call is ended

@@ -17,7 +17,7 @@ public partial class Account : UbluxDocument
     [SwaggerSchema(ReadOnly = true)]
     [References(typeof(CloudServicePbx))]
     [IsUbluxRequired]
-    public required List<string> IdsCloudServicePbxs { get; set; } = new();
+    public required List<string> IdsCloudServicePbxs { get; set; } = new(); // OK
 
     #endregion
 
@@ -27,14 +27,14 @@ public partial class Account : UbluxDocument
     ///     Address
     /// </summary>    
     [AllowUpdate(true)]
-    public MailingAddress? MailingAddress { get; set; }
+    public MailingAddress? MailingAddress { get; set; } // OK
 
     /// <summary>
     ///     Account secrets
     /// </summary>
     [AllowUpdate(true)]
     [IsUbluxRequired]
-    public required AccountSecrets AccountSecrets { get; set; } = AccountSecrets.GenerateRandom();
+    public required AccountSecrets AccountSecrets { get; set; } = AccountSecrets.GenerateRandom(); // OK
 
     ///// <summary>
     /////     Customizable settings
@@ -67,7 +67,7 @@ public partial class Account : UbluxDocument
     [SwaggerSchema(ReadOnly = true)]
     [IsUbluxRequired]
     [BsonRepresentation(BsonType.String)]
-    public List<CountryIsoCode> CountriesThatCanCallLocally { get; set; } = new();
+    public List<CountryIsoCode> CountriesThatCanCallLocally { get; set; } = new(); // OK
 
     /// <summary>
     ///     If CountriesThatCanCallLocally does not contain country then ublux will attempt to find country on this list.
@@ -76,14 +76,14 @@ public partial class Account : UbluxDocument
     // [SwaggerSchema(ReadOnly = true)]
     [BsonRepresentation(BsonType.String)]
     // [IsUbluxRequired]
-    public List<CountryIsoCode> CountriesThatCanCallInternationally { get; set; } = new();
+    public List<CountryIsoCode> CountriesThatCanCallInternationally { get; set; } = new(); // OK
 
     /// <summary>
     ///     Sector
     /// </summary>
     [AllowUpdate(true)]
     [BsonRepresentation(BsonType.String)]
-    public Industry Industry { get; set; }
+    public Industry Industry { get; set; } // OK
 
     #endregion
 

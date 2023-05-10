@@ -1,7 +1,7 @@
 ﻿namespace Ublux.Communications.Models.Documents;
 
 /// <summary>
-///     Voicemail that was forwarded from one extension to another
+///     Voicemail that was forwarded from one extension to another. There are times when people want to send their voicemail from one another.
 /// </summary>
 public partial class VoicemailForwarded : Voicemail
 {

@@ -3,7 +3,7 @@
 /// <summary>
 ///     Type of number
 /// </summary>
-public enum LabelNumber
+public enum LabelNumberType
 {
     /// <summary></summary>
     Other,

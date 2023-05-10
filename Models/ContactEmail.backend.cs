@@ -6,8 +6,6 @@ public partial class ContactEmail
 {
     #region Search index
 
-
-
     /// <summary>
     ///     This cannot be the id because if the email address changes we should not change the id.
     ///     Thanks to this index we can search fast on database. This index consists of: Account followed by the email address
@@ -24,8 +22,6 @@ public partial class ContactEmail
 #endif
     }
     private string searchIndex = string.Empty;
-
-
 
     /// <summary>
     ///     Set value of search index

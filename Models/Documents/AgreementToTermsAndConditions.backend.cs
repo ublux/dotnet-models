@@ -19,7 +19,7 @@ public partial class AgreementToTermsAndConditions : UbluxDocument
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
     [IsUbluxRequired]
-    public required UbluxSession UbluxSession { get; set; }
+    public required UbluxSession UbluxSession { get; set; } // OK
 
     #endregion
 

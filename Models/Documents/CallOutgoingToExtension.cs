@@ -8,7 +8,7 @@ public partial class CallOutgoingToExtension : CallOutgoing, ICallToExtension
 {
     #region Properties
 
-    #region Subdocuments
+    #region References  
 
     /// <summary>
     ///     Extension being called
@@ -45,22 +45,6 @@ public partial class CallOutgoingToExtension : CallOutgoing, ICallToExtension
     #endregion
 
     #endregion
-
-    ///// <summary>
-    /////     Extension number that was called
-    ///// </summary>
-    //[AllowUpdate(false)]
-    //[SwaggerSchema(ReadOnly = true)]
-    //[IsUbluxRequired]
-    //public required string ExtensionNumber { get; set; } = string.Empty;
-
-    ///// <summary>
-    /////     Name of extension
-    ///// </summary>
-    //[AllowUpdate(false)]
-    //[SwaggerSchema(ReadOnly = true)]
-    //[IsUbluxRequired]
-    //public required string ExtensionFriendlyName { get; set; } = string.Empty;
 
     /// <summary>
     ///     Type of call

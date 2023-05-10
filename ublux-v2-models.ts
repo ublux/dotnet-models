@@ -27,7 +27,7 @@ This can only be changed by an ownder of the account. */
     /** Countries on this list will not be marked as international calls */
     readonly countriesThatCanCallLocally?: CountryIsoCode[];
     /** If CountriesThatCanCallLocally does not contain country then ublux will attempt to find country on this list. */
-    readonly countriesThatCanCallInternationally?: CountryIsoCode[];
+    countriesThatCanCallInternationally?: CountryIsoCode[];
     industry?: Industry;
     /** Creation date. Sets DateUpdated if it does not have a value */
     readonly dateCreated?: Date;
@@ -51,6 +51,8 @@ export interface AccountUpdateRequest {
     accountSecrets?: AccountSecrets;
     /** Name of company */
     companyName?: string | null;
+    /** If CountriesThatCanCallLocally does not contain country then ublux will attempt to find country on this list. */
+    countriesThatCanCallInternationally?: CountryIsoCode[] | null;
     industry?: Industry;
 }
 
@@ -606,7 +608,7 @@ CHANUNAVAIL: Channel unavailable. On SIP, peer may not be registered. */
     analysis2?: AiAnalysis;
     analysis3?: AiAnalysis;
     /** Lines that participated in this call */
-    readonly participantLines?: string[];
+    readonly idsParticipantLines?: string[];
     /** If not null it means the call is ended */
     readonly durationInSeconds?: number | null;
     /** If there is an error message with the call. */
@@ -1113,12 +1115,12 @@ export interface CallFilterRequest {
     analysis3_model_con?: string | null;
     /** Analysis3.Model regex */
     analysis3_model_reg?: string | null;
-    /** ParticipantLines equals */
-    participantLines_eq?: string | null;
-    /** ParticipantLines contains */
-    participantLines_con?: string | null;
-    /** ParticipantLines regex */
-    participantLines_reg?: string | null;
+    /** IdsParticipantLines equals */
+    idsParticipantLines_eq?: string | null;
+    /** IdsParticipantLines contains */
+    idsParticipantLines_con?: string | null;
+    /** IdsParticipantLines regex */
+    idsParticipantLines_reg?: string | null;
     /** ErrorMessage equals */
     errorMessage_eq?: string | null;
     /** ErrorMessage contains */
@@ -1301,7 +1303,7 @@ CHANUNAVAIL: Channel unavailable. On SIP, peer may not be registered. */
     analysis2?: AiAnalysis;
     analysis3?: AiAnalysis;
     /** Lines that participated in this call */
-    readonly participantLines?: string[];
+    readonly idsParticipantLines?: string[];
     /** If not null it means the call is ended */
     readonly durationInSeconds?: number | null;
     /** If there is an error message with the call. */
@@ -1385,7 +1387,7 @@ CHANUNAVAIL: Channel unavailable. On SIP, peer may not be registered. */
     analysis2?: AiAnalysis;
     analysis3?: AiAnalysis;
     /** Lines that participated in this call */
-    readonly participantLines?: string[];
+    readonly idsParticipantLines?: string[];
     /** If not null it means the call is ended */
     readonly durationInSeconds?: number | null;
     /** If there is an error message with the call. */
@@ -1465,7 +1467,7 @@ CHANUNAVAIL: Channel unavailable. On SIP, peer may not be registered. */
     analysis2?: AiAnalysis;
     analysis3?: AiAnalysis;
     /** Lines that participated in this call */
-    readonly participantLines?: string[];
+    readonly idsParticipantLines?: string[];
     /** If not null it means the call is ended */
     readonly durationInSeconds?: number | null;
     /** If there is an error message with the call. */
@@ -1539,7 +1541,7 @@ CHANUNAVAIL: Channel unavailable. On SIP, peer may not be registered. */
     analysis2?: AiAnalysis;
     analysis3?: AiAnalysis;
     /** Lines that participated in this call */
-    readonly participantLines?: string[];
+    readonly idsParticipantLines?: string[];
     /** If not null it means the call is ended */
     readonly durationInSeconds?: number | null;
     /** If there is an error message with the call. */
@@ -2123,7 +2125,7 @@ export interface ContactNumber {
     /** Phone number normalized in national format. This is needed so that searches are faster.
 db.GlobalContacts.createIndex({"PhoneNumbers.PhoneNumberNormalized":1}) */
     numberInternationalFormat?: string | null;
-    label?: LabelNumber;
+    label?: LabelNumberType;
 }
 
 /** Contact */
@@ -2549,6 +2551,7 @@ export interface Email {
     readonly address?: string;
     /** Date when email was verified */
     readonly dateVerified?: Date | null;
+    sessionWhenVerified?: UbluxSession;
     /** Ip address where email was verified */
     readonly ipAddress?: string | null;
     /** It is nullable because there are cases where it makes no sense to point to an account. 
@@ -2575,6 +2578,25 @@ export interface EmailFilterRequest {
     dateVerified_lte?: Date | null;
     /** DateVerified greater than or equal to */
     dateVerified_gte?: Date | null;
+    /** SessionWhenVerified.IdUser equals */
+    sessionWhenVerified_idUser_eq?: string | null;
+    /** SessionWhenVerified.IdUser contains */
+    sessionWhenVerified_idUser_con?: string | null;
+    /** SessionWhenVerified.IdUser regex */
+    sessionWhenVerified_idUser_reg?: string | null;
+    /** SessionWhenVerified.UserType equals */
+    sessionWhenVerified_userType_eq?: string | null;
+    /** SessionWhenVerified.UserType contains */
+    sessionWhenVerified_userType_con?: string | null;
+    /** SessionWhenVerified.UserType regex */
+    sessionWhenVerified_userType_reg?: string | null;
+    sessionWhenVerified_ubluxRoles_con?: UbluxRole;
+    /** SessionWhenVerified.ExpirationDate equals */
+    sessionWhenVerified_expirationDate_eq?: Date | null;
+    /** SessionWhenVerified.ExpirationDate less than or equal to */
+    sessionWhenVerified_expirationDate_lte?: Date | null;
+    /** SessionWhenVerified.ExpirationDate greater than or equal to */
+    sessionWhenVerified_expirationDate_gte?: Date | null;
     /** IpAddress equals */
     ipAddress_eq?: string | null;
     /** IpAddress contains */
@@ -3762,16 +3784,9 @@ export interface ExtensionFilterRequest {
 export interface ExtensionQueue {
     /** Id of document */
     readonly id?: string;
-    /** Lines to ring */
-    idsLines?: string[];
-    /** If there is a timeout to what extension we will forward the call? */
-    idExtensionIfTimeout?: string;
     /** Audios to play meanwhile caller is waiting to be attended */
     idsAudios?: string[];
-    sendEmailNotificationIfNotAnswered?: SendEmailNotificationIfNotAnswered;
     sendEmailNotificationIfItTakesToLongToBeAnswered?: SendEmailNotificationIfItTakesToLongToBeAnswered;
-    /** Time that lines will ring in seconds until answered */
-    ringTimeInSeconds?: number;
     /** If line is busy do you still want it to ring it? */
     ringInUse?: boolean;
     /** Maximum amount of minutes a user can be waiting on the queue. */
@@ -3786,6 +3801,12 @@ export interface ExtensionQueue {
     retryFrequency?: number;
     ringStrategy?: QueueRingStrategy;
     extensionType?: ExtensionType;
+    /** Lines to call and ring. Minimum of one line is required */
+    idsLines?: string[];
+    eventActionToExecuteIfNotAnswered?: EventAction;
+    sendEmailNotificationIfNotAnswered?: SendEmailNotificationIfNotAnswered;
+    /** Number of seconds each line will ring */
+    ringTimeInSeconds?: number;
     /** Music on hold to use */
     idMusicOnHoldGroup?: string | null;
     /** Extension friendly name */
@@ -3806,36 +3827,12 @@ TODO: Very important to place index in this field. */
 
 /** Enables searching for ExtensionQueues */
 export interface ExtensionQueueFilterRequest {
-    /** IdsLines equals */
-    idsLines_eq?: string | null;
-    /** IdsLines contains */
-    idsLines_con?: string | null;
-    /** IdsLines regex */
-    idsLines_reg?: string | null;
-    /** IdExtensionIfTimeout equals */
-    idExtensionIfTimeout_eq?: string | null;
-    /** IdExtensionIfTimeout contains */
-    idExtensionIfTimeout_con?: string | null;
-    /** IdExtensionIfTimeout regex */
-    idExtensionIfTimeout_reg?: string | null;
     /** IdsAudios equals */
     idsAudios_eq?: string | null;
     /** IdsAudios contains */
     idsAudios_con?: string | null;
     /** IdsAudios regex */
     idsAudios_reg?: string | null;
-    /** SendEmailNotificationIfNotAnswered.IdsEmails equals */
-    sendEmailNotificationIfNotAnswered_idsEmails_eq?: string | null;
-    /** SendEmailNotificationIfNotAnswered.IdsEmails contains */
-    sendEmailNotificationIfNotAnswered_idsEmails_con?: string | null;
-    /** SendEmailNotificationIfNotAnswered.IdsEmails regex */
-    sendEmailNotificationIfNotAnswered_idsEmails_reg?: string | null;
-    /** SendEmailNotificationIfNotAnswered.PreventSendingNotificationIfLastLessThanNSeconds equals */
-    sendEmailNotificationIfNotAnswered_preventSendingNotificationIfLastLessThanNSeconds_eq?: number | null;
-    /** SendEmailNotificationIfNotAnswered.PreventSendingNotificationIfLastLessThanNSeconds less than or equal to */
-    sendEmailNotificationIfNotAnswered_preventSendingNotificationIfLastLessThanNSeconds_lte?: number | null;
-    /** SendEmailNotificationIfNotAnswered.PreventSendingNotificationIfLastLessThanNSeconds greater than or equal to */
-    sendEmailNotificationIfNotAnswered_preventSendingNotificationIfLastLessThanNSeconds_gte?: number | null;
     /** SendEmailNotificationIfItTakesToLongToBeAnswered.TimeInSeconds equals */
     sendEmailNotificationIfItTakesToLongToBeAnswered_timeInSeconds_eq?: number | null;
     /** SendEmailNotificationIfItTakesToLongToBeAnswered.TimeInSeconds less than or equal to */
@@ -3848,12 +3845,6 @@ export interface ExtensionQueueFilterRequest {
     sendEmailNotificationIfItTakesToLongToBeAnswered_idsEmails_con?: string | null;
     /** SendEmailNotificationIfItTakesToLongToBeAnswered.IdsEmails regex */
     sendEmailNotificationIfItTakesToLongToBeAnswered_idsEmails_reg?: string | null;
-    /** RingTimeInSeconds equals */
-    ringTimeInSeconds_eq?: number | null;
-    /** RingTimeInSeconds less than or equal to */
-    ringTimeInSeconds_lte?: number | null;
-    /** RingTimeInSeconds greater than or equal to */
-    ringTimeInSeconds_gte?: number | null;
     /** RingInUse equals */
     ringInUse_eq?: boolean | null;
     /** QueueTimeoutInMinutes equals */
@@ -3890,6 +3881,36 @@ export interface ExtensionQueueFilterRequest {
     extensionType_con?: string | null;
     /** ExtensionType regex */
     extensionType_reg?: string | null;
+    /** IdsLines equals */
+    idsLines_eq?: string | null;
+    /** IdsLines contains */
+    idsLines_con?: string | null;
+    /** IdsLines regex */
+    idsLines_reg?: string | null;
+    /** EventActionToExecuteIfNotAnswered.EventActionType equals */
+    eventActionToExecuteIfNotAnswered_eventActionType_eq?: string | null;
+    /** EventActionToExecuteIfNotAnswered.EventActionType contains */
+    eventActionToExecuteIfNotAnswered_eventActionType_con?: string | null;
+    /** EventActionToExecuteIfNotAnswered.EventActionType regex */
+    eventActionToExecuteIfNotAnswered_eventActionType_reg?: string | null;
+    /** SendEmailNotificationIfNotAnswered.IdsEmails equals */
+    sendEmailNotificationIfNotAnswered_idsEmails_eq?: string | null;
+    /** SendEmailNotificationIfNotAnswered.IdsEmails contains */
+    sendEmailNotificationIfNotAnswered_idsEmails_con?: string | null;
+    /** SendEmailNotificationIfNotAnswered.IdsEmails regex */
+    sendEmailNotificationIfNotAnswered_idsEmails_reg?: string | null;
+    /** SendEmailNotificationIfNotAnswered.PreventSendingNotificationIfLastLessThanNSeconds equals */
+    sendEmailNotificationIfNotAnswered_preventSendingNotificationIfLastLessThanNSeconds_eq?: number | null;
+    /** SendEmailNotificationIfNotAnswered.PreventSendingNotificationIfLastLessThanNSeconds less than or equal to */
+    sendEmailNotificationIfNotAnswered_preventSendingNotificationIfLastLessThanNSeconds_lte?: number | null;
+    /** SendEmailNotificationIfNotAnswered.PreventSendingNotificationIfLastLessThanNSeconds greater than or equal to */
+    sendEmailNotificationIfNotAnswered_preventSendingNotificationIfLastLessThanNSeconds_gte?: number | null;
+    /** RingTimeInSeconds equals */
+    ringTimeInSeconds_eq?: number | null;
+    /** RingTimeInSeconds less than or equal to */
+    ringTimeInSeconds_lte?: number | null;
+    /** RingTimeInSeconds greater than or equal to */
+    ringTimeInSeconds_gte?: number | null;
     /** IdMusicOnHoldGroup equals */
     idMusicOnHoldGroup_eq?: string | null;
     /** IdMusicOnHoldGroup contains */
@@ -3938,16 +3959,9 @@ export interface ExtensionQueueFilterRequest {
 
 /** Extension where people that call will be placed on a sequence awaiting their turn to be attended */
 export interface ExtensionQueueUpdateRequest {
-    /** Lines to ring */
-    idsLines?: string[] | null;
-    /** If there is a timeout to what extension we will forward the call? */
-    idExtensionIfTimeout?: string | null;
     /** Audios to play meanwhile caller is waiting to be attended */
     idsAudios?: string[] | null;
-    sendEmailNotificationIfNotAnswered?: SendEmailNotificationIfNotAnswered;
     sendEmailNotificationIfItTakesToLongToBeAnswered?: SendEmailNotificationIfItTakesToLongToBeAnswered;
-    /** Time that lines will ring in seconds until answered */
-    ringTimeInSeconds?: number | null;
     /** If line is busy do you still want it to ring it? */
     ringInUse?: boolean | null;
     /** Maximum amount of minutes a user can be waiting on the queue. */
@@ -3961,6 +3975,12 @@ export interface ExtensionQueueUpdateRequest {
     /** Number of seconds to wait in between rings. Default value if null is 20 seconds */
     retryFrequency?: number | null;
     ringStrategy?: QueueRingStrategy;
+    /** Lines to call and ring. Minimum of one line is required */
+    idsLines?: string[] | null;
+    eventActionToExecuteIfNotAnswered?: EventAction;
+    sendEmailNotificationIfNotAnswered?: SendEmailNotificationIfNotAnswered;
+    /** Number of seconds each line will ring */
+    ringTimeInSeconds?: number | null;
     /** Music on hold to use */
     idMusicOnHoldGroup?: string | null;
     /** Extension friendly name */
@@ -4131,6 +4151,8 @@ export interface FaxIncoming {
     readonly id?: string;
     /** Received fax from this VOIP number. This could also be named the 'To' property. */
     readonly idVoipNumberFax?: string;
+    /** Contact */
+    readonly idContact?: string | null;
     pdf?: StoredFile;
     /** Number of pages received */
     readonly numPages?: number;
@@ -4160,6 +4182,12 @@ export interface FaxIncomingFilterRequest {
     idVoipNumberFax_con?: string | null;
     /** IdVoipNumberFax regex */
     idVoipNumberFax_reg?: string | null;
+    /** IdContact equals */
+    idContact_eq?: string | null;
+    /** IdContact contains */
+    idContact_con?: string | null;
+    /** IdContact regex */
+    idContact_reg?: string | null;
     /** Pdf.InstanceId equals */
     pdf_instanceId_eq?: string | null;
     /** Pdf.InstanceId contains */
@@ -4901,7 +4929,7 @@ export enum LabelEmailType {
 }
 
 /** Type of number */
-export enum LabelNumber {
+export enum LabelNumberType {
     Other = "Other",
     Home = "Home",
     Work = "Work",
@@ -5943,7 +5971,8 @@ export interface SMS {
     readonly id?: string;
     /** VOIP number that sent/received SMS message */
     readonly idVoipNumber?: string;
-    contact?: Contact;
+    /** Contact */
+    readonly idContact?: string | null;
     /** True if SMS was received false otherwise */
     readonly isIncoming?: boolean;
     /** SMS message */
@@ -5974,162 +6003,12 @@ export interface SMSFilterRequest {
     idVoipNumber_con?: string | null;
     /** IdVoipNumber regex */
     idVoipNumber_reg?: string | null;
-    /** Contact.IdUserOwner equals */
-    contact_idUserOwner_eq?: string | null;
-    /** Contact.IdUserOwner contains */
-    contact_idUserOwner_con?: string | null;
-    /** Contact.IdUserOwner regex */
-    contact_idUserOwner_reg?: string | null;
-    /** Contact.ContactNumbers.Number equals */
-    contact_contactNumbers_number_eq?: string | null;
-    /** Contact.ContactNumbers.Number contains */
-    contact_contactNumbers_number_con?: string | null;
-    /** Contact.ContactNumbers.Number regex */
-    contact_contactNumbers_number_reg?: string | null;
-    /** Contact.ContactNumbers.NumberInternationalFormat equals */
-    contact_contactNumbers_numberInternationalFormat_eq?: string | null;
-    /** Contact.ContactNumbers.NumberInternationalFormat contains */
-    contact_contactNumbers_numberInternationalFormat_con?: string | null;
-    /** Contact.ContactNumbers.NumberInternationalFormat regex */
-    contact_contactNumbers_numberInternationalFormat_reg?: string | null;
-    /** Contact.ContactNumbers.Label equals */
-    contact_contactNumbers_label_eq?: string | null;
-    /** Contact.ContactNumbers.Label contains */
-    contact_contactNumbers_label_con?: string | null;
-    /** Contact.ContactNumbers.Label regex */
-    contact_contactNumbers_label_reg?: string | null;
-    /** Contact.ContactEmails.SearchIndex equals */
-    contact_contactEmails_searchIndex_eq?: string | null;
-    /** Contact.ContactEmails.SearchIndex contains */
-    contact_contactEmails_searchIndex_con?: string | null;
-    /** Contact.ContactEmails.SearchIndex regex */
-    contact_contactEmails_searchIndex_reg?: string | null;
-    /** Contact.ContactEmails.Email equals */
-    contact_contactEmails_email_eq?: string | null;
-    /** Contact.ContactEmails.Email contains */
-    contact_contactEmails_email_con?: string | null;
-    /** Contact.ContactEmails.Email regex */
-    contact_contactEmails_email_reg?: string | null;
-    /** Contact.ContactEmails.Label equals */
-    contact_contactEmails_label_eq?: string | null;
-    /** Contact.ContactEmails.Label contains */
-    contact_contactEmails_label_con?: string | null;
-    /** Contact.ContactEmails.Label regex */
-    contact_contactEmails_label_reg?: string | null;
-    /** Contact.MailingAddresses.RecipientName equals */
-    contact_mailingAddresses_recipientName_eq?: string | null;
-    /** Contact.MailingAddresses.RecipientName contains */
-    contact_mailingAddresses_recipientName_con?: string | null;
-    /** Contact.MailingAddresses.RecipientName regex */
-    contact_mailingAddresses_recipientName_reg?: string | null;
-    /** Contact.MailingAddresses.BusinessName equals */
-    contact_mailingAddresses_businessName_eq?: string | null;
-    /** Contact.MailingAddresses.BusinessName contains */
-    contact_mailingAddresses_businessName_con?: string | null;
-    /** Contact.MailingAddresses.BusinessName regex */
-    contact_mailingAddresses_businessName_reg?: string | null;
-    /** Contact.MailingAddresses.StreetAddress equals */
-    contact_mailingAddresses_streetAddress_eq?: string | null;
-    /** Contact.MailingAddresses.StreetAddress contains */
-    contact_mailingAddresses_streetAddress_con?: string | null;
-    /** Contact.MailingAddresses.StreetAddress regex */
-    contact_mailingAddresses_streetAddress_reg?: string | null;
-    /** Contact.MailingAddresses.ApparmentOrSuiteNumber equals */
-    contact_mailingAddresses_apparmentOrSuiteNumber_eq?: string | null;
-    /** Contact.MailingAddresses.ApparmentOrSuiteNumber contains */
-    contact_mailingAddresses_apparmentOrSuiteNumber_con?: string | null;
-    /** Contact.MailingAddresses.ApparmentOrSuiteNumber regex */
-    contact_mailingAddresses_apparmentOrSuiteNumber_reg?: string | null;
-    /** Contact.MailingAddresses.City equals */
-    contact_mailingAddresses_city_eq?: string | null;
-    /** Contact.MailingAddresses.City contains */
-    contact_mailingAddresses_city_con?: string | null;
-    /** Contact.MailingAddresses.City regex */
-    contact_mailingAddresses_city_reg?: string | null;
-    /** Contact.MailingAddresses.State equals */
-    contact_mailingAddresses_state_eq?: string | null;
-    /** Contact.MailingAddresses.State contains */
-    contact_mailingAddresses_state_con?: string | null;
-    /** Contact.MailingAddresses.State regex */
-    contact_mailingAddresses_state_reg?: string | null;
-    /** Contact.MailingAddresses.ZipCode equals */
-    contact_mailingAddresses_zipCode_eq?: string | null;
-    /** Contact.MailingAddresses.ZipCode contains */
-    contact_mailingAddresses_zipCode_con?: string | null;
-    /** Contact.MailingAddresses.ZipCode regex */
-    contact_mailingAddresses_zipCode_reg?: string | null;
-    /** Contact.MailingAddresses.Country equals */
-    contact_mailingAddresses_country_eq?: string | null;
-    /** Contact.MailingAddresses.Country contains */
-    contact_mailingAddresses_country_con?: string | null;
-    /** Contact.MailingAddresses.Country regex */
-    contact_mailingAddresses_country_reg?: string | null;
-    /** Contact.FirstName equals */
-    contact_firstName_eq?: string | null;
-    /** Contact.FirstName contains */
-    contact_firstName_con?: string | null;
-    /** Contact.FirstName regex */
-    contact_firstName_reg?: string | null;
-    /** Contact.LastName equals */
-    contact_lastName_eq?: string | null;
-    /** Contact.LastName contains */
-    contact_lastName_con?: string | null;
-    /** Contact.LastName regex */
-    contact_lastName_reg?: string | null;
-    /** Contact.JobTitle equals */
-    contact_jobTitle_eq?: string | null;
-    /** Contact.JobTitle contains */
-    contact_jobTitle_con?: string | null;
-    /** Contact.JobTitle regex */
-    contact_jobTitle_reg?: string | null;
-    /** Contact.Company equals */
-    contact_company_eq?: string | null;
-    /** Contact.Company contains */
-    contact_company_con?: string | null;
-    /** Contact.Company regex */
-    contact_company_reg?: string | null;
-    /** Contact.Notes equals */
-    contact_notes_eq?: string | null;
-    /** Contact.Notes contains */
-    contact_notes_con?: string | null;
-    /** Contact.Notes regex */
-    contact_notes_reg?: string | null;
-    /** Contact.Variables.Name equals */
-    contact_variables_name_eq?: string | null;
-    /** Contact.Variables.Name contains */
-    contact_variables_name_con?: string | null;
-    /** Contact.Variables.Name regex */
-    contact_variables_name_reg?: string | null;
-    /** Contact.Variables.JsonValue equals */
-    contact_variables_jsonValue_eq?: string | null;
-    /** Contact.Variables.JsonValue contains */
-    contact_variables_jsonValue_con?: string | null;
-    /** Contact.Variables.JsonValue regex */
-    contact_variables_jsonValue_reg?: string | null;
-    /** Contact.IdsTags equals */
-    contact_idsTags_eq?: string | null;
-    /** Contact.IdsTags contains */
-    contact_idsTags_con?: string | null;
-    /** Contact.IdsTags regex */
-    contact_idsTags_reg?: string | null;
-    /** Contact.Id equals */
-    contact_id_eq?: string | null;
-    /** Contact.Id contains */
-    contact_id_con?: string | null;
-    /** Contact.Id regex */
-    contact_id_reg?: string | null;
-    /** Contact.DateCreated equals */
-    contact_dateCreated_eq?: Date | null;
-    /** Contact.DateCreated less than or equal to */
-    contact_dateCreated_lte?: Date | null;
-    /** Contact.DateCreated greater than or equal to */
-    contact_dateCreated_gte?: Date | null;
-    /** Contact.DateUpdated equals */
-    contact_dateUpdated_eq?: Date | null;
-    /** Contact.DateUpdated less than or equal to */
-    contact_dateUpdated_lte?: Date | null;
-    /** Contact.DateUpdated greater than or equal to */
-    contact_dateUpdated_gte?: Date | null;
+    /** IdContact equals */
+    idContact_eq?: string | null;
+    /** IdContact contains */
+    idContact_con?: string | null;
+    /** IdContact regex */
+    idContact_reg?: string | null;
     /** IsIncoming equals */
     isIncoming_eq?: boolean | null;
     /** Body equals */
@@ -6702,13 +6581,23 @@ export enum UbluxRole {
     Root = "root",
 }
 
+/** Session is a logged in User (user). We use JWT Security tokens to store this Session. */
+export interface UbluxSession {
+    /** sub property from JWT. Logged in by what user? This may be a PBX */
+    readonly idUser?: string;
+    userType?: UserType;
+    /** role properties from JWT. Permissions */
+    readonly ubluxRoles?: UbluxRole[];
+    /** exp property from JWT. Date when session expires */
+    readonly expirationDate?: Date;
+}
+
 /** Someone that has access to consume Ublux Web Api. It can be a PBX, WA, or Admin. If its a PBX user for example it must point to account tbd 27 */
 export interface User {
     /** Id of document */
     readonly id?: string;
     /** Email of user. This is the Id not the email address.
-Two users cannot use the same email. It is a one to one relationship.
-An email may exists without it pointing to a user. For example you may want to send an email notification if a call is not answered to a specific email. */
+Two users may user the same email address. */
     readonly idEmail?: string;
     /** Key = service/role such as Phone. The phone role probably will have access to the PhoneController service
 Value = Permissions it has on that role. Maybe it can only read data from that service but it cannot update, create or modify. */

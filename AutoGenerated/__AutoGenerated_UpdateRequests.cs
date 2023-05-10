@@ -791,29 +791,13 @@ public class ExtensionDialUpdateRequest // : IUbluxDocumentId
 public class ExtensionQueueUpdateRequest // : IUbluxDocumentId
 {
     /// <summary>
-    /// Lines to ring
-    /// </summary>
-    public List<System.String>? IdsLines { get; set; }
-    /// <summary>
-    /// If there is a timeout to what extension we will forward the call?
-    /// </summary>
-    public String? IdExtensionIfTimeout { get; set; }
-    /// <summary>
     /// Audios to play meanwhile caller is waiting to be attended
     /// </summary>
     public List<System.String>? IdsAudios { get; set; }
     /// <summary>
-    /// Send email notification if call is not answered
-    /// </summary>
-    public SendEmailNotificationIfNotAnswered? SendEmailNotificationIfNotAnswered { get; set; }
-    /// <summary>
     /// Send email notification if call takes to long to be answered
     /// </summary>
     public SendEmailNotificationIfItTakesToLongToBeAnswered? SendEmailNotificationIfItTakesToLongToBeAnswered { get; set; }
-    /// <summary>
-    /// Time that lines will ring in seconds until answered
-    /// </summary>
-    public Int32? RingTimeInSeconds { get; set; }
     /// <summary>
     /// If line is busy do you still want it to ring it?
     /// </summary>
@@ -843,6 +827,22 @@ public class ExtensionQueueUpdateRequest // : IUbluxDocumentId
     /// </summary>
     public QueueRingStrategy? RingStrategy { get; set; }
     /// <summary>
+    /// Lines to call and ring. Minimum of one line is required
+    /// </summary>
+    public List<System.String>? IdsLines { get; set; }
+    /// <summary>
+    /// EventAction to execute if call is not answered
+    /// </summary>
+    public EventAction? EventActionToExecuteIfNotAnswered { get; set; }
+    /// <summary>
+    /// Send email notification if call is not answered
+    /// </summary>
+    public SendEmailNotificationIfNotAnswered? SendEmailNotificationIfNotAnswered { get; set; }
+    /// <summary>
+    /// Number of seconds each line will ring
+    /// </summary>
+    public Int32? RingTimeInSeconds { get; set; }
+    /// <summary>
     /// Music on hold to use
     /// </summary>
     public String? IdMusicOnHoldGroup { get; set; }
@@ -866,18 +866,10 @@ public class ExtensionQueueUpdateRequest // : IUbluxDocumentId
     /// <summary> Set values on actual document </summary>
     public void SetValuesOnExtensionQueue(ExtensionQueue extensionQueue, string jsonRaw)
     {
-        if(jsonRaw.Contains($@"""{nameof(this.IdsLines)}""", StringComparison.OrdinalIgnoreCase))
-            extensionQueue.IdsLines = this.IdsLines;
-        if(jsonRaw.Contains($@"""{nameof(this.IdExtensionIfTimeout)}""", StringComparison.OrdinalIgnoreCase))
-            extensionQueue.IdExtensionIfTimeout = this.IdExtensionIfTimeout;
         if(jsonRaw.Contains($@"""{nameof(this.IdsAudios)}""", StringComparison.OrdinalIgnoreCase))
             extensionQueue.IdsAudios = this.IdsAudios;
-        if(jsonRaw.Contains($@"""{nameof(this.SendEmailNotificationIfNotAnswered)}""", StringComparison.OrdinalIgnoreCase))
-            extensionQueue.SendEmailNotificationIfNotAnswered = this.SendEmailNotificationIfNotAnswered;
         if(jsonRaw.Contains($@"""{nameof(this.SendEmailNotificationIfItTakesToLongToBeAnswered)}""", StringComparison.OrdinalIgnoreCase))
             extensionQueue.SendEmailNotificationIfItTakesToLongToBeAnswered = this.SendEmailNotificationIfItTakesToLongToBeAnswered;
-        if(jsonRaw.Contains($@"""{nameof(this.RingTimeInSeconds)}""", StringComparison.OrdinalIgnoreCase))
-            extensionQueue.RingTimeInSeconds = this.RingTimeInSeconds.Value;
         if(jsonRaw.Contains($@"""{nameof(this.RingInUse)}""", StringComparison.OrdinalIgnoreCase))
             extensionQueue.RingInUse = this.RingInUse.Value;
         if(jsonRaw.Contains($@"""{nameof(this.QueueTimeoutInMinutes)}""", StringComparison.OrdinalIgnoreCase))
@@ -892,6 +884,14 @@ public class ExtensionQueueUpdateRequest // : IUbluxDocumentId
             extensionQueue.RetryFrequency = this.RetryFrequency.Value;
         if(jsonRaw.Contains($@"""{nameof(this.RingStrategy)}""", StringComparison.OrdinalIgnoreCase))
             extensionQueue.RingStrategy = this.RingStrategy.Value;
+        if(jsonRaw.Contains($@"""{nameof(this.IdsLines)}""", StringComparison.OrdinalIgnoreCase))
+            extensionQueue.IdsLines = this.IdsLines;
+        if(jsonRaw.Contains($@"""{nameof(this.EventActionToExecuteIfNotAnswered)}""", StringComparison.OrdinalIgnoreCase))
+            extensionQueue.EventActionToExecuteIfNotAnswered = this.EventActionToExecuteIfNotAnswered;
+        if(jsonRaw.Contains($@"""{nameof(this.SendEmailNotificationIfNotAnswered)}""", StringComparison.OrdinalIgnoreCase))
+            extensionQueue.SendEmailNotificationIfNotAnswered = this.SendEmailNotificationIfNotAnswered;
+        if(jsonRaw.Contains($@"""{nameof(this.RingTimeInSeconds)}""", StringComparison.OrdinalIgnoreCase))
+            extensionQueue.RingTimeInSeconds = this.RingTimeInSeconds.Value;
         if(jsonRaw.Contains($@"""{nameof(this.IdMusicOnHoldGroup)}""", StringComparison.OrdinalIgnoreCase))
             extensionQueue.IdMusicOnHoldGroup = this.IdMusicOnHoldGroup;
         if(jsonRaw.Contains($@"""{nameof(this.FriendlyName)}""", StringComparison.OrdinalIgnoreCase))
@@ -1350,7 +1350,7 @@ public class VoicemailUpdateRequest // : IUbluxDocumentId
 }
 
 /// <summary>
-/// Voicemail that was forwarded from one extension to another
+/// Voicemail that was forwarded from one extension to another. There are times when people want to send their voicemail from one another.
 /// </summary>
 public class VoicemailForwardedUpdateRequest // : IUbluxDocumentId
 {

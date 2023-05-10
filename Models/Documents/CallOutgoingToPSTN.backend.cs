@@ -12,9 +12,9 @@ public partial class CallOutgoingToPSTN : CallOutgoing
     /// </summary>
     [IgnoreDataMember]
     [References(typeof(TrunkTermination))]
-    [AllowUpdate(false)] 
-    [SwaggerSchema(ReadOnly = true)] 
-    public string? IdTrunkTermination { get; set; }
+    [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
+    public required string IdTrunkTermination { get; set; }
 }
 
 #endif

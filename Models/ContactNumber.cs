@@ -23,5 +23,5 @@ public partial class ContactNumber
     ///     Example Main, Work, Fax, Mobile
     /// </summary>
     [AllowUpdate(true)]
-    public LabelNumber Label { get; set; }
+    public LabelNumberType Label { get; set; }
 }
