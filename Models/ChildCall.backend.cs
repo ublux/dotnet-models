@@ -7,7 +7,7 @@ public abstract partial class ChildCall : ICall
     /// <inheritdoc />
     [IgnoreDataMember]
     [AllowUpdate(false)] 
-    [SwaggerSchema(ReadOnly = true)] 
+    [SwaggerSchema(ReadOnly = true)]
     public required string ChannelFrom { get; set; }
 
     /// <summary>
@@ -15,7 +15,7 @@ public abstract partial class ChildCall : ICall
     /// </summary>
     [IgnoreDataMember]
     [AllowUpdate(false)] 
-    [SwaggerSchema(ReadOnly = true)] 
+    [SwaggerSchema(ReadOnly = true)]
     public List<string> ChannelsTo { get; set; } = new();
 
     /// <summary>
@@ -23,7 +23,7 @@ public abstract partial class ChildCall : ICall
     /// </summary>
     [IgnoreDataMember]
     [AllowUpdate(false)] 
-    [SwaggerSchema(ReadOnly = true)] 
+    [SwaggerSchema(ReadOnly = true)]
     public string? ChannelToAnswer { get; set; }
 
     /// <summary>

@@ -8,7 +8,7 @@ public partial class Tag : UbluxDocument_ReferenceAccount
     /// <summary>
     ///     Name of tag
     /// </summary>
-    [IsUbluxRequired]
+    [UbluxValidationIsRequired]
     [AllowUpdate(true)]
     public required string FriendlyName { get; set; } = string.Empty;
 
@@ -17,5 +17,21 @@ public partial class Tag : UbluxDocument_ReferenceAccount
     /// </summary>
     [AllowUpdate(true)]
     public TagColor TagColor { get; set; }
+
+
+    #region MongoDB
+
+    /// <inheritdoc />
+    public override IEnumerable<MongoDbIndex> GetMongoDbIndexes()
+    {
+        // this collection
+        var collection = this.GetType().GetCollectionUsedByType();
+
+        // get all mandatory indexes
+        foreach (var item in base.GetMandatoryIndexes(collection))
+            yield return item;        
+    }
+
+    #endregion
 }
 

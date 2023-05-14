@@ -26,29 +26,27 @@ public abstract class TrunkOrigination : UbluxDocument
     [References(typeof(VoipProvider))]
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [IsUbluxRequired]
+    [UbluxValidationIsRequired]
     public required string IdVoipProvider { get; set; } = string.Empty;
 
     /// <summary>
-    ///     Used by what PBX?
-    ///     TODO: place index on db baced on this field
+    ///     Used by what PBX?    
     /// </summary>
     [IgnoreDataMember]
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
     [References(typeof(CloudServicePbx))]
-    [IsUbluxRequired]
+    [UbluxValidationIsRequired]
     public required string IdCloudServicePbx { get; set; } = string.Empty;
 
     /// <summary>
-    ///     Backup pbx
-    ///     TODO: place index on db baced on this field
+    ///     Backup pbx    
     /// </summary>
     [IgnoreDataMember]
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
     [References(typeof(CloudServicePbx))]
-    [IsUbluxRequired]
+    [UbluxValidationIsRequired]
     public required string IdCloudServicePbxFailover { get; set; } = string.Empty;
 
     #endregion
@@ -61,7 +59,7 @@ public abstract class TrunkOrigination : UbluxDocument
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
     [HideForCreateRequest]
-    [IsUbluxRequired]
+    [UbluxValidationIsRequired]
     public abstract TrunkOriginationType TrunkOriginationType
     {
         get;
@@ -78,7 +76,7 @@ public abstract class TrunkOrigination : UbluxDocument
     [IgnoreDataMember]
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [IsUbluxRequired]
+    [UbluxValidationIsRequired]
     public required string ProviderId { get; set; } = string.Empty;
 
     /// <summary>
@@ -87,8 +85,34 @@ public abstract class TrunkOrigination : UbluxDocument
     [IgnoreDataMember]
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [IsUbluxRequired]
+    [UbluxValidationIsRequired]
     public required string FriendlyName { get; set; } = string.Empty;
+
+
+    #region MongoDB
+
+    /// <inheritdoc />
+    public override IEnumerable<MongoDbIndex> GetMongoDbIndexes()
+    {
+        // this collection
+        var collection = this.GetType().GetCollectionUsedByType();
+
+        // get all mandatory indexes
+        foreach (var item in base.GetMandatoryIndexes(collection))
+            yield return item;
+
+        // enable searching fast by id cloudservicepbx fast
+        yield return new MongoDbIndex(collection, nameof(this.IdCloudServicePbx))
+            // Append DateCreated at the end so that items are returned by dateCreated
+            .Add(nameof(DateCreated));
+
+        // enable searching fast by id cloud service pbx failover
+        yield return new MongoDbIndex(collection, nameof(this.IdCloudServicePbxFailover))
+            // Append DateCreated at the end so that items are returned by dateCreated
+            .Add(nameof(DateCreated));
+    }
+
+    #endregion
 
 }
 

@@ -20,7 +20,7 @@ public partial class CloudServicePbx : CloudService
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [IsUbluxRequired]
+    [UbluxValidationIsRequired]
     [HideForCreateRequest]
     public override CloudServiceType CloudServiceType
     {

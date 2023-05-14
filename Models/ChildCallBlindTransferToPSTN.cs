@@ -19,7 +19,7 @@ public class ChildCallBlindTransferToPSTN : ChildCallBlindTransfer
 /// <summary>
     ///     BlindTransferToPSTN
     /// </summary>
-    [IsUbluxRequired]
+    [UbluxValidationIsRequired]
     public override ChildCallType ChildCallType
     {
         get => ChildCallType.BlindTransferToPSTN;

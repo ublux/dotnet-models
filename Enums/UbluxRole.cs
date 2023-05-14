@@ -11,6 +11,9 @@
 /// </summary>
 public enum UbluxRole
 {
+    /// <summary> Default with no role </summary>
+    none = 0,
+
     #region Low priority (auto generated at Generator_UserControllers.cs last line)
 
     /// <summary> Has access to the audios endpoint with full permissions </summary>

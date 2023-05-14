@@ -10,7 +10,7 @@ public partial class VoipNumberPhone : VoipNumber
     ///     value = day of week when it executes
     /// </summary>    
     [AllowUpdate(true)]
-    [IsUbluxRequired]
+    [UbluxValidationIsRequired]
     public required override List<RulePhone> RulesPhone { get; set; } = new();
 
     /// <summary>

@@ -22,15 +22,35 @@ public partial class BlackListPhoneNumber : UbluxDocument_ReferenceAccount_Refer
     ///     The phone number that will be blocked
     /// </summary>
     [AllowUpdate(true)]
-    [IsUbluxRequired]
+    [UbluxValidationIsRequired]
     public required string Number { get; set; } = string.Empty;
 
     /// <summary>
     ///     Friendly name of this rule
     /// </summary>
     [AllowUpdate(true)]
-    [IsUbluxRequired]
+    [UbluxValidationIsRequired]
     public required string FriendlyName { get; set; } = string.Empty;
+
+    #endregion
+
+    #region MongoDB
+
+    /// <inheritdoc />
+    public override IEnumerable<MongoDbIndex> GetMongoDbIndexes()
+    {
+        // this collection
+        var collection = this.GetType().GetCollectionUsedByType();
+
+        // get all mandatory indexes
+        foreach (var item in base.GetMandatoryIndexes(collection))
+            yield return item;
+
+        // enable searching fast by searchIndex fast
+        yield return new MongoDbIndex(collection, nameof(this.searchIndex))
+            // Append DateCreated at the end so that items are returned by dateCreated
+            .Add(nameof(DateCreated));
+    }
 
     #endregion
 }

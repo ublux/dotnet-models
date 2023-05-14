@@ -55,7 +55,7 @@ public partial class Contact : UbluxDocument_ReferenceAccount_ReferenceTags
     /// <summary>
     ///     Contact first name
     /// </summary>
-    [AllowUpdate(true)]
+    [AllowUpdate(true)]    
     public string? FirstName { get; set; }
 
     /// <summary>
@@ -87,6 +87,7 @@ public partial class Contact : UbluxDocument_ReferenceAccount_ReferenceTags
     ///     Contact Notes
     /// </summary>
     [AllowUpdate(true)]
+    [UbluxValidationStringRange(4000)]
     public string? Notes { get; set; }
 
     /// <summary>
@@ -159,6 +160,31 @@ public partial class Contact : UbluxDocument_ReferenceAccount_ReferenceTags
     //        yield return ce.Label.ToString();
     //    }
     //}
+
+    #endregion
+
+    #region MongoDB
+
+    /// <inheritdoc />
+    public override IEnumerable<MongoDbIndex> GetMongoDbIndexes()
+    {
+        // this collection
+        var collection = this.GetType().GetCollectionUsedByType();
+
+        // get all mandatory indexes
+        foreach (var item in base.GetMandatoryIndexes(collection))
+            yield return item;
+
+        // enable searching fast by contact phone number search index
+        yield return new MongoDbIndex(collection, nameof(this.ContactNumbers), nameof(ContactNumber.SearchIndex))
+            // Append DateCreated at the end so that items are returned by dateCreated
+            .Add(nameof(DateCreated));  
+        
+        // enable searching fast by contact phone number search index
+        yield return new MongoDbIndex(collection, nameof(this.ContactEmails), nameof(ContactEmail.SearchIndex))
+            // Append DateCreated at the end so that items are returned by dateCreated
+            .Add(nameof(DateCreated)); 
+    }
 
     #endregion
 }

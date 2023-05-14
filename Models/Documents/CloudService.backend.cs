@@ -24,7 +24,7 @@ public abstract partial class CloudService : UbluxDocument
     /// <summary>
     ///     Example AWS for amazon web services
     /// </summary>
-    [IsUbluxRequired]
+    [UbluxValidationIsRequired]
     [IgnoreDataMember]
     [AllowUpdate(true)]
     public required CloudServiceProviderType ProviderType { get; set; }

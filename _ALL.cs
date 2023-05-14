@@ -15,7 +15,7 @@ public partial interface IUbluxDocument : IUbluxDocumentId
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
     [JsonProperty(Order = 1000)]
-    [IsUbluxRequired]
+    [UbluxValidationIsRequired]
     DateTime DateCreated { get; set; }
 
     /// <summary>
@@ -31,6 +31,11 @@ public partial interface IUbluxDocument : IUbluxDocumentId
         set;
 #endif
     }
+
+    /// <summary>
+    ///     Get MongoDB indexes
+    /// </summary>
+    IEnumerable<MongoDbIndex> GetMongoDbIndexes();
 }
 
 /// <summary>
@@ -70,6 +75,7 @@ public abstract partial class UbluxDocument : IUbluxDocument, IUbluxDocumentId
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
     [HideForCreateRequest]
+    [UbluxValidationIsRequired]
     public required DateTime DateCreated
     {
         get => dateCreated;
@@ -92,6 +98,7 @@ public abstract partial class UbluxDocument : IUbluxDocument, IUbluxDocumentId
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
     [HideForCreateRequest]
+    [UbluxValidationIsRequired]
     // [Obsolete("Just a reminder that when setting the DateCreated it will also set this same value")]    
     public DateTime DateUpdated
     {
@@ -108,6 +115,22 @@ public abstract partial class UbluxDocument : IUbluxDocument, IUbluxDocumentId
 #endif
     }
     private DateTime dateUpdated;
+
+    /// <summary>
+    ///     Get MongoDB indexes
+    /// </summary>
+    public abstract IEnumerable<MongoDbIndex> GetMongoDbIndexes();
+
+    /// <summary>
+    ///     Required indexes by all collections
+    /// </summary>
+    public virtual IEnumerable<MongoDbIndex> GetMandatoryIndexes(Collections collection, int order = 1)
+    {
+        // Required to sync stuff
+        yield return new MongoDbIndex(collection, order, nameof(DateUpdated))
+            // Append DateCreated at the end so that items are ordered by DateCreated
+            .Add(order, nameof(DateCreated));
+    }
 }
 
 /// <summary>
@@ -123,8 +146,23 @@ public abstract partial class UbluxDocument_ReferenceAccount : UbluxDocument, IR
     [IgnoreDataMember]
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [IsUbluxRequired]
+    [UbluxValidationIsRequired]
     public required string IdAccount { get; set; } = "";
+
+    /// <summary>
+    ///     Required indexes by all collections
+    /// </summary>
+    public override IEnumerable<MongoDbIndex> GetMandatoryIndexes(Collections collection, int order = 1)
+    {
+        // get mandatory indexes from base
+        foreach (var item in base.GetMandatoryIndexes(collection, order))
+            yield return item;
+
+        // enable searching by items of a specific account
+        yield return new MongoDbIndex(collection, order, nameof(IdAccount))
+            // Append DateCreated at the end so that items are returned by dateCreated
+            .Add(order, nameof(DateCreated));
+    }
 }
 
 /// <summary>
@@ -139,6 +177,21 @@ public abstract partial class UbluxDocument_ReferenceAccount_ReferenceTags : Ubl
     [References(typeof(Tag))]
     [AllowUpdate(true)]
     public List<string> IdsTags { get; set; } = new();
+
+    /// <summary>
+    ///     Required indexes by all collections
+    /// </summary>
+    public override IEnumerable<MongoDbIndex> GetMandatoryIndexes(Collections collection, int order = 1)
+    {
+        // get mandatory indexes from base
+        foreach (var item in base.GetMandatoryIndexes(collection, order))
+            yield return item;
+
+        // Enable searching by specific tags
+        yield return new MongoDbIndex(collection, order, nameof(IdsTags))
+            // Append DateCreated at the end so that items are returned by dateCreated
+            .Add(order, nameof(DateCreated));
+    }
 }
 
 

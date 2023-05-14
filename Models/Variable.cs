@@ -9,14 +9,15 @@ public class Variable
     ///     Name of variable
     /// </summary>
     [AllowUpdate(true)]
-    [IsUbluxRequired]
+    [UbluxValidationIsRequired]
     public required string Name { get; set; }
 
     /// <summary>
-    ///     Value of variable in json format
+    ///     Value of variable. It can be in json or anything
     /// </summary>
     [AllowUpdate(true)]
-    public string? JsonValue { get; set; }
+    [UbluxValidationStringRange(4000)]
+    public string? Value { get; set; }
 }
 
 

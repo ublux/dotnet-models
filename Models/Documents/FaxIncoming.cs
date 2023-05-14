@@ -15,7 +15,7 @@ public partial class FaxIncoming : UbluxDocument_ReferenceAccount_ReferenceTags
     [AllowUpdate(false)] 
     [SwaggerSchema(ReadOnly = true)] 
     [References(typeof(VoipNumberFax))]
-    [IsUbluxRequired]
+    [UbluxValidationIsRequired]
     public required string IdVoipNumberFax { get; set; } = string.Empty;
 
     /// <summary>
@@ -51,7 +51,7 @@ public partial class FaxIncoming : UbluxDocument_ReferenceAccount_ReferenceTags
     /// </summary>
     [AllowUpdate(false)] 
     [SwaggerSchema(ReadOnly = true)] 
-    [IsUbluxRequired]
+    [UbluxValidationIsRequired]
     public required string FaxStatus { get; set; } = string.Empty;
 
     /// <summary>
@@ -59,7 +59,7 @@ public partial class FaxIncoming : UbluxDocument_ReferenceAccount_ReferenceTags
     /// </summary>
     [AllowUpdate(false)] 
     [SwaggerSchema(ReadOnly = true)] 
-    [IsUbluxRequired]
+    [UbluxValidationIsRequired]
     public required string From { get; set; } = string.Empty;
 
     /// <summary>
@@ -67,15 +67,31 @@ public partial class FaxIncoming : UbluxDocument_ReferenceAccount_ReferenceTags
     /// </summary>
     [AllowUpdate(false)] 
     [SwaggerSchema(ReadOnly = true)] 
-    [IsUbluxRequired]
+    [UbluxValidationIsRequired]
     public required string To { get; set; } = string.Empty;
 
     /// <summary>
     ///     Description of error if there is one
     /// </summary>
     [AllowUpdate(false)] 
-    [SwaggerSchema(ReadOnly = true)] 
+    [SwaggerSchema(ReadOnly = true)]
+    [UbluxValidationStringRange(2000)]
     public string? ErrorMessage { get; set; }
+
+    #endregion
+
+    #region MongoDB
+
+    /// <inheritdoc />
+    public override IEnumerable<MongoDbIndex> GetMongoDbIndexes()
+    {
+        // this collection
+        var collection = this.GetType().GetCollectionUsedByType();
+
+        // get all mandatory indexes
+        foreach (var item in base.GetMandatoryIndexes(collection))
+            yield return item;
+    }
 
     #endregion
 }

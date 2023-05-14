@@ -14,7 +14,7 @@ public partial class ExtensionDial : Extension
     /// </summary>
     [References(typeof(Line))]
     [AllowUpdate(true)]
-    [IsUbluxRequired]
+    [UbluxValidationIsRequired]
     public List<string> IdsLines { get; set; } = new();
 
     #endregion
@@ -39,7 +39,7 @@ public partial class ExtensionDial : Extension
     ///     Number of seconds each line will ring
     /// </summary>
     [AllowUpdate(true)]
-    [IsUbluxRequired]
+    [UbluxValidationIsRequired]
     public required int RingTimeInSeconds { get; set; }
 
     #endregion
@@ -49,7 +49,7 @@ public partial class ExtensionDial : Extension
     /// </summary>
     [AllowUpdate(false)] 
     [SwaggerSchema(ReadOnly = true)] 
-    [IsUbluxRequired]
+    [UbluxValidationIsRequired]
     [HideForCreateRequest]
     public override ExtensionType ExtensionType
     {

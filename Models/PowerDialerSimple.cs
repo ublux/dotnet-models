@@ -15,7 +15,7 @@ public class PowerDialerSimple : PowerDialer
     /// </summary>
     [AllowUpdate(false)] 
     [SwaggerSchema(ReadOnly = true)] 
-    [IsUbluxRequired]
+    [UbluxValidationIsRequired]
     public override PowerDialerType PowerDialerType
     {
         get => PowerDialerType.Simple;

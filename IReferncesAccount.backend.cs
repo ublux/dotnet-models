@@ -16,7 +16,7 @@ public interface IReferncesAccount
     [IgnoreDataMember]
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [IsUbluxRequired]
+    [UbluxValidationIsRequired]
     public string IdAccount { get; set; }
 }
 

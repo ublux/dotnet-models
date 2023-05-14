@@ -6,7 +6,7 @@
 public class EventActionForwardToExtension : EventAction
 {
     /// <inheritdoc/>
-    [IsUbluxRequired]
+    [UbluxValidationIsRequired]
     public override EventActionType EventActionType
     {
         get => EventActionType.ForwardToExtension;
@@ -20,6 +20,6 @@ public class EventActionForwardToExtension : EventAction
     ///     Extension where to forward call
     /// </summary>
     [References(typeof(Extension))]
-    [IsUbluxRequired]
+    [UbluxValidationIsRequired]
     public required string IdExtension { get; set; }
 }

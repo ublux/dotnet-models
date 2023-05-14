@@ -27,7 +27,7 @@ public partial class Voicemail : UbluxDocument_ReferenceAccount_ReferenceTags
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [IsUbluxRequired]
+    [UbluxValidationIsRequired]
     [References(typeof(Email))]
     public required string IdEmail { get; set; } = string.Empty;
 
@@ -38,7 +38,7 @@ public partial class Voicemail : UbluxDocument_ReferenceAccount_ReferenceTags
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [IsUbluxRequired]
+    [UbluxValidationIsRequired]
     [HideForCreateRequest]
     public virtual VoicemailType VoicemailType => VoicemailType.Regular;
 
@@ -47,7 +47,7 @@ public partial class Voicemail : UbluxDocument_ReferenceAccount_ReferenceTags
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [IsUbluxRequired]
+    [UbluxValidationIsRequired]
     public required double DurationInSeconds { get; set; }
 
     /// <summary>
@@ -68,6 +68,37 @@ public partial class Voicemail : UbluxDocument_ReferenceAccount_ReferenceTags
     ///     If there is an error sending the voicemail then the error description
     /// </summary>
     [AllowUpdate(false)] 
-    [SwaggerSchema(ReadOnly = true)] 
+    [SwaggerSchema(ReadOnly = true)]
+    [UbluxValidationStringRange(1000)]
     public string? ErrorMessage { get; set; }
+
+    #region MongoDB
+
+    /// <inheritdoc />
+    public override IEnumerable<MongoDbIndex> GetMongoDbIndexes()
+    {
+        // this collection
+        var collection = this.GetType().GetCollectionUsedByType();
+
+        // get all mandatory indexes
+        foreach (var item in base.GetMandatoryIndexes(collection))
+            yield return item;
+
+        // enable searching fast by id of email
+        yield return new MongoDbIndex(collection, nameof(this.IdEmail))
+            // Append DateCreated at the end so that items are returned by dateCreated
+            .Add(nameof(DateCreated));
+
+        // enable searching fast by ids lines that can listen to voicemail
+        yield return new MongoDbIndex(collection, nameof(this.IdsLinesThatCanListenToVoicemail))
+            // Append DateCreated at the end so that items are returned by dateCreated
+            .Add(nameof(DateCreated));
+
+        // enable searching fast by type of voicemail
+        yield return new MongoDbIndex(collection, nameof(this.VoicemailType))
+            // Append DateCreated at the end so that items are returned by dateCreated
+            .Add(nameof(DateCreated));
+    }
+
+    #endregion
 }

@@ -90,27 +90,28 @@ public abstract partial class VoipNumber : UbluxDocument_ReferenceAccount_Refere
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [IsUbluxRequired]
+    [UbluxValidationIsRequired]
     public required string Number { get; set; } = string.Empty;
 
     /// <summary>
     ///     Incoming phone number friendly name
     /// </summary>
     [AllowUpdate(true)]
-    [IsUbluxRequired]
+    [UbluxValidationIsRequired]
     public required string FriendlyName { get; set; } = string.Empty;
 
     /// <summary>
     ///     Incoming phone number description
     /// </summary>
     [AllowUpdate(true)]
+    [UbluxValidationStringRange(1000)]
     public string? Description { get; set; }
 
     /// <summary>
     ///     Example: EN, SP, etc..
     /// </summary>
     [AllowUpdate(true)]
-    [IsUbluxRequired]
+    [UbluxValidationIsRequired]
     public required Language Language { get; set; }
 
     /// <summary>
@@ -118,7 +119,7 @@ public abstract partial class VoipNumber : UbluxDocument_ReferenceAccount_Refere
     /// </summary>    
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [IsUbluxRequired]
+    [UbluxValidationIsRequired]    
     public required string City { get; set; } = string.Empty;
 
     /// <summary>
@@ -126,7 +127,7 @@ public abstract partial class VoipNumber : UbluxDocument_ReferenceAccount_Refere
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [IsUbluxRequired]
+    [UbluxValidationIsRequired]
     public required string State { get; set; } = string.Empty;
 
     /// <summary>
@@ -134,7 +135,7 @@ public abstract partial class VoipNumber : UbluxDocument_ReferenceAccount_Refere
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [IsUbluxRequired]
+    [UbluxValidationIsRequired]
     public required CountryIsoCode CountryIsoCode { get; set; }
 
     /// <summary>
@@ -142,7 +143,7 @@ public abstract partial class VoipNumber : UbluxDocument_ReferenceAccount_Refere
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [IsUbluxRequired]
+    [UbluxValidationIsRequired]
     public required bool IsSmsEnabled { get; set; }
 
     /// <summary>
@@ -150,7 +151,7 @@ public abstract partial class VoipNumber : UbluxDocument_ReferenceAccount_Refere
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [IsUbluxRequired]
+    [UbluxValidationIsRequired]
     public required bool IsVoiceEnabled { get; set; }
 
     /// <summary>
@@ -158,7 +159,7 @@ public abstract partial class VoipNumber : UbluxDocument_ReferenceAccount_Refere
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [IsUbluxRequired]
+    [UbluxValidationIsRequired]
     public required bool IsTollFree { get; set; }
 
     ///// <summary>
@@ -189,6 +190,28 @@ public abstract partial class VoipNumber : UbluxDocument_ReferenceAccount_Refere
 
         var phoneNumberWithoutIllegalChars = new string(phoneNumber.Where(char.IsDigit).ToArray());
         return phoneNumberWithoutIllegalChars[Math.Max(0, phoneNumberWithoutIllegalChars.Length - 8)..];
+    }
+
+    #endregion
+
+
+    #region MongoDB
+
+    /// <inheritdoc />
+    public override IEnumerable<MongoDbIndex> GetMongoDbIndexes()
+    {
+        // this collection
+        var collection = this.GetType().GetCollectionUsedByType();
+
+        // get all mandatory indexes
+        foreach (var item in base.GetMandatoryIndexes(collection))
+            yield return item;
+
+        // enable searching fast by number
+        yield return new MongoDbIndex(collection, nameof(this.Number))
+            // Append DateCreated at the end so that items are returned by dateCreated
+            .Add(nameof(DateCreated));
+        
     }
 
     #endregion

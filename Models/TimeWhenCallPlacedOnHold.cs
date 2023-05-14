@@ -8,7 +8,7 @@ public class TimeWhenCallPlacedOnHold
     /// <summary>
     ///     Seconds elapsed since the call started when call was placed on hold
     /// </summary>
-    [IsUbluxRequired]
+    [UbluxValidationIsRequired]
     [AllowUpdate(false)] 
     [SwaggerSchema(ReadOnly = true)] 
     public required double SecondsElapsedWhenPlacedOnHold { get; set; }

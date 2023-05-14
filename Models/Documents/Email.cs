@@ -46,4 +46,29 @@ public partial class Email : UbluxDocument_ReferenceAccount_ReferenceTags
     public string? IpAddress { get; set; }
 
     #endregion
+
+    #region MongoDB
+
+    /// <inheritdoc />
+    public override IEnumerable<MongoDbIndex> GetMongoDbIndexes()
+    {
+        // this collection
+        var collection = this.GetType().GetCollectionUsedByType();
+
+        // get all mandatory indexes
+        foreach (var item in base.GetMandatoryIndexes(collection))
+            yield return item;
+
+        // enable searching fast by address
+        yield return new MongoDbIndex(collection, nameof(this.address))
+            // Append DateCreated at the end so that items are returned by dateCreated
+            .Add(nameof(DateCreated));        
+
+        // enable searching fast by ipaddress
+        yield return new MongoDbIndex(collection, nameof(this.IpAddress))
+            // Append DateCreated at the end so that items are returned by dateCreated
+            .Add(nameof(DateCreated));
+    }
+
+    #endregion
 }

@@ -12,7 +12,7 @@ public partial class AirNetworksProvince : UbluxDocument
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [IsUbluxRequired]
+    [UbluxValidationIsRequired]
     public required string Name { get; set; } = string.Empty;
 
     /// <summary>
@@ -20,8 +20,27 @@ public partial class AirNetworksProvince : UbluxDocument
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [IsUbluxRequired]
+    [UbluxValidationIsRequired]
     public List<string> Populations { get; set; } = new();
+
+    #endregion
+
+    #region MongoDB
+
+
+    /// <inheritdoc />
+    public override IEnumerable<MongoDbIndex> GetMongoDbIndexes()
+    {
+        // this collection
+        var collection = this.GetType().GetCollectionUsedByType();
+
+        // get all mandatory indexes
+        foreach (var item in base.GetMandatoryIndexes(collection))
+            yield return item;
+
+        // Enable searching fast by name
+        yield return new MongoDbIndex(collection, nameof(Name));
+    }
 
     #endregion
 }

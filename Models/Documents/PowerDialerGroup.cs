@@ -50,7 +50,7 @@ public partial class PowerDialerGroup : UbluxDocument_ReferenceAccount_Reference
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [IsUbluxRequired]
+    [UbluxValidationIsRequired]
     public required List<PowerDialer> PowerDialers { get; set; } = new();
 
     #endregion
@@ -59,13 +59,14 @@ public partial class PowerDialerGroup : UbluxDocument_ReferenceAccount_Reference
     ///     Friendly name of power dialer group
     /// </summary>
     [AllowUpdate(true)]
-    [IsUbluxRequired]
+    [UbluxValidationIsRequired]
     public required string FriendlyName { get; set; } = string.Empty;
 
     /// <summary>
     ///     Description of power dialer group
     /// </summary>
     [AllowUpdate(true)]
+    [UbluxValidationStringRange(2000)]
     public string? Description { get; set; }
 
     /// <summary>
@@ -73,7 +74,7 @@ public partial class PowerDialerGroup : UbluxDocument_ReferenceAccount_Reference
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [IsUbluxRequired]
+    [UbluxValidationIsRequired]
     [HideForCreateRequest]
     public PowerDialerGroupStatus PowerDialerGroupStatus  // added for convenience
     {
@@ -88,6 +89,7 @@ public partial class PowerDialerGroup : UbluxDocument_ReferenceAccount_Reference
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
     [HideForCreateRequest]
+    [UbluxValidationStringRange(2000)]
     public string? ErrorMessage { get; set; }
 
     ///// <summary>
@@ -109,7 +111,7 @@ public partial class PowerDialerGroup : UbluxDocument_ReferenceAccount_Reference
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [IsUbluxRequired]
+    [UbluxValidationIsRequired]
     public int NumberOfConcurrentCalls { get; set; }
 
     #endregion
@@ -122,6 +124,22 @@ public partial class PowerDialerGroup : UbluxDocument_ReferenceAccount_Reference
     public bool IsSimpleMode()
     {
         return string.IsNullOrEmpty(IdCallFlowLogic);
+    }
+
+    #endregion
+
+
+    #region MongoDB
+
+    /// <inheritdoc />
+    public override IEnumerable<MongoDbIndex> GetMongoDbIndexes()
+    {
+        // this collection
+        var collection = this.GetType().GetCollectionUsedByType();
+
+        // get all mandatory indexes
+        foreach (var item in base.GetMandatoryIndexes(collection))
+            yield return item;       
     }
 
     #endregion

@@ -14,7 +14,7 @@ public partial class Phone : UbluxDocument_ReferenceAccount_ReferenceTags
     /// </summary>
     [References(typeof(CloudServicePbx))]
     [AllowUpdate(true)]
-    [IsUbluxRequired]
+    [UbluxValidationIsRequired]
     public required string IdCloudServicePbx { get; set; } = string.Empty;
 
     /// <summary>
@@ -41,7 +41,7 @@ public partial class Phone : UbluxDocument_ReferenceAccount_ReferenceTags
     [JsonProperty(Order = 10000)]
     [AllowUpdate(true)]
     //[SwaggerSchema(ReadOnly = true)]
-    [IsUbluxRequired]
+    [UbluxValidationIsRequired]
     public required List<Line> Lines { get; set; } = new();
 
     #endregion
@@ -50,7 +50,7 @@ public partial class Phone : UbluxDocument_ReferenceAccount_ReferenceTags
     ///     Descriptive name of phone
     /// </summary>
     [AllowUpdate(true)]
-    [IsUbluxRequired]
+    [UbluxValidationIsRequired]
     public required string FriendlyName { get; set; } = string.Empty;
 
     #endregion
@@ -58,14 +58,14 @@ public partial class Phone : UbluxDocument_ReferenceAccount_ReferenceTags
     /// <summary>
     ///     Type of phone. If its of type web and user (username and password) must exist in order for phone to connect.
     /// </summary>
-    [IsUbluxRequired]
+    [UbluxValidationIsRequired]
     [AllowUpdate(true)]
     public required PhoneType PhoneType { get; set; }
 
     /// <summary>
     ///     Disable encryption in case device does not support it
     /// </summary>
-    [IsUbluxRequired]
+    [UbluxValidationIsRequired]
     [AllowUpdate(true)]
     public bool DisableEncryption { get; set; }
 
@@ -102,6 +102,22 @@ public partial class Phone : UbluxDocument_ReferenceAccount_ReferenceTags
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [IsUbluxRequired]
-    public required string Pin { get; set; } = string.Empty;    
+    [UbluxValidationIsRequired]
+    [UbluxValidationStringRange(50)]
+    public required string Pin { get; set; } = string.Empty;
+
+    #region MongoDB
+
+    /// <inheritdoc />
+    public override IEnumerable<MongoDbIndex> GetMongoDbIndexes()
+    {
+        // this collection
+        var collection = this.GetType().GetCollectionUsedByType();
+
+        // get all mandatory indexes
+        foreach (var item in base.GetMandatoryIndexes(collection))
+            yield return item;        
+    }
+
+    #endregion
 }

@@ -13,6 +13,7 @@ public partial class Recording : UbluxSubDocument
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
+    [UbluxValidationStringRange(2000)]
     public string? ErrorMessage { get; set; }
 
     /// <summary>
@@ -42,5 +43,4 @@ public partial class Recording : UbluxSubDocument
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
     public double RecordingDurationInSeconds { get; set; }
-
 }

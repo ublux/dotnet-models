@@ -12,12 +12,11 @@ public partial class BlackListPhoneNumber
 
     /// <summary>
     ///     This cannot be the id because if the black list number changes we cannot change the id
-    ///     TODO: make this an index on database. Do not make it unique only and index because we can have two contacts with the same phone number
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
     [IgnoreDataMember]
-    [IsUbluxRequired]
+    [UbluxValidationIsRequired]
     public string SearchIndex
     {
         get => searchIndex;

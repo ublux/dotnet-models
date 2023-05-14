@@ -8,7 +8,7 @@ public class SendEmailNotificationIfNotAnswered
     /// <summary>
     ///     Email addresses where to send notification in case call is not answered.
     /// </summary>
-    [IsUbluxRequired]
+    [UbluxValidationIsRequired]
     [AllowUpdate(true)]
     [References(typeof(Email))]
     public required List<string> IdsEmails { get; set; } = new();

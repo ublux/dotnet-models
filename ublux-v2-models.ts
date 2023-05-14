@@ -667,12 +667,12 @@ export interface CallFilterRequest {
     channelVariables_language_con?: string | null;
     /** ChannelVariables.Language regex */
     channelVariables_language_reg?: string | null;
-    /** ChannelVariables.IdMusicOnHold equals */
-    channelVariables_idMusicOnHold_eq?: string | null;
-    /** ChannelVariables.IdMusicOnHold contains */
-    channelVariables_idMusicOnHold_con?: string | null;
-    /** ChannelVariables.IdMusicOnHold regex */
-    channelVariables_idMusicOnHold_reg?: string | null;
+    /** ChannelVariables.IdMusicOnHoldGroup equals */
+    channelVariables_idMusicOnHoldGroup_eq?: string | null;
+    /** ChannelVariables.IdMusicOnHoldGroup contains */
+    channelVariables_idMusicOnHoldGroup_con?: string | null;
+    /** ChannelVariables.IdMusicOnHoldGroup regex */
+    channelVariables_idMusicOnHoldGroup_reg?: string | null;
     /** ChannelVariables.CallerIdName equals */
     channelVariables_callerIdName_eq?: string | null;
     /** ChannelVariables.CallerIdName contains */
@@ -1688,7 +1688,7 @@ For example a CloudService user will point to no account */
 export interface ChannelVariables {
     language?: Language;
     /** Music on hold. This is the music that will be played when the call is placed on hold. */
-    idMusicOnHold?: string | null;
+    idMusicOnHoldGroup?: string | null;
     /** Caller id is composed of a name and phone number. This is the name part of the caller id */
     callerIdName?: string;
     /** Caller id is composed of a name and phone number. This is the phone number part of the caller id */
@@ -2126,12 +2126,12 @@ export interface ContactFilterRequest {
     variables_name_con?: string | null;
     /** Variables.Name regex */
     variables_name_reg?: string | null;
-    /** Variables.JsonValue equals */
-    variables_jsonValue_eq?: string | null;
-    /** Variables.JsonValue contains */
-    variables_jsonValue_con?: string | null;
-    /** Variables.JsonValue regex */
-    variables_jsonValue_reg?: string | null;
+    /** Variables.Value equals */
+    variables_value_eq?: string | null;
+    /** Variables.Value contains */
+    variables_value_con?: string | null;
+    /** Variables.Value regex */
+    variables_value_reg?: string | null;
     /** IdsTags equals */
     idsTags_eq?: string | null;
     /** IdsTags contains */
@@ -6414,6 +6414,7 @@ export interface TrunkTerminationRule {
 
 /** A ublux user has this roles. They are sorted in order of priority */
 export enum UbluxRole {
+    None = "none",
     Audios = "audios",
     Audios_readonly = "audios_readonly",
     Audios_update = "audios_update",
@@ -6770,8 +6771,8 @@ export interface ValidationError {
 export interface Variable {
     /** Name of variable */
     name?: string;
-    /** Value of variable in json format */
-    jsonValue?: string | null;
+    /** Value of variable. It can be in json or anything */
+    value?: string | null;
 }
 
 /** Extensions may forward an existing voicemail to another extension */

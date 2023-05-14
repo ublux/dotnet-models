@@ -12,8 +12,23 @@ public partial class TrunkTerminationGroup : UbluxDocument
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
     // [References(typeof(TrunkTerminationRule))]
-    [IsUbluxRequired]
+    [UbluxValidationIsRequired]
     public required List<TrunkTerminationRule> TrunkTerminationRulesOrderedByPriority { get; set; } = new();
+
+    #region MongoDB
+
+    /// <inheritdoc />
+    public override IEnumerable<MongoDbIndex> GetMongoDbIndexes()
+    {
+        // this collection
+        var collection = this.GetType().GetCollectionUsedByType();
+
+        // get all mandatory indexes
+        foreach (var item in base.GetMandatoryIndexes(collection))
+            yield return item;        
+    }
+
+    #endregion
 }
 
 /// <summary>
@@ -27,7 +42,7 @@ public class TrunkTerminationRule
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
     [References(typeof(TrunkTermination))]
-    [IsUbluxRequired]
+    [UbluxValidationIsRequired]
     public required string IdTrunkTermination { get; set; } = "";
 
     /// <summary>
@@ -35,7 +50,7 @@ public class TrunkTerminationRule
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [IsUbluxRequired]
+    [UbluxValidationIsRequired]
     [BsonRepresentation(BsonType.String)]
     public required List<CountryIsoCode> CountriesThatCanCall { get; set; } = new ();
 

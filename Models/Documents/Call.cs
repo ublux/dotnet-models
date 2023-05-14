@@ -73,7 +73,7 @@ public abstract partial class Call : UbluxDocument_ReferenceAccount_ReferenceTag
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [IsUbluxRequired]
+    [UbluxValidationIsRequired]
     public required ChannelVariables ChannelVariables { get; set; }
 
     /// <summary>
@@ -98,6 +98,7 @@ public abstract partial class Call : UbluxDocument_ReferenceAccount_ReferenceTag
     //     INVALIDARGS: Error parsing Dial command arguments (added for Asterisk 1.4.1, SVN r53135-53136)
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
+    [UbluxValidationStringRange(50)]
     public required string DialStatus { get; set; } = string.Empty;
 
     /// <summary>
@@ -119,15 +120,33 @@ public abstract partial class Call : UbluxDocument_ReferenceAccount_ReferenceTag
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [IsUbluxRequired]
+    [UbluxValidationIsRequired]
     public required string From { get; set; } = string.Empty;
+
+    /// <summary>
+    ///     Only used on mongo in oder to search fast on queries by index
+    /// </summary>
+    [IgnoreDataMember]
+    [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
+    public string FromReversed
+    {
+        get
+        {
+            return From.ReverseString();
+        }
+#if UBLUX_Release || RELEASE
+        set { }
+#else
+#endif
+    }
 
     /// <summary>
     ///     Country that initiated phone call
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [IsUbluxRequired]
+    [UbluxValidationIsRequired]
     public required CountryIsoCode FromCountry { get; set; }
 
     /// <summary>
@@ -135,15 +154,33 @@ public abstract partial class Call : UbluxDocument_ReferenceAccount_ReferenceTag
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [IsUbluxRequired]
+    [UbluxValidationIsRequired]
     public required string To { get; set; } = string.Empty;
+
+    /// <summary>
+    ///     Only used on mongo in oder to search fast on queries by index
+    /// </summary>
+    [IgnoreDataMember]
+    [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
+    public string ToReversed
+    {
+        get
+        {
+            return To.ReverseString();
+        }
+#if UBLUX_Release || RELEASE
+        set { }
+#else
+#endif
+    }
 
     /// <summary>
     ///     Country that initiated phone call
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [IsUbluxRequired]
+    [UbluxValidationIsRequired]
     public required CountryIsoCode ToCountry { get; set; }
 
     /// <summary>
@@ -276,6 +313,7 @@ public abstract partial class Call : UbluxDocument_ReferenceAccount_ReferenceTag
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
+    [UbluxValidationStringRange(2000)]
     public string? ErrorMessage { get; set; }
 
     /// <summary>
@@ -283,9 +321,9 @@ public abstract partial class Call : UbluxDocument_ReferenceAccount_ReferenceTag
     /// </summary>
     public void AddErrorMessage(string message)
     {
-        if(this.ErrorMessage is null)
+        if (this.ErrorMessage is null)
         {
-            this.ErrorMessage = message; 
+            this.ErrorMessage = message;
         }
         else
         {
@@ -299,7 +337,7 @@ public abstract partial class Call : UbluxDocument_ReferenceAccount_ReferenceTag
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    public AiProcessStatus AiTranscriptionStatus { get;set; }
+    public AiProcessStatus AiTranscriptionStatus { get; set; }
 
     /// <summary>
     ///     Null if it is not going to be AI processed. This is for analysys. ChatGPT performs the analysis of the transcription
@@ -308,4 +346,57 @@ public abstract partial class Call : UbluxDocument_ReferenceAccount_ReferenceTag
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
     public AiProcessStatus AiAnalysisStatus { get; set; }
+
+    #region MongoDB
+
+    /// <inheritdoc />
+    public override IEnumerable<MongoDbIndex> GetMongoDbIndexes()
+    {
+        // we sort calls in descending order; therefore, we pass -1 as the sort order
+
+        // this collection
+        var collection = this.GetType().GetCollectionUsedByType();
+
+        // get all mandatory indexes (we sort calls by descending creation date)
+        foreach (var item in base.GetMandatoryIndexes(collection, -1))
+            yield return item;
+
+        #region text indexes
+
+        /* example on how to execute
+         db.Calls.find({
+          idAccount: "Ac.1",
+          from: { $search: "954654" }
+        });
+         * */
+
+        // Search by from and id of account
+        yield return new MongoDbIndex(collection, nameof(this.FromReversed)).Add(nameof(IdAccount))
+            // Append DateCreated at the end so that items are returned by dateCreated
+            .Add(-1, nameof(DateCreated)); 
+
+        // Search by to and id of account
+        yield return new MongoDbIndex(collection, nameof(this.ToReversed)).Add(nameof(IdAccount))
+            // Append DateCreated at the end so that items are returned by dateCreated
+            .Add(-1, nameof(DateCreated));
+
+        #endregion
+
+        // For ougoing calls enable searching fast by line that initiated phone call then by id of account
+        yield return new MongoDbIndex(collection, nameof(CallOutgoing.IdLineThatInitiatedCall)).Add(nameof(IdAccount))
+            // Append DateCreated at the end so that items are returned by dateCreated
+            .Add(-1, nameof(DateCreated));
+
+        // For incoming calls enable searching fast by the line that answered the call then by id of account
+        yield return new MongoDbIndex(collection, nameof(CallIncomingToExtension.IdLineThatAnswered)).Add(nameof(IdAccount))
+            // Append DateCreated at the end so that items are returned by dateCreated
+            .Add(-1, nameof(DateCreated));
+
+        // Enable searching fast by the participant lines then by id of account
+        yield return new MongoDbIndex(collection, nameof(this.IdsParticipantLines)).Add(nameof(IdAccount))
+            // Append DateCreated at the end so that items are returned by dateCreated
+            .Add(-1, nameof(DateCreated));
+    }
+
+    #endregion
 }

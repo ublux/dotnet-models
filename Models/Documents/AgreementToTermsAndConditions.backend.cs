@@ -1,6 +1,5 @@
 ﻿#if UBLUX_BACKEND
 
-
 namespace Ublux.Communications.Models.Documents;
 
 /// <summary>
@@ -18,8 +17,8 @@ public partial class AgreementToTermsAndConditions : UbluxDocument
     [IgnoreDataMember]
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [IsUbluxRequired]
-    public required UbluxSession UbluxSession { get; set; } // OK
+    [UbluxValidationIsRequired]
+    public required UbluxSession UbluxSession { get; set; }
 
     #endregion
 
@@ -29,7 +28,8 @@ public partial class AgreementToTermsAndConditions : UbluxDocument
     [IgnoreDataMember]
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [IsUbluxRequired]
+    [UbluxValidationIsRequired]
+    [UbluxValidationStringRange(50)]
     public required string Ip { get; set; } = string.Empty;
 
     /// <summary>
@@ -38,7 +38,7 @@ public partial class AgreementToTermsAndConditions : UbluxDocument
     [IgnoreDataMember]
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [IsUbluxRequired]
+    [UbluxValidationIsRequired]
     public required string HttpRequestHeaders { get; set; } = string.Empty;
 
     /// <summary>
@@ -47,16 +47,38 @@ public partial class AgreementToTermsAndConditions : UbluxDocument
     [IgnoreDataMember]
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [IsUbluxRequired]
+    [UbluxValidationIsRequired]
     public required TermsAndConditionsCategory TermsAndConditionsCategory { get; set; }
 
-    /// <summary>
-    ///     Description of this agreement
-    /// </summary>
-    [IgnoreDataMember]
-    [AllowUpdate(false)]
-    [SwaggerSchema(ReadOnly = true)]
-    public string? Description { get; set; }
+    ///// <summary>
+    /////     Description of this agreement
+    ///// </summary>
+    //[IgnoreDataMember]
+    //[AllowUpdate(false)]
+    //[SwaggerSchema(ReadOnly = true)]
+    //public string? Description { get; set; }
+
+    #endregion
+
+    #region MongoDB
+
+    /// <inheritdoc />
+    public override IEnumerable<MongoDbIndex> GetMongoDbIndexes()
+    {
+        // this collection
+        var collection = this.GetType().GetCollectionUsedByType();
+
+        // get all mandatory indexes
+        foreach (var item in base.GetMandatoryIndexes(collection))
+            yield return item;
+
+        // db.getCollection("AgreementsToTermsAndConditions").createIndex({ 'ip' : 1 })
+        yield return new MongoDbIndex(collection, nameof(Ip));
+        // db.getCollection("AgreementsToTermsAndConditions").createIndex({ 'ubluxSession.idUser' : 1 })
+        yield return new MongoDbIndex(collection, nameof(UbluxSession), nameof(UbluxSession.IdUser));
+        // db.getCollection("AgreementsToTermsAndConditions").createIndex({ 'ubluxSession.idAccount' : 1 })
+        yield return new MongoDbIndex(collection, nameof(UbluxSession), nameof(UbluxSession.IdAccount));
+    }
 
     #endregion
 }

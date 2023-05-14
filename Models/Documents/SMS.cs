@@ -15,7 +15,7 @@ public partial class SMS : UbluxDocument_ReferenceAccount_ReferenceTags
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
     [References(typeof(VoipNumber))]
-    [IsUbluxRequired]
+    [UbluxValidationIsRequired]
     public required string IdVoipNumber { get; set; } = string.Empty;
 
     /// <summary>
@@ -40,7 +40,8 @@ public partial class SMS : UbluxDocument_ReferenceAccount_ReferenceTags
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [IsUbluxRequired]
+    [UbluxValidationIsRequired]
+    [UbluxValidationStringRange(4000)]
     public required string Body { get; set; } = string.Empty;
 
     //    // [AllowUpdate(false)]
@@ -51,7 +52,7 @@ public partial class SMS : UbluxDocument_ReferenceAccount_ReferenceTags
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [IsUbluxRequired]
+    [UbluxValidationIsRequired]
     public required int NumSegments { get; set; }
 
     /// <summary>
@@ -81,7 +82,7 @@ public partial class SMS : UbluxDocument_ReferenceAccount_ReferenceTags
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [IsUbluxRequired]
+    [UbluxValidationIsRequired]
     public required string From { get; set; } = string.Empty;
 
     /// <summary>
@@ -89,8 +90,24 @@ public partial class SMS : UbluxDocument_ReferenceAccount_ReferenceTags
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [IsUbluxRequired]
+    [UbluxValidationIsRequired]
     public required string To { get; set; } = string.Empty;
+
+    #endregion
+
+
+    #region MongoDB
+
+    /// <inheritdoc />
+    public override IEnumerable<MongoDbIndex> GetMongoDbIndexes()
+    {
+        // this collection
+        var collection = this.GetType().GetCollectionUsedByType();
+
+        // get all mandatory indexes
+        foreach (var item in base.GetMandatoryIndexes(collection))
+            yield return item;        
+    }
 
     #endregion
 }

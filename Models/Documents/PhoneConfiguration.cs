@@ -22,14 +22,30 @@ public partial class PhoneConfiguration : UbluxDocument_ReferenceAccount_Referen
     ///     Phone configuration name
     /// </summary>
     [AllowUpdate(true)]
-    [IsUbluxRequired]
+    [UbluxValidationIsRequired]
     public required string FrienlyName { get; set; } = string.Empty;
 
     /// <summary>
     ///     Phone configuration description
     /// </summary>
     [AllowUpdate(true)]
+    [UbluxValidationStringRange(1000)]
     public string? Description { get; set; }
+
+    #endregion
+
+    #region MongoDB
+
+    /// <inheritdoc />
+    public override IEnumerable<MongoDbIndex> GetMongoDbIndexes()
+    {
+        // this collection
+        var collection = this.GetType().GetCollectionUsedByType();
+
+        // get all mandatory indexes
+        foreach (var item in base.GetMandatoryIndexes(collection))
+            yield return item;       
+    }
 
     #endregion
 }

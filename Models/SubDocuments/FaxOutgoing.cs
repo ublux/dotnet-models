@@ -10,7 +10,7 @@ public partial class FaxOutgoing : UbluxSubDocument
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [IsUbluxRequired]
+    [UbluxValidationIsRequired]
     public required int NumberOfPages { get; set; }
 
     /// <summary>
@@ -18,7 +18,7 @@ public partial class FaxOutgoing : UbluxSubDocument
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [IsUbluxRequired]
+    [UbluxValidationIsRequired]
     public required string FaxStatus { get; set; }
 
     /// <summary>
@@ -26,7 +26,7 @@ public partial class FaxOutgoing : UbluxSubDocument
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [IsUbluxRequired]
+    [UbluxValidationIsRequired]
     public required string To { get; set; }
 
     /// <summary>
@@ -34,6 +34,7 @@ public partial class FaxOutgoing : UbluxSubDocument
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
+    [UbluxValidationStringRange(2000)]
     public string? ErrorMessage { get; set; }
 
     /// <summary>
@@ -55,7 +56,7 @@ public partial class FaxOutgoing : UbluxSubDocument
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [IsUbluxRequired]
+    [UbluxValidationIsRequired]
     public required StoredFile Pdf { get; set; }
 
     /// <summary>
@@ -77,7 +78,7 @@ public partial class FaxOutgoing : UbluxSubDocument
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [IsUbluxRequired]
+    [UbluxValidationIsRequired]
     public required string Name { get; set; }
 
     /// <summary>
@@ -85,6 +86,6 @@ public partial class FaxOutgoing : UbluxSubDocument
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [IsUbluxRequired]
+    [UbluxValidationIsRequired]
     public int NumberOfAttempts { get; set; }
 }

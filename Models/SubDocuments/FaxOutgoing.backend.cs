@@ -15,7 +15,7 @@ public partial class FaxOutgoing : UbluxSubDocument
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
     [References(typeof(FaxOutgoingGroup))]
-    [IsUbluxRequired]
+    [UbluxValidationIsRequired]
     public required string IdFaxOutgoingGroup { get; set; }
 
     /// <summary>
@@ -24,7 +24,7 @@ public partial class FaxOutgoing : UbluxSubDocument
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
     [IgnoreDataMember]
-    [IsUbluxRequired]
+    [UbluxValidationIsRequired]
     public required EmailAttachment EmailAttachment { get; set; }
 
     /// <summary>

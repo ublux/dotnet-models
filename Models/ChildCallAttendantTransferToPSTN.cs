@@ -8,13 +8,13 @@ public class ChildCallAttendantTransferToPSTN : ChildCall, IAttendantTransfer
     /// <summary>
     ///     Phone number where call was transferred to
     /// </summary>
-    [IsUbluxRequired]
+    [UbluxValidationIsRequired]
     public required string PhoneNumber { get; set; }
 
     /// <summary>
     ///     AttendantTransferToPSTN
     /// </summary>
-    [IsUbluxRequired]
+    [UbluxValidationIsRequired]
     public override ChildCallType ChildCallType
     {
         get => ChildCallType.AttendantTransferToPSTN;

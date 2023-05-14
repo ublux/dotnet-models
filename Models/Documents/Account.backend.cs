@@ -19,7 +19,7 @@ public partial class Account : UbluxDocument
     [References(typeof(TrunkTerminationGroup))]
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [IsUbluxRequired]
+    [UbluxValidationIsRequired]
     public required string IdGTrunkTerminationGroup { get; set; } = string.Empty;
 
     #endregion
@@ -41,13 +41,28 @@ public partial class Account : UbluxDocument
     [IgnoreDataMember]
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [IsUbluxRequired]
+    [UbluxValidationIsRequired]
     public UbluxPartner UbluxPartner { get; set; }
 
     /// <summary>
     ///     Id of account where phones that are TBD connect.
     /// </summary>
     public static readonly BuiltId IdTbdCase27 = Account.BuildId("27");
+
+    /// <summary>
+    ///     Get default country. Its the first country that it can call locally that is not none or all
+    /// </summary>
+    /// <returns></returns>
+    public CountryIsoCode? GetDefaultCountry()
+    {
+        if (this.CountriesThatCanCallLocally is null)
+            return null;
+        foreach (var item in this.CountriesThatCanCallLocally)
+            if (item != CountryIsoCode.None && item != CountryIsoCode.All)
+                return item;
+
+        return null;
+    }
 }
 
 #endif

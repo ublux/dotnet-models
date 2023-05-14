@@ -12,8 +12,9 @@ public class AccountSecrets
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [IsUbluxRequired]
-    public required string PinPhone { get; set; } 
+    [UbluxValidationIsRequired]
+    [UbluxValidationStringRange(5, 50)]
+    public required string PinPhone { get; set; }
 
     /// <summary>
     ///     If you dial *7 and you enter this pin you will be able to ChanSpy "spy" on a extension
@@ -21,8 +22,9 @@ public class AccountSecrets
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [IsUbluxRequired]
-    public required string PinSpy { get; set; } 
+    [UbluxValidationIsRequired]
+    [UbluxValidationStringRange(9, 50)]
+    public required string PinSpy { get; set; }
 
     /// <summary>
     ///     Helps generate new random Pin for phone and spy

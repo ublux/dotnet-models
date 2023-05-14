@@ -15,7 +15,7 @@ public partial class FaxOutgoingGroup : UbluxDocument_ReferenceAccount_Reference
     [References(typeof(VoipNumberFax))]
     [AllowUpdate(false)] 
     [SwaggerSchema(ReadOnly = true)] 
-    [IsUbluxRequired]
+    [UbluxValidationIsRequired]
     public required string IdVoipNumberFax { get; set; } = string.Empty;
 
     #endregion
@@ -27,7 +27,7 @@ public partial class FaxOutgoingGroup : UbluxDocument_ReferenceAccount_Reference
     /// </summary>
     [AllowUpdate(false)] 
     [SwaggerSchema(ReadOnly = true)] 
-    [IsUbluxRequired]
+    [UbluxValidationIsRequired]
     public List<FaxOutgoing> FaxesOutgoing { get; set; } = new();
 
     ///// <summary>
@@ -45,7 +45,7 @@ public partial class FaxOutgoingGroup : UbluxDocument_ReferenceAccount_Reference
     /// </summary>
     [AllowUpdate(false)] 
     [SwaggerSchema(ReadOnly = true)] 
-    [IsUbluxRequired]
+    [UbluxValidationIsRequired]
     public required string From { get; set; } = string.Empty;
 
     /// <summary>
@@ -53,7 +53,7 @@ public partial class FaxOutgoingGroup : UbluxDocument_ReferenceAccount_Reference
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [IsUbluxRequired]
+    [UbluxValidationIsRequired]
     [References(typeof(Email))]
     public required List<string> IdsEmailsSendConfirmation { get; set; } = new();
 
@@ -63,6 +63,22 @@ public partial class FaxOutgoingGroup : UbluxDocument_ReferenceAccount_Reference
     [AllowUpdate(false)] 
     [SwaggerSchema(ReadOnly = true)] 
     public bool ContainsError { get; set; }
+
+    #endregion
+
+
+    #region MongoDB
+
+    /// <inheritdoc />
+    public override IEnumerable<MongoDbIndex> GetMongoDbIndexes()
+    {
+        // this collection
+        var collection = this.GetType().GetCollectionUsedByType();
+
+        // get all mandatory indexes
+        foreach (var item in base.GetMandatoryIndexes(collection))
+            yield return item;
+    }
 
     #endregion
 }

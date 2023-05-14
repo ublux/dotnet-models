@@ -10,7 +10,7 @@ public partial class VoicemailForwarded : Voicemail
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [IsUbluxRequired]
+    [UbluxValidationIsRequired]
     [HideForCreateRequest]
     public override VoicemailType VoicemailType => VoicemailType.Forwarded;
 
@@ -20,7 +20,7 @@ public partial class VoicemailForwarded : Voicemail
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
     //[References(typeof(Line))]
-    [IsUbluxRequired]
+    [UbluxValidationIsRequired]
     public required Line LineThatForwardedVoicemail { get; set; }
 
     /// <summary>

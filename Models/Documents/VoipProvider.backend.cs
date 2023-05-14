@@ -14,7 +14,7 @@ public partial class VoipProvider : UbluxDocument
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
     [IgnoreDataMember]
-    [IsUbluxRequired]
+    [UbluxValidationIsRequired]
     public required string ProviderAccountId { get; set; } = string.Empty;
 
     /// <summary>
@@ -47,7 +47,7 @@ public partial class VoipProvider : UbluxDocument
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
     [IgnoreDataMember]
-    [IsUbluxRequired]
+    [UbluxValidationIsRequired]
     public required UbluxPartner UbluxPartner { get; set; } 
 
     /// <summary>
@@ -56,7 +56,7 @@ public partial class VoipProvider : UbluxDocument
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
     [IgnoreDataMember]
-    [IsUbluxRequired]
+    [UbluxValidationIsRequired]
     public required string FriendlyName { get; set; } = string.Empty;
 
     /// <summary>
@@ -77,7 +77,7 @@ public partial class VoipProvider : UbluxDocument
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
     [IgnoreDataMember]
-    [IsUbluxRequired]
+    [UbluxValidationIsRequired]
     public required CountryIsoCode Country { get; set; }
 
     /// <summary>
@@ -86,8 +86,23 @@ public partial class VoipProvider : UbluxDocument
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
     [IgnoreDataMember]
-    [IsUbluxRequired]
+    [UbluxValidationIsRequired]
     public required VoipCompany VoipCompany { get; set; }
+
+    #region MongoDB
+
+    /// <inheritdoc />
+    public override IEnumerable<MongoDbIndex> GetMongoDbIndexes()
+    {
+        // this collection
+        var collection = this.GetType().GetCollectionUsedByType();
+
+        // get all mandatory indexes
+        foreach (var item in base.GetMandatoryIndexes(collection))
+            yield return item;        
+    }
+
+    #endregion
 }
 
 #endif

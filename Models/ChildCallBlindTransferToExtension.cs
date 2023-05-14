@@ -14,7 +14,7 @@ public class ChildCallBlindTransferToExtension : ChildCallBlindTransfer, ICallTo
     /// <summary>
     ///     BlindTransferToExtension
     /// </summary>
-    [IsUbluxRequired]
+    [UbluxValidationIsRequired]
     public override ChildCallType ChildCallType
     {
         get => ChildCallType.BlindTransferToExtension;

@@ -22,7 +22,7 @@ public partial class StoredFile : UbluxSubDocument
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [IsUbluxRequired]
+    [UbluxValidationIsRequired]
     public required int FileSizeInBytes { get; set; }
 
     /// <summary>
@@ -30,7 +30,7 @@ public partial class StoredFile : UbluxSubDocument
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [IsUbluxRequired]
+    [UbluxValidationIsRequired]
     public required string Md5Hash { get; set; }
 
     /// <summary>
@@ -48,8 +48,6 @@ public partial class StoredFile : UbluxSubDocument
     {
         return $"{webserviceBaseUrl}/{nameof(StoredFile)}/{idstoredfile}";
     }
-
     
-
     #endregion
 }

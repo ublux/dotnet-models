@@ -21,7 +21,7 @@ public partial class LineKeyGroup : UbluxDocument_ReferenceAccount_ReferenceTags
     ///     Friendly name of line key group
     /// </summary>
     [AllowUpdate(true)]
-    [IsUbluxRequired]
+    [UbluxValidationIsRequired]
     public required string FriendlyName { get; set; } = string.Empty;
 
     /// <summary>
@@ -29,7 +29,23 @@ public partial class LineKeyGroup : UbluxDocument_ReferenceAccount_ReferenceTags
     /// </summary>
 
     [AllowUpdate(true)]
+    [UbluxValidationStringRange(1000)]
     public string? Description { get; set; } = string.Empty;
+
+    #endregion
+
+    #region MongoDB
+
+    /// <inheritdoc />
+    public override IEnumerable<MongoDbIndex> GetMongoDbIndexes()
+    {
+        // this collection
+        var collection = this.GetType().GetCollectionUsedByType();
+
+        // get all mandatory indexes
+        foreach (var item in base.GetMandatoryIndexes(collection))
+            yield return item;        
+    }
 
     #endregion
 }

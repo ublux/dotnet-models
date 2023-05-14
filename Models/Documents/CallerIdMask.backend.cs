@@ -14,9 +14,8 @@ public partial class CallerIdMask
     [IgnoreDataMember]
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [IsUbluxRequired]
+    [UbluxValidationIsRequired]
     public required string RandomVerificationCode { get; set; } = string.Empty;
-
 }
 
 #endif

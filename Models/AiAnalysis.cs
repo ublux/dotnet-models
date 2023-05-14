@@ -32,6 +32,7 @@ public class AiAnalysis
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
+    [UbluxValidationStringRange(2000)]
     public string? ClientIntention { get; set; }
 
     /// <summary>
@@ -39,6 +40,7 @@ public class AiAnalysis
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
+    [UbluxValidationStringRange(2000)]
     public string? AgentIntention { get; set; }
 
     /// <summary>
@@ -46,6 +48,7 @@ public class AiAnalysis
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
+    [UbluxValidationStringRange(4000)]
     public string? Summary { get; set; }
 
     /// <summary>
@@ -53,6 +56,7 @@ public class AiAnalysis
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
+    [UbluxValidationStringRange(2000)]
     public string? Problem { get; set; }
 
     /// <summary>
@@ -102,6 +106,7 @@ public class AiAnalysis
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
+    [UbluxValidationStringRange(2000)]
     public string? ActionAgentShouldTakeNext { get; set; }
 
     /// <summary>

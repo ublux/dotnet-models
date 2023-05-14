@@ -16,7 +16,7 @@ public partial class Account : UbluxDocument
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
     [References(typeof(CloudServicePbx))]
-    [IsUbluxRequired]
+    [UbluxValidationIsRequired]
     public required List<string> IdsCloudServicePbxs { get; set; } = new();
 
     #endregion
@@ -33,7 +33,7 @@ public partial class Account : UbluxDocument
     ///     Account secrets
     /// </summary>
     [AllowUpdate(true)]
-    [IsUbluxRequired]
+    [UbluxValidationIsRequired]
     public required AccountSecrets AccountSecrets { get; set; } = AccountSecrets.GenerateRandom();
 
     #endregion
@@ -42,7 +42,7 @@ public partial class Account : UbluxDocument
     ///     Name of company
     /// </summary>    
     [AllowUpdate(true)]
-    [IsUbluxRequired]
+    [UbluxValidationIsRequired]
     public required string CompanyName { get; set; } = string.Empty;
 
     /// <summary>
@@ -58,7 +58,7 @@ public partial class Account : UbluxDocument
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [IsUbluxRequired]
+    [UbluxValidationIsRequired]
     [BsonRepresentation(BsonType.String)]
     public List<CountryIsoCode> CountriesThatCanCallLocally { get; set; } = new();
 
@@ -77,6 +77,25 @@ public partial class Account : UbluxDocument
     [AllowUpdate(true)]
     [BsonRepresentation(BsonType.String)]
     public Industry Industry { get; set; }
+
+    #endregion
+
+    #region MongoDB
+
+    /// <inheritdoc />
+    public override IEnumerable<MongoDbIndex> GetMongoDbIndexes()
+    {
+        // this collection
+        var collection = this.GetType().GetCollectionUsedByType();
+
+        // get all mandatory indexes
+        foreach (var item in base.GetMandatoryIndexes(collection))
+            yield return item;
+
+        // Enable seraching by date created only with accounts.
+        // db.getCollection("AgreementsToTermsAndConditions").createIndex({ 'dateCreated' : 1 })
+        yield return new MongoDbIndex(collection, nameof(DateCreated));
+    }
 
     #endregion
 
@@ -123,4 +142,5 @@ public partial class Account : UbluxDocument
     }
 
     #endregion
+
 }

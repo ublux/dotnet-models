@@ -29,6 +29,7 @@ public partial class ExtensionConference : Extension
     ///     Pin is of type string because value could be 0000 and that would translate to 0 as an integer
     /// </summary>
     [AllowUpdate(true)]
+    [UbluxValidationStringRange(20)]
     public string? Pin { get; set; }
 
     #endregion
@@ -36,9 +37,9 @@ public partial class ExtensionConference : Extension
     /// <summary>
     ///     Type of extension
     /// </summary>
-    [AllowUpdate(false)] 
-    [SwaggerSchema(ReadOnly = true)] 
-    [IsUbluxRequired]
+    [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
+    [UbluxValidationIsRequired]
     [HideForCreateRequest]
     public override ExtensionType ExtensionType
     {

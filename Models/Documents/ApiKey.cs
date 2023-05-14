@@ -13,7 +13,7 @@ public partial class ApiKey : UbluxDocument_ReferenceAccount_ReferenceTags
     /// <summary>
     ///     User that created this key. 
     /// </summary>
-    [IsUbluxRequired]
+    [UbluxValidationIsRequired]
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
     [References(typeof(User))]
@@ -28,20 +28,20 @@ public partial class ApiKey : UbluxDocument_ReferenceAccount_ReferenceTags
     ///     Value = Permissions it has on that role. Maybe it can only read data from that service but it cannot update, create or modify. 
     /// </summary>
     [AllowUpdate(true)]
-    [IsUbluxRequired]
+    [UbluxValidationIsRequired]
     [BsonRepresentation(BsonType.String)]
     public required List<UbluxRole> UbluxRoles { get; set; } = new();
 
     #endregion    
 
     /// <summary>
-    ///     Api key
-    ///     TODO place index on database on this field as we often search by this field
+    ///     Api key. Contains DB index.
     /// </summary>
-    [IsUbluxRequired]
+    [UbluxValidationIsRequired]
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
     [IgnoreDataMember]
+    [UbluxValidationStringRange(300)]
     public required string Key { get; set; } = string.Empty;
 
     /// <summary>
@@ -61,7 +61,26 @@ public partial class ApiKey : UbluxDocument_ReferenceAccount_ReferenceTags
     ///     Description or notes of API key
     /// </summary>
     [AllowUpdate(true)]
-    public string? Description { get; set; }    
+    [UbluxValidationStringRange(2000)]
+    public string? Description { get; set; }
+
+    #endregion
+
+    #region MongoDB
+
+    /// <inheritdoc />
+    public override IEnumerable<MongoDbIndex> GetMongoDbIndexes()
+    {
+        // this collection
+        var collection = this.GetType().GetCollectionUsedByType();
+
+        // get all mandatory indexes
+        foreach (var item in base.GetMandatoryIndexes(collection))
+            yield return item;
+
+        // Enable searching fast by key
+        yield return new MongoDbIndex(collection, nameof(Key));
+    }
 
     #endregion
 }

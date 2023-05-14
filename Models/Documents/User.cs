@@ -18,7 +18,7 @@ public partial class User : UbluxDocument_ReferenceAccount_ReferenceTags
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [IsUbluxRequired]
+    [UbluxValidationIsRequired]
     [References(typeof(Email))]
     public required string IdEmail { get; set; } = string.Empty;
 
@@ -31,7 +31,7 @@ public partial class User : UbluxDocument_ReferenceAccount_ReferenceTags
     ///     Value = Permissions it has on that role. Maybe it can only read data from that service but it cannot update, create or modify. 
     /// </summary>
     [AllowUpdate(true)]
-    [IsUbluxRequired]
+    [UbluxValidationIsRequired]
     [BsonRepresentation(BsonType.String)]
     public required List<UbluxRole> UbluxRoles { get; set; } = new();
 
@@ -42,7 +42,7 @@ public partial class User : UbluxDocument_ReferenceAccount_ReferenceTags
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [IsUbluxRequired]
+    [UbluxValidationIsRequired]
     public required UserType UserType { get; set; }
 
     /// <summary>
@@ -51,7 +51,7 @@ public partial class User : UbluxDocument_ReferenceAccount_ReferenceTags
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [IsUbluxRequired]
+    [UbluxValidationIsRequired]
     public required string Username
     {
         get => (username ?? string.Empty).ToLower();
@@ -70,7 +70,7 @@ public partial class User : UbluxDocument_ReferenceAccount_ReferenceTags
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [IsUbluxRequired]
+    [UbluxValidationIsRequired]
     [HideForCreateRequest]
     public required string Password { get; set; } = string.Empty;
 
@@ -102,6 +102,26 @@ public partial class User : UbluxDocument_ReferenceAccount_ReferenceTags
     [SwaggerSchema(ReadOnly = true)]
     [HideForCreateRequest]
     public DateTime? DateAuthenticated { get; set; }
+
+    #endregion
+
+    #region MongoDB
+
+    /// <inheritdoc />
+    public override IEnumerable<MongoDbIndex> GetMongoDbIndexes()
+    {
+        // this collection
+        var collection = this.GetType().GetCollectionUsedByType();
+
+        // get all mandatory indexes
+        foreach (var item in base.GetMandatoryIndexes(collection))
+            yield return item;
+
+        // enable searching fast by username this will make authentication faster
+        yield return new MongoDbIndex(collection, nameof(this.Username))
+            // Append DateCreated at the end so that items are returned by dateCreated
+            .Add(nameof(DateCreated));        
+    }
 
     #endregion
 }

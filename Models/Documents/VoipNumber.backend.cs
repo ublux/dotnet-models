@@ -34,7 +34,7 @@ public abstract partial class VoipNumber
     [IgnoreDataMember]
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [IsUbluxRequired]
+    [UbluxValidationIsRequired]
     public required string IdVoipProvider { get; set; } = string.Empty;
 
     #endregion
@@ -45,7 +45,7 @@ public abstract partial class VoipNumber
     [IgnoreDataMember]
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [IsUbluxRequired]
+    [UbluxValidationIsRequired]
     public required string ProviderId { get; set; } = string.Empty;
 }
 #endif

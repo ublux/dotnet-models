@@ -21,7 +21,7 @@ public partial class AutoProvisionReference : UbluxDocument
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
     [References(typeof(Phone))]
-    [IsUbluxRequired]
+    [UbluxValidationIsRequired]
     public required string IdPhone { get; set; } = string.Empty;
 
     /// <summary>
@@ -29,7 +29,7 @@ public partial class AutoProvisionReference : UbluxDocument
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [IsUbluxRequired]
+    [UbluxValidationIsRequired]
     public required string Ip { get; set; } = string.Empty;
 
     /// <summary>
@@ -37,18 +37,18 @@ public partial class AutoProvisionReference : UbluxDocument
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [IsUbluxRequired]
+    [UbluxValidationIsRequired]
     public required string UserAgent { get; set; } = string.Empty;
 
     #endregion
 
-    /// <summary>
-    ///     When phone calls *54 we will set this to true. We need phone to stay connected so that we can send auto-provision
-    /// </summary>
-    [IgnoreDataMember]
-    [AllowUpdate(false)]
-    [SwaggerSchema(ReadOnly = true)]
-    public bool RequestedDisconnect { get; set; }
+    ///// <summary>
+    /////     When phone calls *54 we will set this to true. We need phone to stay connected so that we can send auto-provision
+    ///// </summary>
+    //[IgnoreDataMember]
+    //[AllowUpdate(false)]
+    //[SwaggerSchema(ReadOnly = true)]
+    //public bool RequestedDisconnect { get; set; }
 
     ///// <summary>
     /////     We need this to send autoprovision encrypted to phone. Example: y5b0K3z0h3Kw0h03
@@ -106,6 +106,31 @@ public partial class AutoProvisionReference : UbluxDocument
             return new string(p);
         }
     }
+
+    #region MongoDB
+
+    /// <inheritdoc />
+    public override IEnumerable<MongoDbIndex> GetMongoDbIndexes()
+    {
+        // this collection
+        var collection = this.GetType().GetCollectionUsedByType();
+
+        // get all mandatory indexes
+        foreach (var item in base.GetMandatoryIndexes(collection))
+            yield return item;
+
+        // enable searching fast by id of phone
+        yield return new MongoDbIndex(collection, nameof(this.IdPhone))
+            // Append DateCreated at the end so that items are returned by dateCreated
+            .Add(nameof(DateCreated));
+
+        // enable searching fast by ip address
+        yield return new MongoDbIndex(collection, nameof(this.Ip))
+            // Append DateCreated at the end so that items are returned by dateCreated
+            .Add(nameof(DateCreated));
+    }
+
+    #endregion
 }
 
 #endif

@@ -22,7 +22,7 @@ public abstract partial class CallIncoming : Call
     [References(typeof(VoipNumberPhone))]
     [AllowUpdate(false)] 
     [SwaggerSchema(ReadOnly = true)] 
-    [IsUbluxRequired]
+    [UbluxValidationIsRequired]
     public required string IdVoipNumberPhone { get; set; } = string.Empty; // idDID
 
     /// <summary>
@@ -30,7 +30,7 @@ public abstract partial class CallIncoming : Call
     /// </summary>
     [AllowUpdate(false)] 
     [SwaggerSchema(ReadOnly = true)] 
-    [IsUbluxRequired]
+    [UbluxValidationIsRequired]
     public required string FromInternationalFormat { get; set; } = string.Empty;
 
     /// <summary>

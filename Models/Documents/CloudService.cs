@@ -25,13 +25,13 @@ public abstract partial class CloudService : UbluxDocument
     [References(typeof(User))]
     [AllowUpdate(false)] 
     [SwaggerSchema(ReadOnly = true)] 
-    [IsUbluxRequired]
+    [UbluxValidationIsRequired]
     public required string IdUser { get; set; } = string.Empty;
 
     /// <summary>
     ///     Type of cloud service
     /// </summary>
-    [IsUbluxRequired]
+    [UbluxValidationIsRequired]
     [AllowUpdate(false)] 
     [SwaggerSchema(ReadOnly = true)] 
     [HideForCreateRequest]
@@ -50,7 +50,7 @@ public abstract partial class CloudService : UbluxDocument
     /// </summary>
     [AllowUpdate(false)] 
     [SwaggerSchema(ReadOnly = true)] 
-    [IsUbluxRequired]
+    [UbluxValidationIsRequired]
     public required CountryIsoCode CountryIsoCode { get; set; }
 
     /// <summary>
@@ -58,7 +58,7 @@ public abstract partial class CloudService : UbluxDocument
     ///     This is needed by asterisk sip.conf file
     /// </summary>
     [AllowUpdate(false)] 
-    [SwaggerSchema(ReadOnly = true)] 
+    [SwaggerSchema(ReadOnly = true)]
     public string? Localnet { get; set; }
 
     ///// <summary>
@@ -76,7 +76,7 @@ public abstract partial class CloudService : UbluxDocument
     ///     Hard host name should point to this
     /// </summary>
     [AllowUpdate(false)] 
-    [SwaggerSchema(ReadOnly = true)] 
+    [SwaggerSchema(ReadOnly = true)]
     public string? ExternalIp { get; set; }
 
     /// <summary>
@@ -84,7 +84,7 @@ public abstract partial class CloudService : UbluxDocument
     /// </summary>
     [AllowUpdate(false)] 
     [SwaggerSchema(ReadOnly = true)] 
-    [IsUbluxRequired]
+    [UbluxValidationIsRequired]
     public required bool IsFailover { get; set; }
 
     /// <summary>
@@ -92,7 +92,7 @@ public abstract partial class CloudService : UbluxDocument
     /// </summary>
     [AllowUpdate(false)] 
     [SwaggerSchema(ReadOnly = true)] 
-    [IsUbluxRequired]
+    [UbluxValidationIsRequired]
     public required bool Nat { get; set; }
 
     /// <summary>
@@ -106,7 +106,8 @@ public abstract partial class CloudService : UbluxDocument
     ///     Instance Id. Example PBX-US-1 for CSP.PBX-US-1
     /// </summary>
     [AllowUpdate(false)] 
-    [SwaggerSchema(ReadOnly = true)] 
+    [SwaggerSchema(ReadOnly = true)]
+    [UbluxValidationStringRange(50)]
     public required string InstanceId { get => instanceId; set => instanceId = value.ToUpper(); }
     private string instanceId = string.Empty;
 
@@ -115,8 +116,23 @@ public abstract partial class CloudService : UbluxDocument
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [IsUbluxRequired]
+    [UbluxValidationIsRequired]
     public bool IsTest { get; set; }
 
-    #endregion     
+    #endregion
+
+    #region MongoDB
+
+    /// <inheritdoc />
+    public override IEnumerable<MongoDbIndex> GetMongoDbIndexes()
+    {
+        // this collection
+        var collection = this.GetType().GetCollectionUsedByType();
+
+        // get all mandatory indexes
+        foreach (var item in base.GetMandatoryIndexes(collection))
+            yield return item;        
+    }
+
+    #endregion
 }

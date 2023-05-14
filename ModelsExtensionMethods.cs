@@ -8,6 +8,30 @@ namespace Ublux.Communications.Models;
 public static class ModelsExtensionMethods
 {
     /// <summary>
+    ///     Convert the first letter to lowercase
+    /// </summary>
+    public static string? FirstCharToLowerCase(this string? str)
+    {
+        if (!string.IsNullOrEmpty(str) && char.IsUpper(str[0]))
+            return str.Length == 1 ? char.ToLower(str[0]).ToString() : char.ToLower(str[0]) + str[1..];
+
+        return str;
+    }
+
+    /// <summary>
+    ///     helper function that reverses a string
+    /// </summary>
+    public static string ReverseString(this string s)
+    {
+        if (s is null)
+            return "";
+
+        char[] charArray = s.ToCharArray();
+        Array.Reverse(charArray);
+        return new string(charArray);
+    }
+
+    /// <summary>
     ///     Get type of model used by collection
     /// </summary>
     public static Type GetTypeUsedByCollection(this Collections collection)

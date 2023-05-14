@@ -23,7 +23,7 @@ public partial class CallOutgoingToExtension : CallOutgoing, ICallToExtension
     /// </summary>
     [References(typeof(Line))]
     [AllowUpdate(false)] 
-    [SwaggerSchema(ReadOnly = true)] 
+    [SwaggerSchema(ReadOnly = true)]
     public string? IdLineThatAnswered { get; set; }
 
     /// <summary>
@@ -31,7 +31,7 @@ public partial class CallOutgoingToExtension : CallOutgoing, ICallToExtension
     /// </summary>
     [References(typeof(Line))]
     [AllowUpdate(false)] 
-    [SwaggerSchema(ReadOnly = true)] 
+    [SwaggerSchema(ReadOnly = true)]
     public List<string> IdsLinesThatRing { get; set; } = new();
 
     /// <summary>
@@ -39,7 +39,7 @@ public partial class CallOutgoingToExtension : CallOutgoing, ICallToExtension
     /// </summary>
     [References(typeof(Line))]
     [AllowUpdate(false)] 
-    [SwaggerSchema(ReadOnly = true)] 
+    [SwaggerSchema(ReadOnly = true)]
     public List<string> IdsLinesThatDidNotRing { get; set; } = new();
 
     #endregion
@@ -60,35 +60,4 @@ public partial class CallOutgoingToExtension : CallOutgoing, ICallToExtension
 #endif
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

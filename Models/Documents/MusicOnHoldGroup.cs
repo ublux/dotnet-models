@@ -14,7 +14,7 @@ public partial class MusicOnHoldGroup : UbluxDocument_ReferenceAccount_Reference
     /// </summary>
     [References(typeof(Audio))]
     [AllowUpdate(true)]
-    [IsUbluxRequired]
+    [UbluxValidationIsRequired]
     public required List<string> IdsAudios { get; set; } = new();
 
     #endregion
@@ -23,14 +23,30 @@ public partial class MusicOnHoldGroup : UbluxDocument_ReferenceAccount_Reference
     ///     Name of music on hold group
     /// </summary>
     [AllowUpdate(true)]
-    [IsUbluxRequired]
+    [UbluxValidationIsRequired]
     public required string FriendlyName { get; set; } = string.Empty;
 
     /// <summary>
     ///     Description of music on hold group
     /// </summary>
     [AllowUpdate(true)]
+    [UbluxValidationStringRange(1000)]
     public string? Description { get; set; }
+
+    #endregion
+
+    #region MongoDB
+
+    /// <inheritdoc />
+    public override IEnumerable<MongoDbIndex> GetMongoDbIndexes()
+    {
+        // this collection
+        var collection = this.GetType().GetCollectionUsedByType();
+
+        // get all mandatory indexes
+        foreach (var item in base.GetMandatoryIndexes(collection))
+            yield return item;       
+    }
 
     #endregion
 }

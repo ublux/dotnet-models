@@ -41,7 +41,7 @@ public partial class StoredFile : UbluxSubDocument, IReferncesAccount
     [IgnoreDataMember]
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [IsUbluxRequired]
+    [UbluxValidationIsRequired]
     public required StorageFolderName FolderName { get; set; }
 
     /// <summary>
@@ -49,6 +49,7 @@ public partial class StoredFile : UbluxSubDocument, IReferncesAccount
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
+    [UbluxValidationStringRange(50)]
     public required string InstanceId { get; set; } = string.Empty;
 
     /// <summary>

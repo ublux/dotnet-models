@@ -14,7 +14,7 @@ public abstract partial class Call
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
     [IgnoreDataMember]
-    [IsUbluxRequired]
+    [UbluxValidationIsRequired]
     public required string ChannelFrom { get; set; } = string.Empty;
 
     /// <summary>

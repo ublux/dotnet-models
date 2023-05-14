@@ -1024,15 +1024,15 @@ public class CallIncomingToCallFlowLogicFilterRequest
     [JsonProperty("channelVariables_language_reg")]
     public string? ChannelVariables_Language_REG { get; set; }
 
-    /// <summary> ChannelVariables.IdMusicOnHold equals </summary>
-    [JsonProperty("channelVariables_idMusicOnHold_eq")]
-    public string? ChannelVariables_IdMusicOnHold_EQ { get; set; }
-    /// <summary> ChannelVariables.IdMusicOnHold contains </summary>
-    [JsonProperty("channelVariables_idMusicOnHold_con")]
-    public string? ChannelVariables_IdMusicOnHold_CON { get; set; }
-    /// <summary> ChannelVariables.IdMusicOnHold regex </summary>
-    [JsonProperty("channelVariables_idMusicOnHold_reg")]
-    public string? ChannelVariables_IdMusicOnHold_REG { get; set; }
+    /// <summary> ChannelVariables.IdMusicOnHoldGroup equals </summary>
+    [JsonProperty("channelVariables_idMusicOnHoldGroup_eq")]
+    public string? ChannelVariables_IdMusicOnHoldGroup_EQ { get; set; }
+    /// <summary> ChannelVariables.IdMusicOnHoldGroup contains </summary>
+    [JsonProperty("channelVariables_idMusicOnHoldGroup_con")]
+    public string? ChannelVariables_IdMusicOnHoldGroup_CON { get; set; }
+    /// <summary> ChannelVariables.IdMusicOnHoldGroup regex </summary>
+    [JsonProperty("channelVariables_idMusicOnHoldGroup_reg")]
+    public string? ChannelVariables_IdMusicOnHoldGroup_REG { get; set; }
 
     /// <summary> ChannelVariables.CallerIdName equals </summary>
     [JsonProperty("channelVariables_callerIdName_eq")]
@@ -2089,15 +2089,15 @@ public class CallIncomingToExtensionFilterRequest
     [JsonProperty("channelVariables_language_reg")]
     public string? ChannelVariables_Language_REG { get; set; }
 
-    /// <summary> ChannelVariables.IdMusicOnHold equals </summary>
-    [JsonProperty("channelVariables_idMusicOnHold_eq")]
-    public string? ChannelVariables_IdMusicOnHold_EQ { get; set; }
-    /// <summary> ChannelVariables.IdMusicOnHold contains </summary>
-    [JsonProperty("channelVariables_idMusicOnHold_con")]
-    public string? ChannelVariables_IdMusicOnHold_CON { get; set; }
-    /// <summary> ChannelVariables.IdMusicOnHold regex </summary>
-    [JsonProperty("channelVariables_idMusicOnHold_reg")]
-    public string? ChannelVariables_IdMusicOnHold_REG { get; set; }
+    /// <summary> ChannelVariables.IdMusicOnHoldGroup equals </summary>
+    [JsonProperty("channelVariables_idMusicOnHoldGroup_eq")]
+    public string? ChannelVariables_IdMusicOnHoldGroup_EQ { get; set; }
+    /// <summary> ChannelVariables.IdMusicOnHoldGroup contains </summary>
+    [JsonProperty("channelVariables_idMusicOnHoldGroup_con")]
+    public string? ChannelVariables_IdMusicOnHoldGroup_CON { get; set; }
+    /// <summary> ChannelVariables.IdMusicOnHoldGroup regex </summary>
+    [JsonProperty("channelVariables_idMusicOnHoldGroup_reg")]
+    public string? ChannelVariables_IdMusicOnHoldGroup_REG { get; set; }
 
     /// <summary> ChannelVariables.CallerIdName equals </summary>
     [JsonProperty("channelVariables_callerIdName_eq")]
@@ -3134,15 +3134,15 @@ public class CallOutgoingToExtensionFilterRequest
     [JsonProperty("channelVariables_language_reg")]
     public string? ChannelVariables_Language_REG { get; set; }
 
-    /// <summary> ChannelVariables.IdMusicOnHold equals </summary>
-    [JsonProperty("channelVariables_idMusicOnHold_eq")]
-    public string? ChannelVariables_IdMusicOnHold_EQ { get; set; }
-    /// <summary> ChannelVariables.IdMusicOnHold contains </summary>
-    [JsonProperty("channelVariables_idMusicOnHold_con")]
-    public string? ChannelVariables_IdMusicOnHold_CON { get; set; }
-    /// <summary> ChannelVariables.IdMusicOnHold regex </summary>
-    [JsonProperty("channelVariables_idMusicOnHold_reg")]
-    public string? ChannelVariables_IdMusicOnHold_REG { get; set; }
+    /// <summary> ChannelVariables.IdMusicOnHoldGroup equals </summary>
+    [JsonProperty("channelVariables_idMusicOnHoldGroup_eq")]
+    public string? ChannelVariables_IdMusicOnHoldGroup_EQ { get; set; }
+    /// <summary> ChannelVariables.IdMusicOnHoldGroup contains </summary>
+    [JsonProperty("channelVariables_idMusicOnHoldGroup_con")]
+    public string? ChannelVariables_IdMusicOnHoldGroup_CON { get; set; }
+    /// <summary> ChannelVariables.IdMusicOnHoldGroup regex </summary>
+    [JsonProperty("channelVariables_idMusicOnHoldGroup_reg")]
+    public string? ChannelVariables_IdMusicOnHoldGroup_REG { get; set; }
 
     /// <summary> ChannelVariables.CallerIdName equals </summary>
     [JsonProperty("channelVariables_callerIdName_eq")]
@@ -4149,15 +4149,15 @@ public class CallOutgoingToPSTNFilterRequest
     [JsonProperty("channelVariables_language_reg")]
     public string? ChannelVariables_Language_REG { get; set; }
 
-    /// <summary> ChannelVariables.IdMusicOnHold equals </summary>
-    [JsonProperty("channelVariables_idMusicOnHold_eq")]
-    public string? ChannelVariables_IdMusicOnHold_EQ { get; set; }
-    /// <summary> ChannelVariables.IdMusicOnHold contains </summary>
-    [JsonProperty("channelVariables_idMusicOnHold_con")]
-    public string? ChannelVariables_IdMusicOnHold_CON { get; set; }
-    /// <summary> ChannelVariables.IdMusicOnHold regex </summary>
-    [JsonProperty("channelVariables_idMusicOnHold_reg")]
-    public string? ChannelVariables_IdMusicOnHold_REG { get; set; }
+    /// <summary> ChannelVariables.IdMusicOnHoldGroup equals </summary>
+    [JsonProperty("channelVariables_idMusicOnHoldGroup_eq")]
+    public string? ChannelVariables_IdMusicOnHoldGroup_EQ { get; set; }
+    /// <summary> ChannelVariables.IdMusicOnHoldGroup contains </summary>
+    [JsonProperty("channelVariables_idMusicOnHoldGroup_con")]
+    public string? ChannelVariables_IdMusicOnHoldGroup_CON { get; set; }
+    /// <summary> ChannelVariables.IdMusicOnHoldGroup regex </summary>
+    [JsonProperty("channelVariables_idMusicOnHoldGroup_reg")]
+    public string? ChannelVariables_IdMusicOnHoldGroup_REG { get; set; }
 
     /// <summary> ChannelVariables.CallerIdName equals </summary>
     [JsonProperty("channelVariables_callerIdName_eq")]
@@ -5641,15 +5641,15 @@ public class ContactFilterRequest
     [JsonProperty("variables_name_reg")]
     public string? Variables_Name_REG { get; set; }
 
-    /// <summary> Variables.JsonValue equals </summary>
-    [JsonProperty("variables_jsonValue_eq")]
-    public string? Variables_JsonValue_EQ { get; set; }
-    /// <summary> Variables.JsonValue contains </summary>
-    [JsonProperty("variables_jsonValue_con")]
-    public string? Variables_JsonValue_CON { get; set; }
-    /// <summary> Variables.JsonValue regex </summary>
-    [JsonProperty("variables_jsonValue_reg")]
-    public string? Variables_JsonValue_REG { get; set; }
+    /// <summary> Variables.Value equals </summary>
+    [JsonProperty("variables_value_eq")]
+    public string? Variables_Value_EQ { get; set; }
+    /// <summary> Variables.Value contains </summary>
+    [JsonProperty("variables_value_con")]
+    public string? Variables_Value_CON { get; set; }
+    /// <summary> Variables.Value regex </summary>
+    [JsonProperty("variables_value_reg")]
+    public string? Variables_Value_REG { get; set; }
 
 
     /// <summary> IdsTags equals </summary>
@@ -10028,15 +10028,15 @@ public class CallFilterRequest
     [JsonProperty("channelVariables_language_reg")]
     public string? ChannelVariables_Language_REG { get; set; }
 
-    /// <summary> ChannelVariables.IdMusicOnHold equals </summary>
-    [JsonProperty("channelVariables_idMusicOnHold_eq")]
-    public string? ChannelVariables_IdMusicOnHold_EQ { get; set; }
-    /// <summary> ChannelVariables.IdMusicOnHold contains </summary>
-    [JsonProperty("channelVariables_idMusicOnHold_con")]
-    public string? ChannelVariables_IdMusicOnHold_CON { get; set; }
-    /// <summary> ChannelVariables.IdMusicOnHold regex </summary>
-    [JsonProperty("channelVariables_idMusicOnHold_reg")]
-    public string? ChannelVariables_IdMusicOnHold_REG { get; set; }
+    /// <summary> ChannelVariables.IdMusicOnHoldGroup equals </summary>
+    [JsonProperty("channelVariables_idMusicOnHoldGroup_eq")]
+    public string? ChannelVariables_IdMusicOnHoldGroup_EQ { get; set; }
+    /// <summary> ChannelVariables.IdMusicOnHoldGroup contains </summary>
+    [JsonProperty("channelVariables_idMusicOnHoldGroup_con")]
+    public string? ChannelVariables_IdMusicOnHoldGroup_CON { get; set; }
+    /// <summary> ChannelVariables.IdMusicOnHoldGroup regex </summary>
+    [JsonProperty("channelVariables_idMusicOnHoldGroup_reg")]
+    public string? ChannelVariables_IdMusicOnHoldGroup_REG { get; set; }
 
     /// <summary> ChannelVariables.CallerIdName equals </summary>
     [JsonProperty("channelVariables_callerIdName_eq")]
@@ -11053,15 +11053,15 @@ public class CallIncomingFilterRequest
     [JsonProperty("channelVariables_language_reg")]
     public string? ChannelVariables_Language_REG { get; set; }
 
-    /// <summary> ChannelVariables.IdMusicOnHold equals </summary>
-    [JsonProperty("channelVariables_idMusicOnHold_eq")]
-    public string? ChannelVariables_IdMusicOnHold_EQ { get; set; }
-    /// <summary> ChannelVariables.IdMusicOnHold contains </summary>
-    [JsonProperty("channelVariables_idMusicOnHold_con")]
-    public string? ChannelVariables_IdMusicOnHold_CON { get; set; }
-    /// <summary> ChannelVariables.IdMusicOnHold regex </summary>
-    [JsonProperty("channelVariables_idMusicOnHold_reg")]
-    public string? ChannelVariables_IdMusicOnHold_REG { get; set; }
+    /// <summary> ChannelVariables.IdMusicOnHoldGroup equals </summary>
+    [JsonProperty("channelVariables_idMusicOnHoldGroup_eq")]
+    public string? ChannelVariables_IdMusicOnHoldGroup_EQ { get; set; }
+    /// <summary> ChannelVariables.IdMusicOnHoldGroup contains </summary>
+    [JsonProperty("channelVariables_idMusicOnHoldGroup_con")]
+    public string? ChannelVariables_IdMusicOnHoldGroup_CON { get; set; }
+    /// <summary> ChannelVariables.IdMusicOnHoldGroup regex </summary>
+    [JsonProperty("channelVariables_idMusicOnHoldGroup_reg")]
+    public string? ChannelVariables_IdMusicOnHoldGroup_REG { get; set; }
 
     /// <summary> ChannelVariables.CallerIdName equals </summary>
     [JsonProperty("channelVariables_callerIdName_eq")]
@@ -12058,15 +12058,15 @@ public class CallOutgoingFilterRequest
     [JsonProperty("channelVariables_language_reg")]
     public string? ChannelVariables_Language_REG { get; set; }
 
-    /// <summary> ChannelVariables.IdMusicOnHold equals </summary>
-    [JsonProperty("channelVariables_idMusicOnHold_eq")]
-    public string? ChannelVariables_IdMusicOnHold_EQ { get; set; }
-    /// <summary> ChannelVariables.IdMusicOnHold contains </summary>
-    [JsonProperty("channelVariables_idMusicOnHold_con")]
-    public string? ChannelVariables_IdMusicOnHold_CON { get; set; }
-    /// <summary> ChannelVariables.IdMusicOnHold regex </summary>
-    [JsonProperty("channelVariables_idMusicOnHold_reg")]
-    public string? ChannelVariables_IdMusicOnHold_REG { get; set; }
+    /// <summary> ChannelVariables.IdMusicOnHoldGroup equals </summary>
+    [JsonProperty("channelVariables_idMusicOnHoldGroup_eq")]
+    public string? ChannelVariables_IdMusicOnHoldGroup_EQ { get; set; }
+    /// <summary> ChannelVariables.IdMusicOnHoldGroup contains </summary>
+    [JsonProperty("channelVariables_idMusicOnHoldGroup_con")]
+    public string? ChannelVariables_IdMusicOnHoldGroup_CON { get; set; }
+    /// <summary> ChannelVariables.IdMusicOnHoldGroup regex </summary>
+    [JsonProperty("channelVariables_idMusicOnHoldGroup_reg")]
+    public string? ChannelVariables_IdMusicOnHoldGroup_REG { get; set; }
 
     /// <summary> ChannelVariables.CallerIdName equals </summary>
     [JsonProperty("channelVariables_callerIdName_eq")]

@@ -14,7 +14,7 @@ public partial class Audio
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
     [IgnoreDataMember] // client does not need to see sln format
-    [IsUbluxRequired]
+    [UbluxValidationIsRequired]
     public required StoredFile AudioSln { get; set; }
 
     /// <summary>

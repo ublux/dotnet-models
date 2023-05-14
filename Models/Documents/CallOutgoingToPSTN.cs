@@ -39,7 +39,7 @@ public partial class CallOutgoingToPSTN : CallOutgoing
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [IsUbluxRequired]
+    [UbluxValidationIsRequired]
     public required string ToInternationalFormat { get; set; } = string.Empty;
 
     // Use seconds it took to be answered instead

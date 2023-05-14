@@ -8,7 +8,7 @@ public class SnsMessage
     /// <summary>
     ///     Id of message
     /// </summary>
-    [IsUbluxRequired]
+    [UbluxValidationIsRequired]
     public string Id
     {
         get;
@@ -26,7 +26,7 @@ public class SnsMessage
     /// <summary>
     ///     Topic or category type
     /// </summary>
-    [IsUbluxRequired]
+    [UbluxValidationIsRequired]
     public required SnsTopic SnsTopic { get; set; }
 
     /// <summary>

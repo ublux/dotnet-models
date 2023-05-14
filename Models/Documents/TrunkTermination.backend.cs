@@ -20,7 +20,7 @@ public partial class TrunkTermination : UbluxDocument
     [IgnoreDataMember]
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [IsUbluxRequired]
+    [UbluxValidationIsRequired]
     public required string IdVoipProvider { get; set; } = string.Empty;
 
     #endregion
@@ -31,7 +31,7 @@ public partial class TrunkTermination : UbluxDocument
     [IgnoreDataMember]
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [IsUbluxRequired]
+    [UbluxValidationIsRequired]
     public required string ProviderId { get; set; } = string.Empty;
 
     /// <summary>
@@ -41,7 +41,8 @@ public partial class TrunkTermination : UbluxDocument
     [IgnoreDataMember]
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [IsUbluxRequired]
+    [UbluxValidationIsRequired]
+    [UbluxValidationStringRange(500)]
     public required string TerminationUri { get; set; } = string.Empty;
 
     /// <summary>
@@ -66,7 +67,7 @@ public partial class TrunkTermination : UbluxDocument
     [IgnoreDataMember]
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [IsUbluxRequired]
+    [UbluxValidationIsRequired]
     [BsonRepresentation(BsonType.String)]
     public required List<CountryIsoCode> CountryIsoCodesThatCanCall { get; set; } = new();
 
@@ -76,7 +77,7 @@ public partial class TrunkTermination : UbluxDocument
     [IgnoreDataMember]
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [IsUbluxRequired]
+    [UbluxValidationIsRequired]
     public required string FriendlyName { get; set; } = string.Empty;
 
     ///// <summary>
@@ -92,7 +93,7 @@ public partial class TrunkTermination : UbluxDocument
     [IgnoreDataMember]
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [IsUbluxRequired]
+    [UbluxValidationIsRequired]
     public required VoipCompany VoipCompany { get; set; }
 
     #endregion
@@ -114,6 +115,21 @@ public partial class TrunkTermination : UbluxDocument
             return true;
 
         return countryIsoCodes.Contains(country);
+    }
+
+    #endregion
+
+    #region MongoDB
+
+    /// <inheritdoc />
+    public override IEnumerable<MongoDbIndex> GetMongoDbIndexes()
+    {
+        // this collection
+        var collection = this.GetType().GetCollectionUsedByType();
+
+        // get all mandatory indexes
+        foreach (var item in base.GetMandatoryIndexes(collection))
+            yield return item;      
     }
 
     #endregion

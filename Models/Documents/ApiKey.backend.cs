@@ -1,6 +1,5 @@
 ﻿#if UBLUX_BACKEND
 
-
 namespace Ublux.Communications.Models.Documents;
 
 /// <summary>
@@ -8,11 +7,13 @@ namespace Ublux.Communications.Models.Documents;
 /// </summary>
 [DebuggerDisplay("Id:{Id} IdAccount:{IdAccount}")]
 public partial class ApiKey 
-{    
+{
+    private static string GenerateRandomBase62 => RunningApplicationInstance.ToBase62(BitConverter.ToUInt64(Guid.NewGuid().ToByteArray()));
+
     /// <summary>
     ///     Generate random api key
     /// </summary>
-    public static string GenerateRandmKey() => $"K{RunningApplicationInstance.ToBase62(BitConverter.ToUInt64(Guid.NewGuid().ToByteArray()))}{RunningApplicationInstance.ToBase62(BitConverter.ToUInt64(Guid.NewGuid().ToByteArray()))}";
+    public static string GenerateRandmKey() => $"K{GenerateRandomBase62}{GenerateRandomBase62}";
 }
 
 #endif

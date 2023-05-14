@@ -34,7 +34,7 @@ public class ChildCallForwardToExtension : ChildCall, ICallToExtension
     /// <summary>
     ///     ForwardToExtension
     /// </summary>
-    [IsUbluxRequired]
+    [UbluxValidationIsRequired]
     public override ChildCallType ChildCallType
     {
         get => ChildCallType.ForwardToExtension;

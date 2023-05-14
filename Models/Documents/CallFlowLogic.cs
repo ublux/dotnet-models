@@ -11,13 +11,14 @@ public partial class CallFlowLogic : UbluxDocument_ReferenceAccount_ReferenceTag
     ///     Name of virtual receptionist
     /// </summary>
     [AllowUpdate(true)]
-    [IsUbluxRequired]
+    [UbluxValidationIsRequired]
     public required string FriendlyName { get; set; } = string.Empty;
 
     /// <summary>
     ///     Description of virtual receptionist
     /// </summary>
     [AllowUpdate(true)]
+    [UbluxValidationStringRange(1000)]
     public string? Description { get; set; }
 
     ///// <summary>
@@ -31,8 +32,23 @@ public partial class CallFlowLogic : UbluxDocument_ReferenceAccount_ReferenceTag
     ///     XML containing the call flow rules
     /// </summary>
     [AllowUpdate(true)]
-    [IsUbluxRequired]
+    [UbluxValidationIsRequired]
     public required FlowNode Tree { get; set; }
+
+    #endregion
+
+    #region MongoDB
+
+    /// <inheritdoc />
+    public override IEnumerable<MongoDbIndex> GetMongoDbIndexes()
+    {
+        // this collection
+        var collection = this.GetType().GetCollectionUsedByType();
+
+        // get all mandatory indexes
+        foreach (var item in base.GetMandatoryIndexes(collection))
+            yield return item;
+    }
 
     #endregion
 }

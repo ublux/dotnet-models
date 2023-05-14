@@ -13,8 +13,8 @@ public partial class AiCallTranscription : UbluxDocument_ReferenceAccount_Refere
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
     [References(typeof(Call))]
-    [IsUbluxRequired]
-    public string IdCall { get; set; } = string.Empty; // OK
+    [UbluxValidationIsRequired]
+    public string IdCall { get; set; } = string.Empty;
 
     #endregion
 
@@ -23,6 +23,7 @@ public partial class AiCallTranscription : UbluxDocument_ReferenceAccount_Refere
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
+    [UbluxValidationStringRange(50)]
     public string? TranscriptionLanguage { get; set; }
 
     /// <summary>
@@ -30,13 +31,32 @@ public partial class AiCallTranscription : UbluxDocument_ReferenceAccount_Refere
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    public List<AiTranscription> Transcription { get; set; } = new(); // OK
+    public List<AiTranscription> Transcription { get; set; } = new();
 
     /// <summary>
     ///     If the transcription contains an error
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
+    [UbluxValidationStringRange(2000)]
     public string? ErrorMessage { get; set; }
-    
+
+    #region MongoDB
+
+    /// <inheritdoc />
+    public override IEnumerable<MongoDbIndex> GetMongoDbIndexes()
+    {
+        // this collection
+        var collection = this.GetType().GetCollectionUsedByType();
+
+        // get all mandatory indexes
+        foreach (var item in base.GetMandatoryIndexes(collection))
+            yield return item;
+
+        // Enable searching fast by id of call
+        yield return new MongoDbIndex(collection, nameof(IdCall));
+    }
+
+    #endregion
+
 }

@@ -13,7 +13,7 @@ public partial class CustomerInfo : UbluxDocument_ReferenceAccount_ReferenceTags
     ///     Address where this phone number is intended to be used
     /// </summary>
     [AllowUpdate(true)]
-    [IsUbluxRequired]
+    [UbluxValidationIsRequired]
     public required MailingAddress MailingAddress { get; set; }
 
     /// <summary>
@@ -30,6 +30,22 @@ public partial class CustomerInfo : UbluxDocument_ReferenceAccount_ReferenceTags
     /// </summary>
     [AllowUpdate(true)]
     public required string FullName { get; set; } = string.Empty;
+
+    #endregion
+
+
+    #region MongoDB
+
+    /// <inheritdoc />
+    public override IEnumerable<MongoDbIndex> GetMongoDbIndexes()
+    {
+        // this collection
+        var collection = this.GetType().GetCollectionUsedByType();
+
+        // get all mandatory indexes
+        foreach (var item in base.GetMandatoryIndexes(collection))
+            yield return item;      
+    }
 
     #endregion
 }
