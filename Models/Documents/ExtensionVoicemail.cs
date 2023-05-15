@@ -29,7 +29,7 @@ public partial class ExtensionVoicemail : Extension
     ///     Emails where to send the voicemail
     /// </summary>
     [AllowUpdate(true)]
-    [UbluxValidationIsRequired]
+    [UbluxValidationRequired]
     [References(typeof(Email))]
     public required string IdEmail { get; set; } = string.Empty;
 
@@ -53,7 +53,7 @@ public partial class ExtensionVoicemail : Extension
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [UbluxValidationIsRequired]
+    [UbluxValidationRequired]
     [HideForCreateRequest]
     public override ExtensionType ExtensionType
     {

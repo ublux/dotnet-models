@@ -22,7 +22,7 @@ public abstract class PowerDialer
     /// </summary>
     [AllowUpdate(false)] 
     [SwaggerSchema(ReadOnly = true)] 
-    [UbluxValidationIsRequired]
+    [UbluxValidationRequired]
     public abstract PowerDialerType PowerDialerType
     {
         get;
@@ -35,7 +35,7 @@ public abstract class PowerDialer
     /// <summary>
     ///     Phone number to call
     /// </summary>
-    [UbluxValidationIsRequired]
+    [UbluxValidationRequired]
     public required string PhoneNumber { get; set; }
 
     /// <summary>
@@ -43,7 +43,7 @@ public abstract class PowerDialer
     /// </summary>
     [AllowUpdate(false)] 
     [SwaggerSchema(ReadOnly = true)] 
-    [UbluxValidationIsRequired]
+    [UbluxValidationRequired]
     public required CountryIsoCode CountryIsoCode { get; set; }
 
     /// <summary>
@@ -56,7 +56,7 @@ public abstract class PowerDialer
     /// <summary>
     ///     Status of this item
     /// </summary>
-    [UbluxValidationIsRequired]
+    [UbluxValidationRequired]
     public required PowerDialerStatus PowerDialerStatus { get; set; }
 
     /// <summary>

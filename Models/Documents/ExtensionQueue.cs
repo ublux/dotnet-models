@@ -42,7 +42,7 @@ public partial class ExtensionQueue : ExtensionDial
     ///     Maximum amount of minutes a user can be waiting on the queue.
     /// </summary>
     [AllowUpdate(true)]
-    [UbluxValidationIsRequired]
+    [UbluxValidationRequired]
     public required int QueueTimeoutInMinutes { get; set; }
 
     /// <summary>
@@ -67,7 +67,7 @@ public partial class ExtensionQueue : ExtensionDial
     ///     Number of seconds to wait in between rings. Default value if null is 20 seconds
     /// </summary>
     [AllowUpdate(true)]
-    [UbluxValidationIsRequired]
+    [UbluxValidationRequired]
     public required int RetryFrequency { get; set; }
 
     /// <summary>
@@ -92,7 +92,7 @@ public partial class ExtensionQueue : ExtensionDial
     /// </summary>
     [AllowUpdate(false)] 
     [SwaggerSchema(ReadOnly = true)] 
-    [UbluxValidationIsRequired]
+    [UbluxValidationRequired]
     [HideForCreateRequest]
     public override ExtensionType ExtensionType
     {

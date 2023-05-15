@@ -8,7 +8,7 @@ public class PowerDialerAdvance : PowerDialer
     /// <summary>
     ///     IVR to execute
     /// </summary>
-    [UbluxValidationIsRequired]
+    [UbluxValidationRequired]
     [AllowUpdate(true)]
     public required string IdCallFlowLogic { get; set; }
 
@@ -17,7 +17,7 @@ public class PowerDialerAdvance : PowerDialer
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [UbluxValidationIsRequired]
+    [UbluxValidationRequired]
     public override PowerDialerType PowerDialerType
     {
         get => PowerDialerType.Advanced;

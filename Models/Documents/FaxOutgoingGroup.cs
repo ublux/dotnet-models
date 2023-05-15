@@ -15,7 +15,7 @@ public partial class FaxOutgoingGroup : UbluxDocument_ReferenceAccount_Reference
     [References(typeof(VoipNumberFax))]
     [AllowUpdate(false)] 
     [SwaggerSchema(ReadOnly = true)] 
-    [UbluxValidationIsRequired]
+    [UbluxValidationRequired]
     public required string IdVoipNumberFax { get; set; } = string.Empty;
 
     #endregion
@@ -27,7 +27,7 @@ public partial class FaxOutgoingGroup : UbluxDocument_ReferenceAccount_Reference
     /// </summary>
     [AllowUpdate(false)] 
     [SwaggerSchema(ReadOnly = true)] 
-    [UbluxValidationIsRequired]
+    [UbluxValidationRequired]
     public List<FaxOutgoing> FaxesOutgoing { get; set; } = new();
 
     ///// <summary>
@@ -45,7 +45,7 @@ public partial class FaxOutgoingGroup : UbluxDocument_ReferenceAccount_Reference
     /// </summary>
     [AllowUpdate(false)] 
     [SwaggerSchema(ReadOnly = true)] 
-    [UbluxValidationIsRequired]
+    [UbluxValidationRequired]
     public required string From { get; set; } = string.Empty;
 
     /// <summary>
@@ -53,7 +53,7 @@ public partial class FaxOutgoingGroup : UbluxDocument_ReferenceAccount_Reference
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [UbluxValidationIsRequired]
+    [UbluxValidationRequired]
     [References(typeof(Email))]
     public required List<string> IdsEmailsSendConfirmation { get; set; } = new();
 

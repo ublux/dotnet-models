@@ -12,7 +12,7 @@ public partial class CallIncomingToCallFlowLogic : CallIncoming
     [References(typeof(CallFlowLogic))]
     [AllowUpdate(false)] 
     [SwaggerSchema(ReadOnly = true)] 
-    [UbluxValidationIsRequired]
+    [UbluxValidationRequired]
     public required string IdCallFlowLogic { get; set; } = string.Empty;
 
     /// <summary>

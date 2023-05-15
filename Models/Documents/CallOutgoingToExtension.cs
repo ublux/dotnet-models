@@ -47,6 +47,22 @@ public partial class CallOutgoingToExtension : CallOutgoing, ICallToExtension
     #endregion
 
     /// <summary>
+    ///     Override because when calling an extension we are not calling any country.
+    /// </summary>
+    [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
+    [UbluxValidationNotRequired] // Value can be None
+    public override required CountryIsoCode ToCountry { get; set; }
+
+    /// <summary>
+    ///     Override because when calling an extension we are not using any country
+    /// </summary>
+    [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
+    [UbluxValidationNotRequired] // Value can be None
+    public override required CountryIsoCode FromCountry { get; set; }
+
+    /// <summary>
     ///     Type of call
     /// </summary>
     [AllowUpdate(false)] 

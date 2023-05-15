@@ -73,7 +73,7 @@ public abstract partial class Call : UbluxDocument_ReferenceAccount_ReferenceTag
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [UbluxValidationIsRequired]
+    [UbluxValidationRequired]
     public required ChannelVariables ChannelVariables { get; set; }
 
     /// <summary>
@@ -120,7 +120,7 @@ public abstract partial class Call : UbluxDocument_ReferenceAccount_ReferenceTag
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [UbluxValidationIsRequired]
+    [UbluxValidationRequired]
     public required string From { get; set; } = string.Empty;
 
     /// <summary>
@@ -146,15 +146,15 @@ public abstract partial class Call : UbluxDocument_ReferenceAccount_ReferenceTag
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [UbluxValidationIsRequired]
-    public required CountryIsoCode FromCountry { get; set; }
+    [UbluxValidationRequired]
+    public virtual required CountryIsoCode FromCountry { get; set; }
 
     /// <summary>
     ///     Phone number called
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [UbluxValidationIsRequired]
+    [UbluxValidationRequired]
     public required string To { get; set; } = string.Empty;
 
     /// <summary>
@@ -180,8 +180,8 @@ public abstract partial class Call : UbluxDocument_ReferenceAccount_ReferenceTag
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [UbluxValidationIsRequired]
-    public required CountryIsoCode ToCountry { get; set; }
+    [UbluxValidationRequired]
+    public virtual required CountryIsoCode ToCountry { get; set; }
 
     /// <summary>
     ///     Type of call

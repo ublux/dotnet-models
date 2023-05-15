@@ -27,7 +27,7 @@ public partial class Voicemail : UbluxDocument_ReferenceAccount_ReferenceTags
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [UbluxValidationIsRequired]
+    [UbluxValidationRequired]
     [References(typeof(Email))]
     public required string IdEmail { get; set; } = string.Empty;
 
@@ -38,7 +38,7 @@ public partial class Voicemail : UbluxDocument_ReferenceAccount_ReferenceTags
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [UbluxValidationIsRequired]
+    [UbluxValidationRequired]
     [HideForCreateRequest]
     public virtual VoicemailType VoicemailType => VoicemailType.Regular;
 
@@ -47,7 +47,7 @@ public partial class Voicemail : UbluxDocument_ReferenceAccount_ReferenceTags
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [UbluxValidationIsRequired]
+    [UbluxValidationRequired]
     public required double DurationInSeconds { get; set; }
 
     /// <summary>

@@ -10,7 +10,7 @@ public partial class AiTranscription
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [UbluxValidationIsRequired]
+    [UbluxValidationRequired]
     [UbluxValidationStringRange(20)]
     public required string Speaker { get; set; } = "";
 
@@ -19,7 +19,7 @@ public partial class AiTranscription
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [UbluxValidationIsRequired]
+    [UbluxValidationRequired]
     [UbluxValidationStringRange(2000)]
     public required string Text { get; set; } = "";
 

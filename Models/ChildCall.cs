@@ -44,7 +44,7 @@ public abstract partial class ChildCall : ICall
     /// <summary>
     ///     PSTN or EXTEN
     /// </summary>
-    [UbluxValidationIsRequired]
+    [UbluxValidationRequired]
     public abstract ChildCallType ChildCallType
     {
         get;
@@ -82,7 +82,7 @@ public abstract partial class ChildCall : ICall
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [UbluxValidationIsRequired]
+    [UbluxValidationRequired]
     public required string From { get; set; } = string.Empty;
 
     /// <summary>
@@ -90,7 +90,7 @@ public abstract partial class ChildCall : ICall
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [UbluxValidationIsRequired]
+    [UbluxValidationRequired]
     public required CountryIsoCode FromCountry { get; set; }
 
     /// <summary>
@@ -98,7 +98,7 @@ public abstract partial class ChildCall : ICall
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [UbluxValidationIsRequired]
+    [UbluxValidationRequired]
     public required string To { get; set; } = string.Empty;
 
     /// <summary>
@@ -106,7 +106,7 @@ public abstract partial class ChildCall : ICall
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [UbluxValidationIsRequired]
+    [UbluxValidationRequired]
     public required CountryIsoCode ToCountry { get; set; }
 
     /// <summary>
@@ -114,6 +114,6 @@ public abstract partial class ChildCall : ICall
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [UbluxValidationIsRequired]
+    [UbluxValidationRequired]
     public required bool IsInternational { get; set; }
 }

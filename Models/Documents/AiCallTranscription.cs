@@ -13,7 +13,7 @@ public partial class AiCallTranscription : UbluxDocument_ReferenceAccount_Refere
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
     [References(typeof(Call))]
-    [UbluxValidationIsRequired]
+    [UbluxValidationRequired]
     public string IdCall { get; set; } = string.Empty;
 
     #endregion

@@ -8,6 +8,6 @@
 ///     - Booleans can have default value of false
 /// </summary>
 [AttributeUsage(AttributeTargets.Property, AllowMultiple = false)]
-public class UbluxValidationIsRequiredAttribute : Attribute
+public class UbluxValidationRequiredAttribute : Attribute
 {
 }

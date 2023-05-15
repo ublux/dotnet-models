@@ -29,7 +29,7 @@ public partial class Audio : UbluxDocument_ReferenceAccount_ReferenceTags
     ///     Name of audio
     /// </summary>
     [AllowUpdate(true)]
-    [UbluxValidationIsRequired]
+    [UbluxValidationRequired]
     public required string FriendlyName { get; set; } = string.Empty;
 
     /// <summary>
@@ -37,7 +37,7 @@ public partial class Audio : UbluxDocument_ReferenceAccount_ReferenceTags
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [UbluxValidationIsRequired]
+    [UbluxValidationRequired]
     [HideForCreateRequest]
     public required double DurationInSeconds { get; set; }
 

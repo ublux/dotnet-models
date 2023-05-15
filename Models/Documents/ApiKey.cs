@@ -13,7 +13,7 @@ public partial class ApiKey : UbluxDocument_ReferenceAccount_ReferenceTags
     /// <summary>
     ///     User that created this key. 
     /// </summary>
-    [UbluxValidationIsRequired]
+    [UbluxValidationRequired]
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
     [References(typeof(User))]
@@ -28,7 +28,7 @@ public partial class ApiKey : UbluxDocument_ReferenceAccount_ReferenceTags
     ///     Value = Permissions it has on that role. Maybe it can only read data from that service but it cannot update, create or modify. 
     /// </summary>
     [AllowUpdate(true)]
-    [UbluxValidationIsRequired]
+    [UbluxValidationRequired]
     [BsonRepresentation(BsonType.String)]
     public required List<UbluxRole> UbluxRoles { get; set; } = new();
 
@@ -37,7 +37,7 @@ public partial class ApiKey : UbluxDocument_ReferenceAccount_ReferenceTags
     /// <summary>
     ///     Api key. Contains DB index.
     /// </summary>
-    [UbluxValidationIsRequired]
+    [UbluxValidationRequired]
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
     [IgnoreDataMember]

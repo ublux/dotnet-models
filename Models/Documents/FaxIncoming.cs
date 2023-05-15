@@ -15,7 +15,7 @@ public partial class FaxIncoming : UbluxDocument_ReferenceAccount_ReferenceTags
     [AllowUpdate(false)] 
     [SwaggerSchema(ReadOnly = true)] 
     [References(typeof(VoipNumberFax))]
-    [UbluxValidationIsRequired]
+    [UbluxValidationRequired]
     public required string IdVoipNumberFax { get; set; } = string.Empty;
 
     /// <summary>
@@ -51,7 +51,7 @@ public partial class FaxIncoming : UbluxDocument_ReferenceAccount_ReferenceTags
     /// </summary>
     [AllowUpdate(false)] 
     [SwaggerSchema(ReadOnly = true)] 
-    [UbluxValidationIsRequired]
+    [UbluxValidationRequired]
     public required string FaxStatus { get; set; } = string.Empty;
 
     /// <summary>
@@ -59,7 +59,7 @@ public partial class FaxIncoming : UbluxDocument_ReferenceAccount_ReferenceTags
     /// </summary>
     [AllowUpdate(false)] 
     [SwaggerSchema(ReadOnly = true)] 
-    [UbluxValidationIsRequired]
+    [UbluxValidationRequired]
     public required string From { get; set; } = string.Empty;
 
     /// <summary>
@@ -67,7 +67,7 @@ public partial class FaxIncoming : UbluxDocument_ReferenceAccount_ReferenceTags
     /// </summary>
     [AllowUpdate(false)] 
     [SwaggerSchema(ReadOnly = true)] 
-    [UbluxValidationIsRequired]
+    [UbluxValidationRequired]
     public required string To { get; set; } = string.Empty;
 
     /// <summary>

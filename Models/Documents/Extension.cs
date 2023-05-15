@@ -37,7 +37,7 @@ public abstract partial class Extension : UbluxDocument_ReferenceAccount_Referen
     /// </summary>
     [AllowUpdate(false)] 
     [SwaggerSchema(ReadOnly = true)] 
-    [UbluxValidationIsRequired]
+    [UbluxValidationRequired]
     [HideForCreateRequest]
     public abstract ExtensionType ExtensionType
     {
@@ -52,14 +52,14 @@ public abstract partial class Extension : UbluxDocument_ReferenceAccount_Referen
     ///     Extension friendly name
     /// </summary>
     [AllowUpdate(true)]
-    [UbluxValidationIsRequired]
+    [UbluxValidationRequired]
     public required string FriendlyName { get; set; } = string.Empty;
 
     /// <summary>
     ///     Extension number
     /// </summary>
     [AllowUpdate(true)]
-    [UbluxValidationIsRequired]
+    [UbluxValidationRequired]
     public required string Number { get; set; } = string.Empty;
 
     /// <summary>

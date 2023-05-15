@@ -16,7 +16,7 @@ public partial class Account : UbluxDocument
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
     [References(typeof(CloudServicePbx))]
-    [UbluxValidationIsRequired]
+    [UbluxValidationRequired]
     public required List<string> IdsCloudServicePbxs { get; set; } = new();
 
     #endregion
@@ -33,7 +33,7 @@ public partial class Account : UbluxDocument
     ///     Account secrets
     /// </summary>
     [AllowUpdate(true)]
-    [UbluxValidationIsRequired]
+    [UbluxValidationRequired]
     public required AccountSecrets AccountSecrets { get; set; } = AccountSecrets.GenerateRandom();
 
     #endregion
@@ -42,7 +42,7 @@ public partial class Account : UbluxDocument
     ///     Name of company
     /// </summary>    
     [AllowUpdate(true)]
-    [UbluxValidationIsRequired]
+    [UbluxValidationRequired]
     public required string CompanyName { get; set; } = string.Empty;
 
     /// <summary>
@@ -58,7 +58,7 @@ public partial class Account : UbluxDocument
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [UbluxValidationIsRequired]
+    [UbluxValidationRequired]
     [BsonRepresentation(BsonType.String)]
     public List<CountryIsoCode> CountriesThatCanCallLocally { get; set; } = new();
 

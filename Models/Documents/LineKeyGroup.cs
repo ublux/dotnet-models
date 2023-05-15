@@ -21,7 +21,7 @@ public partial class LineKeyGroup : UbluxDocument_ReferenceAccount_ReferenceTags
     ///     Friendly name of line key group
     /// </summary>
     [AllowUpdate(true)]
-    [UbluxValidationIsRequired]
+    [UbluxValidationRequired]
     public required string FriendlyName { get; set; } = string.Empty;
 
     /// <summary>

@@ -32,7 +32,7 @@ public abstract partial class CallOutgoing : Call
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
     [References(typeof(Line))]
-    [UbluxValidationIsRequired]
+    [UbluxValidationRequired]
     public required string IdLineThatInitiatedCall { get; set; } = string.Empty;
 }
 

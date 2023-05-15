@@ -11,7 +11,7 @@ public partial class CallFlowLogic : UbluxDocument_ReferenceAccount_ReferenceTag
     ///     Name of virtual receptionist
     /// </summary>
     [AllowUpdate(true)]
-    [UbluxValidationIsRequired]
+    [UbluxValidationRequired]
     public required string FriendlyName { get; set; } = string.Empty;
 
     /// <summary>
@@ -32,7 +32,7 @@ public partial class CallFlowLogic : UbluxDocument_ReferenceAccount_ReferenceTag
     ///     XML containing the call flow rules
     /// </summary>
     [AllowUpdate(true)]
-    [UbluxValidationIsRequired]
+    [UbluxValidationRequired]
     public required FlowNode Tree { get; set; }
 
     #endregion

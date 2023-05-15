@@ -6,7 +6,7 @@
 public class EventActionForwardToPhoneNumber : EventAction
 {
     /// <inheritdoc/>
-    [UbluxValidationIsRequired]
+    [UbluxValidationRequired]
     public override EventActionType EventActionType
     {
         get => EventActionType.ForwardToPhoneNumber;
@@ -19,6 +19,6 @@ public class EventActionForwardToPhoneNumber : EventAction
     /// <summary>
     ///     Phone number where to forward the call
     /// </summary>
-    [UbluxValidationIsRequired]
+    [UbluxValidationRequired]
     public required string PhoneNumber { get; set; }
 }

@@ -8,19 +8,19 @@ public class LineKey
     /// <summary>
     ///     Type of line key
     /// </summary>
-    [UbluxValidationIsRequired]
+    [UbluxValidationRequired]
     public required LineKeyType LineKeyType { get; set; }
 
     /// <summary>
     ///     Value of line key. Example: 9546543982
     /// </summary>
-    [UbluxValidationIsRequired]
+    [UbluxValidationRequired]
     public required string Value { get; set; }
 
     /// <summary>
     ///     Display name of line key
     /// </summary>
-    [UbluxValidationIsRequired]
+    [UbluxValidationRequired]
     public required string Label { get; set; }
 
     /// <summary>

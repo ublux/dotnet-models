@@ -14,7 +14,7 @@ public partial class Phone : UbluxDocument_ReferenceAccount_ReferenceTags
     /// </summary>
     [References(typeof(CloudServicePbx))]
     [AllowUpdate(true)]
-    [UbluxValidationIsRequired]
+    [UbluxValidationRequired]
     public required string IdCloudServicePbx { get; set; } = string.Empty;
 
     /// <summary>
@@ -41,7 +41,7 @@ public partial class Phone : UbluxDocument_ReferenceAccount_ReferenceTags
     [JsonProperty(Order = 10000)]
     [AllowUpdate(true)]
     //[SwaggerSchema(ReadOnly = true)]
-    [UbluxValidationIsRequired]
+    [UbluxValidationRequired]
     public required List<Line> Lines { get; set; } = new();
 
     #endregion
@@ -50,7 +50,7 @@ public partial class Phone : UbluxDocument_ReferenceAccount_ReferenceTags
     ///     Descriptive name of phone
     /// </summary>
     [AllowUpdate(true)]
-    [UbluxValidationIsRequired]
+    [UbluxValidationRequired]
     public required string FriendlyName { get; set; } = string.Empty;
 
     #endregion
@@ -58,14 +58,14 @@ public partial class Phone : UbluxDocument_ReferenceAccount_ReferenceTags
     /// <summary>
     ///     Type of phone. If its of type web and user (username and password) must exist in order for phone to connect.
     /// </summary>
-    [UbluxValidationIsRequired]
+    [UbluxValidationRequired]
     [AllowUpdate(true)]
     public required PhoneType PhoneType { get; set; }
 
     /// <summary>
     ///     Disable encryption in case device does not support it
     /// </summary>
-    [UbluxValidationIsRequired]
+    [UbluxValidationRequired]
     [AllowUpdate(true)]
     public bool DisableEncryption { get; set; }
 
@@ -102,7 +102,7 @@ public partial class Phone : UbluxDocument_ReferenceAccount_ReferenceTags
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [UbluxValidationIsRequired]
+    [UbluxValidationRequired]
     [UbluxValidationStringRange(50)]
     public required string Pin { get; set; } = string.Empty;
 

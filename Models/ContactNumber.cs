@@ -8,7 +8,7 @@ public partial class ContactNumber
     /// <summary>
     ///     Phone number, Fax number, or any
     /// </summary>
-    [UbluxValidationIsRequired]
+    [UbluxValidationRequired]
     [AllowUpdate(true)]
     public required string Number { get; set; }
 

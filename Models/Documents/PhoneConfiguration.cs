@@ -22,7 +22,7 @@ public partial class PhoneConfiguration : UbluxDocument_ReferenceAccount_Referen
     ///     Phone configuration name
     /// </summary>
     [AllowUpdate(true)]
-    [UbluxValidationIsRequired]
+    [UbluxValidationRequired]
     public required string FrienlyName { get; set; } = string.Empty;
 
     /// <summary>

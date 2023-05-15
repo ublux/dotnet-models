@@ -14,7 +14,7 @@ public partial class ExtensionCallFlowLogic : Extension
     /// </summary>
     [References(typeof(CallFlowLogic))]
     [AllowUpdate(true)]
-    [UbluxValidationIsRequired]
+    [UbluxValidationRequired]
     public required string IdCallFlowLogic { get; set; } = string.Empty;
 
     #endregion
@@ -39,7 +39,7 @@ public partial class ExtensionCallFlowLogic : Extension
     /// </summary>
     [AllowUpdate(false)] 
     [SwaggerSchema(ReadOnly = true)] 
-    [UbluxValidationIsRequired]
+    [UbluxValidationRequired]
     [HideForCreateRequest]
     public override ExtensionType ExtensionType
     {

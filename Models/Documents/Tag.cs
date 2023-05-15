@@ -8,7 +8,7 @@ public partial class Tag : UbluxDocument_ReferenceAccount
     /// <summary>
     ///     Name of tag
     /// </summary>
-    [UbluxValidationIsRequired]
+    [UbluxValidationRequired]
     [AllowUpdate(true)]
     public required string FriendlyName { get; set; } = string.Empty;
 

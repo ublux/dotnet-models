@@ -3054,6 +3054,26 @@ public class CallOutgoingToExtensionFilterRequest
     [JsonProperty("idsLinesThatDidNotRing_reg")]
     public string? IdsLinesThatDidNotRing_REG { get; set; }
 
+    /// <summary> ToCountry equals </summary>
+    [JsonProperty("toCountry_eq")]
+    public string? ToCountry_EQ { get; set; }
+    /// <summary> ToCountry contains </summary>
+    [JsonProperty("toCountry_con")]
+    public string? ToCountry_CON { get; set; }
+    /// <summary> ToCountry regex </summary>
+    [JsonProperty("toCountry_reg")]
+    public string? ToCountry_REG { get; set; }
+
+    /// <summary> FromCountry equals </summary>
+    [JsonProperty("fromCountry_eq")]
+    public string? FromCountry_EQ { get; set; }
+    /// <summary> FromCountry contains </summary>
+    [JsonProperty("fromCountry_con")]
+    public string? FromCountry_CON { get; set; }
+    /// <summary> FromCountry regex </summary>
+    [JsonProperty("fromCountry_reg")]
+    public string? FromCountry_REG { get; set; }
+
     /// <summary> CallType equals </summary>
     [JsonProperty("callType_eq")]
     public string? CallType_EQ { get; set; }
@@ -3266,16 +3286,6 @@ public class CallOutgoingToExtensionFilterRequest
     [JsonProperty("from_reg")]
     public string? From_REG { get; set; }
 
-    /// <summary> FromCountry equals </summary>
-    [JsonProperty("fromCountry_eq")]
-    public string? FromCountry_EQ { get; set; }
-    /// <summary> FromCountry contains </summary>
-    [JsonProperty("fromCountry_con")]
-    public string? FromCountry_CON { get; set; }
-    /// <summary> FromCountry regex </summary>
-    [JsonProperty("fromCountry_reg")]
-    public string? FromCountry_REG { get; set; }
-
     /// <summary> To equals </summary>
     [JsonProperty("to_eq")]
     public string? To_EQ { get; set; }
@@ -3285,16 +3295,6 @@ public class CallOutgoingToExtensionFilterRequest
     /// <summary> To regex </summary>
     [JsonProperty("to_reg")]
     public string? To_REG { get; set; }
-
-    /// <summary> ToCountry equals </summary>
-    [JsonProperty("toCountry_eq")]
-    public string? ToCountry_EQ { get; set; }
-    /// <summary> ToCountry contains </summary>
-    [JsonProperty("toCountry_con")]
-    public string? ToCountry_CON { get; set; }
-    /// <summary> ToCountry regex </summary>
-    [JsonProperty("toCountry_reg")]
-    public string? ToCountry_REG { get; set; }
 
     /// <summary> Recording.ErrorMessage equals </summary>
     [JsonProperty("recording_errorMessage_eq")]

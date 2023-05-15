@@ -12,14 +12,14 @@ public partial class CallerIdMask : UbluxDocument_ReferenceAccount_ReferenceTags
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [UbluxValidationIsRequired]
+    [UbluxValidationRequired]
     public required string PhoneNumber { get; set; } = string.Empty;
 
     /// <summary>
     ///     Name of this caller id mask
     /// </summary>
     [AllowUpdate(true)]    
-    [UbluxValidationIsRequired]
+    [UbluxValidationRequired]
     public required string FriendlyName { get; set; } = string.Empty;
 
     #endregion

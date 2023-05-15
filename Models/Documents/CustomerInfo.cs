@@ -13,7 +13,7 @@ public partial class CustomerInfo : UbluxDocument_ReferenceAccount_ReferenceTags
     ///     Address where this phone number is intended to be used
     /// </summary>
     [AllowUpdate(true)]
-    [UbluxValidationIsRequired]
+    [UbluxValidationRequired]
     public required MailingAddress MailingAddress { get; set; }
 
     /// <summary>

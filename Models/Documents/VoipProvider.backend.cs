@@ -14,7 +14,7 @@ public partial class VoipProvider : UbluxDocument
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
     [IgnoreDataMember]
-    [UbluxValidationIsRequired]
+    [UbluxValidationRequired]
     public required string ProviderAccountId { get; set; } = string.Empty;
 
     /// <summary>
@@ -47,7 +47,7 @@ public partial class VoipProvider : UbluxDocument
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
     [IgnoreDataMember]
-    [UbluxValidationIsRequired]
+    [UbluxValidationRequired]
     public required UbluxPartner UbluxPartner { get; set; } 
 
     /// <summary>
@@ -56,7 +56,7 @@ public partial class VoipProvider : UbluxDocument
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
     [IgnoreDataMember]
-    [UbluxValidationIsRequired]
+    [UbluxValidationRequired]
     public required string FriendlyName { get; set; } = string.Empty;
 
     /// <summary>
@@ -77,7 +77,7 @@ public partial class VoipProvider : UbluxDocument
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
     [IgnoreDataMember]
-    [UbluxValidationIsRequired]
+    [UbluxValidationRequired]
     public required CountryIsoCode Country { get; set; }
 
     /// <summary>
@@ -86,7 +86,7 @@ public partial class VoipProvider : UbluxDocument
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
     [IgnoreDataMember]
-    [UbluxValidationIsRequired]
+    [UbluxValidationRequired]
     public required VoipCompany VoipCompany { get; set; }
 
     #region MongoDB

@@ -15,7 +15,7 @@ public partial interface IUbluxDocument : IUbluxDocumentId
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
     [JsonProperty(Order = 1000)]
-    [UbluxValidationIsRequired]
+    [UbluxValidationRequired]
     DateTime DateCreated { get; set; }
 
     /// <summary>
@@ -75,7 +75,7 @@ public abstract partial class UbluxDocument : IUbluxDocument, IUbluxDocumentId
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
     [HideForCreateRequest]
-    [UbluxValidationIsRequired]
+    [UbluxValidationRequired]
     public required DateTime DateCreated
     {
         get => dateCreated;
@@ -88,7 +88,7 @@ public abstract partial class UbluxDocument : IUbluxDocument, IUbluxDocumentId
                 dateUpdated = value;
         }
     }
-    private DateTime dateCreated;
+    private DateTime dateCreated = new DateTime();
 
     /// <summary>
     ///     Updated date. When item is created on database this date will be set too. This is important so that we can sync contacts
@@ -98,7 +98,7 @@ public abstract partial class UbluxDocument : IUbluxDocument, IUbluxDocumentId
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
     [HideForCreateRequest]
-    [UbluxValidationIsRequired]
+    [UbluxValidationRequired]
     // [Obsolete("Just a reminder that when setting the DateCreated it will also set this same value")]    
     public DateTime DateUpdated
     {
@@ -114,7 +114,7 @@ public abstract partial class UbluxDocument : IUbluxDocument, IUbluxDocumentId
         }
 #endif
     }
-    private DateTime dateUpdated;
+    private DateTime dateUpdated = new DateTime();
 
     /// <summary>
     ///     Get MongoDB indexes
@@ -146,7 +146,7 @@ public abstract partial class UbluxDocument_ReferenceAccount : UbluxDocument, IR
     [IgnoreDataMember]
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [UbluxValidationIsRequired]
+    [UbluxValidationRequired]
     public required string IdAccount { get; set; } = "";
 
     /// <summary>

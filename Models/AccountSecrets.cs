@@ -12,7 +12,7 @@ public class AccountSecrets
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [UbluxValidationIsRequired]
+    [UbluxValidationRequired]
     [UbluxValidationStringRange(5, 50)]
     public required string PinPhone { get; set; }
 
@@ -22,7 +22,7 @@ public class AccountSecrets
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [UbluxValidationIsRequired]
+    [UbluxValidationRequired]
     [UbluxValidationStringRange(9, 50)]
     public required string PinSpy { get; set; }
 

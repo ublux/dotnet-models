@@ -39,7 +39,7 @@ public partial class ExtensionConference : Extension
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [UbluxValidationIsRequired]
+    [UbluxValidationRequired]
     [HideForCreateRequest]
     public override ExtensionType ExtensionType
     {

@@ -13,7 +13,7 @@ public partial class Phone
     /// <summary>
     ///     Password of phone used to authenticate with asterisk
     /// </summary>
-    [UbluxValidationIsRequired]
+    [UbluxValidationRequired]
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
     [IgnoreDataMember]    

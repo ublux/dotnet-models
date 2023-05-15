@@ -7,12 +7,12 @@ namespace Ublux.Communications.Models;
 
 public partial class UbluxDocument
 {
-        #region Hardcoded Common Functions 
+        #region Hardcoded Static Common Functions 
     
 #pragma warning disable IDE0060 // Remove unused parameter
 
     // hadcoded
-    private int Validate_String(string? value, bool isNullable, bool isRequired, int minLength, int maxLength)
+    private static int Validate_String(string? value, bool isNullable, bool isRequired, int minLength, int maxLength)
     {
         if (value is null)
         {
@@ -39,7 +39,7 @@ public partial class UbluxDocument
 
         return 0;
     }
-    private int Validate_ValueTypeRequired<T>(T value, bool isEnum)
+    private static int Validate_ValueTypeRequired<T>(T value, bool isEnum)
         where T : struct
     {
         // Does not make sense to validate a nullable value type because it cannot be required if null
@@ -118,14 +118,14 @@ public partial class UbluxDocument
         if (Debugger.IsAttached) Debugger.Break();
         return -1;
     }
-    private int Validate_EnumType<T>(T value, Type typeOfEnum) where T : Enum
+    private static int Validate_EnumType<T>(T value, Type typeOfEnum) where T : Enum
     {
         bool isValid = Enum.IsDefined(typeOfEnum, value);
         if (isValid)
             return 0;
         return 5;
     }
-    private ValidationError BuildErrorMessage(int errorType, string callstack, object? value, int minLength = 0, int maxLength = 0)
+    private static ValidationError BuildErrorMessage(int errorType, string callstack, object? value, int minLength = 0, int maxLength = 0)
     {
         // 1 value cannot be null
         // 2 value is required
@@ -497,6 +497,41 @@ public partial class UbluxDocument
     {
         ValidatedObjects.Clear();
         foreach(var item in Validate_AiCallTranscription(aiCallTranscription, new(64, 255)))
+            yield return item;
+    }
+    /// <summary> Validation for CloudService </summary>
+    public IEnumerable<ValidationError> Validate(CloudService cloudService)
+    {
+        ValidatedObjects.Clear();
+        foreach(var item in Validate_CloudService(cloudService, new(64, 255)))
+            yield return item;
+    }
+    /// <summary> Validation for Extension </summary>
+    public IEnumerable<ValidationError> Validate(Extension extension)
+    {
+        ValidatedObjects.Clear();
+        foreach(var item in Validate_Extension(extension, new(64, 255)))
+            yield return item;
+    }
+    /// <summary> Validation for Call </summary>
+    public IEnumerable<ValidationError> Validate(Call call)
+    {
+        ValidatedObjects.Clear();
+        foreach(var item in Validate_Call(call, new(64, 255)))
+            yield return item;
+    }
+    /// <summary> Validation for TrunkOrigination </summary>
+    public IEnumerable<ValidationError> Validate(TrunkOrigination trunkOrigination)
+    {
+        ValidatedObjects.Clear();
+        foreach(var item in Validate_TrunkOrigination(trunkOrigination, new(64, 255)))
+            yield return item;
+    }
+    /// <summary> Validation for VoipNumber </summary>
+    public IEnumerable<ValidationError> Validate(VoipNumber voipNumber)
+    {
+        ValidatedObjects.Clear();
+        foreach(var item in Validate_VoipNumber(voipNumber, new(64, 255)))
             yield return item;
     }
 
@@ -5314,6 +5349,24 @@ else
     }
 }
 
+        // == Value type (callOutgoingToExtension.ToCountry) == 
+        {
+            int err1 = Validate_EnumType<CountryIsoCode>(value: callOutgoingToExtension.ToCountry, typeOfEnum: typeof(CountryIsoCode));
+            if (err1 != 0)
+            {
+                yield return BuildErrorMessage(errorType: err1, callstack: $"{callStack}.ToCountry", value: callOutgoingToExtension.ToCountry);
+            }
+            // [Ignoring] to validate its value because it is not required and not nullable. (nothing to validate)            
+        }
+        // == Value type (callOutgoingToExtension.FromCountry) == 
+        {
+            int err1 = Validate_EnumType<CountryIsoCode>(value: callOutgoingToExtension.FromCountry, typeOfEnum: typeof(CountryIsoCode));
+            if (err1 != 0)
+            {
+                yield return BuildErrorMessage(errorType: err1, callstack: $"{callStack}.FromCountry", value: callOutgoingToExtension.FromCountry);
+            }
+            // [Ignoring] to validate its value because it is not required and not nullable. (nothing to validate)            
+        }
         // == Value type (callOutgoingToExtension.CallType) == 
         {
             int err1 = Validate_EnumType<CallType>(value: callOutgoingToExtension.CallType, typeOfEnum: typeof(CallType));
@@ -5519,19 +5572,6 @@ else
                 yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.FromReversed", value: callOutgoingToExtension.FromReversed);
             }
         }
-        // == Value type (callOutgoingToExtension.FromCountry) == 
-        {
-            int err1 = Validate_EnumType<CountryIsoCode>(value: callOutgoingToExtension.FromCountry, typeOfEnum: typeof(CountryIsoCode));
-            if (err1 != 0)
-            {
-                yield return BuildErrorMessage(errorType: err1, callstack: $"{callStack}.FromCountry", value: callOutgoingToExtension.FromCountry);
-            }
-            int err3 = Validate_ValueTypeRequired<CountryIsoCode>(value: callOutgoingToExtension.FromCountry, isEnum: true);
-            if (err3 != 0)
-            {
-                yield return BuildErrorMessage(errorType: err3, callstack: $"{callStack}.FromCountry", value: callOutgoingToExtension.FromCountry);
-            }            
-        }
         // == String type (callOutgoingToExtension.To) == 
         {
             var err = Validate_String(value: callOutgoingToExtension.To, isNullable: false, isRequired: true, minLength: 0, maxLength: 100);
@@ -5547,19 +5587,6 @@ else
             {
                 yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.ToReversed", value: callOutgoingToExtension.ToReversed);
             }
-        }
-        // == Value type (callOutgoingToExtension.ToCountry) == 
-        {
-            int err1 = Validate_EnumType<CountryIsoCode>(value: callOutgoingToExtension.ToCountry, typeOfEnum: typeof(CountryIsoCode));
-            if (err1 != 0)
-            {
-                yield return BuildErrorMessage(errorType: err1, callstack: $"{callStack}.ToCountry", value: callOutgoingToExtension.ToCountry);
-            }
-            int err3 = Validate_ValueTypeRequired<CountryIsoCode>(value: callOutgoingToExtension.ToCountry, isEnum: true);
-            if (err3 != 0)
-            {
-                yield return BuildErrorMessage(errorType: err3, callstack: $"{callStack}.ToCountry", value: callOutgoingToExtension.ToCountry);
-            }            
         }
                 // == Validate object ==
                 {
@@ -16826,6 +16853,24 @@ else if (ubluxDocument is CallOutgoingToExtension callOutgoingToExtension)
     }
 }
 
+        // == Value type (callOutgoingToExtension.ToCountry) == 
+        {
+            int err1 = Validate_EnumType<CountryIsoCode>(value: callOutgoingToExtension.ToCountry, typeOfEnum: typeof(CountryIsoCode));
+            if (err1 != 0)
+            {
+                yield return BuildErrorMessage(errorType: err1, callstack: $"{callStack}.ToCountry", value: callOutgoingToExtension.ToCountry);
+            }
+            // [Ignoring] to validate its value because it is not required and not nullable. (nothing to validate)            
+        }
+        // == Value type (callOutgoingToExtension.FromCountry) == 
+        {
+            int err1 = Validate_EnumType<CountryIsoCode>(value: callOutgoingToExtension.FromCountry, typeOfEnum: typeof(CountryIsoCode));
+            if (err1 != 0)
+            {
+                yield return BuildErrorMessage(errorType: err1, callstack: $"{callStack}.FromCountry", value: callOutgoingToExtension.FromCountry);
+            }
+            // [Ignoring] to validate its value because it is not required and not nullable. (nothing to validate)            
+        }
         // == Value type (callOutgoingToExtension.CallType) == 
         {
             int err1 = Validate_EnumType<CallType>(value: callOutgoingToExtension.CallType, typeOfEnum: typeof(CallType));
@@ -17031,19 +17076,6 @@ else if (ubluxDocument is CallOutgoingToExtension callOutgoingToExtension)
                 yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.FromReversed", value: callOutgoingToExtension.FromReversed);
             }
         }
-        // == Value type (callOutgoingToExtension.FromCountry) == 
-        {
-            int err1 = Validate_EnumType<CountryIsoCode>(value: callOutgoingToExtension.FromCountry, typeOfEnum: typeof(CountryIsoCode));
-            if (err1 != 0)
-            {
-                yield return BuildErrorMessage(errorType: err1, callstack: $"{callStack}.FromCountry", value: callOutgoingToExtension.FromCountry);
-            }
-            int err3 = Validate_ValueTypeRequired<CountryIsoCode>(value: callOutgoingToExtension.FromCountry, isEnum: true);
-            if (err3 != 0)
-            {
-                yield return BuildErrorMessage(errorType: err3, callstack: $"{callStack}.FromCountry", value: callOutgoingToExtension.FromCountry);
-            }            
-        }
         // == String type (callOutgoingToExtension.To) == 
         {
             var err = Validate_String(value: callOutgoingToExtension.To, isNullable: false, isRequired: true, minLength: 0, maxLength: 100);
@@ -17059,19 +17091,6 @@ else if (ubluxDocument is CallOutgoingToExtension callOutgoingToExtension)
             {
                 yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.ToReversed", value: callOutgoingToExtension.ToReversed);
             }
-        }
-        // == Value type (callOutgoingToExtension.ToCountry) == 
-        {
-            int err1 = Validate_EnumType<CountryIsoCode>(value: callOutgoingToExtension.ToCountry, typeOfEnum: typeof(CountryIsoCode));
-            if (err1 != 0)
-            {
-                yield return BuildErrorMessage(errorType: err1, callstack: $"{callStack}.ToCountry", value: callOutgoingToExtension.ToCountry);
-            }
-            int err3 = Validate_ValueTypeRequired<CountryIsoCode>(value: callOutgoingToExtension.ToCountry, isEnum: true);
-            if (err3 != 0)
-            {
-                yield return BuildErrorMessage(errorType: err3, callstack: $"{callStack}.ToCountry", value: callOutgoingToExtension.ToCountry);
-            }            
         }
                 // == Validate object ==
                 {
@@ -20963,6 +20982,4583 @@ else
             }            
         }
 
+
+        yield break;
+    }
+    private IEnumerable<ValidationError> Validate_CloudService(CloudService cloudService, StringBuilder callStack)
+    {
+        if(ValidatedObjects.Add(cloudService)==false)
+            // item has already been validate. This is to prevent a circular reference
+            yield break;
+
+if (cloudService is CloudServicePbx cloudServicePbx)
+{
+            // == String type (cloudServicePbx.IdCloudServicePbxFailover) == 
+        {
+            var err = Validate_String(value: cloudServicePbx.IdCloudServicePbxFailover, isNullable: true, isRequired: false, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.IdCloudServicePbxFailover", value: cloudServicePbx.IdCloudServicePbxFailover);
+            }
+        }
+        // == Value type (cloudServicePbx.CloudServiceType) == 
+        {
+            int err1 = Validate_EnumType<CloudServiceType>(value: cloudServicePbx.CloudServiceType, typeOfEnum: typeof(CloudServiceType));
+            if (err1 != 0)
+            {
+                yield return BuildErrorMessage(errorType: err1, callstack: $"{callStack}.CloudServiceType", value: cloudServicePbx.CloudServiceType);
+            }
+            int err3 = Validate_ValueTypeRequired<CloudServiceType>(value: cloudServicePbx.CloudServiceType, isEnum: true);
+            if (err3 != 0)
+            {
+                yield return BuildErrorMessage(errorType: err3, callstack: $"{callStack}.CloudServiceType", value: cloudServicePbx.CloudServiceType);
+            }            
+        }
+        // == [Ignoring] Value type (cloudServicePbx.DisableMonitoring) because it is not required. (nothing to validate) == 
+        // == [Ignoring] Value type (cloudServicePbx.HttpListenPort) because it is not required. (nothing to validate) == 
+        // == String type (cloudServicePbx.ProviderInstanceId) == 
+        {
+            var err = Validate_String(value: cloudServicePbx.ProviderInstanceId, isNullable: true, isRequired: false, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.ProviderInstanceId", value: cloudServicePbx.ProviderInstanceId);
+            }
+        }
+        // == String type (cloudServicePbx.ProviderRegion) == 
+        {
+            var err = Validate_String(value: cloudServicePbx.ProviderRegion, isNullable: true, isRequired: false, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.ProviderRegion", value: cloudServicePbx.ProviderRegion);
+            }
+        }
+        // == Value type (cloudServicePbx.ProviderType) == 
+        {
+            int err1 = Validate_EnumType<CloudServiceProviderType>(value: cloudServicePbx.ProviderType, typeOfEnum: typeof(CloudServiceProviderType));
+            if (err1 != 0)
+            {
+                yield return BuildErrorMessage(errorType: err1, callstack: $"{callStack}.ProviderType", value: cloudServicePbx.ProviderType);
+            }
+            int err3 = Validate_ValueTypeRequired<CloudServiceProviderType>(value: cloudServicePbx.ProviderType, isEnum: true);
+            if (err3 != 0)
+            {
+                yield return BuildErrorMessage(errorType: err3, callstack: $"{callStack}.ProviderType", value: cloudServicePbx.ProviderType);
+            }            
+        }
+        // == String type (cloudServicePbx.IdUser) == 
+        {
+            var err = Validate_String(value: cloudServicePbx.IdUser, isNullable: false, isRequired: true, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.IdUser", value: cloudServicePbx.IdUser);
+            }
+        }
+        // == Value type (cloudServicePbx.CountryIsoCode) == 
+        {
+            int err1 = Validate_EnumType<CountryIsoCode>(value: cloudServicePbx.CountryIsoCode, typeOfEnum: typeof(CountryIsoCode));
+            if (err1 != 0)
+            {
+                yield return BuildErrorMessage(errorType: err1, callstack: $"{callStack}.CountryIsoCode", value: cloudServicePbx.CountryIsoCode);
+            }
+            int err3 = Validate_ValueTypeRequired<CountryIsoCode>(value: cloudServicePbx.CountryIsoCode, isEnum: true);
+            if (err3 != 0)
+            {
+                yield return BuildErrorMessage(errorType: err3, callstack: $"{callStack}.CountryIsoCode", value: cloudServicePbx.CountryIsoCode);
+            }            
+        }
+        // == String type (cloudServicePbx.Localnet) == 
+        {
+            var err = Validate_String(value: cloudServicePbx.Localnet, isNullable: true, isRequired: false, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.Localnet", value: cloudServicePbx.Localnet);
+            }
+        }
+        // == String type (cloudServicePbx.ExternalIp) == 
+        {
+            var err = Validate_String(value: cloudServicePbx.ExternalIp, isNullable: true, isRequired: false, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.ExternalIp", value: cloudServicePbx.ExternalIp);
+            }
+        }
+        // == Value type (cloudServicePbx.IsFailover) == 
+        {
+
+            int err3 = Validate_ValueTypeRequired<Boolean>(value: cloudServicePbx.IsFailover, isEnum: false);
+            if (err3 != 0)
+            {
+                yield return BuildErrorMessage(errorType: err3, callstack: $"{callStack}.IsFailover", value: cloudServicePbx.IsFailover);
+            }            
+        }
+        // == Value type (cloudServicePbx.Nat) == 
+        {
+
+            int err3 = Validate_ValueTypeRequired<Boolean>(value: cloudServicePbx.Nat, isEnum: false);
+            if (err3 != 0)
+            {
+                yield return BuildErrorMessage(errorType: err3, callstack: $"{callStack}.Nat", value: cloudServicePbx.Nat);
+            }            
+        }
+        // == [Ignoring] Value type (cloudServicePbx.IsHealthy) because it is not required. (nothing to validate) == 
+        // == String type (cloudServicePbx.InstanceId) == 
+        {
+            var err = Validate_String(value: cloudServicePbx.InstanceId, isNullable: false, isRequired: false, minLength: 0, maxLength: 50);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.InstanceId", value: cloudServicePbx.InstanceId);
+            }
+        }
+        // == Value type (cloudServicePbx.IsTest) == 
+        {
+
+            int err3 = Validate_ValueTypeRequired<Boolean>(value: cloudServicePbx.IsTest, isEnum: false);
+            if (err3 != 0)
+            {
+                yield return BuildErrorMessage(errorType: err3, callstack: $"{callStack}.IsTest", value: cloudServicePbx.IsTest);
+            }            
+        }
+        // == [Ignoring] Value type (cloudServicePbx.BuiltId) because it is not required. (nothing to validate) == 
+        // == [Ignoring] Value type (cloudServicePbx.DateDeleted) because it is nullable. If its nullable it cannot be required. (nothing to validate) == 
+        // == String type (cloudServicePbx.Id) == 
+        {
+            var err = Validate_String(value: cloudServicePbx.Id, isNullable: false, isRequired: false, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.Id", value: cloudServicePbx.Id);
+            }
+        }
+        // == Value type (cloudServicePbx.DateCreated) == 
+        {
+
+            int err3 = Validate_ValueTypeRequired<DateTime>(value: cloudServicePbx.DateCreated, isEnum: false);
+            if (err3 != 0)
+            {
+                yield return BuildErrorMessage(errorType: err3, callstack: $"{callStack}.DateCreated", value: cloudServicePbx.DateCreated);
+            }            
+        }
+        // == Value type (cloudServicePbx.DateUpdated) == 
+        {
+
+            int err3 = Validate_ValueTypeRequired<DateTime>(value: cloudServicePbx.DateUpdated, isEnum: false);
+            if (err3 != 0)
+            {
+                yield return BuildErrorMessage(errorType: err3, callstack: $"{callStack}.DateUpdated", value: cloudServicePbx.DateUpdated);
+            }            
+        }
+
+}
+else if (cloudService is CloudServiceWebApp cloudServiceWebApp)
+{
+            // == Value type (cloudServiceWebApp.CloudServiceType) == 
+        {
+            int err1 = Validate_EnumType<CloudServiceType>(value: cloudServiceWebApp.CloudServiceType, typeOfEnum: typeof(CloudServiceType));
+            if (err1 != 0)
+            {
+                yield return BuildErrorMessage(errorType: err1, callstack: $"{callStack}.CloudServiceType", value: cloudServiceWebApp.CloudServiceType);
+            }
+            int err3 = Validate_ValueTypeRequired<CloudServiceType>(value: cloudServiceWebApp.CloudServiceType, isEnum: true);
+            if (err3 != 0)
+            {
+                yield return BuildErrorMessage(errorType: err3, callstack: $"{callStack}.CloudServiceType", value: cloudServiceWebApp.CloudServiceType);
+            }            
+        }
+        // == String type (cloudServiceWebApp.IdCloudServiceWebAppFailover) == 
+        {
+            var err = Validate_String(value: cloudServiceWebApp.IdCloudServiceWebAppFailover, isNullable: true, isRequired: false, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.IdCloudServiceWebAppFailover", value: cloudServiceWebApp.IdCloudServiceWebAppFailover);
+            }
+        }
+        // == String type (cloudServiceWebApp.ProviderInstanceId) == 
+        {
+            var err = Validate_String(value: cloudServiceWebApp.ProviderInstanceId, isNullable: true, isRequired: false, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.ProviderInstanceId", value: cloudServiceWebApp.ProviderInstanceId);
+            }
+        }
+        // == String type (cloudServiceWebApp.ProviderRegion) == 
+        {
+            var err = Validate_String(value: cloudServiceWebApp.ProviderRegion, isNullable: true, isRequired: false, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.ProviderRegion", value: cloudServiceWebApp.ProviderRegion);
+            }
+        }
+        // == Value type (cloudServiceWebApp.ProviderType) == 
+        {
+            int err1 = Validate_EnumType<CloudServiceProviderType>(value: cloudServiceWebApp.ProviderType, typeOfEnum: typeof(CloudServiceProviderType));
+            if (err1 != 0)
+            {
+                yield return BuildErrorMessage(errorType: err1, callstack: $"{callStack}.ProviderType", value: cloudServiceWebApp.ProviderType);
+            }
+            int err3 = Validate_ValueTypeRequired<CloudServiceProviderType>(value: cloudServiceWebApp.ProviderType, isEnum: true);
+            if (err3 != 0)
+            {
+                yield return BuildErrorMessage(errorType: err3, callstack: $"{callStack}.ProviderType", value: cloudServiceWebApp.ProviderType);
+            }            
+        }
+        // == String type (cloudServiceWebApp.IdUser) == 
+        {
+            var err = Validate_String(value: cloudServiceWebApp.IdUser, isNullable: false, isRequired: true, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.IdUser", value: cloudServiceWebApp.IdUser);
+            }
+        }
+        // == Value type (cloudServiceWebApp.CountryIsoCode) == 
+        {
+            int err1 = Validate_EnumType<CountryIsoCode>(value: cloudServiceWebApp.CountryIsoCode, typeOfEnum: typeof(CountryIsoCode));
+            if (err1 != 0)
+            {
+                yield return BuildErrorMessage(errorType: err1, callstack: $"{callStack}.CountryIsoCode", value: cloudServiceWebApp.CountryIsoCode);
+            }
+            int err3 = Validate_ValueTypeRequired<CountryIsoCode>(value: cloudServiceWebApp.CountryIsoCode, isEnum: true);
+            if (err3 != 0)
+            {
+                yield return BuildErrorMessage(errorType: err3, callstack: $"{callStack}.CountryIsoCode", value: cloudServiceWebApp.CountryIsoCode);
+            }            
+        }
+        // == String type (cloudServiceWebApp.Localnet) == 
+        {
+            var err = Validate_String(value: cloudServiceWebApp.Localnet, isNullable: true, isRequired: false, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.Localnet", value: cloudServiceWebApp.Localnet);
+            }
+        }
+        // == String type (cloudServiceWebApp.ExternalIp) == 
+        {
+            var err = Validate_String(value: cloudServiceWebApp.ExternalIp, isNullable: true, isRequired: false, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.ExternalIp", value: cloudServiceWebApp.ExternalIp);
+            }
+        }
+        // == Value type (cloudServiceWebApp.IsFailover) == 
+        {
+
+            int err3 = Validate_ValueTypeRequired<Boolean>(value: cloudServiceWebApp.IsFailover, isEnum: false);
+            if (err3 != 0)
+            {
+                yield return BuildErrorMessage(errorType: err3, callstack: $"{callStack}.IsFailover", value: cloudServiceWebApp.IsFailover);
+            }            
+        }
+        // == Value type (cloudServiceWebApp.Nat) == 
+        {
+
+            int err3 = Validate_ValueTypeRequired<Boolean>(value: cloudServiceWebApp.Nat, isEnum: false);
+            if (err3 != 0)
+            {
+                yield return BuildErrorMessage(errorType: err3, callstack: $"{callStack}.Nat", value: cloudServiceWebApp.Nat);
+            }            
+        }
+        // == [Ignoring] Value type (cloudServiceWebApp.IsHealthy) because it is not required. (nothing to validate) == 
+        // == String type (cloudServiceWebApp.InstanceId) == 
+        {
+            var err = Validate_String(value: cloudServiceWebApp.InstanceId, isNullable: false, isRequired: false, minLength: 0, maxLength: 50);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.InstanceId", value: cloudServiceWebApp.InstanceId);
+            }
+        }
+        // == Value type (cloudServiceWebApp.IsTest) == 
+        {
+
+            int err3 = Validate_ValueTypeRequired<Boolean>(value: cloudServiceWebApp.IsTest, isEnum: false);
+            if (err3 != 0)
+            {
+                yield return BuildErrorMessage(errorType: err3, callstack: $"{callStack}.IsTest", value: cloudServiceWebApp.IsTest);
+            }            
+        }
+        // == [Ignoring] Value type (cloudServiceWebApp.BuiltId) because it is not required. (nothing to validate) == 
+        // == [Ignoring] Value type (cloudServiceWebApp.DateDeleted) because it is nullable. If its nullable it cannot be required. (nothing to validate) == 
+        // == String type (cloudServiceWebApp.Id) == 
+        {
+            var err = Validate_String(value: cloudServiceWebApp.Id, isNullable: false, isRequired: false, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.Id", value: cloudServiceWebApp.Id);
+            }
+        }
+        // == Value type (cloudServiceWebApp.DateCreated) == 
+        {
+
+            int err3 = Validate_ValueTypeRequired<DateTime>(value: cloudServiceWebApp.DateCreated, isEnum: false);
+            if (err3 != 0)
+            {
+                yield return BuildErrorMessage(errorType: err3, callstack: $"{callStack}.DateCreated", value: cloudServiceWebApp.DateCreated);
+            }            
+        }
+        // == Value type (cloudServiceWebApp.DateUpdated) == 
+        {
+
+            int err3 = Validate_ValueTypeRequired<DateTime>(value: cloudServiceWebApp.DateUpdated, isEnum: false);
+            if (err3 != 0)
+            {
+                yield return BuildErrorMessage(errorType: err3, callstack: $"{callStack}.DateUpdated", value: cloudServiceWebApp.DateUpdated);
+            }            
+        }
+
+}
+else if (cloudService is CloudServiceWebHost cloudServiceWebHost)
+{
+            // == Value type (cloudServiceWebHost.CloudServiceType) == 
+        {
+            int err1 = Validate_EnumType<CloudServiceType>(value: cloudServiceWebHost.CloudServiceType, typeOfEnum: typeof(CloudServiceType));
+            if (err1 != 0)
+            {
+                yield return BuildErrorMessage(errorType: err1, callstack: $"{callStack}.CloudServiceType", value: cloudServiceWebHost.CloudServiceType);
+            }
+            int err3 = Validate_ValueTypeRequired<CloudServiceType>(value: cloudServiceWebHost.CloudServiceType, isEnum: true);
+            if (err3 != 0)
+            {
+                yield return BuildErrorMessage(errorType: err3, callstack: $"{callStack}.CloudServiceType", value: cloudServiceWebHost.CloudServiceType);
+            }            
+        }
+        // == String type (cloudServiceWebHost.ProviderInstanceId) == 
+        {
+            var err = Validate_String(value: cloudServiceWebHost.ProviderInstanceId, isNullable: true, isRequired: false, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.ProviderInstanceId", value: cloudServiceWebHost.ProviderInstanceId);
+            }
+        }
+        // == String type (cloudServiceWebHost.ProviderRegion) == 
+        {
+            var err = Validate_String(value: cloudServiceWebHost.ProviderRegion, isNullable: true, isRequired: false, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.ProviderRegion", value: cloudServiceWebHost.ProviderRegion);
+            }
+        }
+        // == Value type (cloudServiceWebHost.ProviderType) == 
+        {
+            int err1 = Validate_EnumType<CloudServiceProviderType>(value: cloudServiceWebHost.ProviderType, typeOfEnum: typeof(CloudServiceProviderType));
+            if (err1 != 0)
+            {
+                yield return BuildErrorMessage(errorType: err1, callstack: $"{callStack}.ProviderType", value: cloudServiceWebHost.ProviderType);
+            }
+            int err3 = Validate_ValueTypeRequired<CloudServiceProviderType>(value: cloudServiceWebHost.ProviderType, isEnum: true);
+            if (err3 != 0)
+            {
+                yield return BuildErrorMessage(errorType: err3, callstack: $"{callStack}.ProviderType", value: cloudServiceWebHost.ProviderType);
+            }            
+        }
+        // == String type (cloudServiceWebHost.IdUser) == 
+        {
+            var err = Validate_String(value: cloudServiceWebHost.IdUser, isNullable: false, isRequired: true, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.IdUser", value: cloudServiceWebHost.IdUser);
+            }
+        }
+        // == Value type (cloudServiceWebHost.CountryIsoCode) == 
+        {
+            int err1 = Validate_EnumType<CountryIsoCode>(value: cloudServiceWebHost.CountryIsoCode, typeOfEnum: typeof(CountryIsoCode));
+            if (err1 != 0)
+            {
+                yield return BuildErrorMessage(errorType: err1, callstack: $"{callStack}.CountryIsoCode", value: cloudServiceWebHost.CountryIsoCode);
+            }
+            int err3 = Validate_ValueTypeRequired<CountryIsoCode>(value: cloudServiceWebHost.CountryIsoCode, isEnum: true);
+            if (err3 != 0)
+            {
+                yield return BuildErrorMessage(errorType: err3, callstack: $"{callStack}.CountryIsoCode", value: cloudServiceWebHost.CountryIsoCode);
+            }            
+        }
+        // == String type (cloudServiceWebHost.Localnet) == 
+        {
+            var err = Validate_String(value: cloudServiceWebHost.Localnet, isNullable: true, isRequired: false, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.Localnet", value: cloudServiceWebHost.Localnet);
+            }
+        }
+        // == String type (cloudServiceWebHost.ExternalIp) == 
+        {
+            var err = Validate_String(value: cloudServiceWebHost.ExternalIp, isNullable: true, isRequired: false, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.ExternalIp", value: cloudServiceWebHost.ExternalIp);
+            }
+        }
+        // == Value type (cloudServiceWebHost.IsFailover) == 
+        {
+
+            int err3 = Validate_ValueTypeRequired<Boolean>(value: cloudServiceWebHost.IsFailover, isEnum: false);
+            if (err3 != 0)
+            {
+                yield return BuildErrorMessage(errorType: err3, callstack: $"{callStack}.IsFailover", value: cloudServiceWebHost.IsFailover);
+            }            
+        }
+        // == Value type (cloudServiceWebHost.Nat) == 
+        {
+
+            int err3 = Validate_ValueTypeRequired<Boolean>(value: cloudServiceWebHost.Nat, isEnum: false);
+            if (err3 != 0)
+            {
+                yield return BuildErrorMessage(errorType: err3, callstack: $"{callStack}.Nat", value: cloudServiceWebHost.Nat);
+            }            
+        }
+        // == [Ignoring] Value type (cloudServiceWebHost.IsHealthy) because it is not required. (nothing to validate) == 
+        // == String type (cloudServiceWebHost.InstanceId) == 
+        {
+            var err = Validate_String(value: cloudServiceWebHost.InstanceId, isNullable: false, isRequired: false, minLength: 0, maxLength: 50);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.InstanceId", value: cloudServiceWebHost.InstanceId);
+            }
+        }
+        // == Value type (cloudServiceWebHost.IsTest) == 
+        {
+
+            int err3 = Validate_ValueTypeRequired<Boolean>(value: cloudServiceWebHost.IsTest, isEnum: false);
+            if (err3 != 0)
+            {
+                yield return BuildErrorMessage(errorType: err3, callstack: $"{callStack}.IsTest", value: cloudServiceWebHost.IsTest);
+            }            
+        }
+        // == [Ignoring] Value type (cloudServiceWebHost.BuiltId) because it is not required. (nothing to validate) == 
+        // == [Ignoring] Value type (cloudServiceWebHost.DateDeleted) because it is nullable. If its nullable it cannot be required. (nothing to validate) == 
+        // == String type (cloudServiceWebHost.Id) == 
+        {
+            var err = Validate_String(value: cloudServiceWebHost.Id, isNullable: false, isRequired: false, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.Id", value: cloudServiceWebHost.Id);
+            }
+        }
+        // == Value type (cloudServiceWebHost.DateCreated) == 
+        {
+
+            int err3 = Validate_ValueTypeRequired<DateTime>(value: cloudServiceWebHost.DateCreated, isEnum: false);
+            if (err3 != 0)
+            {
+                yield return BuildErrorMessage(errorType: err3, callstack: $"{callStack}.DateCreated", value: cloudServiceWebHost.DateCreated);
+            }            
+        }
+        // == Value type (cloudServiceWebHost.DateUpdated) == 
+        {
+
+            int err3 = Validate_ValueTypeRequired<DateTime>(value: cloudServiceWebHost.DateUpdated, isEnum: false);
+            if (err3 != 0)
+            {
+                yield return BuildErrorMessage(errorType: err3, callstack: $"{callStack}.DateUpdated", value: cloudServiceWebHost.DateUpdated);
+            }            
+        }
+
+}
+else
+{
+    // This means we are validating an derived class that does not exist. 
+    // For example if a class has property of type Animal and we are validating a Dog that is not part of validation.
+    // Re-Generating this code should fix this problem if class Dog exists on the assembiles passed to this validator.
+    if (Debugger.IsAttached) Debugger.Break();
+    yield return new ValidationError() { ErrorMessage = "Internal Validation Error" };
+}
+
+        yield break;
+    }
+    private IEnumerable<ValidationError> Validate_Extension(Extension extension, StringBuilder callStack)
+    {
+        if(ValidatedObjects.Add(extension)==false)
+            // item has already been validate. This is to prevent a circular reference
+            yield break;
+
+if (extension is ExtensionCallFlowLogic extensionCallFlowLogic)
+{
+            // == String type (extensionCallFlowLogic.IdCallFlowLogic) == 
+        {
+            var err = Validate_String(value: extensionCallFlowLogic.IdCallFlowLogic, isNullable: false, isRequired: true, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.IdCallFlowLogic", value: extensionCallFlowLogic.IdCallFlowLogic);
+            }
+        }
+        // == String type (extensionCallFlowLogic.CallFlowLabel) == 
+        {
+            var err = Validate_String(value: extensionCallFlowLogic.CallFlowLabel, isNullable: true, isRequired: false, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.CallFlowLabel", value: extensionCallFlowLogic.CallFlowLabel);
+            }
+        }
+        // == String type (extensionCallFlowLogic.TimeZone) == 
+        {
+            var err = Validate_String(value: extensionCallFlowLogic.TimeZone, isNullable: true, isRequired: false, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.TimeZone", value: extensionCallFlowLogic.TimeZone);
+            }
+        }
+        // == Value type (extensionCallFlowLogic.ExtensionType) == 
+        {
+            int err1 = Validate_EnumType<ExtensionType>(value: extensionCallFlowLogic.ExtensionType, typeOfEnum: typeof(ExtensionType));
+            if (err1 != 0)
+            {
+                yield return BuildErrorMessage(errorType: err1, callstack: $"{callStack}.ExtensionType", value: extensionCallFlowLogic.ExtensionType);
+            }
+            int err3 = Validate_ValueTypeRequired<ExtensionType>(value: extensionCallFlowLogic.ExtensionType, isEnum: true);
+            if (err3 != 0)
+            {
+                yield return BuildErrorMessage(errorType: err3, callstack: $"{callStack}.ExtensionType", value: extensionCallFlowLogic.ExtensionType);
+            }            
+        }
+        // == String type (extensionCallFlowLogic.IdMusicOnHoldGroup) == 
+        {
+            var err = Validate_String(value: extensionCallFlowLogic.IdMusicOnHoldGroup, isNullable: true, isRequired: false, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.IdMusicOnHoldGroup", value: extensionCallFlowLogic.IdMusicOnHoldGroup);
+            }
+        }
+        // == String type (extensionCallFlowLogic.FriendlyName) == 
+        {
+            var err = Validate_String(value: extensionCallFlowLogic.FriendlyName, isNullable: false, isRequired: true, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.FriendlyName", value: extensionCallFlowLogic.FriendlyName);
+            }
+        }
+        // == String type (extensionCallFlowLogic.Number) == 
+        {
+            var err = Validate_String(value: extensionCallFlowLogic.Number, isNullable: false, isRequired: true, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.Number", value: extensionCallFlowLogic.Number);
+            }
+        }
+        // == [Ignoring] Value type (extensionCallFlowLogic.InjectExtensionNameToCallerId) because it is not required. (nothing to validate) == 
+// == IList type (extensionCallFlowLogic.IdsTags) ==
+{
+    if(extensionCallFlowLogic.IdsTags is null)
+    {
+                yield return BuildErrorMessage(errorType: 1, callstack: $"{callStack}.IdsTags", value: null); // Error because list cannot be null
+    }
+    else
+    {
+        
+        for (int i = 0; i < extensionCallFlowLogic.IdsTags.Count; i++)
+        {
+                    // == String type (extensionCallFlowLogic.IdsTags) == 
+        {
+            var err = Validate_String(value: extensionCallFlowLogic.IdsTags[i], isNullable: false, isRequired: false, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.IdsTags[{i}]", value: extensionCallFlowLogic.IdsTags[i]);
+            }
+        }
+        }
+    }
+}
+
+        // == String type (extensionCallFlowLogic.IdAccount) == 
+        {
+            var err = Validate_String(value: extensionCallFlowLogic.IdAccount, isNullable: false, isRequired: true, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.IdAccount", value: extensionCallFlowLogic.IdAccount);
+            }
+        }
+        // == [Ignoring] Value type (extensionCallFlowLogic.BuiltId) because it is not required. (nothing to validate) == 
+        // == [Ignoring] Value type (extensionCallFlowLogic.DateDeleted) because it is nullable. If its nullable it cannot be required. (nothing to validate) == 
+        // == String type (extensionCallFlowLogic.Id) == 
+        {
+            var err = Validate_String(value: extensionCallFlowLogic.Id, isNullable: false, isRequired: false, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.Id", value: extensionCallFlowLogic.Id);
+            }
+        }
+        // == Value type (extensionCallFlowLogic.DateCreated) == 
+        {
+
+            int err3 = Validate_ValueTypeRequired<DateTime>(value: extensionCallFlowLogic.DateCreated, isEnum: false);
+            if (err3 != 0)
+            {
+                yield return BuildErrorMessage(errorType: err3, callstack: $"{callStack}.DateCreated", value: extensionCallFlowLogic.DateCreated);
+            }            
+        }
+        // == Value type (extensionCallFlowLogic.DateUpdated) == 
+        {
+
+            int err3 = Validate_ValueTypeRequired<DateTime>(value: extensionCallFlowLogic.DateUpdated, isEnum: false);
+            if (err3 != 0)
+            {
+                yield return BuildErrorMessage(errorType: err3, callstack: $"{callStack}.DateUpdated", value: extensionCallFlowLogic.DateUpdated);
+            }            
+        }
+
+}
+else if (extension is ExtensionConference extensionConference)
+{
+    // == IList type (extensionConference.IdsAudiosWhenOneParticipant) ==
+{
+    if(extensionConference.IdsAudiosWhenOneParticipant is null)
+    {
+                yield return BuildErrorMessage(errorType: 1, callstack: $"{callStack}.IdsAudiosWhenOneParticipant", value: null); // Error because list cannot be null
+    }
+    else
+    {
+        
+        for (int i = 0; i < extensionConference.IdsAudiosWhenOneParticipant.Count; i++)
+        {
+                    // == String type (extensionConference.IdsAudiosWhenOneParticipant) == 
+        {
+            var err = Validate_String(value: extensionConference.IdsAudiosWhenOneParticipant[i], isNullable: false, isRequired: false, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.IdsAudiosWhenOneParticipant[{i}]", value: extensionConference.IdsAudiosWhenOneParticipant[i]);
+            }
+        }
+        }
+    }
+}
+
+        // == [Ignoring] Value type (extensionConference.AnnounceParticipants) because it is not required. (nothing to validate) == 
+        // == String type (extensionConference.Pin) == 
+        {
+            var err = Validate_String(value: extensionConference.Pin, isNullable: true, isRequired: false, minLength: 0, maxLength: 20);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.Pin", value: extensionConference.Pin);
+            }
+        }
+        // == Value type (extensionConference.ExtensionType) == 
+        {
+            int err1 = Validate_EnumType<ExtensionType>(value: extensionConference.ExtensionType, typeOfEnum: typeof(ExtensionType));
+            if (err1 != 0)
+            {
+                yield return BuildErrorMessage(errorType: err1, callstack: $"{callStack}.ExtensionType", value: extensionConference.ExtensionType);
+            }
+            int err3 = Validate_ValueTypeRequired<ExtensionType>(value: extensionConference.ExtensionType, isEnum: true);
+            if (err3 != 0)
+            {
+                yield return BuildErrorMessage(errorType: err3, callstack: $"{callStack}.ExtensionType", value: extensionConference.ExtensionType);
+            }            
+        }
+        // == String type (extensionConference.IdMusicOnHoldGroup) == 
+        {
+            var err = Validate_String(value: extensionConference.IdMusicOnHoldGroup, isNullable: true, isRequired: false, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.IdMusicOnHoldGroup", value: extensionConference.IdMusicOnHoldGroup);
+            }
+        }
+        // == String type (extensionConference.FriendlyName) == 
+        {
+            var err = Validate_String(value: extensionConference.FriendlyName, isNullable: false, isRequired: true, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.FriendlyName", value: extensionConference.FriendlyName);
+            }
+        }
+        // == String type (extensionConference.Number) == 
+        {
+            var err = Validate_String(value: extensionConference.Number, isNullable: false, isRequired: true, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.Number", value: extensionConference.Number);
+            }
+        }
+        // == [Ignoring] Value type (extensionConference.InjectExtensionNameToCallerId) because it is not required. (nothing to validate) == 
+// == IList type (extensionConference.IdsTags) ==
+{
+    if(extensionConference.IdsTags is null)
+    {
+                yield return BuildErrorMessage(errorType: 1, callstack: $"{callStack}.IdsTags", value: null); // Error because list cannot be null
+    }
+    else
+    {
+        
+        for (int i = 0; i < extensionConference.IdsTags.Count; i++)
+        {
+                    // == String type (extensionConference.IdsTags) == 
+        {
+            var err = Validate_String(value: extensionConference.IdsTags[i], isNullable: false, isRequired: false, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.IdsTags[{i}]", value: extensionConference.IdsTags[i]);
+            }
+        }
+        }
+    }
+}
+
+        // == String type (extensionConference.IdAccount) == 
+        {
+            var err = Validate_String(value: extensionConference.IdAccount, isNullable: false, isRequired: true, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.IdAccount", value: extensionConference.IdAccount);
+            }
+        }
+        // == [Ignoring] Value type (extensionConference.BuiltId) because it is not required. (nothing to validate) == 
+        // == [Ignoring] Value type (extensionConference.DateDeleted) because it is nullable. If its nullable it cannot be required. (nothing to validate) == 
+        // == String type (extensionConference.Id) == 
+        {
+            var err = Validate_String(value: extensionConference.Id, isNullable: false, isRequired: false, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.Id", value: extensionConference.Id);
+            }
+        }
+        // == Value type (extensionConference.DateCreated) == 
+        {
+
+            int err3 = Validate_ValueTypeRequired<DateTime>(value: extensionConference.DateCreated, isEnum: false);
+            if (err3 != 0)
+            {
+                yield return BuildErrorMessage(errorType: err3, callstack: $"{callStack}.DateCreated", value: extensionConference.DateCreated);
+            }            
+        }
+        // == Value type (extensionConference.DateUpdated) == 
+        {
+
+            int err3 = Validate_ValueTypeRequired<DateTime>(value: extensionConference.DateUpdated, isEnum: false);
+            if (err3 != 0)
+            {
+                yield return BuildErrorMessage(errorType: err3, callstack: $"{callStack}.DateUpdated", value: extensionConference.DateUpdated);
+            }            
+        }
+
+}
+else if (extension is ExtensionQueue extensionQueue)
+{
+    // == IList type (extensionQueue.IdsAudios) ==
+{
+    if(extensionQueue.IdsAudios is null)
+    {
+                yield return BuildErrorMessage(errorType: 1, callstack: $"{callStack}.IdsAudios", value: null); // Error because list cannot be null
+    }
+    else
+    {
+        
+        for (int i = 0; i < extensionQueue.IdsAudios.Count; i++)
+        {
+                    // == String type (extensionQueue.IdsAudios) == 
+        {
+            var err = Validate_String(value: extensionQueue.IdsAudios[i], isNullable: false, isRequired: false, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.IdsAudios[{i}]", value: extensionQueue.IdsAudios[i]);
+            }
+        }
+        }
+    }
+}
+
+                // == Validate object ==
+                {
+                    var tmp = extensionQueue.SendEmailNotificationIfItTakesToLongToBeAnswered;
+                    if(tmp is null)
+                    {
+                        // OK for it to be null it is nullable
+                    }
+                    else
+                    {
+                        var pos = callStack.Length;
+                        if (callStack.Length > 0) callStack.Append('.');
+                        callStack.Append($"SendEmailNotificationIfItTakesToLongToBeAnswered");
+                        foreach(var err in Validate_SendEmailNotificationIfItTakesToLongToBeAnswered(tmp, callStack))
+                            yield return err;
+                        callStack.Length = pos;
+                    }
+                }
+
+        // == [Ignoring] Value type (extensionQueue.RingInUse) because it is not required. (nothing to validate) == 
+        // == Value type (extensionQueue.QueueTimeoutInMinutes) == 
+        {
+
+            int err3 = Validate_ValueTypeRequired<Int32>(value: extensionQueue.QueueTimeoutInMinutes, isEnum: false);
+            if (err3 != 0)
+            {
+                yield return BuildErrorMessage(errorType: err3, callstack: $"{callStack}.QueueTimeoutInMinutes", value: extensionQueue.QueueTimeoutInMinutes);
+            }            
+        }
+        // == [Ignoring] Value type (extensionQueue.AnnouncePosition) because it is not required. (nothing to validate) == 
+        // == [Ignoring] Value type (extensionQueue.AnnounceHoldTime) because it is not required. (nothing to validate) == 
+        // == [Ignoring] Value type (extensionQueue.AnnounceFrequency) because it is not required. (nothing to validate) == 
+        // == Value type (extensionQueue.RetryFrequency) == 
+        {
+
+            int err3 = Validate_ValueTypeRequired<Int32>(value: extensionQueue.RetryFrequency, isEnum: false);
+            if (err3 != 0)
+            {
+                yield return BuildErrorMessage(errorType: err3, callstack: $"{callStack}.RetryFrequency", value: extensionQueue.RetryFrequency);
+            }            
+        }
+        // == Value type (extensionQueue.RingStrategy) == 
+        {
+            int err1 = Validate_EnumType<QueueRingStrategy>(value: extensionQueue.RingStrategy, typeOfEnum: typeof(QueueRingStrategy));
+            if (err1 != 0)
+            {
+                yield return BuildErrorMessage(errorType: err1, callstack: $"{callStack}.RingStrategy", value: extensionQueue.RingStrategy);
+            }
+            // [Ignoring] to validate its value because it is not required and not nullable. (nothing to validate)            
+        }
+        // == Value type (extensionQueue.ExtensionType) == 
+        {
+            int err1 = Validate_EnumType<ExtensionType>(value: extensionQueue.ExtensionType, typeOfEnum: typeof(ExtensionType));
+            if (err1 != 0)
+            {
+                yield return BuildErrorMessage(errorType: err1, callstack: $"{callStack}.ExtensionType", value: extensionQueue.ExtensionType);
+            }
+            int err3 = Validate_ValueTypeRequired<ExtensionType>(value: extensionQueue.ExtensionType, isEnum: true);
+            if (err3 != 0)
+            {
+                yield return BuildErrorMessage(errorType: err3, callstack: $"{callStack}.ExtensionType", value: extensionQueue.ExtensionType);
+            }            
+        }
+// == IList type (extensionQueue.IdsLines) ==
+{
+    if(extensionQueue.IdsLines is null)
+    {
+                yield return BuildErrorMessage(errorType: 1, callstack: $"{callStack}.IdsLines", value: null); // Error because list cannot be null
+    }
+    else
+    {
+        if(extensionQueue.IdsLines.Count == 0) yield return BuildErrorMessage(errorType: 4, callstack: $"{callStack}.IdsLines", value: null); // Error because list is required meaning it should contain at least one item
+
+        for (int i = 0; i < extensionQueue.IdsLines.Count; i++)
+        {
+                    // == String type (extensionQueue.IdsLines) == 
+        {
+            var err = Validate_String(value: extensionQueue.IdsLines[i], isNullable: false, isRequired: true, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.IdsLines[{i}]", value: extensionQueue.IdsLines[i]);
+            }
+        }
+        }
+    }
+}
+
+                // == Validate object ==
+                {
+                    var tmp = extensionQueue.EventActionToExecuteIfNotAnswered;
+                    if(tmp is null)
+                    {
+                        // OK for it to be null it is nullable
+                    }
+                    else
+                    {
+                        var pos = callStack.Length;
+                        if (callStack.Length > 0) callStack.Append('.');
+                        callStack.Append($"EventActionToExecuteIfNotAnswered");
+                        foreach(var err in Validate_EventAction(tmp, callStack))
+                            yield return err;
+                        callStack.Length = pos;
+                    }
+                }
+
+                // == Validate object ==
+                {
+                    var tmp = extensionQueue.SendEmailNotificationIfNotAnswered;
+                    if(tmp is null)
+                    {
+                        // OK for it to be null it is nullable
+                    }
+                    else
+                    {
+                        var pos = callStack.Length;
+                        if (callStack.Length > 0) callStack.Append('.');
+                        callStack.Append($"SendEmailNotificationIfNotAnswered");
+                        foreach(var err in Validate_SendEmailNotificationIfNotAnswered(tmp, callStack))
+                            yield return err;
+                        callStack.Length = pos;
+                    }
+                }
+
+        // == Value type (extensionQueue.RingTimeInSeconds) == 
+        {
+
+            int err3 = Validate_ValueTypeRequired<Int32>(value: extensionQueue.RingTimeInSeconds, isEnum: false);
+            if (err3 != 0)
+            {
+                yield return BuildErrorMessage(errorType: err3, callstack: $"{callStack}.RingTimeInSeconds", value: extensionQueue.RingTimeInSeconds);
+            }            
+        }
+        // == String type (extensionQueue.IdMusicOnHoldGroup) == 
+        {
+            var err = Validate_String(value: extensionQueue.IdMusicOnHoldGroup, isNullable: true, isRequired: false, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.IdMusicOnHoldGroup", value: extensionQueue.IdMusicOnHoldGroup);
+            }
+        }
+        // == String type (extensionQueue.FriendlyName) == 
+        {
+            var err = Validate_String(value: extensionQueue.FriendlyName, isNullable: false, isRequired: true, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.FriendlyName", value: extensionQueue.FriendlyName);
+            }
+        }
+        // == String type (extensionQueue.Number) == 
+        {
+            var err = Validate_String(value: extensionQueue.Number, isNullable: false, isRequired: true, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.Number", value: extensionQueue.Number);
+            }
+        }
+        // == [Ignoring] Value type (extensionQueue.InjectExtensionNameToCallerId) because it is not required. (nothing to validate) == 
+// == IList type (extensionQueue.IdsTags) ==
+{
+    if(extensionQueue.IdsTags is null)
+    {
+                yield return BuildErrorMessage(errorType: 1, callstack: $"{callStack}.IdsTags", value: null); // Error because list cannot be null
+    }
+    else
+    {
+        
+        for (int i = 0; i < extensionQueue.IdsTags.Count; i++)
+        {
+                    // == String type (extensionQueue.IdsTags) == 
+        {
+            var err = Validate_String(value: extensionQueue.IdsTags[i], isNullable: false, isRequired: false, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.IdsTags[{i}]", value: extensionQueue.IdsTags[i]);
+            }
+        }
+        }
+    }
+}
+
+        // == String type (extensionQueue.IdAccount) == 
+        {
+            var err = Validate_String(value: extensionQueue.IdAccount, isNullable: false, isRequired: true, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.IdAccount", value: extensionQueue.IdAccount);
+            }
+        }
+        // == [Ignoring] Value type (extensionQueue.BuiltId) because it is not required. (nothing to validate) == 
+        // == [Ignoring] Value type (extensionQueue.DateDeleted) because it is nullable. If its nullable it cannot be required. (nothing to validate) == 
+        // == String type (extensionQueue.Id) == 
+        {
+            var err = Validate_String(value: extensionQueue.Id, isNullable: false, isRequired: false, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.Id", value: extensionQueue.Id);
+            }
+        }
+        // == Value type (extensionQueue.DateCreated) == 
+        {
+
+            int err3 = Validate_ValueTypeRequired<DateTime>(value: extensionQueue.DateCreated, isEnum: false);
+            if (err3 != 0)
+            {
+                yield return BuildErrorMessage(errorType: err3, callstack: $"{callStack}.DateCreated", value: extensionQueue.DateCreated);
+            }            
+        }
+        // == Value type (extensionQueue.DateUpdated) == 
+        {
+
+            int err3 = Validate_ValueTypeRequired<DateTime>(value: extensionQueue.DateUpdated, isEnum: false);
+            if (err3 != 0)
+            {
+                yield return BuildErrorMessage(errorType: err3, callstack: $"{callStack}.DateUpdated", value: extensionQueue.DateUpdated);
+            }            
+        }
+
+}
+else if (extension is ExtensionDial extensionDial)
+{
+    // == IList type (extensionDial.IdsLines) ==
+{
+    if(extensionDial.IdsLines is null)
+    {
+                yield return BuildErrorMessage(errorType: 1, callstack: $"{callStack}.IdsLines", value: null); // Error because list cannot be null
+    }
+    else
+    {
+        if(extensionDial.IdsLines.Count == 0) yield return BuildErrorMessage(errorType: 4, callstack: $"{callStack}.IdsLines", value: null); // Error because list is required meaning it should contain at least one item
+
+        for (int i = 0; i < extensionDial.IdsLines.Count; i++)
+        {
+                    // == String type (extensionDial.IdsLines) == 
+        {
+            var err = Validate_String(value: extensionDial.IdsLines[i], isNullable: false, isRequired: true, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.IdsLines[{i}]", value: extensionDial.IdsLines[i]);
+            }
+        }
+        }
+    }
+}
+
+                // == Validate object ==
+                {
+                    var tmp = extensionDial.EventActionToExecuteIfNotAnswered;
+                    if(tmp is null)
+                    {
+                        // OK for it to be null it is nullable
+                    }
+                    else
+                    {
+                        var pos = callStack.Length;
+                        if (callStack.Length > 0) callStack.Append('.');
+                        callStack.Append($"EventActionToExecuteIfNotAnswered");
+                        foreach(var err in Validate_EventAction(tmp, callStack))
+                            yield return err;
+                        callStack.Length = pos;
+                    }
+                }
+
+                // == Validate object ==
+                {
+                    var tmp = extensionDial.SendEmailNotificationIfNotAnswered;
+                    if(tmp is null)
+                    {
+                        // OK for it to be null it is nullable
+                    }
+                    else
+                    {
+                        var pos = callStack.Length;
+                        if (callStack.Length > 0) callStack.Append('.');
+                        callStack.Append($"SendEmailNotificationIfNotAnswered");
+                        foreach(var err in Validate_SendEmailNotificationIfNotAnswered(tmp, callStack))
+                            yield return err;
+                        callStack.Length = pos;
+                    }
+                }
+
+        // == Value type (extensionDial.RingTimeInSeconds) == 
+        {
+
+            int err3 = Validate_ValueTypeRequired<Int32>(value: extensionDial.RingTimeInSeconds, isEnum: false);
+            if (err3 != 0)
+            {
+                yield return BuildErrorMessage(errorType: err3, callstack: $"{callStack}.RingTimeInSeconds", value: extensionDial.RingTimeInSeconds);
+            }            
+        }
+        // == Value type (extensionDial.ExtensionType) == 
+        {
+            int err1 = Validate_EnumType<ExtensionType>(value: extensionDial.ExtensionType, typeOfEnum: typeof(ExtensionType));
+            if (err1 != 0)
+            {
+                yield return BuildErrorMessage(errorType: err1, callstack: $"{callStack}.ExtensionType", value: extensionDial.ExtensionType);
+            }
+            int err3 = Validate_ValueTypeRequired<ExtensionType>(value: extensionDial.ExtensionType, isEnum: true);
+            if (err3 != 0)
+            {
+                yield return BuildErrorMessage(errorType: err3, callstack: $"{callStack}.ExtensionType", value: extensionDial.ExtensionType);
+            }            
+        }
+        // == String type (extensionDial.IdMusicOnHoldGroup) == 
+        {
+            var err = Validate_String(value: extensionDial.IdMusicOnHoldGroup, isNullable: true, isRequired: false, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.IdMusicOnHoldGroup", value: extensionDial.IdMusicOnHoldGroup);
+            }
+        }
+        // == String type (extensionDial.FriendlyName) == 
+        {
+            var err = Validate_String(value: extensionDial.FriendlyName, isNullable: false, isRequired: true, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.FriendlyName", value: extensionDial.FriendlyName);
+            }
+        }
+        // == String type (extensionDial.Number) == 
+        {
+            var err = Validate_String(value: extensionDial.Number, isNullable: false, isRequired: true, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.Number", value: extensionDial.Number);
+            }
+        }
+        // == [Ignoring] Value type (extensionDial.InjectExtensionNameToCallerId) because it is not required. (nothing to validate) == 
+// == IList type (extensionDial.IdsTags) ==
+{
+    if(extensionDial.IdsTags is null)
+    {
+                yield return BuildErrorMessage(errorType: 1, callstack: $"{callStack}.IdsTags", value: null); // Error because list cannot be null
+    }
+    else
+    {
+        
+        for (int i = 0; i < extensionDial.IdsTags.Count; i++)
+        {
+                    // == String type (extensionDial.IdsTags) == 
+        {
+            var err = Validate_String(value: extensionDial.IdsTags[i], isNullable: false, isRequired: false, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.IdsTags[{i}]", value: extensionDial.IdsTags[i]);
+            }
+        }
+        }
+    }
+}
+
+        // == String type (extensionDial.IdAccount) == 
+        {
+            var err = Validate_String(value: extensionDial.IdAccount, isNullable: false, isRequired: true, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.IdAccount", value: extensionDial.IdAccount);
+            }
+        }
+        // == [Ignoring] Value type (extensionDial.BuiltId) because it is not required. (nothing to validate) == 
+        // == [Ignoring] Value type (extensionDial.DateDeleted) because it is nullable. If its nullable it cannot be required. (nothing to validate) == 
+        // == String type (extensionDial.Id) == 
+        {
+            var err = Validate_String(value: extensionDial.Id, isNullable: false, isRequired: false, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.Id", value: extensionDial.Id);
+            }
+        }
+        // == Value type (extensionDial.DateCreated) == 
+        {
+
+            int err3 = Validate_ValueTypeRequired<DateTime>(value: extensionDial.DateCreated, isEnum: false);
+            if (err3 != 0)
+            {
+                yield return BuildErrorMessage(errorType: err3, callstack: $"{callStack}.DateCreated", value: extensionDial.DateCreated);
+            }            
+        }
+        // == Value type (extensionDial.DateUpdated) == 
+        {
+
+            int err3 = Validate_ValueTypeRequired<DateTime>(value: extensionDial.DateUpdated, isEnum: false);
+            if (err3 != 0)
+            {
+                yield return BuildErrorMessage(errorType: err3, callstack: $"{callStack}.DateUpdated", value: extensionDial.DateUpdated);
+            }            
+        }
+
+}
+else if (extension is ExtensionVoicemail extensionVoicemail)
+{
+            // == String type (extensionVoicemail.IdAudio) == 
+        {
+            var err = Validate_String(value: extensionVoicemail.IdAudio, isNullable: true, isRequired: false, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.IdAudio", value: extensionVoicemail.IdAudio);
+            }
+        }
+// == IList type (extensionVoicemail.IdsLinesThatCanListenToVoicemail) ==
+{
+    if(extensionVoicemail.IdsLinesThatCanListenToVoicemail is null)
+    {
+                yield return BuildErrorMessage(errorType: 1, callstack: $"{callStack}.IdsLinesThatCanListenToVoicemail", value: null); // Error because list cannot be null
+    }
+    else
+    {
+        
+        for (int i = 0; i < extensionVoicemail.IdsLinesThatCanListenToVoicemail.Count; i++)
+        {
+                    // == String type (extensionVoicemail.IdsLinesThatCanListenToVoicemail) == 
+        {
+            var err = Validate_String(value: extensionVoicemail.IdsLinesThatCanListenToVoicemail[i], isNullable: false, isRequired: false, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.IdsLinesThatCanListenToVoicemail[{i}]", value: extensionVoicemail.IdsLinesThatCanListenToVoicemail[i]);
+            }
+        }
+        }
+    }
+}
+
+        // == String type (extensionVoicemail.IdEmail) == 
+        {
+            var err = Validate_String(value: extensionVoicemail.IdEmail, isNullable: false, isRequired: true, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.IdEmail", value: extensionVoicemail.IdEmail);
+            }
+        }
+        // == String type (extensionVoicemail.TextToSpeech) == 
+        {
+            var err = Validate_String(value: extensionVoicemail.TextToSpeech, isNullable: true, isRequired: false, minLength: 0, maxLength: 2000);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.TextToSpeech", value: extensionVoicemail.TextToSpeech);
+            }
+        }
+        // == String type (extensionVoicemail.TextToSpeechVoiceId) == 
+        {
+            var err = Validate_String(value: extensionVoicemail.TextToSpeechVoiceId, isNullable: true, isRequired: false, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.TextToSpeechVoiceId", value: extensionVoicemail.TextToSpeechVoiceId);
+            }
+        }
+        // == Value type (extensionVoicemail.ExtensionType) == 
+        {
+            int err1 = Validate_EnumType<ExtensionType>(value: extensionVoicemail.ExtensionType, typeOfEnum: typeof(ExtensionType));
+            if (err1 != 0)
+            {
+                yield return BuildErrorMessage(errorType: err1, callstack: $"{callStack}.ExtensionType", value: extensionVoicemail.ExtensionType);
+            }
+            int err3 = Validate_ValueTypeRequired<ExtensionType>(value: extensionVoicemail.ExtensionType, isEnum: true);
+            if (err3 != 0)
+            {
+                yield return BuildErrorMessage(errorType: err3, callstack: $"{callStack}.ExtensionType", value: extensionVoicemail.ExtensionType);
+            }            
+        }
+        // == String type (extensionVoicemail.IdMusicOnHoldGroup) == 
+        {
+            var err = Validate_String(value: extensionVoicemail.IdMusicOnHoldGroup, isNullable: true, isRequired: false, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.IdMusicOnHoldGroup", value: extensionVoicemail.IdMusicOnHoldGroup);
+            }
+        }
+        // == String type (extensionVoicemail.FriendlyName) == 
+        {
+            var err = Validate_String(value: extensionVoicemail.FriendlyName, isNullable: false, isRequired: true, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.FriendlyName", value: extensionVoicemail.FriendlyName);
+            }
+        }
+        // == String type (extensionVoicemail.Number) == 
+        {
+            var err = Validate_String(value: extensionVoicemail.Number, isNullable: false, isRequired: true, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.Number", value: extensionVoicemail.Number);
+            }
+        }
+        // == [Ignoring] Value type (extensionVoicemail.InjectExtensionNameToCallerId) because it is not required. (nothing to validate) == 
+// == IList type (extensionVoicemail.IdsTags) ==
+{
+    if(extensionVoicemail.IdsTags is null)
+    {
+                yield return BuildErrorMessage(errorType: 1, callstack: $"{callStack}.IdsTags", value: null); // Error because list cannot be null
+    }
+    else
+    {
+        
+        for (int i = 0; i < extensionVoicemail.IdsTags.Count; i++)
+        {
+                    // == String type (extensionVoicemail.IdsTags) == 
+        {
+            var err = Validate_String(value: extensionVoicemail.IdsTags[i], isNullable: false, isRequired: false, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.IdsTags[{i}]", value: extensionVoicemail.IdsTags[i]);
+            }
+        }
+        }
+    }
+}
+
+        // == String type (extensionVoicemail.IdAccount) == 
+        {
+            var err = Validate_String(value: extensionVoicemail.IdAccount, isNullable: false, isRequired: true, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.IdAccount", value: extensionVoicemail.IdAccount);
+            }
+        }
+        // == [Ignoring] Value type (extensionVoicemail.BuiltId) because it is not required. (nothing to validate) == 
+        // == [Ignoring] Value type (extensionVoicemail.DateDeleted) because it is nullable. If its nullable it cannot be required. (nothing to validate) == 
+        // == String type (extensionVoicemail.Id) == 
+        {
+            var err = Validate_String(value: extensionVoicemail.Id, isNullable: false, isRequired: false, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.Id", value: extensionVoicemail.Id);
+            }
+        }
+        // == Value type (extensionVoicemail.DateCreated) == 
+        {
+
+            int err3 = Validate_ValueTypeRequired<DateTime>(value: extensionVoicemail.DateCreated, isEnum: false);
+            if (err3 != 0)
+            {
+                yield return BuildErrorMessage(errorType: err3, callstack: $"{callStack}.DateCreated", value: extensionVoicemail.DateCreated);
+            }            
+        }
+        // == Value type (extensionVoicemail.DateUpdated) == 
+        {
+
+            int err3 = Validate_ValueTypeRequired<DateTime>(value: extensionVoicemail.DateUpdated, isEnum: false);
+            if (err3 != 0)
+            {
+                yield return BuildErrorMessage(errorType: err3, callstack: $"{callStack}.DateUpdated", value: extensionVoicemail.DateUpdated);
+            }            
+        }
+
+}
+else
+{
+    // This means we are validating an derived class that does not exist. 
+    // For example if a class has property of type Animal and we are validating a Dog that is not part of validation.
+    // Re-Generating this code should fix this problem if class Dog exists on the assembiles passed to this validator.
+    if (Debugger.IsAttached) Debugger.Break();
+    yield return new ValidationError() { ErrorMessage = "Internal Validation Error" };
+}
+
+        yield break;
+    }
+    private IEnumerable<ValidationError> Validate_Call(Call call, StringBuilder callStack)
+    {
+        if(ValidatedObjects.Add(call)==false)
+            // item has already been validate. This is to prevent a circular reference
+            yield break;
+
+if (call is CallIncomingToCallFlowLogic callIncomingToCallFlowLogic)
+{
+            // == String type (callIncomingToCallFlowLogic.IdCallFlowLogic) == 
+        {
+            var err = Validate_String(value: callIncomingToCallFlowLogic.IdCallFlowLogic, isNullable: false, isRequired: true, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.IdCallFlowLogic", value: callIncomingToCallFlowLogic.IdCallFlowLogic);
+            }
+        }
+        // == Value type (callIncomingToCallFlowLogic.CallType) == 
+        {
+            int err1 = Validate_EnumType<CallType>(value: callIncomingToCallFlowLogic.CallType, typeOfEnum: typeof(CallType));
+            if (err1 != 0)
+            {
+                yield return BuildErrorMessage(errorType: err1, callstack: $"{callStack}.CallType", value: callIncomingToCallFlowLogic.CallType);
+            }
+            // [Ignoring] to validate its value because it is not required and not nullable. (nothing to validate)            
+        }
+        // == String type (callIncomingToCallFlowLogic.IdVoipProvider) == 
+        {
+            var err = Validate_String(value: callIncomingToCallFlowLogic.IdVoipProvider, isNullable: false, isRequired: true, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.IdVoipProvider", value: callIncomingToCallFlowLogic.IdVoipProvider);
+            }
+        }
+        // == String type (callIncomingToCallFlowLogic.IdVoipNumberPhone) == 
+        {
+            var err = Validate_String(value: callIncomingToCallFlowLogic.IdVoipNumberPhone, isNullable: false, isRequired: true, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.IdVoipNumberPhone", value: callIncomingToCallFlowLogic.IdVoipNumberPhone);
+            }
+        }
+        // == String type (callIncomingToCallFlowLogic.FromInternationalFormat) == 
+        {
+            var err = Validate_String(value: callIncomingToCallFlowLogic.FromInternationalFormat, isNullable: false, isRequired: true, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.FromInternationalFormat", value: callIncomingToCallFlowLogic.FromInternationalFormat);
+            }
+        }
+        // == String type (callIncomingToCallFlowLogic.ForwardedBy) == 
+        {
+            var err = Validate_String(value: callIncomingToCallFlowLogic.ForwardedBy, isNullable: true, isRequired: false, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.ForwardedBy", value: callIncomingToCallFlowLogic.ForwardedBy);
+            }
+        }
+        // == String type (callIncomingToCallFlowLogic.ChannelFrom) == 
+        {
+            var err = Validate_String(value: callIncomingToCallFlowLogic.ChannelFrom, isNullable: false, isRequired: true, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.ChannelFrom", value: callIncomingToCallFlowLogic.ChannelFrom);
+            }
+        }
+// == IList type (callIncomingToCallFlowLogic.ChannelsTo) ==
+{
+    if(callIncomingToCallFlowLogic.ChannelsTo is null)
+    {
+                yield return BuildErrorMessage(errorType: 1, callstack: $"{callStack}.ChannelsTo", value: null); // Error because list cannot be null
+    }
+    else
+    {
+        
+        for (int i = 0; i < callIncomingToCallFlowLogic.ChannelsTo.Count; i++)
+        {
+                    // == String type (callIncomingToCallFlowLogic.ChannelsTo) == 
+        {
+            var err = Validate_String(value: callIncomingToCallFlowLogic.ChannelsTo[i], isNullable: false, isRequired: false, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.ChannelsTo[{i}]", value: callIncomingToCallFlowLogic.ChannelsTo[i]);
+            }
+        }
+        }
+    }
+}
+
+        // == String type (callIncomingToCallFlowLogic.ChannelToAnswer) == 
+        {
+            var err = Validate_String(value: callIncomingToCallFlowLogic.ChannelToAnswer, isNullable: true, isRequired: false, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.ChannelToAnswer", value: callIncomingToCallFlowLogic.ChannelToAnswer);
+            }
+        }
+        // == String type (callIncomingToCallFlowLogic.IdVoicemail) == 
+        {
+            var err = Validate_String(value: callIncomingToCallFlowLogic.IdVoicemail, isNullable: true, isRequired: false, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.IdVoicemail", value: callIncomingToCallFlowLogic.IdVoicemail);
+            }
+        }
+        // == String type (callIncomingToCallFlowLogic.IdCallThatTerminatedThisCallDoToAttendantTransfer) == 
+        {
+            var err = Validate_String(value: callIncomingToCallFlowLogic.IdCallThatTerminatedThisCallDoToAttendantTransfer, isNullable: true, isRequired: false, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.IdCallThatTerminatedThisCallDoToAttendantTransfer", value: callIncomingToCallFlowLogic.IdCallThatTerminatedThisCallDoToAttendantTransfer);
+            }
+        }
+        // == String type (callIncomingToCallFlowLogic.IdContact) == 
+        {
+            var err = Validate_String(value: callIncomingToCallFlowLogic.IdContact, isNullable: true, isRequired: false, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.IdContact", value: callIncomingToCallFlowLogic.IdContact);
+            }
+        }
+        // == String type (callIncomingToCallFlowLogic.ContactFullName) == 
+        {
+            var err = Validate_String(value: callIncomingToCallFlowLogic.ContactFullName, isNullable: true, isRequired: false, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.ContactFullName", value: callIncomingToCallFlowLogic.ContactFullName);
+            }
+        }
+        // == String type (callIncomingToCallFlowLogic.IdAiCallTranscription) == 
+        {
+            var err = Validate_String(value: callIncomingToCallFlowLogic.IdAiCallTranscription, isNullable: true, isRequired: false, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.IdAiCallTranscription", value: callIncomingToCallFlowLogic.IdAiCallTranscription);
+            }
+        }
+                // == Validate object ==
+                {
+                    var tmp = callIncomingToCallFlowLogic.ChannelVariables;
+                    if(tmp is null)
+                    {
+                        yield return BuildErrorMessage(errorType: 1, callstack: $"{callStack}.ChannelVariables", value: null);
+                    }
+                    else
+                    {
+                        var pos = callStack.Length;
+                        if (callStack.Length > 0) callStack.Append('.');
+                        callStack.Append($"ChannelVariables");
+                        foreach(var err in Validate_ChannelVariables(tmp, callStack))
+                            yield return err;
+                        callStack.Length = pos;
+                    }
+                }
+
+// == IList type (callIncomingToCallFlowLogic.ChildCalls) ==
+{
+    if(callIncomingToCallFlowLogic.ChildCalls is null)
+    {
+                yield return BuildErrorMessage(errorType: 1, callstack: $"{callStack}.ChildCalls", value: null); // Error because list cannot be null
+    }
+    else
+    {
+        
+        for (int i = 0; i < callIncomingToCallFlowLogic.ChildCalls.Count; i++)
+        {
+                            // == Validate object ==
+                {
+                    var tmp = callIncomingToCallFlowLogic.ChildCalls[i];
+                    if(tmp is null)
+                    {
+                        yield return BuildErrorMessage(errorType: 1, callstack: $"{callStack}.ChildCalls[{i}]", value: null);
+                    }
+                    else
+                    {
+                        var pos = callStack.Length;
+                        if (callStack.Length > 0) callStack.Append('.');
+                        callStack.Append($"ChildCalls[{i}]");
+                        foreach(var err in Validate_ChildCall(tmp, callStack))
+                            yield return err;
+                        callStack.Length = pos;
+                    }
+                }
+
+        }
+    }
+}
+
+        // == String type (callIncomingToCallFlowLogic.DialStatus) == 
+        {
+            var err = Validate_String(value: callIncomingToCallFlowLogic.DialStatus, isNullable: false, isRequired: false, minLength: 0, maxLength: 50);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.DialStatus", value: callIncomingToCallFlowLogic.DialStatus);
+            }
+        }
+        // == [Ignoring] Value type (callIncomingToCallFlowLogic.SecondsItTookToAnswer) because it is nullable. If its nullable it cannot be required. (nothing to validate) == 
+// == IList type (callIncomingToCallFlowLogic.TimesWhenCallPlacedOnHold) ==
+{
+    if(callIncomingToCallFlowLogic.TimesWhenCallPlacedOnHold is null)
+    {
+                yield return BuildErrorMessage(errorType: 1, callstack: $"{callStack}.TimesWhenCallPlacedOnHold", value: null); // Error because list cannot be null
+    }
+    else
+    {
+        
+        for (int i = 0; i < callIncomingToCallFlowLogic.TimesWhenCallPlacedOnHold.Count; i++)
+        {
+                            // == Validate object ==
+                {
+                    var tmp = callIncomingToCallFlowLogic.TimesWhenCallPlacedOnHold[i];
+                    if(tmp is null)
+                    {
+                        yield return BuildErrorMessage(errorType: 1, callstack: $"{callStack}.TimesWhenCallPlacedOnHold[{i}]", value: null);
+                    }
+                    else
+                    {
+                        var pos = callStack.Length;
+                        if (callStack.Length > 0) callStack.Append('.');
+                        callStack.Append($"TimesWhenCallPlacedOnHold[{i}]");
+                        foreach(var err in Validate_TimeWhenCallPlacedOnHold(tmp, callStack))
+                            yield return err;
+                        callStack.Length = pos;
+                    }
+                }
+
+        }
+    }
+}
+
+        // == String type (callIncomingToCallFlowLogic.From) == 
+        {
+            var err = Validate_String(value: callIncomingToCallFlowLogic.From, isNullable: false, isRequired: true, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.From", value: callIncomingToCallFlowLogic.From);
+            }
+        }
+        // == String type (callIncomingToCallFlowLogic.FromReversed) == 
+        {
+            var err = Validate_String(value: callIncomingToCallFlowLogic.FromReversed, isNullable: false, isRequired: false, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.FromReversed", value: callIncomingToCallFlowLogic.FromReversed);
+            }
+        }
+        // == Value type (callIncomingToCallFlowLogic.FromCountry) == 
+        {
+            int err1 = Validate_EnumType<CountryIsoCode>(value: callIncomingToCallFlowLogic.FromCountry, typeOfEnum: typeof(CountryIsoCode));
+            if (err1 != 0)
+            {
+                yield return BuildErrorMessage(errorType: err1, callstack: $"{callStack}.FromCountry", value: callIncomingToCallFlowLogic.FromCountry);
+            }
+            int err3 = Validate_ValueTypeRequired<CountryIsoCode>(value: callIncomingToCallFlowLogic.FromCountry, isEnum: true);
+            if (err3 != 0)
+            {
+                yield return BuildErrorMessage(errorType: err3, callstack: $"{callStack}.FromCountry", value: callIncomingToCallFlowLogic.FromCountry);
+            }            
+        }
+        // == String type (callIncomingToCallFlowLogic.To) == 
+        {
+            var err = Validate_String(value: callIncomingToCallFlowLogic.To, isNullable: false, isRequired: true, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.To", value: callIncomingToCallFlowLogic.To);
+            }
+        }
+        // == String type (callIncomingToCallFlowLogic.ToReversed) == 
+        {
+            var err = Validate_String(value: callIncomingToCallFlowLogic.ToReversed, isNullable: false, isRequired: false, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.ToReversed", value: callIncomingToCallFlowLogic.ToReversed);
+            }
+        }
+        // == Value type (callIncomingToCallFlowLogic.ToCountry) == 
+        {
+            int err1 = Validate_EnumType<CountryIsoCode>(value: callIncomingToCallFlowLogic.ToCountry, typeOfEnum: typeof(CountryIsoCode));
+            if (err1 != 0)
+            {
+                yield return BuildErrorMessage(errorType: err1, callstack: $"{callStack}.ToCountry", value: callIncomingToCallFlowLogic.ToCountry);
+            }
+            int err3 = Validate_ValueTypeRequired<CountryIsoCode>(value: callIncomingToCallFlowLogic.ToCountry, isEnum: true);
+            if (err3 != 0)
+            {
+                yield return BuildErrorMessage(errorType: err3, callstack: $"{callStack}.ToCountry", value: callIncomingToCallFlowLogic.ToCountry);
+            }            
+        }
+                // == Validate object ==
+                {
+                    var tmp = callIncomingToCallFlowLogic.Recording;
+                    if(tmp is null)
+                    {
+                        // OK for it to be null it is nullable
+                    }
+                    else
+                    {
+                        var pos = callStack.Length;
+                        if (callStack.Length > 0) callStack.Append('.');
+                        callStack.Append($"Recording");
+                        foreach(var err in Validate_UbluxSubDocument(tmp, callStack))
+                            yield return err;
+                        callStack.Length = pos;
+                    }
+                }
+
+        // == [Ignoring] Value type (callIncomingToCallFlowLogic.DisabledVideo) because it is not required. (nothing to validate) == 
+// == IList type (callIncomingToCallFlowLogic.DigitsSent) ==
+{
+    if(callIncomingToCallFlowLogic.DigitsSent is null)
+    {
+                yield return BuildErrorMessage(errorType: 1, callstack: $"{callStack}.DigitsSent", value: null); // Error because list cannot be null
+    }
+    else
+    {
+        
+        for (int i = 0; i < callIncomingToCallFlowLogic.DigitsSent.Count; i++)
+        {
+                    // == String type (callIncomingToCallFlowLogic.DigitsSent) == 
+        {
+            var err = Validate_String(value: callIncomingToCallFlowLogic.DigitsSent[i], isNullable: false, isRequired: false, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.DigitsSent[{i}]", value: callIncomingToCallFlowLogic.DigitsSent[i]);
+            }
+        }
+        }
+    }
+}
+
+        // == [Ignoring] Value type (callIncomingToCallFlowLogic.IsInternational) because it is not required. (nothing to validate) == 
+        // == [Ignoring] Value type (callIncomingToCallFlowLogic.ContainsInternationalCall) because it is not required. (nothing to validate) == 
+        // == Value type (callIncomingToCallFlowLogic.CallResult) == 
+        {
+            int err1 = Validate_EnumType<CallResult>(value: callIncomingToCallFlowLogic.CallResult, typeOfEnum: typeof(CallResult));
+            if (err1 != 0)
+            {
+                yield return BuildErrorMessage(errorType: err1, callstack: $"{callStack}.CallResult", value: callIncomingToCallFlowLogic.CallResult);
+            }
+            // [Ignoring] to validate its value because it is not required and not nullable. (nothing to validate)            
+        }
+                // == Validate object ==
+                {
+                    var tmp = callIncomingToCallFlowLogic.Analysis;
+                    if(tmp is null)
+                    {
+                        // OK for it to be null it is nullable
+                    }
+                    else
+                    {
+                        var pos = callStack.Length;
+                        if (callStack.Length > 0) callStack.Append('.');
+                        callStack.Append($"Analysis");
+                        foreach(var err in Validate_AiAnalysis(tmp, callStack))
+                            yield return err;
+                        callStack.Length = pos;
+                    }
+                }
+
+                // == Validate object ==
+                {
+                    var tmp = callIncomingToCallFlowLogic.Analysis2;
+                    if(tmp is null)
+                    {
+                        // OK for it to be null it is nullable
+                    }
+                    else
+                    {
+                        var pos = callStack.Length;
+                        if (callStack.Length > 0) callStack.Append('.');
+                        callStack.Append($"Analysis2");
+                        foreach(var err in Validate_AiAnalysis(tmp, callStack))
+                            yield return err;
+                        callStack.Length = pos;
+                    }
+                }
+
+                // == Validate object ==
+                {
+                    var tmp = callIncomingToCallFlowLogic.Analysis3;
+                    if(tmp is null)
+                    {
+                        // OK for it to be null it is nullable
+                    }
+                    else
+                    {
+                        var pos = callStack.Length;
+                        if (callStack.Length > 0) callStack.Append('.');
+                        callStack.Append($"Analysis3");
+                        foreach(var err in Validate_AiAnalysis(tmp, callStack))
+                            yield return err;
+                        callStack.Length = pos;
+                    }
+                }
+
+// == IList type (callIncomingToCallFlowLogic.IdsParticipantLines) ==
+{
+    if(callIncomingToCallFlowLogic.IdsParticipantLines is null)
+    {
+                yield return BuildErrorMessage(errorType: 1, callstack: $"{callStack}.IdsParticipantLines", value: null); // Error because list cannot be null
+    }
+    else
+    {
+        
+        for (int i = 0; i < callIncomingToCallFlowLogic.IdsParticipantLines.Count; i++)
+        {
+                    // == String type (callIncomingToCallFlowLogic.IdsParticipantLines) == 
+        {
+            var err = Validate_String(value: callIncomingToCallFlowLogic.IdsParticipantLines[i], isNullable: false, isRequired: false, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.IdsParticipantLines[{i}]", value: callIncomingToCallFlowLogic.IdsParticipantLines[i]);
+            }
+        }
+        }
+    }
+}
+
+        // == [Ignoring] Value type (callIncomingToCallFlowLogic.DurationInSeconds) because it is nullable. If its nullable it cannot be required. (nothing to validate) == 
+        // == String type (callIncomingToCallFlowLogic.ErrorMessage) == 
+        {
+            var err = Validate_String(value: callIncomingToCallFlowLogic.ErrorMessage, isNullable: true, isRequired: false, minLength: 0, maxLength: 2000);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.ErrorMessage", value: callIncomingToCallFlowLogic.ErrorMessage);
+            }
+        }
+        // == Value type (callIncomingToCallFlowLogic.AiTranscriptionStatus) == 
+        {
+            int err1 = Validate_EnumType<AiProcessStatus>(value: callIncomingToCallFlowLogic.AiTranscriptionStatus, typeOfEnum: typeof(AiProcessStatus));
+            if (err1 != 0)
+            {
+                yield return BuildErrorMessage(errorType: err1, callstack: $"{callStack}.AiTranscriptionStatus", value: callIncomingToCallFlowLogic.AiTranscriptionStatus);
+            }
+            // [Ignoring] to validate its value because it is not required and not nullable. (nothing to validate)            
+        }
+        // == Value type (callIncomingToCallFlowLogic.AiAnalysisStatus) == 
+        {
+            int err1 = Validate_EnumType<AiProcessStatus>(value: callIncomingToCallFlowLogic.AiAnalysisStatus, typeOfEnum: typeof(AiProcessStatus));
+            if (err1 != 0)
+            {
+                yield return BuildErrorMessage(errorType: err1, callstack: $"{callStack}.AiAnalysisStatus", value: callIncomingToCallFlowLogic.AiAnalysisStatus);
+            }
+            // [Ignoring] to validate its value because it is not required and not nullable. (nothing to validate)            
+        }
+// == IList type (callIncomingToCallFlowLogic.IdsTags) ==
+{
+    if(callIncomingToCallFlowLogic.IdsTags is null)
+    {
+                yield return BuildErrorMessage(errorType: 1, callstack: $"{callStack}.IdsTags", value: null); // Error because list cannot be null
+    }
+    else
+    {
+        
+        for (int i = 0; i < callIncomingToCallFlowLogic.IdsTags.Count; i++)
+        {
+                    // == String type (callIncomingToCallFlowLogic.IdsTags) == 
+        {
+            var err = Validate_String(value: callIncomingToCallFlowLogic.IdsTags[i], isNullable: false, isRequired: false, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.IdsTags[{i}]", value: callIncomingToCallFlowLogic.IdsTags[i]);
+            }
+        }
+        }
+    }
+}
+
+        // == String type (callIncomingToCallFlowLogic.IdAccount) == 
+        {
+            var err = Validate_String(value: callIncomingToCallFlowLogic.IdAccount, isNullable: false, isRequired: true, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.IdAccount", value: callIncomingToCallFlowLogic.IdAccount);
+            }
+        }
+        // == [Ignoring] Value type (callIncomingToCallFlowLogic.BuiltId) because it is not required. (nothing to validate) == 
+        // == [Ignoring] Value type (callIncomingToCallFlowLogic.DateDeleted) because it is nullable. If its nullable it cannot be required. (nothing to validate) == 
+        // == String type (callIncomingToCallFlowLogic.Id) == 
+        {
+            var err = Validate_String(value: callIncomingToCallFlowLogic.Id, isNullable: false, isRequired: false, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.Id", value: callIncomingToCallFlowLogic.Id);
+            }
+        }
+        // == Value type (callIncomingToCallFlowLogic.DateCreated) == 
+        {
+
+            int err3 = Validate_ValueTypeRequired<DateTime>(value: callIncomingToCallFlowLogic.DateCreated, isEnum: false);
+            if (err3 != 0)
+            {
+                yield return BuildErrorMessage(errorType: err3, callstack: $"{callStack}.DateCreated", value: callIncomingToCallFlowLogic.DateCreated);
+            }            
+        }
+        // == Value type (callIncomingToCallFlowLogic.DateUpdated) == 
+        {
+
+            int err3 = Validate_ValueTypeRequired<DateTime>(value: callIncomingToCallFlowLogic.DateUpdated, isEnum: false);
+            if (err3 != 0)
+            {
+                yield return BuildErrorMessage(errorType: err3, callstack: $"{callStack}.DateUpdated", value: callIncomingToCallFlowLogic.DateUpdated);
+            }            
+        }
+
+}
+else if (call is CallIncomingToExtension callIncomingToExtension)
+{
+            // == String type (callIncomingToExtension.IdExtension) == 
+        {
+            var err = Validate_String(value: callIncomingToExtension.IdExtension, isNullable: true, isRequired: false, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.IdExtension", value: callIncomingToExtension.IdExtension);
+            }
+        }
+        // == String type (callIncomingToExtension.IdLineThatAnswered) == 
+        {
+            var err = Validate_String(value: callIncomingToExtension.IdLineThatAnswered, isNullable: true, isRequired: false, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.IdLineThatAnswered", value: callIncomingToExtension.IdLineThatAnswered);
+            }
+        }
+// == IList type (callIncomingToExtension.IdsLinesThatRing) ==
+{
+    if(callIncomingToExtension.IdsLinesThatRing is null)
+    {
+                yield return BuildErrorMessage(errorType: 1, callstack: $"{callStack}.IdsLinesThatRing", value: null); // Error because list cannot be null
+    }
+    else
+    {
+        
+        for (int i = 0; i < callIncomingToExtension.IdsLinesThatRing.Count; i++)
+        {
+                    // == String type (callIncomingToExtension.IdsLinesThatRing) == 
+        {
+            var err = Validate_String(value: callIncomingToExtension.IdsLinesThatRing[i], isNullable: false, isRequired: false, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.IdsLinesThatRing[{i}]", value: callIncomingToExtension.IdsLinesThatRing[i]);
+            }
+        }
+        }
+    }
+}
+
+// == IList type (callIncomingToExtension.IdsLinesThatDidNotRing) ==
+{
+    if(callIncomingToExtension.IdsLinesThatDidNotRing is null)
+    {
+                yield return BuildErrorMessage(errorType: 1, callstack: $"{callStack}.IdsLinesThatDidNotRing", value: null); // Error because list cannot be null
+    }
+    else
+    {
+        
+        for (int i = 0; i < callIncomingToExtension.IdsLinesThatDidNotRing.Count; i++)
+        {
+                    // == String type (callIncomingToExtension.IdsLinesThatDidNotRing) == 
+        {
+            var err = Validate_String(value: callIncomingToExtension.IdsLinesThatDidNotRing[i], isNullable: false, isRequired: false, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.IdsLinesThatDidNotRing[{i}]", value: callIncomingToExtension.IdsLinesThatDidNotRing[i]);
+            }
+        }
+        }
+    }
+}
+
+        // == Value type (callIncomingToExtension.CallType) == 
+        {
+            int err1 = Validate_EnumType<CallType>(value: callIncomingToExtension.CallType, typeOfEnum: typeof(CallType));
+            if (err1 != 0)
+            {
+                yield return BuildErrorMessage(errorType: err1, callstack: $"{callStack}.CallType", value: callIncomingToExtension.CallType);
+            }
+            // [Ignoring] to validate its value because it is not required and not nullable. (nothing to validate)            
+        }
+        // == String type (callIncomingToExtension.IdVoipProvider) == 
+        {
+            var err = Validate_String(value: callIncomingToExtension.IdVoipProvider, isNullable: false, isRequired: true, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.IdVoipProvider", value: callIncomingToExtension.IdVoipProvider);
+            }
+        }
+        // == String type (callIncomingToExtension.IdVoipNumberPhone) == 
+        {
+            var err = Validate_String(value: callIncomingToExtension.IdVoipNumberPhone, isNullable: false, isRequired: true, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.IdVoipNumberPhone", value: callIncomingToExtension.IdVoipNumberPhone);
+            }
+        }
+        // == String type (callIncomingToExtension.FromInternationalFormat) == 
+        {
+            var err = Validate_String(value: callIncomingToExtension.FromInternationalFormat, isNullable: false, isRequired: true, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.FromInternationalFormat", value: callIncomingToExtension.FromInternationalFormat);
+            }
+        }
+        // == String type (callIncomingToExtension.ForwardedBy) == 
+        {
+            var err = Validate_String(value: callIncomingToExtension.ForwardedBy, isNullable: true, isRequired: false, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.ForwardedBy", value: callIncomingToExtension.ForwardedBy);
+            }
+        }
+        // == String type (callIncomingToExtension.ChannelFrom) == 
+        {
+            var err = Validate_String(value: callIncomingToExtension.ChannelFrom, isNullable: false, isRequired: true, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.ChannelFrom", value: callIncomingToExtension.ChannelFrom);
+            }
+        }
+// == IList type (callIncomingToExtension.ChannelsTo) ==
+{
+    if(callIncomingToExtension.ChannelsTo is null)
+    {
+                yield return BuildErrorMessage(errorType: 1, callstack: $"{callStack}.ChannelsTo", value: null); // Error because list cannot be null
+    }
+    else
+    {
+        
+        for (int i = 0; i < callIncomingToExtension.ChannelsTo.Count; i++)
+        {
+                    // == String type (callIncomingToExtension.ChannelsTo) == 
+        {
+            var err = Validate_String(value: callIncomingToExtension.ChannelsTo[i], isNullable: false, isRequired: false, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.ChannelsTo[{i}]", value: callIncomingToExtension.ChannelsTo[i]);
+            }
+        }
+        }
+    }
+}
+
+        // == String type (callIncomingToExtension.ChannelToAnswer) == 
+        {
+            var err = Validate_String(value: callIncomingToExtension.ChannelToAnswer, isNullable: true, isRequired: false, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.ChannelToAnswer", value: callIncomingToExtension.ChannelToAnswer);
+            }
+        }
+        // == String type (callIncomingToExtension.IdVoicemail) == 
+        {
+            var err = Validate_String(value: callIncomingToExtension.IdVoicemail, isNullable: true, isRequired: false, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.IdVoicemail", value: callIncomingToExtension.IdVoicemail);
+            }
+        }
+        // == String type (callIncomingToExtension.IdCallThatTerminatedThisCallDoToAttendantTransfer) == 
+        {
+            var err = Validate_String(value: callIncomingToExtension.IdCallThatTerminatedThisCallDoToAttendantTransfer, isNullable: true, isRequired: false, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.IdCallThatTerminatedThisCallDoToAttendantTransfer", value: callIncomingToExtension.IdCallThatTerminatedThisCallDoToAttendantTransfer);
+            }
+        }
+        // == String type (callIncomingToExtension.IdContact) == 
+        {
+            var err = Validate_String(value: callIncomingToExtension.IdContact, isNullable: true, isRequired: false, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.IdContact", value: callIncomingToExtension.IdContact);
+            }
+        }
+        // == String type (callIncomingToExtension.ContactFullName) == 
+        {
+            var err = Validate_String(value: callIncomingToExtension.ContactFullName, isNullable: true, isRequired: false, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.ContactFullName", value: callIncomingToExtension.ContactFullName);
+            }
+        }
+        // == String type (callIncomingToExtension.IdAiCallTranscription) == 
+        {
+            var err = Validate_String(value: callIncomingToExtension.IdAiCallTranscription, isNullable: true, isRequired: false, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.IdAiCallTranscription", value: callIncomingToExtension.IdAiCallTranscription);
+            }
+        }
+                // == Validate object ==
+                {
+                    var tmp = callIncomingToExtension.ChannelVariables;
+                    if(tmp is null)
+                    {
+                        yield return BuildErrorMessage(errorType: 1, callstack: $"{callStack}.ChannelVariables", value: null);
+                    }
+                    else
+                    {
+                        var pos = callStack.Length;
+                        if (callStack.Length > 0) callStack.Append('.');
+                        callStack.Append($"ChannelVariables");
+                        foreach(var err in Validate_ChannelVariables(tmp, callStack))
+                            yield return err;
+                        callStack.Length = pos;
+                    }
+                }
+
+// == IList type (callIncomingToExtension.ChildCalls) ==
+{
+    if(callIncomingToExtension.ChildCalls is null)
+    {
+                yield return BuildErrorMessage(errorType: 1, callstack: $"{callStack}.ChildCalls", value: null); // Error because list cannot be null
+    }
+    else
+    {
+        
+        for (int i = 0; i < callIncomingToExtension.ChildCalls.Count; i++)
+        {
+                            // == Validate object ==
+                {
+                    var tmp = callIncomingToExtension.ChildCalls[i];
+                    if(tmp is null)
+                    {
+                        yield return BuildErrorMessage(errorType: 1, callstack: $"{callStack}.ChildCalls[{i}]", value: null);
+                    }
+                    else
+                    {
+                        var pos = callStack.Length;
+                        if (callStack.Length > 0) callStack.Append('.');
+                        callStack.Append($"ChildCalls[{i}]");
+                        foreach(var err in Validate_ChildCall(tmp, callStack))
+                            yield return err;
+                        callStack.Length = pos;
+                    }
+                }
+
+        }
+    }
+}
+
+        // == String type (callIncomingToExtension.DialStatus) == 
+        {
+            var err = Validate_String(value: callIncomingToExtension.DialStatus, isNullable: false, isRequired: false, minLength: 0, maxLength: 50);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.DialStatus", value: callIncomingToExtension.DialStatus);
+            }
+        }
+        // == [Ignoring] Value type (callIncomingToExtension.SecondsItTookToAnswer) because it is nullable. If its nullable it cannot be required. (nothing to validate) == 
+// == IList type (callIncomingToExtension.TimesWhenCallPlacedOnHold) ==
+{
+    if(callIncomingToExtension.TimesWhenCallPlacedOnHold is null)
+    {
+                yield return BuildErrorMessage(errorType: 1, callstack: $"{callStack}.TimesWhenCallPlacedOnHold", value: null); // Error because list cannot be null
+    }
+    else
+    {
+        
+        for (int i = 0; i < callIncomingToExtension.TimesWhenCallPlacedOnHold.Count; i++)
+        {
+                            // == Validate object ==
+                {
+                    var tmp = callIncomingToExtension.TimesWhenCallPlacedOnHold[i];
+                    if(tmp is null)
+                    {
+                        yield return BuildErrorMessage(errorType: 1, callstack: $"{callStack}.TimesWhenCallPlacedOnHold[{i}]", value: null);
+                    }
+                    else
+                    {
+                        var pos = callStack.Length;
+                        if (callStack.Length > 0) callStack.Append('.');
+                        callStack.Append($"TimesWhenCallPlacedOnHold[{i}]");
+                        foreach(var err in Validate_TimeWhenCallPlacedOnHold(tmp, callStack))
+                            yield return err;
+                        callStack.Length = pos;
+                    }
+                }
+
+        }
+    }
+}
+
+        // == String type (callIncomingToExtension.From) == 
+        {
+            var err = Validate_String(value: callIncomingToExtension.From, isNullable: false, isRequired: true, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.From", value: callIncomingToExtension.From);
+            }
+        }
+        // == String type (callIncomingToExtension.FromReversed) == 
+        {
+            var err = Validate_String(value: callIncomingToExtension.FromReversed, isNullable: false, isRequired: false, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.FromReversed", value: callIncomingToExtension.FromReversed);
+            }
+        }
+        // == Value type (callIncomingToExtension.FromCountry) == 
+        {
+            int err1 = Validate_EnumType<CountryIsoCode>(value: callIncomingToExtension.FromCountry, typeOfEnum: typeof(CountryIsoCode));
+            if (err1 != 0)
+            {
+                yield return BuildErrorMessage(errorType: err1, callstack: $"{callStack}.FromCountry", value: callIncomingToExtension.FromCountry);
+            }
+            int err3 = Validate_ValueTypeRequired<CountryIsoCode>(value: callIncomingToExtension.FromCountry, isEnum: true);
+            if (err3 != 0)
+            {
+                yield return BuildErrorMessage(errorType: err3, callstack: $"{callStack}.FromCountry", value: callIncomingToExtension.FromCountry);
+            }            
+        }
+        // == String type (callIncomingToExtension.To) == 
+        {
+            var err = Validate_String(value: callIncomingToExtension.To, isNullable: false, isRequired: true, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.To", value: callIncomingToExtension.To);
+            }
+        }
+        // == String type (callIncomingToExtension.ToReversed) == 
+        {
+            var err = Validate_String(value: callIncomingToExtension.ToReversed, isNullable: false, isRequired: false, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.ToReversed", value: callIncomingToExtension.ToReversed);
+            }
+        }
+        // == Value type (callIncomingToExtension.ToCountry) == 
+        {
+            int err1 = Validate_EnumType<CountryIsoCode>(value: callIncomingToExtension.ToCountry, typeOfEnum: typeof(CountryIsoCode));
+            if (err1 != 0)
+            {
+                yield return BuildErrorMessage(errorType: err1, callstack: $"{callStack}.ToCountry", value: callIncomingToExtension.ToCountry);
+            }
+            int err3 = Validate_ValueTypeRequired<CountryIsoCode>(value: callIncomingToExtension.ToCountry, isEnum: true);
+            if (err3 != 0)
+            {
+                yield return BuildErrorMessage(errorType: err3, callstack: $"{callStack}.ToCountry", value: callIncomingToExtension.ToCountry);
+            }            
+        }
+                // == Validate object ==
+                {
+                    var tmp = callIncomingToExtension.Recording;
+                    if(tmp is null)
+                    {
+                        // OK for it to be null it is nullable
+                    }
+                    else
+                    {
+                        var pos = callStack.Length;
+                        if (callStack.Length > 0) callStack.Append('.');
+                        callStack.Append($"Recording");
+                        foreach(var err in Validate_UbluxSubDocument(tmp, callStack))
+                            yield return err;
+                        callStack.Length = pos;
+                    }
+                }
+
+        // == [Ignoring] Value type (callIncomingToExtension.DisabledVideo) because it is not required. (nothing to validate) == 
+// == IList type (callIncomingToExtension.DigitsSent) ==
+{
+    if(callIncomingToExtension.DigitsSent is null)
+    {
+                yield return BuildErrorMessage(errorType: 1, callstack: $"{callStack}.DigitsSent", value: null); // Error because list cannot be null
+    }
+    else
+    {
+        
+        for (int i = 0; i < callIncomingToExtension.DigitsSent.Count; i++)
+        {
+                    // == String type (callIncomingToExtension.DigitsSent) == 
+        {
+            var err = Validate_String(value: callIncomingToExtension.DigitsSent[i], isNullable: false, isRequired: false, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.DigitsSent[{i}]", value: callIncomingToExtension.DigitsSent[i]);
+            }
+        }
+        }
+    }
+}
+
+        // == [Ignoring] Value type (callIncomingToExtension.IsInternational) because it is not required. (nothing to validate) == 
+        // == [Ignoring] Value type (callIncomingToExtension.ContainsInternationalCall) because it is not required. (nothing to validate) == 
+        // == Value type (callIncomingToExtension.CallResult) == 
+        {
+            int err1 = Validate_EnumType<CallResult>(value: callIncomingToExtension.CallResult, typeOfEnum: typeof(CallResult));
+            if (err1 != 0)
+            {
+                yield return BuildErrorMessage(errorType: err1, callstack: $"{callStack}.CallResult", value: callIncomingToExtension.CallResult);
+            }
+            // [Ignoring] to validate its value because it is not required and not nullable. (nothing to validate)            
+        }
+                // == Validate object ==
+                {
+                    var tmp = callIncomingToExtension.Analysis;
+                    if(tmp is null)
+                    {
+                        // OK for it to be null it is nullable
+                    }
+                    else
+                    {
+                        var pos = callStack.Length;
+                        if (callStack.Length > 0) callStack.Append('.');
+                        callStack.Append($"Analysis");
+                        foreach(var err in Validate_AiAnalysis(tmp, callStack))
+                            yield return err;
+                        callStack.Length = pos;
+                    }
+                }
+
+                // == Validate object ==
+                {
+                    var tmp = callIncomingToExtension.Analysis2;
+                    if(tmp is null)
+                    {
+                        // OK for it to be null it is nullable
+                    }
+                    else
+                    {
+                        var pos = callStack.Length;
+                        if (callStack.Length > 0) callStack.Append('.');
+                        callStack.Append($"Analysis2");
+                        foreach(var err in Validate_AiAnalysis(tmp, callStack))
+                            yield return err;
+                        callStack.Length = pos;
+                    }
+                }
+
+                // == Validate object ==
+                {
+                    var tmp = callIncomingToExtension.Analysis3;
+                    if(tmp is null)
+                    {
+                        // OK for it to be null it is nullable
+                    }
+                    else
+                    {
+                        var pos = callStack.Length;
+                        if (callStack.Length > 0) callStack.Append('.');
+                        callStack.Append($"Analysis3");
+                        foreach(var err in Validate_AiAnalysis(tmp, callStack))
+                            yield return err;
+                        callStack.Length = pos;
+                    }
+                }
+
+// == IList type (callIncomingToExtension.IdsParticipantLines) ==
+{
+    if(callIncomingToExtension.IdsParticipantLines is null)
+    {
+                yield return BuildErrorMessage(errorType: 1, callstack: $"{callStack}.IdsParticipantLines", value: null); // Error because list cannot be null
+    }
+    else
+    {
+        
+        for (int i = 0; i < callIncomingToExtension.IdsParticipantLines.Count; i++)
+        {
+                    // == String type (callIncomingToExtension.IdsParticipantLines) == 
+        {
+            var err = Validate_String(value: callIncomingToExtension.IdsParticipantLines[i], isNullable: false, isRequired: false, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.IdsParticipantLines[{i}]", value: callIncomingToExtension.IdsParticipantLines[i]);
+            }
+        }
+        }
+    }
+}
+
+        // == [Ignoring] Value type (callIncomingToExtension.DurationInSeconds) because it is nullable. If its nullable it cannot be required. (nothing to validate) == 
+        // == String type (callIncomingToExtension.ErrorMessage) == 
+        {
+            var err = Validate_String(value: callIncomingToExtension.ErrorMessage, isNullable: true, isRequired: false, minLength: 0, maxLength: 2000);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.ErrorMessage", value: callIncomingToExtension.ErrorMessage);
+            }
+        }
+        // == Value type (callIncomingToExtension.AiTranscriptionStatus) == 
+        {
+            int err1 = Validate_EnumType<AiProcessStatus>(value: callIncomingToExtension.AiTranscriptionStatus, typeOfEnum: typeof(AiProcessStatus));
+            if (err1 != 0)
+            {
+                yield return BuildErrorMessage(errorType: err1, callstack: $"{callStack}.AiTranscriptionStatus", value: callIncomingToExtension.AiTranscriptionStatus);
+            }
+            // [Ignoring] to validate its value because it is not required and not nullable. (nothing to validate)            
+        }
+        // == Value type (callIncomingToExtension.AiAnalysisStatus) == 
+        {
+            int err1 = Validate_EnumType<AiProcessStatus>(value: callIncomingToExtension.AiAnalysisStatus, typeOfEnum: typeof(AiProcessStatus));
+            if (err1 != 0)
+            {
+                yield return BuildErrorMessage(errorType: err1, callstack: $"{callStack}.AiAnalysisStatus", value: callIncomingToExtension.AiAnalysisStatus);
+            }
+            // [Ignoring] to validate its value because it is not required and not nullable. (nothing to validate)            
+        }
+// == IList type (callIncomingToExtension.IdsTags) ==
+{
+    if(callIncomingToExtension.IdsTags is null)
+    {
+                yield return BuildErrorMessage(errorType: 1, callstack: $"{callStack}.IdsTags", value: null); // Error because list cannot be null
+    }
+    else
+    {
+        
+        for (int i = 0; i < callIncomingToExtension.IdsTags.Count; i++)
+        {
+                    // == String type (callIncomingToExtension.IdsTags) == 
+        {
+            var err = Validate_String(value: callIncomingToExtension.IdsTags[i], isNullable: false, isRequired: false, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.IdsTags[{i}]", value: callIncomingToExtension.IdsTags[i]);
+            }
+        }
+        }
+    }
+}
+
+        // == String type (callIncomingToExtension.IdAccount) == 
+        {
+            var err = Validate_String(value: callIncomingToExtension.IdAccount, isNullable: false, isRequired: true, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.IdAccount", value: callIncomingToExtension.IdAccount);
+            }
+        }
+        // == [Ignoring] Value type (callIncomingToExtension.BuiltId) because it is not required. (nothing to validate) == 
+        // == [Ignoring] Value type (callIncomingToExtension.DateDeleted) because it is nullable. If its nullable it cannot be required. (nothing to validate) == 
+        // == String type (callIncomingToExtension.Id) == 
+        {
+            var err = Validate_String(value: callIncomingToExtension.Id, isNullable: false, isRequired: false, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.Id", value: callIncomingToExtension.Id);
+            }
+        }
+        // == Value type (callIncomingToExtension.DateCreated) == 
+        {
+
+            int err3 = Validate_ValueTypeRequired<DateTime>(value: callIncomingToExtension.DateCreated, isEnum: false);
+            if (err3 != 0)
+            {
+                yield return BuildErrorMessage(errorType: err3, callstack: $"{callStack}.DateCreated", value: callIncomingToExtension.DateCreated);
+            }            
+        }
+        // == Value type (callIncomingToExtension.DateUpdated) == 
+        {
+
+            int err3 = Validate_ValueTypeRequired<DateTime>(value: callIncomingToExtension.DateUpdated, isEnum: false);
+            if (err3 != 0)
+            {
+                yield return BuildErrorMessage(errorType: err3, callstack: $"{callStack}.DateUpdated", value: callIncomingToExtension.DateUpdated);
+            }            
+        }
+
+}
+else if (call is CallOutgoingToExtension callOutgoingToExtension)
+{
+            // == String type (callOutgoingToExtension.IdExtension) == 
+        {
+            var err = Validate_String(value: callOutgoingToExtension.IdExtension, isNullable: true, isRequired: false, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.IdExtension", value: callOutgoingToExtension.IdExtension);
+            }
+        }
+        // == String type (callOutgoingToExtension.IdLineThatAnswered) == 
+        {
+            var err = Validate_String(value: callOutgoingToExtension.IdLineThatAnswered, isNullable: true, isRequired: false, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.IdLineThatAnswered", value: callOutgoingToExtension.IdLineThatAnswered);
+            }
+        }
+// == IList type (callOutgoingToExtension.IdsLinesThatRing) ==
+{
+    if(callOutgoingToExtension.IdsLinesThatRing is null)
+    {
+                yield return BuildErrorMessage(errorType: 1, callstack: $"{callStack}.IdsLinesThatRing", value: null); // Error because list cannot be null
+    }
+    else
+    {
+        
+        for (int i = 0; i < callOutgoingToExtension.IdsLinesThatRing.Count; i++)
+        {
+                    // == String type (callOutgoingToExtension.IdsLinesThatRing) == 
+        {
+            var err = Validate_String(value: callOutgoingToExtension.IdsLinesThatRing[i], isNullable: false, isRequired: false, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.IdsLinesThatRing[{i}]", value: callOutgoingToExtension.IdsLinesThatRing[i]);
+            }
+        }
+        }
+    }
+}
+
+// == IList type (callOutgoingToExtension.IdsLinesThatDidNotRing) ==
+{
+    if(callOutgoingToExtension.IdsLinesThatDidNotRing is null)
+    {
+                yield return BuildErrorMessage(errorType: 1, callstack: $"{callStack}.IdsLinesThatDidNotRing", value: null); // Error because list cannot be null
+    }
+    else
+    {
+        
+        for (int i = 0; i < callOutgoingToExtension.IdsLinesThatDidNotRing.Count; i++)
+        {
+                    // == String type (callOutgoingToExtension.IdsLinesThatDidNotRing) == 
+        {
+            var err = Validate_String(value: callOutgoingToExtension.IdsLinesThatDidNotRing[i], isNullable: false, isRequired: false, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.IdsLinesThatDidNotRing[{i}]", value: callOutgoingToExtension.IdsLinesThatDidNotRing[i]);
+            }
+        }
+        }
+    }
+}
+
+        // == Value type (callOutgoingToExtension.ToCountry) == 
+        {
+            int err1 = Validate_EnumType<CountryIsoCode>(value: callOutgoingToExtension.ToCountry, typeOfEnum: typeof(CountryIsoCode));
+            if (err1 != 0)
+            {
+                yield return BuildErrorMessage(errorType: err1, callstack: $"{callStack}.ToCountry", value: callOutgoingToExtension.ToCountry);
+            }
+            // [Ignoring] to validate its value because it is not required and not nullable. (nothing to validate)            
+        }
+        // == Value type (callOutgoingToExtension.FromCountry) == 
+        {
+            int err1 = Validate_EnumType<CountryIsoCode>(value: callOutgoingToExtension.FromCountry, typeOfEnum: typeof(CountryIsoCode));
+            if (err1 != 0)
+            {
+                yield return BuildErrorMessage(errorType: err1, callstack: $"{callStack}.FromCountry", value: callOutgoingToExtension.FromCountry);
+            }
+            // [Ignoring] to validate its value because it is not required and not nullable. (nothing to validate)            
+        }
+        // == Value type (callOutgoingToExtension.CallType) == 
+        {
+            int err1 = Validate_EnumType<CallType>(value: callOutgoingToExtension.CallType, typeOfEnum: typeof(CallType));
+            if (err1 != 0)
+            {
+                yield return BuildErrorMessage(errorType: err1, callstack: $"{callStack}.CallType", value: callOutgoingToExtension.CallType);
+            }
+            // [Ignoring] to validate its value because it is not required and not nullable. (nothing to validate)            
+        }
+        // == String type (callOutgoingToExtension.IdLineThatInitiatedCall) == 
+        {
+            var err = Validate_String(value: callOutgoingToExtension.IdLineThatInitiatedCall, isNullable: false, isRequired: true, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.IdLineThatInitiatedCall", value: callOutgoingToExtension.IdLineThatInitiatedCall);
+            }
+        }
+        // == String type (callOutgoingToExtension.ChannelFrom) == 
+        {
+            var err = Validate_String(value: callOutgoingToExtension.ChannelFrom, isNullable: false, isRequired: true, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.ChannelFrom", value: callOutgoingToExtension.ChannelFrom);
+            }
+        }
+// == IList type (callOutgoingToExtension.ChannelsTo) ==
+{
+    if(callOutgoingToExtension.ChannelsTo is null)
+    {
+                yield return BuildErrorMessage(errorType: 1, callstack: $"{callStack}.ChannelsTo", value: null); // Error because list cannot be null
+    }
+    else
+    {
+        
+        for (int i = 0; i < callOutgoingToExtension.ChannelsTo.Count; i++)
+        {
+                    // == String type (callOutgoingToExtension.ChannelsTo) == 
+        {
+            var err = Validate_String(value: callOutgoingToExtension.ChannelsTo[i], isNullable: false, isRequired: false, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.ChannelsTo[{i}]", value: callOutgoingToExtension.ChannelsTo[i]);
+            }
+        }
+        }
+    }
+}
+
+        // == String type (callOutgoingToExtension.ChannelToAnswer) == 
+        {
+            var err = Validate_String(value: callOutgoingToExtension.ChannelToAnswer, isNullable: true, isRequired: false, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.ChannelToAnswer", value: callOutgoingToExtension.ChannelToAnswer);
+            }
+        }
+        // == String type (callOutgoingToExtension.IdVoicemail) == 
+        {
+            var err = Validate_String(value: callOutgoingToExtension.IdVoicemail, isNullable: true, isRequired: false, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.IdVoicemail", value: callOutgoingToExtension.IdVoicemail);
+            }
+        }
+        // == String type (callOutgoingToExtension.IdCallThatTerminatedThisCallDoToAttendantTransfer) == 
+        {
+            var err = Validate_String(value: callOutgoingToExtension.IdCallThatTerminatedThisCallDoToAttendantTransfer, isNullable: true, isRequired: false, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.IdCallThatTerminatedThisCallDoToAttendantTransfer", value: callOutgoingToExtension.IdCallThatTerminatedThisCallDoToAttendantTransfer);
+            }
+        }
+        // == String type (callOutgoingToExtension.IdContact) == 
+        {
+            var err = Validate_String(value: callOutgoingToExtension.IdContact, isNullable: true, isRequired: false, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.IdContact", value: callOutgoingToExtension.IdContact);
+            }
+        }
+        // == String type (callOutgoingToExtension.ContactFullName) == 
+        {
+            var err = Validate_String(value: callOutgoingToExtension.ContactFullName, isNullable: true, isRequired: false, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.ContactFullName", value: callOutgoingToExtension.ContactFullName);
+            }
+        }
+        // == String type (callOutgoingToExtension.IdAiCallTranscription) == 
+        {
+            var err = Validate_String(value: callOutgoingToExtension.IdAiCallTranscription, isNullable: true, isRequired: false, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.IdAiCallTranscription", value: callOutgoingToExtension.IdAiCallTranscription);
+            }
+        }
+                // == Validate object ==
+                {
+                    var tmp = callOutgoingToExtension.ChannelVariables;
+                    if(tmp is null)
+                    {
+                        yield return BuildErrorMessage(errorType: 1, callstack: $"{callStack}.ChannelVariables", value: null);
+                    }
+                    else
+                    {
+                        var pos = callStack.Length;
+                        if (callStack.Length > 0) callStack.Append('.');
+                        callStack.Append($"ChannelVariables");
+                        foreach(var err in Validate_ChannelVariables(tmp, callStack))
+                            yield return err;
+                        callStack.Length = pos;
+                    }
+                }
+
+// == IList type (callOutgoingToExtension.ChildCalls) ==
+{
+    if(callOutgoingToExtension.ChildCalls is null)
+    {
+                yield return BuildErrorMessage(errorType: 1, callstack: $"{callStack}.ChildCalls", value: null); // Error because list cannot be null
+    }
+    else
+    {
+        
+        for (int i = 0; i < callOutgoingToExtension.ChildCalls.Count; i++)
+        {
+                            // == Validate object ==
+                {
+                    var tmp = callOutgoingToExtension.ChildCalls[i];
+                    if(tmp is null)
+                    {
+                        yield return BuildErrorMessage(errorType: 1, callstack: $"{callStack}.ChildCalls[{i}]", value: null);
+                    }
+                    else
+                    {
+                        var pos = callStack.Length;
+                        if (callStack.Length > 0) callStack.Append('.');
+                        callStack.Append($"ChildCalls[{i}]");
+                        foreach(var err in Validate_ChildCall(tmp, callStack))
+                            yield return err;
+                        callStack.Length = pos;
+                    }
+                }
+
+        }
+    }
+}
+
+        // == String type (callOutgoingToExtension.DialStatus) == 
+        {
+            var err = Validate_String(value: callOutgoingToExtension.DialStatus, isNullable: false, isRequired: false, minLength: 0, maxLength: 50);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.DialStatus", value: callOutgoingToExtension.DialStatus);
+            }
+        }
+        // == [Ignoring] Value type (callOutgoingToExtension.SecondsItTookToAnswer) because it is nullable. If its nullable it cannot be required. (nothing to validate) == 
+// == IList type (callOutgoingToExtension.TimesWhenCallPlacedOnHold) ==
+{
+    if(callOutgoingToExtension.TimesWhenCallPlacedOnHold is null)
+    {
+                yield return BuildErrorMessage(errorType: 1, callstack: $"{callStack}.TimesWhenCallPlacedOnHold", value: null); // Error because list cannot be null
+    }
+    else
+    {
+        
+        for (int i = 0; i < callOutgoingToExtension.TimesWhenCallPlacedOnHold.Count; i++)
+        {
+                            // == Validate object ==
+                {
+                    var tmp = callOutgoingToExtension.TimesWhenCallPlacedOnHold[i];
+                    if(tmp is null)
+                    {
+                        yield return BuildErrorMessage(errorType: 1, callstack: $"{callStack}.TimesWhenCallPlacedOnHold[{i}]", value: null);
+                    }
+                    else
+                    {
+                        var pos = callStack.Length;
+                        if (callStack.Length > 0) callStack.Append('.');
+                        callStack.Append($"TimesWhenCallPlacedOnHold[{i}]");
+                        foreach(var err in Validate_TimeWhenCallPlacedOnHold(tmp, callStack))
+                            yield return err;
+                        callStack.Length = pos;
+                    }
+                }
+
+        }
+    }
+}
+
+        // == String type (callOutgoingToExtension.From) == 
+        {
+            var err = Validate_String(value: callOutgoingToExtension.From, isNullable: false, isRequired: true, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.From", value: callOutgoingToExtension.From);
+            }
+        }
+        // == String type (callOutgoingToExtension.FromReversed) == 
+        {
+            var err = Validate_String(value: callOutgoingToExtension.FromReversed, isNullable: false, isRequired: false, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.FromReversed", value: callOutgoingToExtension.FromReversed);
+            }
+        }
+        // == String type (callOutgoingToExtension.To) == 
+        {
+            var err = Validate_String(value: callOutgoingToExtension.To, isNullable: false, isRequired: true, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.To", value: callOutgoingToExtension.To);
+            }
+        }
+        // == String type (callOutgoingToExtension.ToReversed) == 
+        {
+            var err = Validate_String(value: callOutgoingToExtension.ToReversed, isNullable: false, isRequired: false, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.ToReversed", value: callOutgoingToExtension.ToReversed);
+            }
+        }
+                // == Validate object ==
+                {
+                    var tmp = callOutgoingToExtension.Recording;
+                    if(tmp is null)
+                    {
+                        // OK for it to be null it is nullable
+                    }
+                    else
+                    {
+                        var pos = callStack.Length;
+                        if (callStack.Length > 0) callStack.Append('.');
+                        callStack.Append($"Recording");
+                        foreach(var err in Validate_UbluxSubDocument(tmp, callStack))
+                            yield return err;
+                        callStack.Length = pos;
+                    }
+                }
+
+        // == [Ignoring] Value type (callOutgoingToExtension.DisabledVideo) because it is not required. (nothing to validate) == 
+// == IList type (callOutgoingToExtension.DigitsSent) ==
+{
+    if(callOutgoingToExtension.DigitsSent is null)
+    {
+                yield return BuildErrorMessage(errorType: 1, callstack: $"{callStack}.DigitsSent", value: null); // Error because list cannot be null
+    }
+    else
+    {
+        
+        for (int i = 0; i < callOutgoingToExtension.DigitsSent.Count; i++)
+        {
+                    // == String type (callOutgoingToExtension.DigitsSent) == 
+        {
+            var err = Validate_String(value: callOutgoingToExtension.DigitsSent[i], isNullable: false, isRequired: false, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.DigitsSent[{i}]", value: callOutgoingToExtension.DigitsSent[i]);
+            }
+        }
+        }
+    }
+}
+
+        // == [Ignoring] Value type (callOutgoingToExtension.IsInternational) because it is not required. (nothing to validate) == 
+        // == [Ignoring] Value type (callOutgoingToExtension.ContainsInternationalCall) because it is not required. (nothing to validate) == 
+        // == Value type (callOutgoingToExtension.CallResult) == 
+        {
+            int err1 = Validate_EnumType<CallResult>(value: callOutgoingToExtension.CallResult, typeOfEnum: typeof(CallResult));
+            if (err1 != 0)
+            {
+                yield return BuildErrorMessage(errorType: err1, callstack: $"{callStack}.CallResult", value: callOutgoingToExtension.CallResult);
+            }
+            // [Ignoring] to validate its value because it is not required and not nullable. (nothing to validate)            
+        }
+                // == Validate object ==
+                {
+                    var tmp = callOutgoingToExtension.Analysis;
+                    if(tmp is null)
+                    {
+                        // OK for it to be null it is nullable
+                    }
+                    else
+                    {
+                        var pos = callStack.Length;
+                        if (callStack.Length > 0) callStack.Append('.');
+                        callStack.Append($"Analysis");
+                        foreach(var err in Validate_AiAnalysis(tmp, callStack))
+                            yield return err;
+                        callStack.Length = pos;
+                    }
+                }
+
+                // == Validate object ==
+                {
+                    var tmp = callOutgoingToExtension.Analysis2;
+                    if(tmp is null)
+                    {
+                        // OK for it to be null it is nullable
+                    }
+                    else
+                    {
+                        var pos = callStack.Length;
+                        if (callStack.Length > 0) callStack.Append('.');
+                        callStack.Append($"Analysis2");
+                        foreach(var err in Validate_AiAnalysis(tmp, callStack))
+                            yield return err;
+                        callStack.Length = pos;
+                    }
+                }
+
+                // == Validate object ==
+                {
+                    var tmp = callOutgoingToExtension.Analysis3;
+                    if(tmp is null)
+                    {
+                        // OK for it to be null it is nullable
+                    }
+                    else
+                    {
+                        var pos = callStack.Length;
+                        if (callStack.Length > 0) callStack.Append('.');
+                        callStack.Append($"Analysis3");
+                        foreach(var err in Validate_AiAnalysis(tmp, callStack))
+                            yield return err;
+                        callStack.Length = pos;
+                    }
+                }
+
+// == IList type (callOutgoingToExtension.IdsParticipantLines) ==
+{
+    if(callOutgoingToExtension.IdsParticipantLines is null)
+    {
+                yield return BuildErrorMessage(errorType: 1, callstack: $"{callStack}.IdsParticipantLines", value: null); // Error because list cannot be null
+    }
+    else
+    {
+        
+        for (int i = 0; i < callOutgoingToExtension.IdsParticipantLines.Count; i++)
+        {
+                    // == String type (callOutgoingToExtension.IdsParticipantLines) == 
+        {
+            var err = Validate_String(value: callOutgoingToExtension.IdsParticipantLines[i], isNullable: false, isRequired: false, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.IdsParticipantLines[{i}]", value: callOutgoingToExtension.IdsParticipantLines[i]);
+            }
+        }
+        }
+    }
+}
+
+        // == [Ignoring] Value type (callOutgoingToExtension.DurationInSeconds) because it is nullable. If its nullable it cannot be required. (nothing to validate) == 
+        // == String type (callOutgoingToExtension.ErrorMessage) == 
+        {
+            var err = Validate_String(value: callOutgoingToExtension.ErrorMessage, isNullable: true, isRequired: false, minLength: 0, maxLength: 2000);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.ErrorMessage", value: callOutgoingToExtension.ErrorMessage);
+            }
+        }
+        // == Value type (callOutgoingToExtension.AiTranscriptionStatus) == 
+        {
+            int err1 = Validate_EnumType<AiProcessStatus>(value: callOutgoingToExtension.AiTranscriptionStatus, typeOfEnum: typeof(AiProcessStatus));
+            if (err1 != 0)
+            {
+                yield return BuildErrorMessage(errorType: err1, callstack: $"{callStack}.AiTranscriptionStatus", value: callOutgoingToExtension.AiTranscriptionStatus);
+            }
+            // [Ignoring] to validate its value because it is not required and not nullable. (nothing to validate)            
+        }
+        // == Value type (callOutgoingToExtension.AiAnalysisStatus) == 
+        {
+            int err1 = Validate_EnumType<AiProcessStatus>(value: callOutgoingToExtension.AiAnalysisStatus, typeOfEnum: typeof(AiProcessStatus));
+            if (err1 != 0)
+            {
+                yield return BuildErrorMessage(errorType: err1, callstack: $"{callStack}.AiAnalysisStatus", value: callOutgoingToExtension.AiAnalysisStatus);
+            }
+            // [Ignoring] to validate its value because it is not required and not nullable. (nothing to validate)            
+        }
+// == IList type (callOutgoingToExtension.IdsTags) ==
+{
+    if(callOutgoingToExtension.IdsTags is null)
+    {
+                yield return BuildErrorMessage(errorType: 1, callstack: $"{callStack}.IdsTags", value: null); // Error because list cannot be null
+    }
+    else
+    {
+        
+        for (int i = 0; i < callOutgoingToExtension.IdsTags.Count; i++)
+        {
+                    // == String type (callOutgoingToExtension.IdsTags) == 
+        {
+            var err = Validate_String(value: callOutgoingToExtension.IdsTags[i], isNullable: false, isRequired: false, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.IdsTags[{i}]", value: callOutgoingToExtension.IdsTags[i]);
+            }
+        }
+        }
+    }
+}
+
+        // == String type (callOutgoingToExtension.IdAccount) == 
+        {
+            var err = Validate_String(value: callOutgoingToExtension.IdAccount, isNullable: false, isRequired: true, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.IdAccount", value: callOutgoingToExtension.IdAccount);
+            }
+        }
+        // == [Ignoring] Value type (callOutgoingToExtension.BuiltId) because it is not required. (nothing to validate) == 
+        // == [Ignoring] Value type (callOutgoingToExtension.DateDeleted) because it is nullable. If its nullable it cannot be required. (nothing to validate) == 
+        // == String type (callOutgoingToExtension.Id) == 
+        {
+            var err = Validate_String(value: callOutgoingToExtension.Id, isNullable: false, isRequired: false, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.Id", value: callOutgoingToExtension.Id);
+            }
+        }
+        // == Value type (callOutgoingToExtension.DateCreated) == 
+        {
+
+            int err3 = Validate_ValueTypeRequired<DateTime>(value: callOutgoingToExtension.DateCreated, isEnum: false);
+            if (err3 != 0)
+            {
+                yield return BuildErrorMessage(errorType: err3, callstack: $"{callStack}.DateCreated", value: callOutgoingToExtension.DateCreated);
+            }            
+        }
+        // == Value type (callOutgoingToExtension.DateUpdated) == 
+        {
+
+            int err3 = Validate_ValueTypeRequired<DateTime>(value: callOutgoingToExtension.DateUpdated, isEnum: false);
+            if (err3 != 0)
+            {
+                yield return BuildErrorMessage(errorType: err3, callstack: $"{callStack}.DateUpdated", value: callOutgoingToExtension.DateUpdated);
+            }            
+        }
+
+}
+else if (call is CallOutgoingToPSTN callOutgoingToPSTN)
+{
+            // == String type (callOutgoingToPSTN.IdTrunkTermination) == 
+        {
+            var err = Validate_String(value: callOutgoingToPSTN.IdTrunkTermination, isNullable: false, isRequired: false, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.IdTrunkTermination", value: callOutgoingToPSTN.IdTrunkTermination);
+            }
+        }
+        // == Value type (callOutgoingToPSTN.CallType) == 
+        {
+            int err1 = Validate_EnumType<CallType>(value: callOutgoingToPSTN.CallType, typeOfEnum: typeof(CallType));
+            if (err1 != 0)
+            {
+                yield return BuildErrorMessage(errorType: err1, callstack: $"{callStack}.CallType", value: callOutgoingToPSTN.CallType);
+            }
+            // [Ignoring] to validate its value because it is not required and not nullable. (nothing to validate)            
+        }
+        // == String type (callOutgoingToPSTN.ToInternationalFormat) == 
+        {
+            var err = Validate_String(value: callOutgoingToPSTN.ToInternationalFormat, isNullable: false, isRequired: true, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.ToInternationalFormat", value: callOutgoingToPSTN.ToInternationalFormat);
+            }
+        }
+        // == String type (callOutgoingToPSTN.IdLineThatInitiatedCall) == 
+        {
+            var err = Validate_String(value: callOutgoingToPSTN.IdLineThatInitiatedCall, isNullable: false, isRequired: true, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.IdLineThatInitiatedCall", value: callOutgoingToPSTN.IdLineThatInitiatedCall);
+            }
+        }
+        // == String type (callOutgoingToPSTN.ChannelFrom) == 
+        {
+            var err = Validate_String(value: callOutgoingToPSTN.ChannelFrom, isNullable: false, isRequired: true, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.ChannelFrom", value: callOutgoingToPSTN.ChannelFrom);
+            }
+        }
+// == IList type (callOutgoingToPSTN.ChannelsTo) ==
+{
+    if(callOutgoingToPSTN.ChannelsTo is null)
+    {
+                yield return BuildErrorMessage(errorType: 1, callstack: $"{callStack}.ChannelsTo", value: null); // Error because list cannot be null
+    }
+    else
+    {
+        
+        for (int i = 0; i < callOutgoingToPSTN.ChannelsTo.Count; i++)
+        {
+                    // == String type (callOutgoingToPSTN.ChannelsTo) == 
+        {
+            var err = Validate_String(value: callOutgoingToPSTN.ChannelsTo[i], isNullable: false, isRequired: false, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.ChannelsTo[{i}]", value: callOutgoingToPSTN.ChannelsTo[i]);
+            }
+        }
+        }
+    }
+}
+
+        // == String type (callOutgoingToPSTN.ChannelToAnswer) == 
+        {
+            var err = Validate_String(value: callOutgoingToPSTN.ChannelToAnswer, isNullable: true, isRequired: false, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.ChannelToAnswer", value: callOutgoingToPSTN.ChannelToAnswer);
+            }
+        }
+        // == String type (callOutgoingToPSTN.IdVoicemail) == 
+        {
+            var err = Validate_String(value: callOutgoingToPSTN.IdVoicemail, isNullable: true, isRequired: false, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.IdVoicemail", value: callOutgoingToPSTN.IdVoicemail);
+            }
+        }
+        // == String type (callOutgoingToPSTN.IdCallThatTerminatedThisCallDoToAttendantTransfer) == 
+        {
+            var err = Validate_String(value: callOutgoingToPSTN.IdCallThatTerminatedThisCallDoToAttendantTransfer, isNullable: true, isRequired: false, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.IdCallThatTerminatedThisCallDoToAttendantTransfer", value: callOutgoingToPSTN.IdCallThatTerminatedThisCallDoToAttendantTransfer);
+            }
+        }
+        // == String type (callOutgoingToPSTN.IdContact) == 
+        {
+            var err = Validate_String(value: callOutgoingToPSTN.IdContact, isNullable: true, isRequired: false, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.IdContact", value: callOutgoingToPSTN.IdContact);
+            }
+        }
+        // == String type (callOutgoingToPSTN.ContactFullName) == 
+        {
+            var err = Validate_String(value: callOutgoingToPSTN.ContactFullName, isNullable: true, isRequired: false, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.ContactFullName", value: callOutgoingToPSTN.ContactFullName);
+            }
+        }
+        // == String type (callOutgoingToPSTN.IdAiCallTranscription) == 
+        {
+            var err = Validate_String(value: callOutgoingToPSTN.IdAiCallTranscription, isNullable: true, isRequired: false, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.IdAiCallTranscription", value: callOutgoingToPSTN.IdAiCallTranscription);
+            }
+        }
+                // == Validate object ==
+                {
+                    var tmp = callOutgoingToPSTN.ChannelVariables;
+                    if(tmp is null)
+                    {
+                        yield return BuildErrorMessage(errorType: 1, callstack: $"{callStack}.ChannelVariables", value: null);
+                    }
+                    else
+                    {
+                        var pos = callStack.Length;
+                        if (callStack.Length > 0) callStack.Append('.');
+                        callStack.Append($"ChannelVariables");
+                        foreach(var err in Validate_ChannelVariables(tmp, callStack))
+                            yield return err;
+                        callStack.Length = pos;
+                    }
+                }
+
+// == IList type (callOutgoingToPSTN.ChildCalls) ==
+{
+    if(callOutgoingToPSTN.ChildCalls is null)
+    {
+                yield return BuildErrorMessage(errorType: 1, callstack: $"{callStack}.ChildCalls", value: null); // Error because list cannot be null
+    }
+    else
+    {
+        
+        for (int i = 0; i < callOutgoingToPSTN.ChildCalls.Count; i++)
+        {
+                            // == Validate object ==
+                {
+                    var tmp = callOutgoingToPSTN.ChildCalls[i];
+                    if(tmp is null)
+                    {
+                        yield return BuildErrorMessage(errorType: 1, callstack: $"{callStack}.ChildCalls[{i}]", value: null);
+                    }
+                    else
+                    {
+                        var pos = callStack.Length;
+                        if (callStack.Length > 0) callStack.Append('.');
+                        callStack.Append($"ChildCalls[{i}]");
+                        foreach(var err in Validate_ChildCall(tmp, callStack))
+                            yield return err;
+                        callStack.Length = pos;
+                    }
+                }
+
+        }
+    }
+}
+
+        // == String type (callOutgoingToPSTN.DialStatus) == 
+        {
+            var err = Validate_String(value: callOutgoingToPSTN.DialStatus, isNullable: false, isRequired: false, minLength: 0, maxLength: 50);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.DialStatus", value: callOutgoingToPSTN.DialStatus);
+            }
+        }
+        // == [Ignoring] Value type (callOutgoingToPSTN.SecondsItTookToAnswer) because it is nullable. If its nullable it cannot be required. (nothing to validate) == 
+// == IList type (callOutgoingToPSTN.TimesWhenCallPlacedOnHold) ==
+{
+    if(callOutgoingToPSTN.TimesWhenCallPlacedOnHold is null)
+    {
+                yield return BuildErrorMessage(errorType: 1, callstack: $"{callStack}.TimesWhenCallPlacedOnHold", value: null); // Error because list cannot be null
+    }
+    else
+    {
+        
+        for (int i = 0; i < callOutgoingToPSTN.TimesWhenCallPlacedOnHold.Count; i++)
+        {
+                            // == Validate object ==
+                {
+                    var tmp = callOutgoingToPSTN.TimesWhenCallPlacedOnHold[i];
+                    if(tmp is null)
+                    {
+                        yield return BuildErrorMessage(errorType: 1, callstack: $"{callStack}.TimesWhenCallPlacedOnHold[{i}]", value: null);
+                    }
+                    else
+                    {
+                        var pos = callStack.Length;
+                        if (callStack.Length > 0) callStack.Append('.');
+                        callStack.Append($"TimesWhenCallPlacedOnHold[{i}]");
+                        foreach(var err in Validate_TimeWhenCallPlacedOnHold(tmp, callStack))
+                            yield return err;
+                        callStack.Length = pos;
+                    }
+                }
+
+        }
+    }
+}
+
+        // == String type (callOutgoingToPSTN.From) == 
+        {
+            var err = Validate_String(value: callOutgoingToPSTN.From, isNullable: false, isRequired: true, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.From", value: callOutgoingToPSTN.From);
+            }
+        }
+        // == String type (callOutgoingToPSTN.FromReversed) == 
+        {
+            var err = Validate_String(value: callOutgoingToPSTN.FromReversed, isNullable: false, isRequired: false, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.FromReversed", value: callOutgoingToPSTN.FromReversed);
+            }
+        }
+        // == Value type (callOutgoingToPSTN.FromCountry) == 
+        {
+            int err1 = Validate_EnumType<CountryIsoCode>(value: callOutgoingToPSTN.FromCountry, typeOfEnum: typeof(CountryIsoCode));
+            if (err1 != 0)
+            {
+                yield return BuildErrorMessage(errorType: err1, callstack: $"{callStack}.FromCountry", value: callOutgoingToPSTN.FromCountry);
+            }
+            int err3 = Validate_ValueTypeRequired<CountryIsoCode>(value: callOutgoingToPSTN.FromCountry, isEnum: true);
+            if (err3 != 0)
+            {
+                yield return BuildErrorMessage(errorType: err3, callstack: $"{callStack}.FromCountry", value: callOutgoingToPSTN.FromCountry);
+            }            
+        }
+        // == String type (callOutgoingToPSTN.To) == 
+        {
+            var err = Validate_String(value: callOutgoingToPSTN.To, isNullable: false, isRequired: true, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.To", value: callOutgoingToPSTN.To);
+            }
+        }
+        // == String type (callOutgoingToPSTN.ToReversed) == 
+        {
+            var err = Validate_String(value: callOutgoingToPSTN.ToReversed, isNullable: false, isRequired: false, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.ToReversed", value: callOutgoingToPSTN.ToReversed);
+            }
+        }
+        // == Value type (callOutgoingToPSTN.ToCountry) == 
+        {
+            int err1 = Validate_EnumType<CountryIsoCode>(value: callOutgoingToPSTN.ToCountry, typeOfEnum: typeof(CountryIsoCode));
+            if (err1 != 0)
+            {
+                yield return BuildErrorMessage(errorType: err1, callstack: $"{callStack}.ToCountry", value: callOutgoingToPSTN.ToCountry);
+            }
+            int err3 = Validate_ValueTypeRequired<CountryIsoCode>(value: callOutgoingToPSTN.ToCountry, isEnum: true);
+            if (err3 != 0)
+            {
+                yield return BuildErrorMessage(errorType: err3, callstack: $"{callStack}.ToCountry", value: callOutgoingToPSTN.ToCountry);
+            }            
+        }
+                // == Validate object ==
+                {
+                    var tmp = callOutgoingToPSTN.Recording;
+                    if(tmp is null)
+                    {
+                        // OK for it to be null it is nullable
+                    }
+                    else
+                    {
+                        var pos = callStack.Length;
+                        if (callStack.Length > 0) callStack.Append('.');
+                        callStack.Append($"Recording");
+                        foreach(var err in Validate_UbluxSubDocument(tmp, callStack))
+                            yield return err;
+                        callStack.Length = pos;
+                    }
+                }
+
+        // == [Ignoring] Value type (callOutgoingToPSTN.DisabledVideo) because it is not required. (nothing to validate) == 
+// == IList type (callOutgoingToPSTN.DigitsSent) ==
+{
+    if(callOutgoingToPSTN.DigitsSent is null)
+    {
+                yield return BuildErrorMessage(errorType: 1, callstack: $"{callStack}.DigitsSent", value: null); // Error because list cannot be null
+    }
+    else
+    {
+        
+        for (int i = 0; i < callOutgoingToPSTN.DigitsSent.Count; i++)
+        {
+                    // == String type (callOutgoingToPSTN.DigitsSent) == 
+        {
+            var err = Validate_String(value: callOutgoingToPSTN.DigitsSent[i], isNullable: false, isRequired: false, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.DigitsSent[{i}]", value: callOutgoingToPSTN.DigitsSent[i]);
+            }
+        }
+        }
+    }
+}
+
+        // == [Ignoring] Value type (callOutgoingToPSTN.IsInternational) because it is not required. (nothing to validate) == 
+        // == [Ignoring] Value type (callOutgoingToPSTN.ContainsInternationalCall) because it is not required. (nothing to validate) == 
+        // == Value type (callOutgoingToPSTN.CallResult) == 
+        {
+            int err1 = Validate_EnumType<CallResult>(value: callOutgoingToPSTN.CallResult, typeOfEnum: typeof(CallResult));
+            if (err1 != 0)
+            {
+                yield return BuildErrorMessage(errorType: err1, callstack: $"{callStack}.CallResult", value: callOutgoingToPSTN.CallResult);
+            }
+            // [Ignoring] to validate its value because it is not required and not nullable. (nothing to validate)            
+        }
+                // == Validate object ==
+                {
+                    var tmp = callOutgoingToPSTN.Analysis;
+                    if(tmp is null)
+                    {
+                        // OK for it to be null it is nullable
+                    }
+                    else
+                    {
+                        var pos = callStack.Length;
+                        if (callStack.Length > 0) callStack.Append('.');
+                        callStack.Append($"Analysis");
+                        foreach(var err in Validate_AiAnalysis(tmp, callStack))
+                            yield return err;
+                        callStack.Length = pos;
+                    }
+                }
+
+                // == Validate object ==
+                {
+                    var tmp = callOutgoingToPSTN.Analysis2;
+                    if(tmp is null)
+                    {
+                        // OK for it to be null it is nullable
+                    }
+                    else
+                    {
+                        var pos = callStack.Length;
+                        if (callStack.Length > 0) callStack.Append('.');
+                        callStack.Append($"Analysis2");
+                        foreach(var err in Validate_AiAnalysis(tmp, callStack))
+                            yield return err;
+                        callStack.Length = pos;
+                    }
+                }
+
+                // == Validate object ==
+                {
+                    var tmp = callOutgoingToPSTN.Analysis3;
+                    if(tmp is null)
+                    {
+                        // OK for it to be null it is nullable
+                    }
+                    else
+                    {
+                        var pos = callStack.Length;
+                        if (callStack.Length > 0) callStack.Append('.');
+                        callStack.Append($"Analysis3");
+                        foreach(var err in Validate_AiAnalysis(tmp, callStack))
+                            yield return err;
+                        callStack.Length = pos;
+                    }
+                }
+
+// == IList type (callOutgoingToPSTN.IdsParticipantLines) ==
+{
+    if(callOutgoingToPSTN.IdsParticipantLines is null)
+    {
+                yield return BuildErrorMessage(errorType: 1, callstack: $"{callStack}.IdsParticipantLines", value: null); // Error because list cannot be null
+    }
+    else
+    {
+        
+        for (int i = 0; i < callOutgoingToPSTN.IdsParticipantLines.Count; i++)
+        {
+                    // == String type (callOutgoingToPSTN.IdsParticipantLines) == 
+        {
+            var err = Validate_String(value: callOutgoingToPSTN.IdsParticipantLines[i], isNullable: false, isRequired: false, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.IdsParticipantLines[{i}]", value: callOutgoingToPSTN.IdsParticipantLines[i]);
+            }
+        }
+        }
+    }
+}
+
+        // == [Ignoring] Value type (callOutgoingToPSTN.DurationInSeconds) because it is nullable. If its nullable it cannot be required. (nothing to validate) == 
+        // == String type (callOutgoingToPSTN.ErrorMessage) == 
+        {
+            var err = Validate_String(value: callOutgoingToPSTN.ErrorMessage, isNullable: true, isRequired: false, minLength: 0, maxLength: 2000);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.ErrorMessage", value: callOutgoingToPSTN.ErrorMessage);
+            }
+        }
+        // == Value type (callOutgoingToPSTN.AiTranscriptionStatus) == 
+        {
+            int err1 = Validate_EnumType<AiProcessStatus>(value: callOutgoingToPSTN.AiTranscriptionStatus, typeOfEnum: typeof(AiProcessStatus));
+            if (err1 != 0)
+            {
+                yield return BuildErrorMessage(errorType: err1, callstack: $"{callStack}.AiTranscriptionStatus", value: callOutgoingToPSTN.AiTranscriptionStatus);
+            }
+            // [Ignoring] to validate its value because it is not required and not nullable. (nothing to validate)            
+        }
+        // == Value type (callOutgoingToPSTN.AiAnalysisStatus) == 
+        {
+            int err1 = Validate_EnumType<AiProcessStatus>(value: callOutgoingToPSTN.AiAnalysisStatus, typeOfEnum: typeof(AiProcessStatus));
+            if (err1 != 0)
+            {
+                yield return BuildErrorMessage(errorType: err1, callstack: $"{callStack}.AiAnalysisStatus", value: callOutgoingToPSTN.AiAnalysisStatus);
+            }
+            // [Ignoring] to validate its value because it is not required and not nullable. (nothing to validate)            
+        }
+// == IList type (callOutgoingToPSTN.IdsTags) ==
+{
+    if(callOutgoingToPSTN.IdsTags is null)
+    {
+                yield return BuildErrorMessage(errorType: 1, callstack: $"{callStack}.IdsTags", value: null); // Error because list cannot be null
+    }
+    else
+    {
+        
+        for (int i = 0; i < callOutgoingToPSTN.IdsTags.Count; i++)
+        {
+                    // == String type (callOutgoingToPSTN.IdsTags) == 
+        {
+            var err = Validate_String(value: callOutgoingToPSTN.IdsTags[i], isNullable: false, isRequired: false, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.IdsTags[{i}]", value: callOutgoingToPSTN.IdsTags[i]);
+            }
+        }
+        }
+    }
+}
+
+        // == String type (callOutgoingToPSTN.IdAccount) == 
+        {
+            var err = Validate_String(value: callOutgoingToPSTN.IdAccount, isNullable: false, isRequired: true, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.IdAccount", value: callOutgoingToPSTN.IdAccount);
+            }
+        }
+        // == [Ignoring] Value type (callOutgoingToPSTN.BuiltId) because it is not required. (nothing to validate) == 
+        // == [Ignoring] Value type (callOutgoingToPSTN.DateDeleted) because it is nullable. If its nullable it cannot be required. (nothing to validate) == 
+        // == String type (callOutgoingToPSTN.Id) == 
+        {
+            var err = Validate_String(value: callOutgoingToPSTN.Id, isNullable: false, isRequired: false, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.Id", value: callOutgoingToPSTN.Id);
+            }
+        }
+        // == Value type (callOutgoingToPSTN.DateCreated) == 
+        {
+
+            int err3 = Validate_ValueTypeRequired<DateTime>(value: callOutgoingToPSTN.DateCreated, isEnum: false);
+            if (err3 != 0)
+            {
+                yield return BuildErrorMessage(errorType: err3, callstack: $"{callStack}.DateCreated", value: callOutgoingToPSTN.DateCreated);
+            }            
+        }
+        // == Value type (callOutgoingToPSTN.DateUpdated) == 
+        {
+
+            int err3 = Validate_ValueTypeRequired<DateTime>(value: callOutgoingToPSTN.DateUpdated, isEnum: false);
+            if (err3 != 0)
+            {
+                yield return BuildErrorMessage(errorType: err3, callstack: $"{callStack}.DateUpdated", value: callOutgoingToPSTN.DateUpdated);
+            }            
+        }
+
+}
+else
+{
+    // This means we are validating an derived class that does not exist. 
+    // For example if a class has property of type Animal and we are validating a Dog that is not part of validation.
+    // Re-Generating this code should fix this problem if class Dog exists on the assembiles passed to this validator.
+    if (Debugger.IsAttached) Debugger.Break();
+    yield return new ValidationError() { ErrorMessage = "Internal Validation Error" };
+}
+
+        yield break;
+    }
+    private IEnumerable<ValidationError> Validate_TrunkOrigination(TrunkOrigination trunkOrigination, StringBuilder callStack)
+    {
+        if(ValidatedObjects.Add(trunkOrigination)==false)
+            // item has already been validate. This is to prevent a circular reference
+            yield break;
+
+if (trunkOrigination is TrunkOriginationForward trunkOriginationForward)
+{
+            // == Value type (trunkOriginationForward.TrunkOriginationType) == 
+        {
+            int err1 = Validate_EnumType<TrunkOriginationType>(value: trunkOriginationForward.TrunkOriginationType, typeOfEnum: typeof(TrunkOriginationType));
+            if (err1 != 0)
+            {
+                yield return BuildErrorMessage(errorType: err1, callstack: $"{callStack}.TrunkOriginationType", value: trunkOriginationForward.TrunkOriginationType);
+            }
+            int err3 = Validate_ValueTypeRequired<TrunkOriginationType>(value: trunkOriginationForward.TrunkOriginationType, isEnum: true);
+            if (err3 != 0)
+            {
+                yield return BuildErrorMessage(errorType: err3, callstack: $"{callStack}.TrunkOriginationType", value: trunkOriginationForward.TrunkOriginationType);
+            }            
+        }
+        // == String type (trunkOriginationForward.IdVoipProvider) == 
+        {
+            var err = Validate_String(value: trunkOriginationForward.IdVoipProvider, isNullable: false, isRequired: true, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.IdVoipProvider", value: trunkOriginationForward.IdVoipProvider);
+            }
+        }
+        // == String type (trunkOriginationForward.IdCloudServicePbx) == 
+        {
+            var err = Validate_String(value: trunkOriginationForward.IdCloudServicePbx, isNullable: false, isRequired: true, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.IdCloudServicePbx", value: trunkOriginationForward.IdCloudServicePbx);
+            }
+        }
+        // == String type (trunkOriginationForward.IdCloudServicePbxFailover) == 
+        {
+            var err = Validate_String(value: trunkOriginationForward.IdCloudServicePbxFailover, isNullable: false, isRequired: true, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.IdCloudServicePbxFailover", value: trunkOriginationForward.IdCloudServicePbxFailover);
+            }
+        }
+        // == String type (trunkOriginationForward.ProviderId) == 
+        {
+            var err = Validate_String(value: trunkOriginationForward.ProviderId, isNullable: false, isRequired: true, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.ProviderId", value: trunkOriginationForward.ProviderId);
+            }
+        }
+        // == String type (trunkOriginationForward.FriendlyName) == 
+        {
+            var err = Validate_String(value: trunkOriginationForward.FriendlyName, isNullable: false, isRequired: true, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.FriendlyName", value: trunkOriginationForward.FriendlyName);
+            }
+        }
+        // == [Ignoring] Value type (trunkOriginationForward.BuiltId) because it is not required. (nothing to validate) == 
+        // == [Ignoring] Value type (trunkOriginationForward.DateDeleted) because it is nullable. If its nullable it cannot be required. (nothing to validate) == 
+        // == String type (trunkOriginationForward.Id) == 
+        {
+            var err = Validate_String(value: trunkOriginationForward.Id, isNullable: false, isRequired: false, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.Id", value: trunkOriginationForward.Id);
+            }
+        }
+        // == Value type (trunkOriginationForward.DateCreated) == 
+        {
+
+            int err3 = Validate_ValueTypeRequired<DateTime>(value: trunkOriginationForward.DateCreated, isEnum: false);
+            if (err3 != 0)
+            {
+                yield return BuildErrorMessage(errorType: err3, callstack: $"{callStack}.DateCreated", value: trunkOriginationForward.DateCreated);
+            }            
+        }
+        // == Value type (trunkOriginationForward.DateUpdated) == 
+        {
+
+            int err3 = Validate_ValueTypeRequired<DateTime>(value: trunkOriginationForward.DateUpdated, isEnum: false);
+            if (err3 != 0)
+            {
+                yield return BuildErrorMessage(errorType: err3, callstack: $"{callStack}.DateUpdated", value: trunkOriginationForward.DateUpdated);
+            }            
+        }
+
+}
+else if (trunkOrigination is TrunkOriginationRegister trunkOriginationRegister)
+{
+            // == String type (trunkOriginationRegister.Reg_username) == 
+        {
+            var err = Validate_String(value: trunkOriginationRegister.Reg_username, isNullable: false, isRequired: true, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.Reg_username", value: trunkOriginationRegister.Reg_username);
+            }
+        }
+        // == String type (trunkOriginationRegister.Reg_password) == 
+        {
+            var err = Validate_String(value: trunkOriginationRegister.Reg_password, isNullable: false, isRequired: true, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.Reg_password", value: trunkOriginationRegister.Reg_password);
+            }
+        }
+        // == String type (trunkOriginationRegister.Reg_host) == 
+        {
+            var err = Validate_String(value: trunkOriginationRegister.Reg_host, isNullable: false, isRequired: true, minLength: 0, maxLength: 500);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.Reg_host", value: trunkOriginationRegister.Reg_host);
+            }
+        }
+        // == Value type (trunkOriginationRegister.Reg_port) == 
+        {
+
+            int err3 = Validate_ValueTypeRequired<Int32>(value: trunkOriginationRegister.Reg_port, isEnum: false);
+            if (err3 != 0)
+            {
+                yield return BuildErrorMessage(errorType: err3, callstack: $"{callStack}.Reg_port", value: trunkOriginationRegister.Reg_port);
+            }            
+        }
+        // == Value type (trunkOriginationRegister.TrunkOriginationType) == 
+        {
+            int err1 = Validate_EnumType<TrunkOriginationType>(value: trunkOriginationRegister.TrunkOriginationType, typeOfEnum: typeof(TrunkOriginationType));
+            if (err1 != 0)
+            {
+                yield return BuildErrorMessage(errorType: err1, callstack: $"{callStack}.TrunkOriginationType", value: trunkOriginationRegister.TrunkOriginationType);
+            }
+            int err3 = Validate_ValueTypeRequired<TrunkOriginationType>(value: trunkOriginationRegister.TrunkOriginationType, isEnum: true);
+            if (err3 != 0)
+            {
+                yield return BuildErrorMessage(errorType: err3, callstack: $"{callStack}.TrunkOriginationType", value: trunkOriginationRegister.TrunkOriginationType);
+            }            
+        }
+        // == String type (trunkOriginationRegister.IdVoipProvider) == 
+        {
+            var err = Validate_String(value: trunkOriginationRegister.IdVoipProvider, isNullable: false, isRequired: true, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.IdVoipProvider", value: trunkOriginationRegister.IdVoipProvider);
+            }
+        }
+        // == String type (trunkOriginationRegister.IdCloudServicePbx) == 
+        {
+            var err = Validate_String(value: trunkOriginationRegister.IdCloudServicePbx, isNullable: false, isRequired: true, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.IdCloudServicePbx", value: trunkOriginationRegister.IdCloudServicePbx);
+            }
+        }
+        // == String type (trunkOriginationRegister.IdCloudServicePbxFailover) == 
+        {
+            var err = Validate_String(value: trunkOriginationRegister.IdCloudServicePbxFailover, isNullable: false, isRequired: true, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.IdCloudServicePbxFailover", value: trunkOriginationRegister.IdCloudServicePbxFailover);
+            }
+        }
+        // == String type (trunkOriginationRegister.ProviderId) == 
+        {
+            var err = Validate_String(value: trunkOriginationRegister.ProviderId, isNullable: false, isRequired: true, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.ProviderId", value: trunkOriginationRegister.ProviderId);
+            }
+        }
+        // == String type (trunkOriginationRegister.FriendlyName) == 
+        {
+            var err = Validate_String(value: trunkOriginationRegister.FriendlyName, isNullable: false, isRequired: true, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.FriendlyName", value: trunkOriginationRegister.FriendlyName);
+            }
+        }
+        // == [Ignoring] Value type (trunkOriginationRegister.BuiltId) because it is not required. (nothing to validate) == 
+        // == [Ignoring] Value type (trunkOriginationRegister.DateDeleted) because it is nullable. If its nullable it cannot be required. (nothing to validate) == 
+        // == String type (trunkOriginationRegister.Id) == 
+        {
+            var err = Validate_String(value: trunkOriginationRegister.Id, isNullable: false, isRequired: false, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.Id", value: trunkOriginationRegister.Id);
+            }
+        }
+        // == Value type (trunkOriginationRegister.DateCreated) == 
+        {
+
+            int err3 = Validate_ValueTypeRequired<DateTime>(value: trunkOriginationRegister.DateCreated, isEnum: false);
+            if (err3 != 0)
+            {
+                yield return BuildErrorMessage(errorType: err3, callstack: $"{callStack}.DateCreated", value: trunkOriginationRegister.DateCreated);
+            }            
+        }
+        // == Value type (trunkOriginationRegister.DateUpdated) == 
+        {
+
+            int err3 = Validate_ValueTypeRequired<DateTime>(value: trunkOriginationRegister.DateUpdated, isEnum: false);
+            if (err3 != 0)
+            {
+                yield return BuildErrorMessage(errorType: err3, callstack: $"{callStack}.DateUpdated", value: trunkOriginationRegister.DateUpdated);
+            }            
+        }
+
+}
+else
+{
+    // This means we are validating an derived class that does not exist. 
+    // For example if a class has property of type Animal and we are validating a Dog that is not part of validation.
+    // Re-Generating this code should fix this problem if class Dog exists on the assembiles passed to this validator.
+    if (Debugger.IsAttached) Debugger.Break();
+    yield return new ValidationError() { ErrorMessage = "Internal Validation Error" };
+}
+
+        yield break;
+    }
+    private IEnumerable<ValidationError> Validate_VoipNumber(VoipNumber voipNumber, StringBuilder callStack)
+    {
+        if(ValidatedObjects.Add(voipNumber)==false)
+            // item has already been validate. This is to prevent a circular reference
+            yield break;
+
+if (voipNumber is VoipNumberAvailableForPurchase voipNumberAvailableForPurchase)
+{
+    // == IList type (voipNumberAvailableForPurchase.RulesPhone) ==
+{
+    if(voipNumberAvailableForPurchase.RulesPhone is null)
+    {
+                yield return BuildErrorMessage(errorType: 1, callstack: $"{callStack}.RulesPhone", value: null); // Error because list cannot be null
+    }
+    else
+    {
+        
+        for (int i = 0; i < voipNumberAvailableForPurchase.RulesPhone.Count; i++)
+        {
+                            // == Validate object ==
+                {
+                    var tmp = voipNumberAvailableForPurchase.RulesPhone[i];
+                    if(tmp is null)
+                    {
+                        yield return BuildErrorMessage(errorType: 1, callstack: $"{callStack}.RulesPhone[{i}]", value: null);
+                    }
+                    else
+                    {
+                        var pos = callStack.Length;
+                        if (callStack.Length > 0) callStack.Append('.');
+                        callStack.Append($"RulesPhone[{i}]");
+                        foreach(var err in Validate_Rule(tmp, callStack))
+                            yield return err;
+                        callStack.Length = pos;
+                    }
+                }
+
+        }
+    }
+}
+
+// == IList type (voipNumberAvailableForPurchase.RulesSms) ==
+{
+    if(voipNumberAvailableForPurchase.RulesSms is null)
+    {
+                yield return BuildErrorMessage(errorType: 1, callstack: $"{callStack}.RulesSms", value: null); // Error because list cannot be null
+    }
+    else
+    {
+        
+        for (int i = 0; i < voipNumberAvailableForPurchase.RulesSms.Count; i++)
+        {
+                            // == Validate object ==
+                {
+                    var tmp = voipNumberAvailableForPurchase.RulesSms[i];
+                    if(tmp is null)
+                    {
+                        yield return BuildErrorMessage(errorType: 1, callstack: $"{callStack}.RulesSms[{i}]", value: null);
+                    }
+                    else
+                    {
+                        var pos = callStack.Length;
+                        if (callStack.Length > 0) callStack.Append('.');
+                        callStack.Append($"RulesSms[{i}]");
+                        foreach(var err in Validate_RuleSms(tmp, callStack))
+                            yield return err;
+                        callStack.Length = pos;
+                    }
+                }
+
+        }
+    }
+}
+
+// == IList type (voipNumberAvailableForPurchase.RulesFax) ==
+{
+    if(voipNumberAvailableForPurchase.RulesFax is null)
+    {
+                yield return BuildErrorMessage(errorType: 1, callstack: $"{callStack}.RulesFax", value: null); // Error because list cannot be null
+    }
+    else
+    {
+        
+        for (int i = 0; i < voipNumberAvailableForPurchase.RulesFax.Count; i++)
+        {
+                            // == Validate object ==
+                {
+                    var tmp = voipNumberAvailableForPurchase.RulesFax[i];
+                    if(tmp is null)
+                    {
+                        yield return BuildErrorMessage(errorType: 1, callstack: $"{callStack}.RulesFax[{i}]", value: null);
+                    }
+                    else
+                    {
+                        var pos = callStack.Length;
+                        if (callStack.Length > 0) callStack.Append('.');
+                        callStack.Append($"RulesFax[{i}]");
+                        foreach(var err in Validate_Rule(tmp, callStack))
+                            yield return err;
+                        callStack.Length = pos;
+                    }
+                }
+
+        }
+    }
+}
+
+        // == [Ignoring] Value type (voipNumberAvailableForPurchase.RequiresCustomerInfo) because it is not required. (nothing to validate) == 
+        // == Value type (voipNumberAvailableForPurchase.VoipNumberType) == 
+        {
+            int err1 = Validate_EnumType<VoipNumberType>(value: voipNumberAvailableForPurchase.VoipNumberType, typeOfEnum: typeof(VoipNumberType));
+            if (err1 != 0)
+            {
+                yield return BuildErrorMessage(errorType: err1, callstack: $"{callStack}.VoipNumberType", value: voipNumberAvailableForPurchase.VoipNumberType);
+            }
+            // [Ignoring] to validate its value because it is not required and not nullable. (nothing to validate)            
+        }
+        // == String type (voipNumberAvailableForPurchase.IdCustomerInfo) == 
+        {
+            var err = Validate_String(value: voipNumberAvailableForPurchase.IdCustomerInfo, isNullable: true, isRequired: false, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.IdCustomerInfo", value: voipNumberAvailableForPurchase.IdCustomerInfo);
+            }
+        }
+        // == String type (voipNumberAvailableForPurchase.IdTrunkOrigination) == 
+        {
+            var err = Validate_String(value: voipNumberAvailableForPurchase.IdTrunkOrigination, isNullable: false, isRequired: false, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.IdTrunkOrigination", value: voipNumberAvailableForPurchase.IdTrunkOrigination);
+            }
+        }
+        // == String type (voipNumberAvailableForPurchase.IdVoipProvider) == 
+        {
+            var err = Validate_String(value: voipNumberAvailableForPurchase.IdVoipProvider, isNullable: false, isRequired: true, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.IdVoipProvider", value: voipNumberAvailableForPurchase.IdVoipProvider);
+            }
+        }
+        // == String type (voipNumberAvailableForPurchase.ProviderId) == 
+        {
+            var err = Validate_String(value: voipNumberAvailableForPurchase.ProviderId, isNullable: false, isRequired: true, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.ProviderId", value: voipNumberAvailableForPurchase.ProviderId);
+            }
+        }
+        // == String type (voipNumberAvailableForPurchase.IdMusicOnHoldGroup) == 
+        {
+            var err = Validate_String(value: voipNumberAvailableForPurchase.IdMusicOnHoldGroup, isNullable: true, isRequired: false, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.IdMusicOnHoldGroup", value: voipNumberAvailableForPurchase.IdMusicOnHoldGroup);
+            }
+        }
+        // == [Ignoring] Value type (voipNumberAvailableForPurchase.InjectFriendlyNameToCallerId) because it is not required. (nothing to validate) == 
+        // == [Ignoring] Value type (voipNumberAvailableForPurchase.RecordIncomingCalls) because it is not required. (nothing to validate) == 
+        // == [Ignoring] Value type (voipNumberAvailableForPurchase.UseAiForIncomingCalls) because it is not required. (nothing to validate) == 
+        // == String type (voipNumberAvailableForPurchase.Number) == 
+        {
+            var err = Validate_String(value: voipNumberAvailableForPurchase.Number, isNullable: false, isRequired: true, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.Number", value: voipNumberAvailableForPurchase.Number);
+            }
+        }
+        // == String type (voipNumberAvailableForPurchase.FriendlyName) == 
+        {
+            var err = Validate_String(value: voipNumberAvailableForPurchase.FriendlyName, isNullable: false, isRequired: true, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.FriendlyName", value: voipNumberAvailableForPurchase.FriendlyName);
+            }
+        }
+        // == String type (voipNumberAvailableForPurchase.Description) == 
+        {
+            var err = Validate_String(value: voipNumberAvailableForPurchase.Description, isNullable: true, isRequired: false, minLength: 0, maxLength: 1000);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.Description", value: voipNumberAvailableForPurchase.Description);
+            }
+        }
+        // == Value type (voipNumberAvailableForPurchase.Language) == 
+        {
+            int err1 = Validate_EnumType<Language>(value: voipNumberAvailableForPurchase.Language, typeOfEnum: typeof(Language));
+            if (err1 != 0)
+            {
+                yield return BuildErrorMessage(errorType: err1, callstack: $"{callStack}.Language", value: voipNumberAvailableForPurchase.Language);
+            }
+            int err3 = Validate_ValueTypeRequired<Language>(value: voipNumberAvailableForPurchase.Language, isEnum: true);
+            if (err3 != 0)
+            {
+                yield return BuildErrorMessage(errorType: err3, callstack: $"{callStack}.Language", value: voipNumberAvailableForPurchase.Language);
+            }            
+        }
+        // == String type (voipNumberAvailableForPurchase.City) == 
+        {
+            var err = Validate_String(value: voipNumberAvailableForPurchase.City, isNullable: false, isRequired: true, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.City", value: voipNumberAvailableForPurchase.City);
+            }
+        }
+        // == String type (voipNumberAvailableForPurchase.State) == 
+        {
+            var err = Validate_String(value: voipNumberAvailableForPurchase.State, isNullable: false, isRequired: true, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.State", value: voipNumberAvailableForPurchase.State);
+            }
+        }
+        // == Value type (voipNumberAvailableForPurchase.CountryIsoCode) == 
+        {
+            int err1 = Validate_EnumType<CountryIsoCode>(value: voipNumberAvailableForPurchase.CountryIsoCode, typeOfEnum: typeof(CountryIsoCode));
+            if (err1 != 0)
+            {
+                yield return BuildErrorMessage(errorType: err1, callstack: $"{callStack}.CountryIsoCode", value: voipNumberAvailableForPurchase.CountryIsoCode);
+            }
+            int err3 = Validate_ValueTypeRequired<CountryIsoCode>(value: voipNumberAvailableForPurchase.CountryIsoCode, isEnum: true);
+            if (err3 != 0)
+            {
+                yield return BuildErrorMessage(errorType: err3, callstack: $"{callStack}.CountryIsoCode", value: voipNumberAvailableForPurchase.CountryIsoCode);
+            }            
+        }
+        // == Value type (voipNumberAvailableForPurchase.IsSmsEnabled) == 
+        {
+
+            int err3 = Validate_ValueTypeRequired<Boolean>(value: voipNumberAvailableForPurchase.IsSmsEnabled, isEnum: false);
+            if (err3 != 0)
+            {
+                yield return BuildErrorMessage(errorType: err3, callstack: $"{callStack}.IsSmsEnabled", value: voipNumberAvailableForPurchase.IsSmsEnabled);
+            }            
+        }
+        // == Value type (voipNumberAvailableForPurchase.IsVoiceEnabled) == 
+        {
+
+            int err3 = Validate_ValueTypeRequired<Boolean>(value: voipNumberAvailableForPurchase.IsVoiceEnabled, isEnum: false);
+            if (err3 != 0)
+            {
+                yield return BuildErrorMessage(errorType: err3, callstack: $"{callStack}.IsVoiceEnabled", value: voipNumberAvailableForPurchase.IsVoiceEnabled);
+            }            
+        }
+        // == Value type (voipNumberAvailableForPurchase.IsTollFree) == 
+        {
+
+            int err3 = Validate_ValueTypeRequired<Boolean>(value: voipNumberAvailableForPurchase.IsTollFree, isEnum: false);
+            if (err3 != 0)
+            {
+                yield return BuildErrorMessage(errorType: err3, callstack: $"{callStack}.IsTollFree", value: voipNumberAvailableForPurchase.IsTollFree);
+            }            
+        }
+        // == String type (voipNumberAvailableForPurchase.TimeZone) == 
+        {
+            var err = Validate_String(value: voipNumberAvailableForPurchase.TimeZone, isNullable: false, isRequired: false, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.TimeZone", value: voipNumberAvailableForPurchase.TimeZone);
+            }
+        }
+// == IList type (voipNumberAvailableForPurchase.IdsTags) ==
+{
+    if(voipNumberAvailableForPurchase.IdsTags is null)
+    {
+                yield return BuildErrorMessage(errorType: 1, callstack: $"{callStack}.IdsTags", value: null); // Error because list cannot be null
+    }
+    else
+    {
+        
+        for (int i = 0; i < voipNumberAvailableForPurchase.IdsTags.Count; i++)
+        {
+                    // == String type (voipNumberAvailableForPurchase.IdsTags) == 
+        {
+            var err = Validate_String(value: voipNumberAvailableForPurchase.IdsTags[i], isNullable: false, isRequired: false, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.IdsTags[{i}]", value: voipNumberAvailableForPurchase.IdsTags[i]);
+            }
+        }
+        }
+    }
+}
+
+        // == String type (voipNumberAvailableForPurchase.IdAccount) == 
+        {
+            var err = Validate_String(value: voipNumberAvailableForPurchase.IdAccount, isNullable: false, isRequired: true, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.IdAccount", value: voipNumberAvailableForPurchase.IdAccount);
+            }
+        }
+        // == [Ignoring] Value type (voipNumberAvailableForPurchase.BuiltId) because it is not required. (nothing to validate) == 
+        // == [Ignoring] Value type (voipNumberAvailableForPurchase.DateDeleted) because it is nullable. If its nullable it cannot be required. (nothing to validate) == 
+        // == String type (voipNumberAvailableForPurchase.Id) == 
+        {
+            var err = Validate_String(value: voipNumberAvailableForPurchase.Id, isNullable: false, isRequired: false, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.Id", value: voipNumberAvailableForPurchase.Id);
+            }
+        }
+        // == Value type (voipNumberAvailableForPurchase.DateCreated) == 
+        {
+
+            int err3 = Validate_ValueTypeRequired<DateTime>(value: voipNumberAvailableForPurchase.DateCreated, isEnum: false);
+            if (err3 != 0)
+            {
+                yield return BuildErrorMessage(errorType: err3, callstack: $"{callStack}.DateCreated", value: voipNumberAvailableForPurchase.DateCreated);
+            }            
+        }
+        // == Value type (voipNumberAvailableForPurchase.DateUpdated) == 
+        {
+
+            int err3 = Validate_ValueTypeRequired<DateTime>(value: voipNumberAvailableForPurchase.DateUpdated, isEnum: false);
+            if (err3 != 0)
+            {
+                yield return BuildErrorMessage(errorType: err3, callstack: $"{callStack}.DateUpdated", value: voipNumberAvailableForPurchase.DateUpdated);
+            }            
+        }
+
+}
+else if (voipNumber is VoipNumberFax voipNumberFax)
+{
+    // == IList type (voipNumberFax.RulesPhone) ==
+{
+    if(voipNumberFax.RulesPhone is null)
+    {
+                yield return BuildErrorMessage(errorType: 1, callstack: $"{callStack}.RulesPhone", value: null); // Error because list cannot be null
+    }
+    else
+    {
+        
+        for (int i = 0; i < voipNumberFax.RulesPhone.Count; i++)
+        {
+                            // == Validate object ==
+                {
+                    var tmp = voipNumberFax.RulesPhone[i];
+                    if(tmp is null)
+                    {
+                        yield return BuildErrorMessage(errorType: 1, callstack: $"{callStack}.RulesPhone[{i}]", value: null);
+                    }
+                    else
+                    {
+                        var pos = callStack.Length;
+                        if (callStack.Length > 0) callStack.Append('.');
+                        callStack.Append($"RulesPhone[{i}]");
+                        foreach(var err in Validate_Rule(tmp, callStack))
+                            yield return err;
+                        callStack.Length = pos;
+                    }
+                }
+
+        }
+    }
+}
+
+// == IList type (voipNumberFax.RulesSms) ==
+{
+    if(voipNumberFax.RulesSms is null)
+    {
+                yield return BuildErrorMessage(errorType: 1, callstack: $"{callStack}.RulesSms", value: null); // Error because list cannot be null
+    }
+    else
+    {
+        
+        for (int i = 0; i < voipNumberFax.RulesSms.Count; i++)
+        {
+                            // == Validate object ==
+                {
+                    var tmp = voipNumberFax.RulesSms[i];
+                    if(tmp is null)
+                    {
+                        yield return BuildErrorMessage(errorType: 1, callstack: $"{callStack}.RulesSms[{i}]", value: null);
+                    }
+                    else
+                    {
+                        var pos = callStack.Length;
+                        if (callStack.Length > 0) callStack.Append('.');
+                        callStack.Append($"RulesSms[{i}]");
+                        foreach(var err in Validate_RuleSms(tmp, callStack))
+                            yield return err;
+                        callStack.Length = pos;
+                    }
+                }
+
+        }
+    }
+}
+
+// == IList type (voipNumberFax.RulesFax) ==
+{
+    if(voipNumberFax.RulesFax is null)
+    {
+                yield return BuildErrorMessage(errorType: 1, callstack: $"{callStack}.RulesFax", value: null); // Error because list cannot be null
+    }
+    else
+    {
+        if(voipNumberFax.RulesFax.Count == 0) yield return BuildErrorMessage(errorType: 4, callstack: $"{callStack}.RulesFax", value: null); // Error because list is required meaning it should contain at least one item
+
+        for (int i = 0; i < voipNumberFax.RulesFax.Count; i++)
+        {
+                            // == Validate object ==
+                {
+                    var tmp = voipNumberFax.RulesFax[i];
+                    if(tmp is null)
+                    {
+                        yield return BuildErrorMessage(errorType: 1, callstack: $"{callStack}.RulesFax[{i}]", value: null);
+                    }
+                    else
+                    {
+                        var pos = callStack.Length;
+                        if (callStack.Length > 0) callStack.Append('.');
+                        callStack.Append($"RulesFax[{i}]");
+                        foreach(var err in Validate_Rule(tmp, callStack))
+                            yield return err;
+                        callStack.Length = pos;
+                    }
+                }
+
+        }
+    }
+}
+
+        // == Value type (voipNumberFax.VoipNumberType) == 
+        {
+            int err1 = Validate_EnumType<VoipNumberType>(value: voipNumberFax.VoipNumberType, typeOfEnum: typeof(VoipNumberType));
+            if (err1 != 0)
+            {
+                yield return BuildErrorMessage(errorType: err1, callstack: $"{callStack}.VoipNumberType", value: voipNumberFax.VoipNumberType);
+            }
+            // [Ignoring] to validate its value because it is not required and not nullable. (nothing to validate)            
+        }
+        // == String type (voipNumberFax.IdCustomerInfo) == 
+        {
+            var err = Validate_String(value: voipNumberFax.IdCustomerInfo, isNullable: true, isRequired: false, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.IdCustomerInfo", value: voipNumberFax.IdCustomerInfo);
+            }
+        }
+        // == String type (voipNumberFax.IdTrunkOrigination) == 
+        {
+            var err = Validate_String(value: voipNumberFax.IdTrunkOrigination, isNullable: false, isRequired: false, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.IdTrunkOrigination", value: voipNumberFax.IdTrunkOrigination);
+            }
+        }
+        // == String type (voipNumberFax.IdVoipProvider) == 
+        {
+            var err = Validate_String(value: voipNumberFax.IdVoipProvider, isNullable: false, isRequired: true, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.IdVoipProvider", value: voipNumberFax.IdVoipProvider);
+            }
+        }
+        // == String type (voipNumberFax.ProviderId) == 
+        {
+            var err = Validate_String(value: voipNumberFax.ProviderId, isNullable: false, isRequired: true, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.ProviderId", value: voipNumberFax.ProviderId);
+            }
+        }
+        // == String type (voipNumberFax.IdMusicOnHoldGroup) == 
+        {
+            var err = Validate_String(value: voipNumberFax.IdMusicOnHoldGroup, isNullable: true, isRequired: false, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.IdMusicOnHoldGroup", value: voipNumberFax.IdMusicOnHoldGroup);
+            }
+        }
+        // == [Ignoring] Value type (voipNumberFax.InjectFriendlyNameToCallerId) because it is not required. (nothing to validate) == 
+        // == [Ignoring] Value type (voipNumberFax.RecordIncomingCalls) because it is not required. (nothing to validate) == 
+        // == [Ignoring] Value type (voipNumberFax.UseAiForIncomingCalls) because it is not required. (nothing to validate) == 
+        // == String type (voipNumberFax.Number) == 
+        {
+            var err = Validate_String(value: voipNumberFax.Number, isNullable: false, isRequired: true, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.Number", value: voipNumberFax.Number);
+            }
+        }
+        // == String type (voipNumberFax.FriendlyName) == 
+        {
+            var err = Validate_String(value: voipNumberFax.FriendlyName, isNullable: false, isRequired: true, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.FriendlyName", value: voipNumberFax.FriendlyName);
+            }
+        }
+        // == String type (voipNumberFax.Description) == 
+        {
+            var err = Validate_String(value: voipNumberFax.Description, isNullable: true, isRequired: false, minLength: 0, maxLength: 1000);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.Description", value: voipNumberFax.Description);
+            }
+        }
+        // == Value type (voipNumberFax.Language) == 
+        {
+            int err1 = Validate_EnumType<Language>(value: voipNumberFax.Language, typeOfEnum: typeof(Language));
+            if (err1 != 0)
+            {
+                yield return BuildErrorMessage(errorType: err1, callstack: $"{callStack}.Language", value: voipNumberFax.Language);
+            }
+            int err3 = Validate_ValueTypeRequired<Language>(value: voipNumberFax.Language, isEnum: true);
+            if (err3 != 0)
+            {
+                yield return BuildErrorMessage(errorType: err3, callstack: $"{callStack}.Language", value: voipNumberFax.Language);
+            }            
+        }
+        // == String type (voipNumberFax.City) == 
+        {
+            var err = Validate_String(value: voipNumberFax.City, isNullable: false, isRequired: true, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.City", value: voipNumberFax.City);
+            }
+        }
+        // == String type (voipNumberFax.State) == 
+        {
+            var err = Validate_String(value: voipNumberFax.State, isNullable: false, isRequired: true, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.State", value: voipNumberFax.State);
+            }
+        }
+        // == Value type (voipNumberFax.CountryIsoCode) == 
+        {
+            int err1 = Validate_EnumType<CountryIsoCode>(value: voipNumberFax.CountryIsoCode, typeOfEnum: typeof(CountryIsoCode));
+            if (err1 != 0)
+            {
+                yield return BuildErrorMessage(errorType: err1, callstack: $"{callStack}.CountryIsoCode", value: voipNumberFax.CountryIsoCode);
+            }
+            int err3 = Validate_ValueTypeRequired<CountryIsoCode>(value: voipNumberFax.CountryIsoCode, isEnum: true);
+            if (err3 != 0)
+            {
+                yield return BuildErrorMessage(errorType: err3, callstack: $"{callStack}.CountryIsoCode", value: voipNumberFax.CountryIsoCode);
+            }            
+        }
+        // == Value type (voipNumberFax.IsSmsEnabled) == 
+        {
+
+            int err3 = Validate_ValueTypeRequired<Boolean>(value: voipNumberFax.IsSmsEnabled, isEnum: false);
+            if (err3 != 0)
+            {
+                yield return BuildErrorMessage(errorType: err3, callstack: $"{callStack}.IsSmsEnabled", value: voipNumberFax.IsSmsEnabled);
+            }            
+        }
+        // == Value type (voipNumberFax.IsVoiceEnabled) == 
+        {
+
+            int err3 = Validate_ValueTypeRequired<Boolean>(value: voipNumberFax.IsVoiceEnabled, isEnum: false);
+            if (err3 != 0)
+            {
+                yield return BuildErrorMessage(errorType: err3, callstack: $"{callStack}.IsVoiceEnabled", value: voipNumberFax.IsVoiceEnabled);
+            }            
+        }
+        // == Value type (voipNumberFax.IsTollFree) == 
+        {
+
+            int err3 = Validate_ValueTypeRequired<Boolean>(value: voipNumberFax.IsTollFree, isEnum: false);
+            if (err3 != 0)
+            {
+                yield return BuildErrorMessage(errorType: err3, callstack: $"{callStack}.IsTollFree", value: voipNumberFax.IsTollFree);
+            }            
+        }
+        // == String type (voipNumberFax.TimeZone) == 
+        {
+            var err = Validate_String(value: voipNumberFax.TimeZone, isNullable: false, isRequired: false, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.TimeZone", value: voipNumberFax.TimeZone);
+            }
+        }
+// == IList type (voipNumberFax.IdsTags) ==
+{
+    if(voipNumberFax.IdsTags is null)
+    {
+                yield return BuildErrorMessage(errorType: 1, callstack: $"{callStack}.IdsTags", value: null); // Error because list cannot be null
+    }
+    else
+    {
+        
+        for (int i = 0; i < voipNumberFax.IdsTags.Count; i++)
+        {
+                    // == String type (voipNumberFax.IdsTags) == 
+        {
+            var err = Validate_String(value: voipNumberFax.IdsTags[i], isNullable: false, isRequired: false, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.IdsTags[{i}]", value: voipNumberFax.IdsTags[i]);
+            }
+        }
+        }
+    }
+}
+
+        // == String type (voipNumberFax.IdAccount) == 
+        {
+            var err = Validate_String(value: voipNumberFax.IdAccount, isNullable: false, isRequired: true, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.IdAccount", value: voipNumberFax.IdAccount);
+            }
+        }
+        // == [Ignoring] Value type (voipNumberFax.BuiltId) because it is not required. (nothing to validate) == 
+        // == [Ignoring] Value type (voipNumberFax.DateDeleted) because it is nullable. If its nullable it cannot be required. (nothing to validate) == 
+        // == String type (voipNumberFax.Id) == 
+        {
+            var err = Validate_String(value: voipNumberFax.Id, isNullable: false, isRequired: false, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.Id", value: voipNumberFax.Id);
+            }
+        }
+        // == Value type (voipNumberFax.DateCreated) == 
+        {
+
+            int err3 = Validate_ValueTypeRequired<DateTime>(value: voipNumberFax.DateCreated, isEnum: false);
+            if (err3 != 0)
+            {
+                yield return BuildErrorMessage(errorType: err3, callstack: $"{callStack}.DateCreated", value: voipNumberFax.DateCreated);
+            }            
+        }
+        // == Value type (voipNumberFax.DateUpdated) == 
+        {
+
+            int err3 = Validate_ValueTypeRequired<DateTime>(value: voipNumberFax.DateUpdated, isEnum: false);
+            if (err3 != 0)
+            {
+                yield return BuildErrorMessage(errorType: err3, callstack: $"{callStack}.DateUpdated", value: voipNumberFax.DateUpdated);
+            }            
+        }
+
+}
+else if (voipNumber is VoipNumberPhone voipNumberPhone)
+{
+    // == IList type (voipNumberPhone.RulesPhone) ==
+{
+    if(voipNumberPhone.RulesPhone is null)
+    {
+                yield return BuildErrorMessage(errorType: 1, callstack: $"{callStack}.RulesPhone", value: null); // Error because list cannot be null
+    }
+    else
+    {
+        if(voipNumberPhone.RulesPhone.Count == 0) yield return BuildErrorMessage(errorType: 4, callstack: $"{callStack}.RulesPhone", value: null); // Error because list is required meaning it should contain at least one item
+
+        for (int i = 0; i < voipNumberPhone.RulesPhone.Count; i++)
+        {
+                            // == Validate object ==
+                {
+                    var tmp = voipNumberPhone.RulesPhone[i];
+                    if(tmp is null)
+                    {
+                        yield return BuildErrorMessage(errorType: 1, callstack: $"{callStack}.RulesPhone[{i}]", value: null);
+                    }
+                    else
+                    {
+                        var pos = callStack.Length;
+                        if (callStack.Length > 0) callStack.Append('.');
+                        callStack.Append($"RulesPhone[{i}]");
+                        foreach(var err in Validate_Rule(tmp, callStack))
+                            yield return err;
+                        callStack.Length = pos;
+                    }
+                }
+
+        }
+    }
+}
+
+// == IList type (voipNumberPhone.RulesSms) ==
+{
+    if(voipNumberPhone.RulesSms is null)
+    {
+                yield return BuildErrorMessage(errorType: 1, callstack: $"{callStack}.RulesSms", value: null); // Error because list cannot be null
+    }
+    else
+    {
+        
+        for (int i = 0; i < voipNumberPhone.RulesSms.Count; i++)
+        {
+                            // == Validate object ==
+                {
+                    var tmp = voipNumberPhone.RulesSms[i];
+                    if(tmp is null)
+                    {
+                        yield return BuildErrorMessage(errorType: 1, callstack: $"{callStack}.RulesSms[{i}]", value: null);
+                    }
+                    else
+                    {
+                        var pos = callStack.Length;
+                        if (callStack.Length > 0) callStack.Append('.');
+                        callStack.Append($"RulesSms[{i}]");
+                        foreach(var err in Validate_RuleSms(tmp, callStack))
+                            yield return err;
+                        callStack.Length = pos;
+                    }
+                }
+
+        }
+    }
+}
+
+// == IList type (voipNumberPhone.RulesFax) ==
+{
+    if(voipNumberPhone.RulesFax is null)
+    {
+                yield return BuildErrorMessage(errorType: 1, callstack: $"{callStack}.RulesFax", value: null); // Error because list cannot be null
+    }
+    else
+    {
+        
+        for (int i = 0; i < voipNumberPhone.RulesFax.Count; i++)
+        {
+                            // == Validate object ==
+                {
+                    var tmp = voipNumberPhone.RulesFax[i];
+                    if(tmp is null)
+                    {
+                        yield return BuildErrorMessage(errorType: 1, callstack: $"{callStack}.RulesFax[{i}]", value: null);
+                    }
+                    else
+                    {
+                        var pos = callStack.Length;
+                        if (callStack.Length > 0) callStack.Append('.');
+                        callStack.Append($"RulesFax[{i}]");
+                        foreach(var err in Validate_Rule(tmp, callStack))
+                            yield return err;
+                        callStack.Length = pos;
+                    }
+                }
+
+        }
+    }
+}
+
+        // == Value type (voipNumberPhone.VoipNumberType) == 
+        {
+            int err1 = Validate_EnumType<VoipNumberType>(value: voipNumberPhone.VoipNumberType, typeOfEnum: typeof(VoipNumberType));
+            if (err1 != 0)
+            {
+                yield return BuildErrorMessage(errorType: err1, callstack: $"{callStack}.VoipNumberType", value: voipNumberPhone.VoipNumberType);
+            }
+            // [Ignoring] to validate its value because it is not required and not nullable. (nothing to validate)            
+        }
+        // == String type (voipNumberPhone.IdCustomerInfo) == 
+        {
+            var err = Validate_String(value: voipNumberPhone.IdCustomerInfo, isNullable: true, isRequired: false, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.IdCustomerInfo", value: voipNumberPhone.IdCustomerInfo);
+            }
+        }
+        // == String type (voipNumberPhone.IdTrunkOrigination) == 
+        {
+            var err = Validate_String(value: voipNumberPhone.IdTrunkOrigination, isNullable: false, isRequired: false, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.IdTrunkOrigination", value: voipNumberPhone.IdTrunkOrigination);
+            }
+        }
+        // == String type (voipNumberPhone.IdVoipProvider) == 
+        {
+            var err = Validate_String(value: voipNumberPhone.IdVoipProvider, isNullable: false, isRequired: true, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.IdVoipProvider", value: voipNumberPhone.IdVoipProvider);
+            }
+        }
+        // == String type (voipNumberPhone.ProviderId) == 
+        {
+            var err = Validate_String(value: voipNumberPhone.ProviderId, isNullable: false, isRequired: true, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.ProviderId", value: voipNumberPhone.ProviderId);
+            }
+        }
+        // == String type (voipNumberPhone.IdMusicOnHoldGroup) == 
+        {
+            var err = Validate_String(value: voipNumberPhone.IdMusicOnHoldGroup, isNullable: true, isRequired: false, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.IdMusicOnHoldGroup", value: voipNumberPhone.IdMusicOnHoldGroup);
+            }
+        }
+        // == [Ignoring] Value type (voipNumberPhone.InjectFriendlyNameToCallerId) because it is not required. (nothing to validate) == 
+        // == [Ignoring] Value type (voipNumberPhone.RecordIncomingCalls) because it is not required. (nothing to validate) == 
+        // == [Ignoring] Value type (voipNumberPhone.UseAiForIncomingCalls) because it is not required. (nothing to validate) == 
+        // == String type (voipNumberPhone.Number) == 
+        {
+            var err = Validate_String(value: voipNumberPhone.Number, isNullable: false, isRequired: true, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.Number", value: voipNumberPhone.Number);
+            }
+        }
+        // == String type (voipNumberPhone.FriendlyName) == 
+        {
+            var err = Validate_String(value: voipNumberPhone.FriendlyName, isNullable: false, isRequired: true, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.FriendlyName", value: voipNumberPhone.FriendlyName);
+            }
+        }
+        // == String type (voipNumberPhone.Description) == 
+        {
+            var err = Validate_String(value: voipNumberPhone.Description, isNullable: true, isRequired: false, minLength: 0, maxLength: 1000);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.Description", value: voipNumberPhone.Description);
+            }
+        }
+        // == Value type (voipNumberPhone.Language) == 
+        {
+            int err1 = Validate_EnumType<Language>(value: voipNumberPhone.Language, typeOfEnum: typeof(Language));
+            if (err1 != 0)
+            {
+                yield return BuildErrorMessage(errorType: err1, callstack: $"{callStack}.Language", value: voipNumberPhone.Language);
+            }
+            int err3 = Validate_ValueTypeRequired<Language>(value: voipNumberPhone.Language, isEnum: true);
+            if (err3 != 0)
+            {
+                yield return BuildErrorMessage(errorType: err3, callstack: $"{callStack}.Language", value: voipNumberPhone.Language);
+            }            
+        }
+        // == String type (voipNumberPhone.City) == 
+        {
+            var err = Validate_String(value: voipNumberPhone.City, isNullable: false, isRequired: true, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.City", value: voipNumberPhone.City);
+            }
+        }
+        // == String type (voipNumberPhone.State) == 
+        {
+            var err = Validate_String(value: voipNumberPhone.State, isNullable: false, isRequired: true, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.State", value: voipNumberPhone.State);
+            }
+        }
+        // == Value type (voipNumberPhone.CountryIsoCode) == 
+        {
+            int err1 = Validate_EnumType<CountryIsoCode>(value: voipNumberPhone.CountryIsoCode, typeOfEnum: typeof(CountryIsoCode));
+            if (err1 != 0)
+            {
+                yield return BuildErrorMessage(errorType: err1, callstack: $"{callStack}.CountryIsoCode", value: voipNumberPhone.CountryIsoCode);
+            }
+            int err3 = Validate_ValueTypeRequired<CountryIsoCode>(value: voipNumberPhone.CountryIsoCode, isEnum: true);
+            if (err3 != 0)
+            {
+                yield return BuildErrorMessage(errorType: err3, callstack: $"{callStack}.CountryIsoCode", value: voipNumberPhone.CountryIsoCode);
+            }            
+        }
+        // == Value type (voipNumberPhone.IsSmsEnabled) == 
+        {
+
+            int err3 = Validate_ValueTypeRequired<Boolean>(value: voipNumberPhone.IsSmsEnabled, isEnum: false);
+            if (err3 != 0)
+            {
+                yield return BuildErrorMessage(errorType: err3, callstack: $"{callStack}.IsSmsEnabled", value: voipNumberPhone.IsSmsEnabled);
+            }            
+        }
+        // == Value type (voipNumberPhone.IsVoiceEnabled) == 
+        {
+
+            int err3 = Validate_ValueTypeRequired<Boolean>(value: voipNumberPhone.IsVoiceEnabled, isEnum: false);
+            if (err3 != 0)
+            {
+                yield return BuildErrorMessage(errorType: err3, callstack: $"{callStack}.IsVoiceEnabled", value: voipNumberPhone.IsVoiceEnabled);
+            }            
+        }
+        // == Value type (voipNumberPhone.IsTollFree) == 
+        {
+
+            int err3 = Validate_ValueTypeRequired<Boolean>(value: voipNumberPhone.IsTollFree, isEnum: false);
+            if (err3 != 0)
+            {
+                yield return BuildErrorMessage(errorType: err3, callstack: $"{callStack}.IsTollFree", value: voipNumberPhone.IsTollFree);
+            }            
+        }
+        // == String type (voipNumberPhone.TimeZone) == 
+        {
+            var err = Validate_String(value: voipNumberPhone.TimeZone, isNullable: false, isRequired: false, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.TimeZone", value: voipNumberPhone.TimeZone);
+            }
+        }
+// == IList type (voipNumberPhone.IdsTags) ==
+{
+    if(voipNumberPhone.IdsTags is null)
+    {
+                yield return BuildErrorMessage(errorType: 1, callstack: $"{callStack}.IdsTags", value: null); // Error because list cannot be null
+    }
+    else
+    {
+        
+        for (int i = 0; i < voipNumberPhone.IdsTags.Count; i++)
+        {
+                    // == String type (voipNumberPhone.IdsTags) == 
+        {
+            var err = Validate_String(value: voipNumberPhone.IdsTags[i], isNullable: false, isRequired: false, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.IdsTags[{i}]", value: voipNumberPhone.IdsTags[i]);
+            }
+        }
+        }
+    }
+}
+
+        // == String type (voipNumberPhone.IdAccount) == 
+        {
+            var err = Validate_String(value: voipNumberPhone.IdAccount, isNullable: false, isRequired: true, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.IdAccount", value: voipNumberPhone.IdAccount);
+            }
+        }
+        // == [Ignoring] Value type (voipNumberPhone.BuiltId) because it is not required. (nothing to validate) == 
+        // == [Ignoring] Value type (voipNumberPhone.DateDeleted) because it is nullable. If its nullable it cannot be required. (nothing to validate) == 
+        // == String type (voipNumberPhone.Id) == 
+        {
+            var err = Validate_String(value: voipNumberPhone.Id, isNullable: false, isRequired: false, minLength: 0, maxLength: 100);
+            if(err != 0)
+            {
+                yield return BuildErrorMessage(errorType: err, callstack: $"{callStack}.Id", value: voipNumberPhone.Id);
+            }
+        }
+        // == Value type (voipNumberPhone.DateCreated) == 
+        {
+
+            int err3 = Validate_ValueTypeRequired<DateTime>(value: voipNumberPhone.DateCreated, isEnum: false);
+            if (err3 != 0)
+            {
+                yield return BuildErrorMessage(errorType: err3, callstack: $"{callStack}.DateCreated", value: voipNumberPhone.DateCreated);
+            }            
+        }
+        // == Value type (voipNumberPhone.DateUpdated) == 
+        {
+
+            int err3 = Validate_ValueTypeRequired<DateTime>(value: voipNumberPhone.DateUpdated, isEnum: false);
+            if (err3 != 0)
+            {
+                yield return BuildErrorMessage(errorType: err3, callstack: $"{callStack}.DateUpdated", value: voipNumberPhone.DateUpdated);
+            }            
+        }
+
+}
+else
+{
+    // This means we are validating an derived class that does not exist. 
+    // For example if a class has property of type Animal and we are validating a Dog that is not part of validation.
+    // Re-Generating this code should fix this problem if class Dog exists on the assembiles passed to this validator.
+    if (Debugger.IsAttached) Debugger.Break();
+    yield return new ValidationError() { ErrorMessage = "Internal Validation Error" };
+}
 
         yield break;
     }

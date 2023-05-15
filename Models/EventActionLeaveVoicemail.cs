@@ -6,7 +6,7 @@
 public class EventActionLeaveVoicemail : EventAction
 {
     /// <inheritdoc/>
-    [UbluxValidationIsRequired]
+    [UbluxValidationRequired]
     public override EventActionType EventActionType
     {
         get => EventActionType.LeaveVoicemail;
@@ -19,7 +19,7 @@ public class EventActionLeaveVoicemail : EventAction
     /// <summary>
     ///     Emails where to send voicemails
     /// </summary>
-    [UbluxValidationIsRequired]
+    [UbluxValidationRequired]
     [References(typeof(Email))]
     [AllowUpdate(true)]
     public required string IdEmail { get; set; } = "";

@@ -22,14 +22,14 @@ public partial class BlackListPhoneNumber : UbluxDocument_ReferenceAccount_Refer
     ///     The phone number that will be blocked
     /// </summary>
     [AllowUpdate(true)]
-    [UbluxValidationIsRequired]
+    [UbluxValidationRequired]
     public required string Number { get; set; } = string.Empty;
 
     /// <summary>
     ///     Friendly name of this rule
     /// </summary>
     [AllowUpdate(true)]
-    [UbluxValidationIsRequired]
+    [UbluxValidationRequired]
     public required string FriendlyName { get; set; } = string.Empty;
 
     #endregion

@@ -9,7 +9,7 @@ public class Variable
     ///     Name of variable
     /// </summary>
     [AllowUpdate(true)]
-    [UbluxValidationIsRequired]
+    [UbluxValidationRequired]
     public required string Name { get; set; }
 
     /// <summary>

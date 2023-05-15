@@ -15,7 +15,7 @@ public partial class SMS : UbluxDocument_ReferenceAccount_ReferenceTags
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
     [References(typeof(VoipNumber))]
-    [UbluxValidationIsRequired]
+    [UbluxValidationRequired]
     public required string IdVoipNumber { get; set; } = string.Empty;
 
     /// <summary>
@@ -40,7 +40,7 @@ public partial class SMS : UbluxDocument_ReferenceAccount_ReferenceTags
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [UbluxValidationIsRequired]
+    [UbluxValidationRequired]
     [UbluxValidationStringRange(4000)]
     public required string Body { get; set; } = string.Empty;
 
@@ -52,7 +52,7 @@ public partial class SMS : UbluxDocument_ReferenceAccount_ReferenceTags
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [UbluxValidationIsRequired]
+    [UbluxValidationRequired]
     public required int NumSegments { get; set; }
 
     /// <summary>
@@ -82,7 +82,7 @@ public partial class SMS : UbluxDocument_ReferenceAccount_ReferenceTags
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [UbluxValidationIsRequired]
+    [UbluxValidationRequired]
     public required string From { get; set; } = string.Empty;
 
     /// <summary>
@@ -90,7 +90,7 @@ public partial class SMS : UbluxDocument_ReferenceAccount_ReferenceTags
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [UbluxValidationIsRequired]
+    [UbluxValidationRequired]
     public required string To { get; set; } = string.Empty;
 
     #endregion

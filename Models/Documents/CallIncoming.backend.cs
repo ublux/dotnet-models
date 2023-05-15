@@ -23,7 +23,7 @@ public abstract partial class CallIncoming : Call
     [AllowUpdate(false)] 
     [SwaggerSchema(ReadOnly = true)] 
     [IgnoreDataMember]
-    [UbluxValidationIsRequired]
+    [UbluxValidationRequired]
     public required string IdVoipProvider { get; set; } = string.Empty;
 }
 

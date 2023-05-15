@@ -22,7 +22,7 @@ public partial class StoredFile : UbluxSubDocument
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [UbluxValidationIsRequired]
+    [UbluxValidationRequired]
     public required int FileSizeInBytes { get; set; }
 
     /// <summary>
@@ -30,7 +30,7 @@ public partial class StoredFile : UbluxSubDocument
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [UbluxValidationIsRequired]
+    [UbluxValidationRequired]
     public required string Md5Hash { get; set; }
 
     /// <summary>

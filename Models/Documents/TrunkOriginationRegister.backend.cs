@@ -34,7 +34,7 @@ allow=alaw
     [IgnoreDataMember]
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [UbluxValidationIsRequired]
+    [UbluxValidationRequired]
     public required string Reg_username { get; set; } = string.Empty;
 
     /// <summary>
@@ -43,7 +43,7 @@ allow=alaw
     [IgnoreDataMember]
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [UbluxValidationIsRequired]
+    [UbluxValidationRequired]
     public required string Reg_password { get; set; } = string.Empty;
 
     /// <summary>
@@ -52,7 +52,7 @@ allow=alaw
     [IgnoreDataMember]
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [UbluxValidationIsRequired]
+    [UbluxValidationRequired]
     [UbluxValidationStringRange(500)]
     public required string Reg_host { get; set; } = string.Empty;
 
@@ -62,7 +62,7 @@ allow=alaw
     [IgnoreDataMember]
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [UbluxValidationIsRequired]
+    [UbluxValidationRequired]
     public required int Reg_port { get; set; }
 
     ///// <summary>
@@ -78,7 +78,7 @@ allow=alaw
     /// </summary>
     [AllowUpdate(false)]
     // [IgnoreDataMember] if ignored deserialization will not work
-    [UbluxValidationIsRequired]
+    [UbluxValidationRequired]
     [HideForCreateRequest]
     public override TrunkOriginationType TrunkOriginationType
     {

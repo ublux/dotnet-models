@@ -51,7 +51,7 @@ public partial interface ICall
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [UbluxValidationIsRequired]
+    [UbluxValidationRequired]
     string From { get; set; }
 
     /// <summary>
@@ -59,7 +59,7 @@ public partial interface ICall
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [UbluxValidationIsRequired]
+    [UbluxValidationRequired]
     CountryIsoCode FromCountry { get; set; }
 
     /// <summary>
@@ -67,7 +67,7 @@ public partial interface ICall
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [UbluxValidationIsRequired]
+    [UbluxValidationRequired]
     string To { get; set; }
 
     /// <summary>
@@ -75,7 +75,7 @@ public partial interface ICall
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [UbluxValidationIsRequired]
+    [UbluxValidationRequired]
     CountryIsoCode ToCountry { get; set; }
 
     /// <summary>

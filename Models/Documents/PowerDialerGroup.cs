@@ -50,7 +50,7 @@ public partial class PowerDialerGroup : UbluxDocument_ReferenceAccount_Reference
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [UbluxValidationIsRequired]
+    [UbluxValidationRequired]
     public required List<PowerDialer> PowerDialers { get; set; } = new();
 
     #endregion
@@ -59,7 +59,7 @@ public partial class PowerDialerGroup : UbluxDocument_ReferenceAccount_Reference
     ///     Friendly name of power dialer group
     /// </summary>
     [AllowUpdate(true)]
-    [UbluxValidationIsRequired]
+    [UbluxValidationRequired]
     public required string FriendlyName { get; set; } = string.Empty;
 
     /// <summary>
@@ -74,7 +74,7 @@ public partial class PowerDialerGroup : UbluxDocument_ReferenceAccount_Reference
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [UbluxValidationIsRequired]
+    [UbluxValidationRequired]
     [HideForCreateRequest]
     public PowerDialerGroupStatus PowerDialerGroupStatus  // added for convenience
     {
@@ -111,7 +111,7 @@ public partial class PowerDialerGroup : UbluxDocument_ReferenceAccount_Reference
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [UbluxValidationIsRequired]
+    [UbluxValidationRequired]
     public int NumberOfConcurrentCalls { get; set; }
 
     #endregion

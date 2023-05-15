@@ -19,7 +19,7 @@ public partial class Account : UbluxDocument
     [References(typeof(TrunkTerminationGroup))]
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [UbluxValidationIsRequired]
+    [UbluxValidationRequired]
     public required string IdGTrunkTerminationGroup { get; set; } = string.Empty;
 
     #endregion
@@ -41,7 +41,7 @@ public partial class Account : UbluxDocument
     [IgnoreDataMember]
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [UbluxValidationIsRequired]
+    [UbluxValidationRequired]
     public UbluxPartner UbluxPartner { get; set; }
 
     /// <summary>

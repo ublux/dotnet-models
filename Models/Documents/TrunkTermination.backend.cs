@@ -20,7 +20,7 @@ public partial class TrunkTermination : UbluxDocument
     [IgnoreDataMember]
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [UbluxValidationIsRequired]
+    [UbluxValidationRequired]
     public required string IdVoipProvider { get; set; } = string.Empty;
 
     #endregion
@@ -31,7 +31,7 @@ public partial class TrunkTermination : UbluxDocument
     [IgnoreDataMember]
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [UbluxValidationIsRequired]
+    [UbluxValidationRequired]
     public required string ProviderId { get; set; } = string.Empty;
 
     /// <summary>
@@ -41,7 +41,7 @@ public partial class TrunkTermination : UbluxDocument
     [IgnoreDataMember]
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [UbluxValidationIsRequired]
+    [UbluxValidationRequired]
     [UbluxValidationStringRange(500)]
     public required string TerminationUri { get; set; } = string.Empty;
 
@@ -67,7 +67,7 @@ public partial class TrunkTermination : UbluxDocument
     [IgnoreDataMember]
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [UbluxValidationIsRequired]
+    [UbluxValidationRequired]
     [BsonRepresentation(BsonType.String)]
     public required List<CountryIsoCode> CountryIsoCodesThatCanCall { get; set; } = new();
 
@@ -77,7 +77,7 @@ public partial class TrunkTermination : UbluxDocument
     [IgnoreDataMember]
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [UbluxValidationIsRequired]
+    [UbluxValidationRequired]
     public required string FriendlyName { get; set; } = string.Empty;
 
     ///// <summary>
@@ -93,7 +93,7 @@ public partial class TrunkTermination : UbluxDocument
     [IgnoreDataMember]
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [UbluxValidationIsRequired]
+    [UbluxValidationRequired]
     public required VoipCompany VoipCompany { get; set; }
 
     #endregion

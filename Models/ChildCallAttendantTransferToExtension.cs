@@ -14,7 +14,7 @@ public class ChildCallAttendantTransferToExtension : ChildCall, IAttendantTransf
     /// <summary>
     ///     AttendantTransferToExtension
     /// </summary>
-    [UbluxValidationIsRequired]
+    [UbluxValidationRequired]
     public override ChildCallType ChildCallType
     {
         get => ChildCallType.AttendantTransferToExtension;

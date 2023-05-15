@@ -66,7 +66,7 @@ public partial class LogWebServiceRequest : UbluxDocument
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [UbluxValidationIsRequired]
+    [UbluxValidationRequired]
     public required string HttpMethod { get; set; } = string.Empty;
 
     /// <summary>
@@ -82,7 +82,7 @@ public partial class LogWebServiceRequest : UbluxDocument
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [UbluxValidationIsRequired]
+    [UbluxValidationRequired]
     public required string Ip { get; set; } = string.Empty;
 
     /// <summary>
@@ -90,7 +90,7 @@ public partial class LogWebServiceRequest : UbluxDocument
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [UbluxValidationIsRequired]
+    [UbluxValidationRequired]
     [UbluxValidationStringRange(2000)]
     public required string RequestUrl { get; set; } = string.Empty;
 
@@ -131,7 +131,7 @@ public partial class LogWebServiceRequest : UbluxDocument
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [UbluxValidationIsRequired]
+    [UbluxValidationRequired]
     public required HttpResponseStatusCode HttpResponseStatusCode { get; set; }
 
     /// <summary>
@@ -140,7 +140,7 @@ public partial class LogWebServiceRequest : UbluxDocument
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [UbluxValidationIsRequired]
+    [UbluxValidationRequired]
     public int ResponseTime { get; set; }
 
     #endregion

@@ -11,7 +11,7 @@ public partial class WebHook : UbluxDocument_ReferenceAccount_ReferenceTags
     ///     Points to enum and not database!
     /// </summary>
     [AllowUpdate(true)]
-    [UbluxValidationIsRequired]
+    [UbluxValidationRequired]
     public required EventTrigger EventTrigger { get; set; }
 
     /// <summary>
@@ -19,7 +19,7 @@ public partial class WebHook : UbluxDocument_ReferenceAccount_ReferenceTags
     ///     TODO: place index on this field. Index is needed because when zapier deletes/unsubscribes it passes this url
     /// </summary>
     [AllowUpdate(true)]
-    [UbluxValidationIsRequired]
+    [UbluxValidationRequired]
     [UbluxValidationStringRange(500)]
     public required string Url { get; set; } = string.Empty;
 

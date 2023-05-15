@@ -90,14 +90,14 @@ public abstract partial class VoipNumber : UbluxDocument_ReferenceAccount_Refere
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [UbluxValidationIsRequired]
+    [UbluxValidationRequired]
     public required string Number { get; set; } = string.Empty;
 
     /// <summary>
     ///     Incoming phone number friendly name
     /// </summary>
     [AllowUpdate(true)]
-    [UbluxValidationIsRequired]
+    [UbluxValidationRequired]
     public required string FriendlyName { get; set; } = string.Empty;
 
     /// <summary>
@@ -111,7 +111,7 @@ public abstract partial class VoipNumber : UbluxDocument_ReferenceAccount_Refere
     ///     Example: EN, SP, etc..
     /// </summary>
     [AllowUpdate(true)]
-    [UbluxValidationIsRequired]
+    [UbluxValidationRequired]
     public required Language Language { get; set; }
 
     /// <summary>
@@ -119,7 +119,7 @@ public abstract partial class VoipNumber : UbluxDocument_ReferenceAccount_Refere
     /// </summary>    
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [UbluxValidationIsRequired]    
+    [UbluxValidationRequired]    
     public required string City { get; set; } = string.Empty;
 
     /// <summary>
@@ -127,7 +127,7 @@ public abstract partial class VoipNumber : UbluxDocument_ReferenceAccount_Refere
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [UbluxValidationIsRequired]
+    [UbluxValidationRequired]
     public required string State { get; set; } = string.Empty;
 
     /// <summary>
@@ -135,7 +135,7 @@ public abstract partial class VoipNumber : UbluxDocument_ReferenceAccount_Refere
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [UbluxValidationIsRequired]
+    [UbluxValidationRequired]
     public required CountryIsoCode CountryIsoCode { get; set; }
 
     /// <summary>
@@ -143,7 +143,7 @@ public abstract partial class VoipNumber : UbluxDocument_ReferenceAccount_Refere
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [UbluxValidationIsRequired]
+    [UbluxValidationRequired]
     public required bool IsSmsEnabled { get; set; }
 
     /// <summary>
@@ -151,7 +151,7 @@ public abstract partial class VoipNumber : UbluxDocument_ReferenceAccount_Refere
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [UbluxValidationIsRequired]
+    [UbluxValidationRequired]
     public required bool IsVoiceEnabled { get; set; }
 
     /// <summary>
@@ -159,7 +159,7 @@ public abstract partial class VoipNumber : UbluxDocument_ReferenceAccount_Refere
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [UbluxValidationIsRequired]
+    [UbluxValidationRequired]
     public required bool IsTollFree { get; set; }
 
     ///// <summary>

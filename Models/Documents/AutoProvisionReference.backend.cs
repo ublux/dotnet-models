@@ -21,7 +21,7 @@ public partial class AutoProvisionReference : UbluxDocument
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
     [References(typeof(Phone))]
-    [UbluxValidationIsRequired]
+    [UbluxValidationRequired]
     public required string IdPhone { get; set; } = string.Empty;
 
     /// <summary>
@@ -29,7 +29,7 @@ public partial class AutoProvisionReference : UbluxDocument
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [UbluxValidationIsRequired]
+    [UbluxValidationRequired]
     public required string Ip { get; set; } = string.Empty;
 
     /// <summary>
@@ -37,7 +37,7 @@ public partial class AutoProvisionReference : UbluxDocument
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [UbluxValidationIsRequired]
+    [UbluxValidationRequired]
     public required string UserAgent { get; set; } = string.Empty;
 
     #endregion

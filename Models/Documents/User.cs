@@ -18,7 +18,7 @@ public partial class User : UbluxDocument_ReferenceAccount_ReferenceTags
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [UbluxValidationIsRequired]
+    [UbluxValidationRequired]
     [References(typeof(Email))]
     public required string IdEmail { get; set; } = string.Empty;
 
@@ -31,7 +31,7 @@ public partial class User : UbluxDocument_ReferenceAccount_ReferenceTags
     ///     Value = Permissions it has on that role. Maybe it can only read data from that service but it cannot update, create or modify. 
     /// </summary>
     [AllowUpdate(true)]
-    [UbluxValidationIsRequired]
+    [UbluxValidationRequired]
     [BsonRepresentation(BsonType.String)]
     public required List<UbluxRole> UbluxRoles { get; set; } = new();
 
@@ -42,7 +42,7 @@ public partial class User : UbluxDocument_ReferenceAccount_ReferenceTags
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [UbluxValidationIsRequired]
+    [UbluxValidationRequired]
     public required UserType UserType { get; set; }
 
     /// <summary>
@@ -51,7 +51,7 @@ public partial class User : UbluxDocument_ReferenceAccount_ReferenceTags
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [UbluxValidationIsRequired]
+    [UbluxValidationRequired]
     public required string Username
     {
         get => (username ?? string.Empty).ToLower();
@@ -70,7 +70,7 @@ public partial class User : UbluxDocument_ReferenceAccount_ReferenceTags
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [UbluxValidationIsRequired]
+    [UbluxValidationRequired]
     [HideForCreateRequest]
     public required string Password { get; set; } = string.Empty;
 

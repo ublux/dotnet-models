@@ -17,7 +17,7 @@ public partial class AgreementToTermsAndConditions : UbluxDocument
     [IgnoreDataMember]
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [UbluxValidationIsRequired]
+    [UbluxValidationRequired]
     public required UbluxSession UbluxSession { get; set; }
 
     #endregion
@@ -28,7 +28,7 @@ public partial class AgreementToTermsAndConditions : UbluxDocument
     [IgnoreDataMember]
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [UbluxValidationIsRequired]
+    [UbluxValidationRequired]
     [UbluxValidationStringRange(50)]
     public required string Ip { get; set; } = string.Empty;
 
@@ -38,7 +38,7 @@ public partial class AgreementToTermsAndConditions : UbluxDocument
     [IgnoreDataMember]
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [UbluxValidationIsRequired]
+    [UbluxValidationRequired]
     public required string HttpRequestHeaders { get; set; } = string.Empty;
 
     /// <summary>
@@ -47,7 +47,7 @@ public partial class AgreementToTermsAndConditions : UbluxDocument
     [IgnoreDataMember]
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [UbluxValidationIsRequired]
+    [UbluxValidationRequired]
     public required TermsAndConditionsCategory TermsAndConditionsCategory { get; set; }
 
     ///// <summary>

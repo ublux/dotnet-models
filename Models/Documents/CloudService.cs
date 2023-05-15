@@ -25,13 +25,13 @@ public abstract partial class CloudService : UbluxDocument
     [References(typeof(User))]
     [AllowUpdate(false)] 
     [SwaggerSchema(ReadOnly = true)] 
-    [UbluxValidationIsRequired]
+    [UbluxValidationRequired]
     public required string IdUser { get; set; } = string.Empty;
 
     /// <summary>
     ///     Type of cloud service
     /// </summary>
-    [UbluxValidationIsRequired]
+    [UbluxValidationRequired]
     [AllowUpdate(false)] 
     [SwaggerSchema(ReadOnly = true)] 
     [HideForCreateRequest]
@@ -50,7 +50,7 @@ public abstract partial class CloudService : UbluxDocument
     /// </summary>
     [AllowUpdate(false)] 
     [SwaggerSchema(ReadOnly = true)] 
-    [UbluxValidationIsRequired]
+    [UbluxValidationRequired]
     public required CountryIsoCode CountryIsoCode { get; set; }
 
     /// <summary>
@@ -84,7 +84,7 @@ public abstract partial class CloudService : UbluxDocument
     /// </summary>
     [AllowUpdate(false)] 
     [SwaggerSchema(ReadOnly = true)] 
-    [UbluxValidationIsRequired]
+    [UbluxValidationRequired]
     public required bool IsFailover { get; set; }
 
     /// <summary>
@@ -92,7 +92,7 @@ public abstract partial class CloudService : UbluxDocument
     /// </summary>
     [AllowUpdate(false)] 
     [SwaggerSchema(ReadOnly = true)] 
-    [UbluxValidationIsRequired]
+    [UbluxValidationRequired]
     public required bool Nat { get; set; }
 
     /// <summary>
@@ -116,7 +116,7 @@ public abstract partial class CloudService : UbluxDocument
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [UbluxValidationIsRequired]
+    [UbluxValidationRequired]
     public bool IsTest { get; set; }
 
     #endregion

@@ -26,7 +26,7 @@ public abstract class TrunkOrigination : UbluxDocument
     [References(typeof(VoipProvider))]
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [UbluxValidationIsRequired]
+    [UbluxValidationRequired]
     public required string IdVoipProvider { get; set; } = string.Empty;
 
     /// <summary>
@@ -36,7 +36,7 @@ public abstract class TrunkOrigination : UbluxDocument
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
     [References(typeof(CloudServicePbx))]
-    [UbluxValidationIsRequired]
+    [UbluxValidationRequired]
     public required string IdCloudServicePbx { get; set; } = string.Empty;
 
     /// <summary>
@@ -46,7 +46,7 @@ public abstract class TrunkOrigination : UbluxDocument
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
     [References(typeof(CloudServicePbx))]
-    [UbluxValidationIsRequired]
+    [UbluxValidationRequired]
     public required string IdCloudServicePbxFailover { get; set; } = string.Empty;
 
     #endregion
@@ -59,7 +59,7 @@ public abstract class TrunkOrigination : UbluxDocument
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
     [HideForCreateRequest]
-    [UbluxValidationIsRequired]
+    [UbluxValidationRequired]
     public abstract TrunkOriginationType TrunkOriginationType
     {
         get;
@@ -76,7 +76,7 @@ public abstract class TrunkOrigination : UbluxDocument
     [IgnoreDataMember]
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [UbluxValidationIsRequired]
+    [UbluxValidationRequired]
     public required string ProviderId { get; set; } = string.Empty;
 
     /// <summary>
@@ -85,7 +85,7 @@ public abstract class TrunkOrigination : UbluxDocument
     [IgnoreDataMember]
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [UbluxValidationIsRequired]
+    [UbluxValidationRequired]
     public required string FriendlyName { get; set; } = string.Empty;
 
 

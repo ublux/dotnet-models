@@ -21,7 +21,7 @@ public partial class Line : UbluxSubDocument
     /// <summary>
     /// </summary>
     [AllowUpdate(true)]
-    [UbluxValidationIsRequired]
+    [UbluxValidationRequired]
     public required string FriendlyName { get; set; } = "";
 
     /// <summary>
@@ -62,7 +62,7 @@ public partial class Line : UbluxSubDocument
     ///     Caller id number that will be used to place outbound calls
     /// </summary>
     [AllowUpdate(true)]
-    [UbluxValidationIsRequired]
+    [UbluxValidationRequired]
     public required string CallerIdNumber { get; set; } = "";
 
     /// <summary>

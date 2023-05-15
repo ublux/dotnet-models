@@ -8,7 +8,7 @@ public class RuleSms
     /// <summary>
     ///     Email address where to send SMS
     /// </summary>
-    [UbluxValidationIsRequired]
+    [UbluxValidationRequired]
     [AllowUpdate(true)]
     [References(typeof(Email))]
     public required string IdEmail { get; set; } = "";

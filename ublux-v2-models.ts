@@ -1456,6 +1456,8 @@ export interface CallOutgoingToExtension {
     readonly idsLinesThatRing?: string[];
     /** Lines that did not ring */
     readonly idsLinesThatDidNotRing?: string[];
+    toCountry?: CountryIsoCode;
+    fromCountry?: CountryIsoCode;
     callType?: CallType;
     /** Line that started phone call */
     readonly idLineThatInitiatedCall?: string;
@@ -1489,10 +1491,8 @@ CHANUNAVAIL: Channel unavailable. On SIP, peer may not be registered. */
     readonly timesWhenCallPlacedOnHold?: TimeWhenCallPlacedOnHold[];
     /** Caller id */
     readonly from?: string;
-    fromCountry?: CountryIsoCode;
     /** Phone number called */
     readonly to?: string;
-    toCountry?: CountryIsoCode;
     recording?: Recording;
     /** Was video disabled on call? */
     readonly disabledVideo?: boolean;
@@ -1857,6 +1857,7 @@ export interface ChildCallForwardToExtension {
 
 /** Type of child call */
 export enum ChildCallType {
+    None = "None",
     ForwardToExtension = "ForwardToExtension",
     AttendantTransferToExtension = "AttendantTransferToExtension",
     AttendantTransferToPSTN = "AttendantTransferToPSTN",

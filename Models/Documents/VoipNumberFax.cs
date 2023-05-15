@@ -22,7 +22,7 @@ public partial class VoipNumberFax : VoipNumber
     ///     Incoming Faxes will be sent to this email addresses
     /// </summary>
     [AllowUpdate(true)]
-    [UbluxValidationIsRequired]
+    [UbluxValidationRequired]
     public required override List<RuleFax> RulesFax { get; set; } = new();
 
     /// <summary>

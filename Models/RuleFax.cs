@@ -8,7 +8,7 @@ public class RuleFax : Rule
     /// <summary>
     ///     Email address where to send fax
     /// </summary>
-    [UbluxValidationIsRequired]
+    [UbluxValidationRequired]
     [AllowUpdate(true)]
     [References(typeof(Email))]
     public required string IdEmail { get; set; }

@@ -10,7 +10,7 @@ public partial class CloudServiceWebHost : CloudService
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [UbluxValidationIsRequired]
+    [UbluxValidationRequired]
     [HideForCreateRequest]
     public override CloudServiceType CloudServiceType
     {

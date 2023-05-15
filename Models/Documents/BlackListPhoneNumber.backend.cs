@@ -16,7 +16,7 @@ public partial class BlackListPhoneNumber
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
     [IgnoreDataMember]
-    [UbluxValidationIsRequired]
+    [UbluxValidationRequired]
     public string SearchIndex
     {
         get => searchIndex;

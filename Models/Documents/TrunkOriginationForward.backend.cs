@@ -35,7 +35,7 @@ public partial class TrunkOriginationForward : TrunkOrigination
     /// </summary>
     [AllowUpdate(false)]
     // [IgnoreDataMember] if ignored deserialization will not work
-    [UbluxValidationIsRequired]
+    [UbluxValidationRequired]
     [HideForCreateRequest]
     public override TrunkOriginationType TrunkOriginationType
     {

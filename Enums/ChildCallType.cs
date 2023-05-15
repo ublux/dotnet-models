@@ -6,6 +6,11 @@
 public enum ChildCallType
 {
     /// <summary>
+    ///     Unknown
+    /// </summary>
+    None,
+
+    /// <summary>
     ///     Automatic forward/transfer
     /// </summary>
     ForwardToExtension,

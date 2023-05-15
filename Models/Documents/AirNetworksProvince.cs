@@ -12,7 +12,7 @@ public partial class AirNetworksProvince : UbluxDocument
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [UbluxValidationIsRequired]
+    [UbluxValidationRequired]
     public required string Name { get; set; } = string.Empty;
 
     /// <summary>
@@ -20,7 +20,7 @@ public partial class AirNetworksProvince : UbluxDocument
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [UbluxValidationIsRequired]
+    [UbluxValidationRequired]
     public List<string> Populations { get; set; } = new();
 
     #endregion
