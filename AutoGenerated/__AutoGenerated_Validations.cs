@@ -9504,11 +9504,7 @@ else
             {
                 yield return BuildErrorMessage(errorType: err1, callstack: $"{callStack}.PhoneType", value: phone.PhoneType);
             }
-            int err3 = Validate_ValueTypeRequired<PhoneType>(value: phone.PhoneType, isEnum: true);
-            if (err3 != 0)
-            {
-                yield return BuildErrorMessage(errorType: err3, callstack: $"{callStack}.PhoneType", value: phone.PhoneType);
-            }            
+            // [Ignoring] to validate its value because it is not required and not nullable. (nothing to validate)            
         }
         // == Value type (phone.DisableEncryption) == 
         {
@@ -11698,11 +11694,7 @@ else if (ubluxDocument is Phone phone)
             {
                 yield return BuildErrorMessage(errorType: err1, callstack: $"{callStack}.PhoneType", value: phone.PhoneType);
             }
-            int err3 = Validate_ValueTypeRequired<PhoneType>(value: phone.PhoneType, isEnum: true);
-            if (err3 != 0)
-            {
-                yield return BuildErrorMessage(errorType: err3, callstack: $"{callStack}.PhoneType", value: phone.PhoneType);
-            }            
+            // [Ignoring] to validate its value because it is not required and not nullable. (nothing to validate)            
         }
         // == Value type (phone.DisableEncryption) == 
         {

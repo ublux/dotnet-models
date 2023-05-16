@@ -16,7 +16,7 @@ public partial class Account : UbluxDocument
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
     [References(typeof(CloudServicePbx))]
-    [UbluxValidationRequired]
+    [UbluxValidationRequired($"{{path}} must have at least one {nameof(CloudServicePbx)}")]
     public required List<string> IdsCloudServicePbxs { get; set; } = new();
 
     #endregion

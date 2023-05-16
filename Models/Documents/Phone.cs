@@ -58,7 +58,6 @@ public partial class Phone : UbluxDocument_ReferenceAccount_ReferenceTags
     /// <summary>
     ///     Type of phone. If its of type web and user (username and password) must exist in order for phone to connect.
     /// </summary>
-    [UbluxValidationRequired]
     [AllowUpdate(true)]
     public required PhoneType PhoneType { get; set; }
 

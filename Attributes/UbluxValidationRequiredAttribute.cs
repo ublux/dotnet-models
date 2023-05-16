@@ -10,4 +10,16 @@
 [AttributeUsage(AttributeTargets.Property, AllowMultiple = false)]
 public class UbluxValidationRequiredAttribute : Attribute
 {
+    /// <summary>
+    ///     Custom error message
+    /// </summary>
+    public string? CustomErrorMessage { get; }
+
+    /// <summary>
+    ///     Constructor
+    /// </summary>    
+    public UbluxValidationRequiredAttribute(string customErrorMessage = null)
+    {
+        CustomErrorMessage = customErrorMessage;
+    }
 }
