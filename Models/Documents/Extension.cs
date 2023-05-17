@@ -36,7 +36,7 @@ public abstract partial class Extension : UbluxDocument_ReferenceAccount_Referen
     ///     Type of extension
     /// </summary>
     [AllowUpdate(false)] 
-    [SwaggerSchema(ReadOnly = true)] 
+    [SwaggerSchema(ReadOnly = true)]
     [UbluxValidationRequired]
     [HideForCreateRequest]
     public abstract ExtensionType ExtensionType

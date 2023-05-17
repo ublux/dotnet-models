@@ -6,7 +6,6 @@
 public class EventActionForwardToExtension : EventAction
 {
     /// <inheritdoc/>
-    [UbluxValidationRequired]
     public override EventActionType EventActionType
     {
         get => EventActionType.ForwardToExtension;

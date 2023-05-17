@@ -9,8 +9,7 @@ public partial class CloudServiceWebApp : CloudService
     ///     Type of cloud service
     /// </summary>
     [AllowUpdate(false)] 
-    [SwaggerSchema(ReadOnly = true)] 
-    [UbluxValidationRequired]
+    [SwaggerSchema(ReadOnly = true)]     
     [HideForCreateRequest]
     public override CloudServiceType CloudServiceType
     {

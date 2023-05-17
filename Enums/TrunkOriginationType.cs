@@ -7,6 +7,11 @@ namespace Ublux.Communications.Enums;
 public enum TrunkOriginationType
 {
     /// <summary>
+    ///     No type
+    /// </summary>
+    None,
+
+    /// <summary>
     ///     Twilio uses this type of trunk origination where it will forward traffic to our PBX
     /// </summary>
     Forward,

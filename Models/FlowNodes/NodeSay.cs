@@ -11,6 +11,7 @@ public partial class NodeSay : INodePlay
     /// <summary>
     ///     Text to say
     /// </summary>
+    [UbluxValidationStringRange(1, 2000)]
     public required string Text { get; set; }
 
     #region INodePlay

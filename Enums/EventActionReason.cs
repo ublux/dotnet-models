@@ -6,6 +6,11 @@
 public enum EventActionType
 {
     /// <summary>
+    ///     No type
+    /// </summary>
+    None,
+
+    /// <summary>
     ///     If extension is not answered and call is thus forwarded to another extension
     /// </summary>
     ForwardToExtension,

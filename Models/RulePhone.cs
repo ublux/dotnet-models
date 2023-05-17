@@ -22,7 +22,6 @@ public class RulePhone : Rule
     /// <summary>
     ///     Day of week when to execute
     /// </summary>
-    [UbluxValidationRequired]
     [AllowUpdate(true)]
     [BsonRepresentation(BsonType.String)]
     public required List<DayOfWeek> DaysOfWeek { get; set; }

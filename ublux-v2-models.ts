@@ -1912,6 +1912,7 @@ export enum CloudServiceProviderType {
 
 /** Type of cloud service */
 export enum CloudServiceType {
+    None = "None",
     PBX = "PBX",
     WS = "WS",
     WH = "WH",
@@ -2677,6 +2678,7 @@ export interface EventAction {
 
 /** Reason why an action executes */
 export enum EventActionType {
+    None = "None",
     ForwardToExtension = "ForwardToExtension",
     ForwardToPhoneNumber = "ForwardToPhoneNumber",
     LeaveVoicemail = "LeaveVoicemail",
@@ -4037,6 +4039,7 @@ For example a CloudService user will point to no account */
 
 /** Type of extension */
 export enum ExtensionType {
+    None = "None",
     CallFlowLogic = "CallFlowLogic",
     Conference = "Conference",
     Dial = "Dial",
@@ -6376,6 +6379,7 @@ TODO: Very important to place index in this field. */
 
 /** Types of trunk originations */
 export enum TrunkOriginationType {
+    None = "None",
     Forward = "Forward",
     Register = "Register",
 }

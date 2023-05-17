@@ -6,7 +6,6 @@
 public class EventActionForwardToPhoneNumber : EventAction
 {
     /// <inheritdoc/>
-    [UbluxValidationRequired]
     public override EventActionType EventActionType
     {
         get => EventActionType.ForwardToPhoneNumber;

@@ -49,7 +49,6 @@ public partial class ExtensionDial : Extension
     /// </summary>
     [AllowUpdate(false)] 
     [SwaggerSchema(ReadOnly = true)] 
-    [UbluxValidationRequired]
     [HideForCreateRequest]
     public override ExtensionType ExtensionType
     {

@@ -91,8 +91,7 @@ public partial class ExtensionQueue : ExtensionDial
     ///     Type of extension
     /// </summary>
     [AllowUpdate(false)] 
-    [SwaggerSchema(ReadOnly = true)] 
-    [UbluxValidationRequired]
+    [SwaggerSchema(ReadOnly = true)]
     [HideForCreateRequest]
     public override ExtensionType ExtensionType
     {

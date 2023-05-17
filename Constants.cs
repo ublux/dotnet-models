@@ -6,7 +6,7 @@ namespace Ublux.Communications.Models;
 ///     Application constants
 /// </summary>
 public static partial class Constants
-{
+{    
     ///// <summary>
     /////     If a packet contains this we will not mark it as black. Zoiper does not send domain on packets
     ///// </summary>

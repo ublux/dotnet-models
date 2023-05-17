@@ -18,6 +18,7 @@ public abstract partial class EventAction
     /// <summary>
     ///     Reason why this action should execute
     /// </summary>
+    [UbluxValidationRequired]
     public abstract EventActionType EventActionType
     {
         get;

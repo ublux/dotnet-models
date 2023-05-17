@@ -6,7 +6,6 @@
 public class EventActionLeaveVoicemail : EventAction
 {
     /// <inheritdoc/>
-    [UbluxValidationRequired]
     public override EventActionType EventActionType
     {
         get => EventActionType.LeaveVoicemail;

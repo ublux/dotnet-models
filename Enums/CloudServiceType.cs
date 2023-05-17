@@ -6,6 +6,11 @@
 public enum CloudServiceType
 {
     /// <summary>
+    ///     No type
+    /// </summary>
+    None,
+
+    /// <summary>
     ///     PBX
     /// </summary>
     PBX,

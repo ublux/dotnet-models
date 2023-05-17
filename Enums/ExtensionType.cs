@@ -6,6 +6,11 @@
 public enum ExtensionType
 {
     /// <summary>
+    ///     No type
+    /// </summary>
+    None,
+
+    /// <summary>
     ///     Executes an IVR
     /// </summary>
     CallFlowLogic,

@@ -74,7 +74,7 @@ public partial class LogWebServiceRequest : UbluxDocument
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [UbluxValidationStringRange(200)]
+    [UbluxValidationStringRange(500)]
     public string? UserAgent { get; set; }
 
     /// <summary>
@@ -140,7 +140,7 @@ public partial class LogWebServiceRequest : UbluxDocument
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [UbluxValidationRequired]
+    // [UbluxValidationRequired]
     public int ResponseTime { get; set; }
 
     #endregion
