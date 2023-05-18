@@ -1634,7 +1634,7 @@ public class WebHookUpdateRequest // : IUbluxDocumentId
     /// <summary>
     /// Points to enum and not database!
     /// </summary>
-    public EventTrigger? EventTrigger { get; set; }
+    public EventTriggerType? EventTriggerType { get; set; }
     /// <summary>
     /// Url where event will be sent
     /// TODO: place index on this field. Index is needed because when zapier deletes/unsubscribes it passes this url
@@ -1652,8 +1652,8 @@ public class WebHookUpdateRequest // : IUbluxDocumentId
     /// <summary> Set values on actual document </summary>
     public void SetValuesOnWebHook(WebHook webHook, string jsonRaw)
     {
-        if(jsonRaw.Contains($@"""{nameof(this.EventTrigger)}""", StringComparison.OrdinalIgnoreCase))
-            webHook.EventTrigger = this.EventTrigger.Value;
+        if(jsonRaw.Contains($@"""{nameof(this.EventTriggerType)}""", StringComparison.OrdinalIgnoreCase))
+            webHook.EventTriggerType = this.EventTriggerType.Value;
         if(jsonRaw.Contains($@"""{nameof(this.Url)}""", StringComparison.OrdinalIgnoreCase))
             webHook.Url = this.Url;
         if(jsonRaw.Contains($@"""{nameof(this.Headers)}""", StringComparison.OrdinalIgnoreCase))
@@ -1691,6 +1691,10 @@ public class TagUpdateRequest // : IUbluxDocumentId
     /// Color of tag
     /// </summary>
     public TagColor? TagColor { get; set; }
+    /// <summary>
+    /// Description of tag
+    /// </summary>
+    public String? Description { get; set; }
     /// <summary> Set values on actual document </summary>
     public void SetValuesOnTag(Tag tag, string jsonRaw)
     {
@@ -1698,6 +1702,8 @@ public class TagUpdateRequest // : IUbluxDocumentId
             tag.FriendlyName = this.FriendlyName;
         if(jsonRaw.Contains($@"""{nameof(this.TagColor)}""", StringComparison.OrdinalIgnoreCase))
             tag.TagColor = this.TagColor.Value;
+        if(jsonRaw.Contains($@"""{nameof(this.Description)}""", StringComparison.OrdinalIgnoreCase))
+            tag.Description = this.Description;
     }
 
 }

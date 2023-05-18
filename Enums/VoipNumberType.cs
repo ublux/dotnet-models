@@ -6,6 +6,11 @@
 public enum VoipNumberType
 {
     /// <summary>
+    ///     No type
+    /// </summary>
+    None,
+
+    /// <summary>
     ///     DID configured as phone
     /// </summary>
     Phone,

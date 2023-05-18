@@ -55,12 +55,12 @@ public partial class SMS : UbluxDocument_ReferenceAccount_ReferenceTags
     [UbluxValidationRequired]
     public required int NumSegments { get; set; }
 
-    /// <summary>
-    ///     Status of SMS
-    /// </summary>
-    [AllowUpdate(false)] 
-    [SwaggerSchema(ReadOnly = true)] 
-    public string? Status { get; set; }
+    ///// <summary>
+    /////     Status of SMS
+    ///// </summary>
+    //[AllowUpdate(false)] 
+    //[SwaggerSchema(ReadOnly = true)] 
+    //public string? Status { get; set; }
 
     //    // [AllowUpdate(false)]
     //public decimal? Price { get; set; }
@@ -83,7 +83,26 @@ public partial class SMS : UbluxDocument_ReferenceAccount_ReferenceTags
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
     [UbluxValidationRequired]
+    [UbluxValidationStringRange(1, 20)]
     public required string From { get; set; } = string.Empty;
+
+    /// <summary>
+    ///     Only used on mongo in oder to search fast on queries by index
+    /// </summary>
+    [IgnoreDataMember]
+    [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
+    public string FromReversed
+    {
+        get
+        {
+            return From.ReverseString();
+        }
+#if UBLUX_Release || RELEASE
+        set { }
+#else
+#endif
+    }
 
     /// <summary>
     ///     Number to whom SMS was sent to 
@@ -91,10 +110,28 @@ public partial class SMS : UbluxDocument_ReferenceAccount_ReferenceTags
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
     [UbluxValidationRequired]
+    [UbluxValidationStringRange(1, 20)]
     public required string To { get; set; } = string.Empty;
 
-    #endregion
+    /// <summary>
+    ///     Only used on mongo in oder to search fast on queries by index
+    /// </summary>
+    [IgnoreDataMember]
+    [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
+    public string ToReversed
+    {
+        get
+        {
+            return To.ReverseString();
+        }
+#if UBLUX_Release || RELEASE
+        set { }
+#else
+#endif
+    }
 
+    #endregion
 
     #region MongoDB
 
@@ -103,6 +140,20 @@ public partial class SMS : UbluxDocument_ReferenceAccount_ReferenceTags
     {
         // this collection
         var collection = this.GetType().GetCollectionUsedByType();
+
+        #region From/To reversed
+
+        // Search by from and id of account
+        yield return new MongoDbIndex(collection, nameof(this.FromReversed)).Add(nameof(IdAccount))
+            // Append DateCreated at the end so that items are returned by dateCreated
+            .Add(-1, nameof(DateCreated));
+
+        // Search by to and id of account
+        yield return new MongoDbIndex(collection, nameof(this.ToReversed)).Add(nameof(IdAccount))
+            // Append DateCreated at the end so that items are returned by dateCreated
+            .Add(-1, nameof(DateCreated));
+
+        #endregion
 
         // get all mandatory indexes
         foreach (var item in base.GetMandatoryIndexes(collection))

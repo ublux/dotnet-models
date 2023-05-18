@@ -75,14 +75,6 @@ public partial class Contact : UbluxDocument_ReferenceAccount_ReferenceTags
     [AllowUpdate(true)]
     public string? Company { get; set; }
 
-    ///// <summary>
-    /////     Used to know if contact changed or not. Contacts service is responsible (Julio) for generating this hash
-    ///// </summary>
-    //[AllowUpdate(false)]
-    //// [IsUbluxRequired]
-    //[HideForCreateRequest]
-    //public string? Hash { get; set; }
-
     /// <summary>
     ///     Contact Notes
     /// </summary>
@@ -174,6 +166,11 @@ public partial class Contact : UbluxDocument_ReferenceAccount_ReferenceTags
         // get all mandatory indexes
         foreach (var item in base.GetMandatoryIndexes(collection))
             yield return item;
+
+        // enable searching fast by IdContactOwner
+        yield return new MongoDbIndex(collection, nameof(this.IdUserOwner))
+            // Append DateCreated at the end so that items are returned by dateCreated
+            .Add(nameof(DateCreated));
 
         // enable searching fast by contact phone number search index
         yield return new MongoDbIndex(collection, nameof(this.ContactNumbers), nameof(ContactNumber.SearchIndex))

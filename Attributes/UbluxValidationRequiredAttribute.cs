@@ -18,7 +18,7 @@ public class UbluxValidationRequiredAttribute : Attribute
     /// <summary>
     ///     Constructor
     /// </summary>    
-    public UbluxValidationRequiredAttribute(string customErrorMessage = null)
+    public UbluxValidationRequiredAttribute(string? customErrorMessage = null)
     {
         CustomErrorMessage = customErrorMessage;
     }

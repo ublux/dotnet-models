@@ -121,6 +121,7 @@ public abstract partial class Call : UbluxDocument_ReferenceAccount_ReferenceTag
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
     [UbluxValidationRequired]
+    [UbluxValidationStringRange(1, 20)]
     public required string From { get; set; } = string.Empty;
 
     /// <summary>
@@ -155,6 +156,7 @@ public abstract partial class Call : UbluxDocument_ReferenceAccount_ReferenceTag
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
     [UbluxValidationRequired]
+    [UbluxValidationStringRange(1, 20)]
     public required string To { get; set; } = string.Empty;
 
     /// <summary>
@@ -361,7 +363,7 @@ public abstract partial class Call : UbluxDocument_ReferenceAccount_ReferenceTag
         foreach (var item in base.GetMandatoryIndexes(collection, -1))
             yield return item;
 
-        #region text indexes
+        #region from/to indexes
 
         /* example on how to execute
          db.Calls.find({

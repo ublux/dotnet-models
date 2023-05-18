@@ -7,6 +7,11 @@ namespace Ublux.Communications.Enums;
 /// </summary>
 public enum StorageFolderName
 {
+    /// <summary>
+    ///     No folder name
+    /// </summary>
+    None,
+
     /// <summary></summary>
     Voicemail,
     /// <summary></summary>

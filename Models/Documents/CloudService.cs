@@ -108,6 +108,7 @@ public abstract partial class CloudService : UbluxDocument
     [AllowUpdate(false)] 
     [SwaggerSchema(ReadOnly = true)]
     [UbluxValidationStringRange(50)]
+    [UbluxValidationRequired]
     public required string InstanceId { get => instanceId; set => instanceId = value.ToUpper(); }
     private string instanceId = string.Empty;
 

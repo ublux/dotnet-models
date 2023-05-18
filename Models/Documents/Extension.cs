@@ -28,14 +28,14 @@ public abstract partial class Extension : UbluxDocument_ReferenceAccount_Referen
     /// </summary>
     [References(typeof(MusicOnHoldGroup))]
     [AllowUpdate(true)]
-    public string? IdMusicOnHoldGroup { get; set; }   
+    public string? IdMusicOnHoldGroup { get; set; }
 
     #endregion
 
     /// <summary>
     ///     Type of extension
     /// </summary>
-    [AllowUpdate(false)] 
+    [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
     [UbluxValidationRequired]
     [HideForCreateRequest]
@@ -60,6 +60,7 @@ public abstract partial class Extension : UbluxDocument_ReferenceAccount_Referen
     /// </summary>
     [AllowUpdate(true)]
     [UbluxValidationRequired]
+    [UbluxValidationStringRange(1, 7)]
     public required string Number { get; set; } = string.Empty;
 
     /// <summary>

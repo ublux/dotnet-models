@@ -12,7 +12,7 @@ public partial class WebHook : UbluxDocument_ReferenceAccount_ReferenceTags
     /// </summary>
     [AllowUpdate(true)]
     [UbluxValidationRequired]
-    public required EventTrigger EventTrigger { get; set; }
+    public required EventTriggerType EventTriggerType { get; set; }
 
     /// <summary>
     ///     Url where event will be sent
@@ -50,7 +50,7 @@ public partial class WebHook : UbluxDocument_ReferenceAccount_ReferenceTags
             .Add(nameof(DateCreated));
 
         // enable searching fast by event trigger
-        yield return new MongoDbIndex(collection, nameof(this.EventTrigger))
+        yield return new MongoDbIndex(collection, nameof(this.EventTriggerType))
             // Append DateCreated at the end so that items are returned by dateCreated
             .Add(nameof(DateCreated));
     }

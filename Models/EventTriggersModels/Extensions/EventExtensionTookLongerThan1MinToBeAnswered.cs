@@ -2,7 +2,7 @@
 
 /// <summary>
 ///     Webhook will send this data when triggered.
-///     <see cref="EventTrigger.EventExtensionTookLongerThan1MinToBeAnswered"/>
+///     <see cref="EventTriggerType.EventExtensionTookLongerThan1MinToBeAnswered"/>
 /// </summary>
 public class EventExtensionTookLongerThan1MinToBeAnswered : EventExtensionBase
 {
@@ -11,9 +11,9 @@ public class EventExtensionTookLongerThan1MinToBeAnswered : EventExtensionBase
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    public override EventTrigger EventTrigger
+    public override EventTriggerType EventTrigger
     {
-        get => EventTrigger.EventExtensionTookLongerThan1MinToBeAnswered;
+        get => EventTriggerType.EventExtensionTookLongerThan1MinToBeAnswered;
 #if UBLUX_Release || RELEASE
         set { }
 #else

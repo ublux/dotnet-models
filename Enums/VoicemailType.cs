@@ -6,6 +6,11 @@
 public enum VoicemailType
 {
     /// <summary>
+    ///     No type
+    /// </summary>
+    None,
+
+    /// <summary>
     ///     Regular voicemail left on a UBLUX phone
     /// </summary>
     Regular,

@@ -53,8 +53,8 @@ public abstract partial class UbluxDocument : IUbluxDocument, IUbluxDocumentId
     [BsonRepresentation(BsonType.String)] // store id as string
     [BsonElement(Order = -1000000)]
     [JsonProperty(Order = -1000)]
-    // [IsUbluxRequired]
-    // [HideForCreateRequest]
+    // [IsUbluxRequired] // cannot have this because sometimes if calling api with null value it will fail
+    [UbluxValidationRequired]
     [SwaggerSchema(ReadOnly = true, Nullable = false)]
     [AllowUpdate(false)] // allow update will include property.
                          // This property is needed in order to know what document will be updated
@@ -88,7 +88,7 @@ public abstract partial class UbluxDocument : IUbluxDocument, IUbluxDocumentId
                 dateUpdated = value;
         }
     }
-    private DateTime dateCreated = new DateTime();
+    private DateTime dateCreated = new ();
 
     /// <summary>
     ///     Updated date. When item is created on database this date will be set too. This is important so that we can sync contacts
@@ -114,7 +114,7 @@ public abstract partial class UbluxDocument : IUbluxDocument, IUbluxDocumentId
         }
 #endif
     }
-    private DateTime dateUpdated = new DateTime();
+    private DateTime dateUpdated = new ();
 
     /// <summary>
     ///     Get MongoDB indexes

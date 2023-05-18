@@ -11,32 +11,36 @@ public partial class VoipNumberAvailableForPurchase : VoipNumber
     ///     key = id of logic OR id of extension.  
     ///     value = day of week when it executes
     /// </summary>    
-    [AllowUpdate(false)] 
-    [SwaggerSchema(ReadOnly = true)] 
+    [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
+    [UbluxValidationNotRequired]
     public override List<RulePhone> RulesPhone { get; set; } = new();
 
     /// <summary>
     ///     Incoming SMS will be sent to these email addresses
     /// </summary>
-    [AllowUpdate(false)] 
-    [SwaggerSchema(ReadOnly = true)] 
+    [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
+    [UbluxValidationNotRequired]
     public override List<RuleSms> RulesSms { get; set; } = new();
 
     /// <summary>
     ///     Incoming Faxes will be sent to this email addresses
     /// </summary>
-    [AllowUpdate(false)] 
-    [SwaggerSchema(ReadOnly = true)] 
+    [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
+    [UbluxValidationNotRequired]
     public override List<RuleFax> RulesFax { get; set; } = new();
 
     /// <summary>
     ///     Requires customer info in order to be purchased
     /// </summary>
-    [AllowUpdate(false)] 
-    [SwaggerSchema(ReadOnly = true)] 
-    public bool RequiresCustomerInfo {
+    [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
+    public bool RequiresCustomerInfo
+    {
         get { try { /*custom-get-code*/ _lock.EnterReadLock(); return _RequiresCustomerInfo; } finally { _lock.ExitReadLock(); } }
-        set { try { _lock.EnterWriteLock(); _RequiresCustomerInfo = value; /*custom-set-code*/ } finally { _lock.ExitWriteLock(); }}
+        set { try { _lock.EnterWriteLock(); _RequiresCustomerInfo = value; /*custom-set-code*/ } finally { _lock.ExitWriteLock(); } }
     }
     private bool _RequiresCustomerInfo;
 
@@ -58,7 +62,7 @@ public partial class VoipNumberAvailableForPurchase : VoipNumber
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [HideForCreateRequest]
+    [HideForCreateRequest]    
     public override VoipNumberType VoipNumberType
     {
         get => VoipNumberType.AvailableForPurchase;

@@ -8,7 +8,7 @@ namespace Ublux.Communications.Models.Documents;
 /// <summary>
 ///     Previously called IpPhone. Represents a phone in UBLUX
 /// </summary>
-public partial class Phone 
+public partial class Phone
 {
     /// <summary>
     ///     Password of phone used to authenticate with asterisk
@@ -16,7 +16,8 @@ public partial class Phone
     [UbluxValidationRequired]
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [IgnoreDataMember]    
+    [IgnoreDataMember]
+    [UbluxValidationStringRange(8, 50)]
     public required string Password { get; set; } = string.Empty;
 
     /// <summary>
@@ -29,7 +30,7 @@ public partial class Phone
     ///     It is ok to hard code it. If prefixis change unit tests will fail. It is very important to keep running unit tests!
     /// </summary>
     [GeneratedRegex(Regex_GetIdOfLinePattern)]
-    public static partial Regex Regex_GetIdOfLine();    
+    public static partial Regex Regex_GetIdOfLine();
 
     internal const string alphanumericMainCharacters =
            "ABCDEFGHIJKLMNOPQRSTUVWXYZ" +
@@ -80,11 +81,11 @@ public partial class Phone
             return false;
 
         // if any of the lines is marked as connected return true
-        foreach(var ln in this.Lines)
+        foreach (var ln in this.Lines)
         {
-            if(ln.LineConnectionStatus is null) continue;
+            if (ln.LineConnectionStatus is null) continue;
 
-            if(ln.LineConnectionStatus.IsConnected == true) return true;
+            if (ln.LineConnectionStatus.IsConnected == true) return true;
         }
 
         // if any of the lines connection status is marked as null return null

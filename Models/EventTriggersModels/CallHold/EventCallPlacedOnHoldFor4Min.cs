@@ -2,7 +2,7 @@
 
 /// <summary>
 ///     Webhook will send this data when triggered.
-///     <see cref="EventTrigger.EventCallPlacedOnHoldFor4Min"/>
+///     <see cref="EventTriggerType.EventCallPlacedOnHoldFor4Min"/>
 /// </summary>
 public class EventCallPlacedOnHoldFor4Min : EventCallPlacedOnHoldBase
 {
@@ -11,9 +11,9 @@ public class EventCallPlacedOnHoldFor4Min : EventCallPlacedOnHoldBase
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    public override EventTrigger EventTrigger
+    public override EventTriggerType EventTrigger
     {
-        get => EventTrigger.EventCallPlacedOnHoldFor4Min;
+        get => EventTriggerType.EventCallPlacedOnHoldFor4Min;
 #if UBLUX_Release || RELEASE
         set { }
 #else

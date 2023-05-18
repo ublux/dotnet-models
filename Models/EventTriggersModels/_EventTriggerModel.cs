@@ -8,7 +8,7 @@ public abstract class EventTriggerModel
     /// <summary>
     ///     Type of event. It only
     /// </summary>
-    public abstract EventTrigger EventTrigger
+    public abstract EventTriggerType EventTrigger
     {
         get;
 #if UBLUX_Release || RELEASE

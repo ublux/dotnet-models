@@ -92,6 +92,9 @@ public partial class Account : UbluxDocument
         foreach (var item in base.GetMandatoryIndexes(collection))
             yield return item;
 
+        // enable searching by IdGTrunkTerminationGroup fast
+        yield return new MongoDbIndex(collection, nameof(Account.IdGTrunkTerminationGroup));
+
         // Enable seraching by date created only with accounts.
         // db.getCollection("AgreementsToTermsAndConditions").createIndex({ 'dateCreated' : 1 })
         yield return new MongoDbIndex(collection, nameof(DateCreated));

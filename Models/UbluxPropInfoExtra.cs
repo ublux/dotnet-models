@@ -31,6 +31,11 @@ public class UbluxPropInfoExtra
     public UbluxValidationStringRangeAttribute? UbluxValidationStringRangeAttribute { get; set; }
 
     /// <summary>
+    ///     If validating refences 
+    /// </summary>
+    public ReferencesAttribute? ReferencesAttribute { get; set; }
+
+    /// <summary>
     ///     Error message if null
     /// </summary>
     public string BuildErrorMessageIfNull(string propertyName)

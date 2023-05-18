@@ -19,17 +19,14 @@ public partial class VoicemailForwarded : Voicemail
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    //[References(typeof(Line))]
     [UbluxValidationRequired]
     public required Line LineThatForwardedVoicemail { get; set; }
 
     /// <summary>
-    ///     If voicemail is forwarded
-    ///     To what extension was this voicemail forwarded to?
+    ///     (CallerIdNumber when voicemail was forwarded)
+    ///     Extension number where voicemail was forwarded. For example 100 meaning that extension 100 forwarded this voicemail.    
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    //[References(typeof(Extension))]
-    //[IsUbluxRequired]
-    public Extension? ExtensionForwarded { get; set; }
+    public string? ForwardedFrom { get; set; }
 }

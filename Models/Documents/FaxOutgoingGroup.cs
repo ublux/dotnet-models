@@ -64,6 +64,14 @@ public partial class FaxOutgoingGroup : UbluxDocument_ReferenceAccount_Reference
     [SwaggerSchema(ReadOnly = true)] 
     public bool ContainsError { get; set; }
 
+    /// <summary>
+    ///     The status. Is it pending, processing or complete?
+    /// </summary>
+    [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
+    [UbluxValidationRequired]
+    public AiProcessStatus Status { get; set; }
+
     #endregion
 
 
@@ -78,6 +86,12 @@ public partial class FaxOutgoingGroup : UbluxDocument_ReferenceAccount_Reference
         // get all mandatory indexes
         foreach (var item in base.GetMandatoryIndexes(collection))
             yield return item;
+
+        // We use this query to see if an email can be deleted
+        // Search fast by IdsEmailsSendConfirmation and status 
+        yield return new MongoDbIndex(collection, nameof(this.IdsEmailsSendConfirmation)).Add(nameof(this.Status))
+            // Append DateCreated at the end so that items are returned by dateCreated
+            .Add(-1, nameof(DateCreated));
     }
 
     #endregion

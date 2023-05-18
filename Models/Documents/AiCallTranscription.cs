@@ -58,5 +58,4 @@ public partial class AiCallTranscription : UbluxDocument_ReferenceAccount_Refere
     }
 
     #endregion
-
 }

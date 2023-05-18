@@ -35,17 +35,16 @@ public partial class StoredFileReference : UbluxDocument
     /// <summary>
     ///     Stored file such as an Audio MP3 file
     /// </summary>    
-    [AllowUpdate(false)] 
-    [SwaggerSchema(ReadOnly = true)] 
+    [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     public required StoredFile StoredFile { get; set; }
 
     /// <summary>
     ///     Is this Cloud file backed up
     /// </summary>
-    [AllowUpdate(false)] 
-    [SwaggerSchema(ReadOnly = true)] 
+    [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     public required bool IsBackup { get; set; }
-
 
     #region MongoDB
 
@@ -62,7 +61,7 @@ public partial class StoredFileReference : UbluxDocument
         // enable searching fast by id of document
         yield return new MongoDbIndex(collection, nameof(this.IdDocument))
             // Append DateCreated at the end so that items are returned by dateCreated
-            .Add(nameof(DateCreated));       
+            .Add(nameof(DateCreated));
     }
 
     #endregion

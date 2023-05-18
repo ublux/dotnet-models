@@ -4,7 +4,12 @@
 ///     Ring strategy of a queue
 /// </summary>
 public enum QueueRingStrategy
-{    
+{
+    /// <summary>
+    ///     No strategy
+    /// </summary>
+    None,
+
     /// <summary>
     ///     All lines will ring
     /// </summary>

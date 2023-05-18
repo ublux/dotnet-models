@@ -74,6 +74,7 @@ public partial class ExtensionQueue : ExtensionDial
     ///     Strategy to ring queue. Default is RingAll
     /// </summary>
     [AllowUpdate(true)]
+    [UbluxValidationRequired]
     public QueueRingStrategy RingStrategy { get; set; }
 
     #endregion

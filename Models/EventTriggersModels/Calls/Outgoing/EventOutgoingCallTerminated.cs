@@ -2,16 +2,16 @@
 
 /// <summary>
 ///     Webhook will send this data when triggered.
-///     <see cref="EventTrigger.EventOutgoingCallTerminated"/>
+///     <see cref="EventTriggerType.EventOutgoingCallTerminated"/>
 /// </summary>
 public partial class EventOutgoingCallTerminated : EventOutgoingCallEndedBase
 {
     /// <inheritdoc />
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    public override EventTrigger EventTrigger
+    public override EventTriggerType EventTrigger
     {
-        get => EventTrigger.EventOutgoingCallTerminated;
+        get => EventTriggerType.EventOutgoingCallTerminated;
 #if UBLUX_Release || RELEASE
         set { }
 #else

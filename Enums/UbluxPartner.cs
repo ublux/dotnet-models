@@ -7,9 +7,9 @@ namespace Ublux.Communications.Enums;
 public enum UbluxPartner
 {
     /// <summary>
-    ///     Default value. This value should never be set.
+    ///     No partner
     /// </summary>
-    Unknown,
+    None,
 
     /// <summary>
     ///     Clients with Eduardo Namnum.

@@ -8,12 +8,12 @@ namespace Ublux.Communications.Models;
 public class AccountSecrets
 {
     /// <summary>
-    ///     9 digit number that a customer must dial in order to link his phone to a new account. 
+    ///     9 digit number that used to autoprovision phone. 
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
     [UbluxValidationRequired]
-    [UbluxValidationStringRange(5, 50)]
+    [UbluxValidationStringRange(9, 20)]
     public required string PinPhone { get; set; }
 
     /// <summary>
@@ -23,7 +23,7 @@ public class AccountSecrets
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
     [UbluxValidationRequired]
-    [UbluxValidationStringRange(9, 50)]
+    [UbluxValidationStringRange(9, 20)]
     public required string PinSpy { get; set; }
 
     /// <summary>

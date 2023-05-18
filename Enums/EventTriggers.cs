@@ -4,8 +4,13 @@
 ///     Type of events that could trigger a custom action. 
 ///     Used by Zapier and Integromat
 /// </summary>
-public enum EventTrigger
+public enum EventTriggerType
 {
+    /// <summary>
+    ///     No event trigger
+    /// </summary>
+    None,
+
     #region Call terminated/started
 
     /// <summary/>

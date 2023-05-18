@@ -10,13 +10,14 @@ public partial class ContactNumber
     /// </summary>
     [UbluxValidationRequired]
     [AllowUpdate(true)]
+    [UbluxValidationStringRange(1, 20)]
     public required string Number { get; set; }
 
     /// <summary>
     ///     Phone number normalized in national format. This is needed so that searches are faster.
     ///     db.GlobalContacts.createIndex({"PhoneNumbers.PhoneNumberNormalized":1})
     /// </summary>
-    [AllowUpdate(false)] // update Number will change this
+    [AllowUpdate(false)] // update Number will change this    
     public string? NumberInternationalFormat { get; set; }
 
     /// <summary>

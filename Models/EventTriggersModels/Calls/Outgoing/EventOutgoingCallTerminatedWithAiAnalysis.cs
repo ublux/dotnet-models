@@ -2,16 +2,16 @@
 
 /// <summary>
 ///     Webhook will send this data when triggered.
-///     <see cref="EventTrigger.EventOutgoingCallTerminatedWithAiAnalysis"/>
+///     <see cref="EventTriggerType.EventOutgoingCallTerminatedWithAiAnalysis"/>
 /// </summary>
 public class EventOutgoingCallTerminatedWithAiAnalysis : EventOutgoingCallTerminatedWithRecording
 {
     /// <inheritdoc />
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    public override EventTrigger EventTrigger
+    public override EventTriggerType EventTrigger
     {
-        get => EventTrigger.EventOutgoingCallTerminatedWithAiAnalysis;
+        get => EventTriggerType.EventOutgoingCallTerminatedWithAiAnalysis;
 #if UBLUX_Release || RELEASE
         set { }
 #else

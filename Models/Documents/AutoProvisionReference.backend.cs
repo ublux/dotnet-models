@@ -38,6 +38,7 @@ public partial class AutoProvisionReference : UbluxDocument
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
     [UbluxValidationRequired]
+    [UbluxValidationStringRange(500)]
     public required string UserAgent { get; set; } = string.Empty;
 
     #endregion

@@ -60,18 +60,6 @@ public partial class VoipProvider : UbluxDocument
     public required string FriendlyName { get; set; } = string.Empty;
 
     /// <summary>
-    ///     Used mostly for sub-accounts. A sub account in twilio can be suspended, closed or active 
-    /// </summary>
-    [AllowUpdate(false)]
-    [SwaggerSchema(ReadOnly = true)]
-    [IgnoreDataMember]
-    public string? Status {
-        get { try { /*custom-get-code*/ _lock.EnterReadLock(); return _Status; } finally { _lock.ExitReadLock(); } }
-        set { try { _lock.EnterWriteLock(); _Status = value; /*custom-set-code*/ } finally { _lock.ExitWriteLock(); }}
-    }
-    private string? _Status;
-
-    /// <summary>
     ///     Country of this provider
     /// </summary>
     [AllowUpdate(false)]

@@ -53,5 +53,4 @@ public class TrunkTerminationRule
     [UbluxValidationRequired]
     [BsonRepresentation(BsonType.String)]
     public required List<CountryIsoCode> CountriesThatCanCall { get; set; } = new ();
-
 }

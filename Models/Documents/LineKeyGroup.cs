@@ -12,7 +12,7 @@ public partial class LineKeyGroup : UbluxDocument_ReferenceAccount_ReferenceTags
     /// <summary>
     ///     Group of speed dial keys. Must have at least one
     /// </summary>
-    [AllowUpdate(true)]
+    [AllowUpdate(true)]    
     public List<LineKey> LineKeys { get; set; } = new();
 
     #endregion
@@ -27,7 +27,6 @@ public partial class LineKeyGroup : UbluxDocument_ReferenceAccount_ReferenceTags
     /// <summary>
     ///     Description of line key group
     /// </summary>
-
     [AllowUpdate(true)]
     [UbluxValidationStringRange(1000)]
     public string? Description { get; set; } = string.Empty;

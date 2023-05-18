@@ -38,7 +38,7 @@ TODO: Very important to place index in this field. */
 
 /** Account secrets */
 export interface AccountSecrets {
-    /** 9 digit number that a customer must dial in order to link his phone to a new account. */
+    /** 9 digit number that used to autoprovision phone. */
     readonly pinPhone?: string;
     /** If you dial *7 and you enter this pin you will be able to ChanSpy "spy" on a extension
 9 digits now to make it more secure */
@@ -2684,9 +2684,9 @@ export enum EventActionType {
     LeaveVoicemail = "LeaveVoicemail",
 }
 
-/** Webhook will send this data when triggered. Ublux.Communications.Enums.EventTrigger.EventCallPlacedOnHoldFor1Min */
+/** Webhook will send this data when triggered. Ublux.Communications.Enums.EventTriggerType.EventCallPlacedOnHoldFor1Min */
 export interface EventCallPlacedOnHoldFor1Min {
-    eventTrigger?: EventTrigger;
+    eventTrigger?: EventTriggerType;
     /** Is the call incoming? If false call is outgiong */
     readonly isIncoming?: boolean;
     /** From phone number */
@@ -2711,9 +2711,9 @@ If it is an outgiong call then the friendly name of the line that initiated the 
     id?: string;
 }
 
-/** Webhook will send this data when triggered. Ublux.Communications.Enums.EventTrigger.EventCallPlacedOnHoldFor2Min */
+/** Webhook will send this data when triggered. Ublux.Communications.Enums.EventTriggerType.EventCallPlacedOnHoldFor2Min */
 export interface EventCallPlacedOnHoldFor2Min {
-    eventTrigger?: EventTrigger;
+    eventTrigger?: EventTriggerType;
     /** Is the call incoming? If false call is outgiong */
     readonly isIncoming?: boolean;
     /** From phone number */
@@ -2738,9 +2738,9 @@ If it is an outgiong call then the friendly name of the line that initiated the 
     id?: string;
 }
 
-/** Webhook will send this data when triggered. Ublux.Communications.Enums.EventTrigger.EventCallPlacedOnHoldFor4Min */
+/** Webhook will send this data when triggered. Ublux.Communications.Enums.EventTriggerType.EventCallPlacedOnHoldFor4Min */
 export interface EventCallPlacedOnHoldFor4Min {
-    eventTrigger?: EventTrigger;
+    eventTrigger?: EventTriggerType;
     /** Is the call incoming? If false call is outgiong */
     readonly isIncoming?: boolean;
     /** From phone number */
@@ -2765,9 +2765,9 @@ If it is an outgiong call then the friendly name of the line that initiated the 
     id?: string;
 }
 
-/** Webhook will send this data when triggered. Ublux.Communications.Enums.EventTrigger.EventCallPlacedOnHoldFor8Min */
+/** Webhook will send this data when triggered. Ublux.Communications.Enums.EventTriggerType.EventCallPlacedOnHoldFor8Min */
 export interface EventCallPlacedOnHoldFor8Min {
-    eventTrigger?: EventTrigger;
+    eventTrigger?: EventTriggerType;
     /** Is the call incoming? If false call is outgiong */
     readonly isIncoming?: boolean;
     /** From phone number */
@@ -2792,9 +2792,9 @@ If it is an outgiong call then the friendly name of the line that initiated the 
     id?: string;
 }
 
-/** Webhook will send this data when triggered. Ublux.Communications.Enums.EventTrigger.EventExtensionNotAnswered */
+/** Webhook will send this data when triggered. Ublux.Communications.Enums.EventTriggerType.EventExtensionNotAnswered */
 export interface EventExtensionNotAnswered {
-    eventTrigger?: EventTrigger;
+    eventTrigger?: EventTriggerType;
     /** Extension friendly name */
     readonly friendlyName?: string;
     /** Extension number */
@@ -2823,9 +2823,9 @@ export interface EventExtensionNotAnswered {
     id?: string;
 }
 
-/** Webhook will send this data when triggered. Ublux.Communications.Enums.EventTrigger.EventExtensionTookLongerThan1MinToBeAnswered */
+/** Webhook will send this data when triggered. Ublux.Communications.Enums.EventTriggerType.EventExtensionTookLongerThan1MinToBeAnswered */
 export interface EventExtensionTookLongerThan1MinToBeAnswered {
-    eventTrigger?: EventTrigger;
+    eventTrigger?: EventTriggerType;
     /** Extension friendly name */
     readonly friendlyName?: string;
     /** Extension number */
@@ -2854,9 +2854,9 @@ export interface EventExtensionTookLongerThan1MinToBeAnswered {
     id?: string;
 }
 
-/** Webhook will send this data when triggered. Ublux.Communications.Enums.EventTrigger.EventExtensionTookLongerThan2MinToBeAnswered */
+/** Webhook will send this data when triggered. Ublux.Communications.Enums.EventTriggerType.EventExtensionTookLongerThan2MinToBeAnswered */
 export interface EventExtensionTookLongerThan2MinToBeAnswered {
-    eventTrigger?: EventTrigger;
+    eventTrigger?: EventTriggerType;
     /** Extension friendly name */
     readonly friendlyName?: string;
     /** Extension number */
@@ -2885,9 +2885,9 @@ export interface EventExtensionTookLongerThan2MinToBeAnswered {
     id?: string;
 }
 
-/** Webhook will send this data when triggered. Ublux.Communications.Enums.EventTrigger.EventExtensionTookLongerThan4MinToBeAnswered */
+/** Webhook will send this data when triggered. Ublux.Communications.Enums.EventTriggerType.EventExtensionTookLongerThan4MinToBeAnswered */
 export interface EventExtensionTookLongerThan4MinToBeAnswered {
-    eventTrigger?: EventTrigger;
+    eventTrigger?: EventTriggerType;
     /** Extension friendly name */
     readonly friendlyName?: string;
     /** Extension number */
@@ -2916,9 +2916,9 @@ export interface EventExtensionTookLongerThan4MinToBeAnswered {
     id?: string;
 }
 
-/** Webhook will send this data when triggered. Ublux.Communications.Enums.EventTrigger.EventExtensionTookLongerThan8MinToBeAnswered */
+/** Webhook will send this data when triggered. Ublux.Communications.Enums.EventTriggerType.EventExtensionTookLongerThan8MinToBeAnswered */
 export interface EventExtensionTookLongerThan8MinToBeAnswered {
-    eventTrigger?: EventTrigger;
+    eventTrigger?: EventTriggerType;
     /** Extension friendly name */
     readonly friendlyName?: string;
     /** Extension number */
@@ -2947,9 +2947,9 @@ export interface EventExtensionTookLongerThan8MinToBeAnswered {
     id?: string;
 }
 
-/** Webhook will send this data when triggered. Ublux.Communications.Enums.EventTrigger.EventIncomingCallStarted */
+/** Webhook will send this data when triggered. Ublux.Communications.Enums.EventTriggerType.EventIncomingCallStarted */
 export interface EventIncomingCallStarted {
-    eventTrigger?: EventTrigger;
+    eventTrigger?: EventTriggerType;
     /** From phone number */
     readonly from?: string;
     /** To phone number */
@@ -2966,9 +2966,9 @@ If call is outgoing then the name of contact that we are calling. */
     id?: string;
 }
 
-/** Webhook will send this data when triggered. Ublux.Communications.Enums.EventTrigger.EventIncomingCallTerminated */
+/** Webhook will send this data when triggered. Ublux.Communications.Enums.EventTriggerType.EventIncomingCallTerminated */
 export interface EventIncomingCallTerminated {
-    eventTrigger?: EventTrigger;
+    eventTrigger?: EventTriggerType;
     /** Date when call was answered */
     readonly secondsItTookToAnswer?: number | null;
     /** Id of line that answered */
@@ -2995,9 +2995,9 @@ If call is outgoing then the name of contact that we are calling. */
     id?: string;
 }
 
-/** Webhook will send this data when triggered. Ublux.Communications.Enums.EventTrigger.EventIncomingCallTerminatedWithAiAnalysis */
+/** Webhook will send this data when triggered. Ublux.Communications.Enums.EventTriggerType.EventIncomingCallTerminatedWithAiAnalysis */
 export interface EventIncomingCallTerminatedWithAiAnalysis {
-    eventTrigger?: EventTrigger;
+    eventTrigger?: EventTriggerType;
     sentiment?: AiSentiment;
     /** Entities mentioned in the conversation */
     readonly entities?: AiEntity[];
@@ -3047,9 +3047,9 @@ If call is outgoing then the name of contact that we are calling. */
     id?: string;
 }
 
-/** Webhook will send this data when triggered. Ublux.Communications.Enums.EventTrigger.EventIncomingCallTerminatedWithRecording */
+/** Webhook will send this data when triggered. Ublux.Communications.Enums.EventTriggerType.EventIncomingCallTerminatedWithRecording */
 export interface EventIncomingCallTerminatedWithRecording {
-    eventTrigger?: EventTrigger;
+    eventTrigger?: EventTriggerType;
     /** Recording of call */
     readonly recordingUrl?: string;
     /** Date when call was answered */
@@ -3078,9 +3078,9 @@ If call is outgoing then the name of contact that we are calling. */
     id?: string;
 }
 
-/** Webhook will send this data when triggered. Ublux.Communications.Enums.EventTrigger.EventIncomingCallTerminatedWithTranscription */
+/** Webhook will send this data when triggered. Ublux.Communications.Enums.EventTriggerType.EventIncomingCallTerminatedWithTranscription */
 export interface EventIncomingCallTerminatedWithTranscription {
-    eventTrigger?: EventTrigger;
+    eventTrigger?: EventTriggerType;
     /** If there is a language it means there is a transcription */
     readonly transcriptionLanguage?: string | null;
     /** Audio of agent converted to text */
@@ -3115,9 +3115,9 @@ If call is outgoing then the name of contact that we are calling. */
     id?: string;
 }
 
-/** Webhook will send this data when triggered. Ublux.Communications.Enums.EventTrigger.EventLineConnected */
+/** Webhook will send this data when triggered. Ublux.Communications.Enums.EventTriggerType.EventLineConnected */
 export interface EventLineConnected {
-    eventTrigger?: EventTrigger;
+    eventTrigger?: EventTriggerType;
     /** Line friendly name */
     readonly friendlyName?: string | null;
     /** Id of phone */
@@ -3135,9 +3135,9 @@ export interface EventLineConnected {
     id?: string;
 }
 
-/** Webhook will send this data when triggered. Ublux.Communications.Enums.EventTrigger.EventLineDisconnected */
+/** Webhook will send this data when triggered. Ublux.Communications.Enums.EventTriggerType.EventLineDisconnected */
 export interface EventLineDisconnected {
-    eventTrigger?: EventTrigger;
+    eventTrigger?: EventTriggerType;
     /** Line friendly name */
     readonly friendlyName?: string | null;
     /** Id of phone */
@@ -3155,9 +3155,9 @@ export interface EventLineDisconnected {
     id?: string;
 }
 
-/** Webhook will send this data when triggered. Ublux.Communications.Enums.EventTrigger.EventOutgoingCallStarted */
+/** Webhook will send this data when triggered. Ublux.Communications.Enums.EventTriggerType.EventOutgoingCallStarted */
 export interface EventOutgoingCallStarted {
-    eventTrigger?: EventTrigger;
+    eventTrigger?: EventTriggerType;
     /** Id of line that initiated phone call */
     readonly lineThatInitiatedCallId?: string;
     /** Friendly name of line that initiated phone call */
@@ -3178,9 +3178,9 @@ If call is outgoing then the name of contact that we are calling. */
     id?: string;
 }
 
-/** Webhook will send this data when triggered. Ublux.Communications.Enums.EventTrigger.EventOutgoingCallTerminated */
+/** Webhook will send this data when triggered. Ublux.Communications.Enums.EventTriggerType.EventOutgoingCallTerminated */
 export interface EventOutgoingCallTerminated {
-    eventTrigger?: EventTrigger;
+    eventTrigger?: EventTriggerType;
     /** Date when call was answered */
     readonly secondsItTookToAnswer?: number | null;
     /** Id of line that answered in case it is an outgoing call to an extension */
@@ -3211,9 +3211,9 @@ If call is outgoing then the name of contact that we are calling. */
     id?: string;
 }
 
-/** Webhook will send this data when triggered. Ublux.Communications.Enums.EventTrigger.EventOutgoingCallTerminatedWithAiAnalysis */
+/** Webhook will send this data when triggered. Ublux.Communications.Enums.EventTriggerType.EventOutgoingCallTerminatedWithAiAnalysis */
 export interface EventOutgoingCallTerminatedWithAiAnalysis {
-    eventTrigger?: EventTrigger;
+    eventTrigger?: EventTriggerType;
     sentiment?: AiSentiment;
     /** Entities mentioned in the conversation */
     readonly entities?: AiEntity[];
@@ -3267,9 +3267,9 @@ If call is outgoing then the name of contact that we are calling. */
     id?: string;
 }
 
-/** Webhook will send this data when triggered. Ublux.Communications.Enums.EventTrigger.EventOutgoingCallTerminatedWithRecording */
+/** Webhook will send this data when triggered. Ublux.Communications.Enums.EventTriggerType.EventOutgoingCallTerminatedWithRecording */
 export interface EventOutgoingCallTerminatedWithRecording {
-    eventTrigger?: EventTrigger;
+    eventTrigger?: EventTriggerType;
     /** Recording of call */
     readonly recordingUrl?: string;
     /** Date when call was answered */
@@ -3302,9 +3302,9 @@ If call is outgoing then the name of contact that we are calling. */
     id?: string;
 }
 
-/** Webhook will send this data when triggered. Ublux.Communications.Enums.EventTrigger.EventOutgoingCallTerminatedWithTranscription */
+/** Webhook will send this data when triggered. Ublux.Communications.Enums.EventTriggerType.EventOutgoingCallTerminatedWithTranscription */
 export interface EventOutgoingCallTerminatedWithTranscription {
-    eventTrigger?: EventTrigger;
+    eventTrigger?: EventTriggerType;
     /** If there is a language it means there is a transcription */
     readonly transcriptionLanguage?: string | null;
     /** Audio of agent converted to text */
@@ -3344,7 +3344,8 @@ If call is outgoing then the name of contact that we are calling. */
 }
 
 /** Type of events that could trigger a custom action. Used by Zapier and Integromat */
-export enum EventTrigger {
+export enum EventTriggerType {
+    None = "None",
     EventOutgoingCallTerminated = "EventOutgoingCallTerminated",
     EventIncomingCallTerminated = "EventIncomingCallTerminated",
     EventOutgoingCallTerminatedWithRecording = "EventOutgoingCallTerminatedWithRecording",
@@ -4362,6 +4363,7 @@ export interface FaxOutgoingGroup {
     readonly idsEmailsSendConfirmation?: string[];
     /** True if there is an error */
     readonly containsError?: boolean;
+    status?: AiProcessStatus;
     /** It is nullable because there are cases where it makes no sense to point to an account. 
 For example a CloudService user will point to no account */
     idsTags?: string[];
@@ -4474,6 +4476,12 @@ export interface FaxOutgoingGroupFilterRequest {
     idsEmailsSendConfirmation_reg?: string | null;
     /** ContainsError equals */
     containsError_eq?: boolean | null;
+    /** Status equals */
+    status_eq?: string | null;
+    /** Status contains */
+    status_con?: string | null;
+    /** Status regex */
+    status_reg?: string | null;
     /** IdsTags equals */
     idsTags_eq?: string | null;
     /** IdsTags contains */
@@ -5038,13 +5046,14 @@ Posible reasons: none, registration failure, remove existing, remove unavailable
 /** Speed dial */
 export interface LineKey {
     lineKeyType?: LineKeyType;
-    /** Value of line key. Example: 9546543982 */
-    value?: string;
     /** Display name of line key */
     label?: string;
+    /** Value of line key. Example: 9546543982
+Only requried if LineKeyType is SpeedDial */
+    value?: string | null;
     /** Id of extension to call */
     idExtension?: string | null;
-    /** Position of line key */
+    /** Position of line key. This is importante because maybe a user may want to skip some positions */
     lineKeyIndex?: number;
 }
 
@@ -5076,18 +5085,18 @@ export interface LineKeyGroupFilterRequest {
     lineKeys_lineKeyType_con?: string | null;
     /** LineKeys.LineKeyType regex */
     lineKeys_lineKeyType_reg?: string | null;
-    /** LineKeys.Value equals */
-    lineKeys_value_eq?: string | null;
-    /** LineKeys.Value contains */
-    lineKeys_value_con?: string | null;
-    /** LineKeys.Value regex */
-    lineKeys_value_reg?: string | null;
     /** LineKeys.Label equals */
     lineKeys_label_eq?: string | null;
     /** LineKeys.Label contains */
     lineKeys_label_con?: string | null;
     /** LineKeys.Label regex */
     lineKeys_label_reg?: string | null;
+    /** LineKeys.Value equals */
+    lineKeys_value_eq?: string | null;
+    /** LineKeys.Value contains */
+    lineKeys_value_con?: string | null;
+    /** LineKeys.Value regex */
+    lineKeys_value_reg?: string | null;
     /** LineKeys.IdExtension equals */
     lineKeys_idExtension_eq?: string | null;
     /** LineKeys.IdExtension contains */
@@ -5966,6 +5975,7 @@ export interface ProblemDetails {
 
 /** Ring strategy of a queue */
 export enum QueueRingStrategy {
+    None = "None",
     RingAll = "RingAll",
     LeastResent = "LeastResent",
     FewestCalls = "FewestCalls",
@@ -6023,8 +6033,6 @@ export interface SMS {
     readonly body?: string;
     /** If a SMS body is to large, it will be sent in multiple chunks/segments */
     readonly numSegments?: number;
-    /** Status of SMS */
-    readonly status?: string | null;
     /** Number that sent SMS */
     readonly from?: string;
     /** Number to whom SMS was sent to */
@@ -6067,12 +6075,6 @@ export interface SMSFilterRequest {
     numSegments_lte?: number | null;
     /** NumSegments greater than or equal to */
     numSegments_gte?: number | null;
-    /** Status equals */
-    status_eq?: string | null;
-    /** Status contains */
-    status_con?: string | null;
-    /** Status regex */
-    status_reg?: string | null;
     /** From equals */
     from_eq?: string | null;
     /** From contains */
@@ -6156,6 +6158,8 @@ export interface Tag {
     /** Name of tag */
     friendlyName?: string;
     tagColor?: TagColor;
+    /** Description of tag */
+    description?: string | null;
     /** Creation date. Sets DateUpdated if it does not have a value */
     readonly dateCreated?: Date;
     /** Updated date. When item is created on database this date will be set too. This is important so that we can sync contacts
@@ -6330,6 +6334,12 @@ export interface TagFilterRequest {
     tagColor_con?: string | null;
     /** TagColor regex */
     tagColor_reg?: string | null;
+    /** Description equals */
+    description_eq?: string | null;
+    /** Description contains */
+    description_con?: string | null;
+    /** Description regex */
+    description_reg?: string | null;
     /** Id equals */
     id_eq?: string | null;
     /** Id contains */
@@ -6355,6 +6365,8 @@ export interface TagUpdateRequest {
     /** Name of tag */
     friendlyName?: string | null;
     tagColor?: TagColor;
+    /** Description of tag */
+    description?: string | null;
 }
 
 /** Date when call was placed on hold */
@@ -6919,6 +6931,7 @@ export interface VoicemailFilterRequest {
 
 /** Types of voicemail */
 export enum VoicemailType {
+    None = "None",
     Regular = "Regular",
     Forwarded = "Forwarded",
 }
@@ -6972,6 +6985,8 @@ will be injected to the caller id allowing the agent to know that she has to ans
     readonly isTollFree?: boolean;
     /** TimeZone of this phone number */
     timeZone?: string;
+    /** Beause a lot of collections depend on a number instead of deleting it we mark it as disconnected. */
+    readonly isDisconnected?: boolean;
     /** It is nullable because there are cases where it makes no sense to point to an account. 
 For example a CloudService user will point to no account */
     idsTags?: string[];
@@ -7026,6 +7041,8 @@ will be injected to the caller id allowing the agent to know that she has to ans
     readonly isTollFree?: boolean;
     /** TimeZone of this phone number */
     timeZone?: string;
+    /** Beause a lot of collections depend on a number instead of deleting it we mark it as disconnected. */
+    readonly isDisconnected?: boolean;
     /** It is nullable because there are cases where it makes no sense to point to an account. 
 For example a CloudService user will point to no account */
     idsTags?: string[];
@@ -7137,6 +7154,8 @@ export interface VoipNumberAvailableForPurchaseFilterRequest {
     timeZone_con?: string | null;
     /** TimeZone regex */
     timeZone_reg?: string | null;
+    /** IsDisconnected equals */
+    isDisconnected_eq?: boolean | null;
     /** IdsTags equals */
     idsTags_eq?: string | null;
     /** IdsTags contains */
@@ -7229,6 +7248,8 @@ will be injected to the caller id allowing the agent to know that she has to ans
     readonly isTollFree?: boolean;
     /** TimeZone of this phone number */
     timeZone?: string;
+    /** Beause a lot of collections depend on a number instead of deleting it we mark it as disconnected. */
+    readonly isDisconnected?: boolean;
     /** It is nullable because there are cases where it makes no sense to point to an account. 
 For example a CloudService user will point to no account */
     idsTags?: string[];
@@ -7338,6 +7359,8 @@ export interface VoipNumberFaxFilterRequest {
     timeZone_con?: string | null;
     /** TimeZone regex */
     timeZone_reg?: string | null;
+    /** IsDisconnected equals */
+    isDisconnected_eq?: boolean | null;
     /** IdsTags equals */
     idsTags_eq?: string | null;
     /** IdsTags contains */
@@ -7494,6 +7517,8 @@ export interface VoipNumberFilterRequest {
     timeZone_con?: string | null;
     /** TimeZone regex */
     timeZone_reg?: string | null;
+    /** IsDisconnected equals */
+    isDisconnected_eq?: boolean | null;
     /** IdsTags equals */
     idsTags_eq?: string | null;
     /** IdsTags contains */
@@ -7562,6 +7587,8 @@ will be injected to the caller id allowing the agent to know that she has to ans
     readonly isTollFree?: boolean;
     /** TimeZone of this phone number */
     timeZone?: string;
+    /** Beause a lot of collections depend on a number instead of deleting it we mark it as disconnected. */
+    readonly isDisconnected?: boolean;
     /** It is nullable because there are cases where it makes no sense to point to an account. 
 For example a CloudService user will point to no account */
     idsTags?: string[];
@@ -7671,6 +7698,8 @@ export interface VoipNumberPhoneFilterRequest {
     timeZone_con?: string | null;
     /** TimeZone regex */
     timeZone_reg?: string | null;
+    /** IsDisconnected equals */
+    isDisconnected_eq?: boolean | null;
     /** IdsTags equals */
     idsTags_eq?: string | null;
     /** IdsTags contains */
@@ -7730,6 +7759,7 @@ For example a CloudService user will point to no account */
 
 /** Type of DIDs */
 export enum VoipNumberType {
+    None = "None",
     Phone = "Phone",
     Fax = "Fax",
     AvailableForPurchase = "AvailableForPurchase",
@@ -7739,7 +7769,7 @@ export enum VoipNumberType {
 export interface WebHook {
     /** Id of document */
     readonly id?: string;
-    eventTrigger?: EventTrigger;
+    eventTriggerType?: EventTriggerType;
     /** Url where event will be sent
 TODO: place index on this field. Index is needed because when zapier deletes/unsubscribes it passes this url */
     url?: string;
@@ -7757,12 +7787,12 @@ TODO: Very important to place index in this field. */
 
 /** Enables searching for WebHooks */
 export interface WebHookFilterRequest {
-    /** EventTrigger equals */
-    eventTrigger_eq?: string | null;
-    /** EventTrigger contains */
-    eventTrigger_con?: string | null;
-    /** EventTrigger regex */
-    eventTrigger_reg?: string | null;
+    /** EventTriggerType equals */
+    eventTriggerType_eq?: string | null;
+    /** EventTriggerType contains */
+    eventTriggerType_con?: string | null;
+    /** EventTriggerType regex */
+    eventTriggerType_reg?: string | null;
     /** Url equals */
     url_eq?: string | null;
     /** Url contains */
@@ -7803,7 +7833,7 @@ export interface WebHookFilterRequest {
 
 /** Web callback that will be fired when a custom event of interest occurs. */
 export interface WebHookUpdateRequest {
-    eventTrigger?: EventTrigger;
+    eventTriggerType?: EventTriggerType;
     /** Url where event will be sent
 TODO: place index on this field. Index is needed because when zapier deletes/unsubscribes it passes this url */
     url?: string | null;

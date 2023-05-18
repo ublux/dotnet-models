@@ -2,7 +2,7 @@
 
 /// <summary>
 ///     Webhook will send this data when triggered.
-///     <see cref="EventTrigger.EventExtensionNotAnswered"/>
+///     <see cref="EventTriggerType.EventExtensionNotAnswered"/>
 /// </summary>
 public class EventExtensionNotAnswered : EventExtensionBase
 {
@@ -11,9 +11,9 @@ public class EventExtensionNotAnswered : EventExtensionBase
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    public override EventTrigger EventTrigger
+    public override EventTriggerType EventTrigger
     {
-        get => EventTrigger.EventCallPlacedOnHoldFor1Min;
+        get => EventTriggerType.EventCallPlacedOnHoldFor1Min;
 #if UBLUX_Release || RELEASE
         set { }
 #else

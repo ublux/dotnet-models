@@ -119,8 +119,11 @@ public partial class User : UbluxDocument_ReferenceAccount_ReferenceTags
 
         // enable searching fast by username this will make authentication faster
         yield return new MongoDbIndex(collection, nameof(this.Username))
-            // Append DateCreated at the end so that items are returned by dateCreated
-            .Add(nameof(DateCreated));        
+
+            // Does not make sense to append datCreated because Username should be unique
+            //// Append DateCreated at the end so that items are returned by dateCreated
+            //.Add(nameof(DateCreated))
+        ;        
     }
 
     #endregion

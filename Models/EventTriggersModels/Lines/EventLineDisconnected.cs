@@ -2,7 +2,7 @@
 
 /// <summary>
 ///     Webhook will send this data when triggered.
-///     <see cref="EventTrigger.EventLineDisconnected"/>
+///     <see cref="EventTriggerType.EventLineDisconnected"/>
 /// </summary>
 public partial class EventLineDisconnected : EventLineBase
 {
@@ -11,9 +11,9 @@ public partial class EventLineDisconnected : EventLineBase
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    public override EventTrigger EventTrigger
+    public override EventTriggerType EventTrigger
     {
-        get => EventTrigger.EventLineDisconnected;
+        get => EventTriggerType.EventLineDisconnected;
 #if UBLUX_Release || RELEASE
         set { }
 #else

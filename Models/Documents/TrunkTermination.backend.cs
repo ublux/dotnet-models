@@ -1,6 +1,5 @@
 ﻿#if UBLUX_BACKEND
 
-
 namespace Ublux.Communications.Models.Documents;
 
 /// <summary>

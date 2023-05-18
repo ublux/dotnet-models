@@ -18,6 +18,12 @@ public partial class Tag : UbluxDocument_ReferenceAccount
     [AllowUpdate(true)]
     public TagColor TagColor { get; set; }
 
+    /// <summary>
+    ///     Description of tag
+    /// </summary>
+    [AllowUpdate(true)]
+    [UbluxValidationStringRange(1000)]
+    public string? Description { get; set; }
 
     #region MongoDB
 
@@ -29,7 +35,7 @@ public partial class Tag : UbluxDocument_ReferenceAccount
 
         // get all mandatory indexes
         foreach (var item in base.GetMandatoryIndexes(collection))
-            yield return item;        
+            yield return item;
     }
 
     #endregion

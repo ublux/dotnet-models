@@ -23,7 +23,7 @@ public abstract partial class VoipNumber : UbluxDocument_ReferenceAccount_Refere
     /// </summary>
     [References(typeof(MusicOnHoldGroup))]
     [AllowUpdate(true)]
-    public string? IdMusicOnHoldGroup { get; set; } 
+    public string? IdMusicOnHoldGroup { get; set; }
 
     #endregion
 
@@ -33,7 +33,7 @@ public abstract partial class VoipNumber : UbluxDocument_ReferenceAccount_Refere
     ///     key = id of logic OR id of extension.  
     ///     value = day of week when it executes
     /// </summary>   
-    [AllowUpdate(true)] 
+    [AllowUpdate(true)]
     public abstract List<RulePhone> RulesPhone { get; set; }
 
     /// <summary>
@@ -45,7 +45,7 @@ public abstract partial class VoipNumber : UbluxDocument_ReferenceAccount_Refere
     /// <summary>
     ///     Incoming Faxes will be sent to this email addresses
     /// </summary>
-    [AllowUpdate(true)] 
+    [AllowUpdate(true)]
     public abstract List<RuleFax> RulesFax { get; set; }
 
     #endregion
@@ -56,6 +56,7 @@ public abstract partial class VoipNumber : UbluxDocument_ReferenceAccount_Refere
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
     [HideForCreateRequest]
+    [UbluxValidationRequired]
     public abstract VoipNumberType VoipNumberType
     {
         get;
@@ -91,6 +92,7 @@ public abstract partial class VoipNumber : UbluxDocument_ReferenceAccount_Refere
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
     [UbluxValidationRequired]
+    [UbluxValidationStringRange(9, 14)]
     public required string Number { get; set; } = string.Empty;
 
     /// <summary>
@@ -119,7 +121,7 @@ public abstract partial class VoipNumber : UbluxDocument_ReferenceAccount_Refere
     /// </summary>    
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [UbluxValidationRequired]    
+    [UbluxValidationRequired]
     public required string City { get; set; } = string.Empty;
 
     /// <summary>
@@ -168,13 +170,21 @@ public abstract partial class VoipNumber : UbluxDocument_ReferenceAccount_Refere
     //[AllowUpdate(false)]
     //[SwaggerSchema(ReadOnly = true)]
     //[IsUbluxRequired]
-    //public required bool IsWhatsappEnabled { get; set; }
+    //public required bool IsWhatsappEnabled { get; set; }    
 
     /// <summary>
     ///     TimeZone of this phone number
     /// </summary>
     [AllowUpdate(true)]
+    [UbluxValidationRequired]
     public string TimeZone { get; set; } = "America/New_York";
+
+    /// <summary>
+    ///     Beause a lot of collections depend on a number instead of deleting it we mark it as disconnected.
+    /// </summary>
+    [SwaggerSchema(ReadOnly = true)]
+    [AllowUpdate(false)]
+    public bool IsDisconnected { get; set; }
 
     #endregion
 
@@ -194,7 +204,6 @@ public abstract partial class VoipNumber : UbluxDocument_ReferenceAccount_Refere
 
     #endregion
 
-
     #region MongoDB
 
     /// <inheritdoc />
@@ -211,7 +220,7 @@ public abstract partial class VoipNumber : UbluxDocument_ReferenceAccount_Refere
         yield return new MongoDbIndex(collection, nameof(this.Number))
             // Append DateCreated at the end so that items are returned by dateCreated
             .Add(nameof(DateCreated));
-        
+
     }
 
     #endregion
