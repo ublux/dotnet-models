@@ -94,6 +94,7 @@ public partial class Phone : UbluxDocument_ReferenceAccount_ReferenceTags
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
+    [UbluxValidationStringRange(500)]
     public string? UserAgent { get; set; }
 
     /// <summary>
