@@ -434,6 +434,17 @@ public enum UbluxRole
     /// <summary> Has access to the aicalltranscriptions endpoint with only read/create permissions </summary>
     aicalltranscriptions_create,
 
+    /// <summary> Has access to the aicallanalysisinputs endpoint with full permissions </summary>
+    aicallanalysisinputs = 390,
+    /// <summary> Has access to the aicallanalysisinputs endpoint with only read permissions </summary>
+    aicallanalysisinputs_readonly,
+    /// <summary> Has access to the aicallanalysisinputs endpoint with only read/update permissions </summary>
+    aicallanalysisinputs_update,
+    /// <summary> Has access to the aicallanalysisinputs endpoint with only read/delete permissions </summary>
+    aicallanalysisinputs_delete,
+    /// <summary> Has access to the aicallanalysisinputs endpoint with only read/create permissions </summary>
+    aicallanalysisinputs_create,
+
     #endregion
 
     #region Medium Priority

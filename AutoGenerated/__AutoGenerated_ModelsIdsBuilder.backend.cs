@@ -161,8 +161,7 @@ namespace Ublux.Communications.Models.Documents {
         /// <summary> Build Id </summary>
         public static BuiltId BuildId(RunningApplicationInstance instance) => new($"{DocumentPrefix}.{instance.Id}.{instance.IdGlobalAutoIncrement()}");
     }
-    public partial class AiCallAnalysisInput
-    {
+    public partial class AiCallAnalysisInput {
         /// <summary> Id prefix </summary>
         public const string DocumentPrefix = "ACAI";
 

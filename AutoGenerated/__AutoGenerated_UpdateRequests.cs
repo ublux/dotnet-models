@@ -786,6 +786,31 @@ public class ExtensionDialUpdateRequest // : IUbluxDocumentId
 }
 
 /// <summary>
+/// Determines how will a call be AI processed. What questions will be asked to the AI engine
+/// </summary>
+public class AiCallAnalysisInputUpdateRequest // : IUbluxDocumentId
+{
+    /// <summary>
+    /// List of queries to ask AI engine about a call
+    /// </summary>
+    public List<Ublux.Communications.Models.AiCallAnalysisVariableInput>? Queries { get; set; }
+    /// <summary>
+    /// It is nullable because there are cases where it makes no sense to point to an account.
+    /// For example a CloudService user will point to no account
+    /// </summary>
+    public List<System.String>? IdsTags { get; set; }
+    /// <summary> Set values on actual document </summary>
+    public void SetValuesOnAiCallAnalysisInput(AiCallAnalysisInput aiCallAnalysisInput, string jsonRaw)
+    {
+        if(jsonRaw.Contains($@"""{nameof(this.Queries)}""", StringComparison.OrdinalIgnoreCase))
+            aiCallAnalysisInput.Queries = this.Queries;
+        if(jsonRaw.Contains($@"""{nameof(this.IdsTags)}""", StringComparison.OrdinalIgnoreCase))
+            aiCallAnalysisInput.IdsTags = this.IdsTags;
+    }
+
+}
+
+/// <summary>
 /// Extension where people that call will be placed on a sequence awaiting their turn to be attended
 /// </summary>
 public class ExtensionQueueUpdateRequest // : IUbluxDocumentId
@@ -1392,6 +1417,10 @@ public class VoipNumberAvailableForPurchaseUpdateRequest // : IUbluxDocumentId
     /// </summary>
     public Boolean? UseAiForIncomingCalls { get; set; }
     /// <summary>
+    /// What input to pass to AI engine in case UseAiForIncomingCalls=true. If null it should use a default input that is part of constants.
+    /// </summary>
+    public String? IdAiCallAnalysisInput { get; set; }
+    /// <summary>
     /// Incoming phone number friendly name
     /// </summary>
     public String? FriendlyName { get; set; }
@@ -1423,6 +1452,8 @@ public class VoipNumberAvailableForPurchaseUpdateRequest // : IUbluxDocumentId
             voipNumberAvailableForPurchase.RecordIncomingCalls = this.RecordIncomingCalls.Value;
         if(jsonRaw.Contains($@"""{nameof(this.UseAiForIncomingCalls)}""", StringComparison.OrdinalIgnoreCase))
             voipNumberAvailableForPurchase.UseAiForIncomingCalls = this.UseAiForIncomingCalls.Value;
+        if(jsonRaw.Contains($@"""{nameof(this.IdAiCallAnalysisInput)}""", StringComparison.OrdinalIgnoreCase))
+            voipNumberAvailableForPurchase.IdAiCallAnalysisInput = this.IdAiCallAnalysisInput;
         if(jsonRaw.Contains($@"""{nameof(this.FriendlyName)}""", StringComparison.OrdinalIgnoreCase))
             voipNumberAvailableForPurchase.FriendlyName = this.FriendlyName;
         if(jsonRaw.Contains($@"""{nameof(this.Description)}""", StringComparison.OrdinalIgnoreCase))
@@ -1474,6 +1505,10 @@ public class VoipNumberFaxUpdateRequest // : IUbluxDocumentId
     /// </summary>
     public Boolean? UseAiForIncomingCalls { get; set; }
     /// <summary>
+    /// What input to pass to AI engine in case UseAiForIncomingCalls=true. If null it should use a default input that is part of constants.
+    /// </summary>
+    public String? IdAiCallAnalysisInput { get; set; }
+    /// <summary>
     /// Incoming phone number friendly name
     /// </summary>
     public String? FriendlyName { get; set; }
@@ -1511,6 +1546,8 @@ public class VoipNumberFaxUpdateRequest // : IUbluxDocumentId
             voipNumberFax.RecordIncomingCalls = this.RecordIncomingCalls.Value;
         if(jsonRaw.Contains($@"""{nameof(this.UseAiForIncomingCalls)}""", StringComparison.OrdinalIgnoreCase))
             voipNumberFax.UseAiForIncomingCalls = this.UseAiForIncomingCalls.Value;
+        if(jsonRaw.Contains($@"""{nameof(this.IdAiCallAnalysisInput)}""", StringComparison.OrdinalIgnoreCase))
+            voipNumberFax.IdAiCallAnalysisInput = this.IdAiCallAnalysisInput;
         if(jsonRaw.Contains($@"""{nameof(this.FriendlyName)}""", StringComparison.OrdinalIgnoreCase))
             voipNumberFax.FriendlyName = this.FriendlyName;
         if(jsonRaw.Contains($@"""{nameof(this.Description)}""", StringComparison.OrdinalIgnoreCase))
@@ -1562,6 +1599,10 @@ public class VoipNumberPhoneUpdateRequest // : IUbluxDocumentId
     /// </summary>
     public Boolean? UseAiForIncomingCalls { get; set; }
     /// <summary>
+    /// What input to pass to AI engine in case UseAiForIncomingCalls=true. If null it should use a default input that is part of constants.
+    /// </summary>
+    public String? IdAiCallAnalysisInput { get; set; }
+    /// <summary>
     /// Incoming phone number friendly name
     /// </summary>
     public String? FriendlyName { get; set; }
@@ -1599,6 +1640,8 @@ public class VoipNumberPhoneUpdateRequest // : IUbluxDocumentId
             voipNumberPhone.RecordIncomingCalls = this.RecordIncomingCalls.Value;
         if(jsonRaw.Contains($@"""{nameof(this.UseAiForIncomingCalls)}""", StringComparison.OrdinalIgnoreCase))
             voipNumberPhone.UseAiForIncomingCalls = this.UseAiForIncomingCalls.Value;
+        if(jsonRaw.Contains($@"""{nameof(this.IdAiCallAnalysisInput)}""", StringComparison.OrdinalIgnoreCase))
+            voipNumberPhone.IdAiCallAnalysisInput = this.IdAiCallAnalysisInput;
         if(jsonRaw.Contains($@"""{nameof(this.FriendlyName)}""", StringComparison.OrdinalIgnoreCase))
             voipNumberPhone.FriendlyName = this.FriendlyName;
         if(jsonRaw.Contains($@"""{nameof(this.Description)}""", StringComparison.OrdinalIgnoreCase))
@@ -1757,6 +1800,10 @@ public class LineUpdateRequest // : IUbluxDocumentId
     /// </summary>
     public Boolean? UseAiForOutgoingCallsToExtensions { get; set; }
     /// <summary>
+    /// What input to pass to AI engine. If null it should use a default input that is part of constants.
+    /// </summary>
+    public String? IdAiCallAnalysisInput { get; set; }
+    /// <summary>
     /// Langage to use when playing messages
     /// </summary>
     public Language? Language { get; set; }
@@ -1775,6 +1822,8 @@ public class LineUpdateRequest // : IUbluxDocumentId
             line.UseAiForExternalCalls = this.UseAiForExternalCalls.Value;
         if(jsonRaw.Contains($@"""{nameof(this.UseAiForOutgoingCallsToExtensions)}""", StringComparison.OrdinalIgnoreCase))
             line.UseAiForOutgoingCallsToExtensions = this.UseAiForOutgoingCallsToExtensions.Value;
+        if(jsonRaw.Contains($@"""{nameof(this.IdAiCallAnalysisInput)}""", StringComparison.OrdinalIgnoreCase))
+            line.IdAiCallAnalysisInput = this.IdAiCallAnalysisInput;
         if(jsonRaw.Contains($@"""{nameof(this.Language)}""", StringComparison.OrdinalIgnoreCase))
             line.Language = this.Language.Value;
     }

@@ -118,5 +118,8 @@ public enum Collections
     AiCallTranscriptions,
 
     /// <summary> Emails </summary>
-    Emails
+    Emails,
+
+    /// <summary> AiCallAnalysisInput </summary>
+    AiCallAnalysisInputs
 }

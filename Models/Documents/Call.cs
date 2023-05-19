@@ -266,7 +266,7 @@ public abstract partial class Call : UbluxDocument_ReferenceAccount_ReferenceTag
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    public AICallAnalysisOutput? AICallAnalysisOutput { get; set; }
+    public AiCallAnalysisOutput? AiCallAnalysisOutput { get; set; }
 
     /// <summary>
     ///     AI input

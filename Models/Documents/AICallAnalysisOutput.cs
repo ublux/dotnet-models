@@ -3,7 +3,7 @@
 /// <summary>
 ///     AI output of analysed call
 /// </summary>
-public class AICallAnalysisOutput
+public class AiCallAnalysisOutput
 {
     /// <summary>
     ///     What input was passed to get this output?

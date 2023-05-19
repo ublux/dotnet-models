@@ -1,4 +1,5 @@
 ﻿using System.Collections.Concurrent;
+using Ublux.Communications.Models.Documents;
 
 namespace Ublux.Communications.Models;
 
@@ -76,6 +77,7 @@ public static class ModelsExtensionMethods
             Collections.ApiKeys => typeof(ApiKey),
             Collections.AiCallTranscriptions => typeof(AiCallTranscription),
             Collections.Emails => typeof(Email),
+            Collections.AiCallAnalysisInputs => typeof(AiCallAnalysisInput),
             _ => throw new Exception($"Missing collection type: {collection}"),// should never hit this point because this is tested in SouceCode Unit tests
         };
     }
@@ -315,6 +317,12 @@ public static class ModelsExtensionMethods
             _getCollectionUsedByTypeCache[type] = Collections.Emails;
             return Collections.Emails;
         }
+        if (typeof(AiCallAnalysisInput).IsAssignableFrom(type))
+        {
+            // store on cache so next time it is faster
+            _getCollectionUsedByTypeCache[type] = Collections.AiCallAnalysisInputs;
+            return Collections.AiCallAnalysisInputs;
+        }
         throw new Exception("Invalid Type");
     }
 
@@ -388,7 +396,8 @@ public static class ModelsExtensionMethods
         { Tag.DocumentPrefix, Collections.Tags },
         { ApiKey.DocumentPrefix, Collections.ApiKeys },
         { AiCallTranscription.DocumentPrefix, Collections.AiCallTranscriptions },
-        { Email.DocumentPrefix, Collections.Emails }
+        { Email.DocumentPrefix, Collections.Emails },
+        { AiCallAnalysisInput.DocumentPrefix, Collections.AiCallAnalysisInputs }
     };
 
     /// <summary>

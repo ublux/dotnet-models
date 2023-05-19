@@ -9,12 +9,14 @@
 [JsonSubtypes.KnownSubType(typeof(ChildCallAttendantTransferToPSTN), nameof(ChildCallType.AttendantTransferToPSTN))]
 [JsonSubtypes.KnownSubType(typeof(ChildCallBlindTransferToExtension), nameof(ChildCallType.BlindTransferToExtension))]
 [JsonSubtypes.KnownSubType(typeof(ChildCallBlindTransferToPSTN), nameof(ChildCallType.BlindTransferToPSTN))]
+[JsonSubtypes.KnownSubType(typeof(ChildCallForwardToPSTN), nameof(ChildCallType.ForwardToPSTN))]
 [BsonKnownTypes(
     typeof(ChildCallForwardToExtension),
     typeof(ChildCallAttendantTransferToExtension),
     typeof(ChildCallAttendantTransferToPSTN),
     typeof(ChildCallBlindTransferToExtension),
-    typeof(ChildCallBlindTransferToPSTN)
+    typeof(ChildCallBlindTransferToPSTN),
+    typeof(ChildCallForwardToPSTN)
 )]
 public abstract partial class ChildCall : ICall
 {
