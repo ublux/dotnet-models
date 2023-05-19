@@ -11,9 +11,16 @@ public enum ChildCallType
     None,
 
     /// <summary>
-    ///     Automatic forward/transfer
+    ///     For example when an extension queue is not answered and it forwards the cal to another extension.
     /// </summary>
     ForwardToExtension,
+
+    /// <summary>
+    ///     For example when extension dial is not answered and we need to forward the call to its movil.
+    ///     Same thing when executing a CallFlowLogic and we execute the NodeCall
+    /// </summary>
+    ForwardToPSTN,
+
     /// <summary>
     ///     Attendant transfer to extension
     /// </summary>

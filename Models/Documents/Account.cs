@@ -125,6 +125,8 @@ public partial class Account : UbluxDocument
         if (CountriesThatCanCallLocally.Any(x => x == CountryIsoCode.All))
             return false;
 
+        if(country == CountryIsoCode.None) return false;
+
         return !CountriesThatCanCallInternationally.Contains(country);
     }
 

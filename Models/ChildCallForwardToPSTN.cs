@@ -1,29 +1,29 @@
 ﻿namespace Ublux.Communications.Models;
 
 /// <summary>
-///     Call is blind transferred to land-line or cell-phone
+///     Call is transferred to land-line or cell-phone
 /// </summary>
-public class ChildCallBlindTransferToPSTN : ChildCallBlindTransfer
+public class ChildCallForwardToPSTN : ChildCall
 {
-    //// this should be the "to" field
+    // this is the to field
     ///// <summary>
     /////     Phone number where call was transferred to
     ///// </summary>
     //public required string PhoneNumber { get; set; }
 
     /// <summary>
-    ///     Trunk used to make call
+    ///     Trunk used to make call. Nullable because if trunk does not exist to call some specific country.
     /// </summary>
     [References(typeof(TrunkTermination))]
     public string? IdTrunkTermination { get; set; }
 
     /// <summary>
-    ///     BlindTransferToPSTN
+    ///     ForwardToPSTN
     /// </summary>
     [UbluxValidationRequired]
     public override ChildCallType ChildCallType
     {
-        get => ChildCallType.BlindTransferToPSTN;
+        get => ChildCallType.ForwardToPSTN;
 #if UBLUX_Release || RELEASE
         set { }
 #else

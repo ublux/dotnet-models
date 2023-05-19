@@ -13,7 +13,7 @@ public class EventExtensionNotAnswered : EventExtensionBase
     [SwaggerSchema(ReadOnly = true)]
     public override EventTriggerType EventTrigger
     {
-        get => EventTriggerType.EventCallPlacedOnHoldFor1Min;
+        get => EventTriggerType.EventExtensionNotAnswered;
 #if UBLUX_Release || RELEASE
         set { }
 #else

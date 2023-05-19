@@ -1799,8 +1799,6 @@ export interface ChildCallBlindTransferToExtension {
 
 /** Call is blind transferred to land-line or cell-phone */
 export interface ChildCallBlindTransferToPSTN {
-    /** Phone number where call was transferred to */
-    phoneNumber?: string;
     /** Trunk used to make call */
     idTrunkTermination?: string | null;
     childCallType?: ChildCallType;
@@ -1855,10 +1853,37 @@ export interface ChildCallForwardToExtension {
     readonly isInternational?: boolean;
 }
 
+/** Call is transferred to land-line or cell-phone */
+export interface ChildCallForwardToPSTN {
+    /** Trunk used to make call. Nullable because if trunk does not exist to call some specific country. */
+    idTrunkTermination?: string | null;
+    childCallType?: ChildCallType;
+    /** Id of contact to whom call is being transfered */
+    readonly idContact?: string | null;
+    /** Contact full name */
+    readonly contactFullName?: string | null;
+    /** Call duration in seconds */
+    readonly durationInSeconds?: number | null;
+    /** Status of call */
+    dialStatus?: string;
+    dateCreated?: Date;
+    /** Number of seconds it took to answer */
+    secondsItTookToAnswer?: number | null;
+    /** Caller id */
+    readonly from?: string;
+    fromCountry?: CountryIsoCode;
+    /** Phone number called */
+    readonly to?: string;
+    toCountry?: CountryIsoCode;
+    /** Is this call international */
+    readonly isInternational?: boolean;
+}
+
 /** Type of child call */
 export enum ChildCallType {
     None = "None",
     ForwardToExtension = "ForwardToExtension",
+    ForwardToPSTN = "ForwardToPSTN",
     AttendantTransferToExtension = "AttendantTransferToExtension",
     AttendantTransferToPSTN = "AttendantTransferToPSTN",
     BlindTransferToExtension = "BlindTransferToExtension",

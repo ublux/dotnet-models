@@ -52,7 +52,6 @@ public partial class Account : UbluxDocument
     /// <summary>
     ///     Get default country. Its the first country that it can call locally that is not none or all
     /// </summary>
-    /// <returns></returns>
     public CountryIsoCode? GetDefaultCountry()
     {
         if (this.CountriesThatCanCallLocally is null)
