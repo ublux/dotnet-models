@@ -17,6 +17,11 @@ public enum AiProcessStatus
     Pending,
 
     /// <summary>
+    ///     Is in queue pending to be processed
+    /// </summary>
+    Queued,
+
+    /// <summary>
     ///     Its being processed
     /// </summary>
     Processing,

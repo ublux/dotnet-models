@@ -89,6 +89,12 @@ public partial class Line : UbluxSubDocument
     /// </summary>
     [AllowUpdate(true)]
     public bool UseAiForOutgoingCallsToExtensions { get; set; }
+    /// <summary>
+    ///     What input to pass to AI engine. If null it should use a default input that is part of constants.
+    /// </summary>
+    [AllowUpdate(true)]
+    [References(typeof(AiCallAnalysisInput))]
+    public string? IdAiCallAnalysisInput { get; set; }
 
     #endregion
 

@@ -1,10 +1,10 @@
 ﻿namespace Ublux.Communications.Models;
 
-
 /// <summary>
 ///     AI analysis of conversation in a phone call
 /// </summary>
-public class AiAnalysis
+[Obsolete("we do not hardcode stuff anymore")]
+public class AiCallAnalysis
 {
     /// <summary>
     ///     Sentiment of phone call in percentages
@@ -115,68 +115,5 @@ public class AiAnalysis
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
     public int? ClientInterestInProduct { get; set; }
-}
-
-/// <summary>
-///     Sentiment of phrase or conversation
-/// </summary>
-public class AiSentiment
-{
-    /// <summary>
-    ///     Positive sentiment. This is a value between 0 and 1 representing a percentage.
-    /// </summary>
-    [AllowUpdate(false)]
-    [SwaggerSchema(ReadOnly = true)]
-    public int Positive { get; set; } = 0;
-
-    /// <summary>
-    ///     Negative sentiment. This is a value between 0 and 1 representing a percentage.
-    /// </summary>
-    [AllowUpdate(false)]
-    [SwaggerSchema(ReadOnly = true)]
-    public int Negative { get; set; } = 0;
-
-    /// <summary>
-    ///     Neutral sentiment. This is a value between 0 and 1 representing a percentage.
-    /// </summary>
-    [AllowUpdate(false)]
-    [SwaggerSchema(ReadOnly = true)]
-    public int Neutral { get; set; } = 0;
-}
-
-/// <summary>
-///     AI Entity. Example: Date with value January 1, 2023
-/// </summary>
-public class AiEntity
-{
-    /// <summary>
-    /// </summary>
-    [AllowUpdate(false)]
-    [SwaggerSchema(ReadOnly = true)]
-    public string EntityType { get; set; } = "";
-
-    /// <summary>
-    /// </summary>
-    [AllowUpdate(false)]
-    [SwaggerSchema(ReadOnly = true)]
-    public string EntityName { get; set; } = "";
-}
-
-/// <summary>
-///     AI Topic. Example: Noise with weight .8
-/// </summary>
-public class AiTopic
-{
-    /// <summary>
-    /// </summary>
-    [AllowUpdate(false)]
-    [SwaggerSchema(ReadOnly = true)]
-    public string Name { get; set; } = "";
-
-    /// <summary>
-    /// </summary>
-    [AllowUpdate(false)]
-    [SwaggerSchema(ReadOnly = true)]
-    public double Weight { get; set; } 
 }
 

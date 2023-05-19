@@ -87,6 +87,13 @@ public abstract partial class VoipNumber : UbluxDocument_ReferenceAccount_Refere
     public bool UseAiForIncomingCalls { get; set; }
 
     /// <summary>
+    ///     What input to pass to AI engine in case UseAiForIncomingCalls=true. If null it should use a default input that is part of constants.
+    /// </summary>
+    [AllowUpdate(true)]
+    [References(typeof(AiCallAnalysisInput))]
+    public string? IdAiCallAnalysisInput { get; set; }
+
+    /// <summary>
     ///     Phone number
     /// </summary>
     [AllowUpdate(false)]

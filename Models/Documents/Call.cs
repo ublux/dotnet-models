@@ -262,25 +262,40 @@ public abstract partial class Call : UbluxDocument_ReferenceAccount_ReferenceTag
     public CallResult CallResult { get; set; }
 
     /// <summary>
-    ///     AI analysis of the call
+    ///     Processed AI output
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    public AiAnalysis? Analysis { get; set; }
+    public AICallAnalysisOutput? AICallAnalysisOutput { get; set; }
+
+    /// <summary>
+    ///     AI input
+    /// </summary>
+    [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
+    [References(typeof(AiCallAnalysisInput))]
+    public string? IdAiCallAnalysisInput { get; set; }
 
     /// <summary>
     ///     AI analysis of the call
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    public AiAnalysis? Analysis2 { get; set; }
+    public AiCallAnalysis? Analysis { get; set; }
 
     /// <summary>
     ///     AI analysis of the call
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    public AiAnalysis? Analysis3 { get; set; }
+    public AiCallAnalysis? Analysis2 { get; set; }
+
+    /// <summary>
+    ///     AI analysis of the call
+    /// </summary>
+    [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
+    public AiCallAnalysis? Analysis3 { get; set; }
 
     /// <summary>
     ///     Lines that participated in this call
