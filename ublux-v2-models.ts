@@ -57,7 +57,7 @@ export interface AccountUpdateRequest {
 }
 
 /** AI analysis of conversation in a phone call */
-export interface AiAnalysis {
+export interface AiCallAnalysis {
     sentiment?: AiSentiment;
     /** Entities mentioned in the conversation */
     readonly entities?: AiEntity[];
@@ -85,6 +85,111 @@ export interface AiAnalysis {
     readonly actionAgentShouldTakeNext?: string | null;
     /** Measure the interest that the client has expressed in the product ranging from 1 to 5. */
     readonly clientInterestInProduct?: number | null;
+}
+
+/** Determines how will a call be AI processed. What questions will be asked to the AI engine */
+export interface AiCallAnalysisInput {
+    /** Id of document */
+    readonly id?: string;
+    /** List of queries to ask AI engine about a call */
+    queries?: AiCallAnalysisVariableInput[];
+    /** It is nullable because there are cases where it makes no sense to point to an account. 
+For example a CloudService user will point to no account */
+    idsTags?: string[];
+    /** Creation date. Sets DateUpdated if it does not have a value */
+    readonly dateCreated?: Date;
+    /** Updated date. When item is created on database this date will be set too. This is important so that we can sync contacts
+TODO: Very important to place index in this field. */
+    readonly dateUpdated?: Date;
+}
+
+/** Enables searching for AiCallAnalysisInputs */
+export interface AiCallAnalysisInputFilterRequest {
+    /** Queries.Query equals */
+    queries_query_eq?: string | null;
+    /** Queries.Query contains */
+    queries_query_con?: string | null;
+    /** Queries.Query regex */
+    queries_query_reg?: string | null;
+    /** Queries.Name equals */
+    queries_name_eq?: string | null;
+    /** Queries.Name contains */
+    queries_name_con?: string | null;
+    /** Queries.Name regex */
+    queries_name_reg?: string | null;
+    /** Queries.AiVariableType equals */
+    queries_aiVariableType_eq?: string | null;
+    /** Queries.AiVariableType contains */
+    queries_aiVariableType_con?: string | null;
+    /** Queries.AiVariableType regex */
+    queries_aiVariableType_reg?: string | null;
+    /** Queries.Value equals */
+    queries_value_eq?: string | null;
+    /** Queries.Value contains */
+    queries_value_con?: string | null;
+    /** Queries.Value regex */
+    queries_value_reg?: string | null;
+    /** IdsTags equals */
+    idsTags_eq?: string | null;
+    /** IdsTags contains */
+    idsTags_con?: string | null;
+    /** IdsTags regex */
+    idsTags_reg?: string | null;
+    /** Id equals */
+    id_eq?: string | null;
+    /** Id contains */
+    id_con?: string | null;
+    /** Id regex */
+    id_reg?: string | null;
+    /** DateCreated equals */
+    dateCreated_eq?: Date | null;
+    /** DateCreated less than or equal to */
+    dateCreated_lte?: Date | null;
+    /** DateCreated greater than or equal to */
+    dateCreated_gte?: Date | null;
+    /** DateUpdated equals */
+    dateUpdated_eq?: Date | null;
+    /** DateUpdated less than or equal to */
+    dateUpdated_lte?: Date | null;
+    /** DateUpdated greater than or equal to */
+    dateUpdated_gte?: Date | null;
+}
+
+/** Determines how will a call be AI processed. What questions will be asked to the AI engine */
+export interface AiCallAnalysisInputUpdateRequest {
+    /** List of queries to ask AI engine about a call */
+    queries?: AiCallAnalysisVariableInput[] | null;
+    /** It is nullable because there are cases where it makes no sense to point to an account.
+For example a CloudService user will point to no account */
+    idsTags?: string[] | null;
+}
+
+/** AI output of analysed call */
+export interface AiCallAnalysisOutput {
+    /** What input was passed to get this output? */
+    readonly idAiCallAnalysisInput?: string;
+    /** List of queries to ask AI engine about a call */
+    readonly output?: AiCallAnalysisVariableOutput[];
+}
+
+/** AI call analysis variable query sent to AI engine */
+export interface AiCallAnalysisVariableInput {
+    /** Question to ask AI engine about conversation. For example: Client satisfaction with integer value ranging from 1 to 5 */
+    query?: string;
+    /** There cannot be two variable names with the same name */
+    name?: string;
+    aiVariableType?: AiVariableType;
+    /** Value of variable */
+    value?: string | null;
+}
+
+/** AI call analysis variable that AI engine outputs */
+export interface AiCallAnalysisVariableOutput {
+    /** There cannot be two variable names with the same name */
+    name?: string;
+    aiVariableType?: AiVariableType;
+    /** Value of variable */
+    value?: string | null;
 }
 
 /** AI transcription of a phone call. This is the convertion from audio to text only. */
@@ -184,17 +289,18 @@ export interface AiEntity {
 export enum AiProcessStatus {
     None = "None",
     Pending = "Pending",
+    Queued = "Queued",
     Processing = "Processing",
     Complete = "Complete",
 }
 
 /** Sentiment of phrase or conversation */
 export interface AiSentiment {
-    /** Positive sentiment. This is a value between 0 and 1 representing a percentage. */
+    /** Positive sentiment. This is a value between 0 and 100 representing a percentage. */
     readonly positive?: number;
-    /** Negative sentiment. This is a value between 0 and 1 representing a percentage. */
+    /** Negative sentiment. This is a value between 0 and 100 representing a percentage. */
     readonly negative?: number;
-    /** Neutral sentiment. This is a value between 0 and 1 representing a percentage. */
+    /** Neutral sentiment. This is a value between 0 and 100 representing a percentage. */
     readonly neutral?: number;
 }
 
@@ -214,6 +320,18 @@ export interface AiTranscription {
     startTime?: number;
     /** Number of seconds when this text ended being said */
     endTime?: number;
+}
+
+/** Type of AI variable */
+export enum AiVariableType {
+    None = "None",
+    Text = "Text",
+    Integer = "Integer",
+    Decimal = "Decimal",
+    Boolean = "Boolean",
+    Sentiments = "Sentiments",
+    Entities = "Entities",
+    Topics = "Topics",
 }
 
 /** Provider AirNetworks requests this information for every customer */
@@ -608,9 +726,12 @@ CHANUNAVAIL: Channel unavailable. On SIP, peer may not be registered. */
     /** True if it contains any child call or master call international */
     readonly containsInternationalCall?: boolean;
     callResult?: CallResult;
-    analysis?: AiAnalysis;
-    analysis2?: AiAnalysis;
-    analysis3?: AiAnalysis;
+    aiCallAnalysisOutput?: AiCallAnalysisOutput;
+    /** AI input */
+    readonly idAiCallAnalysisInput?: string | null;
+    analysis?: AiCallAnalysis;
+    analysis2?: AiCallAnalysis;
+    analysis3?: AiCallAnalysis;
     /** Lines that participated in this call */
     readonly idsParticipantLines?: string[];
     /** If not null it means the call is ended */
@@ -885,6 +1006,36 @@ export interface CallFilterRequest {
     callResult_con?: string | null;
     /** CallResult regex */
     callResult_reg?: string | null;
+    /** AiCallAnalysisOutput.IdAiCallAnalysisInput equals */
+    aiCallAnalysisOutput_idAiCallAnalysisInput_eq?: string | null;
+    /** AiCallAnalysisOutput.IdAiCallAnalysisInput contains */
+    aiCallAnalysisOutput_idAiCallAnalysisInput_con?: string | null;
+    /** AiCallAnalysisOutput.IdAiCallAnalysisInput regex */
+    aiCallAnalysisOutput_idAiCallAnalysisInput_reg?: string | null;
+    /** AiCallAnalysisOutput.Output.Name equals */
+    aiCallAnalysisOutput_output_name_eq?: string | null;
+    /** AiCallAnalysisOutput.Output.Name contains */
+    aiCallAnalysisOutput_output_name_con?: string | null;
+    /** AiCallAnalysisOutput.Output.Name regex */
+    aiCallAnalysisOutput_output_name_reg?: string | null;
+    /** AiCallAnalysisOutput.Output.AiVariableType equals */
+    aiCallAnalysisOutput_output_aiVariableType_eq?: string | null;
+    /** AiCallAnalysisOutput.Output.AiVariableType contains */
+    aiCallAnalysisOutput_output_aiVariableType_con?: string | null;
+    /** AiCallAnalysisOutput.Output.AiVariableType regex */
+    aiCallAnalysisOutput_output_aiVariableType_reg?: string | null;
+    /** AiCallAnalysisOutput.Output.Value equals */
+    aiCallAnalysisOutput_output_value_eq?: string | null;
+    /** AiCallAnalysisOutput.Output.Value contains */
+    aiCallAnalysisOutput_output_value_con?: string | null;
+    /** AiCallAnalysisOutput.Output.Value regex */
+    aiCallAnalysisOutput_output_value_reg?: string | null;
+    /** IdAiCallAnalysisInput equals */
+    idAiCallAnalysisInput_eq?: string | null;
+    /** IdAiCallAnalysisInput contains */
+    idAiCallAnalysisInput_con?: string | null;
+    /** IdAiCallAnalysisInput regex */
+    idAiCallAnalysisInput_reg?: string | null;
     /** Analysis.Sentiment.Positive equals */
     analysis_sentiment_positive_eq?: number | null;
     /** Analysis.Sentiment.Positive less than or equal to */
@@ -1339,9 +1490,12 @@ CHANUNAVAIL: Channel unavailable. On SIP, peer may not be registered. */
     /** True if it contains any child call or master call international */
     readonly containsInternationalCall?: boolean;
     callResult?: CallResult;
-    analysis?: AiAnalysis;
-    analysis2?: AiAnalysis;
-    analysis3?: AiAnalysis;
+    aiCallAnalysisOutput?: AiCallAnalysisOutput;
+    /** AI input */
+    readonly idAiCallAnalysisInput?: string | null;
+    analysis?: AiCallAnalysis;
+    analysis2?: AiCallAnalysis;
+    analysis3?: AiCallAnalysis;
     /** Lines that participated in this call */
     readonly idsParticipantLines?: string[];
     /** If not null it means the call is ended */
@@ -1423,9 +1577,12 @@ CHANUNAVAIL: Channel unavailable. On SIP, peer may not be registered. */
     /** True if it contains any child call or master call international */
     readonly containsInternationalCall?: boolean;
     callResult?: CallResult;
-    analysis?: AiAnalysis;
-    analysis2?: AiAnalysis;
-    analysis3?: AiAnalysis;
+    aiCallAnalysisOutput?: AiCallAnalysisOutput;
+    /** AI input */
+    readonly idAiCallAnalysisInput?: string | null;
+    analysis?: AiCallAnalysis;
+    analysis2?: AiCallAnalysis;
+    analysis3?: AiCallAnalysis;
     /** Lines that participated in this call */
     readonly idsParticipantLines?: string[];
     /** If not null it means the call is ended */
@@ -1503,9 +1660,12 @@ CHANUNAVAIL: Channel unavailable. On SIP, peer may not be registered. */
     /** True if it contains any child call or master call international */
     readonly containsInternationalCall?: boolean;
     callResult?: CallResult;
-    analysis?: AiAnalysis;
-    analysis2?: AiAnalysis;
-    analysis3?: AiAnalysis;
+    aiCallAnalysisOutput?: AiCallAnalysisOutput;
+    /** AI input */
+    readonly idAiCallAnalysisInput?: string | null;
+    analysis?: AiCallAnalysis;
+    analysis2?: AiCallAnalysis;
+    analysis3?: AiCallAnalysis;
     /** Lines that participated in this call */
     readonly idsParticipantLines?: string[];
     /** If not null it means the call is ended */
@@ -1577,9 +1737,12 @@ CHANUNAVAIL: Channel unavailable. On SIP, peer may not be registered. */
     /** True if it contains any child call or master call international */
     readonly containsInternationalCall?: boolean;
     callResult?: CallResult;
-    analysis?: AiAnalysis;
-    analysis2?: AiAnalysis;
-    analysis3?: AiAnalysis;
+    aiCallAnalysisOutput?: AiCallAnalysisOutput;
+    /** AI input */
+    readonly idAiCallAnalysisInput?: string | null;
+    analysis?: AiCallAnalysis;
+    analysis2?: AiCallAnalysis;
+    analysis3?: AiCallAnalysis;
     /** Lines that participated in this call */
     readonly idsParticipantLines?: string[];
     /** If not null it means the call is ended */
@@ -4586,6 +4749,18 @@ export interface HttpResponseAuthorization {
 }
 
 /** Limits the number of results that can obtained per request. */
+export interface HttpResponsePaginationResultOfAiCallAnalysisInput {
+    /** Page number */
+    pageNumber?: number;
+    /** Maximum number of records that can be retrieved per page */
+    pageSize?: number;
+    /** Number of records */
+    readonly recordsCount?: number;
+    /** Results */
+    records?: AiCallAnalysisInput[] | null;
+}
+
+/** Limits the number of results that can obtained per request. */
 export interface HttpResponsePaginationResultOfAiCallTranscription {
     /** Page number */
     pageNumber?: number;
@@ -5040,6 +5215,8 @@ export interface Line {
     useAiForExternalCalls?: boolean;
     /** Users will be charged extra for AI transcriptions. If this is true internal calls to extensions will be recorded. */
     useAiForOutgoingCallsToExtensions?: boolean;
+    /** What input to pass to AI engine. If null it should use a default input that is part of constants. */
+    idAiCallAnalysisInput?: string | null;
     language?: Language;
     /** Id of entity */
     readonly id?: string;
@@ -5205,6 +5382,8 @@ export interface LineUpdateRequest {
     useAiForExternalCalls?: boolean | null;
     /** Users will be charged extra for AI transcriptions. If this is true internal calls to extensions will be recorded. */
     useAiForOutgoingCallsToExtensions?: boolean | null;
+    /** What input to pass to AI engine. If null it should use a default input that is part of constants. */
+    idAiCallAnalysisInput?: string | null;
     language?: Language;
 }
 
@@ -5659,6 +5838,12 @@ export interface PhoneFilterRequest {
     lines_useAiForExternalCalls_eq?: boolean | null;
     /** Lines.UseAiForOutgoingCallsToExtensions equals */
     lines_useAiForOutgoingCallsToExtensions_eq?: boolean | null;
+    /** Lines.IdAiCallAnalysisInput equals */
+    lines_idAiCallAnalysisInput_eq?: string | null;
+    /** Lines.IdAiCallAnalysisInput contains */
+    lines_idAiCallAnalysisInput_con?: string | null;
+    /** Lines.IdAiCallAnalysisInput regex */
+    lines_idAiCallAnalysisInput_reg?: string | null;
     /** Lines.Language equals */
     lines_language_eq?: string | null;
     /** Lines.Language contains */
@@ -6647,6 +6832,11 @@ export enum UbluxRole {
     Aicalltranscriptions_update = "aicalltranscriptions_update",
     Aicalltranscriptions_delete = "aicalltranscriptions_delete",
     Aicalltranscriptions_create = "aicalltranscriptions_create",
+    Aicallanalysisinputs = "aicallanalysisinputs",
+    Aicallanalysisinputs_readonly = "aicallanalysisinputs_readonly",
+    Aicallanalysisinputs_update = "aicallanalysisinputs_update",
+    Aicallanalysisinputs_delete = "aicallanalysisinputs_delete",
+    Aicallanalysisinputs_create = "aicallanalysisinputs_create",
     Admin = "admin",
     Admin_readonly = "admin_readonly",
     Admin_update = "admin_update",
@@ -6990,6 +7180,8 @@ will be injected to the caller id allowing the agent to know that she has to ans
     recordIncomingCalls?: boolean;
     /** Users will be charged extra for AI transcriptions. If this is true call will be recorded in order to do AI work */
     useAiForIncomingCalls?: boolean;
+    /** What input to pass to AI engine in case UseAiForIncomingCalls=true. If null it should use a default input that is part of constants. */
+    idAiCallAnalysisInput?: string | null;
     /** Phone number */
     readonly number?: string;
     /** Incoming phone number friendly name */
@@ -7046,6 +7238,8 @@ will be injected to the caller id allowing the agent to know that she has to ans
     recordIncomingCalls?: boolean;
     /** Users will be charged extra for AI transcriptions. If this is true call will be recorded in order to do AI work */
     useAiForIncomingCalls?: boolean;
+    /** What input to pass to AI engine in case UseAiForIncomingCalls=true. If null it should use a default input that is part of constants. */
+    idAiCallAnalysisInput?: string | null;
     /** Phone number */
     readonly number?: string;
     /** Incoming phone number friendly name */
@@ -7125,6 +7319,12 @@ export interface VoipNumberAvailableForPurchaseFilterRequest {
     recordIncomingCalls_eq?: boolean | null;
     /** UseAiForIncomingCalls equals */
     useAiForIncomingCalls_eq?: boolean | null;
+    /** IdAiCallAnalysisInput equals */
+    idAiCallAnalysisInput_eq?: string | null;
+    /** IdAiCallAnalysisInput contains */
+    idAiCallAnalysisInput_con?: string | null;
+    /** IdAiCallAnalysisInput regex */
+    idAiCallAnalysisInput_reg?: string | null;
     /** Number equals */
     number_eq?: string | null;
     /** Number contains */
@@ -7219,6 +7419,8 @@ will be injected to the caller id allowing the agent to know that she has to ans
     recordIncomingCalls?: boolean | null;
     /** Users will be charged extra for AI transcriptions. If this is true call will be recorded in order to do AI work */
     useAiForIncomingCalls?: boolean | null;
+    /** What input to pass to AI engine in case UseAiForIncomingCalls=true. If null it should use a default input that is part of constants. */
+    idAiCallAnalysisInput?: string | null;
     /** Incoming phone number friendly name */
     friendlyName?: string | null;
     /** Incoming phone number description */
@@ -7253,6 +7455,8 @@ will be injected to the caller id allowing the agent to know that she has to ans
     recordIncomingCalls?: boolean;
     /** Users will be charged extra for AI transcriptions. If this is true call will be recorded in order to do AI work */
     useAiForIncomingCalls?: boolean;
+    /** What input to pass to AI engine in case UseAiForIncomingCalls=true. If null it should use a default input that is part of constants. */
+    idAiCallAnalysisInput?: string | null;
     /** Phone number */
     readonly number?: string;
     /** Incoming phone number friendly name */
@@ -7330,6 +7534,12 @@ export interface VoipNumberFaxFilterRequest {
     recordIncomingCalls_eq?: boolean | null;
     /** UseAiForIncomingCalls equals */
     useAiForIncomingCalls_eq?: boolean | null;
+    /** IdAiCallAnalysisInput equals */
+    idAiCallAnalysisInput_eq?: string | null;
+    /** IdAiCallAnalysisInput contains */
+    idAiCallAnalysisInput_con?: string | null;
+    /** IdAiCallAnalysisInput regex */
+    idAiCallAnalysisInput_reg?: string | null;
     /** Number equals */
     number_eq?: string | null;
     /** Number contains */
@@ -7431,6 +7641,8 @@ will be injected to the caller id allowing the agent to know that she has to ans
     recordIncomingCalls?: boolean | null;
     /** Users will be charged extra for AI transcriptions. If this is true call will be recorded in order to do AI work */
     useAiForIncomingCalls?: boolean | null;
+    /** What input to pass to AI engine in case UseAiForIncomingCalls=true. If null it should use a default input that is part of constants. */
+    idAiCallAnalysisInput?: string | null;
     /** Incoming phone number friendly name */
     friendlyName?: string | null;
     /** Incoming phone number description */
@@ -7488,6 +7700,12 @@ export interface VoipNumberFilterRequest {
     recordIncomingCalls_eq?: boolean | null;
     /** UseAiForIncomingCalls equals */
     useAiForIncomingCalls_eq?: boolean | null;
+    /** IdAiCallAnalysisInput equals */
+    idAiCallAnalysisInput_eq?: string | null;
+    /** IdAiCallAnalysisInput contains */
+    idAiCallAnalysisInput_con?: string | null;
+    /** IdAiCallAnalysisInput regex */
+    idAiCallAnalysisInput_reg?: string | null;
     /** Number equals */
     number_eq?: string | null;
     /** Number contains */
@@ -7592,6 +7810,8 @@ will be injected to the caller id allowing the agent to know that she has to ans
     recordIncomingCalls?: boolean;
     /** Users will be charged extra for AI transcriptions. If this is true call will be recorded in order to do AI work */
     useAiForIncomingCalls?: boolean;
+    /** What input to pass to AI engine in case UseAiForIncomingCalls=true. If null it should use a default input that is part of constants. */
+    idAiCallAnalysisInput?: string | null;
     /** Phone number */
     readonly number?: string;
     /** Incoming phone number friendly name */
@@ -7669,6 +7889,12 @@ export interface VoipNumberPhoneFilterRequest {
     recordIncomingCalls_eq?: boolean | null;
     /** UseAiForIncomingCalls equals */
     useAiForIncomingCalls_eq?: boolean | null;
+    /** IdAiCallAnalysisInput equals */
+    idAiCallAnalysisInput_eq?: string | null;
+    /** IdAiCallAnalysisInput contains */
+    idAiCallAnalysisInput_con?: string | null;
+    /** IdAiCallAnalysisInput regex */
+    idAiCallAnalysisInput_reg?: string | null;
     /** Number equals */
     number_eq?: string | null;
     /** Number contains */
@@ -7770,6 +7996,8 @@ will be injected to the caller id allowing the agent to know that she has to ans
     recordIncomingCalls?: boolean | null;
     /** Users will be charged extra for AI transcriptions. If this is true call will be recorded in order to do AI work */
     useAiForIncomingCalls?: boolean | null;
+    /** What input to pass to AI engine in case UseAiForIncomingCalls=true. If null it should use a default input that is part of constants. */
+    idAiCallAnalysisInput?: string | null;
     /** Incoming phone number friendly name */
     friendlyName?: string | null;
     /** Incoming phone number description */
