@@ -1,7 +1,7 @@
 ﻿namespace Ublux.Communications.Models.Documents;
 
 /// <summary>
-///     AI output of analysed call
+///     AI output of analyzed call
 /// </summary>
 public class AiCallAnalysisOutput
 {

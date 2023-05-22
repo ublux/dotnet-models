@@ -133,7 +133,7 @@ For example a CloudService user will point to no account */
     idsTags?: string[] | null;
 }
 
-/** AI output of analysed call */
+/** AI output of analyzed call */
 export interface AiCallAnalysisOutput {
     /** What input was passed to get this output? */
     readonly idAiCallAnalysisInput?: string;
