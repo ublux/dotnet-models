@@ -31,14 +31,7 @@ public partial class EventOutgoingCallTerminatedWithTranscription : EventOutgoin
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
     public List<AiTranscription> Transcription { get; set; } = new();
-
-    /// <summary>
-    ///     If the transcription contains an error
-    /// </summary>
-    [AllowUpdate(false)]
-    [SwaggerSchema(ReadOnly = true)]
-    public string? ErrorMessage { get; set; }
-
+    
     /// <summary>
     ///     Return a random object
     /// </summary>

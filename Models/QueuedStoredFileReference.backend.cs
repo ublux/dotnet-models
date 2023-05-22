@@ -110,6 +110,13 @@ public class QueuedStoredFileReference : IUbluxDocumentId
         set;
 #endif
     }
+
+    /// <summary>
+    ///     Fires when this queued file is backed up.
+    ///     Parameters are the id of the call and the stored fileReference being backed up
+    /// </summary>
+    public Action<StoredFileReference>? OnBackupEventHandler { get; set; }
+
 }
 
 #endif

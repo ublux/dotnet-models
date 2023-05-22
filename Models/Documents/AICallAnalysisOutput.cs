@@ -15,9 +15,17 @@ public class AiCallAnalysisOutput
     public required string IdAiCallAnalysisInput { get; set; } = "";
 
     /// <summary>
+    ///     Detected language on call conversation
+    /// </summary>    
+    [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
+    public required string DetectedLanguage { get; set; } 
+
+    /// <summary>
     ///     List of queries to ask AI engine about a call
     /// </summary>    
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
     public List<AiCallAnalysisVariableOutput> Output { get; set; } = new();
+
 }

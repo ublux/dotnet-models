@@ -1445,477 +1445,6 @@ public class CallIncomingToCallFlowLogicFilterRequest
     [JsonProperty("idAiCallAnalysisInput_reg")]
     public string? IdAiCallAnalysisInput_REG { get; set; }
 
-    /// <summary> Analysis.Sentiment.Positive equals </summary>
-    [JsonProperty("analysis_sentiment_positive_eq")]
-    public System.Int32? Analysis_Sentiment_Positive_EQ { get; set; }
-    /// <summary> Analysis.Sentiment.Positive less than or equal to </summary>
-    [JsonProperty("analysis_sentiment_positive_lte")]
-    public System.Int32? Analysis_Sentiment_Positive_LTE { get; set; }
-    /// <summary> Analysis.Sentiment.Positive greater than or equal to </summary>
-    [JsonProperty("analysis_sentiment_positive_gte")]
-    public System.Int32? Analysis_Sentiment_Positive_GTE { get; set; }
-
-    /// <summary> Analysis.Sentiment.Negative equals </summary>
-    [JsonProperty("analysis_sentiment_negative_eq")]
-    public System.Int32? Analysis_Sentiment_Negative_EQ { get; set; }
-    /// <summary> Analysis.Sentiment.Negative less than or equal to </summary>
-    [JsonProperty("analysis_sentiment_negative_lte")]
-    public System.Int32? Analysis_Sentiment_Negative_LTE { get; set; }
-    /// <summary> Analysis.Sentiment.Negative greater than or equal to </summary>
-    [JsonProperty("analysis_sentiment_negative_gte")]
-    public System.Int32? Analysis_Sentiment_Negative_GTE { get; set; }
-
-    /// <summary> Analysis.Sentiment.Neutral equals </summary>
-    [JsonProperty("analysis_sentiment_neutral_eq")]
-    public System.Int32? Analysis_Sentiment_Neutral_EQ { get; set; }
-    /// <summary> Analysis.Sentiment.Neutral less than or equal to </summary>
-    [JsonProperty("analysis_sentiment_neutral_lte")]
-    public System.Int32? Analysis_Sentiment_Neutral_LTE { get; set; }
-    /// <summary> Analysis.Sentiment.Neutral greater than or equal to </summary>
-    [JsonProperty("analysis_sentiment_neutral_gte")]
-    public System.Int32? Analysis_Sentiment_Neutral_GTE { get; set; }
-
-
-    /// <summary> Analysis.Entities.EntityType equals </summary>
-    [JsonProperty("analysis_entities_entityType_eq")]
-    public string? Analysis_Entities_EntityType_EQ { get; set; }
-    /// <summary> Analysis.Entities.EntityType contains </summary>
-    [JsonProperty("analysis_entities_entityType_con")]
-    public string? Analysis_Entities_EntityType_CON { get; set; }
-    /// <summary> Analysis.Entities.EntityType regex </summary>
-    [JsonProperty("analysis_entities_entityType_reg")]
-    public string? Analysis_Entities_EntityType_REG { get; set; }
-
-    /// <summary> Analysis.Entities.EntityName equals </summary>
-    [JsonProperty("analysis_entities_entityName_eq")]
-    public string? Analysis_Entities_EntityName_EQ { get; set; }
-    /// <summary> Analysis.Entities.EntityName contains </summary>
-    [JsonProperty("analysis_entities_entityName_con")]
-    public string? Analysis_Entities_EntityName_CON { get; set; }
-    /// <summary> Analysis.Entities.EntityName regex </summary>
-    [JsonProperty("analysis_entities_entityName_reg")]
-    public string? Analysis_Entities_EntityName_REG { get; set; }
-
-
-    /// <summary> Analysis.Topics.Name equals </summary>
-    [JsonProperty("analysis_topics_name_eq")]
-    public string? Analysis_Topics_Name_EQ { get; set; }
-    /// <summary> Analysis.Topics.Name contains </summary>
-    [JsonProperty("analysis_topics_name_con")]
-    public string? Analysis_Topics_Name_CON { get; set; }
-    /// <summary> Analysis.Topics.Name regex </summary>
-    [JsonProperty("analysis_topics_name_reg")]
-    public string? Analysis_Topics_Name_REG { get; set; }
-
-
-
-    /// <summary> Analysis.ClientIntention equals </summary>
-    [JsonProperty("analysis_clientIntention_eq")]
-    public string? Analysis_ClientIntention_EQ { get; set; }
-    /// <summary> Analysis.ClientIntention contains </summary>
-    [JsonProperty("analysis_clientIntention_con")]
-    public string? Analysis_ClientIntention_CON { get; set; }
-    /// <summary> Analysis.ClientIntention regex </summary>
-    [JsonProperty("analysis_clientIntention_reg")]
-    public string? Analysis_ClientIntention_REG { get; set; }
-
-    /// <summary> Analysis.AgentIntention equals </summary>
-    [JsonProperty("analysis_agentIntention_eq")]
-    public string? Analysis_AgentIntention_EQ { get; set; }
-    /// <summary> Analysis.AgentIntention contains </summary>
-    [JsonProperty("analysis_agentIntention_con")]
-    public string? Analysis_AgentIntention_CON { get; set; }
-    /// <summary> Analysis.AgentIntention regex </summary>
-    [JsonProperty("analysis_agentIntention_reg")]
-    public string? Analysis_AgentIntention_REG { get; set; }
-
-    /// <summary> Analysis.Summary equals </summary>
-    [JsonProperty("analysis_summary_eq")]
-    public string? Analysis_Summary_EQ { get; set; }
-    /// <summary> Analysis.Summary contains </summary>
-    [JsonProperty("analysis_summary_con")]
-    public string? Analysis_Summary_CON { get; set; }
-    /// <summary> Analysis.Summary regex </summary>
-    [JsonProperty("analysis_summary_reg")]
-    public string? Analysis_Summary_REG { get; set; }
-
-    /// <summary> Analysis.Problem equals </summary>
-    [JsonProperty("analysis_problem_eq")]
-    public string? Analysis_Problem_EQ { get; set; }
-    /// <summary> Analysis.Problem contains </summary>
-    [JsonProperty("analysis_problem_con")]
-    public string? Analysis_Problem_CON { get; set; }
-    /// <summary> Analysis.Problem regex </summary>
-    [JsonProperty("analysis_problem_reg")]
-    public string? Analysis_Problem_REG { get; set; }
-
-
-
-    /// <summary> Analysis.ClientSatisfaction equals </summary>
-    [JsonProperty("analysis_clientSatisfaction_eq")]
-    public System.Int32? Analysis_ClientSatisfaction_EQ { get; set; }
-    /// <summary> Analysis.ClientSatisfaction less than or equal to </summary>
-    [JsonProperty("analysis_clientSatisfaction_lte")]
-    public System.Int32? Analysis_ClientSatisfaction_LTE { get; set; }
-    /// <summary> Analysis.ClientSatisfaction greater than or equal to </summary>
-    [JsonProperty("analysis_clientSatisfaction_gte")]
-    public System.Int32? Analysis_ClientSatisfaction_GTE { get; set; }
-
-    /// <summary> Analysis.Language equals </summary>
-    [JsonProperty("analysis_language_eq")]
-    public string? Analysis_Language_EQ { get; set; }
-    /// <summary> Analysis.Language contains </summary>
-    [JsonProperty("analysis_language_con")]
-    public string? Analysis_Language_CON { get; set; }
-    /// <summary> Analysis.Language regex </summary>
-    [JsonProperty("analysis_language_reg")]
-    public string? Analysis_Language_REG { get; set; }
-
-    /// <summary> Analysis.Model equals </summary>
-    [JsonProperty("analysis_model_eq")]
-    public string? Analysis_Model_EQ { get; set; }
-    /// <summary> Analysis.Model contains </summary>
-    [JsonProperty("analysis_model_con")]
-    public string? Analysis_Model_CON { get; set; }
-    /// <summary> Analysis.Model regex </summary>
-    [JsonProperty("analysis_model_reg")]
-    public string? Analysis_Model_REG { get; set; }
-
-    /// <summary> Analysis.ActionAgentShouldTakeNext equals </summary>
-    [JsonProperty("analysis_actionAgentShouldTakeNext_eq")]
-    public string? Analysis_ActionAgentShouldTakeNext_EQ { get; set; }
-    /// <summary> Analysis.ActionAgentShouldTakeNext contains </summary>
-    [JsonProperty("analysis_actionAgentShouldTakeNext_con")]
-    public string? Analysis_ActionAgentShouldTakeNext_CON { get; set; }
-    /// <summary> Analysis.ActionAgentShouldTakeNext regex </summary>
-    [JsonProperty("analysis_actionAgentShouldTakeNext_reg")]
-    public string? Analysis_ActionAgentShouldTakeNext_REG { get; set; }
-
-    /// <summary> Analysis.ClientInterestInProduct equals </summary>
-    [JsonProperty("analysis_clientInterestInProduct_eq")]
-    public System.Int32? Analysis_ClientInterestInProduct_EQ { get; set; }
-    /// <summary> Analysis.ClientInterestInProduct less than or equal to </summary>
-    [JsonProperty("analysis_clientInterestInProduct_lte")]
-    public System.Int32? Analysis_ClientInterestInProduct_LTE { get; set; }
-    /// <summary> Analysis.ClientInterestInProduct greater than or equal to </summary>
-    [JsonProperty("analysis_clientInterestInProduct_gte")]
-    public System.Int32? Analysis_ClientInterestInProduct_GTE { get; set; }
-
-
-    /// <summary> Analysis2.Sentiment.Positive equals </summary>
-    [JsonProperty("analysis2_sentiment_positive_eq")]
-    public System.Int32? Analysis2_Sentiment_Positive_EQ { get; set; }
-    /// <summary> Analysis2.Sentiment.Positive less than or equal to </summary>
-    [JsonProperty("analysis2_sentiment_positive_lte")]
-    public System.Int32? Analysis2_Sentiment_Positive_LTE { get; set; }
-    /// <summary> Analysis2.Sentiment.Positive greater than or equal to </summary>
-    [JsonProperty("analysis2_sentiment_positive_gte")]
-    public System.Int32? Analysis2_Sentiment_Positive_GTE { get; set; }
-
-    /// <summary> Analysis2.Sentiment.Negative equals </summary>
-    [JsonProperty("analysis2_sentiment_negative_eq")]
-    public System.Int32? Analysis2_Sentiment_Negative_EQ { get; set; }
-    /// <summary> Analysis2.Sentiment.Negative less than or equal to </summary>
-    [JsonProperty("analysis2_sentiment_negative_lte")]
-    public System.Int32? Analysis2_Sentiment_Negative_LTE { get; set; }
-    /// <summary> Analysis2.Sentiment.Negative greater than or equal to </summary>
-    [JsonProperty("analysis2_sentiment_negative_gte")]
-    public System.Int32? Analysis2_Sentiment_Negative_GTE { get; set; }
-
-    /// <summary> Analysis2.Sentiment.Neutral equals </summary>
-    [JsonProperty("analysis2_sentiment_neutral_eq")]
-    public System.Int32? Analysis2_Sentiment_Neutral_EQ { get; set; }
-    /// <summary> Analysis2.Sentiment.Neutral less than or equal to </summary>
-    [JsonProperty("analysis2_sentiment_neutral_lte")]
-    public System.Int32? Analysis2_Sentiment_Neutral_LTE { get; set; }
-    /// <summary> Analysis2.Sentiment.Neutral greater than or equal to </summary>
-    [JsonProperty("analysis2_sentiment_neutral_gte")]
-    public System.Int32? Analysis2_Sentiment_Neutral_GTE { get; set; }
-
-
-    /// <summary> Analysis2.Entities.EntityType equals </summary>
-    [JsonProperty("analysis2_entities_entityType_eq")]
-    public string? Analysis2_Entities_EntityType_EQ { get; set; }
-    /// <summary> Analysis2.Entities.EntityType contains </summary>
-    [JsonProperty("analysis2_entities_entityType_con")]
-    public string? Analysis2_Entities_EntityType_CON { get; set; }
-    /// <summary> Analysis2.Entities.EntityType regex </summary>
-    [JsonProperty("analysis2_entities_entityType_reg")]
-    public string? Analysis2_Entities_EntityType_REG { get; set; }
-
-    /// <summary> Analysis2.Entities.EntityName equals </summary>
-    [JsonProperty("analysis2_entities_entityName_eq")]
-    public string? Analysis2_Entities_EntityName_EQ { get; set; }
-    /// <summary> Analysis2.Entities.EntityName contains </summary>
-    [JsonProperty("analysis2_entities_entityName_con")]
-    public string? Analysis2_Entities_EntityName_CON { get; set; }
-    /// <summary> Analysis2.Entities.EntityName regex </summary>
-    [JsonProperty("analysis2_entities_entityName_reg")]
-    public string? Analysis2_Entities_EntityName_REG { get; set; }
-
-
-    /// <summary> Analysis2.Topics.Name equals </summary>
-    [JsonProperty("analysis2_topics_name_eq")]
-    public string? Analysis2_Topics_Name_EQ { get; set; }
-    /// <summary> Analysis2.Topics.Name contains </summary>
-    [JsonProperty("analysis2_topics_name_con")]
-    public string? Analysis2_Topics_Name_CON { get; set; }
-    /// <summary> Analysis2.Topics.Name regex </summary>
-    [JsonProperty("analysis2_topics_name_reg")]
-    public string? Analysis2_Topics_Name_REG { get; set; }
-
-
-
-    /// <summary> Analysis2.ClientIntention equals </summary>
-    [JsonProperty("analysis2_clientIntention_eq")]
-    public string? Analysis2_ClientIntention_EQ { get; set; }
-    /// <summary> Analysis2.ClientIntention contains </summary>
-    [JsonProperty("analysis2_clientIntention_con")]
-    public string? Analysis2_ClientIntention_CON { get; set; }
-    /// <summary> Analysis2.ClientIntention regex </summary>
-    [JsonProperty("analysis2_clientIntention_reg")]
-    public string? Analysis2_ClientIntention_REG { get; set; }
-
-    /// <summary> Analysis2.AgentIntention equals </summary>
-    [JsonProperty("analysis2_agentIntention_eq")]
-    public string? Analysis2_AgentIntention_EQ { get; set; }
-    /// <summary> Analysis2.AgentIntention contains </summary>
-    [JsonProperty("analysis2_agentIntention_con")]
-    public string? Analysis2_AgentIntention_CON { get; set; }
-    /// <summary> Analysis2.AgentIntention regex </summary>
-    [JsonProperty("analysis2_agentIntention_reg")]
-    public string? Analysis2_AgentIntention_REG { get; set; }
-
-    /// <summary> Analysis2.Summary equals </summary>
-    [JsonProperty("analysis2_summary_eq")]
-    public string? Analysis2_Summary_EQ { get; set; }
-    /// <summary> Analysis2.Summary contains </summary>
-    [JsonProperty("analysis2_summary_con")]
-    public string? Analysis2_Summary_CON { get; set; }
-    /// <summary> Analysis2.Summary regex </summary>
-    [JsonProperty("analysis2_summary_reg")]
-    public string? Analysis2_Summary_REG { get; set; }
-
-    /// <summary> Analysis2.Problem equals </summary>
-    [JsonProperty("analysis2_problem_eq")]
-    public string? Analysis2_Problem_EQ { get; set; }
-    /// <summary> Analysis2.Problem contains </summary>
-    [JsonProperty("analysis2_problem_con")]
-    public string? Analysis2_Problem_CON { get; set; }
-    /// <summary> Analysis2.Problem regex </summary>
-    [JsonProperty("analysis2_problem_reg")]
-    public string? Analysis2_Problem_REG { get; set; }
-
-
-
-    /// <summary> Analysis2.ClientSatisfaction equals </summary>
-    [JsonProperty("analysis2_clientSatisfaction_eq")]
-    public System.Int32? Analysis2_ClientSatisfaction_EQ { get; set; }
-    /// <summary> Analysis2.ClientSatisfaction less than or equal to </summary>
-    [JsonProperty("analysis2_clientSatisfaction_lte")]
-    public System.Int32? Analysis2_ClientSatisfaction_LTE { get; set; }
-    /// <summary> Analysis2.ClientSatisfaction greater than or equal to </summary>
-    [JsonProperty("analysis2_clientSatisfaction_gte")]
-    public System.Int32? Analysis2_ClientSatisfaction_GTE { get; set; }
-
-    /// <summary> Analysis2.Language equals </summary>
-    [JsonProperty("analysis2_language_eq")]
-    public string? Analysis2_Language_EQ { get; set; }
-    /// <summary> Analysis2.Language contains </summary>
-    [JsonProperty("analysis2_language_con")]
-    public string? Analysis2_Language_CON { get; set; }
-    /// <summary> Analysis2.Language regex </summary>
-    [JsonProperty("analysis2_language_reg")]
-    public string? Analysis2_Language_REG { get; set; }
-
-    /// <summary> Analysis2.Model equals </summary>
-    [JsonProperty("analysis2_model_eq")]
-    public string? Analysis2_Model_EQ { get; set; }
-    /// <summary> Analysis2.Model contains </summary>
-    [JsonProperty("analysis2_model_con")]
-    public string? Analysis2_Model_CON { get; set; }
-    /// <summary> Analysis2.Model regex </summary>
-    [JsonProperty("analysis2_model_reg")]
-    public string? Analysis2_Model_REG { get; set; }
-
-    /// <summary> Analysis2.ActionAgentShouldTakeNext equals </summary>
-    [JsonProperty("analysis2_actionAgentShouldTakeNext_eq")]
-    public string? Analysis2_ActionAgentShouldTakeNext_EQ { get; set; }
-    /// <summary> Analysis2.ActionAgentShouldTakeNext contains </summary>
-    [JsonProperty("analysis2_actionAgentShouldTakeNext_con")]
-    public string? Analysis2_ActionAgentShouldTakeNext_CON { get; set; }
-    /// <summary> Analysis2.ActionAgentShouldTakeNext regex </summary>
-    [JsonProperty("analysis2_actionAgentShouldTakeNext_reg")]
-    public string? Analysis2_ActionAgentShouldTakeNext_REG { get; set; }
-
-    /// <summary> Analysis2.ClientInterestInProduct equals </summary>
-    [JsonProperty("analysis2_clientInterestInProduct_eq")]
-    public System.Int32? Analysis2_ClientInterestInProduct_EQ { get; set; }
-    /// <summary> Analysis2.ClientInterestInProduct less than or equal to </summary>
-    [JsonProperty("analysis2_clientInterestInProduct_lte")]
-    public System.Int32? Analysis2_ClientInterestInProduct_LTE { get; set; }
-    /// <summary> Analysis2.ClientInterestInProduct greater than or equal to </summary>
-    [JsonProperty("analysis2_clientInterestInProduct_gte")]
-    public System.Int32? Analysis2_ClientInterestInProduct_GTE { get; set; }
-
-
-    /// <summary> Analysis3.Sentiment.Positive equals </summary>
-    [JsonProperty("analysis3_sentiment_positive_eq")]
-    public System.Int32? Analysis3_Sentiment_Positive_EQ { get; set; }
-    /// <summary> Analysis3.Sentiment.Positive less than or equal to </summary>
-    [JsonProperty("analysis3_sentiment_positive_lte")]
-    public System.Int32? Analysis3_Sentiment_Positive_LTE { get; set; }
-    /// <summary> Analysis3.Sentiment.Positive greater than or equal to </summary>
-    [JsonProperty("analysis3_sentiment_positive_gte")]
-    public System.Int32? Analysis3_Sentiment_Positive_GTE { get; set; }
-
-    /// <summary> Analysis3.Sentiment.Negative equals </summary>
-    [JsonProperty("analysis3_sentiment_negative_eq")]
-    public System.Int32? Analysis3_Sentiment_Negative_EQ { get; set; }
-    /// <summary> Analysis3.Sentiment.Negative less than or equal to </summary>
-    [JsonProperty("analysis3_sentiment_negative_lte")]
-    public System.Int32? Analysis3_Sentiment_Negative_LTE { get; set; }
-    /// <summary> Analysis3.Sentiment.Negative greater than or equal to </summary>
-    [JsonProperty("analysis3_sentiment_negative_gte")]
-    public System.Int32? Analysis3_Sentiment_Negative_GTE { get; set; }
-
-    /// <summary> Analysis3.Sentiment.Neutral equals </summary>
-    [JsonProperty("analysis3_sentiment_neutral_eq")]
-    public System.Int32? Analysis3_Sentiment_Neutral_EQ { get; set; }
-    /// <summary> Analysis3.Sentiment.Neutral less than or equal to </summary>
-    [JsonProperty("analysis3_sentiment_neutral_lte")]
-    public System.Int32? Analysis3_Sentiment_Neutral_LTE { get; set; }
-    /// <summary> Analysis3.Sentiment.Neutral greater than or equal to </summary>
-    [JsonProperty("analysis3_sentiment_neutral_gte")]
-    public System.Int32? Analysis3_Sentiment_Neutral_GTE { get; set; }
-
-
-    /// <summary> Analysis3.Entities.EntityType equals </summary>
-    [JsonProperty("analysis3_entities_entityType_eq")]
-    public string? Analysis3_Entities_EntityType_EQ { get; set; }
-    /// <summary> Analysis3.Entities.EntityType contains </summary>
-    [JsonProperty("analysis3_entities_entityType_con")]
-    public string? Analysis3_Entities_EntityType_CON { get; set; }
-    /// <summary> Analysis3.Entities.EntityType regex </summary>
-    [JsonProperty("analysis3_entities_entityType_reg")]
-    public string? Analysis3_Entities_EntityType_REG { get; set; }
-
-    /// <summary> Analysis3.Entities.EntityName equals </summary>
-    [JsonProperty("analysis3_entities_entityName_eq")]
-    public string? Analysis3_Entities_EntityName_EQ { get; set; }
-    /// <summary> Analysis3.Entities.EntityName contains </summary>
-    [JsonProperty("analysis3_entities_entityName_con")]
-    public string? Analysis3_Entities_EntityName_CON { get; set; }
-    /// <summary> Analysis3.Entities.EntityName regex </summary>
-    [JsonProperty("analysis3_entities_entityName_reg")]
-    public string? Analysis3_Entities_EntityName_REG { get; set; }
-
-
-    /// <summary> Analysis3.Topics.Name equals </summary>
-    [JsonProperty("analysis3_topics_name_eq")]
-    public string? Analysis3_Topics_Name_EQ { get; set; }
-    /// <summary> Analysis3.Topics.Name contains </summary>
-    [JsonProperty("analysis3_topics_name_con")]
-    public string? Analysis3_Topics_Name_CON { get; set; }
-    /// <summary> Analysis3.Topics.Name regex </summary>
-    [JsonProperty("analysis3_topics_name_reg")]
-    public string? Analysis3_Topics_Name_REG { get; set; }
-
-
-
-    /// <summary> Analysis3.ClientIntention equals </summary>
-    [JsonProperty("analysis3_clientIntention_eq")]
-    public string? Analysis3_ClientIntention_EQ { get; set; }
-    /// <summary> Analysis3.ClientIntention contains </summary>
-    [JsonProperty("analysis3_clientIntention_con")]
-    public string? Analysis3_ClientIntention_CON { get; set; }
-    /// <summary> Analysis3.ClientIntention regex </summary>
-    [JsonProperty("analysis3_clientIntention_reg")]
-    public string? Analysis3_ClientIntention_REG { get; set; }
-
-    /// <summary> Analysis3.AgentIntention equals </summary>
-    [JsonProperty("analysis3_agentIntention_eq")]
-    public string? Analysis3_AgentIntention_EQ { get; set; }
-    /// <summary> Analysis3.AgentIntention contains </summary>
-    [JsonProperty("analysis3_agentIntention_con")]
-    public string? Analysis3_AgentIntention_CON { get; set; }
-    /// <summary> Analysis3.AgentIntention regex </summary>
-    [JsonProperty("analysis3_agentIntention_reg")]
-    public string? Analysis3_AgentIntention_REG { get; set; }
-
-    /// <summary> Analysis3.Summary equals </summary>
-    [JsonProperty("analysis3_summary_eq")]
-    public string? Analysis3_Summary_EQ { get; set; }
-    /// <summary> Analysis3.Summary contains </summary>
-    [JsonProperty("analysis3_summary_con")]
-    public string? Analysis3_Summary_CON { get; set; }
-    /// <summary> Analysis3.Summary regex </summary>
-    [JsonProperty("analysis3_summary_reg")]
-    public string? Analysis3_Summary_REG { get; set; }
-
-    /// <summary> Analysis3.Problem equals </summary>
-    [JsonProperty("analysis3_problem_eq")]
-    public string? Analysis3_Problem_EQ { get; set; }
-    /// <summary> Analysis3.Problem contains </summary>
-    [JsonProperty("analysis3_problem_con")]
-    public string? Analysis3_Problem_CON { get; set; }
-    /// <summary> Analysis3.Problem regex </summary>
-    [JsonProperty("analysis3_problem_reg")]
-    public string? Analysis3_Problem_REG { get; set; }
-
-
-
-    /// <summary> Analysis3.ClientSatisfaction equals </summary>
-    [JsonProperty("analysis3_clientSatisfaction_eq")]
-    public System.Int32? Analysis3_ClientSatisfaction_EQ { get; set; }
-    /// <summary> Analysis3.ClientSatisfaction less than or equal to </summary>
-    [JsonProperty("analysis3_clientSatisfaction_lte")]
-    public System.Int32? Analysis3_ClientSatisfaction_LTE { get; set; }
-    /// <summary> Analysis3.ClientSatisfaction greater than or equal to </summary>
-    [JsonProperty("analysis3_clientSatisfaction_gte")]
-    public System.Int32? Analysis3_ClientSatisfaction_GTE { get; set; }
-
-    /// <summary> Analysis3.Language equals </summary>
-    [JsonProperty("analysis3_language_eq")]
-    public string? Analysis3_Language_EQ { get; set; }
-    /// <summary> Analysis3.Language contains </summary>
-    [JsonProperty("analysis3_language_con")]
-    public string? Analysis3_Language_CON { get; set; }
-    /// <summary> Analysis3.Language regex </summary>
-    [JsonProperty("analysis3_language_reg")]
-    public string? Analysis3_Language_REG { get; set; }
-
-    /// <summary> Analysis3.Model equals </summary>
-    [JsonProperty("analysis3_model_eq")]
-    public string? Analysis3_Model_EQ { get; set; }
-    /// <summary> Analysis3.Model contains </summary>
-    [JsonProperty("analysis3_model_con")]
-    public string? Analysis3_Model_CON { get; set; }
-    /// <summary> Analysis3.Model regex </summary>
-    [JsonProperty("analysis3_model_reg")]
-    public string? Analysis3_Model_REG { get; set; }
-
-    /// <summary> Analysis3.ActionAgentShouldTakeNext equals </summary>
-    [JsonProperty("analysis3_actionAgentShouldTakeNext_eq")]
-    public string? Analysis3_ActionAgentShouldTakeNext_EQ { get; set; }
-    /// <summary> Analysis3.ActionAgentShouldTakeNext contains </summary>
-    [JsonProperty("analysis3_actionAgentShouldTakeNext_con")]
-    public string? Analysis3_ActionAgentShouldTakeNext_CON { get; set; }
-    /// <summary> Analysis3.ActionAgentShouldTakeNext regex </summary>
-    [JsonProperty("analysis3_actionAgentShouldTakeNext_reg")]
-    public string? Analysis3_ActionAgentShouldTakeNext_REG { get; set; }
-
-    /// <summary> Analysis3.ClientInterestInProduct equals </summary>
-    [JsonProperty("analysis3_clientInterestInProduct_eq")]
-    public System.Int32? Analysis3_ClientInterestInProduct_EQ { get; set; }
-    /// <summary> Analysis3.ClientInterestInProduct less than or equal to </summary>
-    [JsonProperty("analysis3_clientInterestInProduct_lte")]
-    public System.Int32? Analysis3_ClientInterestInProduct_LTE { get; set; }
-    /// <summary> Analysis3.ClientInterestInProduct greater than or equal to </summary>
-    [JsonProperty("analysis3_clientInterestInProduct_gte")]
-    public System.Int32? Analysis3_ClientInterestInProduct_GTE { get; set; }
-
-
     /// <summary> IdsParticipantLines equals </summary>
     [JsonProperty("idsParticipantLines_eq")]
     public string? IdsParticipantLines_EQ { get; set; }
@@ -1927,15 +1456,56 @@ public class CallIncomingToCallFlowLogicFilterRequest
     public string? IdsParticipantLines_REG { get; set; }
 
 
-    /// <summary> ErrorMessage equals </summary>
-    [JsonProperty("errorMessage_eq")]
-    public string? ErrorMessage_EQ { get; set; }
-    /// <summary> ErrorMessage contains </summary>
-    [JsonProperty("errorMessage_con")]
-    public string? ErrorMessage_CON { get; set; }
-    /// <summary> ErrorMessage regex </summary>
-    [JsonProperty("errorMessage_reg")]
-    public string? ErrorMessage_REG { get; set; }
+    /// <summary> Errors.ErrorsCall equals </summary>
+    [JsonProperty("errors_errorsCall_eq")]
+    public string? Errors_ErrorsCall_EQ { get; set; }
+    /// <summary> Errors.ErrorsCall contains </summary>
+    [JsonProperty("errors_errorsCall_con")]
+    public string? Errors_ErrorsCall_CON { get; set; }
+    /// <summary> Errors.ErrorsCall regex </summary>
+    [JsonProperty("errors_errorsCall_reg")]
+    public string? Errors_ErrorsCall_REG { get; set; }
+
+    /// <summary> Errors.ErrorsRecording equals </summary>
+    [JsonProperty("errors_errorsRecording_eq")]
+    public string? Errors_ErrorsRecording_EQ { get; set; }
+    /// <summary> Errors.ErrorsRecording contains </summary>
+    [JsonProperty("errors_errorsRecording_con")]
+    public string? Errors_ErrorsRecording_CON { get; set; }
+    /// <summary> Errors.ErrorsRecording regex </summary>
+    [JsonProperty("errors_errorsRecording_reg")]
+    public string? Errors_ErrorsRecording_REG { get; set; }
+
+    /// <summary> Errors.ErrorsAiTranscription equals </summary>
+    [JsonProperty("errors_errorsAiTranscription_eq")]
+    public string? Errors_ErrorsAiTranscription_EQ { get; set; }
+    /// <summary> Errors.ErrorsAiTranscription contains </summary>
+    [JsonProperty("errors_errorsAiTranscription_con")]
+    public string? Errors_ErrorsAiTranscription_CON { get; set; }
+    /// <summary> Errors.ErrorsAiTranscription regex </summary>
+    [JsonProperty("errors_errorsAiTranscription_reg")]
+    public string? Errors_ErrorsAiTranscription_REG { get; set; }
+
+    /// <summary> Errors.ErrorsAiAnalysis equals </summary>
+    [JsonProperty("errors_errorsAiAnalysis_eq")]
+    public string? Errors_ErrorsAiAnalysis_EQ { get; set; }
+    /// <summary> Errors.ErrorsAiAnalysis contains </summary>
+    [JsonProperty("errors_errorsAiAnalysis_con")]
+    public string? Errors_ErrorsAiAnalysis_CON { get; set; }
+    /// <summary> Errors.ErrorsAiAnalysis regex </summary>
+    [JsonProperty("errors_errorsAiAnalysis_reg")]
+    public string? Errors_ErrorsAiAnalysis_REG { get; set; }
+
+
+    /// <summary> RecordingStatus equals </summary>
+    [JsonProperty("recordingStatus_eq")]
+    public string? RecordingStatus_EQ { get; set; }
+    /// <summary> RecordingStatus contains </summary>
+    [JsonProperty("recordingStatus_con")]
+    public string? RecordingStatus_CON { get; set; }
+    /// <summary> RecordingStatus regex </summary>
+    [JsonProperty("recordingStatus_reg")]
+    public string? RecordingStatus_REG { get; set; }
 
     /// <summary> AiTranscriptionStatus equals </summary>
     [JsonProperty("aiTranscriptionStatus_eq")]
@@ -2562,477 +2132,6 @@ public class CallIncomingToExtensionFilterRequest
     [JsonProperty("idAiCallAnalysisInput_reg")]
     public string? IdAiCallAnalysisInput_REG { get; set; }
 
-    /// <summary> Analysis.Sentiment.Positive equals </summary>
-    [JsonProperty("analysis_sentiment_positive_eq")]
-    public System.Int32? Analysis_Sentiment_Positive_EQ { get; set; }
-    /// <summary> Analysis.Sentiment.Positive less than or equal to </summary>
-    [JsonProperty("analysis_sentiment_positive_lte")]
-    public System.Int32? Analysis_Sentiment_Positive_LTE { get; set; }
-    /// <summary> Analysis.Sentiment.Positive greater than or equal to </summary>
-    [JsonProperty("analysis_sentiment_positive_gte")]
-    public System.Int32? Analysis_Sentiment_Positive_GTE { get; set; }
-
-    /// <summary> Analysis.Sentiment.Negative equals </summary>
-    [JsonProperty("analysis_sentiment_negative_eq")]
-    public System.Int32? Analysis_Sentiment_Negative_EQ { get; set; }
-    /// <summary> Analysis.Sentiment.Negative less than or equal to </summary>
-    [JsonProperty("analysis_sentiment_negative_lte")]
-    public System.Int32? Analysis_Sentiment_Negative_LTE { get; set; }
-    /// <summary> Analysis.Sentiment.Negative greater than or equal to </summary>
-    [JsonProperty("analysis_sentiment_negative_gte")]
-    public System.Int32? Analysis_Sentiment_Negative_GTE { get; set; }
-
-    /// <summary> Analysis.Sentiment.Neutral equals </summary>
-    [JsonProperty("analysis_sentiment_neutral_eq")]
-    public System.Int32? Analysis_Sentiment_Neutral_EQ { get; set; }
-    /// <summary> Analysis.Sentiment.Neutral less than or equal to </summary>
-    [JsonProperty("analysis_sentiment_neutral_lte")]
-    public System.Int32? Analysis_Sentiment_Neutral_LTE { get; set; }
-    /// <summary> Analysis.Sentiment.Neutral greater than or equal to </summary>
-    [JsonProperty("analysis_sentiment_neutral_gte")]
-    public System.Int32? Analysis_Sentiment_Neutral_GTE { get; set; }
-
-
-    /// <summary> Analysis.Entities.EntityType equals </summary>
-    [JsonProperty("analysis_entities_entityType_eq")]
-    public string? Analysis_Entities_EntityType_EQ { get; set; }
-    /// <summary> Analysis.Entities.EntityType contains </summary>
-    [JsonProperty("analysis_entities_entityType_con")]
-    public string? Analysis_Entities_EntityType_CON { get; set; }
-    /// <summary> Analysis.Entities.EntityType regex </summary>
-    [JsonProperty("analysis_entities_entityType_reg")]
-    public string? Analysis_Entities_EntityType_REG { get; set; }
-
-    /// <summary> Analysis.Entities.EntityName equals </summary>
-    [JsonProperty("analysis_entities_entityName_eq")]
-    public string? Analysis_Entities_EntityName_EQ { get; set; }
-    /// <summary> Analysis.Entities.EntityName contains </summary>
-    [JsonProperty("analysis_entities_entityName_con")]
-    public string? Analysis_Entities_EntityName_CON { get; set; }
-    /// <summary> Analysis.Entities.EntityName regex </summary>
-    [JsonProperty("analysis_entities_entityName_reg")]
-    public string? Analysis_Entities_EntityName_REG { get; set; }
-
-
-    /// <summary> Analysis.Topics.Name equals </summary>
-    [JsonProperty("analysis_topics_name_eq")]
-    public string? Analysis_Topics_Name_EQ { get; set; }
-    /// <summary> Analysis.Topics.Name contains </summary>
-    [JsonProperty("analysis_topics_name_con")]
-    public string? Analysis_Topics_Name_CON { get; set; }
-    /// <summary> Analysis.Topics.Name regex </summary>
-    [JsonProperty("analysis_topics_name_reg")]
-    public string? Analysis_Topics_Name_REG { get; set; }
-
-
-
-    /// <summary> Analysis.ClientIntention equals </summary>
-    [JsonProperty("analysis_clientIntention_eq")]
-    public string? Analysis_ClientIntention_EQ { get; set; }
-    /// <summary> Analysis.ClientIntention contains </summary>
-    [JsonProperty("analysis_clientIntention_con")]
-    public string? Analysis_ClientIntention_CON { get; set; }
-    /// <summary> Analysis.ClientIntention regex </summary>
-    [JsonProperty("analysis_clientIntention_reg")]
-    public string? Analysis_ClientIntention_REG { get; set; }
-
-    /// <summary> Analysis.AgentIntention equals </summary>
-    [JsonProperty("analysis_agentIntention_eq")]
-    public string? Analysis_AgentIntention_EQ { get; set; }
-    /// <summary> Analysis.AgentIntention contains </summary>
-    [JsonProperty("analysis_agentIntention_con")]
-    public string? Analysis_AgentIntention_CON { get; set; }
-    /// <summary> Analysis.AgentIntention regex </summary>
-    [JsonProperty("analysis_agentIntention_reg")]
-    public string? Analysis_AgentIntention_REG { get; set; }
-
-    /// <summary> Analysis.Summary equals </summary>
-    [JsonProperty("analysis_summary_eq")]
-    public string? Analysis_Summary_EQ { get; set; }
-    /// <summary> Analysis.Summary contains </summary>
-    [JsonProperty("analysis_summary_con")]
-    public string? Analysis_Summary_CON { get; set; }
-    /// <summary> Analysis.Summary regex </summary>
-    [JsonProperty("analysis_summary_reg")]
-    public string? Analysis_Summary_REG { get; set; }
-
-    /// <summary> Analysis.Problem equals </summary>
-    [JsonProperty("analysis_problem_eq")]
-    public string? Analysis_Problem_EQ { get; set; }
-    /// <summary> Analysis.Problem contains </summary>
-    [JsonProperty("analysis_problem_con")]
-    public string? Analysis_Problem_CON { get; set; }
-    /// <summary> Analysis.Problem regex </summary>
-    [JsonProperty("analysis_problem_reg")]
-    public string? Analysis_Problem_REG { get; set; }
-
-
-
-    /// <summary> Analysis.ClientSatisfaction equals </summary>
-    [JsonProperty("analysis_clientSatisfaction_eq")]
-    public System.Int32? Analysis_ClientSatisfaction_EQ { get; set; }
-    /// <summary> Analysis.ClientSatisfaction less than or equal to </summary>
-    [JsonProperty("analysis_clientSatisfaction_lte")]
-    public System.Int32? Analysis_ClientSatisfaction_LTE { get; set; }
-    /// <summary> Analysis.ClientSatisfaction greater than or equal to </summary>
-    [JsonProperty("analysis_clientSatisfaction_gte")]
-    public System.Int32? Analysis_ClientSatisfaction_GTE { get; set; }
-
-    /// <summary> Analysis.Language equals </summary>
-    [JsonProperty("analysis_language_eq")]
-    public string? Analysis_Language_EQ { get; set; }
-    /// <summary> Analysis.Language contains </summary>
-    [JsonProperty("analysis_language_con")]
-    public string? Analysis_Language_CON { get; set; }
-    /// <summary> Analysis.Language regex </summary>
-    [JsonProperty("analysis_language_reg")]
-    public string? Analysis_Language_REG { get; set; }
-
-    /// <summary> Analysis.Model equals </summary>
-    [JsonProperty("analysis_model_eq")]
-    public string? Analysis_Model_EQ { get; set; }
-    /// <summary> Analysis.Model contains </summary>
-    [JsonProperty("analysis_model_con")]
-    public string? Analysis_Model_CON { get; set; }
-    /// <summary> Analysis.Model regex </summary>
-    [JsonProperty("analysis_model_reg")]
-    public string? Analysis_Model_REG { get; set; }
-
-    /// <summary> Analysis.ActionAgentShouldTakeNext equals </summary>
-    [JsonProperty("analysis_actionAgentShouldTakeNext_eq")]
-    public string? Analysis_ActionAgentShouldTakeNext_EQ { get; set; }
-    /// <summary> Analysis.ActionAgentShouldTakeNext contains </summary>
-    [JsonProperty("analysis_actionAgentShouldTakeNext_con")]
-    public string? Analysis_ActionAgentShouldTakeNext_CON { get; set; }
-    /// <summary> Analysis.ActionAgentShouldTakeNext regex </summary>
-    [JsonProperty("analysis_actionAgentShouldTakeNext_reg")]
-    public string? Analysis_ActionAgentShouldTakeNext_REG { get; set; }
-
-    /// <summary> Analysis.ClientInterestInProduct equals </summary>
-    [JsonProperty("analysis_clientInterestInProduct_eq")]
-    public System.Int32? Analysis_ClientInterestInProduct_EQ { get; set; }
-    /// <summary> Analysis.ClientInterestInProduct less than or equal to </summary>
-    [JsonProperty("analysis_clientInterestInProduct_lte")]
-    public System.Int32? Analysis_ClientInterestInProduct_LTE { get; set; }
-    /// <summary> Analysis.ClientInterestInProduct greater than or equal to </summary>
-    [JsonProperty("analysis_clientInterestInProduct_gte")]
-    public System.Int32? Analysis_ClientInterestInProduct_GTE { get; set; }
-
-
-    /// <summary> Analysis2.Sentiment.Positive equals </summary>
-    [JsonProperty("analysis2_sentiment_positive_eq")]
-    public System.Int32? Analysis2_Sentiment_Positive_EQ { get; set; }
-    /// <summary> Analysis2.Sentiment.Positive less than or equal to </summary>
-    [JsonProperty("analysis2_sentiment_positive_lte")]
-    public System.Int32? Analysis2_Sentiment_Positive_LTE { get; set; }
-    /// <summary> Analysis2.Sentiment.Positive greater than or equal to </summary>
-    [JsonProperty("analysis2_sentiment_positive_gte")]
-    public System.Int32? Analysis2_Sentiment_Positive_GTE { get; set; }
-
-    /// <summary> Analysis2.Sentiment.Negative equals </summary>
-    [JsonProperty("analysis2_sentiment_negative_eq")]
-    public System.Int32? Analysis2_Sentiment_Negative_EQ { get; set; }
-    /// <summary> Analysis2.Sentiment.Negative less than or equal to </summary>
-    [JsonProperty("analysis2_sentiment_negative_lte")]
-    public System.Int32? Analysis2_Sentiment_Negative_LTE { get; set; }
-    /// <summary> Analysis2.Sentiment.Negative greater than or equal to </summary>
-    [JsonProperty("analysis2_sentiment_negative_gte")]
-    public System.Int32? Analysis2_Sentiment_Negative_GTE { get; set; }
-
-    /// <summary> Analysis2.Sentiment.Neutral equals </summary>
-    [JsonProperty("analysis2_sentiment_neutral_eq")]
-    public System.Int32? Analysis2_Sentiment_Neutral_EQ { get; set; }
-    /// <summary> Analysis2.Sentiment.Neutral less than or equal to </summary>
-    [JsonProperty("analysis2_sentiment_neutral_lte")]
-    public System.Int32? Analysis2_Sentiment_Neutral_LTE { get; set; }
-    /// <summary> Analysis2.Sentiment.Neutral greater than or equal to </summary>
-    [JsonProperty("analysis2_sentiment_neutral_gte")]
-    public System.Int32? Analysis2_Sentiment_Neutral_GTE { get; set; }
-
-
-    /// <summary> Analysis2.Entities.EntityType equals </summary>
-    [JsonProperty("analysis2_entities_entityType_eq")]
-    public string? Analysis2_Entities_EntityType_EQ { get; set; }
-    /// <summary> Analysis2.Entities.EntityType contains </summary>
-    [JsonProperty("analysis2_entities_entityType_con")]
-    public string? Analysis2_Entities_EntityType_CON { get; set; }
-    /// <summary> Analysis2.Entities.EntityType regex </summary>
-    [JsonProperty("analysis2_entities_entityType_reg")]
-    public string? Analysis2_Entities_EntityType_REG { get; set; }
-
-    /// <summary> Analysis2.Entities.EntityName equals </summary>
-    [JsonProperty("analysis2_entities_entityName_eq")]
-    public string? Analysis2_Entities_EntityName_EQ { get; set; }
-    /// <summary> Analysis2.Entities.EntityName contains </summary>
-    [JsonProperty("analysis2_entities_entityName_con")]
-    public string? Analysis2_Entities_EntityName_CON { get; set; }
-    /// <summary> Analysis2.Entities.EntityName regex </summary>
-    [JsonProperty("analysis2_entities_entityName_reg")]
-    public string? Analysis2_Entities_EntityName_REG { get; set; }
-
-
-    /// <summary> Analysis2.Topics.Name equals </summary>
-    [JsonProperty("analysis2_topics_name_eq")]
-    public string? Analysis2_Topics_Name_EQ { get; set; }
-    /// <summary> Analysis2.Topics.Name contains </summary>
-    [JsonProperty("analysis2_topics_name_con")]
-    public string? Analysis2_Topics_Name_CON { get; set; }
-    /// <summary> Analysis2.Topics.Name regex </summary>
-    [JsonProperty("analysis2_topics_name_reg")]
-    public string? Analysis2_Topics_Name_REG { get; set; }
-
-
-
-    /// <summary> Analysis2.ClientIntention equals </summary>
-    [JsonProperty("analysis2_clientIntention_eq")]
-    public string? Analysis2_ClientIntention_EQ { get; set; }
-    /// <summary> Analysis2.ClientIntention contains </summary>
-    [JsonProperty("analysis2_clientIntention_con")]
-    public string? Analysis2_ClientIntention_CON { get; set; }
-    /// <summary> Analysis2.ClientIntention regex </summary>
-    [JsonProperty("analysis2_clientIntention_reg")]
-    public string? Analysis2_ClientIntention_REG { get; set; }
-
-    /// <summary> Analysis2.AgentIntention equals </summary>
-    [JsonProperty("analysis2_agentIntention_eq")]
-    public string? Analysis2_AgentIntention_EQ { get; set; }
-    /// <summary> Analysis2.AgentIntention contains </summary>
-    [JsonProperty("analysis2_agentIntention_con")]
-    public string? Analysis2_AgentIntention_CON { get; set; }
-    /// <summary> Analysis2.AgentIntention regex </summary>
-    [JsonProperty("analysis2_agentIntention_reg")]
-    public string? Analysis2_AgentIntention_REG { get; set; }
-
-    /// <summary> Analysis2.Summary equals </summary>
-    [JsonProperty("analysis2_summary_eq")]
-    public string? Analysis2_Summary_EQ { get; set; }
-    /// <summary> Analysis2.Summary contains </summary>
-    [JsonProperty("analysis2_summary_con")]
-    public string? Analysis2_Summary_CON { get; set; }
-    /// <summary> Analysis2.Summary regex </summary>
-    [JsonProperty("analysis2_summary_reg")]
-    public string? Analysis2_Summary_REG { get; set; }
-
-    /// <summary> Analysis2.Problem equals </summary>
-    [JsonProperty("analysis2_problem_eq")]
-    public string? Analysis2_Problem_EQ { get; set; }
-    /// <summary> Analysis2.Problem contains </summary>
-    [JsonProperty("analysis2_problem_con")]
-    public string? Analysis2_Problem_CON { get; set; }
-    /// <summary> Analysis2.Problem regex </summary>
-    [JsonProperty("analysis2_problem_reg")]
-    public string? Analysis2_Problem_REG { get; set; }
-
-
-
-    /// <summary> Analysis2.ClientSatisfaction equals </summary>
-    [JsonProperty("analysis2_clientSatisfaction_eq")]
-    public System.Int32? Analysis2_ClientSatisfaction_EQ { get; set; }
-    /// <summary> Analysis2.ClientSatisfaction less than or equal to </summary>
-    [JsonProperty("analysis2_clientSatisfaction_lte")]
-    public System.Int32? Analysis2_ClientSatisfaction_LTE { get; set; }
-    /// <summary> Analysis2.ClientSatisfaction greater than or equal to </summary>
-    [JsonProperty("analysis2_clientSatisfaction_gte")]
-    public System.Int32? Analysis2_ClientSatisfaction_GTE { get; set; }
-
-    /// <summary> Analysis2.Language equals </summary>
-    [JsonProperty("analysis2_language_eq")]
-    public string? Analysis2_Language_EQ { get; set; }
-    /// <summary> Analysis2.Language contains </summary>
-    [JsonProperty("analysis2_language_con")]
-    public string? Analysis2_Language_CON { get; set; }
-    /// <summary> Analysis2.Language regex </summary>
-    [JsonProperty("analysis2_language_reg")]
-    public string? Analysis2_Language_REG { get; set; }
-
-    /// <summary> Analysis2.Model equals </summary>
-    [JsonProperty("analysis2_model_eq")]
-    public string? Analysis2_Model_EQ { get; set; }
-    /// <summary> Analysis2.Model contains </summary>
-    [JsonProperty("analysis2_model_con")]
-    public string? Analysis2_Model_CON { get; set; }
-    /// <summary> Analysis2.Model regex </summary>
-    [JsonProperty("analysis2_model_reg")]
-    public string? Analysis2_Model_REG { get; set; }
-
-    /// <summary> Analysis2.ActionAgentShouldTakeNext equals </summary>
-    [JsonProperty("analysis2_actionAgentShouldTakeNext_eq")]
-    public string? Analysis2_ActionAgentShouldTakeNext_EQ { get; set; }
-    /// <summary> Analysis2.ActionAgentShouldTakeNext contains </summary>
-    [JsonProperty("analysis2_actionAgentShouldTakeNext_con")]
-    public string? Analysis2_ActionAgentShouldTakeNext_CON { get; set; }
-    /// <summary> Analysis2.ActionAgentShouldTakeNext regex </summary>
-    [JsonProperty("analysis2_actionAgentShouldTakeNext_reg")]
-    public string? Analysis2_ActionAgentShouldTakeNext_REG { get; set; }
-
-    /// <summary> Analysis2.ClientInterestInProduct equals </summary>
-    [JsonProperty("analysis2_clientInterestInProduct_eq")]
-    public System.Int32? Analysis2_ClientInterestInProduct_EQ { get; set; }
-    /// <summary> Analysis2.ClientInterestInProduct less than or equal to </summary>
-    [JsonProperty("analysis2_clientInterestInProduct_lte")]
-    public System.Int32? Analysis2_ClientInterestInProduct_LTE { get; set; }
-    /// <summary> Analysis2.ClientInterestInProduct greater than or equal to </summary>
-    [JsonProperty("analysis2_clientInterestInProduct_gte")]
-    public System.Int32? Analysis2_ClientInterestInProduct_GTE { get; set; }
-
-
-    /// <summary> Analysis3.Sentiment.Positive equals </summary>
-    [JsonProperty("analysis3_sentiment_positive_eq")]
-    public System.Int32? Analysis3_Sentiment_Positive_EQ { get; set; }
-    /// <summary> Analysis3.Sentiment.Positive less than or equal to </summary>
-    [JsonProperty("analysis3_sentiment_positive_lte")]
-    public System.Int32? Analysis3_Sentiment_Positive_LTE { get; set; }
-    /// <summary> Analysis3.Sentiment.Positive greater than or equal to </summary>
-    [JsonProperty("analysis3_sentiment_positive_gte")]
-    public System.Int32? Analysis3_Sentiment_Positive_GTE { get; set; }
-
-    /// <summary> Analysis3.Sentiment.Negative equals </summary>
-    [JsonProperty("analysis3_sentiment_negative_eq")]
-    public System.Int32? Analysis3_Sentiment_Negative_EQ { get; set; }
-    /// <summary> Analysis3.Sentiment.Negative less than or equal to </summary>
-    [JsonProperty("analysis3_sentiment_negative_lte")]
-    public System.Int32? Analysis3_Sentiment_Negative_LTE { get; set; }
-    /// <summary> Analysis3.Sentiment.Negative greater than or equal to </summary>
-    [JsonProperty("analysis3_sentiment_negative_gte")]
-    public System.Int32? Analysis3_Sentiment_Negative_GTE { get; set; }
-
-    /// <summary> Analysis3.Sentiment.Neutral equals </summary>
-    [JsonProperty("analysis3_sentiment_neutral_eq")]
-    public System.Int32? Analysis3_Sentiment_Neutral_EQ { get; set; }
-    /// <summary> Analysis3.Sentiment.Neutral less than or equal to </summary>
-    [JsonProperty("analysis3_sentiment_neutral_lte")]
-    public System.Int32? Analysis3_Sentiment_Neutral_LTE { get; set; }
-    /// <summary> Analysis3.Sentiment.Neutral greater than or equal to </summary>
-    [JsonProperty("analysis3_sentiment_neutral_gte")]
-    public System.Int32? Analysis3_Sentiment_Neutral_GTE { get; set; }
-
-
-    /// <summary> Analysis3.Entities.EntityType equals </summary>
-    [JsonProperty("analysis3_entities_entityType_eq")]
-    public string? Analysis3_Entities_EntityType_EQ { get; set; }
-    /// <summary> Analysis3.Entities.EntityType contains </summary>
-    [JsonProperty("analysis3_entities_entityType_con")]
-    public string? Analysis3_Entities_EntityType_CON { get; set; }
-    /// <summary> Analysis3.Entities.EntityType regex </summary>
-    [JsonProperty("analysis3_entities_entityType_reg")]
-    public string? Analysis3_Entities_EntityType_REG { get; set; }
-
-    /// <summary> Analysis3.Entities.EntityName equals </summary>
-    [JsonProperty("analysis3_entities_entityName_eq")]
-    public string? Analysis3_Entities_EntityName_EQ { get; set; }
-    /// <summary> Analysis3.Entities.EntityName contains </summary>
-    [JsonProperty("analysis3_entities_entityName_con")]
-    public string? Analysis3_Entities_EntityName_CON { get; set; }
-    /// <summary> Analysis3.Entities.EntityName regex </summary>
-    [JsonProperty("analysis3_entities_entityName_reg")]
-    public string? Analysis3_Entities_EntityName_REG { get; set; }
-
-
-    /// <summary> Analysis3.Topics.Name equals </summary>
-    [JsonProperty("analysis3_topics_name_eq")]
-    public string? Analysis3_Topics_Name_EQ { get; set; }
-    /// <summary> Analysis3.Topics.Name contains </summary>
-    [JsonProperty("analysis3_topics_name_con")]
-    public string? Analysis3_Topics_Name_CON { get; set; }
-    /// <summary> Analysis3.Topics.Name regex </summary>
-    [JsonProperty("analysis3_topics_name_reg")]
-    public string? Analysis3_Topics_Name_REG { get; set; }
-
-
-
-    /// <summary> Analysis3.ClientIntention equals </summary>
-    [JsonProperty("analysis3_clientIntention_eq")]
-    public string? Analysis3_ClientIntention_EQ { get; set; }
-    /// <summary> Analysis3.ClientIntention contains </summary>
-    [JsonProperty("analysis3_clientIntention_con")]
-    public string? Analysis3_ClientIntention_CON { get; set; }
-    /// <summary> Analysis3.ClientIntention regex </summary>
-    [JsonProperty("analysis3_clientIntention_reg")]
-    public string? Analysis3_ClientIntention_REG { get; set; }
-
-    /// <summary> Analysis3.AgentIntention equals </summary>
-    [JsonProperty("analysis3_agentIntention_eq")]
-    public string? Analysis3_AgentIntention_EQ { get; set; }
-    /// <summary> Analysis3.AgentIntention contains </summary>
-    [JsonProperty("analysis3_agentIntention_con")]
-    public string? Analysis3_AgentIntention_CON { get; set; }
-    /// <summary> Analysis3.AgentIntention regex </summary>
-    [JsonProperty("analysis3_agentIntention_reg")]
-    public string? Analysis3_AgentIntention_REG { get; set; }
-
-    /// <summary> Analysis3.Summary equals </summary>
-    [JsonProperty("analysis3_summary_eq")]
-    public string? Analysis3_Summary_EQ { get; set; }
-    /// <summary> Analysis3.Summary contains </summary>
-    [JsonProperty("analysis3_summary_con")]
-    public string? Analysis3_Summary_CON { get; set; }
-    /// <summary> Analysis3.Summary regex </summary>
-    [JsonProperty("analysis3_summary_reg")]
-    public string? Analysis3_Summary_REG { get; set; }
-
-    /// <summary> Analysis3.Problem equals </summary>
-    [JsonProperty("analysis3_problem_eq")]
-    public string? Analysis3_Problem_EQ { get; set; }
-    /// <summary> Analysis3.Problem contains </summary>
-    [JsonProperty("analysis3_problem_con")]
-    public string? Analysis3_Problem_CON { get; set; }
-    /// <summary> Analysis3.Problem regex </summary>
-    [JsonProperty("analysis3_problem_reg")]
-    public string? Analysis3_Problem_REG { get; set; }
-
-
-
-    /// <summary> Analysis3.ClientSatisfaction equals </summary>
-    [JsonProperty("analysis3_clientSatisfaction_eq")]
-    public System.Int32? Analysis3_ClientSatisfaction_EQ { get; set; }
-    /// <summary> Analysis3.ClientSatisfaction less than or equal to </summary>
-    [JsonProperty("analysis3_clientSatisfaction_lte")]
-    public System.Int32? Analysis3_ClientSatisfaction_LTE { get; set; }
-    /// <summary> Analysis3.ClientSatisfaction greater than or equal to </summary>
-    [JsonProperty("analysis3_clientSatisfaction_gte")]
-    public System.Int32? Analysis3_ClientSatisfaction_GTE { get; set; }
-
-    /// <summary> Analysis3.Language equals </summary>
-    [JsonProperty("analysis3_language_eq")]
-    public string? Analysis3_Language_EQ { get; set; }
-    /// <summary> Analysis3.Language contains </summary>
-    [JsonProperty("analysis3_language_con")]
-    public string? Analysis3_Language_CON { get; set; }
-    /// <summary> Analysis3.Language regex </summary>
-    [JsonProperty("analysis3_language_reg")]
-    public string? Analysis3_Language_REG { get; set; }
-
-    /// <summary> Analysis3.Model equals </summary>
-    [JsonProperty("analysis3_model_eq")]
-    public string? Analysis3_Model_EQ { get; set; }
-    /// <summary> Analysis3.Model contains </summary>
-    [JsonProperty("analysis3_model_con")]
-    public string? Analysis3_Model_CON { get; set; }
-    /// <summary> Analysis3.Model regex </summary>
-    [JsonProperty("analysis3_model_reg")]
-    public string? Analysis3_Model_REG { get; set; }
-
-    /// <summary> Analysis3.ActionAgentShouldTakeNext equals </summary>
-    [JsonProperty("analysis3_actionAgentShouldTakeNext_eq")]
-    public string? Analysis3_ActionAgentShouldTakeNext_EQ { get; set; }
-    /// <summary> Analysis3.ActionAgentShouldTakeNext contains </summary>
-    [JsonProperty("analysis3_actionAgentShouldTakeNext_con")]
-    public string? Analysis3_ActionAgentShouldTakeNext_CON { get; set; }
-    /// <summary> Analysis3.ActionAgentShouldTakeNext regex </summary>
-    [JsonProperty("analysis3_actionAgentShouldTakeNext_reg")]
-    public string? Analysis3_ActionAgentShouldTakeNext_REG { get; set; }
-
-    /// <summary> Analysis3.ClientInterestInProduct equals </summary>
-    [JsonProperty("analysis3_clientInterestInProduct_eq")]
-    public System.Int32? Analysis3_ClientInterestInProduct_EQ { get; set; }
-    /// <summary> Analysis3.ClientInterestInProduct less than or equal to </summary>
-    [JsonProperty("analysis3_clientInterestInProduct_lte")]
-    public System.Int32? Analysis3_ClientInterestInProduct_LTE { get; set; }
-    /// <summary> Analysis3.ClientInterestInProduct greater than or equal to </summary>
-    [JsonProperty("analysis3_clientInterestInProduct_gte")]
-    public System.Int32? Analysis3_ClientInterestInProduct_GTE { get; set; }
-
-
     /// <summary> IdsParticipantLines equals </summary>
     [JsonProperty("idsParticipantLines_eq")]
     public string? IdsParticipantLines_EQ { get; set; }
@@ -3044,15 +2143,56 @@ public class CallIncomingToExtensionFilterRequest
     public string? IdsParticipantLines_REG { get; set; }
 
 
-    /// <summary> ErrorMessage equals </summary>
-    [JsonProperty("errorMessage_eq")]
-    public string? ErrorMessage_EQ { get; set; }
-    /// <summary> ErrorMessage contains </summary>
-    [JsonProperty("errorMessage_con")]
-    public string? ErrorMessage_CON { get; set; }
-    /// <summary> ErrorMessage regex </summary>
-    [JsonProperty("errorMessage_reg")]
-    public string? ErrorMessage_REG { get; set; }
+    /// <summary> Errors.ErrorsCall equals </summary>
+    [JsonProperty("errors_errorsCall_eq")]
+    public string? Errors_ErrorsCall_EQ { get; set; }
+    /// <summary> Errors.ErrorsCall contains </summary>
+    [JsonProperty("errors_errorsCall_con")]
+    public string? Errors_ErrorsCall_CON { get; set; }
+    /// <summary> Errors.ErrorsCall regex </summary>
+    [JsonProperty("errors_errorsCall_reg")]
+    public string? Errors_ErrorsCall_REG { get; set; }
+
+    /// <summary> Errors.ErrorsRecording equals </summary>
+    [JsonProperty("errors_errorsRecording_eq")]
+    public string? Errors_ErrorsRecording_EQ { get; set; }
+    /// <summary> Errors.ErrorsRecording contains </summary>
+    [JsonProperty("errors_errorsRecording_con")]
+    public string? Errors_ErrorsRecording_CON { get; set; }
+    /// <summary> Errors.ErrorsRecording regex </summary>
+    [JsonProperty("errors_errorsRecording_reg")]
+    public string? Errors_ErrorsRecording_REG { get; set; }
+
+    /// <summary> Errors.ErrorsAiTranscription equals </summary>
+    [JsonProperty("errors_errorsAiTranscription_eq")]
+    public string? Errors_ErrorsAiTranscription_EQ { get; set; }
+    /// <summary> Errors.ErrorsAiTranscription contains </summary>
+    [JsonProperty("errors_errorsAiTranscription_con")]
+    public string? Errors_ErrorsAiTranscription_CON { get; set; }
+    /// <summary> Errors.ErrorsAiTranscription regex </summary>
+    [JsonProperty("errors_errorsAiTranscription_reg")]
+    public string? Errors_ErrorsAiTranscription_REG { get; set; }
+
+    /// <summary> Errors.ErrorsAiAnalysis equals </summary>
+    [JsonProperty("errors_errorsAiAnalysis_eq")]
+    public string? Errors_ErrorsAiAnalysis_EQ { get; set; }
+    /// <summary> Errors.ErrorsAiAnalysis contains </summary>
+    [JsonProperty("errors_errorsAiAnalysis_con")]
+    public string? Errors_ErrorsAiAnalysis_CON { get; set; }
+    /// <summary> Errors.ErrorsAiAnalysis regex </summary>
+    [JsonProperty("errors_errorsAiAnalysis_reg")]
+    public string? Errors_ErrorsAiAnalysis_REG { get; set; }
+
+
+    /// <summary> RecordingStatus equals </summary>
+    [JsonProperty("recordingStatus_eq")]
+    public string? RecordingStatus_EQ { get; set; }
+    /// <summary> RecordingStatus contains </summary>
+    [JsonProperty("recordingStatus_con")]
+    public string? RecordingStatus_CON { get; set; }
+    /// <summary> RecordingStatus regex </summary>
+    [JsonProperty("recordingStatus_reg")]
+    public string? RecordingStatus_REG { get; set; }
 
     /// <summary> AiTranscriptionStatus equals </summary>
     [JsonProperty("aiTranscriptionStatus_eq")]
@@ -3659,477 +2799,6 @@ public class CallOutgoingToExtensionFilterRequest
     [JsonProperty("idAiCallAnalysisInput_reg")]
     public string? IdAiCallAnalysisInput_REG { get; set; }
 
-    /// <summary> Analysis.Sentiment.Positive equals </summary>
-    [JsonProperty("analysis_sentiment_positive_eq")]
-    public System.Int32? Analysis_Sentiment_Positive_EQ { get; set; }
-    /// <summary> Analysis.Sentiment.Positive less than or equal to </summary>
-    [JsonProperty("analysis_sentiment_positive_lte")]
-    public System.Int32? Analysis_Sentiment_Positive_LTE { get; set; }
-    /// <summary> Analysis.Sentiment.Positive greater than or equal to </summary>
-    [JsonProperty("analysis_sentiment_positive_gte")]
-    public System.Int32? Analysis_Sentiment_Positive_GTE { get; set; }
-
-    /// <summary> Analysis.Sentiment.Negative equals </summary>
-    [JsonProperty("analysis_sentiment_negative_eq")]
-    public System.Int32? Analysis_Sentiment_Negative_EQ { get; set; }
-    /// <summary> Analysis.Sentiment.Negative less than or equal to </summary>
-    [JsonProperty("analysis_sentiment_negative_lte")]
-    public System.Int32? Analysis_Sentiment_Negative_LTE { get; set; }
-    /// <summary> Analysis.Sentiment.Negative greater than or equal to </summary>
-    [JsonProperty("analysis_sentiment_negative_gte")]
-    public System.Int32? Analysis_Sentiment_Negative_GTE { get; set; }
-
-    /// <summary> Analysis.Sentiment.Neutral equals </summary>
-    [JsonProperty("analysis_sentiment_neutral_eq")]
-    public System.Int32? Analysis_Sentiment_Neutral_EQ { get; set; }
-    /// <summary> Analysis.Sentiment.Neutral less than or equal to </summary>
-    [JsonProperty("analysis_sentiment_neutral_lte")]
-    public System.Int32? Analysis_Sentiment_Neutral_LTE { get; set; }
-    /// <summary> Analysis.Sentiment.Neutral greater than or equal to </summary>
-    [JsonProperty("analysis_sentiment_neutral_gte")]
-    public System.Int32? Analysis_Sentiment_Neutral_GTE { get; set; }
-
-
-    /// <summary> Analysis.Entities.EntityType equals </summary>
-    [JsonProperty("analysis_entities_entityType_eq")]
-    public string? Analysis_Entities_EntityType_EQ { get; set; }
-    /// <summary> Analysis.Entities.EntityType contains </summary>
-    [JsonProperty("analysis_entities_entityType_con")]
-    public string? Analysis_Entities_EntityType_CON { get; set; }
-    /// <summary> Analysis.Entities.EntityType regex </summary>
-    [JsonProperty("analysis_entities_entityType_reg")]
-    public string? Analysis_Entities_EntityType_REG { get; set; }
-
-    /// <summary> Analysis.Entities.EntityName equals </summary>
-    [JsonProperty("analysis_entities_entityName_eq")]
-    public string? Analysis_Entities_EntityName_EQ { get; set; }
-    /// <summary> Analysis.Entities.EntityName contains </summary>
-    [JsonProperty("analysis_entities_entityName_con")]
-    public string? Analysis_Entities_EntityName_CON { get; set; }
-    /// <summary> Analysis.Entities.EntityName regex </summary>
-    [JsonProperty("analysis_entities_entityName_reg")]
-    public string? Analysis_Entities_EntityName_REG { get; set; }
-
-
-    /// <summary> Analysis.Topics.Name equals </summary>
-    [JsonProperty("analysis_topics_name_eq")]
-    public string? Analysis_Topics_Name_EQ { get; set; }
-    /// <summary> Analysis.Topics.Name contains </summary>
-    [JsonProperty("analysis_topics_name_con")]
-    public string? Analysis_Topics_Name_CON { get; set; }
-    /// <summary> Analysis.Topics.Name regex </summary>
-    [JsonProperty("analysis_topics_name_reg")]
-    public string? Analysis_Topics_Name_REG { get; set; }
-
-
-
-    /// <summary> Analysis.ClientIntention equals </summary>
-    [JsonProperty("analysis_clientIntention_eq")]
-    public string? Analysis_ClientIntention_EQ { get; set; }
-    /// <summary> Analysis.ClientIntention contains </summary>
-    [JsonProperty("analysis_clientIntention_con")]
-    public string? Analysis_ClientIntention_CON { get; set; }
-    /// <summary> Analysis.ClientIntention regex </summary>
-    [JsonProperty("analysis_clientIntention_reg")]
-    public string? Analysis_ClientIntention_REG { get; set; }
-
-    /// <summary> Analysis.AgentIntention equals </summary>
-    [JsonProperty("analysis_agentIntention_eq")]
-    public string? Analysis_AgentIntention_EQ { get; set; }
-    /// <summary> Analysis.AgentIntention contains </summary>
-    [JsonProperty("analysis_agentIntention_con")]
-    public string? Analysis_AgentIntention_CON { get; set; }
-    /// <summary> Analysis.AgentIntention regex </summary>
-    [JsonProperty("analysis_agentIntention_reg")]
-    public string? Analysis_AgentIntention_REG { get; set; }
-
-    /// <summary> Analysis.Summary equals </summary>
-    [JsonProperty("analysis_summary_eq")]
-    public string? Analysis_Summary_EQ { get; set; }
-    /// <summary> Analysis.Summary contains </summary>
-    [JsonProperty("analysis_summary_con")]
-    public string? Analysis_Summary_CON { get; set; }
-    /// <summary> Analysis.Summary regex </summary>
-    [JsonProperty("analysis_summary_reg")]
-    public string? Analysis_Summary_REG { get; set; }
-
-    /// <summary> Analysis.Problem equals </summary>
-    [JsonProperty("analysis_problem_eq")]
-    public string? Analysis_Problem_EQ { get; set; }
-    /// <summary> Analysis.Problem contains </summary>
-    [JsonProperty("analysis_problem_con")]
-    public string? Analysis_Problem_CON { get; set; }
-    /// <summary> Analysis.Problem regex </summary>
-    [JsonProperty("analysis_problem_reg")]
-    public string? Analysis_Problem_REG { get; set; }
-
-
-
-    /// <summary> Analysis.ClientSatisfaction equals </summary>
-    [JsonProperty("analysis_clientSatisfaction_eq")]
-    public System.Int32? Analysis_ClientSatisfaction_EQ { get; set; }
-    /// <summary> Analysis.ClientSatisfaction less than or equal to </summary>
-    [JsonProperty("analysis_clientSatisfaction_lte")]
-    public System.Int32? Analysis_ClientSatisfaction_LTE { get; set; }
-    /// <summary> Analysis.ClientSatisfaction greater than or equal to </summary>
-    [JsonProperty("analysis_clientSatisfaction_gte")]
-    public System.Int32? Analysis_ClientSatisfaction_GTE { get; set; }
-
-    /// <summary> Analysis.Language equals </summary>
-    [JsonProperty("analysis_language_eq")]
-    public string? Analysis_Language_EQ { get; set; }
-    /// <summary> Analysis.Language contains </summary>
-    [JsonProperty("analysis_language_con")]
-    public string? Analysis_Language_CON { get; set; }
-    /// <summary> Analysis.Language regex </summary>
-    [JsonProperty("analysis_language_reg")]
-    public string? Analysis_Language_REG { get; set; }
-
-    /// <summary> Analysis.Model equals </summary>
-    [JsonProperty("analysis_model_eq")]
-    public string? Analysis_Model_EQ { get; set; }
-    /// <summary> Analysis.Model contains </summary>
-    [JsonProperty("analysis_model_con")]
-    public string? Analysis_Model_CON { get; set; }
-    /// <summary> Analysis.Model regex </summary>
-    [JsonProperty("analysis_model_reg")]
-    public string? Analysis_Model_REG { get; set; }
-
-    /// <summary> Analysis.ActionAgentShouldTakeNext equals </summary>
-    [JsonProperty("analysis_actionAgentShouldTakeNext_eq")]
-    public string? Analysis_ActionAgentShouldTakeNext_EQ { get; set; }
-    /// <summary> Analysis.ActionAgentShouldTakeNext contains </summary>
-    [JsonProperty("analysis_actionAgentShouldTakeNext_con")]
-    public string? Analysis_ActionAgentShouldTakeNext_CON { get; set; }
-    /// <summary> Analysis.ActionAgentShouldTakeNext regex </summary>
-    [JsonProperty("analysis_actionAgentShouldTakeNext_reg")]
-    public string? Analysis_ActionAgentShouldTakeNext_REG { get; set; }
-
-    /// <summary> Analysis.ClientInterestInProduct equals </summary>
-    [JsonProperty("analysis_clientInterestInProduct_eq")]
-    public System.Int32? Analysis_ClientInterestInProduct_EQ { get; set; }
-    /// <summary> Analysis.ClientInterestInProduct less than or equal to </summary>
-    [JsonProperty("analysis_clientInterestInProduct_lte")]
-    public System.Int32? Analysis_ClientInterestInProduct_LTE { get; set; }
-    /// <summary> Analysis.ClientInterestInProduct greater than or equal to </summary>
-    [JsonProperty("analysis_clientInterestInProduct_gte")]
-    public System.Int32? Analysis_ClientInterestInProduct_GTE { get; set; }
-
-
-    /// <summary> Analysis2.Sentiment.Positive equals </summary>
-    [JsonProperty("analysis2_sentiment_positive_eq")]
-    public System.Int32? Analysis2_Sentiment_Positive_EQ { get; set; }
-    /// <summary> Analysis2.Sentiment.Positive less than or equal to </summary>
-    [JsonProperty("analysis2_sentiment_positive_lte")]
-    public System.Int32? Analysis2_Sentiment_Positive_LTE { get; set; }
-    /// <summary> Analysis2.Sentiment.Positive greater than or equal to </summary>
-    [JsonProperty("analysis2_sentiment_positive_gte")]
-    public System.Int32? Analysis2_Sentiment_Positive_GTE { get; set; }
-
-    /// <summary> Analysis2.Sentiment.Negative equals </summary>
-    [JsonProperty("analysis2_sentiment_negative_eq")]
-    public System.Int32? Analysis2_Sentiment_Negative_EQ { get; set; }
-    /// <summary> Analysis2.Sentiment.Negative less than or equal to </summary>
-    [JsonProperty("analysis2_sentiment_negative_lte")]
-    public System.Int32? Analysis2_Sentiment_Negative_LTE { get; set; }
-    /// <summary> Analysis2.Sentiment.Negative greater than or equal to </summary>
-    [JsonProperty("analysis2_sentiment_negative_gte")]
-    public System.Int32? Analysis2_Sentiment_Negative_GTE { get; set; }
-
-    /// <summary> Analysis2.Sentiment.Neutral equals </summary>
-    [JsonProperty("analysis2_sentiment_neutral_eq")]
-    public System.Int32? Analysis2_Sentiment_Neutral_EQ { get; set; }
-    /// <summary> Analysis2.Sentiment.Neutral less than or equal to </summary>
-    [JsonProperty("analysis2_sentiment_neutral_lte")]
-    public System.Int32? Analysis2_Sentiment_Neutral_LTE { get; set; }
-    /// <summary> Analysis2.Sentiment.Neutral greater than or equal to </summary>
-    [JsonProperty("analysis2_sentiment_neutral_gte")]
-    public System.Int32? Analysis2_Sentiment_Neutral_GTE { get; set; }
-
-
-    /// <summary> Analysis2.Entities.EntityType equals </summary>
-    [JsonProperty("analysis2_entities_entityType_eq")]
-    public string? Analysis2_Entities_EntityType_EQ { get; set; }
-    /// <summary> Analysis2.Entities.EntityType contains </summary>
-    [JsonProperty("analysis2_entities_entityType_con")]
-    public string? Analysis2_Entities_EntityType_CON { get; set; }
-    /// <summary> Analysis2.Entities.EntityType regex </summary>
-    [JsonProperty("analysis2_entities_entityType_reg")]
-    public string? Analysis2_Entities_EntityType_REG { get; set; }
-
-    /// <summary> Analysis2.Entities.EntityName equals </summary>
-    [JsonProperty("analysis2_entities_entityName_eq")]
-    public string? Analysis2_Entities_EntityName_EQ { get; set; }
-    /// <summary> Analysis2.Entities.EntityName contains </summary>
-    [JsonProperty("analysis2_entities_entityName_con")]
-    public string? Analysis2_Entities_EntityName_CON { get; set; }
-    /// <summary> Analysis2.Entities.EntityName regex </summary>
-    [JsonProperty("analysis2_entities_entityName_reg")]
-    public string? Analysis2_Entities_EntityName_REG { get; set; }
-
-
-    /// <summary> Analysis2.Topics.Name equals </summary>
-    [JsonProperty("analysis2_topics_name_eq")]
-    public string? Analysis2_Topics_Name_EQ { get; set; }
-    /// <summary> Analysis2.Topics.Name contains </summary>
-    [JsonProperty("analysis2_topics_name_con")]
-    public string? Analysis2_Topics_Name_CON { get; set; }
-    /// <summary> Analysis2.Topics.Name regex </summary>
-    [JsonProperty("analysis2_topics_name_reg")]
-    public string? Analysis2_Topics_Name_REG { get; set; }
-
-
-
-    /// <summary> Analysis2.ClientIntention equals </summary>
-    [JsonProperty("analysis2_clientIntention_eq")]
-    public string? Analysis2_ClientIntention_EQ { get; set; }
-    /// <summary> Analysis2.ClientIntention contains </summary>
-    [JsonProperty("analysis2_clientIntention_con")]
-    public string? Analysis2_ClientIntention_CON { get; set; }
-    /// <summary> Analysis2.ClientIntention regex </summary>
-    [JsonProperty("analysis2_clientIntention_reg")]
-    public string? Analysis2_ClientIntention_REG { get; set; }
-
-    /// <summary> Analysis2.AgentIntention equals </summary>
-    [JsonProperty("analysis2_agentIntention_eq")]
-    public string? Analysis2_AgentIntention_EQ { get; set; }
-    /// <summary> Analysis2.AgentIntention contains </summary>
-    [JsonProperty("analysis2_agentIntention_con")]
-    public string? Analysis2_AgentIntention_CON { get; set; }
-    /// <summary> Analysis2.AgentIntention regex </summary>
-    [JsonProperty("analysis2_agentIntention_reg")]
-    public string? Analysis2_AgentIntention_REG { get; set; }
-
-    /// <summary> Analysis2.Summary equals </summary>
-    [JsonProperty("analysis2_summary_eq")]
-    public string? Analysis2_Summary_EQ { get; set; }
-    /// <summary> Analysis2.Summary contains </summary>
-    [JsonProperty("analysis2_summary_con")]
-    public string? Analysis2_Summary_CON { get; set; }
-    /// <summary> Analysis2.Summary regex </summary>
-    [JsonProperty("analysis2_summary_reg")]
-    public string? Analysis2_Summary_REG { get; set; }
-
-    /// <summary> Analysis2.Problem equals </summary>
-    [JsonProperty("analysis2_problem_eq")]
-    public string? Analysis2_Problem_EQ { get; set; }
-    /// <summary> Analysis2.Problem contains </summary>
-    [JsonProperty("analysis2_problem_con")]
-    public string? Analysis2_Problem_CON { get; set; }
-    /// <summary> Analysis2.Problem regex </summary>
-    [JsonProperty("analysis2_problem_reg")]
-    public string? Analysis2_Problem_REG { get; set; }
-
-
-
-    /// <summary> Analysis2.ClientSatisfaction equals </summary>
-    [JsonProperty("analysis2_clientSatisfaction_eq")]
-    public System.Int32? Analysis2_ClientSatisfaction_EQ { get; set; }
-    /// <summary> Analysis2.ClientSatisfaction less than or equal to </summary>
-    [JsonProperty("analysis2_clientSatisfaction_lte")]
-    public System.Int32? Analysis2_ClientSatisfaction_LTE { get; set; }
-    /// <summary> Analysis2.ClientSatisfaction greater than or equal to </summary>
-    [JsonProperty("analysis2_clientSatisfaction_gte")]
-    public System.Int32? Analysis2_ClientSatisfaction_GTE { get; set; }
-
-    /// <summary> Analysis2.Language equals </summary>
-    [JsonProperty("analysis2_language_eq")]
-    public string? Analysis2_Language_EQ { get; set; }
-    /// <summary> Analysis2.Language contains </summary>
-    [JsonProperty("analysis2_language_con")]
-    public string? Analysis2_Language_CON { get; set; }
-    /// <summary> Analysis2.Language regex </summary>
-    [JsonProperty("analysis2_language_reg")]
-    public string? Analysis2_Language_REG { get; set; }
-
-    /// <summary> Analysis2.Model equals </summary>
-    [JsonProperty("analysis2_model_eq")]
-    public string? Analysis2_Model_EQ { get; set; }
-    /// <summary> Analysis2.Model contains </summary>
-    [JsonProperty("analysis2_model_con")]
-    public string? Analysis2_Model_CON { get; set; }
-    /// <summary> Analysis2.Model regex </summary>
-    [JsonProperty("analysis2_model_reg")]
-    public string? Analysis2_Model_REG { get; set; }
-
-    /// <summary> Analysis2.ActionAgentShouldTakeNext equals </summary>
-    [JsonProperty("analysis2_actionAgentShouldTakeNext_eq")]
-    public string? Analysis2_ActionAgentShouldTakeNext_EQ { get; set; }
-    /// <summary> Analysis2.ActionAgentShouldTakeNext contains </summary>
-    [JsonProperty("analysis2_actionAgentShouldTakeNext_con")]
-    public string? Analysis2_ActionAgentShouldTakeNext_CON { get; set; }
-    /// <summary> Analysis2.ActionAgentShouldTakeNext regex </summary>
-    [JsonProperty("analysis2_actionAgentShouldTakeNext_reg")]
-    public string? Analysis2_ActionAgentShouldTakeNext_REG { get; set; }
-
-    /// <summary> Analysis2.ClientInterestInProduct equals </summary>
-    [JsonProperty("analysis2_clientInterestInProduct_eq")]
-    public System.Int32? Analysis2_ClientInterestInProduct_EQ { get; set; }
-    /// <summary> Analysis2.ClientInterestInProduct less than or equal to </summary>
-    [JsonProperty("analysis2_clientInterestInProduct_lte")]
-    public System.Int32? Analysis2_ClientInterestInProduct_LTE { get; set; }
-    /// <summary> Analysis2.ClientInterestInProduct greater than or equal to </summary>
-    [JsonProperty("analysis2_clientInterestInProduct_gte")]
-    public System.Int32? Analysis2_ClientInterestInProduct_GTE { get; set; }
-
-
-    /// <summary> Analysis3.Sentiment.Positive equals </summary>
-    [JsonProperty("analysis3_sentiment_positive_eq")]
-    public System.Int32? Analysis3_Sentiment_Positive_EQ { get; set; }
-    /// <summary> Analysis3.Sentiment.Positive less than or equal to </summary>
-    [JsonProperty("analysis3_sentiment_positive_lte")]
-    public System.Int32? Analysis3_Sentiment_Positive_LTE { get; set; }
-    /// <summary> Analysis3.Sentiment.Positive greater than or equal to </summary>
-    [JsonProperty("analysis3_sentiment_positive_gte")]
-    public System.Int32? Analysis3_Sentiment_Positive_GTE { get; set; }
-
-    /// <summary> Analysis3.Sentiment.Negative equals </summary>
-    [JsonProperty("analysis3_sentiment_negative_eq")]
-    public System.Int32? Analysis3_Sentiment_Negative_EQ { get; set; }
-    /// <summary> Analysis3.Sentiment.Negative less than or equal to </summary>
-    [JsonProperty("analysis3_sentiment_negative_lte")]
-    public System.Int32? Analysis3_Sentiment_Negative_LTE { get; set; }
-    /// <summary> Analysis3.Sentiment.Negative greater than or equal to </summary>
-    [JsonProperty("analysis3_sentiment_negative_gte")]
-    public System.Int32? Analysis3_Sentiment_Negative_GTE { get; set; }
-
-    /// <summary> Analysis3.Sentiment.Neutral equals </summary>
-    [JsonProperty("analysis3_sentiment_neutral_eq")]
-    public System.Int32? Analysis3_Sentiment_Neutral_EQ { get; set; }
-    /// <summary> Analysis3.Sentiment.Neutral less than or equal to </summary>
-    [JsonProperty("analysis3_sentiment_neutral_lte")]
-    public System.Int32? Analysis3_Sentiment_Neutral_LTE { get; set; }
-    /// <summary> Analysis3.Sentiment.Neutral greater than or equal to </summary>
-    [JsonProperty("analysis3_sentiment_neutral_gte")]
-    public System.Int32? Analysis3_Sentiment_Neutral_GTE { get; set; }
-
-
-    /// <summary> Analysis3.Entities.EntityType equals </summary>
-    [JsonProperty("analysis3_entities_entityType_eq")]
-    public string? Analysis3_Entities_EntityType_EQ { get; set; }
-    /// <summary> Analysis3.Entities.EntityType contains </summary>
-    [JsonProperty("analysis3_entities_entityType_con")]
-    public string? Analysis3_Entities_EntityType_CON { get; set; }
-    /// <summary> Analysis3.Entities.EntityType regex </summary>
-    [JsonProperty("analysis3_entities_entityType_reg")]
-    public string? Analysis3_Entities_EntityType_REG { get; set; }
-
-    /// <summary> Analysis3.Entities.EntityName equals </summary>
-    [JsonProperty("analysis3_entities_entityName_eq")]
-    public string? Analysis3_Entities_EntityName_EQ { get; set; }
-    /// <summary> Analysis3.Entities.EntityName contains </summary>
-    [JsonProperty("analysis3_entities_entityName_con")]
-    public string? Analysis3_Entities_EntityName_CON { get; set; }
-    /// <summary> Analysis3.Entities.EntityName regex </summary>
-    [JsonProperty("analysis3_entities_entityName_reg")]
-    public string? Analysis3_Entities_EntityName_REG { get; set; }
-
-
-    /// <summary> Analysis3.Topics.Name equals </summary>
-    [JsonProperty("analysis3_topics_name_eq")]
-    public string? Analysis3_Topics_Name_EQ { get; set; }
-    /// <summary> Analysis3.Topics.Name contains </summary>
-    [JsonProperty("analysis3_topics_name_con")]
-    public string? Analysis3_Topics_Name_CON { get; set; }
-    /// <summary> Analysis3.Topics.Name regex </summary>
-    [JsonProperty("analysis3_topics_name_reg")]
-    public string? Analysis3_Topics_Name_REG { get; set; }
-
-
-
-    /// <summary> Analysis3.ClientIntention equals </summary>
-    [JsonProperty("analysis3_clientIntention_eq")]
-    public string? Analysis3_ClientIntention_EQ { get; set; }
-    /// <summary> Analysis3.ClientIntention contains </summary>
-    [JsonProperty("analysis3_clientIntention_con")]
-    public string? Analysis3_ClientIntention_CON { get; set; }
-    /// <summary> Analysis3.ClientIntention regex </summary>
-    [JsonProperty("analysis3_clientIntention_reg")]
-    public string? Analysis3_ClientIntention_REG { get; set; }
-
-    /// <summary> Analysis3.AgentIntention equals </summary>
-    [JsonProperty("analysis3_agentIntention_eq")]
-    public string? Analysis3_AgentIntention_EQ { get; set; }
-    /// <summary> Analysis3.AgentIntention contains </summary>
-    [JsonProperty("analysis3_agentIntention_con")]
-    public string? Analysis3_AgentIntention_CON { get; set; }
-    /// <summary> Analysis3.AgentIntention regex </summary>
-    [JsonProperty("analysis3_agentIntention_reg")]
-    public string? Analysis3_AgentIntention_REG { get; set; }
-
-    /// <summary> Analysis3.Summary equals </summary>
-    [JsonProperty("analysis3_summary_eq")]
-    public string? Analysis3_Summary_EQ { get; set; }
-    /// <summary> Analysis3.Summary contains </summary>
-    [JsonProperty("analysis3_summary_con")]
-    public string? Analysis3_Summary_CON { get; set; }
-    /// <summary> Analysis3.Summary regex </summary>
-    [JsonProperty("analysis3_summary_reg")]
-    public string? Analysis3_Summary_REG { get; set; }
-
-    /// <summary> Analysis3.Problem equals </summary>
-    [JsonProperty("analysis3_problem_eq")]
-    public string? Analysis3_Problem_EQ { get; set; }
-    /// <summary> Analysis3.Problem contains </summary>
-    [JsonProperty("analysis3_problem_con")]
-    public string? Analysis3_Problem_CON { get; set; }
-    /// <summary> Analysis3.Problem regex </summary>
-    [JsonProperty("analysis3_problem_reg")]
-    public string? Analysis3_Problem_REG { get; set; }
-
-
-
-    /// <summary> Analysis3.ClientSatisfaction equals </summary>
-    [JsonProperty("analysis3_clientSatisfaction_eq")]
-    public System.Int32? Analysis3_ClientSatisfaction_EQ { get; set; }
-    /// <summary> Analysis3.ClientSatisfaction less than or equal to </summary>
-    [JsonProperty("analysis3_clientSatisfaction_lte")]
-    public System.Int32? Analysis3_ClientSatisfaction_LTE { get; set; }
-    /// <summary> Analysis3.ClientSatisfaction greater than or equal to </summary>
-    [JsonProperty("analysis3_clientSatisfaction_gte")]
-    public System.Int32? Analysis3_ClientSatisfaction_GTE { get; set; }
-
-    /// <summary> Analysis3.Language equals </summary>
-    [JsonProperty("analysis3_language_eq")]
-    public string? Analysis3_Language_EQ { get; set; }
-    /// <summary> Analysis3.Language contains </summary>
-    [JsonProperty("analysis3_language_con")]
-    public string? Analysis3_Language_CON { get; set; }
-    /// <summary> Analysis3.Language regex </summary>
-    [JsonProperty("analysis3_language_reg")]
-    public string? Analysis3_Language_REG { get; set; }
-
-    /// <summary> Analysis3.Model equals </summary>
-    [JsonProperty("analysis3_model_eq")]
-    public string? Analysis3_Model_EQ { get; set; }
-    /// <summary> Analysis3.Model contains </summary>
-    [JsonProperty("analysis3_model_con")]
-    public string? Analysis3_Model_CON { get; set; }
-    /// <summary> Analysis3.Model regex </summary>
-    [JsonProperty("analysis3_model_reg")]
-    public string? Analysis3_Model_REG { get; set; }
-
-    /// <summary> Analysis3.ActionAgentShouldTakeNext equals </summary>
-    [JsonProperty("analysis3_actionAgentShouldTakeNext_eq")]
-    public string? Analysis3_ActionAgentShouldTakeNext_EQ { get; set; }
-    /// <summary> Analysis3.ActionAgentShouldTakeNext contains </summary>
-    [JsonProperty("analysis3_actionAgentShouldTakeNext_con")]
-    public string? Analysis3_ActionAgentShouldTakeNext_CON { get; set; }
-    /// <summary> Analysis3.ActionAgentShouldTakeNext regex </summary>
-    [JsonProperty("analysis3_actionAgentShouldTakeNext_reg")]
-    public string? Analysis3_ActionAgentShouldTakeNext_REG { get; set; }
-
-    /// <summary> Analysis3.ClientInterestInProduct equals </summary>
-    [JsonProperty("analysis3_clientInterestInProduct_eq")]
-    public System.Int32? Analysis3_ClientInterestInProduct_EQ { get; set; }
-    /// <summary> Analysis3.ClientInterestInProduct less than or equal to </summary>
-    [JsonProperty("analysis3_clientInterestInProduct_lte")]
-    public System.Int32? Analysis3_ClientInterestInProduct_LTE { get; set; }
-    /// <summary> Analysis3.ClientInterestInProduct greater than or equal to </summary>
-    [JsonProperty("analysis3_clientInterestInProduct_gte")]
-    public System.Int32? Analysis3_ClientInterestInProduct_GTE { get; set; }
-
-
     /// <summary> IdsParticipantLines equals </summary>
     [JsonProperty("idsParticipantLines_eq")]
     public string? IdsParticipantLines_EQ { get; set; }
@@ -4141,15 +2810,56 @@ public class CallOutgoingToExtensionFilterRequest
     public string? IdsParticipantLines_REG { get; set; }
 
 
-    /// <summary> ErrorMessage equals </summary>
-    [JsonProperty("errorMessage_eq")]
-    public string? ErrorMessage_EQ { get; set; }
-    /// <summary> ErrorMessage contains </summary>
-    [JsonProperty("errorMessage_con")]
-    public string? ErrorMessage_CON { get; set; }
-    /// <summary> ErrorMessage regex </summary>
-    [JsonProperty("errorMessage_reg")]
-    public string? ErrorMessage_REG { get; set; }
+    /// <summary> Errors.ErrorsCall equals </summary>
+    [JsonProperty("errors_errorsCall_eq")]
+    public string? Errors_ErrorsCall_EQ { get; set; }
+    /// <summary> Errors.ErrorsCall contains </summary>
+    [JsonProperty("errors_errorsCall_con")]
+    public string? Errors_ErrorsCall_CON { get; set; }
+    /// <summary> Errors.ErrorsCall regex </summary>
+    [JsonProperty("errors_errorsCall_reg")]
+    public string? Errors_ErrorsCall_REG { get; set; }
+
+    /// <summary> Errors.ErrorsRecording equals </summary>
+    [JsonProperty("errors_errorsRecording_eq")]
+    public string? Errors_ErrorsRecording_EQ { get; set; }
+    /// <summary> Errors.ErrorsRecording contains </summary>
+    [JsonProperty("errors_errorsRecording_con")]
+    public string? Errors_ErrorsRecording_CON { get; set; }
+    /// <summary> Errors.ErrorsRecording regex </summary>
+    [JsonProperty("errors_errorsRecording_reg")]
+    public string? Errors_ErrorsRecording_REG { get; set; }
+
+    /// <summary> Errors.ErrorsAiTranscription equals </summary>
+    [JsonProperty("errors_errorsAiTranscription_eq")]
+    public string? Errors_ErrorsAiTranscription_EQ { get; set; }
+    /// <summary> Errors.ErrorsAiTranscription contains </summary>
+    [JsonProperty("errors_errorsAiTranscription_con")]
+    public string? Errors_ErrorsAiTranscription_CON { get; set; }
+    /// <summary> Errors.ErrorsAiTranscription regex </summary>
+    [JsonProperty("errors_errorsAiTranscription_reg")]
+    public string? Errors_ErrorsAiTranscription_REG { get; set; }
+
+    /// <summary> Errors.ErrorsAiAnalysis equals </summary>
+    [JsonProperty("errors_errorsAiAnalysis_eq")]
+    public string? Errors_ErrorsAiAnalysis_EQ { get; set; }
+    /// <summary> Errors.ErrorsAiAnalysis contains </summary>
+    [JsonProperty("errors_errorsAiAnalysis_con")]
+    public string? Errors_ErrorsAiAnalysis_CON { get; set; }
+    /// <summary> Errors.ErrorsAiAnalysis regex </summary>
+    [JsonProperty("errors_errorsAiAnalysis_reg")]
+    public string? Errors_ErrorsAiAnalysis_REG { get; set; }
+
+
+    /// <summary> RecordingStatus equals </summary>
+    [JsonProperty("recordingStatus_eq")]
+    public string? RecordingStatus_EQ { get; set; }
+    /// <summary> RecordingStatus contains </summary>
+    [JsonProperty("recordingStatus_con")]
+    public string? RecordingStatus_CON { get; set; }
+    /// <summary> RecordingStatus regex </summary>
+    [JsonProperty("recordingStatus_reg")]
+    public string? RecordingStatus_REG { get; set; }
 
     /// <summary> AiTranscriptionStatus equals </summary>
     [JsonProperty("aiTranscriptionStatus_eq")]
@@ -4726,477 +3436,6 @@ public class CallOutgoingToPSTNFilterRequest
     [JsonProperty("idAiCallAnalysisInput_reg")]
     public string? IdAiCallAnalysisInput_REG { get; set; }
 
-    /// <summary> Analysis.Sentiment.Positive equals </summary>
-    [JsonProperty("analysis_sentiment_positive_eq")]
-    public System.Int32? Analysis_Sentiment_Positive_EQ { get; set; }
-    /// <summary> Analysis.Sentiment.Positive less than or equal to </summary>
-    [JsonProperty("analysis_sentiment_positive_lte")]
-    public System.Int32? Analysis_Sentiment_Positive_LTE { get; set; }
-    /// <summary> Analysis.Sentiment.Positive greater than or equal to </summary>
-    [JsonProperty("analysis_sentiment_positive_gte")]
-    public System.Int32? Analysis_Sentiment_Positive_GTE { get; set; }
-
-    /// <summary> Analysis.Sentiment.Negative equals </summary>
-    [JsonProperty("analysis_sentiment_negative_eq")]
-    public System.Int32? Analysis_Sentiment_Negative_EQ { get; set; }
-    /// <summary> Analysis.Sentiment.Negative less than or equal to </summary>
-    [JsonProperty("analysis_sentiment_negative_lte")]
-    public System.Int32? Analysis_Sentiment_Negative_LTE { get; set; }
-    /// <summary> Analysis.Sentiment.Negative greater than or equal to </summary>
-    [JsonProperty("analysis_sentiment_negative_gte")]
-    public System.Int32? Analysis_Sentiment_Negative_GTE { get; set; }
-
-    /// <summary> Analysis.Sentiment.Neutral equals </summary>
-    [JsonProperty("analysis_sentiment_neutral_eq")]
-    public System.Int32? Analysis_Sentiment_Neutral_EQ { get; set; }
-    /// <summary> Analysis.Sentiment.Neutral less than or equal to </summary>
-    [JsonProperty("analysis_sentiment_neutral_lte")]
-    public System.Int32? Analysis_Sentiment_Neutral_LTE { get; set; }
-    /// <summary> Analysis.Sentiment.Neutral greater than or equal to </summary>
-    [JsonProperty("analysis_sentiment_neutral_gte")]
-    public System.Int32? Analysis_Sentiment_Neutral_GTE { get; set; }
-
-
-    /// <summary> Analysis.Entities.EntityType equals </summary>
-    [JsonProperty("analysis_entities_entityType_eq")]
-    public string? Analysis_Entities_EntityType_EQ { get; set; }
-    /// <summary> Analysis.Entities.EntityType contains </summary>
-    [JsonProperty("analysis_entities_entityType_con")]
-    public string? Analysis_Entities_EntityType_CON { get; set; }
-    /// <summary> Analysis.Entities.EntityType regex </summary>
-    [JsonProperty("analysis_entities_entityType_reg")]
-    public string? Analysis_Entities_EntityType_REG { get; set; }
-
-    /// <summary> Analysis.Entities.EntityName equals </summary>
-    [JsonProperty("analysis_entities_entityName_eq")]
-    public string? Analysis_Entities_EntityName_EQ { get; set; }
-    /// <summary> Analysis.Entities.EntityName contains </summary>
-    [JsonProperty("analysis_entities_entityName_con")]
-    public string? Analysis_Entities_EntityName_CON { get; set; }
-    /// <summary> Analysis.Entities.EntityName regex </summary>
-    [JsonProperty("analysis_entities_entityName_reg")]
-    public string? Analysis_Entities_EntityName_REG { get; set; }
-
-
-    /// <summary> Analysis.Topics.Name equals </summary>
-    [JsonProperty("analysis_topics_name_eq")]
-    public string? Analysis_Topics_Name_EQ { get; set; }
-    /// <summary> Analysis.Topics.Name contains </summary>
-    [JsonProperty("analysis_topics_name_con")]
-    public string? Analysis_Topics_Name_CON { get; set; }
-    /// <summary> Analysis.Topics.Name regex </summary>
-    [JsonProperty("analysis_topics_name_reg")]
-    public string? Analysis_Topics_Name_REG { get; set; }
-
-
-
-    /// <summary> Analysis.ClientIntention equals </summary>
-    [JsonProperty("analysis_clientIntention_eq")]
-    public string? Analysis_ClientIntention_EQ { get; set; }
-    /// <summary> Analysis.ClientIntention contains </summary>
-    [JsonProperty("analysis_clientIntention_con")]
-    public string? Analysis_ClientIntention_CON { get; set; }
-    /// <summary> Analysis.ClientIntention regex </summary>
-    [JsonProperty("analysis_clientIntention_reg")]
-    public string? Analysis_ClientIntention_REG { get; set; }
-
-    /// <summary> Analysis.AgentIntention equals </summary>
-    [JsonProperty("analysis_agentIntention_eq")]
-    public string? Analysis_AgentIntention_EQ { get; set; }
-    /// <summary> Analysis.AgentIntention contains </summary>
-    [JsonProperty("analysis_agentIntention_con")]
-    public string? Analysis_AgentIntention_CON { get; set; }
-    /// <summary> Analysis.AgentIntention regex </summary>
-    [JsonProperty("analysis_agentIntention_reg")]
-    public string? Analysis_AgentIntention_REG { get; set; }
-
-    /// <summary> Analysis.Summary equals </summary>
-    [JsonProperty("analysis_summary_eq")]
-    public string? Analysis_Summary_EQ { get; set; }
-    /// <summary> Analysis.Summary contains </summary>
-    [JsonProperty("analysis_summary_con")]
-    public string? Analysis_Summary_CON { get; set; }
-    /// <summary> Analysis.Summary regex </summary>
-    [JsonProperty("analysis_summary_reg")]
-    public string? Analysis_Summary_REG { get; set; }
-
-    /// <summary> Analysis.Problem equals </summary>
-    [JsonProperty("analysis_problem_eq")]
-    public string? Analysis_Problem_EQ { get; set; }
-    /// <summary> Analysis.Problem contains </summary>
-    [JsonProperty("analysis_problem_con")]
-    public string? Analysis_Problem_CON { get; set; }
-    /// <summary> Analysis.Problem regex </summary>
-    [JsonProperty("analysis_problem_reg")]
-    public string? Analysis_Problem_REG { get; set; }
-
-
-
-    /// <summary> Analysis.ClientSatisfaction equals </summary>
-    [JsonProperty("analysis_clientSatisfaction_eq")]
-    public System.Int32? Analysis_ClientSatisfaction_EQ { get; set; }
-    /// <summary> Analysis.ClientSatisfaction less than or equal to </summary>
-    [JsonProperty("analysis_clientSatisfaction_lte")]
-    public System.Int32? Analysis_ClientSatisfaction_LTE { get; set; }
-    /// <summary> Analysis.ClientSatisfaction greater than or equal to </summary>
-    [JsonProperty("analysis_clientSatisfaction_gte")]
-    public System.Int32? Analysis_ClientSatisfaction_GTE { get; set; }
-
-    /// <summary> Analysis.Language equals </summary>
-    [JsonProperty("analysis_language_eq")]
-    public string? Analysis_Language_EQ { get; set; }
-    /// <summary> Analysis.Language contains </summary>
-    [JsonProperty("analysis_language_con")]
-    public string? Analysis_Language_CON { get; set; }
-    /// <summary> Analysis.Language regex </summary>
-    [JsonProperty("analysis_language_reg")]
-    public string? Analysis_Language_REG { get; set; }
-
-    /// <summary> Analysis.Model equals </summary>
-    [JsonProperty("analysis_model_eq")]
-    public string? Analysis_Model_EQ { get; set; }
-    /// <summary> Analysis.Model contains </summary>
-    [JsonProperty("analysis_model_con")]
-    public string? Analysis_Model_CON { get; set; }
-    /// <summary> Analysis.Model regex </summary>
-    [JsonProperty("analysis_model_reg")]
-    public string? Analysis_Model_REG { get; set; }
-
-    /// <summary> Analysis.ActionAgentShouldTakeNext equals </summary>
-    [JsonProperty("analysis_actionAgentShouldTakeNext_eq")]
-    public string? Analysis_ActionAgentShouldTakeNext_EQ { get; set; }
-    /// <summary> Analysis.ActionAgentShouldTakeNext contains </summary>
-    [JsonProperty("analysis_actionAgentShouldTakeNext_con")]
-    public string? Analysis_ActionAgentShouldTakeNext_CON { get; set; }
-    /// <summary> Analysis.ActionAgentShouldTakeNext regex </summary>
-    [JsonProperty("analysis_actionAgentShouldTakeNext_reg")]
-    public string? Analysis_ActionAgentShouldTakeNext_REG { get; set; }
-
-    /// <summary> Analysis.ClientInterestInProduct equals </summary>
-    [JsonProperty("analysis_clientInterestInProduct_eq")]
-    public System.Int32? Analysis_ClientInterestInProduct_EQ { get; set; }
-    /// <summary> Analysis.ClientInterestInProduct less than or equal to </summary>
-    [JsonProperty("analysis_clientInterestInProduct_lte")]
-    public System.Int32? Analysis_ClientInterestInProduct_LTE { get; set; }
-    /// <summary> Analysis.ClientInterestInProduct greater than or equal to </summary>
-    [JsonProperty("analysis_clientInterestInProduct_gte")]
-    public System.Int32? Analysis_ClientInterestInProduct_GTE { get; set; }
-
-
-    /// <summary> Analysis2.Sentiment.Positive equals </summary>
-    [JsonProperty("analysis2_sentiment_positive_eq")]
-    public System.Int32? Analysis2_Sentiment_Positive_EQ { get; set; }
-    /// <summary> Analysis2.Sentiment.Positive less than or equal to </summary>
-    [JsonProperty("analysis2_sentiment_positive_lte")]
-    public System.Int32? Analysis2_Sentiment_Positive_LTE { get; set; }
-    /// <summary> Analysis2.Sentiment.Positive greater than or equal to </summary>
-    [JsonProperty("analysis2_sentiment_positive_gte")]
-    public System.Int32? Analysis2_Sentiment_Positive_GTE { get; set; }
-
-    /// <summary> Analysis2.Sentiment.Negative equals </summary>
-    [JsonProperty("analysis2_sentiment_negative_eq")]
-    public System.Int32? Analysis2_Sentiment_Negative_EQ { get; set; }
-    /// <summary> Analysis2.Sentiment.Negative less than or equal to </summary>
-    [JsonProperty("analysis2_sentiment_negative_lte")]
-    public System.Int32? Analysis2_Sentiment_Negative_LTE { get; set; }
-    /// <summary> Analysis2.Sentiment.Negative greater than or equal to </summary>
-    [JsonProperty("analysis2_sentiment_negative_gte")]
-    public System.Int32? Analysis2_Sentiment_Negative_GTE { get; set; }
-
-    /// <summary> Analysis2.Sentiment.Neutral equals </summary>
-    [JsonProperty("analysis2_sentiment_neutral_eq")]
-    public System.Int32? Analysis2_Sentiment_Neutral_EQ { get; set; }
-    /// <summary> Analysis2.Sentiment.Neutral less than or equal to </summary>
-    [JsonProperty("analysis2_sentiment_neutral_lte")]
-    public System.Int32? Analysis2_Sentiment_Neutral_LTE { get; set; }
-    /// <summary> Analysis2.Sentiment.Neutral greater than or equal to </summary>
-    [JsonProperty("analysis2_sentiment_neutral_gte")]
-    public System.Int32? Analysis2_Sentiment_Neutral_GTE { get; set; }
-
-
-    /// <summary> Analysis2.Entities.EntityType equals </summary>
-    [JsonProperty("analysis2_entities_entityType_eq")]
-    public string? Analysis2_Entities_EntityType_EQ { get; set; }
-    /// <summary> Analysis2.Entities.EntityType contains </summary>
-    [JsonProperty("analysis2_entities_entityType_con")]
-    public string? Analysis2_Entities_EntityType_CON { get; set; }
-    /// <summary> Analysis2.Entities.EntityType regex </summary>
-    [JsonProperty("analysis2_entities_entityType_reg")]
-    public string? Analysis2_Entities_EntityType_REG { get; set; }
-
-    /// <summary> Analysis2.Entities.EntityName equals </summary>
-    [JsonProperty("analysis2_entities_entityName_eq")]
-    public string? Analysis2_Entities_EntityName_EQ { get; set; }
-    /// <summary> Analysis2.Entities.EntityName contains </summary>
-    [JsonProperty("analysis2_entities_entityName_con")]
-    public string? Analysis2_Entities_EntityName_CON { get; set; }
-    /// <summary> Analysis2.Entities.EntityName regex </summary>
-    [JsonProperty("analysis2_entities_entityName_reg")]
-    public string? Analysis2_Entities_EntityName_REG { get; set; }
-
-
-    /// <summary> Analysis2.Topics.Name equals </summary>
-    [JsonProperty("analysis2_topics_name_eq")]
-    public string? Analysis2_Topics_Name_EQ { get; set; }
-    /// <summary> Analysis2.Topics.Name contains </summary>
-    [JsonProperty("analysis2_topics_name_con")]
-    public string? Analysis2_Topics_Name_CON { get; set; }
-    /// <summary> Analysis2.Topics.Name regex </summary>
-    [JsonProperty("analysis2_topics_name_reg")]
-    public string? Analysis2_Topics_Name_REG { get; set; }
-
-
-
-    /// <summary> Analysis2.ClientIntention equals </summary>
-    [JsonProperty("analysis2_clientIntention_eq")]
-    public string? Analysis2_ClientIntention_EQ { get; set; }
-    /// <summary> Analysis2.ClientIntention contains </summary>
-    [JsonProperty("analysis2_clientIntention_con")]
-    public string? Analysis2_ClientIntention_CON { get; set; }
-    /// <summary> Analysis2.ClientIntention regex </summary>
-    [JsonProperty("analysis2_clientIntention_reg")]
-    public string? Analysis2_ClientIntention_REG { get; set; }
-
-    /// <summary> Analysis2.AgentIntention equals </summary>
-    [JsonProperty("analysis2_agentIntention_eq")]
-    public string? Analysis2_AgentIntention_EQ { get; set; }
-    /// <summary> Analysis2.AgentIntention contains </summary>
-    [JsonProperty("analysis2_agentIntention_con")]
-    public string? Analysis2_AgentIntention_CON { get; set; }
-    /// <summary> Analysis2.AgentIntention regex </summary>
-    [JsonProperty("analysis2_agentIntention_reg")]
-    public string? Analysis2_AgentIntention_REG { get; set; }
-
-    /// <summary> Analysis2.Summary equals </summary>
-    [JsonProperty("analysis2_summary_eq")]
-    public string? Analysis2_Summary_EQ { get; set; }
-    /// <summary> Analysis2.Summary contains </summary>
-    [JsonProperty("analysis2_summary_con")]
-    public string? Analysis2_Summary_CON { get; set; }
-    /// <summary> Analysis2.Summary regex </summary>
-    [JsonProperty("analysis2_summary_reg")]
-    public string? Analysis2_Summary_REG { get; set; }
-
-    /// <summary> Analysis2.Problem equals </summary>
-    [JsonProperty("analysis2_problem_eq")]
-    public string? Analysis2_Problem_EQ { get; set; }
-    /// <summary> Analysis2.Problem contains </summary>
-    [JsonProperty("analysis2_problem_con")]
-    public string? Analysis2_Problem_CON { get; set; }
-    /// <summary> Analysis2.Problem regex </summary>
-    [JsonProperty("analysis2_problem_reg")]
-    public string? Analysis2_Problem_REG { get; set; }
-
-
-
-    /// <summary> Analysis2.ClientSatisfaction equals </summary>
-    [JsonProperty("analysis2_clientSatisfaction_eq")]
-    public System.Int32? Analysis2_ClientSatisfaction_EQ { get; set; }
-    /// <summary> Analysis2.ClientSatisfaction less than or equal to </summary>
-    [JsonProperty("analysis2_clientSatisfaction_lte")]
-    public System.Int32? Analysis2_ClientSatisfaction_LTE { get; set; }
-    /// <summary> Analysis2.ClientSatisfaction greater than or equal to </summary>
-    [JsonProperty("analysis2_clientSatisfaction_gte")]
-    public System.Int32? Analysis2_ClientSatisfaction_GTE { get; set; }
-
-    /// <summary> Analysis2.Language equals </summary>
-    [JsonProperty("analysis2_language_eq")]
-    public string? Analysis2_Language_EQ { get; set; }
-    /// <summary> Analysis2.Language contains </summary>
-    [JsonProperty("analysis2_language_con")]
-    public string? Analysis2_Language_CON { get; set; }
-    /// <summary> Analysis2.Language regex </summary>
-    [JsonProperty("analysis2_language_reg")]
-    public string? Analysis2_Language_REG { get; set; }
-
-    /// <summary> Analysis2.Model equals </summary>
-    [JsonProperty("analysis2_model_eq")]
-    public string? Analysis2_Model_EQ { get; set; }
-    /// <summary> Analysis2.Model contains </summary>
-    [JsonProperty("analysis2_model_con")]
-    public string? Analysis2_Model_CON { get; set; }
-    /// <summary> Analysis2.Model regex </summary>
-    [JsonProperty("analysis2_model_reg")]
-    public string? Analysis2_Model_REG { get; set; }
-
-    /// <summary> Analysis2.ActionAgentShouldTakeNext equals </summary>
-    [JsonProperty("analysis2_actionAgentShouldTakeNext_eq")]
-    public string? Analysis2_ActionAgentShouldTakeNext_EQ { get; set; }
-    /// <summary> Analysis2.ActionAgentShouldTakeNext contains </summary>
-    [JsonProperty("analysis2_actionAgentShouldTakeNext_con")]
-    public string? Analysis2_ActionAgentShouldTakeNext_CON { get; set; }
-    /// <summary> Analysis2.ActionAgentShouldTakeNext regex </summary>
-    [JsonProperty("analysis2_actionAgentShouldTakeNext_reg")]
-    public string? Analysis2_ActionAgentShouldTakeNext_REG { get; set; }
-
-    /// <summary> Analysis2.ClientInterestInProduct equals </summary>
-    [JsonProperty("analysis2_clientInterestInProduct_eq")]
-    public System.Int32? Analysis2_ClientInterestInProduct_EQ { get; set; }
-    /// <summary> Analysis2.ClientInterestInProduct less than or equal to </summary>
-    [JsonProperty("analysis2_clientInterestInProduct_lte")]
-    public System.Int32? Analysis2_ClientInterestInProduct_LTE { get; set; }
-    /// <summary> Analysis2.ClientInterestInProduct greater than or equal to </summary>
-    [JsonProperty("analysis2_clientInterestInProduct_gte")]
-    public System.Int32? Analysis2_ClientInterestInProduct_GTE { get; set; }
-
-
-    /// <summary> Analysis3.Sentiment.Positive equals </summary>
-    [JsonProperty("analysis3_sentiment_positive_eq")]
-    public System.Int32? Analysis3_Sentiment_Positive_EQ { get; set; }
-    /// <summary> Analysis3.Sentiment.Positive less than or equal to </summary>
-    [JsonProperty("analysis3_sentiment_positive_lte")]
-    public System.Int32? Analysis3_Sentiment_Positive_LTE { get; set; }
-    /// <summary> Analysis3.Sentiment.Positive greater than or equal to </summary>
-    [JsonProperty("analysis3_sentiment_positive_gte")]
-    public System.Int32? Analysis3_Sentiment_Positive_GTE { get; set; }
-
-    /// <summary> Analysis3.Sentiment.Negative equals </summary>
-    [JsonProperty("analysis3_sentiment_negative_eq")]
-    public System.Int32? Analysis3_Sentiment_Negative_EQ { get; set; }
-    /// <summary> Analysis3.Sentiment.Negative less than or equal to </summary>
-    [JsonProperty("analysis3_sentiment_negative_lte")]
-    public System.Int32? Analysis3_Sentiment_Negative_LTE { get; set; }
-    /// <summary> Analysis3.Sentiment.Negative greater than or equal to </summary>
-    [JsonProperty("analysis3_sentiment_negative_gte")]
-    public System.Int32? Analysis3_Sentiment_Negative_GTE { get; set; }
-
-    /// <summary> Analysis3.Sentiment.Neutral equals </summary>
-    [JsonProperty("analysis3_sentiment_neutral_eq")]
-    public System.Int32? Analysis3_Sentiment_Neutral_EQ { get; set; }
-    /// <summary> Analysis3.Sentiment.Neutral less than or equal to </summary>
-    [JsonProperty("analysis3_sentiment_neutral_lte")]
-    public System.Int32? Analysis3_Sentiment_Neutral_LTE { get; set; }
-    /// <summary> Analysis3.Sentiment.Neutral greater than or equal to </summary>
-    [JsonProperty("analysis3_sentiment_neutral_gte")]
-    public System.Int32? Analysis3_Sentiment_Neutral_GTE { get; set; }
-
-
-    /// <summary> Analysis3.Entities.EntityType equals </summary>
-    [JsonProperty("analysis3_entities_entityType_eq")]
-    public string? Analysis3_Entities_EntityType_EQ { get; set; }
-    /// <summary> Analysis3.Entities.EntityType contains </summary>
-    [JsonProperty("analysis3_entities_entityType_con")]
-    public string? Analysis3_Entities_EntityType_CON { get; set; }
-    /// <summary> Analysis3.Entities.EntityType regex </summary>
-    [JsonProperty("analysis3_entities_entityType_reg")]
-    public string? Analysis3_Entities_EntityType_REG { get; set; }
-
-    /// <summary> Analysis3.Entities.EntityName equals </summary>
-    [JsonProperty("analysis3_entities_entityName_eq")]
-    public string? Analysis3_Entities_EntityName_EQ { get; set; }
-    /// <summary> Analysis3.Entities.EntityName contains </summary>
-    [JsonProperty("analysis3_entities_entityName_con")]
-    public string? Analysis3_Entities_EntityName_CON { get; set; }
-    /// <summary> Analysis3.Entities.EntityName regex </summary>
-    [JsonProperty("analysis3_entities_entityName_reg")]
-    public string? Analysis3_Entities_EntityName_REG { get; set; }
-
-
-    /// <summary> Analysis3.Topics.Name equals </summary>
-    [JsonProperty("analysis3_topics_name_eq")]
-    public string? Analysis3_Topics_Name_EQ { get; set; }
-    /// <summary> Analysis3.Topics.Name contains </summary>
-    [JsonProperty("analysis3_topics_name_con")]
-    public string? Analysis3_Topics_Name_CON { get; set; }
-    /// <summary> Analysis3.Topics.Name regex </summary>
-    [JsonProperty("analysis3_topics_name_reg")]
-    public string? Analysis3_Topics_Name_REG { get; set; }
-
-
-
-    /// <summary> Analysis3.ClientIntention equals </summary>
-    [JsonProperty("analysis3_clientIntention_eq")]
-    public string? Analysis3_ClientIntention_EQ { get; set; }
-    /// <summary> Analysis3.ClientIntention contains </summary>
-    [JsonProperty("analysis3_clientIntention_con")]
-    public string? Analysis3_ClientIntention_CON { get; set; }
-    /// <summary> Analysis3.ClientIntention regex </summary>
-    [JsonProperty("analysis3_clientIntention_reg")]
-    public string? Analysis3_ClientIntention_REG { get; set; }
-
-    /// <summary> Analysis3.AgentIntention equals </summary>
-    [JsonProperty("analysis3_agentIntention_eq")]
-    public string? Analysis3_AgentIntention_EQ { get; set; }
-    /// <summary> Analysis3.AgentIntention contains </summary>
-    [JsonProperty("analysis3_agentIntention_con")]
-    public string? Analysis3_AgentIntention_CON { get; set; }
-    /// <summary> Analysis3.AgentIntention regex </summary>
-    [JsonProperty("analysis3_agentIntention_reg")]
-    public string? Analysis3_AgentIntention_REG { get; set; }
-
-    /// <summary> Analysis3.Summary equals </summary>
-    [JsonProperty("analysis3_summary_eq")]
-    public string? Analysis3_Summary_EQ { get; set; }
-    /// <summary> Analysis3.Summary contains </summary>
-    [JsonProperty("analysis3_summary_con")]
-    public string? Analysis3_Summary_CON { get; set; }
-    /// <summary> Analysis3.Summary regex </summary>
-    [JsonProperty("analysis3_summary_reg")]
-    public string? Analysis3_Summary_REG { get; set; }
-
-    /// <summary> Analysis3.Problem equals </summary>
-    [JsonProperty("analysis3_problem_eq")]
-    public string? Analysis3_Problem_EQ { get; set; }
-    /// <summary> Analysis3.Problem contains </summary>
-    [JsonProperty("analysis3_problem_con")]
-    public string? Analysis3_Problem_CON { get; set; }
-    /// <summary> Analysis3.Problem regex </summary>
-    [JsonProperty("analysis3_problem_reg")]
-    public string? Analysis3_Problem_REG { get; set; }
-
-
-
-    /// <summary> Analysis3.ClientSatisfaction equals </summary>
-    [JsonProperty("analysis3_clientSatisfaction_eq")]
-    public System.Int32? Analysis3_ClientSatisfaction_EQ { get; set; }
-    /// <summary> Analysis3.ClientSatisfaction less than or equal to </summary>
-    [JsonProperty("analysis3_clientSatisfaction_lte")]
-    public System.Int32? Analysis3_ClientSatisfaction_LTE { get; set; }
-    /// <summary> Analysis3.ClientSatisfaction greater than or equal to </summary>
-    [JsonProperty("analysis3_clientSatisfaction_gte")]
-    public System.Int32? Analysis3_ClientSatisfaction_GTE { get; set; }
-
-    /// <summary> Analysis3.Language equals </summary>
-    [JsonProperty("analysis3_language_eq")]
-    public string? Analysis3_Language_EQ { get; set; }
-    /// <summary> Analysis3.Language contains </summary>
-    [JsonProperty("analysis3_language_con")]
-    public string? Analysis3_Language_CON { get; set; }
-    /// <summary> Analysis3.Language regex </summary>
-    [JsonProperty("analysis3_language_reg")]
-    public string? Analysis3_Language_REG { get; set; }
-
-    /// <summary> Analysis3.Model equals </summary>
-    [JsonProperty("analysis3_model_eq")]
-    public string? Analysis3_Model_EQ { get; set; }
-    /// <summary> Analysis3.Model contains </summary>
-    [JsonProperty("analysis3_model_con")]
-    public string? Analysis3_Model_CON { get; set; }
-    /// <summary> Analysis3.Model regex </summary>
-    [JsonProperty("analysis3_model_reg")]
-    public string? Analysis3_Model_REG { get; set; }
-
-    /// <summary> Analysis3.ActionAgentShouldTakeNext equals </summary>
-    [JsonProperty("analysis3_actionAgentShouldTakeNext_eq")]
-    public string? Analysis3_ActionAgentShouldTakeNext_EQ { get; set; }
-    /// <summary> Analysis3.ActionAgentShouldTakeNext contains </summary>
-    [JsonProperty("analysis3_actionAgentShouldTakeNext_con")]
-    public string? Analysis3_ActionAgentShouldTakeNext_CON { get; set; }
-    /// <summary> Analysis3.ActionAgentShouldTakeNext regex </summary>
-    [JsonProperty("analysis3_actionAgentShouldTakeNext_reg")]
-    public string? Analysis3_ActionAgentShouldTakeNext_REG { get; set; }
-
-    /// <summary> Analysis3.ClientInterestInProduct equals </summary>
-    [JsonProperty("analysis3_clientInterestInProduct_eq")]
-    public System.Int32? Analysis3_ClientInterestInProduct_EQ { get; set; }
-    /// <summary> Analysis3.ClientInterestInProduct less than or equal to </summary>
-    [JsonProperty("analysis3_clientInterestInProduct_lte")]
-    public System.Int32? Analysis3_ClientInterestInProduct_LTE { get; set; }
-    /// <summary> Analysis3.ClientInterestInProduct greater than or equal to </summary>
-    [JsonProperty("analysis3_clientInterestInProduct_gte")]
-    public System.Int32? Analysis3_ClientInterestInProduct_GTE { get; set; }
-
-
     /// <summary> IdsParticipantLines equals </summary>
     [JsonProperty("idsParticipantLines_eq")]
     public string? IdsParticipantLines_EQ { get; set; }
@@ -5208,15 +3447,56 @@ public class CallOutgoingToPSTNFilterRequest
     public string? IdsParticipantLines_REG { get; set; }
 
 
-    /// <summary> ErrorMessage equals </summary>
-    [JsonProperty("errorMessage_eq")]
-    public string? ErrorMessage_EQ { get; set; }
-    /// <summary> ErrorMessage contains </summary>
-    [JsonProperty("errorMessage_con")]
-    public string? ErrorMessage_CON { get; set; }
-    /// <summary> ErrorMessage regex </summary>
-    [JsonProperty("errorMessage_reg")]
-    public string? ErrorMessage_REG { get; set; }
+    /// <summary> Errors.ErrorsCall equals </summary>
+    [JsonProperty("errors_errorsCall_eq")]
+    public string? Errors_ErrorsCall_EQ { get; set; }
+    /// <summary> Errors.ErrorsCall contains </summary>
+    [JsonProperty("errors_errorsCall_con")]
+    public string? Errors_ErrorsCall_CON { get; set; }
+    /// <summary> Errors.ErrorsCall regex </summary>
+    [JsonProperty("errors_errorsCall_reg")]
+    public string? Errors_ErrorsCall_REG { get; set; }
+
+    /// <summary> Errors.ErrorsRecording equals </summary>
+    [JsonProperty("errors_errorsRecording_eq")]
+    public string? Errors_ErrorsRecording_EQ { get; set; }
+    /// <summary> Errors.ErrorsRecording contains </summary>
+    [JsonProperty("errors_errorsRecording_con")]
+    public string? Errors_ErrorsRecording_CON { get; set; }
+    /// <summary> Errors.ErrorsRecording regex </summary>
+    [JsonProperty("errors_errorsRecording_reg")]
+    public string? Errors_ErrorsRecording_REG { get; set; }
+
+    /// <summary> Errors.ErrorsAiTranscription equals </summary>
+    [JsonProperty("errors_errorsAiTranscription_eq")]
+    public string? Errors_ErrorsAiTranscription_EQ { get; set; }
+    /// <summary> Errors.ErrorsAiTranscription contains </summary>
+    [JsonProperty("errors_errorsAiTranscription_con")]
+    public string? Errors_ErrorsAiTranscription_CON { get; set; }
+    /// <summary> Errors.ErrorsAiTranscription regex </summary>
+    [JsonProperty("errors_errorsAiTranscription_reg")]
+    public string? Errors_ErrorsAiTranscription_REG { get; set; }
+
+    /// <summary> Errors.ErrorsAiAnalysis equals </summary>
+    [JsonProperty("errors_errorsAiAnalysis_eq")]
+    public string? Errors_ErrorsAiAnalysis_EQ { get; set; }
+    /// <summary> Errors.ErrorsAiAnalysis contains </summary>
+    [JsonProperty("errors_errorsAiAnalysis_con")]
+    public string? Errors_ErrorsAiAnalysis_CON { get; set; }
+    /// <summary> Errors.ErrorsAiAnalysis regex </summary>
+    [JsonProperty("errors_errorsAiAnalysis_reg")]
+    public string? Errors_ErrorsAiAnalysis_REG { get; set; }
+
+
+    /// <summary> RecordingStatus equals </summary>
+    [JsonProperty("recordingStatus_eq")]
+    public string? RecordingStatus_EQ { get; set; }
+    /// <summary> RecordingStatus contains </summary>
+    [JsonProperty("recordingStatus_con")]
+    public string? RecordingStatus_CON { get; set; }
+    /// <summary> RecordingStatus regex </summary>
+    [JsonProperty("recordingStatus_reg")]
+    public string? RecordingStatus_REG { get; set; }
 
     /// <summary> AiTranscriptionStatus equals </summary>
     [JsonProperty("aiTranscriptionStatus_eq")]
@@ -10204,16 +8484,6 @@ public class AiCallTranscriptionFilterRequest
 
 
 
-    /// <summary> ErrorMessage equals </summary>
-    [JsonProperty("errorMessage_eq")]
-    public string? ErrorMessage_EQ { get; set; }
-    /// <summary> ErrorMessage contains </summary>
-    [JsonProperty("errorMessage_con")]
-    public string? ErrorMessage_CON { get; set; }
-    /// <summary> ErrorMessage regex </summary>
-    [JsonProperty("errorMessage_reg")]
-    public string? ErrorMessage_REG { get; set; }
-
     /// <summary> IdsTags equals </summary>
     [JsonProperty("idsTags_eq")]
     public string? IdsTags_EQ { get; set; }
@@ -10749,477 +9019,6 @@ public class CallFilterRequest
     [JsonProperty("idAiCallAnalysisInput_reg")]
     public string? IdAiCallAnalysisInput_REG { get; set; }
 
-    /// <summary> Analysis.Sentiment.Positive equals </summary>
-    [JsonProperty("analysis_sentiment_positive_eq")]
-    public System.Int32? Analysis_Sentiment_Positive_EQ { get; set; }
-    /// <summary> Analysis.Sentiment.Positive less than or equal to </summary>
-    [JsonProperty("analysis_sentiment_positive_lte")]
-    public System.Int32? Analysis_Sentiment_Positive_LTE { get; set; }
-    /// <summary> Analysis.Sentiment.Positive greater than or equal to </summary>
-    [JsonProperty("analysis_sentiment_positive_gte")]
-    public System.Int32? Analysis_Sentiment_Positive_GTE { get; set; }
-
-    /// <summary> Analysis.Sentiment.Negative equals </summary>
-    [JsonProperty("analysis_sentiment_negative_eq")]
-    public System.Int32? Analysis_Sentiment_Negative_EQ { get; set; }
-    /// <summary> Analysis.Sentiment.Negative less than or equal to </summary>
-    [JsonProperty("analysis_sentiment_negative_lte")]
-    public System.Int32? Analysis_Sentiment_Negative_LTE { get; set; }
-    /// <summary> Analysis.Sentiment.Negative greater than or equal to </summary>
-    [JsonProperty("analysis_sentiment_negative_gte")]
-    public System.Int32? Analysis_Sentiment_Negative_GTE { get; set; }
-
-    /// <summary> Analysis.Sentiment.Neutral equals </summary>
-    [JsonProperty("analysis_sentiment_neutral_eq")]
-    public System.Int32? Analysis_Sentiment_Neutral_EQ { get; set; }
-    /// <summary> Analysis.Sentiment.Neutral less than or equal to </summary>
-    [JsonProperty("analysis_sentiment_neutral_lte")]
-    public System.Int32? Analysis_Sentiment_Neutral_LTE { get; set; }
-    /// <summary> Analysis.Sentiment.Neutral greater than or equal to </summary>
-    [JsonProperty("analysis_sentiment_neutral_gte")]
-    public System.Int32? Analysis_Sentiment_Neutral_GTE { get; set; }
-
-
-    /// <summary> Analysis.Entities.EntityType equals </summary>
-    [JsonProperty("analysis_entities_entityType_eq")]
-    public string? Analysis_Entities_EntityType_EQ { get; set; }
-    /// <summary> Analysis.Entities.EntityType contains </summary>
-    [JsonProperty("analysis_entities_entityType_con")]
-    public string? Analysis_Entities_EntityType_CON { get; set; }
-    /// <summary> Analysis.Entities.EntityType regex </summary>
-    [JsonProperty("analysis_entities_entityType_reg")]
-    public string? Analysis_Entities_EntityType_REG { get; set; }
-
-    /// <summary> Analysis.Entities.EntityName equals </summary>
-    [JsonProperty("analysis_entities_entityName_eq")]
-    public string? Analysis_Entities_EntityName_EQ { get; set; }
-    /// <summary> Analysis.Entities.EntityName contains </summary>
-    [JsonProperty("analysis_entities_entityName_con")]
-    public string? Analysis_Entities_EntityName_CON { get; set; }
-    /// <summary> Analysis.Entities.EntityName regex </summary>
-    [JsonProperty("analysis_entities_entityName_reg")]
-    public string? Analysis_Entities_EntityName_REG { get; set; }
-
-
-    /// <summary> Analysis.Topics.Name equals </summary>
-    [JsonProperty("analysis_topics_name_eq")]
-    public string? Analysis_Topics_Name_EQ { get; set; }
-    /// <summary> Analysis.Topics.Name contains </summary>
-    [JsonProperty("analysis_topics_name_con")]
-    public string? Analysis_Topics_Name_CON { get; set; }
-    /// <summary> Analysis.Topics.Name regex </summary>
-    [JsonProperty("analysis_topics_name_reg")]
-    public string? Analysis_Topics_Name_REG { get; set; }
-
-
-
-    /// <summary> Analysis.ClientIntention equals </summary>
-    [JsonProperty("analysis_clientIntention_eq")]
-    public string? Analysis_ClientIntention_EQ { get; set; }
-    /// <summary> Analysis.ClientIntention contains </summary>
-    [JsonProperty("analysis_clientIntention_con")]
-    public string? Analysis_ClientIntention_CON { get; set; }
-    /// <summary> Analysis.ClientIntention regex </summary>
-    [JsonProperty("analysis_clientIntention_reg")]
-    public string? Analysis_ClientIntention_REG { get; set; }
-
-    /// <summary> Analysis.AgentIntention equals </summary>
-    [JsonProperty("analysis_agentIntention_eq")]
-    public string? Analysis_AgentIntention_EQ { get; set; }
-    /// <summary> Analysis.AgentIntention contains </summary>
-    [JsonProperty("analysis_agentIntention_con")]
-    public string? Analysis_AgentIntention_CON { get; set; }
-    /// <summary> Analysis.AgentIntention regex </summary>
-    [JsonProperty("analysis_agentIntention_reg")]
-    public string? Analysis_AgentIntention_REG { get; set; }
-
-    /// <summary> Analysis.Summary equals </summary>
-    [JsonProperty("analysis_summary_eq")]
-    public string? Analysis_Summary_EQ { get; set; }
-    /// <summary> Analysis.Summary contains </summary>
-    [JsonProperty("analysis_summary_con")]
-    public string? Analysis_Summary_CON { get; set; }
-    /// <summary> Analysis.Summary regex </summary>
-    [JsonProperty("analysis_summary_reg")]
-    public string? Analysis_Summary_REG { get; set; }
-
-    /// <summary> Analysis.Problem equals </summary>
-    [JsonProperty("analysis_problem_eq")]
-    public string? Analysis_Problem_EQ { get; set; }
-    /// <summary> Analysis.Problem contains </summary>
-    [JsonProperty("analysis_problem_con")]
-    public string? Analysis_Problem_CON { get; set; }
-    /// <summary> Analysis.Problem regex </summary>
-    [JsonProperty("analysis_problem_reg")]
-    public string? Analysis_Problem_REG { get; set; }
-
-
-
-    /// <summary> Analysis.ClientSatisfaction equals </summary>
-    [JsonProperty("analysis_clientSatisfaction_eq")]
-    public System.Int32? Analysis_ClientSatisfaction_EQ { get; set; }
-    /// <summary> Analysis.ClientSatisfaction less than or equal to </summary>
-    [JsonProperty("analysis_clientSatisfaction_lte")]
-    public System.Int32? Analysis_ClientSatisfaction_LTE { get; set; }
-    /// <summary> Analysis.ClientSatisfaction greater than or equal to </summary>
-    [JsonProperty("analysis_clientSatisfaction_gte")]
-    public System.Int32? Analysis_ClientSatisfaction_GTE { get; set; }
-
-    /// <summary> Analysis.Language equals </summary>
-    [JsonProperty("analysis_language_eq")]
-    public string? Analysis_Language_EQ { get; set; }
-    /// <summary> Analysis.Language contains </summary>
-    [JsonProperty("analysis_language_con")]
-    public string? Analysis_Language_CON { get; set; }
-    /// <summary> Analysis.Language regex </summary>
-    [JsonProperty("analysis_language_reg")]
-    public string? Analysis_Language_REG { get; set; }
-
-    /// <summary> Analysis.Model equals </summary>
-    [JsonProperty("analysis_model_eq")]
-    public string? Analysis_Model_EQ { get; set; }
-    /// <summary> Analysis.Model contains </summary>
-    [JsonProperty("analysis_model_con")]
-    public string? Analysis_Model_CON { get; set; }
-    /// <summary> Analysis.Model regex </summary>
-    [JsonProperty("analysis_model_reg")]
-    public string? Analysis_Model_REG { get; set; }
-
-    /// <summary> Analysis.ActionAgentShouldTakeNext equals </summary>
-    [JsonProperty("analysis_actionAgentShouldTakeNext_eq")]
-    public string? Analysis_ActionAgentShouldTakeNext_EQ { get; set; }
-    /// <summary> Analysis.ActionAgentShouldTakeNext contains </summary>
-    [JsonProperty("analysis_actionAgentShouldTakeNext_con")]
-    public string? Analysis_ActionAgentShouldTakeNext_CON { get; set; }
-    /// <summary> Analysis.ActionAgentShouldTakeNext regex </summary>
-    [JsonProperty("analysis_actionAgentShouldTakeNext_reg")]
-    public string? Analysis_ActionAgentShouldTakeNext_REG { get; set; }
-
-    /// <summary> Analysis.ClientInterestInProduct equals </summary>
-    [JsonProperty("analysis_clientInterestInProduct_eq")]
-    public System.Int32? Analysis_ClientInterestInProduct_EQ { get; set; }
-    /// <summary> Analysis.ClientInterestInProduct less than or equal to </summary>
-    [JsonProperty("analysis_clientInterestInProduct_lte")]
-    public System.Int32? Analysis_ClientInterestInProduct_LTE { get; set; }
-    /// <summary> Analysis.ClientInterestInProduct greater than or equal to </summary>
-    [JsonProperty("analysis_clientInterestInProduct_gte")]
-    public System.Int32? Analysis_ClientInterestInProduct_GTE { get; set; }
-
-
-    /// <summary> Analysis2.Sentiment.Positive equals </summary>
-    [JsonProperty("analysis2_sentiment_positive_eq")]
-    public System.Int32? Analysis2_Sentiment_Positive_EQ { get; set; }
-    /// <summary> Analysis2.Sentiment.Positive less than or equal to </summary>
-    [JsonProperty("analysis2_sentiment_positive_lte")]
-    public System.Int32? Analysis2_Sentiment_Positive_LTE { get; set; }
-    /// <summary> Analysis2.Sentiment.Positive greater than or equal to </summary>
-    [JsonProperty("analysis2_sentiment_positive_gte")]
-    public System.Int32? Analysis2_Sentiment_Positive_GTE { get; set; }
-
-    /// <summary> Analysis2.Sentiment.Negative equals </summary>
-    [JsonProperty("analysis2_sentiment_negative_eq")]
-    public System.Int32? Analysis2_Sentiment_Negative_EQ { get; set; }
-    /// <summary> Analysis2.Sentiment.Negative less than or equal to </summary>
-    [JsonProperty("analysis2_sentiment_negative_lte")]
-    public System.Int32? Analysis2_Sentiment_Negative_LTE { get; set; }
-    /// <summary> Analysis2.Sentiment.Negative greater than or equal to </summary>
-    [JsonProperty("analysis2_sentiment_negative_gte")]
-    public System.Int32? Analysis2_Sentiment_Negative_GTE { get; set; }
-
-    /// <summary> Analysis2.Sentiment.Neutral equals </summary>
-    [JsonProperty("analysis2_sentiment_neutral_eq")]
-    public System.Int32? Analysis2_Sentiment_Neutral_EQ { get; set; }
-    /// <summary> Analysis2.Sentiment.Neutral less than or equal to </summary>
-    [JsonProperty("analysis2_sentiment_neutral_lte")]
-    public System.Int32? Analysis2_Sentiment_Neutral_LTE { get; set; }
-    /// <summary> Analysis2.Sentiment.Neutral greater than or equal to </summary>
-    [JsonProperty("analysis2_sentiment_neutral_gte")]
-    public System.Int32? Analysis2_Sentiment_Neutral_GTE { get; set; }
-
-
-    /// <summary> Analysis2.Entities.EntityType equals </summary>
-    [JsonProperty("analysis2_entities_entityType_eq")]
-    public string? Analysis2_Entities_EntityType_EQ { get; set; }
-    /// <summary> Analysis2.Entities.EntityType contains </summary>
-    [JsonProperty("analysis2_entities_entityType_con")]
-    public string? Analysis2_Entities_EntityType_CON { get; set; }
-    /// <summary> Analysis2.Entities.EntityType regex </summary>
-    [JsonProperty("analysis2_entities_entityType_reg")]
-    public string? Analysis2_Entities_EntityType_REG { get; set; }
-
-    /// <summary> Analysis2.Entities.EntityName equals </summary>
-    [JsonProperty("analysis2_entities_entityName_eq")]
-    public string? Analysis2_Entities_EntityName_EQ { get; set; }
-    /// <summary> Analysis2.Entities.EntityName contains </summary>
-    [JsonProperty("analysis2_entities_entityName_con")]
-    public string? Analysis2_Entities_EntityName_CON { get; set; }
-    /// <summary> Analysis2.Entities.EntityName regex </summary>
-    [JsonProperty("analysis2_entities_entityName_reg")]
-    public string? Analysis2_Entities_EntityName_REG { get; set; }
-
-
-    /// <summary> Analysis2.Topics.Name equals </summary>
-    [JsonProperty("analysis2_topics_name_eq")]
-    public string? Analysis2_Topics_Name_EQ { get; set; }
-    /// <summary> Analysis2.Topics.Name contains </summary>
-    [JsonProperty("analysis2_topics_name_con")]
-    public string? Analysis2_Topics_Name_CON { get; set; }
-    /// <summary> Analysis2.Topics.Name regex </summary>
-    [JsonProperty("analysis2_topics_name_reg")]
-    public string? Analysis2_Topics_Name_REG { get; set; }
-
-
-
-    /// <summary> Analysis2.ClientIntention equals </summary>
-    [JsonProperty("analysis2_clientIntention_eq")]
-    public string? Analysis2_ClientIntention_EQ { get; set; }
-    /// <summary> Analysis2.ClientIntention contains </summary>
-    [JsonProperty("analysis2_clientIntention_con")]
-    public string? Analysis2_ClientIntention_CON { get; set; }
-    /// <summary> Analysis2.ClientIntention regex </summary>
-    [JsonProperty("analysis2_clientIntention_reg")]
-    public string? Analysis2_ClientIntention_REG { get; set; }
-
-    /// <summary> Analysis2.AgentIntention equals </summary>
-    [JsonProperty("analysis2_agentIntention_eq")]
-    public string? Analysis2_AgentIntention_EQ { get; set; }
-    /// <summary> Analysis2.AgentIntention contains </summary>
-    [JsonProperty("analysis2_agentIntention_con")]
-    public string? Analysis2_AgentIntention_CON { get; set; }
-    /// <summary> Analysis2.AgentIntention regex </summary>
-    [JsonProperty("analysis2_agentIntention_reg")]
-    public string? Analysis2_AgentIntention_REG { get; set; }
-
-    /// <summary> Analysis2.Summary equals </summary>
-    [JsonProperty("analysis2_summary_eq")]
-    public string? Analysis2_Summary_EQ { get; set; }
-    /// <summary> Analysis2.Summary contains </summary>
-    [JsonProperty("analysis2_summary_con")]
-    public string? Analysis2_Summary_CON { get; set; }
-    /// <summary> Analysis2.Summary regex </summary>
-    [JsonProperty("analysis2_summary_reg")]
-    public string? Analysis2_Summary_REG { get; set; }
-
-    /// <summary> Analysis2.Problem equals </summary>
-    [JsonProperty("analysis2_problem_eq")]
-    public string? Analysis2_Problem_EQ { get; set; }
-    /// <summary> Analysis2.Problem contains </summary>
-    [JsonProperty("analysis2_problem_con")]
-    public string? Analysis2_Problem_CON { get; set; }
-    /// <summary> Analysis2.Problem regex </summary>
-    [JsonProperty("analysis2_problem_reg")]
-    public string? Analysis2_Problem_REG { get; set; }
-
-
-
-    /// <summary> Analysis2.ClientSatisfaction equals </summary>
-    [JsonProperty("analysis2_clientSatisfaction_eq")]
-    public System.Int32? Analysis2_ClientSatisfaction_EQ { get; set; }
-    /// <summary> Analysis2.ClientSatisfaction less than or equal to </summary>
-    [JsonProperty("analysis2_clientSatisfaction_lte")]
-    public System.Int32? Analysis2_ClientSatisfaction_LTE { get; set; }
-    /// <summary> Analysis2.ClientSatisfaction greater than or equal to </summary>
-    [JsonProperty("analysis2_clientSatisfaction_gte")]
-    public System.Int32? Analysis2_ClientSatisfaction_GTE { get; set; }
-
-    /// <summary> Analysis2.Language equals </summary>
-    [JsonProperty("analysis2_language_eq")]
-    public string? Analysis2_Language_EQ { get; set; }
-    /// <summary> Analysis2.Language contains </summary>
-    [JsonProperty("analysis2_language_con")]
-    public string? Analysis2_Language_CON { get; set; }
-    /// <summary> Analysis2.Language regex </summary>
-    [JsonProperty("analysis2_language_reg")]
-    public string? Analysis2_Language_REG { get; set; }
-
-    /// <summary> Analysis2.Model equals </summary>
-    [JsonProperty("analysis2_model_eq")]
-    public string? Analysis2_Model_EQ { get; set; }
-    /// <summary> Analysis2.Model contains </summary>
-    [JsonProperty("analysis2_model_con")]
-    public string? Analysis2_Model_CON { get; set; }
-    /// <summary> Analysis2.Model regex </summary>
-    [JsonProperty("analysis2_model_reg")]
-    public string? Analysis2_Model_REG { get; set; }
-
-    /// <summary> Analysis2.ActionAgentShouldTakeNext equals </summary>
-    [JsonProperty("analysis2_actionAgentShouldTakeNext_eq")]
-    public string? Analysis2_ActionAgentShouldTakeNext_EQ { get; set; }
-    /// <summary> Analysis2.ActionAgentShouldTakeNext contains </summary>
-    [JsonProperty("analysis2_actionAgentShouldTakeNext_con")]
-    public string? Analysis2_ActionAgentShouldTakeNext_CON { get; set; }
-    /// <summary> Analysis2.ActionAgentShouldTakeNext regex </summary>
-    [JsonProperty("analysis2_actionAgentShouldTakeNext_reg")]
-    public string? Analysis2_ActionAgentShouldTakeNext_REG { get; set; }
-
-    /// <summary> Analysis2.ClientInterestInProduct equals </summary>
-    [JsonProperty("analysis2_clientInterestInProduct_eq")]
-    public System.Int32? Analysis2_ClientInterestInProduct_EQ { get; set; }
-    /// <summary> Analysis2.ClientInterestInProduct less than or equal to </summary>
-    [JsonProperty("analysis2_clientInterestInProduct_lte")]
-    public System.Int32? Analysis2_ClientInterestInProduct_LTE { get; set; }
-    /// <summary> Analysis2.ClientInterestInProduct greater than or equal to </summary>
-    [JsonProperty("analysis2_clientInterestInProduct_gte")]
-    public System.Int32? Analysis2_ClientInterestInProduct_GTE { get; set; }
-
-
-    /// <summary> Analysis3.Sentiment.Positive equals </summary>
-    [JsonProperty("analysis3_sentiment_positive_eq")]
-    public System.Int32? Analysis3_Sentiment_Positive_EQ { get; set; }
-    /// <summary> Analysis3.Sentiment.Positive less than or equal to </summary>
-    [JsonProperty("analysis3_sentiment_positive_lte")]
-    public System.Int32? Analysis3_Sentiment_Positive_LTE { get; set; }
-    /// <summary> Analysis3.Sentiment.Positive greater than or equal to </summary>
-    [JsonProperty("analysis3_sentiment_positive_gte")]
-    public System.Int32? Analysis3_Sentiment_Positive_GTE { get; set; }
-
-    /// <summary> Analysis3.Sentiment.Negative equals </summary>
-    [JsonProperty("analysis3_sentiment_negative_eq")]
-    public System.Int32? Analysis3_Sentiment_Negative_EQ { get; set; }
-    /// <summary> Analysis3.Sentiment.Negative less than or equal to </summary>
-    [JsonProperty("analysis3_sentiment_negative_lte")]
-    public System.Int32? Analysis3_Sentiment_Negative_LTE { get; set; }
-    /// <summary> Analysis3.Sentiment.Negative greater than or equal to </summary>
-    [JsonProperty("analysis3_sentiment_negative_gte")]
-    public System.Int32? Analysis3_Sentiment_Negative_GTE { get; set; }
-
-    /// <summary> Analysis3.Sentiment.Neutral equals </summary>
-    [JsonProperty("analysis3_sentiment_neutral_eq")]
-    public System.Int32? Analysis3_Sentiment_Neutral_EQ { get; set; }
-    /// <summary> Analysis3.Sentiment.Neutral less than or equal to </summary>
-    [JsonProperty("analysis3_sentiment_neutral_lte")]
-    public System.Int32? Analysis3_Sentiment_Neutral_LTE { get; set; }
-    /// <summary> Analysis3.Sentiment.Neutral greater than or equal to </summary>
-    [JsonProperty("analysis3_sentiment_neutral_gte")]
-    public System.Int32? Analysis3_Sentiment_Neutral_GTE { get; set; }
-
-
-    /// <summary> Analysis3.Entities.EntityType equals </summary>
-    [JsonProperty("analysis3_entities_entityType_eq")]
-    public string? Analysis3_Entities_EntityType_EQ { get; set; }
-    /// <summary> Analysis3.Entities.EntityType contains </summary>
-    [JsonProperty("analysis3_entities_entityType_con")]
-    public string? Analysis3_Entities_EntityType_CON { get; set; }
-    /// <summary> Analysis3.Entities.EntityType regex </summary>
-    [JsonProperty("analysis3_entities_entityType_reg")]
-    public string? Analysis3_Entities_EntityType_REG { get; set; }
-
-    /// <summary> Analysis3.Entities.EntityName equals </summary>
-    [JsonProperty("analysis3_entities_entityName_eq")]
-    public string? Analysis3_Entities_EntityName_EQ { get; set; }
-    /// <summary> Analysis3.Entities.EntityName contains </summary>
-    [JsonProperty("analysis3_entities_entityName_con")]
-    public string? Analysis3_Entities_EntityName_CON { get; set; }
-    /// <summary> Analysis3.Entities.EntityName regex </summary>
-    [JsonProperty("analysis3_entities_entityName_reg")]
-    public string? Analysis3_Entities_EntityName_REG { get; set; }
-
-
-    /// <summary> Analysis3.Topics.Name equals </summary>
-    [JsonProperty("analysis3_topics_name_eq")]
-    public string? Analysis3_Topics_Name_EQ { get; set; }
-    /// <summary> Analysis3.Topics.Name contains </summary>
-    [JsonProperty("analysis3_topics_name_con")]
-    public string? Analysis3_Topics_Name_CON { get; set; }
-    /// <summary> Analysis3.Topics.Name regex </summary>
-    [JsonProperty("analysis3_topics_name_reg")]
-    public string? Analysis3_Topics_Name_REG { get; set; }
-
-
-
-    /// <summary> Analysis3.ClientIntention equals </summary>
-    [JsonProperty("analysis3_clientIntention_eq")]
-    public string? Analysis3_ClientIntention_EQ { get; set; }
-    /// <summary> Analysis3.ClientIntention contains </summary>
-    [JsonProperty("analysis3_clientIntention_con")]
-    public string? Analysis3_ClientIntention_CON { get; set; }
-    /// <summary> Analysis3.ClientIntention regex </summary>
-    [JsonProperty("analysis3_clientIntention_reg")]
-    public string? Analysis3_ClientIntention_REG { get; set; }
-
-    /// <summary> Analysis3.AgentIntention equals </summary>
-    [JsonProperty("analysis3_agentIntention_eq")]
-    public string? Analysis3_AgentIntention_EQ { get; set; }
-    /// <summary> Analysis3.AgentIntention contains </summary>
-    [JsonProperty("analysis3_agentIntention_con")]
-    public string? Analysis3_AgentIntention_CON { get; set; }
-    /// <summary> Analysis3.AgentIntention regex </summary>
-    [JsonProperty("analysis3_agentIntention_reg")]
-    public string? Analysis3_AgentIntention_REG { get; set; }
-
-    /// <summary> Analysis3.Summary equals </summary>
-    [JsonProperty("analysis3_summary_eq")]
-    public string? Analysis3_Summary_EQ { get; set; }
-    /// <summary> Analysis3.Summary contains </summary>
-    [JsonProperty("analysis3_summary_con")]
-    public string? Analysis3_Summary_CON { get; set; }
-    /// <summary> Analysis3.Summary regex </summary>
-    [JsonProperty("analysis3_summary_reg")]
-    public string? Analysis3_Summary_REG { get; set; }
-
-    /// <summary> Analysis3.Problem equals </summary>
-    [JsonProperty("analysis3_problem_eq")]
-    public string? Analysis3_Problem_EQ { get; set; }
-    /// <summary> Analysis3.Problem contains </summary>
-    [JsonProperty("analysis3_problem_con")]
-    public string? Analysis3_Problem_CON { get; set; }
-    /// <summary> Analysis3.Problem regex </summary>
-    [JsonProperty("analysis3_problem_reg")]
-    public string? Analysis3_Problem_REG { get; set; }
-
-
-
-    /// <summary> Analysis3.ClientSatisfaction equals </summary>
-    [JsonProperty("analysis3_clientSatisfaction_eq")]
-    public System.Int32? Analysis3_ClientSatisfaction_EQ { get; set; }
-    /// <summary> Analysis3.ClientSatisfaction less than or equal to </summary>
-    [JsonProperty("analysis3_clientSatisfaction_lte")]
-    public System.Int32? Analysis3_ClientSatisfaction_LTE { get; set; }
-    /// <summary> Analysis3.ClientSatisfaction greater than or equal to </summary>
-    [JsonProperty("analysis3_clientSatisfaction_gte")]
-    public System.Int32? Analysis3_ClientSatisfaction_GTE { get; set; }
-
-    /// <summary> Analysis3.Language equals </summary>
-    [JsonProperty("analysis3_language_eq")]
-    public string? Analysis3_Language_EQ { get; set; }
-    /// <summary> Analysis3.Language contains </summary>
-    [JsonProperty("analysis3_language_con")]
-    public string? Analysis3_Language_CON { get; set; }
-    /// <summary> Analysis3.Language regex </summary>
-    [JsonProperty("analysis3_language_reg")]
-    public string? Analysis3_Language_REG { get; set; }
-
-    /// <summary> Analysis3.Model equals </summary>
-    [JsonProperty("analysis3_model_eq")]
-    public string? Analysis3_Model_EQ { get; set; }
-    /// <summary> Analysis3.Model contains </summary>
-    [JsonProperty("analysis3_model_con")]
-    public string? Analysis3_Model_CON { get; set; }
-    /// <summary> Analysis3.Model regex </summary>
-    [JsonProperty("analysis3_model_reg")]
-    public string? Analysis3_Model_REG { get; set; }
-
-    /// <summary> Analysis3.ActionAgentShouldTakeNext equals </summary>
-    [JsonProperty("analysis3_actionAgentShouldTakeNext_eq")]
-    public string? Analysis3_ActionAgentShouldTakeNext_EQ { get; set; }
-    /// <summary> Analysis3.ActionAgentShouldTakeNext contains </summary>
-    [JsonProperty("analysis3_actionAgentShouldTakeNext_con")]
-    public string? Analysis3_ActionAgentShouldTakeNext_CON { get; set; }
-    /// <summary> Analysis3.ActionAgentShouldTakeNext regex </summary>
-    [JsonProperty("analysis3_actionAgentShouldTakeNext_reg")]
-    public string? Analysis3_ActionAgentShouldTakeNext_REG { get; set; }
-
-    /// <summary> Analysis3.ClientInterestInProduct equals </summary>
-    [JsonProperty("analysis3_clientInterestInProduct_eq")]
-    public System.Int32? Analysis3_ClientInterestInProduct_EQ { get; set; }
-    /// <summary> Analysis3.ClientInterestInProduct less than or equal to </summary>
-    [JsonProperty("analysis3_clientInterestInProduct_lte")]
-    public System.Int32? Analysis3_ClientInterestInProduct_LTE { get; set; }
-    /// <summary> Analysis3.ClientInterestInProduct greater than or equal to </summary>
-    [JsonProperty("analysis3_clientInterestInProduct_gte")]
-    public System.Int32? Analysis3_ClientInterestInProduct_GTE { get; set; }
-
-
     /// <summary> IdsParticipantLines equals </summary>
     [JsonProperty("idsParticipantLines_eq")]
     public string? IdsParticipantLines_EQ { get; set; }
@@ -11231,15 +9030,56 @@ public class CallFilterRequest
     public string? IdsParticipantLines_REG { get; set; }
 
 
-    /// <summary> ErrorMessage equals </summary>
-    [JsonProperty("errorMessage_eq")]
-    public string? ErrorMessage_EQ { get; set; }
-    /// <summary> ErrorMessage contains </summary>
-    [JsonProperty("errorMessage_con")]
-    public string? ErrorMessage_CON { get; set; }
-    /// <summary> ErrorMessage regex </summary>
-    [JsonProperty("errorMessage_reg")]
-    public string? ErrorMessage_REG { get; set; }
+    /// <summary> Errors.ErrorsCall equals </summary>
+    [JsonProperty("errors_errorsCall_eq")]
+    public string? Errors_ErrorsCall_EQ { get; set; }
+    /// <summary> Errors.ErrorsCall contains </summary>
+    [JsonProperty("errors_errorsCall_con")]
+    public string? Errors_ErrorsCall_CON { get; set; }
+    /// <summary> Errors.ErrorsCall regex </summary>
+    [JsonProperty("errors_errorsCall_reg")]
+    public string? Errors_ErrorsCall_REG { get; set; }
+
+    /// <summary> Errors.ErrorsRecording equals </summary>
+    [JsonProperty("errors_errorsRecording_eq")]
+    public string? Errors_ErrorsRecording_EQ { get; set; }
+    /// <summary> Errors.ErrorsRecording contains </summary>
+    [JsonProperty("errors_errorsRecording_con")]
+    public string? Errors_ErrorsRecording_CON { get; set; }
+    /// <summary> Errors.ErrorsRecording regex </summary>
+    [JsonProperty("errors_errorsRecording_reg")]
+    public string? Errors_ErrorsRecording_REG { get; set; }
+
+    /// <summary> Errors.ErrorsAiTranscription equals </summary>
+    [JsonProperty("errors_errorsAiTranscription_eq")]
+    public string? Errors_ErrorsAiTranscription_EQ { get; set; }
+    /// <summary> Errors.ErrorsAiTranscription contains </summary>
+    [JsonProperty("errors_errorsAiTranscription_con")]
+    public string? Errors_ErrorsAiTranscription_CON { get; set; }
+    /// <summary> Errors.ErrorsAiTranscription regex </summary>
+    [JsonProperty("errors_errorsAiTranscription_reg")]
+    public string? Errors_ErrorsAiTranscription_REG { get; set; }
+
+    /// <summary> Errors.ErrorsAiAnalysis equals </summary>
+    [JsonProperty("errors_errorsAiAnalysis_eq")]
+    public string? Errors_ErrorsAiAnalysis_EQ { get; set; }
+    /// <summary> Errors.ErrorsAiAnalysis contains </summary>
+    [JsonProperty("errors_errorsAiAnalysis_con")]
+    public string? Errors_ErrorsAiAnalysis_CON { get; set; }
+    /// <summary> Errors.ErrorsAiAnalysis regex </summary>
+    [JsonProperty("errors_errorsAiAnalysis_reg")]
+    public string? Errors_ErrorsAiAnalysis_REG { get; set; }
+
+
+    /// <summary> RecordingStatus equals </summary>
+    [JsonProperty("recordingStatus_eq")]
+    public string? RecordingStatus_EQ { get; set; }
+    /// <summary> RecordingStatus contains </summary>
+    [JsonProperty("recordingStatus_con")]
+    public string? RecordingStatus_CON { get; set; }
+    /// <summary> RecordingStatus regex </summary>
+    [JsonProperty("recordingStatus_reg")]
+    public string? RecordingStatus_REG { get; set; }
 
     /// <summary> AiTranscriptionStatus equals </summary>
     [JsonProperty("aiTranscriptionStatus_eq")]
@@ -11826,477 +9666,6 @@ public class CallIncomingFilterRequest
     [JsonProperty("idAiCallAnalysisInput_reg")]
     public string? IdAiCallAnalysisInput_REG { get; set; }
 
-    /// <summary> Analysis.Sentiment.Positive equals </summary>
-    [JsonProperty("analysis_sentiment_positive_eq")]
-    public System.Int32? Analysis_Sentiment_Positive_EQ { get; set; }
-    /// <summary> Analysis.Sentiment.Positive less than or equal to </summary>
-    [JsonProperty("analysis_sentiment_positive_lte")]
-    public System.Int32? Analysis_Sentiment_Positive_LTE { get; set; }
-    /// <summary> Analysis.Sentiment.Positive greater than or equal to </summary>
-    [JsonProperty("analysis_sentiment_positive_gte")]
-    public System.Int32? Analysis_Sentiment_Positive_GTE { get; set; }
-
-    /// <summary> Analysis.Sentiment.Negative equals </summary>
-    [JsonProperty("analysis_sentiment_negative_eq")]
-    public System.Int32? Analysis_Sentiment_Negative_EQ { get; set; }
-    /// <summary> Analysis.Sentiment.Negative less than or equal to </summary>
-    [JsonProperty("analysis_sentiment_negative_lte")]
-    public System.Int32? Analysis_Sentiment_Negative_LTE { get; set; }
-    /// <summary> Analysis.Sentiment.Negative greater than or equal to </summary>
-    [JsonProperty("analysis_sentiment_negative_gte")]
-    public System.Int32? Analysis_Sentiment_Negative_GTE { get; set; }
-
-    /// <summary> Analysis.Sentiment.Neutral equals </summary>
-    [JsonProperty("analysis_sentiment_neutral_eq")]
-    public System.Int32? Analysis_Sentiment_Neutral_EQ { get; set; }
-    /// <summary> Analysis.Sentiment.Neutral less than or equal to </summary>
-    [JsonProperty("analysis_sentiment_neutral_lte")]
-    public System.Int32? Analysis_Sentiment_Neutral_LTE { get; set; }
-    /// <summary> Analysis.Sentiment.Neutral greater than or equal to </summary>
-    [JsonProperty("analysis_sentiment_neutral_gte")]
-    public System.Int32? Analysis_Sentiment_Neutral_GTE { get; set; }
-
-
-    /// <summary> Analysis.Entities.EntityType equals </summary>
-    [JsonProperty("analysis_entities_entityType_eq")]
-    public string? Analysis_Entities_EntityType_EQ { get; set; }
-    /// <summary> Analysis.Entities.EntityType contains </summary>
-    [JsonProperty("analysis_entities_entityType_con")]
-    public string? Analysis_Entities_EntityType_CON { get; set; }
-    /// <summary> Analysis.Entities.EntityType regex </summary>
-    [JsonProperty("analysis_entities_entityType_reg")]
-    public string? Analysis_Entities_EntityType_REG { get; set; }
-
-    /// <summary> Analysis.Entities.EntityName equals </summary>
-    [JsonProperty("analysis_entities_entityName_eq")]
-    public string? Analysis_Entities_EntityName_EQ { get; set; }
-    /// <summary> Analysis.Entities.EntityName contains </summary>
-    [JsonProperty("analysis_entities_entityName_con")]
-    public string? Analysis_Entities_EntityName_CON { get; set; }
-    /// <summary> Analysis.Entities.EntityName regex </summary>
-    [JsonProperty("analysis_entities_entityName_reg")]
-    public string? Analysis_Entities_EntityName_REG { get; set; }
-
-
-    /// <summary> Analysis.Topics.Name equals </summary>
-    [JsonProperty("analysis_topics_name_eq")]
-    public string? Analysis_Topics_Name_EQ { get; set; }
-    /// <summary> Analysis.Topics.Name contains </summary>
-    [JsonProperty("analysis_topics_name_con")]
-    public string? Analysis_Topics_Name_CON { get; set; }
-    /// <summary> Analysis.Topics.Name regex </summary>
-    [JsonProperty("analysis_topics_name_reg")]
-    public string? Analysis_Topics_Name_REG { get; set; }
-
-
-
-    /// <summary> Analysis.ClientIntention equals </summary>
-    [JsonProperty("analysis_clientIntention_eq")]
-    public string? Analysis_ClientIntention_EQ { get; set; }
-    /// <summary> Analysis.ClientIntention contains </summary>
-    [JsonProperty("analysis_clientIntention_con")]
-    public string? Analysis_ClientIntention_CON { get; set; }
-    /// <summary> Analysis.ClientIntention regex </summary>
-    [JsonProperty("analysis_clientIntention_reg")]
-    public string? Analysis_ClientIntention_REG { get; set; }
-
-    /// <summary> Analysis.AgentIntention equals </summary>
-    [JsonProperty("analysis_agentIntention_eq")]
-    public string? Analysis_AgentIntention_EQ { get; set; }
-    /// <summary> Analysis.AgentIntention contains </summary>
-    [JsonProperty("analysis_agentIntention_con")]
-    public string? Analysis_AgentIntention_CON { get; set; }
-    /// <summary> Analysis.AgentIntention regex </summary>
-    [JsonProperty("analysis_agentIntention_reg")]
-    public string? Analysis_AgentIntention_REG { get; set; }
-
-    /// <summary> Analysis.Summary equals </summary>
-    [JsonProperty("analysis_summary_eq")]
-    public string? Analysis_Summary_EQ { get; set; }
-    /// <summary> Analysis.Summary contains </summary>
-    [JsonProperty("analysis_summary_con")]
-    public string? Analysis_Summary_CON { get; set; }
-    /// <summary> Analysis.Summary regex </summary>
-    [JsonProperty("analysis_summary_reg")]
-    public string? Analysis_Summary_REG { get; set; }
-
-    /// <summary> Analysis.Problem equals </summary>
-    [JsonProperty("analysis_problem_eq")]
-    public string? Analysis_Problem_EQ { get; set; }
-    /// <summary> Analysis.Problem contains </summary>
-    [JsonProperty("analysis_problem_con")]
-    public string? Analysis_Problem_CON { get; set; }
-    /// <summary> Analysis.Problem regex </summary>
-    [JsonProperty("analysis_problem_reg")]
-    public string? Analysis_Problem_REG { get; set; }
-
-
-
-    /// <summary> Analysis.ClientSatisfaction equals </summary>
-    [JsonProperty("analysis_clientSatisfaction_eq")]
-    public System.Int32? Analysis_ClientSatisfaction_EQ { get; set; }
-    /// <summary> Analysis.ClientSatisfaction less than or equal to </summary>
-    [JsonProperty("analysis_clientSatisfaction_lte")]
-    public System.Int32? Analysis_ClientSatisfaction_LTE { get; set; }
-    /// <summary> Analysis.ClientSatisfaction greater than or equal to </summary>
-    [JsonProperty("analysis_clientSatisfaction_gte")]
-    public System.Int32? Analysis_ClientSatisfaction_GTE { get; set; }
-
-    /// <summary> Analysis.Language equals </summary>
-    [JsonProperty("analysis_language_eq")]
-    public string? Analysis_Language_EQ { get; set; }
-    /// <summary> Analysis.Language contains </summary>
-    [JsonProperty("analysis_language_con")]
-    public string? Analysis_Language_CON { get; set; }
-    /// <summary> Analysis.Language regex </summary>
-    [JsonProperty("analysis_language_reg")]
-    public string? Analysis_Language_REG { get; set; }
-
-    /// <summary> Analysis.Model equals </summary>
-    [JsonProperty("analysis_model_eq")]
-    public string? Analysis_Model_EQ { get; set; }
-    /// <summary> Analysis.Model contains </summary>
-    [JsonProperty("analysis_model_con")]
-    public string? Analysis_Model_CON { get; set; }
-    /// <summary> Analysis.Model regex </summary>
-    [JsonProperty("analysis_model_reg")]
-    public string? Analysis_Model_REG { get; set; }
-
-    /// <summary> Analysis.ActionAgentShouldTakeNext equals </summary>
-    [JsonProperty("analysis_actionAgentShouldTakeNext_eq")]
-    public string? Analysis_ActionAgentShouldTakeNext_EQ { get; set; }
-    /// <summary> Analysis.ActionAgentShouldTakeNext contains </summary>
-    [JsonProperty("analysis_actionAgentShouldTakeNext_con")]
-    public string? Analysis_ActionAgentShouldTakeNext_CON { get; set; }
-    /// <summary> Analysis.ActionAgentShouldTakeNext regex </summary>
-    [JsonProperty("analysis_actionAgentShouldTakeNext_reg")]
-    public string? Analysis_ActionAgentShouldTakeNext_REG { get; set; }
-
-    /// <summary> Analysis.ClientInterestInProduct equals </summary>
-    [JsonProperty("analysis_clientInterestInProduct_eq")]
-    public System.Int32? Analysis_ClientInterestInProduct_EQ { get; set; }
-    /// <summary> Analysis.ClientInterestInProduct less than or equal to </summary>
-    [JsonProperty("analysis_clientInterestInProduct_lte")]
-    public System.Int32? Analysis_ClientInterestInProduct_LTE { get; set; }
-    /// <summary> Analysis.ClientInterestInProduct greater than or equal to </summary>
-    [JsonProperty("analysis_clientInterestInProduct_gte")]
-    public System.Int32? Analysis_ClientInterestInProduct_GTE { get; set; }
-
-
-    /// <summary> Analysis2.Sentiment.Positive equals </summary>
-    [JsonProperty("analysis2_sentiment_positive_eq")]
-    public System.Int32? Analysis2_Sentiment_Positive_EQ { get; set; }
-    /// <summary> Analysis2.Sentiment.Positive less than or equal to </summary>
-    [JsonProperty("analysis2_sentiment_positive_lte")]
-    public System.Int32? Analysis2_Sentiment_Positive_LTE { get; set; }
-    /// <summary> Analysis2.Sentiment.Positive greater than or equal to </summary>
-    [JsonProperty("analysis2_sentiment_positive_gte")]
-    public System.Int32? Analysis2_Sentiment_Positive_GTE { get; set; }
-
-    /// <summary> Analysis2.Sentiment.Negative equals </summary>
-    [JsonProperty("analysis2_sentiment_negative_eq")]
-    public System.Int32? Analysis2_Sentiment_Negative_EQ { get; set; }
-    /// <summary> Analysis2.Sentiment.Negative less than or equal to </summary>
-    [JsonProperty("analysis2_sentiment_negative_lte")]
-    public System.Int32? Analysis2_Sentiment_Negative_LTE { get; set; }
-    /// <summary> Analysis2.Sentiment.Negative greater than or equal to </summary>
-    [JsonProperty("analysis2_sentiment_negative_gte")]
-    public System.Int32? Analysis2_Sentiment_Negative_GTE { get; set; }
-
-    /// <summary> Analysis2.Sentiment.Neutral equals </summary>
-    [JsonProperty("analysis2_sentiment_neutral_eq")]
-    public System.Int32? Analysis2_Sentiment_Neutral_EQ { get; set; }
-    /// <summary> Analysis2.Sentiment.Neutral less than or equal to </summary>
-    [JsonProperty("analysis2_sentiment_neutral_lte")]
-    public System.Int32? Analysis2_Sentiment_Neutral_LTE { get; set; }
-    /// <summary> Analysis2.Sentiment.Neutral greater than or equal to </summary>
-    [JsonProperty("analysis2_sentiment_neutral_gte")]
-    public System.Int32? Analysis2_Sentiment_Neutral_GTE { get; set; }
-
-
-    /// <summary> Analysis2.Entities.EntityType equals </summary>
-    [JsonProperty("analysis2_entities_entityType_eq")]
-    public string? Analysis2_Entities_EntityType_EQ { get; set; }
-    /// <summary> Analysis2.Entities.EntityType contains </summary>
-    [JsonProperty("analysis2_entities_entityType_con")]
-    public string? Analysis2_Entities_EntityType_CON { get; set; }
-    /// <summary> Analysis2.Entities.EntityType regex </summary>
-    [JsonProperty("analysis2_entities_entityType_reg")]
-    public string? Analysis2_Entities_EntityType_REG { get; set; }
-
-    /// <summary> Analysis2.Entities.EntityName equals </summary>
-    [JsonProperty("analysis2_entities_entityName_eq")]
-    public string? Analysis2_Entities_EntityName_EQ { get; set; }
-    /// <summary> Analysis2.Entities.EntityName contains </summary>
-    [JsonProperty("analysis2_entities_entityName_con")]
-    public string? Analysis2_Entities_EntityName_CON { get; set; }
-    /// <summary> Analysis2.Entities.EntityName regex </summary>
-    [JsonProperty("analysis2_entities_entityName_reg")]
-    public string? Analysis2_Entities_EntityName_REG { get; set; }
-
-
-    /// <summary> Analysis2.Topics.Name equals </summary>
-    [JsonProperty("analysis2_topics_name_eq")]
-    public string? Analysis2_Topics_Name_EQ { get; set; }
-    /// <summary> Analysis2.Topics.Name contains </summary>
-    [JsonProperty("analysis2_topics_name_con")]
-    public string? Analysis2_Topics_Name_CON { get; set; }
-    /// <summary> Analysis2.Topics.Name regex </summary>
-    [JsonProperty("analysis2_topics_name_reg")]
-    public string? Analysis2_Topics_Name_REG { get; set; }
-
-
-
-    /// <summary> Analysis2.ClientIntention equals </summary>
-    [JsonProperty("analysis2_clientIntention_eq")]
-    public string? Analysis2_ClientIntention_EQ { get; set; }
-    /// <summary> Analysis2.ClientIntention contains </summary>
-    [JsonProperty("analysis2_clientIntention_con")]
-    public string? Analysis2_ClientIntention_CON { get; set; }
-    /// <summary> Analysis2.ClientIntention regex </summary>
-    [JsonProperty("analysis2_clientIntention_reg")]
-    public string? Analysis2_ClientIntention_REG { get; set; }
-
-    /// <summary> Analysis2.AgentIntention equals </summary>
-    [JsonProperty("analysis2_agentIntention_eq")]
-    public string? Analysis2_AgentIntention_EQ { get; set; }
-    /// <summary> Analysis2.AgentIntention contains </summary>
-    [JsonProperty("analysis2_agentIntention_con")]
-    public string? Analysis2_AgentIntention_CON { get; set; }
-    /// <summary> Analysis2.AgentIntention regex </summary>
-    [JsonProperty("analysis2_agentIntention_reg")]
-    public string? Analysis2_AgentIntention_REG { get; set; }
-
-    /// <summary> Analysis2.Summary equals </summary>
-    [JsonProperty("analysis2_summary_eq")]
-    public string? Analysis2_Summary_EQ { get; set; }
-    /// <summary> Analysis2.Summary contains </summary>
-    [JsonProperty("analysis2_summary_con")]
-    public string? Analysis2_Summary_CON { get; set; }
-    /// <summary> Analysis2.Summary regex </summary>
-    [JsonProperty("analysis2_summary_reg")]
-    public string? Analysis2_Summary_REG { get; set; }
-
-    /// <summary> Analysis2.Problem equals </summary>
-    [JsonProperty("analysis2_problem_eq")]
-    public string? Analysis2_Problem_EQ { get; set; }
-    /// <summary> Analysis2.Problem contains </summary>
-    [JsonProperty("analysis2_problem_con")]
-    public string? Analysis2_Problem_CON { get; set; }
-    /// <summary> Analysis2.Problem regex </summary>
-    [JsonProperty("analysis2_problem_reg")]
-    public string? Analysis2_Problem_REG { get; set; }
-
-
-
-    /// <summary> Analysis2.ClientSatisfaction equals </summary>
-    [JsonProperty("analysis2_clientSatisfaction_eq")]
-    public System.Int32? Analysis2_ClientSatisfaction_EQ { get; set; }
-    /// <summary> Analysis2.ClientSatisfaction less than or equal to </summary>
-    [JsonProperty("analysis2_clientSatisfaction_lte")]
-    public System.Int32? Analysis2_ClientSatisfaction_LTE { get; set; }
-    /// <summary> Analysis2.ClientSatisfaction greater than or equal to </summary>
-    [JsonProperty("analysis2_clientSatisfaction_gte")]
-    public System.Int32? Analysis2_ClientSatisfaction_GTE { get; set; }
-
-    /// <summary> Analysis2.Language equals </summary>
-    [JsonProperty("analysis2_language_eq")]
-    public string? Analysis2_Language_EQ { get; set; }
-    /// <summary> Analysis2.Language contains </summary>
-    [JsonProperty("analysis2_language_con")]
-    public string? Analysis2_Language_CON { get; set; }
-    /// <summary> Analysis2.Language regex </summary>
-    [JsonProperty("analysis2_language_reg")]
-    public string? Analysis2_Language_REG { get; set; }
-
-    /// <summary> Analysis2.Model equals </summary>
-    [JsonProperty("analysis2_model_eq")]
-    public string? Analysis2_Model_EQ { get; set; }
-    /// <summary> Analysis2.Model contains </summary>
-    [JsonProperty("analysis2_model_con")]
-    public string? Analysis2_Model_CON { get; set; }
-    /// <summary> Analysis2.Model regex </summary>
-    [JsonProperty("analysis2_model_reg")]
-    public string? Analysis2_Model_REG { get; set; }
-
-    /// <summary> Analysis2.ActionAgentShouldTakeNext equals </summary>
-    [JsonProperty("analysis2_actionAgentShouldTakeNext_eq")]
-    public string? Analysis2_ActionAgentShouldTakeNext_EQ { get; set; }
-    /// <summary> Analysis2.ActionAgentShouldTakeNext contains </summary>
-    [JsonProperty("analysis2_actionAgentShouldTakeNext_con")]
-    public string? Analysis2_ActionAgentShouldTakeNext_CON { get; set; }
-    /// <summary> Analysis2.ActionAgentShouldTakeNext regex </summary>
-    [JsonProperty("analysis2_actionAgentShouldTakeNext_reg")]
-    public string? Analysis2_ActionAgentShouldTakeNext_REG { get; set; }
-
-    /// <summary> Analysis2.ClientInterestInProduct equals </summary>
-    [JsonProperty("analysis2_clientInterestInProduct_eq")]
-    public System.Int32? Analysis2_ClientInterestInProduct_EQ { get; set; }
-    /// <summary> Analysis2.ClientInterestInProduct less than or equal to </summary>
-    [JsonProperty("analysis2_clientInterestInProduct_lte")]
-    public System.Int32? Analysis2_ClientInterestInProduct_LTE { get; set; }
-    /// <summary> Analysis2.ClientInterestInProduct greater than or equal to </summary>
-    [JsonProperty("analysis2_clientInterestInProduct_gte")]
-    public System.Int32? Analysis2_ClientInterestInProduct_GTE { get; set; }
-
-
-    /// <summary> Analysis3.Sentiment.Positive equals </summary>
-    [JsonProperty("analysis3_sentiment_positive_eq")]
-    public System.Int32? Analysis3_Sentiment_Positive_EQ { get; set; }
-    /// <summary> Analysis3.Sentiment.Positive less than or equal to </summary>
-    [JsonProperty("analysis3_sentiment_positive_lte")]
-    public System.Int32? Analysis3_Sentiment_Positive_LTE { get; set; }
-    /// <summary> Analysis3.Sentiment.Positive greater than or equal to </summary>
-    [JsonProperty("analysis3_sentiment_positive_gte")]
-    public System.Int32? Analysis3_Sentiment_Positive_GTE { get; set; }
-
-    /// <summary> Analysis3.Sentiment.Negative equals </summary>
-    [JsonProperty("analysis3_sentiment_negative_eq")]
-    public System.Int32? Analysis3_Sentiment_Negative_EQ { get; set; }
-    /// <summary> Analysis3.Sentiment.Negative less than or equal to </summary>
-    [JsonProperty("analysis3_sentiment_negative_lte")]
-    public System.Int32? Analysis3_Sentiment_Negative_LTE { get; set; }
-    /// <summary> Analysis3.Sentiment.Negative greater than or equal to </summary>
-    [JsonProperty("analysis3_sentiment_negative_gte")]
-    public System.Int32? Analysis3_Sentiment_Negative_GTE { get; set; }
-
-    /// <summary> Analysis3.Sentiment.Neutral equals </summary>
-    [JsonProperty("analysis3_sentiment_neutral_eq")]
-    public System.Int32? Analysis3_Sentiment_Neutral_EQ { get; set; }
-    /// <summary> Analysis3.Sentiment.Neutral less than or equal to </summary>
-    [JsonProperty("analysis3_sentiment_neutral_lte")]
-    public System.Int32? Analysis3_Sentiment_Neutral_LTE { get; set; }
-    /// <summary> Analysis3.Sentiment.Neutral greater than or equal to </summary>
-    [JsonProperty("analysis3_sentiment_neutral_gte")]
-    public System.Int32? Analysis3_Sentiment_Neutral_GTE { get; set; }
-
-
-    /// <summary> Analysis3.Entities.EntityType equals </summary>
-    [JsonProperty("analysis3_entities_entityType_eq")]
-    public string? Analysis3_Entities_EntityType_EQ { get; set; }
-    /// <summary> Analysis3.Entities.EntityType contains </summary>
-    [JsonProperty("analysis3_entities_entityType_con")]
-    public string? Analysis3_Entities_EntityType_CON { get; set; }
-    /// <summary> Analysis3.Entities.EntityType regex </summary>
-    [JsonProperty("analysis3_entities_entityType_reg")]
-    public string? Analysis3_Entities_EntityType_REG { get; set; }
-
-    /// <summary> Analysis3.Entities.EntityName equals </summary>
-    [JsonProperty("analysis3_entities_entityName_eq")]
-    public string? Analysis3_Entities_EntityName_EQ { get; set; }
-    /// <summary> Analysis3.Entities.EntityName contains </summary>
-    [JsonProperty("analysis3_entities_entityName_con")]
-    public string? Analysis3_Entities_EntityName_CON { get; set; }
-    /// <summary> Analysis3.Entities.EntityName regex </summary>
-    [JsonProperty("analysis3_entities_entityName_reg")]
-    public string? Analysis3_Entities_EntityName_REG { get; set; }
-
-
-    /// <summary> Analysis3.Topics.Name equals </summary>
-    [JsonProperty("analysis3_topics_name_eq")]
-    public string? Analysis3_Topics_Name_EQ { get; set; }
-    /// <summary> Analysis3.Topics.Name contains </summary>
-    [JsonProperty("analysis3_topics_name_con")]
-    public string? Analysis3_Topics_Name_CON { get; set; }
-    /// <summary> Analysis3.Topics.Name regex </summary>
-    [JsonProperty("analysis3_topics_name_reg")]
-    public string? Analysis3_Topics_Name_REG { get; set; }
-
-
-
-    /// <summary> Analysis3.ClientIntention equals </summary>
-    [JsonProperty("analysis3_clientIntention_eq")]
-    public string? Analysis3_ClientIntention_EQ { get; set; }
-    /// <summary> Analysis3.ClientIntention contains </summary>
-    [JsonProperty("analysis3_clientIntention_con")]
-    public string? Analysis3_ClientIntention_CON { get; set; }
-    /// <summary> Analysis3.ClientIntention regex </summary>
-    [JsonProperty("analysis3_clientIntention_reg")]
-    public string? Analysis3_ClientIntention_REG { get; set; }
-
-    /// <summary> Analysis3.AgentIntention equals </summary>
-    [JsonProperty("analysis3_agentIntention_eq")]
-    public string? Analysis3_AgentIntention_EQ { get; set; }
-    /// <summary> Analysis3.AgentIntention contains </summary>
-    [JsonProperty("analysis3_agentIntention_con")]
-    public string? Analysis3_AgentIntention_CON { get; set; }
-    /// <summary> Analysis3.AgentIntention regex </summary>
-    [JsonProperty("analysis3_agentIntention_reg")]
-    public string? Analysis3_AgentIntention_REG { get; set; }
-
-    /// <summary> Analysis3.Summary equals </summary>
-    [JsonProperty("analysis3_summary_eq")]
-    public string? Analysis3_Summary_EQ { get; set; }
-    /// <summary> Analysis3.Summary contains </summary>
-    [JsonProperty("analysis3_summary_con")]
-    public string? Analysis3_Summary_CON { get; set; }
-    /// <summary> Analysis3.Summary regex </summary>
-    [JsonProperty("analysis3_summary_reg")]
-    public string? Analysis3_Summary_REG { get; set; }
-
-    /// <summary> Analysis3.Problem equals </summary>
-    [JsonProperty("analysis3_problem_eq")]
-    public string? Analysis3_Problem_EQ { get; set; }
-    /// <summary> Analysis3.Problem contains </summary>
-    [JsonProperty("analysis3_problem_con")]
-    public string? Analysis3_Problem_CON { get; set; }
-    /// <summary> Analysis3.Problem regex </summary>
-    [JsonProperty("analysis3_problem_reg")]
-    public string? Analysis3_Problem_REG { get; set; }
-
-
-
-    /// <summary> Analysis3.ClientSatisfaction equals </summary>
-    [JsonProperty("analysis3_clientSatisfaction_eq")]
-    public System.Int32? Analysis3_ClientSatisfaction_EQ { get; set; }
-    /// <summary> Analysis3.ClientSatisfaction less than or equal to </summary>
-    [JsonProperty("analysis3_clientSatisfaction_lte")]
-    public System.Int32? Analysis3_ClientSatisfaction_LTE { get; set; }
-    /// <summary> Analysis3.ClientSatisfaction greater than or equal to </summary>
-    [JsonProperty("analysis3_clientSatisfaction_gte")]
-    public System.Int32? Analysis3_ClientSatisfaction_GTE { get; set; }
-
-    /// <summary> Analysis3.Language equals </summary>
-    [JsonProperty("analysis3_language_eq")]
-    public string? Analysis3_Language_EQ { get; set; }
-    /// <summary> Analysis3.Language contains </summary>
-    [JsonProperty("analysis3_language_con")]
-    public string? Analysis3_Language_CON { get; set; }
-    /// <summary> Analysis3.Language regex </summary>
-    [JsonProperty("analysis3_language_reg")]
-    public string? Analysis3_Language_REG { get; set; }
-
-    /// <summary> Analysis3.Model equals </summary>
-    [JsonProperty("analysis3_model_eq")]
-    public string? Analysis3_Model_EQ { get; set; }
-    /// <summary> Analysis3.Model contains </summary>
-    [JsonProperty("analysis3_model_con")]
-    public string? Analysis3_Model_CON { get; set; }
-    /// <summary> Analysis3.Model regex </summary>
-    [JsonProperty("analysis3_model_reg")]
-    public string? Analysis3_Model_REG { get; set; }
-
-    /// <summary> Analysis3.ActionAgentShouldTakeNext equals </summary>
-    [JsonProperty("analysis3_actionAgentShouldTakeNext_eq")]
-    public string? Analysis3_ActionAgentShouldTakeNext_EQ { get; set; }
-    /// <summary> Analysis3.ActionAgentShouldTakeNext contains </summary>
-    [JsonProperty("analysis3_actionAgentShouldTakeNext_con")]
-    public string? Analysis3_ActionAgentShouldTakeNext_CON { get; set; }
-    /// <summary> Analysis3.ActionAgentShouldTakeNext regex </summary>
-    [JsonProperty("analysis3_actionAgentShouldTakeNext_reg")]
-    public string? Analysis3_ActionAgentShouldTakeNext_REG { get; set; }
-
-    /// <summary> Analysis3.ClientInterestInProduct equals </summary>
-    [JsonProperty("analysis3_clientInterestInProduct_eq")]
-    public System.Int32? Analysis3_ClientInterestInProduct_EQ { get; set; }
-    /// <summary> Analysis3.ClientInterestInProduct less than or equal to </summary>
-    [JsonProperty("analysis3_clientInterestInProduct_lte")]
-    public System.Int32? Analysis3_ClientInterestInProduct_LTE { get; set; }
-    /// <summary> Analysis3.ClientInterestInProduct greater than or equal to </summary>
-    [JsonProperty("analysis3_clientInterestInProduct_gte")]
-    public System.Int32? Analysis3_ClientInterestInProduct_GTE { get; set; }
-
-
     /// <summary> IdsParticipantLines equals </summary>
     [JsonProperty("idsParticipantLines_eq")]
     public string? IdsParticipantLines_EQ { get; set; }
@@ -12308,15 +9677,56 @@ public class CallIncomingFilterRequest
     public string? IdsParticipantLines_REG { get; set; }
 
 
-    /// <summary> ErrorMessage equals </summary>
-    [JsonProperty("errorMessage_eq")]
-    public string? ErrorMessage_EQ { get; set; }
-    /// <summary> ErrorMessage contains </summary>
-    [JsonProperty("errorMessage_con")]
-    public string? ErrorMessage_CON { get; set; }
-    /// <summary> ErrorMessage regex </summary>
-    [JsonProperty("errorMessage_reg")]
-    public string? ErrorMessage_REG { get; set; }
+    /// <summary> Errors.ErrorsCall equals </summary>
+    [JsonProperty("errors_errorsCall_eq")]
+    public string? Errors_ErrorsCall_EQ { get; set; }
+    /// <summary> Errors.ErrorsCall contains </summary>
+    [JsonProperty("errors_errorsCall_con")]
+    public string? Errors_ErrorsCall_CON { get; set; }
+    /// <summary> Errors.ErrorsCall regex </summary>
+    [JsonProperty("errors_errorsCall_reg")]
+    public string? Errors_ErrorsCall_REG { get; set; }
+
+    /// <summary> Errors.ErrorsRecording equals </summary>
+    [JsonProperty("errors_errorsRecording_eq")]
+    public string? Errors_ErrorsRecording_EQ { get; set; }
+    /// <summary> Errors.ErrorsRecording contains </summary>
+    [JsonProperty("errors_errorsRecording_con")]
+    public string? Errors_ErrorsRecording_CON { get; set; }
+    /// <summary> Errors.ErrorsRecording regex </summary>
+    [JsonProperty("errors_errorsRecording_reg")]
+    public string? Errors_ErrorsRecording_REG { get; set; }
+
+    /// <summary> Errors.ErrorsAiTranscription equals </summary>
+    [JsonProperty("errors_errorsAiTranscription_eq")]
+    public string? Errors_ErrorsAiTranscription_EQ { get; set; }
+    /// <summary> Errors.ErrorsAiTranscription contains </summary>
+    [JsonProperty("errors_errorsAiTranscription_con")]
+    public string? Errors_ErrorsAiTranscription_CON { get; set; }
+    /// <summary> Errors.ErrorsAiTranscription regex </summary>
+    [JsonProperty("errors_errorsAiTranscription_reg")]
+    public string? Errors_ErrorsAiTranscription_REG { get; set; }
+
+    /// <summary> Errors.ErrorsAiAnalysis equals </summary>
+    [JsonProperty("errors_errorsAiAnalysis_eq")]
+    public string? Errors_ErrorsAiAnalysis_EQ { get; set; }
+    /// <summary> Errors.ErrorsAiAnalysis contains </summary>
+    [JsonProperty("errors_errorsAiAnalysis_con")]
+    public string? Errors_ErrorsAiAnalysis_CON { get; set; }
+    /// <summary> Errors.ErrorsAiAnalysis regex </summary>
+    [JsonProperty("errors_errorsAiAnalysis_reg")]
+    public string? Errors_ErrorsAiAnalysis_REG { get; set; }
+
+
+    /// <summary> RecordingStatus equals </summary>
+    [JsonProperty("recordingStatus_eq")]
+    public string? RecordingStatus_EQ { get; set; }
+    /// <summary> RecordingStatus contains </summary>
+    [JsonProperty("recordingStatus_con")]
+    public string? RecordingStatus_CON { get; set; }
+    /// <summary> RecordingStatus regex </summary>
+    [JsonProperty("recordingStatus_reg")]
+    public string? RecordingStatus_REG { get; set; }
 
     /// <summary> AiTranscriptionStatus equals </summary>
     [JsonProperty("aiTranscriptionStatus_eq")]
@@ -12883,477 +10293,6 @@ public class CallOutgoingFilterRequest
     [JsonProperty("idAiCallAnalysisInput_reg")]
     public string? IdAiCallAnalysisInput_REG { get; set; }
 
-    /// <summary> Analysis.Sentiment.Positive equals </summary>
-    [JsonProperty("analysis_sentiment_positive_eq")]
-    public System.Int32? Analysis_Sentiment_Positive_EQ { get; set; }
-    /// <summary> Analysis.Sentiment.Positive less than or equal to </summary>
-    [JsonProperty("analysis_sentiment_positive_lte")]
-    public System.Int32? Analysis_Sentiment_Positive_LTE { get; set; }
-    /// <summary> Analysis.Sentiment.Positive greater than or equal to </summary>
-    [JsonProperty("analysis_sentiment_positive_gte")]
-    public System.Int32? Analysis_Sentiment_Positive_GTE { get; set; }
-
-    /// <summary> Analysis.Sentiment.Negative equals </summary>
-    [JsonProperty("analysis_sentiment_negative_eq")]
-    public System.Int32? Analysis_Sentiment_Negative_EQ { get; set; }
-    /// <summary> Analysis.Sentiment.Negative less than or equal to </summary>
-    [JsonProperty("analysis_sentiment_negative_lte")]
-    public System.Int32? Analysis_Sentiment_Negative_LTE { get; set; }
-    /// <summary> Analysis.Sentiment.Negative greater than or equal to </summary>
-    [JsonProperty("analysis_sentiment_negative_gte")]
-    public System.Int32? Analysis_Sentiment_Negative_GTE { get; set; }
-
-    /// <summary> Analysis.Sentiment.Neutral equals </summary>
-    [JsonProperty("analysis_sentiment_neutral_eq")]
-    public System.Int32? Analysis_Sentiment_Neutral_EQ { get; set; }
-    /// <summary> Analysis.Sentiment.Neutral less than or equal to </summary>
-    [JsonProperty("analysis_sentiment_neutral_lte")]
-    public System.Int32? Analysis_Sentiment_Neutral_LTE { get; set; }
-    /// <summary> Analysis.Sentiment.Neutral greater than or equal to </summary>
-    [JsonProperty("analysis_sentiment_neutral_gte")]
-    public System.Int32? Analysis_Sentiment_Neutral_GTE { get; set; }
-
-
-    /// <summary> Analysis.Entities.EntityType equals </summary>
-    [JsonProperty("analysis_entities_entityType_eq")]
-    public string? Analysis_Entities_EntityType_EQ { get; set; }
-    /// <summary> Analysis.Entities.EntityType contains </summary>
-    [JsonProperty("analysis_entities_entityType_con")]
-    public string? Analysis_Entities_EntityType_CON { get; set; }
-    /// <summary> Analysis.Entities.EntityType regex </summary>
-    [JsonProperty("analysis_entities_entityType_reg")]
-    public string? Analysis_Entities_EntityType_REG { get; set; }
-
-    /// <summary> Analysis.Entities.EntityName equals </summary>
-    [JsonProperty("analysis_entities_entityName_eq")]
-    public string? Analysis_Entities_EntityName_EQ { get; set; }
-    /// <summary> Analysis.Entities.EntityName contains </summary>
-    [JsonProperty("analysis_entities_entityName_con")]
-    public string? Analysis_Entities_EntityName_CON { get; set; }
-    /// <summary> Analysis.Entities.EntityName regex </summary>
-    [JsonProperty("analysis_entities_entityName_reg")]
-    public string? Analysis_Entities_EntityName_REG { get; set; }
-
-
-    /// <summary> Analysis.Topics.Name equals </summary>
-    [JsonProperty("analysis_topics_name_eq")]
-    public string? Analysis_Topics_Name_EQ { get; set; }
-    /// <summary> Analysis.Topics.Name contains </summary>
-    [JsonProperty("analysis_topics_name_con")]
-    public string? Analysis_Topics_Name_CON { get; set; }
-    /// <summary> Analysis.Topics.Name regex </summary>
-    [JsonProperty("analysis_topics_name_reg")]
-    public string? Analysis_Topics_Name_REG { get; set; }
-
-
-
-    /// <summary> Analysis.ClientIntention equals </summary>
-    [JsonProperty("analysis_clientIntention_eq")]
-    public string? Analysis_ClientIntention_EQ { get; set; }
-    /// <summary> Analysis.ClientIntention contains </summary>
-    [JsonProperty("analysis_clientIntention_con")]
-    public string? Analysis_ClientIntention_CON { get; set; }
-    /// <summary> Analysis.ClientIntention regex </summary>
-    [JsonProperty("analysis_clientIntention_reg")]
-    public string? Analysis_ClientIntention_REG { get; set; }
-
-    /// <summary> Analysis.AgentIntention equals </summary>
-    [JsonProperty("analysis_agentIntention_eq")]
-    public string? Analysis_AgentIntention_EQ { get; set; }
-    /// <summary> Analysis.AgentIntention contains </summary>
-    [JsonProperty("analysis_agentIntention_con")]
-    public string? Analysis_AgentIntention_CON { get; set; }
-    /// <summary> Analysis.AgentIntention regex </summary>
-    [JsonProperty("analysis_agentIntention_reg")]
-    public string? Analysis_AgentIntention_REG { get; set; }
-
-    /// <summary> Analysis.Summary equals </summary>
-    [JsonProperty("analysis_summary_eq")]
-    public string? Analysis_Summary_EQ { get; set; }
-    /// <summary> Analysis.Summary contains </summary>
-    [JsonProperty("analysis_summary_con")]
-    public string? Analysis_Summary_CON { get; set; }
-    /// <summary> Analysis.Summary regex </summary>
-    [JsonProperty("analysis_summary_reg")]
-    public string? Analysis_Summary_REG { get; set; }
-
-    /// <summary> Analysis.Problem equals </summary>
-    [JsonProperty("analysis_problem_eq")]
-    public string? Analysis_Problem_EQ { get; set; }
-    /// <summary> Analysis.Problem contains </summary>
-    [JsonProperty("analysis_problem_con")]
-    public string? Analysis_Problem_CON { get; set; }
-    /// <summary> Analysis.Problem regex </summary>
-    [JsonProperty("analysis_problem_reg")]
-    public string? Analysis_Problem_REG { get; set; }
-
-
-
-    /// <summary> Analysis.ClientSatisfaction equals </summary>
-    [JsonProperty("analysis_clientSatisfaction_eq")]
-    public System.Int32? Analysis_ClientSatisfaction_EQ { get; set; }
-    /// <summary> Analysis.ClientSatisfaction less than or equal to </summary>
-    [JsonProperty("analysis_clientSatisfaction_lte")]
-    public System.Int32? Analysis_ClientSatisfaction_LTE { get; set; }
-    /// <summary> Analysis.ClientSatisfaction greater than or equal to </summary>
-    [JsonProperty("analysis_clientSatisfaction_gte")]
-    public System.Int32? Analysis_ClientSatisfaction_GTE { get; set; }
-
-    /// <summary> Analysis.Language equals </summary>
-    [JsonProperty("analysis_language_eq")]
-    public string? Analysis_Language_EQ { get; set; }
-    /// <summary> Analysis.Language contains </summary>
-    [JsonProperty("analysis_language_con")]
-    public string? Analysis_Language_CON { get; set; }
-    /// <summary> Analysis.Language regex </summary>
-    [JsonProperty("analysis_language_reg")]
-    public string? Analysis_Language_REG { get; set; }
-
-    /// <summary> Analysis.Model equals </summary>
-    [JsonProperty("analysis_model_eq")]
-    public string? Analysis_Model_EQ { get; set; }
-    /// <summary> Analysis.Model contains </summary>
-    [JsonProperty("analysis_model_con")]
-    public string? Analysis_Model_CON { get; set; }
-    /// <summary> Analysis.Model regex </summary>
-    [JsonProperty("analysis_model_reg")]
-    public string? Analysis_Model_REG { get; set; }
-
-    /// <summary> Analysis.ActionAgentShouldTakeNext equals </summary>
-    [JsonProperty("analysis_actionAgentShouldTakeNext_eq")]
-    public string? Analysis_ActionAgentShouldTakeNext_EQ { get; set; }
-    /// <summary> Analysis.ActionAgentShouldTakeNext contains </summary>
-    [JsonProperty("analysis_actionAgentShouldTakeNext_con")]
-    public string? Analysis_ActionAgentShouldTakeNext_CON { get; set; }
-    /// <summary> Analysis.ActionAgentShouldTakeNext regex </summary>
-    [JsonProperty("analysis_actionAgentShouldTakeNext_reg")]
-    public string? Analysis_ActionAgentShouldTakeNext_REG { get; set; }
-
-    /// <summary> Analysis.ClientInterestInProduct equals </summary>
-    [JsonProperty("analysis_clientInterestInProduct_eq")]
-    public System.Int32? Analysis_ClientInterestInProduct_EQ { get; set; }
-    /// <summary> Analysis.ClientInterestInProduct less than or equal to </summary>
-    [JsonProperty("analysis_clientInterestInProduct_lte")]
-    public System.Int32? Analysis_ClientInterestInProduct_LTE { get; set; }
-    /// <summary> Analysis.ClientInterestInProduct greater than or equal to </summary>
-    [JsonProperty("analysis_clientInterestInProduct_gte")]
-    public System.Int32? Analysis_ClientInterestInProduct_GTE { get; set; }
-
-
-    /// <summary> Analysis2.Sentiment.Positive equals </summary>
-    [JsonProperty("analysis2_sentiment_positive_eq")]
-    public System.Int32? Analysis2_Sentiment_Positive_EQ { get; set; }
-    /// <summary> Analysis2.Sentiment.Positive less than or equal to </summary>
-    [JsonProperty("analysis2_sentiment_positive_lte")]
-    public System.Int32? Analysis2_Sentiment_Positive_LTE { get; set; }
-    /// <summary> Analysis2.Sentiment.Positive greater than or equal to </summary>
-    [JsonProperty("analysis2_sentiment_positive_gte")]
-    public System.Int32? Analysis2_Sentiment_Positive_GTE { get; set; }
-
-    /// <summary> Analysis2.Sentiment.Negative equals </summary>
-    [JsonProperty("analysis2_sentiment_negative_eq")]
-    public System.Int32? Analysis2_Sentiment_Negative_EQ { get; set; }
-    /// <summary> Analysis2.Sentiment.Negative less than or equal to </summary>
-    [JsonProperty("analysis2_sentiment_negative_lte")]
-    public System.Int32? Analysis2_Sentiment_Negative_LTE { get; set; }
-    /// <summary> Analysis2.Sentiment.Negative greater than or equal to </summary>
-    [JsonProperty("analysis2_sentiment_negative_gte")]
-    public System.Int32? Analysis2_Sentiment_Negative_GTE { get; set; }
-
-    /// <summary> Analysis2.Sentiment.Neutral equals </summary>
-    [JsonProperty("analysis2_sentiment_neutral_eq")]
-    public System.Int32? Analysis2_Sentiment_Neutral_EQ { get; set; }
-    /// <summary> Analysis2.Sentiment.Neutral less than or equal to </summary>
-    [JsonProperty("analysis2_sentiment_neutral_lte")]
-    public System.Int32? Analysis2_Sentiment_Neutral_LTE { get; set; }
-    /// <summary> Analysis2.Sentiment.Neutral greater than or equal to </summary>
-    [JsonProperty("analysis2_sentiment_neutral_gte")]
-    public System.Int32? Analysis2_Sentiment_Neutral_GTE { get; set; }
-
-
-    /// <summary> Analysis2.Entities.EntityType equals </summary>
-    [JsonProperty("analysis2_entities_entityType_eq")]
-    public string? Analysis2_Entities_EntityType_EQ { get; set; }
-    /// <summary> Analysis2.Entities.EntityType contains </summary>
-    [JsonProperty("analysis2_entities_entityType_con")]
-    public string? Analysis2_Entities_EntityType_CON { get; set; }
-    /// <summary> Analysis2.Entities.EntityType regex </summary>
-    [JsonProperty("analysis2_entities_entityType_reg")]
-    public string? Analysis2_Entities_EntityType_REG { get; set; }
-
-    /// <summary> Analysis2.Entities.EntityName equals </summary>
-    [JsonProperty("analysis2_entities_entityName_eq")]
-    public string? Analysis2_Entities_EntityName_EQ { get; set; }
-    /// <summary> Analysis2.Entities.EntityName contains </summary>
-    [JsonProperty("analysis2_entities_entityName_con")]
-    public string? Analysis2_Entities_EntityName_CON { get; set; }
-    /// <summary> Analysis2.Entities.EntityName regex </summary>
-    [JsonProperty("analysis2_entities_entityName_reg")]
-    public string? Analysis2_Entities_EntityName_REG { get; set; }
-
-
-    /// <summary> Analysis2.Topics.Name equals </summary>
-    [JsonProperty("analysis2_topics_name_eq")]
-    public string? Analysis2_Topics_Name_EQ { get; set; }
-    /// <summary> Analysis2.Topics.Name contains </summary>
-    [JsonProperty("analysis2_topics_name_con")]
-    public string? Analysis2_Topics_Name_CON { get; set; }
-    /// <summary> Analysis2.Topics.Name regex </summary>
-    [JsonProperty("analysis2_topics_name_reg")]
-    public string? Analysis2_Topics_Name_REG { get; set; }
-
-
-
-    /// <summary> Analysis2.ClientIntention equals </summary>
-    [JsonProperty("analysis2_clientIntention_eq")]
-    public string? Analysis2_ClientIntention_EQ { get; set; }
-    /// <summary> Analysis2.ClientIntention contains </summary>
-    [JsonProperty("analysis2_clientIntention_con")]
-    public string? Analysis2_ClientIntention_CON { get; set; }
-    /// <summary> Analysis2.ClientIntention regex </summary>
-    [JsonProperty("analysis2_clientIntention_reg")]
-    public string? Analysis2_ClientIntention_REG { get; set; }
-
-    /// <summary> Analysis2.AgentIntention equals </summary>
-    [JsonProperty("analysis2_agentIntention_eq")]
-    public string? Analysis2_AgentIntention_EQ { get; set; }
-    /// <summary> Analysis2.AgentIntention contains </summary>
-    [JsonProperty("analysis2_agentIntention_con")]
-    public string? Analysis2_AgentIntention_CON { get; set; }
-    /// <summary> Analysis2.AgentIntention regex </summary>
-    [JsonProperty("analysis2_agentIntention_reg")]
-    public string? Analysis2_AgentIntention_REG { get; set; }
-
-    /// <summary> Analysis2.Summary equals </summary>
-    [JsonProperty("analysis2_summary_eq")]
-    public string? Analysis2_Summary_EQ { get; set; }
-    /// <summary> Analysis2.Summary contains </summary>
-    [JsonProperty("analysis2_summary_con")]
-    public string? Analysis2_Summary_CON { get; set; }
-    /// <summary> Analysis2.Summary regex </summary>
-    [JsonProperty("analysis2_summary_reg")]
-    public string? Analysis2_Summary_REG { get; set; }
-
-    /// <summary> Analysis2.Problem equals </summary>
-    [JsonProperty("analysis2_problem_eq")]
-    public string? Analysis2_Problem_EQ { get; set; }
-    /// <summary> Analysis2.Problem contains </summary>
-    [JsonProperty("analysis2_problem_con")]
-    public string? Analysis2_Problem_CON { get; set; }
-    /// <summary> Analysis2.Problem regex </summary>
-    [JsonProperty("analysis2_problem_reg")]
-    public string? Analysis2_Problem_REG { get; set; }
-
-
-
-    /// <summary> Analysis2.ClientSatisfaction equals </summary>
-    [JsonProperty("analysis2_clientSatisfaction_eq")]
-    public System.Int32? Analysis2_ClientSatisfaction_EQ { get; set; }
-    /// <summary> Analysis2.ClientSatisfaction less than or equal to </summary>
-    [JsonProperty("analysis2_clientSatisfaction_lte")]
-    public System.Int32? Analysis2_ClientSatisfaction_LTE { get; set; }
-    /// <summary> Analysis2.ClientSatisfaction greater than or equal to </summary>
-    [JsonProperty("analysis2_clientSatisfaction_gte")]
-    public System.Int32? Analysis2_ClientSatisfaction_GTE { get; set; }
-
-    /// <summary> Analysis2.Language equals </summary>
-    [JsonProperty("analysis2_language_eq")]
-    public string? Analysis2_Language_EQ { get; set; }
-    /// <summary> Analysis2.Language contains </summary>
-    [JsonProperty("analysis2_language_con")]
-    public string? Analysis2_Language_CON { get; set; }
-    /// <summary> Analysis2.Language regex </summary>
-    [JsonProperty("analysis2_language_reg")]
-    public string? Analysis2_Language_REG { get; set; }
-
-    /// <summary> Analysis2.Model equals </summary>
-    [JsonProperty("analysis2_model_eq")]
-    public string? Analysis2_Model_EQ { get; set; }
-    /// <summary> Analysis2.Model contains </summary>
-    [JsonProperty("analysis2_model_con")]
-    public string? Analysis2_Model_CON { get; set; }
-    /// <summary> Analysis2.Model regex </summary>
-    [JsonProperty("analysis2_model_reg")]
-    public string? Analysis2_Model_REG { get; set; }
-
-    /// <summary> Analysis2.ActionAgentShouldTakeNext equals </summary>
-    [JsonProperty("analysis2_actionAgentShouldTakeNext_eq")]
-    public string? Analysis2_ActionAgentShouldTakeNext_EQ { get; set; }
-    /// <summary> Analysis2.ActionAgentShouldTakeNext contains </summary>
-    [JsonProperty("analysis2_actionAgentShouldTakeNext_con")]
-    public string? Analysis2_ActionAgentShouldTakeNext_CON { get; set; }
-    /// <summary> Analysis2.ActionAgentShouldTakeNext regex </summary>
-    [JsonProperty("analysis2_actionAgentShouldTakeNext_reg")]
-    public string? Analysis2_ActionAgentShouldTakeNext_REG { get; set; }
-
-    /// <summary> Analysis2.ClientInterestInProduct equals </summary>
-    [JsonProperty("analysis2_clientInterestInProduct_eq")]
-    public System.Int32? Analysis2_ClientInterestInProduct_EQ { get; set; }
-    /// <summary> Analysis2.ClientInterestInProduct less than or equal to </summary>
-    [JsonProperty("analysis2_clientInterestInProduct_lte")]
-    public System.Int32? Analysis2_ClientInterestInProduct_LTE { get; set; }
-    /// <summary> Analysis2.ClientInterestInProduct greater than or equal to </summary>
-    [JsonProperty("analysis2_clientInterestInProduct_gte")]
-    public System.Int32? Analysis2_ClientInterestInProduct_GTE { get; set; }
-
-
-    /// <summary> Analysis3.Sentiment.Positive equals </summary>
-    [JsonProperty("analysis3_sentiment_positive_eq")]
-    public System.Int32? Analysis3_Sentiment_Positive_EQ { get; set; }
-    /// <summary> Analysis3.Sentiment.Positive less than or equal to </summary>
-    [JsonProperty("analysis3_sentiment_positive_lte")]
-    public System.Int32? Analysis3_Sentiment_Positive_LTE { get; set; }
-    /// <summary> Analysis3.Sentiment.Positive greater than or equal to </summary>
-    [JsonProperty("analysis3_sentiment_positive_gte")]
-    public System.Int32? Analysis3_Sentiment_Positive_GTE { get; set; }
-
-    /// <summary> Analysis3.Sentiment.Negative equals </summary>
-    [JsonProperty("analysis3_sentiment_negative_eq")]
-    public System.Int32? Analysis3_Sentiment_Negative_EQ { get; set; }
-    /// <summary> Analysis3.Sentiment.Negative less than or equal to </summary>
-    [JsonProperty("analysis3_sentiment_negative_lte")]
-    public System.Int32? Analysis3_Sentiment_Negative_LTE { get; set; }
-    /// <summary> Analysis3.Sentiment.Negative greater than or equal to </summary>
-    [JsonProperty("analysis3_sentiment_negative_gte")]
-    public System.Int32? Analysis3_Sentiment_Negative_GTE { get; set; }
-
-    /// <summary> Analysis3.Sentiment.Neutral equals </summary>
-    [JsonProperty("analysis3_sentiment_neutral_eq")]
-    public System.Int32? Analysis3_Sentiment_Neutral_EQ { get; set; }
-    /// <summary> Analysis3.Sentiment.Neutral less than or equal to </summary>
-    [JsonProperty("analysis3_sentiment_neutral_lte")]
-    public System.Int32? Analysis3_Sentiment_Neutral_LTE { get; set; }
-    /// <summary> Analysis3.Sentiment.Neutral greater than or equal to </summary>
-    [JsonProperty("analysis3_sentiment_neutral_gte")]
-    public System.Int32? Analysis3_Sentiment_Neutral_GTE { get; set; }
-
-
-    /// <summary> Analysis3.Entities.EntityType equals </summary>
-    [JsonProperty("analysis3_entities_entityType_eq")]
-    public string? Analysis3_Entities_EntityType_EQ { get; set; }
-    /// <summary> Analysis3.Entities.EntityType contains </summary>
-    [JsonProperty("analysis3_entities_entityType_con")]
-    public string? Analysis3_Entities_EntityType_CON { get; set; }
-    /// <summary> Analysis3.Entities.EntityType regex </summary>
-    [JsonProperty("analysis3_entities_entityType_reg")]
-    public string? Analysis3_Entities_EntityType_REG { get; set; }
-
-    /// <summary> Analysis3.Entities.EntityName equals </summary>
-    [JsonProperty("analysis3_entities_entityName_eq")]
-    public string? Analysis3_Entities_EntityName_EQ { get; set; }
-    /// <summary> Analysis3.Entities.EntityName contains </summary>
-    [JsonProperty("analysis3_entities_entityName_con")]
-    public string? Analysis3_Entities_EntityName_CON { get; set; }
-    /// <summary> Analysis3.Entities.EntityName regex </summary>
-    [JsonProperty("analysis3_entities_entityName_reg")]
-    public string? Analysis3_Entities_EntityName_REG { get; set; }
-
-
-    /// <summary> Analysis3.Topics.Name equals </summary>
-    [JsonProperty("analysis3_topics_name_eq")]
-    public string? Analysis3_Topics_Name_EQ { get; set; }
-    /// <summary> Analysis3.Topics.Name contains </summary>
-    [JsonProperty("analysis3_topics_name_con")]
-    public string? Analysis3_Topics_Name_CON { get; set; }
-    /// <summary> Analysis3.Topics.Name regex </summary>
-    [JsonProperty("analysis3_topics_name_reg")]
-    public string? Analysis3_Topics_Name_REG { get; set; }
-
-
-
-    /// <summary> Analysis3.ClientIntention equals </summary>
-    [JsonProperty("analysis3_clientIntention_eq")]
-    public string? Analysis3_ClientIntention_EQ { get; set; }
-    /// <summary> Analysis3.ClientIntention contains </summary>
-    [JsonProperty("analysis3_clientIntention_con")]
-    public string? Analysis3_ClientIntention_CON { get; set; }
-    /// <summary> Analysis3.ClientIntention regex </summary>
-    [JsonProperty("analysis3_clientIntention_reg")]
-    public string? Analysis3_ClientIntention_REG { get; set; }
-
-    /// <summary> Analysis3.AgentIntention equals </summary>
-    [JsonProperty("analysis3_agentIntention_eq")]
-    public string? Analysis3_AgentIntention_EQ { get; set; }
-    /// <summary> Analysis3.AgentIntention contains </summary>
-    [JsonProperty("analysis3_agentIntention_con")]
-    public string? Analysis3_AgentIntention_CON { get; set; }
-    /// <summary> Analysis3.AgentIntention regex </summary>
-    [JsonProperty("analysis3_agentIntention_reg")]
-    public string? Analysis3_AgentIntention_REG { get; set; }
-
-    /// <summary> Analysis3.Summary equals </summary>
-    [JsonProperty("analysis3_summary_eq")]
-    public string? Analysis3_Summary_EQ { get; set; }
-    /// <summary> Analysis3.Summary contains </summary>
-    [JsonProperty("analysis3_summary_con")]
-    public string? Analysis3_Summary_CON { get; set; }
-    /// <summary> Analysis3.Summary regex </summary>
-    [JsonProperty("analysis3_summary_reg")]
-    public string? Analysis3_Summary_REG { get; set; }
-
-    /// <summary> Analysis3.Problem equals </summary>
-    [JsonProperty("analysis3_problem_eq")]
-    public string? Analysis3_Problem_EQ { get; set; }
-    /// <summary> Analysis3.Problem contains </summary>
-    [JsonProperty("analysis3_problem_con")]
-    public string? Analysis3_Problem_CON { get; set; }
-    /// <summary> Analysis3.Problem regex </summary>
-    [JsonProperty("analysis3_problem_reg")]
-    public string? Analysis3_Problem_REG { get; set; }
-
-
-
-    /// <summary> Analysis3.ClientSatisfaction equals </summary>
-    [JsonProperty("analysis3_clientSatisfaction_eq")]
-    public System.Int32? Analysis3_ClientSatisfaction_EQ { get; set; }
-    /// <summary> Analysis3.ClientSatisfaction less than or equal to </summary>
-    [JsonProperty("analysis3_clientSatisfaction_lte")]
-    public System.Int32? Analysis3_ClientSatisfaction_LTE { get; set; }
-    /// <summary> Analysis3.ClientSatisfaction greater than or equal to </summary>
-    [JsonProperty("analysis3_clientSatisfaction_gte")]
-    public System.Int32? Analysis3_ClientSatisfaction_GTE { get; set; }
-
-    /// <summary> Analysis3.Language equals </summary>
-    [JsonProperty("analysis3_language_eq")]
-    public string? Analysis3_Language_EQ { get; set; }
-    /// <summary> Analysis3.Language contains </summary>
-    [JsonProperty("analysis3_language_con")]
-    public string? Analysis3_Language_CON { get; set; }
-    /// <summary> Analysis3.Language regex </summary>
-    [JsonProperty("analysis3_language_reg")]
-    public string? Analysis3_Language_REG { get; set; }
-
-    /// <summary> Analysis3.Model equals </summary>
-    [JsonProperty("analysis3_model_eq")]
-    public string? Analysis3_Model_EQ { get; set; }
-    /// <summary> Analysis3.Model contains </summary>
-    [JsonProperty("analysis3_model_con")]
-    public string? Analysis3_Model_CON { get; set; }
-    /// <summary> Analysis3.Model regex </summary>
-    [JsonProperty("analysis3_model_reg")]
-    public string? Analysis3_Model_REG { get; set; }
-
-    /// <summary> Analysis3.ActionAgentShouldTakeNext equals </summary>
-    [JsonProperty("analysis3_actionAgentShouldTakeNext_eq")]
-    public string? Analysis3_ActionAgentShouldTakeNext_EQ { get; set; }
-    /// <summary> Analysis3.ActionAgentShouldTakeNext contains </summary>
-    [JsonProperty("analysis3_actionAgentShouldTakeNext_con")]
-    public string? Analysis3_ActionAgentShouldTakeNext_CON { get; set; }
-    /// <summary> Analysis3.ActionAgentShouldTakeNext regex </summary>
-    [JsonProperty("analysis3_actionAgentShouldTakeNext_reg")]
-    public string? Analysis3_ActionAgentShouldTakeNext_REG { get; set; }
-
-    /// <summary> Analysis3.ClientInterestInProduct equals </summary>
-    [JsonProperty("analysis3_clientInterestInProduct_eq")]
-    public System.Int32? Analysis3_ClientInterestInProduct_EQ { get; set; }
-    /// <summary> Analysis3.ClientInterestInProduct less than or equal to </summary>
-    [JsonProperty("analysis3_clientInterestInProduct_lte")]
-    public System.Int32? Analysis3_ClientInterestInProduct_LTE { get; set; }
-    /// <summary> Analysis3.ClientInterestInProduct greater than or equal to </summary>
-    [JsonProperty("analysis3_clientInterestInProduct_gte")]
-    public System.Int32? Analysis3_ClientInterestInProduct_GTE { get; set; }
-
-
     /// <summary> IdsParticipantLines equals </summary>
     [JsonProperty("idsParticipantLines_eq")]
     public string? IdsParticipantLines_EQ { get; set; }
@@ -13365,15 +10304,56 @@ public class CallOutgoingFilterRequest
     public string? IdsParticipantLines_REG { get; set; }
 
 
-    /// <summary> ErrorMessage equals </summary>
-    [JsonProperty("errorMessage_eq")]
-    public string? ErrorMessage_EQ { get; set; }
-    /// <summary> ErrorMessage contains </summary>
-    [JsonProperty("errorMessage_con")]
-    public string? ErrorMessage_CON { get; set; }
-    /// <summary> ErrorMessage regex </summary>
-    [JsonProperty("errorMessage_reg")]
-    public string? ErrorMessage_REG { get; set; }
+    /// <summary> Errors.ErrorsCall equals </summary>
+    [JsonProperty("errors_errorsCall_eq")]
+    public string? Errors_ErrorsCall_EQ { get; set; }
+    /// <summary> Errors.ErrorsCall contains </summary>
+    [JsonProperty("errors_errorsCall_con")]
+    public string? Errors_ErrorsCall_CON { get; set; }
+    /// <summary> Errors.ErrorsCall regex </summary>
+    [JsonProperty("errors_errorsCall_reg")]
+    public string? Errors_ErrorsCall_REG { get; set; }
+
+    /// <summary> Errors.ErrorsRecording equals </summary>
+    [JsonProperty("errors_errorsRecording_eq")]
+    public string? Errors_ErrorsRecording_EQ { get; set; }
+    /// <summary> Errors.ErrorsRecording contains </summary>
+    [JsonProperty("errors_errorsRecording_con")]
+    public string? Errors_ErrorsRecording_CON { get; set; }
+    /// <summary> Errors.ErrorsRecording regex </summary>
+    [JsonProperty("errors_errorsRecording_reg")]
+    public string? Errors_ErrorsRecording_REG { get; set; }
+
+    /// <summary> Errors.ErrorsAiTranscription equals </summary>
+    [JsonProperty("errors_errorsAiTranscription_eq")]
+    public string? Errors_ErrorsAiTranscription_EQ { get; set; }
+    /// <summary> Errors.ErrorsAiTranscription contains </summary>
+    [JsonProperty("errors_errorsAiTranscription_con")]
+    public string? Errors_ErrorsAiTranscription_CON { get; set; }
+    /// <summary> Errors.ErrorsAiTranscription regex </summary>
+    [JsonProperty("errors_errorsAiTranscription_reg")]
+    public string? Errors_ErrorsAiTranscription_REG { get; set; }
+
+    /// <summary> Errors.ErrorsAiAnalysis equals </summary>
+    [JsonProperty("errors_errorsAiAnalysis_eq")]
+    public string? Errors_ErrorsAiAnalysis_EQ { get; set; }
+    /// <summary> Errors.ErrorsAiAnalysis contains </summary>
+    [JsonProperty("errors_errorsAiAnalysis_con")]
+    public string? Errors_ErrorsAiAnalysis_CON { get; set; }
+    /// <summary> Errors.ErrorsAiAnalysis regex </summary>
+    [JsonProperty("errors_errorsAiAnalysis_reg")]
+    public string? Errors_ErrorsAiAnalysis_REG { get; set; }
+
+
+    /// <summary> RecordingStatus equals </summary>
+    [JsonProperty("recordingStatus_eq")]
+    public string? RecordingStatus_EQ { get; set; }
+    /// <summary> RecordingStatus contains </summary>
+    [JsonProperty("recordingStatus_con")]
+    public string? RecordingStatus_CON { get; set; }
+    /// <summary> RecordingStatus regex </summary>
+    [JsonProperty("recordingStatus_reg")]
+    public string? RecordingStatus_REG { get; set; }
 
     /// <summary> AiTranscriptionStatus equals </summary>
     [JsonProperty("aiTranscriptionStatus_eq")]

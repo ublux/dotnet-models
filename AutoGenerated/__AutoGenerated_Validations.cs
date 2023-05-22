@@ -3537,7 +3537,7 @@
 //        }
 //        // == Value type (callIncomingToCallFlowLogic.AiTranscriptionStatus) == 
 //        {
-//            int err1 = Validate_EnumType<AiProcessStatus>(value: callIncomingToCallFlowLogic.AiTranscriptionStatus, typeOfEnum: typeof(AiProcessStatus));
+//            int err1 = Validate_EnumType<ProcessStatus>(value: callIncomingToCallFlowLogic.AiTranscriptionStatus, typeOfEnum: typeof(ProcessStatus));
 //            if (err1 != 0)
 //            {
 //                yield return BuildErrorMessage(errorType: err1, callstack: $"{callStack}.AiTranscriptionStatus", value: callIncomingToCallFlowLogic.AiTranscriptionStatus);
@@ -3546,7 +3546,7 @@
 //        }
 //        // == Value type (callIncomingToCallFlowLogic.AiAnalysisStatus) == 
 //        {
-//            int err1 = Validate_EnumType<AiProcessStatus>(value: callIncomingToCallFlowLogic.AiAnalysisStatus, typeOfEnum: typeof(AiProcessStatus));
+//            int err1 = Validate_EnumType<ProcessStatus>(value: callIncomingToCallFlowLogic.AiAnalysisStatus, typeOfEnum: typeof(ProcessStatus));
 //            if (err1 != 0)
 //            {
 //                yield return BuildErrorMessage(errorType: err1, callstack: $"{callStack}.AiAnalysisStatus", value: callIncomingToCallFlowLogic.AiAnalysisStatus);
@@ -5202,7 +5202,7 @@
 //        }
 //        // == Value type (callIncomingToExtension.AiTranscriptionStatus) == 
 //        {
-//            int err1 = Validate_EnumType<AiProcessStatus>(value: callIncomingToExtension.AiTranscriptionStatus, typeOfEnum: typeof(AiProcessStatus));
+//            int err1 = Validate_EnumType<ProcessStatus>(value: callIncomingToExtension.AiTranscriptionStatus, typeOfEnum: typeof(ProcessStatus));
 //            if (err1 != 0)
 //            {
 //                yield return BuildErrorMessage(errorType: err1, callstack: $"{callStack}.AiTranscriptionStatus", value: callIncomingToExtension.AiTranscriptionStatus);
@@ -5211,7 +5211,7 @@
 //        }
 //        // == Value type (callIncomingToExtension.AiAnalysisStatus) == 
 //        {
-//            int err1 = Validate_EnumType<AiProcessStatus>(value: callIncomingToExtension.AiAnalysisStatus, typeOfEnum: typeof(AiProcessStatus));
+//            int err1 = Validate_EnumType<ProcessStatus>(value: callIncomingToExtension.AiAnalysisStatus, typeOfEnum: typeof(ProcessStatus));
 //            if (err1 != 0)
 //            {
 //                yield return BuildErrorMessage(errorType: err1, callstack: $"{callStack}.AiAnalysisStatus", value: callIncomingToExtension.AiAnalysisStatus);
@@ -5729,7 +5729,7 @@
 //        }
 //        // == Value type (callOutgoingToExtension.AiTranscriptionStatus) == 
 //        {
-//            int err1 = Validate_EnumType<AiProcessStatus>(value: callOutgoingToExtension.AiTranscriptionStatus, typeOfEnum: typeof(AiProcessStatus));
+//            int err1 = Validate_EnumType<ProcessStatus>(value: callOutgoingToExtension.AiTranscriptionStatus, typeOfEnum: typeof(ProcessStatus));
 //            if (err1 != 0)
 //            {
 //                yield return BuildErrorMessage(errorType: err1, callstack: $"{callStack}.AiTranscriptionStatus", value: callOutgoingToExtension.AiTranscriptionStatus);
@@ -5738,7 +5738,7 @@
 //        }
 //        // == Value type (callOutgoingToExtension.AiAnalysisStatus) == 
 //        {
-//            int err1 = Validate_EnumType<AiProcessStatus>(value: callOutgoingToExtension.AiAnalysisStatus, typeOfEnum: typeof(AiProcessStatus));
+//            int err1 = Validate_EnumType<ProcessStatus>(value: callOutgoingToExtension.AiAnalysisStatus, typeOfEnum: typeof(ProcessStatus));
 //            if (err1 != 0)
 //            {
 //                yield return BuildErrorMessage(errorType: err1, callstack: $"{callStack}.AiAnalysisStatus", value: callOutgoingToExtension.AiAnalysisStatus);
@@ -6218,7 +6218,7 @@
 //        }
 //        // == Value type (callOutgoingToPSTN.AiTranscriptionStatus) == 
 //        {
-//            int err1 = Validate_EnumType<AiProcessStatus>(value: callOutgoingToPSTN.AiTranscriptionStatus, typeOfEnum: typeof(AiProcessStatus));
+//            int err1 = Validate_EnumType<ProcessStatus>(value: callOutgoingToPSTN.AiTranscriptionStatus, typeOfEnum: typeof(ProcessStatus));
 //            if (err1 != 0)
 //            {
 //                yield return BuildErrorMessage(errorType: err1, callstack: $"{callStack}.AiTranscriptionStatus", value: callOutgoingToPSTN.AiTranscriptionStatus);
@@ -6227,7 +6227,7 @@
 //        }
 //        // == Value type (callOutgoingToPSTN.AiAnalysisStatus) == 
 //        {
-//            int err1 = Validate_EnumType<AiProcessStatus>(value: callOutgoingToPSTN.AiAnalysisStatus, typeOfEnum: typeof(AiProcessStatus));
+//            int err1 = Validate_EnumType<ProcessStatus>(value: callOutgoingToPSTN.AiAnalysisStatus, typeOfEnum: typeof(ProcessStatus));
 //            if (err1 != 0)
 //            {
 //                yield return BuildErrorMessage(errorType: err1, callstack: $"{callStack}.AiAnalysisStatus", value: callOutgoingToPSTN.AiAnalysisStatus);
@@ -16151,7 +16151,7 @@
 //        }
 //        // == Value type (callIncomingToCallFlowLogic.AiTranscriptionStatus) == 
 //        {
-//            int err1 = Validate_EnumType<AiProcessStatus>(value: callIncomingToCallFlowLogic.AiTranscriptionStatus, typeOfEnum: typeof(AiProcessStatus));
+//            int err1 = Validate_EnumType<ProcessStatus>(value: callIncomingToCallFlowLogic.AiTranscriptionStatus, typeOfEnum: typeof(ProcessStatus));
 //            if (err1 != 0)
 //            {
 //                yield return BuildErrorMessage(errorType: err1, callstack: $"{callStack}.AiTranscriptionStatus", value: callIncomingToCallFlowLogic.AiTranscriptionStatus);
@@ -16160,7 +16160,7 @@
 //        }
 //        // == Value type (callIncomingToCallFlowLogic.AiAnalysisStatus) == 
 //        {
-//            int err1 = Validate_EnumType<AiProcessStatus>(value: callIncomingToCallFlowLogic.AiAnalysisStatus, typeOfEnum: typeof(AiProcessStatus));
+//            int err1 = Validate_EnumType<ProcessStatus>(value: callIncomingToCallFlowLogic.AiAnalysisStatus, typeOfEnum: typeof(ProcessStatus));
 //            if (err1 != 0)
 //            {
 //                yield return BuildErrorMessage(errorType: err1, callstack: $"{callStack}.AiAnalysisStatus", value: callIncomingToCallFlowLogic.AiAnalysisStatus);
@@ -16704,7 +16704,7 @@
 //        }
 //        // == Value type (callIncomingToExtension.AiTranscriptionStatus) == 
 //        {
-//            int err1 = Validate_EnumType<AiProcessStatus>(value: callIncomingToExtension.AiTranscriptionStatus, typeOfEnum: typeof(AiProcessStatus));
+//            int err1 = Validate_EnumType<ProcessStatus>(value: callIncomingToExtension.AiTranscriptionStatus, typeOfEnum: typeof(ProcessStatus));
 //            if (err1 != 0)
 //            {
 //                yield return BuildErrorMessage(errorType: err1, callstack: $"{callStack}.AiTranscriptionStatus", value: callIncomingToExtension.AiTranscriptionStatus);
@@ -16713,7 +16713,7 @@
 //        }
 //        // == Value type (callIncomingToExtension.AiAnalysisStatus) == 
 //        {
-//            int err1 = Validate_EnumType<AiProcessStatus>(value: callIncomingToExtension.AiAnalysisStatus, typeOfEnum: typeof(AiProcessStatus));
+//            int err1 = Validate_EnumType<ProcessStatus>(value: callIncomingToExtension.AiAnalysisStatus, typeOfEnum: typeof(ProcessStatus));
 //            if (err1 != 0)
 //            {
 //                yield return BuildErrorMessage(errorType: err1, callstack: $"{callStack}.AiAnalysisStatus", value: callIncomingToExtension.AiAnalysisStatus);
@@ -17225,7 +17225,7 @@
 //        }
 //        // == Value type (callOutgoingToExtension.AiTranscriptionStatus) == 
 //        {
-//            int err1 = Validate_EnumType<AiProcessStatus>(value: callOutgoingToExtension.AiTranscriptionStatus, typeOfEnum: typeof(AiProcessStatus));
+//            int err1 = Validate_EnumType<ProcessStatus>(value: callOutgoingToExtension.AiTranscriptionStatus, typeOfEnum: typeof(ProcessStatus));
 //            if (err1 != 0)
 //            {
 //                yield return BuildErrorMessage(errorType: err1, callstack: $"{callStack}.AiTranscriptionStatus", value: callOutgoingToExtension.AiTranscriptionStatus);
@@ -17234,7 +17234,7 @@
 //        }
 //        // == Value type (callOutgoingToExtension.AiAnalysisStatus) == 
 //        {
-//            int err1 = Validate_EnumType<AiProcessStatus>(value: callOutgoingToExtension.AiAnalysisStatus, typeOfEnum: typeof(AiProcessStatus));
+//            int err1 = Validate_EnumType<ProcessStatus>(value: callOutgoingToExtension.AiAnalysisStatus, typeOfEnum: typeof(ProcessStatus));
 //            if (err1 != 0)
 //            {
 //                yield return BuildErrorMessage(errorType: err1, callstack: $"{callStack}.AiAnalysisStatus", value: callOutgoingToExtension.AiAnalysisStatus);
@@ -17708,7 +17708,7 @@
 //        }
 //        // == Value type (callOutgoingToPSTN.AiTranscriptionStatus) == 
 //        {
-//            int err1 = Validate_EnumType<AiProcessStatus>(value: callOutgoingToPSTN.AiTranscriptionStatus, typeOfEnum: typeof(AiProcessStatus));
+//            int err1 = Validate_EnumType<ProcessStatus>(value: callOutgoingToPSTN.AiTranscriptionStatus, typeOfEnum: typeof(ProcessStatus));
 //            if (err1 != 0)
 //            {
 //                yield return BuildErrorMessage(errorType: err1, callstack: $"{callStack}.AiTranscriptionStatus", value: callOutgoingToPSTN.AiTranscriptionStatus);
@@ -17717,7 +17717,7 @@
 //        }
 //        // == Value type (callOutgoingToPSTN.AiAnalysisStatus) == 
 //        {
-//            int err1 = Validate_EnumType<AiProcessStatus>(value: callOutgoingToPSTN.AiAnalysisStatus, typeOfEnum: typeof(AiProcessStatus));
+//            int err1 = Validate_EnumType<ProcessStatus>(value: callOutgoingToPSTN.AiAnalysisStatus, typeOfEnum: typeof(ProcessStatus));
 //            if (err1 != 0)
 //            {
 //                yield return BuildErrorMessage(errorType: err1, callstack: $"{callStack}.AiAnalysisStatus", value: callOutgoingToPSTN.AiAnalysisStatus);
@@ -22724,7 +22724,7 @@
 //        }
 //        // == Value type (callIncomingToCallFlowLogic.AiTranscriptionStatus) == 
 //        {
-//            int err1 = Validate_EnumType<AiProcessStatus>(value: callIncomingToCallFlowLogic.AiTranscriptionStatus, typeOfEnum: typeof(AiProcessStatus));
+//            int err1 = Validate_EnumType<ProcessStatus>(value: callIncomingToCallFlowLogic.AiTranscriptionStatus, typeOfEnum: typeof(ProcessStatus));
 //            if (err1 != 0)
 //            {
 //                yield return BuildErrorMessage(errorType: err1, callstack: $"{callStack}.AiTranscriptionStatus", value: callIncomingToCallFlowLogic.AiTranscriptionStatus);
@@ -22733,7 +22733,7 @@
 //        }
 //        // == Value type (callIncomingToCallFlowLogic.AiAnalysisStatus) == 
 //        {
-//            int err1 = Validate_EnumType<AiProcessStatus>(value: callIncomingToCallFlowLogic.AiAnalysisStatus, typeOfEnum: typeof(AiProcessStatus));
+//            int err1 = Validate_EnumType<ProcessStatus>(value: callIncomingToCallFlowLogic.AiAnalysisStatus, typeOfEnum: typeof(ProcessStatus));
 //            if (err1 != 0)
 //            {
 //                yield return BuildErrorMessage(errorType: err1, callstack: $"{callStack}.AiAnalysisStatus", value: callIncomingToCallFlowLogic.AiAnalysisStatus);
@@ -23277,7 +23277,7 @@
 //        }
 //        // == Value type (callIncomingToExtension.AiTranscriptionStatus) == 
 //        {
-//            int err1 = Validate_EnumType<AiProcessStatus>(value: callIncomingToExtension.AiTranscriptionStatus, typeOfEnum: typeof(AiProcessStatus));
+//            int err1 = Validate_EnumType<ProcessStatus>(value: callIncomingToExtension.AiTranscriptionStatus, typeOfEnum: typeof(ProcessStatus));
 //            if (err1 != 0)
 //            {
 //                yield return BuildErrorMessage(errorType: err1, callstack: $"{callStack}.AiTranscriptionStatus", value: callIncomingToExtension.AiTranscriptionStatus);
@@ -23286,7 +23286,7 @@
 //        }
 //        // == Value type (callIncomingToExtension.AiAnalysisStatus) == 
 //        {
-//            int err1 = Validate_EnumType<AiProcessStatus>(value: callIncomingToExtension.AiAnalysisStatus, typeOfEnum: typeof(AiProcessStatus));
+//            int err1 = Validate_EnumType<ProcessStatus>(value: callIncomingToExtension.AiAnalysisStatus, typeOfEnum: typeof(ProcessStatus));
 //            if (err1 != 0)
 //            {
 //                yield return BuildErrorMessage(errorType: err1, callstack: $"{callStack}.AiAnalysisStatus", value: callIncomingToExtension.AiAnalysisStatus);
@@ -23798,7 +23798,7 @@
 //        }
 //        // == Value type (callOutgoingToExtension.AiTranscriptionStatus) == 
 //        {
-//            int err1 = Validate_EnumType<AiProcessStatus>(value: callOutgoingToExtension.AiTranscriptionStatus, typeOfEnum: typeof(AiProcessStatus));
+//            int err1 = Validate_EnumType<ProcessStatus>(value: callOutgoingToExtension.AiTranscriptionStatus, typeOfEnum: typeof(ProcessStatus));
 //            if (err1 != 0)
 //            {
 //                yield return BuildErrorMessage(errorType: err1, callstack: $"{callStack}.AiTranscriptionStatus", value: callOutgoingToExtension.AiTranscriptionStatus);
@@ -23807,7 +23807,7 @@
 //        }
 //        // == Value type (callOutgoingToExtension.AiAnalysisStatus) == 
 //        {
-//            int err1 = Validate_EnumType<AiProcessStatus>(value: callOutgoingToExtension.AiAnalysisStatus, typeOfEnum: typeof(AiProcessStatus));
+//            int err1 = Validate_EnumType<ProcessStatus>(value: callOutgoingToExtension.AiAnalysisStatus, typeOfEnum: typeof(ProcessStatus));
 //            if (err1 != 0)
 //            {
 //                yield return BuildErrorMessage(errorType: err1, callstack: $"{callStack}.AiAnalysisStatus", value: callOutgoingToExtension.AiAnalysisStatus);
@@ -24281,7 +24281,7 @@
 //        }
 //        // == Value type (callOutgoingToPSTN.AiTranscriptionStatus) == 
 //        {
-//            int err1 = Validate_EnumType<AiProcessStatus>(value: callOutgoingToPSTN.AiTranscriptionStatus, typeOfEnum: typeof(AiProcessStatus));
+//            int err1 = Validate_EnumType<ProcessStatus>(value: callOutgoingToPSTN.AiTranscriptionStatus, typeOfEnum: typeof(ProcessStatus));
 //            if (err1 != 0)
 //            {
 //                yield return BuildErrorMessage(errorType: err1, callstack: $"{callStack}.AiTranscriptionStatus", value: callOutgoingToPSTN.AiTranscriptionStatus);
@@ -24290,7 +24290,7 @@
 //        }
 //        // == Value type (callOutgoingToPSTN.AiAnalysisStatus) == 
 //        {
-//            int err1 = Validate_EnumType<AiProcessStatus>(value: callOutgoingToPSTN.AiAnalysisStatus, typeOfEnum: typeof(AiProcessStatus));
+//            int err1 = Validate_EnumType<ProcessStatus>(value: callOutgoingToPSTN.AiAnalysisStatus, typeOfEnum: typeof(ProcessStatus));
 //            if (err1 != 0)
 //            {
 //                yield return BuildErrorMessage(errorType: err1, callstack: $"{callStack}.AiAnalysisStatus", value: callOutgoingToPSTN.AiAnalysisStatus);

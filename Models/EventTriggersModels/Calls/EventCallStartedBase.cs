@@ -45,6 +45,13 @@ public abstract class EventCallStartedBase : EventTriggerModel
     public string? ContactFullName { get; set; }
 
     /// <summary>
+    ///     Errors of call
+    /// </summary>
+    [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
+    public required CallErrors CallErrors { get; set; }
+
+    /// <summary>
     ///     Return a random object
     /// </summary>
     protected T GetRandomBase<T>(RunningApplicationInstance instance) where T : EventCallStartedBase

@@ -70,7 +70,7 @@ public partial class FaxOutgoingGroup : UbluxDocument_ReferenceAccount_Reference
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
     [UbluxValidationRequired]
-    public AiProcessStatus Status { get; set; }
+    public ProcessStatus Status { get; set; }
 
     #endregion
 

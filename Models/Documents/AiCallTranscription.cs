@@ -1,5 +1,7 @@
 ﻿namespace Ublux.Communications.Models.Documents;
 
+// SHOULD BE CREATED WHEN CALL IS CREATED!
+
 /// <summary>
 ///     AI transcription of a phone call. This is the convertion from audio to text only.
 /// </summary>
@@ -33,13 +35,14 @@ public partial class AiCallTranscription : UbluxDocument_ReferenceAccount_Refere
     [SwaggerSchema(ReadOnly = true)]
     public List<AiTranscription> Transcription { get; set; } = new();
 
-    /// <summary>
-    ///     If the transcription contains an error
-    /// </summary>
-    [AllowUpdate(false)]
-    [SwaggerSchema(ReadOnly = true)]
-    [UbluxValidationStringRange(2000)]
-    public string? ErrorMessage { get; set; }
+    ///// <summary>
+    /////     If the transcription contains an error. This should be part of main call
+    ///// </summary>
+    //[AllowUpdate(false)]
+    //[SwaggerSchema(ReadOnly = true)]
+    //[UbluxValidationStringRange(2000)]
+    //[Obsolete]
+    //public string? ErrorMessage { get; set; }
 
     #region MongoDB
 

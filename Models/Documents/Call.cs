@@ -1,5 +1,8 @@
 ﻿namespace Ublux.Communications.Models.Documents;
 
+// IF CALL IS NOT TERMINATED (DURATION IN SECONDS IS NULL) THEN IT CAN ONLY BE UPDATED BY PBX!
+// IF CALL IS TERMINATED IT CAN ONLY BE UPDATED BY WS
+
 /// <summary>
 ///     Ublux phone call
 /// </summary>
@@ -276,26 +279,26 @@ public abstract partial class Call : UbluxDocument_ReferenceAccount_ReferenceTag
     [References(typeof(AiCallAnalysisInput))]
     public string? IdAiCallAnalysisInput { get; set; }
 
-    /// <summary>
-    ///     AI analysis of the call
-    /// </summary>
-    [AllowUpdate(false)]
-    [SwaggerSchema(ReadOnly = true)]
-    public AiCallAnalysis? Analysis { get; set; }
+    ///// <summary>
+    /////     AI analysis of the call
+    ///// </summary>
+    //[AllowUpdate(false)]
+    //[SwaggerSchema(ReadOnly = true)]
+    //public AiCallAnalysis? Analysis { get; set; }
 
-    /// <summary>
-    ///     AI analysis of the call
-    /// </summary>
-    [AllowUpdate(false)]
-    [SwaggerSchema(ReadOnly = true)]
-    public AiCallAnalysis? Analysis2 { get; set; }
+    ///// <summary>
+    /////     AI analysis of the call
+    ///// </summary>
+    //[AllowUpdate(false)]
+    //[SwaggerSchema(ReadOnly = true)]
+    //public AiCallAnalysis? Analysis2 { get; set; }
 
-    /// <summary>
-    ///     AI analysis of the call
-    /// </summary>
-    [AllowUpdate(false)]
-    [SwaggerSchema(ReadOnly = true)]
-    public AiCallAnalysis? Analysis3 { get; set; }
+    ///// <summary>
+    /////     AI analysis of the call
+    ///// </summary>
+    //[AllowUpdate(false)]
+    //[SwaggerSchema(ReadOnly = true)]
+    //public AiCallAnalysis? Analysis3 { get; set; }
 
     /// <summary>
     ///     Lines that participated in this call
@@ -325,44 +328,61 @@ public abstract partial class Call : UbluxDocument_ReferenceAccount_ReferenceTag
 
     #endregion
 
+    ///// <summary>
+    /////     If there is an error message with the call.
+    ///// </summary>
+    //[AllowUpdate(false)]
+    //[SwaggerSchema(ReadOnly = true)]
+    //[UbluxValidationStringRange(2000)]
+    //public string? ErrorMessage { get; set; }
+
+    ///// <summary>
+    /////     Add error message to list of errors
+    ///// </summary>    
+    //public void AddErrorMessage(string message)
+    //{
+    //    if (this.ErrorMessage is null)
+    //    {
+    //        this.ErrorMessage = message;
+    //    }
+    //    else
+    //    {
+    //        this.ErrorMessage += "\n" + message;
+    //    }
+    //}
+
     /// <summary>
-    ///     If there is an error message with the call.
+    ///     Contain call errors
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [UbluxValidationStringRange(2000)]
-    public string? ErrorMessage { get; set; }
+    [UbluxValidationStringRange(1000)]    
+    public CallErrors Errors { get; set; } = new();
+
+    #region ProcessStatus
 
     /// <summary>
-    ///     Add error message to list of errors
-    /// </summary>
-    public void AddErrorMessage(string message)
-    {
-        if (this.ErrorMessage is null)
-        {
-            this.ErrorMessage = message;
-        }
-        else
-        {
-            this.ErrorMessage += "\n" + message;
-        }
-    }
-
-    /// <summary>
-    ///     Null if it is not going to be AI processed. This is for transcriptions. Converting audio to text.
-    ///     TODO: create index
+    ///     None if its not being recorded. Remove nullable attribute once done publishing
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    public AiProcessStatus AiTranscriptionStatus { get; set; }
+    public ProcessStatus RecordingStatus { get; set; }
 
     /// <summary>
-    ///     Null if it is not going to be AI processed. This is for analysys. ChatGPT performs the analysis of the transcription
-    ///     TODO: create index
+    ///     None if it is not going to be AI processed. This is for transcriptions. Converting audio to text.
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    public AiProcessStatus AiAnalysisStatus { get; set; }
+    public ProcessStatus AiTranscriptionStatus { get; set; }
+
+    /// <summary>
+    ///     None if it is not going to be AI processed. This is for analysys. ChatGPT performs the analysis of the transcription
+    /// </summary>
+    [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
+    public ProcessStatus AiAnalysisStatus { get; set; }
+
+    #endregion
 
     #region MongoDB
 
@@ -414,8 +434,8 @@ public abstract partial class Call : UbluxDocument_ReferenceAccount_ReferenceTag
             // Append DateCreated at the end so that items are returned by dateCreated
             .Add(-1, nameof(DateCreated));
 
-        // Needed to search calls that need transcription
-        yield return new MongoDbIndex(collection, nameof(this.AiTranscriptionStatus)).Add(nameof(this.AiAnalysisStatus));
+        // Helps find calls that are ready to be transcribed or ai analyzed
+        yield return new MongoDbIndex(collection, nameof(this.RecordingStatus)).Add(nameof(this.AiAnalysisStatus)).Add(nameof(this.AiTranscriptionStatus));
     }
 
     #endregion

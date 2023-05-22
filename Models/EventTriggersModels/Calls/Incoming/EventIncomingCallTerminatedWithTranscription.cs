@@ -30,14 +30,7 @@ public class EventIncomingCallTerminatedWithTranscription : EventIncomingCallTer
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    public List<AiTranscription> Transcription { get; set; } = new();
-
-    /// <summary>
-    ///     If the transcription contains an error
-    /// </summary>
-    [AllowUpdate(false)]
-    [SwaggerSchema(ReadOnly = true)]
-    public string? ErrorMessage { get; set; }
+    public List<AiTranscription> Transcription { get; set; } = new();    
 
     /// <summary>
     ///     Return a random object

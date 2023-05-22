@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Reflection;
-
-namespace Ublux.Communications.Models.Documents;
+﻿namespace Ublux.Communications.Models.Documents;
 
 /// <summary>
 ///     Outgoing phone call
