@@ -56,37 +56,6 @@ export interface AccountUpdateRequest {
     industry?: Industry;
 }
 
-/** AI analysis of conversation in a phone call */
-export interface AiCallAnalysis {
-    sentiment?: AiSentiment;
-    /** Entities mentioned in the conversation */
-    readonly entities?: AiEntity[];
-    /** Topics mentioned in the conversation */
-    readonly topics?: AiTopic[];
-    /** Intention of client summarized */
-    readonly clientIntention?: string | null;
-    /** Intention of agent summarized */
-    readonly agentIntention?: string | null;
-    /** Summary of conversation */
-    readonly summary?: string | null;
-    /** Problem of the conversation */
-    readonly problem?: string | null;
-    /** Was client polite? This is a value between 0 and 1 representing a percentage. */
-    readonly clientPolite?: number | null;
-    /** Was agent polite? This is a value between 0 and 1 representing a percentage. */
-    readonly agentPolite?: number | null;
-    /** Client satisfaction from 1 to 5. */
-    readonly clientSatisfaction?: number;
-    /** Detected language */
-    readonly language?: string;
-    /** Example: gpt-3.5-turbo */
-    readonly model?: string | null;
-    /** Based on the conversation, what action should the agent take next? */
-    readonly actionAgentShouldTakeNext?: string | null;
-    /** Measure the interest that the client has expressed in the product ranging from 1 to 5. */
-    readonly clientInterestInProduct?: number | null;
-}
-
 /** Determines how will a call be AI processed. What questions will be asked to the AI engine */
 export interface AiCallAnalysisInput {
     /** Id of document */
@@ -168,6 +137,8 @@ For example a CloudService user will point to no account */
 export interface AiCallAnalysisOutput {
     /** What input was passed to get this output? */
     readonly idAiCallAnalysisInput?: string;
+    /** Detected language on call conversation */
+    readonly detectedLanguage?: string;
     /** List of queries to ask AI engine about a call */
     readonly output?: AiCallAnalysisVariableOutput[];
 }
@@ -202,8 +173,6 @@ export interface AiCallTranscription {
     readonly transcriptionLanguage?: string | null;
     /** Audio of agent converted to text */
     readonly transcription?: AiTranscription[];
-    /** If the transcription contains an error */
-    readonly errorMessage?: string | null;
     /** It is nullable because there are cases where it makes no sense to point to an account. 
 For example a CloudService user will point to no account */
     idsTags?: string[];
@@ -240,12 +209,6 @@ export interface AiCallTranscriptionFilterRequest {
     transcription_text_con?: string | null;
     /** Transcription.Text regex */
     transcription_text_reg?: string | null;
-    /** ErrorMessage equals */
-    errorMessage_eq?: string | null;
-    /** ErrorMessage contains */
-    errorMessage_con?: string | null;
-    /** ErrorMessage regex */
-    errorMessage_reg?: string | null;
     /** IdsTags equals */
     idsTags_eq?: string | null;
     /** IdsTags contains */
@@ -270,36 +233,6 @@ export interface AiCallTranscriptionFilterRequest {
     dateUpdated_lte?: Date | null;
     /** DateUpdated greater than or equal to */
     dateUpdated_gte?: Date | null;
-}
-
-/** AI Entity. Example: Date with value January 1, 2023 */
-export interface AiEntity {
-    readonly entityType?: string;
-    readonly entityName?: string;
-}
-
-/** Status of something that is AI processed. For example the transcription of a call using whisper or analysis of call using chat GPT. */
-export enum ProcessStatus {
-    None = "None",
-    Pending = "Pending",
-    Processing = "Processing",
-    Complete = "Complete",
-}
-
-/** Sentiment of phrase or conversation */
-export interface AiSentiment {
-    /** Positive sentiment. This is a value between 0 and 100 representing a percentage. */
-    readonly positive?: number;
-    /** Negative sentiment. This is a value between 0 and 100 representing a percentage. */
-    readonly negative?: number;
-    /** Neutral sentiment. This is a value between 0 and 100 representing a percentage. */
-    readonly neutral?: number;
-}
-
-/** AI Topic. Example: Noise with weight .8 */
-export interface AiTopic {
-    readonly name?: string;
-    readonly weight?: number;
 }
 
 /** Converted audio to text */
@@ -721,15 +654,12 @@ CHANUNAVAIL: Channel unavailable. On SIP, peer may not be registered. */
     aiCallAnalysisOutput?: AiCallAnalysisOutput;
     /** AI input */
     readonly idAiCallAnalysisInput?: string | null;
-    analysis?: AiCallAnalysis;
-    analysis2?: AiCallAnalysis;
-    analysis3?: AiCallAnalysis;
     /** Lines that participated in this call */
     readonly idsParticipantLines?: string[];
     /** If not null it means the call is ended */
     readonly durationInSeconds?: number | null;
-    /** If there is an error message with the call. */
-    readonly errorMessage?: string | null;
+    errors?: CallErrors;
+    recordingStatus?: ProcessStatus;
     aiTranscriptionStatus?: ProcessStatus;
     aiAnalysisStatus?: ProcessStatus;
     /** It is nullable because there are cases where it makes no sense to point to an account. 
@@ -740,6 +670,18 @@ For example a CloudService user will point to no account */
     /** Updated date. When item is created on database this date will be set too. This is important so that we can sync contacts
 TODO: Very important to place index in this field. */
     readonly dateUpdated?: Date;
+}
+
+/** Call errors */
+export interface CallErrors {
+    /** Errors with call in general. For example: Call made to none existing extension. */
+    readonly errorsCall?: string[];
+    /** Errors with call recoding. For example: It was not possible to store recording. */
+    readonly errorsRecording?: string[];
+    /** Errors with dealing converting call audio to text. For example: Transcription service is not available; therefore, it was not possible to transcribe call */
+    readonly errorsAiTranscription?: string[];
+    /** Errors with AI engine. For example: Call is too short and does not contain any relevant information to be AI analyzed. */
+    readonly errorsAiAnalysis?: string[];
 }
 
 /** Enables searching for Calls */
@@ -1004,6 +946,12 @@ export interface CallFilterRequest {
     aiCallAnalysisOutput_idAiCallAnalysisInput_con?: string | null;
     /** AiCallAnalysisOutput.IdAiCallAnalysisInput regex */
     aiCallAnalysisOutput_idAiCallAnalysisInput_reg?: string | null;
+    /** AiCallAnalysisOutput.DetectedLanguage equals */
+    aiCallAnalysisOutput_detectedLanguage_eq?: string | null;
+    /** AiCallAnalysisOutput.DetectedLanguage contains */
+    aiCallAnalysisOutput_detectedLanguage_con?: string | null;
+    /** AiCallAnalysisOutput.DetectedLanguage regex */
+    aiCallAnalysisOutput_detectedLanguage_reg?: string | null;
     /** AiCallAnalysisOutput.Output.Name equals */
     aiCallAnalysisOutput_output_name_eq?: string | null;
     /** AiCallAnalysisOutput.Output.Name contains */
@@ -1028,288 +976,42 @@ export interface CallFilterRequest {
     idAiCallAnalysisInput_con?: string | null;
     /** IdAiCallAnalysisInput regex */
     idAiCallAnalysisInput_reg?: string | null;
-    /** Analysis.Sentiment.Positive equals */
-    analysis_sentiment_positive_eq?: number | null;
-    /** Analysis.Sentiment.Positive less than or equal to */
-    analysis_sentiment_positive_lte?: number | null;
-    /** Analysis.Sentiment.Positive greater than or equal to */
-    analysis_sentiment_positive_gte?: number | null;
-    /** Analysis.Sentiment.Negative equals */
-    analysis_sentiment_negative_eq?: number | null;
-    /** Analysis.Sentiment.Negative less than or equal to */
-    analysis_sentiment_negative_lte?: number | null;
-    /** Analysis.Sentiment.Negative greater than or equal to */
-    analysis_sentiment_negative_gte?: number | null;
-    /** Analysis.Sentiment.Neutral equals */
-    analysis_sentiment_neutral_eq?: number | null;
-    /** Analysis.Sentiment.Neutral less than or equal to */
-    analysis_sentiment_neutral_lte?: number | null;
-    /** Analysis.Sentiment.Neutral greater than or equal to */
-    analysis_sentiment_neutral_gte?: number | null;
-    /** Analysis.Entities.EntityType equals */
-    analysis_entities_entityType_eq?: string | null;
-    /** Analysis.Entities.EntityType contains */
-    analysis_entities_entityType_con?: string | null;
-    /** Analysis.Entities.EntityType regex */
-    analysis_entities_entityType_reg?: string | null;
-    /** Analysis.Entities.EntityName equals */
-    analysis_entities_entityName_eq?: string | null;
-    /** Analysis.Entities.EntityName contains */
-    analysis_entities_entityName_con?: string | null;
-    /** Analysis.Entities.EntityName regex */
-    analysis_entities_entityName_reg?: string | null;
-    /** Analysis.Topics.Name equals */
-    analysis_topics_name_eq?: string | null;
-    /** Analysis.Topics.Name contains */
-    analysis_topics_name_con?: string | null;
-    /** Analysis.Topics.Name regex */
-    analysis_topics_name_reg?: string | null;
-    /** Analysis.ClientIntention equals */
-    analysis_clientIntention_eq?: string | null;
-    /** Analysis.ClientIntention contains */
-    analysis_clientIntention_con?: string | null;
-    /** Analysis.ClientIntention regex */
-    analysis_clientIntention_reg?: string | null;
-    /** Analysis.AgentIntention equals */
-    analysis_agentIntention_eq?: string | null;
-    /** Analysis.AgentIntention contains */
-    analysis_agentIntention_con?: string | null;
-    /** Analysis.AgentIntention regex */
-    analysis_agentIntention_reg?: string | null;
-    /** Analysis.Summary equals */
-    analysis_summary_eq?: string | null;
-    /** Analysis.Summary contains */
-    analysis_summary_con?: string | null;
-    /** Analysis.Summary regex */
-    analysis_summary_reg?: string | null;
-    /** Analysis.Problem equals */
-    analysis_problem_eq?: string | null;
-    /** Analysis.Problem contains */
-    analysis_problem_con?: string | null;
-    /** Analysis.Problem regex */
-    analysis_problem_reg?: string | null;
-    /** Analysis.ClientSatisfaction equals */
-    analysis_clientSatisfaction_eq?: number | null;
-    /** Analysis.ClientSatisfaction less than or equal to */
-    analysis_clientSatisfaction_lte?: number | null;
-    /** Analysis.ClientSatisfaction greater than or equal to */
-    analysis_clientSatisfaction_gte?: number | null;
-    /** Analysis.Language equals */
-    analysis_language_eq?: string | null;
-    /** Analysis.Language contains */
-    analysis_language_con?: string | null;
-    /** Analysis.Language regex */
-    analysis_language_reg?: string | null;
-    /** Analysis.Model equals */
-    analysis_model_eq?: string | null;
-    /** Analysis.Model contains */
-    analysis_model_con?: string | null;
-    /** Analysis.Model regex */
-    analysis_model_reg?: string | null;
-    /** Analysis.ActionAgentShouldTakeNext equals */
-    analysis_actionAgentShouldTakeNext_eq?: string | null;
-    /** Analysis.ActionAgentShouldTakeNext contains */
-    analysis_actionAgentShouldTakeNext_con?: string | null;
-    /** Analysis.ActionAgentShouldTakeNext regex */
-    analysis_actionAgentShouldTakeNext_reg?: string | null;
-    /** Analysis.ClientInterestInProduct equals */
-    analysis_clientInterestInProduct_eq?: number | null;
-    /** Analysis.ClientInterestInProduct less than or equal to */
-    analysis_clientInterestInProduct_lte?: number | null;
-    /** Analysis.ClientInterestInProduct greater than or equal to */
-    analysis_clientInterestInProduct_gte?: number | null;
-    /** Analysis2.Sentiment.Positive equals */
-    analysis2_sentiment_positive_eq?: number | null;
-    /** Analysis2.Sentiment.Positive less than or equal to */
-    analysis2_sentiment_positive_lte?: number | null;
-    /** Analysis2.Sentiment.Positive greater than or equal to */
-    analysis2_sentiment_positive_gte?: number | null;
-    /** Analysis2.Sentiment.Negative equals */
-    analysis2_sentiment_negative_eq?: number | null;
-    /** Analysis2.Sentiment.Negative less than or equal to */
-    analysis2_sentiment_negative_lte?: number | null;
-    /** Analysis2.Sentiment.Negative greater than or equal to */
-    analysis2_sentiment_negative_gte?: number | null;
-    /** Analysis2.Sentiment.Neutral equals */
-    analysis2_sentiment_neutral_eq?: number | null;
-    /** Analysis2.Sentiment.Neutral less than or equal to */
-    analysis2_sentiment_neutral_lte?: number | null;
-    /** Analysis2.Sentiment.Neutral greater than or equal to */
-    analysis2_sentiment_neutral_gte?: number | null;
-    /** Analysis2.Entities.EntityType equals */
-    analysis2_entities_entityType_eq?: string | null;
-    /** Analysis2.Entities.EntityType contains */
-    analysis2_entities_entityType_con?: string | null;
-    /** Analysis2.Entities.EntityType regex */
-    analysis2_entities_entityType_reg?: string | null;
-    /** Analysis2.Entities.EntityName equals */
-    analysis2_entities_entityName_eq?: string | null;
-    /** Analysis2.Entities.EntityName contains */
-    analysis2_entities_entityName_con?: string | null;
-    /** Analysis2.Entities.EntityName regex */
-    analysis2_entities_entityName_reg?: string | null;
-    /** Analysis2.Topics.Name equals */
-    analysis2_topics_name_eq?: string | null;
-    /** Analysis2.Topics.Name contains */
-    analysis2_topics_name_con?: string | null;
-    /** Analysis2.Topics.Name regex */
-    analysis2_topics_name_reg?: string | null;
-    /** Analysis2.ClientIntention equals */
-    analysis2_clientIntention_eq?: string | null;
-    /** Analysis2.ClientIntention contains */
-    analysis2_clientIntention_con?: string | null;
-    /** Analysis2.ClientIntention regex */
-    analysis2_clientIntention_reg?: string | null;
-    /** Analysis2.AgentIntention equals */
-    analysis2_agentIntention_eq?: string | null;
-    /** Analysis2.AgentIntention contains */
-    analysis2_agentIntention_con?: string | null;
-    /** Analysis2.AgentIntention regex */
-    analysis2_agentIntention_reg?: string | null;
-    /** Analysis2.Summary equals */
-    analysis2_summary_eq?: string | null;
-    /** Analysis2.Summary contains */
-    analysis2_summary_con?: string | null;
-    /** Analysis2.Summary regex */
-    analysis2_summary_reg?: string | null;
-    /** Analysis2.Problem equals */
-    analysis2_problem_eq?: string | null;
-    /** Analysis2.Problem contains */
-    analysis2_problem_con?: string | null;
-    /** Analysis2.Problem regex */
-    analysis2_problem_reg?: string | null;
-    /** Analysis2.ClientSatisfaction equals */
-    analysis2_clientSatisfaction_eq?: number | null;
-    /** Analysis2.ClientSatisfaction less than or equal to */
-    analysis2_clientSatisfaction_lte?: number | null;
-    /** Analysis2.ClientSatisfaction greater than or equal to */
-    analysis2_clientSatisfaction_gte?: number | null;
-    /** Analysis2.Language equals */
-    analysis2_language_eq?: string | null;
-    /** Analysis2.Language contains */
-    analysis2_language_con?: string | null;
-    /** Analysis2.Language regex */
-    analysis2_language_reg?: string | null;
-    /** Analysis2.Model equals */
-    analysis2_model_eq?: string | null;
-    /** Analysis2.Model contains */
-    analysis2_model_con?: string | null;
-    /** Analysis2.Model regex */
-    analysis2_model_reg?: string | null;
-    /** Analysis2.ActionAgentShouldTakeNext equals */
-    analysis2_actionAgentShouldTakeNext_eq?: string | null;
-    /** Analysis2.ActionAgentShouldTakeNext contains */
-    analysis2_actionAgentShouldTakeNext_con?: string | null;
-    /** Analysis2.ActionAgentShouldTakeNext regex */
-    analysis2_actionAgentShouldTakeNext_reg?: string | null;
-    /** Analysis2.ClientInterestInProduct equals */
-    analysis2_clientInterestInProduct_eq?: number | null;
-    /** Analysis2.ClientInterestInProduct less than or equal to */
-    analysis2_clientInterestInProduct_lte?: number | null;
-    /** Analysis2.ClientInterestInProduct greater than or equal to */
-    analysis2_clientInterestInProduct_gte?: number | null;
-    /** Analysis3.Sentiment.Positive equals */
-    analysis3_sentiment_positive_eq?: number | null;
-    /** Analysis3.Sentiment.Positive less than or equal to */
-    analysis3_sentiment_positive_lte?: number | null;
-    /** Analysis3.Sentiment.Positive greater than or equal to */
-    analysis3_sentiment_positive_gte?: number | null;
-    /** Analysis3.Sentiment.Negative equals */
-    analysis3_sentiment_negative_eq?: number | null;
-    /** Analysis3.Sentiment.Negative less than or equal to */
-    analysis3_sentiment_negative_lte?: number | null;
-    /** Analysis3.Sentiment.Negative greater than or equal to */
-    analysis3_sentiment_negative_gte?: number | null;
-    /** Analysis3.Sentiment.Neutral equals */
-    analysis3_sentiment_neutral_eq?: number | null;
-    /** Analysis3.Sentiment.Neutral less than or equal to */
-    analysis3_sentiment_neutral_lte?: number | null;
-    /** Analysis3.Sentiment.Neutral greater than or equal to */
-    analysis3_sentiment_neutral_gte?: number | null;
-    /** Analysis3.Entities.EntityType equals */
-    analysis3_entities_entityType_eq?: string | null;
-    /** Analysis3.Entities.EntityType contains */
-    analysis3_entities_entityType_con?: string | null;
-    /** Analysis3.Entities.EntityType regex */
-    analysis3_entities_entityType_reg?: string | null;
-    /** Analysis3.Entities.EntityName equals */
-    analysis3_entities_entityName_eq?: string | null;
-    /** Analysis3.Entities.EntityName contains */
-    analysis3_entities_entityName_con?: string | null;
-    /** Analysis3.Entities.EntityName regex */
-    analysis3_entities_entityName_reg?: string | null;
-    /** Analysis3.Topics.Name equals */
-    analysis3_topics_name_eq?: string | null;
-    /** Analysis3.Topics.Name contains */
-    analysis3_topics_name_con?: string | null;
-    /** Analysis3.Topics.Name regex */
-    analysis3_topics_name_reg?: string | null;
-    /** Analysis3.ClientIntention equals */
-    analysis3_clientIntention_eq?: string | null;
-    /** Analysis3.ClientIntention contains */
-    analysis3_clientIntention_con?: string | null;
-    /** Analysis3.ClientIntention regex */
-    analysis3_clientIntention_reg?: string | null;
-    /** Analysis3.AgentIntention equals */
-    analysis3_agentIntention_eq?: string | null;
-    /** Analysis3.AgentIntention contains */
-    analysis3_agentIntention_con?: string | null;
-    /** Analysis3.AgentIntention regex */
-    analysis3_agentIntention_reg?: string | null;
-    /** Analysis3.Summary equals */
-    analysis3_summary_eq?: string | null;
-    /** Analysis3.Summary contains */
-    analysis3_summary_con?: string | null;
-    /** Analysis3.Summary regex */
-    analysis3_summary_reg?: string | null;
-    /** Analysis3.Problem equals */
-    analysis3_problem_eq?: string | null;
-    /** Analysis3.Problem contains */
-    analysis3_problem_con?: string | null;
-    /** Analysis3.Problem regex */
-    analysis3_problem_reg?: string | null;
-    /** Analysis3.ClientSatisfaction equals */
-    analysis3_clientSatisfaction_eq?: number | null;
-    /** Analysis3.ClientSatisfaction less than or equal to */
-    analysis3_clientSatisfaction_lte?: number | null;
-    /** Analysis3.ClientSatisfaction greater than or equal to */
-    analysis3_clientSatisfaction_gte?: number | null;
-    /** Analysis3.Language equals */
-    analysis3_language_eq?: string | null;
-    /** Analysis3.Language contains */
-    analysis3_language_con?: string | null;
-    /** Analysis3.Language regex */
-    analysis3_language_reg?: string | null;
-    /** Analysis3.Model equals */
-    analysis3_model_eq?: string | null;
-    /** Analysis3.Model contains */
-    analysis3_model_con?: string | null;
-    /** Analysis3.Model regex */
-    analysis3_model_reg?: string | null;
-    /** Analysis3.ActionAgentShouldTakeNext equals */
-    analysis3_actionAgentShouldTakeNext_eq?: string | null;
-    /** Analysis3.ActionAgentShouldTakeNext contains */
-    analysis3_actionAgentShouldTakeNext_con?: string | null;
-    /** Analysis3.ActionAgentShouldTakeNext regex */
-    analysis3_actionAgentShouldTakeNext_reg?: string | null;
-    /** Analysis3.ClientInterestInProduct equals */
-    analysis3_clientInterestInProduct_eq?: number | null;
-    /** Analysis3.ClientInterestInProduct less than or equal to */
-    analysis3_clientInterestInProduct_lte?: number | null;
-    /** Analysis3.ClientInterestInProduct greater than or equal to */
-    analysis3_clientInterestInProduct_gte?: number | null;
     /** IdsParticipantLines equals */
     idsParticipantLines_eq?: string | null;
     /** IdsParticipantLines contains */
     idsParticipantLines_con?: string | null;
     /** IdsParticipantLines regex */
     idsParticipantLines_reg?: string | null;
-    /** ErrorMessage equals */
-    errorMessage_eq?: string | null;
-    /** ErrorMessage contains */
-    errorMessage_con?: string | null;
-    /** ErrorMessage regex */
-    errorMessage_reg?: string | null;
+    /** Errors.ErrorsCall equals */
+    errors_errorsCall_eq?: string | null;
+    /** Errors.ErrorsCall contains */
+    errors_errorsCall_con?: string | null;
+    /** Errors.ErrorsCall regex */
+    errors_errorsCall_reg?: string | null;
+    /** Errors.ErrorsRecording equals */
+    errors_errorsRecording_eq?: string | null;
+    /** Errors.ErrorsRecording contains */
+    errors_errorsRecording_con?: string | null;
+    /** Errors.ErrorsRecording regex */
+    errors_errorsRecording_reg?: string | null;
+    /** Errors.ErrorsAiTranscription equals */
+    errors_errorsAiTranscription_eq?: string | null;
+    /** Errors.ErrorsAiTranscription contains */
+    errors_errorsAiTranscription_con?: string | null;
+    /** Errors.ErrorsAiTranscription regex */
+    errors_errorsAiTranscription_reg?: string | null;
+    /** Errors.ErrorsAiAnalysis equals */
+    errors_errorsAiAnalysis_eq?: string | null;
+    /** Errors.ErrorsAiAnalysis contains */
+    errors_errorsAiAnalysis_con?: string | null;
+    /** Errors.ErrorsAiAnalysis regex */
+    errors_errorsAiAnalysis_reg?: string | null;
+    /** RecordingStatus equals */
+    recordingStatus_eq?: string | null;
+    /** RecordingStatus contains */
+    recordingStatus_con?: string | null;
+    /** RecordingStatus regex */
+    recordingStatus_reg?: string | null;
     /** AiTranscriptionStatus equals */
     aiTranscriptionStatus_eq?: string | null;
     /** AiTranscriptionStatus contains */
@@ -1485,15 +1187,12 @@ CHANUNAVAIL: Channel unavailable. On SIP, peer may not be registered. */
     aiCallAnalysisOutput?: AiCallAnalysisOutput;
     /** AI input */
     readonly idAiCallAnalysisInput?: string | null;
-    analysis?: AiCallAnalysis;
-    analysis2?: AiCallAnalysis;
-    analysis3?: AiCallAnalysis;
     /** Lines that participated in this call */
     readonly idsParticipantLines?: string[];
     /** If not null it means the call is ended */
     readonly durationInSeconds?: number | null;
-    /** If there is an error message with the call. */
-    readonly errorMessage?: string | null;
+    errors?: CallErrors;
+    recordingStatus?: ProcessStatus;
     aiTranscriptionStatus?: ProcessStatus;
     aiAnalysisStatus?: ProcessStatus;
     /** It is nullable because there are cases where it makes no sense to point to an account. 
@@ -1572,15 +1271,12 @@ CHANUNAVAIL: Channel unavailable. On SIP, peer may not be registered. */
     aiCallAnalysisOutput?: AiCallAnalysisOutput;
     /** AI input */
     readonly idAiCallAnalysisInput?: string | null;
-    analysis?: AiCallAnalysis;
-    analysis2?: AiCallAnalysis;
-    analysis3?: AiCallAnalysis;
     /** Lines that participated in this call */
     readonly idsParticipantLines?: string[];
     /** If not null it means the call is ended */
     readonly durationInSeconds?: number | null;
-    /** If there is an error message with the call. */
-    readonly errorMessage?: string | null;
+    errors?: CallErrors;
+    recordingStatus?: ProcessStatus;
     aiTranscriptionStatus?: ProcessStatus;
     aiAnalysisStatus?: ProcessStatus;
     /** It is nullable because there are cases where it makes no sense to point to an account. 
@@ -1655,15 +1351,12 @@ CHANUNAVAIL: Channel unavailable. On SIP, peer may not be registered. */
     aiCallAnalysisOutput?: AiCallAnalysisOutput;
     /** AI input */
     readonly idAiCallAnalysisInput?: string | null;
-    analysis?: AiCallAnalysis;
-    analysis2?: AiCallAnalysis;
-    analysis3?: AiCallAnalysis;
     /** Lines that participated in this call */
     readonly idsParticipantLines?: string[];
     /** If not null it means the call is ended */
     readonly durationInSeconds?: number | null;
-    /** If there is an error message with the call. */
-    readonly errorMessage?: string | null;
+    errors?: CallErrors;
+    recordingStatus?: ProcessStatus;
     aiTranscriptionStatus?: ProcessStatus;
     aiAnalysisStatus?: ProcessStatus;
     /** It is nullable because there are cases where it makes no sense to point to an account. 
@@ -1732,15 +1425,12 @@ CHANUNAVAIL: Channel unavailable. On SIP, peer may not be registered. */
     aiCallAnalysisOutput?: AiCallAnalysisOutput;
     /** AI input */
     readonly idAiCallAnalysisInput?: string | null;
-    analysis?: AiCallAnalysis;
-    analysis2?: AiCallAnalysis;
-    analysis3?: AiCallAnalysis;
     /** Lines that participated in this call */
     readonly idsParticipantLines?: string[];
     /** If not null it means the call is ended */
     readonly durationInSeconds?: number | null;
-    /** If there is an error message with the call. */
-    readonly errorMessage?: string | null;
+    errors?: CallErrors;
+    recordingStatus?: ProcessStatus;
     aiTranscriptionStatus?: ProcessStatus;
     aiAnalysisStatus?: ProcessStatus;
     /** It is nullable because there are cases where it makes no sense to point to an account. 
@@ -3142,6 +2832,7 @@ If call is outgoing then the contact that we are calling. */
     /** If call is incoming then the name of contact that made phone call.
 If call is outgoing then the name of contact that we are calling. */
     readonly contactFullName?: string | null;
+    callErrors?: CallErrors;
     /** Id of document */
     id?: string;
 }
@@ -3171,6 +2862,7 @@ If call is outgoing then the contact that we are calling. */
     /** If call is incoming then the name of contact that made phone call.
 If call is outgoing then the name of contact that we are calling. */
     readonly contactFullName?: string | null;
+    callErrors?: CallErrors;
     /** Id of document */
     id?: string;
 }
@@ -3178,27 +2870,7 @@ If call is outgoing then the name of contact that we are calling. */
 /** Webhook will send this data when triggered. Ublux.Communications.Enums.EventTriggerType.EventIncomingCallTerminatedWithAiAnalysis */
 export interface EventIncomingCallTerminatedWithAiAnalysis {
     eventTrigger?: EventTriggerType;
-    sentiment?: AiSentiment;
-    /** Entities mentioned in the conversation */
-    readonly entities?: AiEntity[];
-    /** Topics mentioned in the conversation */
-    readonly topics?: AiTopic[];
-    /** Intention of client summarized */
-    readonly clientIntention?: string | null;
-    /** Intention of agent summarized */
-    readonly agentIntention?: string | null;
-    /** Summary of conversation */
-    readonly summary?: string | null;
-    /** Problem of the conversation */
-    readonly problem?: string | null;
-    /** Was client polite? This is a value between 0 and 1 representing a percentage. */
-    readonly clientPolite?: number | null;
-    /** Was agent polite? This is a value between 0 and 1 representing a percentage. */
-    readonly agentPolite?: number | null;
-    /** Client satisfaction from 1 to 5. */
-    readonly clientSatisfaction?: number;
-    /** Detected language */
-    readonly language?: string;
+    aiCallAnalysis?: AiCallAnalysisOutput;
     /** Recording of call */
     readonly recordingUrl?: string;
     /** Date when call was answered */
@@ -3223,6 +2895,7 @@ If call is outgoing then the contact that we are calling. */
     /** If call is incoming then the name of contact that made phone call.
 If call is outgoing then the name of contact that we are calling. */
     readonly contactFullName?: string | null;
+    callErrors?: CallErrors;
     /** Id of document */
     id?: string;
 }
@@ -3254,6 +2927,7 @@ If call is outgoing then the contact that we are calling. */
     /** If call is incoming then the name of contact that made phone call.
 If call is outgoing then the name of contact that we are calling. */
     readonly contactFullName?: string | null;
+    callErrors?: CallErrors;
     /** Id of document */
     id?: string;
 }
@@ -3265,8 +2939,6 @@ export interface EventIncomingCallTerminatedWithTranscription {
     readonly transcriptionLanguage?: string | null;
     /** Audio of agent converted to text */
     readonly transcription?: AiTranscription[];
-    /** If the transcription contains an error */
-    readonly errorMessage?: string | null;
     /** Recording of call */
     readonly recordingUrl?: string;
     /** Date when call was answered */
@@ -3291,6 +2963,7 @@ If call is outgoing then the contact that we are calling. */
     /** If call is incoming then the name of contact that made phone call.
 If call is outgoing then the name of contact that we are calling. */
     readonly contactFullName?: string | null;
+    callErrors?: CallErrors;
     /** Id of document */
     id?: string;
 }
@@ -3354,6 +3027,7 @@ If call is outgoing then the contact that we are calling. */
     /** If call is incoming then the name of contact that made phone call.
 If call is outgoing then the name of contact that we are calling. */
     readonly contactFullName?: string | null;
+    callErrors?: CallErrors;
     /** Id of document */
     id?: string;
 }
@@ -3387,6 +3061,7 @@ If call is outgoing then the contact that we are calling. */
     /** If call is incoming then the name of contact that made phone call.
 If call is outgoing then the name of contact that we are calling. */
     readonly contactFullName?: string | null;
+    callErrors?: CallErrors;
     /** Id of document */
     id?: string;
 }
@@ -3394,27 +3069,7 @@ If call is outgoing then the name of contact that we are calling. */
 /** Webhook will send this data when triggered. Ublux.Communications.Enums.EventTriggerType.EventOutgoingCallTerminatedWithAiAnalysis */
 export interface EventOutgoingCallTerminatedWithAiAnalysis {
     eventTrigger?: EventTriggerType;
-    sentiment?: AiSentiment;
-    /** Entities mentioned in the conversation */
-    readonly entities?: AiEntity[];
-    /** Topics mentioned in the conversation */
-    readonly topics?: AiTopic[];
-    /** Intention of client summarized */
-    readonly clientIntention?: string | null;
-    /** Intention of agent summarized */
-    readonly agentIntention?: string | null;
-    /** Summary of conversation */
-    readonly summary?: string | null;
-    /** Problem of the conversation */
-    readonly problem?: string | null;
-    /** Was client polite? This is a value between 0 and 1 representing a percentage. */
-    readonly clientPolite?: number | null;
-    /** Was agent polite? This is a value between 0 and 1 representing a percentage. */
-    readonly agentPolite?: number | null;
-    /** Client satisfaction from 1 to 5. */
-    readonly clientSatisfaction?: number;
-    /** Detected language */
-    readonly language?: string;
+    aiCallAnalysis?: AiCallAnalysisOutput;
     /** Recording of call */
     readonly recordingUrl?: string;
     /** Date when call was answered */
@@ -3443,6 +3098,7 @@ If call is outgoing then the contact that we are calling. */
     /** If call is incoming then the name of contact that made phone call.
 If call is outgoing then the name of contact that we are calling. */
     readonly contactFullName?: string | null;
+    callErrors?: CallErrors;
     /** Id of document */
     id?: string;
 }
@@ -3478,6 +3134,7 @@ If call is outgoing then the contact that we are calling. */
     /** If call is incoming then the name of contact that made phone call.
 If call is outgoing then the name of contact that we are calling. */
     readonly contactFullName?: string | null;
+    callErrors?: CallErrors;
     /** Id of document */
     id?: string;
 }
@@ -3489,8 +3146,6 @@ export interface EventOutgoingCallTerminatedWithTranscription {
     readonly transcriptionLanguage?: string | null;
     /** Audio of agent converted to text */
     readonly transcription?: AiTranscription[];
-    /** If the transcription contains an error */
-    readonly errorMessage?: string | null;
     /** Recording of call */
     readonly recordingUrl?: string;
     /** Date when call was answered */
@@ -3519,6 +3174,7 @@ If call is outgoing then the contact that we are calling. */
     /** If call is incoming then the name of contact that made phone call.
 If call is outgoing then the name of contact that we are calling. */
     readonly contactFullName?: string | null;
+    callErrors?: CallErrors;
     /** Id of document */
     id?: string;
 }
@@ -6173,6 +5829,14 @@ export interface ProblemDetails {
     status?: number | null;
     detail?: string | null;
     instance?: string | null;
+}
+
+/** Status of something that is being processed. For example the transcription of a call using whisper or analysis of call using chat GPT. */
+export enum ProcessStatus {
+    None = "None",
+    Pending = "Pending",
+    Processing = "Processing",
+    Complete = "Complete",
 }
 
 /** Ring strategy of a queue */

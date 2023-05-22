@@ -1403,6 +1403,16 @@ public class CallIncomingToCallFlowLogicFilterRequest
     [JsonProperty("aiCallAnalysisOutput_idAiCallAnalysisInput_reg")]
     public string? AiCallAnalysisOutput_IdAiCallAnalysisInput_REG { get; set; }
 
+    /// <summary> AiCallAnalysisOutput.DetectedLanguage equals </summary>
+    [JsonProperty("aiCallAnalysisOutput_detectedLanguage_eq")]
+    public string? AiCallAnalysisOutput_DetectedLanguage_EQ { get; set; }
+    /// <summary> AiCallAnalysisOutput.DetectedLanguage contains </summary>
+    [JsonProperty("aiCallAnalysisOutput_detectedLanguage_con")]
+    public string? AiCallAnalysisOutput_DetectedLanguage_CON { get; set; }
+    /// <summary> AiCallAnalysisOutput.DetectedLanguage regex </summary>
+    [JsonProperty("aiCallAnalysisOutput_detectedLanguage_reg")]
+    public string? AiCallAnalysisOutput_DetectedLanguage_REG { get; set; }
+
     /// <summary> AiCallAnalysisOutput.Output.Name equals </summary>
     [JsonProperty("aiCallAnalysisOutput_output_name_eq")]
     public string? AiCallAnalysisOutput_Output_Name_EQ { get; set; }
@@ -2090,6 +2100,16 @@ public class CallIncomingToExtensionFilterRequest
     [JsonProperty("aiCallAnalysisOutput_idAiCallAnalysisInput_reg")]
     public string? AiCallAnalysisOutput_IdAiCallAnalysisInput_REG { get; set; }
 
+    /// <summary> AiCallAnalysisOutput.DetectedLanguage equals </summary>
+    [JsonProperty("aiCallAnalysisOutput_detectedLanguage_eq")]
+    public string? AiCallAnalysisOutput_DetectedLanguage_EQ { get; set; }
+    /// <summary> AiCallAnalysisOutput.DetectedLanguage contains </summary>
+    [JsonProperty("aiCallAnalysisOutput_detectedLanguage_con")]
+    public string? AiCallAnalysisOutput_DetectedLanguage_CON { get; set; }
+    /// <summary> AiCallAnalysisOutput.DetectedLanguage regex </summary>
+    [JsonProperty("aiCallAnalysisOutput_detectedLanguage_reg")]
+    public string? AiCallAnalysisOutput_DetectedLanguage_REG { get; set; }
+
     /// <summary> AiCallAnalysisOutput.Output.Name equals </summary>
     [JsonProperty("aiCallAnalysisOutput_output_name_eq")]
     public string? AiCallAnalysisOutput_Output_Name_EQ { get; set; }
@@ -2757,6 +2777,16 @@ public class CallOutgoingToExtensionFilterRequest
     [JsonProperty("aiCallAnalysisOutput_idAiCallAnalysisInput_reg")]
     public string? AiCallAnalysisOutput_IdAiCallAnalysisInput_REG { get; set; }
 
+    /// <summary> AiCallAnalysisOutput.DetectedLanguage equals </summary>
+    [JsonProperty("aiCallAnalysisOutput_detectedLanguage_eq")]
+    public string? AiCallAnalysisOutput_DetectedLanguage_EQ { get; set; }
+    /// <summary> AiCallAnalysisOutput.DetectedLanguage contains </summary>
+    [JsonProperty("aiCallAnalysisOutput_detectedLanguage_con")]
+    public string? AiCallAnalysisOutput_DetectedLanguage_CON { get; set; }
+    /// <summary> AiCallAnalysisOutput.DetectedLanguage regex </summary>
+    [JsonProperty("aiCallAnalysisOutput_detectedLanguage_reg")]
+    public string? AiCallAnalysisOutput_DetectedLanguage_REG { get; set; }
+
     /// <summary> AiCallAnalysisOutput.Output.Name equals </summary>
     [JsonProperty("aiCallAnalysisOutput_output_name_eq")]
     public string? AiCallAnalysisOutput_Output_Name_EQ { get; set; }
@@ -3393,6 +3423,16 @@ public class CallOutgoingToPSTNFilterRequest
     /// <summary> AiCallAnalysisOutput.IdAiCallAnalysisInput regex </summary>
     [JsonProperty("aiCallAnalysisOutput_idAiCallAnalysisInput_reg")]
     public string? AiCallAnalysisOutput_IdAiCallAnalysisInput_REG { get; set; }
+
+    /// <summary> AiCallAnalysisOutput.DetectedLanguage equals </summary>
+    [JsonProperty("aiCallAnalysisOutput_detectedLanguage_eq")]
+    public string? AiCallAnalysisOutput_DetectedLanguage_EQ { get; set; }
+    /// <summary> AiCallAnalysisOutput.DetectedLanguage contains </summary>
+    [JsonProperty("aiCallAnalysisOutput_detectedLanguage_con")]
+    public string? AiCallAnalysisOutput_DetectedLanguage_CON { get; set; }
+    /// <summary> AiCallAnalysisOutput.DetectedLanguage regex </summary>
+    [JsonProperty("aiCallAnalysisOutput_detectedLanguage_reg")]
+    public string? AiCallAnalysisOutput_DetectedLanguage_REG { get; set; }
 
     /// <summary> AiCallAnalysisOutput.Output.Name equals </summary>
     [JsonProperty("aiCallAnalysisOutput_output_name_eq")]
@@ -8977,6 +9017,16 @@ public class CallFilterRequest
     [JsonProperty("aiCallAnalysisOutput_idAiCallAnalysisInput_reg")]
     public string? AiCallAnalysisOutput_IdAiCallAnalysisInput_REG { get; set; }
 
+    /// <summary> AiCallAnalysisOutput.DetectedLanguage equals </summary>
+    [JsonProperty("aiCallAnalysisOutput_detectedLanguage_eq")]
+    public string? AiCallAnalysisOutput_DetectedLanguage_EQ { get; set; }
+    /// <summary> AiCallAnalysisOutput.DetectedLanguage contains </summary>
+    [JsonProperty("aiCallAnalysisOutput_detectedLanguage_con")]
+    public string? AiCallAnalysisOutput_DetectedLanguage_CON { get; set; }
+    /// <summary> AiCallAnalysisOutput.DetectedLanguage regex </summary>
+    [JsonProperty("aiCallAnalysisOutput_detectedLanguage_reg")]
+    public string? AiCallAnalysisOutput_DetectedLanguage_REG { get; set; }
+
     /// <summary> AiCallAnalysisOutput.Output.Name equals </summary>
     [JsonProperty("aiCallAnalysisOutput_output_name_eq")]
     public string? AiCallAnalysisOutput_Output_Name_EQ { get; set; }
@@ -9624,6 +9674,16 @@ public class CallIncomingFilterRequest
     [JsonProperty("aiCallAnalysisOutput_idAiCallAnalysisInput_reg")]
     public string? AiCallAnalysisOutput_IdAiCallAnalysisInput_REG { get; set; }
 
+    /// <summary> AiCallAnalysisOutput.DetectedLanguage equals </summary>
+    [JsonProperty("aiCallAnalysisOutput_detectedLanguage_eq")]
+    public string? AiCallAnalysisOutput_DetectedLanguage_EQ { get; set; }
+    /// <summary> AiCallAnalysisOutput.DetectedLanguage contains </summary>
+    [JsonProperty("aiCallAnalysisOutput_detectedLanguage_con")]
+    public string? AiCallAnalysisOutput_DetectedLanguage_CON { get; set; }
+    /// <summary> AiCallAnalysisOutput.DetectedLanguage regex </summary>
+    [JsonProperty("aiCallAnalysisOutput_detectedLanguage_reg")]
+    public string? AiCallAnalysisOutput_DetectedLanguage_REG { get; set; }
+
     /// <summary> AiCallAnalysisOutput.Output.Name equals </summary>
     [JsonProperty("aiCallAnalysisOutput_output_name_eq")]
     public string? AiCallAnalysisOutput_Output_Name_EQ { get; set; }
@@ -10250,6 +10310,16 @@ public class CallOutgoingFilterRequest
     /// <summary> AiCallAnalysisOutput.IdAiCallAnalysisInput regex </summary>
     [JsonProperty("aiCallAnalysisOutput_idAiCallAnalysisInput_reg")]
     public string? AiCallAnalysisOutput_IdAiCallAnalysisInput_REG { get; set; }
+
+    /// <summary> AiCallAnalysisOutput.DetectedLanguage equals </summary>
+    [JsonProperty("aiCallAnalysisOutput_detectedLanguage_eq")]
+    public string? AiCallAnalysisOutput_DetectedLanguage_EQ { get; set; }
+    /// <summary> AiCallAnalysisOutput.DetectedLanguage contains </summary>
+    [JsonProperty("aiCallAnalysisOutput_detectedLanguage_con")]
+    public string? AiCallAnalysisOutput_DetectedLanguage_CON { get; set; }
+    /// <summary> AiCallAnalysisOutput.DetectedLanguage regex </summary>
+    [JsonProperty("aiCallAnalysisOutput_detectedLanguage_reg")]
+    public string? AiCallAnalysisOutput_DetectedLanguage_REG { get; set; }
 
     /// <summary> AiCallAnalysisOutput.Output.Name equals </summary>
     [JsonProperty("aiCallAnalysisOutput_output_name_eq")]
