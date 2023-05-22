@@ -131,6 +131,12 @@ public class RunningApplicationInstance
             throw new Exception("IdGlobalSetValue must be initialized");
         }
 
+        if (_cts.IsCancellationRequested)
+        {
+            if (Debugger.IsAttached) Debugger.Break();
+            Console.WriteLine("Error: If application is terminationg we should not increment this because it will not be saved.");
+        }
+
         return ToBase62(Interlocked.Increment(ref _idGlobalCounter));
     }
 
