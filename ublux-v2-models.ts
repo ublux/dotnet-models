@@ -272,13 +272,6 @@ export interface AiCallTranscriptionFilterRequest {
     dateUpdated_gte?: Date | null;
 }
 
-/** AI transcription of a phone call. This is the convertion from audio to text only. */
-export interface AiCallTranscriptionUpdateRequest {
-    /** It is nullable because there are cases where it makes no sense to point to an account.
-For example a CloudService user will point to no account */
-    idsTags?: string[] | null;
-}
-
 /** AI Entity. Example: Date with value January 1, 2023 */
 export interface AiEntity {
     readonly entityType?: string;
@@ -289,7 +282,6 @@ export interface AiEntity {
 export enum AiProcessStatus {
     None = "None",
     Pending = "Pending",
-    Queued = "Queued",
     Processing = "Processing",
     Complete = "Complete",
 }

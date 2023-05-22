@@ -413,6 +413,9 @@ public abstract partial class Call : UbluxDocument_ReferenceAccount_ReferenceTag
         yield return new MongoDbIndex(collection, nameof(this.IdsParticipantLines)).Add(nameof(IdAccount))
             // Append DateCreated at the end so that items are returned by dateCreated
             .Add(-1, nameof(DateCreated));
+
+        // Needed to search calls that need transcription
+        yield return new MongoDbIndex(collection, nameof(this.AiTranscriptionStatus)).Add(nameof(this.AiAnalysisStatus));
     }
 
     #endregion
