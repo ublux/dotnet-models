@@ -436,6 +436,11 @@ public abstract partial class Call : UbluxDocument_ReferenceAccount_ReferenceTag
 
         // Helps find calls that are ready to be transcribed or ai analyzed
         yield return new MongoDbIndex(collection, nameof(this.RecordingStatus)).Add(nameof(this.AiAnalysisStatus)).Add(nameof(this.AiTranscriptionStatus));
+
+        // Needed to revert status from queued to pending in case app crashes
+        yield return new MongoDbIndex(collection, nameof(this.RecordingStatus));
+        yield return new MongoDbIndex(collection, nameof(this.AiAnalysisStatus));
+        yield return new MongoDbIndex(collection, nameof(this.AiTranscriptionStatus));
     }
 
     #endregion

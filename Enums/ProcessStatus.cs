@@ -14,7 +14,12 @@ public enum ProcessStatus
     /// <summary>
     ///     Pending to be processed
     /// </summary>
-    Pending,    
+    Pending,
+
+    /// <summary>
+    ///     It is about to be processed
+    /// </summary>
+    Queued,
 
     /// <summary>
     ///     Its being processed

@@ -141,6 +141,12 @@ export interface AiCallAnalysisOutput {
     readonly detectedLanguage?: string;
     /** List of queries to ask AI engine about a call */
     readonly output?: AiCallAnalysisVariableOutput[];
+    /** Total tokes used by AI engine */
+    readonly tokensTotal?: number;
+    /** Tokens used by completion on AI engine */
+    readonly tokensCompletion?: number;
+    /** Tokens used by prompt on AI engine */
+    readonly tokensPrompt?: number;
 }
 
 /** AI call analysis variable query sent to AI engine */
@@ -970,6 +976,24 @@ export interface CallFilterRequest {
     aiCallAnalysisOutput_output_value_con?: string | null;
     /** AiCallAnalysisOutput.Output.Value regex */
     aiCallAnalysisOutput_output_value_reg?: string | null;
+    /** AiCallAnalysisOutput.TokensTotal equals */
+    aiCallAnalysisOutput_tokensTotal_eq?: number | null;
+    /** AiCallAnalysisOutput.TokensTotal less than or equal to */
+    aiCallAnalysisOutput_tokensTotal_lte?: number | null;
+    /** AiCallAnalysisOutput.TokensTotal greater than or equal to */
+    aiCallAnalysisOutput_tokensTotal_gte?: number | null;
+    /** AiCallAnalysisOutput.TokensCompletion equals */
+    aiCallAnalysisOutput_tokensCompletion_eq?: number | null;
+    /** AiCallAnalysisOutput.TokensCompletion less than or equal to */
+    aiCallAnalysisOutput_tokensCompletion_lte?: number | null;
+    /** AiCallAnalysisOutput.TokensCompletion greater than or equal to */
+    aiCallAnalysisOutput_tokensCompletion_gte?: number | null;
+    /** AiCallAnalysisOutput.TokensPrompt equals */
+    aiCallAnalysisOutput_tokensPrompt_eq?: number | null;
+    /** AiCallAnalysisOutput.TokensPrompt less than or equal to */
+    aiCallAnalysisOutput_tokensPrompt_lte?: number | null;
+    /** AiCallAnalysisOutput.TokensPrompt greater than or equal to */
+    aiCallAnalysisOutput_tokensPrompt_gte?: number | null;
     /** IdAiCallAnalysisInput equals */
     idAiCallAnalysisInput_eq?: string | null;
     /** IdAiCallAnalysisInput contains */
@@ -1819,6 +1843,46 @@ Hard host name should point to this */
     /** Updated date. When item is created on database this date will be set too. This is important so that we can sync contacts
 TODO: Very important to place index in this field. */
     readonly dateUpdated?: Date;
+}
+
+/** Database tables */
+export enum Collections {
+    Accounts = "Accounts",
+    AgreementsToTermsAndConditions = "AgreementsToTermsAndConditions",
+    AirNetworksProvinces = "AirNetworksProvinces",
+    Audios = "Audios",
+    AutoProvisionReferences = "AutoProvisionReferences",
+    BlackListPhoneNumbers = "BlackListPhoneNumbers",
+    Calls = "Calls",
+    CallerIdMasks = "CallerIdMasks",
+    CallFlowLogics = "CallFlowLogics",
+    CloudServices = "CloudServices",
+    Contacts = "Contacts",
+    CustomerInfos = "CustomerInfos",
+    Extensions = "Extensions",
+    FaxesIncoming = "FaxesIncoming",
+    FaxOutgoingGroups = "FaxOutgoingGroups",
+    Voicemails = "Voicemails",
+    Users = "Users",
+    LineKeyGroups = "LineKeyGroups",
+    LogWebServiceRequests = "LogWebServiceRequests",
+    MusicOnHoldGroups = "MusicOnHoldGroups",
+    Phones = "Phones",
+    PhoneConfigurations = "PhoneConfigurations",
+    PowerDialerGroups = "PowerDialerGroups",
+    SMS = "SMS",
+    TrunkOriginations = "TrunkOriginations",
+    TrunkTerminations = "TrunkTerminations",
+    TrunkTerminationGroups = "TrunkTerminationGroups",
+    VoipNumbers = "VoipNumbers",
+    VoipProviders = "VoipProviders",
+    WebHooks = "WebHooks",
+    StoredFileReferences = "StoredFileReferences",
+    Tags = "Tags",
+    ApiKeys = "ApiKeys",
+    AiCallTranscriptions = "AiCallTranscriptions",
+    Emails = "Emails",
+    AiCallAnalysisInputs = "AiCallAnalysisInputs",
 }
 
 /** Contact */
@@ -5835,6 +5899,7 @@ export interface ProblemDetails {
 export enum ProcessStatus {
     None = "None",
     Pending = "Pending",
+    Queued = "Queued",
     Processing = "Processing",
     Complete = "Complete",
 }
@@ -6000,6 +6065,48 @@ export interface SendEmailNotificationIfNotAnswered {
     idsEmails?: string[];
     /** If a caller calls and hung up right away then maybe we don't want to send a notification. */
     preventSendingNotificationIfLastLessThanNSeconds?: number;
+}
+
+/** Simple notification service message */
+export interface SnsMessage {
+    /** Id of message */
+    id?: string;
+    /** Date when message was created in UTC */
+    dateCreated?: Date;
+    snsTopic?: SnsTopic;
+    /** Message data */
+    message?: string | null;
+    /** Id of account. Use account 27 for internal events */
+    readonly idAccount?: string;
+    /** If a phone was modified then the id of the phone */
+    idCollection?: string | null;
+    collection?: Collections;
+    /** Data of message. This may be json data */
+    data?: any | null;
+    /** If there is data then what type of data is it */
+    dataType?: string | null;
+    /** Created by instance id */
+    origin?: string;
+    /** Any helpful data */
+    tag?: any | null;
+    /** If there is a Tag then its type */
+    tagType?: string | null;
+}
+
+/** Simple notification service topic. Example call_completed. */
+export enum SnsTopic {
+    Collection_Created = "Collection_Created",
+    Collection_Updated = "Collection_Updated",
+    Collection_Deleted = "Collection_Deleted",
+    Transcription_Complete = "Transcription_Complete",
+    AiAnalysis_Complete = "AiAnalysis_Complete",
+    Call_Started = "Call_Started",
+    Call_Terminated = "Call_Terminated",
+    Line_Disconnected = "Line_Disconnected",
+    Line_Connected = "Line_Connected",
+    Extension_Unanswered = "Extension_Unanswered",
+    Extension_TookToLongToBeAnswered = "Extension_TookToLongToBeAnswered",
+    Call_PlacedOnHoldForTooLong = "Call_PlacedOnHoldForTooLong",
 }
 
 /** Represents a stored file in ublux such as a recording or audio. */

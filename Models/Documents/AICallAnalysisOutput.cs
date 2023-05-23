@@ -28,4 +28,24 @@ public class AiCallAnalysisOutput
     [SwaggerSchema(ReadOnly = true)]
     public List<AiCallAnalysisVariableOutput> Output { get; set; } = new();
 
+    /// <summary>
+    ///     Total tokes used by AI engine
+    /// </summary>    
+    [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
+    public int TokensTotal { get; set; }
+
+    /// <summary>
+    ///     Tokens used by completion on AI engine
+    /// </summary>    
+    [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
+    public int TokensCompletion { get; set; }
+
+    /// <summary>
+    ///     Tokens used by prompt on AI engine
+    /// </summary>    
+    [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
+    public int TokensPrompt { get; set; }
 }

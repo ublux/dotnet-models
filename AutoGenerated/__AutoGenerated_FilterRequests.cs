@@ -1444,6 +1444,36 @@ public class CallIncomingToCallFlowLogicFilterRequest
     public string? AiCallAnalysisOutput_Output_Value_REG { get; set; }
 
 
+    /// <summary> AiCallAnalysisOutput.TokensTotal equals </summary>
+    [JsonProperty("aiCallAnalysisOutput_tokensTotal_eq")]
+    public System.Int32? AiCallAnalysisOutput_TokensTotal_EQ { get; set; }
+    /// <summary> AiCallAnalysisOutput.TokensTotal less than or equal to </summary>
+    [JsonProperty("aiCallAnalysisOutput_tokensTotal_lte")]
+    public System.Int32? AiCallAnalysisOutput_TokensTotal_LTE { get; set; }
+    /// <summary> AiCallAnalysisOutput.TokensTotal greater than or equal to </summary>
+    [JsonProperty("aiCallAnalysisOutput_tokensTotal_gte")]
+    public System.Int32? AiCallAnalysisOutput_TokensTotal_GTE { get; set; }
+
+    /// <summary> AiCallAnalysisOutput.TokensCompletion equals </summary>
+    [JsonProperty("aiCallAnalysisOutput_tokensCompletion_eq")]
+    public System.Int32? AiCallAnalysisOutput_TokensCompletion_EQ { get; set; }
+    /// <summary> AiCallAnalysisOutput.TokensCompletion less than or equal to </summary>
+    [JsonProperty("aiCallAnalysisOutput_tokensCompletion_lte")]
+    public System.Int32? AiCallAnalysisOutput_TokensCompletion_LTE { get; set; }
+    /// <summary> AiCallAnalysisOutput.TokensCompletion greater than or equal to </summary>
+    [JsonProperty("aiCallAnalysisOutput_tokensCompletion_gte")]
+    public System.Int32? AiCallAnalysisOutput_TokensCompletion_GTE { get; set; }
+
+    /// <summary> AiCallAnalysisOutput.TokensPrompt equals </summary>
+    [JsonProperty("aiCallAnalysisOutput_tokensPrompt_eq")]
+    public System.Int32? AiCallAnalysisOutput_TokensPrompt_EQ { get; set; }
+    /// <summary> AiCallAnalysisOutput.TokensPrompt less than or equal to </summary>
+    [JsonProperty("aiCallAnalysisOutput_tokensPrompt_lte")]
+    public System.Int32? AiCallAnalysisOutput_TokensPrompt_LTE { get; set; }
+    /// <summary> AiCallAnalysisOutput.TokensPrompt greater than or equal to </summary>
+    [JsonProperty("aiCallAnalysisOutput_tokensPrompt_gte")]
+    public System.Int32? AiCallAnalysisOutput_TokensPrompt_GTE { get; set; }
+
 
     /// <summary> IdAiCallAnalysisInput equals </summary>
     [JsonProperty("idAiCallAnalysisInput_eq")]
@@ -2141,6 +2171,36 @@ public class CallIncomingToExtensionFilterRequest
     public string? AiCallAnalysisOutput_Output_Value_REG { get; set; }
 
 
+    /// <summary> AiCallAnalysisOutput.TokensTotal equals </summary>
+    [JsonProperty("aiCallAnalysisOutput_tokensTotal_eq")]
+    public System.Int32? AiCallAnalysisOutput_TokensTotal_EQ { get; set; }
+    /// <summary> AiCallAnalysisOutput.TokensTotal less than or equal to </summary>
+    [JsonProperty("aiCallAnalysisOutput_tokensTotal_lte")]
+    public System.Int32? AiCallAnalysisOutput_TokensTotal_LTE { get; set; }
+    /// <summary> AiCallAnalysisOutput.TokensTotal greater than or equal to </summary>
+    [JsonProperty("aiCallAnalysisOutput_tokensTotal_gte")]
+    public System.Int32? AiCallAnalysisOutput_TokensTotal_GTE { get; set; }
+
+    /// <summary> AiCallAnalysisOutput.TokensCompletion equals </summary>
+    [JsonProperty("aiCallAnalysisOutput_tokensCompletion_eq")]
+    public System.Int32? AiCallAnalysisOutput_TokensCompletion_EQ { get; set; }
+    /// <summary> AiCallAnalysisOutput.TokensCompletion less than or equal to </summary>
+    [JsonProperty("aiCallAnalysisOutput_tokensCompletion_lte")]
+    public System.Int32? AiCallAnalysisOutput_TokensCompletion_LTE { get; set; }
+    /// <summary> AiCallAnalysisOutput.TokensCompletion greater than or equal to </summary>
+    [JsonProperty("aiCallAnalysisOutput_tokensCompletion_gte")]
+    public System.Int32? AiCallAnalysisOutput_TokensCompletion_GTE { get; set; }
+
+    /// <summary> AiCallAnalysisOutput.TokensPrompt equals </summary>
+    [JsonProperty("aiCallAnalysisOutput_tokensPrompt_eq")]
+    public System.Int32? AiCallAnalysisOutput_TokensPrompt_EQ { get; set; }
+    /// <summary> AiCallAnalysisOutput.TokensPrompt less than or equal to </summary>
+    [JsonProperty("aiCallAnalysisOutput_tokensPrompt_lte")]
+    public System.Int32? AiCallAnalysisOutput_TokensPrompt_LTE { get; set; }
+    /// <summary> AiCallAnalysisOutput.TokensPrompt greater than or equal to </summary>
+    [JsonProperty("aiCallAnalysisOutput_tokensPrompt_gte")]
+    public System.Int32? AiCallAnalysisOutput_TokensPrompt_GTE { get; set; }
+
 
     /// <summary> IdAiCallAnalysisInput equals </summary>
     [JsonProperty("idAiCallAnalysisInput_eq")]
@@ -2818,6 +2878,36 @@ public class CallOutgoingToExtensionFilterRequest
     public string? AiCallAnalysisOutput_Output_Value_REG { get; set; }
 
 
+    /// <summary> AiCallAnalysisOutput.TokensTotal equals </summary>
+    [JsonProperty("aiCallAnalysisOutput_tokensTotal_eq")]
+    public System.Int32? AiCallAnalysisOutput_TokensTotal_EQ { get; set; }
+    /// <summary> AiCallAnalysisOutput.TokensTotal less than or equal to </summary>
+    [JsonProperty("aiCallAnalysisOutput_tokensTotal_lte")]
+    public System.Int32? AiCallAnalysisOutput_TokensTotal_LTE { get; set; }
+    /// <summary> AiCallAnalysisOutput.TokensTotal greater than or equal to </summary>
+    [JsonProperty("aiCallAnalysisOutput_tokensTotal_gte")]
+    public System.Int32? AiCallAnalysisOutput_TokensTotal_GTE { get; set; }
+
+    /// <summary> AiCallAnalysisOutput.TokensCompletion equals </summary>
+    [JsonProperty("aiCallAnalysisOutput_tokensCompletion_eq")]
+    public System.Int32? AiCallAnalysisOutput_TokensCompletion_EQ { get; set; }
+    /// <summary> AiCallAnalysisOutput.TokensCompletion less than or equal to </summary>
+    [JsonProperty("aiCallAnalysisOutput_tokensCompletion_lte")]
+    public System.Int32? AiCallAnalysisOutput_TokensCompletion_LTE { get; set; }
+    /// <summary> AiCallAnalysisOutput.TokensCompletion greater than or equal to </summary>
+    [JsonProperty("aiCallAnalysisOutput_tokensCompletion_gte")]
+    public System.Int32? AiCallAnalysisOutput_TokensCompletion_GTE { get; set; }
+
+    /// <summary> AiCallAnalysisOutput.TokensPrompt equals </summary>
+    [JsonProperty("aiCallAnalysisOutput_tokensPrompt_eq")]
+    public System.Int32? AiCallAnalysisOutput_TokensPrompt_EQ { get; set; }
+    /// <summary> AiCallAnalysisOutput.TokensPrompt less than or equal to </summary>
+    [JsonProperty("aiCallAnalysisOutput_tokensPrompt_lte")]
+    public System.Int32? AiCallAnalysisOutput_TokensPrompt_LTE { get; set; }
+    /// <summary> AiCallAnalysisOutput.TokensPrompt greater than or equal to </summary>
+    [JsonProperty("aiCallAnalysisOutput_tokensPrompt_gte")]
+    public System.Int32? AiCallAnalysisOutput_TokensPrompt_GTE { get; set; }
+
 
     /// <summary> IdAiCallAnalysisInput equals </summary>
     [JsonProperty("idAiCallAnalysisInput_eq")]
@@ -3464,6 +3554,36 @@ public class CallOutgoingToPSTNFilterRequest
     [JsonProperty("aiCallAnalysisOutput_output_value_reg")]
     public string? AiCallAnalysisOutput_Output_Value_REG { get; set; }
 
+
+    /// <summary> AiCallAnalysisOutput.TokensTotal equals </summary>
+    [JsonProperty("aiCallAnalysisOutput_tokensTotal_eq")]
+    public System.Int32? AiCallAnalysisOutput_TokensTotal_EQ { get; set; }
+    /// <summary> AiCallAnalysisOutput.TokensTotal less than or equal to </summary>
+    [JsonProperty("aiCallAnalysisOutput_tokensTotal_lte")]
+    public System.Int32? AiCallAnalysisOutput_TokensTotal_LTE { get; set; }
+    /// <summary> AiCallAnalysisOutput.TokensTotal greater than or equal to </summary>
+    [JsonProperty("aiCallAnalysisOutput_tokensTotal_gte")]
+    public System.Int32? AiCallAnalysisOutput_TokensTotal_GTE { get; set; }
+
+    /// <summary> AiCallAnalysisOutput.TokensCompletion equals </summary>
+    [JsonProperty("aiCallAnalysisOutput_tokensCompletion_eq")]
+    public System.Int32? AiCallAnalysisOutput_TokensCompletion_EQ { get; set; }
+    /// <summary> AiCallAnalysisOutput.TokensCompletion less than or equal to </summary>
+    [JsonProperty("aiCallAnalysisOutput_tokensCompletion_lte")]
+    public System.Int32? AiCallAnalysisOutput_TokensCompletion_LTE { get; set; }
+    /// <summary> AiCallAnalysisOutput.TokensCompletion greater than or equal to </summary>
+    [JsonProperty("aiCallAnalysisOutput_tokensCompletion_gte")]
+    public System.Int32? AiCallAnalysisOutput_TokensCompletion_GTE { get; set; }
+
+    /// <summary> AiCallAnalysisOutput.TokensPrompt equals </summary>
+    [JsonProperty("aiCallAnalysisOutput_tokensPrompt_eq")]
+    public System.Int32? AiCallAnalysisOutput_TokensPrompt_EQ { get; set; }
+    /// <summary> AiCallAnalysisOutput.TokensPrompt less than or equal to </summary>
+    [JsonProperty("aiCallAnalysisOutput_tokensPrompt_lte")]
+    public System.Int32? AiCallAnalysisOutput_TokensPrompt_LTE { get; set; }
+    /// <summary> AiCallAnalysisOutput.TokensPrompt greater than or equal to </summary>
+    [JsonProperty("aiCallAnalysisOutput_tokensPrompt_gte")]
+    public System.Int32? AiCallAnalysisOutput_TokensPrompt_GTE { get; set; }
 
 
     /// <summary> IdAiCallAnalysisInput equals </summary>
@@ -9058,6 +9178,36 @@ public class CallFilterRequest
     public string? AiCallAnalysisOutput_Output_Value_REG { get; set; }
 
 
+    /// <summary> AiCallAnalysisOutput.TokensTotal equals </summary>
+    [JsonProperty("aiCallAnalysisOutput_tokensTotal_eq")]
+    public System.Int32? AiCallAnalysisOutput_TokensTotal_EQ { get; set; }
+    /// <summary> AiCallAnalysisOutput.TokensTotal less than or equal to </summary>
+    [JsonProperty("aiCallAnalysisOutput_tokensTotal_lte")]
+    public System.Int32? AiCallAnalysisOutput_TokensTotal_LTE { get; set; }
+    /// <summary> AiCallAnalysisOutput.TokensTotal greater than or equal to </summary>
+    [JsonProperty("aiCallAnalysisOutput_tokensTotal_gte")]
+    public System.Int32? AiCallAnalysisOutput_TokensTotal_GTE { get; set; }
+
+    /// <summary> AiCallAnalysisOutput.TokensCompletion equals </summary>
+    [JsonProperty("aiCallAnalysisOutput_tokensCompletion_eq")]
+    public System.Int32? AiCallAnalysisOutput_TokensCompletion_EQ { get; set; }
+    /// <summary> AiCallAnalysisOutput.TokensCompletion less than or equal to </summary>
+    [JsonProperty("aiCallAnalysisOutput_tokensCompletion_lte")]
+    public System.Int32? AiCallAnalysisOutput_TokensCompletion_LTE { get; set; }
+    /// <summary> AiCallAnalysisOutput.TokensCompletion greater than or equal to </summary>
+    [JsonProperty("aiCallAnalysisOutput_tokensCompletion_gte")]
+    public System.Int32? AiCallAnalysisOutput_TokensCompletion_GTE { get; set; }
+
+    /// <summary> AiCallAnalysisOutput.TokensPrompt equals </summary>
+    [JsonProperty("aiCallAnalysisOutput_tokensPrompt_eq")]
+    public System.Int32? AiCallAnalysisOutput_TokensPrompt_EQ { get; set; }
+    /// <summary> AiCallAnalysisOutput.TokensPrompt less than or equal to </summary>
+    [JsonProperty("aiCallAnalysisOutput_tokensPrompt_lte")]
+    public System.Int32? AiCallAnalysisOutput_TokensPrompt_LTE { get; set; }
+    /// <summary> AiCallAnalysisOutput.TokensPrompt greater than or equal to </summary>
+    [JsonProperty("aiCallAnalysisOutput_tokensPrompt_gte")]
+    public System.Int32? AiCallAnalysisOutput_TokensPrompt_GTE { get; set; }
+
 
     /// <summary> IdAiCallAnalysisInput equals </summary>
     [JsonProperty("idAiCallAnalysisInput_eq")]
@@ -9715,6 +9865,36 @@ public class CallIncomingFilterRequest
     public string? AiCallAnalysisOutput_Output_Value_REG { get; set; }
 
 
+    /// <summary> AiCallAnalysisOutput.TokensTotal equals </summary>
+    [JsonProperty("aiCallAnalysisOutput_tokensTotal_eq")]
+    public System.Int32? AiCallAnalysisOutput_TokensTotal_EQ { get; set; }
+    /// <summary> AiCallAnalysisOutput.TokensTotal less than or equal to </summary>
+    [JsonProperty("aiCallAnalysisOutput_tokensTotal_lte")]
+    public System.Int32? AiCallAnalysisOutput_TokensTotal_LTE { get; set; }
+    /// <summary> AiCallAnalysisOutput.TokensTotal greater than or equal to </summary>
+    [JsonProperty("aiCallAnalysisOutput_tokensTotal_gte")]
+    public System.Int32? AiCallAnalysisOutput_TokensTotal_GTE { get; set; }
+
+    /// <summary> AiCallAnalysisOutput.TokensCompletion equals </summary>
+    [JsonProperty("aiCallAnalysisOutput_tokensCompletion_eq")]
+    public System.Int32? AiCallAnalysisOutput_TokensCompletion_EQ { get; set; }
+    /// <summary> AiCallAnalysisOutput.TokensCompletion less than or equal to </summary>
+    [JsonProperty("aiCallAnalysisOutput_tokensCompletion_lte")]
+    public System.Int32? AiCallAnalysisOutput_TokensCompletion_LTE { get; set; }
+    /// <summary> AiCallAnalysisOutput.TokensCompletion greater than or equal to </summary>
+    [JsonProperty("aiCallAnalysisOutput_tokensCompletion_gte")]
+    public System.Int32? AiCallAnalysisOutput_TokensCompletion_GTE { get; set; }
+
+    /// <summary> AiCallAnalysisOutput.TokensPrompt equals </summary>
+    [JsonProperty("aiCallAnalysisOutput_tokensPrompt_eq")]
+    public System.Int32? AiCallAnalysisOutput_TokensPrompt_EQ { get; set; }
+    /// <summary> AiCallAnalysisOutput.TokensPrompt less than or equal to </summary>
+    [JsonProperty("aiCallAnalysisOutput_tokensPrompt_lte")]
+    public System.Int32? AiCallAnalysisOutput_TokensPrompt_LTE { get; set; }
+    /// <summary> AiCallAnalysisOutput.TokensPrompt greater than or equal to </summary>
+    [JsonProperty("aiCallAnalysisOutput_tokensPrompt_gte")]
+    public System.Int32? AiCallAnalysisOutput_TokensPrompt_GTE { get; set; }
+
 
     /// <summary> IdAiCallAnalysisInput equals </summary>
     [JsonProperty("idAiCallAnalysisInput_eq")]
@@ -10351,6 +10531,36 @@ public class CallOutgoingFilterRequest
     [JsonProperty("aiCallAnalysisOutput_output_value_reg")]
     public string? AiCallAnalysisOutput_Output_Value_REG { get; set; }
 
+
+    /// <summary> AiCallAnalysisOutput.TokensTotal equals </summary>
+    [JsonProperty("aiCallAnalysisOutput_tokensTotal_eq")]
+    public System.Int32? AiCallAnalysisOutput_TokensTotal_EQ { get; set; }
+    /// <summary> AiCallAnalysisOutput.TokensTotal less than or equal to </summary>
+    [JsonProperty("aiCallAnalysisOutput_tokensTotal_lte")]
+    public System.Int32? AiCallAnalysisOutput_TokensTotal_LTE { get; set; }
+    /// <summary> AiCallAnalysisOutput.TokensTotal greater than or equal to </summary>
+    [JsonProperty("aiCallAnalysisOutput_tokensTotal_gte")]
+    public System.Int32? AiCallAnalysisOutput_TokensTotal_GTE { get; set; }
+
+    /// <summary> AiCallAnalysisOutput.TokensCompletion equals </summary>
+    [JsonProperty("aiCallAnalysisOutput_tokensCompletion_eq")]
+    public System.Int32? AiCallAnalysisOutput_TokensCompletion_EQ { get; set; }
+    /// <summary> AiCallAnalysisOutput.TokensCompletion less than or equal to </summary>
+    [JsonProperty("aiCallAnalysisOutput_tokensCompletion_lte")]
+    public System.Int32? AiCallAnalysisOutput_TokensCompletion_LTE { get; set; }
+    /// <summary> AiCallAnalysisOutput.TokensCompletion greater than or equal to </summary>
+    [JsonProperty("aiCallAnalysisOutput_tokensCompletion_gte")]
+    public System.Int32? AiCallAnalysisOutput_TokensCompletion_GTE { get; set; }
+
+    /// <summary> AiCallAnalysisOutput.TokensPrompt equals </summary>
+    [JsonProperty("aiCallAnalysisOutput_tokensPrompt_eq")]
+    public System.Int32? AiCallAnalysisOutput_TokensPrompt_EQ { get; set; }
+    /// <summary> AiCallAnalysisOutput.TokensPrompt less than or equal to </summary>
+    [JsonProperty("aiCallAnalysisOutput_tokensPrompt_lte")]
+    public System.Int32? AiCallAnalysisOutput_TokensPrompt_LTE { get; set; }
+    /// <summary> AiCallAnalysisOutput.TokensPrompt greater than or equal to </summary>
+    [JsonProperty("aiCallAnalysisOutput_tokensPrompt_gte")]
+    public System.Int32? AiCallAnalysisOutput_TokensPrompt_GTE { get; set; }
 
 
     /// <summary> IdAiCallAnalysisInput equals </summary>

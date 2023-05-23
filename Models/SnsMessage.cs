@@ -37,8 +37,7 @@ public class SnsMessage
     /// <summary>
     ///     Id of account. Use account 27 for internal events
     /// </summary>
-    [References(typeof(Account))]
-    [IgnoreDataMember]
+    [References(typeof(Account))]    
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
     public required string IdAccount { get; set; }
