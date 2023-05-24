@@ -1679,6 +1679,10 @@ public class WebHookUpdateRequest // : IUbluxDocumentId
     /// </summary>
     public EventTriggerType? EventTriggerType { get; set; }
     /// <summary>
+    /// Friendly name of webhook
+    /// </summary>
+    public String? FriendlyName { get; set; }
+    /// <summary>
     /// Url where event will be sent
     /// TODO: place index on this field. Index is needed because when zapier deletes/unsubscribes it passes this url
     /// </summary>
@@ -1687,6 +1691,10 @@ public class WebHookUpdateRequest // : IUbluxDocumentId
     /// Custom headers to inject on request. Example: x-token:1234,user:user1
     /// </summary>
     public List<System.String>? Headers { get; set; }
+    /// <summary>
+    /// Description of webhook
+    /// </summary>
+    public String? Description { get; set; }
     /// <summary>
     /// It is nullable because there are cases where it makes no sense to point to an account.
     /// For example a CloudService user will point to no account
@@ -1697,10 +1705,14 @@ public class WebHookUpdateRequest // : IUbluxDocumentId
     {
         if(jsonRaw.Contains($@"""{nameof(this.EventTriggerType)}""", StringComparison.OrdinalIgnoreCase))
             webHook.EventTriggerType = this.EventTriggerType.Value;
+        if(jsonRaw.Contains($@"""{nameof(this.FriendlyName)}""", StringComparison.OrdinalIgnoreCase))
+            webHook.FriendlyName = this.FriendlyName;
         if(jsonRaw.Contains($@"""{nameof(this.Url)}""", StringComparison.OrdinalIgnoreCase))
             webHook.Url = this.Url;
         if(jsonRaw.Contains($@"""{nameof(this.Headers)}""", StringComparison.OrdinalIgnoreCase))
             webHook.Headers = this.Headers;
+        if(jsonRaw.Contains($@"""{nameof(this.Description)}""", StringComparison.OrdinalIgnoreCase))
+            webHook.Description = this.Description;
         if(jsonRaw.Contains($@"""{nameof(this.IdsTags)}""", StringComparison.OrdinalIgnoreCase))
             webHook.IdsTags = this.IdsTags;
     }

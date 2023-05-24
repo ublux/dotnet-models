@@ -15,6 +15,13 @@ public partial class WebHook : UbluxDocument_ReferenceAccount_ReferenceTags
     public required EventTriggerType EventTriggerType { get; set; }
 
     /// <summary>
+    ///     Friendly name of webhook
+    /// </summary>
+    [AllowUpdate(true)]
+    [UbluxValidationRequired]
+    public required string FriendlyName { get; set; }
+
+    /// <summary>
     ///     Url where event will be sent
     ///     TODO: place index on this field. Index is needed because when zapier deletes/unsubscribes it passes this url
     /// </summary>
@@ -29,6 +36,13 @@ public partial class WebHook : UbluxDocument_ReferenceAccount_ReferenceTags
     [AllowUpdate(true)]
     [UbluxValidationStringRange(500)]
     public List<string> Headers { get; set; } = new();
+
+    /// <summary>
+    ///     Description of webhook
+    /// </summary>
+    [AllowUpdate(true)]
+    [UbluxValidationStringRange(0, 4000)]
+    public string? Description { get; set; }
 
     #endregion
 

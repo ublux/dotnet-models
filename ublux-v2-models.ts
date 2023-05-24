@@ -7786,11 +7786,15 @@ export interface WebHook {
     /** Id of document */
     readonly id?: string;
     eventTriggerType?: EventTriggerType;
+    /** Friendly name of webhook */
+    friendlyName?: string;
     /** Url where event will be sent
 TODO: place index on this field. Index is needed because when zapier deletes/unsubscribes it passes this url */
     url?: string;
     /** Custom headers to inject on request. Example: x-token:1234,user:user1 */
     headers?: string[];
+    /** Description of webhook */
+    description?: string | null;
     /** It is nullable because there are cases where it makes no sense to point to an account. 
 For example a CloudService user will point to no account */
     idsTags?: string[];
@@ -7809,6 +7813,12 @@ export interface WebHookFilterRequest {
     eventTriggerType_con?: string | null;
     /** EventTriggerType regex */
     eventTriggerType_reg?: string | null;
+    /** FriendlyName equals */
+    friendlyName_eq?: string | null;
+    /** FriendlyName contains */
+    friendlyName_con?: string | null;
+    /** FriendlyName regex */
+    friendlyName_reg?: string | null;
     /** Url equals */
     url_eq?: string | null;
     /** Url contains */
@@ -7821,6 +7831,12 @@ export interface WebHookFilterRequest {
     headers_con?: string | null;
     /** Headers regex */
     headers_reg?: string | null;
+    /** Description equals */
+    description_eq?: string | null;
+    /** Description contains */
+    description_con?: string | null;
+    /** Description regex */
+    description_reg?: string | null;
     /** IdsTags equals */
     idsTags_eq?: string | null;
     /** IdsTags contains */
@@ -7850,11 +7866,15 @@ export interface WebHookFilterRequest {
 /** Web callback that will be fired when a custom event of interest occurs. */
 export interface WebHookUpdateRequest {
     eventTriggerType?: EventTriggerType;
+    /** Friendly name of webhook */
+    friendlyName?: string | null;
     /** Url where event will be sent
 TODO: place index on this field. Index is needed because when zapier deletes/unsubscribes it passes this url */
     url?: string | null;
     /** Custom headers to inject on request. Example: x-token:1234,user:user1 */
     headers?: string[] | null;
+    /** Description of webhook */
+    description?: string | null;
     /** It is nullable because there are cases where it makes no sense to point to an account.
 For example a CloudService user will point to no account */
     idsTags?: string[] | null;
