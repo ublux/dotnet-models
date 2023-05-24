@@ -9,11 +9,17 @@ public class AiEntity
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
+    public string EntityName { get; set; } = "";
+
+    /// <summary>
+    /// </summary>
+    [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     public string EntityType { get; set; } = "";
 
     /// <summary>
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    public string EntityName { get; set; } = "";
+    public double Weight { get; set; }
 }

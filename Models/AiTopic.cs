@@ -9,7 +9,7 @@ public class AiTopic
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    public string Name { get; set; } = "";
+    public string Topic { get; set; } = "";
 
     /// <summary>
     /// </summary>
