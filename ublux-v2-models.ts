@@ -31,8 +31,7 @@ This can only be changed by an ownder of the account. */
     industry?: Industry;
     /** Creation date. Sets DateUpdated if it does not have a value */
     readonly dateCreated?: Date;
-    /** Updated date. When item is created on database this date will be set too. This is important so that we can sync contacts
-TODO: Very important to place index in this field. */
+    /** Updated date. When item is created on database this date will be set too. This is important so that we can sync contacts */
     readonly dateUpdated?: Date;
 }
 
@@ -67,8 +66,7 @@ For example a CloudService user will point to no account */
     idsTags?: string[];
     /** Creation date. Sets DateUpdated if it does not have a value */
     readonly dateCreated?: Date;
-    /** Updated date. When item is created on database this date will be set too. This is important so that we can sync contacts
-TODO: Very important to place index in this field. */
+    /** Updated date. When item is created on database this date will be set too. This is important so that we can sync contacts */
     readonly dateUpdated?: Date;
 }
 
@@ -184,8 +182,7 @@ For example a CloudService user will point to no account */
     idsTags?: string[];
     /** Creation date. Sets DateUpdated if it does not have a value */
     readonly dateCreated?: Date;
-    /** Updated date. When item is created on database this date will be set too. This is important so that we can sync contacts
-TODO: Very important to place index in this field. */
+    /** Updated date. When item is created on database this date will be set too. This is important so that we can sync contacts */
     readonly dateUpdated?: Date;
 }
 
@@ -306,8 +303,7 @@ For example a CloudService user will point to no account */
     idsTags?: string[];
     /** Creation date. Sets DateUpdated if it does not have a value */
     readonly dateCreated?: Date;
-    /** Updated date. When item is created on database this date will be set too. This is important so that we can sync contacts
-TODO: Very important to place index in this field. */
+    /** Updated date. When item is created on database this date will be set too. This is important so that we can sync contacts */
     readonly dateUpdated?: Date;
 }
 
@@ -395,8 +391,7 @@ For example a CloudService user will point to no account */
     idsTags?: string[];
     /** Creation date. Sets DateUpdated if it does not have a value */
     readonly dateCreated?: Date;
-    /** Updated date. When item is created on database this date will be set too. This is important so that we can sync contacts
-TODO: Very important to place index in this field. */
+    /** Updated date. When item is created on database this date will be set too. This is important so that we can sync contacts */
     readonly dateUpdated?: Date;
 }
 
@@ -524,8 +519,7 @@ The phone makes autoprovision with a pin. With the pin we retrive the session of
     readonly idUserThatAllowedAutoprovision?: string | null;
     /** Creation date. Sets DateUpdated if it does not have a value */
     readonly dateCreated?: Date;
-    /** Updated date. When item is created on database this date will be set too. This is important so that we can sync contacts
-TODO: Very important to place index in this field. */
+    /** Updated date. When item is created on database this date will be set too. This is important so that we can sync contacts */
     readonly dateUpdated?: Date;
 }
 
@@ -544,8 +538,7 @@ For example a CloudService user will point to no account */
     idsTags?: string[];
     /** Creation date. Sets DateUpdated if it does not have a value */
     readonly dateCreated?: Date;
-    /** Updated date. When item is created on database this date will be set too. This is important so that we can sync contacts
-TODO: Very important to place index in this field. */
+    /** Updated date. When item is created on database this date will be set too. This is important so that we can sync contacts */
     readonly dateUpdated?: Date;
 }
 
@@ -673,8 +666,7 @@ For example a CloudService user will point to no account */
     idsTags?: string[];
     /** Creation date. Sets DateUpdated if it does not have a value */
     readonly dateCreated?: Date;
-    /** Updated date. When item is created on database this date will be set too. This is important so that we can sync contacts
-TODO: Very important to place index in this field. */
+    /** Updated date. When item is created on database this date will be set too. This is important so that we can sync contacts */
     readonly dateUpdated?: Date;
 }
 
@@ -1088,8 +1080,7 @@ For example a CloudService user will point to no account */
     idsTags?: string[];
     /** Creation date. Sets DateUpdated if it does not have a value */
     readonly dateCreated?: Date;
-    /** Updated date. When item is created on database this date will be set too. This is important so that we can sync contacts
-TODO: Very important to place index in this field. */
+    /** Updated date. When item is created on database this date will be set too. This is important so that we can sync contacts */
     readonly dateUpdated?: Date;
 }
 
@@ -1224,8 +1215,7 @@ For example a CloudService user will point to no account */
     idsTags?: string[];
     /** Creation date. Sets DateUpdated if it does not have a value */
     readonly dateCreated?: Date;
-    /** Updated date. When item is created on database this date will be set too. This is important so that we can sync contacts
-TODO: Very important to place index in this field. */
+    /** Updated date. When item is created on database this date will be set too. This is important so that we can sync contacts */
     readonly dateUpdated?: Date;
 }
 
@@ -1308,8 +1298,7 @@ For example a CloudService user will point to no account */
     idsTags?: string[];
     /** Creation date. Sets DateUpdated if it does not have a value */
     readonly dateCreated?: Date;
-    /** Updated date. When item is created on database this date will be set too. This is important so that we can sync contacts
-TODO: Very important to place index in this field. */
+    /** Updated date. When item is created on database this date will be set too. This is important so that we can sync contacts */
     readonly dateUpdated?: Date;
 }
 
@@ -1388,8 +1377,7 @@ For example a CloudService user will point to no account */
     idsTags?: string[];
     /** Creation date. Sets DateUpdated if it does not have a value */
     readonly dateCreated?: Date;
-    /** Updated date. When item is created on database this date will be set too. This is important so that we can sync contacts
-TODO: Very important to place index in this field. */
+    /** Updated date. When item is created on database this date will be set too. This is important so that we can sync contacts */
     readonly dateUpdated?: Date;
 }
 
@@ -1462,8 +1450,7 @@ For example a CloudService user will point to no account */
     idsTags?: string[];
     /** Creation date. Sets DateUpdated if it does not have a value */
     readonly dateCreated?: Date;
-    /** Updated date. When item is created on database this date will be set too. This is important so that we can sync contacts
-TODO: Very important to place index in this field. */
+    /** Updated date. When item is created on database this date will be set too. This is important so that we can sync contacts */
     readonly dateUpdated?: Date;
 }
 
@@ -1499,8 +1486,7 @@ For example a CloudService user will point to no account */
     idsTags?: string[];
     /** Creation date. Sets DateUpdated if it does not have a value */
     readonly dateCreated?: Date;
-    /** Updated date. When item is created on database this date will be set too. This is important so that we can sync contacts
-TODO: Very important to place index in this field. */
+    /** Updated date. When item is created on database this date will be set too. This is important so that we can sync contacts */
     readonly dateUpdated?: Date;
 }
 
@@ -1786,8 +1772,7 @@ Hard host name should point to this */
     readonly isTest?: boolean;
     /** Creation date. Sets DateUpdated if it does not have a value */
     readonly dateCreated?: Date;
-    /** Updated date. When item is created on database this date will be set too. This is important so that we can sync contacts
-TODO: Very important to place index in this field. */
+    /** Updated date. When item is created on database this date will be set too. This is important so that we can sync contacts */
     readonly dateUpdated?: Date;
 }
 
@@ -1840,8 +1825,7 @@ Hard host name should point to this */
     readonly isTest?: boolean;
     /** Creation date. Sets DateUpdated if it does not have a value */
     readonly dateCreated?: Date;
-    /** Updated date. When item is created on database this date will be set too. This is important so that we can sync contacts
-TODO: Very important to place index in this field. */
+    /** Updated date. When item is created on database this date will be set too. This is important so that we can sync contacts */
     readonly dateUpdated?: Date;
 }
 
@@ -1918,8 +1902,7 @@ For example a CloudService user will point to no account */
     idsTags?: string[];
     /** Creation date. Sets DateUpdated if it does not have a value */
     readonly dateCreated?: Date;
-    /** Updated date. When item is created on database this date will be set too. This is important so that we can sync contacts
-TODO: Very important to place index in this field. */
+    /** Updated date. When item is created on database this date will be set too. This is important so that we can sync contacts */
     readonly dateUpdated?: Date;
 }
 
@@ -2382,8 +2365,7 @@ For example a CloudService user will point to no account */
     idsTags?: string[];
     /** Creation date. Sets DateUpdated if it does not have a value */
     readonly dateCreated?: Date;
-    /** Updated date. When item is created on database this date will be set too. This is important so that we can sync contacts
-TODO: Very important to place index in this field. */
+    /** Updated date. When item is created on database this date will be set too. This is important so that we can sync contacts */
     readonly dateUpdated?: Date;
 }
 
@@ -2535,8 +2517,7 @@ For example a CloudService user will point to no account */
     idsTags?: string[];
     /** Creation date. Sets DateUpdated if it does not have a value */
     readonly dateCreated?: Date;
-    /** Updated date. When item is created on database this date will be set too. This is important so that we can sync contacts
-TODO: Very important to place index in this field. */
+    /** Updated date. When item is created on database this date will be set too. This is important so that we can sync contacts */
     readonly dateUpdated?: Date;
 }
 
@@ -2608,6 +2589,31 @@ export interface EmailFilterRequest {
 /** EventAction to execute if a specific event occurs. For example if an extension is not answered send an email notification */
 export interface EventAction {
     eventActionType?: EventActionType;
+}
+
+/** Forward call to another extension because call was not answered */
+export interface EventActionForwardToExtension {
+    eventActionType?: EventActionType;
+    /** Extension where to forward call */
+    idExtension?: string;
+}
+
+/** Forward call to a cell phone or land line because call was not answered */
+export interface EventActionForwardToPhoneNumber {
+    eventActionType?: EventActionType;
+    /** Phone number where to forward the call */
+    phoneNumber?: string;
+}
+
+/** Leave voicemail because call was not answered */
+export interface EventActionLeaveVoicemail {
+    eventActionType?: EventActionType;
+    /** Emails where to send voicemails */
+    idEmail?: string;
+    /** Optional audio to play to instruct caller how to leave a voicemail. 
+If not specified then a default audio will be played. 
+The audio will say "Hello! You have reached the voicemail of ${NameOfExtension}. Please leave a detailed message after the beep. Thank you." */
+    idAudio?: string | null;
 }
 
 /** Reason why an action executes */
@@ -3287,8 +3293,7 @@ For example a CloudService user will point to no account */
     idsTags?: string[];
     /** Creation date. Sets DateUpdated if it does not have a value */
     readonly dateCreated?: Date;
-    /** Updated date. When item is created on database this date will be set too. This is important so that we can sync contacts
-TODO: Very important to place index in this field. */
+    /** Updated date. When item is created on database this date will be set too. This is important so that we can sync contacts */
     readonly dateUpdated?: Date;
 }
 
@@ -3317,8 +3322,7 @@ For example a CloudService user will point to no account */
     idsTags?: string[];
     /** Creation date. Sets DateUpdated if it does not have a value */
     readonly dateCreated?: Date;
-    /** Updated date. When item is created on database this date will be set too. This is important so that we can sync contacts
-TODO: Very important to place index in this field. */
+    /** Updated date. When item is created on database this date will be set too. This is important so that we can sync contacts */
     readonly dateUpdated?: Date;
 }
 
@@ -3441,8 +3445,7 @@ For example a CloudService user will point to no account */
     idsTags?: string[];
     /** Creation date. Sets DateUpdated if it does not have a value */
     readonly dateCreated?: Date;
-    /** Updated date. When item is created on database this date will be set too. This is important so that we can sync contacts
-TODO: Very important to place index in this field. */
+    /** Updated date. When item is created on database this date will be set too. This is important so that we can sync contacts */
     readonly dateUpdated?: Date;
 }
 
@@ -3560,8 +3563,7 @@ For example a CloudService user will point to no account */
     idsTags?: string[];
     /** Creation date. Sets DateUpdated if it does not have a value */
     readonly dateCreated?: Date;
-    /** Updated date. When item is created on database this date will be set too. This is important so that we can sync contacts
-TODO: Very important to place index in this field. */
+    /** Updated date. When item is created on database this date will be set too. This is important so that we can sync contacts */
     readonly dateUpdated?: Date;
 }
 
@@ -3764,8 +3766,7 @@ For example a CloudService user will point to no account */
     idsTags?: string[];
     /** Creation date. Sets DateUpdated if it does not have a value */
     readonly dateCreated?: Date;
-    /** Updated date. When item is created on database this date will be set too. This is important so that we can sync contacts
-TODO: Very important to place index in this field. */
+    /** Updated date. When item is created on database this date will be set too. This is important so that we can sync contacts */
     readonly dateUpdated?: Date;
 }
 
@@ -3976,8 +3977,7 @@ For example a CloudService user will point to no account */
     idsTags?: string[];
     /** Creation date. Sets DateUpdated if it does not have a value */
     readonly dateCreated?: Date;
-    /** Updated date. When item is created on database this date will be set too. This is important so that we can sync contacts
-TODO: Very important to place index in this field. */
+    /** Updated date. When item is created on database this date will be set too. This is important so that we can sync contacts */
     readonly dateUpdated?: Date;
 }
 
@@ -4114,8 +4114,7 @@ For example a CloudService user will point to no account */
     idsTags?: string[];
     /** Creation date. Sets DateUpdated if it does not have a value */
     readonly dateCreated?: Date;
-    /** Updated date. When item is created on database this date will be set too. This is important so that we can sync contacts
-TODO: Very important to place index in this field. */
+    /** Updated date. When item is created on database this date will be set too. This is important so that we can sync contacts */
     readonly dateUpdated?: Date;
 }
 
@@ -4269,8 +4268,7 @@ For example a CloudService user will point to no account */
     idsTags?: string[];
     /** Creation date. Sets DateUpdated if it does not have a value */
     readonly dateCreated?: Date;
-    /** Updated date. When item is created on database this date will be set too. This is important so that we can sync contacts
-TODO: Very important to place index in this field. */
+    /** Updated date. When item is created on database this date will be set too. This is important so that we can sync contacts */
     readonly dateUpdated?: Date;
 }
 
@@ -4986,8 +4984,7 @@ For example a CloudService user will point to no account */
     idsTags?: string[];
     /** Creation date. Sets DateUpdated if it does not have a value */
     readonly dateCreated?: Date;
-    /** Updated date. When item is created on database this date will be set too. This is important so that we can sync contacts
-TODO: Very important to place index in this field. */
+    /** Updated date. When item is created on database this date will be set too. This is important so that we can sync contacts */
     readonly dateUpdated?: Date;
 }
 
@@ -5133,8 +5130,7 @@ For example a CloudService user will point to no account */
     idsTags?: string[];
     /** Creation date. Sets DateUpdated if it does not have a value */
     readonly dateCreated?: Date;
-    /** Updated date. When item is created on database this date will be set too. This is important so that we can sync contacts
-TODO: Very important to place index in this field. */
+    /** Updated date. When item is created on database this date will be set too. This is important so that we can sync contacts */
     readonly dateUpdated?: Date;
 }
 
@@ -5374,8 +5370,7 @@ For example a CloudService user will point to no account */
     idsTags?: string[];
     /** Creation date. Sets DateUpdated if it does not have a value */
     readonly dateCreated?: Date;
-    /** Updated date. When item is created on database this date will be set too. This is important so that we can sync contacts
-TODO: Very important to place index in this field. */
+    /** Updated date. When item is created on database this date will be set too. This is important so that we can sync contacts */
     readonly dateUpdated?: Date;
     /** Phone lines. Should never be null */
     lines?: Line[];
@@ -5396,8 +5391,7 @@ For example a CloudService user will point to no account */
     idsTags?: string[];
     /** Creation date. Sets DateUpdated if it does not have a value */
     readonly dateCreated?: Date;
-    /** Updated date. When item is created on database this date will be set too. This is important so that we can sync contacts
-TODO: Very important to place index in this field. */
+    /** Updated date. When item is created on database this date will be set too. This is important so that we can sync contacts */
     readonly dateUpdated?: Date;
 }
 
@@ -5706,8 +5700,7 @@ For example a CloudService user will point to no account */
     idsTags?: string[];
     /** Creation date. Sets DateUpdated if it does not have a value */
     readonly dateCreated?: Date;
-    /** Updated date. When item is created on database this date will be set too. This is important so that we can sync contacts
-TODO: Very important to place index in this field. */
+    /** Updated date. When item is created on database this date will be set too. This is important so that we can sync contacts */
     readonly dateUpdated?: Date;
 }
 
@@ -5973,8 +5966,7 @@ For example a CloudService user will point to no account */
     idsTags?: string[];
     /** Creation date. Sets DateUpdated if it does not have a value */
     readonly dateCreated?: Date;
-    /** Updated date. When item is created on database this date will be set too. This is important so that we can sync contacts
-TODO: Very important to place index in this field. */
+    /** Updated date. When item is created on database this date will be set too. This is important so that we can sync contacts */
     readonly dateUpdated?: Date;
 }
 
@@ -6135,8 +6127,7 @@ export interface Tag {
     description?: string | null;
     /** Creation date. Sets DateUpdated if it does not have a value */
     readonly dateCreated?: Date;
-    /** Updated date. When item is created on database this date will be set too. This is important so that we can sync contacts
-TODO: Very important to place index in this field. */
+    /** Updated date. When item is created on database this date will be set too. This is important so that we can sync contacts */
     readonly dateUpdated?: Date;
 }
 
@@ -6357,8 +6348,7 @@ export interface TrunkOrigination {
     trunkOriginationType?: TrunkOriginationType;
     /** Creation date. Sets DateUpdated if it does not have a value */
     readonly dateCreated?: Date;
-    /** Updated date. When item is created on database this date will be set too. This is important so that we can sync contacts
-TODO: Very important to place index in this field. */
+    /** Updated date. When item is created on database this date will be set too. This is important so that we can sync contacts */
     readonly dateUpdated?: Date;
 }
 
@@ -6375,8 +6365,7 @@ export interface TrunkTermination {
     readonly id?: string;
     /** Creation date. Sets DateUpdated if it does not have a value */
     readonly dateCreated?: Date;
-    /** Updated date. When item is created on database this date will be set too. This is important so that we can sync contacts
-TODO: Very important to place index in this field. */
+    /** Updated date. When item is created on database this date will be set too. This is important so that we can sync contacts */
     readonly dateUpdated?: Date;
 }
 
@@ -6389,8 +6378,7 @@ Example. ID of a twilio trunk to call US, then a trunk from victor to call Spain
     readonly trunkTerminationRulesOrderedByPriority?: TrunkTerminationRule[];
     /** Creation date. Sets DateUpdated if it does not have a value */
     readonly dateCreated?: Date;
-    /** Updated date. When item is created on database this date will be set too. This is important so that we can sync contacts
-TODO: Very important to place index in this field. */
+    /** Updated date. When item is created on database this date will be set too. This is important so that we can sync contacts */
     readonly dateUpdated?: Date;
 }
 
@@ -6653,8 +6641,7 @@ For example a CloudService user will point to no account */
     idsTags?: string[];
     /** Creation date. Sets DateUpdated if it does not have a value */
     readonly dateCreated?: Date;
-    /** Updated date. When item is created on database this date will be set too. This is important so that we can sync contacts
-TODO: Very important to place index in this field. */
+    /** Updated date. When item is created on database this date will be set too. This is important so that we can sync contacts */
     readonly dateUpdated?: Date;
 }
 
@@ -6790,8 +6777,7 @@ For example a CloudService user will point to no account */
     idsTags?: string[];
     /** Creation date. Sets DateUpdated if it does not have a value */
     readonly dateCreated?: Date;
-    /** Updated date. When item is created on database this date will be set too. This is important so that we can sync contacts
-TODO: Very important to place index in this field. */
+    /** Updated date. When item is created on database this date will be set too. This is important so that we can sync contacts */
     readonly dateUpdated?: Date;
 }
 
@@ -6972,8 +6958,7 @@ For example a CloudService user will point to no account */
     idsTags?: string[];
     /** Creation date. Sets DateUpdated if it does not have a value */
     readonly dateCreated?: Date;
-    /** Updated date. When item is created on database this date will be set too. This is important so that we can sync contacts
-TODO: Very important to place index in this field. */
+    /** Updated date. When item is created on database this date will be set too. This is important so that we can sync contacts */
     readonly dateUpdated?: Date;
 }
 
@@ -7030,8 +7015,7 @@ For example a CloudService user will point to no account */
     idsTags?: string[];
     /** Creation date. Sets DateUpdated if it does not have a value */
     readonly dateCreated?: Date;
-    /** Updated date. When item is created on database this date will be set too. This is important so that we can sync contacts
-TODO: Very important to place index in this field. */
+    /** Updated date. When item is created on database this date will be set too. This is important so that we can sync contacts */
     readonly dateUpdated?: Date;
 }
 
@@ -7247,8 +7231,7 @@ For example a CloudService user will point to no account */
     idsTags?: string[];
     /** Creation date. Sets DateUpdated if it does not have a value */
     readonly dateCreated?: Date;
-    /** Updated date. When item is created on database this date will be set too. This is important so that we can sync contacts
-TODO: Very important to place index in this field. */
+    /** Updated date. When item is created on database this date will be set too. This is important so that we can sync contacts */
     readonly dateUpdated?: Date;
 }
 
@@ -7602,8 +7585,7 @@ For example a CloudService user will point to no account */
     idsTags?: string[];
     /** Creation date. Sets DateUpdated if it does not have a value */
     readonly dateCreated?: Date;
-    /** Updated date. When item is created on database this date will be set too. This is important so that we can sync contacts
-TODO: Very important to place index in this field. */
+    /** Updated date. When item is created on database this date will be set too. This is important so that we can sync contacts */
     readonly dateUpdated?: Date;
 }
 
@@ -7800,8 +7782,7 @@ For example a CloudService user will point to no account */
     idsTags?: string[];
     /** Creation date. Sets DateUpdated if it does not have a value */
     readonly dateCreated?: Date;
-    /** Updated date. When item is created on database this date will be set too. This is important so that we can sync contacts
-TODO: Very important to place index in this field. */
+    /** Updated date. When item is created on database this date will be set too. This is important so that we can sync contacts */
     readonly dateUpdated?: Date;
 }
 
