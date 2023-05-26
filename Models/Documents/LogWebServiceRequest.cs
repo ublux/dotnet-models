@@ -118,13 +118,13 @@ public partial class LogWebServiceRequest : UbluxDocument
     [UbluxValidationStringRange(4000)]
     public string? RequestBody { get; set; }
 
-    /// <summary>
-    ///     We only store response body on POST,DELETE and PATCH commands
-    /// </summary>
-    [AllowUpdate(false)]
-    [SwaggerSchema(ReadOnly = true)]
-    [UbluxValidationStringRange(4000)]
-    public string? ResponseBody { get; set; }
+    ///// <summary>
+    /////     We only store response body on POST,DELETE and PATCH commands
+    ///// </summary>
+    //[AllowUpdate(false)]
+    //[SwaggerSchema(ReadOnly = true)]
+    //[UbluxValidationStringRange(4000)]
+    //public string? ResponseBody { get; set; }
 
     /// <summary>
     ///     Response status code

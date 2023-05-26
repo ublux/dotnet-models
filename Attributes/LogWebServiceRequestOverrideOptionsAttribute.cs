@@ -11,16 +11,16 @@ public class LogWebServiceRequestOverrideOptionsAttribute : Attribute
     /// </summary>
     public int Charge { get; set; } = 1;
 
-    /// <summary>
-    ///     All GET requests will not save response. This only works with other http verbs
-    /// </summary>
-    public bool PreventSavingResponse { get; set; }
+    // No need to store the response
+    ///// <summary>
+    /////     All GET requests will not save response. This only works with other http verbs
+    ///// </summary>
+    //public bool PreventSavingResponse { get; set; }
 
     /// <summary>
     ///     All GET requests will not save the request. This only works with other verbs
     /// </summary>
     public bool PreventSavingRequest { get; set; }
-
 
     /// <summary>
     ///     Prevent saving query string. For example on method login we may not want to save username and password on DB

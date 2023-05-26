@@ -17,14 +17,15 @@ public partial class LogWebServiceRequest : UbluxDocument
     [IgnoreDataMember]
     public bool SaveRequestBody { get; set; }
 
-    /// <summary>
-    ///     Save response body? If true ResponseBody should be set
-    /// </summary>
-    [AllowUpdate(false)]
-    [SwaggerSchema(ReadOnly = true)]
-    //[BsonIgnore] // gives problesm with unit test. Just include it
-    [IgnoreDataMember]
-    public bool SaveResponseBody { get; set; }
+    // Do not save response body
+    ///// <summary>
+    /////     Save response body? If true ResponseBody should be set
+    ///// </summary>
+    //[AllowUpdate(false)]
+    //[SwaggerSchema(ReadOnly = true)]
+    ////[BsonIgnore] // gives problesm with unit test. Just include it
+    //[IgnoreDataMember]
+    //public bool SaveResponseBody { get; set; }
 }
 
 #endif
