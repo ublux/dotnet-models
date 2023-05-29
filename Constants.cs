@@ -230,7 +230,8 @@ public static partial class Constants
             Path.Combine(BaseDirPbxFiles, "completed-calls"),
             Path.Combine(BaseDirPbxFiles, "completed-calls-errors"),
             Path.Combine(BaseDirPbxFiles, "recordings"),
-            Path.Combine(BaseDirPbxFiles, "voicemails")
+            Path.Combine(BaseDirPbxFiles, "voicemails"),
+            Path.Combine(BaseDirPbxFiles, "audios"),
         };
 
         /// <summary>
@@ -254,6 +255,11 @@ public static partial class Constants
         ///     Location where to store call recordings. /usr/share/ublux/pbx-files/voicemails
         /// </summary>
         public static readonly string PathVoicemails = AllPaths[3];
+
+        /// <summary>
+        ///     Location where to store call recordings. /usr/share/ublux/pbx-files/audios
+        /// </summary>
+        public static readonly string PathAudios = AllPaths[4];
     }
 
     /// <summary>
