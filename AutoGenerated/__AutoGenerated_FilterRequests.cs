@@ -6097,16 +6097,6 @@ public class LogWebServiceRequestFilterRequest
     [JsonProperty("requestBody_reg")]
     public string? RequestBody_REG { get; set; }
 
-    /// <summary> ResponseBody equals </summary>
-    [JsonProperty("responseBody_eq")]
-    public string? ResponseBody_EQ { get; set; }
-    /// <summary> ResponseBody contains </summary>
-    [JsonProperty("responseBody_con")]
-    public string? ResponseBody_CON { get; set; }
-    /// <summary> ResponseBody regex </summary>
-    [JsonProperty("responseBody_reg")]
-    public string? ResponseBody_REG { get; set; }
-
     /// <summary> HttpResponseStatusCode equals </summary>
     [JsonProperty("httpResponseStatusCode_eq")]
     public string? HttpResponseStatusCode_EQ { get; set; }

@@ -46,6 +46,11 @@ public class RunningApplicationInstance
     public int ExitCode { get; set; }
 
     /// <summary>
+    ///     Reboot computer when application terminates?
+    /// </summary>
+    public bool RebootWhenApplicationTerminates { get; set; }
+
+    /// <summary>
     ///     Generate a random Instance. Used for unit tests 
     /// </summary>
     public static RunningApplicationInstance GenerateRandom(CloudServiceType type, bool initIdGlobalCounter)
