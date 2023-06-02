@@ -4,8 +4,13 @@
 ///     Outgoing is the channel that makes the call
 ///     Incoming is the channel receiveing the call
 /// </summary>
-public enum BlfLineStatus
+public enum BlfStatusType
 {    
+    /// <summary>
+    ///     No status
+    /// </summary>
+    None,
+
     /// <summary>
     ///     Line is calling/ringing another party
     /// </summary>

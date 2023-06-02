@@ -601,6 +601,17 @@ For example a CloudService user will point to no account */
     idsTags?: string[] | null;
 }
 
+/** Outgoing is the channel that makes the call Incoming is the channel receiveing the call */
+export enum BlfStatusType {
+    None = "None",
+    Outgoing_Ringing = "Outgoing_Ringing",
+    Outgoing_InProgress = "Outgoing_InProgress",
+    Outgiong_OnHold = "Outgiong_OnHold",
+    Incoming_Ringing = "Incoming_Ringing",
+    Incoming_InProgress = "Incoming_InProgress",
+    Incoming_OnHold = "Incoming_OnHold",
+}
+
 /** Ublux phone call */
 export interface Call {
     /** Id of document */
@@ -4932,6 +4943,17 @@ export interface Line {
     readonly id?: string;
 }
 
+/** BLF status of a line */
+export interface LineBlfStatus {
+    /** Id of line */
+    idLine?: string;
+    /** Id of channel */
+    idChannel?: string;
+    /** Extension called */
+    callerId?: string | null;
+    blfStatusType?: BlfStatusType;
+}
+
 /** Status of phone line */
 export interface LineConnectionStatus {
     /** Public ip address of the connection */
@@ -6097,8 +6119,17 @@ export enum SnsTopic {
     Line_Disconnected = "Line_Disconnected",
     Line_Connected = "Line_Connected",
     Extension_Unanswered = "Extension_Unanswered",
+    Extension_Answered = "Extension_Answered",
     Extension_TookToLongToBeAnswered = "Extension_TookToLongToBeAnswered",
     Call_PlacedOnHoldForTooLong = "Call_PlacedOnHoldForTooLong",
+    Fax_Received = "Fax_Received",
+    Fax_Sent = "Fax_Sent",
+    Fax_ReceivedFailed = "Fax_ReceivedFailed",
+    Fax_SentFailed = "Fax_SentFailed",
+    Fax_ReceivingProgress = "Fax_ReceivingProgress",
+    Fax_SendingProgress = "Fax_SendingProgress",
+    CallFlowLogic_Progress = "CallFlowLogic_Progress",
+    BLF = "BLF",
 }
 
 /** Represents a stored file in ublux such as a recording or audio. */

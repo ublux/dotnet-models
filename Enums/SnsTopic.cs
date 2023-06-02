@@ -35,7 +35,7 @@ public enum SnsTopic
     #endregion
 
     #region PBX
-
+    
     /// <summary>
     ///     If there is a new call
     /// </summary>
@@ -61,6 +61,12 @@ public enum SnsTopic
     /// </summary>
     Extension_Unanswered,
 
+#warning TODO
+    /// <summary>
+    ///     Extension answered
+    /// </summary>
+    Extension_Answered,
+
     /// <summary>
     ///     If extension takes too long to be answered
     /// </summary>
@@ -69,7 +75,29 @@ public enum SnsTopic
     /// <summary>
     ///     If call is placed on hold for too long
     /// </summary>
-    Call_PlacedOnHoldForTooLong
+    Call_PlacedOnHoldForTooLong,
+
+    //SMS_Received,
+    //SMS_Sent,
+
+#warning TODO
+    Fax_Received,
+    Fax_Sent,
+    
+    Fax_ReceivedFailed,
+    Fax_SentFailed,
+
+    Fax_ReceivingProgress,
+    Fax_SendingProgress,
+
+    // Data: IdCallFlowLogic
+    // Tag: Path 1,2,1,1,label:start,1,1,1
+    CallFlowLogic_Progress,
 
     #endregion
+
+    /// <summary>
+    ///     IdLine, BlfStatus[]
+    /// </summary>
+    BLF,
 }
