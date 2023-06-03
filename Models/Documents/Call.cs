@@ -11,11 +11,13 @@
 [JsonSubtypes.KnownSubType(typeof(CallIncomingToExtension), nameof(CallType.IncomingToExtension))]
 [JsonSubtypes.KnownSubType(typeof(CallOutgoingToExtension), nameof(CallType.OutgoingToExtension))]
 [JsonSubtypes.KnownSubType(typeof(CallOutgoingToPSTN), nameof(CallType.OutgoingToPSTN))]
+[JsonSubtypes.KnownSubType(typeof(CallOutgoingToPowerDialer), nameof(CallType.PowerDialer))]
 [BsonKnownTypes(
     typeof(CallIncomingToCallFlowLogic),
     typeof(CallIncomingToExtension),
     typeof(CallOutgoingToExtension),
-    typeof(CallOutgoingToPSTN)
+    typeof(CallOutgoingToPSTN),
+    typeof(CallOutgoingToPowerDialer)
 )]
 public abstract partial class Call : UbluxDocument_ReferenceAccount_ReferenceTags, ICall
 {
@@ -356,7 +358,7 @@ public abstract partial class Call : UbluxDocument_ReferenceAccount_ReferenceTag
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [UbluxValidationStringRange(1000)]    
+    [UbluxValidationStringRange(1000)]
     public CallErrors Errors { get; set; } = new();
 
     #region ProcessStatus
@@ -410,7 +412,7 @@ public abstract partial class Call : UbluxDocument_ReferenceAccount_ReferenceTag
         // Search by from and id of account
         yield return new MongoDbIndex(collection, nameof(this.FromReversed)).Add(nameof(IdAccount))
             // Append DateCreated at the end so that items are returned by dateCreated
-            .Add(-1, nameof(DateCreated)); 
+            .Add(-1, nameof(DateCreated));
 
         // Search by to and id of account
         yield return new MongoDbIndex(collection, nameof(this.ToReversed)).Add(nameof(IdAccount))

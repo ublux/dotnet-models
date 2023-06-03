@@ -8,11 +8,13 @@
 //[JsonSubtypes.KnownSubType(typeof(CallIncomingToExtension), nameof(CallType.IncomingToExtension))]
 [JsonSubtypes.KnownSubType(typeof(CallOutgoingToExtension), nameof(CallType.OutgoingToExtension))]
 [JsonSubtypes.KnownSubType(typeof(CallOutgoingToPSTN), nameof(CallType.OutgoingToPSTN))]
+[JsonSubtypes.KnownSubType(typeof(CallOutgoingToPowerDialer), nameof(CallType.PowerDialer))]
 [BsonKnownTypes(
     //typeof(CallIncomingToCallFlowLogic),
     //typeof(CallIncomingToExtension),
     typeof(CallOutgoingToExtension),
-    typeof(CallOutgoingToPSTN)
+    typeof(CallOutgoingToPSTN),
+    typeof(CallOutgoingToPowerDialer)
 )]
 public abstract partial class CallOutgoing : Call
 {

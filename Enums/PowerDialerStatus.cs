@@ -6,47 +6,43 @@
 public enum PowerDialerStatus
 {
     /// <summary>
-    ///     This means powerdialer group has not started. Once the whole group starts all child calls should change status to pending
+    ///     No status
     /// </summary>
-    ToBeStarted = 0,
+    None,
 
     /// <summary>
     ///     This means powerdialer group has started but this call has not started
     /// </summary>
-    Pending = 1,
+    Pending,
+
+    /// <summary>
+    ///     When client requests PowerDialerContact to ensure to agents do not call the same contact.
+    /// </summary>
+    AssignedToAgent,
 
     /// <summary>
     ///     Call is in progress
     /// </summary>
-    InProgress = 2,
+    Started,
 
     /// <summary>
     ///     Power dialer failed 
     /// </summary>
-    Failed = 3,
+    Failed,
 
-    /// <summary>
-    ///     This happens if powerdialer continues to execute until there is a timeout
-    /// </summary>
-    ExceededDateLimit = 4,
+    ///// <summary>
+    /////     This happens if powerdialer continues to execute until there is a timeout
+    ///// </summary>
+    //ExceededDateLimit,
 
     /// <summary>
     ///     Completed
     /// </summary>
-    Completed = 5,
+    Completed,
 
-    /// <summary>
-    ///     Canceled
-    /// </summary>
-    Canceled = 6,
-
-    /// <summary>
-    ///     Attempts up to 3 times
-    /// </summary>
-    Retrying = 7,
-
-    /// <summary>
-    ///     If paused
-    /// </summary>
-    Paused = 8,
+    ///// <summary>
+    /////     Canceled
+    ///// </summary>
+    //Canceled,
+ 
 }

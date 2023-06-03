@@ -16,7 +16,7 @@ public partial class Line : UbluxSubDocument
     [JsonIgnore]
     [BsonIgnore]
     [HideForCreateRequest]
-    public bool IsConnectionStatusChanged;
+    public bool IsConnectionStatusChanged;    
    
     /// <summary>
     /// </summary>
@@ -104,15 +104,15 @@ public partial class Line : UbluxSubDocument
     [AllowUpdate(true)]
     public Language Language { get; set; }
 
-    /// <summary>
-    ///     Field used to know when the line received last network traffic packet
-    ///     Thanks to this field we can monitor when a phone is disconnected
-    /// </summary>
-    [System.Text.Json.Serialization.JsonIgnore]
-    [JsonIgnore]
-    [BsonIgnore]
-    [HideForCreateRequest]
-    public DateTime DateReceivedLastPacket;
+    ///// <summary>
+    /////     Field used to know when the line received last network traffic packet
+    /////     Thanks to this field we can monitor when a phone is disconnected
+    ///// </summary>
+    //[System.Text.Json.Serialization.JsonIgnore]
+    //[JsonIgnore]
+    //[BsonIgnore]
+    //[HideForCreateRequest]
+    //public DateTime DateReceivedLastPacket;
 
     ///// <summary>
     /////     Used by PBX

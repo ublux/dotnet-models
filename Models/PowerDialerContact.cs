@@ -3,40 +3,31 @@
 /// <summary>
 ///     Peer to call on power dialer group
 /// </summary>
-[JsonConverter(typeof(JsonSubtypes), nameof(PowerDialerType))]
-[JsonSubtypes.KnownSubType(typeof(PowerDialerSimple), nameof(PowerDialerType.Simple))]
-[JsonSubtypes.KnownSubType(typeof(PowerDialerAdvance), nameof(PowerDialerType.Advanced))]
-[BsonKnownTypes(
-    typeof(PowerDialerAdvance),
-    typeof(PowerDialerSimple)
-)]
-public abstract class PowerDialer 
+//[JsonConverter(typeof(JsonSubtypes), nameof(PowerDialerType))]
+//[JsonSubtypes.KnownSubType(typeof(PowerDialerSimple), nameof(PowerDialerType.Simple))]
+//[JsonSubtypes.KnownSubType(typeof(PowerDialerAdvance), nameof(PowerDialerType.Advanced))]
+//[BsonKnownTypes(
+//    typeof(PowerDialerAdvance),
+//    typeof(PowerDialerSimple)
+//)]
+public class PowerDialerContact
 {
     ///// <summary>
     /////     Id of power dialer
     ///// </summary>
     //public required string Id { get; set; }
-
-    /// <summary>
-    ///     Type of power dialer
-    /// </summary>
-    [AllowUpdate(false)] 
-    [SwaggerSchema(ReadOnly = true)] 
-    [UbluxValidationRequired]
-    public abstract PowerDialerType PowerDialerType
-    {
-        get;
-#if UBLUX_Release || RELEASE
-        set;
-#else
-#endif
-    }
-
+   
     /// <summary>
     ///     Phone number to call
     /// </summary>
     [UbluxValidationRequired]
     public required string PhoneNumber { get; set; }
+
+    ///// <summary>
+    /////     If a call flow logic needs to be executed before calling contact.
+    ///// </summary>
+    //[References(typeof(CallFlowLogic))]
+    //public string? IdCallFlowLogic { get; set; }
 
     /// <summary>
     ///     Country ISO code of phone number to call

@@ -1482,6 +1482,7 @@ export enum CallType {
     OutgoingToExtension = "OutgoingToExtension",
     OutgoingToPSTN = "OutgoingToPSTN",
     FeatureVoicemail = "FeatureVoicemail",
+    PowerDialer = "PowerDialer",
 }
 
 /** Phone numbers that will be blocked */
@@ -5675,8 +5676,7 @@ For example a CloudService user will point to no account */
 }
 
 /** Peer to call on power dialer group */
-export interface PowerDialer {
-    powerDialerType?: PowerDialerType;
+export interface PowerDialerContact {
     /** Phone number to call */
     phoneNumber?: string;
     countryIsoCode?: CountryIsoCode;
@@ -5699,24 +5699,17 @@ export interface PowerDialerGroup {
     readonly idVoipNumberPhone?: string | null;
     /** Override caller id? */
     readonly idCallerIdMask?: string | null;
-    /** What IVR to execute */
-    readonly idCallFlowLogic?: string | null;
-    /** If on mode simple what extensions will ring to take phone calls */
-    readonly idExtension?: string | null;
+    /** Agents that will be using power dialer */
+    idLinesAgents?: string[];
     /** Subdocument */
-    readonly powerDialers?: PowerDialer[];
+    readonly powerDialerContacts?: PowerDialerContact[];
     /** Friendly name of power dialer group */
     friendlyName?: string;
     /** Description of power dialer group */
     description?: string | null;
     powerDialerGroupStatus?: PowerDialerGroupStatus;
-    /** If there is an error then what error? */
+    /** If there is an error in general with the group and NOT with a power dialer item contact. */
     readonly errorMessage?: string | null;
-    /** Used by pbx to know what is the current item that is executing. Also by web service to let front know what index is being executed. */
-    readonly powerDialerExecutingRecordIndex?: number;
-    /** If there are 5 agents using the power dialer then there can 5 five concurrent calls.
-When power dialer was first created only one call at a time existed. When that call ended the next call was made. */
-    readonly numberOfConcurrentCalls?: number;
     /** It is nullable because there are cases where it makes no sense to point to an account. 
 For example a CloudService user will point to no account */
     idsTags?: string[];
@@ -5740,66 +5733,54 @@ export interface PowerDialerGroupFilterRequest {
     idCallerIdMask_con?: string | null;
     /** IdCallerIdMask regex */
     idCallerIdMask_reg?: string | null;
-    /** IdCallFlowLogic equals */
-    idCallFlowLogic_eq?: string | null;
-    /** IdCallFlowLogic contains */
-    idCallFlowLogic_con?: string | null;
-    /** IdCallFlowLogic regex */
-    idCallFlowLogic_reg?: string | null;
-    /** IdExtension equals */
-    idExtension_eq?: string | null;
-    /** IdExtension contains */
-    idExtension_con?: string | null;
-    /** IdExtension regex */
-    idExtension_reg?: string | null;
-    /** PowerDialers.PowerDialerType equals */
-    powerDialers_powerDialerType_eq?: string | null;
-    /** PowerDialers.PowerDialerType contains */
-    powerDialers_powerDialerType_con?: string | null;
-    /** PowerDialers.PowerDialerType regex */
-    powerDialers_powerDialerType_reg?: string | null;
-    /** PowerDialers.PhoneNumber equals */
-    powerDialers_phoneNumber_eq?: string | null;
-    /** PowerDialers.PhoneNumber contains */
-    powerDialers_phoneNumber_con?: string | null;
-    /** PowerDialers.PhoneNumber regex */
-    powerDialers_phoneNumber_reg?: string | null;
-    /** PowerDialers.CountryIsoCode equals */
-    powerDialers_countryIsoCode_eq?: string | null;
-    /** PowerDialers.CountryIsoCode contains */
-    powerDialers_countryIsoCode_con?: string | null;
-    /** PowerDialers.CountryIsoCode regex */
-    powerDialers_countryIsoCode_reg?: string | null;
-    /** PowerDialers.IdContact equals */
-    powerDialers_idContact_eq?: string | null;
-    /** PowerDialers.IdContact contains */
-    powerDialers_idContact_con?: string | null;
-    /** PowerDialers.IdContact regex */
-    powerDialers_idContact_reg?: string | null;
-    /** PowerDialers.PowerDialerStatus equals */
-    powerDialers_powerDialerStatus_eq?: string | null;
-    /** PowerDialers.PowerDialerStatus contains */
-    powerDialers_powerDialerStatus_con?: string | null;
-    /** PowerDialers.PowerDialerStatus regex */
-    powerDialers_powerDialerStatus_reg?: string | null;
-    /** PowerDialers.ErrorMessage equals */
-    powerDialers_errorMessage_eq?: string | null;
-    /** PowerDialers.ErrorMessage contains */
-    powerDialers_errorMessage_con?: string | null;
-    /** PowerDialers.ErrorMessage regex */
-    powerDialers_errorMessage_reg?: string | null;
-    /** PowerDialers.NumberOfAttempts equals */
-    powerDialers_numberOfAttempts_eq?: number | null;
-    /** PowerDialers.NumberOfAttempts less than or equal to */
-    powerDialers_numberOfAttempts_lte?: number | null;
-    /** PowerDialers.NumberOfAttempts greater than or equal to */
-    powerDialers_numberOfAttempts_gte?: number | null;
-    /** PowerDialers.ContactName equals */
-    powerDialers_contactName_eq?: string | null;
-    /** PowerDialers.ContactName contains */
-    powerDialers_contactName_con?: string | null;
-    /** PowerDialers.ContactName regex */
-    powerDialers_contactName_reg?: string | null;
+    /** IdLinesAgents equals */
+    idLinesAgents_eq?: string | null;
+    /** IdLinesAgents contains */
+    idLinesAgents_con?: string | null;
+    /** IdLinesAgents regex */
+    idLinesAgents_reg?: string | null;
+    /** PowerDialerContacts.PhoneNumber equals */
+    powerDialerContacts_phoneNumber_eq?: string | null;
+    /** PowerDialerContacts.PhoneNumber contains */
+    powerDialerContacts_phoneNumber_con?: string | null;
+    /** PowerDialerContacts.PhoneNumber regex */
+    powerDialerContacts_phoneNumber_reg?: string | null;
+    /** PowerDialerContacts.CountryIsoCode equals */
+    powerDialerContacts_countryIsoCode_eq?: string | null;
+    /** PowerDialerContacts.CountryIsoCode contains */
+    powerDialerContacts_countryIsoCode_con?: string | null;
+    /** PowerDialerContacts.CountryIsoCode regex */
+    powerDialerContacts_countryIsoCode_reg?: string | null;
+    /** PowerDialerContacts.IdContact equals */
+    powerDialerContacts_idContact_eq?: string | null;
+    /** PowerDialerContacts.IdContact contains */
+    powerDialerContacts_idContact_con?: string | null;
+    /** PowerDialerContacts.IdContact regex */
+    powerDialerContacts_idContact_reg?: string | null;
+    /** PowerDialerContacts.PowerDialerStatus equals */
+    powerDialerContacts_powerDialerStatus_eq?: string | null;
+    /** PowerDialerContacts.PowerDialerStatus contains */
+    powerDialerContacts_powerDialerStatus_con?: string | null;
+    /** PowerDialerContacts.PowerDialerStatus regex */
+    powerDialerContacts_powerDialerStatus_reg?: string | null;
+    /** PowerDialerContacts.ErrorMessage equals */
+    powerDialerContacts_errorMessage_eq?: string | null;
+    /** PowerDialerContacts.ErrorMessage contains */
+    powerDialerContacts_errorMessage_con?: string | null;
+    /** PowerDialerContacts.ErrorMessage regex */
+    powerDialerContacts_errorMessage_reg?: string | null;
+    /** PowerDialerContacts.NumberOfAttempts equals */
+    powerDialerContacts_numberOfAttempts_eq?: number | null;
+    /** PowerDialerContacts.NumberOfAttempts less than or equal to */
+    powerDialerContacts_numberOfAttempts_lte?: number | null;
+    /** PowerDialerContacts.NumberOfAttempts greater than or equal to */
+    powerDialerContacts_numberOfAttempts_gte?: number | null;
+    /** PowerDialerContacts.ContactName equals */
+    powerDialerContacts_contactName_eq?: string | null;
+    /** PowerDialerContacts.ContactName contains */
+    powerDialerContacts_contactName_con?: string | null;
+    /** PowerDialerContacts.ContactName regex */
+    powerDialerContacts_contactName_reg?: string | null;
     /** FriendlyName equals */
     friendlyName_eq?: string | null;
     /** FriendlyName contains */
@@ -5824,18 +5805,6 @@ export interface PowerDialerGroupFilterRequest {
     errorMessage_con?: string | null;
     /** ErrorMessage regex */
     errorMessage_reg?: string | null;
-    /** PowerDialerExecutingRecordIndex equals */
-    powerDialerExecutingRecordIndex_eq?: number | null;
-    /** PowerDialerExecutingRecordIndex less than or equal to */
-    powerDialerExecutingRecordIndex_lte?: number | null;
-    /** PowerDialerExecutingRecordIndex greater than or equal to */
-    powerDialerExecutingRecordIndex_gte?: number | null;
-    /** NumberOfConcurrentCalls equals */
-    numberOfConcurrentCalls_eq?: number | null;
-    /** NumberOfConcurrentCalls less than or equal to */
-    numberOfConcurrentCalls_lte?: number | null;
-    /** NumberOfConcurrentCalls greater than or equal to */
-    numberOfConcurrentCalls_gte?: number | null;
     /** IdsTags equals */
     idsTags_eq?: string | null;
     /** IdsTags contains */
@@ -5864,7 +5833,8 @@ export interface PowerDialerGroupFilterRequest {
 
 /** Status of power dialer group */
 export enum PowerDialerGroupStatus {
-    ToBeStarted = "ToBeStarted",
+    None = "None",
+    Pending = "Pending",
     Started = "Started",
     Paused = "Paused",
     Canceled = "Canceled",
@@ -5874,6 +5844,8 @@ export enum PowerDialerGroupStatus {
 
 /** Group used to call multiple parties */
 export interface PowerDialerGroupUpdateRequest {
+    /** Agents that will be using power dialer */
+    idLinesAgents?: string[] | null;
     /** Friendly name of power dialer group */
     friendlyName?: string | null;
     /** Description of power dialer group */
@@ -5885,21 +5857,12 @@ For example a CloudService user will point to no account */
 
 /** Status of power dialer */
 export enum PowerDialerStatus {
-    ToBeStarted = "ToBeStarted",
+    None = "None",
     Pending = "Pending",
-    InProgress = "InProgress",
+    AssignedToAgent = "AssignedToAgent",
+    Started = "Started",
     Failed = "Failed",
-    ExceededDateLimit = "ExceededDateLimit",
     Completed = "Completed",
-    Canceled = "Canceled",
-    Retrying = "Retrying",
-    Paused = "Paused",
-}
-
-/** Type of power dialer */
-export enum PowerDialerType {
-    Simple = "Simple",
-    Advanced = "Advanced",
 }
 
 export interface ProblemDetails {

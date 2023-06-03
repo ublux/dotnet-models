@@ -358,6 +358,7 @@ public static class ModelsExtensionMethods
         { CallIncomingToExtension.DocumentPrefix, Collections.Calls },
         { CallOutgoingToExtension.DocumentPrefix, Collections.Calls },
         { CallOutgoingToPSTN.DocumentPrefix, Collections.Calls },
+        { CallOutgoingToPowerDialer.DocumentPrefix, Collections.Calls },
         { CallerIdMask.DocumentPrefix, Collections.CallerIdMasks },
         { CallFlowLogic.DocumentPrefix, Collections.CallFlowLogics },
         { CloudServicePbx.DocumentPrefix, Collections.CloudServices },

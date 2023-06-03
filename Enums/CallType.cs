@@ -29,4 +29,9 @@ public enum CallType
     ///     Voicemail phone call by dialing *1
     /// </summary>
     FeatureVoicemail,
+
+    /// <summary>
+    ///     Power dialer
+    /// </summary>
+    PowerDialer,
 }

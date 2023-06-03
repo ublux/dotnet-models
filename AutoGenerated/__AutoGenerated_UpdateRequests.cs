@@ -1263,6 +1263,10 @@ public class PhoneConfigurationUpdateRequest // : IUbluxDocumentId
 public class PowerDialerGroupUpdateRequest // : IUbluxDocumentId
 {
     /// <summary>
+    /// Agents that will be using power dialer
+    /// </summary>
+    public List<System.String>? IdLinesAgents { get; set; }
+    /// <summary>
     /// Friendly name of power dialer group
     /// </summary>
     public String? FriendlyName { get; set; }
@@ -1278,6 +1282,8 @@ public class PowerDialerGroupUpdateRequest // : IUbluxDocumentId
     /// <summary> Set values on actual document </summary>
     public void SetValuesOnPowerDialerGroup(PowerDialerGroup powerDialerGroup, string jsonRaw)
     {
+        if(jsonRaw.Contains($@"""{nameof(this.IdLinesAgents)}""", StringComparison.OrdinalIgnoreCase))
+            powerDialerGroup.IdLinesAgents = this.IdLinesAgents;
         if(jsonRaw.Contains($@"""{nameof(this.FriendlyName)}""", StringComparison.OrdinalIgnoreCase))
             powerDialerGroup.FriendlyName = this.FriendlyName;
         if(jsonRaw.Contains($@"""{nameof(this.Description)}""", StringComparison.OrdinalIgnoreCase))
@@ -1778,6 +1784,31 @@ public class AiCallTranscriptionUpdateRequest // : IUbluxDocumentId
     {
         if(jsonRaw.Contains($@"""{nameof(this.IdsTags)}""", StringComparison.OrdinalIgnoreCase))
             aiCallTranscription.IdsTags = this.IdsTags;
+    }
+
+}
+
+/// <summary>
+/// Call made to cell phone or land line
+/// </summary>
+public class CallOutgoingToPowerDialerUpdateRequest // : IUbluxDocumentId
+{
+    /// <summary>
+    /// Result of a call
+    /// </summary>
+    public CallResult? CallResult { get; set; }
+    /// <summary>
+    /// It is nullable because there are cases where it makes no sense to point to an account.
+    /// For example a CloudService user will point to no account
+    /// </summary>
+    public List<System.String>? IdsTags { get; set; }
+    /// <summary> Set values on actual document </summary>
+    public void SetValuesOnCallOutgoingToPowerDialer(CallOutgoingToPowerDialer callOutgoingToPowerDialer, string jsonRaw)
+    {
+        if(jsonRaw.Contains($@"""{nameof(this.CallResult)}""", StringComparison.OrdinalIgnoreCase))
+            callOutgoingToPowerDialer.CallResult = this.CallResult.Value;
+        if(jsonRaw.Contains($@"""{nameof(this.IdsTags)}""", StringComparison.OrdinalIgnoreCase))
+            callOutgoingToPowerDialer.IdsTags = this.IdsTags;
     }
 
 }
