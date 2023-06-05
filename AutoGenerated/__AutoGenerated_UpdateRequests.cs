@@ -790,6 +790,10 @@ public class ExtensionDialUpdateRequest // : IUbluxDocumentId
 /// </summary>
 public class AiCallAnalysisInputUpdateRequest // : IUbluxDocumentId
 {
+    /// <summary></summary>
+    public String? FriendlyName { get; set; }
+    /// <summary></summary>
+    public String? Description { get; set; }
     /// <summary>
     /// List of queries to ask AI engine about a call
     /// </summary>
@@ -802,6 +806,10 @@ public class AiCallAnalysisInputUpdateRequest // : IUbluxDocumentId
     /// <summary> Set values on actual document </summary>
     public void SetValuesOnAiCallAnalysisInput(AiCallAnalysisInput aiCallAnalysisInput, string jsonRaw)
     {
+        if(jsonRaw.Contains($@"""{nameof(this.FriendlyName)}""", StringComparison.OrdinalIgnoreCase))
+            aiCallAnalysisInput.FriendlyName = this.FriendlyName;
+        if(jsonRaw.Contains($@"""{nameof(this.Description)}""", StringComparison.OrdinalIgnoreCase))
+            aiCallAnalysisInput.Description = this.Description;
         if(jsonRaw.Contains($@"""{nameof(this.Queries)}""", StringComparison.OrdinalIgnoreCase))
             aiCallAnalysisInput.Queries = this.Queries;
         if(jsonRaw.Contains($@"""{nameof(this.IdsTags)}""", StringComparison.OrdinalIgnoreCase))

@@ -59,6 +59,8 @@ export interface AccountUpdateRequest {
 export interface AiCallAnalysisInput {
     /** Id of document */
     readonly id?: string;
+    friendlyName?: string;
+    description?: string | null;
     /** List of queries to ask AI engine about a call */
     queries?: AiCallAnalysisVariableInput[];
     /** It is nullable because there are cases where it makes no sense to point to an account. 
@@ -72,6 +74,18 @@ For example a CloudService user will point to no account */
 
 /** Enables searching for AiCallAnalysisInputs */
 export interface AiCallAnalysisInputFilterRequest {
+    /** FriendlyName equals */
+    friendlyName_eq?: string | null;
+    /** FriendlyName contains */
+    friendlyName_con?: string | null;
+    /** FriendlyName regex */
+    friendlyName_reg?: string | null;
+    /** Description equals */
+    description_eq?: string | null;
+    /** Description contains */
+    description_con?: string | null;
+    /** Description regex */
+    description_reg?: string | null;
     /** Queries.Query equals */
     queries_query_eq?: string | null;
     /** Queries.Query contains */
@@ -124,6 +138,8 @@ export interface AiCallAnalysisInputFilterRequest {
 
 /** Determines how will a call be AI processed. What questions will be asked to the AI engine */
 export interface AiCallAnalysisInputUpdateRequest {
+    friendlyName?: string | null;
+    description?: string | null;
     /** List of queries to ask AI engine about a call */
     queries?: AiCallAnalysisVariableInput[] | null;
     /** It is nullable because there are cases where it makes no sense to point to an account.

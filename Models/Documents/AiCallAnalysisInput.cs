@@ -6,6 +6,18 @@
 public partial class AiCallAnalysisInput : UbluxDocument_ReferenceAccount_ReferenceTags
 {
     /// <summary>
+    /// </summary>
+    [AllowUpdate(true)]
+    [UbluxValidationRequired]
+    public required string FriendlyName { get; set; } = "";
+
+    /// <summary>
+    /// </summary>
+    [AllowUpdate(true)]
+    [UbluxValidationStringRange(0, 2000)]
+    public string? Description { get; set; } = "";
+
+    /// <summary>
     ///     List of queries to ask AI engine about a call
     /// </summary>    
     [UbluxValidationRequired]
@@ -14,7 +26,7 @@ public partial class AiCallAnalysisInput : UbluxDocument_ReferenceAccount_Refere
 
     /// <inheritdoc />
     public override IEnumerable<MongoDbIndex> GetMongoDbIndexes()
-    {        
+    {
         // this collection
         var collection = this.GetType().GetCollectionUsedByType();
 

@@ -4900,6 +4900,26 @@ public class ExtensionDialFilterRequest
 /// <summary> Enables searching for AiCallAnalysisInputs </summary>
 public class AiCallAnalysisInputFilterRequest 
 {
+    /// <summary> FriendlyName equals </summary>
+    [JsonProperty("friendlyName_eq")]
+    public string? FriendlyName_EQ { get; set; }
+    /// <summary> FriendlyName contains </summary>
+    [JsonProperty("friendlyName_con")]
+    public string? FriendlyName_CON { get; set; }
+    /// <summary> FriendlyName regex </summary>
+    [JsonProperty("friendlyName_reg")]
+    public string? FriendlyName_REG { get; set; }
+
+    /// <summary> Description equals </summary>
+    [JsonProperty("description_eq")]
+    public string? Description_EQ { get; set; }
+    /// <summary> Description contains </summary>
+    [JsonProperty("description_con")]
+    public string? Description_CON { get; set; }
+    /// <summary> Description regex </summary>
+    [JsonProperty("description_reg")]
+    public string? Description_REG { get; set; }
+
     /// <summary> Queries.Query equals </summary>
     [JsonProperty("queries_query_eq")]
     public string? Queries_Query_EQ { get; set; }
