@@ -350,14 +350,14 @@ namespace Ublux.Communications.Models.Documents {
         public const string DocumentPrefix = "ACT";
 
         /// <summary> Prefix + IdCall </summary>
-        public static BuiltId BuildId(Call call) => new($"{DocumentPrefix}.{call.Id}");
+        public static BuiltId BuildId(string idCall) => new($"{DocumentPrefix}.{idCall}");
     }
     public partial class CallOutgoingToPowerDialer {
         /// <summary> Id prefix </summary>
-        public const string DocumentPrefix = "COTPD";
+        public new const string DocumentPrefix = "COTPD";
 
         /// <summary> Custom: prefix.instance.channel-uid. Example COTE.PBXUS1.1232123.2 </summary>
-        public static BuiltId BuildId(RunningApplicationInstance instance,  string channelUid) => new($"{DocumentPrefix}.{instance.Id}.{channelUid}");
+        public new static BuiltId BuildId(RunningApplicationInstance instance,  string channelUid) => new($"{DocumentPrefix}.{instance.Id}.{channelUid}");
     }
 }
 
