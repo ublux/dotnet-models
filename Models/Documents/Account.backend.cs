@@ -62,6 +62,26 @@ public partial class Account : UbluxDocument
 
         return null;
     }
+
+    public Language? GetLanguage()
+    {
+        if (this.CountriesThatCanCallInternationally is null)
+            return null;
+        var dc = GetDefaultCountry();
+        if (dc is null)
+            return null;
+        if (dc == CountryIsoCode.MX)
+            return Language.ES_MX;
+        if (dc == CountryIsoCode.ES)
+            return Language.ES_ES;
+
+        if (dc == CountryIsoCode.GB)
+            return Language.EN_GB;
+
+        // TODO implement other countrries
+
+        return Language.EN_US;
+    }
 }
 
 #endif
