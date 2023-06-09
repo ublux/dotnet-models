@@ -1102,6 +1102,8 @@ export interface CallFlowLogic {
     /** Description of virtual receptionist */
     description?: string | null;
     tree?: FlowNode;
+    /** Special bookmarks on tree. This will be separate trees to share common logic */
+    bookmarks?: NodeBookmark[];
     /** It is nullable because there are cases where it makes no sense to point to an account. 
 For example a CloudService user will point to no account */
     idsTags?: string[];
@@ -1131,6 +1133,24 @@ export interface CallFlowLogicFilterRequest {
     tree_flowNodeType_con?: string | null;
     /** Tree.FlowNodeType regex */
     tree_flowNodeType_reg?: string | null;
+    /** Bookmarks.Name equals */
+    bookmarks_name_eq?: string | null;
+    /** Bookmarks.Name contains */
+    bookmarks_name_con?: string | null;
+    /** Bookmarks.Name regex */
+    bookmarks_name_reg?: string | null;
+    /** Bookmarks.FlowNodeType equals */
+    bookmarks_flowNodeType_eq?: string | null;
+    /** Bookmarks.FlowNodeType contains */
+    bookmarks_flowNodeType_con?: string | null;
+    /** Bookmarks.FlowNodeType regex */
+    bookmarks_flowNodeType_reg?: string | null;
+    /** Bookmarks.Child.FlowNodeType equals */
+    bookmarks_child_flowNodeType_eq?: string | null;
+    /** Bookmarks.Child.FlowNodeType contains */
+    bookmarks_child_flowNodeType_con?: string | null;
+    /** Bookmarks.Child.FlowNodeType regex */
+    bookmarks_child_flowNodeType_reg?: string | null;
     /** IdsTags equals */
     idsTags_eq?: string | null;
     /** IdsTags contains */
@@ -1164,6 +1184,8 @@ export interface CallFlowLogicUpdateRequest {
     /** Description of virtual receptionist */
     description?: string | null;
     tree?: FlowNode;
+    /** Special bookmarks on tree. This will be separate trees to share common logic */
+    bookmarks?: NodeBookmark[] | null;
     /** It is nullable because there are cases where it makes no sense to point to an account.
 For example a CloudService user will point to no account */
     idsTags?: string[] | null;

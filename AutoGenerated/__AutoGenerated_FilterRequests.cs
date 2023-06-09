@@ -870,6 +870,38 @@ public class CallFlowLogicFilterRequest
     public string? Tree_FlowNodeType_REG { get; set; }
 
 
+    /// <summary> Bookmarks.Name equals </summary>
+    [JsonProperty("bookmarks_name_eq")]
+    public string? Bookmarks_Name_EQ { get; set; }
+    /// <summary> Bookmarks.Name contains </summary>
+    [JsonProperty("bookmarks_name_con")]
+    public string? Bookmarks_Name_CON { get; set; }
+    /// <summary> Bookmarks.Name regex </summary>
+    [JsonProperty("bookmarks_name_reg")]
+    public string? Bookmarks_Name_REG { get; set; }
+
+    /// <summary> Bookmarks.FlowNodeType equals </summary>
+    [JsonProperty("bookmarks_flowNodeType_eq")]
+    public string? Bookmarks_FlowNodeType_EQ { get; set; }
+    /// <summary> Bookmarks.FlowNodeType contains </summary>
+    [JsonProperty("bookmarks_flowNodeType_con")]
+    public string? Bookmarks_FlowNodeType_CON { get; set; }
+    /// <summary> Bookmarks.FlowNodeType regex </summary>
+    [JsonProperty("bookmarks_flowNodeType_reg")]
+    public string? Bookmarks_FlowNodeType_REG { get; set; }
+
+    /// <summary> Bookmarks.Child.FlowNodeType equals </summary>
+    [JsonProperty("bookmarks_child_flowNodeType_eq")]
+    public string? Bookmarks_Child_FlowNodeType_EQ { get; set; }
+    /// <summary> Bookmarks.Child.FlowNodeType contains </summary>
+    [JsonProperty("bookmarks_child_flowNodeType_con")]
+    public string? Bookmarks_Child_FlowNodeType_CON { get; set; }
+    /// <summary> Bookmarks.Child.FlowNodeType regex </summary>
+    [JsonProperty("bookmarks_child_flowNodeType_reg")]
+    public string? Bookmarks_Child_FlowNodeType_REG { get; set; }
+
+
+
     /// <summary> IdsTags equals </summary>
     [JsonProperty("idsTags_eq")]
     public string? IdsTags_EQ { get; set; }

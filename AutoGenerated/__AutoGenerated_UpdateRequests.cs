@@ -267,6 +267,10 @@ public class CallFlowLogicUpdateRequest // : IUbluxDocumentId
     /// </summary>
     public FlowNode? Tree { get; set; }
     /// <summary>
+    /// Special bookmarks on tree. This will be separate trees to share common logic
+    /// </summary>
+    public List<Ublux.Communications.Models.FlowNodes.NodeBookmark>? Bookmarks { get; set; }
+    /// <summary>
     /// It is nullable because there are cases where it makes no sense to point to an account.
     /// For example a CloudService user will point to no account
     /// </summary>
@@ -280,6 +284,8 @@ public class CallFlowLogicUpdateRequest // : IUbluxDocumentId
             callFlowLogic.Description = this.Description;
         if(jsonRaw.Contains($@"""{nameof(this.Tree)}""", StringComparison.OrdinalIgnoreCase))
             callFlowLogic.Tree = this.Tree;
+        if(jsonRaw.Contains($@"""{nameof(this.Bookmarks)}""", StringComparison.OrdinalIgnoreCase))
+            callFlowLogic.Bookmarks = this.Bookmarks;
         if(jsonRaw.Contains($@"""{nameof(this.IdsTags)}""", StringComparison.OrdinalIgnoreCase))
             callFlowLogic.IdsTags = this.IdsTags;
     }
