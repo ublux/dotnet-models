@@ -166,7 +166,8 @@ public static partial class Constants
 
         FlowNodeType.IfLineOffline,
         FlowNodeType.IfDigits,
-        FlowNodeType.IfTime
+        FlowNodeType.IfTime,
+        FlowNodeType.IfWeekDay
     };
 
     /// <summary>
@@ -181,15 +182,21 @@ public static partial class Constants
         { FlowNodeType.IfDigits,
             new FlowNodeType[]{ FlowNodeType.Digits, FlowNodeType.AnyDigits } },
         { FlowNodeType.IfTime,
-            new FlowNodeType[]{ FlowNodeType.Time } },
+            new FlowNodeType[]{ FlowNodeType.Time, FlowNodeType.AnyTime } },
+        { FlowNodeType.IfWeekDay,
+            new FlowNodeType[]{ FlowNodeType.WeekDays, FlowNodeType.AnyWeekDay } },
 
-        // Conditional childs
-        { FlowNodeType.Time, CommonActions },
+        // Childs of conditionals
         { FlowNodeType.Digits, CommonActions },
         { FlowNodeType.AnyDigits, CommonActions },
         { FlowNodeType.LineOffline, CommonActions },
         { FlowNodeType.LineOnline, CommonActions },
+        { FlowNodeType.Time, CommonActions },
         { FlowNodeType.AnyTime, CommonActions },
+        { FlowNodeType.WeekDays, CommonActions },
+        { FlowNodeType.AnyWeekDay, CommonActions },
+
+#warning implement rest of this nodes
 
         // Rest of children
         { FlowNodeType.Say, CommonActions },
@@ -204,6 +211,7 @@ public static partial class Constants
         { FlowNodeType.Hangup, CommonActions },
         { FlowNodeType.DynamicExtension, CommonActions },
         { FlowNodeType.Extension, CommonActions },
+        
     };
 
     /// <summary>

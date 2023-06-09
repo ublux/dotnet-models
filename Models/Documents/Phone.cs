@@ -106,6 +106,13 @@ public partial class Phone : UbluxDocument_ReferenceAccount_ReferenceTags
     [UbluxValidationStringRange(50)]
     public required string Pin { get; set; } = string.Empty;
 
+    /// <summary>
+    ///     TimeZone of this phone
+    /// </summary>
+    [AllowUpdate(true)]
+    [UbluxValidationRequired]
+    public required string TimeZone { get; set; } = "America/New_York";
+
     #region MongoDB
 
     /// <inheritdoc />

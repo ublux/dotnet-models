@@ -17,16 +17,24 @@ public enum FlowNodeType
     Digits,
     /// <summary></summary>
     AnyDigits,
-    
+
 
     /// <summary></summary>
     IfTime,
-    /// <summary></summary>
+    /// <summary>From 10 AM to 6 PM for example. </summary>
     Time,
     /// <summary></summary>
     AnyTime,
 
-    
+
+    /// <summary></summary>
+    IfWeekDay,
+    /// <summary>From Monday to Thursday for example. </summary>
+    WeekDays,
+    /// <summary></summary>
+    AnyWeekDay,
+
+
 
     /// <summary> Call an extension </summary>
     Extension,

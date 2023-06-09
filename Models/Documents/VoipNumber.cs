@@ -184,7 +184,7 @@ public abstract partial class VoipNumber : UbluxDocument_ReferenceAccount_Refere
     /// </summary>
     [AllowUpdate(true)]
     [UbluxValidationRequired]
-    public string TimeZone { get; set; } = "America/New_York";
+    public required string TimeZone { get; set; } = "America/New_York";
 
     /// <summary>
     ///     Beause a lot of collections depend on a number instead of deleting it we mark it as disconnected.

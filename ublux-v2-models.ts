@@ -4455,6 +4455,9 @@ export enum FlowNodeType {
     IfTime = "IfTime",
     Time = "Time",
     AnyTime = "AnyTime",
+    IfWeekDay = "IfWeekDay",
+    WeekDays = "WeekDays",
+    AnyWeekDay = "AnyWeekDay",
     Extension = "Extension",
     DynamicExtension = "DynamicExtension",
     IfLineOffline = "IfLineOffline",
@@ -5247,6 +5250,11 @@ export interface NodeAnyTime {
     child?: FlowNode;
 }
 
+export interface NodeAnyWeekDay {
+    flowNodeType?: FlowNodeType;
+    child?: FlowNode;
+}
+
 export interface NodeBookmark {
     /** Name of bookmark */
     name?: string;
@@ -5327,6 +5335,11 @@ export interface NodeIfTime {
     readonly children?: FlowNode[];
 }
 
+export interface NodeIfWeekDay {
+    flowNodeType?: FlowNodeType;
+    readonly children?: FlowNode[];
+}
+
 export interface NodeLineOffline {
     flowNodeType?: FlowNodeType;
     child?: FlowNode;
@@ -5381,6 +5394,14 @@ export interface NodeTime {
     child?: FlowNode;
 }
 
+/** For example from Monday to Friday */
+export interface NodeWeekDays {
+    start?: DayOfWeek;
+    end?: DayOfWeek;
+    flowNodeType?: FlowNodeType;
+    child?: FlowNode;
+}
+
 /** Previously called IpPhone. Represents a phone in UBLUX */
 export interface Phone {
     /** Id of document */
@@ -5404,6 +5425,8 @@ export interface Phone {
     readonly userAgent?: string | null;
     /** Device pin of 5 random digits used to connect phone in case extension is used by multiple phones */
     readonly pin?: string;
+    /** TimeZone of this phone */
+    timeZone?: string;
     /** It is nullable because there are cases where it makes no sense to point to an account. 
 For example a CloudService user will point to no account */
     idsTags?: string[];
@@ -5639,6 +5662,12 @@ export interface PhoneFilterRequest {
     pin_con?: string | null;
     /** Pin regex */
     pin_reg?: string | null;
+    /** TimeZone equals */
+    timeZone_eq?: string | null;
+    /** TimeZone contains */
+    timeZone_con?: string | null;
+    /** TimeZone regex */
+    timeZone_reg?: string | null;
     /** IdsTags equals */
     idsTags_eq?: string | null;
     /** IdsTags contains */
@@ -5686,6 +5715,8 @@ export interface PhoneUpdateRequest {
     phoneType?: PhoneType;
     /** Disable encryption in case device does not support it */
     disableEncryption?: boolean | null;
+    /** TimeZone of this phone */
+    timeZone?: string | null;
     /** It is nullable because there are cases where it makes no sense to point to an account.
 For example a CloudService user will point to no account */
     idsTags?: string[] | null;

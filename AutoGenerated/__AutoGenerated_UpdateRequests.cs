@@ -1201,6 +1201,10 @@ public class PhoneUpdateRequest // : IUbluxDocumentId
     /// </summary>
     public Boolean? DisableEncryption { get; set; }
     /// <summary>
+    /// TimeZone of this phone
+    /// </summary>
+    public String? TimeZone { get; set; }
+    /// <summary>
     /// It is nullable because there are cases where it makes no sense to point to an account.
     /// For example a CloudService user will point to no account
     /// </summary>
@@ -1222,6 +1226,8 @@ public class PhoneUpdateRequest // : IUbluxDocumentId
             phone.PhoneType = this.PhoneType.Value;
         if(jsonRaw.Contains($@"""{nameof(this.DisableEncryption)}""", StringComparison.OrdinalIgnoreCase))
             phone.DisableEncryption = this.DisableEncryption.Value;
+        if(jsonRaw.Contains($@"""{nameof(this.TimeZone)}""", StringComparison.OrdinalIgnoreCase))
+            phone.TimeZone = this.TimeZone;
         if(jsonRaw.Contains($@"""{nameof(this.IdsTags)}""", StringComparison.OrdinalIgnoreCase))
             phone.IdsTags = this.IdsTags;
     }

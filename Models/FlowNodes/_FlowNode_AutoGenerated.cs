@@ -15,6 +15,9 @@ namespace Ublux.Communications.Models.FlowNodes;
 [JsonSubtypes.KnownSubType(typeof(NodeIfTime), /*                             */ nameof(FlowNodeType.IfTime))]
 [JsonSubtypes.KnownSubType(typeof(NodeTime), /*                               */ nameof(FlowNodeType.Time))]
 [JsonSubtypes.KnownSubType(typeof(NodeAnyTime), /*                            */ nameof(FlowNodeType.AnyTime))]
+[JsonSubtypes.KnownSubType(typeof(NodeIfWeekDay), /*                          */ nameof(FlowNodeType.IfWeekDay))]
+[JsonSubtypes.KnownSubType(typeof(NodeWeekDays), /*                           */ nameof(FlowNodeType.WeekDays))]
+[JsonSubtypes.KnownSubType(typeof(NodeAnyWeekDay), /*                         */ nameof(FlowNodeType.AnyWeekDay))]
 [JsonSubtypes.KnownSubType(typeof(NodeExtension), /*                          */ nameof(FlowNodeType.Extension))]
 [JsonSubtypes.KnownSubType(typeof(NodeDynamicExtension), /*                   */ nameof(FlowNodeType.DynamicExtension))]
 [JsonSubtypes.KnownSubType(typeof(NodeIfLineOffline), /*                      */ nameof(FlowNodeType.IfLineOffline))]
@@ -37,6 +40,9 @@ namespace Ublux.Communications.Models.FlowNodes;
     typeof(NodeIfTime),
     typeof(NodeTime),
     typeof(NodeAnyTime),
+    typeof(NodeIfWeekDay),
+    typeof(NodeWeekDays),
+    typeof(NodeAnyWeekDay),
     typeof(NodeExtension),
     typeof(NodeDynamicExtension),
     typeof(NodeIfLineOffline),
@@ -235,6 +241,66 @@ public partial class NodeAnyTime : FlowNode, IOneChild
     public override FlowNodeType FlowNodeType
     {
         get => FlowNodeType.AnyTime;
+        #if UBLUX_Release || RELEASE
+        set { }
+        #else
+        #endif
+    }
+
+    /// <inheritdoc />
+    [AllowUpdate(false)] 
+    [SwaggerSchema(ReadOnly = true)] 
+    [References(typeof(FlowNode))]
+    public FlowNode? Child { get; set; }
+}
+
+/// <summary></summary>
+public partial class NodeIfWeekDay : FlowNode, IMultipleChildren
+{
+    /// <inheritdoc />
+    public override FlowNodeType FlowNodeType
+    {
+        get => FlowNodeType.IfWeekDay;
+        #if UBLUX_Release || RELEASE
+        set { }
+        #else
+        #endif
+    }
+
+    /// <inheritdoc />
+    [AllowUpdate(false)] 
+    [SwaggerSchema(ReadOnly = true)] 
+    [References(typeof(FlowNode))]
+    public List<FlowNode> Children { get; set; } = new List<FlowNode>();
+}
+
+/// <summary></summary>
+public partial class NodeWeekDays : FlowNode, IOneChild
+{
+    /// <inheritdoc />
+    public override FlowNodeType FlowNodeType
+    {
+        get => FlowNodeType.WeekDays;
+        #if UBLUX_Release || RELEASE
+        set { }
+        #else
+        #endif
+    }
+
+    /// <inheritdoc />
+    [AllowUpdate(false)] 
+    [SwaggerSchema(ReadOnly = true)] 
+    [References(typeof(FlowNode))]
+    public FlowNode? Child { get; set; }
+}
+
+/// <summary></summary>
+public partial class NodeAnyWeekDay : FlowNode, IOneChild
+{
+    /// <inheritdoc />
+    public override FlowNodeType FlowNodeType
+    {
+        get => FlowNodeType.AnyWeekDay;
         #if UBLUX_Release || RELEASE
         set { }
         #else

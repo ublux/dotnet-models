@@ -6491,6 +6491,16 @@ public class PhoneFilterRequest
     [JsonProperty("pin_reg")]
     public string? Pin_REG { get; set; }
 
+    /// <summary> TimeZone equals </summary>
+    [JsonProperty("timeZone_eq")]
+    public string? TimeZone_EQ { get; set; }
+    /// <summary> TimeZone contains </summary>
+    [JsonProperty("timeZone_con")]
+    public string? TimeZone_CON { get; set; }
+    /// <summary> TimeZone regex </summary>
+    [JsonProperty("timeZone_reg")]
+    public string? TimeZone_REG { get; set; }
+
     /// <summary> IdsTags equals </summary>
     [JsonProperty("idsTags_eq")]
     public string? IdsTags_EQ { get; set; }
