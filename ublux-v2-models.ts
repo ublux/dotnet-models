@@ -1815,6 +1815,7 @@ export enum CloudServiceProviderType {
     None = "None",
     AWS = "AWS",
     Azure = "Azure",
+    Ublux = "Ublux",
 }
 
 /** Type of cloud service */

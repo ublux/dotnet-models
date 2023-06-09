@@ -62,7 +62,7 @@ public abstract partial class CloudService : UbluxDocument
     public static string HostNameSoft(string instanceId) => $"sft.{HostNameHard(instanceId)}".ToLower();
 
     /// <summary>
-    ///     Example: pbx-us-1
+    ///     Example: PBX-US-1
     /// </summary>
     public static string BuildInstanceId(CloudServiceType cloudServiceType, int number, CountryIsoCode country)
     {
@@ -70,7 +70,7 @@ public abstract partial class CloudService : UbluxDocument
     }
 
     /// <summary>
-    ///     Example: pbx-us-f
+    ///     Example: PBX-US-F
     /// </summary>
     public static string BuildInstanceIdFailover(CloudServiceType cloudServiceType, CountryIsoCode country)
     {
@@ -78,7 +78,7 @@ public abstract partial class CloudService : UbluxDocument
     }
 
     /// <summary>
-    ///     Example: pbx-us-f
+    ///     Example: PBX-US-T
     /// </summary>
     public static string BuildInstanceIdTest(CloudServiceType cloudServiceType, CountryIsoCode country)
     {

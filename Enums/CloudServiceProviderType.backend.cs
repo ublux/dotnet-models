@@ -20,7 +20,12 @@ public enum CloudServiceProviderType
     /// <summary>
     ///     Microsoft
     /// </summary>
-    Azure
+    Azure,
+
+    /// <summary>
+    ///     Hosted on Canal-Park or office
+    /// </summary>
+    Ublux,
 }
 
 #endif
