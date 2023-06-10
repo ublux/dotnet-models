@@ -36,7 +36,7 @@ public partial interface ICall
     ///     INVALIDARGS: Error parsing Dial command arguments (added for Asterisk 1.4.1, SVN r53135-53136)
     /// </summary>
     [AllowUpdate(false)]
-    string DialStatus { get; set; }
+    DialStatus DialStatus { get; set; }
 
     /// <summary>
     ///     Number of seconds it took to answer. Null means it was not answered

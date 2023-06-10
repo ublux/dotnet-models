@@ -104,7 +104,7 @@ public abstract partial class Call : UbluxDocument_ReferenceAccount_ReferenceTag
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
     [UbluxValidationStringRange(50)]
-    public required string DialStatus { get; set; } = string.Empty;
+    public required DialStatus DialStatus { get; set; } 
 
     /// <summary>
     ///     Number of seconds it took to answer

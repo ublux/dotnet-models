@@ -65,7 +65,7 @@ public abstract partial class ChildCall : ICall
     ///     Status of call
     /// </summary>
     [UbluxValidationStringRange(50)]
-    public required string DialStatus { get; set; }
+    public required DialStatus DialStatus { get; set; }
 
     /// <inheritdoc />
     public DateTime DateCreated { get; set; }

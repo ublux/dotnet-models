@@ -6,5 +6,6 @@ public partial class NodeBookmark
     /// <summary>
     ///     Name of bookmark
     /// </summary>
+    [UbluxValidationRequired]
     public required string Name { get; set; }
 }
