@@ -303,12 +303,12 @@ public abstract partial class Call : UbluxDocument_ReferenceAccount_ReferenceTag
     //public AiCallAnalysis? Analysis3 { get; set; }
 
     /// <summary>
-    ///     Lines that participated in this call
+    ///     Phones that participated in this call
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [References(typeof(Line))]
-    public List<string> IdsParticipantLines { get; set; } = new();
+    [References(typeof(Phone))]
+    public List<string> IdsParticipantPhones { get; set; } = new();
 
     /// <summary>
     ///     If not null it means the call is ended
@@ -422,17 +422,17 @@ public abstract partial class Call : UbluxDocument_ReferenceAccount_ReferenceTag
         #endregion
 
         // For ougoing calls enable searching fast by line that initiated phone call then by id of account
-        yield return new MongoDbIndex(collection, nameof(CallOutgoing.IdLineThatInitiatedCall)).Add(nameof(IdAccount))
+        yield return new MongoDbIndex(collection, nameof(CallOutgoing.IdPhoneThatInitiatedCall)).Add(nameof(IdAccount))
             // Append DateCreated at the end so that items are returned by dateCreated
             .Add(-1, nameof(DateCreated));
 
         // For incoming calls enable searching fast by the line that answered the call then by id of account
-        yield return new MongoDbIndex(collection, nameof(CallIncomingToExtension.IdLineThatAnswered)).Add(nameof(IdAccount))
+        yield return new MongoDbIndex(collection, nameof(CallIncomingToExtension.IdPhoneThatAnswered)).Add(nameof(IdAccount))
             // Append DateCreated at the end so that items are returned by dateCreated
             .Add(-1, nameof(DateCreated));
 
         // Enable searching fast by the participant lines then by id of account
-        yield return new MongoDbIndex(collection, nameof(this.IdsParticipantLines)).Add(nameof(IdAccount))
+        yield return new MongoDbIndex(collection, nameof(this.IdsParticipantPhones)).Add(nameof(IdAccount))
             // Append DateCreated at the end so that items are returned by dateCreated
             .Add(-1, nameof(DateCreated));
 

@@ -20,9 +20,9 @@ namespace Ublux.Communications.Models.FlowNodes;
 [JsonSubtypes.KnownSubType(typeof(NodeAnyWeekDay), /*                         */ nameof(FlowNodeType.AnyWeekDay))]
 [JsonSubtypes.KnownSubType(typeof(NodeExtension), /*                          */ nameof(FlowNodeType.Extension))]
 [JsonSubtypes.KnownSubType(typeof(NodeDynamicExtension), /*                   */ nameof(FlowNodeType.DynamicExtension))]
-[JsonSubtypes.KnownSubType(typeof(NodeIfLineOffline), /*                      */ nameof(FlowNodeType.IfLineOffline))]
-[JsonSubtypes.KnownSubType(typeof(NodeLineOnline), /*                         */ nameof(FlowNodeType.LineOnline))]
-[JsonSubtypes.KnownSubType(typeof(NodeLineOffline), /*                        */ nameof(FlowNodeType.LineOffline))]
+[JsonSubtypes.KnownSubType(typeof(NodeIfPhoneDisconnected), /*                */ nameof(FlowNodeType.IfPhoneDisconnected))]
+[JsonSubtypes.KnownSubType(typeof(NodePhoneConnected), /*                     */ nameof(FlowNodeType.PhoneConnected))]
+[JsonSubtypes.KnownSubType(typeof(NodePhoneDisconnected), /*                  */ nameof(FlowNodeType.PhoneDisconnected))]
 [JsonSubtypes.KnownSubType(typeof(NodeCall), /*                               */ nameof(FlowNodeType.Call))]
 [JsonSubtypes.KnownSubType(typeof(NodePause), /*                              */ nameof(FlowNodeType.Pause))]
 [JsonSubtypes.KnownSubType(typeof(NodeGoTo), /*                               */ nameof(FlowNodeType.GoTo))]
@@ -45,9 +45,9 @@ namespace Ublux.Communications.Models.FlowNodes;
     typeof(NodeAnyWeekDay),
     typeof(NodeExtension),
     typeof(NodeDynamicExtension),
-    typeof(NodeIfLineOffline),
-    typeof(NodeLineOnline),
-    typeof(NodeLineOffline),
+    typeof(NodeIfPhoneDisconnected),
+    typeof(NodePhoneConnected),
+    typeof(NodePhoneDisconnected),
     typeof(NodeCall),
     typeof(NodePause),
     typeof(NodeGoTo),
@@ -355,12 +355,12 @@ public partial class NodeDynamicExtension : FlowNode, IOneChild
 }
 
 /// <summary></summary>
-public partial class NodeIfLineOffline : FlowNode, IMultipleChildren
+public partial class NodeIfPhoneDisconnected : FlowNode, IMultipleChildren
 {
     /// <inheritdoc />
     public override FlowNodeType FlowNodeType
     {
-        get => FlowNodeType.IfLineOffline;
+        get => FlowNodeType.IfPhoneDisconnected;
         #if UBLUX_Release || RELEASE
         set { }
         #else
@@ -375,12 +375,12 @@ public partial class NodeIfLineOffline : FlowNode, IMultipleChildren
 }
 
 /// <summary></summary>
-public partial class NodeLineOnline : FlowNode, IOneChild
+public partial class NodePhoneConnected : FlowNode, IOneChild
 {
     /// <inheritdoc />
     public override FlowNodeType FlowNodeType
     {
-        get => FlowNodeType.LineOnline;
+        get => FlowNodeType.PhoneConnected;
         #if UBLUX_Release || RELEASE
         set { }
         #else
@@ -395,12 +395,12 @@ public partial class NodeLineOnline : FlowNode, IOneChild
 }
 
 /// <summary></summary>
-public partial class NodeLineOffline : FlowNode, IOneChild
+public partial class NodePhoneDisconnected : FlowNode, IOneChild
 {
     /// <inheritdoc />
     public override FlowNodeType FlowNodeType
     {
-        get => FlowNodeType.LineOffline;
+        get => FlowNodeType.PhoneDisconnected;
         #if UBLUX_Release || RELEASE
         set { }
         #else

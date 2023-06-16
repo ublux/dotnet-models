@@ -62,8 +62,8 @@ public enum Collections
     ///// <summary>IPs</summary>
     //IPs,
 
-    /// <summary>LineKeyGroups</summary>
-    LineKeyGroups,
+    /// <summary>SpeedDialGroups</summary>
+    SpeedDialGroups,
 
     /// <summary>LogWebServiceRequests</summary>
     LogWebServiceRequests,

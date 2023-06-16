@@ -53,12 +53,12 @@ public enum EventTriggerType
 
     #endregion
 
-    #region Line connected/disconnected
+    #region Phone connected/disconnected
 
     /// <summary/>
-    EventLineDisconnected,
+    EventPhoneDisconnected,
     /// <summary/>
-    EventLineConnected,
+    EventPhoneConnected,
 
     #endregion
 

@@ -5,10 +5,10 @@ namespace Ublux.Communications.Models.EventTriggersModels;
 /// <summary>
 ///     When a line is connected or disconnected
 /// </summary>
-public abstract class EventLineBase : EventTriggerModel
+public abstract class EventPhoneBase : EventTriggerModel
 {
     /// <summary>
-    ///     Line friendly name
+    ///     Phone friendly name
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
@@ -50,25 +50,23 @@ public abstract class EventLineBase : EventTriggerModel
     public string? ExtensionNumber { get; set; }
 
     /// <summary>
-    ///     Line last connection status state
+    ///     Phone last connection status state
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    public LineConnectionStatus? ConnectionStatus { get; set; }
+    public PhoneConnectionStatus? ConnectionStatus { get; set; }
 
     /// <summary>
     ///     Return a random object
     /// </summary>
-    public T RandomBase<T>(RunningApplicationInstance instance) where T : EventLineBase
+    public T RandomBase<T>(RunningApplicationInstance instance) where T : EventPhoneBase
     {
         var accountIdBuild = Account.BuildId(Random.Shared.Next(100, 10000).ToString());
 
-        GenerateRandomIdAccountPhoneAndLine(instance, out _, out _, out var idLine);
+        GenerateRandomIdAccountPhoneAndPhone(instance, out _, out _);
 
         var f = new Faker<T>()
-            .RuleFor(x => x.Id, idLine)
             .RuleFor(x => x.FriendlyName, x => x.Name.FullName())
-            .RuleFor(x=>x.PhoneId, Line.GetIdPhone(idLine))
             ;
 
         var obj = f.Generate();
@@ -79,7 +77,7 @@ public abstract class EventLineBase : EventTriggerModel
 
         var randUserAgents = new string[] { "Yealink W60B 77.85.0.20", "Yealink SIP-CP960 73.83.0.30", "Yealink SIP-T58 58.85.0.5", "Yealink SIP-T43U 108.84.0.50" };
 
-        obj.ConnectionStatus = new LineConnectionStatus()
+        obj.ConnectionStatus = new PhoneConnectionStatus()
         {
             DateConnected = DateTime.UtcNow,
             DateDisconnected = DateTime.UtcNow.AddHours(-1),

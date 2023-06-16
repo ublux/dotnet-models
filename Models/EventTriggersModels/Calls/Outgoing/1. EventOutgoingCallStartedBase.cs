@@ -10,26 +10,29 @@ public abstract class EventOutgoingCallStartedBase : EventCallBase
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    public required string LineThatInitiatedCallId { get; set; }
+    public required string PhoneThatInitiatedCallId { get; set; }
 
     /// <summary>
     ///     Friendly name of line that initiated phone call
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    public required string LineThatInitiatedCallFrienlyName { get; set; }
+    public required string PhoneThatInitiatedCallFrienlyName { get; set; }
 
     /// <summary>
     ///     Return a random object
     /// </summary>
     protected new T GetRandomBase<T>(RunningApplicationInstance instance) where T : EventOutgoingCallStartedBase
     {
-        var obj = base.GetRandomBase<T>(instance);
-        
-        GenerateRandomIdAccountPhoneAndLine(instance, out _, out _, out var idLine);
-        obj.LineThatInitiatedCallId = idLine;
-        obj.LineThatInitiatedCallFrienlyName = Constants.RandomNames[Random.Shared.Next(0, Constants.RandomNames.Length)];
+#warning fix this
+        throw new NotImplementedException();
 
-        return obj;
+        //var obj = base.GetRandomBase<T>(instance);
+        
+        //GenerateRandomIdAccountPhoneAndPhone(instance, out _, out _, out var idPhone);
+        //obj.PhoneThatInitiatedCallId = idPhone;
+        //obj.PhoneThatInitiatedCallFrienlyName = Constants.RandomNames[Random.Shared.Next(0, Constants.RandomNames.Length)];
+
+        //return obj;
     }
 }

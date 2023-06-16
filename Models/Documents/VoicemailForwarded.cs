@@ -15,12 +15,12 @@ public partial class VoicemailForwarded : Voicemail
     public override VoicemailType VoicemailType => VoicemailType.Forwarded;
 
     /// <summary>
-    ///     Line that forwarded this voicemail in case voicemail was forwarded
+    ///     Phone that forwarded this voicemail in case voicemail was forwarded
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
     [UbluxValidationRequired]
-    public required Line LineThatForwardedVoicemail { get; set; }
+    public required Phone PhoneThatForwardedVoicemail { get; set; }
 
     /// <summary>
     ///     (CallerIdNumber when voicemail was forwarded)

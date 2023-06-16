@@ -68,28 +68,28 @@ public abstract class EventExtensionBase : EventTriggerModel
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    public required List<string> LinesThatRingIds { get; set; } = new();
+    public required List<string> PhonesThatRingIds { get; set; } = new();
 
     /// <summary>
     ///     Id of lines that ring dit not ring
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    public required List<string> LinesThatDidNotRingIds { get; set; } = new();
+    public required List<string> PhonesThatDidNotRingIds { get; set; } = new();
 
     /// <summary>
     ///     Name of lines that ring
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    public required List<string> LinesThatRingFriendlyNames { get; set; } = new();
+    public required List<string> PhonesThatRingFriendlyNames { get; set; } = new();
 
     /// <summary>
     ///     Name of lines that ring dit not ring
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    public required List<string> LinesThatDidNotRingFriendlyNames { get; set; } = new();
+    public required List<string> PhonesThatDidNotRingFriendlyNames { get; set; } = new();
 
     /// <summary>
     ///     Return a random object
@@ -117,20 +117,20 @@ public abstract class EventExtensionBase : EventTriggerModel
         var randStart = Random.Shared.Next(0, 95);
 
         // set lines that ring
-        var numOfLinesThatRing = 3;
-        for (int i = 0; i < numOfLinesThatRing; i++)
+        var numOfPhonesThatRing = 3;
+        for (int i = 0; i < numOfPhonesThatRing; i++)
         {
-            GenerateRandomIdAccountPhoneAndLine(instance, out _, out _, out var idLine);
-            obj.LinesThatRingIds.Add(idLine);
-            obj.LinesThatRingFriendlyNames.Add(Constants.RandomNames[randStart + i]);
+            GenerateRandomIdAccountPhoneAndPhone(instance, out _, out _);
+            //obj.PhonesThatRingIds.Add(idPhone);
+            obj.PhonesThatRingFriendlyNames.Add(Constants.RandomNames[randStart + i]);
         }
 
         // set lines that did not ring
         for (int i = 0; i < 2; i++)
         {
-            GenerateRandomIdAccountPhoneAndLine(instance, out _, out _, out var idLine);
-            obj.LinesThatDidNotRingIds.Add(idLine);
-            obj.LinesThatDidNotRingFriendlyNames.Add(Constants.RandomNames[randStart + i + numOfLinesThatRing]);
+            GenerateRandomIdAccountPhoneAndPhone(instance, out _, out _);
+            //obj.PhonesThatDidNotRingIds.Add(idPhone);
+            obj.PhonesThatDidNotRingFriendlyNames.Add(Constants.RandomNames[randStart + i + numOfPhonesThatRing]);
         }
 
         return obj;

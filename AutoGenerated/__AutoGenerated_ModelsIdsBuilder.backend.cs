@@ -203,9 +203,9 @@ namespace Ublux.Communications.Models.Documents {
         /// <summary> Build Id </summary>
         public static BuiltId BuildId(RunningApplicationInstance instance) => new($"{DocumentPrefix}.{instance.Id}.{instance.IdGlobalAutoIncrement()}");
     }
-    public partial class LineKeyGroup {
+    public partial class SpeedDialGroup {
         /// <summary> Id prefix </summary>
-        public const string DocumentPrefix = "LKG";
+        public const string DocumentPrefix = "SDG";
 
         /// <summary> Build Id </summary>
         public static BuiltId BuildId(RunningApplicationInstance instance) => new($"{DocumentPrefix}.{instance.Id}.{instance.IdGlobalAutoIncrement()}");
@@ -228,8 +228,8 @@ namespace Ublux.Communications.Models.Documents {
         /// <summary> Id prefix </summary>
         public const string DocumentPrefix = "Ph";
 
-        /// <summary> Build Id </summary>
-        public static BuiltId BuildId(RunningApplicationInstance instance) => new($"{DocumentPrefix}.{instance.Id}.{instance.IdGlobalAutoIncrement()}");
+        /// <summary> Ph | IdAccount | Instance | Counter  </summary>
+        public static BuiltId BuildId(RunningApplicationInstance instance, string idAccount) => new($"{DocumentPrefix}.{idAccount}.{instance.Id}.{instance.IdGlobalAutoIncrement()}");
     }
     public partial class PhoneConfiguration {
         /// <summary> Id prefix </summary>
@@ -371,15 +371,6 @@ namespace Ublux.Communications.Models.SubDocuments {
 
         /// <summary> Custom: prefix.faxNumber.parentFaxGroup. Example FO.0.FOG.100 </summary>
         public static BuiltId BuildId(int faxNumber, FaxOutgoingGroup parent) => new($"{DocumentPrefix}.{faxNumber}.{parent.Id}");
-    }
-    public partial class Line {
-        /// <summary> Id prefix </summary>
-        public const string DocumentPrefix = "Li";
-
-        /// <summary> Custom: prefix.parentAccountId.parentPhoneId.IdGlobalCounter. Li | Ac.1 | Ph.WS1.* | *  where * means IdGlobal Counter. Example: Li.Ac.1.Ph.WS1.8.9 </summary>
-        public static BuiltId BuildId(RunningApplicationInstance instance, string idAcc, string idPhone) => new($"{DocumentPrefix}.{idAcc}.{idPhone}.{instance.IdGlobalAutoIncrement()}");
-        /// <summary> Custom: prefix.parentAccountId.parentPhoneId.IdGlobalCounter. Li | Ac.1 | Ph.WS1.* | *  where * means IdGlobal Counter. Example: Li.Ac.1.Ph.WS1.8.9 </summary>
-        public static BuiltId BuildId(RunningApplicationInstance instance, Phone parentPhone) => new($"{DocumentPrefix}.{parentPhone.IdAccount}.{parentPhone.Id}.{instance.IdGlobalAutoIncrement()}");
     }
     public partial class Recording {
         /// <summary> Id prefix </summary>

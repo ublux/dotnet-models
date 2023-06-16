@@ -12,24 +12,24 @@ public enum BlfStatusType
     None,
 
     /// <summary>
-    ///     Line is calling/ringing another party
+    ///     Phone is calling/ringing another party
     /// </summary>
     Outgoing_Ringing,
 
     /// <summary>
-    ///     Line is calling another party
+    ///     Phone is calling another party
     /// </summary>
     Outgoing_InProgress,
 
     /// <summary>
-    ///     Line call someone and was placed on hold
+    ///     Phone call someone and was placed on hold
     /// </summary>
     Outgiong_OnHold,
 
 
 
     /// <summary>
-    ///     Line is ringing because its receiving a new phone call
+    ///     Phone is ringing because its receiving a new phone call
     /// </summary>
     Incoming_Ringing,
 
@@ -39,7 +39,7 @@ public enum BlfStatusType
     Incoming_InProgress,
 
     /// <summary>
-    ///     Line answered a call and placed that call on hold
+    ///     Phone answered a call and placed that call on hold
     /// </summary>
     Incoming_OnHold,
 }

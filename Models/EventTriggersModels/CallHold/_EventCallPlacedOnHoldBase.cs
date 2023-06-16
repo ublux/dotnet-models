@@ -62,7 +62,7 @@ public abstract class EventCallPlacedOnHoldBase : EventTriggerModel
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    public required string LineId { get; set; }
+    public required string PhoneId { get; set; }
 
     /// <summary>
     ///     If it is an incoming call then the friendly name of the line that answered the call.
@@ -70,7 +70,7 @@ public abstract class EventCallPlacedOnHoldBase : EventTriggerModel
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    public required string LineFriendlyName { get; set; }
+    public required string PhoneFriendlyName { get; set; }
 
     /// <summary>
     ///     Helper method to generate random
@@ -93,9 +93,8 @@ public abstract class EventCallPlacedOnHoldBase : EventTriggerModel
 
         var obj = f.Generate();
 
-        GenerateRandomIdAccountPhoneAndLine(instance, out _, out _, out var idLine);
-        obj.LineId = idLine;
-        obj.LineFriendlyName = Constants.RandomNames[Random.Shared.Next(0, Constants.RandomNames.Length)];
+        GenerateRandomIdAccountPhoneAndPhone(instance, out _, out _);
+        obj.PhoneFriendlyName = Constants.RandomNames[Random.Shared.Next(0, Constants.RandomNames.Length)];
 
         return obj;
     }

@@ -26,11 +26,11 @@ public abstract partial class CallOutgoing : Call
     //public override string? IdContact { get; set; }
 
     /// <summary>
-    ///     Line that started phone call
+    ///     Phone that started phone call
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [References(typeof(Line))]
+    [References(typeof(Phone))]
     [UbluxValidationRequired]
-    public required string IdLineThatInitiatedCall { get; set; } = string.Empty;
+    public required string IdPhoneThatInitiatedCall { get; set; } = string.Empty;
 }

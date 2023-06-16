@@ -3,14 +3,14 @@
 /// <summary>
 ///     BLF status of a line
 /// </summary>
-public class LineBlfStatus
+public class PhoneBlfStatus
 {
     /// <summary>
     ///     Id of line
     /// </summary>
     [UbluxValidationRequired]
-    [References(typeof(Line))]
-    public required string IdLine { get; set; }
+    [References(typeof(Phone))]
+    public required string IdPhone { get; set; }
 
     /// <summary>
     ///     Id of channel

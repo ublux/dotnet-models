@@ -10,12 +10,12 @@ public partial class ExtensionDial : Extension
     #region References
 
     /// <summary>
-    ///     Lines to call and ring. Minimum of one line is required
+    ///     Phones to call and ring. Minimum of one line is required
     /// </summary>
-    [References(typeof(Line))]
+    [References(typeof(Phone))]
     [AllowUpdate(true)]
     [UbluxValidationRequired]
-    public List<string> IdsLines { get; set; } = new();
+    public List<string> IdsPhones { get; set; } = new();
 
     #endregion
 

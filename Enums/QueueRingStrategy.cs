@@ -36,7 +36,7 @@ public enum QueueRingStrategy
     RoundRobin,
 
     /// <summary>
-    ///     Line answered a call and placed that call on hold
+    ///     Rings in order
     /// </summary>
     Linear,
 }

@@ -14,22 +14,22 @@ public class ChildCallForwardToExtension : ChildCall, ICallToExtension
     public string? IdExtension { get; set; }
 
     /// <summary>
-    ///     Line that answered
+    ///     Phone that answered
     /// </summary>    
-    [References(typeof(Line))]
-    public string? IdLineThatAnswered { get; set; }
+    [References(typeof(Phone))]
+    public string? IdPhoneThatAnswered { get; set; }
 
     /// <summary>
-    ///     Lines that ring
+    ///     Phones that ring
     /// </summary>
-    [References(typeof(Line))]
-    public List<string> IdsLinesThatRing { get; set; } = new();
+    [References(typeof(Phone))]
+    public List<string> IdsPhonesThatRing { get; set; } = new();
 
     /// <summary>
-    ///     Lines that did not ring
+    ///     Phones that did not ring
     /// </summary>
-    [References(typeof(Line))]
-    public List<string> IdsLinesThatDidNotRing { get; set; } = new();
+    [References(typeof(Phone))]
+    public List<string> IdsPhonesThatDidNotRing { get; set; } = new();
 
     /// <summary>
     ///     ForwardToExtension

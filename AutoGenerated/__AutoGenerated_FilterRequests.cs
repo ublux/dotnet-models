@@ -207,6 +207,16 @@ public class AccountFilterRequest
     public string? AccountSecrets_PinSpy_REG { get; set; }
 
 
+    /// <summary> Language equals </summary>
+    [JsonProperty("language_eq")]
+    public string? Language_EQ { get; set; }
+    /// <summary> Language contains </summary>
+    [JsonProperty("language_con")]
+    public string? Language_CON { get; set; }
+    /// <summary> Language regex </summary>
+    [JsonProperty("language_reg")]
+    public string? Language_REG { get; set; }
+
     /// <summary> CompanyName equals </summary>
     [JsonProperty("companyName_eq")]
     public string? CompanyName_EQ { get; set; }
@@ -1517,15 +1527,15 @@ public class CallIncomingToCallFlowLogicFilterRequest
     [JsonProperty("idAiCallAnalysisInput_reg")]
     public string? IdAiCallAnalysisInput_REG { get; set; }
 
-    /// <summary> IdsParticipantLines equals </summary>
-    [JsonProperty("idsParticipantLines_eq")]
-    public string? IdsParticipantLines_EQ { get; set; }
-    /// <summary> IdsParticipantLines contains </summary>
-    [JsonProperty("idsParticipantLines_con")]
-    public string? IdsParticipantLines_CON { get; set; }
-    /// <summary> IdsParticipantLines regex </summary>
-    [JsonProperty("idsParticipantLines_reg")]
-    public string? IdsParticipantLines_REG { get; set; }
+    /// <summary> IdsParticipantPhones equals </summary>
+    [JsonProperty("idsParticipantPhones_eq")]
+    public string? IdsParticipantPhones_EQ { get; set; }
+    /// <summary> IdsParticipantPhones contains </summary>
+    [JsonProperty("idsParticipantPhones_con")]
+    public string? IdsParticipantPhones_CON { get; set; }
+    /// <summary> IdsParticipantPhones regex </summary>
+    [JsonProperty("idsParticipantPhones_reg")]
+    public string? IdsParticipantPhones_REG { get; set; }
 
 
     /// <summary> Errors.ErrorsCall equals </summary>
@@ -1653,35 +1663,35 @@ public class CallIncomingToExtensionFilterRequest
     [JsonProperty("idExtension_reg")]
     public string? IdExtension_REG { get; set; }
 
-    /// <summary> IdLineThatAnswered equals </summary>
-    [JsonProperty("idLineThatAnswered_eq")]
-    public string? IdLineThatAnswered_EQ { get; set; }
-    /// <summary> IdLineThatAnswered contains </summary>
-    [JsonProperty("idLineThatAnswered_con")]
-    public string? IdLineThatAnswered_CON { get; set; }
-    /// <summary> IdLineThatAnswered regex </summary>
-    [JsonProperty("idLineThatAnswered_reg")]
-    public string? IdLineThatAnswered_REG { get; set; }
+    /// <summary> IdPhoneThatAnswered equals </summary>
+    [JsonProperty("idPhoneThatAnswered_eq")]
+    public string? IdPhoneThatAnswered_EQ { get; set; }
+    /// <summary> IdPhoneThatAnswered contains </summary>
+    [JsonProperty("idPhoneThatAnswered_con")]
+    public string? IdPhoneThatAnswered_CON { get; set; }
+    /// <summary> IdPhoneThatAnswered regex </summary>
+    [JsonProperty("idPhoneThatAnswered_reg")]
+    public string? IdPhoneThatAnswered_REG { get; set; }
 
-    /// <summary> IdsLinesThatRing equals </summary>
-    [JsonProperty("idsLinesThatRing_eq")]
-    public string? IdsLinesThatRing_EQ { get; set; }
-    /// <summary> IdsLinesThatRing contains </summary>
-    [JsonProperty("idsLinesThatRing_con")]
-    public string? IdsLinesThatRing_CON { get; set; }
-    /// <summary> IdsLinesThatRing regex </summary>
-    [JsonProperty("idsLinesThatRing_reg")]
-    public string? IdsLinesThatRing_REG { get; set; }
+    /// <summary> IdsPhonesThatRing equals </summary>
+    [JsonProperty("idsPhonesThatRing_eq")]
+    public string? IdsPhonesThatRing_EQ { get; set; }
+    /// <summary> IdsPhonesThatRing contains </summary>
+    [JsonProperty("idsPhonesThatRing_con")]
+    public string? IdsPhonesThatRing_CON { get; set; }
+    /// <summary> IdsPhonesThatRing regex </summary>
+    [JsonProperty("idsPhonesThatRing_reg")]
+    public string? IdsPhonesThatRing_REG { get; set; }
 
-    /// <summary> IdsLinesThatDidNotRing equals </summary>
-    [JsonProperty("idsLinesThatDidNotRing_eq")]
-    public string? IdsLinesThatDidNotRing_EQ { get; set; }
-    /// <summary> IdsLinesThatDidNotRing contains </summary>
-    [JsonProperty("idsLinesThatDidNotRing_con")]
-    public string? IdsLinesThatDidNotRing_CON { get; set; }
-    /// <summary> IdsLinesThatDidNotRing regex </summary>
-    [JsonProperty("idsLinesThatDidNotRing_reg")]
-    public string? IdsLinesThatDidNotRing_REG { get; set; }
+    /// <summary> IdsPhonesThatDidNotRing equals </summary>
+    [JsonProperty("idsPhonesThatDidNotRing_eq")]
+    public string? IdsPhonesThatDidNotRing_EQ { get; set; }
+    /// <summary> IdsPhonesThatDidNotRing contains </summary>
+    [JsonProperty("idsPhonesThatDidNotRing_con")]
+    public string? IdsPhonesThatDidNotRing_CON { get; set; }
+    /// <summary> IdsPhonesThatDidNotRing regex </summary>
+    [JsonProperty("idsPhonesThatDidNotRing_reg")]
+    public string? IdsPhonesThatDidNotRing_REG { get; set; }
 
     /// <summary> CallType equals </summary>
     [JsonProperty("callType_eq")]
@@ -2244,15 +2254,15 @@ public class CallIncomingToExtensionFilterRequest
     [JsonProperty("idAiCallAnalysisInput_reg")]
     public string? IdAiCallAnalysisInput_REG { get; set; }
 
-    /// <summary> IdsParticipantLines equals </summary>
-    [JsonProperty("idsParticipantLines_eq")]
-    public string? IdsParticipantLines_EQ { get; set; }
-    /// <summary> IdsParticipantLines contains </summary>
-    [JsonProperty("idsParticipantLines_con")]
-    public string? IdsParticipantLines_CON { get; set; }
-    /// <summary> IdsParticipantLines regex </summary>
-    [JsonProperty("idsParticipantLines_reg")]
-    public string? IdsParticipantLines_REG { get; set; }
+    /// <summary> IdsParticipantPhones equals </summary>
+    [JsonProperty("idsParticipantPhones_eq")]
+    public string? IdsParticipantPhones_EQ { get; set; }
+    /// <summary> IdsParticipantPhones contains </summary>
+    [JsonProperty("idsParticipantPhones_con")]
+    public string? IdsParticipantPhones_CON { get; set; }
+    /// <summary> IdsParticipantPhones regex </summary>
+    [JsonProperty("idsParticipantPhones_reg")]
+    public string? IdsParticipantPhones_REG { get; set; }
 
 
     /// <summary> Errors.ErrorsCall equals </summary>
@@ -2380,35 +2390,35 @@ public class CallOutgoingToExtensionFilterRequest
     [JsonProperty("idExtension_reg")]
     public string? IdExtension_REG { get; set; }
 
-    /// <summary> IdLineThatAnswered equals </summary>
-    [JsonProperty("idLineThatAnswered_eq")]
-    public string? IdLineThatAnswered_EQ { get; set; }
-    /// <summary> IdLineThatAnswered contains </summary>
-    [JsonProperty("idLineThatAnswered_con")]
-    public string? IdLineThatAnswered_CON { get; set; }
-    /// <summary> IdLineThatAnswered regex </summary>
-    [JsonProperty("idLineThatAnswered_reg")]
-    public string? IdLineThatAnswered_REG { get; set; }
+    /// <summary> IdPhoneThatAnswered equals </summary>
+    [JsonProperty("idPhoneThatAnswered_eq")]
+    public string? IdPhoneThatAnswered_EQ { get; set; }
+    /// <summary> IdPhoneThatAnswered contains </summary>
+    [JsonProperty("idPhoneThatAnswered_con")]
+    public string? IdPhoneThatAnswered_CON { get; set; }
+    /// <summary> IdPhoneThatAnswered regex </summary>
+    [JsonProperty("idPhoneThatAnswered_reg")]
+    public string? IdPhoneThatAnswered_REG { get; set; }
 
-    /// <summary> IdsLinesThatRing equals </summary>
-    [JsonProperty("idsLinesThatRing_eq")]
-    public string? IdsLinesThatRing_EQ { get; set; }
-    /// <summary> IdsLinesThatRing contains </summary>
-    [JsonProperty("idsLinesThatRing_con")]
-    public string? IdsLinesThatRing_CON { get; set; }
-    /// <summary> IdsLinesThatRing regex </summary>
-    [JsonProperty("idsLinesThatRing_reg")]
-    public string? IdsLinesThatRing_REG { get; set; }
+    /// <summary> IdsPhonesThatRing equals </summary>
+    [JsonProperty("idsPhonesThatRing_eq")]
+    public string? IdsPhonesThatRing_EQ { get; set; }
+    /// <summary> IdsPhonesThatRing contains </summary>
+    [JsonProperty("idsPhonesThatRing_con")]
+    public string? IdsPhonesThatRing_CON { get; set; }
+    /// <summary> IdsPhonesThatRing regex </summary>
+    [JsonProperty("idsPhonesThatRing_reg")]
+    public string? IdsPhonesThatRing_REG { get; set; }
 
-    /// <summary> IdsLinesThatDidNotRing equals </summary>
-    [JsonProperty("idsLinesThatDidNotRing_eq")]
-    public string? IdsLinesThatDidNotRing_EQ { get; set; }
-    /// <summary> IdsLinesThatDidNotRing contains </summary>
-    [JsonProperty("idsLinesThatDidNotRing_con")]
-    public string? IdsLinesThatDidNotRing_CON { get; set; }
-    /// <summary> IdsLinesThatDidNotRing regex </summary>
-    [JsonProperty("idsLinesThatDidNotRing_reg")]
-    public string? IdsLinesThatDidNotRing_REG { get; set; }
+    /// <summary> IdsPhonesThatDidNotRing equals </summary>
+    [JsonProperty("idsPhonesThatDidNotRing_eq")]
+    public string? IdsPhonesThatDidNotRing_EQ { get; set; }
+    /// <summary> IdsPhonesThatDidNotRing contains </summary>
+    [JsonProperty("idsPhonesThatDidNotRing_con")]
+    public string? IdsPhonesThatDidNotRing_CON { get; set; }
+    /// <summary> IdsPhonesThatDidNotRing regex </summary>
+    [JsonProperty("idsPhonesThatDidNotRing_reg")]
+    public string? IdsPhonesThatDidNotRing_REG { get; set; }
 
     /// <summary> ToCountry equals </summary>
     [JsonProperty("toCountry_eq")]
@@ -2440,15 +2450,15 @@ public class CallOutgoingToExtensionFilterRequest
     [JsonProperty("callType_reg")]
     public string? CallType_REG { get; set; }
 
-    /// <summary> IdLineThatInitiatedCall equals </summary>
-    [JsonProperty("idLineThatInitiatedCall_eq")]
-    public string? IdLineThatInitiatedCall_EQ { get; set; }
-    /// <summary> IdLineThatInitiatedCall contains </summary>
-    [JsonProperty("idLineThatInitiatedCall_con")]
-    public string? IdLineThatInitiatedCall_CON { get; set; }
-    /// <summary> IdLineThatInitiatedCall regex </summary>
-    [JsonProperty("idLineThatInitiatedCall_reg")]
-    public string? IdLineThatInitiatedCall_REG { get; set; }
+    /// <summary> IdPhoneThatInitiatedCall equals </summary>
+    [JsonProperty("idPhoneThatInitiatedCall_eq")]
+    public string? IdPhoneThatInitiatedCall_EQ { get; set; }
+    /// <summary> IdPhoneThatInitiatedCall contains </summary>
+    [JsonProperty("idPhoneThatInitiatedCall_con")]
+    public string? IdPhoneThatInitiatedCall_CON { get; set; }
+    /// <summary> IdPhoneThatInitiatedCall regex </summary>
+    [JsonProperty("idPhoneThatInitiatedCall_reg")]
+    public string? IdPhoneThatInitiatedCall_REG { get; set; }
 
     /// <summary> IdVoicemail equals </summary>
     [JsonProperty("idVoicemail_eq")]
@@ -2951,15 +2961,15 @@ public class CallOutgoingToExtensionFilterRequest
     [JsonProperty("idAiCallAnalysisInput_reg")]
     public string? IdAiCallAnalysisInput_REG { get; set; }
 
-    /// <summary> IdsParticipantLines equals </summary>
-    [JsonProperty("idsParticipantLines_eq")]
-    public string? IdsParticipantLines_EQ { get; set; }
-    /// <summary> IdsParticipantLines contains </summary>
-    [JsonProperty("idsParticipantLines_con")]
-    public string? IdsParticipantLines_CON { get; set; }
-    /// <summary> IdsParticipantLines regex </summary>
-    [JsonProperty("idsParticipantLines_reg")]
-    public string? IdsParticipantLines_REG { get; set; }
+    /// <summary> IdsParticipantPhones equals </summary>
+    [JsonProperty("idsParticipantPhones_eq")]
+    public string? IdsParticipantPhones_EQ { get; set; }
+    /// <summary> IdsParticipantPhones contains </summary>
+    [JsonProperty("idsParticipantPhones_con")]
+    public string? IdsParticipantPhones_CON { get; set; }
+    /// <summary> IdsParticipantPhones regex </summary>
+    [JsonProperty("idsParticipantPhones_reg")]
+    public string? IdsParticipantPhones_REG { get; set; }
 
 
     /// <summary> Errors.ErrorsCall equals </summary>
@@ -3097,15 +3107,15 @@ public class CallOutgoingToPSTNFilterRequest
     [JsonProperty("toInternationalFormat_reg")]
     public string? ToInternationalFormat_REG { get; set; }
 
-    /// <summary> IdLineThatInitiatedCall equals </summary>
-    [JsonProperty("idLineThatInitiatedCall_eq")]
-    public string? IdLineThatInitiatedCall_EQ { get; set; }
-    /// <summary> IdLineThatInitiatedCall contains </summary>
-    [JsonProperty("idLineThatInitiatedCall_con")]
-    public string? IdLineThatInitiatedCall_CON { get; set; }
-    /// <summary> IdLineThatInitiatedCall regex </summary>
-    [JsonProperty("idLineThatInitiatedCall_reg")]
-    public string? IdLineThatInitiatedCall_REG { get; set; }
+    /// <summary> IdPhoneThatInitiatedCall equals </summary>
+    [JsonProperty("idPhoneThatInitiatedCall_eq")]
+    public string? IdPhoneThatInitiatedCall_EQ { get; set; }
+    /// <summary> IdPhoneThatInitiatedCall contains </summary>
+    [JsonProperty("idPhoneThatInitiatedCall_con")]
+    public string? IdPhoneThatInitiatedCall_CON { get; set; }
+    /// <summary> IdPhoneThatInitiatedCall regex </summary>
+    [JsonProperty("idPhoneThatInitiatedCall_reg")]
+    public string? IdPhoneThatInitiatedCall_REG { get; set; }
 
     /// <summary> IdVoicemail equals </summary>
     [JsonProperty("idVoicemail_eq")]
@@ -3628,15 +3638,15 @@ public class CallOutgoingToPSTNFilterRequest
     [JsonProperty("idAiCallAnalysisInput_reg")]
     public string? IdAiCallAnalysisInput_REG { get; set; }
 
-    /// <summary> IdsParticipantLines equals </summary>
-    [JsonProperty("idsParticipantLines_eq")]
-    public string? IdsParticipantLines_EQ { get; set; }
-    /// <summary> IdsParticipantLines contains </summary>
-    [JsonProperty("idsParticipantLines_con")]
-    public string? IdsParticipantLines_CON { get; set; }
-    /// <summary> IdsParticipantLines regex </summary>
-    [JsonProperty("idsParticipantLines_reg")]
-    public string? IdsParticipantLines_REG { get; set; }
+    /// <summary> IdsParticipantPhones equals </summary>
+    [JsonProperty("idsParticipantPhones_eq")]
+    public string? IdsParticipantPhones_EQ { get; set; }
+    /// <summary> IdsParticipantPhones contains </summary>
+    [JsonProperty("idsParticipantPhones_con")]
+    public string? IdsParticipantPhones_CON { get; set; }
+    /// <summary> IdsParticipantPhones regex </summary>
+    [JsonProperty("idsParticipantPhones_reg")]
+    public string? IdsParticipantPhones_REG { get; set; }
 
 
     /// <summary> Errors.ErrorsCall equals </summary>
@@ -4792,15 +4802,15 @@ public class ExtensionConferenceFilterRequest
 /// <summary> Enables searching for ExtensionDials </summary>
 public class ExtensionDialFilterRequest 
 {
-    /// <summary> IdsLines equals </summary>
-    [JsonProperty("idsLines_eq")]
-    public string? IdsLines_EQ { get; set; }
-    /// <summary> IdsLines contains </summary>
-    [JsonProperty("idsLines_con")]
-    public string? IdsLines_CON { get; set; }
-    /// <summary> IdsLines regex </summary>
-    [JsonProperty("idsLines_reg")]
-    public string? IdsLines_REG { get; set; }
+    /// <summary> IdsPhones equals </summary>
+    [JsonProperty("idsPhones_eq")]
+    public string? IdsPhones_EQ { get; set; }
+    /// <summary> IdsPhones contains </summary>
+    [JsonProperty("idsPhones_con")]
+    public string? IdsPhones_CON { get; set; }
+    /// <summary> IdsPhones regex </summary>
+    [JsonProperty("idsPhones_reg")]
+    public string? IdsPhones_REG { get; set; }
 
     /// <summary> EventActionToExecuteIfNotAnswered.EventActionType equals </summary>
     [JsonProperty("eventActionToExecuteIfNotAnswered_eventActionType_eq")]
@@ -5130,15 +5140,15 @@ public class ExtensionQueueFilterRequest
     [JsonProperty("extensionType_reg")]
     public string? ExtensionType_REG { get; set; }
 
-    /// <summary> IdsLines equals </summary>
-    [JsonProperty("idsLines_eq")]
-    public string? IdsLines_EQ { get; set; }
-    /// <summary> IdsLines contains </summary>
-    [JsonProperty("idsLines_con")]
-    public string? IdsLines_CON { get; set; }
-    /// <summary> IdsLines regex </summary>
-    [JsonProperty("idsLines_reg")]
-    public string? IdsLines_REG { get; set; }
+    /// <summary> IdsPhones equals </summary>
+    [JsonProperty("idsPhones_eq")]
+    public string? IdsPhones_EQ { get; set; }
+    /// <summary> IdsPhones contains </summary>
+    [JsonProperty("idsPhones_con")]
+    public string? IdsPhones_CON { get; set; }
+    /// <summary> IdsPhones regex </summary>
+    [JsonProperty("idsPhones_reg")]
+    public string? IdsPhones_REG { get; set; }
 
     /// <summary> EventActionToExecuteIfNotAnswered.EventActionType equals </summary>
     [JsonProperty("eventActionToExecuteIfNotAnswered_eventActionType_eq")]
@@ -5270,15 +5280,15 @@ public class ExtensionVoicemailFilterRequest
     [JsonProperty("idAudio_reg")]
     public string? IdAudio_REG { get; set; }
 
-    /// <summary> IdsLinesThatCanListenToVoicemail equals </summary>
-    [JsonProperty("idsLinesThatCanListenToVoicemail_eq")]
-    public string? IdsLinesThatCanListenToVoicemail_EQ { get; set; }
-    /// <summary> IdsLinesThatCanListenToVoicemail contains </summary>
-    [JsonProperty("idsLinesThatCanListenToVoicemail_con")]
-    public string? IdsLinesThatCanListenToVoicemail_CON { get; set; }
-    /// <summary> IdsLinesThatCanListenToVoicemail regex </summary>
-    [JsonProperty("idsLinesThatCanListenToVoicemail_reg")]
-    public string? IdsLinesThatCanListenToVoicemail_REG { get; set; }
+    /// <summary> IdsPhonesThatCanListenToVoicemail equals </summary>
+    [JsonProperty("idsPhonesThatCanListenToVoicemail_eq")]
+    public string? IdsPhonesThatCanListenToVoicemail_EQ { get; set; }
+    /// <summary> IdsPhonesThatCanListenToVoicemail contains </summary>
+    [JsonProperty("idsPhonesThatCanListenToVoicemail_con")]
+    public string? IdsPhonesThatCanListenToVoicemail_CON { get; set; }
+    /// <summary> IdsPhonesThatCanListenToVoicemail regex </summary>
+    [JsonProperty("idsPhonesThatCanListenToVoicemail_reg")]
+    public string? IdsPhonesThatCanListenToVoicemail_REG { get; set; }
 
     /// <summary> IdEmail equals </summary>
     [JsonProperty("idEmail_eq")]
@@ -5892,58 +5902,58 @@ public class UserFilterRequest
     public DateTime? DateUpdated_GTE { get; set; }
 
 }
-/// <summary> Enables searching for LineKeyGroups </summary>
-public class LineKeyGroupFilterRequest 
+/// <summary> Enables searching for SpeedDialGroups </summary>
+public class SpeedDialGroupFilterRequest 
 {
-    /// <summary> LineKeys.LineKeyType equals </summary>
-    [JsonProperty("lineKeys_lineKeyType_eq")]
-    public string? LineKeys_LineKeyType_EQ { get; set; }
-    /// <summary> LineKeys.LineKeyType contains </summary>
-    [JsonProperty("lineKeys_lineKeyType_con")]
-    public string? LineKeys_LineKeyType_CON { get; set; }
-    /// <summary> LineKeys.LineKeyType regex </summary>
-    [JsonProperty("lineKeys_lineKeyType_reg")]
-    public string? LineKeys_LineKeyType_REG { get; set; }
+    /// <summary> SpeedDials.SpeedDialType equals </summary>
+    [JsonProperty("speedDials_speedDialType_eq")]
+    public string? SpeedDials_SpeedDialType_EQ { get; set; }
+    /// <summary> SpeedDials.SpeedDialType contains </summary>
+    [JsonProperty("speedDials_speedDialType_con")]
+    public string? SpeedDials_SpeedDialType_CON { get; set; }
+    /// <summary> SpeedDials.SpeedDialType regex </summary>
+    [JsonProperty("speedDials_speedDialType_reg")]
+    public string? SpeedDials_SpeedDialType_REG { get; set; }
 
-    /// <summary> LineKeys.Label equals </summary>
-    [JsonProperty("lineKeys_label_eq")]
-    public string? LineKeys_Label_EQ { get; set; }
-    /// <summary> LineKeys.Label contains </summary>
-    [JsonProperty("lineKeys_label_con")]
-    public string? LineKeys_Label_CON { get; set; }
-    /// <summary> LineKeys.Label regex </summary>
-    [JsonProperty("lineKeys_label_reg")]
-    public string? LineKeys_Label_REG { get; set; }
+    /// <summary> SpeedDials.Label equals </summary>
+    [JsonProperty("speedDials_label_eq")]
+    public string? SpeedDials_Label_EQ { get; set; }
+    /// <summary> SpeedDials.Label contains </summary>
+    [JsonProperty("speedDials_label_con")]
+    public string? SpeedDials_Label_CON { get; set; }
+    /// <summary> SpeedDials.Label regex </summary>
+    [JsonProperty("speedDials_label_reg")]
+    public string? SpeedDials_Label_REG { get; set; }
 
-    /// <summary> LineKeys.Value equals </summary>
-    [JsonProperty("lineKeys_value_eq")]
-    public string? LineKeys_Value_EQ { get; set; }
-    /// <summary> LineKeys.Value contains </summary>
-    [JsonProperty("lineKeys_value_con")]
-    public string? LineKeys_Value_CON { get; set; }
-    /// <summary> LineKeys.Value regex </summary>
-    [JsonProperty("lineKeys_value_reg")]
-    public string? LineKeys_Value_REG { get; set; }
+    /// <summary> SpeedDials.Value equals </summary>
+    [JsonProperty("speedDials_value_eq")]
+    public string? SpeedDials_Value_EQ { get; set; }
+    /// <summary> SpeedDials.Value contains </summary>
+    [JsonProperty("speedDials_value_con")]
+    public string? SpeedDials_Value_CON { get; set; }
+    /// <summary> SpeedDials.Value regex </summary>
+    [JsonProperty("speedDials_value_reg")]
+    public string? SpeedDials_Value_REG { get; set; }
 
-    /// <summary> LineKeys.IdExtension equals </summary>
-    [JsonProperty("lineKeys_idExtension_eq")]
-    public string? LineKeys_IdExtension_EQ { get; set; }
-    /// <summary> LineKeys.IdExtension contains </summary>
-    [JsonProperty("lineKeys_idExtension_con")]
-    public string? LineKeys_IdExtension_CON { get; set; }
-    /// <summary> LineKeys.IdExtension regex </summary>
-    [JsonProperty("lineKeys_idExtension_reg")]
-    public string? LineKeys_IdExtension_REG { get; set; }
+    /// <summary> SpeedDials.IdExtension equals </summary>
+    [JsonProperty("speedDials_idExtension_eq")]
+    public string? SpeedDials_IdExtension_EQ { get; set; }
+    /// <summary> SpeedDials.IdExtension contains </summary>
+    [JsonProperty("speedDials_idExtension_con")]
+    public string? SpeedDials_IdExtension_CON { get; set; }
+    /// <summary> SpeedDials.IdExtension regex </summary>
+    [JsonProperty("speedDials_idExtension_reg")]
+    public string? SpeedDials_IdExtension_REG { get; set; }
 
-    /// <summary> LineKeys.LineKeyIndex equals </summary>
-    [JsonProperty("lineKeys_lineKeyIndex_eq")]
-    public System.Int32? LineKeys_LineKeyIndex_EQ { get; set; }
-    /// <summary> LineKeys.LineKeyIndex less than or equal to </summary>
-    [JsonProperty("lineKeys_lineKeyIndex_lte")]
-    public System.Int32? LineKeys_LineKeyIndex_LTE { get; set; }
-    /// <summary> LineKeys.LineKeyIndex greater than or equal to </summary>
-    [JsonProperty("lineKeys_lineKeyIndex_gte")]
-    public System.Int32? LineKeys_LineKeyIndex_GTE { get; set; }
+    /// <summary> SpeedDials.SpeedDialIndex equals </summary>
+    [JsonProperty("speedDials_speedDialIndex_eq")]
+    public System.Int32? SpeedDials_SpeedDialIndex_EQ { get; set; }
+    /// <summary> SpeedDials.SpeedDialIndex less than or equal to </summary>
+    [JsonProperty("speedDials_speedDialIndex_lte")]
+    public System.Int32? SpeedDials_SpeedDialIndex_LTE { get; set; }
+    /// <summary> SpeedDials.SpeedDialIndex greater than or equal to </summary>
+    [JsonProperty("speedDials_speedDialIndex_gte")]
+    public System.Int32? SpeedDials_SpeedDialIndex_GTE { get; set; }
 
 
     /// <summary> FriendlyName equals </summary>
@@ -6307,157 +6317,136 @@ public class PhoneFilterRequest
     [JsonProperty("idUser_reg")]
     public string? IdUser_REG { get; set; }
 
-    /// <summary> Lines.FriendlyName equals </summary>
-    [JsonProperty("lines_friendlyName_eq")]
-    public string? Lines_FriendlyName_EQ { get; set; }
-    /// <summary> Lines.FriendlyName contains </summary>
-    [JsonProperty("lines_friendlyName_con")]
-    public string? Lines_FriendlyName_CON { get; set; }
-    /// <summary> Lines.FriendlyName regex </summary>
-    [JsonProperty("lines_friendlyName_reg")]
-    public string? Lines_FriendlyName_REG { get; set; }
+    /// <summary> PhoneConnectionStatus.IpWAN equals </summary>
+    [JsonProperty("phoneConnectionStatus_ipWAN_eq")]
+    public string? PhoneConnectionStatus_IpWAN_EQ { get; set; }
+    /// <summary> PhoneConnectionStatus.IpWAN contains </summary>
+    [JsonProperty("phoneConnectionStatus_ipWAN_con")]
+    public string? PhoneConnectionStatus_IpWAN_CON { get; set; }
+    /// <summary> PhoneConnectionStatus.IpWAN regex </summary>
+    [JsonProperty("phoneConnectionStatus_ipWAN_reg")]
+    public string? PhoneConnectionStatus_IpWAN_REG { get; set; }
 
-    /// <summary> Lines.LineConnectionStatus.IpWAN equals </summary>
-    [JsonProperty("lines_lineConnectionStatus_ipWAN_eq")]
-    public string? Lines_LineConnectionStatus_IpWAN_EQ { get; set; }
-    /// <summary> Lines.LineConnectionStatus.IpWAN contains </summary>
-    [JsonProperty("lines_lineConnectionStatus_ipWAN_con")]
-    public string? Lines_LineConnectionStatus_IpWAN_CON { get; set; }
-    /// <summary> Lines.LineConnectionStatus.IpWAN regex </summary>
-    [JsonProperty("lines_lineConnectionStatus_ipWAN_reg")]
-    public string? Lines_LineConnectionStatus_IpWAN_REG { get; set; }
+    /// <summary> PhoneConnectionStatus.PortWAN equals </summary>
+    [JsonProperty("phoneConnectionStatus_portWAN_eq")]
+    public System.Int32? PhoneConnectionStatus_PortWAN_EQ { get; set; }
+    /// <summary> PhoneConnectionStatus.PortWAN less than or equal to </summary>
+    [JsonProperty("phoneConnectionStatus_portWAN_lte")]
+    public System.Int32? PhoneConnectionStatus_PortWAN_LTE { get; set; }
+    /// <summary> PhoneConnectionStatus.PortWAN greater than or equal to </summary>
+    [JsonProperty("phoneConnectionStatus_portWAN_gte")]
+    public System.Int32? PhoneConnectionStatus_PortWAN_GTE { get; set; }
 
-    /// <summary> Lines.LineConnectionStatus.PortWAN equals </summary>
-    [JsonProperty("lines_lineConnectionStatus_portWAN_eq")]
-    public System.Int32? Lines_LineConnectionStatus_PortWAN_EQ { get; set; }
-    /// <summary> Lines.LineConnectionStatus.PortWAN less than or equal to </summary>
-    [JsonProperty("lines_lineConnectionStatus_portWAN_lte")]
-    public System.Int32? Lines_LineConnectionStatus_PortWAN_LTE { get; set; }
-    /// <summary> Lines.LineConnectionStatus.PortWAN greater than or equal to </summary>
-    [JsonProperty("lines_lineConnectionStatus_portWAN_gte")]
-    public System.Int32? Lines_LineConnectionStatus_PortWAN_GTE { get; set; }
+    /// <summary> PhoneConnectionStatus.IpLAN equals </summary>
+    [JsonProperty("phoneConnectionStatus_ipLAN_eq")]
+    public string? PhoneConnectionStatus_IpLAN_EQ { get; set; }
+    /// <summary> PhoneConnectionStatus.IpLAN contains </summary>
+    [JsonProperty("phoneConnectionStatus_ipLAN_con")]
+    public string? PhoneConnectionStatus_IpLAN_CON { get; set; }
+    /// <summary> PhoneConnectionStatus.IpLAN regex </summary>
+    [JsonProperty("phoneConnectionStatus_ipLAN_reg")]
+    public string? PhoneConnectionStatus_IpLAN_REG { get; set; }
 
-    /// <summary> Lines.LineConnectionStatus.IpLAN equals </summary>
-    [JsonProperty("lines_lineConnectionStatus_ipLAN_eq")]
-    public string? Lines_LineConnectionStatus_IpLAN_EQ { get; set; }
-    /// <summary> Lines.LineConnectionStatus.IpLAN contains </summary>
-    [JsonProperty("lines_lineConnectionStatus_ipLAN_con")]
-    public string? Lines_LineConnectionStatus_IpLAN_CON { get; set; }
-    /// <summary> Lines.LineConnectionStatus.IpLAN regex </summary>
-    [JsonProperty("lines_lineConnectionStatus_ipLAN_reg")]
-    public string? Lines_LineConnectionStatus_IpLAN_REG { get; set; }
+    /// <summary> PhoneConnectionStatus.PortLAN equals </summary>
+    [JsonProperty("phoneConnectionStatus_portLAN_eq")]
+    public System.Int32? PhoneConnectionStatus_PortLAN_EQ { get; set; }
+    /// <summary> PhoneConnectionStatus.PortLAN less than or equal to </summary>
+    [JsonProperty("phoneConnectionStatus_portLAN_lte")]
+    public System.Int32? PhoneConnectionStatus_PortLAN_LTE { get; set; }
+    /// <summary> PhoneConnectionStatus.PortLAN greater than or equal to </summary>
+    [JsonProperty("phoneConnectionStatus_portLAN_gte")]
+    public System.Int32? PhoneConnectionStatus_PortLAN_GTE { get; set; }
 
-    /// <summary> Lines.LineConnectionStatus.PortLAN equals </summary>
-    [JsonProperty("lines_lineConnectionStatus_portLAN_eq")]
-    public System.Int32? Lines_LineConnectionStatus_PortLAN_EQ { get; set; }
-    /// <summary> Lines.LineConnectionStatus.PortLAN less than or equal to </summary>
-    [JsonProperty("lines_lineConnectionStatus_portLAN_lte")]
-    public System.Int32? Lines_LineConnectionStatus_PortLAN_LTE { get; set; }
-    /// <summary> Lines.LineConnectionStatus.PortLAN greater than or equal to </summary>
-    [JsonProperty("lines_lineConnectionStatus_portLAN_gte")]
-    public System.Int32? Lines_LineConnectionStatus_PortLAN_GTE { get; set; }
+    /// <summary> PhoneConnectionStatus.UserAgent equals </summary>
+    [JsonProperty("phoneConnectionStatus_userAgent_eq")]
+    public string? PhoneConnectionStatus_UserAgent_EQ { get; set; }
+    /// <summary> PhoneConnectionStatus.UserAgent contains </summary>
+    [JsonProperty("phoneConnectionStatus_userAgent_con")]
+    public string? PhoneConnectionStatus_UserAgent_CON { get; set; }
+    /// <summary> PhoneConnectionStatus.UserAgent regex </summary>
+    [JsonProperty("phoneConnectionStatus_userAgent_reg")]
+    public string? PhoneConnectionStatus_UserAgent_REG { get; set; }
 
-    /// <summary> Lines.LineConnectionStatus.UserAgent equals </summary>
-    [JsonProperty("lines_lineConnectionStatus_userAgent_eq")]
-    public string? Lines_LineConnectionStatus_UserAgent_EQ { get; set; }
-    /// <summary> Lines.LineConnectionStatus.UserAgent contains </summary>
-    [JsonProperty("lines_lineConnectionStatus_userAgent_con")]
-    public string? Lines_LineConnectionStatus_UserAgent_CON { get; set; }
-    /// <summary> Lines.LineConnectionStatus.UserAgent regex </summary>
-    [JsonProperty("lines_lineConnectionStatus_userAgent_reg")]
-    public string? Lines_LineConnectionStatus_UserAgent_REG { get; set; }
+    /// <summary> PhoneConnectionStatus.IsConnected equals </summary>
+    [JsonProperty("phoneConnectionStatus_isConnected_eq")]
+    public bool? PhoneConnectionStatus_IsConnected_EQ { get; set; }
 
-    /// <summary> Lines.LineConnectionStatus.IsConnected equals </summary>
-    [JsonProperty("lines_lineConnectionStatus_isConnected_eq")]
-    public bool? Lines_LineConnectionStatus_IsConnected_EQ { get; set; }
+    /// <summary> PhoneConnectionStatus.DisconnectedReason equals </summary>
+    [JsonProperty("phoneConnectionStatus_disconnectedReason_eq")]
+    public string? PhoneConnectionStatus_DisconnectedReason_EQ { get; set; }
+    /// <summary> PhoneConnectionStatus.DisconnectedReason contains </summary>
+    [JsonProperty("phoneConnectionStatus_disconnectedReason_con")]
+    public string? PhoneConnectionStatus_DisconnectedReason_CON { get; set; }
+    /// <summary> PhoneConnectionStatus.DisconnectedReason regex </summary>
+    [JsonProperty("phoneConnectionStatus_disconnectedReason_reg")]
+    public string? PhoneConnectionStatus_DisconnectedReason_REG { get; set; }
 
-    /// <summary> Lines.LineConnectionStatus.DisconnectedReason equals </summary>
-    [JsonProperty("lines_lineConnectionStatus_disconnectedReason_eq")]
-    public string? Lines_LineConnectionStatus_DisconnectedReason_EQ { get; set; }
-    /// <summary> Lines.LineConnectionStatus.DisconnectedReason contains </summary>
-    [JsonProperty("lines_lineConnectionStatus_disconnectedReason_con")]
-    public string? Lines_LineConnectionStatus_DisconnectedReason_CON { get; set; }
-    /// <summary> Lines.LineConnectionStatus.DisconnectedReason regex </summary>
-    [JsonProperty("lines_lineConnectionStatus_disconnectedReason_reg")]
-    public string? Lines_LineConnectionStatus_DisconnectedReason_REG { get; set; }
+    /// <summary> PhoneConnectionStatus.DateConnected equals </summary>
+    [JsonProperty("phoneConnectionStatus_dateConnected_eq")]
+    public DateTime? PhoneConnectionStatus_DateConnected_EQ { get; set; }
+    /// <summary> PhoneConnectionStatus.DateConnected less than or equal to </summary>
+    [JsonProperty("phoneConnectionStatus_dateConnected_lte")]
+    public DateTime? PhoneConnectionStatus_DateConnected_LTE { get; set; }
+    /// <summary> PhoneConnectionStatus.DateConnected greater than or equal to </summary>
+    [JsonProperty("phoneConnectionStatus_dateConnected_gte")]
+    public DateTime? PhoneConnectionStatus_DateConnected_GTE { get; set; }
 
-    /// <summary> Lines.LineConnectionStatus.DateConnected equals </summary>
-    [JsonProperty("lines_lineConnectionStatus_dateConnected_eq")]
-    public DateTime? Lines_LineConnectionStatus_DateConnected_EQ { get; set; }
-    /// <summary> Lines.LineConnectionStatus.DateConnected less than or equal to </summary>
-    [JsonProperty("lines_lineConnectionStatus_dateConnected_lte")]
-    public DateTime? Lines_LineConnectionStatus_DateConnected_LTE { get; set; }
-    /// <summary> Lines.LineConnectionStatus.DateConnected greater than or equal to </summary>
-    [JsonProperty("lines_lineConnectionStatus_dateConnected_gte")]
-    public DateTime? Lines_LineConnectionStatus_DateConnected_GTE { get; set; }
-
-    /// <summary> Lines.LineConnectionStatus.DateDisconnected equals </summary>
-    [JsonProperty("lines_lineConnectionStatus_dateDisconnected_eq")]
-    public DateTime? Lines_LineConnectionStatus_DateDisconnected_EQ { get; set; }
-    /// <summary> Lines.LineConnectionStatus.DateDisconnected less than or equal to </summary>
-    [JsonProperty("lines_lineConnectionStatus_dateDisconnected_lte")]
-    public DateTime? Lines_LineConnectionStatus_DateDisconnected_LTE { get; set; }
-    /// <summary> Lines.LineConnectionStatus.DateDisconnected greater than or equal to </summary>
-    [JsonProperty("lines_lineConnectionStatus_dateDisconnected_gte")]
-    public DateTime? Lines_LineConnectionStatus_DateDisconnected_GTE { get; set; }
+    /// <summary> PhoneConnectionStatus.DateDisconnected equals </summary>
+    [JsonProperty("phoneConnectionStatus_dateDisconnected_eq")]
+    public DateTime? PhoneConnectionStatus_DateDisconnected_EQ { get; set; }
+    /// <summary> PhoneConnectionStatus.DateDisconnected less than or equal to </summary>
+    [JsonProperty("phoneConnectionStatus_dateDisconnected_lte")]
+    public DateTime? PhoneConnectionStatus_DateDisconnected_LTE { get; set; }
+    /// <summary> PhoneConnectionStatus.DateDisconnected greater than or equal to </summary>
+    [JsonProperty("phoneConnectionStatus_dateDisconnected_gte")]
+    public DateTime? PhoneConnectionStatus_DateDisconnected_GTE { get; set; }
 
 
-    /// <summary> Lines.CallerIdNumber equals </summary>
-    [JsonProperty("lines_callerIdNumber_eq")]
-    public string? Lines_CallerIdNumber_EQ { get; set; }
-    /// <summary> Lines.CallerIdNumber contains </summary>
-    [JsonProperty("lines_callerIdNumber_con")]
-    public string? Lines_CallerIdNumber_CON { get; set; }
-    /// <summary> Lines.CallerIdNumber regex </summary>
-    [JsonProperty("lines_callerIdNumber_reg")]
-    public string? Lines_CallerIdNumber_REG { get; set; }
+    /// <summary> CallerIdNumbers equals </summary>
+    [JsonProperty("callerIdNumbers_eq")]
+    public string? CallerIdNumbers_EQ { get; set; }
+    /// <summary> CallerIdNumbers contains </summary>
+    [JsonProperty("callerIdNumbers_con")]
+    public string? CallerIdNumbers_CON { get; set; }
+    /// <summary> CallerIdNumbers regex </summary>
+    [JsonProperty("callerIdNumbers_reg")]
+    public string? CallerIdNumbers_REG { get; set; }
 
-    /// <summary> Lines.RecordExternalCalls equals </summary>
-    [JsonProperty("lines_recordExternalCalls_eq")]
-    public bool? Lines_RecordExternalCalls_EQ { get; set; }
+    /// <summary> RecordExternalCalls equals </summary>
+    [JsonProperty("recordExternalCalls_eq")]
+    public bool? RecordExternalCalls_EQ { get; set; }
 
-    /// <summary> Lines.RecordInternalCalls equals </summary>
-    [JsonProperty("lines_recordInternalCalls_eq")]
-    public bool? Lines_RecordInternalCalls_EQ { get; set; }
+    /// <summary> RecordInternalCalls equals </summary>
+    [JsonProperty("recordInternalCalls_eq")]
+    public bool? RecordInternalCalls_EQ { get; set; }
 
-    /// <summary> Lines.UseAiForExternalCalls equals </summary>
-    [JsonProperty("lines_useAiForExternalCalls_eq")]
-    public bool? Lines_UseAiForExternalCalls_EQ { get; set; }
+    /// <summary> UseAiForExternalCalls equals </summary>
+    [JsonProperty("useAiForExternalCalls_eq")]
+    public bool? UseAiForExternalCalls_EQ { get; set; }
 
-    /// <summary> Lines.UseAiForOutgoingCallsToExtensions equals </summary>
-    [JsonProperty("lines_useAiForOutgoingCallsToExtensions_eq")]
-    public bool? Lines_UseAiForOutgoingCallsToExtensions_EQ { get; set; }
+    /// <summary> UseAiForOutgoingCallsToExtensions equals </summary>
+    [JsonProperty("useAiForOutgoingCallsToExtensions_eq")]
+    public bool? UseAiForOutgoingCallsToExtensions_EQ { get; set; }
 
-    /// <summary> Lines.IdAiCallAnalysisInput equals </summary>
-    [JsonProperty("lines_idAiCallAnalysisInput_eq")]
-    public string? Lines_IdAiCallAnalysisInput_EQ { get; set; }
-    /// <summary> Lines.IdAiCallAnalysisInput contains </summary>
-    [JsonProperty("lines_idAiCallAnalysisInput_con")]
-    public string? Lines_IdAiCallAnalysisInput_CON { get; set; }
-    /// <summary> Lines.IdAiCallAnalysisInput regex </summary>
-    [JsonProperty("lines_idAiCallAnalysisInput_reg")]
-    public string? Lines_IdAiCallAnalysisInput_REG { get; set; }
+    /// <summary> IdAiCallAnalysisInput equals </summary>
+    [JsonProperty("idAiCallAnalysisInput_eq")]
+    public string? IdAiCallAnalysisInput_EQ { get; set; }
+    /// <summary> IdAiCallAnalysisInput contains </summary>
+    [JsonProperty("idAiCallAnalysisInput_con")]
+    public string? IdAiCallAnalysisInput_CON { get; set; }
+    /// <summary> IdAiCallAnalysisInput regex </summary>
+    [JsonProperty("idAiCallAnalysisInput_reg")]
+    public string? IdAiCallAnalysisInput_REG { get; set; }
 
-    /// <summary> Lines.Language equals </summary>
-    [JsonProperty("lines_language_eq")]
-    public string? Lines_Language_EQ { get; set; }
-    /// <summary> Lines.Language contains </summary>
-    [JsonProperty("lines_language_con")]
-    public string? Lines_Language_CON { get; set; }
-    /// <summary> Lines.Language regex </summary>
-    [JsonProperty("lines_language_reg")]
-    public string? Lines_Language_REG { get; set; }
-
-    /// <summary> Lines.Id equals </summary>
-    [JsonProperty("lines_id_eq")]
-    public string? Lines_Id_EQ { get; set; }
-    /// <summary> Lines.Id contains </summary>
-    [JsonProperty("lines_id_con")]
-    public string? Lines_Id_CON { get; set; }
-    /// <summary> Lines.Id regex </summary>
-    [JsonProperty("lines_id_reg")]
-    public string? Lines_Id_REG { get; set; }
-
+    /// <summary> Language equals </summary>
+    [JsonProperty("language_eq")]
+    public string? Language_EQ { get; set; }
+    /// <summary> Language contains </summary>
+    [JsonProperty("language_con")]
+    public string? Language_CON { get; set; }
+    /// <summary> Language regex </summary>
+    [JsonProperty("language_reg")]
+    public string? Language_REG { get; set; }
 
     /// <summary> FriendlyName equals </summary>
     [JsonProperty("friendlyName_eq")]
@@ -6577,15 +6566,15 @@ public class PhoneFilterRequest
 /// <summary> Enables searching for PhoneConfigurations </summary>
 public class PhoneConfigurationFilterRequest 
 {
-    /// <summary> IdLineKeyGroup equals </summary>
-    [JsonProperty("idLineKeyGroup_eq")]
-    public string? IdLineKeyGroup_EQ { get; set; }
-    /// <summary> IdLineKeyGroup contains </summary>
-    [JsonProperty("idLineKeyGroup_con")]
-    public string? IdLineKeyGroup_CON { get; set; }
-    /// <summary> IdLineKeyGroup regex </summary>
-    [JsonProperty("idLineKeyGroup_reg")]
-    public string? IdLineKeyGroup_REG { get; set; }
+    /// <summary> IdSpeedDialGroup equals </summary>
+    [JsonProperty("idSpeedDialGroup_eq")]
+    public string? IdSpeedDialGroup_EQ { get; set; }
+    /// <summary> IdSpeedDialGroup contains </summary>
+    [JsonProperty("idSpeedDialGroup_con")]
+    public string? IdSpeedDialGroup_CON { get; set; }
+    /// <summary> IdSpeedDialGroup regex </summary>
+    [JsonProperty("idSpeedDialGroup_reg")]
+    public string? IdSpeedDialGroup_REG { get; set; }
 
     /// <summary> FrienlyName equals </summary>
     [JsonProperty("frienlyName_eq")]
@@ -6671,15 +6660,15 @@ public class PowerDialerGroupFilterRequest
     [JsonProperty("idCallerIdMask_reg")]
     public string? IdCallerIdMask_REG { get; set; }
 
-    /// <summary> IdLinesAgents equals </summary>
-    [JsonProperty("idLinesAgents_eq")]
-    public string? IdLinesAgents_EQ { get; set; }
-    /// <summary> IdLinesAgents contains </summary>
-    [JsonProperty("idLinesAgents_con")]
-    public string? IdLinesAgents_CON { get; set; }
-    /// <summary> IdLinesAgents regex </summary>
-    [JsonProperty("idLinesAgents_reg")]
-    public string? IdLinesAgents_REG { get; set; }
+    /// <summary> IdPhonesAgents equals </summary>
+    [JsonProperty("idPhonesAgents_eq")]
+    public string? IdPhonesAgents_EQ { get; set; }
+    /// <summary> IdPhonesAgents contains </summary>
+    [JsonProperty("idPhonesAgents_con")]
+    public string? IdPhonesAgents_CON { get; set; }
+    /// <summary> IdPhonesAgents regex </summary>
+    [JsonProperty("idPhonesAgents_reg")]
+    public string? IdPhonesAgents_REG { get; set; }
 
     /// <summary> PowerDialerContacts.PhoneNumber equals </summary>
     [JsonProperty("powerDialerContacts_phoneNumber_eq")]
@@ -7115,15 +7104,15 @@ public class TrunkTerminationGroupFilterRequest
 /// <summary> Enables searching for Voicemails </summary>
 public class VoicemailFilterRequest 
 {
-    /// <summary> IdsLinesThatCanListenToVoicemail equals </summary>
-    [JsonProperty("idsLinesThatCanListenToVoicemail_eq")]
-    public string? IdsLinesThatCanListenToVoicemail_EQ { get; set; }
-    /// <summary> IdsLinesThatCanListenToVoicemail contains </summary>
-    [JsonProperty("idsLinesThatCanListenToVoicemail_con")]
-    public string? IdsLinesThatCanListenToVoicemail_CON { get; set; }
-    /// <summary> IdsLinesThatCanListenToVoicemail regex </summary>
-    [JsonProperty("idsLinesThatCanListenToVoicemail_reg")]
-    public string? IdsLinesThatCanListenToVoicemail_REG { get; set; }
+    /// <summary> IdsPhonesThatCanListenToVoicemail equals </summary>
+    [JsonProperty("idsPhonesThatCanListenToVoicemail_eq")]
+    public string? IdsPhonesThatCanListenToVoicemail_EQ { get; set; }
+    /// <summary> IdsPhonesThatCanListenToVoicemail contains </summary>
+    [JsonProperty("idsPhonesThatCanListenToVoicemail_con")]
+    public string? IdsPhonesThatCanListenToVoicemail_CON { get; set; }
+    /// <summary> IdsPhonesThatCanListenToVoicemail regex </summary>
+    [JsonProperty("idsPhonesThatCanListenToVoicemail_reg")]
+    public string? IdsPhonesThatCanListenToVoicemail_REG { get; set; }
 
     /// <summary> IdEmail equals </summary>
     [JsonProperty("idEmail_eq")]
@@ -7312,156 +7301,280 @@ public class VoicemailForwardedFilterRequest
     [JsonProperty("voicemailType_reg")]
     public string? VoicemailType_REG { get; set; }
 
-    /// <summary> LineThatForwardedVoicemail.FriendlyName equals </summary>
-    [JsonProperty("lineThatForwardedVoicemail_friendlyName_eq")]
-    public string? LineThatForwardedVoicemail_FriendlyName_EQ { get; set; }
-    /// <summary> LineThatForwardedVoicemail.FriendlyName contains </summary>
-    [JsonProperty("lineThatForwardedVoicemail_friendlyName_con")]
-    public string? LineThatForwardedVoicemail_FriendlyName_CON { get; set; }
-    /// <summary> LineThatForwardedVoicemail.FriendlyName regex </summary>
-    [JsonProperty("lineThatForwardedVoicemail_friendlyName_reg")]
-    public string? LineThatForwardedVoicemail_FriendlyName_REG { get; set; }
+    /// <summary> PhoneThatForwardedVoicemail.IdCloudServicePbx equals </summary>
+    [JsonProperty("phoneThatForwardedVoicemail_idCloudServicePbx_eq")]
+    public string? PhoneThatForwardedVoicemail_IdCloudServicePbx_EQ { get; set; }
+    /// <summary> PhoneThatForwardedVoicemail.IdCloudServicePbx contains </summary>
+    [JsonProperty("phoneThatForwardedVoicemail_idCloudServicePbx_con")]
+    public string? PhoneThatForwardedVoicemail_IdCloudServicePbx_CON { get; set; }
+    /// <summary> PhoneThatForwardedVoicemail.IdCloudServicePbx regex </summary>
+    [JsonProperty("phoneThatForwardedVoicemail_idCloudServicePbx_reg")]
+    public string? PhoneThatForwardedVoicemail_IdCloudServicePbx_REG { get; set; }
 
-    /// <summary> LineThatForwardedVoicemail.LineConnectionStatus.IpWAN equals </summary>
-    [JsonProperty("lineThatForwardedVoicemail_lineConnectionStatus_ipWAN_eq")]
-    public string? LineThatForwardedVoicemail_LineConnectionStatus_IpWAN_EQ { get; set; }
-    /// <summary> LineThatForwardedVoicemail.LineConnectionStatus.IpWAN contains </summary>
-    [JsonProperty("lineThatForwardedVoicemail_lineConnectionStatus_ipWAN_con")]
-    public string? LineThatForwardedVoicemail_LineConnectionStatus_IpWAN_CON { get; set; }
-    /// <summary> LineThatForwardedVoicemail.LineConnectionStatus.IpWAN regex </summary>
-    [JsonProperty("lineThatForwardedVoicemail_lineConnectionStatus_ipWAN_reg")]
-    public string? LineThatForwardedVoicemail_LineConnectionStatus_IpWAN_REG { get; set; }
+    /// <summary> PhoneThatForwardedVoicemail.IdPhoneConfiguration equals </summary>
+    [JsonProperty("phoneThatForwardedVoicemail_idPhoneConfiguration_eq")]
+    public string? PhoneThatForwardedVoicemail_IdPhoneConfiguration_EQ { get; set; }
+    /// <summary> PhoneThatForwardedVoicemail.IdPhoneConfiguration contains </summary>
+    [JsonProperty("phoneThatForwardedVoicemail_idPhoneConfiguration_con")]
+    public string? PhoneThatForwardedVoicemail_IdPhoneConfiguration_CON { get; set; }
+    /// <summary> PhoneThatForwardedVoicemail.IdPhoneConfiguration regex </summary>
+    [JsonProperty("phoneThatForwardedVoicemail_idPhoneConfiguration_reg")]
+    public string? PhoneThatForwardedVoicemail_IdPhoneConfiguration_REG { get; set; }
 
-    /// <summary> LineThatForwardedVoicemail.LineConnectionStatus.PortWAN equals </summary>
-    [JsonProperty("lineThatForwardedVoicemail_lineConnectionStatus_portWAN_eq")]
-    public System.Int32? LineThatForwardedVoicemail_LineConnectionStatus_PortWAN_EQ { get; set; }
-    /// <summary> LineThatForwardedVoicemail.LineConnectionStatus.PortWAN less than or equal to </summary>
-    [JsonProperty("lineThatForwardedVoicemail_lineConnectionStatus_portWAN_lte")]
-    public System.Int32? LineThatForwardedVoicemail_LineConnectionStatus_PortWAN_LTE { get; set; }
-    /// <summary> LineThatForwardedVoicemail.LineConnectionStatus.PortWAN greater than or equal to </summary>
-    [JsonProperty("lineThatForwardedVoicemail_lineConnectionStatus_portWAN_gte")]
-    public System.Int32? LineThatForwardedVoicemail_LineConnectionStatus_PortWAN_GTE { get; set; }
+    /// <summary> PhoneThatForwardedVoicemail.IdUser equals </summary>
+    [JsonProperty("phoneThatForwardedVoicemail_idUser_eq")]
+    public string? PhoneThatForwardedVoicemail_IdUser_EQ { get; set; }
+    /// <summary> PhoneThatForwardedVoicemail.IdUser contains </summary>
+    [JsonProperty("phoneThatForwardedVoicemail_idUser_con")]
+    public string? PhoneThatForwardedVoicemail_IdUser_CON { get; set; }
+    /// <summary> PhoneThatForwardedVoicemail.IdUser regex </summary>
+    [JsonProperty("phoneThatForwardedVoicemail_idUser_reg")]
+    public string? PhoneThatForwardedVoicemail_IdUser_REG { get; set; }
 
-    /// <summary> LineThatForwardedVoicemail.LineConnectionStatus.IpLAN equals </summary>
-    [JsonProperty("lineThatForwardedVoicemail_lineConnectionStatus_ipLAN_eq")]
-    public string? LineThatForwardedVoicemail_LineConnectionStatus_IpLAN_EQ { get; set; }
-    /// <summary> LineThatForwardedVoicemail.LineConnectionStatus.IpLAN contains </summary>
-    [JsonProperty("lineThatForwardedVoicemail_lineConnectionStatus_ipLAN_con")]
-    public string? LineThatForwardedVoicemail_LineConnectionStatus_IpLAN_CON { get; set; }
-    /// <summary> LineThatForwardedVoicemail.LineConnectionStatus.IpLAN regex </summary>
-    [JsonProperty("lineThatForwardedVoicemail_lineConnectionStatus_ipLAN_reg")]
-    public string? LineThatForwardedVoicemail_LineConnectionStatus_IpLAN_REG { get; set; }
+    /// <summary> PhoneThatForwardedVoicemail.PhoneConnectionStatus.IpWAN equals </summary>
+    [JsonProperty("phoneThatForwardedVoicemail_phoneConnectionStatus_ipWAN_eq")]
+    public string? PhoneThatForwardedVoicemail_PhoneConnectionStatus_IpWAN_EQ { get; set; }
+    /// <summary> PhoneThatForwardedVoicemail.PhoneConnectionStatus.IpWAN contains </summary>
+    [JsonProperty("phoneThatForwardedVoicemail_phoneConnectionStatus_ipWAN_con")]
+    public string? PhoneThatForwardedVoicemail_PhoneConnectionStatus_IpWAN_CON { get; set; }
+    /// <summary> PhoneThatForwardedVoicemail.PhoneConnectionStatus.IpWAN regex </summary>
+    [JsonProperty("phoneThatForwardedVoicemail_phoneConnectionStatus_ipWAN_reg")]
+    public string? PhoneThatForwardedVoicemail_PhoneConnectionStatus_IpWAN_REG { get; set; }
 
-    /// <summary> LineThatForwardedVoicemail.LineConnectionStatus.PortLAN equals </summary>
-    [JsonProperty("lineThatForwardedVoicemail_lineConnectionStatus_portLAN_eq")]
-    public System.Int32? LineThatForwardedVoicemail_LineConnectionStatus_PortLAN_EQ { get; set; }
-    /// <summary> LineThatForwardedVoicemail.LineConnectionStatus.PortLAN less than or equal to </summary>
-    [JsonProperty("lineThatForwardedVoicemail_lineConnectionStatus_portLAN_lte")]
-    public System.Int32? LineThatForwardedVoicemail_LineConnectionStatus_PortLAN_LTE { get; set; }
-    /// <summary> LineThatForwardedVoicemail.LineConnectionStatus.PortLAN greater than or equal to </summary>
-    [JsonProperty("lineThatForwardedVoicemail_lineConnectionStatus_portLAN_gte")]
-    public System.Int32? LineThatForwardedVoicemail_LineConnectionStatus_PortLAN_GTE { get; set; }
+    /// <summary> PhoneThatForwardedVoicemail.PhoneConnectionStatus.PortWAN equals </summary>
+    [JsonProperty("phoneThatForwardedVoicemail_phoneConnectionStatus_portWAN_eq")]
+    public System.Int32? PhoneThatForwardedVoicemail_PhoneConnectionStatus_PortWAN_EQ { get; set; }
+    /// <summary> PhoneThatForwardedVoicemail.PhoneConnectionStatus.PortWAN less than or equal to </summary>
+    [JsonProperty("phoneThatForwardedVoicemail_phoneConnectionStatus_portWAN_lte")]
+    public System.Int32? PhoneThatForwardedVoicemail_PhoneConnectionStatus_PortWAN_LTE { get; set; }
+    /// <summary> PhoneThatForwardedVoicemail.PhoneConnectionStatus.PortWAN greater than or equal to </summary>
+    [JsonProperty("phoneThatForwardedVoicemail_phoneConnectionStatus_portWAN_gte")]
+    public System.Int32? PhoneThatForwardedVoicemail_PhoneConnectionStatus_PortWAN_GTE { get; set; }
 
-    /// <summary> LineThatForwardedVoicemail.LineConnectionStatus.UserAgent equals </summary>
-    [JsonProperty("lineThatForwardedVoicemail_lineConnectionStatus_userAgent_eq")]
-    public string? LineThatForwardedVoicemail_LineConnectionStatus_UserAgent_EQ { get; set; }
-    /// <summary> LineThatForwardedVoicemail.LineConnectionStatus.UserAgent contains </summary>
-    [JsonProperty("lineThatForwardedVoicemail_lineConnectionStatus_userAgent_con")]
-    public string? LineThatForwardedVoicemail_LineConnectionStatus_UserAgent_CON { get; set; }
-    /// <summary> LineThatForwardedVoicemail.LineConnectionStatus.UserAgent regex </summary>
-    [JsonProperty("lineThatForwardedVoicemail_lineConnectionStatus_userAgent_reg")]
-    public string? LineThatForwardedVoicemail_LineConnectionStatus_UserAgent_REG { get; set; }
+    /// <summary> PhoneThatForwardedVoicemail.PhoneConnectionStatus.IpLAN equals </summary>
+    [JsonProperty("phoneThatForwardedVoicemail_phoneConnectionStatus_ipLAN_eq")]
+    public string? PhoneThatForwardedVoicemail_PhoneConnectionStatus_IpLAN_EQ { get; set; }
+    /// <summary> PhoneThatForwardedVoicemail.PhoneConnectionStatus.IpLAN contains </summary>
+    [JsonProperty("phoneThatForwardedVoicemail_phoneConnectionStatus_ipLAN_con")]
+    public string? PhoneThatForwardedVoicemail_PhoneConnectionStatus_IpLAN_CON { get; set; }
+    /// <summary> PhoneThatForwardedVoicemail.PhoneConnectionStatus.IpLAN regex </summary>
+    [JsonProperty("phoneThatForwardedVoicemail_phoneConnectionStatus_ipLAN_reg")]
+    public string? PhoneThatForwardedVoicemail_PhoneConnectionStatus_IpLAN_REG { get; set; }
 
-    /// <summary> LineThatForwardedVoicemail.LineConnectionStatus.IsConnected equals </summary>
-    [JsonProperty("lineThatForwardedVoicemail_lineConnectionStatus_isConnected_eq")]
-    public bool? LineThatForwardedVoicemail_LineConnectionStatus_IsConnected_EQ { get; set; }
+    /// <summary> PhoneThatForwardedVoicemail.PhoneConnectionStatus.PortLAN equals </summary>
+    [JsonProperty("phoneThatForwardedVoicemail_phoneConnectionStatus_portLAN_eq")]
+    public System.Int32? PhoneThatForwardedVoicemail_PhoneConnectionStatus_PortLAN_EQ { get; set; }
+    /// <summary> PhoneThatForwardedVoicemail.PhoneConnectionStatus.PortLAN less than or equal to </summary>
+    [JsonProperty("phoneThatForwardedVoicemail_phoneConnectionStatus_portLAN_lte")]
+    public System.Int32? PhoneThatForwardedVoicemail_PhoneConnectionStatus_PortLAN_LTE { get; set; }
+    /// <summary> PhoneThatForwardedVoicemail.PhoneConnectionStatus.PortLAN greater than or equal to </summary>
+    [JsonProperty("phoneThatForwardedVoicemail_phoneConnectionStatus_portLAN_gte")]
+    public System.Int32? PhoneThatForwardedVoicemail_PhoneConnectionStatus_PortLAN_GTE { get; set; }
 
-    /// <summary> LineThatForwardedVoicemail.LineConnectionStatus.DisconnectedReason equals </summary>
-    [JsonProperty("lineThatForwardedVoicemail_lineConnectionStatus_disconnectedReason_eq")]
-    public string? LineThatForwardedVoicemail_LineConnectionStatus_DisconnectedReason_EQ { get; set; }
-    /// <summary> LineThatForwardedVoicemail.LineConnectionStatus.DisconnectedReason contains </summary>
-    [JsonProperty("lineThatForwardedVoicemail_lineConnectionStatus_disconnectedReason_con")]
-    public string? LineThatForwardedVoicemail_LineConnectionStatus_DisconnectedReason_CON { get; set; }
-    /// <summary> LineThatForwardedVoicemail.LineConnectionStatus.DisconnectedReason regex </summary>
-    [JsonProperty("lineThatForwardedVoicemail_lineConnectionStatus_disconnectedReason_reg")]
-    public string? LineThatForwardedVoicemail_LineConnectionStatus_DisconnectedReason_REG { get; set; }
+    /// <summary> PhoneThatForwardedVoicemail.PhoneConnectionStatus.UserAgent equals </summary>
+    [JsonProperty("phoneThatForwardedVoicemail_phoneConnectionStatus_userAgent_eq")]
+    public string? PhoneThatForwardedVoicemail_PhoneConnectionStatus_UserAgent_EQ { get; set; }
+    /// <summary> PhoneThatForwardedVoicemail.PhoneConnectionStatus.UserAgent contains </summary>
+    [JsonProperty("phoneThatForwardedVoicemail_phoneConnectionStatus_userAgent_con")]
+    public string? PhoneThatForwardedVoicemail_PhoneConnectionStatus_UserAgent_CON { get; set; }
+    /// <summary> PhoneThatForwardedVoicemail.PhoneConnectionStatus.UserAgent regex </summary>
+    [JsonProperty("phoneThatForwardedVoicemail_phoneConnectionStatus_userAgent_reg")]
+    public string? PhoneThatForwardedVoicemail_PhoneConnectionStatus_UserAgent_REG { get; set; }
 
-    /// <summary> LineThatForwardedVoicemail.LineConnectionStatus.DateConnected equals </summary>
-    [JsonProperty("lineThatForwardedVoicemail_lineConnectionStatus_dateConnected_eq")]
-    public DateTime? LineThatForwardedVoicemail_LineConnectionStatus_DateConnected_EQ { get; set; }
-    /// <summary> LineThatForwardedVoicemail.LineConnectionStatus.DateConnected less than or equal to </summary>
-    [JsonProperty("lineThatForwardedVoicemail_lineConnectionStatus_dateConnected_lte")]
-    public DateTime? LineThatForwardedVoicemail_LineConnectionStatus_DateConnected_LTE { get; set; }
-    /// <summary> LineThatForwardedVoicemail.LineConnectionStatus.DateConnected greater than or equal to </summary>
-    [JsonProperty("lineThatForwardedVoicemail_lineConnectionStatus_dateConnected_gte")]
-    public DateTime? LineThatForwardedVoicemail_LineConnectionStatus_DateConnected_GTE { get; set; }
+    /// <summary> PhoneThatForwardedVoicemail.PhoneConnectionStatus.IsConnected equals </summary>
+    [JsonProperty("phoneThatForwardedVoicemail_phoneConnectionStatus_isConnected_eq")]
+    public bool? PhoneThatForwardedVoicemail_PhoneConnectionStatus_IsConnected_EQ { get; set; }
 
-    /// <summary> LineThatForwardedVoicemail.LineConnectionStatus.DateDisconnected equals </summary>
-    [JsonProperty("lineThatForwardedVoicemail_lineConnectionStatus_dateDisconnected_eq")]
-    public DateTime? LineThatForwardedVoicemail_LineConnectionStatus_DateDisconnected_EQ { get; set; }
-    /// <summary> LineThatForwardedVoicemail.LineConnectionStatus.DateDisconnected less than or equal to </summary>
-    [JsonProperty("lineThatForwardedVoicemail_lineConnectionStatus_dateDisconnected_lte")]
-    public DateTime? LineThatForwardedVoicemail_LineConnectionStatus_DateDisconnected_LTE { get; set; }
-    /// <summary> LineThatForwardedVoicemail.LineConnectionStatus.DateDisconnected greater than or equal to </summary>
-    [JsonProperty("lineThatForwardedVoicemail_lineConnectionStatus_dateDisconnected_gte")]
-    public DateTime? LineThatForwardedVoicemail_LineConnectionStatus_DateDisconnected_GTE { get; set; }
+    /// <summary> PhoneThatForwardedVoicemail.PhoneConnectionStatus.DisconnectedReason equals </summary>
+    [JsonProperty("phoneThatForwardedVoicemail_phoneConnectionStatus_disconnectedReason_eq")]
+    public string? PhoneThatForwardedVoicemail_PhoneConnectionStatus_DisconnectedReason_EQ { get; set; }
+    /// <summary> PhoneThatForwardedVoicemail.PhoneConnectionStatus.DisconnectedReason contains </summary>
+    [JsonProperty("phoneThatForwardedVoicemail_phoneConnectionStatus_disconnectedReason_con")]
+    public string? PhoneThatForwardedVoicemail_PhoneConnectionStatus_DisconnectedReason_CON { get; set; }
+    /// <summary> PhoneThatForwardedVoicemail.PhoneConnectionStatus.DisconnectedReason regex </summary>
+    [JsonProperty("phoneThatForwardedVoicemail_phoneConnectionStatus_disconnectedReason_reg")]
+    public string? PhoneThatForwardedVoicemail_PhoneConnectionStatus_DisconnectedReason_REG { get; set; }
+
+    /// <summary> PhoneThatForwardedVoicemail.PhoneConnectionStatus.DateConnected equals </summary>
+    [JsonProperty("phoneThatForwardedVoicemail_phoneConnectionStatus_dateConnected_eq")]
+    public DateTime? PhoneThatForwardedVoicemail_PhoneConnectionStatus_DateConnected_EQ { get; set; }
+    /// <summary> PhoneThatForwardedVoicemail.PhoneConnectionStatus.DateConnected less than or equal to </summary>
+    [JsonProperty("phoneThatForwardedVoicemail_phoneConnectionStatus_dateConnected_lte")]
+    public DateTime? PhoneThatForwardedVoicemail_PhoneConnectionStatus_DateConnected_LTE { get; set; }
+    /// <summary> PhoneThatForwardedVoicemail.PhoneConnectionStatus.DateConnected greater than or equal to </summary>
+    [JsonProperty("phoneThatForwardedVoicemail_phoneConnectionStatus_dateConnected_gte")]
+    public DateTime? PhoneThatForwardedVoicemail_PhoneConnectionStatus_DateConnected_GTE { get; set; }
+
+    /// <summary> PhoneThatForwardedVoicemail.PhoneConnectionStatus.DateDisconnected equals </summary>
+    [JsonProperty("phoneThatForwardedVoicemail_phoneConnectionStatus_dateDisconnected_eq")]
+    public DateTime? PhoneThatForwardedVoicemail_PhoneConnectionStatus_DateDisconnected_EQ { get; set; }
+    /// <summary> PhoneThatForwardedVoicemail.PhoneConnectionStatus.DateDisconnected less than or equal to </summary>
+    [JsonProperty("phoneThatForwardedVoicemail_phoneConnectionStatus_dateDisconnected_lte")]
+    public DateTime? PhoneThatForwardedVoicemail_PhoneConnectionStatus_DateDisconnected_LTE { get; set; }
+    /// <summary> PhoneThatForwardedVoicemail.PhoneConnectionStatus.DateDisconnected greater than or equal to </summary>
+    [JsonProperty("phoneThatForwardedVoicemail_phoneConnectionStatus_dateDisconnected_gte")]
+    public DateTime? PhoneThatForwardedVoicemail_PhoneConnectionStatus_DateDisconnected_GTE { get; set; }
 
 
-    /// <summary> LineThatForwardedVoicemail.CallerIdNumber equals </summary>
-    [JsonProperty("lineThatForwardedVoicemail_callerIdNumber_eq")]
-    public string? LineThatForwardedVoicemail_CallerIdNumber_EQ { get; set; }
-    /// <summary> LineThatForwardedVoicemail.CallerIdNumber contains </summary>
-    [JsonProperty("lineThatForwardedVoicemail_callerIdNumber_con")]
-    public string? LineThatForwardedVoicemail_CallerIdNumber_CON { get; set; }
-    /// <summary> LineThatForwardedVoicemail.CallerIdNumber regex </summary>
-    [JsonProperty("lineThatForwardedVoicemail_callerIdNumber_reg")]
-    public string? LineThatForwardedVoicemail_CallerIdNumber_REG { get; set; }
+    /// <summary> PhoneThatForwardedVoicemail.CallerIdNumbers equals </summary>
+    [JsonProperty("phoneThatForwardedVoicemail_callerIdNumbers_eq")]
+    public string? PhoneThatForwardedVoicemail_CallerIdNumbers_EQ { get; set; }
+    /// <summary> PhoneThatForwardedVoicemail.CallerIdNumbers contains </summary>
+    [JsonProperty("phoneThatForwardedVoicemail_callerIdNumbers_con")]
+    public string? PhoneThatForwardedVoicemail_CallerIdNumbers_CON { get; set; }
+    /// <summary> PhoneThatForwardedVoicemail.CallerIdNumbers regex </summary>
+    [JsonProperty("phoneThatForwardedVoicemail_callerIdNumbers_reg")]
+    public string? PhoneThatForwardedVoicemail_CallerIdNumbers_REG { get; set; }
 
-    /// <summary> LineThatForwardedVoicemail.RecordExternalCalls equals </summary>
-    [JsonProperty("lineThatForwardedVoicemail_recordExternalCalls_eq")]
-    public bool? LineThatForwardedVoicemail_RecordExternalCalls_EQ { get; set; }
+    /// <summary> PhoneThatForwardedVoicemail.RecordExternalCalls equals </summary>
+    [JsonProperty("phoneThatForwardedVoicemail_recordExternalCalls_eq")]
+    public bool? PhoneThatForwardedVoicemail_RecordExternalCalls_EQ { get; set; }
 
-    /// <summary> LineThatForwardedVoicemail.RecordInternalCalls equals </summary>
-    [JsonProperty("lineThatForwardedVoicemail_recordInternalCalls_eq")]
-    public bool? LineThatForwardedVoicemail_RecordInternalCalls_EQ { get; set; }
+    /// <summary> PhoneThatForwardedVoicemail.RecordInternalCalls equals </summary>
+    [JsonProperty("phoneThatForwardedVoicemail_recordInternalCalls_eq")]
+    public bool? PhoneThatForwardedVoicemail_RecordInternalCalls_EQ { get; set; }
 
-    /// <summary> LineThatForwardedVoicemail.UseAiForExternalCalls equals </summary>
-    [JsonProperty("lineThatForwardedVoicemail_useAiForExternalCalls_eq")]
-    public bool? LineThatForwardedVoicemail_UseAiForExternalCalls_EQ { get; set; }
+    /// <summary> PhoneThatForwardedVoicemail.UseAiForExternalCalls equals </summary>
+    [JsonProperty("phoneThatForwardedVoicemail_useAiForExternalCalls_eq")]
+    public bool? PhoneThatForwardedVoicemail_UseAiForExternalCalls_EQ { get; set; }
 
-    /// <summary> LineThatForwardedVoicemail.UseAiForOutgoingCallsToExtensions equals </summary>
-    [JsonProperty("lineThatForwardedVoicemail_useAiForOutgoingCallsToExtensions_eq")]
-    public bool? LineThatForwardedVoicemail_UseAiForOutgoingCallsToExtensions_EQ { get; set; }
+    /// <summary> PhoneThatForwardedVoicemail.UseAiForOutgoingCallsToExtensions equals </summary>
+    [JsonProperty("phoneThatForwardedVoicemail_useAiForOutgoingCallsToExtensions_eq")]
+    public bool? PhoneThatForwardedVoicemail_UseAiForOutgoingCallsToExtensions_EQ { get; set; }
 
-    /// <summary> LineThatForwardedVoicemail.IdAiCallAnalysisInput equals </summary>
-    [JsonProperty("lineThatForwardedVoicemail_idAiCallAnalysisInput_eq")]
-    public string? LineThatForwardedVoicemail_IdAiCallAnalysisInput_EQ { get; set; }
-    /// <summary> LineThatForwardedVoicemail.IdAiCallAnalysisInput contains </summary>
-    [JsonProperty("lineThatForwardedVoicemail_idAiCallAnalysisInput_con")]
-    public string? LineThatForwardedVoicemail_IdAiCallAnalysisInput_CON { get; set; }
-    /// <summary> LineThatForwardedVoicemail.IdAiCallAnalysisInput regex </summary>
-    [JsonProperty("lineThatForwardedVoicemail_idAiCallAnalysisInput_reg")]
-    public string? LineThatForwardedVoicemail_IdAiCallAnalysisInput_REG { get; set; }
+    /// <summary> PhoneThatForwardedVoicemail.IdAiCallAnalysisInput equals </summary>
+    [JsonProperty("phoneThatForwardedVoicemail_idAiCallAnalysisInput_eq")]
+    public string? PhoneThatForwardedVoicemail_IdAiCallAnalysisInput_EQ { get; set; }
+    /// <summary> PhoneThatForwardedVoicemail.IdAiCallAnalysisInput contains </summary>
+    [JsonProperty("phoneThatForwardedVoicemail_idAiCallAnalysisInput_con")]
+    public string? PhoneThatForwardedVoicemail_IdAiCallAnalysisInput_CON { get; set; }
+    /// <summary> PhoneThatForwardedVoicemail.IdAiCallAnalysisInput regex </summary>
+    [JsonProperty("phoneThatForwardedVoicemail_idAiCallAnalysisInput_reg")]
+    public string? PhoneThatForwardedVoicemail_IdAiCallAnalysisInput_REG { get; set; }
 
-    /// <summary> LineThatForwardedVoicemail.Language equals </summary>
-    [JsonProperty("lineThatForwardedVoicemail_language_eq")]
-    public string? LineThatForwardedVoicemail_Language_EQ { get; set; }
-    /// <summary> LineThatForwardedVoicemail.Language contains </summary>
-    [JsonProperty("lineThatForwardedVoicemail_language_con")]
-    public string? LineThatForwardedVoicemail_Language_CON { get; set; }
-    /// <summary> LineThatForwardedVoicemail.Language regex </summary>
-    [JsonProperty("lineThatForwardedVoicemail_language_reg")]
-    public string? LineThatForwardedVoicemail_Language_REG { get; set; }
+    /// <summary> PhoneThatForwardedVoicemail.Language equals </summary>
+    [JsonProperty("phoneThatForwardedVoicemail_language_eq")]
+    public string? PhoneThatForwardedVoicemail_Language_EQ { get; set; }
+    /// <summary> PhoneThatForwardedVoicemail.Language contains </summary>
+    [JsonProperty("phoneThatForwardedVoicemail_language_con")]
+    public string? PhoneThatForwardedVoicemail_Language_CON { get; set; }
+    /// <summary> PhoneThatForwardedVoicemail.Language regex </summary>
+    [JsonProperty("phoneThatForwardedVoicemail_language_reg")]
+    public string? PhoneThatForwardedVoicemail_Language_REG { get; set; }
 
-    /// <summary> LineThatForwardedVoicemail.Id equals </summary>
-    [JsonProperty("lineThatForwardedVoicemail_id_eq")]
-    public string? LineThatForwardedVoicemail_Id_EQ { get; set; }
-    /// <summary> LineThatForwardedVoicemail.Id contains </summary>
-    [JsonProperty("lineThatForwardedVoicemail_id_con")]
-    public string? LineThatForwardedVoicemail_Id_CON { get; set; }
-    /// <summary> LineThatForwardedVoicemail.Id regex </summary>
-    [JsonProperty("lineThatForwardedVoicemail_id_reg")]
-    public string? LineThatForwardedVoicemail_Id_REG { get; set; }
+    /// <summary> PhoneThatForwardedVoicemail.FriendlyName equals </summary>
+    [JsonProperty("phoneThatForwardedVoicemail_friendlyName_eq")]
+    public string? PhoneThatForwardedVoicemail_FriendlyName_EQ { get; set; }
+    /// <summary> PhoneThatForwardedVoicemail.FriendlyName contains </summary>
+    [JsonProperty("phoneThatForwardedVoicemail_friendlyName_con")]
+    public string? PhoneThatForwardedVoicemail_FriendlyName_CON { get; set; }
+    /// <summary> PhoneThatForwardedVoicemail.FriendlyName regex </summary>
+    [JsonProperty("phoneThatForwardedVoicemail_friendlyName_reg")]
+    public string? PhoneThatForwardedVoicemail_FriendlyName_REG { get; set; }
+
+    /// <summary> PhoneThatForwardedVoicemail.PhoneType equals </summary>
+    [JsonProperty("phoneThatForwardedVoicemail_phoneType_eq")]
+    public string? PhoneThatForwardedVoicemail_PhoneType_EQ { get; set; }
+    /// <summary> PhoneThatForwardedVoicemail.PhoneType contains </summary>
+    [JsonProperty("phoneThatForwardedVoicemail_phoneType_con")]
+    public string? PhoneThatForwardedVoicemail_PhoneType_CON { get; set; }
+    /// <summary> PhoneThatForwardedVoicemail.PhoneType regex </summary>
+    [JsonProperty("phoneThatForwardedVoicemail_phoneType_reg")]
+    public string? PhoneThatForwardedVoicemail_PhoneType_REG { get; set; }
+
+    /// <summary> PhoneThatForwardedVoicemail.DisableEncryption equals </summary>
+    [JsonProperty("phoneThatForwardedVoicemail_disableEncryption_eq")]
+    public bool? PhoneThatForwardedVoicemail_DisableEncryption_EQ { get; set; }
+
+    /// <summary> PhoneThatForwardedVoicemail.DateAutoProvision equals </summary>
+    [JsonProperty("phoneThatForwardedVoicemail_dateAutoProvision_eq")]
+    public DateTime? PhoneThatForwardedVoicemail_DateAutoProvision_EQ { get; set; }
+    /// <summary> PhoneThatForwardedVoicemail.DateAutoProvision less than or equal to </summary>
+    [JsonProperty("phoneThatForwardedVoicemail_dateAutoProvision_lte")]
+    public DateTime? PhoneThatForwardedVoicemail_DateAutoProvision_LTE { get; set; }
+    /// <summary> PhoneThatForwardedVoicemail.DateAutoProvision greater than or equal to </summary>
+    [JsonProperty("phoneThatForwardedVoicemail_dateAutoProvision_gte")]
+    public DateTime? PhoneThatForwardedVoicemail_DateAutoProvision_GTE { get; set; }
+
+    /// <summary> PhoneThatForwardedVoicemail.MacAddress equals </summary>
+    [JsonProperty("phoneThatForwardedVoicemail_macAddress_eq")]
+    public string? PhoneThatForwardedVoicemail_MacAddress_EQ { get; set; }
+    /// <summary> PhoneThatForwardedVoicemail.MacAddress contains </summary>
+    [JsonProperty("phoneThatForwardedVoicemail_macAddress_con")]
+    public string? PhoneThatForwardedVoicemail_MacAddress_CON { get; set; }
+    /// <summary> PhoneThatForwardedVoicemail.MacAddress regex </summary>
+    [JsonProperty("phoneThatForwardedVoicemail_macAddress_reg")]
+    public string? PhoneThatForwardedVoicemail_MacAddress_REG { get; set; }
+
+    /// <summary> PhoneThatForwardedVoicemail.UserAgent equals </summary>
+    [JsonProperty("phoneThatForwardedVoicemail_userAgent_eq")]
+    public string? PhoneThatForwardedVoicemail_UserAgent_EQ { get; set; }
+    /// <summary> PhoneThatForwardedVoicemail.UserAgent contains </summary>
+    [JsonProperty("phoneThatForwardedVoicemail_userAgent_con")]
+    public string? PhoneThatForwardedVoicemail_UserAgent_CON { get; set; }
+    /// <summary> PhoneThatForwardedVoicemail.UserAgent regex </summary>
+    [JsonProperty("phoneThatForwardedVoicemail_userAgent_reg")]
+    public string? PhoneThatForwardedVoicemail_UserAgent_REG { get; set; }
+
+    /// <summary> PhoneThatForwardedVoicemail.Pin equals </summary>
+    [JsonProperty("phoneThatForwardedVoicemail_pin_eq")]
+    public string? PhoneThatForwardedVoicemail_Pin_EQ { get; set; }
+    /// <summary> PhoneThatForwardedVoicemail.Pin contains </summary>
+    [JsonProperty("phoneThatForwardedVoicemail_pin_con")]
+    public string? PhoneThatForwardedVoicemail_Pin_CON { get; set; }
+    /// <summary> PhoneThatForwardedVoicemail.Pin regex </summary>
+    [JsonProperty("phoneThatForwardedVoicemail_pin_reg")]
+    public string? PhoneThatForwardedVoicemail_Pin_REG { get; set; }
+
+    /// <summary> PhoneThatForwardedVoicemail.TimeZone equals </summary>
+    [JsonProperty("phoneThatForwardedVoicemail_timeZone_eq")]
+    public string? PhoneThatForwardedVoicemail_TimeZone_EQ { get; set; }
+    /// <summary> PhoneThatForwardedVoicemail.TimeZone contains </summary>
+    [JsonProperty("phoneThatForwardedVoicemail_timeZone_con")]
+    public string? PhoneThatForwardedVoicemail_TimeZone_CON { get; set; }
+    /// <summary> PhoneThatForwardedVoicemail.TimeZone regex </summary>
+    [JsonProperty("phoneThatForwardedVoicemail_timeZone_reg")]
+    public string? PhoneThatForwardedVoicemail_TimeZone_REG { get; set; }
+
+    /// <summary> PhoneThatForwardedVoicemail.IdsTags equals </summary>
+    [JsonProperty("phoneThatForwardedVoicemail_idsTags_eq")]
+    public string? PhoneThatForwardedVoicemail_IdsTags_EQ { get; set; }
+    /// <summary> PhoneThatForwardedVoicemail.IdsTags contains </summary>
+    [JsonProperty("phoneThatForwardedVoicemail_idsTags_con")]
+    public string? PhoneThatForwardedVoicemail_IdsTags_CON { get; set; }
+    /// <summary> PhoneThatForwardedVoicemail.IdsTags regex </summary>
+    [JsonProperty("phoneThatForwardedVoicemail_idsTags_reg")]
+    public string? PhoneThatForwardedVoicemail_IdsTags_REG { get; set; }
+
+    /// <summary> PhoneThatForwardedVoicemail.Id equals </summary>
+    [JsonProperty("phoneThatForwardedVoicemail_id_eq")]
+    public string? PhoneThatForwardedVoicemail_Id_EQ { get; set; }
+    /// <summary> PhoneThatForwardedVoicemail.Id contains </summary>
+    [JsonProperty("phoneThatForwardedVoicemail_id_con")]
+    public string? PhoneThatForwardedVoicemail_Id_CON { get; set; }
+    /// <summary> PhoneThatForwardedVoicemail.Id regex </summary>
+    [JsonProperty("phoneThatForwardedVoicemail_id_reg")]
+    public string? PhoneThatForwardedVoicemail_Id_REG { get; set; }
+
+    /// <summary> PhoneThatForwardedVoicemail.DateCreated equals </summary>
+    [JsonProperty("phoneThatForwardedVoicemail_dateCreated_eq")]
+    public DateTime? PhoneThatForwardedVoicemail_DateCreated_EQ { get; set; }
+    /// <summary> PhoneThatForwardedVoicemail.DateCreated less than or equal to </summary>
+    [JsonProperty("phoneThatForwardedVoicemail_dateCreated_lte")]
+    public DateTime? PhoneThatForwardedVoicemail_DateCreated_LTE { get; set; }
+    /// <summary> PhoneThatForwardedVoicemail.DateCreated greater than or equal to </summary>
+    [JsonProperty("phoneThatForwardedVoicemail_dateCreated_gte")]
+    public DateTime? PhoneThatForwardedVoicemail_DateCreated_GTE { get; set; }
+
+    /// <summary> PhoneThatForwardedVoicemail.DateUpdated equals </summary>
+    [JsonProperty("phoneThatForwardedVoicemail_dateUpdated_eq")]
+    public DateTime? PhoneThatForwardedVoicemail_DateUpdated_EQ { get; set; }
+    /// <summary> PhoneThatForwardedVoicemail.DateUpdated less than or equal to </summary>
+    [JsonProperty("phoneThatForwardedVoicemail_dateUpdated_lte")]
+    public DateTime? PhoneThatForwardedVoicemail_DateUpdated_LTE { get; set; }
+    /// <summary> PhoneThatForwardedVoicemail.DateUpdated greater than or equal to </summary>
+    [JsonProperty("phoneThatForwardedVoicemail_dateUpdated_gte")]
+    public DateTime? PhoneThatForwardedVoicemail_DateUpdated_GTE { get; set; }
 
 
     /// <summary> ForwardedFrom equals </summary>
@@ -7474,15 +7587,15 @@ public class VoicemailForwardedFilterRequest
     [JsonProperty("forwardedFrom_reg")]
     public string? ForwardedFrom_REG { get; set; }
 
-    /// <summary> IdsLinesThatCanListenToVoicemail equals </summary>
-    [JsonProperty("idsLinesThatCanListenToVoicemail_eq")]
-    public string? IdsLinesThatCanListenToVoicemail_EQ { get; set; }
-    /// <summary> IdsLinesThatCanListenToVoicemail contains </summary>
-    [JsonProperty("idsLinesThatCanListenToVoicemail_con")]
-    public string? IdsLinesThatCanListenToVoicemail_CON { get; set; }
-    /// <summary> IdsLinesThatCanListenToVoicemail regex </summary>
-    [JsonProperty("idsLinesThatCanListenToVoicemail_reg")]
-    public string? IdsLinesThatCanListenToVoicemail_REG { get; set; }
+    /// <summary> IdsPhonesThatCanListenToVoicemail equals </summary>
+    [JsonProperty("idsPhonesThatCanListenToVoicemail_eq")]
+    public string? IdsPhonesThatCanListenToVoicemail_EQ { get; set; }
+    /// <summary> IdsPhonesThatCanListenToVoicemail contains </summary>
+    [JsonProperty("idsPhonesThatCanListenToVoicemail_con")]
+    public string? IdsPhonesThatCanListenToVoicemail_CON { get; set; }
+    /// <summary> IdsPhonesThatCanListenToVoicemail regex </summary>
+    [JsonProperty("idsPhonesThatCanListenToVoicemail_reg")]
+    public string? IdsPhonesThatCanListenToVoicemail_REG { get; set; }
 
     /// <summary> IdEmail equals </summary>
     [JsonProperty("idEmail_eq")]
@@ -8750,15 +8863,15 @@ public class CallOutgoingToPowerDialerFilterRequest
     [JsonProperty("toInternationalFormat_reg")]
     public string? ToInternationalFormat_REG { get; set; }
 
-    /// <summary> IdLineThatInitiatedCall equals </summary>
-    [JsonProperty("idLineThatInitiatedCall_eq")]
-    public string? IdLineThatInitiatedCall_EQ { get; set; }
-    /// <summary> IdLineThatInitiatedCall contains </summary>
-    [JsonProperty("idLineThatInitiatedCall_con")]
-    public string? IdLineThatInitiatedCall_CON { get; set; }
-    /// <summary> IdLineThatInitiatedCall regex </summary>
-    [JsonProperty("idLineThatInitiatedCall_reg")]
-    public string? IdLineThatInitiatedCall_REG { get; set; }
+    /// <summary> IdPhoneThatInitiatedCall equals </summary>
+    [JsonProperty("idPhoneThatInitiatedCall_eq")]
+    public string? IdPhoneThatInitiatedCall_EQ { get; set; }
+    /// <summary> IdPhoneThatInitiatedCall contains </summary>
+    [JsonProperty("idPhoneThatInitiatedCall_con")]
+    public string? IdPhoneThatInitiatedCall_CON { get; set; }
+    /// <summary> IdPhoneThatInitiatedCall regex </summary>
+    [JsonProperty("idPhoneThatInitiatedCall_reg")]
+    public string? IdPhoneThatInitiatedCall_REG { get; set; }
 
     /// <summary> IdVoicemail equals </summary>
     [JsonProperty("idVoicemail_eq")]
@@ -9281,15 +9394,15 @@ public class CallOutgoingToPowerDialerFilterRequest
     [JsonProperty("idAiCallAnalysisInput_reg")]
     public string? IdAiCallAnalysisInput_REG { get; set; }
 
-    /// <summary> IdsParticipantLines equals </summary>
-    [JsonProperty("idsParticipantLines_eq")]
-    public string? IdsParticipantLines_EQ { get; set; }
-    /// <summary> IdsParticipantLines contains </summary>
-    [JsonProperty("idsParticipantLines_con")]
-    public string? IdsParticipantLines_CON { get; set; }
-    /// <summary> IdsParticipantLines regex </summary>
-    [JsonProperty("idsParticipantLines_reg")]
-    public string? IdsParticipantLines_REG { get; set; }
+    /// <summary> IdsParticipantPhones equals </summary>
+    [JsonProperty("idsParticipantPhones_eq")]
+    public string? IdsParticipantPhones_EQ { get; set; }
+    /// <summary> IdsParticipantPhones contains </summary>
+    [JsonProperty("idsParticipantPhones_con")]
+    public string? IdsParticipantPhones_CON { get; set; }
+    /// <summary> IdsParticipantPhones regex </summary>
+    [JsonProperty("idsParticipantPhones_reg")]
+    public string? IdsParticipantPhones_REG { get; set; }
 
 
     /// <summary> Errors.ErrorsCall equals </summary>
@@ -9938,15 +10051,15 @@ public class CallFilterRequest
     [JsonProperty("idAiCallAnalysisInput_reg")]
     public string? IdAiCallAnalysisInput_REG { get; set; }
 
-    /// <summary> IdsParticipantLines equals </summary>
-    [JsonProperty("idsParticipantLines_eq")]
-    public string? IdsParticipantLines_EQ { get; set; }
-    /// <summary> IdsParticipantLines contains </summary>
-    [JsonProperty("idsParticipantLines_con")]
-    public string? IdsParticipantLines_CON { get; set; }
-    /// <summary> IdsParticipantLines regex </summary>
-    [JsonProperty("idsParticipantLines_reg")]
-    public string? IdsParticipantLines_REG { get; set; }
+    /// <summary> IdsParticipantPhones equals </summary>
+    [JsonProperty("idsParticipantPhones_eq")]
+    public string? IdsParticipantPhones_EQ { get; set; }
+    /// <summary> IdsParticipantPhones contains </summary>
+    [JsonProperty("idsParticipantPhones_con")]
+    public string? IdsParticipantPhones_CON { get; set; }
+    /// <summary> IdsParticipantPhones regex </summary>
+    [JsonProperty("idsParticipantPhones_reg")]
+    public string? IdsParticipantPhones_REG { get; set; }
 
 
     /// <summary> Errors.ErrorsCall equals </summary>
@@ -10625,15 +10738,15 @@ public class CallIncomingFilterRequest
     [JsonProperty("idAiCallAnalysisInput_reg")]
     public string? IdAiCallAnalysisInput_REG { get; set; }
 
-    /// <summary> IdsParticipantLines equals </summary>
-    [JsonProperty("idsParticipantLines_eq")]
-    public string? IdsParticipantLines_EQ { get; set; }
-    /// <summary> IdsParticipantLines contains </summary>
-    [JsonProperty("idsParticipantLines_con")]
-    public string? IdsParticipantLines_CON { get; set; }
-    /// <summary> IdsParticipantLines regex </summary>
-    [JsonProperty("idsParticipantLines_reg")]
-    public string? IdsParticipantLines_REG { get; set; }
+    /// <summary> IdsParticipantPhones equals </summary>
+    [JsonProperty("idsParticipantPhones_eq")]
+    public string? IdsParticipantPhones_EQ { get; set; }
+    /// <summary> IdsParticipantPhones contains </summary>
+    [JsonProperty("idsParticipantPhones_con")]
+    public string? IdsParticipantPhones_CON { get; set; }
+    /// <summary> IdsParticipantPhones regex </summary>
+    [JsonProperty("idsParticipantPhones_reg")]
+    public string? IdsParticipantPhones_REG { get; set; }
 
 
     /// <summary> Errors.ErrorsCall equals </summary>
@@ -10751,15 +10864,15 @@ public class CallIncomingFilterRequest
 /// <summary> Enables searching for CallOutgoings </summary>
 public class CallOutgoingFilterRequest 
 {
-    /// <summary> IdLineThatInitiatedCall equals </summary>
-    [JsonProperty("idLineThatInitiatedCall_eq")]
-    public string? IdLineThatInitiatedCall_EQ { get; set; }
-    /// <summary> IdLineThatInitiatedCall contains </summary>
-    [JsonProperty("idLineThatInitiatedCall_con")]
-    public string? IdLineThatInitiatedCall_CON { get; set; }
-    /// <summary> IdLineThatInitiatedCall regex </summary>
-    [JsonProperty("idLineThatInitiatedCall_reg")]
-    public string? IdLineThatInitiatedCall_REG { get; set; }
+    /// <summary> IdPhoneThatInitiatedCall equals </summary>
+    [JsonProperty("idPhoneThatInitiatedCall_eq")]
+    public string? IdPhoneThatInitiatedCall_EQ { get; set; }
+    /// <summary> IdPhoneThatInitiatedCall contains </summary>
+    [JsonProperty("idPhoneThatInitiatedCall_con")]
+    public string? IdPhoneThatInitiatedCall_CON { get; set; }
+    /// <summary> IdPhoneThatInitiatedCall regex </summary>
+    [JsonProperty("idPhoneThatInitiatedCall_reg")]
+    public string? IdPhoneThatInitiatedCall_REG { get; set; }
 
     /// <summary> IdVoicemail equals </summary>
     [JsonProperty("idVoicemail_eq")]
@@ -11292,15 +11405,15 @@ public class CallOutgoingFilterRequest
     [JsonProperty("idAiCallAnalysisInput_reg")]
     public string? IdAiCallAnalysisInput_REG { get; set; }
 
-    /// <summary> IdsParticipantLines equals </summary>
-    [JsonProperty("idsParticipantLines_eq")]
-    public string? IdsParticipantLines_EQ { get; set; }
-    /// <summary> IdsParticipantLines contains </summary>
-    [JsonProperty("idsParticipantLines_con")]
-    public string? IdsParticipantLines_CON { get; set; }
-    /// <summary> IdsParticipantLines regex </summary>
-    [JsonProperty("idsParticipantLines_reg")]
-    public string? IdsParticipantLines_REG { get; set; }
+    /// <summary> IdsParticipantPhones equals </summary>
+    [JsonProperty("idsParticipantPhones_eq")]
+    public string? IdsParticipantPhones_EQ { get; set; }
+    /// <summary> IdsParticipantPhones contains </summary>
+    [JsonProperty("idsParticipantPhones_con")]
+    public string? IdsParticipantPhones_CON { get; set; }
+    /// <summary> IdsParticipantPhones regex </summary>
+    [JsonProperty("idsParticipantPhones_reg")]
+    public string? IdsParticipantPhones_REG { get; set; }
 
 
     /// <summary> Errors.ErrorsCall equals </summary>

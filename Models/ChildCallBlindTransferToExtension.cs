@@ -1,4 +1,6 @@
-﻿namespace Ublux.Communications.Models;
+﻿using Ublux.Communications.Models.Documents;
+
+namespace Ublux.Communications.Models;
 
 /// <summary>
 ///     Call is blind transferred to an extension
@@ -28,20 +30,20 @@ public class ChildCallBlindTransferToExtension : ChildCallBlindTransfer, ICallTo
     ///     Id of line that answered
     /// </summary>
     [AllowUpdate(false)]
-    [References(typeof(Line))]
-    public string? IdLineThatAnswered { get; set; }
+    [References(typeof(Phone))]
+    public string? IdPhoneThatAnswered { get; set; }
 
     /// <summary>
     ///     Ids of lines that ring
     /// </summary>
     [AllowUpdate(false)]
-    [References(typeof(Line))]
-    public List<string> IdsLinesThatRing { get; set; } = new();
+    [References(typeof(Phone))]
+    public List<string> IdsPhonesThatRing { get; set; } = new();
 
     /// <summary>
     ///     Ids of lines that where supposed to ring and did not ring because phone was offline or disconnected.
     /// </summary>
     [AllowUpdate(false)]
-    [References(typeof(Line))]
-    public List<string> IdsLinesThatDidNotRing { get; set; } = new();
+    [References(typeof(Phone))]
+    public List<string> IdsPhonesThatDidNotRing { get; set; } = new();
 }

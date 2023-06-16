@@ -17,14 +17,14 @@
 //     public PhoneManufacturer? PhoneManufacturer { get; set; }
 //
 //     /// <summary>
-//     ///     Maximum number of lines it supports
+//     ///     Maximum number of accounts it supports
 //     /// </summary>
-//     public int MaxNumberOfLines { get; set; }
+//     public int MaxNumberOfAccounts { get; set; }
 //
 //     /// <summary>
 //     ///     Supports speed dial
 //     /// </summary>
-//     public bool SupportsLineKeys { get; set; }
+//     public bool SupportsSpeedDials { get; set; }
 //
 //     /// <summary>
 //     ///     Url where latest firmware can be downloaded

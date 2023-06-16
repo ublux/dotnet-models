@@ -33,16 +33,100 @@ public partial class Phone : UbluxDocument_ReferenceAccount_ReferenceTags
 
     #endregion
 
-    #region Subdocuments
+    #region Line
+
+    //private static readonly ReaderWriterLockSlim _lock = new();
+
+    private PhoneConnectionStatus? _lineConnectionStatus;
 
     /// <summary>
-    ///     Phone lines. Should never be null
+    ///     If true it will be sync with WS because line status changed
     /// </summary>
-    [JsonProperty(Order = 10000)]
+    [System.Text.Json.Serialization.JsonIgnore]
+    [JsonIgnore]
+    [BsonIgnore]
+    [HideForCreateRequest]
+    public bool IsConnectionStatusChanged;
+
+    /// <summary>
+    ///     Phone status
+    /// </summary>
+    [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
+    [HideForCreateRequest]
+    public PhoneConnectionStatus? PhoneConnectionStatus
+    {
+        get
+        {
+            _lock.EnterReadLock();
+            try
+            {
+                return _lineConnectionStatus;
+            }
+            finally
+            {
+                _lock.ExitReadLock();
+            }
+        }
+        set
+        {
+            _lock.EnterWriteLock();
+            try
+            {
+                _lineConnectionStatus = value;
+            }
+            finally
+            {
+                _lock.ExitWriteLock();
+            }
+        }
+    }
+
+    /// <summary>
+    ///     Caller id number that will be used to place outbound calls
+    /// </summary>
     [AllowUpdate(true)]
-    //[SwaggerSchema(ReadOnly = true)]
     [UbluxValidationRequired]
-    public required List<Line> Lines { get; set; } = new();
+    public required List<string> CallerIdNumbers { get; set; } = new();
+
+    /// <summary>
+    ///     Record outbound calls to PSTN?
+    /// </summary>
+    [AllowUpdate(true)]
+    public bool RecordExternalCalls { get; set; }
+
+    /// <summary>
+    ///     Record calls to other extensions?
+    /// </summary>
+    [AllowUpdate(true)]
+    public bool RecordInternalCalls { get; set; }
+
+    #region AI
+
+    /// <summary>
+    ///     Users will be charged extra for AI transcriptions. If this is true external calls to PSTN will be recorded.
+    /// </summary>
+    [AllowUpdate(true)]
+    public bool UseAiForExternalCalls { get; set; }
+    /// <summary>
+    ///     Users will be charged extra for AI transcriptions. If this is true internal calls to extensions will be recorded.
+    /// </summary>
+    [AllowUpdate(true)]
+    public bool UseAiForOutgoingCallsToExtensions { get; set; }
+    /// <summary>
+    ///     What input to pass to AI engine. If null it should use a default input that is part of constants.
+    /// </summary>
+    [AllowUpdate(true)]
+    [References(typeof(AiCallAnalysisInput))]
+    public string? IdAiCallAnalysisInput { get; set; }
+
+    #endregion
+
+    /// <summary>
+    ///     Langage to use when playing messages
+    /// </summary>
+    [AllowUpdate(true)]
+    public Language Language { get; set; }
 
     #endregion
 
@@ -123,7 +207,24 @@ public partial class Phone : UbluxDocument_ReferenceAccount_ReferenceTags
 
         // get all mandatory indexes
         foreach (var item in base.GetMandatoryIndexes(collection))
-            yield return item;        
+            yield return item;
+    }
+
+    /// <summary>
+    ///     Ids of phones contain id of phone embeded
+    /// </summary>
+    public static string GetIdOfAccount(string idPhone)
+    {
+        // string input = "Ph.Ac.1.WS.1000";
+
+        var start = Phone.DocumentPrefix.Length + Account.DocumentPrefix.Length + 3;
+
+        var thirdDot = start + idPhone[start..].IndexOf(RedisConstants.DelimeterId);
+
+        // id account will be substring in btween dot 1 and
+        var idAccount = idPhone[(Phone.DocumentPrefix.Length + 1)..thirdDot];
+
+        return idAccount;
     }
 
     #endregion

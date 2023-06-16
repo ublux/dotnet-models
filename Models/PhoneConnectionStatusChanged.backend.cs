@@ -5,19 +5,14 @@ namespace Ublux.Communications.Models;
 /// <summary>
 ///     Used to sync line connection status changes with WS
 /// </summary>
-public class LineConnectionStatusChanged
+public class PhoneConnectionStatusChanged
 {
     /// <summary>
     ///     Id of line that was modified
     /// </summary>
     [AllowUpdate(false)] 
     [SwaggerSchema(ReadOnly = true)]     
-    public required string IdLine { get; set; } = String.Empty;
-
-    /// <summary>
-    ///     Line index
-    /// </summary>    
-    public int LineIndex { get; set; }
+    public required string IdPhone { get; set; } = String.Empty;
 
     ///// <summary>
     /////     Id of phone
@@ -39,7 +34,7 @@ public class LineConnectionStatusChanged
     /// </summary>
     [AllowUpdate(false)] 
     [SwaggerSchema(ReadOnly = true)] 
-    public required LineConnectionStatus NewLineConnectionStatus { get; set; }
+    public required PhoneConnectionStatus NewPhoneConnectionStatus { get; set; }
 }
 
 #endif

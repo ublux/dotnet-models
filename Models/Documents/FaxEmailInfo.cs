@@ -20,12 +20,12 @@
 
 //    /// <summary>
 //    ///     If email was validated with phone then what line validated this email?
-//    ///     Line that validated email
+//    ///     Phone that validated email
 //    /// </summary>
 //    [AllowUpdate(false)] 
 //    [SwaggerSchema(ReadOnly = true)] 
-//    [References(typeof(Line))]
-//    public Line? LineThatValidatedEmail { get; set; }
+//    [References(typeof(Phone))]
+//    public Phone? PhoneThatValidatedEmail { get; set; }
 
 
 

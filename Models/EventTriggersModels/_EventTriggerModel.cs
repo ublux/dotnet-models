@@ -64,12 +64,11 @@ public abstract class EventTriggerModel
     /// <param name="instance"></param>
     /// <param name="idAcc"></param>
     /// <param name="idPhone"></param>
-    /// <param name="idLine"></param>
-    protected static void GenerateRandomIdAccountPhoneAndLine(RunningApplicationInstance instance, out string idAcc, out string idPhone, out string idLine)
+    protected static void GenerateRandomIdAccountPhoneAndPhone(RunningApplicationInstance instance, out string idAcc, out string idPhone)
     {
-        idPhone = Phone.BuildId(instance).Id;
+        idAcc = "Ac.101";
+        idPhone = Phone.BuildId(instance, idAcc).Id;
         idAcc = Account.BuildId(Random.Shared.Next(100, 1000).ToString()).Id;
-        idLine = Line.BuildId(instance, idAcc, idPhone).Id;
     }
 }
 

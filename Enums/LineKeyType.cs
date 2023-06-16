@@ -3,7 +3,7 @@
 /// <summary>
 ///     Type of speed dial
 /// </summary>
-public enum LineKeyType
+public enum SpeedDialType
 {
     /// <summary>
     /// </summary>

@@ -42,12 +42,12 @@ public enum FlowNodeType
     /// <summary></summary>
     DynamicExtension,
 
-    /// <summary> If a line is offline </summary>
-    IfLineOffline,
-    /// <summary> Line is online </summary>
-    LineOnline,
-    /// <summary> Line is offline </summary>
-    LineOffline,
+    /// <summary> If a phone is offline </summary>
+    IfPhoneDisconnected,
+    /// <summary> Phone is connected </summary>
+    PhoneConnected,
+    /// <summary> Phone is offline </summary>
+    PhoneDisconnected,
 
     /// <summary> Call phone number </summary>
     Call,

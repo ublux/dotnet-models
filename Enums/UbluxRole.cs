@@ -269,16 +269,16 @@ public enum UbluxRole
     /// <summary> Has access to the users endpoint with only read/create permissions </summary>
     users_create,
 
-    /// <summary> Has access to the linekeygroups endpoint with full permissions </summary>
-    linekeygroups = 240,
-    /// <summary> Has access to the linekeygroups endpoint with only read permissions </summary>
-    linekeygroups_readonly,
-    /// <summary> Has access to the linekeygroups endpoint with only read/update permissions </summary>
-    linekeygroups_update,
-    /// <summary> Has access to the linekeygroups endpoint with only read/delete permissions </summary>
-    linekeygroups_delete,
-    /// <summary> Has access to the linekeygroups endpoint with only read/create permissions </summary>
-    linekeygroups_create,
+    /// <summary> Has access to the speeddialgroups endpoint with full permissions </summary>
+    speeddialgroups = 240,
+    /// <summary> Has access to the speeddialgroups endpoint with only read permissions </summary>
+    speeddialgroups_readonly,
+    /// <summary> Has access to the speeddialgroups endpoint with only read/update permissions </summary>
+    speeddialgroups_update,
+    /// <summary> Has access to the speeddialgroups endpoint with only read/delete permissions </summary>
+    speeddialgroups_delete,
+    /// <summary> Has access to the speeddialgroups endpoint with only read/create permissions </summary>
+    speeddialgroups_create,
 
     /// <summary> Has access to the musiconholdgroups endpoint with full permissions </summary>
     musiconholdgroups = 250,

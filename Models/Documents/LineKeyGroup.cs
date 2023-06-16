@@ -3,7 +3,7 @@
 /// <summary>
 ///     Group of line keys
 /// </summary>
-public partial class LineKeyGroup : UbluxDocument_ReferenceAccount_ReferenceTags
+public partial class SpeedDialGroup : UbluxDocument_ReferenceAccount_ReferenceTags
 {
     #region Properties
 
@@ -13,7 +13,7 @@ public partial class LineKeyGroup : UbluxDocument_ReferenceAccount_ReferenceTags
     ///     Group of speed dial keys. Must have at least one
     /// </summary>
     [AllowUpdate(true)]    
-    public List<LineKey> LineKeys { get; set; } = new();
+    public List<SpeedDial> SpeedDials { get; set; } = new();
 
     #endregion
 

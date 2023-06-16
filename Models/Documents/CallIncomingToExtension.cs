@@ -26,28 +26,28 @@ public partial class CallIncomingToExtension : CallIncoming, ICallToExtension
     public string? IdExtension { get; set; }
 
     /// <summary>
-    ///     Line that answered
+    ///     Phone that answered
     /// </summary>
-    [References(typeof(Line))]
+    [References(typeof(Phone))]
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    public string? IdLineThatAnswered { get; set; }
+    public string? IdPhoneThatAnswered { get; set; }
 
     /// <summary>
-    ///     Lines that ring
+    ///     Phones that ring
     /// </summary>
-    [References(typeof(Line))]
+    [References(typeof(Phone))]
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    public List<string> IdsLinesThatRing { get; set; } = new();
+    public List<string> IdsPhonesThatRing { get; set; } = new();
 
     /// <summary>
-    ///     Lines that did not ring
+    ///     Phones that did not ring
     /// </summary>
-    [References(typeof(Line))]
+    [References(typeof(Phone))]
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    public List<string> IdsLinesThatDidNotRing { get; set; } = new();
+    public List<string> IdsPhonesThatDidNotRing { get; set; } = new();
 
     #endregion
 

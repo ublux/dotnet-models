@@ -54,12 +54,12 @@ public enum SnsTopic
     /// <summary>
     ///     When a line is disconnected (enqueues)
     /// </summary>
-    Line_Disconnected,
+    Phone_Disconnected,
 
     /// <summary>
     ///     When a line is connected. (enqueues)
     /// </summary>
-    Line_Connected,
+    Phone_Connected,
 
     /// <summary>
     ///     If an extension is not answered
@@ -86,23 +86,48 @@ public enum SnsTopic
     //SMS_Sent,
 
 #warning TODO
+
+    /// <summary>
+    ///     Fax is received
+    /// </summary>
     Fax_Received,
+
+    /// <summary>
+    ///     Fax is sent
+    /// </summary>
     Fax_Sent,
     
+    /// <summary>
+    ///     Fax received failed
+    /// </summary>
     Fax_ReceivedFailed,
+
+    /// <summary>
+    ///     Fax sent failed
+    /// </summary>
     Fax_SentFailed,
 
+    /// <summary>
+    ///     Fax receiving progress changed
+    /// </summary>
     Fax_ReceivingProgress,
+
+    /// <summary>
+    ///     Fax sending progress changed
+    /// </summary>
     Fax_SendingProgress,
 
-    // Data: IdCallFlowLogic
-    // Tag: Path 1,2,1,1,label:start,1,1,1
+    /// <summary>
+    ///     Fall flow logic progress changed to a new node
+    ///         Data: IdCallFlowLogic
+    ///         Tag: Path 1,2,1,1,label:start,1,1,1
+    /// </summary>
     CallFlowLogic_Progress,
 
     #endregion
 
     /// <summary>
-    ///     IdLine, BlfStatus[]
+    ///     IdPhone, BlfStatus[]
     /// </summary>
     BLF,
 }

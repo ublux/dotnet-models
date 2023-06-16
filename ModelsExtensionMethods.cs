@@ -57,7 +57,7 @@ public static class ModelsExtensionMethods
             Collections.Voicemails => typeof(Voicemail),
             Collections.Users => typeof(User),
             // Collections.IPs => typeof(IP),
-            Collections.LineKeyGroups => typeof(LineKeyGroup),
+            Collections.SpeedDialGroups => typeof(SpeedDialGroup),
             Collections.LogWebServiceRequests => typeof(LogWebServiceRequest),
             Collections.MusicOnHoldGroups => typeof(MusicOnHoldGroup),
             Collections.Phones => typeof(Phone),
@@ -202,11 +202,11 @@ public static class ModelsExtensionMethods
             _getCollectionUsedByTypeCache[type] = Collections.Users;
             return Collections.Users;
         }
-        if (typeof(LineKeyGroup).IsAssignableFrom(type))
+        if (typeof(SpeedDialGroup).IsAssignableFrom(type))
         {
             // store on cache so next time it is faster
-            _getCollectionUsedByTypeCache[type] = Collections.LineKeyGroups;
-            return Collections.LineKeyGroups;
+            _getCollectionUsedByTypeCache[type] = Collections.SpeedDialGroups;
+            return Collections.SpeedDialGroups;
         }
         if (typeof(LogWebServiceRequest).IsAssignableFrom(type))
         {
@@ -376,7 +376,7 @@ public static class ModelsExtensionMethods
         { VoicemailForwarded.DocumentPrefix, Collections.Voicemails },
         { Voicemail.DocumentPrefix, Collections.Voicemails },
         { User.DocumentPrefix, Collections.Users },
-        { LineKeyGroup.DocumentPrefix, Collections.LineKeyGroups },
+        { SpeedDialGroup.DocumentPrefix, Collections.SpeedDialGroups },
         { LogWebServiceRequest.DocumentPrefix, Collections.LogWebServiceRequests },
         { MusicOnHoldGroup.DocumentPrefix, Collections.MusicOnHoldGroups },
         { Phone.DocumentPrefix, Collections.Phones },
@@ -422,7 +422,7 @@ public static class ModelsExtensionMethods
                 // Collections.FaxOutgoingGroups,
                 // Collections.Voicemails,
                 // Collections.Users,
-                //Collections.LineKeyGroups,
+                //Collections.SpeedDialGroups,
                 // Collections.LogWebServiceRequests,
                 Collections.MusicOnHoldGroups,
                 Collections.Phones,
@@ -451,24 +451,24 @@ public static class ModelsExtensionMethods
     }
 
 
-    #region GetExtensionsUsedByLine ordered by priority
+    #region GetExtensionsUsedByPhone ordered by priority
 
     /// <summary>
     ///     Get extensions used by line ordered by prioroty
     /// </summary>
-    public static IEnumerable<Extension> GetExtensionsUsedByLine(this IEnumerable<Extension> extensions, string idLine)
+    public static IEnumerable<Extension> GetExtensionsUsedByPhone(this IEnumerable<Extension> extensions, string idPhone)
     {
         return extensions
-            .Order(new ExtensionPriorityComparer(idLine))
-            .TakeWhile(x => IsExtensionUsedByLine(x, idLine, out _));
+            .Order(new ExtensionPriorityComparer(idPhone))
+            .TakeWhile(x => IsExtensionUsedByPhone(x, idPhone, out _));
     }
     private class ExtensionPriorityComparer : IComparer<Extension>
     {
-        private readonly string idLine;
+        private readonly string idPhone;
 
-        public ExtensionPriorityComparer(string idLine)
+        public ExtensionPriorityComparer(string idPhone)
         {
-            this.idLine = idLine;
+            this.idPhone = idPhone;
         }
 
         public int Compare(Extension? x, Extension? y)
@@ -477,8 +477,8 @@ public static class ModelsExtensionMethods
             // 0.     x == y
             // more than 0.     x is greater than y
 
-            var isXUsed = IsExtensionUsedByLine(x, idLine, out var weightX);
-            var isYUsed = IsExtensionUsedByLine(y, idLine, out var weightY);
+            var isXUsed = IsExtensionUsedByPhone(x, idPhone, out var weightX);
+            var isYUsed = IsExtensionUsedByPhone(y, idPhone, out var weightY);
 
             if (isXUsed == false && isYUsed == false)
                 return 0;
@@ -495,7 +495,7 @@ public static class ModelsExtensionMethods
     }
 
     // Weight. The lower the higher the priority
-    private static bool IsExtensionUsedByLine(Extension? e, string idLine, out int weight)
+    private static bool IsExtensionUsedByPhone(Extension? e, string idPhone, out int weight)
     {
         if (e is null)
         {
@@ -505,18 +505,18 @@ public static class ModelsExtensionMethods
 
         if (e is ExtensionDial dial)
         {
-            weight = dial.IdsLines.Count * 2;
-            return dial.IdsLines.Contains(idLine);
+            weight = dial.IdsPhones.Count * 2;
+            return dial.IdsPhones.Contains(idPhone);
         }
         if (e is ExtensionQueue queue)
         {
-            weight = (queue.IdsLines.Count * 2) + 1;
-            return queue.IdsLines.Contains(idLine);
+            weight = (queue.IdsPhones.Count * 2) + 1;
+            return queue.IdsPhones.Contains(idPhone);
         }
         if (e is ExtensionVoicemail vm)
         {
-            weight = (vm.IdsLinesThatCanListenToVoicemail.Count * 2) + 4;
-            return vm.IdsLinesThatCanListenToVoicemail.Contains(idLine);
+            weight = (vm.IdsPhonesThatCanListenToVoicemail.Count * 2) + 4;
+            return vm.IdsPhonesThatCanListenToVoicemail.Contains(idPhone);
         }
         weight = 0;
         return false;

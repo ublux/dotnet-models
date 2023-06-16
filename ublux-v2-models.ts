@@ -19,6 +19,7 @@ Must have at least one */
     readonly idsCloudServicePbxs?: string[];
     mailingAddress?: MailingAddress;
     accountSecrets?: AccountSecrets;
+    language?: Language;
     /** Name of company */
     companyName?: string;
     /** If client has granted access to support to make changes to account. 
@@ -48,6 +49,7 @@ export interface AccountSecrets {
 export interface AccountUpdateRequest {
     mailingAddress?: MailingAddress;
     accountSecrets?: AccountSecrets;
+    language?: Language;
     /** Name of company */
     companyName?: string | null;
     /** If CountriesThatCanCallLocally does not contain country then ublux will attempt to find country on this list. */
@@ -674,8 +676,8 @@ If incoming:
     aiCallAnalysisOutput?: AiCallAnalysisOutput;
     /** AI input */
     readonly idAiCallAnalysisInput?: string | null;
-    /** Lines that participated in this call */
-    readonly idsParticipantLines?: string[];
+    /** Phones that participated in this call */
+    readonly idsParticipantPhones?: string[];
     /** If not null it means the call is ended */
     readonly durationInSeconds?: number | null;
     errors?: CallErrors;
@@ -1013,12 +1015,12 @@ export interface CallFilterRequest {
     idAiCallAnalysisInput_con?: string | null;
     /** IdAiCallAnalysisInput regex */
     idAiCallAnalysisInput_reg?: string | null;
-    /** IdsParticipantLines equals */
-    idsParticipantLines_eq?: string | null;
-    /** IdsParticipantLines contains */
-    idsParticipantLines_con?: string | null;
-    /** IdsParticipantLines regex */
-    idsParticipantLines_reg?: string | null;
+    /** IdsParticipantPhones equals */
+    idsParticipantPhones_eq?: string | null;
+    /** IdsParticipantPhones contains */
+    idsParticipantPhones_con?: string | null;
+    /** IdsParticipantPhones regex */
+    idsParticipantPhones_reg?: string | null;
     /** Errors.ErrorsCall equals */
     errors_errorsCall_eq?: string | null;
     /** Errors.ErrorsCall contains */
@@ -1239,8 +1241,8 @@ If incoming:
     aiCallAnalysisOutput?: AiCallAnalysisOutput;
     /** AI input */
     readonly idAiCallAnalysisInput?: string | null;
-    /** Lines that participated in this call */
-    readonly idsParticipantLines?: string[];
+    /** Phones that participated in this call */
+    readonly idsParticipantPhones?: string[];
     /** If not null it means the call is ended */
     readonly durationInSeconds?: number | null;
     errors?: CallErrors;
@@ -1262,12 +1264,12 @@ export interface CallIncomingToExtension {
     readonly id?: string;
     /** Extension being called */
     readonly idExtension?: string | null;
-    /** Line that answered */
-    readonly idLineThatAnswered?: string | null;
-    /** Lines that ring */
-    readonly idsLinesThatRing?: string[];
-    /** Lines that did not ring */
-    readonly idsLinesThatDidNotRing?: string[];
+    /** Phone that answered */
+    readonly idPhoneThatAnswered?: string | null;
+    /** Phones that ring */
+    readonly idsPhonesThatRing?: string[];
+    /** Phones that did not ring */
+    readonly idsPhonesThatDidNotRing?: string[];
     callType?: CallType;
     /** VOIP phone number that received the phone call */
     readonly idVoipNumberPhone?: string;
@@ -1316,8 +1318,8 @@ If incoming:
     aiCallAnalysisOutput?: AiCallAnalysisOutput;
     /** AI input */
     readonly idAiCallAnalysisInput?: string | null;
-    /** Lines that participated in this call */
-    readonly idsParticipantLines?: string[];
+    /** Phones that participated in this call */
+    readonly idsParticipantPhones?: string[];
     /** If not null it means the call is ended */
     readonly durationInSeconds?: number | null;
     errors?: CallErrors;
@@ -1339,17 +1341,17 @@ export interface CallOutgoingToExtension {
     readonly id?: string;
     /** Extension being called */
     readonly idExtension?: string | null;
-    /** Line that answered */
-    readonly idLineThatAnswered?: string | null;
-    /** Lines that ring */
-    readonly idsLinesThatRing?: string[];
-    /** Lines that did not ring */
-    readonly idsLinesThatDidNotRing?: string[];
+    /** Phone that answered */
+    readonly idPhoneThatAnswered?: string | null;
+    /** Phones that ring */
+    readonly idsPhonesThatRing?: string[];
+    /** Phones that did not ring */
+    readonly idsPhonesThatDidNotRing?: string[];
     toCountry?: CountryIsoCode;
     fromCountry?: CountryIsoCode;
     callType?: CallType;
-    /** Line that started phone call */
-    readonly idLineThatInitiatedCall?: string;
+    /** Phone that started phone call */
+    readonly idPhoneThatInitiatedCall?: string;
     /** Id of voicemail in case there is one */
     readonly idVoicemail?: string | null;
     /** This call was originated with the purpose of tranfering another call with this id    
@@ -1389,8 +1391,8 @@ If incoming:
     aiCallAnalysisOutput?: AiCallAnalysisOutput;
     /** AI input */
     readonly idAiCallAnalysisInput?: string | null;
-    /** Lines that participated in this call */
-    readonly idsParticipantLines?: string[];
+    /** Phones that participated in this call */
+    readonly idsParticipantPhones?: string[];
     /** If not null it means the call is ended */
     readonly durationInSeconds?: number | null;
     errors?: CallErrors;
@@ -1413,8 +1415,8 @@ export interface CallOutgoingToPSTN {
     callType?: CallType;
     /** Phone number dialed in international format. Property To should contain number that was actually dialed */
     readonly toInternationalFormat?: string;
-    /** Line that started phone call */
-    readonly idLineThatInitiatedCall?: string;
+    /** Phone that started phone call */
+    readonly idPhoneThatInitiatedCall?: string;
     /** Id of voicemail in case there is one */
     readonly idVoicemail?: string | null;
     /** This call was originated with the purpose of tranfering another call with this id    
@@ -1456,8 +1458,8 @@ If incoming:
     aiCallAnalysisOutput?: AiCallAnalysisOutput;
     /** AI input */
     readonly idAiCallAnalysisInput?: string | null;
-    /** Lines that participated in this call */
-    readonly idsParticipantLines?: string[];
+    /** Phones that participated in this call */
+    readonly idsParticipantPhones?: string[];
     /** If not null it means the call is ended */
     readonly durationInSeconds?: number | null;
     errors?: CallErrors;
@@ -1645,11 +1647,11 @@ export interface ChildCallBlindTransferToExtension {
     idExtension?: string | null;
     childCallType?: ChildCallType;
     /** Id of line that answered */
-    idLineThatAnswered?: string | null;
+    idPhoneThatAnswered?: string | null;
     /** Ids of lines that ring */
-    idsLinesThatRing?: string[];
+    idsPhonesThatRing?: string[];
     /** Ids of lines that where supposed to ring and did not ring because phone was offline or disconnected. */
-    idsLinesThatDidNotRing?: string[];
+    idsPhonesThatDidNotRing?: string[];
     /** Id of call that originated blind transfer */
     idCall?: string;
     /** Call duration in seconds */
@@ -1699,12 +1701,12 @@ export interface ChildCallBlindTransferToPSTN {
 export interface ChildCallForwardToExtension {
     /** Extension being called */
     idExtension?: string | null;
-    /** Line that answered */
-    idLineThatAnswered?: string | null;
-    /** Lines that ring */
-    idsLinesThatRing?: string[];
-    /** Lines that did not ring */
-    idsLinesThatDidNotRing?: string[];
+    /** Phone that answered */
+    idPhoneThatAnswered?: string | null;
+    /** Phones that ring */
+    idsPhonesThatRing?: string[];
+    /** Phones that did not ring */
+    idsPhonesThatDidNotRing?: string[];
     childCallType?: ChildCallType;
     /** Call duration in seconds */
     readonly durationInSeconds?: number | null;
@@ -1862,7 +1864,7 @@ export enum Collections {
     FaxOutgoingGroups = "FaxOutgoingGroups",
     Voicemails = "Voicemails",
     Users = "Users",
-    LineKeyGroups = "LineKeyGroups",
+    SpeedDialGroups = "SpeedDialGroups",
     LogWebServiceRequests = "LogWebServiceRequests",
     MusicOnHoldGroups = "MusicOnHoldGroups",
     Phones = "Phones",
@@ -2671,10 +2673,10 @@ export interface EventCallPlacedOnHoldFor1Min {
     readonly contactFullName?: string | null;
     /** If it is an incoming call then the id of line that answered the call.
 If it is an outgiong call then the id of the line that initiated the call. */
-    readonly lineId?: string;
+    readonly phoneId?: string;
     /** If it is an incoming call then the friendly name of the line that answered the call.
 If it is an outgiong call then the friendly name of the line that initiated the call. */
-    readonly lineFriendlyName?: string;
+    readonly phoneFriendlyName?: string;
     /** Id of document */
     id?: string;
 }
@@ -2698,10 +2700,10 @@ export interface EventCallPlacedOnHoldFor2Min {
     readonly contactFullName?: string | null;
     /** If it is an incoming call then the id of line that answered the call.
 If it is an outgiong call then the id of the line that initiated the call. */
-    readonly lineId?: string;
+    readonly phoneId?: string;
     /** If it is an incoming call then the friendly name of the line that answered the call.
 If it is an outgiong call then the friendly name of the line that initiated the call. */
-    readonly lineFriendlyName?: string;
+    readonly phoneFriendlyName?: string;
     /** Id of document */
     id?: string;
 }
@@ -2725,10 +2727,10 @@ export interface EventCallPlacedOnHoldFor4Min {
     readonly contactFullName?: string | null;
     /** If it is an incoming call then the id of line that answered the call.
 If it is an outgiong call then the id of the line that initiated the call. */
-    readonly lineId?: string;
+    readonly phoneId?: string;
     /** If it is an incoming call then the friendly name of the line that answered the call.
 If it is an outgiong call then the friendly name of the line that initiated the call. */
-    readonly lineFriendlyName?: string;
+    readonly phoneFriendlyName?: string;
     /** Id of document */
     id?: string;
 }
@@ -2752,10 +2754,10 @@ export interface EventCallPlacedOnHoldFor8Min {
     readonly contactFullName?: string | null;
     /** If it is an incoming call then the id of line that answered the call.
 If it is an outgiong call then the id of the line that initiated the call. */
-    readonly lineId?: string;
+    readonly phoneId?: string;
     /** If it is an incoming call then the friendly name of the line that answered the call.
 If it is an outgiong call then the friendly name of the line that initiated the call. */
-    readonly lineFriendlyName?: string;
+    readonly phoneFriendlyName?: string;
     /** Id of document */
     id?: string;
 }
@@ -2780,13 +2782,13 @@ export interface EventExtensionNotAnswered {
     /** How long extension ring? */
     readonly numberOfSecondsItRing?: number;
     /** Id of lines that ring */
-    readonly linesThatRingIds?: string[];
+    readonly phonesThatRingIds?: string[];
     /** Id of lines that ring dit not ring */
-    readonly linesThatDidNotRingIds?: string[];
+    readonly phonesThatDidNotRingIds?: string[];
     /** Name of lines that ring */
-    readonly linesThatRingFriendlyNames?: string[];
+    readonly phonesThatRingFriendlyNames?: string[];
     /** Name of lines that ring dit not ring */
-    readonly linesThatDidNotRingFriendlyNames?: string[];
+    readonly phonesThatDidNotRingFriendlyNames?: string[];
     /** Id of document */
     id?: string;
 }
@@ -2811,13 +2813,13 @@ export interface EventExtensionTookLongerThan1MinToBeAnswered {
     /** How long extension ring? */
     readonly numberOfSecondsItRing?: number;
     /** Id of lines that ring */
-    readonly linesThatRingIds?: string[];
+    readonly phonesThatRingIds?: string[];
     /** Id of lines that ring dit not ring */
-    readonly linesThatDidNotRingIds?: string[];
+    readonly phonesThatDidNotRingIds?: string[];
     /** Name of lines that ring */
-    readonly linesThatRingFriendlyNames?: string[];
+    readonly phonesThatRingFriendlyNames?: string[];
     /** Name of lines that ring dit not ring */
-    readonly linesThatDidNotRingFriendlyNames?: string[];
+    readonly phonesThatDidNotRingFriendlyNames?: string[];
     /** Id of document */
     id?: string;
 }
@@ -2842,13 +2844,13 @@ export interface EventExtensionTookLongerThan2MinToBeAnswered {
     /** How long extension ring? */
     readonly numberOfSecondsItRing?: number;
     /** Id of lines that ring */
-    readonly linesThatRingIds?: string[];
+    readonly phonesThatRingIds?: string[];
     /** Id of lines that ring dit not ring */
-    readonly linesThatDidNotRingIds?: string[];
+    readonly phonesThatDidNotRingIds?: string[];
     /** Name of lines that ring */
-    readonly linesThatRingFriendlyNames?: string[];
+    readonly phonesThatRingFriendlyNames?: string[];
     /** Name of lines that ring dit not ring */
-    readonly linesThatDidNotRingFriendlyNames?: string[];
+    readonly phonesThatDidNotRingFriendlyNames?: string[];
     /** Id of document */
     id?: string;
 }
@@ -2873,13 +2875,13 @@ export interface EventExtensionTookLongerThan4MinToBeAnswered {
     /** How long extension ring? */
     readonly numberOfSecondsItRing?: number;
     /** Id of lines that ring */
-    readonly linesThatRingIds?: string[];
+    readonly phonesThatRingIds?: string[];
     /** Id of lines that ring dit not ring */
-    readonly linesThatDidNotRingIds?: string[];
+    readonly phonesThatDidNotRingIds?: string[];
     /** Name of lines that ring */
-    readonly linesThatRingFriendlyNames?: string[];
+    readonly phonesThatRingFriendlyNames?: string[];
     /** Name of lines that ring dit not ring */
-    readonly linesThatDidNotRingFriendlyNames?: string[];
+    readonly phonesThatDidNotRingFriendlyNames?: string[];
     /** Id of document */
     id?: string;
 }
@@ -2904,13 +2906,13 @@ export interface EventExtensionTookLongerThan8MinToBeAnswered {
     /** How long extension ring? */
     readonly numberOfSecondsItRing?: number;
     /** Id of lines that ring */
-    readonly linesThatRingIds?: string[];
+    readonly phonesThatRingIds?: string[];
     /** Id of lines that ring dit not ring */
-    readonly linesThatDidNotRingIds?: string[];
+    readonly phonesThatDidNotRingIds?: string[];
     /** Name of lines that ring */
-    readonly linesThatRingFriendlyNames?: string[];
+    readonly phonesThatRingFriendlyNames?: string[];
     /** Name of lines that ring dit not ring */
-    readonly linesThatDidNotRingFriendlyNames?: string[];
+    readonly phonesThatDidNotRingFriendlyNames?: string[];
     /** Id of document */
     id?: string;
 }
@@ -2941,9 +2943,9 @@ export interface EventIncomingCallTerminated {
     /** Date when call was answered */
     readonly secondsItTookToAnswer?: number | null;
     /** Id of line that answered */
-    readonly lineThatAnsweredId?: string | null;
+    readonly phoneThatAnsweredId?: string | null;
     /** Friendly name of line that answered */
-    readonly lineThatAnsweredFrienlyName?: string | null;
+    readonly phoneThatAnsweredFrienlyName?: string | null;
     /** Date when call was ended */
     readonly durationInSeconds?: number;
     /** Times when call was placed on hold */
@@ -2974,9 +2976,9 @@ export interface EventIncomingCallTerminatedWithAiAnalysis {
     /** Date when call was answered */
     readonly secondsItTookToAnswer?: number | null;
     /** Id of line that answered */
-    readonly lineThatAnsweredId?: string | null;
+    readonly phoneThatAnsweredId?: string | null;
     /** Friendly name of line that answered */
-    readonly lineThatAnsweredFrienlyName?: string | null;
+    readonly phoneThatAnsweredFrienlyName?: string | null;
     /** Date when call was ended */
     readonly durationInSeconds?: number;
     /** Times when call was placed on hold */
@@ -3006,9 +3008,9 @@ export interface EventIncomingCallTerminatedWithRecording {
     /** Date when call was answered */
     readonly secondsItTookToAnswer?: number | null;
     /** Id of line that answered */
-    readonly lineThatAnsweredId?: string | null;
+    readonly phoneThatAnsweredId?: string | null;
     /** Friendly name of line that answered */
-    readonly lineThatAnsweredFrienlyName?: string | null;
+    readonly phoneThatAnsweredFrienlyName?: string | null;
     /** Date when call was ended */
     readonly durationInSeconds?: number;
     /** Times when call was placed on hold */
@@ -3042,9 +3044,9 @@ export interface EventIncomingCallTerminatedWithTranscription {
     /** Date when call was answered */
     readonly secondsItTookToAnswer?: number | null;
     /** Id of line that answered */
-    readonly lineThatAnsweredId?: string | null;
+    readonly phoneThatAnsweredId?: string | null;
     /** Friendly name of line that answered */
-    readonly lineThatAnsweredFrienlyName?: string | null;
+    readonly phoneThatAnsweredFrienlyName?: string | null;
     /** Date when call was ended */
     readonly durationInSeconds?: number;
     /** Times when call was placed on hold */
@@ -3066,53 +3068,13 @@ If call is outgoing then the name of contact that we are calling. */
     id?: string;
 }
 
-/** Webhook will send this data when triggered. Ublux.Communications.Enums.EventTriggerType.EventLineConnected */
-export interface EventLineConnected {
-    eventTrigger?: EventTriggerType;
-    /** Line friendly name */
-    readonly friendlyName?: string | null;
-    /** Id of phone */
-    readonly phoneId?: string | null;
-    /** Name of phone */
-    readonly phoneFriendly?: string | null;
-    /** To what extension this line belongs */
-    readonly extensionFriendlyName?: string | null;
-    /** To what id extension this line belongs too */
-    readonly extensionId?: string | null;
-    /** To what extension number this line belongs too */
-    readonly extensionNumber?: string | null;
-    connectionStatus?: LineConnectionStatus;
-    /** Id of document */
-    id?: string;
-}
-
-/** Webhook will send this data when triggered. Ublux.Communications.Enums.EventTriggerType.EventLineDisconnected */
-export interface EventLineDisconnected {
-    eventTrigger?: EventTriggerType;
-    /** Line friendly name */
-    readonly friendlyName?: string | null;
-    /** Id of phone */
-    readonly phoneId?: string | null;
-    /** Name of phone */
-    readonly phoneFriendly?: string | null;
-    /** To what extension this line belongs */
-    readonly extensionFriendlyName?: string | null;
-    /** To what id extension this line belongs too */
-    readonly extensionId?: string | null;
-    /** To what extension number this line belongs too */
-    readonly extensionNumber?: string | null;
-    connectionStatus?: LineConnectionStatus;
-    /** Id of document */
-    id?: string;
-}
-
 /** Webhook will send this data when triggered. Ublux.Communications.Enums.EventTriggerType.EventOutgoingCallStarted */
 export interface EventOutgoingCallStarted {
     eventTrigger?: EventTriggerType;
     /** Id of line that initiated phone call */
-    readonly lineThatInitiatedCallId?: string;
+    readonly phoneThatInitiatedCallId?: string;
     /** Friendly name of line that initiated phone call */
-    readonly lineThatInitiatedCallFrienlyName?: string;
+    readonly phoneThatInitiatedCallFrienlyName?: string;
     /** From phone number */
     readonly from?: string;
     /** To phone number */
@@ -3136,17 +3098,17 @@ export interface EventOutgoingCallTerminated {
     /** Date when call was answered */
     readonly secondsItTookToAnswer?: number | null;
     /** Id of line that answered in case it is an outgoing call to an extension */
-    readonly lineThatAnsweredId?: string | null;
+    readonly phoneThatAnsweredId?: string | null;
     /** Friendly name of line that answered in case it is an outgoing call to an extension */
-    readonly lineThatAnsweredFrienlyName?: string | null;
+    readonly phoneThatAnsweredFrienlyName?: string | null;
     /** How long call lasted in seconds */
     readonly durationInSeconds?: number;
     /** Times when call was placed on hold */
     readonly timesWhenCallPlacedOnHold?: TimeWhenCallPlacedOnHold[];
     /** Id of line that initiated phone call */
-    readonly lineThatInitiatedCallId?: string;
+    readonly phoneThatInitiatedCallId?: string;
     /** Friendly name of line that initiated phone call */
-    readonly lineThatInitiatedCallFrienlyName?: string;
+    readonly phoneThatInitiatedCallFrienlyName?: string;
     /** From phone number */
     readonly from?: string;
     /** To phone number */
@@ -3173,17 +3135,17 @@ export interface EventOutgoingCallTerminatedWithAiAnalysis {
     /** Date when call was answered */
     readonly secondsItTookToAnswer?: number | null;
     /** Id of line that answered in case it is an outgoing call to an extension */
-    readonly lineThatAnsweredId?: string | null;
+    readonly phoneThatAnsweredId?: string | null;
     /** Friendly name of line that answered in case it is an outgoing call to an extension */
-    readonly lineThatAnsweredFrienlyName?: string | null;
+    readonly phoneThatAnsweredFrienlyName?: string | null;
     /** How long call lasted in seconds */
     readonly durationInSeconds?: number;
     /** Times when call was placed on hold */
     readonly timesWhenCallPlacedOnHold?: TimeWhenCallPlacedOnHold[];
     /** Id of line that initiated phone call */
-    readonly lineThatInitiatedCallId?: string;
+    readonly phoneThatInitiatedCallId?: string;
     /** Friendly name of line that initiated phone call */
-    readonly lineThatInitiatedCallFrienlyName?: string;
+    readonly phoneThatInitiatedCallFrienlyName?: string;
     /** From phone number */
     readonly from?: string;
     /** To phone number */
@@ -3209,17 +3171,17 @@ export interface EventOutgoingCallTerminatedWithRecording {
     /** Date when call was answered */
     readonly secondsItTookToAnswer?: number | null;
     /** Id of line that answered in case it is an outgoing call to an extension */
-    readonly lineThatAnsweredId?: string | null;
+    readonly phoneThatAnsweredId?: string | null;
     /** Friendly name of line that answered in case it is an outgoing call to an extension */
-    readonly lineThatAnsweredFrienlyName?: string | null;
+    readonly phoneThatAnsweredFrienlyName?: string | null;
     /** How long call lasted in seconds */
     readonly durationInSeconds?: number;
     /** Times when call was placed on hold */
     readonly timesWhenCallPlacedOnHold?: TimeWhenCallPlacedOnHold[];
     /** Id of line that initiated phone call */
-    readonly lineThatInitiatedCallId?: string;
+    readonly phoneThatInitiatedCallId?: string;
     /** Friendly name of line that initiated phone call */
-    readonly lineThatInitiatedCallFrienlyName?: string;
+    readonly phoneThatInitiatedCallFrienlyName?: string;
     /** From phone number */
     readonly from?: string;
     /** To phone number */
@@ -3249,17 +3211,17 @@ export interface EventOutgoingCallTerminatedWithTranscription {
     /** Date when call was answered */
     readonly secondsItTookToAnswer?: number | null;
     /** Id of line that answered in case it is an outgoing call to an extension */
-    readonly lineThatAnsweredId?: string | null;
+    readonly phoneThatAnsweredId?: string | null;
     /** Friendly name of line that answered in case it is an outgoing call to an extension */
-    readonly lineThatAnsweredFrienlyName?: string | null;
+    readonly phoneThatAnsweredFrienlyName?: string | null;
     /** How long call lasted in seconds */
     readonly durationInSeconds?: number;
     /** Times when call was placed on hold */
     readonly timesWhenCallPlacedOnHold?: TimeWhenCallPlacedOnHold[];
     /** Id of line that initiated phone call */
-    readonly lineThatInitiatedCallId?: string;
+    readonly phoneThatInitiatedCallId?: string;
     /** Friendly name of line that initiated phone call */
-    readonly lineThatInitiatedCallFrienlyName?: string;
+    readonly phoneThatInitiatedCallFrienlyName?: string;
     /** From phone number */
     readonly from?: string;
     /** To phone number */
@@ -3273,6 +3235,46 @@ If call is outgoing then the contact that we are calling. */
 If call is outgoing then the name of contact that we are calling. */
     readonly contactFullName?: string | null;
     callErrors?: CallErrors;
+    /** Id of document */
+    id?: string;
+}
+
+/** Webhook will send this data when triggered. Ublux.Communications.Enums.EventTriggerType.EventPhoneConnected */
+export interface EventPhoneConnected {
+    eventTrigger?: EventTriggerType;
+    /** Phone friendly name */
+    readonly friendlyName?: string | null;
+    /** Id of phone */
+    readonly phoneId?: string | null;
+    /** Name of phone */
+    readonly phoneFriendly?: string | null;
+    /** To what extension this line belongs */
+    readonly extensionFriendlyName?: string | null;
+    /** To what id extension this line belongs too */
+    readonly extensionId?: string | null;
+    /** To what extension number this line belongs too */
+    readonly extensionNumber?: string | null;
+    connectionStatus?: PhoneConnectionStatus;
+    /** Id of document */
+    id?: string;
+}
+
+/** Webhook will send this data when triggered. Ublux.Communications.Enums.EventTriggerType.EventPhoneDisconnected */
+export interface EventPhoneDisconnected {
+    eventTrigger?: EventTriggerType;
+    /** Phone friendly name */
+    readonly friendlyName?: string | null;
+    /** Id of phone */
+    readonly phoneId?: string | null;
+    /** Name of phone */
+    readonly phoneFriendly?: string | null;
+    /** To what extension this line belongs */
+    readonly extensionFriendlyName?: string | null;
+    /** To what id extension this line belongs too */
+    readonly extensionId?: string | null;
+    /** To what extension number this line belongs too */
+    readonly extensionNumber?: string | null;
+    connectionStatus?: PhoneConnectionStatus;
     /** Id of document */
     id?: string;
 }
@@ -3294,8 +3296,8 @@ export enum EventTriggerType {
     EventCallPlacedOnHoldFor2Min = "EventCallPlacedOnHoldFor2Min",
     EventCallPlacedOnHoldFor4Min = "EventCallPlacedOnHoldFor4Min",
     EventCallPlacedOnHoldFor8Min = "EventCallPlacedOnHoldFor8Min",
-    EventLineDisconnected = "EventLineDisconnected",
-    EventLineConnected = "EventLineConnected",
+    EventPhoneDisconnected = "EventPhoneDisconnected",
+    EventPhoneConnected = "EventPhoneConnected",
     EventExtensionNotAnswered = "EventExtensionNotAnswered",
     EventExtensionTookLongerThan1MinToBeAnswered = "EventExtensionTookLongerThan1MinToBeAnswered",
     EventExtensionTookLongerThan2MinToBeAnswered = "EventExtensionTookLongerThan2MinToBeAnswered",
@@ -3571,8 +3573,8 @@ For example a CloudService user will point to no account */
 export interface ExtensionDial {
     /** Id of document */
     readonly id?: string;
-    /** Lines to call and ring. Minimum of one line is required */
-    idsLines?: string[];
+    /** Phones to call and ring. Minimum of one line is required */
+    idsPhones?: string[];
     eventActionToExecuteIfNotAnswered?: EventAction;
     sendEmailNotificationIfNotAnswered?: SendEmailNotificationIfNotAnswered;
     /** Number of seconds each line will ring */
@@ -3597,12 +3599,12 @@ For example a CloudService user will point to no account */
 
 /** Enables searching for ExtensionDials */
 export interface ExtensionDialFilterRequest {
-    /** IdsLines equals */
-    idsLines_eq?: string | null;
-    /** IdsLines contains */
-    idsLines_con?: string | null;
-    /** IdsLines regex */
-    idsLines_reg?: string | null;
+    /** IdsPhones equals */
+    idsPhones_eq?: string | null;
+    /** IdsPhones contains */
+    idsPhones_con?: string | null;
+    /** IdsPhones regex */
+    idsPhones_reg?: string | null;
     /** EventActionToExecuteIfNotAnswered.EventActionType equals */
     eventActionToExecuteIfNotAnswered_eventActionType_eq?: string | null;
     /** EventActionToExecuteIfNotAnswered.EventActionType contains */
@@ -3681,8 +3683,8 @@ export interface ExtensionDialFilterRequest {
 
 /** Basic extension */
 export interface ExtensionDialUpdateRequest {
-    /** Lines to call and ring. Minimum of one line is required */
-    idsLines?: string[] | null;
+    /** Phones to call and ring. Minimum of one line is required */
+    idsPhones?: string[] | null;
     eventActionToExecuteIfNotAnswered?: EventAction;
     sendEmailNotificationIfNotAnswered?: SendEmailNotificationIfNotAnswered;
     /** Number of seconds each line will ring */
@@ -3775,8 +3777,8 @@ export interface ExtensionQueue {
     retryFrequency?: number;
     ringStrategy?: QueueRingStrategy;
     extensionType?: ExtensionType;
-    /** Lines to call and ring. Minimum of one line is required */
-    idsLines?: string[];
+    /** Phones to call and ring. Minimum of one line is required */
+    idsPhones?: string[];
     eventActionToExecuteIfNotAnswered?: EventAction;
     sendEmailNotificationIfNotAnswered?: SendEmailNotificationIfNotAnswered;
     /** Number of seconds each line will ring */
@@ -3854,12 +3856,12 @@ export interface ExtensionQueueFilterRequest {
     extensionType_con?: string | null;
     /** ExtensionType regex */
     extensionType_reg?: string | null;
-    /** IdsLines equals */
-    idsLines_eq?: string | null;
-    /** IdsLines contains */
-    idsLines_con?: string | null;
-    /** IdsLines regex */
-    idsLines_reg?: string | null;
+    /** IdsPhones equals */
+    idsPhones_eq?: string | null;
+    /** IdsPhones contains */
+    idsPhones_con?: string | null;
+    /** IdsPhones regex */
+    idsPhones_reg?: string | null;
     /** EventActionToExecuteIfNotAnswered.EventActionType equals */
     eventActionToExecuteIfNotAnswered_eventActionType_eq?: string | null;
     /** EventActionToExecuteIfNotAnswered.EventActionType contains */
@@ -3948,8 +3950,8 @@ export interface ExtensionQueueUpdateRequest {
     /** Number of seconds to wait in between rings. Default value if null is 20 seconds */
     retryFrequency?: number | null;
     ringStrategy?: QueueRingStrategy;
-    /** Lines to call and ring. Minimum of one line is required */
-    idsLines?: string[] | null;
+    /** Phones to call and ring. Minimum of one line is required */
+    idsPhones?: string[] | null;
     eventActionToExecuteIfNotAnswered?: EventAction;
     sendEmailNotificationIfNotAnswered?: SendEmailNotificationIfNotAnswered;
     /** Number of seconds each line will ring */
@@ -3983,8 +3985,8 @@ export interface ExtensionVoicemail {
     readonly id?: string;
     /** Optional audio to play before leaving voicemail */
     idAudio?: string | null;
-    /** Lines that can listen to this voicemail on their phones. It is also possible to listen to voicemails through phones and not just email. */
-    idsLinesThatCanListenToVoicemail?: string[];
+    /** Phones that can listen to this voicemail on their phones. It is also possible to listen to voicemails through phones and not just email. */
+    idsPhonesThatCanListenToVoicemail?: string[];
     /** Emails where to send the voicemail */
     idEmail?: string;
     /** This text will be converted to audio and be played before leaving voicemail */
@@ -4017,12 +4019,12 @@ export interface ExtensionVoicemailFilterRequest {
     idAudio_con?: string | null;
     /** IdAudio regex */
     idAudio_reg?: string | null;
-    /** IdsLinesThatCanListenToVoicemail equals */
-    idsLinesThatCanListenToVoicemail_eq?: string | null;
-    /** IdsLinesThatCanListenToVoicemail contains */
-    idsLinesThatCanListenToVoicemail_con?: string | null;
-    /** IdsLinesThatCanListenToVoicemail regex */
-    idsLinesThatCanListenToVoicemail_reg?: string | null;
+    /** IdsPhonesThatCanListenToVoicemail equals */
+    idsPhonesThatCanListenToVoicemail_eq?: string | null;
+    /** IdsPhonesThatCanListenToVoicemail contains */
+    idsPhonesThatCanListenToVoicemail_con?: string | null;
+    /** IdsPhonesThatCanListenToVoicemail regex */
+    idsPhonesThatCanListenToVoicemail_reg?: string | null;
     /** IdEmail equals */
     idEmail_eq?: string | null;
     /** IdEmail contains */
@@ -4097,8 +4099,8 @@ export interface ExtensionVoicemailFilterRequest {
 export interface ExtensionVoicemailUpdateRequest {
     /** Optional audio to play before leaving voicemail */
     idAudio?: string | null;
-    /** Lines that can listen to this voicemail on their phones. It is also possible to listen to voicemails through phones and not just email. */
-    idsLinesThatCanListenToVoicemail?: string[] | null;
+    /** Phones that can listen to this voicemail on their phones. It is also possible to listen to voicemails through phones and not just email. */
+    idsPhonesThatCanListenToVoicemail?: string[] | null;
     /** Emails where to send the voicemail */
     idEmail?: string | null;
     /** This text will be converted to audio and be played before leaving voicemail */
@@ -4460,9 +4462,9 @@ export enum FlowNodeType {
     AnyWeekDay = "AnyWeekDay",
     Extension = "Extension",
     DynamicExtension = "DynamicExtension",
-    IfLineOffline = "IfLineOffline",
-    LineOnline = "LineOnline",
-    LineOffline = "LineOffline",
+    IfPhoneDisconnected = "IfPhoneDisconnected",
+    PhoneConnected = "PhoneConnected",
+    PhoneDisconnected = "PhoneDisconnected",
     Call = "Call",
     Pause = "Pause",
     GoTo = "GoTo",
@@ -4718,18 +4720,6 @@ export interface HttpResponsePaginationResultOfFaxOutgoingGroup {
 }
 
 /** Limits the number of results that can obtained per request. */
-export interface HttpResponsePaginationResultOfLineKeyGroup {
-    /** Page number */
-    pageNumber?: number;
-    /** Maximum number of records that can be retrieved per page */
-    pageSize?: number;
-    /** Number of records */
-    readonly recordsCount?: number;
-    /** Results */
-    records?: LineKeyGroup[] | null;
-}
-
-/** Limits the number of results that can obtained per request. */
 export interface HttpResponsePaginationResultOfMusicOnHoldGroup {
     /** Page number */
     pageNumber?: number;
@@ -4787,6 +4777,18 @@ export interface HttpResponsePaginationResultOfSMS {
     readonly recordsCount?: number;
     /** Results */
     records?: SMS[] | null;
+}
+
+/** Limits the number of results that can obtained per request. */
+export interface HttpResponsePaginationResultOfSpeedDialGroup {
+    /** Page number */
+    pageNumber?: number;
+    /** Maximum number of records that can be retrieved per page */
+    pageSize?: number;
+    /** Number of records */
+    readonly recordsCount?: number;
+    /** Results */
+    records?: SpeedDialGroup[] | null;
 }
 
 /** Limits the number of results that can obtained per request. */
@@ -4940,202 +4942,6 @@ export enum Language {
     EN_GB = "EN_GB",
     ES_ES = "ES_ES",
     ES_MX = "ES_MX",
-}
-
-/** It is part of a phone. Lines are needed in order to make and receive phone calls. */
-export interface Line {
-    friendlyName?: string;
-    lineConnectionStatus?: LineConnectionStatus;
-    /** Caller id number that will be used to place outbound calls */
-    callerIdNumber?: string;
-    /** Record outbound calls to PSTN? */
-    recordExternalCalls?: boolean;
-    /** Record calls to other extensions? */
-    recordInternalCalls?: boolean;
-    /** Users will be charged extra for AI transcriptions. If this is true external calls to PSTN will be recorded. */
-    useAiForExternalCalls?: boolean;
-    /** Users will be charged extra for AI transcriptions. If this is true internal calls to extensions will be recorded. */
-    useAiForOutgoingCallsToExtensions?: boolean;
-    /** What input to pass to AI engine. If null it should use a default input that is part of constants. */
-    idAiCallAnalysisInput?: string | null;
-    language?: Language;
-    /** Id of entity */
-    readonly id?: string;
-}
-
-/** BLF status of a line */
-export interface LineBlfStatus {
-    /** Id of line */
-    idLine?: string;
-    /** Id of channel */
-    idChannel?: string;
-    /** Extension called */
-    callerId?: string | null;
-    blfStatusType?: BlfStatusType;
-}
-
-/** Status of phone line */
-export interface LineConnectionStatus {
-    /** Public ip address of the connection */
-    readonly ipWAN?: string | null;
-    /** Public port */
-    readonly portWAN?: number;
-    /** Private ip address of the connection */
-    readonly ipLAN?: string | null;
-    /** Private port */
-    readonly portLAN?: number;
-    /** User agent of phone connecting */
-    readonly userAgent?: string | null;
-    /** Null means we do not know */
-    readonly isConnected?: boolean | null;
-    /** Reason of phone disconnected. 
-Posible reasons: none, registration failure, remove existing, remove unavailable, expiration, request, shutdown */
-    readonly disconnectedReason?: string | null;
-    /** Date when line was last connected */
-    readonly dateConnected?: Date | null;
-    /** Date when line was last disconnected */
-    readonly dateDisconnected?: Date | null;
-}
-
-/** Speed dial */
-export interface LineKey {
-    lineKeyType?: LineKeyType;
-    /** Display name of line key */
-    label?: string;
-    /** Value of line key. Example: 9546543982
-Only requried if LineKeyType is SpeedDial */
-    value?: string | null;
-    /** Id of extension to call */
-    idExtension?: string | null;
-    /** Position of line key. This is importante because maybe a user may want to skip some positions */
-    lineKeyIndex?: number;
-}
-
-/** Group of line keys */
-export interface LineKeyGroup {
-    /** Id of document */
-    readonly id?: string;
-    /** Group of speed dial keys. Must have at least one */
-    lineKeys?: LineKey[];
-    /** Friendly name of line key group */
-    friendlyName?: string;
-    /** Description of line key group */
-    description?: string | null;
-    /** It is nullable because there are cases where it makes no sense to point to an account. 
-For example a CloudService user will point to no account */
-    idsTags?: string[];
-    /** Creation date. Sets DateUpdated if it does not have a value */
-    readonly dateCreated?: Date;
-    /** Updated date. When item is created on database this date will be set too. This is important so that we can sync contacts */
-    readonly dateUpdated?: Date;
-}
-
-/** Enables searching for LineKeyGroups */
-export interface LineKeyGroupFilterRequest {
-    /** LineKeys.LineKeyType equals */
-    lineKeys_lineKeyType_eq?: string | null;
-    /** LineKeys.LineKeyType contains */
-    lineKeys_lineKeyType_con?: string | null;
-    /** LineKeys.LineKeyType regex */
-    lineKeys_lineKeyType_reg?: string | null;
-    /** LineKeys.Label equals */
-    lineKeys_label_eq?: string | null;
-    /** LineKeys.Label contains */
-    lineKeys_label_con?: string | null;
-    /** LineKeys.Label regex */
-    lineKeys_label_reg?: string | null;
-    /** LineKeys.Value equals */
-    lineKeys_value_eq?: string | null;
-    /** LineKeys.Value contains */
-    lineKeys_value_con?: string | null;
-    /** LineKeys.Value regex */
-    lineKeys_value_reg?: string | null;
-    /** LineKeys.IdExtension equals */
-    lineKeys_idExtension_eq?: string | null;
-    /** LineKeys.IdExtension contains */
-    lineKeys_idExtension_con?: string | null;
-    /** LineKeys.IdExtension regex */
-    lineKeys_idExtension_reg?: string | null;
-    /** LineKeys.LineKeyIndex equals */
-    lineKeys_lineKeyIndex_eq?: number | null;
-    /** LineKeys.LineKeyIndex less than or equal to */
-    lineKeys_lineKeyIndex_lte?: number | null;
-    /** LineKeys.LineKeyIndex greater than or equal to */
-    lineKeys_lineKeyIndex_gte?: number | null;
-    /** FriendlyName equals */
-    friendlyName_eq?: string | null;
-    /** FriendlyName contains */
-    friendlyName_con?: string | null;
-    /** FriendlyName regex */
-    friendlyName_reg?: string | null;
-    /** Description equals */
-    description_eq?: string | null;
-    /** Description contains */
-    description_con?: string | null;
-    /** Description regex */
-    description_reg?: string | null;
-    /** IdsTags equals */
-    idsTags_eq?: string | null;
-    /** IdsTags contains */
-    idsTags_con?: string | null;
-    /** IdsTags regex */
-    idsTags_reg?: string | null;
-    /** Id equals */
-    id_eq?: string | null;
-    /** Id contains */
-    id_con?: string | null;
-    /** Id regex */
-    id_reg?: string | null;
-    /** DateCreated equals */
-    dateCreated_eq?: Date | null;
-    /** DateCreated less than or equal to */
-    dateCreated_lte?: Date | null;
-    /** DateCreated greater than or equal to */
-    dateCreated_gte?: Date | null;
-    /** DateUpdated equals */
-    dateUpdated_eq?: Date | null;
-    /** DateUpdated less than or equal to */
-    dateUpdated_lte?: Date | null;
-    /** DateUpdated greater than or equal to */
-    dateUpdated_gte?: Date | null;
-}
-
-/** Group of line keys */
-export interface LineKeyGroupUpdateRequest {
-    /** Group of speed dial keys. Must have at least one */
-    lineKeys?: LineKey[] | null;
-    /** Friendly name of line key group */
-    friendlyName?: string | null;
-    /** Description of line key group */
-    description?: string | null;
-    /** It is nullable because there are cases where it makes no sense to point to an account.
-For example a CloudService user will point to no account */
-    idsTags?: string[] | null;
-}
-
-/** Type of speed dial */
-export enum LineKeyType {
-    None = "None",
-    Extension = "Extension",
-    SpeedDial = "SpeedDial",
-}
-
-/** It is part of a phone. Lines are needed in order to make and receive phone calls. */
-export interface LineUpdateRequest {
-    friendlyName?: string | null;
-    /** Caller id number that will be used to place outbound calls */
-    callerIdNumber?: string | null;
-    /** Record outbound calls to PSTN? */
-    recordExternalCalls?: boolean | null;
-    /** Record calls to other extensions? */
-    recordInternalCalls?: boolean | null;
-    /** Users will be charged extra for AI transcriptions. If this is true external calls to PSTN will be recorded. */
-    useAiForExternalCalls?: boolean | null;
-    /** Users will be charged extra for AI transcriptions. If this is true internal calls to extensions will be recorded. */
-    useAiForOutgoingCallsToExtensions?: boolean | null;
-    /** What input to pass to AI engine. If null it should use a default input that is part of constants. */
-    idAiCallAnalysisInput?: string | null;
-    language?: Language;
 }
 
 /** Mailing address */
@@ -5325,7 +5131,7 @@ export interface NodeIfDigits {
     readonly children?: FlowNode[];
 }
 
-export interface NodeIfLineOffline {
+export interface NodeIfPhoneDisconnected {
     flowNodeType?: FlowNodeType;
     readonly children?: FlowNode[];
 }
@@ -5340,19 +5146,19 @@ export interface NodeIfWeekDay {
     readonly children?: FlowNode[];
 }
 
-export interface NodeLineOffline {
-    flowNodeType?: FlowNodeType;
-    child?: FlowNode;
-}
-
-export interface NodeLineOnline {
-    flowNodeType?: FlowNodeType;
-    child?: FlowNode;
-}
-
 export interface NodePause {
     /** Number of seconds to pause */
     seconds?: number;
+    flowNodeType?: FlowNodeType;
+    child?: FlowNode;
+}
+
+export interface NodePhoneConnected {
+    flowNodeType?: FlowNodeType;
+    child?: FlowNode;
+}
+
+export interface NodePhoneDisconnected {
     flowNodeType?: FlowNodeType;
     child?: FlowNode;
 }
@@ -5412,6 +5218,20 @@ export interface Phone {
     idPhoneConfiguration?: string | null;
     /** Username and password to login to web-app */
     idUser?: string | null;
+    phoneConnectionStatus?: PhoneConnectionStatus;
+    /** Caller id number that will be used to place outbound calls */
+    callerIdNumbers?: string[];
+    /** Record outbound calls to PSTN? */
+    recordExternalCalls?: boolean;
+    /** Record calls to other extensions? */
+    recordInternalCalls?: boolean;
+    /** Users will be charged extra for AI transcriptions. If this is true external calls to PSTN will be recorded. */
+    useAiForExternalCalls?: boolean;
+    /** Users will be charged extra for AI transcriptions. If this is true internal calls to extensions will be recorded. */
+    useAiForOutgoingCallsToExtensions?: boolean;
+    /** What input to pass to AI engine. If null it should use a default input that is part of constants. */
+    idAiCallAnalysisInput?: string | null;
+    language?: Language;
     /** Descriptive name of phone */
     friendlyName?: string;
     phoneType?: PhoneType;
@@ -5434,16 +5254,25 @@ For example a CloudService user will point to no account */
     readonly dateCreated?: Date;
     /** Updated date. When item is created on database this date will be set too. This is important so that we can sync contacts */
     readonly dateUpdated?: Date;
-    /** Phone lines. Should never be null */
-    lines?: Line[];
+}
+
+/** BLF status of a line */
+export interface PhoneBlfStatus {
+    /** Id of line */
+    idPhone?: string;
+    /** Id of channel */
+    idChannel?: string;
+    /** Extension called */
+    callerId?: string | null;
+    blfStatusType?: BlfStatusType;
 }
 
 /** Configuration of a phone */
 export interface PhoneConfiguration {
     /** Id of document */
     readonly id?: string;
-    /** Line keys to use */
-    idLineKeyGroup?: string | null;
+    /** Phone keys to use */
+    idSpeedDialGroup?: string | null;
     /** Phone configuration name */
     frienlyName?: string;
     /** Phone configuration description */
@@ -5459,12 +5288,12 @@ For example a CloudService user will point to no account */
 
 /** Enables searching for PhoneConfigurations */
 export interface PhoneConfigurationFilterRequest {
-    /** IdLineKeyGroup equals */
-    idLineKeyGroup_eq?: string | null;
-    /** IdLineKeyGroup contains */
-    idLineKeyGroup_con?: string | null;
-    /** IdLineKeyGroup regex */
-    idLineKeyGroup_reg?: string | null;
+    /** IdSpeedDialGroup equals */
+    idSpeedDialGroup_eq?: string | null;
+    /** IdSpeedDialGroup contains */
+    idSpeedDialGroup_con?: string | null;
+    /** IdSpeedDialGroup regex */
+    idSpeedDialGroup_reg?: string | null;
     /** FrienlyName equals */
     frienlyName_eq?: string | null;
     /** FrienlyName contains */
@@ -5505,8 +5334,8 @@ export interface PhoneConfigurationFilterRequest {
 
 /** Configuration of a phone */
 export interface PhoneConfigurationUpdateRequest {
-    /** Line keys to use */
-    idLineKeyGroup?: string | null;
+    /** Phone keys to use */
+    idSpeedDialGroup?: string | null;
     /** Phone configuration name */
     frienlyName?: string | null;
     /** Phone configuration description */
@@ -5514,6 +5343,29 @@ export interface PhoneConfigurationUpdateRequest {
     /** It is nullable because there are cases where it makes no sense to point to an account.
 For example a CloudService user will point to no account */
     idsTags?: string[] | null;
+}
+
+/** Status of phone line */
+export interface PhoneConnectionStatus {
+    /** Public ip address of the connection */
+    readonly ipWAN?: string | null;
+    /** Public port */
+    readonly portWAN?: number;
+    /** Private ip address of the connection */
+    readonly ipLAN?: string | null;
+    /** Private port */
+    readonly portLAN?: number;
+    /** User agent of phone connecting */
+    readonly userAgent?: string | null;
+    /** Null means we do not know */
+    readonly isConnected?: boolean;
+    /** Reason of phone disconnected. 
+Posible reasons: none, registration failure, remove existing, remove unavailable, expiration, request, shutdown */
+    readonly disconnectedReason?: string | null;
+    /** Date when line was last connected */
+    readonly dateConnected?: Date | null;
+    /** Date when line was last disconnected */
+    readonly dateDisconnected?: Date | null;
 }
 
 /** Enables searching for Phones */
@@ -5536,94 +5388,82 @@ export interface PhoneFilterRequest {
     idUser_con?: string | null;
     /** IdUser regex */
     idUser_reg?: string | null;
-    /** Lines.FriendlyName equals */
-    lines_friendlyName_eq?: string | null;
-    /** Lines.FriendlyName contains */
-    lines_friendlyName_con?: string | null;
-    /** Lines.FriendlyName regex */
-    lines_friendlyName_reg?: string | null;
-    /** Lines.LineConnectionStatus.IpWAN equals */
-    lines_lineConnectionStatus_ipWAN_eq?: string | null;
-    /** Lines.LineConnectionStatus.IpWAN contains */
-    lines_lineConnectionStatus_ipWAN_con?: string | null;
-    /** Lines.LineConnectionStatus.IpWAN regex */
-    lines_lineConnectionStatus_ipWAN_reg?: string | null;
-    /** Lines.LineConnectionStatus.PortWAN equals */
-    lines_lineConnectionStatus_portWAN_eq?: number | null;
-    /** Lines.LineConnectionStatus.PortWAN less than or equal to */
-    lines_lineConnectionStatus_portWAN_lte?: number | null;
-    /** Lines.LineConnectionStatus.PortWAN greater than or equal to */
-    lines_lineConnectionStatus_portWAN_gte?: number | null;
-    /** Lines.LineConnectionStatus.IpLAN equals */
-    lines_lineConnectionStatus_ipLAN_eq?: string | null;
-    /** Lines.LineConnectionStatus.IpLAN contains */
-    lines_lineConnectionStatus_ipLAN_con?: string | null;
-    /** Lines.LineConnectionStatus.IpLAN regex */
-    lines_lineConnectionStatus_ipLAN_reg?: string | null;
-    /** Lines.LineConnectionStatus.PortLAN equals */
-    lines_lineConnectionStatus_portLAN_eq?: number | null;
-    /** Lines.LineConnectionStatus.PortLAN less than or equal to */
-    lines_lineConnectionStatus_portLAN_lte?: number | null;
-    /** Lines.LineConnectionStatus.PortLAN greater than or equal to */
-    lines_lineConnectionStatus_portLAN_gte?: number | null;
-    /** Lines.LineConnectionStatus.UserAgent equals */
-    lines_lineConnectionStatus_userAgent_eq?: string | null;
-    /** Lines.LineConnectionStatus.UserAgent contains */
-    lines_lineConnectionStatus_userAgent_con?: string | null;
-    /** Lines.LineConnectionStatus.UserAgent regex */
-    lines_lineConnectionStatus_userAgent_reg?: string | null;
-    /** Lines.LineConnectionStatus.IsConnected equals */
-    lines_lineConnectionStatus_isConnected_eq?: boolean | null;
-    /** Lines.LineConnectionStatus.DisconnectedReason equals */
-    lines_lineConnectionStatus_disconnectedReason_eq?: string | null;
-    /** Lines.LineConnectionStatus.DisconnectedReason contains */
-    lines_lineConnectionStatus_disconnectedReason_con?: string | null;
-    /** Lines.LineConnectionStatus.DisconnectedReason regex */
-    lines_lineConnectionStatus_disconnectedReason_reg?: string | null;
-    /** Lines.LineConnectionStatus.DateConnected equals */
-    lines_lineConnectionStatus_dateConnected_eq?: Date | null;
-    /** Lines.LineConnectionStatus.DateConnected less than or equal to */
-    lines_lineConnectionStatus_dateConnected_lte?: Date | null;
-    /** Lines.LineConnectionStatus.DateConnected greater than or equal to */
-    lines_lineConnectionStatus_dateConnected_gte?: Date | null;
-    /** Lines.LineConnectionStatus.DateDisconnected equals */
-    lines_lineConnectionStatus_dateDisconnected_eq?: Date | null;
-    /** Lines.LineConnectionStatus.DateDisconnected less than or equal to */
-    lines_lineConnectionStatus_dateDisconnected_lte?: Date | null;
-    /** Lines.LineConnectionStatus.DateDisconnected greater than or equal to */
-    lines_lineConnectionStatus_dateDisconnected_gte?: Date | null;
-    /** Lines.CallerIdNumber equals */
-    lines_callerIdNumber_eq?: string | null;
-    /** Lines.CallerIdNumber contains */
-    lines_callerIdNumber_con?: string | null;
-    /** Lines.CallerIdNumber regex */
-    lines_callerIdNumber_reg?: string | null;
-    /** Lines.RecordExternalCalls equals */
-    lines_recordExternalCalls_eq?: boolean | null;
-    /** Lines.RecordInternalCalls equals */
-    lines_recordInternalCalls_eq?: boolean | null;
-    /** Lines.UseAiForExternalCalls equals */
-    lines_useAiForExternalCalls_eq?: boolean | null;
-    /** Lines.UseAiForOutgoingCallsToExtensions equals */
-    lines_useAiForOutgoingCallsToExtensions_eq?: boolean | null;
-    /** Lines.IdAiCallAnalysisInput equals */
-    lines_idAiCallAnalysisInput_eq?: string | null;
-    /** Lines.IdAiCallAnalysisInput contains */
-    lines_idAiCallAnalysisInput_con?: string | null;
-    /** Lines.IdAiCallAnalysisInput regex */
-    lines_idAiCallAnalysisInput_reg?: string | null;
-    /** Lines.Language equals */
-    lines_language_eq?: string | null;
-    /** Lines.Language contains */
-    lines_language_con?: string | null;
-    /** Lines.Language regex */
-    lines_language_reg?: string | null;
-    /** Lines.Id equals */
-    lines_id_eq?: string | null;
-    /** Lines.Id contains */
-    lines_id_con?: string | null;
-    /** Lines.Id regex */
-    lines_id_reg?: string | null;
+    /** PhoneConnectionStatus.IpWAN equals */
+    phoneConnectionStatus_ipWAN_eq?: string | null;
+    /** PhoneConnectionStatus.IpWAN contains */
+    phoneConnectionStatus_ipWAN_con?: string | null;
+    /** PhoneConnectionStatus.IpWAN regex */
+    phoneConnectionStatus_ipWAN_reg?: string | null;
+    /** PhoneConnectionStatus.PortWAN equals */
+    phoneConnectionStatus_portWAN_eq?: number | null;
+    /** PhoneConnectionStatus.PortWAN less than or equal to */
+    phoneConnectionStatus_portWAN_lte?: number | null;
+    /** PhoneConnectionStatus.PortWAN greater than or equal to */
+    phoneConnectionStatus_portWAN_gte?: number | null;
+    /** PhoneConnectionStatus.IpLAN equals */
+    phoneConnectionStatus_ipLAN_eq?: string | null;
+    /** PhoneConnectionStatus.IpLAN contains */
+    phoneConnectionStatus_ipLAN_con?: string | null;
+    /** PhoneConnectionStatus.IpLAN regex */
+    phoneConnectionStatus_ipLAN_reg?: string | null;
+    /** PhoneConnectionStatus.PortLAN equals */
+    phoneConnectionStatus_portLAN_eq?: number | null;
+    /** PhoneConnectionStatus.PortLAN less than or equal to */
+    phoneConnectionStatus_portLAN_lte?: number | null;
+    /** PhoneConnectionStatus.PortLAN greater than or equal to */
+    phoneConnectionStatus_portLAN_gte?: number | null;
+    /** PhoneConnectionStatus.UserAgent equals */
+    phoneConnectionStatus_userAgent_eq?: string | null;
+    /** PhoneConnectionStatus.UserAgent contains */
+    phoneConnectionStatus_userAgent_con?: string | null;
+    /** PhoneConnectionStatus.UserAgent regex */
+    phoneConnectionStatus_userAgent_reg?: string | null;
+    /** PhoneConnectionStatus.IsConnected equals */
+    phoneConnectionStatus_isConnected_eq?: boolean | null;
+    /** PhoneConnectionStatus.DisconnectedReason equals */
+    phoneConnectionStatus_disconnectedReason_eq?: string | null;
+    /** PhoneConnectionStatus.DisconnectedReason contains */
+    phoneConnectionStatus_disconnectedReason_con?: string | null;
+    /** PhoneConnectionStatus.DisconnectedReason regex */
+    phoneConnectionStatus_disconnectedReason_reg?: string | null;
+    /** PhoneConnectionStatus.DateConnected equals */
+    phoneConnectionStatus_dateConnected_eq?: Date | null;
+    /** PhoneConnectionStatus.DateConnected less than or equal to */
+    phoneConnectionStatus_dateConnected_lte?: Date | null;
+    /** PhoneConnectionStatus.DateConnected greater than or equal to */
+    phoneConnectionStatus_dateConnected_gte?: Date | null;
+    /** PhoneConnectionStatus.DateDisconnected equals */
+    phoneConnectionStatus_dateDisconnected_eq?: Date | null;
+    /** PhoneConnectionStatus.DateDisconnected less than or equal to */
+    phoneConnectionStatus_dateDisconnected_lte?: Date | null;
+    /** PhoneConnectionStatus.DateDisconnected greater than or equal to */
+    phoneConnectionStatus_dateDisconnected_gte?: Date | null;
+    /** CallerIdNumbers equals */
+    callerIdNumbers_eq?: string | null;
+    /** CallerIdNumbers contains */
+    callerIdNumbers_con?: string | null;
+    /** CallerIdNumbers regex */
+    callerIdNumbers_reg?: string | null;
+    /** RecordExternalCalls equals */
+    recordExternalCalls_eq?: boolean | null;
+    /** RecordInternalCalls equals */
+    recordInternalCalls_eq?: boolean | null;
+    /** UseAiForExternalCalls equals */
+    useAiForExternalCalls_eq?: boolean | null;
+    /** UseAiForOutgoingCallsToExtensions equals */
+    useAiForOutgoingCallsToExtensions_eq?: boolean | null;
+    /** IdAiCallAnalysisInput equals */
+    idAiCallAnalysisInput_eq?: string | null;
+    /** IdAiCallAnalysisInput contains */
+    idAiCallAnalysisInput_con?: string | null;
+    /** IdAiCallAnalysisInput regex */
+    idAiCallAnalysisInput_reg?: string | null;
+    /** Language equals */
+    language_eq?: string | null;
+    /** Language contains */
+    language_con?: string | null;
+    /** Language regex */
+    language_reg?: string | null;
     /** FriendlyName equals */
     friendlyName_eq?: string | null;
     /** FriendlyName contains */
@@ -5708,8 +5548,19 @@ export interface PhoneUpdateRequest {
     idPhoneConfiguration?: string | null;
     /** Username and password to login to web-app */
     idUser?: string | null;
-    /** Phone lines. Should never be null */
-    lines?: Line[] | null;
+    /** Caller id number that will be used to place outbound calls */
+    callerIdNumbers?: string[] | null;
+    /** Record outbound calls to PSTN? */
+    recordExternalCalls?: boolean | null;
+    /** Record calls to other extensions? */
+    recordInternalCalls?: boolean | null;
+    /** Users will be charged extra for AI transcriptions. If this is true external calls to PSTN will be recorded. */
+    useAiForExternalCalls?: boolean | null;
+    /** Users will be charged extra for AI transcriptions. If this is true internal calls to extensions will be recorded. */
+    useAiForOutgoingCallsToExtensions?: boolean | null;
+    /** What input to pass to AI engine. If null it should use a default input that is part of constants. */
+    idAiCallAnalysisInput?: string | null;
+    language?: Language;
     /** Descriptive name of phone */
     friendlyName?: string | null;
     phoneType?: PhoneType;
@@ -5747,7 +5598,7 @@ export interface PowerDialerGroup {
     /** Override caller id? */
     readonly idCallerIdMask?: string | null;
     /** Agents that will be using power dialer */
-    idLinesAgents?: string[];
+    idPhonesAgents?: string[];
     /** Subdocument */
     readonly powerDialerContacts?: PowerDialerContact[];
     /** Friendly name of power dialer group */
@@ -5780,12 +5631,12 @@ export interface PowerDialerGroupFilterRequest {
     idCallerIdMask_con?: string | null;
     /** IdCallerIdMask regex */
     idCallerIdMask_reg?: string | null;
-    /** IdLinesAgents equals */
-    idLinesAgents_eq?: string | null;
-    /** IdLinesAgents contains */
-    idLinesAgents_con?: string | null;
-    /** IdLinesAgents regex */
-    idLinesAgents_reg?: string | null;
+    /** IdPhonesAgents equals */
+    idPhonesAgents_eq?: string | null;
+    /** IdPhonesAgents contains */
+    idPhonesAgents_con?: string | null;
+    /** IdPhonesAgents regex */
+    idPhonesAgents_reg?: string | null;
     /** PowerDialerContacts.PhoneNumber equals */
     powerDialerContacts_phoneNumber_eq?: string | null;
     /** PowerDialerContacts.PhoneNumber contains */
@@ -5892,7 +5743,7 @@ export enum PowerDialerGroupStatus {
 /** Group used to call multiple parties */
 export interface PowerDialerGroupUpdateRequest {
     /** Agents that will be using power dialer */
-    idLinesAgents?: string[] | null;
+    idPhonesAgents?: string[] | null;
     /** Friendly name of power dialer group */
     friendlyName?: string | null;
     /** Description of power dialer group */
@@ -6126,8 +5977,9 @@ export enum SnsTopic {
     AiAnalysis_Complete = "AiAnalysis_Complete",
     Call_Started = "Call_Started",
     Call_Terminated = "Call_Terminated",
-    Line_Disconnected = "Line_Disconnected",
-    Line_Connected = "Line_Connected",
+    Call_TerminatedWithRecording = "Call_TerminatedWithRecording",
+    Phone_Disconnected = "Phone_Disconnected",
+    Phone_Connected = "Phone_Connected",
     Extension_Unanswered = "Extension_Unanswered",
     Extension_Answered = "Extension_Answered",
     Extension_TookToLongToBeAnswered = "Extension_TookToLongToBeAnswered",
@@ -6140,6 +5992,129 @@ export enum SnsTopic {
     Fax_SendingProgress = "Fax_SendingProgress",
     CallFlowLogic_Progress = "CallFlowLogic_Progress",
     BLF = "BLF",
+}
+
+/** Speed dial */
+export interface SpeedDial {
+    speedDialType?: SpeedDialType;
+    /** Display name of line key */
+    label?: string;
+    /** Value of line key. Example: 9546543982
+Only requried if SpeedDialType is SpeedDial */
+    value?: string | null;
+    /** Id of extension to call */
+    idExtension?: string | null;
+    /** Position of line key. This is importante because maybe a user may want to skip some positions */
+    speedDialIndex?: number;
+}
+
+/** Group of line keys */
+export interface SpeedDialGroup {
+    /** Id of document */
+    readonly id?: string;
+    /** Group of speed dial keys. Must have at least one */
+    speedDials?: SpeedDial[];
+    /** Friendly name of line key group */
+    friendlyName?: string;
+    /** Description of line key group */
+    description?: string | null;
+    /** It is nullable because there are cases where it makes no sense to point to an account. 
+For example a CloudService user will point to no account */
+    idsTags?: string[];
+    /** Creation date. Sets DateUpdated if it does not have a value */
+    readonly dateCreated?: Date;
+    /** Updated date. When item is created on database this date will be set too. This is important so that we can sync contacts */
+    readonly dateUpdated?: Date;
+}
+
+/** Enables searching for SpeedDialGroups */
+export interface SpeedDialGroupFilterRequest {
+    /** SpeedDials.SpeedDialType equals */
+    speedDials_speedDialType_eq?: string | null;
+    /** SpeedDials.SpeedDialType contains */
+    speedDials_speedDialType_con?: string | null;
+    /** SpeedDials.SpeedDialType regex */
+    speedDials_speedDialType_reg?: string | null;
+    /** SpeedDials.Label equals */
+    speedDials_label_eq?: string | null;
+    /** SpeedDials.Label contains */
+    speedDials_label_con?: string | null;
+    /** SpeedDials.Label regex */
+    speedDials_label_reg?: string | null;
+    /** SpeedDials.Value equals */
+    speedDials_value_eq?: string | null;
+    /** SpeedDials.Value contains */
+    speedDials_value_con?: string | null;
+    /** SpeedDials.Value regex */
+    speedDials_value_reg?: string | null;
+    /** SpeedDials.IdExtension equals */
+    speedDials_idExtension_eq?: string | null;
+    /** SpeedDials.IdExtension contains */
+    speedDials_idExtension_con?: string | null;
+    /** SpeedDials.IdExtension regex */
+    speedDials_idExtension_reg?: string | null;
+    /** SpeedDials.SpeedDialIndex equals */
+    speedDials_speedDialIndex_eq?: number | null;
+    /** SpeedDials.SpeedDialIndex less than or equal to */
+    speedDials_speedDialIndex_lte?: number | null;
+    /** SpeedDials.SpeedDialIndex greater than or equal to */
+    speedDials_speedDialIndex_gte?: number | null;
+    /** FriendlyName equals */
+    friendlyName_eq?: string | null;
+    /** FriendlyName contains */
+    friendlyName_con?: string | null;
+    /** FriendlyName regex */
+    friendlyName_reg?: string | null;
+    /** Description equals */
+    description_eq?: string | null;
+    /** Description contains */
+    description_con?: string | null;
+    /** Description regex */
+    description_reg?: string | null;
+    /** IdsTags equals */
+    idsTags_eq?: string | null;
+    /** IdsTags contains */
+    idsTags_con?: string | null;
+    /** IdsTags regex */
+    idsTags_reg?: string | null;
+    /** Id equals */
+    id_eq?: string | null;
+    /** Id contains */
+    id_con?: string | null;
+    /** Id regex */
+    id_reg?: string | null;
+    /** DateCreated equals */
+    dateCreated_eq?: Date | null;
+    /** DateCreated less than or equal to */
+    dateCreated_lte?: Date | null;
+    /** DateCreated greater than or equal to */
+    dateCreated_gte?: Date | null;
+    /** DateUpdated equals */
+    dateUpdated_eq?: Date | null;
+    /** DateUpdated less than or equal to */
+    dateUpdated_lte?: Date | null;
+    /** DateUpdated greater than or equal to */
+    dateUpdated_gte?: Date | null;
+}
+
+/** Group of line keys */
+export interface SpeedDialGroupUpdateRequest {
+    /** Group of speed dial keys. Must have at least one */
+    speedDials?: SpeedDial[] | null;
+    /** Friendly name of line key group */
+    friendlyName?: string | null;
+    /** Description of line key group */
+    description?: string | null;
+    /** It is nullable because there are cases where it makes no sense to point to an account.
+For example a CloudService user will point to no account */
+    idsTags?: string[] | null;
+}
+
+/** Type of speed dial */
+export enum SpeedDialType {
+    None = "None",
+    Extension = "Extension",
+    SpeedDial = "SpeedDial",
 }
 
 /** Represents a stored file in ublux such as a recording or audio. */
@@ -6561,11 +6536,11 @@ export enum UbluxRole {
     Users_update = "users_update",
     Users_delete = "users_delete",
     Users_create = "users_create",
-    Linekeygroups = "linekeygroups",
-    Linekeygroups_readonly = "linekeygroups_readonly",
-    Linekeygroups_update = "linekeygroups_update",
-    Linekeygroups_delete = "linekeygroups_delete",
-    Linekeygroups_create = "linekeygroups_create",
+    Speeddialgroups = "speeddialgroups",
+    Speeddialgroups_readonly = "speeddialgroups_readonly",
+    Speeddialgroups_update = "speeddialgroups_update",
+    Speeddialgroups_delete = "speeddialgroups_delete",
+    Speeddialgroups_create = "speeddialgroups_create",
     Musiconholdgroups = "musiconholdgroups",
     Musiconholdgroups_readonly = "musiconholdgroups_readonly",
     Musiconholdgroups_update = "musiconholdgroups_update",
@@ -6815,7 +6790,7 @@ export interface Voicemail {
     /** Id of document */
     readonly id?: string;
     /** Ids of lines that can listen to voicemail */
-    readonly idsLinesThatCanListenToVoicemail?: string[];
+    readonly idsPhonesThatCanListenToVoicemail?: string[];
     /** Email where voicemail was sent */
     readonly idEmail?: string;
     voicemailType?: VoicemailType;
@@ -6836,12 +6811,12 @@ For example a CloudService user will point to no account */
 
 /** Enables searching for Voicemails */
 export interface VoicemailFilterRequest {
-    /** IdsLinesThatCanListenToVoicemail equals */
-    idsLinesThatCanListenToVoicemail_eq?: string | null;
-    /** IdsLinesThatCanListenToVoicemail contains */
-    idsLinesThatCanListenToVoicemail_con?: string | null;
-    /** IdsLinesThatCanListenToVoicemail regex */
-    idsLinesThatCanListenToVoicemail_reg?: string | null;
+    /** IdsPhonesThatCanListenToVoicemail equals */
+    idsPhonesThatCanListenToVoicemail_eq?: string | null;
+    /** IdsPhonesThatCanListenToVoicemail contains */
+    idsPhonesThatCanListenToVoicemail_con?: string | null;
+    /** IdsPhonesThatCanListenToVoicemail regex */
+    idsPhonesThatCanListenToVoicemail_reg?: string | null;
     /** IdEmail equals */
     idEmail_eq?: string | null;
     /** IdEmail contains */

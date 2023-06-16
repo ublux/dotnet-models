@@ -21,16 +21,17 @@ public partial class Phone
     public required string Password { get; set; } = string.Empty;
 
     /// <summary>
-    ///     It is ok to have it hardcoded. If we change id of line unit tests will fail
+    ///     It is ok to have it hardcoded. If we change this unit test will fail
+    ///     Ph | Ac.1 | WS1 | 10000
     /// </summary>
-    public const string Regex_GetIdOfLinePattern = @"Li\.Ac\.\w+\.Ph\.[\w-]+\.\w+\.\w{1,12}";
+    public const string Regex_GetIdOfPhonePattern = @"Ph\.Ac\.\d+\.[^\.]+\.\w{1,12}";
 
     /// <summary>
     ///     For now it is: Li.Ac.1111.Ph.WS-1111.81111.91111
     ///     It is ok to hard code it. If prefixis change unit tests will fail. It is very important to keep running unit tests!
     /// </summary>
-    [GeneratedRegex(Regex_GetIdOfLinePattern)]
-    public static partial Regex Regex_GetIdOfLine();
+    [GeneratedRegex(Regex_GetIdOfPhonePattern)]
+    public static partial Regex Regex_GetIdOfPhone();
 
     internal const string alphanumericMainCharacters =
            "ABCDEFGHIJKLMNOPQRSTUVWXYZ" +
@@ -73,30 +74,12 @@ public partial class Phone
 
     /// <summary>
     ///     Helper method to see if any of the lines are connected
-    ///     null means we do not know
     /// </summary>
-    public bool? IsConnected()
+    public bool IsConnected()
     {
-        if (this.Lines is null)
+        if (this.PhoneConnectionStatus is null)
             return false;
-
-        // if any of the lines is marked as connected return true
-        foreach (var ln in this.Lines)
-        {
-            if (ln.LineConnectionStatus is null) continue;
-
-            if (ln.LineConnectionStatus.IsConnected == true) return true;
-        }
-
-        // if any of the lines connection status is marked as null return null
-        foreach (var ln in this.Lines)
-        {
-            if (ln.LineConnectionStatus is null) continue;
-
-            if (ln.LineConnectionStatus.IsConnected == null) return null;
-        }
-
-        return false;
+        return this.PhoneConnectionStatus.IsConnected;
     }
 
 }

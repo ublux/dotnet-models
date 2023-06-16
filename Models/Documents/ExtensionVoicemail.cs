@@ -17,11 +17,11 @@ public partial class ExtensionVoicemail : Extension
     public string? IdAudio { get; set; }
 
     /// <summary>
-    ///     Lines that can listen to this voicemail on their phones. It is also possible to listen to voicemails through phones and not just email.
+    ///     Phones that can listen to this voicemail on their phones. It is also possible to listen to voicemails through phones and not just email.
     /// </summary>
-    [References(typeof(Line))]
+    [References(typeof(Phone))]
     [AllowUpdate(true)]
-    public List<string> IdsLinesThatCanListenToVoicemail { get; set; } = new();
+    public List<string> IdsPhonesThatCanListenToVoicemail { get; set; } = new();
 
     #endregion
 

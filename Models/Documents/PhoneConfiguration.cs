@@ -10,11 +10,11 @@ public partial class PhoneConfiguration : UbluxDocument_ReferenceAccount_Referen
     #region References
 
     /// <summary>
-    ///     Line keys to use
+    ///     Phone keys to use
     /// </summary>
-    [References(typeof(LineKeyGroup))]
+    [References(typeof(SpeedDialGroup))]
     [AllowUpdate(true)]
-    public string? IdLineKeyGroup { get; set; }
+    public string? IdSpeedDialGroup { get; set; }
 
     #endregion
 

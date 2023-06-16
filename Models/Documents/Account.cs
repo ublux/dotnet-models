@@ -39,6 +39,13 @@ public partial class Account : UbluxDocument
     #endregion
 
     /// <summary>
+    ///     Primary language of account
+    /// </summary>    
+    [AllowUpdate(true)]
+    [UbluxValidationRequired]
+    public required Language Language { get; set; } 
+
+    /// <summary>
     ///     Name of company
     /// </summary>    
     [AllowUpdate(true)]

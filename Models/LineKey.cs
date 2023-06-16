@@ -3,13 +3,13 @@
 /// <summary>
 ///     Speed dial
 /// </summary>
-public class LineKey
+public class SpeedDial
 {
     /// <summary>
     ///     Type of line key
     /// </summary>
     [UbluxValidationRequired]
-    public required LineKeyType LineKeyType { get; set; }
+    public required SpeedDialType SpeedDialType { get; set; }
 
     /// <summary>
     ///     Display name of line key
@@ -19,7 +19,7 @@ public class LineKey
 
     /// <summary>
     ///     Value of line key. Example: 9546543982
-    ///     Only requried if LineKeyType is SpeedDial
+    ///     Only requried if SpeedDialType is SpeedDial
     /// </summary>
     [UbluxValidationRequired]
     public string? Value { get; set; }
@@ -33,5 +33,5 @@ public class LineKey
     /// <summary>
     ///     Position of line key. This is importante because maybe a user may want to skip some positions
     /// </summary>
-    public int LineKeyIndex { get; set; }
+    public int SpeedDialIndex { get; set; }
 }

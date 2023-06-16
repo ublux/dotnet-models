@@ -2,9 +2,9 @@
 
 /// <summary>
 ///     Webhook will send this data when triggered.
-///     <see cref="EventTriggerType.EventLineDisconnected"/>
+///     <see cref="EventTriggerType.EventPhoneDisconnected"/>
 /// </summary>
-public partial class EventLineDisconnected : EventLineBase
+public partial class EventPhoneDisconnected : EventPhoneBase
 {
     /// <summary>
     ///     Event Trigger Type
@@ -13,7 +13,7 @@ public partial class EventLineDisconnected : EventLineBase
     [SwaggerSchema(ReadOnly = true)]
     public override EventTriggerType EventTrigger
     {
-        get => EventTriggerType.EventLineDisconnected;
+        get => EventTriggerType.EventPhoneDisconnected;
 #if UBLUX_Release || RELEASE
         set { }
 #else
@@ -23,9 +23,9 @@ public partial class EventLineDisconnected : EventLineBase
     /// <summary>
     ///     Return a random object
     /// </summary>
-    public override EventLineDisconnected BuildRandomFakeObject(RunningApplicationInstance instance)
+    public override EventPhoneDisconnected BuildRandomFakeObject(RunningApplicationInstance instance)
     {
-        var obj = this.RandomBase<EventLineDisconnected>(instance);
+        var obj = this.RandomBase<EventPhoneDisconnected>(instance);
         obj.ConnectionStatus!.IsConnected = true;
 
         return obj;

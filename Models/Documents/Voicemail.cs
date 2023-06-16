@@ -19,8 +19,8 @@ public partial class Voicemail : UbluxDocument_ReferenceAccount_ReferenceTags
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [References(typeof(Line))]
-    public List<string> IdsLinesThatCanListenToVoicemail { get; set; } = new();
+    [References(typeof(Phone))]
+    public List<string> IdsPhonesThatCanListenToVoicemail { get; set; } = new();
 
     /// <summary>
     ///     Email where voicemail was sent
@@ -90,7 +90,7 @@ public partial class Voicemail : UbluxDocument_ReferenceAccount_ReferenceTags
             .Add(nameof(DateCreated));
 
         // enable searching fast by ids lines that can listen to voicemail
-        yield return new MongoDbIndex(collection, nameof(this.IdsLinesThatCanListenToVoicemail))
+        yield return new MongoDbIndex(collection, nameof(this.IdsPhonesThatCanListenToVoicemail))
             // Append DateCreated at the end so that items are returned by dateCreated
             .Add(nameof(DateCreated));
 

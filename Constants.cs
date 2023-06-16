@@ -1,4 +1,5 @@
 ﻿using System.Text.RegularExpressions;
+#pragma warning disable CA2211 // Non-constant fields should not be visible
 
 namespace Ublux.Communications.Models;
 
@@ -7,11 +8,6 @@ namespace Ublux.Communications.Models;
 /// </summary>
 public static partial class Constants
 {
-    ///// <summary>
-    /////     If a packet contains this we will not mark it as black. Zoiper does not send domain on packets
-    ///// </summary>
-    //public const string SipPacketLineId = "sip:Li.";
-
     /// <summary>
     ///     Stun server to use
     /// </summary>
@@ -105,13 +101,6 @@ public static partial class Constants
     [GeneratedRegex("(\\d+\\.\\d+\\.\\d+\\.\\d+)")]
     public static partial Regex RegexIp();
 
-    ///// <summary>
-    /////     Example: sip:Li.1G.Ph.1.1F@189.174.117.130:12013;transport=TLS;x-ast-orig-host=192.168.1.10:12013
-    /////     Attempt to get two ip addresses the public and private ip of line
-    ///// </summary>
-    //[GeneratedRegex("(\\d+\\.\\d+\\.\\d+\\.\\d+)")]
-    //public static partial Regex RegexLineContact();
-
     /// <summary>
     ///     Port used for UDP (only use this for providers)
     /// </summary>
@@ -164,7 +153,7 @@ public static partial class Constants
         FlowNodeType.DynamicExtension,
         FlowNodeType.Extension,
 
-        FlowNodeType.IfLineOffline,
+        FlowNodeType.IfPhoneDisconnected,
         FlowNodeType.IfDigits,
         FlowNodeType.IfTime,
         FlowNodeType.IfWeekDay
@@ -177,8 +166,8 @@ public static partial class Constants
     public static readonly Dictionary<FlowNodeType, FlowNodeType[]> FlowNodeChildRules = new()
     {
         // Conditionals
-        { FlowNodeType.IfLineOffline,
-            new FlowNodeType[]{ FlowNodeType.LineOffline, FlowNodeType.LineOnline } },
+        { FlowNodeType.IfPhoneDisconnected,
+            new FlowNodeType[]{ FlowNodeType.PhoneDisconnected, FlowNodeType.PhoneConnected } },
         { FlowNodeType.IfDigits,
             new FlowNodeType[]{ FlowNodeType.Digits, FlowNodeType.AnyDigits } },
         { FlowNodeType.IfTime,
@@ -189,8 +178,8 @@ public static partial class Constants
         // Childs of conditionals
         { FlowNodeType.Digits, CommonActions },
         { FlowNodeType.AnyDigits, CommonActions },
-        { FlowNodeType.LineOffline, CommonActions },
-        { FlowNodeType.LineOnline, CommonActions },
+        { FlowNodeType.PhoneDisconnected, CommonActions },
+        { FlowNodeType.PhoneConnected, CommonActions },
         { FlowNodeType.Time, CommonActions },
         { FlowNodeType.AnyTime, CommonActions },
         { FlowNodeType.WeekDays, CommonActions },
@@ -215,7 +204,7 @@ public static partial class Constants
     };
 
     /// <summary>
-    ///     Valid characters for an instance id. It cannot contain . it will make method GetLineId from phone not work!
+    ///     Valid characters for an instance id. It cannot contain . it will make method GetPhoneId from phone not work!
     /// </summary>
     public static readonly HashSet<char> InstanceIdValidChars = new("ABCDEFGHIJKLMNOPQRSTUVWXYZ-0123456789".ToCharArray());
 
@@ -380,8 +369,7 @@ public static partial class Constants
     /// <summary>
     ///     Timezones ordered
     /// </summary>
-    public static KeyValuePair<string, string>[] TimeZonesOrdered = new KeyValuePair<string, string>[]  {
-            //new ("Etc/GM", "ue: (UTC-12:00) International Date Line West"),
+    public static KeyValuePair<string, string>[] TimeZonesOrdered = new KeyValuePair<string, string>[]  {            
             new ("Pacific/Apia", "(UTC-11:00) Midway Island, Samoa"),
             new ("Pacific/Honolulu", "(UTC-10:00) Hawaii"),
             new ("America/Anchorage", "(UTC-09:00) Alaska"),

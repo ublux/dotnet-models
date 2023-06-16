@@ -3,7 +3,7 @@
 /// <summary>
 ///     Status of phone line
 /// </summary>
-public class LineConnectionStatus
+public class PhoneConnectionStatus
 {
     private static readonly ReaderWriterLockSlim _lock = new();
 
@@ -12,7 +12,7 @@ public class LineConnectionStatus
     private string? _ipLAN;
     private int _portLAN;
     private string? _userAgent;
-    private bool? _isConnected;
+    private bool _isConnected;
     private string? _disconnectedReason;
     private DateTime? _dateConnected;
     private DateTime? _dateDisconnected;
@@ -187,7 +187,7 @@ public class LineConnectionStatus
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    public bool? IsConnected
+    public bool IsConnected
     {
         get
         {

@@ -14,23 +14,23 @@ public interface ICallToExtension : ICall
     string? IdExtension { get; set; }
 
     /// <summary>
-    ///     Line that answered
+    ///     Phone that answered
     /// </summary>
-    [References(typeof(Line))]
+    [References(typeof(Phone))]
     [AllowUpdate(false)]
-    string? IdLineThatAnswered { get; set; }
+    string? IdPhoneThatAnswered { get; set; }
 
     /// <summary>
-    ///     Lines that ring
+    ///     Phones that ring
     /// </summary>
-    [References(typeof(Line))]
+    [References(typeof(Phone))]
     [AllowUpdate(false)]
-    List<string> IdsLinesThatRing { get; set; }
+    List<string> IdsPhonesThatRing { get; set; }
 
     /// <summary>
-    ///     Lines that did not ring
+    ///     Phones that did not ring
     /// </summary>
-    [References(typeof(Line))]
+    [References(typeof(Phone))]
     [AllowUpdate(false)]
-    List<string> IdsLinesThatDidNotRing { get; set; }
+    List<string> IdsPhonesThatDidNotRing { get; set; }
 }
