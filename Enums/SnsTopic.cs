@@ -47,6 +47,11 @@ public enum SnsTopic
     Call_Terminated,
 
     /// <summary>
+    ///     Call terminates with recording. Takes longer than call terminated because recording has to be uploaded
+    /// </summary>
+    Call_TerminatedWithRecording,
+
+    /// <summary>
     ///     When a line is disconnected (enqueues)
     /// </summary>
     Line_Disconnected,
