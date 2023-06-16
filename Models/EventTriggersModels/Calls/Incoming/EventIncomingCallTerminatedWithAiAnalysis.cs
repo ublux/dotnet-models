@@ -27,13 +27,6 @@ public class EventIncomingCallTerminatedWithAiAnalysis : EventIncomingCallTermin
     [SwaggerSchema(ReadOnly = true)]
     public required AiCallAnalysisOutput AiCallAnalysis { get; set; }
 
-    ///// <summary>
-    /////     Detected language
-    ///// </summary>
-    //[AllowUpdate(false)]
-    //[SwaggerSchema(ReadOnly = true)]
-    //public required string Language { get; set; } = "";
-
     #endregion
 
     /// <summary>

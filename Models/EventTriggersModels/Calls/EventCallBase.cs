@@ -6,7 +6,7 @@ namespace Ublux.Communications.Models.EventTriggersModels;
 /// <summary>
 ///     Base class for calls
 /// </summary>
-public abstract class EventCallStartedBase : EventTriggerModel
+public abstract class EventCallBase : EventTriggerModel
 {
     /// <summary>
     ///     From phone number
@@ -55,7 +55,7 @@ public abstract class EventCallStartedBase : EventTriggerModel
     /// <summary>
     ///     Return a random object
     /// </summary>
-    protected T GetRandomBase<T>(RunningApplicationInstance instance) where T : EventCallStartedBase
+    protected T GetRandomBase<T>(RunningApplicationInstance instance) where T : EventCallBase
     {
         var randChannel = Random.Shared.Next(100000, 999999);
         string randomIdCall = CallOutgoingToPSTN.BuildId(instance, randChannel + ".0").Id;

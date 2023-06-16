@@ -39,7 +39,6 @@ public class EventIncomingCallTerminatedWithRecording : EventIncomingCallEndedBa
     protected new T GetRandomBase<T>(RunningApplicationInstance instance) where T : EventIncomingCallTerminatedWithRecording
     {
         var obj = base.GetRandomBase<T>(instance);
-        // var idAccBuild = Account.BuildId(Random.Shared.Next(100, 10000).ToString());
         obj.RecordingUrl = "https://api.ublux.com/StoredFile/" + Guid.NewGuid().ToString() + ".mp3";
         return obj;
     }

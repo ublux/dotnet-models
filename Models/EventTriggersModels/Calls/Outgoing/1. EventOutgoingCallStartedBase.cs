@@ -3,7 +3,7 @@
 /// <summary>
 ///     Base class for outgoing calls events
 /// </summary>
-public abstract class EventOutgoingCallStartedBase : EventCallStartedBase
+public abstract class EventOutgoingCallStartedBase : EventCallBase
 {
     /// <summary>
     ///     Id of line that initiated phone call

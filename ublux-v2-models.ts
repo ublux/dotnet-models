@@ -649,13 +649,7 @@ If incoming:
     channelVariables?: ChannelVariables;
     /** Child calls */
     readonly childCalls?: ChildCall[];
-    /** ANSWER: Call is answered. A successful dial. The caller reached the callee.
-BUSY: Busy signal. The dial command reached its number but the number is busy.
-NOANSWER: No answer. The dial command reached its number, the number ring for too long, then the dial timed out.
-CANCEL: Call is canceled. The dial command reached its number but the caller hung up before the callee picked up.
-CONGESTION: Congestion. This status is usually a sign that the dialed number is not recognized.
-CHANUNAVAIL: Channel unavailable. On SIP, peer may not be registered. */
-    readonly dialStatus?: string;
+    dialStatus?: DialStatus;
     /** Number of seconds it took to answer */
     readonly secondsItTookToAnswer?: number | null;
     /** Dates when call is placed on hold */
@@ -1221,13 +1215,7 @@ If incoming:
     channelVariables?: ChannelVariables;
     /** Child calls */
     readonly childCalls?: ChildCall[];
-    /** ANSWER: Call is answered. A successful dial. The caller reached the callee.
-BUSY: Busy signal. The dial command reached its number but the number is busy.
-NOANSWER: No answer. The dial command reached its number, the number ring for too long, then the dial timed out.
-CANCEL: Call is canceled. The dial command reached its number but the caller hung up before the callee picked up.
-CONGESTION: Congestion. This status is usually a sign that the dialed number is not recognized.
-CHANUNAVAIL: Channel unavailable. On SIP, peer may not be registered. */
-    readonly dialStatus?: string;
+    dialStatus?: DialStatus;
     /** Number of seconds it took to answer */
     readonly secondsItTookToAnswer?: number | null;
     /** Dates when call is placed on hold */
@@ -1304,13 +1292,7 @@ If incoming:
     channelVariables?: ChannelVariables;
     /** Child calls */
     readonly childCalls?: ChildCall[];
-    /** ANSWER: Call is answered. A successful dial. The caller reached the callee.
-BUSY: Busy signal. The dial command reached its number but the number is busy.
-NOANSWER: No answer. The dial command reached its number, the number ring for too long, then the dial timed out.
-CANCEL: Call is canceled. The dial command reached its number but the caller hung up before the callee picked up.
-CONGESTION: Congestion. This status is usually a sign that the dialed number is not recognized.
-CHANUNAVAIL: Channel unavailable. On SIP, peer may not be registered. */
-    readonly dialStatus?: string;
+    dialStatus?: DialStatus;
     /** Number of seconds it took to answer */
     readonly secondsItTookToAnswer?: number | null;
     /** Dates when call is placed on hold */
@@ -1385,13 +1367,7 @@ If incoming:
     channelVariables?: ChannelVariables;
     /** Child calls */
     readonly childCalls?: ChildCall[];
-    /** ANSWER: Call is answered. A successful dial. The caller reached the callee.
-BUSY: Busy signal. The dial command reached its number but the number is busy.
-NOANSWER: No answer. The dial command reached its number, the number ring for too long, then the dial timed out.
-CANCEL: Call is canceled. The dial command reached its number but the caller hung up before the callee picked up.
-CONGESTION: Congestion. This status is usually a sign that the dialed number is not recognized.
-CHANUNAVAIL: Channel unavailable. On SIP, peer may not be registered. */
-    readonly dialStatus?: string;
+    dialStatus?: DialStatus;
     /** Number of seconds it took to answer */
     readonly secondsItTookToAnswer?: number | null;
     /** Dates when call is placed on hold */
@@ -1456,13 +1432,7 @@ If incoming:
     channelVariables?: ChannelVariables;
     /** Child calls */
     readonly childCalls?: ChildCall[];
-    /** ANSWER: Call is answered. A successful dial. The caller reached the callee.
-BUSY: Busy signal. The dial command reached its number but the number is busy.
-NOANSWER: No answer. The dial command reached its number, the number ring for too long, then the dial timed out.
-CANCEL: Call is canceled. The dial command reached its number but the caller hung up before the callee picked up.
-CONGESTION: Congestion. This status is usually a sign that the dialed number is not recognized.
-CHANUNAVAIL: Channel unavailable. On SIP, peer may not be registered. */
-    readonly dialStatus?: string;
+    dialStatus?: DialStatus;
     /** Number of seconds it took to answer */
     readonly secondsItTookToAnswer?: number | null;
     /** Dates when call is placed on hold */
@@ -1605,8 +1575,7 @@ export interface ChildCall {
     /** Call duration in seconds */
     readonly durationInSeconds?: number | null;
     childCallType?: ChildCallType;
-    /** Status of call */
-    dialStatus?: string;
+    dialStatus?: DialStatus;
     dateCreated?: Date;
     /** Number of seconds it took to answer */
     secondsItTookToAnswer?: number | null;
@@ -1629,8 +1598,7 @@ export interface ChildCallAttendantTransferToExtension {
     idCallAttendantTransfer?: string;
     /** Call duration in seconds */
     readonly durationInSeconds?: number | null;
-    /** Status of call */
-    dialStatus?: string;
+    dialStatus?: DialStatus;
     dateCreated?: Date;
     /** Number of seconds it took to answer */
     secondsItTookToAnswer?: number | null;
@@ -1657,8 +1625,7 @@ export interface ChildCallAttendantTransferToPSTN {
     readonly contactFullName?: string | null;
     /** Call duration in seconds */
     readonly durationInSeconds?: number | null;
-    /** Status of call */
-    dialStatus?: string;
+    dialStatus?: DialStatus;
     dateCreated?: Date;
     /** Number of seconds it took to answer */
     secondsItTookToAnswer?: number | null;
@@ -1687,8 +1654,7 @@ export interface ChildCallBlindTransferToExtension {
     idCall?: string;
     /** Call duration in seconds */
     readonly durationInSeconds?: number | null;
-    /** Status of call */
-    dialStatus?: string;
+    dialStatus?: DialStatus;
     dateCreated?: Date;
     /** Number of seconds it took to answer */
     secondsItTookToAnswer?: number | null;
@@ -1715,8 +1681,7 @@ export interface ChildCallBlindTransferToPSTN {
     idCall?: string;
     /** Call duration in seconds */
     readonly durationInSeconds?: number | null;
-    /** Status of call */
-    dialStatus?: string;
+    dialStatus?: DialStatus;
     dateCreated?: Date;
     /** Number of seconds it took to answer */
     secondsItTookToAnswer?: number | null;
@@ -1743,8 +1708,7 @@ export interface ChildCallForwardToExtension {
     childCallType?: ChildCallType;
     /** Call duration in seconds */
     readonly durationInSeconds?: number | null;
-    /** Status of call */
-    dialStatus?: string;
+    dialStatus?: DialStatus;
     dateCreated?: Date;
     /** Number of seconds it took to answer */
     secondsItTookToAnswer?: number | null;
@@ -1769,8 +1733,7 @@ export interface ChildCallForwardToPSTN {
     readonly contactFullName?: string | null;
     /** Call duration in seconds */
     readonly durationInSeconds?: number | null;
-    /** Status of call */
-    dialStatus?: string;
+    dialStatus?: DialStatus;
     dateCreated?: Date;
     /** Number of seconds it took to answer */
     secondsItTookToAnswer?: number | null;
@@ -2550,6 +2513,20 @@ export enum DayOfWeek {
     Thursday = "Thursday",
     Friday = "Friday",
     Saturday = "Saturday",
+}
+
+/** Type of call. https://wiki.asterisk.org/wiki/display/AST/Asterisk+18+Application_Dial */
+export enum DialStatus {
+    None = "None",
+    RINGING = "RINGING",
+    NOANSWER = "NOANSWER",
+    HANGUP = "HANGUP",
+    CANCEL = "CANCEL",
+    BUSY = "BUSY",
+    CALLFLOW = "CALLFLOW",
+    ANSWER = "ANSWER",
+    UNAVAILABLE = "UNAVAILABLE",
+    ERROR = "ERROR",
 }
 
 /** Email address. Two users may use the same email address */
@@ -6397,12 +6374,24 @@ export interface TagUpdateRequest {
     description?: string | null;
 }
 
-/** Date when call was placed on hold */
+/** Date when call was placed on hold. For example if SecondsElapsedWhenPlacedOnHold=10 and SecondsElapsedWhenRemovedFromHold=15 it means call was placed on hold from second 10 to 15. */
 export interface TimeWhenCallPlacedOnHold {
     /** Seconds elapsed since the call started when call was placed on hold */
     readonly secondsElapsedWhenPlacedOnHold?: number;
     /** Seconds elapsed since the call started when call was removed from hold */
     readonly secondsElapsedWhenRemovedFromHold?: number | null;
+}
+
+/** Service that converts audio to text */
+export interface TranscriptionService {
+    /** Instance id */
+    instanceId?: string | null;
+    /** Public ip address */
+    ipPublic?: string | null;
+    /** Private ip address */
+    ipPrivate?: string | null;
+    /** Date received last ping */
+    date?: Date;
 }
 
 /** Trunk used to receive phone calls. Multiple VoipNumbers can point to the same trunk origination. */

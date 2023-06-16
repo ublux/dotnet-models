@@ -3,7 +3,7 @@
 /// <summary>
 ///     Base class for incoming calls
 /// </summary>
-public abstract class EventIncomingCallStartedBase : EventCallStartedBase
+public abstract class EventIncomingCallStartedBase : EventCallBase
 {
     /// <summary>
     ///     Return a random object
