@@ -20,6 +20,7 @@ Must have at least one */
     mailingAddress?: MailingAddress;
     accountSecrets?: AccountSecrets;
     language?: Language;
+    country?: CountryIsoCode;
     /** Name of company */
     companyName?: string;
     /** If client has granted access to support to make changes to account. 
@@ -27,7 +28,7 @@ This can only be changed by an ownder of the account. */
     readonly hasGrantedSupportAccess?: boolean;
     /** Countries on this list will not be marked as international calls */
     readonly countriesThatCanCallLocally?: CountryIsoCode[];
-    /** If CountriesThatCanCallLocally does not contain country then ublux will attempt to find country on this list. */
+    /** If CountriesThatCanCallLocally does not contain country then ublux will attempt to find country on this list and mark call as international */
     countriesThatCanCallInternationally?: CountryIsoCode[];
     industry?: Industry;
     /** Creation date. Sets DateUpdated if it does not have a value */
@@ -50,9 +51,10 @@ export interface AccountUpdateRequest {
     mailingAddress?: MailingAddress;
     accountSecrets?: AccountSecrets;
     language?: Language;
+    country?: CountryIsoCode;
     /** Name of company */
     companyName?: string | null;
-    /** If CountriesThatCanCallLocally does not contain country then ublux will attempt to find country on this list. */
+    /** If CountriesThatCanCallLocally does not contain country then ublux will attempt to find country on this list and mark call as international */
     countriesThatCanCallInternationally?: CountryIsoCode[] | null;
     industry?: Industry;
 }
@@ -1760,14 +1762,17 @@ export enum ChildCallType {
     BlindTransferToPSTN = "BlindTransferToPSTN",
 }
 
-/** Base class for cloud services */
-export interface CloudService {
+/** PBX cloud service where phones connect */
+export interface CloudServicePbx {
     /** Id of document */
     readonly id?: string;
-    /** TODO. Place index on this field on DB
-Thanks to the user it can login */
-    readonly idUser?: string;
     cloudServiceType?: CloudServiceType;
+    /** If true we will not monitor pbx in order to update its soft dns in case it is not healthy */
+    disableMonitoring?: boolean;
+    /** Http port where it is listening on SimpleTcpServer. For example PBX listens on port 8181 */
+    readonly httpListenPort?: number;
+    /** Cloud services can authenticate differently than users. Makes no sense for a pbx for exaple to have an email address */
+    readonly password?: string;
     countryIsoCode?: CountryIsoCode;
     /** If this service is inside a nat what is the local ip address?
 This is needed by asterisk sip.conf file */
@@ -1775,26 +1780,21 @@ This is needed by asterisk sip.conf file */
     /** It can have multipe ips but only one should be used.
 Hard host name should point to this */
     readonly externalIp?: string | null;
-    /** Is this service used as a backup pbx? Failover and NonFailover servers should NEVER overlap. */
-    readonly isFailover?: boolean;
     /** Is there a router? For example on Divieto this will be true. On Canal Park this will be false */
     readonly nat?: boolean;
     /** Send this constantly to web service when polling. The pbx sends this */
     readonly isHealthy?: boolean;
-    /** Instance Id. Example PBX-US-1 for CSP.PBX-US-1 */
-    readonly instanceId?: string;
     /** Is this a test cloud serviec */
     readonly isTest?: boolean;
+    /** We need instance id in order to reboot cloud service for example. Example: i-0655b45b8134e6425 */
+    providerInstanceId?: string | null;
+    /** Region is needed to connect to EC2 instance when using AWS for example: USEast1 or EUWest3 for europe paris */
+    providerRegion?: string | null;
+    providerType?: CloudServiceProviderType;
     /** Creation date. Sets DateUpdated if it does not have a value */
     readonly dateCreated?: Date;
     /** Updated date. When item is created on database this date will be set too. This is important so that we can sync contacts */
     readonly dateUpdated?: Date;
-}
-
-/** Used to group a cloud service and user */
-export interface CloudServiceAndUser {
-    cloudService?: CloudService;
-    user?: User;
 }
 
 /** Provider that hosts this cloud service */
@@ -1814,14 +1814,15 @@ export enum CloudServiceType {
     WA = "WA",
 }
 
-/** Server where ublux website lives */
-export interface CloudServiceWebHost {
+/** Web app where web-phone lives */
+export interface CloudServiceWebApp {
     /** Id of document */
     readonly id?: string;
     cloudServiceType?: CloudServiceType;
-    /** TODO. Place index on this field on DB
-Thanks to the user it can login */
-    readonly idUser?: string;
+    /** In case web-app fails point it to another one */
+    idCloudServiceWebAppFailover?: string | null;
+    /** Cloud services can authenticate differently than users. Makes no sense for a pbx for exaple to have an email address */
+    readonly password?: string;
     countryIsoCode?: CountryIsoCode;
     /** If this service is inside a nat what is the local ip address?
 This is needed by asterisk sip.conf file */
@@ -1829,16 +1830,48 @@ This is needed by asterisk sip.conf file */
     /** It can have multipe ips but only one should be used.
 Hard host name should point to this */
     readonly externalIp?: string | null;
-    /** Is this service used as a backup pbx? Failover and NonFailover servers should NEVER overlap. */
-    readonly isFailover?: boolean;
     /** Is there a router? For example on Divieto this will be true. On Canal Park this will be false */
     readonly nat?: boolean;
     /** Send this constantly to web service when polling. The pbx sends this */
     readonly isHealthy?: boolean;
-    /** Instance Id. Example PBX-US-1 for CSP.PBX-US-1 */
-    readonly instanceId?: string;
     /** Is this a test cloud serviec */
     readonly isTest?: boolean;
+    /** We need instance id in order to reboot cloud service for example. Example: i-0655b45b8134e6425 */
+    providerInstanceId?: string | null;
+    /** Region is needed to connect to EC2 instance when using AWS for example: USEast1 or EUWest3 for europe paris */
+    providerRegion?: string | null;
+    providerType?: CloudServiceProviderType;
+    /** Creation date. Sets DateUpdated if it does not have a value */
+    readonly dateCreated?: Date;
+    /** Updated date. When item is created on database this date will be set too. This is important so that we can sync contacts */
+    readonly dateUpdated?: Date;
+}
+
+/** Server where ublux website lives */
+export interface CloudServiceWebHost {
+    /** Id of document */
+    readonly id?: string;
+    cloudServiceType?: CloudServiceType;
+    /** Cloud services can authenticate differently than users. Makes no sense for a pbx for exaple to have an email address */
+    readonly password?: string;
+    countryIsoCode?: CountryIsoCode;
+    /** If this service is inside a nat what is the local ip address?
+This is needed by asterisk sip.conf file */
+    readonly localnet?: string | null;
+    /** It can have multipe ips but only one should be used.
+Hard host name should point to this */
+    readonly externalIp?: string | null;
+    /** Is there a router? For example on Divieto this will be true. On Canal Park this will be false */
+    readonly nat?: boolean;
+    /** Send this constantly to web service when polling. The pbx sends this */
+    readonly isHealthy?: boolean;
+    /** Is this a test cloud serviec */
+    readonly isTest?: boolean;
+    /** We need instance id in order to reboot cloud service for example. Example: i-0655b45b8134e6425 */
+    providerInstanceId?: string | null;
+    /** Region is needed to connect to EC2 instance when using AWS for example: USEast1 or EUWest3 for europe paris */
+    providerRegion?: string | null;
+    providerType?: CloudServiceProviderType;
     /** Creation date. Sets DateUpdated if it does not have a value */
     readonly dateCreated?: Date;
     /** Updated date. When item is created on database this date will be set too. This is important so that we can sync contacts */
@@ -4489,6 +4522,8 @@ export interface HttpResponseAuthorization {
     refresh_token?: string | null;
     /** Expiration in seconds */
     expires_in?: number;
+    /** Company name */
+    account?: string | null;
 }
 
 /** Limits the number of results that can obtained per request. */
@@ -6635,7 +6670,7 @@ export enum UbluxRole {
 
 /** Session is a logged in User (user). We use JWT Security tokens to store this Session. */
 export interface UbluxSession {
-    /** sub property from JWT. Logged in by what user? This may be a PBX */
+    /** sub property from JWT. Logged in by what user? This may be a CloudService */
     readonly idUser?: string;
     userType?: UserType;
     /** role properties from JWT. Permissions */
