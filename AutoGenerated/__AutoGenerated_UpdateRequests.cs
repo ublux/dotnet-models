@@ -69,11 +69,15 @@ public class AccountUpdateRequest // : IUbluxDocumentId
     /// </summary>
     public Language? Language { get; set; }
     /// <summary>
+    /// Primary country of account
+    /// </summary>
+    public CountryIsoCode? Country { get; set; }
+    /// <summary>
     /// Name of company
     /// </summary>
     public String? CompanyName { get; set; }
     /// <summary>
-    /// If CountriesThatCanCallLocally does not contain country then ublux will attempt to find country on this list.
+    /// If CountriesThatCanCallLocally does not contain country then ublux will attempt to find country on this list and mark call as international
     /// </summary>
     public List<Ublux.Communications.Enums.CountryIsoCode>? CountriesThatCanCallInternationally { get; set; }
     /// <summary>
@@ -89,6 +93,8 @@ public class AccountUpdateRequest // : IUbluxDocumentId
             account.AccountSecrets = this.AccountSecrets;
         if(jsonRaw.Contains($@"""{nameof(this.Language)}""", StringComparison.OrdinalIgnoreCase))
             account.Language = this.Language.Value;
+        if(jsonRaw.Contains($@"""{nameof(this.Country)}""", StringComparison.OrdinalIgnoreCase))
+            account.Country = this.Country.Value;
         if(jsonRaw.Contains($@"""{nameof(this.CompanyName)}""", StringComparison.OrdinalIgnoreCase))
             account.CompanyName = this.CompanyName;
         if(jsonRaw.Contains($@"""{nameof(this.CountriesThatCanCallInternationally)}""", StringComparison.OrdinalIgnoreCase))
@@ -1386,8 +1392,6 @@ public class TrunkOriginationForwardUpdateRequest // : IUbluxDocumentId
     }
 
 }
-
-
 
 /// <summary>
 /// Trunk used to receive phone calls

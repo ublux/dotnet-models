@@ -217,6 +217,16 @@ public class AccountFilterRequest
     [JsonProperty("language_reg")]
     public string? Language_REG { get; set; }
 
+    /// <summary> Country equals </summary>
+    [JsonProperty("country_eq")]
+    public string? Country_EQ { get; set; }
+    /// <summary> Country contains </summary>
+    [JsonProperty("country_con")]
+    public string? Country_CON { get; set; }
+    /// <summary> Country regex </summary>
+    [JsonProperty("country_reg")]
+    public string? Country_REG { get; set; }
+
     /// <summary> CompanyName equals </summary>
     [JsonProperty("companyName_eq")]
     public string? CompanyName_EQ { get; set; }
@@ -3788,15 +3798,15 @@ public class CloudServicePbxFilterRequest
     [JsonProperty("httpListenPort_gte")]
     public System.Int32? HttpListenPort_GTE { get; set; }
 
-    /// <summary> IdUser equals </summary>
-    [JsonProperty("idUser_eq")]
-    public string? IdUser_EQ { get; set; }
-    /// <summary> IdUser contains </summary>
-    [JsonProperty("idUser_con")]
-    public string? IdUser_CON { get; set; }
-    /// <summary> IdUser regex </summary>
-    [JsonProperty("idUser_reg")]
-    public string? IdUser_REG { get; set; }
+    /// <summary> Password equals </summary>
+    [JsonProperty("password_eq")]
+    public string? Password_EQ { get; set; }
+    /// <summary> Password contains </summary>
+    [JsonProperty("password_con")]
+    public string? Password_CON { get; set; }
+    /// <summary> Password regex </summary>
+    [JsonProperty("password_reg")]
+    public string? Password_REG { get; set; }
 
     /// <summary> CountryIsoCode equals </summary>
     [JsonProperty("countryIsoCode_eq")]
@@ -3828,10 +3838,6 @@ public class CloudServicePbxFilterRequest
     [JsonProperty("externalIp_reg")]
     public string? ExternalIp_REG { get; set; }
 
-    /// <summary> IsFailover equals </summary>
-    [JsonProperty("isFailover_eq")]
-    public bool? IsFailover_EQ { get; set; }
-
     /// <summary> Nat equals </summary>
     [JsonProperty("nat_eq")]
     public bool? Nat_EQ { get; set; }
@@ -3840,19 +3846,39 @@ public class CloudServicePbxFilterRequest
     [JsonProperty("isHealthy_eq")]
     public bool? IsHealthy_EQ { get; set; }
 
-    /// <summary> InstanceId equals </summary>
-    [JsonProperty("instanceId_eq")]
-    public string? InstanceId_EQ { get; set; }
-    /// <summary> InstanceId contains </summary>
-    [JsonProperty("instanceId_con")]
-    public string? InstanceId_CON { get; set; }
-    /// <summary> InstanceId regex </summary>
-    [JsonProperty("instanceId_reg")]
-    public string? InstanceId_REG { get; set; }
-
     /// <summary> IsTest equals </summary>
     [JsonProperty("isTest_eq")]
     public bool? IsTest_EQ { get; set; }
+
+    /// <summary> ProviderInstanceId equals </summary>
+    [JsonProperty("providerInstanceId_eq")]
+    public string? ProviderInstanceId_EQ { get; set; }
+    /// <summary> ProviderInstanceId contains </summary>
+    [JsonProperty("providerInstanceId_con")]
+    public string? ProviderInstanceId_CON { get; set; }
+    /// <summary> ProviderInstanceId regex </summary>
+    [JsonProperty("providerInstanceId_reg")]
+    public string? ProviderInstanceId_REG { get; set; }
+
+    /// <summary> ProviderRegion equals </summary>
+    [JsonProperty("providerRegion_eq")]
+    public string? ProviderRegion_EQ { get; set; }
+    /// <summary> ProviderRegion contains </summary>
+    [JsonProperty("providerRegion_con")]
+    public string? ProviderRegion_CON { get; set; }
+    /// <summary> ProviderRegion regex </summary>
+    [JsonProperty("providerRegion_reg")]
+    public string? ProviderRegion_REG { get; set; }
+
+    /// <summary> ProviderType equals </summary>
+    [JsonProperty("providerType_eq")]
+    public string? ProviderType_EQ { get; set; }
+    /// <summary> ProviderType contains </summary>
+    [JsonProperty("providerType_con")]
+    public string? ProviderType_CON { get; set; }
+    /// <summary> ProviderType regex </summary>
+    [JsonProperty("providerType_reg")]
+    public string? ProviderType_REG { get; set; }
 
     /// <summary> Id equals </summary>
     [JsonProperty("id_eq")]
@@ -3908,15 +3934,15 @@ public class CloudServiceWebAppFilterRequest
     [JsonProperty("idCloudServiceWebAppFailover_reg")]
     public string? IdCloudServiceWebAppFailover_REG { get; set; }
 
-    /// <summary> IdUser equals </summary>
-    [JsonProperty("idUser_eq")]
-    public string? IdUser_EQ { get; set; }
-    /// <summary> IdUser contains </summary>
-    [JsonProperty("idUser_con")]
-    public string? IdUser_CON { get; set; }
-    /// <summary> IdUser regex </summary>
-    [JsonProperty("idUser_reg")]
-    public string? IdUser_REG { get; set; }
+    /// <summary> Password equals </summary>
+    [JsonProperty("password_eq")]
+    public string? Password_EQ { get; set; }
+    /// <summary> Password contains </summary>
+    [JsonProperty("password_con")]
+    public string? Password_CON { get; set; }
+    /// <summary> Password regex </summary>
+    [JsonProperty("password_reg")]
+    public string? Password_REG { get; set; }
 
     /// <summary> CountryIsoCode equals </summary>
     [JsonProperty("countryIsoCode_eq")]
@@ -3948,10 +3974,6 @@ public class CloudServiceWebAppFilterRequest
     [JsonProperty("externalIp_reg")]
     public string? ExternalIp_REG { get; set; }
 
-    /// <summary> IsFailover equals </summary>
-    [JsonProperty("isFailover_eq")]
-    public bool? IsFailover_EQ { get; set; }
-
     /// <summary> Nat equals </summary>
     [JsonProperty("nat_eq")]
     public bool? Nat_EQ { get; set; }
@@ -3960,19 +3982,39 @@ public class CloudServiceWebAppFilterRequest
     [JsonProperty("isHealthy_eq")]
     public bool? IsHealthy_EQ { get; set; }
 
-    /// <summary> InstanceId equals </summary>
-    [JsonProperty("instanceId_eq")]
-    public string? InstanceId_EQ { get; set; }
-    /// <summary> InstanceId contains </summary>
-    [JsonProperty("instanceId_con")]
-    public string? InstanceId_CON { get; set; }
-    /// <summary> InstanceId regex </summary>
-    [JsonProperty("instanceId_reg")]
-    public string? InstanceId_REG { get; set; }
-
     /// <summary> IsTest equals </summary>
     [JsonProperty("isTest_eq")]
     public bool? IsTest_EQ { get; set; }
+
+    /// <summary> ProviderInstanceId equals </summary>
+    [JsonProperty("providerInstanceId_eq")]
+    public string? ProviderInstanceId_EQ { get; set; }
+    /// <summary> ProviderInstanceId contains </summary>
+    [JsonProperty("providerInstanceId_con")]
+    public string? ProviderInstanceId_CON { get; set; }
+    /// <summary> ProviderInstanceId regex </summary>
+    [JsonProperty("providerInstanceId_reg")]
+    public string? ProviderInstanceId_REG { get; set; }
+
+    /// <summary> ProviderRegion equals </summary>
+    [JsonProperty("providerRegion_eq")]
+    public string? ProviderRegion_EQ { get; set; }
+    /// <summary> ProviderRegion contains </summary>
+    [JsonProperty("providerRegion_con")]
+    public string? ProviderRegion_CON { get; set; }
+    /// <summary> ProviderRegion regex </summary>
+    [JsonProperty("providerRegion_reg")]
+    public string? ProviderRegion_REG { get; set; }
+
+    /// <summary> ProviderType equals </summary>
+    [JsonProperty("providerType_eq")]
+    public string? ProviderType_EQ { get; set; }
+    /// <summary> ProviderType contains </summary>
+    [JsonProperty("providerType_con")]
+    public string? ProviderType_CON { get; set; }
+    /// <summary> ProviderType regex </summary>
+    [JsonProperty("providerType_reg")]
+    public string? ProviderType_REG { get; set; }
 
     /// <summary> Id equals </summary>
     [JsonProperty("id_eq")]
@@ -4018,15 +4060,15 @@ public class CloudServiceWebHostFilterRequest
     [JsonProperty("cloudServiceType_reg")]
     public string? CloudServiceType_REG { get; set; }
 
-    /// <summary> IdUser equals </summary>
-    [JsonProperty("idUser_eq")]
-    public string? IdUser_EQ { get; set; }
-    /// <summary> IdUser contains </summary>
-    [JsonProperty("idUser_con")]
-    public string? IdUser_CON { get; set; }
-    /// <summary> IdUser regex </summary>
-    [JsonProperty("idUser_reg")]
-    public string? IdUser_REG { get; set; }
+    /// <summary> Password equals </summary>
+    [JsonProperty("password_eq")]
+    public string? Password_EQ { get; set; }
+    /// <summary> Password contains </summary>
+    [JsonProperty("password_con")]
+    public string? Password_CON { get; set; }
+    /// <summary> Password regex </summary>
+    [JsonProperty("password_reg")]
+    public string? Password_REG { get; set; }
 
     /// <summary> CountryIsoCode equals </summary>
     [JsonProperty("countryIsoCode_eq")]
@@ -4058,10 +4100,6 @@ public class CloudServiceWebHostFilterRequest
     [JsonProperty("externalIp_reg")]
     public string? ExternalIp_REG { get; set; }
 
-    /// <summary> IsFailover equals </summary>
-    [JsonProperty("isFailover_eq")]
-    public bool? IsFailover_EQ { get; set; }
-
     /// <summary> Nat equals </summary>
     [JsonProperty("nat_eq")]
     public bool? Nat_EQ { get; set; }
@@ -4070,19 +4108,39 @@ public class CloudServiceWebHostFilterRequest
     [JsonProperty("isHealthy_eq")]
     public bool? IsHealthy_EQ { get; set; }
 
-    /// <summary> InstanceId equals </summary>
-    [JsonProperty("instanceId_eq")]
-    public string? InstanceId_EQ { get; set; }
-    /// <summary> InstanceId contains </summary>
-    [JsonProperty("instanceId_con")]
-    public string? InstanceId_CON { get; set; }
-    /// <summary> InstanceId regex </summary>
-    [JsonProperty("instanceId_reg")]
-    public string? InstanceId_REG { get; set; }
-
     /// <summary> IsTest equals </summary>
     [JsonProperty("isTest_eq")]
     public bool? IsTest_EQ { get; set; }
+
+    /// <summary> ProviderInstanceId equals </summary>
+    [JsonProperty("providerInstanceId_eq")]
+    public string? ProviderInstanceId_EQ { get; set; }
+    /// <summary> ProviderInstanceId contains </summary>
+    [JsonProperty("providerInstanceId_con")]
+    public string? ProviderInstanceId_CON { get; set; }
+    /// <summary> ProviderInstanceId regex </summary>
+    [JsonProperty("providerInstanceId_reg")]
+    public string? ProviderInstanceId_REG { get; set; }
+
+    /// <summary> ProviderRegion equals </summary>
+    [JsonProperty("providerRegion_eq")]
+    public string? ProviderRegion_EQ { get; set; }
+    /// <summary> ProviderRegion contains </summary>
+    [JsonProperty("providerRegion_con")]
+    public string? ProviderRegion_CON { get; set; }
+    /// <summary> ProviderRegion regex </summary>
+    [JsonProperty("providerRegion_reg")]
+    public string? ProviderRegion_REG { get; set; }
+
+    /// <summary> ProviderType equals </summary>
+    [JsonProperty("providerType_eq")]
+    public string? ProviderType_EQ { get; set; }
+    /// <summary> ProviderType contains </summary>
+    [JsonProperty("providerType_con")]
+    public string? ProviderType_CON { get; set; }
+    /// <summary> ProviderType regex </summary>
+    [JsonProperty("providerType_reg")]
+    public string? ProviderType_REG { get; set; }
 
     /// <summary> Id equals </summary>
     [JsonProperty("id_eq")]
@@ -6932,50 +6990,6 @@ public class SMSFilterRequest
 }
 /// <summary> Enables searching for TrunkOriginationForwards </summary>
 public class TrunkOriginationForwardFilterRequest 
-{
-    /// <summary> TrunkOriginationType equals </summary>
-    [JsonProperty("trunkOriginationType_eq")]
-    public string? TrunkOriginationType_EQ { get; set; }
-    /// <summary> TrunkOriginationType contains </summary>
-    [JsonProperty("trunkOriginationType_con")]
-    public string? TrunkOriginationType_CON { get; set; }
-    /// <summary> TrunkOriginationType regex </summary>
-    [JsonProperty("trunkOriginationType_reg")]
-    public string? TrunkOriginationType_REG { get; set; }
-
-    /// <summary> Id equals </summary>
-    [JsonProperty("id_eq")]
-    public string? Id_EQ { get; set; }
-    /// <summary> Id contains </summary>
-    [JsonProperty("id_con")]
-    public string? Id_CON { get; set; }
-    /// <summary> Id regex </summary>
-    [JsonProperty("id_reg")]
-    public string? Id_REG { get; set; }
-
-    /// <summary> DateCreated equals </summary>
-    [JsonProperty("dateCreated_eq")]
-    public DateTime? DateCreated_EQ { get; set; }
-    /// <summary> DateCreated less than or equal to </summary>
-    [JsonProperty("dateCreated_lte")]
-    public DateTime? DateCreated_LTE { get; set; }
-    /// <summary> DateCreated greater than or equal to </summary>
-    [JsonProperty("dateCreated_gte")]
-    public DateTime? DateCreated_GTE { get; set; }
-
-    /// <summary> DateUpdated equals </summary>
-    [JsonProperty("dateUpdated_eq")]
-    public DateTime? DateUpdated_EQ { get; set; }
-    /// <summary> DateUpdated less than or equal to </summary>
-    [JsonProperty("dateUpdated_lte")]
-    public DateTime? DateUpdated_LTE { get; set; }
-    /// <summary> DateUpdated greater than or equal to </summary>
-    [JsonProperty("dateUpdated_gte")]
-    public DateTime? DateUpdated_GTE { get; set; }
-
-}
-/// <summary> Enables searching for TrunkOriginationRegisters </summary>
-public class TrunkOriginationRegisterFilterRequest 
 {
     /// <summary> TrunkOriginationType equals </summary>
     [JsonProperty("trunkOriginationType_eq")]
@@ -11531,15 +11545,15 @@ public class CallOutgoingFilterRequest
 /// <summary> Enables searching for CloudServices </summary>
 public class CloudServiceFilterRequest 
 {
-    /// <summary> IdUser equals </summary>
-    [JsonProperty("idUser_eq")]
-    public string? IdUser_EQ { get; set; }
-    /// <summary> IdUser contains </summary>
-    [JsonProperty("idUser_con")]
-    public string? IdUser_CON { get; set; }
-    /// <summary> IdUser regex </summary>
-    [JsonProperty("idUser_reg")]
-    public string? IdUser_REG { get; set; }
+    /// <summary> Password equals </summary>
+    [JsonProperty("password_eq")]
+    public string? Password_EQ { get; set; }
+    /// <summary> Password contains </summary>
+    [JsonProperty("password_con")]
+    public string? Password_CON { get; set; }
+    /// <summary> Password regex </summary>
+    [JsonProperty("password_reg")]
+    public string? Password_REG { get; set; }
 
     /// <summary> CloudServiceType equals </summary>
     [JsonProperty("cloudServiceType_eq")]
@@ -11581,10 +11595,6 @@ public class CloudServiceFilterRequest
     [JsonProperty("externalIp_reg")]
     public string? ExternalIp_REG { get; set; }
 
-    /// <summary> IsFailover equals </summary>
-    [JsonProperty("isFailover_eq")]
-    public bool? IsFailover_EQ { get; set; }
-
     /// <summary> Nat equals </summary>
     [JsonProperty("nat_eq")]
     public bool? Nat_EQ { get; set; }
@@ -11593,19 +11603,39 @@ public class CloudServiceFilterRequest
     [JsonProperty("isHealthy_eq")]
     public bool? IsHealthy_EQ { get; set; }
 
-    /// <summary> InstanceId equals </summary>
-    [JsonProperty("instanceId_eq")]
-    public string? InstanceId_EQ { get; set; }
-    /// <summary> InstanceId contains </summary>
-    [JsonProperty("instanceId_con")]
-    public string? InstanceId_CON { get; set; }
-    /// <summary> InstanceId regex </summary>
-    [JsonProperty("instanceId_reg")]
-    public string? InstanceId_REG { get; set; }
-
     /// <summary> IsTest equals </summary>
     [JsonProperty("isTest_eq")]
     public bool? IsTest_EQ { get; set; }
+
+    /// <summary> ProviderInstanceId equals </summary>
+    [JsonProperty("providerInstanceId_eq")]
+    public string? ProviderInstanceId_EQ { get; set; }
+    /// <summary> ProviderInstanceId contains </summary>
+    [JsonProperty("providerInstanceId_con")]
+    public string? ProviderInstanceId_CON { get; set; }
+    /// <summary> ProviderInstanceId regex </summary>
+    [JsonProperty("providerInstanceId_reg")]
+    public string? ProviderInstanceId_REG { get; set; }
+
+    /// <summary> ProviderRegion equals </summary>
+    [JsonProperty("providerRegion_eq")]
+    public string? ProviderRegion_EQ { get; set; }
+    /// <summary> ProviderRegion contains </summary>
+    [JsonProperty("providerRegion_con")]
+    public string? ProviderRegion_CON { get; set; }
+    /// <summary> ProviderRegion regex </summary>
+    [JsonProperty("providerRegion_reg")]
+    public string? ProviderRegion_REG { get; set; }
+
+    /// <summary> ProviderType equals </summary>
+    [JsonProperty("providerType_eq")]
+    public string? ProviderType_EQ { get; set; }
+    /// <summary> ProviderType contains </summary>
+    [JsonProperty("providerType_con")]
+    public string? ProviderType_CON { get; set; }
+    /// <summary> ProviderType regex </summary>
+    [JsonProperty("providerType_reg")]
+    public string? ProviderType_REG { get; set; }
 
     /// <summary> Id equals </summary>
     [JsonProperty("id_eq")]
