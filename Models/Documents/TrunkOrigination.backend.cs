@@ -8,10 +8,10 @@ namespace Ublux.Communications.Models.Documents;
 /// </summary>
 [JsonConverter(typeof(JsonSubtypes), nameof(TrunkOriginationType))]
 [JsonSubtypes.KnownSubType(typeof(TrunkOriginationForward), nameof(TrunkOriginationType.Forward))]
-[JsonSubtypes.KnownSubType(typeof(TrunkOriginationRegister), nameof(TrunkOriginationType.Register))]
+//[JsonSubtypes.KnownSubType(typeof(TrunkOriginationRegister), nameof(TrunkOriginationType.Register))]
 [BsonKnownTypes(
-    typeof(TrunkOriginationForward),
-    typeof(TrunkOriginationRegister)
+    typeof(TrunkOriginationForward)
+    //typeof(TrunkOriginationRegister)
 )]
 public abstract class TrunkOrigination : UbluxDocument
 {
@@ -39,15 +39,15 @@ public abstract class TrunkOrigination : UbluxDocument
     [UbluxValidationRequired]
     public required string IdCloudServicePbx { get; set; } = string.Empty;
 
-    /// <summary>
-    ///     Backup pbx    
-    /// </summary>
-    [IgnoreDataMember]
-    [AllowUpdate(false)]
-    [SwaggerSchema(ReadOnly = true)]
-    [References(typeof(CloudServicePbx))]
-    [UbluxValidationRequired]
-    public required string IdCloudServicePbxFailover { get; set; } = string.Empty;
+    ///// <summary>
+    /////     Backup pbx    
+    ///// </summary>
+    //[IgnoreDataMember]
+    //[AllowUpdate(false)]
+    //[SwaggerSchema(ReadOnly = true)]
+    //[References(typeof(CloudServicePbx))]
+    //[UbluxValidationRequired]
+    //public required string IdCloudServicePbxFailover { get; set; } = string.Empty;
 
     #endregion
 
@@ -106,10 +106,10 @@ public abstract class TrunkOrigination : UbluxDocument
             // Append DateCreated at the end so that items are returned by dateCreated
             .Add(nameof(DateCreated));
 
-        // enable searching fast by id cloud service pbx failover
-        yield return new MongoDbIndex(collection, nameof(this.IdCloudServicePbxFailover))
-            // Append DateCreated at the end so that items are returned by dateCreated
-            .Add(nameof(DateCreated));
+        //// enable searching fast by id cloud service pbx failover
+        //yield return new MongoDbIndex(collection, nameof(this.IdCloudServicePbxFailover))
+        //    // Append DateCreated at the end so that items are returned by dateCreated
+        //    .Add(nameof(DateCreated));
     }
 
     #endregion

@@ -384,7 +384,6 @@ public static class ModelsExtensionMethods
         { PowerDialerGroup.DocumentPrefix, Collections.PowerDialerGroups },
         { SMS.DocumentPrefix, Collections.SMS },
         { TrunkOriginationForward.DocumentPrefix, Collections.TrunkOriginations },
-        { TrunkOriginationRegister.DocumentPrefix, Collections.TrunkOriginations },
         { TrunkTerminationGroup.DocumentPrefix, Collections.TrunkTerminationGroups },
         { TrunkTermination.DocumentPrefix, Collections.TrunkTerminations },
         { VoipNumberPhone.DocumentPrefix, Collections.VoipNumbers },

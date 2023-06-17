@@ -5,15 +5,15 @@
 /// </summary>
 public partial class CloudServicePbx : CloudService
 {
-    /// <summary>
-    ///     If its NOT failover the the id of pbx that will act as failover. Else string empty string
-    /// </summary>
-    [IgnoreDataMember]
-    [AllowUpdate(false)]
-    [SwaggerSchema(ReadOnly = true)]
-    [References(typeof(CloudServicePbx))]
-    // [IsUbluxRequired]
-    public required string? IdCloudServicePbxFailover { get; set; } = string.Empty;
+    ///// <summary>
+    /////     If its NOT failover the the id of pbx that will act as failover. Else string empty string
+    ///// </summary>
+    //[IgnoreDataMember]
+    //[AllowUpdate(false)]
+    //[SwaggerSchema(ReadOnly = true)]
+    //[References(typeof(CloudServicePbx))]
+    //// [IsUbluxRequired]
+    //public required string? IdCloudServicePbxFailover { get; set; } = string.Empty;
 
     /// <summary>
     ///     Type of cloud service

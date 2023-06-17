@@ -1387,17 +1387,7 @@ public class TrunkOriginationForwardUpdateRequest // : IUbluxDocumentId
 
 }
 
-/// <summary>
-/// This type of trunk origination we must register with provider in order to receive phone calls. Netbox solutions uses this type of trunk
-/// </summary>
-public class TrunkOriginationRegisterUpdateRequest // : IUbluxDocumentId
-{
-    /// <summary> Set values on actual document </summary>
-    public void SetValuesOnTrunkOriginationRegister(TrunkOriginationRegister trunkOriginationRegister, string jsonRaw)
-    {
-    }
 
-}
 
 /// <summary>
 /// Trunk used to receive phone calls

@@ -5,7 +5,7 @@
 /// </summary>
 public partial class UbluxSession 
 {
-    /// <summary> sub property from JWT. Logged in by what user? This may be a PBX </summary>
+    /// <summary> sub property from JWT. Logged in by what user? This may be a CloudService </summary>
     [References(typeof(User))]
     [UbluxValidationRequired]
     [AllowUpdate(false)] 

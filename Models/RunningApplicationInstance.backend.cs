@@ -9,7 +9,7 @@ namespace Ublux.Communications.Models;
 public class RunningApplicationInstance
 {
     /// <summary>
-    ///     Example US-T. This will always be in uppercase
+    ///     Example CSP.US-1 This will always be in uppercase
     /// </summary>
     public required string Id { get => id; set => id = value.ToUpper(); }
     private string id = "";

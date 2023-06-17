@@ -16,7 +16,7 @@ public partial class Account : UbluxDocument
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
     [References(typeof(CloudServicePbx))]
-    [UbluxValidationRequired($"{{path}} must have at least one {nameof(CloudServicePbx)}")]
+    [UbluxValidationRequired($"Must have at least one {nameof(CloudServicePbx)}")]
     public required List<string> IdsCloudServicePbxs { get; set; } = new();
 
     #endregion
@@ -43,7 +43,14 @@ public partial class Account : UbluxDocument
     /// </summary>    
     [AllowUpdate(true)]
     [UbluxValidationRequired]
-    public required Language Language { get; set; } 
+    public required Language Language { get; set; }
+
+    /// <summary>
+    ///     Primary country of account
+    /// </summary>    
+    [AllowUpdate(true)]
+    [UbluxValidationRequired]
+    public required CountryIsoCode Country { get; set; }
 
     /// <summary>
     ///     Name of company
@@ -70,12 +77,10 @@ public partial class Account : UbluxDocument
     public List<CountryIsoCode> CountriesThatCanCallLocally { get; set; } = new();
 
     /// <summary>
-    ///     If CountriesThatCanCallLocally does not contain country then ublux will attempt to find country on this list.
+    ///     If CountriesThatCanCallLocally does not contain country then ublux will attempt to find country on this list and mark call as international
     /// </summary>
     [AllowUpdate(true)]
-    // [SwaggerSchema(ReadOnly = true)]
     [BsonRepresentation(BsonType.String)]
-    // [IsUbluxRequired]
     public List<CountryIsoCode> CountriesThatCanCallInternationally { get; set; } = new();
 
     /// <summary>
@@ -111,15 +116,7 @@ public partial class Account : UbluxDocument
 
     #region Helper methods
 
-    /// <summary>
-    ///     The default country is code is the first country that can be called locally
-    /// </summary>
-    /// <returns></returns>
-    public CountryIsoCode GetDefaultCountryIsoCode()
-    {
-        return CountriesThatCanCallLocally.FirstOrDefault();
-    }
-
+    
     /// <summary>
     ///     Returns true if call is international
     /// </summary>
@@ -132,7 +129,7 @@ public partial class Account : UbluxDocument
         if (CountriesThatCanCallLocally.Any(x => x == CountryIsoCode.All))
             return false;
 
-        if(country == CountryIsoCode.None) return false;
+        if (country == CountryIsoCode.None) return false;
 
         return !CountriesThatCanCallInternationally.Contains(country);
     }
@@ -140,16 +137,23 @@ public partial class Account : UbluxDocument
     /// <summary>
     ///     Can this account call this country?
     /// </summary>
-    public bool CanCallCountry(CountryIsoCode country)
+    public bool CanCallCountry(CountryIsoCode country, out bool isInternational)
     {
         foreach (var item in CountriesThatCanCallLocally)
             if (item == country || item == CountryIsoCode.All)
+            {
+                isInternational = false;
                 return true;
+            }
 
         foreach (var item in CountriesThatCanCallInternationally)
             if (item == country || item == CountryIsoCode.All)
+            {
+                isInternational = true;
                 return true;
+            }
 
+        isInternational = false;
         return false;
     }
 

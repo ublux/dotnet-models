@@ -17,7 +17,7 @@ public enum TrunkOriginationType
     Forward,
 
     /// <summary>
-    ///     Netbox solutions uses this type of trunk where we must register in order to receive phone calls
+    ///     Not implemented case. On the old version of ublux our provider from mexico uses this technique.
     /// </summary>
     Register
 }
