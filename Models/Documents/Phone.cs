@@ -210,22 +210,7 @@ public partial class Phone : UbluxDocument_ReferenceAccount_ReferenceTags
             yield return item;
     }
 
-    /// <summary>
-    ///     Ids of phones contain id of phone embeded
-    /// </summary>
-    public static string GetIdOfAccount(string idPhone)
-    {
-        // string input = "Ph.Ac.1.WS.1000";
-
-        var start = Phone.DocumentPrefix.Length + Account.DocumentPrefix.Length + 3;
-
-        var thirdDot = start + idPhone[start..].IndexOf(RedisConstants.DelimeterId);
-
-        // id account will be substring in btween dot 1 and
-        var idAccount = idPhone[(Phone.DocumentPrefix.Length + 1)..thirdDot];
-
-        return idAccount;
-    }
+    
 
     #endregion
 }
