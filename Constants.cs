@@ -80,6 +80,12 @@ public static partial class Constants
     public const string Domain = "ublux.com";
 
     /// <summary>
+    ///     Domain where phones do autoprovision
+    /// </summary>
+    public const string DomainAutoprovision = $"ap2.{Domain}";
+#warning change this to ap.ublux.com once we are done with migration
+
+    /// <summary>
     ///     Example: api.ublux.com
     /// </summary>
     public const string WebService_HostName = $"api2.{Domain}";
