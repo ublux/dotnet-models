@@ -6470,6 +6470,16 @@ public class PhoneFilterRequest
     [JsonProperty("callerIdNumbers_reg")]
     public string? CallerIdNumbers_REG { get; set; }
 
+    /// <summary> CallerIdIndex equals </summary>
+    [JsonProperty("callerIdIndex_eq")]
+    public System.Int32? CallerIdIndex_EQ { get; set; }
+    /// <summary> CallerIdIndex less than or equal to </summary>
+    [JsonProperty("callerIdIndex_lte")]
+    public System.Int32? CallerIdIndex_LTE { get; set; }
+    /// <summary> CallerIdIndex greater than or equal to </summary>
+    [JsonProperty("callerIdIndex_gte")]
+    public System.Int32? CallerIdIndex_GTE { get; set; }
+
     /// <summary> RecordExternalCalls equals </summary>
     [JsonProperty("recordExternalCalls_eq")]
     public bool? RecordExternalCalls_EQ { get; set; }
@@ -6478,13 +6488,21 @@ public class PhoneFilterRequest
     [JsonProperty("recordInternalCalls_eq")]
     public bool? RecordInternalCalls_EQ { get; set; }
 
+    /// <summary> TranscribeExternalCalls equals </summary>
+    [JsonProperty("transcribeExternalCalls_eq")]
+    public bool? TranscribeExternalCalls_EQ { get; set; }
+
+    /// <summary> TranscribeInternalCalls equals </summary>
+    [JsonProperty("transcribeInternalCalls_eq")]
+    public bool? TranscribeInternalCalls_EQ { get; set; }
+
     /// <summary> UseAiForExternalCalls equals </summary>
     [JsonProperty("useAiForExternalCalls_eq")]
     public bool? UseAiForExternalCalls_EQ { get; set; }
 
-    /// <summary> UseAiForOutgoingCallsToExtensions equals </summary>
-    [JsonProperty("useAiForOutgoingCallsToExtensions_eq")]
-    public bool? UseAiForOutgoingCallsToExtensions_EQ { get; set; }
+    /// <summary> UseAiForInternalCalls equals </summary>
+    [JsonProperty("useAiForInternalCalls_eq")]
+    public bool? UseAiForInternalCalls_EQ { get; set; }
 
     /// <summary> IdAiCallAnalysisInput equals </summary>
     [JsonProperty("idAiCallAnalysisInput_eq")]
@@ -6579,6 +6597,16 @@ public class PhoneFilterRequest
     /// <summary> TimeZone regex </summary>
     [JsonProperty("timeZone_reg")]
     public string? TimeZone_REG { get; set; }
+
+    /// <summary> PhysicalPhoneAccountIndex equals </summary>
+    [JsonProperty("physicalPhoneAccountIndex_eq")]
+    public System.Int32? PhysicalPhoneAccountIndex_EQ { get; set; }
+    /// <summary> PhysicalPhoneAccountIndex less than or equal to </summary>
+    [JsonProperty("physicalPhoneAccountIndex_lte")]
+    public System.Int32? PhysicalPhoneAccountIndex_LTE { get; set; }
+    /// <summary> PhysicalPhoneAccountIndex greater than or equal to </summary>
+    [JsonProperty("physicalPhoneAccountIndex_gte")]
+    public System.Int32? PhysicalPhoneAccountIndex_GTE { get; set; }
 
     /// <summary> IdsTags equals </summary>
     [JsonProperty("idsTags_eq")]
@@ -7440,6 +7468,16 @@ public class VoicemailForwardedFilterRequest
     [JsonProperty("phoneThatForwardedVoicemail_callerIdNumbers_reg")]
     public string? PhoneThatForwardedVoicemail_CallerIdNumbers_REG { get; set; }
 
+    /// <summary> PhoneThatForwardedVoicemail.CallerIdIndex equals </summary>
+    [JsonProperty("phoneThatForwardedVoicemail_callerIdIndex_eq")]
+    public System.Int32? PhoneThatForwardedVoicemail_CallerIdIndex_EQ { get; set; }
+    /// <summary> PhoneThatForwardedVoicemail.CallerIdIndex less than or equal to </summary>
+    [JsonProperty("phoneThatForwardedVoicemail_callerIdIndex_lte")]
+    public System.Int32? PhoneThatForwardedVoicemail_CallerIdIndex_LTE { get; set; }
+    /// <summary> PhoneThatForwardedVoicemail.CallerIdIndex greater than or equal to </summary>
+    [JsonProperty("phoneThatForwardedVoicemail_callerIdIndex_gte")]
+    public System.Int32? PhoneThatForwardedVoicemail_CallerIdIndex_GTE { get; set; }
+
     /// <summary> PhoneThatForwardedVoicemail.RecordExternalCalls equals </summary>
     [JsonProperty("phoneThatForwardedVoicemail_recordExternalCalls_eq")]
     public bool? PhoneThatForwardedVoicemail_RecordExternalCalls_EQ { get; set; }
@@ -7448,13 +7486,21 @@ public class VoicemailForwardedFilterRequest
     [JsonProperty("phoneThatForwardedVoicemail_recordInternalCalls_eq")]
     public bool? PhoneThatForwardedVoicemail_RecordInternalCalls_EQ { get; set; }
 
+    /// <summary> PhoneThatForwardedVoicemail.TranscribeExternalCalls equals </summary>
+    [JsonProperty("phoneThatForwardedVoicemail_transcribeExternalCalls_eq")]
+    public bool? PhoneThatForwardedVoicemail_TranscribeExternalCalls_EQ { get; set; }
+
+    /// <summary> PhoneThatForwardedVoicemail.TranscribeInternalCalls equals </summary>
+    [JsonProperty("phoneThatForwardedVoicemail_transcribeInternalCalls_eq")]
+    public bool? PhoneThatForwardedVoicemail_TranscribeInternalCalls_EQ { get; set; }
+
     /// <summary> PhoneThatForwardedVoicemail.UseAiForExternalCalls equals </summary>
     [JsonProperty("phoneThatForwardedVoicemail_useAiForExternalCalls_eq")]
     public bool? PhoneThatForwardedVoicemail_UseAiForExternalCalls_EQ { get; set; }
 
-    /// <summary> PhoneThatForwardedVoicemail.UseAiForOutgoingCallsToExtensions equals </summary>
-    [JsonProperty("phoneThatForwardedVoicemail_useAiForOutgoingCallsToExtensions_eq")]
-    public bool? PhoneThatForwardedVoicemail_UseAiForOutgoingCallsToExtensions_EQ { get; set; }
+    /// <summary> PhoneThatForwardedVoicemail.UseAiForInternalCalls equals </summary>
+    [JsonProperty("phoneThatForwardedVoicemail_useAiForInternalCalls_eq")]
+    public bool? PhoneThatForwardedVoicemail_UseAiForInternalCalls_EQ { get; set; }
 
     /// <summary> PhoneThatForwardedVoicemail.IdAiCallAnalysisInput equals </summary>
     [JsonProperty("phoneThatForwardedVoicemail_idAiCallAnalysisInput_eq")]
@@ -7549,6 +7595,16 @@ public class VoicemailForwardedFilterRequest
     /// <summary> PhoneThatForwardedVoicemail.TimeZone regex </summary>
     [JsonProperty("phoneThatForwardedVoicemail_timeZone_reg")]
     public string? PhoneThatForwardedVoicemail_TimeZone_REG { get; set; }
+
+    /// <summary> PhoneThatForwardedVoicemail.PhysicalPhoneAccountIndex equals </summary>
+    [JsonProperty("phoneThatForwardedVoicemail_physicalPhoneAccountIndex_eq")]
+    public System.Int32? PhoneThatForwardedVoicemail_PhysicalPhoneAccountIndex_EQ { get; set; }
+    /// <summary> PhoneThatForwardedVoicemail.PhysicalPhoneAccountIndex less than or equal to </summary>
+    [JsonProperty("phoneThatForwardedVoicemail_physicalPhoneAccountIndex_lte")]
+    public System.Int32? PhoneThatForwardedVoicemail_PhysicalPhoneAccountIndex_LTE { get; set; }
+    /// <summary> PhoneThatForwardedVoicemail.PhysicalPhoneAccountIndex greater than or equal to </summary>
+    [JsonProperty("phoneThatForwardedVoicemail_physicalPhoneAccountIndex_gte")]
+    public System.Int32? PhoneThatForwardedVoicemail_PhysicalPhoneAccountIndex_GTE { get; set; }
 
     /// <summary> PhoneThatForwardedVoicemail.IdsTags equals </summary>
     [JsonProperty("phoneThatForwardedVoicemail_idsTags_eq")]

@@ -10,6 +10,17 @@ namespace Ublux.Communications.Models.Documents;
 /// </summary>
 public partial class Phone
 {
+    //private static readonly ReaderWriterLockSlim _lock = new();
+
+    /// <summary>
+    ///     If true it will be sync with WS because line status changed
+    /// </summary>
+    [System.Text.Json.Serialization.JsonIgnore]
+    [JsonIgnore]
+    [BsonIgnore]
+    [HideForCreateRequest]
+    public bool IsConnectionStatusChanged;
+
     /// <summary>
     ///     Password of phone used to authenticate with asterisk
     /// </summary>
@@ -97,6 +108,20 @@ public partial class Phone
         var idAccount = idPhone[(Phone.DocumentPrefix.Length + 1)..thirdDot];
 
         return idAccount;
+    }
+
+    /// <summary>
+    ///     Get caller id number
+    /// </summary>
+    public string GetCallerIdNumber()
+    {
+        if (this.CallerIdNumbers is null || this.CallerIdNumbers.Count == 0)
+            return "";
+
+        if(this.CallerIdIndex < this.CallerIdNumbers.Count)
+            return this.CallerIdNumbers[this.CallerIdIndex];
+
+        return "";
     }
 
 }

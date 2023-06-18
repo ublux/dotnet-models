@@ -24,16 +24,16 @@ public partial class Account : UbluxDocument
 
     #endregion
 
-    /// <summary>
-    ///     Continental assists has 2 providers on their phones.
-    ///     Thanks to this Variable we may ignore an account so that we do not override properties from Netelip for example.
-    ///
-    ///     For example value {3,4} will reserver accounts 3 and 4 for personal use of Continental assist
-    /// </summary>
-    [AllowUpdate(false)]
-    [SwaggerSchema(ReadOnly = true)]
-    [IgnoreDataMember]
-    public List<int> ReserveAccountsOnPhone { get; set; } = new();
+    ///// <summary>
+    /////     Continental assists has 2 providers on their phones.
+    /////     Thanks to this Variable we may ignore an account so that we do not override properties from Netelip for example.
+    /////
+    /////     For example value {3,4} will reserver accounts 3 and 4 for personal use of Continental assist
+    ///// </summary>
+    //[AllowUpdate(false)]
+    //[SwaggerSchema(ReadOnly = true)]
+    //[IgnoreDataMember]
+    //public List<int> ReserveAccountsOnPhone { get; set; } = new();
 
     /// <summary>
     ///     Was this account sold by CanalPark, Victor, Daniel?

@@ -3277,8 +3277,6 @@ export interface EventPhoneConnected {
     eventTrigger?: EventTriggerType;
     /** Phone friendly name */
     readonly friendlyName?: string | null;
-    /** Id of phone */
-    readonly phoneId?: string | null;
     /** Name of phone */
     readonly phoneFriendly?: string | null;
     /** To what extension this line belongs */
@@ -3297,8 +3295,6 @@ export interface EventPhoneDisconnected {
     eventTrigger?: EventTriggerType;
     /** Phone friendly name */
     readonly friendlyName?: string | null;
-    /** Id of phone */
-    readonly phoneId?: string | null;
     /** Name of phone */
     readonly phoneFriendly?: string | null;
     /** To what extension this line belongs */
@@ -5256,14 +5252,20 @@ export interface Phone {
     phoneConnectionStatus?: PhoneConnectionStatus;
     /** Caller id number that will be used to place outbound calls */
     callerIdNumbers?: string[];
+    /** Specifies what caller id to use.  CallerIdIdex cannot be greater than the number of callerIdNumbers. */
+    callerIdIndex?: number;
     /** Record outbound calls to PSTN? */
     recordExternalCalls?: boolean;
     /** Record calls to other extensions? */
     recordInternalCalls?: boolean;
+    /** Transcribe calls made to PSTN */
+    transcribeExternalCalls?: boolean;
+    /** Transcribe calls made to internal extensions */
+    transcribeInternalCalls?: boolean;
     /** Users will be charged extra for AI transcriptions. If this is true external calls to PSTN will be recorded. */
     useAiForExternalCalls?: boolean;
     /** Users will be charged extra for AI transcriptions. If this is true internal calls to extensions will be recorded. */
-    useAiForOutgoingCallsToExtensions?: boolean;
+    useAiForInternalCalls?: boolean;
     /** What input to pass to AI engine. If null it should use a default input that is part of constants. */
     idAiCallAnalysisInput?: string | null;
     language?: Language;
@@ -5282,6 +5284,9 @@ export interface Phone {
     readonly pin?: string;
     /** TimeZone of this phone */
     timeZone?: string;
+    /** This is needed for yealink cordless phones for example. When doing autoprovision this is the account number that will be configured.
+Place value of 1 to set to the first account! This is important because if value is 1 then we will not modify other accounts. Moreover if we see a value of 1 we know it is a cordless phone. */
+    physicalPhoneAccountIndex?: number;
     /** It is nullable because there are cases where it makes no sense to point to an account. 
 For example a CloudService user will point to no account */
     idsTags?: string[];
@@ -5479,14 +5484,24 @@ export interface PhoneFilterRequest {
     callerIdNumbers_con?: string | null;
     /** CallerIdNumbers regex */
     callerIdNumbers_reg?: string | null;
+    /** CallerIdIndex equals */
+    callerIdIndex_eq?: number | null;
+    /** CallerIdIndex less than or equal to */
+    callerIdIndex_lte?: number | null;
+    /** CallerIdIndex greater than or equal to */
+    callerIdIndex_gte?: number | null;
     /** RecordExternalCalls equals */
     recordExternalCalls_eq?: boolean | null;
     /** RecordInternalCalls equals */
     recordInternalCalls_eq?: boolean | null;
+    /** TranscribeExternalCalls equals */
+    transcribeExternalCalls_eq?: boolean | null;
+    /** TranscribeInternalCalls equals */
+    transcribeInternalCalls_eq?: boolean | null;
     /** UseAiForExternalCalls equals */
     useAiForExternalCalls_eq?: boolean | null;
-    /** UseAiForOutgoingCallsToExtensions equals */
-    useAiForOutgoingCallsToExtensions_eq?: boolean | null;
+    /** UseAiForInternalCalls equals */
+    useAiForInternalCalls_eq?: boolean | null;
     /** IdAiCallAnalysisInput equals */
     idAiCallAnalysisInput_eq?: string | null;
     /** IdAiCallAnalysisInput contains */
@@ -5543,6 +5558,12 @@ export interface PhoneFilterRequest {
     timeZone_con?: string | null;
     /** TimeZone regex */
     timeZone_reg?: string | null;
+    /** PhysicalPhoneAccountIndex equals */
+    physicalPhoneAccountIndex_eq?: number | null;
+    /** PhysicalPhoneAccountIndex less than or equal to */
+    physicalPhoneAccountIndex_lte?: number | null;
+    /** PhysicalPhoneAccountIndex greater than or equal to */
+    physicalPhoneAccountIndex_gte?: number | null;
     /** IdsTags equals */
     idsTags_eq?: string | null;
     /** IdsTags contains */
@@ -5585,14 +5606,20 @@ export interface PhoneUpdateRequest {
     idUser?: string | null;
     /** Caller id number that will be used to place outbound calls */
     callerIdNumbers?: string[] | null;
+    /** Specifies what caller id to use.  CallerIdIdex cannot be greater than the number of callerIdNumbers. */
+    callerIdIndex?: number | null;
     /** Record outbound calls to PSTN? */
     recordExternalCalls?: boolean | null;
     /** Record calls to other extensions? */
     recordInternalCalls?: boolean | null;
+    /** Transcribe calls made to PSTN */
+    transcribeExternalCalls?: boolean | null;
+    /** Transcribe calls made to internal extensions */
+    transcribeInternalCalls?: boolean | null;
     /** Users will be charged extra for AI transcriptions. If this is true external calls to PSTN will be recorded. */
     useAiForExternalCalls?: boolean | null;
     /** Users will be charged extra for AI transcriptions. If this is true internal calls to extensions will be recorded. */
-    useAiForOutgoingCallsToExtensions?: boolean | null;
+    useAiForInternalCalls?: boolean | null;
     /** What input to pass to AI engine. If null it should use a default input that is part of constants. */
     idAiCallAnalysisInput?: string | null;
     language?: Language;
@@ -5603,6 +5630,9 @@ export interface PhoneUpdateRequest {
     disableEncryption?: boolean | null;
     /** TimeZone of this phone */
     timeZone?: string | null;
+    /** This is needed for yealink cordless phones for example. When doing autoprovision this is the account number that will be configured.
+Place value of 1 to set to the first account! This is important because if value is 1 then we will not modify other accounts. Moreover if we see a value of 1 we know it is a cordless phone. */
+    physicalPhoneAccountIndex?: number | null;
     /** It is nullable because there are cases where it makes no sense to point to an account.
 For example a CloudService user will point to no account */
     idsTags?: string[] | null;

@@ -453,9 +453,9 @@ public static class ModelsExtensionMethods
     #region GetExtensionsUsedByPhone ordered by priority
 
     /// <summary>
-    ///     Get extensions used by line ordered by prioroty
+    ///     Get extensions used by phone ordered by prioroty
     /// </summary>
-    public static IEnumerable<Extension> GetExtensionsUsedByPhone(this IEnumerable<Extension> extensions, string idPhone)
+    public static IEnumerable<Extension> GetExtensionsUsedByPhoneOrderedByPriority(this IEnumerable<Extension> extensions, string idPhone)
     {
         return extensions
             .Order(new ExtensionPriorityComparer(idPhone))
@@ -486,7 +486,7 @@ public static class ModelsExtensionMethods
             if (isXUsed == false && isYUsed == true)
                 return 1;
 
-            // at this point we know line is being used by both extensions. so complare the weights
+            // at this point we know phone is being used by both extensions. so complare the weights
             if (weightX < weightY) return -1;
             if (weightX == weightY) return 0;
             return 1;

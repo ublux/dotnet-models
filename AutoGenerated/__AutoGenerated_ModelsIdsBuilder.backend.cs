@@ -111,6 +111,8 @@ namespace Ublux.Communications.Models.Documents {
 
         /// <summary> Custom: Prefix followed by id. Example: CSP.US-1  CSWA.US-1 </summary>
         public static BuiltId BuildId(CountryIsoCode country, int number) => new($"{DocumentPrefix}.{country}-{number}");
+        /// <summary> Build test cloud service: Example: CSP.US-T  CSWA.US-T </summary>
+        public static BuiltId BuildIdTest(CountryIsoCode country) => new($"{DocumentPrefix}.{country}-T");
     }
     public partial class CloudServiceWebApp {
         /// <summary> Id prefix </summary>
@@ -118,6 +120,8 @@ namespace Ublux.Communications.Models.Documents {
 
         /// <summary> Custom: Prefix followed by id. Example: CSP.US-1  CSWA.US-1 </summary>
         public static BuiltId BuildId(CountryIsoCode country, int number) => new($"{DocumentPrefix}.{country}-{number}");
+        /// <summary> Build test cloud service: Example: CSP.US-T  CSWA.US-T </summary>
+        public static BuiltId BuildIdTest(CountryIsoCode country) => new($"{DocumentPrefix}.{country}-T");
     }
     public partial class CloudServiceWebHost {
         /// <summary> Id prefix </summary>
@@ -125,6 +129,8 @@ namespace Ublux.Communications.Models.Documents {
 
         /// <summary> Custom: Prefix followed by id. Example: CSP.US-1  CSWA.US-1 </summary>
         public static BuiltId BuildId(CountryIsoCode country, int number) => new($"{DocumentPrefix}.{country}-{number}");
+        /// <summary> Build test cloud service: Example: CSP.US-T  CSWA.US-T </summary>
+        public static BuiltId BuildIdTest(CountryIsoCode country) => new($"{DocumentPrefix}.{country}-T");
     }
     public partial class Contact {
         /// <summary> Id prefix </summary>

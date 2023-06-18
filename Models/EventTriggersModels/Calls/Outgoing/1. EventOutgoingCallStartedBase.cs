@@ -24,15 +24,14 @@ public abstract class EventOutgoingCallStartedBase : EventCallBase
     /// </summary>
     protected new T GetRandomBase<T>(RunningApplicationInstance instance) where T : EventOutgoingCallStartedBase
     {
-#warning fix this
-        throw new NotImplementedException();
 
-        //var obj = base.GetRandomBase<T>(instance);
-        
-        //GenerateRandomIdAccountPhoneAndPhone(instance, out _, out _, out var idPhone);
-        //obj.PhoneThatInitiatedCallId = idPhone;
-        //obj.PhoneThatInitiatedCallFrienlyName = Constants.RandomNames[Random.Shared.Next(0, Constants.RandomNames.Length)];
+        var obj = base.GetRandomBase<T>(instance);
 
-        //return obj;
+        var idAccount = Account.BuildId(Random.Shared.Next(10, 1000).ToString()).Id;
+        var idPhone = Phone.BuildId(instance, idAccount).Id;
+        obj.PhoneThatInitiatedCallId = idPhone;
+        obj.PhoneThatInitiatedCallFrienlyName = Constants.RandomNames[Random.Shared.Next(0, Constants.RandomNames.Length)];
+
+        return obj;
     }
 }

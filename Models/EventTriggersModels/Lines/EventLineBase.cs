@@ -14,12 +14,12 @@ public abstract class EventPhoneBase : EventTriggerModel
     [SwaggerSchema(ReadOnly = true)]
     public string? FriendlyName { get; set; }
 
-    /// <summary>
-    ///     Id of phone
-    /// </summary>
-    [AllowUpdate(false)]
-    [SwaggerSchema(ReadOnly = true)]
-    public string? PhoneId { get; set; }
+    ///// <summary>
+    /////     Id of phone
+    ///// </summary>
+    //[AllowUpdate(false)]
+    //[SwaggerSchema(ReadOnly = true)]
+    //public string? PhoneId { get; set; }
 
     /// <summary>
     ///     Name of phone

@@ -35,19 +35,6 @@ public partial class Phone : UbluxDocument_ReferenceAccount_ReferenceTags
 
     #region Line
 
-    //private static readonly ReaderWriterLockSlim _lock = new();
-
-    private PhoneConnectionStatus? _lineConnectionStatus;
-
-    /// <summary>
-    ///     If true it will be sync with WS because line status changed
-    /// </summary>
-    [System.Text.Json.Serialization.JsonIgnore]
-    [JsonIgnore]
-    [BsonIgnore]
-    [HideForCreateRequest]
-    public bool IsConnectionStatusChanged;
-
     /// <summary>
     ///     Phone status
     /// </summary>
@@ -61,7 +48,7 @@ public partial class Phone : UbluxDocument_ReferenceAccount_ReferenceTags
             _lock.EnterReadLock();
             try
             {
-                return _lineConnectionStatus;
+                return _phoneConnectionStatus;
             }
             finally
             {
@@ -73,7 +60,7 @@ public partial class Phone : UbluxDocument_ReferenceAccount_ReferenceTags
             _lock.EnterWriteLock();
             try
             {
-                _lineConnectionStatus = value;
+                _phoneConnectionStatus = value;
             }
             finally
             {
@@ -81,6 +68,7 @@ public partial class Phone : UbluxDocument_ReferenceAccount_ReferenceTags
             }
         }
     }
+    private PhoneConnectionStatus? _phoneConnectionStatus;
 
     /// <summary>
     ///     Caller id number that will be used to place outbound calls
@@ -88,6 +76,12 @@ public partial class Phone : UbluxDocument_ReferenceAccount_ReferenceTags
     [AllowUpdate(true)]
     [UbluxValidationRequired]
     public required List<string> CallerIdNumbers { get; set; } = new();
+
+    /// <summary>
+    ///     Specifies what caller id to use.  CallerIdIdex cannot be greater than the number of callerIdNumbers.
+    /// </summary>
+    [AllowUpdate(true)]
+    public int CallerIdIndex { get; set; }
 
     /// <summary>
     ///     Record outbound calls to PSTN?
@@ -104,6 +98,19 @@ public partial class Phone : UbluxDocument_ReferenceAccount_ReferenceTags
     #region AI
 
     /// <summary>
+    ///     Transcribe calls made to PSTN
+    /// </summary>
+    [AllowUpdate(true)]
+    public bool TranscribeExternalCalls { get; set; }
+
+    /// <summary>
+    ///     Transcribe calls made to internal extensions
+    /// </summary>
+    [AllowUpdate(true)]
+    public bool TranscribeInternalCalls { get; set; }
+
+
+    /// <summary>
     ///     Users will be charged extra for AI transcriptions. If this is true external calls to PSTN will be recorded.
     /// </summary>
     [AllowUpdate(true)]
@@ -112,7 +119,7 @@ public partial class Phone : UbluxDocument_ReferenceAccount_ReferenceTags
     ///     Users will be charged extra for AI transcriptions. If this is true internal calls to extensions will be recorded.
     /// </summary>
     [AllowUpdate(true)]
-    public bool UseAiForOutgoingCallsToExtensions { get; set; }
+    public bool UseAiForInternalCalls { get; set; }
     /// <summary>
     ///     What input to pass to AI engine. If null it should use a default input that is part of constants.
     /// </summary>
@@ -197,6 +204,13 @@ public partial class Phone : UbluxDocument_ReferenceAccount_ReferenceTags
     [UbluxValidationRequired]
     public required string TimeZone { get; set; } = "America/New_York";
 
+    /// <summary>
+    ///     This is needed for yealink cordless phones for example. When doing autoprovision this is the account number that will be configured.
+    ///     Place value of 1 to set to the first account! This is important because if value is 1 then we will not modify other accounts. Moreover if we see a value of 1 we know it is a cordless phone.
+    /// </summary>
+    [AllowUpdate(true)]
+    public int PhysicalPhoneAccountIndex { get; set; }
+
     #region MongoDB
 
     /// <inheritdoc />
@@ -209,8 +223,6 @@ public partial class Phone : UbluxDocument_ReferenceAccount_ReferenceTags
         foreach (var item in base.GetMandatoryIndexes(collection))
             yield return item;
     }
-
-    
 
     #endregion
 }

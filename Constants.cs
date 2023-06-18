@@ -82,12 +82,19 @@ public static partial class Constants
     /// <summary>
     ///     Example: api.ublux.com
     /// </summary>
-    public const string WebService_HostName = $"api.{Domain}";
+    public const string WebService_HostName = $"api2.{Domain}";
+#warning change from api2 to api once we finish migration
 
     /// <summary>
     ///     Example: https://api.ublux.com
     /// </summary>
     public const string WebService_BaseUrl = $"https://{WebService_HostName}";
+
+
+    /// <summary>
+    ///     Example: https://events.ublux.com
+    /// </summary>
+    public const string WebService_Events = $"https://events.{Domain}";
 
     /// <summary>
     ///     Regex used to find ip address V4 and port

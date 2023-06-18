@@ -1207,6 +1207,10 @@ public class PhoneUpdateRequest // : IUbluxDocumentId
     /// </summary>
     public List<System.String>? CallerIdNumbers { get; set; }
     /// <summary>
+    /// Specifies what caller id to use.  CallerIdIdex cannot be greater than the number of callerIdNumbers.
+    /// </summary>
+    public Int32? CallerIdIndex { get; set; }
+    /// <summary>
     /// Record outbound calls to PSTN?
     /// </summary>
     public Boolean? RecordExternalCalls { get; set; }
@@ -1215,13 +1219,21 @@ public class PhoneUpdateRequest // : IUbluxDocumentId
     /// </summary>
     public Boolean? RecordInternalCalls { get; set; }
     /// <summary>
+    /// Transcribe calls made to PSTN
+    /// </summary>
+    public Boolean? TranscribeExternalCalls { get; set; }
+    /// <summary>
+    /// Transcribe calls made to internal extensions
+    /// </summary>
+    public Boolean? TranscribeInternalCalls { get; set; }
+    /// <summary>
     /// Users will be charged extra for AI transcriptions. If this is true external calls to PSTN will be recorded.
     /// </summary>
     public Boolean? UseAiForExternalCalls { get; set; }
     /// <summary>
     /// Users will be charged extra for AI transcriptions. If this is true internal calls to extensions will be recorded.
     /// </summary>
-    public Boolean? UseAiForOutgoingCallsToExtensions { get; set; }
+    public Boolean? UseAiForInternalCalls { get; set; }
     /// <summary>
     /// What input to pass to AI engine. If null it should use a default input that is part of constants.
     /// </summary>
@@ -1247,6 +1259,11 @@ public class PhoneUpdateRequest // : IUbluxDocumentId
     /// </summary>
     public String? TimeZone { get; set; }
     /// <summary>
+    /// This is needed for yealink cordless phones for example. When doing autoprovision this is the account number that will be configured.
+    /// Place value of 1 to set to the first account! This is important because if value is 1 then we will not modify other accounts. Moreover if we see a value of 1 we know it is a cordless phone.
+    /// </summary>
+    public Int32? PhysicalPhoneAccountIndex { get; set; }
+    /// <summary>
     /// It is nullable because there are cases where it makes no sense to point to an account.
     /// For example a CloudService user will point to no account
     /// </summary>
@@ -1262,14 +1279,20 @@ public class PhoneUpdateRequest // : IUbluxDocumentId
             phone.IdUser = this.IdUser;
         if(jsonRaw.Contains($@"""{nameof(this.CallerIdNumbers)}""", StringComparison.OrdinalIgnoreCase))
             phone.CallerIdNumbers = this.CallerIdNumbers;
+        if(jsonRaw.Contains($@"""{nameof(this.CallerIdIndex)}""", StringComparison.OrdinalIgnoreCase))
+            phone.CallerIdIndex = this.CallerIdIndex.Value;
         if(jsonRaw.Contains($@"""{nameof(this.RecordExternalCalls)}""", StringComparison.OrdinalIgnoreCase))
             phone.RecordExternalCalls = this.RecordExternalCalls.Value;
         if(jsonRaw.Contains($@"""{nameof(this.RecordInternalCalls)}""", StringComparison.OrdinalIgnoreCase))
             phone.RecordInternalCalls = this.RecordInternalCalls.Value;
+        if(jsonRaw.Contains($@"""{nameof(this.TranscribeExternalCalls)}""", StringComparison.OrdinalIgnoreCase))
+            phone.TranscribeExternalCalls = this.TranscribeExternalCalls.Value;
+        if(jsonRaw.Contains($@"""{nameof(this.TranscribeInternalCalls)}""", StringComparison.OrdinalIgnoreCase))
+            phone.TranscribeInternalCalls = this.TranscribeInternalCalls.Value;
         if(jsonRaw.Contains($@"""{nameof(this.UseAiForExternalCalls)}""", StringComparison.OrdinalIgnoreCase))
             phone.UseAiForExternalCalls = this.UseAiForExternalCalls.Value;
-        if(jsonRaw.Contains($@"""{nameof(this.UseAiForOutgoingCallsToExtensions)}""", StringComparison.OrdinalIgnoreCase))
-            phone.UseAiForOutgoingCallsToExtensions = this.UseAiForOutgoingCallsToExtensions.Value;
+        if(jsonRaw.Contains($@"""{nameof(this.UseAiForInternalCalls)}""", StringComparison.OrdinalIgnoreCase))
+            phone.UseAiForInternalCalls = this.UseAiForInternalCalls.Value;
         if(jsonRaw.Contains($@"""{nameof(this.IdAiCallAnalysisInput)}""", StringComparison.OrdinalIgnoreCase))
             phone.IdAiCallAnalysisInput = this.IdAiCallAnalysisInput;
         if(jsonRaw.Contains($@"""{nameof(this.Language)}""", StringComparison.OrdinalIgnoreCase))
@@ -1282,6 +1305,8 @@ public class PhoneUpdateRequest // : IUbluxDocumentId
             phone.DisableEncryption = this.DisableEncryption.Value;
         if(jsonRaw.Contains($@"""{nameof(this.TimeZone)}""", StringComparison.OrdinalIgnoreCase))
             phone.TimeZone = this.TimeZone;
+        if(jsonRaw.Contains($@"""{nameof(this.PhysicalPhoneAccountIndex)}""", StringComparison.OrdinalIgnoreCase))
+            phone.PhysicalPhoneAccountIndex = this.PhysicalPhoneAccountIndex.Value;
         if(jsonRaw.Contains($@"""{nameof(this.IdsTags)}""", StringComparison.OrdinalIgnoreCase))
             phone.IdsTags = this.IdsTags;
     }
