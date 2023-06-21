@@ -25,7 +25,7 @@ public partial class Phone : UbluxDocument_ReferenceAccount_ReferenceTags
     public string? IdPhoneConfiguration { get; set; }
 
     /// <summary>
-    ///     Username and password to login to web-app
+    ///     Username and password to login to web-app. Two phones cannot point to the same user.
     /// </summary>
     [AllowUpdate(true)]
     [References(typeof(User))]
