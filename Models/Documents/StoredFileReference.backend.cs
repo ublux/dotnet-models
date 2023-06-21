@@ -4,7 +4,6 @@ namespace Ublux.Communications.Models.Documents;
 
 /// <summary>
 ///     File stored on the cloud
-///     This collection should not be stored on redis and be created with TTL
 ///     Thanks to this collection we can keep track of all StoredFiles
 /// </summary>
 public partial class StoredFileReference : UbluxDocument

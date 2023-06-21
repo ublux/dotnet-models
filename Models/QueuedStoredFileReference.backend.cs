@@ -72,7 +72,7 @@ public class QueuedStoredFileReference : IUbluxDocumentId
     ///     Move file to a new location. 
     ///     Maybe because we had an error uploading it and we will movie it from a temp dir to a permanent location.
     /// </summary>
-    public bool MoveFile(string directoryNewLocation)
+    public bool MoveFile(string directoryNewLocation, out string? newLocation)
     {
         try
         {
@@ -84,17 +84,19 @@ public class QueuedStoredFileReference : IUbluxDocumentId
                 }
 
                 var fileName = Path.GetFileName(PathToFile);
-                var dest = Path.Combine(directoryNewLocation, fileName);
-
-                File.Move(PathToFile, dest);
+                newLocation = Path.Combine(directoryNewLocation, fileName);
+                
+                File.Move(PathToFile, newLocation);
 
                 return true;
             }
 
+            newLocation = null;
             return false;
         }
         catch
         {
+            newLocation = null;
             return false;
         }
 
@@ -112,11 +114,18 @@ public class QueuedStoredFileReference : IUbluxDocumentId
     }
 
     /// <summary>
-    ///     Fires when this queued file is backed up.
-    ///     Parameters are the id of the call and the stored fileReference being backed up
+    ///     Fires when this queued file is backed up successfully
     /// </summary>
-    public Action<StoredFileReference>? OnBackupEventHandler { get; set; }
+    [JsonIgnore]
+    [System.Text.Json.Serialization.JsonIgnore]
+    public Action<StoredFileReference>? OnBackupSuccessfull { get; set; }
 
+    /// <summary>
+    ///     Fires if there is an error uploading the file
+    /// </summary>
+    [JsonIgnore]
+    [System.Text.Json.Serialization.JsonIgnore]
+    public Action<StoredFileReference>? OnBackupFailed { get; set; }
 }
 
 #endif

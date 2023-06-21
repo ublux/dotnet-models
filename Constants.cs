@@ -8,6 +8,17 @@ namespace Ublux.Communications.Models;
 /// </summary>
 public static partial class Constants
 {
+    /// <summary> Amazon Web Services </summary>
+    public static class AWS
+    {
+        /// <summary> S3 storage service </summary>
+        public static class S3
+        {
+            /// <summary> AWS S3 bucket name </summary>
+            public static string BucketName = "wsfffffffff.ublux.com";
+        }
+    }
+
     /// <summary>
     ///     Stun server to use
     /// </summary>

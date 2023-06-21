@@ -1,6 +1,4 @@
-﻿using Ublux.Communications.Models.Documents;
-
-namespace Ublux.Communications.Models;
+﻿namespace Ublux.Communications.Models;
 
 /// <summary>
 ///     Call is blind transferred to an extension
