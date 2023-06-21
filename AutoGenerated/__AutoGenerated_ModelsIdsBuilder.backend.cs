@@ -53,8 +53,8 @@ namespace Ublux.Communications.Models.Documents {
         /// <summary> Id prefix </summary>
         public const string DocumentPrefix = "APR";
 
-        /// <summary> Id is the mac address </summary>
-        public static BuiltId BuildId(string macAddress) => new($"{DocumentPrefix}.{macAddress}");
+        /// <summary> Id is the mac address without : and in lowercase </summary>
+        public static BuiltId BuildId(string macAddress) => new($"{DocumentPrefix}.{macAddress.Replace(":", "").ToLower()}");
     }
     public partial class BlackListPhoneNumber {
         /// <summary> Id prefix </summary>
@@ -277,7 +277,7 @@ namespace Ublux.Communications.Models.Documents {
         public const string DocumentPrefix = "TTG";
 
         /// <summary> Custom: Example: TTG.Victor-ES </summary>
-        public static BuiltId BuildId(UbluxPartner ubluxPartner, CountryIsoCode countryIsoCode) => new BuiltId($"{DocumentPrefix}.{ubluxPartner}-{countryIsoCode}");
+        public static BuiltId BuildId(UbluxPartner ubluxPartner, CountryIsoCode countryIsoCode) => new($"{DocumentPrefix}.{ubluxPartner}-{countryIsoCode}");
     }
     public partial class Voicemail {
         /// <summary> Id prefix </summary>

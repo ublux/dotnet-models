@@ -84,50 +84,27 @@ public partial class Phone : UbluxDocument_ReferenceAccount_ReferenceTags
     public int CallerIdIndex { get; set; }
 
     /// <summary>
-    ///     Record outbound calls to PSTN?
+    ///     Record, transcribe or AI analyse external calls to PSTN. 
+    ///     This are only for outgoing calls!
+    ///     Please note that if you transcribe the call will be recorded. If you AI analyze the call it will be transcribed.    
     /// </summary>
     [AllowUpdate(true)]
-    public bool RecordExternalCalls { get; set; }
+    public CallProcessingType ProcessingTypeExternal { get; set; }
 
     /// <summary>
-    ///     Record calls to other extensions?
+    ///     Record, transcribe or AI analyse internal calls bewteen extensions. 
+    ///     This are only for outgoing calls!
+    ///     Please note that if you transcribe the call will be recorded. If you AI analyze the call it will be transcribed.    
     /// </summary>
     [AllowUpdate(true)]
-    public bool RecordInternalCalls { get; set; }
+    public CallProcessingType ProcessingTypeInternal { get; set; }
 
-    #region AI
-
-    /// <summary>
-    ///     Transcribe calls made to PSTN
-    /// </summary>
-    [AllowUpdate(true)]
-    public bool TranscribeExternalCalls { get; set; }
-
-    /// <summary>
-    ///     Transcribe calls made to internal extensions
-    /// </summary>
-    [AllowUpdate(true)]
-    public bool TranscribeInternalCalls { get; set; }
-
-
-    /// <summary>
-    ///     Users will be charged extra for AI transcriptions. If this is true external calls to PSTN will be recorded.
-    /// </summary>
-    [AllowUpdate(true)]
-    public bool UseAiForExternalCalls { get; set; }
-    /// <summary>
-    ///     Users will be charged extra for AI transcriptions. If this is true internal calls to extensions will be recorded.
-    /// </summary>
-    [AllowUpdate(true)]
-    public bool UseAiForInternalCalls { get; set; }
     /// <summary>
     ///     What input to pass to AI engine. If null it should use a default input that is part of constants.
     /// </summary>
     [AllowUpdate(true)]
     [References(typeof(AiCallAnalysisInput))]
     public string? IdAiCallAnalysisInput { get; set; }
-
-    #endregion
 
     /// <summary>
     ///     Langage to use when playing messages
@@ -178,7 +155,18 @@ public partial class Phone : UbluxDocument_ReferenceAccount_ReferenceTags
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    public string? MacAddress { get; set; }
+    public string? MacAddress
+    {
+        get => macAddress; 
+        set
+        {
+            if (value != null)
+                macAddress = value.Replace(":", "").ToLower();
+            else
+                macAddress = "";
+        }
+    }
+    private string? macAddress;
 
     /// <summary>
     ///     User Agent

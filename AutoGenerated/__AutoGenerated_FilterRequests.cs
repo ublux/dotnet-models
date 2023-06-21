@@ -6480,29 +6480,25 @@ public class PhoneFilterRequest
     [JsonProperty("callerIdIndex_gte")]
     public System.Int32? CallerIdIndex_GTE { get; set; }
 
-    /// <summary> RecordExternalCalls equals </summary>
-    [JsonProperty("recordExternalCalls_eq")]
-    public bool? RecordExternalCalls_EQ { get; set; }
+    /// <summary> ProcessingTypeExternal equals </summary>
+    [JsonProperty("processingTypeExternal_eq")]
+    public string? ProcessingTypeExternal_EQ { get; set; }
+    /// <summary> ProcessingTypeExternal contains </summary>
+    [JsonProperty("processingTypeExternal_con")]
+    public string? ProcessingTypeExternal_CON { get; set; }
+    /// <summary> ProcessingTypeExternal regex </summary>
+    [JsonProperty("processingTypeExternal_reg")]
+    public string? ProcessingTypeExternal_REG { get; set; }
 
-    /// <summary> RecordInternalCalls equals </summary>
-    [JsonProperty("recordInternalCalls_eq")]
-    public bool? RecordInternalCalls_EQ { get; set; }
-
-    /// <summary> TranscribeExternalCalls equals </summary>
-    [JsonProperty("transcribeExternalCalls_eq")]
-    public bool? TranscribeExternalCalls_EQ { get; set; }
-
-    /// <summary> TranscribeInternalCalls equals </summary>
-    [JsonProperty("transcribeInternalCalls_eq")]
-    public bool? TranscribeInternalCalls_EQ { get; set; }
-
-    /// <summary> UseAiForExternalCalls equals </summary>
-    [JsonProperty("useAiForExternalCalls_eq")]
-    public bool? UseAiForExternalCalls_EQ { get; set; }
-
-    /// <summary> UseAiForInternalCalls equals </summary>
-    [JsonProperty("useAiForInternalCalls_eq")]
-    public bool? UseAiForInternalCalls_EQ { get; set; }
+    /// <summary> ProcessingTypeInternal equals </summary>
+    [JsonProperty("processingTypeInternal_eq")]
+    public string? ProcessingTypeInternal_EQ { get; set; }
+    /// <summary> ProcessingTypeInternal contains </summary>
+    [JsonProperty("processingTypeInternal_con")]
+    public string? ProcessingTypeInternal_CON { get; set; }
+    /// <summary> ProcessingTypeInternal regex </summary>
+    [JsonProperty("processingTypeInternal_reg")]
+    public string? ProcessingTypeInternal_REG { get; set; }
 
     /// <summary> IdAiCallAnalysisInput equals </summary>
     [JsonProperty("idAiCallAnalysisInput_eq")]
@@ -7478,29 +7474,25 @@ public class VoicemailForwardedFilterRequest
     [JsonProperty("phoneThatForwardedVoicemail_callerIdIndex_gte")]
     public System.Int32? PhoneThatForwardedVoicemail_CallerIdIndex_GTE { get; set; }
 
-    /// <summary> PhoneThatForwardedVoicemail.RecordExternalCalls equals </summary>
-    [JsonProperty("phoneThatForwardedVoicemail_recordExternalCalls_eq")]
-    public bool? PhoneThatForwardedVoicemail_RecordExternalCalls_EQ { get; set; }
+    /// <summary> PhoneThatForwardedVoicemail.ProcessingTypeExternal equals </summary>
+    [JsonProperty("phoneThatForwardedVoicemail_processingTypeExternal_eq")]
+    public string? PhoneThatForwardedVoicemail_ProcessingTypeExternal_EQ { get; set; }
+    /// <summary> PhoneThatForwardedVoicemail.ProcessingTypeExternal contains </summary>
+    [JsonProperty("phoneThatForwardedVoicemail_processingTypeExternal_con")]
+    public string? PhoneThatForwardedVoicemail_ProcessingTypeExternal_CON { get; set; }
+    /// <summary> PhoneThatForwardedVoicemail.ProcessingTypeExternal regex </summary>
+    [JsonProperty("phoneThatForwardedVoicemail_processingTypeExternal_reg")]
+    public string? PhoneThatForwardedVoicemail_ProcessingTypeExternal_REG { get; set; }
 
-    /// <summary> PhoneThatForwardedVoicemail.RecordInternalCalls equals </summary>
-    [JsonProperty("phoneThatForwardedVoicemail_recordInternalCalls_eq")]
-    public bool? PhoneThatForwardedVoicemail_RecordInternalCalls_EQ { get; set; }
-
-    /// <summary> PhoneThatForwardedVoicemail.TranscribeExternalCalls equals </summary>
-    [JsonProperty("phoneThatForwardedVoicemail_transcribeExternalCalls_eq")]
-    public bool? PhoneThatForwardedVoicemail_TranscribeExternalCalls_EQ { get; set; }
-
-    /// <summary> PhoneThatForwardedVoicemail.TranscribeInternalCalls equals </summary>
-    [JsonProperty("phoneThatForwardedVoicemail_transcribeInternalCalls_eq")]
-    public bool? PhoneThatForwardedVoicemail_TranscribeInternalCalls_EQ { get; set; }
-
-    /// <summary> PhoneThatForwardedVoicemail.UseAiForExternalCalls equals </summary>
-    [JsonProperty("phoneThatForwardedVoicemail_useAiForExternalCalls_eq")]
-    public bool? PhoneThatForwardedVoicemail_UseAiForExternalCalls_EQ { get; set; }
-
-    /// <summary> PhoneThatForwardedVoicemail.UseAiForInternalCalls equals </summary>
-    [JsonProperty("phoneThatForwardedVoicemail_useAiForInternalCalls_eq")]
-    public bool? PhoneThatForwardedVoicemail_UseAiForInternalCalls_EQ { get; set; }
+    /// <summary> PhoneThatForwardedVoicemail.ProcessingTypeInternal equals </summary>
+    [JsonProperty("phoneThatForwardedVoicemail_processingTypeInternal_eq")]
+    public string? PhoneThatForwardedVoicemail_ProcessingTypeInternal_EQ { get; set; }
+    /// <summary> PhoneThatForwardedVoicemail.ProcessingTypeInternal contains </summary>
+    [JsonProperty("phoneThatForwardedVoicemail_processingTypeInternal_con")]
+    public string? PhoneThatForwardedVoicemail_ProcessingTypeInternal_CON { get; set; }
+    /// <summary> PhoneThatForwardedVoicemail.ProcessingTypeInternal regex </summary>
+    [JsonProperty("phoneThatForwardedVoicemail_processingTypeInternal_reg")]
+    public string? PhoneThatForwardedVoicemail_ProcessingTypeInternal_REG { get; set; }
 
     /// <summary> PhoneThatForwardedVoicemail.IdAiCallAnalysisInput equals </summary>
     [JsonProperty("phoneThatForwardedVoicemail_idAiCallAnalysisInput_eq")]
@@ -7909,13 +7901,15 @@ public class VoipNumberAvailableForPurchaseFilterRequest
     [JsonProperty("injectFriendlyNameToCallerId_eq")]
     public bool? InjectFriendlyNameToCallerId_EQ { get; set; }
 
-    /// <summary> RecordIncomingCalls equals </summary>
-    [JsonProperty("recordIncomingCalls_eq")]
-    public bool? RecordIncomingCalls_EQ { get; set; }
-
-    /// <summary> UseAiForIncomingCalls equals </summary>
-    [JsonProperty("useAiForIncomingCalls_eq")]
-    public bool? UseAiForIncomingCalls_EQ { get; set; }
+    /// <summary> ProcessingType equals </summary>
+    [JsonProperty("processingType_eq")]
+    public string? ProcessingType_EQ { get; set; }
+    /// <summary> ProcessingType contains </summary>
+    [JsonProperty("processingType_con")]
+    public string? ProcessingType_CON { get; set; }
+    /// <summary> ProcessingType regex </summary>
+    [JsonProperty("processingType_reg")]
+    public string? ProcessingType_REG { get; set; }
 
     /// <summary> IdAiCallAnalysisInput equals </summary>
     [JsonProperty("idAiCallAnalysisInput_eq")]
@@ -8138,13 +8132,15 @@ public class VoipNumberFaxFilterRequest
     [JsonProperty("injectFriendlyNameToCallerId_eq")]
     public bool? InjectFriendlyNameToCallerId_EQ { get; set; }
 
-    /// <summary> RecordIncomingCalls equals </summary>
-    [JsonProperty("recordIncomingCalls_eq")]
-    public bool? RecordIncomingCalls_EQ { get; set; }
-
-    /// <summary> UseAiForIncomingCalls equals </summary>
-    [JsonProperty("useAiForIncomingCalls_eq")]
-    public bool? UseAiForIncomingCalls_EQ { get; set; }
+    /// <summary> ProcessingType equals </summary>
+    [JsonProperty("processingType_eq")]
+    public string? ProcessingType_EQ { get; set; }
+    /// <summary> ProcessingType contains </summary>
+    [JsonProperty("processingType_con")]
+    public string? ProcessingType_CON { get; set; }
+    /// <summary> ProcessingType regex </summary>
+    [JsonProperty("processingType_reg")]
+    public string? ProcessingType_REG { get; set; }
 
     /// <summary> IdAiCallAnalysisInput equals </summary>
     [JsonProperty("idAiCallAnalysisInput_eq")]
@@ -8367,13 +8363,15 @@ public class VoipNumberPhoneFilterRequest
     [JsonProperty("injectFriendlyNameToCallerId_eq")]
     public bool? InjectFriendlyNameToCallerId_EQ { get; set; }
 
-    /// <summary> RecordIncomingCalls equals </summary>
-    [JsonProperty("recordIncomingCalls_eq")]
-    public bool? RecordIncomingCalls_EQ { get; set; }
-
-    /// <summary> UseAiForIncomingCalls equals </summary>
-    [JsonProperty("useAiForIncomingCalls_eq")]
-    public bool? UseAiForIncomingCalls_EQ { get; set; }
+    /// <summary> ProcessingType equals </summary>
+    [JsonProperty("processingType_eq")]
+    public string? ProcessingType_EQ { get; set; }
+    /// <summary> ProcessingType contains </summary>
+    [JsonProperty("processingType_con")]
+    public string? ProcessingType_CON { get; set; }
+    /// <summary> ProcessingType regex </summary>
+    [JsonProperty("processingType_reg")]
+    public string? ProcessingType_REG { get; set; }
 
     /// <summary> IdAiCallAnalysisInput equals </summary>
     [JsonProperty("idAiCallAnalysisInput_eq")]
@@ -11930,13 +11928,15 @@ public class VoipNumberFilterRequest
     [JsonProperty("injectFriendlyNameToCallerId_eq")]
     public bool? InjectFriendlyNameToCallerId_EQ { get; set; }
 
-    /// <summary> RecordIncomingCalls equals </summary>
-    [JsonProperty("recordIncomingCalls_eq")]
-    public bool? RecordIncomingCalls_EQ { get; set; }
-
-    /// <summary> UseAiForIncomingCalls equals </summary>
-    [JsonProperty("useAiForIncomingCalls_eq")]
-    public bool? UseAiForIncomingCalls_EQ { get; set; }
+    /// <summary> ProcessingType equals </summary>
+    [JsonProperty("processingType_eq")]
+    public string? ProcessingType_EQ { get; set; }
+    /// <summary> ProcessingType contains </summary>
+    [JsonProperty("processingType_con")]
+    public string? ProcessingType_CON { get; set; }
+    /// <summary> ProcessingType regex </summary>
+    [JsonProperty("processingType_reg")]
+    public string? ProcessingType_REG { get; set; }
 
     /// <summary> IdAiCallAnalysisInput equals </summary>
     [JsonProperty("idAiCallAnalysisInput_eq")]

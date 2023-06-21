@@ -1477,6 +1477,14 @@ For example a CloudService user will point to no account */
     readonly dateUpdated?: Date;
 }
 
+/** Type of extension */
+export enum CallProcessingType {
+    None = "None",
+    Record = "Record",
+    Transcribe = "Transcribe",
+    AiAnalyze = "AiAnalyze",
+}
+
 /** How a call is categorized as agent when completed */
 export enum CallResult {
     None = "None",
@@ -5247,25 +5255,15 @@ export interface Phone {
     idCloudServicePbx?: string;
     /** Configuration phone will use */
     idPhoneConfiguration?: string | null;
-    /** Username and password to login to web-app */
+    /** Username and password to login to web-app. Two phones cannot point to the same user. */
     idUser?: string | null;
     phoneConnectionStatus?: PhoneConnectionStatus;
     /** Caller id number that will be used to place outbound calls */
     callerIdNumbers?: string[];
     /** Specifies what caller id to use.  CallerIdIdex cannot be greater than the number of callerIdNumbers. */
     callerIdIndex?: number;
-    /** Record outbound calls to PSTN? */
-    recordExternalCalls?: boolean;
-    /** Record calls to other extensions? */
-    recordInternalCalls?: boolean;
-    /** Transcribe calls made to PSTN */
-    transcribeExternalCalls?: boolean;
-    /** Transcribe calls made to internal extensions */
-    transcribeInternalCalls?: boolean;
-    /** Users will be charged extra for AI transcriptions. If this is true external calls to PSTN will be recorded. */
-    useAiForExternalCalls?: boolean;
-    /** Users will be charged extra for AI transcriptions. If this is true internal calls to extensions will be recorded. */
-    useAiForInternalCalls?: boolean;
+    processingTypeExternal?: CallProcessingType;
+    processingTypeInternal?: CallProcessingType;
     /** What input to pass to AI engine. If null it should use a default input that is part of constants. */
     idAiCallAnalysisInput?: string | null;
     language?: Language;
@@ -5490,18 +5488,18 @@ export interface PhoneFilterRequest {
     callerIdIndex_lte?: number | null;
     /** CallerIdIndex greater than or equal to */
     callerIdIndex_gte?: number | null;
-    /** RecordExternalCalls equals */
-    recordExternalCalls_eq?: boolean | null;
-    /** RecordInternalCalls equals */
-    recordInternalCalls_eq?: boolean | null;
-    /** TranscribeExternalCalls equals */
-    transcribeExternalCalls_eq?: boolean | null;
-    /** TranscribeInternalCalls equals */
-    transcribeInternalCalls_eq?: boolean | null;
-    /** UseAiForExternalCalls equals */
-    useAiForExternalCalls_eq?: boolean | null;
-    /** UseAiForInternalCalls equals */
-    useAiForInternalCalls_eq?: boolean | null;
+    /** ProcessingTypeExternal equals */
+    processingTypeExternal_eq?: string | null;
+    /** ProcessingTypeExternal contains */
+    processingTypeExternal_con?: string | null;
+    /** ProcessingTypeExternal regex */
+    processingTypeExternal_reg?: string | null;
+    /** ProcessingTypeInternal equals */
+    processingTypeInternal_eq?: string | null;
+    /** ProcessingTypeInternal contains */
+    processingTypeInternal_con?: string | null;
+    /** ProcessingTypeInternal regex */
+    processingTypeInternal_reg?: string | null;
     /** IdAiCallAnalysisInput equals */
     idAiCallAnalysisInput_eq?: string | null;
     /** IdAiCallAnalysisInput contains */
@@ -5602,24 +5600,14 @@ export interface PhoneUpdateRequest {
     idCloudServicePbx?: string | null;
     /** Configuration phone will use */
     idPhoneConfiguration?: string | null;
-    /** Username and password to login to web-app */
+    /** Username and password to login to web-app. Two phones cannot point to the same user. */
     idUser?: string | null;
     /** Caller id number that will be used to place outbound calls */
     callerIdNumbers?: string[] | null;
     /** Specifies what caller id to use.  CallerIdIdex cannot be greater than the number of callerIdNumbers. */
     callerIdIndex?: number | null;
-    /** Record outbound calls to PSTN? */
-    recordExternalCalls?: boolean | null;
-    /** Record calls to other extensions? */
-    recordInternalCalls?: boolean | null;
-    /** Transcribe calls made to PSTN */
-    transcribeExternalCalls?: boolean | null;
-    /** Transcribe calls made to internal extensions */
-    transcribeInternalCalls?: boolean | null;
-    /** Users will be charged extra for AI transcriptions. If this is true external calls to PSTN will be recorded. */
-    useAiForExternalCalls?: boolean | null;
-    /** Users will be charged extra for AI transcriptions. If this is true internal calls to extensions will be recorded. */
-    useAiForInternalCalls?: boolean | null;
+    processingTypeExternal?: CallProcessingType;
+    processingTypeInternal?: CallProcessingType;
     /** What input to pass to AI engine. If null it should use a default input that is part of constants. */
     idAiCallAnalysisInput?: string | null;
     language?: Language;
@@ -7018,11 +7006,9 @@ value = day of week when it executes */
 If the friendly name of this VoipNumber is "Spanish Support" then "Spanish Support" 
 will be injected to the caller id allowing the agent to know that she has to answer in Spanish for example */
     injectFriendlyNameToCallerId?: boolean;
-    /** Record incoming phone calls received by this phone number? */
-    recordIncomingCalls?: boolean;
-    /** Users will be charged extra for AI transcriptions. If this is true call will be recorded in order to do AI work */
-    useAiForIncomingCalls?: boolean;
-    /** What input to pass to AI engine in case UseAiForIncomingCalls=true. If null it should use a default input that is part of constants. */
+    processingType?: CallProcessingType;
+    /** What input to pass to AI engine in case UseAiForIncomingCalls=true. If null it should use a default input that is part of constants.
+For this to work ProcessingType should equal AiAnalyze */
     idAiCallAnalysisInput?: string | null;
     /** Phone number */
     readonly number?: string;
@@ -7075,11 +7061,9 @@ value = day of week when it executes */
 If the friendly name of this VoipNumber is "Spanish Support" then "Spanish Support" 
 will be injected to the caller id allowing the agent to know that she has to answer in Spanish for example */
     injectFriendlyNameToCallerId?: boolean;
-    /** Record incoming phone calls received by this phone number? */
-    recordIncomingCalls?: boolean;
-    /** Users will be charged extra for AI transcriptions. If this is true call will be recorded in order to do AI work */
-    useAiForIncomingCalls?: boolean;
-    /** What input to pass to AI engine in case UseAiForIncomingCalls=true. If null it should use a default input that is part of constants. */
+    processingType?: CallProcessingType;
+    /** What input to pass to AI engine in case UseAiForIncomingCalls=true. If null it should use a default input that is part of constants.
+For this to work ProcessingType should equal AiAnalyze */
     idAiCallAnalysisInput?: string | null;
     /** Phone number */
     readonly number?: string;
@@ -7155,10 +7139,12 @@ export interface VoipNumberAvailableForPurchaseFilterRequest {
     idMusicOnHoldGroup_reg?: string | null;
     /** InjectFriendlyNameToCallerId equals */
     injectFriendlyNameToCallerId_eq?: boolean | null;
-    /** RecordIncomingCalls equals */
-    recordIncomingCalls_eq?: boolean | null;
-    /** UseAiForIncomingCalls equals */
-    useAiForIncomingCalls_eq?: boolean | null;
+    /** ProcessingType equals */
+    processingType_eq?: string | null;
+    /** ProcessingType contains */
+    processingType_con?: string | null;
+    /** ProcessingType regex */
+    processingType_reg?: string | null;
     /** IdAiCallAnalysisInput equals */
     idAiCallAnalysisInput_eq?: string | null;
     /** IdAiCallAnalysisInput contains */
@@ -7255,11 +7241,9 @@ export interface VoipNumberAvailableForPurchaseUpdateRequest {
 If the friendly name of this VoipNumber is "Spanish Support" then "Spanish Support"
 will be injected to the caller id allowing the agent to know that she has to answer in Spanish for example */
     injectFriendlyNameToCallerId?: boolean | null;
-    /** Record incoming phone calls received by this phone number? */
-    recordIncomingCalls?: boolean | null;
-    /** Users will be charged extra for AI transcriptions. If this is true call will be recorded in order to do AI work */
-    useAiForIncomingCalls?: boolean | null;
-    /** What input to pass to AI engine in case UseAiForIncomingCalls=true. If null it should use a default input that is part of constants. */
+    processingType?: CallProcessingType;
+    /** What input to pass to AI engine in case UseAiForIncomingCalls=true. If null it should use a default input that is part of constants.
+For this to work ProcessingType should equal AiAnalyze */
     idAiCallAnalysisInput?: string | null;
     /** Incoming phone number friendly name */
     friendlyName?: string | null;
@@ -7291,11 +7275,9 @@ value = day of week when it executes */
 If the friendly name of this VoipNumber is "Spanish Support" then "Spanish Support" 
 will be injected to the caller id allowing the agent to know that she has to answer in Spanish for example */
     injectFriendlyNameToCallerId?: boolean;
-    /** Record incoming phone calls received by this phone number? */
-    recordIncomingCalls?: boolean;
-    /** Users will be charged extra for AI transcriptions. If this is true call will be recorded in order to do AI work */
-    useAiForIncomingCalls?: boolean;
-    /** What input to pass to AI engine in case UseAiForIncomingCalls=true. If null it should use a default input that is part of constants. */
+    processingType?: CallProcessingType;
+    /** What input to pass to AI engine in case UseAiForIncomingCalls=true. If null it should use a default input that is part of constants.
+For this to work ProcessingType should equal AiAnalyze */
     idAiCallAnalysisInput?: string | null;
     /** Phone number */
     readonly number?: string;
@@ -7369,10 +7351,12 @@ export interface VoipNumberFaxFilterRequest {
     idMusicOnHoldGroup_reg?: string | null;
     /** InjectFriendlyNameToCallerId equals */
     injectFriendlyNameToCallerId_eq?: boolean | null;
-    /** RecordIncomingCalls equals */
-    recordIncomingCalls_eq?: boolean | null;
-    /** UseAiForIncomingCalls equals */
-    useAiForIncomingCalls_eq?: boolean | null;
+    /** ProcessingType equals */
+    processingType_eq?: string | null;
+    /** ProcessingType contains */
+    processingType_con?: string | null;
+    /** ProcessingType regex */
+    processingType_reg?: string | null;
     /** IdAiCallAnalysisInput equals */
     idAiCallAnalysisInput_eq?: string | null;
     /** IdAiCallAnalysisInput contains */
@@ -7476,11 +7460,9 @@ value = day of week when it executes */
 If the friendly name of this VoipNumber is "Spanish Support" then "Spanish Support"
 will be injected to the caller id allowing the agent to know that she has to answer in Spanish for example */
     injectFriendlyNameToCallerId?: boolean | null;
-    /** Record incoming phone calls received by this phone number? */
-    recordIncomingCalls?: boolean | null;
-    /** Users will be charged extra for AI transcriptions. If this is true call will be recorded in order to do AI work */
-    useAiForIncomingCalls?: boolean | null;
-    /** What input to pass to AI engine in case UseAiForIncomingCalls=true. If null it should use a default input that is part of constants. */
+    processingType?: CallProcessingType;
+    /** What input to pass to AI engine in case UseAiForIncomingCalls=true. If null it should use a default input that is part of constants.
+For this to work ProcessingType should equal AiAnalyze */
     idAiCallAnalysisInput?: string | null;
     /** Incoming phone number friendly name */
     friendlyName?: string | null;
@@ -7535,10 +7517,12 @@ export interface VoipNumberFilterRequest {
     voipNumberType_reg?: string | null;
     /** InjectFriendlyNameToCallerId equals */
     injectFriendlyNameToCallerId_eq?: boolean | null;
-    /** RecordIncomingCalls equals */
-    recordIncomingCalls_eq?: boolean | null;
-    /** UseAiForIncomingCalls equals */
-    useAiForIncomingCalls_eq?: boolean | null;
+    /** ProcessingType equals */
+    processingType_eq?: string | null;
+    /** ProcessingType contains */
+    processingType_con?: string | null;
+    /** ProcessingType regex */
+    processingType_reg?: string | null;
     /** IdAiCallAnalysisInput equals */
     idAiCallAnalysisInput_eq?: string | null;
     /** IdAiCallAnalysisInput contains */
@@ -7645,11 +7629,9 @@ value = day of week when it executes */
 If the friendly name of this VoipNumber is "Spanish Support" then "Spanish Support" 
 will be injected to the caller id allowing the agent to know that she has to answer in Spanish for example */
     injectFriendlyNameToCallerId?: boolean;
-    /** Record incoming phone calls received by this phone number? */
-    recordIncomingCalls?: boolean;
-    /** Users will be charged extra for AI transcriptions. If this is true call will be recorded in order to do AI work */
-    useAiForIncomingCalls?: boolean;
-    /** What input to pass to AI engine in case UseAiForIncomingCalls=true. If null it should use a default input that is part of constants. */
+    processingType?: CallProcessingType;
+    /** What input to pass to AI engine in case UseAiForIncomingCalls=true. If null it should use a default input that is part of constants.
+For this to work ProcessingType should equal AiAnalyze */
     idAiCallAnalysisInput?: string | null;
     /** Phone number */
     readonly number?: string;
@@ -7723,10 +7705,12 @@ export interface VoipNumberPhoneFilterRequest {
     idMusicOnHoldGroup_reg?: string | null;
     /** InjectFriendlyNameToCallerId equals */
     injectFriendlyNameToCallerId_eq?: boolean | null;
-    /** RecordIncomingCalls equals */
-    recordIncomingCalls_eq?: boolean | null;
-    /** UseAiForIncomingCalls equals */
-    useAiForIncomingCalls_eq?: boolean | null;
+    /** ProcessingType equals */
+    processingType_eq?: string | null;
+    /** ProcessingType contains */
+    processingType_con?: string | null;
+    /** ProcessingType regex */
+    processingType_reg?: string | null;
     /** IdAiCallAnalysisInput equals */
     idAiCallAnalysisInput_eq?: string | null;
     /** IdAiCallAnalysisInput contains */
@@ -7830,11 +7814,9 @@ value = day of week when it executes */
 If the friendly name of this VoipNumber is "Spanish Support" then "Spanish Support"
 will be injected to the caller id allowing the agent to know that she has to answer in Spanish for example */
     injectFriendlyNameToCallerId?: boolean | null;
-    /** Record incoming phone calls received by this phone number? */
-    recordIncomingCalls?: boolean | null;
-    /** Users will be charged extra for AI transcriptions. If this is true call will be recorded in order to do AI work */
-    useAiForIncomingCalls?: boolean | null;
-    /** What input to pass to AI engine in case UseAiForIncomingCalls=true. If null it should use a default input that is part of constants. */
+    processingType?: CallProcessingType;
+    /** What input to pass to AI engine in case UseAiForIncomingCalls=true. If null it should use a default input that is part of constants.
+For this to work ProcessingType should equal AiAnalyze */
     idAiCallAnalysisInput?: string | null;
     /** Incoming phone number friendly name */
     friendlyName?: string | null;

@@ -1199,7 +1199,7 @@ public class PhoneUpdateRequest // : IUbluxDocumentId
     /// </summary>
     public String? IdPhoneConfiguration { get; set; }
     /// <summary>
-    /// Username and password to login to web-app
+    /// Username and password to login to web-app. Two phones cannot point to the same user.
     /// </summary>
     public String? IdUser { get; set; }
     /// <summary>
@@ -1211,29 +1211,17 @@ public class PhoneUpdateRequest // : IUbluxDocumentId
     /// </summary>
     public Int32? CallerIdIndex { get; set; }
     /// <summary>
-    /// Record outbound calls to PSTN?
+    /// Record, transcribe or AI analyse external calls to PSTN.
+    /// This are only for outgoing calls!
+    /// Please note that if you transcribe the call will be recorded. If you AI analyze the call it will be transcribed.
     /// </summary>
-    public Boolean? RecordExternalCalls { get; set; }
+    public CallProcessingType? ProcessingTypeExternal { get; set; }
     /// <summary>
-    /// Record calls to other extensions?
+    /// Record, transcribe or AI analyse internal calls bewteen extensions.
+    /// This are only for outgoing calls!
+    /// Please note that if you transcribe the call will be recorded. If you AI analyze the call it will be transcribed.
     /// </summary>
-    public Boolean? RecordInternalCalls { get; set; }
-    /// <summary>
-    /// Transcribe calls made to PSTN
-    /// </summary>
-    public Boolean? TranscribeExternalCalls { get; set; }
-    /// <summary>
-    /// Transcribe calls made to internal extensions
-    /// </summary>
-    public Boolean? TranscribeInternalCalls { get; set; }
-    /// <summary>
-    /// Users will be charged extra for AI transcriptions. If this is true external calls to PSTN will be recorded.
-    /// </summary>
-    public Boolean? UseAiForExternalCalls { get; set; }
-    /// <summary>
-    /// Users will be charged extra for AI transcriptions. If this is true internal calls to extensions will be recorded.
-    /// </summary>
-    public Boolean? UseAiForInternalCalls { get; set; }
+    public CallProcessingType? ProcessingTypeInternal { get; set; }
     /// <summary>
     /// What input to pass to AI engine. If null it should use a default input that is part of constants.
     /// </summary>
@@ -1281,18 +1269,10 @@ public class PhoneUpdateRequest // : IUbluxDocumentId
             phone.CallerIdNumbers = this.CallerIdNumbers;
         if(jsonRaw.Contains($@"""{nameof(this.CallerIdIndex)}""", StringComparison.OrdinalIgnoreCase))
             phone.CallerIdIndex = this.CallerIdIndex.Value;
-        if(jsonRaw.Contains($@"""{nameof(this.RecordExternalCalls)}""", StringComparison.OrdinalIgnoreCase))
-            phone.RecordExternalCalls = this.RecordExternalCalls.Value;
-        if(jsonRaw.Contains($@"""{nameof(this.RecordInternalCalls)}""", StringComparison.OrdinalIgnoreCase))
-            phone.RecordInternalCalls = this.RecordInternalCalls.Value;
-        if(jsonRaw.Contains($@"""{nameof(this.TranscribeExternalCalls)}""", StringComparison.OrdinalIgnoreCase))
-            phone.TranscribeExternalCalls = this.TranscribeExternalCalls.Value;
-        if(jsonRaw.Contains($@"""{nameof(this.TranscribeInternalCalls)}""", StringComparison.OrdinalIgnoreCase))
-            phone.TranscribeInternalCalls = this.TranscribeInternalCalls.Value;
-        if(jsonRaw.Contains($@"""{nameof(this.UseAiForExternalCalls)}""", StringComparison.OrdinalIgnoreCase))
-            phone.UseAiForExternalCalls = this.UseAiForExternalCalls.Value;
-        if(jsonRaw.Contains($@"""{nameof(this.UseAiForInternalCalls)}""", StringComparison.OrdinalIgnoreCase))
-            phone.UseAiForInternalCalls = this.UseAiForInternalCalls.Value;
+        if(jsonRaw.Contains($@"""{nameof(this.ProcessingTypeExternal)}""", StringComparison.OrdinalIgnoreCase))
+            phone.ProcessingTypeExternal = this.ProcessingTypeExternal.Value;
+        if(jsonRaw.Contains($@"""{nameof(this.ProcessingTypeInternal)}""", StringComparison.OrdinalIgnoreCase))
+            phone.ProcessingTypeInternal = this.ProcessingTypeInternal.Value;
         if(jsonRaw.Contains($@"""{nameof(this.IdAiCallAnalysisInput)}""", StringComparison.OrdinalIgnoreCase))
             phone.IdAiCallAnalysisInput = this.IdAiCallAnalysisInput;
         if(jsonRaw.Contains($@"""{nameof(this.Language)}""", StringComparison.OrdinalIgnoreCase))
@@ -1496,15 +1476,14 @@ public class VoipNumberAvailableForPurchaseUpdateRequest // : IUbluxDocumentId
     /// </summary>
     public Boolean? InjectFriendlyNameToCallerId { get; set; }
     /// <summary>
-    /// Record incoming phone calls received by this phone number?
+    /// Record, transcribe or AI analyse call.
+    /// This is only for incoming calls made to this number.
+    /// Please note that if you transcribe the call will be recorded. If you AI analyze the call it will be transcribed.
     /// </summary>
-    public Boolean? RecordIncomingCalls { get; set; }
-    /// <summary>
-    /// Users will be charged extra for AI transcriptions. If this is true call will be recorded in order to do AI work
-    /// </summary>
-    public Boolean? UseAiForIncomingCalls { get; set; }
+    public CallProcessingType? ProcessingType { get; set; }
     /// <summary>
     /// What input to pass to AI engine in case UseAiForIncomingCalls=true. If null it should use a default input that is part of constants.
+    /// For this to work ProcessingType should equal AiAnalyze
     /// </summary>
     public String? IdAiCallAnalysisInput { get; set; }
     /// <summary>
@@ -1535,10 +1514,8 @@ public class VoipNumberAvailableForPurchaseUpdateRequest // : IUbluxDocumentId
             voipNumberAvailableForPurchase.IdMusicOnHoldGroup = this.IdMusicOnHoldGroup;
         if(jsonRaw.Contains($@"""{nameof(this.InjectFriendlyNameToCallerId)}""", StringComparison.OrdinalIgnoreCase))
             voipNumberAvailableForPurchase.InjectFriendlyNameToCallerId = this.InjectFriendlyNameToCallerId.Value;
-        if(jsonRaw.Contains($@"""{nameof(this.RecordIncomingCalls)}""", StringComparison.OrdinalIgnoreCase))
-            voipNumberAvailableForPurchase.RecordIncomingCalls = this.RecordIncomingCalls.Value;
-        if(jsonRaw.Contains($@"""{nameof(this.UseAiForIncomingCalls)}""", StringComparison.OrdinalIgnoreCase))
-            voipNumberAvailableForPurchase.UseAiForIncomingCalls = this.UseAiForIncomingCalls.Value;
+        if(jsonRaw.Contains($@"""{nameof(this.ProcessingType)}""", StringComparison.OrdinalIgnoreCase))
+            voipNumberAvailableForPurchase.ProcessingType = this.ProcessingType.Value;
         if(jsonRaw.Contains($@"""{nameof(this.IdAiCallAnalysisInput)}""", StringComparison.OrdinalIgnoreCase))
             voipNumberAvailableForPurchase.IdAiCallAnalysisInput = this.IdAiCallAnalysisInput;
         if(jsonRaw.Contains($@"""{nameof(this.FriendlyName)}""", StringComparison.OrdinalIgnoreCase))
@@ -1584,15 +1561,14 @@ public class VoipNumberFaxUpdateRequest // : IUbluxDocumentId
     /// </summary>
     public Boolean? InjectFriendlyNameToCallerId { get; set; }
     /// <summary>
-    /// Record incoming phone calls received by this phone number?
+    /// Record, transcribe or AI analyse call.
+    /// This is only for incoming calls made to this number.
+    /// Please note that if you transcribe the call will be recorded. If you AI analyze the call it will be transcribed.
     /// </summary>
-    public Boolean? RecordIncomingCalls { get; set; }
-    /// <summary>
-    /// Users will be charged extra for AI transcriptions. If this is true call will be recorded in order to do AI work
-    /// </summary>
-    public Boolean? UseAiForIncomingCalls { get; set; }
+    public CallProcessingType? ProcessingType { get; set; }
     /// <summary>
     /// What input to pass to AI engine in case UseAiForIncomingCalls=true. If null it should use a default input that is part of constants.
+    /// For this to work ProcessingType should equal AiAnalyze
     /// </summary>
     public String? IdAiCallAnalysisInput { get; set; }
     /// <summary>
@@ -1629,10 +1605,8 @@ public class VoipNumberFaxUpdateRequest // : IUbluxDocumentId
             voipNumberFax.IdMusicOnHoldGroup = this.IdMusicOnHoldGroup;
         if(jsonRaw.Contains($@"""{nameof(this.InjectFriendlyNameToCallerId)}""", StringComparison.OrdinalIgnoreCase))
             voipNumberFax.InjectFriendlyNameToCallerId = this.InjectFriendlyNameToCallerId.Value;
-        if(jsonRaw.Contains($@"""{nameof(this.RecordIncomingCalls)}""", StringComparison.OrdinalIgnoreCase))
-            voipNumberFax.RecordIncomingCalls = this.RecordIncomingCalls.Value;
-        if(jsonRaw.Contains($@"""{nameof(this.UseAiForIncomingCalls)}""", StringComparison.OrdinalIgnoreCase))
-            voipNumberFax.UseAiForIncomingCalls = this.UseAiForIncomingCalls.Value;
+        if(jsonRaw.Contains($@"""{nameof(this.ProcessingType)}""", StringComparison.OrdinalIgnoreCase))
+            voipNumberFax.ProcessingType = this.ProcessingType.Value;
         if(jsonRaw.Contains($@"""{nameof(this.IdAiCallAnalysisInput)}""", StringComparison.OrdinalIgnoreCase))
             voipNumberFax.IdAiCallAnalysisInput = this.IdAiCallAnalysisInput;
         if(jsonRaw.Contains($@"""{nameof(this.FriendlyName)}""", StringComparison.OrdinalIgnoreCase))
@@ -1678,15 +1652,14 @@ public class VoipNumberPhoneUpdateRequest // : IUbluxDocumentId
     /// </summary>
     public Boolean? InjectFriendlyNameToCallerId { get; set; }
     /// <summary>
-    /// Record incoming phone calls received by this phone number?
+    /// Record, transcribe or AI analyse call.
+    /// This is only for incoming calls made to this number.
+    /// Please note that if you transcribe the call will be recorded. If you AI analyze the call it will be transcribed.
     /// </summary>
-    public Boolean? RecordIncomingCalls { get; set; }
-    /// <summary>
-    /// Users will be charged extra for AI transcriptions. If this is true call will be recorded in order to do AI work
-    /// </summary>
-    public Boolean? UseAiForIncomingCalls { get; set; }
+    public CallProcessingType? ProcessingType { get; set; }
     /// <summary>
     /// What input to pass to AI engine in case UseAiForIncomingCalls=true. If null it should use a default input that is part of constants.
+    /// For this to work ProcessingType should equal AiAnalyze
     /// </summary>
     public String? IdAiCallAnalysisInput { get; set; }
     /// <summary>
@@ -1723,10 +1696,8 @@ public class VoipNumberPhoneUpdateRequest // : IUbluxDocumentId
             voipNumberPhone.IdMusicOnHoldGroup = this.IdMusicOnHoldGroup;
         if(jsonRaw.Contains($@"""{nameof(this.InjectFriendlyNameToCallerId)}""", StringComparison.OrdinalIgnoreCase))
             voipNumberPhone.InjectFriendlyNameToCallerId = this.InjectFriendlyNameToCallerId.Value;
-        if(jsonRaw.Contains($@"""{nameof(this.RecordIncomingCalls)}""", StringComparison.OrdinalIgnoreCase))
-            voipNumberPhone.RecordIncomingCalls = this.RecordIncomingCalls.Value;
-        if(jsonRaw.Contains($@"""{nameof(this.UseAiForIncomingCalls)}""", StringComparison.OrdinalIgnoreCase))
-            voipNumberPhone.UseAiForIncomingCalls = this.UseAiForIncomingCalls.Value;
+        if(jsonRaw.Contains($@"""{nameof(this.ProcessingType)}""", StringComparison.OrdinalIgnoreCase))
+            voipNumberPhone.ProcessingType = this.ProcessingType.Value;
         if(jsonRaw.Contains($@"""{nameof(this.IdAiCallAnalysisInput)}""", StringComparison.OrdinalIgnoreCase))
             voipNumberPhone.IdAiCallAnalysisInput = this.IdAiCallAnalysisInput;
         if(jsonRaw.Contains($@"""{nameof(this.FriendlyName)}""", StringComparison.OrdinalIgnoreCase))
@@ -1808,7 +1779,6 @@ public class WebHookUpdateRequest // : IUbluxDocumentId
 
 /// <summary>
 /// File stored on the cloud
-/// This collection should not be stored on redis and be created with TTL
 /// Thanks to this collection we can keep track of all StoredFiles
 /// </summary>
 public class StoredFileReferenceUpdateRequest // : IUbluxDocumentId

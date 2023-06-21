@@ -75,19 +75,16 @@ public abstract partial class VoipNumber : UbluxDocument_ReferenceAccount_Refere
     public bool InjectFriendlyNameToCallerId { get; set; }
 
     /// <summary>
-    ///     Record incoming phone calls received by this phone number?
+    ///     Record, transcribe or AI analyse call. 
+    ///     This is only for incoming calls made to this number.
+    ///     Please note that if you transcribe the call will be recorded. If you AI analyze the call it will be transcribed.    
     /// </summary>
     [AllowUpdate(true)]
-    public bool RecordIncomingCalls { get; set; }
-
-    /// <summary>
-    ///     Users will be charged extra for AI transcriptions. If this is true call will be recorded in order to do AI work
-    /// </summary>
-    [AllowUpdate(true)]
-    public bool UseAiForIncomingCalls { get; set; }
+    public CallProcessingType ProcessingType { get; set; }
 
     /// <summary>
     ///     What input to pass to AI engine in case UseAiForIncomingCalls=true. If null it should use a default input that is part of constants.
+    ///     For this to work ProcessingType should equal AiAnalyze
     /// </summary>
     [AllowUpdate(true)]
     [References(typeof(AiCallAnalysisInput))]
