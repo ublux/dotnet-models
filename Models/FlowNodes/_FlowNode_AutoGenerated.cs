@@ -20,6 +20,9 @@ namespace Ublux.Communications.Models.FlowNodes;
 [JsonSubtypes.KnownSubType(typeof(NodeAnyWeekDay), /*                         */ nameof(FlowNodeType.AnyWeekDay))]
 [JsonSubtypes.KnownSubType(typeof(NodeExtension), /*                          */ nameof(FlowNodeType.Extension))]
 [JsonSubtypes.KnownSubType(typeof(NodeDynamicExtension), /*                   */ nameof(FlowNodeType.DynamicExtension))]
+[JsonSubtypes.KnownSubType(typeof(NodeIfDialStatus), /*                       */ nameof(FlowNodeType.IfDialStatus))]
+[JsonSubtypes.KnownSubType(typeof(NodeDialStatus), /*                         */ nameof(FlowNodeType.DialStatus))]
+[JsonSubtypes.KnownSubType(typeof(NodeAnyDialStatus), /*                      */ nameof(FlowNodeType.AnyDialStatus))]
 [JsonSubtypes.KnownSubType(typeof(NodeIfPhoneDisconnected), /*                */ nameof(FlowNodeType.IfPhoneDisconnected))]
 [JsonSubtypes.KnownSubType(typeof(NodePhoneConnected), /*                     */ nameof(FlowNodeType.PhoneConnected))]
 [JsonSubtypes.KnownSubType(typeof(NodePhoneDisconnected), /*                  */ nameof(FlowNodeType.PhoneDisconnected))]
@@ -45,6 +48,9 @@ namespace Ublux.Communications.Models.FlowNodes;
     typeof(NodeAnyWeekDay),
     typeof(NodeExtension),
     typeof(NodeDynamicExtension),
+    typeof(NodeIfDialStatus),
+    typeof(NodeDialStatus),
+    typeof(NodeAnyDialStatus),
     typeof(NodeIfPhoneDisconnected),
     typeof(NodePhoneConnected),
     typeof(NodePhoneDisconnected),
@@ -341,6 +347,66 @@ public partial class NodeDynamicExtension : FlowNode, IOneChild
     public override FlowNodeType FlowNodeType
     {
         get => FlowNodeType.DynamicExtension;
+        #if UBLUX_Release || RELEASE
+        set { }
+        #else
+        #endif
+    }
+
+    /// <inheritdoc />
+    [AllowUpdate(false)] 
+    [SwaggerSchema(ReadOnly = true)] 
+    [References(typeof(FlowNode))]
+    public FlowNode? Child { get; set; }
+}
+
+/// <summary></summary>
+public partial class NodeIfDialStatus : FlowNode, IMultipleChildren
+{
+    /// <inheritdoc />
+    public override FlowNodeType FlowNodeType
+    {
+        get => FlowNodeType.IfDialStatus;
+        #if UBLUX_Release || RELEASE
+        set { }
+        #else
+        #endif
+    }
+
+    /// <inheritdoc />
+    [AllowUpdate(false)] 
+    [SwaggerSchema(ReadOnly = true)] 
+    [References(typeof(FlowNode))]
+    public List<FlowNode> Children { get; set; } = new List<FlowNode>();
+}
+
+/// <summary></summary>
+public partial class NodeDialStatus : FlowNode, IOneChild
+{
+    /// <inheritdoc />
+    public override FlowNodeType FlowNodeType
+    {
+        get => FlowNodeType.DialStatus;
+        #if UBLUX_Release || RELEASE
+        set { }
+        #else
+        #endif
+    }
+
+    /// <inheritdoc />
+    [AllowUpdate(false)] 
+    [SwaggerSchema(ReadOnly = true)] 
+    [References(typeof(FlowNode))]
+    public FlowNode? Child { get; set; }
+}
+
+/// <summary></summary>
+public partial class NodeAnyDialStatus : FlowNode, IOneChild
+{
+    /// <inheritdoc />
+    public override FlowNodeType FlowNodeType
+    {
+        get => FlowNodeType.AnyDialStatus;
         #if UBLUX_Release || RELEASE
         set { }
         #else

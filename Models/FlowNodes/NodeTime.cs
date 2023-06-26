@@ -13,3 +13,24 @@ public partial class NodeTime
     /// </summary>
     public required string EndTime { get; set; }
 }
+
+public partial class NodeAPI
+{
+
+}
+
+public partial class NodeCallBackAPI
+{
+
+}
+
+public partial class NodeDialStatus
+{
+    /// <summary>
+    ///     If any of this dial status
+    /// </summary>
+    [AllowUpdate(true)]
+    [BsonRepresentation(BsonType.String)]
+    
+    public List<DialStatus> DialStatuses { get; set; } = new();
+}

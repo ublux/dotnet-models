@@ -1,42 +1,37 @@
-﻿namespace Ublux.Communications.Models.FlowNodes;
+﻿using System.Xml.Linq;
+
+namespace Ublux.Communications.Models.FlowNodes;
 
 public abstract partial class FlowNode
 {
     /// <summary>
-    ///     Traverse node
+    ///     Traverse node. It will yield the current node!
     /// </summary>
     public IEnumerable<FlowNode> TraverseNode()
     {
-        FlowNode node = this;
+        yield return this;
 
-        if (node != null)
+        if (this is IOneChild o)
         {
-            if (node is IOneChild o)
+            if (o.Child != null)
             {
-                if (o.Child != null)
-                {
-                    yield return o.Child;
-
-                    foreach (var subChild in o.Child.TraverseNode())
-                        yield return subChild;
-                }
+                foreach (var subChild in o.Child.TraverseNode())
+                    yield return subChild;
             }
-            else if (node is IMultipleChildren m)
+        }
+        else if (this is IMultipleChildren m)
+        {
+            foreach (var child in m.Children)
             {
-                foreach (var child in m.Children)
-                {
-                    if (child is null) continue;
+                if (child is null) continue;
 
-                    yield return child;
-
-                    foreach (var subChild in child.TraverseNode())
-                        yield return subChild;
-                }
+                foreach (var subChild in child.TraverseNode())
+                    yield return subChild;
             }
-            else
-            {
-                throw new Exception($"Invalid node {node.GetType().Name}. It must either be {nameof(IMultipleChildren)} or {nameof(IOneChild)}");
-            }
+        }
+        else
+        {
+            throw new Exception($"Invalid node {this.GetType().Name}. It must either be {nameof(IMultipleChildren)} or {nameof(IOneChild)}");
         }
     }
 }

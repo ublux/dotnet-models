@@ -96,20 +96,17 @@ public static partial class Constants
     /// <summary>
     ///     Domain where phones do autoprovision
     /// </summary>
-    public const string DomainAutoprovision = $"ap2.{Domain}";
-#warning change this to ap.ublux.com once we are done with migration
+    public const string DomainAutoprovision = $"ap.{Domain}";
 
     /// <summary>
     ///     Example: api.ublux.com
     /// </summary>
-    public const string WebService_HostName = $"api2.{Domain}";
-#warning change from api2 to api once we finish migration
+    public const string WebService_HostName = $"api.{Domain}";
 
     /// <summary>
     ///     Example: https://api.ublux.com
     /// </summary>
     public const string WebService_BaseUrl = $"https://{WebService_HostName}";
-
 
     /// <summary>
     ///     Example: https://events.ublux.com
@@ -183,8 +180,11 @@ public static partial class Constants
         FlowNodeType.IfPhoneDisconnected,
         FlowNodeType.IfDigits,
         FlowNodeType.IfTime,
-        FlowNodeType.IfWeekDay
+        FlowNodeType.IfWeekDay,
+        FlowNodeType.IfDialStatus
     };
+
+#warning create unit test to check that all nodes exist on dictionary!!!!!!!!!!!!!!!!!!!!!!
 
     /// <summary>
     ///     Contains the rules for the type of children each node can have. 
@@ -201,6 +201,8 @@ public static partial class Constants
             new FlowNodeType[]{ FlowNodeType.Time, FlowNodeType.AnyTime } },
         { FlowNodeType.IfWeekDay,
             new FlowNodeType[]{ FlowNodeType.WeekDays, FlowNodeType.AnyWeekDay } },
+        { FlowNodeType.IfDialStatus,
+            new FlowNodeType[]{ FlowNodeType.DialStatus, FlowNodeType.AnyDialStatus } },
 
         // Childs of conditionals
         { FlowNodeType.Digits, CommonActions },
@@ -211,6 +213,8 @@ public static partial class Constants
         { FlowNodeType.AnyTime, CommonActions },
         { FlowNodeType.WeekDays, CommonActions },
         { FlowNodeType.AnyWeekDay, CommonActions },
+        { FlowNodeType.DialStatus, CommonActions },
+        { FlowNodeType.AnyDialStatus, CommonActions },
 
 #warning implement rest of this nodes
 
@@ -227,7 +231,7 @@ public static partial class Constants
         { FlowNodeType.Hangup, CommonActions },
         { FlowNodeType.DynamicExtension, CommonActions },
         { FlowNodeType.Extension, CommonActions },
-        
+
     };
 
     /// <summary>
@@ -396,7 +400,7 @@ public static partial class Constants
     /// <summary>
     ///     Timezones ordered
     /// </summary>
-    public static KeyValuePair<string, string>[] TimeZonesOrdered = new KeyValuePair<string, string>[]  {            
+    public static KeyValuePair<string, string>[] TimeZonesOrdered = new KeyValuePair<string, string>[]  {
             new ("Pacific/Apia", "(UTC-11:00) Midway Island, Samoa"),
             new ("Pacific/Honolulu", "(UTC-10:00) Hawaii"),
             new ("America/Anchorage", "(UTC-09:00) Alaska"),

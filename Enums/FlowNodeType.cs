@@ -42,6 +42,13 @@ public enum FlowNodeType
     /// <summary></summary>
     DynamicExtension,
 
+    /// <summary> If call is answered or unanswered for example. </summary>
+    IfDialStatus,
+    /// <summary> If it is a specific dial status </summary>
+    DialStatus,
+    /// <summary> If any dial status </summary>
+    AnyDialStatus,
+
     /// <summary> If a phone is offline </summary>
     IfPhoneDisconnected,
     /// <summary> Phone is connected </summary>
