@@ -3348,6 +3348,8 @@ export interface Extension {
     readonly id?: string;
     /** Music on hold to use */
     idMusicOnHoldGroup?: string | null;
+    /** Audio to play before calling extension. It is common to play an audio that says that the call is being recorded for example. */
+    idAudioToPlayBeforeCallingExtension?: string | null;
     extensionType?: ExtensionType;
     /** Extension friendly name */
     friendlyName?: string;
@@ -3378,6 +3380,8 @@ This is important if you have the IfBusinessHours node in the call flow for exam
     extensionType?: ExtensionType;
     /** Music on hold to use */
     idMusicOnHoldGroup?: string | null;
+    /** Audio to play before calling extension. It is common to play an audio that says that the call is being recorded for example. */
+    idAudioToPlayBeforeCallingExtension?: string | null;
     /** Extension friendly name */
     friendlyName?: string;
     /** Extension number */
@@ -3425,6 +3429,12 @@ export interface ExtensionCallFlowLogicFilterRequest {
     idMusicOnHoldGroup_con?: string | null;
     /** IdMusicOnHoldGroup regex */
     idMusicOnHoldGroup_reg?: string | null;
+    /** IdAudioToPlayBeforeCallingExtension equals */
+    idAudioToPlayBeforeCallingExtension_eq?: string | null;
+    /** IdAudioToPlayBeforeCallingExtension contains */
+    idAudioToPlayBeforeCallingExtension_con?: string | null;
+    /** IdAudioToPlayBeforeCallingExtension regex */
+    idAudioToPlayBeforeCallingExtension_reg?: string | null;
     /** FriendlyName equals */
     friendlyName_eq?: string | null;
     /** FriendlyName contains */
@@ -3476,6 +3486,8 @@ This is important if you have the IfBusinessHours node in the call flow for exam
     timeZone?: string | null;
     /** Music on hold to use */
     idMusicOnHoldGroup?: string | null;
+    /** Audio to play before calling extension. It is common to play an audio that says that the call is being recorded for example. */
+    idAudioToPlayBeforeCallingExtension?: string | null;
     /** Extension friendly name */
     friendlyName?: string | null;
     /** Extension number */
@@ -3501,6 +3513,8 @@ Pin is of type string because value could be 0000 and that would translate to 0 
     extensionType?: ExtensionType;
     /** Music on hold to use */
     idMusicOnHoldGroup?: string | null;
+    /** Audio to play before calling extension. It is common to play an audio that says that the call is being recorded for example. */
+    idAudioToPlayBeforeCallingExtension?: string | null;
     /** Extension friendly name */
     friendlyName?: string;
     /** Extension number */
@@ -3544,6 +3558,12 @@ export interface ExtensionConferenceFilterRequest {
     idMusicOnHoldGroup_con?: string | null;
     /** IdMusicOnHoldGroup regex */
     idMusicOnHoldGroup_reg?: string | null;
+    /** IdAudioToPlayBeforeCallingExtension equals */
+    idAudioToPlayBeforeCallingExtension_eq?: string | null;
+    /** IdAudioToPlayBeforeCallingExtension contains */
+    idAudioToPlayBeforeCallingExtension_con?: string | null;
+    /** IdAudioToPlayBeforeCallingExtension regex */
+    idAudioToPlayBeforeCallingExtension_reg?: string | null;
     /** FriendlyName equals */
     friendlyName_eq?: string | null;
     /** FriendlyName contains */
@@ -3595,6 +3615,8 @@ Pin is of type string because value could be 0000 and that would translate to 0 
     pin?: string | null;
     /** Music on hold to use */
     idMusicOnHoldGroup?: string | null;
+    /** Audio to play before calling extension. It is common to play an audio that says that the call is being recorded for example. */
+    idAudioToPlayBeforeCallingExtension?: string | null;
     /** Extension friendly name */
     friendlyName?: string | null;
     /** Extension number */
@@ -3619,6 +3641,8 @@ export interface ExtensionDial {
     extensionType?: ExtensionType;
     /** Music on hold to use */
     idMusicOnHoldGroup?: string | null;
+    /** Audio to play before calling extension. It is common to play an audio that says that the call is being recorded for example. */
+    idAudioToPlayBeforeCallingExtension?: string | null;
     /** Extension friendly name */
     friendlyName?: string;
     /** Extension number */
@@ -3678,6 +3702,12 @@ export interface ExtensionDialFilterRequest {
     idMusicOnHoldGroup_con?: string | null;
     /** IdMusicOnHoldGroup regex */
     idMusicOnHoldGroup_reg?: string | null;
+    /** IdAudioToPlayBeforeCallingExtension equals */
+    idAudioToPlayBeforeCallingExtension_eq?: string | null;
+    /** IdAudioToPlayBeforeCallingExtension contains */
+    idAudioToPlayBeforeCallingExtension_con?: string | null;
+    /** IdAudioToPlayBeforeCallingExtension regex */
+    idAudioToPlayBeforeCallingExtension_reg?: string | null;
     /** FriendlyName equals */
     friendlyName_eq?: string | null;
     /** FriendlyName contains */
@@ -3728,6 +3758,8 @@ export interface ExtensionDialUpdateRequest {
     ringTimeInSeconds?: number | null;
     /** Music on hold to use */
     idMusicOnHoldGroup?: string | null;
+    /** Audio to play before calling extension. It is common to play an audio that says that the call is being recorded for example. */
+    idAudioToPlayBeforeCallingExtension?: string | null;
     /** Extension friendly name */
     friendlyName?: string | null;
     /** Extension number */
@@ -3747,6 +3779,12 @@ export interface ExtensionFilterRequest {
     idMusicOnHoldGroup_con?: string | null;
     /** IdMusicOnHoldGroup regex */
     idMusicOnHoldGroup_reg?: string | null;
+    /** IdAudioToPlayBeforeCallingExtension equals */
+    idAudioToPlayBeforeCallingExtension_eq?: string | null;
+    /** IdAudioToPlayBeforeCallingExtension contains */
+    idAudioToPlayBeforeCallingExtension_con?: string | null;
+    /** IdAudioToPlayBeforeCallingExtension regex */
+    idAudioToPlayBeforeCallingExtension_reg?: string | null;
     /** ExtensionType equals */
     extensionType_eq?: string | null;
     /** ExtensionType contains */
@@ -3822,6 +3860,8 @@ export interface ExtensionQueue {
     ringTimeInSeconds?: number;
     /** Music on hold to use */
     idMusicOnHoldGroup?: string | null;
+    /** Audio to play before calling extension. It is common to play an audio that says that the call is being recorded for example. */
+    idAudioToPlayBeforeCallingExtension?: string | null;
     /** Extension friendly name */
     friendlyName?: string;
     /** Extension number */
@@ -3929,6 +3969,12 @@ export interface ExtensionQueueFilterRequest {
     idMusicOnHoldGroup_con?: string | null;
     /** IdMusicOnHoldGroup regex */
     idMusicOnHoldGroup_reg?: string | null;
+    /** IdAudioToPlayBeforeCallingExtension equals */
+    idAudioToPlayBeforeCallingExtension_eq?: string | null;
+    /** IdAudioToPlayBeforeCallingExtension contains */
+    idAudioToPlayBeforeCallingExtension_con?: string | null;
+    /** IdAudioToPlayBeforeCallingExtension regex */
+    idAudioToPlayBeforeCallingExtension_reg?: string | null;
     /** FriendlyName equals */
     friendlyName_eq?: string | null;
     /** FriendlyName contains */
@@ -3995,6 +4041,8 @@ export interface ExtensionQueueUpdateRequest {
     ringTimeInSeconds?: number | null;
     /** Music on hold to use */
     idMusicOnHoldGroup?: string | null;
+    /** Audio to play before calling extension. It is common to play an audio that says that the call is being recorded for example. */
+    idAudioToPlayBeforeCallingExtension?: string | null;
     /** Extension friendly name */
     friendlyName?: string | null;
     /** Extension number */
@@ -4033,6 +4081,8 @@ export interface ExtensionVoicemail {
     extensionType?: ExtensionType;
     /** Music on hold to use */
     idMusicOnHoldGroup?: string | null;
+    /** Audio to play before calling extension. It is common to play an audio that says that the call is being recorded for example. */
+    idAudioToPlayBeforeCallingExtension?: string | null;
     /** Extension friendly name */
     friendlyName?: string;
     /** Extension number */
@@ -4092,6 +4142,12 @@ export interface ExtensionVoicemailFilterRequest {
     idMusicOnHoldGroup_con?: string | null;
     /** IdMusicOnHoldGroup regex */
     idMusicOnHoldGroup_reg?: string | null;
+    /** IdAudioToPlayBeforeCallingExtension equals */
+    idAudioToPlayBeforeCallingExtension_eq?: string | null;
+    /** IdAudioToPlayBeforeCallingExtension contains */
+    idAudioToPlayBeforeCallingExtension_con?: string | null;
+    /** IdAudioToPlayBeforeCallingExtension regex */
+    idAudioToPlayBeforeCallingExtension_reg?: string | null;
     /** FriendlyName equals */
     friendlyName_eq?: string | null;
     /** FriendlyName contains */
@@ -4146,6 +4202,8 @@ export interface ExtensionVoicemailUpdateRequest {
     textToSpeechVoiceId?: string | null;
     /** Music on hold to use */
     idMusicOnHoldGroup?: string | null;
+    /** Audio to play before calling extension. It is common to play an audio that says that the call is being recorded for example. */
+    idAudioToPlayBeforeCallingExtension?: string | null;
     /** Extension friendly name */
     friendlyName?: string | null;
     /** Extension number */
@@ -4499,6 +4557,9 @@ export enum FlowNodeType {
     AnyWeekDay = "AnyWeekDay",
     Extension = "Extension",
     DynamicExtension = "DynamicExtension",
+    IfDialStatus = "IfDialStatus",
+    DialStatus = "DialStatus",
+    AnyDialStatus = "AnyDialStatus",
     IfPhoneDisconnected = "IfPhoneDisconnected",
     PhoneConnected = "PhoneConnected",
     PhoneDisconnected = "PhoneDisconnected",
@@ -5085,6 +5146,11 @@ export interface NodeAPI {
     child?: FlowNode;
 }
 
+export interface NodeAnyDialStatus {
+    flowNodeType?: FlowNodeType;
+    child?: FlowNode;
+}
+
 export interface NodeAnyDigits {
     flowNodeType?: FlowNodeType;
     child?: FlowNode;
@@ -5126,6 +5192,13 @@ export interface NodeComment {
     child?: FlowNode;
 }
 
+export interface NodeDialStatus {
+    /** If any of this dial status */
+    dialStatuses?: DialStatus[];
+    flowNodeType?: FlowNodeType;
+    child?: FlowNode;
+}
+
 export interface NodeDigits {
     /** If is this digits. */
     isDigits?: string | null;
@@ -5163,6 +5236,11 @@ export interface NodeGoTo {
 export interface NodeHangup {
     flowNodeType?: FlowNodeType;
     child?: FlowNode;
+}
+
+export interface NodeIfDialStatus {
+    flowNodeType?: FlowNodeType;
+    readonly children?: FlowNode[];
 }
 
 export interface NodeIfDigits {

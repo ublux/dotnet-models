@@ -4680,6 +4680,16 @@ public class ExtensionCallFlowLogicFilterRequest
     [JsonProperty("idMusicOnHoldGroup_reg")]
     public string? IdMusicOnHoldGroup_REG { get; set; }
 
+    /// <summary> IdAudioToPlayBeforeCallingExtension equals </summary>
+    [JsonProperty("idAudioToPlayBeforeCallingExtension_eq")]
+    public string? IdAudioToPlayBeforeCallingExtension_EQ { get; set; }
+    /// <summary> IdAudioToPlayBeforeCallingExtension contains </summary>
+    [JsonProperty("idAudioToPlayBeforeCallingExtension_con")]
+    public string? IdAudioToPlayBeforeCallingExtension_CON { get; set; }
+    /// <summary> IdAudioToPlayBeforeCallingExtension regex </summary>
+    [JsonProperty("idAudioToPlayBeforeCallingExtension_reg")]
+    public string? IdAudioToPlayBeforeCallingExtension_REG { get; set; }
+
     /// <summary> FriendlyName equals </summary>
     [JsonProperty("friendlyName_eq")]
     public string? FriendlyName_EQ { get; set; }
@@ -4791,6 +4801,16 @@ public class ExtensionConferenceFilterRequest
     /// <summary> IdMusicOnHoldGroup regex </summary>
     [JsonProperty("idMusicOnHoldGroup_reg")]
     public string? IdMusicOnHoldGroup_REG { get; set; }
+
+    /// <summary> IdAudioToPlayBeforeCallingExtension equals </summary>
+    [JsonProperty("idAudioToPlayBeforeCallingExtension_eq")]
+    public string? IdAudioToPlayBeforeCallingExtension_EQ { get; set; }
+    /// <summary> IdAudioToPlayBeforeCallingExtension contains </summary>
+    [JsonProperty("idAudioToPlayBeforeCallingExtension_con")]
+    public string? IdAudioToPlayBeforeCallingExtension_CON { get; set; }
+    /// <summary> IdAudioToPlayBeforeCallingExtension regex </summary>
+    [JsonProperty("idAudioToPlayBeforeCallingExtension_reg")]
+    public string? IdAudioToPlayBeforeCallingExtension_REG { get; set; }
 
     /// <summary> FriendlyName equals </summary>
     [JsonProperty("friendlyName_eq")]
@@ -4931,6 +4951,16 @@ public class ExtensionDialFilterRequest
     /// <summary> IdMusicOnHoldGroup regex </summary>
     [JsonProperty("idMusicOnHoldGroup_reg")]
     public string? IdMusicOnHoldGroup_REG { get; set; }
+
+    /// <summary> IdAudioToPlayBeforeCallingExtension equals </summary>
+    [JsonProperty("idAudioToPlayBeforeCallingExtension_eq")]
+    public string? IdAudioToPlayBeforeCallingExtension_EQ { get; set; }
+    /// <summary> IdAudioToPlayBeforeCallingExtension contains </summary>
+    [JsonProperty("idAudioToPlayBeforeCallingExtension_con")]
+    public string? IdAudioToPlayBeforeCallingExtension_CON { get; set; }
+    /// <summary> IdAudioToPlayBeforeCallingExtension regex </summary>
+    [JsonProperty("idAudioToPlayBeforeCallingExtension_reg")]
+    public string? IdAudioToPlayBeforeCallingExtension_REG { get; set; }
 
     /// <summary> FriendlyName equals </summary>
     [JsonProperty("friendlyName_eq")]
@@ -5260,6 +5290,16 @@ public class ExtensionQueueFilterRequest
     [JsonProperty("idMusicOnHoldGroup_reg")]
     public string? IdMusicOnHoldGroup_REG { get; set; }
 
+    /// <summary> IdAudioToPlayBeforeCallingExtension equals </summary>
+    [JsonProperty("idAudioToPlayBeforeCallingExtension_eq")]
+    public string? IdAudioToPlayBeforeCallingExtension_EQ { get; set; }
+    /// <summary> IdAudioToPlayBeforeCallingExtension contains </summary>
+    [JsonProperty("idAudioToPlayBeforeCallingExtension_con")]
+    public string? IdAudioToPlayBeforeCallingExtension_CON { get; set; }
+    /// <summary> IdAudioToPlayBeforeCallingExtension regex </summary>
+    [JsonProperty("idAudioToPlayBeforeCallingExtension_reg")]
+    public string? IdAudioToPlayBeforeCallingExtension_REG { get; set; }
+
     /// <summary> FriendlyName equals </summary>
     [JsonProperty("friendlyName_eq")]
     public string? FriendlyName_EQ { get; set; }
@@ -5397,6 +5437,16 @@ public class ExtensionVoicemailFilterRequest
     /// <summary> IdMusicOnHoldGroup regex </summary>
     [JsonProperty("idMusicOnHoldGroup_reg")]
     public string? IdMusicOnHoldGroup_REG { get; set; }
+
+    /// <summary> IdAudioToPlayBeforeCallingExtension equals </summary>
+    [JsonProperty("idAudioToPlayBeforeCallingExtension_eq")]
+    public string? IdAudioToPlayBeforeCallingExtension_EQ { get; set; }
+    /// <summary> IdAudioToPlayBeforeCallingExtension contains </summary>
+    [JsonProperty("idAudioToPlayBeforeCallingExtension_con")]
+    public string? IdAudioToPlayBeforeCallingExtension_CON { get; set; }
+    /// <summary> IdAudioToPlayBeforeCallingExtension regex </summary>
+    [JsonProperty("idAudioToPlayBeforeCallingExtension_reg")]
+    public string? IdAudioToPlayBeforeCallingExtension_REG { get; set; }
 
     /// <summary> FriendlyName equals </summary>
     [JsonProperty("friendlyName_eq")]
@@ -11734,6 +11784,16 @@ public class ExtensionFilterRequest
     /// <summary> IdMusicOnHoldGroup regex </summary>
     [JsonProperty("idMusicOnHoldGroup_reg")]
     public string? IdMusicOnHoldGroup_REG { get; set; }
+
+    /// <summary> IdAudioToPlayBeforeCallingExtension equals </summary>
+    [JsonProperty("idAudioToPlayBeforeCallingExtension_eq")]
+    public string? IdAudioToPlayBeforeCallingExtension_EQ { get; set; }
+    /// <summary> IdAudioToPlayBeforeCallingExtension contains </summary>
+    [JsonProperty("idAudioToPlayBeforeCallingExtension_con")]
+    public string? IdAudioToPlayBeforeCallingExtension_CON { get; set; }
+    /// <summary> IdAudioToPlayBeforeCallingExtension regex </summary>
+    [JsonProperty("idAudioToPlayBeforeCallingExtension_reg")]
+    public string? IdAudioToPlayBeforeCallingExtension_REG { get; set; }
 
     /// <summary> ExtensionType equals </summary>
     [JsonProperty("extensionType_eq")]

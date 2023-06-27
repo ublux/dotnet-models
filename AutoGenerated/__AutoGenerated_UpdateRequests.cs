@@ -635,6 +635,10 @@ public class ExtensionCallFlowLogicUpdateRequest // : IUbluxDocumentId
     /// </summary>
     public String? IdMusicOnHoldGroup { get; set; }
     /// <summary>
+    /// Audio to play before calling extension. It is common to play an audio that says that the call is being recorded for example.
+    /// </summary>
+    public String? IdAudioToPlayBeforeCallingExtension { get; set; }
+    /// <summary>
     /// Extension friendly name
     /// </summary>
     public String? FriendlyName { get; set; }
@@ -662,6 +666,8 @@ public class ExtensionCallFlowLogicUpdateRequest // : IUbluxDocumentId
             extensionCallFlowLogic.TimeZone = this.TimeZone;
         if(jsonRaw.Contains($@"""{nameof(this.IdMusicOnHoldGroup)}""", StringComparison.OrdinalIgnoreCase))
             extensionCallFlowLogic.IdMusicOnHoldGroup = this.IdMusicOnHoldGroup;
+        if(jsonRaw.Contains($@"""{nameof(this.IdAudioToPlayBeforeCallingExtension)}""", StringComparison.OrdinalIgnoreCase))
+            extensionCallFlowLogic.IdAudioToPlayBeforeCallingExtension = this.IdAudioToPlayBeforeCallingExtension;
         if(jsonRaw.Contains($@"""{nameof(this.FriendlyName)}""", StringComparison.OrdinalIgnoreCase))
             extensionCallFlowLogic.FriendlyName = this.FriendlyName;
         if(jsonRaw.Contains($@"""{nameof(this.Number)}""", StringComparison.OrdinalIgnoreCase))
@@ -697,6 +703,10 @@ public class ExtensionConferenceUpdateRequest // : IUbluxDocumentId
     /// </summary>
     public String? IdMusicOnHoldGroup { get; set; }
     /// <summary>
+    /// Audio to play before calling extension. It is common to play an audio that says that the call is being recorded for example.
+    /// </summary>
+    public String? IdAudioToPlayBeforeCallingExtension { get; set; }
+    /// <summary>
     /// Extension friendly name
     /// </summary>
     public String? FriendlyName { get; set; }
@@ -724,6 +734,8 @@ public class ExtensionConferenceUpdateRequest // : IUbluxDocumentId
             extensionConference.Pin = this.Pin;
         if(jsonRaw.Contains($@"""{nameof(this.IdMusicOnHoldGroup)}""", StringComparison.OrdinalIgnoreCase))
             extensionConference.IdMusicOnHoldGroup = this.IdMusicOnHoldGroup;
+        if(jsonRaw.Contains($@"""{nameof(this.IdAudioToPlayBeforeCallingExtension)}""", StringComparison.OrdinalIgnoreCase))
+            extensionConference.IdAudioToPlayBeforeCallingExtension = this.IdAudioToPlayBeforeCallingExtension;
         if(jsonRaw.Contains($@"""{nameof(this.FriendlyName)}""", StringComparison.OrdinalIgnoreCase))
             extensionConference.FriendlyName = this.FriendlyName;
         if(jsonRaw.Contains($@"""{nameof(this.Number)}""", StringComparison.OrdinalIgnoreCase))
@@ -762,6 +774,10 @@ public class ExtensionDialUpdateRequest // : IUbluxDocumentId
     /// </summary>
     public String? IdMusicOnHoldGroup { get; set; }
     /// <summary>
+    /// Audio to play before calling extension. It is common to play an audio that says that the call is being recorded for example.
+    /// </summary>
+    public String? IdAudioToPlayBeforeCallingExtension { get; set; }
+    /// <summary>
     /// Extension friendly name
     /// </summary>
     public String? FriendlyName { get; set; }
@@ -791,6 +807,8 @@ public class ExtensionDialUpdateRequest // : IUbluxDocumentId
             extensionDial.RingTimeInSeconds = this.RingTimeInSeconds.Value;
         if(jsonRaw.Contains($@"""{nameof(this.IdMusicOnHoldGroup)}""", StringComparison.OrdinalIgnoreCase))
             extensionDial.IdMusicOnHoldGroup = this.IdMusicOnHoldGroup;
+        if(jsonRaw.Contains($@"""{nameof(this.IdAudioToPlayBeforeCallingExtension)}""", StringComparison.OrdinalIgnoreCase))
+            extensionDial.IdAudioToPlayBeforeCallingExtension = this.IdAudioToPlayBeforeCallingExtension;
         if(jsonRaw.Contains($@"""{nameof(this.FriendlyName)}""", StringComparison.OrdinalIgnoreCase))
             extensionDial.FriendlyName = this.FriendlyName;
         if(jsonRaw.Contains($@"""{nameof(this.Number)}""", StringComparison.OrdinalIgnoreCase))
@@ -898,6 +916,10 @@ public class ExtensionQueueUpdateRequest // : IUbluxDocumentId
     /// </summary>
     public String? IdMusicOnHoldGroup { get; set; }
     /// <summary>
+    /// Audio to play before calling extension. It is common to play an audio that says that the call is being recorded for example.
+    /// </summary>
+    public String? IdAudioToPlayBeforeCallingExtension { get; set; }
+    /// <summary>
     /// Extension friendly name
     /// </summary>
     public String? FriendlyName { get; set; }
@@ -945,6 +967,8 @@ public class ExtensionQueueUpdateRequest // : IUbluxDocumentId
             extensionQueue.RingTimeInSeconds = this.RingTimeInSeconds.Value;
         if(jsonRaw.Contains($@"""{nameof(this.IdMusicOnHoldGroup)}""", StringComparison.OrdinalIgnoreCase))
             extensionQueue.IdMusicOnHoldGroup = this.IdMusicOnHoldGroup;
+        if(jsonRaw.Contains($@"""{nameof(this.IdAudioToPlayBeforeCallingExtension)}""", StringComparison.OrdinalIgnoreCase))
+            extensionQueue.IdAudioToPlayBeforeCallingExtension = this.IdAudioToPlayBeforeCallingExtension;
         if(jsonRaw.Contains($@"""{nameof(this.FriendlyName)}""", StringComparison.OrdinalIgnoreCase))
             extensionQueue.FriendlyName = this.FriendlyName;
         if(jsonRaw.Contains($@"""{nameof(this.Number)}""", StringComparison.OrdinalIgnoreCase))
@@ -987,6 +1011,10 @@ public class ExtensionVoicemailUpdateRequest // : IUbluxDocumentId
     /// </summary>
     public String? IdMusicOnHoldGroup { get; set; }
     /// <summary>
+    /// Audio to play before calling extension. It is common to play an audio that says that the call is being recorded for example.
+    /// </summary>
+    public String? IdAudioToPlayBeforeCallingExtension { get; set; }
+    /// <summary>
     /// Extension friendly name
     /// </summary>
     public String? FriendlyName { get; set; }
@@ -1018,6 +1046,8 @@ public class ExtensionVoicemailUpdateRequest // : IUbluxDocumentId
             extensionVoicemail.TextToSpeechVoiceId = this.TextToSpeechVoiceId;
         if(jsonRaw.Contains($@"""{nameof(this.IdMusicOnHoldGroup)}""", StringComparison.OrdinalIgnoreCase))
             extensionVoicemail.IdMusicOnHoldGroup = this.IdMusicOnHoldGroup;
+        if(jsonRaw.Contains($@"""{nameof(this.IdAudioToPlayBeforeCallingExtension)}""", StringComparison.OrdinalIgnoreCase))
+            extensionVoicemail.IdAudioToPlayBeforeCallingExtension = this.IdAudioToPlayBeforeCallingExtension;
         if(jsonRaw.Contains($@"""{nameof(this.FriendlyName)}""", StringComparison.OrdinalIgnoreCase))
             extensionVoicemail.FriendlyName = this.FriendlyName;
         if(jsonRaw.Contains($@"""{nameof(this.Number)}""", StringComparison.OrdinalIgnoreCase))

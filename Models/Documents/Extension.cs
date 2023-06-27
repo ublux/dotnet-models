@@ -30,6 +30,13 @@ public abstract partial class Extension : UbluxDocument_ReferenceAccount_Referen
     [AllowUpdate(true)]
     public string? IdMusicOnHoldGroup { get; set; }
 
+    /// <summary>
+    ///     Audio to play before calling extension. It is common to play an audio that says that the call is being recorded for example.
+    /// </summary>
+    [References(typeof(Audio))]
+    [AllowUpdate(true)]
+    public string? IdAudioToPlayBeforeCallingExtension { get; set; }
+
     #endregion
 
     /// <summary>
