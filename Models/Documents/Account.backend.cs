@@ -1,6 +1,5 @@
 ﻿#if UBLUX_BACKEND
 
-
 namespace Ublux.Communications.Models.Documents;
 
 /// <summary>
@@ -62,8 +61,6 @@ public partial class Account : UbluxDocument
 
         return null;
     }
-
-    
 }
 
 #endif
