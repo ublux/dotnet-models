@@ -33,8 +33,6 @@ public partial class Phone : UbluxDocument_ReferenceAccount_ReferenceTags
 
     #endregion
 
-    #region Line
-
     /// <summary>
     ///     Phone status
     /// </summary>
@@ -120,8 +118,6 @@ public partial class Phone : UbluxDocument_ReferenceAccount_ReferenceTags
     [AllowUpdate(true)]
     [UbluxValidationRequired]
     public required string FriendlyName { get; set; } = string.Empty;
-
-    #endregion
 
     /// <summary>
     ///     Type of phone. If its of type web and user (username and password) must exist in order for phone to connect.
