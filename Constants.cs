@@ -111,7 +111,7 @@ public static partial class Constants
     /// <summary>
     ///     Example: https://events.ublux.com
     /// </summary>
-    public const string WebService_Events = $"https://events.{Domain}";
+    public const string WebService_Events = $"events.{Domain}";
 
     /// <summary>
     ///     Regex used to find ip address V4 and port
