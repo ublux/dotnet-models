@@ -129,9 +129,16 @@ public class EmailUpdateRequest // : IUbluxDocumentId
 /// </summary>
 public class AgreementToTermsAndConditionsUpdateRequest // : IUbluxDocumentId
 {
+    /// <summary>
+    /// It is nullable because there are cases where it makes no sense to point to an account.
+    /// For example a CloudService user will point to no account
+    /// </summary>
+    public List<System.String>? IdsTags { get; set; }
     /// <summary> Set values on actual document </summary>
     public void SetValuesOnAgreementToTermsAndConditions(AgreementToTermsAndConditions agreementToTermsAndConditions, string jsonRaw)
     {
+        if(jsonRaw.Contains($@"""{nameof(this.IdsTags)}""", StringComparison.OrdinalIgnoreCase))
+            agreementToTermsAndConditions.IdsTags = this.IdsTags;
     }
 
 }
@@ -1412,18 +1419,6 @@ public class SMSUpdateRequest // : IUbluxDocumentId
     {
         if(jsonRaw.Contains($@"""{nameof(this.IdsTags)}""", StringComparison.OrdinalIgnoreCase))
             sMS.IdsTags = this.IdsTags;
-    }
-
-}
-
-/// <summary>
-/// This type of trunk origination forwards the call to our pbx. Twilio uses this type of Trunk origination
-/// </summary>
-public class TrunkOriginationForwardUpdateRequest // : IUbluxDocumentId
-{
-    /// <summary> Set values on actual document </summary>
-    public void SetValuesOnTrunkOriginationForward(TrunkOriginationForward trunkOriginationForward, string jsonRaw)
-    {
     }
 
 }

@@ -258,13 +258,6 @@ namespace Ublux.Communications.Models.Documents {
         /// <summary> Build Id </summary>
         public static BuiltId BuildId(RunningApplicationInstance instance) => new($"{DocumentPrefix}.{instance.Id}.{instance.IdGlobalAutoIncrement()}");
     }
-    public partial class TrunkOriginationForward {
-        /// <summary> Id prefix </summary>
-        public const string DocumentPrefix = "TOF";
-
-        /// <summary> Custom: TOF.Twilio.CSP.US-1. This means this trunk is from twilio and it will forward calls to pbx CSP.US-1 </summary>
-        public static BuiltId BuildId(VoipCompany voipCompany, string idPbx) => new($"{DocumentPrefix}.{voipCompany}.{idPbx}");
-    }
     public partial class TrunkTermination {
         /// <summary> Id prefix </summary>
         public const string DocumentPrefix = "TT";

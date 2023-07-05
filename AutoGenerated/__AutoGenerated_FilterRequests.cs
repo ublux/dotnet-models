@@ -402,6 +402,16 @@ public class EmailFilterRequest
 /// <summary> Enables searching for AgreementToTermsAndConditionss </summary>
 public class AgreementToTermsAndConditionsFilterRequest 
 {
+    /// <summary> IdsTags equals </summary>
+    [JsonProperty("idsTags_eq")]
+    public string? IdsTags_EQ { get; set; }
+    /// <summary> IdsTags contains </summary>
+    [JsonProperty("idsTags_con")]
+    public string? IdsTags_CON { get; set; }
+    /// <summary> IdsTags regex </summary>
+    [JsonProperty("idsTags_reg")]
+    public string? IdsTags_REG { get; set; }
+
     /// <summary> Id equals </summary>
     [JsonProperty("id_eq")]
     public string? Id_EQ { get; set; }
@@ -7062,50 +7072,6 @@ public class SMSFilterRequest
     public DateTime? DateUpdated_GTE { get; set; }
 
 }
-/// <summary> Enables searching for TrunkOriginationForwards </summary>
-public class TrunkOriginationForwardFilterRequest 
-{
-    /// <summary> TrunkOriginationType equals </summary>
-    [JsonProperty("trunkOriginationType_eq")]
-    public string? TrunkOriginationType_EQ { get; set; }
-    /// <summary> TrunkOriginationType contains </summary>
-    [JsonProperty("trunkOriginationType_con")]
-    public string? TrunkOriginationType_CON { get; set; }
-    /// <summary> TrunkOriginationType regex </summary>
-    [JsonProperty("trunkOriginationType_reg")]
-    public string? TrunkOriginationType_REG { get; set; }
-
-    /// <summary> Id equals </summary>
-    [JsonProperty("id_eq")]
-    public string? Id_EQ { get; set; }
-    /// <summary> Id contains </summary>
-    [JsonProperty("id_con")]
-    public string? Id_CON { get; set; }
-    /// <summary> Id regex </summary>
-    [JsonProperty("id_reg")]
-    public string? Id_REG { get; set; }
-
-    /// <summary> DateCreated equals </summary>
-    [JsonProperty("dateCreated_eq")]
-    public DateTime? DateCreated_EQ { get; set; }
-    /// <summary> DateCreated less than or equal to </summary>
-    [JsonProperty("dateCreated_lte")]
-    public DateTime? DateCreated_LTE { get; set; }
-    /// <summary> DateCreated greater than or equal to </summary>
-    [JsonProperty("dateCreated_gte")]
-    public DateTime? DateCreated_GTE { get; set; }
-
-    /// <summary> DateUpdated equals </summary>
-    [JsonProperty("dateUpdated_eq")]
-    public DateTime? DateUpdated_EQ { get; set; }
-    /// <summary> DateUpdated less than or equal to </summary>
-    [JsonProperty("dateUpdated_lte")]
-    public DateTime? DateUpdated_LTE { get; set; }
-    /// <summary> DateUpdated greater than or equal to </summary>
-    [JsonProperty("dateUpdated_gte")]
-    public DateTime? DateUpdated_GTE { get; set; }
-
-}
 /// <summary> Enables searching for TrunkTerminations </summary>
 public class TrunkTerminationFilterRequest 
 {
@@ -11848,50 +11814,6 @@ public class ExtensionFilterRequest
     /// <summary> IdsTags regex </summary>
     [JsonProperty("idsTags_reg")]
     public string? IdsTags_REG { get; set; }
-
-    /// <summary> Id equals </summary>
-    [JsonProperty("id_eq")]
-    public string? Id_EQ { get; set; }
-    /// <summary> Id contains </summary>
-    [JsonProperty("id_con")]
-    public string? Id_CON { get; set; }
-    /// <summary> Id regex </summary>
-    [JsonProperty("id_reg")]
-    public string? Id_REG { get; set; }
-
-    /// <summary> DateCreated equals </summary>
-    [JsonProperty("dateCreated_eq")]
-    public DateTime? DateCreated_EQ { get; set; }
-    /// <summary> DateCreated less than or equal to </summary>
-    [JsonProperty("dateCreated_lte")]
-    public DateTime? DateCreated_LTE { get; set; }
-    /// <summary> DateCreated greater than or equal to </summary>
-    [JsonProperty("dateCreated_gte")]
-    public DateTime? DateCreated_GTE { get; set; }
-
-    /// <summary> DateUpdated equals </summary>
-    [JsonProperty("dateUpdated_eq")]
-    public DateTime? DateUpdated_EQ { get; set; }
-    /// <summary> DateUpdated less than or equal to </summary>
-    [JsonProperty("dateUpdated_lte")]
-    public DateTime? DateUpdated_LTE { get; set; }
-    /// <summary> DateUpdated greater than or equal to </summary>
-    [JsonProperty("dateUpdated_gte")]
-    public DateTime? DateUpdated_GTE { get; set; }
-
-}
-/// <summary> Enables searching for TrunkOriginations </summary>
-public class TrunkOriginationFilterRequest 
-{
-    /// <summary> TrunkOriginationType equals </summary>
-    [JsonProperty("trunkOriginationType_eq")]
-    public string? TrunkOriginationType_EQ { get; set; }
-    /// <summary> TrunkOriginationType contains </summary>
-    [JsonProperty("trunkOriginationType_con")]
-    public string? TrunkOriginationType_CON { get; set; }
-    /// <summary> TrunkOriginationType regex </summary>
-    [JsonProperty("trunkOriginationType_reg")]
-    public string? TrunkOriginationType_REG { get; set; }
 
     /// <summary> Id equals </summary>
     [JsonProperty("id_eq")]

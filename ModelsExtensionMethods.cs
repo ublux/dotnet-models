@@ -64,7 +64,7 @@ public static class ModelsExtensionMethods
             Collections.PhoneConfigurations => typeof(PhoneConfiguration),
             Collections.PowerDialerGroups => typeof(PowerDialerGroup),
             Collections.SMS => typeof(SMS),
-            Collections.TrunkOriginations => typeof(TrunkOrigination),
+            //Collections.TrunkOriginations => typeof(TrunkOrigination),
             Collections.TrunkTerminations => typeof(TrunkTermination),
             Collections.TrunkTerminationGroups => typeof(TrunkTerminationGroup),
             Collections.VoipNumbers => typeof(VoipNumber),
@@ -244,12 +244,12 @@ public static class ModelsExtensionMethods
             _getCollectionUsedByTypeCache[type] = Collections.SMS;
             return Collections.SMS;
         }
-        if (typeof(TrunkOrigination).IsAssignableFrom(type))
-        {
-            // store on cache so next time it is faster
-            _getCollectionUsedByTypeCache[type] = Collections.TrunkOriginations;
-            return Collections.TrunkOriginations;
-        }
+        //if (typeof(TrunkOrigination).IsAssignableFrom(type))
+        //{
+        //    // store on cache so next time it is faster
+        //    _getCollectionUsedByTypeCache[type] = Collections.TrunkOriginations;
+        //    return Collections.TrunkOriginations;
+        //}
         if (typeof(TrunkTermination).IsAssignableFrom(type))
         {
             // store on cache so next time it is faster
@@ -383,7 +383,7 @@ public static class ModelsExtensionMethods
         { PhoneConfiguration.DocumentPrefix, Collections.PhoneConfigurations },
         { PowerDialerGroup.DocumentPrefix, Collections.PowerDialerGroups },
         { SMS.DocumentPrefix, Collections.SMS },
-        { TrunkOriginationForward.DocumentPrefix, Collections.TrunkOriginations },
+        //{ TrunkOriginationForward.DocumentPrefix, Collections.TrunkOriginations },
         { TrunkTerminationGroup.DocumentPrefix, Collections.TrunkTerminationGroups },
         { TrunkTermination.DocumentPrefix, Collections.TrunkTerminations },
         { VoipNumberPhone.DocumentPrefix, Collections.VoipNumbers },
@@ -428,7 +428,7 @@ public static class ModelsExtensionMethods
                 //Collections.PhoneConfigurations,
                 // Collections.PowerDialerGroups,
                 // Collections.SMS,
-                Collections.TrunkOriginations,
+                //Collections.TrunkOriginations,
                 Collections.TrunkTerminations,
                 Collections.TrunkTerminationGroups,
                 Collections.VoipNumbers,

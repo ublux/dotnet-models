@@ -18,14 +18,14 @@ public abstract partial class VoipNumber
     [IgnoreDataMember]
     public string? IdCustomerInfo { get; set; }
 
-    /// <summary>
-    ///     Responsible for receiving phone calls. If (AvailableForPurcahse) it should point to support TBD account.
-    /// </summary>
-    [References(typeof(TrunkOrigination))]
-    [IgnoreDataMember]
-    [AllowUpdate(false)]
-    [SwaggerSchema(ReadOnly = true)]
-    public required string IdTrunkOrigination { get; set; } = "";
+    ///// <summary>
+    /////     Responsible for receiving phone calls. If (AvailableForPurcahse) it should point to support TBD account.
+    ///// </summary>
+    //[References(typeof(TrunkOrigination))]
+    //[IgnoreDataMember]
+    //[AllowUpdate(false)]
+    //[SwaggerSchema(ReadOnly = true)]
+    //public required string IdTrunkOrigination { get; set; } = "";
 
     /// <summary>
     ///     To what provider this belongs. Thanks to the provider we can use its API.

@@ -6,7 +6,7 @@ namespace Ublux.Communications.Models.Documents;
 ///     File stored on the cloud
 ///     Thanks to this collection we can keep track of all StoredFiles
 /// </summary>
-public partial class StoredFileReference : UbluxDocument
+public partial class StoredFileReference : UbluxDocument_ReferenceAccount
 {
     /// <summary>
     ///     Factory Pattern
@@ -21,6 +21,7 @@ public partial class StoredFileReference : UbluxDocument
             IdDocument = idParentDocument,
             StoredFile = sf,
             IsBackup = false,
+            IdAccount = sf.IdAccount
         };
     }
 

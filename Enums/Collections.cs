@@ -83,8 +83,8 @@ public enum Collections
     /// <summary>SMS</summary>
     SMS,
 
-    /// <summary>TrunkOriginations</summary>
-    TrunkOriginations,
+    ///// <summary>TrunkOriginations</summary>
+    //TrunkOriginations,
 
     /// <summary>TrunkTerminations</summary>
     TrunkTerminations,

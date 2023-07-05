@@ -5,7 +5,7 @@ namespace Ublux.Communications.Models.Documents;
 /// <summary>
 ///     Store when user agreed to UBLUX terms and conditions for legal reasons.
 /// </summary>
-public partial class AgreementToTermsAndConditions : UbluxDocument
+public partial class AgreementToTermsAndConditions : UbluxDocument_ReferenceAccount_ReferenceTags
 {
     #region Properties
 
@@ -76,8 +76,9 @@ public partial class AgreementToTermsAndConditions : UbluxDocument
         yield return new MongoDbIndex(collection, nameof(Ip));
         // db.getCollection("AgreementsToTermsAndConditions").createIndex({ 'ubluxSession.idUser' : 1 })
         yield return new MongoDbIndex(collection, nameof(UbluxSession), nameof(UbluxSession.IdUser));
-        // db.getCollection("AgreementsToTermsAndConditions").createIndex({ 'ubluxSession.idAccount' : 1 })
-        yield return new MongoDbIndex(collection, nameof(UbluxSession), nameof(UbluxSession.IdAccount));
+
+        //// db.getCollection("AgreementsToTermsAndConditions").createIndex({ 'ubluxSession.idAccount' : 1 })
+        //yield return new MongoDbIndex(collection, nameof(UbluxSession), nameof(UbluxSession.IdAccount));
     }
 
     #endregion
