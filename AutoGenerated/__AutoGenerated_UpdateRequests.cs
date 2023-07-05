@@ -1837,6 +1837,10 @@ public class TagUpdateRequest // : IUbluxDocumentId
     /// Description of tag
     /// </summary>
     public String? Description { get; set; }
+    /// <summary>
+    /// Used to place an extra layer of filtering.
+    /// </summary>
+    public UserType? UserType { get; set; }
     /// <summary> Set values on actual document </summary>
     public void SetValuesOnTag(Tag tag, string jsonRaw)
     {
@@ -1846,6 +1850,8 @@ public class TagUpdateRequest // : IUbluxDocumentId
             tag.TagColor = this.TagColor.Value;
         if(jsonRaw.Contains($@"""{nameof(this.Description)}""", StringComparison.OrdinalIgnoreCase))
             tag.Description = this.Description;
+        if(jsonRaw.Contains($@"""{nameof(this.UserType)}""", StringComparison.OrdinalIgnoreCase))
+            tag.UserType = this.UserType.Value;
     }
 
 }

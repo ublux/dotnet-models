@@ -8830,6 +8830,16 @@ public class TagFilterRequest
     [JsonProperty("description_reg")]
     public string? Description_REG { get; set; }
 
+    /// <summary> UserType equals </summary>
+    [JsonProperty("userType_eq")]
+    public string? UserType_EQ { get; set; }
+    /// <summary> UserType contains </summary>
+    [JsonProperty("userType_con")]
+    public string? UserType_CON { get; set; }
+    /// <summary> UserType regex </summary>
+    [JsonProperty("userType_reg")]
+    public string? UserType_REG { get; set; }
+
     /// <summary> Id equals </summary>
     [JsonProperty("id_eq")]
     public string? Id_EQ { get; set; }

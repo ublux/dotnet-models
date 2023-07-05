@@ -25,6 +25,12 @@ public partial class Tag : UbluxDocument_ReferenceAccount
     [UbluxValidationStringRange(1000)]
     public string? Description { get; set; }
 
+    /// <summary>
+    ///     Used to place an extra layer of filtering.
+    /// </summary>
+    [AllowUpdate(true)]
+    public UserType UserType { get; set; }
+
     #region MongoDB
 
     /// <inheritdoc />
