@@ -12,7 +12,7 @@ public partial class CallFlowLogic
     /// </summary>
     public IEnumerable<FlowNode> TraverseTree()
     {
-        yield return Tree;
+        // yield return Tree;
 
         foreach (var node in Tree.TraverseNode())
             yield return node;

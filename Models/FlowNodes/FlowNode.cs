@@ -1,6 +1,4 @@
-﻿using System.Xml.Linq;
-
-namespace Ublux.Communications.Models.FlowNodes;
+﻿namespace Ublux.Communications.Models.FlowNodes;
 
 public abstract partial class FlowNode
 {
