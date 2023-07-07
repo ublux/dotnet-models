@@ -31,8 +31,15 @@ namespace Ublux.Communications.Models.FlowNodes;
 [JsonSubtypes.KnownSubType(typeof(NodeGoTo), /*                               */ nameof(FlowNodeType.GoTo))]
 [JsonSubtypes.KnownSubType(typeof(NodeBookmark), /*                           */ nameof(FlowNodeType.Bookmark))]
 [JsonSubtypes.KnownSubType(typeof(NodeComment), /*                            */ nameof(FlowNodeType.Comment))]
+[JsonSubtypes.KnownSubType(typeof(NodeSetVariable), /*                        */ nameof(FlowNodeType.SetVariable))]
+[JsonSubtypes.KnownSubType(typeof(NodeIfVariable), /*                         */ nameof(FlowNodeType.IfVariable))]
+[JsonSubtypes.KnownSubType(typeof(NodeVariable), /*                           */ nameof(FlowNodeType.Variable))]
+[JsonSubtypes.KnownSubType(typeof(NodeAnyVariable), /*                        */ nameof(FlowNodeType.AnyVariable))]
+[JsonSubtypes.KnownSubType(typeof(NodeIfKeyword), /*                          */ nameof(FlowNodeType.IfKeyword))]
+[JsonSubtypes.KnownSubType(typeof(NodeKeyword), /*                            */ nameof(FlowNodeType.Keyword))]
+[JsonSubtypes.KnownSubType(typeof(NodeAnyKeyword), /*                         */ nameof(FlowNodeType.AnyKeyword))]
 [JsonSubtypes.KnownSubType(typeof(NodeAPI), /*                                */ nameof(FlowNodeType.API))]
-[JsonSubtypes.KnownSubType(typeof(NodeCallBackAPI), /*                        */ nameof(FlowNodeType.CallBackAPI))]
+[JsonSubtypes.KnownSubType(typeof(NodeAPICallback), /*                        */ nameof(FlowNodeType.APICallback))]
 [JsonSubtypes.KnownSubType(typeof(NodeHangup), /*                             */ nameof(FlowNodeType.Hangup))]
 [BsonKnownTypes(
     typeof(NodeSay),
@@ -59,8 +66,15 @@ namespace Ublux.Communications.Models.FlowNodes;
     typeof(NodeGoTo),
     typeof(NodeBookmark),
     typeof(NodeComment),
+    typeof(NodeSetVariable),
+    typeof(NodeIfVariable),
+    typeof(NodeVariable),
+    typeof(NodeAnyVariable),
+    typeof(NodeIfKeyword),
+    typeof(NodeKeyword),
+    typeof(NodeAnyKeyword),
     typeof(NodeAPI),
-    typeof(NodeCallBackAPI),
+    typeof(NodeAPICallback),
     typeof(NodeHangup)
 )]
 public abstract partial class FlowNode
@@ -581,6 +595,146 @@ public partial class NodeComment : FlowNode, IOneChild
 }
 
 /// <summary></summary>
+public partial class NodeSetVariable : FlowNode, IOneChild
+{
+    /// <inheritdoc />
+    public override FlowNodeType FlowNodeType
+    {
+        get => FlowNodeType.SetVariable;
+        #if UBLUX_Release || RELEASE
+        set { }
+        #else
+        #endif
+    }
+
+    /// <inheritdoc />
+    [AllowUpdate(false)] 
+    [SwaggerSchema(ReadOnly = true)] 
+    [References(typeof(FlowNode))]
+    public FlowNode? Child { get; set; }
+}
+
+/// <summary></summary>
+public partial class NodeIfVariable : FlowNode, IMultipleChildren
+{
+    /// <inheritdoc />
+    public override FlowNodeType FlowNodeType
+    {
+        get => FlowNodeType.IfVariable;
+        #if UBLUX_Release || RELEASE
+        set { }
+        #else
+        #endif
+    }
+
+    /// <inheritdoc />
+    [AllowUpdate(false)] 
+    [SwaggerSchema(ReadOnly = true)] 
+    [References(typeof(FlowNode))]
+    public List<FlowNode> Children { get; set; } = new List<FlowNode>();
+}
+
+/// <summary></summary>
+public partial class NodeVariable : FlowNode, IOneChild
+{
+    /// <inheritdoc />
+    public override FlowNodeType FlowNodeType
+    {
+        get => FlowNodeType.Variable;
+        #if UBLUX_Release || RELEASE
+        set { }
+        #else
+        #endif
+    }
+
+    /// <inheritdoc />
+    [AllowUpdate(false)] 
+    [SwaggerSchema(ReadOnly = true)] 
+    [References(typeof(FlowNode))]
+    public FlowNode? Child { get; set; }
+}
+
+/// <summary></summary>
+public partial class NodeAnyVariable : FlowNode, IOneChild
+{
+    /// <inheritdoc />
+    public override FlowNodeType FlowNodeType
+    {
+        get => FlowNodeType.AnyVariable;
+        #if UBLUX_Release || RELEASE
+        set { }
+        #else
+        #endif
+    }
+
+    /// <inheritdoc />
+    [AllowUpdate(false)] 
+    [SwaggerSchema(ReadOnly = true)] 
+    [References(typeof(FlowNode))]
+    public FlowNode? Child { get; set; }
+}
+
+/// <summary></summary>
+public partial class NodeIfKeyword : FlowNode, IMultipleChildren
+{
+    /// <inheritdoc />
+    public override FlowNodeType FlowNodeType
+    {
+        get => FlowNodeType.IfKeyword;
+        #if UBLUX_Release || RELEASE
+        set { }
+        #else
+        #endif
+    }
+
+    /// <inheritdoc />
+    [AllowUpdate(false)] 
+    [SwaggerSchema(ReadOnly = true)] 
+    [References(typeof(FlowNode))]
+    public List<FlowNode> Children { get; set; } = new List<FlowNode>();
+}
+
+/// <summary></summary>
+public partial class NodeKeyword : FlowNode, IOneChild
+{
+    /// <inheritdoc />
+    public override FlowNodeType FlowNodeType
+    {
+        get => FlowNodeType.Keyword;
+        #if UBLUX_Release || RELEASE
+        set { }
+        #else
+        #endif
+    }
+
+    /// <inheritdoc />
+    [AllowUpdate(false)] 
+    [SwaggerSchema(ReadOnly = true)] 
+    [References(typeof(FlowNode))]
+    public FlowNode? Child { get; set; }
+}
+
+/// <summary></summary>
+public partial class NodeAnyKeyword : FlowNode, IOneChild
+{
+    /// <inheritdoc />
+    public override FlowNodeType FlowNodeType
+    {
+        get => FlowNodeType.AnyKeyword;
+        #if UBLUX_Release || RELEASE
+        set { }
+        #else
+        #endif
+    }
+
+    /// <inheritdoc />
+    [AllowUpdate(false)] 
+    [SwaggerSchema(ReadOnly = true)] 
+    [References(typeof(FlowNode))]
+    public FlowNode? Child { get; set; }
+}
+
+/// <summary></summary>
 public partial class NodeAPI : FlowNode, IOneChild
 {
     /// <inheritdoc />
@@ -601,12 +755,12 @@ public partial class NodeAPI : FlowNode, IOneChild
 }
 
 /// <summary></summary>
-public partial class NodeCallBackAPI : FlowNode, IOneChild
+public partial class NodeAPICallback : FlowNode, IOneChild
 {
     /// <inheritdoc />
     public override FlowNodeType FlowNodeType
     {
-        get => FlowNodeType.CallBackAPI;
+        get => FlowNodeType.APICallback;
         #if UBLUX_Release || RELEASE
         set { }
         #else

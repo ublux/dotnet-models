@@ -167,7 +167,7 @@ public static partial class Constants
         FlowNodeType.Say,
         FlowNodeType.Play,
         FlowNodeType.API,
-        FlowNodeType.CallBackAPI,
+        FlowNodeType.APICallback,
         FlowNodeType.Bookmark,
         FlowNodeType.GoTo,
         FlowNodeType.Call,
@@ -176,15 +176,16 @@ public static partial class Constants
         FlowNodeType.Hangup,
         FlowNodeType.DynamicExtension,
         FlowNodeType.Extension,
+        FlowNodeType.SetVariable,
 
         FlowNodeType.IfPhoneDisconnected,
         FlowNodeType.IfDigits,
         FlowNodeType.IfTime,
         FlowNodeType.IfWeekDay,
-        FlowNodeType.IfDialStatus
+        FlowNodeType.IfDialStatus,
+        FlowNodeType.IfVariable,
+        FlowNodeType.IfKeyword
     };
-
-#warning create unit test to check that all nodes exist on dictionary!!!!!!!!!!!!!!!!!!!!!!
 
     /// <summary>
     ///     Contains the rules for the type of children each node can have. 
@@ -203,6 +204,10 @@ public static partial class Constants
             new FlowNodeType[]{ FlowNodeType.WeekDays, FlowNodeType.AnyWeekDay } },
         { FlowNodeType.IfDialStatus,
             new FlowNodeType[]{ FlowNodeType.DialStatus, FlowNodeType.AnyDialStatus } },
+        { FlowNodeType.IfKeyword,
+            new FlowNodeType[]{ FlowNodeType.Keyword, FlowNodeType.AnyKeyword } },
+        { FlowNodeType.IfVariable,
+            new FlowNodeType[]{ FlowNodeType.Variable, FlowNodeType.AnyVariable } },
 
         // Childs of conditionals
         { FlowNodeType.Digits, CommonActions },
@@ -215,14 +220,16 @@ public static partial class Constants
         { FlowNodeType.AnyWeekDay, CommonActions },
         { FlowNodeType.DialStatus, CommonActions },
         { FlowNodeType.AnyDialStatus, CommonActions },
-
-#warning implement rest of this nodes
+        { FlowNodeType.Keyword, CommonActions },
+        { FlowNodeType.AnyKeyword, CommonActions },
+        { FlowNodeType.Variable, CommonActions },
+        { FlowNodeType.AnyVariable, CommonActions },
 
         // Rest of children
         { FlowNodeType.Say, CommonActions },
         { FlowNodeType.Play, CommonActions },
         { FlowNodeType.API, CommonActions },
-        { FlowNodeType.CallBackAPI, CommonActions },
+        { FlowNodeType.APICallback, CommonActions },
         { FlowNodeType.Bookmark, CommonActions },
         { FlowNodeType.GoTo, CommonActions },
         { FlowNodeType.Call, CommonActions },
@@ -231,7 +238,7 @@ public static partial class Constants
         { FlowNodeType.Hangup, CommonActions },
         { FlowNodeType.DynamicExtension, CommonActions },
         { FlowNodeType.Extension, CommonActions },
-
+        { FlowNodeType.SetVariable, CommonActions },
     };
 
     /// <summary>

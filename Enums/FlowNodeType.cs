@@ -71,11 +71,54 @@ public enum FlowNodeType
     Comment,
 
 
+    /// <summary>
+    ///     Set a specific variable
+    /// </summary>
+    SetVariable,
+
+    /// <summary>
+    ///     Check if variable equals something
+    /// </summary>
+    IfVariable,
+
+    /// <summary>
+    ///     If variable is true
+    /// </summary>
+    Variable,
+
+    /// <summary>
+    ///     Any variable
+    /// </summary>
+    AnyVariable,
+
+
+    /// <summary>
+    ///     Listens and uses AI to see if a specific keyword or group of keywords is said
+    /// </summary>
+    IfKeyword,
+    /// <summary>
+    ///     Keyword or group of keywords
+    /// </summary>
+    Keyword,
+    /// <summary>
+    ///     Any keyword or no keword
+    /// </summary>
+    AnyKeyword,
+
+
+    ///// <summary>
+    /////     AI reservation
+    ///// </summary>
+    //Reservation,
+
+
+
+
     /// <summary> Call an api to execute custom logic</summary>
     API,
 
     /// <summary> Execute response from API </summary>
-    CallBackAPI,
+    APICallback,
 
     /// <summary> Hangup </summary>
     Hangup

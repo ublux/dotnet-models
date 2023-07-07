@@ -1558,6 +1558,27 @@ public class CallIncomingToCallFlowLogicFilterRequest
     public string? IdsParticipantPhones_REG { get; set; }
 
 
+    /// <summary> Variables.Name equals </summary>
+    [JsonProperty("variables_name_eq")]
+    public string? Variables_Name_EQ { get; set; }
+    /// <summary> Variables.Name contains </summary>
+    [JsonProperty("variables_name_con")]
+    public string? Variables_Name_CON { get; set; }
+    /// <summary> Variables.Name regex </summary>
+    [JsonProperty("variables_name_reg")]
+    public string? Variables_Name_REG { get; set; }
+
+    /// <summary> Variables.Value equals </summary>
+    [JsonProperty("variables_value_eq")]
+    public string? Variables_Value_EQ { get; set; }
+    /// <summary> Variables.Value contains </summary>
+    [JsonProperty("variables_value_con")]
+    public string? Variables_Value_CON { get; set; }
+    /// <summary> Variables.Value regex </summary>
+    [JsonProperty("variables_value_reg")]
+    public string? Variables_Value_REG { get; set; }
+
+
     /// <summary> Errors.ErrorsCall equals </summary>
     [JsonProperty("errors_errorsCall_eq")]
     public string? Errors_ErrorsCall_EQ { get; set; }
@@ -2285,6 +2306,27 @@ public class CallIncomingToExtensionFilterRequest
     public string? IdsParticipantPhones_REG { get; set; }
 
 
+    /// <summary> Variables.Name equals </summary>
+    [JsonProperty("variables_name_eq")]
+    public string? Variables_Name_EQ { get; set; }
+    /// <summary> Variables.Name contains </summary>
+    [JsonProperty("variables_name_con")]
+    public string? Variables_Name_CON { get; set; }
+    /// <summary> Variables.Name regex </summary>
+    [JsonProperty("variables_name_reg")]
+    public string? Variables_Name_REG { get; set; }
+
+    /// <summary> Variables.Value equals </summary>
+    [JsonProperty("variables_value_eq")]
+    public string? Variables_Value_EQ { get; set; }
+    /// <summary> Variables.Value contains </summary>
+    [JsonProperty("variables_value_con")]
+    public string? Variables_Value_CON { get; set; }
+    /// <summary> Variables.Value regex </summary>
+    [JsonProperty("variables_value_reg")]
+    public string? Variables_Value_REG { get; set; }
+
+
     /// <summary> Errors.ErrorsCall equals </summary>
     [JsonProperty("errors_errorsCall_eq")]
     public string? Errors_ErrorsCall_EQ { get; set; }
@@ -2992,6 +3034,27 @@ public class CallOutgoingToExtensionFilterRequest
     public string? IdsParticipantPhones_REG { get; set; }
 
 
+    /// <summary> Variables.Name equals </summary>
+    [JsonProperty("variables_name_eq")]
+    public string? Variables_Name_EQ { get; set; }
+    /// <summary> Variables.Name contains </summary>
+    [JsonProperty("variables_name_con")]
+    public string? Variables_Name_CON { get; set; }
+    /// <summary> Variables.Name regex </summary>
+    [JsonProperty("variables_name_reg")]
+    public string? Variables_Name_REG { get; set; }
+
+    /// <summary> Variables.Value equals </summary>
+    [JsonProperty("variables_value_eq")]
+    public string? Variables_Value_EQ { get; set; }
+    /// <summary> Variables.Value contains </summary>
+    [JsonProperty("variables_value_con")]
+    public string? Variables_Value_CON { get; set; }
+    /// <summary> Variables.Value regex </summary>
+    [JsonProperty("variables_value_reg")]
+    public string? Variables_Value_REG { get; set; }
+
+
     /// <summary> Errors.ErrorsCall equals </summary>
     [JsonProperty("errors_errorsCall_eq")]
     public string? Errors_ErrorsCall_EQ { get; set; }
@@ -3667,6 +3730,27 @@ public class CallOutgoingToPSTNFilterRequest
     /// <summary> IdsParticipantPhones regex </summary>
     [JsonProperty("idsParticipantPhones_reg")]
     public string? IdsParticipantPhones_REG { get; set; }
+
+
+    /// <summary> Variables.Name equals </summary>
+    [JsonProperty("variables_name_eq")]
+    public string? Variables_Name_EQ { get; set; }
+    /// <summary> Variables.Name contains </summary>
+    [JsonProperty("variables_name_con")]
+    public string? Variables_Name_CON { get; set; }
+    /// <summary> Variables.Name regex </summary>
+    [JsonProperty("variables_name_reg")]
+    public string? Variables_Name_REG { get; set; }
+
+    /// <summary> Variables.Value equals </summary>
+    [JsonProperty("variables_value_eq")]
+    public string? Variables_Value_EQ { get; set; }
+    /// <summary> Variables.Value contains </summary>
+    [JsonProperty("variables_value_con")]
+    public string? Variables_Value_CON { get; set; }
+    /// <summary> Variables.Value regex </summary>
+    [JsonProperty("variables_value_reg")]
+    public string? Variables_Value_REG { get; set; }
 
 
     /// <summary> Errors.ErrorsCall equals </summary>
@@ -9499,6 +9583,27 @@ public class CallOutgoingToPowerDialerFilterRequest
     public string? IdsParticipantPhones_REG { get; set; }
 
 
+    /// <summary> Variables.Name equals </summary>
+    [JsonProperty("variables_name_eq")]
+    public string? Variables_Name_EQ { get; set; }
+    /// <summary> Variables.Name contains </summary>
+    [JsonProperty("variables_name_con")]
+    public string? Variables_Name_CON { get; set; }
+    /// <summary> Variables.Name regex </summary>
+    [JsonProperty("variables_name_reg")]
+    public string? Variables_Name_REG { get; set; }
+
+    /// <summary> Variables.Value equals </summary>
+    [JsonProperty("variables_value_eq")]
+    public string? Variables_Value_EQ { get; set; }
+    /// <summary> Variables.Value contains </summary>
+    [JsonProperty("variables_value_con")]
+    public string? Variables_Value_CON { get; set; }
+    /// <summary> Variables.Value regex </summary>
+    [JsonProperty("variables_value_reg")]
+    public string? Variables_Value_REG { get; set; }
+
+
     /// <summary> Errors.ErrorsCall equals </summary>
     [JsonProperty("errors_errorsCall_eq")]
     public string? Errors_ErrorsCall_EQ { get; set; }
@@ -10154,6 +10259,27 @@ public class CallFilterRequest
     /// <summary> IdsParticipantPhones regex </summary>
     [JsonProperty("idsParticipantPhones_reg")]
     public string? IdsParticipantPhones_REG { get; set; }
+
+
+    /// <summary> Variables.Name equals </summary>
+    [JsonProperty("variables_name_eq")]
+    public string? Variables_Name_EQ { get; set; }
+    /// <summary> Variables.Name contains </summary>
+    [JsonProperty("variables_name_con")]
+    public string? Variables_Name_CON { get; set; }
+    /// <summary> Variables.Name regex </summary>
+    [JsonProperty("variables_name_reg")]
+    public string? Variables_Name_REG { get; set; }
+
+    /// <summary> Variables.Value equals </summary>
+    [JsonProperty("variables_value_eq")]
+    public string? Variables_Value_EQ { get; set; }
+    /// <summary> Variables.Value contains </summary>
+    [JsonProperty("variables_value_con")]
+    public string? Variables_Value_CON { get; set; }
+    /// <summary> Variables.Value regex </summary>
+    [JsonProperty("variables_value_reg")]
+    public string? Variables_Value_REG { get; set; }
 
 
     /// <summary> Errors.ErrorsCall equals </summary>
@@ -10843,6 +10969,27 @@ public class CallIncomingFilterRequest
     public string? IdsParticipantPhones_REG { get; set; }
 
 
+    /// <summary> Variables.Name equals </summary>
+    [JsonProperty("variables_name_eq")]
+    public string? Variables_Name_EQ { get; set; }
+    /// <summary> Variables.Name contains </summary>
+    [JsonProperty("variables_name_con")]
+    public string? Variables_Name_CON { get; set; }
+    /// <summary> Variables.Name regex </summary>
+    [JsonProperty("variables_name_reg")]
+    public string? Variables_Name_REG { get; set; }
+
+    /// <summary> Variables.Value equals </summary>
+    [JsonProperty("variables_value_eq")]
+    public string? Variables_Value_EQ { get; set; }
+    /// <summary> Variables.Value contains </summary>
+    [JsonProperty("variables_value_con")]
+    public string? Variables_Value_CON { get; set; }
+    /// <summary> Variables.Value regex </summary>
+    [JsonProperty("variables_value_reg")]
+    public string? Variables_Value_REG { get; set; }
+
+
     /// <summary> Errors.ErrorsCall equals </summary>
     [JsonProperty("errors_errorsCall_eq")]
     public string? Errors_ErrorsCall_EQ { get; set; }
@@ -11508,6 +11655,27 @@ public class CallOutgoingFilterRequest
     /// <summary> IdsParticipantPhones regex </summary>
     [JsonProperty("idsParticipantPhones_reg")]
     public string? IdsParticipantPhones_REG { get; set; }
+
+
+    /// <summary> Variables.Name equals </summary>
+    [JsonProperty("variables_name_eq")]
+    public string? Variables_Name_EQ { get; set; }
+    /// <summary> Variables.Name contains </summary>
+    [JsonProperty("variables_name_con")]
+    public string? Variables_Name_CON { get; set; }
+    /// <summary> Variables.Name regex </summary>
+    [JsonProperty("variables_name_reg")]
+    public string? Variables_Name_REG { get; set; }
+
+    /// <summary> Variables.Value equals </summary>
+    [JsonProperty("variables_value_eq")]
+    public string? Variables_Value_EQ { get; set; }
+    /// <summary> Variables.Value contains </summary>
+    [JsonProperty("variables_value_con")]
+    public string? Variables_Value_CON { get; set; }
+    /// <summary> Variables.Value regex </summary>
+    [JsonProperty("variables_value_reg")]
+    public string? Variables_Value_REG { get; set; }
 
 
     /// <summary> Errors.ErrorsCall equals </summary>

@@ -1,4 +1,7 @@
-﻿namespace Ublux.Communications.Models.Documents;
+﻿using Newtonsoft.Json.Linq;
+using System.Text.RegularExpressions;
+
+namespace Ublux.Communications.Models.Documents;
 
 // IF CALL IS NOT TERMINATED (DURATION IN SECONDS IS NULL) THEN IT CAN ONLY BE UPDATED BY PBX!
 // IF CALL IS TERMINATED IT CAN ONLY BE UPDATED BY WS
@@ -21,6 +24,7 @@
 )]
 public abstract partial class Call : UbluxDocument_ReferenceAccount_ReferenceTags, ICall
 {
+
     #region Properties
 
     #region References
@@ -104,7 +108,7 @@ public abstract partial class Call : UbluxDocument_ReferenceAccount_ReferenceTag
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
     [UbluxValidationStringRange(50)]
-    public required DialStatus DialStatus { get; set; } 
+    public required DialStatus DialStatus { get; set; }
 
     /// <summary>
     ///     Number of seconds it took to answer
@@ -329,6 +333,130 @@ public abstract partial class Call : UbluxDocument_ReferenceAccount_ReferenceTag
     //}
 
     #endregion
+
+    /// <summary>
+    ///     Custom Variables. 
+    ///     key = variable name
+    ///     value = variable value in json format. It can also be a json array
+    /// </summary>
+    [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
+    public List<CallVariable> Variables
+    {
+        get => variables ?? new();
+        set => variables = value ?? new();
+    }
+    private List<CallVariable>? variables = new();
+
+    /// <summary>
+    ///     Given a json object get a specific path. Example: prop1.items[0].firstName
+    /// </summary>
+    public static string? GetJsonPropertyByPath(string json, string path)
+    {
+        if (string.IsNullOrEmpty(path) || path == ".")
+            return json;
+
+        try
+        {
+            var propertyNames = path.Split('.');
+            JToken currentToken;
+
+            // Check if the JSON string represents an array or an object
+            if (json.TrimStart().StartsWith("["))
+            {
+                var jsonArray = JArray.Parse(json);
+                currentToken = jsonArray;
+            }
+            else
+            {
+                var jsonObject = JObject.Parse(json);
+                currentToken = jsonObject;
+            }
+
+            foreach (var propName in propertyNames)
+            {
+                var start = propName.IndexOf('[');
+
+                if (start >= 0) // Check if propName is an array access e.g. items[1]. Or [1]
+                {
+                    var end = propName.IndexOf(']');
+
+                    var propNameWithNoIndex = propName[..start];
+                    var indexTemp = propName[(start + 1)..end];
+                    int.TryParse(indexTemp, out var index);
+
+                    JArray jarray;
+                    if (string.IsNullOrEmpty(propNameWithNoIndex) == false)
+                    {
+                        if (currentToken is JObject jobject && jobject != null)
+                        {
+                            if (jobject[propNameWithNoIndex] is JArray ja)
+                            {
+                                jarray = ja;
+                            }
+                            else
+                            {
+                                // error
+                                return null;
+                            }
+                        }
+                        else
+                        {
+                            // error
+                            return null;
+                        }
+                    }
+                    else
+                    {
+                        if (currentToken is JArray ja)
+                        {
+                            jarray = ja;
+                        }
+                        else
+                        {
+                            // error
+                            return null;
+                        }
+                    }
+
+                    if (index > jarray.Count)
+                    {
+                        // error
+                        return null;
+                    }
+
+                    currentToken = jarray[index];
+                }
+                else
+                {
+                    if(currentToken is JObject jobject && jobject != null)
+                    {
+                        if (jobject.ContainsKey(propName))
+                        {
+                            currentToken = jobject[propName]!;
+                        }
+                        else
+                        {
+                            // error
+                            return null;
+                        }
+                    }
+                    else
+                    {
+                        // error 
+                        return null;
+                    }
+                }
+            }
+
+            return currentToken?.ToString();
+        }
+        catch
+        {
+            return null;
+        }
+
+    }
 
     ///// <summary>
     /////     If there is an error message with the call.

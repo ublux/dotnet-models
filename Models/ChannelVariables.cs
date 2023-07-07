@@ -27,5 +27,5 @@ public class ChannelVariables
     ///     Caller id is composed of a name and phone number. This is the phone number part of the caller id
     /// </summary>
     [UbluxValidationRequired]
-    public required string CallerIdNumber { get; set; }
+    public required string CallerIdNumber { get; set; }    
 }
