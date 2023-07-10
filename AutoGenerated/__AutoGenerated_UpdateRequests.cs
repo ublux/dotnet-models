@@ -1342,7 +1342,7 @@ public class PhoneConfigurationUpdateRequest // : IUbluxDocumentId
     /// <summary>
     /// Phone configuration name
     /// </summary>
-    public String? FrienlyName { get; set; }
+    public String? FriendlyName { get; set; }
     /// <summary>
     /// Phone configuration description
     /// </summary>
@@ -1357,8 +1357,8 @@ public class PhoneConfigurationUpdateRequest // : IUbluxDocumentId
     {
         if(jsonRaw.Contains($@"""{nameof(this.IdSpeedDialGroup)}""", StringComparison.OrdinalIgnoreCase))
             phoneConfiguration.IdSpeedDialGroup = this.IdSpeedDialGroup;
-        if(jsonRaw.Contains($@"""{nameof(this.FrienlyName)}""", StringComparison.OrdinalIgnoreCase))
-            phoneConfiguration.FrienlyName = this.FrienlyName;
+        if(jsonRaw.Contains($@"""{nameof(this.FriendlyName)}""", StringComparison.OrdinalIgnoreCase))
+            phoneConfiguration.FriendlyName = this.FriendlyName;
         if(jsonRaw.Contains($@"""{nameof(this.Description)}""", StringComparison.OrdinalIgnoreCase))
             phoneConfiguration.Description = this.Description;
         if(jsonRaw.Contains($@"""{nameof(this.IdsTags)}""", StringComparison.OrdinalIgnoreCase))

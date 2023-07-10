@@ -6802,15 +6802,15 @@ public class PhoneConfigurationFilterRequest
     [JsonProperty("idSpeedDialGroup_reg")]
     public string? IdSpeedDialGroup_REG { get; set; }
 
-    /// <summary> FrienlyName equals </summary>
-    [JsonProperty("frienlyName_eq")]
-    public string? FrienlyName_EQ { get; set; }
-    /// <summary> FrienlyName contains </summary>
-    [JsonProperty("frienlyName_con")]
-    public string? FrienlyName_CON { get; set; }
-    /// <summary> FrienlyName regex </summary>
-    [JsonProperty("frienlyName_reg")]
-    public string? FrienlyName_REG { get; set; }
+    /// <summary> FriendlyName equals </summary>
+    [JsonProperty("friendlyName_eq")]
+    public string? FriendlyName_EQ { get; set; }
+    /// <summary> FriendlyName contains </summary>
+    [JsonProperty("friendlyName_con")]
+    public string? FriendlyName_CON { get; set; }
+    /// <summary> FriendlyName regex </summary>
+    [JsonProperty("friendlyName_reg")]
+    public string? FriendlyName_REG { get; set; }
 
     /// <summary> Description equals </summary>
     [JsonProperty("description_eq")]

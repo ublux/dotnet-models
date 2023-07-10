@@ -1,12 +1,12 @@
 ﻿namespace Ublux.Communications.Models;
 
 /// <summary>
-///     BLF status of a line
+///     BLF status of a phone
 /// </summary>
 public class PhoneBlfStatus
 {
     /// <summary>
-    ///     Id of line
+    ///     Id of phone
     /// </summary>
     [UbluxValidationRequired]
     [References(typeof(Phone))]

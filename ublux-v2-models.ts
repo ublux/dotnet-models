@@ -682,6 +682,10 @@ If incoming:
     readonly idsParticipantPhones?: string[];
     /** If not null it means the call is ended */
     readonly durationInSeconds?: number | null;
+    /** Custom Variables. 
+key = variable name
+value = variable value in json format. It can also be a json array */
+    readonly variables?: CallVariable[];
     errors?: CallErrors;
     recordingStatus?: ProcessStatus;
     aiTranscriptionStatus?: ProcessStatus;
@@ -1023,6 +1027,18 @@ export interface CallFilterRequest {
     idsParticipantPhones_con?: string | null;
     /** IdsParticipantPhones regex */
     idsParticipantPhones_reg?: string | null;
+    /** Variables.Name equals */
+    variables_name_eq?: string | null;
+    /** Variables.Name contains */
+    variables_name_con?: string | null;
+    /** Variables.Name regex */
+    variables_name_reg?: string | null;
+    /** Variables.Value equals */
+    variables_value_eq?: string | null;
+    /** Variables.Value contains */
+    variables_value_con?: string | null;
+    /** Variables.Value regex */
+    variables_value_reg?: string | null;
     /** Errors.ErrorsCall equals */
     errors_errorsCall_eq?: string | null;
     /** Errors.ErrorsCall contains */
@@ -1247,6 +1263,10 @@ If incoming:
     readonly idsParticipantPhones?: string[];
     /** If not null it means the call is ended */
     readonly durationInSeconds?: number | null;
+    /** Custom Variables. 
+key = variable name
+value = variable value in json format. It can also be a json array */
+    readonly variables?: CallVariable[];
     errors?: CallErrors;
     recordingStatus?: ProcessStatus;
     aiTranscriptionStatus?: ProcessStatus;
@@ -1324,6 +1344,10 @@ If incoming:
     readonly idsParticipantPhones?: string[];
     /** If not null it means the call is ended */
     readonly durationInSeconds?: number | null;
+    /** Custom Variables. 
+key = variable name
+value = variable value in json format. It can also be a json array */
+    readonly variables?: CallVariable[];
     errors?: CallErrors;
     recordingStatus?: ProcessStatus;
     aiTranscriptionStatus?: ProcessStatus;
@@ -1397,6 +1421,10 @@ If incoming:
     readonly idsParticipantPhones?: string[];
     /** If not null it means the call is ended */
     readonly durationInSeconds?: number | null;
+    /** Custom Variables. 
+key = variable name
+value = variable value in json format. It can also be a json array */
+    readonly variables?: CallVariable[];
     errors?: CallErrors;
     recordingStatus?: ProcessStatus;
     aiTranscriptionStatus?: ProcessStatus;
@@ -1464,6 +1492,10 @@ If incoming:
     readonly idsParticipantPhones?: string[];
     /** If not null it means the call is ended */
     readonly durationInSeconds?: number | null;
+    /** Custom Variables. 
+key = variable name
+value = variable value in json format. It can also be a json array */
+    readonly variables?: CallVariable[];
     errors?: CallErrors;
     recordingStatus?: ProcessStatus;
     aiTranscriptionStatus?: ProcessStatus;
@@ -1503,6 +1535,14 @@ export enum CallType {
     OutgoingToPSTN = "OutgoingToPSTN",
     FeatureVoicemail = "FeatureVoicemail",
     PowerDialer = "PowerDialer",
+}
+
+/** Call variable */
+export interface CallVariable {
+    /** Variable name */
+    name?: string;
+    /** Variable value. Supports JSON format */
+    value?: string | null;
 }
 
 /** Phone numbers that will be blocked */
@@ -1912,7 +1952,6 @@ export enum Collections {
     PhoneConfigurations = "PhoneConfigurations",
     PowerDialerGroups = "PowerDialerGroups",
     SMS = "SMS",
-    TrunkOriginations = "TrunkOriginations",
     TrunkTerminations = "TrunkTerminations",
     TrunkTerminationGroups = "TrunkTerminationGroups",
     VoipNumbers = "VoipNumbers",
@@ -4568,8 +4607,15 @@ export enum FlowNodeType {
     GoTo = "GoTo",
     Bookmark = "Bookmark",
     Comment = "Comment",
+    SetVariable = "SetVariable",
+    IfVariable = "IfVariable",
+    Variable = "Variable",
+    AnyVariable = "AnyVariable",
+    IfKeyword = "IfKeyword",
+    Keyword = "Keyword",
+    AnyKeyword = "AnyKeyword",
     API = "API",
-    CallBackAPI = "CallBackAPI",
+    APICallback = "APICallback",
     Hangup = "Hangup",
 }
 
@@ -5142,6 +5188,29 @@ For example a CloudService user will point to no account */
 }
 
 export interface NodeAPI {
+    /** Id of the request */
+    requestId?: string;
+    /** Url where to send the requst */
+    url?: string;
+    /** POST, GET, PUT, Delete */
+    httpMethod?: string;
+    /** Body of request */
+    body?: string | null;
+    /** Fallback url to call in case primary url fails */
+    urlFallback?: string | null;
+    /** Custom headers to send. For example an Authorization header may be needed */
+    headers?: string[];
+    /** Will save response under this variable name */
+    variableName?: string;
+    flowNodeType?: FlowNodeType;
+    child?: FlowNode;
+}
+
+export interface NodeAPICallback {
+    /** Id of request to wait for */
+    requestId?: string;
+    /** If request fails then go to this bookmark */
+    bookmarkFallback?: string | null;
     flowNodeType?: FlowNodeType;
     child?: FlowNode;
 }
@@ -5156,7 +5225,17 @@ export interface NodeAnyDigits {
     child?: FlowNode;
 }
 
+export interface NodeAnyKeyword {
+    flowNodeType?: FlowNodeType;
+    child?: FlowNode;
+}
+
 export interface NodeAnyTime {
+    flowNodeType?: FlowNodeType;
+    child?: FlowNode;
+}
+
+export interface NodeAnyVariable {
     flowNodeType?: FlowNodeType;
     child?: FlowNode;
 }
@@ -5176,11 +5255,6 @@ export interface NodeBookmark {
 export interface NodeCall {
     /** Phone number to call */
     phoneNumber?: string;
-    flowNodeType?: FlowNodeType;
-    child?: FlowNode;
-}
-
-export interface NodeCallBackAPI {
     flowNodeType?: FlowNodeType;
     child?: FlowNode;
 }
@@ -5248,6 +5322,21 @@ export interface NodeIfDigits {
     readonly children?: FlowNode[];
 }
 
+/** Can either play an audio or convert text to speech meanwhile waiting for keywords */
+export interface NodeIfKeyword {
+    language?: Language;
+    /** Time to wait after audio is played to capure keyword */
+    timeout?: number;
+    /** Audio to play */
+    idAudio?: string | null;
+    /** Type of voice. Example: US English - Joanna */
+    voice?: string | null;
+    /** Text to say */
+    text?: string | null;
+    flowNodeType?: FlowNodeType;
+    readonly children?: FlowNode[];
+}
+
 export interface NodeIfPhoneDisconnected {
     flowNodeType?: FlowNodeType;
     readonly children?: FlowNode[];
@@ -5258,9 +5347,23 @@ export interface NodeIfTime {
     readonly children?: FlowNode[];
 }
 
+export interface NodeIfVariable {
+    flowNodeType?: FlowNodeType;
+    readonly children?: FlowNode[];
+}
+
 export interface NodeIfWeekDay {
     flowNodeType?: FlowNodeType;
     readonly children?: FlowNode[];
+}
+
+export interface NodeKeyword {
+    /** If it contains this keywords */
+    keywords?: string[];
+    /** User can also press this digit instead of saying the keyword */
+    digit?: string | null;
+    flowNodeType?: FlowNodeType;
+    child?: FlowNode;
 }
 
 export interface NodePause {
@@ -5308,11 +5411,31 @@ export interface NodeSay {
     child?: FlowNode;
 }
 
+export interface NodeSetVariable {
+    /** Name of varieble */
+    name?: string;
+    /** Value of variable */
+    value?: string;
+    flowNodeType?: FlowNodeType;
+    child?: FlowNode;
+}
+
 export interface NodeTime {
     /** Start time in 24 hour format. Example 14:00 */
     startTime?: string;
     /** Start time in 24 hour format. Example 16:30 */
     endTime?: string;
+    flowNodeType?: FlowNodeType;
+    child?: FlowNode;
+}
+
+export interface NodeVariable {
+    /** Path to json. Example:  students[10].firstName; */
+    path?: string;
+    /** Euals this value */
+    equal?: string | null;
+    /** Contains this value */
+    contains?: string | null;
     flowNodeType?: FlowNodeType;
     child?: FlowNode;
 }
@@ -5372,9 +5495,9 @@ For example a CloudService user will point to no account */
     readonly dateUpdated?: Date;
 }
 
-/** BLF status of a line */
+/** BLF status of a phone */
 export interface PhoneBlfStatus {
-    /** Id of line */
+    /** Id of phone */
     idPhone?: string;
     /** Id of channel */
     idChannel?: string;
@@ -5390,7 +5513,7 @@ export interface PhoneConfiguration {
     /** Phone keys to use */
     idSpeedDialGroup?: string | null;
     /** Phone configuration name */
-    frienlyName?: string;
+    friendlyName?: string;
     /** Phone configuration description */
     description?: string | null;
     /** It is nullable because there are cases where it makes no sense to point to an account. 
@@ -5410,12 +5533,12 @@ export interface PhoneConfigurationFilterRequest {
     idSpeedDialGroup_con?: string | null;
     /** IdSpeedDialGroup regex */
     idSpeedDialGroup_reg?: string | null;
-    /** FrienlyName equals */
-    frienlyName_eq?: string | null;
-    /** FrienlyName contains */
-    frienlyName_con?: string | null;
-    /** FrienlyName regex */
-    frienlyName_reg?: string | null;
+    /** FriendlyName equals */
+    friendlyName_eq?: string | null;
+    /** FriendlyName contains */
+    friendlyName_con?: string | null;
+    /** FriendlyName regex */
+    friendlyName_reg?: string | null;
     /** Description equals */
     description_eq?: string | null;
     /** Description contains */
@@ -5453,7 +5576,7 @@ export interface PhoneConfigurationUpdateRequest {
     /** Phone keys to use */
     idSpeedDialGroup?: string | null;
     /** Phone configuration name */
-    frienlyName?: string | null;
+    friendlyName?: string | null;
     /** Phone configuration description */
     description?: string | null;
     /** It is nullable because there are cases where it makes no sense to point to an account.
@@ -6272,6 +6395,7 @@ export interface Tag {
     tagColor?: TagColor;
     /** Description of tag */
     description?: string | null;
+    userType?: UserType;
     /** Creation date. Sets DateUpdated if it does not have a value */
     readonly dateCreated?: Date;
     /** Updated date. When item is created on database this date will be set too. This is important so that we can sync contacts */
@@ -6451,6 +6575,12 @@ export interface TagFilterRequest {
     description_con?: string | null;
     /** Description regex */
     description_reg?: string | null;
+    /** UserType equals */
+    userType_eq?: string | null;
+    /** UserType contains */
+    userType_con?: string | null;
+    /** UserType regex */
+    userType_reg?: string | null;
     /** Id equals */
     id_eq?: string | null;
     /** Id contains */
@@ -6478,6 +6608,7 @@ export interface TagUpdateRequest {
     tagColor?: TagColor;
     /** Description of tag */
     description?: string | null;
+    userType?: UserType;
 }
 
 /** Date when call was placed on hold. For example if SecondsElapsedWhenPlacedOnHold=10 and SecondsElapsedWhenRemovedFromHold=15 it means call was placed on hold from second 10 to 15. */
@@ -6496,26 +6627,10 @@ export interface TranscriptionService {
     ipPublic?: string | null;
     /** Private ip address */
     ipPrivate?: string | null;
+    /** Process ID */
+    processId?: string | null;
     /** Date received last ping */
     date?: Date;
-}
-
-/** Trunk used to receive phone calls. Multiple VoipNumbers can point to the same trunk origination. */
-export interface TrunkOrigination {
-    /** Id of document */
-    readonly id?: string;
-    trunkOriginationType?: TrunkOriginationType;
-    /** Creation date. Sets DateUpdated if it does not have a value */
-    readonly dateCreated?: Date;
-    /** Updated date. When item is created on database this date will be set too. This is important so that we can sync contacts */
-    readonly dateUpdated?: Date;
-}
-
-/** Types of trunk originations */
-export enum TrunkOriginationType {
-    None = "None",
-    Forward = "Forward",
-    Register = "Register",
 }
 
 /** Trunk used to receive phone calls */
