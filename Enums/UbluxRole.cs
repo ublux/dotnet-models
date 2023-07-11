@@ -495,12 +495,12 @@ public enum UbluxRole
     wa = 3000000,
 
     /// <summary>
-    ///     We have this because a WS can talk to another WS
+    ///     We have this because a API can talk to another API
     /// </summary>
-    ws = 4000000,
+    api = 4000000,
 
     ///// <summary>
-    /////     This is the master service that determines a user what WS will use to consume the API
+    /////     This is the master service that determines a user what API will use to consume the API
     ///// </summary>
     //MS,   
 

@@ -216,9 +216,9 @@ namespace Ublux.Communications.Models.Documents {
         /// <summary> Build Id </summary>
         public static BuiltId BuildId(RunningApplicationInstance instance) => new($"{DocumentPrefix}.{instance.Id}.{instance.IdGlobalAutoIncrement()}");
     }
-    public partial class LogWebServiceRequest {
+    public partial class LogApiRequest {
         /// <summary> Id prefix </summary>
-        public const string DocumentPrefix = "LWSR";
+        public const string DocumentPrefix = "LAR";
 
         /// <summary> Custom: prefix and trace id </summary>
         public static BuiltId BuildId(string traceId) => new($"{DocumentPrefix}.{traceId}");

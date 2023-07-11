@@ -10,7 +10,7 @@
 //    private PhoneConnectionStatus? _lineConnectionStatus;
 
 //    /// <summary>
-//    ///     If true it will be sync with WS because line status changed
+//    ///     If true it will be sync with API because line status changed
 //    /// </summary>
 //    [System.Text.Json.Serialization.JsonIgnore]
 //    [JsonIgnore]

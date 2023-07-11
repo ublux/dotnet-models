@@ -58,7 +58,7 @@ public static class ModelsExtensionMethods
             Collections.Users => typeof(User),
             // Collections.IPs => typeof(IP),
             Collections.SpeedDialGroups => typeof(SpeedDialGroup),
-            Collections.LogWebServiceRequests => typeof(LogWebServiceRequest),
+            Collections.LogApiRequests => typeof(LogApiRequest),
             Collections.MusicOnHoldGroups => typeof(MusicOnHoldGroup),
             Collections.Phones => typeof(Phone),
             Collections.PhoneConfigurations => typeof(PhoneConfiguration),
@@ -208,11 +208,11 @@ public static class ModelsExtensionMethods
             _getCollectionUsedByTypeCache[type] = Collections.SpeedDialGroups;
             return Collections.SpeedDialGroups;
         }
-        if (typeof(LogWebServiceRequest).IsAssignableFrom(type))
+        if (typeof(LogApiRequest).IsAssignableFrom(type))
         {
             // store on cache so next time it is faster
-            _getCollectionUsedByTypeCache[type] = Collections.LogWebServiceRequests;
-            return Collections.LogWebServiceRequests;
+            _getCollectionUsedByTypeCache[type] = Collections.LogApiRequests;
+            return Collections.LogApiRequests;
         }
         if (typeof(MusicOnHoldGroup).IsAssignableFrom(type))
         {
@@ -377,7 +377,7 @@ public static class ModelsExtensionMethods
         { Voicemail.DocumentPrefix, Collections.Voicemails },
         { User.DocumentPrefix, Collections.Users },
         { SpeedDialGroup.DocumentPrefix, Collections.SpeedDialGroups },
-        { LogWebServiceRequest.DocumentPrefix, Collections.LogWebServiceRequests },
+        { LogApiRequest.DocumentPrefix, Collections.LogApiRequests },
         { MusicOnHoldGroup.DocumentPrefix, Collections.MusicOnHoldGroups },
         { Phone.DocumentPrefix, Collections.Phones },
         { PhoneConfiguration.DocumentPrefix, Collections.PhoneConfigurations },
@@ -422,7 +422,7 @@ public static class ModelsExtensionMethods
                 // Collections.Voicemails,
                 // Collections.Users,
                 //Collections.SpeedDialGroups,
-                // Collections.LogWebServiceRequests,
+                // Collections.LogApiRequests,
                 Collections.MusicOnHoldGroups,
                 Collections.Phones,
                 //Collections.PhoneConfigurations,

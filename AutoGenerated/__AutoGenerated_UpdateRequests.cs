@@ -1174,10 +1174,10 @@ public class SpeedDialGroupUpdateRequest // : IUbluxDocumentId
 /// </summary><summary>
 /// All request sent to ublux will be stored.
 /// </summary>
-public class LogWebServiceRequestUpdateRequest // : IUbluxDocumentId
+public class LogApiRequestUpdateRequest // : IUbluxDocumentId
 {
     /// <summary> Set values on actual document </summary>
-    public void SetValuesOnLogWebServiceRequest(LogWebServiceRequest logWebServiceRequest, string jsonRaw)
+    public void SetValuesOnLogApiRequest(LogApiRequest logApiRequest, string jsonRaw)
     {
     }
 

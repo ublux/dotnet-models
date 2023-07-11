@@ -13,7 +13,7 @@ public partial class Phone
     //private static readonly ReaderWriterLockSlim _lock = new();
 
     /// <summary>
-    ///     If true it will be sync with WS because line status changed
+    ///     If true it will be sync with API because line status changed
     /// </summary>
     [System.Text.Json.Serialization.JsonIgnore]
     [JsonIgnore]
@@ -33,12 +33,12 @@ public partial class Phone
 
     /// <summary>
     ///     It is ok to have it hardcoded. If we change this unit test will fail
-    ///     Ph | Ac.1 | WS1 | 10000
+    ///     Ph | Ac.1 | API1 | 10000
     /// </summary>
     public const string Regex_GetIdOfPhonePattern = @"Ph\.Ac\.\d+\.[^\.]+\.\w{1,12}";
 
     /// <summary>
-    ///     For now it is: Li.Ac.1111.Ph.WS-1111.81111.91111
+    ///     For now it is: Li.Ac.1111.Ph.API-1111.81111.91111
     ///     It is ok to hard code it. If prefixis change unit tests will fail. It is very important to keep running unit tests!
     /// </summary>
     [GeneratedRegex(Regex_GetIdOfPhonePattern)]
@@ -98,7 +98,7 @@ public partial class Phone
     /// </summary>
     public static string GetIdAccountFromId(string idPhone)
     {
-        // string input = "Ph.Ac.1.WS.1000";
+        // string input = "Ph.Ac.1.API.1000";
 
         var start = Phone.DocumentPrefix.Length + Account.DocumentPrefix.Length + 3;
 

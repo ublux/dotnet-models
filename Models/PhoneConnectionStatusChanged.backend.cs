@@ -3,7 +3,7 @@
 namespace Ublux.Communications.Models;
 
 /// <summary>
-///     Used to sync line connection status changes with WS
+///     Used to sync line connection status changes with API
 /// </summary>
 public class PhoneConnectionStatusChanged
 {

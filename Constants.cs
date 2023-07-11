@@ -15,7 +15,7 @@ public static partial class Constants
         public static class S3
         {
             /// <summary> AWS S3 bucket name </summary>
-            public static string BucketName = "ws.ublux.com";
+            public static string BucketName = "api.ublux.com";
 
             /// <summary> Region of S3 bucket</summary>
             public static Amazon.RegionEndpoint Region = Amazon.RegionEndpoint.USEast1;

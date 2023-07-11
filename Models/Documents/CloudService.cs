@@ -7,7 +7,7 @@
 [JsonSubtypes.KnownSubType(typeof(CloudServicePbx), nameof(CloudServiceType.PBX))]
 [JsonSubtypes.KnownSubType(typeof(CloudServiceWebApp), nameof(CloudServiceType.WA))]
 [JsonSubtypes.KnownSubType(typeof(CloudServiceWebHost), nameof(CloudServiceType.WH))]
-//[JsonSubtypes.KnownSubType(typeof(CloudServiceWebService), nameof(CloudServiceType.WS))]
+//[JsonSubtypes.KnownSubType(typeof(CloudServiceWebService), nameof(CloudServiceType.API))]
 [BsonKnownTypes(
     typeof(CloudServicePbx),
     typeof(CloudServiceWebApp),

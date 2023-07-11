@@ -42,7 +42,7 @@ public enum UserType
     WH,
 
     /// <summary>
-    ///     This is used by WS to send a request to the other WS to monitor its statuses
+    ///     This is used by API to send a request to the other API to monitor its statuses
     /// </summary>
-    WS
+    API
 }

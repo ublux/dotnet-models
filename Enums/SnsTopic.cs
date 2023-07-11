@@ -5,7 +5,7 @@
 /// </summary>
 public enum SnsTopic
 {
-    #region WS
+    #region API
 
     /// <summary>
     ///     Item Created

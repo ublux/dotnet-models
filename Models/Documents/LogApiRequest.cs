@@ -3,7 +3,7 @@
 /// <summary>
 ///     All request sent to ublux will be stored.
 /// </summary>
-public partial class LogWebServiceRequest : UbluxDocument
+public partial class LogApiRequest : UbluxDocument
 {
     #region Properties
 

@@ -17,7 +17,7 @@ public enum CloudServiceType
     /// <summary>
     ///     Web service
     /// </summary>
-    WS,
+    API,
     /// <summary>
     ///     Web hosting
     /// </summary>

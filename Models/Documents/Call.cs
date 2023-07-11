@@ -4,7 +4,7 @@ using System.Text.RegularExpressions;
 namespace Ublux.Communications.Models.Documents;
 
 // IF CALL IS NOT TERMINATED (DURATION IN SECONDS IS NULL) THEN IT CAN ONLY BE UPDATED BY PBX!
-// IF CALL IS TERMINATED IT CAN ONLY BE UPDATED BY WS
+// IF CALL IS TERMINATED IT CAN ONLY BE UPDATED BY API
 
 /// <summary>
 ///     Ublux phone call

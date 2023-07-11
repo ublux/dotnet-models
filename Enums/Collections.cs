@@ -65,8 +65,8 @@ public enum Collections
     /// <summary>SpeedDialGroups</summary>
     SpeedDialGroups,
 
-    /// <summary>LogWebServiceRequests</summary>
-    LogWebServiceRequests,
+    /// <summary>LogApiRequests</summary>
+    LogApiRequests,
 
     /// <summary>MusicOnHoldGroups</summary>
     MusicOnHoldGroups,

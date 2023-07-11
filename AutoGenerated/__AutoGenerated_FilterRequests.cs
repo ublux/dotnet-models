@@ -6219,8 +6219,8 @@ public class SpeedDialGroupFilterRequest
     public DateTime? DateUpdated_GTE { get; set; }
 
 }
-/// <summary> Enables searching for LogWebServiceRequests </summary>
-public class LogWebServiceRequestFilterRequest 
+/// <summary> Enables searching for LogApiRequests </summary>
+public class LogApiRequestFilterRequest 
 {
     /// <summary> UbluxSession.IdUser equals </summary>
     [JsonProperty("ubluxSession_idUser_eq")]

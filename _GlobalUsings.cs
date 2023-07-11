@@ -14,4 +14,4 @@ global using Swashbuckle.AspNetCore.Annotations;
 global using Tag = Ublux.Communications.Models.Documents.Tag;
 
 using System.Runtime.CompilerServices;
-[assembly: InternalsVisibleTo("Ublux.Communications.WS.IntegrationTests")]
+[assembly: InternalsVisibleTo("Ublux.Communications.API.IntegrationTests")]

@@ -6,7 +6,7 @@ namespace Ublux.Communications.Models.Documents;
 ///     All request sent to ublux will be stored.
 /// </summary>
 [DebuggerDisplay("RequestUrl={RequestUrl}")]
-public partial class LogWebServiceRequest : UbluxDocument
+public partial class LogApiRequest : UbluxDocument
 {
     /// <summary>
     ///     Save request body? If true RequestBody should be set

@@ -4,7 +4,7 @@
 ///     Used to modify a logWebService request. If it has a value it will be replaced
 /// </summary>
 [AttributeUsage(AttributeTargets.Method, AllowMultiple = true)]
-public class LogWebServiceRequestOverrideOptionsAttribute : Attribute
+public class LogApiRequestOverrideOptionsAttribute : Attribute
 {
     /// <summary>
     ///     How expensive this method is? 

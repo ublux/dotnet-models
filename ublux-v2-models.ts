@@ -1857,7 +1857,7 @@ export enum CloudServiceProviderType {
 export enum CloudServiceType {
     None = "None",
     PBX = "PBX",
-    WS = "WS",
+    API = "API",
     WH = "WH",
     WA = "WA",
 }
@@ -1946,7 +1946,7 @@ export enum Collections {
     Voicemails = "Voicemails",
     Users = "Users",
     SpeedDialGroups = "SpeedDialGroups",
-    LogWebServiceRequests = "LogWebServiceRequests",
+    LogApiRequests = "LogApiRequests",
     MusicOnHoldGroups = "MusicOnHoldGroups",
     Phones = "Phones",
     PhoneConfigurations = "PhoneConfigurations",
@@ -2378,7 +2378,7 @@ export enum CountryIsoCode {
     WF = "WF",
     CK = "CK",
     NU = "NU",
-    WS = "WS",
+    API = "API",
     KI = "KI",
     NC = "NC",
     TV = "TV",
@@ -6875,7 +6875,7 @@ export enum UbluxRole {
     Wh = "wh",
     Pbx = "pbx",
     Wa = "wa",
-    Ws = "ws",
+    Api = "api",
     Root = "root",
 }
 
@@ -6992,7 +6992,7 @@ export enum UserType {
     PBX = "PBX",
     WA = "WA",
     WH = "WH",
-    WS = "WS",
+    API = "API",
 }
 
 /** Someone that has access to consume Ublux Web Api. It can be a PBX, WA, or Admin. If its a PBX user for example it must point to account tbd 27 */
