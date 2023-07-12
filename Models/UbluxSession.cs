@@ -43,5 +43,10 @@ public partial class UbluxSession
     [AllowUpdate(false)] 
     [SwaggerSchema(ReadOnly = true)] 
     public required DateTime ExpirationDate { get; set; }
+
+    /// <summary>
+    ///     Is expired
+    /// </summary>
+    public bool IsExpired() => DateTime.UtcNow > this.ExpirationDate;
 }
 

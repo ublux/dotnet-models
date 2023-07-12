@@ -51,6 +51,11 @@ public partial class ApiKey : UbluxDocument_ReferenceAccount_ReferenceTags
     public DateTime? DateExpire { get; set; }
 
     /// <summary>
+    ///     Is expired?
+    /// </summary>
+    public bool IsExpired() => DateTime.UtcNow > DateExpire;
+
+    /// <summary>
     ///     Date last authenticated
     /// </summary>
     [AllowUpdate(false)]
