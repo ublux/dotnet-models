@@ -17,7 +17,7 @@ public partial interface ICall
     /// </summary>
     [IgnoreDataMember]
     [AllowUpdate(false)] 
-    [SwaggerSchema(ReadOnly = true)] 
+    [SwaggerSchema(ReadOnly = true)]
     public List<string> ChannelsTo { get; set; }
 
     /// <summary>
@@ -27,6 +27,11 @@ public partial interface ICall
     [AllowUpdate(false)] 
     [SwaggerSchema(ReadOnly = true)] 
     public string? ChannelToAnswer { get; set; }
+
+    /// <summary>
+    ///     Adds to ChannelsTo makeing sure there are not duplicates
+    /// </summary>    
+    public void AddToChannesTo(string idChannel);
 }
 
 #endif

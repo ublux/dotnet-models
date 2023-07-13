@@ -1,6 +1,5 @@
 ﻿#if UBLUX_BACKEND
 
-
 namespace Ublux.Communications.Models.Documents;
 
 /// <summary>
@@ -51,6 +50,27 @@ public abstract partial class Call
                 cc.DurationInSeconds ??= (now - cc.DateCreated).TotalSeconds;
             }
         }
+    }
+
+    /// <summary>
+    ///     Get last call
+    /// </summary>
+    public ICall GetLastCall()
+    {
+        if (this.ChildCalls is null || this.ChildCalls.Count == 0)
+            return this;
+
+        return this.ChildCalls.Last();
+    }
+
+    /// <summary>
+    ///     Adds to ChannelsTo makeing sure there are not duplicates
+    /// </summary>    
+    public void AddToChannesTo(string idChannel)
+    {
+        if (ChannelsTo.Contains(idChannel))
+            return;
+        ChannelsTo.Add(idChannel);
     }
 }
 

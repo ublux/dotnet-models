@@ -19,6 +19,21 @@ public partial class CallFlowLogic
     }
 
     /// <summary>
+    ///     Traverse tree
+    /// </summary>
+    public IEnumerable<FlowNode> TraverseTreeAndBookmarks()
+    {
+        // traverse main tree
+        foreach(var node in this.TraverseTree())
+            yield return node;
+
+        // traverse bookmarks
+        foreach (var bk in this.Bookmarks)
+            foreach (var node in bk.TraverseNode())
+                yield return node;
+    }
+
+    /// <summary>
     ///     Create default logic
     /// </summary>
     public static CallFlowLogic CreateDefault(RunningApplicationInstance instance, string idAccount)

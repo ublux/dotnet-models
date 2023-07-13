@@ -6,7 +6,7 @@ public abstract partial class ChildCall : ICall
 {
     /// <inheritdoc />
     [IgnoreDataMember]
-    [AllowUpdate(false)] 
+    [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
     public required string ChannelFrom { get; set; }
 
@@ -14,7 +14,7 @@ public abstract partial class ChildCall : ICall
     ///     Multiple because it can ring multiple lines
     /// </summary>
     [IgnoreDataMember]
-    [AllowUpdate(false)] 
+    [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
     public List<string> ChannelsTo { get; set; } = new();
 
@@ -22,7 +22,7 @@ public abstract partial class ChildCall : ICall
     ///     Channel To that answered
     /// </summary>
     [IgnoreDataMember]
-    [AllowUpdate(false)] 
+    [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
     public string? ChannelToAnswer { get; set; }
 
@@ -32,6 +32,16 @@ public abstract partial class ChildCall : ICall
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
     public double? DurationInSeconds { get; set; }
+
+    /// <summary>
+    ///     Adds to ChannelsTo makeing sure there are not duplicates
+    /// </summary>    
+    public void AddToChannesTo(string idChannel)
+    {
+        if (ChannelsTo.Contains(idChannel))
+            return;
+        ChannelsTo.Add(idChannel);
+    }
 }
 
 #endif

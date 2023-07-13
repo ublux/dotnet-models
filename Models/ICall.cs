@@ -44,8 +44,6 @@ public partial interface ICall
     [AllowUpdate(false)]
     double? SecondsItTookToAnswer { get; set; }
 
-
-
     /// <summary>
     ///     Caller id
     /// </summary>
