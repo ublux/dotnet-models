@@ -72,6 +72,15 @@ public abstract partial class Call
             return;
         ChannelsTo.Add(idChannel);
     }
+
+    /// <summary>
+    ///     Add participant phone if it does not exist
+    /// </summary>
+    public void AddIdParticipantPhone(string idParticipantPhone)
+    {
+        if(this.IdsParticipantPhones.Contains(idParticipantPhone)) return;
+        this.IdsParticipantPhones.Add(idParticipantPhone);
+    }
 }
 
 #endif

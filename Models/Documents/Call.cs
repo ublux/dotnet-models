@@ -312,6 +312,36 @@ public abstract partial class Call : UbluxDocument_ReferenceAccount_ReferenceTag
     [SwaggerSchema(ReadOnly = true)]
     [References(typeof(Phone))]
     public List<string> IdsParticipantPhones { get; set; } = new();
+    //{
+    //    get
+    //    {
+    //        if (this is ICallToExtension ce)
+    //        {
+    //            if (ce.IdPhoneThatAnswered != null)
+    //                yield return ce.IdPhoneThatAnswered;
+    //            if (ce.IdsPhonesThatDidNotRing != null)
+    //                foreach (var item in ce.IdsPhonesThatDidNotRing) yield return item;
+    //            if (ce.IdsPhonesThatRing != null)
+    //                foreach (var item in ce.IdsPhonesThatRing) yield return item;
+    //        }
+
+    //        if (this is CallOutgoing co)
+    //        {
+    //            if (co.IdPhoneThatInitiatedCall != null)
+    //                yield return co.IdPhoneThatInitiatedCall;                
+    //        }
+
+    //        if (this.ChildCalls != null)
+    //        {
+    //            foreach(ChildCall cc in this.ChildCalls)
+    //            {
+    //                foreach(var item in cc.par
+    //            }
+    //        }
+
+    //    }
+    //}
+
 
     /// <summary>
     ///     If not null it means the call is ended
@@ -428,7 +458,7 @@ public abstract partial class Call : UbluxDocument_ReferenceAccount_ReferenceTag
                 }
                 else
                 {
-                    if(currentToken is JObject jobject && jobject != null)
+                    if (currentToken is JObject jobject && jobject != null)
                     {
                         if (jobject.ContainsKey(propName))
                         {
