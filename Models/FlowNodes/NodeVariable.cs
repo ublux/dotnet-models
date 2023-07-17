@@ -1,7 +1,15 @@
 ﻿namespace Ublux.Communications.Models.FlowNodes;
 
+/// <summary>
+///     A variable is usualy some time of json object
+/// </summary>
 public partial class NodeVariable
 {
+    /// <summary>
+    ///     Variable name
+    /// </summary>
+    public required string Name { get; set; }
+
     /// <summary>
     ///     Path to json. Example:  students[10].firstName;
     /// </summary>
