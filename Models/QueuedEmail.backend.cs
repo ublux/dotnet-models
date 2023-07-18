@@ -20,6 +20,11 @@ public class QueuedEmail : IUbluxDocumentId
     } = BuildId();
 
     /// <summary>
+    ///     Id of account
+    /// </summary>
+    public required string IdAccount { get; set; }
+
+    /// <summary>
     ///     Id builder
     /// </summary>
     public static string BuildId() => $"{DateTime.UtcNow.Ticks / 10_000}-{Guid.NewGuid().ToString()[..4]}.bin";
