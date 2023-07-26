@@ -259,6 +259,16 @@ public class AccountFilterRequest
     [JsonProperty("industry_reg")]
     public string? Industry_REG { get; set; }
 
+    /// <summary> ReserveSipAccountIndex equals </summary>
+    [JsonProperty("reserveSipAccountIndex_eq")]
+    public System.Int32? ReserveSipAccountIndex_EQ { get; set; }
+    /// <summary> ReserveSipAccountIndex less than or equal to </summary>
+    [JsonProperty("reserveSipAccountIndex_lte")]
+    public System.Int32? ReserveSipAccountIndex_LTE { get; set; }
+    /// <summary> ReserveSipAccountIndex greater than or equal to </summary>
+    [JsonProperty("reserveSipAccountIndex_gte")]
+    public System.Int32? ReserveSipAccountIndex_GTE { get; set; }
+
     /// <summary> Id equals </summary>
     [JsonProperty("id_eq")]
     public string? Id_EQ { get; set; }
@@ -6738,15 +6748,15 @@ public class PhoneFilterRequest
     [JsonProperty("timeZone_reg")]
     public string? TimeZone_REG { get; set; }
 
-    /// <summary> PhysicalPhoneAccountIndex equals </summary>
-    [JsonProperty("physicalPhoneAccountIndex_eq")]
-    public System.Int32? PhysicalPhoneAccountIndex_EQ { get; set; }
-    /// <summary> PhysicalPhoneAccountIndex less than or equal to </summary>
-    [JsonProperty("physicalPhoneAccountIndex_lte")]
-    public System.Int32? PhysicalPhoneAccountIndex_LTE { get; set; }
-    /// <summary> PhysicalPhoneAccountIndex greater than or equal to </summary>
-    [JsonProperty("physicalPhoneAccountIndex_gte")]
-    public System.Int32? PhysicalPhoneAccountIndex_GTE { get; set; }
+    /// <summary> GroupName equals </summary>
+    [JsonProperty("groupName_eq")]
+    public string? GroupName_EQ { get; set; }
+    /// <summary> GroupName contains </summary>
+    [JsonProperty("groupName_con")]
+    public string? GroupName_CON { get; set; }
+    /// <summary> GroupName regex </summary>
+    [JsonProperty("groupName_reg")]
+    public string? GroupName_REG { get; set; }
 
     /// <summary> IdsTags equals </summary>
     [JsonProperty("idsTags_eq")]
@@ -7688,15 +7698,15 @@ public class VoicemailForwardedFilterRequest
     [JsonProperty("phoneThatForwardedVoicemail_timeZone_reg")]
     public string? PhoneThatForwardedVoicemail_TimeZone_REG { get; set; }
 
-    /// <summary> PhoneThatForwardedVoicemail.PhysicalPhoneAccountIndex equals </summary>
-    [JsonProperty("phoneThatForwardedVoicemail_physicalPhoneAccountIndex_eq")]
-    public System.Int32? PhoneThatForwardedVoicemail_PhysicalPhoneAccountIndex_EQ { get; set; }
-    /// <summary> PhoneThatForwardedVoicemail.PhysicalPhoneAccountIndex less than or equal to </summary>
-    [JsonProperty("phoneThatForwardedVoicemail_physicalPhoneAccountIndex_lte")]
-    public System.Int32? PhoneThatForwardedVoicemail_PhysicalPhoneAccountIndex_LTE { get; set; }
-    /// <summary> PhoneThatForwardedVoicemail.PhysicalPhoneAccountIndex greater than or equal to </summary>
-    [JsonProperty("phoneThatForwardedVoicemail_physicalPhoneAccountIndex_gte")]
-    public System.Int32? PhoneThatForwardedVoicemail_PhysicalPhoneAccountIndex_GTE { get; set; }
+    /// <summary> PhoneThatForwardedVoicemail.GroupName equals </summary>
+    [JsonProperty("phoneThatForwardedVoicemail_groupName_eq")]
+    public string? PhoneThatForwardedVoicemail_GroupName_EQ { get; set; }
+    /// <summary> PhoneThatForwardedVoicemail.GroupName contains </summary>
+    [JsonProperty("phoneThatForwardedVoicemail_groupName_con")]
+    public string? PhoneThatForwardedVoicemail_GroupName_CON { get; set; }
+    /// <summary> PhoneThatForwardedVoicemail.GroupName regex </summary>
+    [JsonProperty("phoneThatForwardedVoicemail_groupName_reg")]
+    public string? PhoneThatForwardedVoicemail_GroupName_REG { get; set; }
 
     /// <summary> PhoneThatForwardedVoicemail.IdsTags equals </summary>
     [JsonProperty("phoneThatForwardedVoicemail_idsTags_eq")]

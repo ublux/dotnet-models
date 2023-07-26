@@ -84,6 +84,10 @@ public class AccountUpdateRequest // : IUbluxDocumentId
     /// Sector
     /// </summary>
     public Industry? Industry { get; set; }
+    /// <summary>
+    /// This is the case for customers that have two VOIP providers and when doing autoprovision we will reserve this index when doing autoprovision.
+    /// </summary>
+    public Int32? ReserveSipAccountIndex { get; set; }
     /// <summary> Set values on actual document </summary>
     public void SetValuesOnAccount(Account account, string jsonRaw)
     {
@@ -101,6 +105,8 @@ public class AccountUpdateRequest // : IUbluxDocumentId
             account.CountriesThatCanCallInternationally = this.CountriesThatCanCallInternationally;
         if(jsonRaw.Contains($@"""{nameof(this.Industry)}""", StringComparison.OrdinalIgnoreCase))
             account.Industry = this.Industry.Value;
+        if(jsonRaw.Contains($@"""{nameof(this.ReserveSipAccountIndex)}""", StringComparison.OrdinalIgnoreCase))
+            account.ReserveSipAccountIndex = this.ReserveSipAccountIndex.Value;
     }
 
 }
@@ -1287,7 +1293,7 @@ public class PhoneUpdateRequest // : IUbluxDocumentId
     /// This is needed for yealink cordless phones for example. When doing autoprovision this is the account number that will be configured.
     /// Place value of 1 to set to the first account! This is important because if value is 1 then we will not modify other accounts. Moreover if we see a value of 1 we know it is a cordless phone.
     /// </summary>
-    public Int32? PhysicalPhoneAccountIndex { get; set; }
+    public String? GroupName { get; set; }
     /// <summary>
     /// It is nullable because there are cases where it makes no sense to point to an account.
     /// For example a CloudService user will point to no account
@@ -1322,8 +1328,8 @@ public class PhoneUpdateRequest // : IUbluxDocumentId
             phone.DisableEncryption = this.DisableEncryption.Value;
         if(jsonRaw.Contains($@"""{nameof(this.TimeZone)}""", StringComparison.OrdinalIgnoreCase))
             phone.TimeZone = this.TimeZone;
-        if(jsonRaw.Contains($@"""{nameof(this.PhysicalPhoneAccountIndex)}""", StringComparison.OrdinalIgnoreCase))
-            phone.PhysicalPhoneAccountIndex = this.PhysicalPhoneAccountIndex.Value;
+        if(jsonRaw.Contains($@"""{nameof(this.GroupName)}""", StringComparison.OrdinalIgnoreCase))
+            phone.GroupName = this.GroupName;
         if(jsonRaw.Contains($@"""{nameof(this.IdsTags)}""", StringComparison.OrdinalIgnoreCase))
             phone.IdsTags = this.IdsTags;
     }

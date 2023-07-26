@@ -90,6 +90,12 @@ public partial class Account : UbluxDocument
     [BsonRepresentation(BsonType.String)]
     public Industry Industry { get; set; }
 
+    /// <summary>
+    ///     This is the case for customers that have two VOIP providers and when doing autoprovision we will reserve this index when doing autoprovision.
+    /// </summary>
+    [AllowUpdate(true)]
+    public int ReserveSipAccountIndex { get; set; }
+
     #endregion
 
     #region MongoDB

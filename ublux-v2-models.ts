@@ -31,6 +31,8 @@ This can only be changed by an ownder of the account. */
     /** If CountriesThatCanCallLocally does not contain country then ublux will attempt to find country on this list and mark call as international */
     countriesThatCanCallInternationally?: CountryIsoCode[];
     industry?: Industry;
+    /** This is the case for customers that have two VOIP providers and when doing autoprovision we will reserve this index when doing autoprovision. */
+    reserveSipAccountIndex?: number;
     /** Creation date. Sets DateUpdated if it does not have a value */
     readonly dateCreated?: Date;
     /** Updated date. When item is created on database this date will be set too. This is important so that we can sync contacts */
@@ -57,6 +59,8 @@ export interface AccountUpdateRequest {
     /** If CountriesThatCanCallLocally does not contain country then ublux will attempt to find country on this list and mark call as international */
     countriesThatCanCallInternationally?: CountryIsoCode[] | null;
     industry?: Industry;
+    /** This is the case for customers that have two VOIP providers and when doing autoprovision we will reserve this index when doing autoprovision. */
+    reserveSipAccountIndex?: number | null;
 }
 
 /** Determines how will a call be AI processed. What questions will be asked to the AI engine */
@@ -2378,7 +2382,7 @@ export enum CountryIsoCode {
     WF = "WF",
     CK = "CK",
     NU = "NU",
-    API = "API",
+    WS = "WS",
     KI = "KI",
     NC = "NC",
     TV = "TV",
@@ -5429,7 +5433,10 @@ export interface NodeTime {
     child?: FlowNode;
 }
 
+/** A variable is usualy some time of json object */
 export interface NodeVariable {
+    /** Variable name */
+    name?: string;
     /** Path to json. Example:  students[10].firstName; */
     path?: string;
     /** Euals this value */
@@ -5485,7 +5492,7 @@ export interface Phone {
     timeZone?: string;
     /** This is needed for yealink cordless phones for example. When doing autoprovision this is the account number that will be configured.
 Place value of 1 to set to the first account! This is important because if value is 1 then we will not modify other accounts. Moreover if we see a value of 1 we know it is a cordless phone. */
-    physicalPhoneAccountIndex?: number;
+    groupName?: string | null;
     /** It is nullable because there are cases where it makes no sense to point to an account. 
 For example a CloudService user will point to no account */
     idsTags?: string[];
@@ -5504,6 +5511,12 @@ export interface PhoneBlfStatus {
     /** Extension called */
     callerId?: string | null;
     blfStatusType?: BlfStatusType;
+    /** Is incoming or outgoing channel. If receiving phone call it is incoming. If it is making call it is outgoing.
+In other words it if true it means it goes from asterisk to phone
+If false it means it goes from phone to asterisk */
+    isIncoming?: boolean;
+    /** With what ip phone is connected. Empty string if PSTN */
+    idPhoneConnectedWith?: string | null;
 }
 
 /** Configuration of a phone */
@@ -5757,12 +5770,12 @@ export interface PhoneFilterRequest {
     timeZone_con?: string | null;
     /** TimeZone regex */
     timeZone_reg?: string | null;
-    /** PhysicalPhoneAccountIndex equals */
-    physicalPhoneAccountIndex_eq?: number | null;
-    /** PhysicalPhoneAccountIndex less than or equal to */
-    physicalPhoneAccountIndex_lte?: number | null;
-    /** PhysicalPhoneAccountIndex greater than or equal to */
-    physicalPhoneAccountIndex_gte?: number | null;
+    /** GroupName equals */
+    groupName_eq?: string | null;
+    /** GroupName contains */
+    groupName_con?: string | null;
+    /** GroupName regex */
+    groupName_reg?: string | null;
     /** IdsTags equals */
     idsTags_eq?: string | null;
     /** IdsTags contains */
@@ -5821,7 +5834,7 @@ export interface PhoneUpdateRequest {
     timeZone?: string | null;
     /** This is needed for yealink cordless phones for example. When doing autoprovision this is the account number that will be configured.
 Place value of 1 to set to the first account! This is important because if value is 1 then we will not modify other accounts. Moreover if we see a value of 1 we know it is a cordless phone. */
-    physicalPhoneAccountIndex?: number | null;
+    groupName?: string | null;
     /** It is nullable because there are cases where it makes no sense to point to an account.
 For example a CloudService user will point to no account */
     idsTags?: string[] | null;

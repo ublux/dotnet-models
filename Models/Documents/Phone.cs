@@ -193,7 +193,7 @@ public partial class Phone : UbluxDocument_ReferenceAccount_ReferenceTags
     ///     Place value of 1 to set to the first account! This is important because if value is 1 then we will not modify other accounts. Moreover if we see a value of 1 we know it is a cordless phone.
     /// </summary>
     [AllowUpdate(true)]
-    public int PhysicalPhoneAccountIndex { get; set; }
+    public string? GroupName { get; set; }    
 
     #region MongoDB
 
