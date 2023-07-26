@@ -5490,8 +5490,8 @@ export interface Phone {
     readonly pin?: string;
     /** TimeZone of this phone */
     timeZone?: string;
-    /** This is needed for yealink cordless phones for example. When doing autoprovision this is the account number that will be configured.
-Place value of 1 to set to the first account! This is important because if value is 1 then we will not modify other accounts. Moreover if we see a value of 1 we know it is a cordless phone. */
+    /** This is needed for yealink cordless phones for example. Phones on the same group name will be sent as a group when autoprovisioning.
+Can only set if phone is disconnected. */
     groupName?: string | null;
     /** It is nullable because there are cases where it makes no sense to point to an account. 
 For example a CloudService user will point to no account */
@@ -5832,9 +5832,6 @@ export interface PhoneUpdateRequest {
     disableEncryption?: boolean | null;
     /** TimeZone of this phone */
     timeZone?: string | null;
-    /** This is needed for yealink cordless phones for example. When doing autoprovision this is the account number that will be configured.
-Place value of 1 to set to the first account! This is important because if value is 1 then we will not modify other accounts. Moreover if we see a value of 1 we know it is a cordless phone. */
-    groupName?: string | null;
     /** It is nullable because there are cases where it makes no sense to point to an account.
 For example a CloudService user will point to no account */
     idsTags?: string[] | null;

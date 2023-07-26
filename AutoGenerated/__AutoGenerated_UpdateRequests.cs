@@ -1290,11 +1290,6 @@ public class PhoneUpdateRequest // : IUbluxDocumentId
     /// </summary>
     public String? TimeZone { get; set; }
     /// <summary>
-    /// This is needed for yealink cordless phones for example. When doing autoprovision this is the account number that will be configured.
-    /// Place value of 1 to set to the first account! This is important because if value is 1 then we will not modify other accounts. Moreover if we see a value of 1 we know it is a cordless phone.
-    /// </summary>
-    public String? GroupName { get; set; }
-    /// <summary>
     /// It is nullable because there are cases where it makes no sense to point to an account.
     /// For example a CloudService user will point to no account
     /// </summary>
@@ -1328,8 +1323,6 @@ public class PhoneUpdateRequest // : IUbluxDocumentId
             phone.DisableEncryption = this.DisableEncryption.Value;
         if(jsonRaw.Contains($@"""{nameof(this.TimeZone)}""", StringComparison.OrdinalIgnoreCase))
             phone.TimeZone = this.TimeZone;
-        if(jsonRaw.Contains($@"""{nameof(this.GroupName)}""", StringComparison.OrdinalIgnoreCase))
-            phone.GroupName = this.GroupName;
         if(jsonRaw.Contains($@"""{nameof(this.IdsTags)}""", StringComparison.OrdinalIgnoreCase))
             phone.IdsTags = this.IdsTags;
     }
