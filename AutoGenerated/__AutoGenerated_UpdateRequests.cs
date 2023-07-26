@@ -1376,6 +1376,10 @@ public class PowerDialerGroupUpdateRequest // : IUbluxDocumentId
     /// </summary>
     public List<System.String>? IdPhonesAgents { get; set; }
     /// <summary>
+    /// Subdocument
+    /// </summary>
+    public List<Ublux.Communications.Models.PowerDialerContact>? PowerDialerContacts { get; set; }
+    /// <summary>
     /// Friendly name of power dialer group
     /// </summary>
     public String? FriendlyName { get; set; }
@@ -1393,6 +1397,8 @@ public class PowerDialerGroupUpdateRequest // : IUbluxDocumentId
     {
         if(jsonRaw.Contains($@"""{nameof(this.IdPhonesAgents)}""", StringComparison.OrdinalIgnoreCase))
             powerDialerGroup.IdPhonesAgents = this.IdPhonesAgents;
+        if(jsonRaw.Contains($@"""{nameof(this.PowerDialerContacts)}""", StringComparison.OrdinalIgnoreCase))
+            powerDialerGroup.PowerDialerContacts = this.PowerDialerContacts;
         if(jsonRaw.Contains($@"""{nameof(this.FriendlyName)}""", StringComparison.OrdinalIgnoreCase))
             powerDialerGroup.FriendlyName = this.FriendlyName;
         if(jsonRaw.Contains($@"""{nameof(this.Description)}""", StringComparison.OrdinalIgnoreCase))

@@ -55,7 +55,7 @@ public partial class PowerDialerGroup : UbluxDocument_ReferenceAccount_Reference
     /// <summary>
     ///     Subdocument
     /// </summary>
-    [AllowUpdate(false)]
+    [AllowUpdate(true)]
     [SwaggerSchema(ReadOnly = true)]
     [UbluxValidationRequired]
     public required List<PowerDialerContact> PowerDialerContacts { get; set; } = new();

@@ -6008,6 +6008,8 @@ export enum PowerDialerGroupStatus {
 export interface PowerDialerGroupUpdateRequest {
     /** Agents that will be using power dialer */
     idPhonesAgents?: string[] | null;
+    /** Subdocument */
+    powerDialerContacts?: PowerDialerContact[] | null;
     /** Friendly name of power dialer group */
     friendlyName?: string | null;
     /** Description of power dialer group */
