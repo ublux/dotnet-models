@@ -80,6 +80,9 @@ public enum Collections
     /// <summary>PowerDialerGroups</summary>
     PowerDialerGroups,
 
+    /// <summary>PowerDialerGroups</summary>
+    PowerDialerContacts,
+
     /// <summary>SMS</summary>
     SMS,
 

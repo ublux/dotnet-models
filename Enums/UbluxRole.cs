@@ -324,8 +324,19 @@ public enum UbluxRole
     /// <summary> Has access to the powerdialergroups endpoint with only read/create permissions </summary>
     powerdialergroups_create,
 
+    /// <summary> Has access to the powerdialercontacts endpoint with full permissions </summary>
+    powerdialercontacts = 290,
+    /// <summary> Has access to the powerdialercontacts endpoint with only read permissions </summary>
+    powerdialercontacts_readonly,
+    /// <summary> Has access to the powerdialercontacts endpoint with only read/update permissions </summary>
+    powerdialercontacts_update,
+    /// <summary> Has access to the powerdialercontacts endpoint with only read/delete permissions </summary>
+    powerdialercontacts_delete,
+    /// <summary> Has access to the powerdialercontacts endpoint with only read/create permissions </summary>
+    powerdialercontacts_create,
+
     /// <summary> Has access to the sms endpoint with full permissions </summary>
-    sms = 290,
+    sms = 300,
     /// <summary> Has access to the sms endpoint with only read permissions </summary>
     sms_readonly,
     /// <summary> Has access to the sms endpoint with only read/update permissions </summary>
@@ -336,7 +347,7 @@ public enum UbluxRole
     sms_create,
 
     /// <summary> Has access to the voicemails endpoint with full permissions </summary>
-    voicemails = 300,
+    voicemails = 310,
     /// <summary> Has access to the voicemails endpoint with only read permissions </summary>
     voicemails_readonly,
     /// <summary> Has access to the voicemails endpoint with only read/update permissions </summary>
@@ -347,7 +358,7 @@ public enum UbluxRole
     voicemails_create,
 
     /// <summary> Has access to the voipnumbers endpoint with full permissions </summary>
-    voipnumbers = 310,
+    voipnumbers = 320,
     /// <summary> Has access to the voipnumbers endpoint with only read permissions </summary>
     voipnumbers_readonly,
     /// <summary> Has access to the voipnumbers endpoint with only read/update permissions </summary>
@@ -358,7 +369,7 @@ public enum UbluxRole
     voipnumbers_create,
 
     /// <summary> Has access to the voipnumberavailableforpurchases endpoint with full permissions </summary>
-    voipnumberavailableforpurchases = 320,
+    voipnumberavailableforpurchases = 330,
     /// <summary> Has access to the voipnumberavailableforpurchases endpoint with only read permissions </summary>
     voipnumberavailableforpurchases_readonly,
     /// <summary> Has access to the voipnumberavailableforpurchases endpoint with only read/update permissions </summary>
@@ -369,7 +380,7 @@ public enum UbluxRole
     voipnumberavailableforpurchases_create,
 
     /// <summary> Has access to the voipnumberfaxs endpoint with full permissions </summary>
-    voipnumberfaxs = 330,
+    voipnumberfaxs = 340,
     /// <summary> Has access to the voipnumberfaxs endpoint with only read permissions </summary>
     voipnumberfaxs_readonly,
     /// <summary> Has access to the voipnumberfaxs endpoint with only read/update permissions </summary>
@@ -380,7 +391,7 @@ public enum UbluxRole
     voipnumberfaxs_create,
 
     /// <summary> Has access to the voipnumberphones endpoint with full permissions </summary>
-    voipnumberphones = 340,
+    voipnumberphones = 350,
     /// <summary> Has access to the voipnumberphones endpoint with only read permissions </summary>
     voipnumberphones_readonly,
     /// <summary> Has access to the voipnumberphones endpoint with only read/update permissions </summary>
@@ -391,7 +402,7 @@ public enum UbluxRole
     voipnumberphones_create,
 
     /// <summary> Has access to the webhooks endpoint with full permissions </summary>
-    webhooks = 350,
+    webhooks = 360,
     /// <summary> Has access to the webhooks endpoint with only read permissions </summary>
     webhooks_readonly,
     /// <summary> Has access to the webhooks endpoint with only read/update permissions </summary>
@@ -402,7 +413,7 @@ public enum UbluxRole
     webhooks_create,
 
     /// <summary> Has access to the tags endpoint with full permissions </summary>
-    tags = 360,
+    tags = 370,
     /// <summary> Has access to the tags endpoint with only read permissions </summary>
     tags_readonly,
     /// <summary> Has access to the tags endpoint with only read/update permissions </summary>
@@ -413,7 +424,7 @@ public enum UbluxRole
     tags_create,
 
     /// <summary> Has access to the apikeys endpoint with full permissions </summary>
-    apikeys = 370,
+    apikeys = 380,
     /// <summary> Has access to the apikeys endpoint with only read permissions </summary>
     apikeys_readonly,
     /// <summary> Has access to the apikeys endpoint with only read/update permissions </summary>
@@ -424,7 +435,7 @@ public enum UbluxRole
     apikeys_create,
 
     /// <summary> Has access to the aicalltranscriptions endpoint with full permissions </summary>
-    aicalltranscriptions = 380,
+    aicalltranscriptions = 390,
     /// <summary> Has access to the aicalltranscriptions endpoint with only read permissions </summary>
     aicalltranscriptions_readonly,
     /// <summary> Has access to the aicalltranscriptions endpoint with only read/update permissions </summary>
@@ -435,7 +446,7 @@ public enum UbluxRole
     aicalltranscriptions_create,
 
     /// <summary> Has access to the aicallanalysisinputs endpoint with full permissions </summary>
-    aicallanalysisinputs = 390,
+    aicallanalysisinputs = 400,
     /// <summary> Has access to the aicallanalysisinputs endpoint with only read permissions </summary>
     aicallanalysisinputs_readonly,
     /// <summary> Has access to the aicallanalysisinputs endpoint with only read/update permissions </summary>

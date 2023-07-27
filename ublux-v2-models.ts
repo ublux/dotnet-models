@@ -1955,6 +1955,7 @@ export enum Collections {
     Phones = "Phones",
     PhoneConfigurations = "PhoneConfigurations",
     PowerDialerGroups = "PowerDialerGroups",
+    PowerDialerContacts = "PowerDialerContacts",
     SMS = "SMS",
     TrunkTerminations = "TrunkTerminations",
     TrunkTerminationGroups = "TrunkTerminationGroups",
@@ -4906,6 +4907,18 @@ export interface HttpResponsePaginationResultOfPhoneConfiguration {
 }
 
 /** Limits the number of results that can obtained per request. */
+export interface HttpResponsePaginationResultOfPowerDialerContact {
+    /** Page number */
+    pageNumber?: number;
+    /** Maximum number of records that can be retrieved per page */
+    pageSize?: number;
+    /** Number of records */
+    readonly recordsCount?: number;
+    /** Results */
+    records?: PowerDialerContact[] | null;
+}
+
+/** Limits the number of results that can obtained per request. */
 export interface HttpResponsePaginationResultOfPowerDialerGroup {
     /** Page number */
     pageNumber?: number;
@@ -5492,7 +5505,7 @@ export interface Phone {
     timeZone?: string;
     /** This is needed for yealink cordless phones for example. Phones on the same group name will be sent as a group when autoprovisioning.
 Can only set if phone is disconnected. */
-    groupName?: string | null;
+    readonly groupName?: string | null;
     /** It is nullable because there are cases where it makes no sense to point to an account. 
 For example a CloudService user will point to no account */
     idsTags?: string[];
@@ -5839,11 +5852,19 @@ For example a CloudService user will point to no account */
 
 /** Peer to call on power dialer group */
 export interface PowerDialerContact {
+    /** Id of document */
+    readonly id?: string;
+    /** To what power dialer group */
+    readonly idPowerDialerGroup?: string;
     /** Phone number to call */
-    phoneNumber?: string;
+    readonly phoneNumber?: string;
     countryIsoCode?: CountryIsoCode;
     /** Id of contact */
     readonly idContact?: string | null;
+    /** Date when powerdialer group started */
+    readonly dateStarted?: Date | null;
+    /** Date when powerdialer group ended */
+    readonly dateEnded?: Date | null;
     powerDialerStatus?: PowerDialerStatus;
     /** Error message */
     errorMessage?: string | null;
@@ -5851,6 +5872,114 @@ export interface PowerDialerContact {
     numberOfAttempts?: number;
     /** Name of the contact in order to know who are we calling */
     contactName?: string | null;
+    /** It is nullable because there are cases where it makes no sense to point to an account. 
+For example a CloudService user will point to no account */
+    idsTags?: string[];
+    /** Creation date. Sets DateUpdated if it does not have a value */
+    readonly dateCreated?: Date;
+    /** Updated date. When item is created on database this date will be set too. This is important so that we can sync contacts */
+    readonly dateUpdated?: Date;
+}
+
+/** Enables searching for PowerDialerContacts */
+export interface PowerDialerContactFilterRequest {
+    /** IdPowerDialerGroup equals */
+    idPowerDialerGroup_eq?: string | null;
+    /** IdPowerDialerGroup contains */
+    idPowerDialerGroup_con?: string | null;
+    /** IdPowerDialerGroup regex */
+    idPowerDialerGroup_reg?: string | null;
+    /** PhoneNumber equals */
+    phoneNumber_eq?: string | null;
+    /** PhoneNumber contains */
+    phoneNumber_con?: string | null;
+    /** PhoneNumber regex */
+    phoneNumber_reg?: string | null;
+    /** CountryIsoCode equals */
+    countryIsoCode_eq?: string | null;
+    /** CountryIsoCode contains */
+    countryIsoCode_con?: string | null;
+    /** CountryIsoCode regex */
+    countryIsoCode_reg?: string | null;
+    /** IdContact equals */
+    idContact_eq?: string | null;
+    /** IdContact contains */
+    idContact_con?: string | null;
+    /** IdContact regex */
+    idContact_reg?: string | null;
+    /** DateStarted equals */
+    dateStarted_eq?: Date | null;
+    /** DateStarted less than or equal to */
+    dateStarted_lte?: Date | null;
+    /** DateStarted greater than or equal to */
+    dateStarted_gte?: Date | null;
+    /** DateEnded equals */
+    dateEnded_eq?: Date | null;
+    /** DateEnded less than or equal to */
+    dateEnded_lte?: Date | null;
+    /** DateEnded greater than or equal to */
+    dateEnded_gte?: Date | null;
+    /** PowerDialerStatus equals */
+    powerDialerStatus_eq?: string | null;
+    /** PowerDialerStatus contains */
+    powerDialerStatus_con?: string | null;
+    /** PowerDialerStatus regex */
+    powerDialerStatus_reg?: string | null;
+    /** ErrorMessage equals */
+    errorMessage_eq?: string | null;
+    /** ErrorMessage contains */
+    errorMessage_con?: string | null;
+    /** ErrorMessage regex */
+    errorMessage_reg?: string | null;
+    /** NumberOfAttempts equals */
+    numberOfAttempts_eq?: number | null;
+    /** NumberOfAttempts less than or equal to */
+    numberOfAttempts_lte?: number | null;
+    /** NumberOfAttempts greater than or equal to */
+    numberOfAttempts_gte?: number | null;
+    /** ContactName equals */
+    contactName_eq?: string | null;
+    /** ContactName contains */
+    contactName_con?: string | null;
+    /** ContactName regex */
+    contactName_reg?: string | null;
+    /** IdsTags equals */
+    idsTags_eq?: string | null;
+    /** IdsTags contains */
+    idsTags_con?: string | null;
+    /** IdsTags regex */
+    idsTags_reg?: string | null;
+    /** Id equals */
+    id_eq?: string | null;
+    /** Id contains */
+    id_con?: string | null;
+    /** Id regex */
+    id_reg?: string | null;
+    /** DateCreated equals */
+    dateCreated_eq?: Date | null;
+    /** DateCreated less than or equal to */
+    dateCreated_lte?: Date | null;
+    /** DateCreated greater than or equal to */
+    dateCreated_gte?: Date | null;
+    /** DateUpdated equals */
+    dateUpdated_eq?: Date | null;
+    /** DateUpdated less than or equal to */
+    dateUpdated_lte?: Date | null;
+    /** DateUpdated greater than or equal to */
+    dateUpdated_gte?: Date | null;
+}
+
+/** Peer to call on power dialer group */
+export interface PowerDialerContactUpdateRequest {
+    /** Error message */
+    errorMessage?: string | null;
+    /** If powerdialer fails it attempts to call again. If it reaches 3 attempts and fails it will stop */
+    numberOfAttempts?: number | null;
+    /** Name of the contact in order to know who are we calling */
+    contactName?: string | null;
+    /** It is nullable because there are cases where it makes no sense to point to an account.
+For example a CloudService user will point to no account */
+    idsTags?: string[] | null;
 }
 
 /** Group used to call multiple parties */
@@ -5863,8 +5992,10 @@ export interface PowerDialerGroup {
     readonly idCallerIdMask?: string | null;
     /** Agents that will be using power dialer */
     idPhonesAgents?: string[];
-    /** Subdocument */
-    readonly powerDialerContacts?: PowerDialerContact[];
+    /** Date when powerdialer group started */
+    readonly dateStarted?: Date | null;
+    /** Date when powerdialer group ended */
+    readonly dateEnded?: Date | null;
     /** Friendly name of power dialer group */
     friendlyName?: string;
     /** Description of power dialer group */
@@ -5901,48 +6032,18 @@ export interface PowerDialerGroupFilterRequest {
     idPhonesAgents_con?: string | null;
     /** IdPhonesAgents regex */
     idPhonesAgents_reg?: string | null;
-    /** PowerDialerContacts.PhoneNumber equals */
-    powerDialerContacts_phoneNumber_eq?: string | null;
-    /** PowerDialerContacts.PhoneNumber contains */
-    powerDialerContacts_phoneNumber_con?: string | null;
-    /** PowerDialerContacts.PhoneNumber regex */
-    powerDialerContacts_phoneNumber_reg?: string | null;
-    /** PowerDialerContacts.CountryIsoCode equals */
-    powerDialerContacts_countryIsoCode_eq?: string | null;
-    /** PowerDialerContacts.CountryIsoCode contains */
-    powerDialerContacts_countryIsoCode_con?: string | null;
-    /** PowerDialerContacts.CountryIsoCode regex */
-    powerDialerContacts_countryIsoCode_reg?: string | null;
-    /** PowerDialerContacts.IdContact equals */
-    powerDialerContacts_idContact_eq?: string | null;
-    /** PowerDialerContacts.IdContact contains */
-    powerDialerContacts_idContact_con?: string | null;
-    /** PowerDialerContacts.IdContact regex */
-    powerDialerContacts_idContact_reg?: string | null;
-    /** PowerDialerContacts.PowerDialerStatus equals */
-    powerDialerContacts_powerDialerStatus_eq?: string | null;
-    /** PowerDialerContacts.PowerDialerStatus contains */
-    powerDialerContacts_powerDialerStatus_con?: string | null;
-    /** PowerDialerContacts.PowerDialerStatus regex */
-    powerDialerContacts_powerDialerStatus_reg?: string | null;
-    /** PowerDialerContacts.ErrorMessage equals */
-    powerDialerContacts_errorMessage_eq?: string | null;
-    /** PowerDialerContacts.ErrorMessage contains */
-    powerDialerContacts_errorMessage_con?: string | null;
-    /** PowerDialerContacts.ErrorMessage regex */
-    powerDialerContacts_errorMessage_reg?: string | null;
-    /** PowerDialerContacts.NumberOfAttempts equals */
-    powerDialerContacts_numberOfAttempts_eq?: number | null;
-    /** PowerDialerContacts.NumberOfAttempts less than or equal to */
-    powerDialerContacts_numberOfAttempts_lte?: number | null;
-    /** PowerDialerContacts.NumberOfAttempts greater than or equal to */
-    powerDialerContacts_numberOfAttempts_gte?: number | null;
-    /** PowerDialerContacts.ContactName equals */
-    powerDialerContacts_contactName_eq?: string | null;
-    /** PowerDialerContacts.ContactName contains */
-    powerDialerContacts_contactName_con?: string | null;
-    /** PowerDialerContacts.ContactName regex */
-    powerDialerContacts_contactName_reg?: string | null;
+    /** DateStarted equals */
+    dateStarted_eq?: Date | null;
+    /** DateStarted less than or equal to */
+    dateStarted_lte?: Date | null;
+    /** DateStarted greater than or equal to */
+    dateStarted_gte?: Date | null;
+    /** DateEnded equals */
+    dateEnded_eq?: Date | null;
+    /** DateEnded less than or equal to */
+    dateEnded_lte?: Date | null;
+    /** DateEnded greater than or equal to */
+    dateEnded_gte?: Date | null;
     /** FriendlyName equals */
     friendlyName_eq?: string | null;
     /** FriendlyName contains */
@@ -6008,8 +6109,6 @@ export enum PowerDialerGroupStatus {
 export interface PowerDialerGroupUpdateRequest {
     /** Agents that will be using power dialer */
     idPhonesAgents?: string[] | null;
-    /** Subdocument */
-    powerDialerContacts?: PowerDialerContact[] | null;
     /** Friendly name of power dialer group */
     friendlyName?: string | null;
     /** Description of power dialer group */
@@ -6819,6 +6918,11 @@ export enum UbluxRole {
     Powerdialergroups_update = "powerdialergroups_update",
     Powerdialergroups_delete = "powerdialergroups_delete",
     Powerdialergroups_create = "powerdialergroups_create",
+    Powerdialercontacts = "powerdialercontacts",
+    Powerdialercontacts_readonly = "powerdialercontacts_readonly",
+    Powerdialercontacts_update = "powerdialercontacts_update",
+    Powerdialercontacts_delete = "powerdialercontacts_delete",
+    Powerdialercontacts_create = "powerdialercontacts_create",
     Sms = "sms",
     Sms_readonly = "sms_readonly",
     Sms_update = "sms_update",

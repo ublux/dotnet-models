@@ -351,6 +351,13 @@ namespace Ublux.Communications.Models.Documents {
         /// <summary> Custom: prefix.instance.channel-uid. Example COTE.PBXUS1.1232123.2 </summary>
         public new static BuiltId BuildId(RunningApplicationInstance instance,  string channelUid) => new($"{DocumentPrefix}.{instance.Id}.{channelUid}");
     }
+    public partial class PowerDialerContact {
+        /// <summary> Id prefix </summary>
+        public const string DocumentPrefix = "PDC";
+
+        /// <summary> Build Id </summary>
+        public static BuiltId BuildId(RunningApplicationInstance instance) => new($"{DocumentPrefix}.{instance.Id}.{instance.IdGlobalAutoIncrement()}");
+    }
 }
 
 

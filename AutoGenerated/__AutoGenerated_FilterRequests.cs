@@ -6906,76 +6906,25 @@ public class PowerDialerGroupFilterRequest
     [JsonProperty("idPhonesAgents_reg")]
     public string? IdPhonesAgents_REG { get; set; }
 
-    /// <summary> PowerDialerContacts.PhoneNumber equals </summary>
-    [JsonProperty("powerDialerContacts_phoneNumber_eq")]
-    public string? PowerDialerContacts_PhoneNumber_EQ { get; set; }
-    /// <summary> PowerDialerContacts.PhoneNumber contains </summary>
-    [JsonProperty("powerDialerContacts_phoneNumber_con")]
-    public string? PowerDialerContacts_PhoneNumber_CON { get; set; }
-    /// <summary> PowerDialerContacts.PhoneNumber regex </summary>
-    [JsonProperty("powerDialerContacts_phoneNumber_reg")]
-    public string? PowerDialerContacts_PhoneNumber_REG { get; set; }
+    /// <summary> DateStarted equals </summary>
+    [JsonProperty("dateStarted_eq")]
+    public DateTime? DateStarted_EQ { get; set; }
+    /// <summary> DateStarted less than or equal to </summary>
+    [JsonProperty("dateStarted_lte")]
+    public DateTime? DateStarted_LTE { get; set; }
+    /// <summary> DateStarted greater than or equal to </summary>
+    [JsonProperty("dateStarted_gte")]
+    public DateTime? DateStarted_GTE { get; set; }
 
-    /// <summary> PowerDialerContacts.CountryIsoCode equals </summary>
-    [JsonProperty("powerDialerContacts_countryIsoCode_eq")]
-    public string? PowerDialerContacts_CountryIsoCode_EQ { get; set; }
-    /// <summary> PowerDialerContacts.CountryIsoCode contains </summary>
-    [JsonProperty("powerDialerContacts_countryIsoCode_con")]
-    public string? PowerDialerContacts_CountryIsoCode_CON { get; set; }
-    /// <summary> PowerDialerContacts.CountryIsoCode regex </summary>
-    [JsonProperty("powerDialerContacts_countryIsoCode_reg")]
-    public string? PowerDialerContacts_CountryIsoCode_REG { get; set; }
-
-    /// <summary> PowerDialerContacts.IdContact equals </summary>
-    [JsonProperty("powerDialerContacts_idContact_eq")]
-    public string? PowerDialerContacts_IdContact_EQ { get; set; }
-    /// <summary> PowerDialerContacts.IdContact contains </summary>
-    [JsonProperty("powerDialerContacts_idContact_con")]
-    public string? PowerDialerContacts_IdContact_CON { get; set; }
-    /// <summary> PowerDialerContacts.IdContact regex </summary>
-    [JsonProperty("powerDialerContacts_idContact_reg")]
-    public string? PowerDialerContacts_IdContact_REG { get; set; }
-
-    /// <summary> PowerDialerContacts.PowerDialerStatus equals </summary>
-    [JsonProperty("powerDialerContacts_powerDialerStatus_eq")]
-    public string? PowerDialerContacts_PowerDialerStatus_EQ { get; set; }
-    /// <summary> PowerDialerContacts.PowerDialerStatus contains </summary>
-    [JsonProperty("powerDialerContacts_powerDialerStatus_con")]
-    public string? PowerDialerContacts_PowerDialerStatus_CON { get; set; }
-    /// <summary> PowerDialerContacts.PowerDialerStatus regex </summary>
-    [JsonProperty("powerDialerContacts_powerDialerStatus_reg")]
-    public string? PowerDialerContacts_PowerDialerStatus_REG { get; set; }
-
-    /// <summary> PowerDialerContacts.ErrorMessage equals </summary>
-    [JsonProperty("powerDialerContacts_errorMessage_eq")]
-    public string? PowerDialerContacts_ErrorMessage_EQ { get; set; }
-    /// <summary> PowerDialerContacts.ErrorMessage contains </summary>
-    [JsonProperty("powerDialerContacts_errorMessage_con")]
-    public string? PowerDialerContacts_ErrorMessage_CON { get; set; }
-    /// <summary> PowerDialerContacts.ErrorMessage regex </summary>
-    [JsonProperty("powerDialerContacts_errorMessage_reg")]
-    public string? PowerDialerContacts_ErrorMessage_REG { get; set; }
-
-    /// <summary> PowerDialerContacts.NumberOfAttempts equals </summary>
-    [JsonProperty("powerDialerContacts_numberOfAttempts_eq")]
-    public System.Int32? PowerDialerContacts_NumberOfAttempts_EQ { get; set; }
-    /// <summary> PowerDialerContacts.NumberOfAttempts less than or equal to </summary>
-    [JsonProperty("powerDialerContacts_numberOfAttempts_lte")]
-    public System.Int32? PowerDialerContacts_NumberOfAttempts_LTE { get; set; }
-    /// <summary> PowerDialerContacts.NumberOfAttempts greater than or equal to </summary>
-    [JsonProperty("powerDialerContacts_numberOfAttempts_gte")]
-    public System.Int32? PowerDialerContacts_NumberOfAttempts_GTE { get; set; }
-
-    /// <summary> PowerDialerContacts.ContactName equals </summary>
-    [JsonProperty("powerDialerContacts_contactName_eq")]
-    public string? PowerDialerContacts_ContactName_EQ { get; set; }
-    /// <summary> PowerDialerContacts.ContactName contains </summary>
-    [JsonProperty("powerDialerContacts_contactName_con")]
-    public string? PowerDialerContacts_ContactName_CON { get; set; }
-    /// <summary> PowerDialerContacts.ContactName regex </summary>
-    [JsonProperty("powerDialerContacts_contactName_reg")]
-    public string? PowerDialerContacts_ContactName_REG { get; set; }
-
+    /// <summary> DateEnded equals </summary>
+    [JsonProperty("dateEnded_eq")]
+    public DateTime? DateEnded_EQ { get; set; }
+    /// <summary> DateEnded less than or equal to </summary>
+    [JsonProperty("dateEnded_lte")]
+    public DateTime? DateEnded_LTE { get; set; }
+    /// <summary> DateEnded greater than or equal to </summary>
+    [JsonProperty("dateEnded_gte")]
+    public DateTime? DateEnded_GTE { get; set; }
 
     /// <summary> FriendlyName equals </summary>
     [JsonProperty("friendlyName_eq")]
@@ -9684,6 +9633,150 @@ public class CallOutgoingToPowerDialerFilterRequest
     /// <summary> AiAnalysisStatus regex </summary>
     [JsonProperty("aiAnalysisStatus_reg")]
     public string? AiAnalysisStatus_REG { get; set; }
+
+    /// <summary> IdsTags equals </summary>
+    [JsonProperty("idsTags_eq")]
+    public string? IdsTags_EQ { get; set; }
+    /// <summary> IdsTags contains </summary>
+    [JsonProperty("idsTags_con")]
+    public string? IdsTags_CON { get; set; }
+    /// <summary> IdsTags regex </summary>
+    [JsonProperty("idsTags_reg")]
+    public string? IdsTags_REG { get; set; }
+
+    /// <summary> Id equals </summary>
+    [JsonProperty("id_eq")]
+    public string? Id_EQ { get; set; }
+    /// <summary> Id contains </summary>
+    [JsonProperty("id_con")]
+    public string? Id_CON { get; set; }
+    /// <summary> Id regex </summary>
+    [JsonProperty("id_reg")]
+    public string? Id_REG { get; set; }
+
+    /// <summary> DateCreated equals </summary>
+    [JsonProperty("dateCreated_eq")]
+    public DateTime? DateCreated_EQ { get; set; }
+    /// <summary> DateCreated less than or equal to </summary>
+    [JsonProperty("dateCreated_lte")]
+    public DateTime? DateCreated_LTE { get; set; }
+    /// <summary> DateCreated greater than or equal to </summary>
+    [JsonProperty("dateCreated_gte")]
+    public DateTime? DateCreated_GTE { get; set; }
+
+    /// <summary> DateUpdated equals </summary>
+    [JsonProperty("dateUpdated_eq")]
+    public DateTime? DateUpdated_EQ { get; set; }
+    /// <summary> DateUpdated less than or equal to </summary>
+    [JsonProperty("dateUpdated_lte")]
+    public DateTime? DateUpdated_LTE { get; set; }
+    /// <summary> DateUpdated greater than or equal to </summary>
+    [JsonProperty("dateUpdated_gte")]
+    public DateTime? DateUpdated_GTE { get; set; }
+
+}
+/// <summary> Enables searching for PowerDialerContacts </summary>
+public class PowerDialerContactFilterRequest 
+{
+    /// <summary> IdPowerDialerGroup equals </summary>
+    [JsonProperty("idPowerDialerGroup_eq")]
+    public string? IdPowerDialerGroup_EQ { get; set; }
+    /// <summary> IdPowerDialerGroup contains </summary>
+    [JsonProperty("idPowerDialerGroup_con")]
+    public string? IdPowerDialerGroup_CON { get; set; }
+    /// <summary> IdPowerDialerGroup regex </summary>
+    [JsonProperty("idPowerDialerGroup_reg")]
+    public string? IdPowerDialerGroup_REG { get; set; }
+
+    /// <summary> PhoneNumber equals </summary>
+    [JsonProperty("phoneNumber_eq")]
+    public string? PhoneNumber_EQ { get; set; }
+    /// <summary> PhoneNumber contains </summary>
+    [JsonProperty("phoneNumber_con")]
+    public string? PhoneNumber_CON { get; set; }
+    /// <summary> PhoneNumber regex </summary>
+    [JsonProperty("phoneNumber_reg")]
+    public string? PhoneNumber_REG { get; set; }
+
+    /// <summary> CountryIsoCode equals </summary>
+    [JsonProperty("countryIsoCode_eq")]
+    public string? CountryIsoCode_EQ { get; set; }
+    /// <summary> CountryIsoCode contains </summary>
+    [JsonProperty("countryIsoCode_con")]
+    public string? CountryIsoCode_CON { get; set; }
+    /// <summary> CountryIsoCode regex </summary>
+    [JsonProperty("countryIsoCode_reg")]
+    public string? CountryIsoCode_REG { get; set; }
+
+    /// <summary> IdContact equals </summary>
+    [JsonProperty("idContact_eq")]
+    public string? IdContact_EQ { get; set; }
+    /// <summary> IdContact contains </summary>
+    [JsonProperty("idContact_con")]
+    public string? IdContact_CON { get; set; }
+    /// <summary> IdContact regex </summary>
+    [JsonProperty("idContact_reg")]
+    public string? IdContact_REG { get; set; }
+
+    /// <summary> DateStarted equals </summary>
+    [JsonProperty("dateStarted_eq")]
+    public DateTime? DateStarted_EQ { get; set; }
+    /// <summary> DateStarted less than or equal to </summary>
+    [JsonProperty("dateStarted_lte")]
+    public DateTime? DateStarted_LTE { get; set; }
+    /// <summary> DateStarted greater than or equal to </summary>
+    [JsonProperty("dateStarted_gte")]
+    public DateTime? DateStarted_GTE { get; set; }
+
+    /// <summary> DateEnded equals </summary>
+    [JsonProperty("dateEnded_eq")]
+    public DateTime? DateEnded_EQ { get; set; }
+    /// <summary> DateEnded less than or equal to </summary>
+    [JsonProperty("dateEnded_lte")]
+    public DateTime? DateEnded_LTE { get; set; }
+    /// <summary> DateEnded greater than or equal to </summary>
+    [JsonProperty("dateEnded_gte")]
+    public DateTime? DateEnded_GTE { get; set; }
+
+    /// <summary> PowerDialerStatus equals </summary>
+    [JsonProperty("powerDialerStatus_eq")]
+    public string? PowerDialerStatus_EQ { get; set; }
+    /// <summary> PowerDialerStatus contains </summary>
+    [JsonProperty("powerDialerStatus_con")]
+    public string? PowerDialerStatus_CON { get; set; }
+    /// <summary> PowerDialerStatus regex </summary>
+    [JsonProperty("powerDialerStatus_reg")]
+    public string? PowerDialerStatus_REG { get; set; }
+
+    /// <summary> ErrorMessage equals </summary>
+    [JsonProperty("errorMessage_eq")]
+    public string? ErrorMessage_EQ { get; set; }
+    /// <summary> ErrorMessage contains </summary>
+    [JsonProperty("errorMessage_con")]
+    public string? ErrorMessage_CON { get; set; }
+    /// <summary> ErrorMessage regex </summary>
+    [JsonProperty("errorMessage_reg")]
+    public string? ErrorMessage_REG { get; set; }
+
+    /// <summary> NumberOfAttempts equals </summary>
+    [JsonProperty("numberOfAttempts_eq")]
+    public System.Int32? NumberOfAttempts_EQ { get; set; }
+    /// <summary> NumberOfAttempts less than or equal to </summary>
+    [JsonProperty("numberOfAttempts_lte")]
+    public System.Int32? NumberOfAttempts_LTE { get; set; }
+    /// <summary> NumberOfAttempts greater than or equal to </summary>
+    [JsonProperty("numberOfAttempts_gte")]
+    public System.Int32? NumberOfAttempts_GTE { get; set; }
+
+    /// <summary> ContactName equals </summary>
+    [JsonProperty("contactName_eq")]
+    public string? ContactName_EQ { get; set; }
+    /// <summary> ContactName contains </summary>
+    [JsonProperty("contactName_con")]
+    public string? ContactName_CON { get; set; }
+    /// <summary> ContactName regex </summary>
+    [JsonProperty("contactName_reg")]
+    public string? ContactName_REG { get; set; }
 
     /// <summary> IdsTags equals </summary>
     [JsonProperty("idsTags_eq")]

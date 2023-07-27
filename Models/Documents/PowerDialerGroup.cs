@@ -50,17 +50,19 @@ public partial class PowerDialerGroup : UbluxDocument_ReferenceAccount_Reference
 
     #endregion
 
-    #region Subdocuments
+    /// <summary>
+    ///     Date when powerdialer group started
+    /// </summary>
+    [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
+    public DateTime? DateStarted { get; set; }
 
     /// <summary>
-    ///     Subdocument
+    ///     Date when powerdialer group ended
     /// </summary>
-    [AllowUpdate(true)]
+    [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [UbluxValidationRequired]
-    public required List<PowerDialerContact> PowerDialerContacts { get; set; } = new();
-
-    #endregion
+    public DateTime? DateEnded { get; set; }
 
     /// <summary>
     ///     Friendly name of power dialer group

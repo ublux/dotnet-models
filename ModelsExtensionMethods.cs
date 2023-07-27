@@ -63,6 +63,7 @@ public static class ModelsExtensionMethods
             Collections.Phones => typeof(Phone),
             Collections.PhoneConfigurations => typeof(PhoneConfiguration),
             Collections.PowerDialerGroups => typeof(PowerDialerGroup),
+            Collections.PowerDialerContacts => typeof(PowerDialerContact),
             Collections.SMS => typeof(SMS),
             //Collections.TrunkOriginations => typeof(TrunkOrigination),
             Collections.TrunkTerminations => typeof(TrunkTermination),
@@ -238,6 +239,12 @@ public static class ModelsExtensionMethods
             _getCollectionUsedByTypeCache[type] = Collections.PowerDialerGroups;
             return Collections.PowerDialerGroups;
         }
+        if (typeof(PowerDialerContact).IsAssignableFrom(type))
+        {
+            // store on cache so next time it is faster
+            _getCollectionUsedByTypeCache[type] = Collections.PowerDialerContacts;
+            return Collections.PowerDialerContacts;
+        }
         if (typeof(SMS).IsAssignableFrom(type))
         {
             // store on cache so next time it is faster
@@ -382,6 +389,7 @@ public static class ModelsExtensionMethods
         { Phone.DocumentPrefix, Collections.Phones },
         { PhoneConfiguration.DocumentPrefix, Collections.PhoneConfigurations },
         { PowerDialerGroup.DocumentPrefix, Collections.PowerDialerGroups },
+        { PowerDialerContact.DocumentPrefix, Collections.PowerDialerContacts },
         { SMS.DocumentPrefix, Collections.SMS },
         //{ TrunkOriginationForward.DocumentPrefix, Collections.TrunkOriginations },
         { TrunkTerminationGroup.DocumentPrefix, Collections.TrunkTerminationGroups },
@@ -427,6 +435,7 @@ public static class ModelsExtensionMethods
                 Collections.Phones,
                 //Collections.PhoneConfigurations,
                 // Collections.PowerDialerGroups,
+                // Collections.PowerDialerContacts,
                 // Collections.SMS,
                 //Collections.TrunkOriginations,
                 Collections.TrunkTerminations,

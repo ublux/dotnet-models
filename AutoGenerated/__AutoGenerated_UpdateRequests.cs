@@ -1376,10 +1376,6 @@ public class PowerDialerGroupUpdateRequest // : IUbluxDocumentId
     /// </summary>
     public List<System.String>? IdPhonesAgents { get; set; }
     /// <summary>
-    /// Subdocument
-    /// </summary>
-    public List<Ublux.Communications.Models.PowerDialerContact>? PowerDialerContacts { get; set; }
-    /// <summary>
     /// Friendly name of power dialer group
     /// </summary>
     public String? FriendlyName { get; set; }
@@ -1397,8 +1393,6 @@ public class PowerDialerGroupUpdateRequest // : IUbluxDocumentId
     {
         if(jsonRaw.Contains($@"""{nameof(this.IdPhonesAgents)}""", StringComparison.OrdinalIgnoreCase))
             powerDialerGroup.IdPhonesAgents = this.IdPhonesAgents;
-        if(jsonRaw.Contains($@"""{nameof(this.PowerDialerContacts)}""", StringComparison.OrdinalIgnoreCase))
-            powerDialerGroup.PowerDialerContacts = this.PowerDialerContacts;
         if(jsonRaw.Contains($@"""{nameof(this.FriendlyName)}""", StringComparison.OrdinalIgnoreCase))
             powerDialerGroup.FriendlyName = this.FriendlyName;
         if(jsonRaw.Contains($@"""{nameof(this.Description)}""", StringComparison.OrdinalIgnoreCase))
@@ -1896,6 +1890,43 @@ public class CallOutgoingToPowerDialerUpdateRequest // : IUbluxDocumentId
             callOutgoingToPowerDialer.CallResult = this.CallResult.Value;
         if(jsonRaw.Contains($@"""{nameof(this.IdsTags)}""", StringComparison.OrdinalIgnoreCase))
             callOutgoingToPowerDialer.IdsTags = this.IdsTags;
+    }
+
+}
+
+/// <summary>
+/// Peer to call on power dialer group
+/// </summary>
+public class PowerDialerContactUpdateRequest // : IUbluxDocumentId
+{
+    /// <summary>
+    /// Error message
+    /// </summary>
+    public String? ErrorMessage { get; set; }
+    /// <summary>
+    /// If powerdialer fails it attempts to call again. If it reaches 3 attempts and fails it will stop
+    /// </summary>
+    public Int32? NumberOfAttempts { get; set; }
+    /// <summary>
+    /// Name of the contact in order to know who are we calling
+    /// </summary>
+    public String? ContactName { get; set; }
+    /// <summary>
+    /// It is nullable because there are cases where it makes no sense to point to an account.
+    /// For example a CloudService user will point to no account
+    /// </summary>
+    public List<System.String>? IdsTags { get; set; }
+    /// <summary> Set values on actual document </summary>
+    public void SetValuesOnPowerDialerContact(PowerDialerContact powerDialerContact, string jsonRaw)
+    {
+        if(jsonRaw.Contains($@"""{nameof(this.ErrorMessage)}""", StringComparison.OrdinalIgnoreCase))
+            powerDialerContact.ErrorMessage = this.ErrorMessage;
+        if(jsonRaw.Contains($@"""{nameof(this.NumberOfAttempts)}""", StringComparison.OrdinalIgnoreCase))
+            powerDialerContact.NumberOfAttempts = this.NumberOfAttempts.Value;
+        if(jsonRaw.Contains($@"""{nameof(this.ContactName)}""", StringComparison.OrdinalIgnoreCase))
+            powerDialerContact.ContactName = this.ContactName;
+        if(jsonRaw.Contains($@"""{nameof(this.IdsTags)}""", StringComparison.OrdinalIgnoreCase))
+            powerDialerContact.IdsTags = this.IdsTags;
     }
 
 }

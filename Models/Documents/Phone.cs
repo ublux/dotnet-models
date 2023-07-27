@@ -193,6 +193,7 @@ public partial class Phone : UbluxDocument_ReferenceAccount_ReferenceTags
     ///     Can only set if phone is disconnected.
     /// </summary>
     [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     public string? GroupName { get; set; }    
 
     #region MongoDB
