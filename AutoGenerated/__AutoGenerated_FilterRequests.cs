@@ -5795,45 +5795,15 @@ public class FaxOutgoingGroupFilterRequest
     [JsonProperty("idVoipNumberFax_reg")]
     public string? IdVoipNumberFax_REG { get; set; }
 
-    /// <summary> FaxesOutgoing.NumberOfPages equals </summary>
-    [JsonProperty("faxesOutgoing_numberOfPages_eq")]
-    public System.Int32? FaxesOutgoing_NumberOfPages_EQ { get; set; }
-    /// <summary> FaxesOutgoing.NumberOfPages less than or equal to </summary>
-    [JsonProperty("faxesOutgoing_numberOfPages_lte")]
-    public System.Int32? FaxesOutgoing_NumberOfPages_LTE { get; set; }
-    /// <summary> FaxesOutgoing.NumberOfPages greater than or equal to </summary>
-    [JsonProperty("faxesOutgoing_numberOfPages_gte")]
-    public System.Int32? FaxesOutgoing_NumberOfPages_GTE { get; set; }
-
-    /// <summary> FaxesOutgoing.FaxStatus equals </summary>
-    [JsonProperty("faxesOutgoing_faxStatus_eq")]
-    public string? FaxesOutgoing_FaxStatus_EQ { get; set; }
-    /// <summary> FaxesOutgoing.FaxStatus contains </summary>
-    [JsonProperty("faxesOutgoing_faxStatus_con")]
-    public string? FaxesOutgoing_FaxStatus_CON { get; set; }
-    /// <summary> FaxesOutgoing.FaxStatus regex </summary>
-    [JsonProperty("faxesOutgoing_faxStatus_reg")]
-    public string? FaxesOutgoing_FaxStatus_REG { get; set; }
-
-    /// <summary> FaxesOutgoing.To equals </summary>
-    [JsonProperty("faxesOutgoing_to_eq")]
-    public string? FaxesOutgoing_To_EQ { get; set; }
-    /// <summary> FaxesOutgoing.To contains </summary>
-    [JsonProperty("faxesOutgoing_to_con")]
-    public string? FaxesOutgoing_To_CON { get; set; }
-    /// <summary> FaxesOutgoing.To regex </summary>
-    [JsonProperty("faxesOutgoing_to_reg")]
-    public string? FaxesOutgoing_To_REG { get; set; }
-
-    /// <summary> FaxesOutgoing.ErrorMessage equals </summary>
-    [JsonProperty("faxesOutgoing_errorMessage_eq")]
-    public string? FaxesOutgoing_ErrorMessage_EQ { get; set; }
-    /// <summary> FaxesOutgoing.ErrorMessage contains </summary>
-    [JsonProperty("faxesOutgoing_errorMessage_con")]
-    public string? FaxesOutgoing_ErrorMessage_CON { get; set; }
-    /// <summary> FaxesOutgoing.ErrorMessage regex </summary>
-    [JsonProperty("faxesOutgoing_errorMessage_reg")]
-    public string? FaxesOutgoing_ErrorMessage_REG { get; set; }
+    /// <summary> FaxesOutgoing.IdFaxOutgoingGroup equals </summary>
+    [JsonProperty("faxesOutgoing_idFaxOutgoingGroup_eq")]
+    public string? FaxesOutgoing_IdFaxOutgoingGroup_EQ { get; set; }
+    /// <summary> FaxesOutgoing.IdFaxOutgoingGroup contains </summary>
+    [JsonProperty("faxesOutgoing_idFaxOutgoingGroup_con")]
+    public string? FaxesOutgoing_IdFaxOutgoingGroup_CON { get; set; }
+    /// <summary> FaxesOutgoing.IdFaxOutgoingGroup regex </summary>
+    [JsonProperty("faxesOutgoing_idFaxOutgoingGroup_reg")]
+    public string? FaxesOutgoing_IdFaxOutgoingGroup_REG { get; set; }
 
     /// <summary> FaxesOutgoing.Pdf.InstanceId equals </summary>
     [JsonProperty("faxesOutgoing_pdf_instanceId_eq")]
@@ -5885,6 +5855,36 @@ public class FaxOutgoingGroupFilterRequest
     [JsonProperty("faxesOutgoing_pdf_id_reg")]
     public string? FaxesOutgoing_Pdf_Id_REG { get; set; }
 
+
+    /// <summary> FaxesOutgoing.Status equals </summary>
+    [JsonProperty("faxesOutgoing_status_eq")]
+    public string? FaxesOutgoing_Status_EQ { get; set; }
+    /// <summary> FaxesOutgoing.Status contains </summary>
+    [JsonProperty("faxesOutgoing_status_con")]
+    public string? FaxesOutgoing_Status_CON { get; set; }
+    /// <summary> FaxesOutgoing.Status regex </summary>
+    [JsonProperty("faxesOutgoing_status_reg")]
+    public string? FaxesOutgoing_Status_REG { get; set; }
+
+    /// <summary> FaxesOutgoing.NumberOfPages equals </summary>
+    [JsonProperty("faxesOutgoing_numberOfPages_eq")]
+    public System.Int32? FaxesOutgoing_NumberOfPages_EQ { get; set; }
+    /// <summary> FaxesOutgoing.NumberOfPages less than or equal to </summary>
+    [JsonProperty("faxesOutgoing_numberOfPages_lte")]
+    public System.Int32? FaxesOutgoing_NumberOfPages_LTE { get; set; }
+    /// <summary> FaxesOutgoing.NumberOfPages greater than or equal to </summary>
+    [JsonProperty("faxesOutgoing_numberOfPages_gte")]
+    public System.Int32? FaxesOutgoing_NumberOfPages_GTE { get; set; }
+
+    /// <summary> FaxesOutgoing.ErrorMessage equals </summary>
+    [JsonProperty("faxesOutgoing_errorMessage_eq")]
+    public string? FaxesOutgoing_ErrorMessage_EQ { get; set; }
+    /// <summary> FaxesOutgoing.ErrorMessage contains </summary>
+    [JsonProperty("faxesOutgoing_errorMessage_con")]
+    public string? FaxesOutgoing_ErrorMessage_CON { get; set; }
+    /// <summary> FaxesOutgoing.ErrorMessage regex </summary>
+    [JsonProperty("faxesOutgoing_errorMessage_reg")]
+    public string? FaxesOutgoing_ErrorMessage_REG { get; set; }
 
     /// <summary> FaxesOutgoing.NumberOfPagesSent equals </summary>
     [JsonProperty("faxesOutgoing_numberOfPagesSent_eq")]
@@ -5941,6 +5941,26 @@ public class FaxOutgoingGroupFilterRequest
     [JsonProperty("from_reg")]
     public string? From_REG { get; set; }
 
+    /// <summary> To equals </summary>
+    [JsonProperty("to_eq")]
+    public string? To_EQ { get; set; }
+    /// <summary> To contains </summary>
+    [JsonProperty("to_con")]
+    public string? To_CON { get; set; }
+    /// <summary> To regex </summary>
+    [JsonProperty("to_reg")]
+    public string? To_REG { get; set; }
+
+    /// <summary> ToCountry equals </summary>
+    [JsonProperty("toCountry_eq")]
+    public string? ToCountry_EQ { get; set; }
+    /// <summary> ToCountry contains </summary>
+    [JsonProperty("toCountry_con")]
+    public string? ToCountry_CON { get; set; }
+    /// <summary> ToCountry regex </summary>
+    [JsonProperty("toCountry_reg")]
+    public string? ToCountry_REG { get; set; }
+
     /// <summary> IdsEmailsSendConfirmation equals </summary>
     [JsonProperty("idsEmailsSendConfirmation_eq")]
     public string? IdsEmailsSendConfirmation_EQ { get; set; }
@@ -5951,9 +5971,15 @@ public class FaxOutgoingGroupFilterRequest
     [JsonProperty("idsEmailsSendConfirmation_reg")]
     public string? IdsEmailsSendConfirmation_REG { get; set; }
 
-    /// <summary> ContainsError equals </summary>
-    [JsonProperty("containsError_eq")]
-    public bool? ContainsError_EQ { get; set; }
+    /// <summary> Errors equals </summary>
+    [JsonProperty("errors_eq")]
+    public string? Errors_EQ { get; set; }
+    /// <summary> Errors contains </summary>
+    [JsonProperty("errors_con")]
+    public string? Errors_CON { get; set; }
+    /// <summary> Errors regex </summary>
+    [JsonProperty("errors_reg")]
+    public string? Errors_REG { get; set; }
 
     /// <summary> Status equals </summary>
     [JsonProperty("status_eq")]

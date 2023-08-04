@@ -126,8 +126,17 @@ public enum SnsTopic
 
     #endregion
 
+    #region WA
+
     /// <summary>
     ///     IdPhone, BlfStatus[]
     /// </summary>
     BLF,
+
+    /// <summary>
+    ///     PowerDialer sns topic
+    /// </summary>
+    PowerDialer
+
+    #endregion
 }

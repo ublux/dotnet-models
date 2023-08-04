@@ -46,23 +46,38 @@ public partial class FaxOutgoingGroup : UbluxDocument_ReferenceAccount_Reference
     [AllowUpdate(false)] 
     [SwaggerSchema(ReadOnly = true)] 
     [UbluxValidationRequired]
-    public required string From { get; set; } = string.Empty;
+    public required string From { get; set; } = string.Empty;    
+
+    /// <summary>
+    ///     To phone number
+    /// </summary>
+    [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
+    [UbluxValidationRequired]
+    public required string To { get; set; }
+
+    /// <summary>
+    ///     To country
+    /// </summary>
+    [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
+    [UbluxValidationRequired]
+    public required CountryIsoCode ToCountry { get; set; }
 
     /// <summary>
     ///     If fax is sent successfully then send confirmation to this emails
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [UbluxValidationRequired]
     [References(typeof(Email))]
-    public required List<string> IdsEmailsSendConfirmation { get; set; } = new();
+    public List<string> IdsEmailsSendConfirmation { get; set; } = new();
 
     /// <summary>
-    ///     True if there is an error
+    ///     Error message
     /// </summary>
-    [AllowUpdate(false)] 
-    [SwaggerSchema(ReadOnly = true)] 
-    public bool ContainsError { get; set; }
+    [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
+    public List<string> Errors { get; set; } = new();
 
     /// <summary>
     ///     The status. Is it pending, processing or complete?

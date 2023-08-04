@@ -1,6 +1,5 @@
 ﻿#if UBLUX_BACKEND
 
-
 namespace Ublux.Communications.Models.SubDocuments;
 
 /// <summary>
@@ -11,7 +10,6 @@ public partial class FaxOutgoing : UbluxSubDocument
     /// <summary>
     ///     This is a subdocument. Id of parent
     /// </summary>
-    [IgnoreDataMember]
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
     [References(typeof(FaxOutgoingGroup))]
@@ -23,17 +21,17 @@ public partial class FaxOutgoing : UbluxSubDocument
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [IgnoreDataMember]
-    [UbluxValidationRequired]
-    public required EmailAttachment EmailAttachment { get; set; }
+    //[IgnoreDataMember]
+    //[UbluxValidationRequired]
+    public required StoredFile Pdf { get; set; }
 
     /// <summary>
     ///     True when done sending fax
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [IgnoreDataMember]
-    public bool IsComplete { get; set; }
+    //[IgnoreDataMember]
+    public ProcessStatus Status { get; set; }
 
     /// <summary>
     ///     Determine if fax contains an error

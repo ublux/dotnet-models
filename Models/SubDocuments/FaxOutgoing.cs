@@ -13,21 +13,21 @@ public partial class FaxOutgoing : UbluxSubDocument
     [UbluxValidationRequired]
     public required int NumberOfPages { get; set; }
 
-    /// <summary>
-    ///     Status of fax sent
-    /// </summary>
-    [AllowUpdate(false)]
-    [SwaggerSchema(ReadOnly = true)]
-    [UbluxValidationRequired]
-    public required string FaxStatus { get; set; }
+    ///// <summary>
+    /////     Status of fax sent
+    ///// </summary>
+    //[AllowUpdate(false)]
+    //[SwaggerSchema(ReadOnly = true)]
+    //[UbluxValidationRequired]
+    //public required string FaxStatus { get; set; }
 
-    /// <summary>
-    ///     Fax number to where fax was sent
-    /// </summary>
-    [AllowUpdate(false)]
-    [SwaggerSchema(ReadOnly = true)]
-    [UbluxValidationRequired]
-    public required string To { get; set; }
+    ///// <summary>
+    /////     Fax number to where fax was sent
+    ///// </summary>
+    //[AllowUpdate(false)]
+    //[SwaggerSchema(ReadOnly = true)]
+    //[UbluxValidationRequired]
+    //public required string To { get; set; }
 
     /// <summary>
     ///     Description of error
@@ -37,27 +37,27 @@ public partial class FaxOutgoing : UbluxSubDocument
     [UbluxValidationStringRange(2000)]
     public string? ErrorMessage { get; set; }
 
-    /// <summary>
-    ///     Path where Pdf exists on disk
-    /// </summary>
-    private string? pdfFilePath;
+    ///// <summary>
+    /////     Path where Pdf exists on disk
+    ///// </summary>
+    //private string? pdfFilePath;
 
-    /// <summary>
-    ///     Setter
-    /// </summary>
-    public string? GetPdfFilePath() => pdfFilePath;
-    /// <summary>
-    ///     Getter
-    /// </summary>
-    public void SetPdfFilePath(string? pdfFilePath) => this.pdfFilePath = pdfFilePath;
+    ///// <summary>
+    /////     Setter
+    ///// </summary>
+    //public string? GetPdfFilePath() => pdfFilePath;
+    ///// <summary>
+    /////     Getter
+    ///// </summary>
+    //public void SetPdfFilePath(string? pdfFilePath) => this.pdfFilePath = pdfFilePath;
 
-    /// <summary>
-    ///     Pdf to be sent as a fax
-    /// </summary>
-    [AllowUpdate(false)]
-    [SwaggerSchema(ReadOnly = true)]
-    [UbluxValidationRequired]
-    public required StoredFile Pdf { get; set; }
+    ///// <summary>
+    /////     Pdf to be sent as a fax
+    ///// </summary>
+    //[AllowUpdate(false)]
+    //[SwaggerSchema(ReadOnly = true)]
+    //[UbluxValidationRequired]
+    //public required StoredFile Pdf { get; set; }
 
     /// <summary>
     ///     Number of pages that where actually sent
