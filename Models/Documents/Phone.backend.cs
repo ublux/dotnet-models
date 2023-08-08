@@ -1,5 +1,6 @@
 ﻿#if UBLUX_BACKEND
 
+using Microsoft.Extensions.Logging;
 using System.Security.Cryptography;
 using System.Text.RegularExpressions;
 
@@ -113,7 +114,7 @@ public partial class Phone
     /// <summary>
     ///     Get caller id number
     /// </summary>
-    public string GetCallerIdNumber()
+    public string GetCallerIdNumber(ILogger logger)
     {
         if (this.CallerIdNumbers is null || this.CallerIdNumbers.Count == 0)
             return "";
@@ -121,7 +122,8 @@ public partial class Phone
         if(this.CallerIdIndex < this.CallerIdNumbers.Count)
             return this.CallerIdNumbers[this.CallerIdIndex];
 
-        return "";
+        logger.Log(LogLevel.Error, 374827381, "Caller id index is outside of range for phone {id}. Setting first one", this.id);
+        return this.CallerIdNumbers[0];
     }
 
 }

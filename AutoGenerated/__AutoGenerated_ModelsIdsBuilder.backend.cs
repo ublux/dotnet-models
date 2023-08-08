@@ -276,15 +276,15 @@ namespace Ublux.Communications.Models.Documents {
         /// <summary> Id prefix </summary>
         public const string DocumentPrefix = "Vo";
 
-        /// <summary> Build Id </summary>
-        public static BuiltId BuildId(RunningApplicationInstance instance) => new($"{DocumentPrefix}.{instance.Id}.{instance.IdGlobalAutoIncrement()}");
+        /// <summary> Voicemail id. A call can only have one voicemail so its ok to have it like this </summary>
+        public static BuiltId BuildId(RunningApplicationInstance instance, string idCall) => new($"{DocumentPrefix}.{instance.Id}.{idCall}");
     }
     public partial class VoicemailForwarded {
         /// <summary> Id prefix </summary>
         public new const string DocumentPrefix = "VF";
 
-        /// <summary> Build Id </summary>
-        public new static BuiltId BuildId(RunningApplicationInstance instance) => new($"{DocumentPrefix}.{instance.Id}.{instance.IdGlobalAutoIncrement()}");
+        /// <summary> Voicemail id. A call can only have one voicemail so its ok to have it like this </summary>
+        public new static BuiltId BuildId(RunningApplicationInstance instance, string idCall) => new($"{DocumentPrefix}.{instance.Id}.{idCall}");
     }
     public partial class VoipNumberAvailableForPurchase {
         /// <summary> Id prefix </summary>
