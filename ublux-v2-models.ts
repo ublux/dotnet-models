@@ -4396,15 +4396,14 @@ For example a CloudService user will point to no account */
 
 /** Outgoing fax */
 export interface FaxOutgoing {
+    /** This is a subdocument. Id of parent */
+    readonly idFaxOutgoingGroup?: string;
+    pdf?: StoredFile;
+    status?: ProcessStatus;
     /** Number of pages that Pdf contains */
     readonly numberOfPages?: number;
-    /** Status of fax sent */
-    readonly faxStatus?: string;
-    /** Fax number to where fax was sent */
-    readonly to?: string;
     /** Description of error */
     readonly errorMessage?: string | null;
-    pdf?: StoredFile;
     /** Number of pages that where actually sent */
     readonly numberOfPagesSent?: number;
     /** Is pdf in portrait or landscape mode? */
@@ -4427,10 +4426,13 @@ export interface FaxOutgoingGroup {
     readonly faxesOutgoing?: FaxOutgoing[];
     /** Phone number where fax is sent */
     readonly from?: string;
+    /** To phone number */
+    readonly to?: string;
+    toCountry?: CountryIsoCode;
     /** If fax is sent successfully then send confirmation to this emails */
     readonly idsEmailsSendConfirmation?: string[];
-    /** True if there is an error */
-    readonly containsError?: boolean;
+    /** Error message */
+    readonly errors?: string[];
     status?: ProcessStatus;
     /** It is nullable because there are cases where it makes no sense to point to an account. 
 For example a CloudService user will point to no account */
@@ -4449,30 +4451,12 @@ export interface FaxOutgoingGroupFilterRequest {
     idVoipNumberFax_con?: string | null;
     /** IdVoipNumberFax regex */
     idVoipNumberFax_reg?: string | null;
-    /** FaxesOutgoing.NumberOfPages equals */
-    faxesOutgoing_numberOfPages_eq?: number | null;
-    /** FaxesOutgoing.NumberOfPages less than or equal to */
-    faxesOutgoing_numberOfPages_lte?: number | null;
-    /** FaxesOutgoing.NumberOfPages greater than or equal to */
-    faxesOutgoing_numberOfPages_gte?: number | null;
-    /** FaxesOutgoing.FaxStatus equals */
-    faxesOutgoing_faxStatus_eq?: string | null;
-    /** FaxesOutgoing.FaxStatus contains */
-    faxesOutgoing_faxStatus_con?: string | null;
-    /** FaxesOutgoing.FaxStatus regex */
-    faxesOutgoing_faxStatus_reg?: string | null;
-    /** FaxesOutgoing.To equals */
-    faxesOutgoing_to_eq?: string | null;
-    /** FaxesOutgoing.To contains */
-    faxesOutgoing_to_con?: string | null;
-    /** FaxesOutgoing.To regex */
-    faxesOutgoing_to_reg?: string | null;
-    /** FaxesOutgoing.ErrorMessage equals */
-    faxesOutgoing_errorMessage_eq?: string | null;
-    /** FaxesOutgoing.ErrorMessage contains */
-    faxesOutgoing_errorMessage_con?: string | null;
-    /** FaxesOutgoing.ErrorMessage regex */
-    faxesOutgoing_errorMessage_reg?: string | null;
+    /** FaxesOutgoing.IdFaxOutgoingGroup equals */
+    faxesOutgoing_idFaxOutgoingGroup_eq?: string | null;
+    /** FaxesOutgoing.IdFaxOutgoingGroup contains */
+    faxesOutgoing_idFaxOutgoingGroup_con?: string | null;
+    /** FaxesOutgoing.IdFaxOutgoingGroup regex */
+    faxesOutgoing_idFaxOutgoingGroup_reg?: string | null;
     /** FaxesOutgoing.Pdf.InstanceId equals */
     faxesOutgoing_pdf_instanceId_eq?: string | null;
     /** FaxesOutgoing.Pdf.InstanceId contains */
@@ -4503,6 +4487,24 @@ export interface FaxOutgoingGroupFilterRequest {
     faxesOutgoing_pdf_id_con?: string | null;
     /** FaxesOutgoing.Pdf.Id regex */
     faxesOutgoing_pdf_id_reg?: string | null;
+    /** FaxesOutgoing.Status equals */
+    faxesOutgoing_status_eq?: string | null;
+    /** FaxesOutgoing.Status contains */
+    faxesOutgoing_status_con?: string | null;
+    /** FaxesOutgoing.Status regex */
+    faxesOutgoing_status_reg?: string | null;
+    /** FaxesOutgoing.NumberOfPages equals */
+    faxesOutgoing_numberOfPages_eq?: number | null;
+    /** FaxesOutgoing.NumberOfPages less than or equal to */
+    faxesOutgoing_numberOfPages_lte?: number | null;
+    /** FaxesOutgoing.NumberOfPages greater than or equal to */
+    faxesOutgoing_numberOfPages_gte?: number | null;
+    /** FaxesOutgoing.ErrorMessage equals */
+    faxesOutgoing_errorMessage_eq?: string | null;
+    /** FaxesOutgoing.ErrorMessage contains */
+    faxesOutgoing_errorMessage_con?: string | null;
+    /** FaxesOutgoing.ErrorMessage regex */
+    faxesOutgoing_errorMessage_reg?: string | null;
     /** FaxesOutgoing.NumberOfPagesSent equals */
     faxesOutgoing_numberOfPagesSent_eq?: number | null;
     /** FaxesOutgoing.NumberOfPagesSent less than or equal to */
@@ -4535,14 +4537,30 @@ export interface FaxOutgoingGroupFilterRequest {
     from_con?: string | null;
     /** From regex */
     from_reg?: string | null;
+    /** To equals */
+    to_eq?: string | null;
+    /** To contains */
+    to_con?: string | null;
+    /** To regex */
+    to_reg?: string | null;
+    /** ToCountry equals */
+    toCountry_eq?: string | null;
+    /** ToCountry contains */
+    toCountry_con?: string | null;
+    /** ToCountry regex */
+    toCountry_reg?: string | null;
     /** IdsEmailsSendConfirmation equals */
     idsEmailsSendConfirmation_eq?: string | null;
     /** IdsEmailsSendConfirmation contains */
     idsEmailsSendConfirmation_con?: string | null;
     /** IdsEmailsSendConfirmation regex */
     idsEmailsSendConfirmation_reg?: string | null;
-    /** ContainsError equals */
-    containsError_eq?: boolean | null;
+    /** Errors equals */
+    errors_eq?: string | null;
+    /** Errors contains */
+    errors_con?: string | null;
+    /** Errors regex */
+    errors_reg?: string | null;
     /** Status equals */
     status_eq?: string | null;
     /** Status contains */
@@ -5302,8 +5320,8 @@ export interface NodeDigits {
 }
 
 export interface NodeDynamicExtension {
-    /** If extension is not found then call this extension */
-    idExtensionDefault?: string | null;
+    /** If extension is not found then goto this bookmark */
+    bookmark?: string | null;
     /** Prevent calling this extensions */
     idsExtensionsToExclude?: string[];
     flowNodeType?: FlowNodeType;
@@ -6357,6 +6375,7 @@ export enum SnsTopic {
     Fax_SendingProgress = "Fax_SendingProgress",
     CallFlowLogic_Progress = "CallFlowLogic_Progress",
     BLF = "BLF",
+    PowerDialer = "PowerDialer",
 }
 
 /** Speed dial */

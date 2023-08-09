@@ -3,10 +3,15 @@
 /// <summary></summary>
 public partial class NodeDynamicExtension
 {
+    ///// <summary>
+    /////     If extension is not found then goto this bookmark
+    ///// </summary>
+    //public string? IdExtensionDefault { get; set; }
+
     /// <summary>
-    ///     If extension is not found then call this extension
+    ///     If extension is not found then goto this bookmark
     /// </summary>
-    public string? IdExtensionDefault { get; set; }
+    public string? Bookmark { get; set; }
 
     /// <summary>
     ///     Prevent calling this extensions
