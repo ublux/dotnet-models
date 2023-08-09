@@ -42,7 +42,7 @@ public class UbluxPropInfoExtra
     {
         if (UbluxValidationRequiredAttribute != null && UbluxValidationRequiredAttribute.CustomErrorMessage != null)
             return UbluxValidationRequiredAttribute.CustomErrorMessage.Replace("path", propertyName);
-        return $"'{propertyName}' cannot be null";
+        return $"'{propertyName}' cannot be null or empty";
     }
 
     /// <summary>
