@@ -149,10 +149,16 @@ public static partial class Constants
     ///     rtpstart on rtp.conf
     /// </summary>
     public const int RtpPortStart = 10_000;
+
     /// <summary>
-    ///     rtpend on rtp.conf
+    ///     rtpend on rtp.conf. Used to be port 20_000 but we use that port for Sse to avoid having to change all firewall rules
     /// </summary>
-    public const int RtpPortEnd = 20_000;
+    public const int RtpPortEnd = 19_999;
+
+    /// <summary>
+    ///     Port used for Server side events used to send notifications to restaurantes about in progress calls
+    /// </summary>
+    public const int PortSse = 20_000;
 
     /// <summary>
     ///     Simple tcp server used on pbx
