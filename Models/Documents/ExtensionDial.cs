@@ -33,6 +33,12 @@ public partial class ExtensionDial : Extension
     [AllowUpdate(true)]
     public SendEmailNotificationIfNotAnswered? SendEmailNotificationIfNotAnswered { get; set; }
 
+    /// <summary>
+    ///     Handicap to ensure all phones take an equal number of calls
+    /// </summary>
+    [AllowUpdate(true)]
+    public Handicap? Handicap { get; set; }
+
     #endregion
 
     /// <summary>

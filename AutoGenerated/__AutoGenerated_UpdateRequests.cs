@@ -779,6 +779,10 @@ public class ExtensionDialUpdateRequest // : IUbluxDocumentId
     /// </summary>
     public SendEmailNotificationIfNotAnswered? SendEmailNotificationIfNotAnswered { get; set; }
     /// <summary>
+    /// Handicap to ensure all phones take an equal number of calls
+    /// </summary>
+    public Handicap? Handicap { get; set; }
+    /// <summary>
     /// Number of seconds each line will ring
     /// </summary>
     public Int32? RingTimeInSeconds { get; set; }
@@ -816,6 +820,8 @@ public class ExtensionDialUpdateRequest // : IUbluxDocumentId
             extensionDial.EventActionToExecuteIfNotAnswered = this.EventActionToExecuteIfNotAnswered;
         if(jsonRaw.Contains($@"""{nameof(this.SendEmailNotificationIfNotAnswered)}""", StringComparison.OrdinalIgnoreCase))
             extensionDial.SendEmailNotificationIfNotAnswered = this.SendEmailNotificationIfNotAnswered;
+        if(jsonRaw.Contains($@"""{nameof(this.Handicap)}""", StringComparison.OrdinalIgnoreCase))
+            extensionDial.Handicap = this.Handicap;
         if(jsonRaw.Contains($@"""{nameof(this.RingTimeInSeconds)}""", StringComparison.OrdinalIgnoreCase))
             extensionDial.RingTimeInSeconds = this.RingTimeInSeconds.Value;
         if(jsonRaw.Contains($@"""{nameof(this.IdMusicOnHoldGroup)}""", StringComparison.OrdinalIgnoreCase))
@@ -921,6 +927,10 @@ public class ExtensionQueueUpdateRequest // : IUbluxDocumentId
     /// </summary>
     public SendEmailNotificationIfNotAnswered? SendEmailNotificationIfNotAnswered { get; set; }
     /// <summary>
+    /// Handicap to ensure all phones take an equal number of calls
+    /// </summary>
+    public Handicap? Handicap { get; set; }
+    /// <summary>
     /// Number of seconds each line will ring
     /// </summary>
     public Int32? RingTimeInSeconds { get; set; }
@@ -976,6 +986,8 @@ public class ExtensionQueueUpdateRequest // : IUbluxDocumentId
             extensionQueue.EventActionToExecuteIfNotAnswered = this.EventActionToExecuteIfNotAnswered;
         if(jsonRaw.Contains($@"""{nameof(this.SendEmailNotificationIfNotAnswered)}""", StringComparison.OrdinalIgnoreCase))
             extensionQueue.SendEmailNotificationIfNotAnswered = this.SendEmailNotificationIfNotAnswered;
+        if(jsonRaw.Contains($@"""{nameof(this.Handicap)}""", StringComparison.OrdinalIgnoreCase))
+            extensionQueue.Handicap = this.Handicap;
         if(jsonRaw.Contains($@"""{nameof(this.RingTimeInSeconds)}""", StringComparison.OrdinalIgnoreCase))
             extensionQueue.RingTimeInSeconds = this.RingTimeInSeconds.Value;
         if(jsonRaw.Contains($@"""{nameof(this.IdMusicOnHoldGroup)}""", StringComparison.OrdinalIgnoreCase))

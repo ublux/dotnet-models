@@ -5026,6 +5026,27 @@ public class ExtensionDialFilterRequest
     public System.Int32? SendEmailNotificationIfNotAnswered_PreventSendingNotificationIfLastLessThanNSeconds_GTE { get; set; }
 
 
+    /// <summary> Handicap.StopRingingIfCountReaches equals </summary>
+    [JsonProperty("handicap_stopRingingIfCountReaches_eq")]
+    public System.Int32? Handicap_StopRingingIfCountReaches_EQ { get; set; }
+    /// <summary> Handicap.StopRingingIfCountReaches less than or equal to </summary>
+    [JsonProperty("handicap_stopRingingIfCountReaches_lte")]
+    public System.Int32? Handicap_StopRingingIfCountReaches_LTE { get; set; }
+    /// <summary> Handicap.StopRingingIfCountReaches greater than or equal to </summary>
+    [JsonProperty("handicap_stopRingingIfCountReaches_gte")]
+    public System.Int32? Handicap_StopRingingIfCountReaches_GTE { get; set; }
+
+    /// <summary> Handicap.ResetInMinutes equals </summary>
+    [JsonProperty("handicap_resetInMinutes_eq")]
+    public System.Int32? Handicap_ResetInMinutes_EQ { get; set; }
+    /// <summary> Handicap.ResetInMinutes less than or equal to </summary>
+    [JsonProperty("handicap_resetInMinutes_lte")]
+    public System.Int32? Handicap_ResetInMinutes_LTE { get; set; }
+    /// <summary> Handicap.ResetInMinutes greater than or equal to </summary>
+    [JsonProperty("handicap_resetInMinutes_gte")]
+    public System.Int32? Handicap_ResetInMinutes_GTE { get; set; }
+
+
     /// <summary> RingTimeInSeconds equals </summary>
     [JsonProperty("ringTimeInSeconds_eq")]
     public System.Int32? RingTimeInSeconds_EQ { get; set; }
@@ -5372,6 +5393,27 @@ public class ExtensionQueueFilterRequest
     /// <summary> SendEmailNotificationIfNotAnswered.PreventSendingNotificationIfLastLessThanNSeconds greater than or equal to </summary>
     [JsonProperty("sendEmailNotificationIfNotAnswered_preventSendingNotificationIfLastLessThanNSeconds_gte")]
     public System.Int32? SendEmailNotificationIfNotAnswered_PreventSendingNotificationIfLastLessThanNSeconds_GTE { get; set; }
+
+
+    /// <summary> Handicap.StopRingingIfCountReaches equals </summary>
+    [JsonProperty("handicap_stopRingingIfCountReaches_eq")]
+    public System.Int32? Handicap_StopRingingIfCountReaches_EQ { get; set; }
+    /// <summary> Handicap.StopRingingIfCountReaches less than or equal to </summary>
+    [JsonProperty("handicap_stopRingingIfCountReaches_lte")]
+    public System.Int32? Handicap_StopRingingIfCountReaches_LTE { get; set; }
+    /// <summary> Handicap.StopRingingIfCountReaches greater than or equal to </summary>
+    [JsonProperty("handicap_stopRingingIfCountReaches_gte")]
+    public System.Int32? Handicap_StopRingingIfCountReaches_GTE { get; set; }
+
+    /// <summary> Handicap.ResetInMinutes equals </summary>
+    [JsonProperty("handicap_resetInMinutes_eq")]
+    public System.Int32? Handicap_ResetInMinutes_EQ { get; set; }
+    /// <summary> Handicap.ResetInMinutes less than or equal to </summary>
+    [JsonProperty("handicap_resetInMinutes_lte")]
+    public System.Int32? Handicap_ResetInMinutes_LTE { get; set; }
+    /// <summary> Handicap.ResetInMinutes greater than or equal to </summary>
+    [JsonProperty("handicap_resetInMinutes_gte")]
+    public System.Int32? Handicap_ResetInMinutes_GTE { get; set; }
 
 
     /// <summary> RingTimeInSeconds equals </summary>
