@@ -161,9 +161,9 @@ public static partial class Constants
     public const int PortSse = 20_000;
 
     /// <summary>
-    ///     Simple tcp server used on pbx
+    ///     Tcp tunnel used for pbx
     /// </summary>
-    public const int PortBinaryTcpServer = 8181;
+    public const int PortPbxTunnel = 8181;
 
     /// <summary>
     ///     Common actions
