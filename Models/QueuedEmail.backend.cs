@@ -64,6 +64,18 @@ public class QueuedEmail : IUbluxDocumentId
     ///     Location where attachment is located
     /// </summary>
     public string? PathAttachment { get; set; }
+
+    /// <summary>
+    ///     Date when queued email was created
+    /// </summary>
+    public DateTime DateCreated
+    {
+        get;
+#if UBLUX_Release || RELEASE
+        set;
+#else
+#endif
+    } = DateTime.UtcNow;
 }
 
 #endif
