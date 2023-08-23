@@ -1,4 +1,4 @@
-﻿using System.Collections.Concurrent;
+using System.Collections.Concurrent;
 
 namespace Ublux.Communications.Models;
 
@@ -341,7 +341,7 @@ public static class ModelsExtensionMethods
         if (dotIndex < 0)
         {
             if (Debugger.IsAttached) Debugger.Break();
-            throw new Exception("Invalid ID" + "[_Guid_]");
+            throw new Exception("Invalid ID" + "326E-9A79");
         }
 
         var str = id[..dotIndex].ToString();
@@ -349,7 +349,7 @@ public static class ModelsExtensionMethods
         if (_collectionMap.TryGetValue(str, out var v) == false)
         {
             if (Debugger.IsAttached) Debugger.Break();
-            throw new Exception("Ensure CollectionMap dictionary contains all mappings. " + "[_Guid_]");
+            throw new Exception("Ensure CollectionMap dictionary contains all mappings. " + "C5AB-4D32");
         }
         return v;
     }
