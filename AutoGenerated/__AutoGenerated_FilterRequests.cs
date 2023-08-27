@@ -3892,15 +3892,45 @@ public class CloudServicePbxFilterRequest
     [JsonProperty("disableMonitoring_eq")]
     public bool? DisableMonitoring_EQ { get; set; }
 
-    /// <summary> HttpListenPort equals </summary>
-    [JsonProperty("httpListenPort_eq")]
-    public System.Int32? HttpListenPort_EQ { get; set; }
-    /// <summary> HttpListenPort less than or equal to </summary>
-    [JsonProperty("httpListenPort_lte")]
-    public System.Int32? HttpListenPort_LTE { get; set; }
-    /// <summary> HttpListenPort greater than or equal to </summary>
-    [JsonProperty("httpListenPort_gte")]
-    public System.Int32? HttpListenPort_GTE { get; set; }
+    /// <summary> IdExtensionForwardCallsGateway equals </summary>
+    [JsonProperty("idExtensionForwardCallsGateway_eq")]
+    public string? IdExtensionForwardCallsGateway_EQ { get; set; }
+    /// <summary> IdExtensionForwardCallsGateway contains </summary>
+    [JsonProperty("idExtensionForwardCallsGateway_con")]
+    public string? IdExtensionForwardCallsGateway_CON { get; set; }
+    /// <summary> IdExtensionForwardCallsGateway regex </summary>
+    [JsonProperty("idExtensionForwardCallsGateway_reg")]
+    public string? IdExtensionForwardCallsGateway_REG { get; set; }
+
+    /// <summary> CallProcessingTypeGateway equals </summary>
+    [JsonProperty("callProcessingTypeGateway_eq")]
+    public string? CallProcessingTypeGateway_EQ { get; set; }
+    /// <summary> CallProcessingTypeGateway contains </summary>
+    [JsonProperty("callProcessingTypeGateway_con")]
+    public string? CallProcessingTypeGateway_CON { get; set; }
+    /// <summary> CallProcessingTypeGateway regex </summary>
+    [JsonProperty("callProcessingTypeGateway_reg")]
+    public string? CallProcessingTypeGateway_REG { get; set; }
+
+    /// <summary> IdAccountGateway equals </summary>
+    [JsonProperty("idAccountGateway_eq")]
+    public string? IdAccountGateway_EQ { get; set; }
+    /// <summary> IdAccountGateway contains </summary>
+    [JsonProperty("idAccountGateway_con")]
+    public string? IdAccountGateway_CON { get; set; }
+    /// <summary> IdAccountGateway regex </summary>
+    [JsonProperty("idAccountGateway_reg")]
+    public string? IdAccountGateway_REG { get; set; }
+
+    /// <summary> IdAiCallAnalysisInputGateway equals </summary>
+    [JsonProperty("idAiCallAnalysisInputGateway_eq")]
+    public string? IdAiCallAnalysisInputGateway_EQ { get; set; }
+    /// <summary> IdAiCallAnalysisInputGateway contains </summary>
+    [JsonProperty("idAiCallAnalysisInputGateway_con")]
+    public string? IdAiCallAnalysisInputGateway_CON { get; set; }
+    /// <summary> IdAiCallAnalysisInputGateway regex </summary>
+    [JsonProperty("idAiCallAnalysisInputGateway_reg")]
+    public string? IdAiCallAnalysisInputGateway_REG { get; set; }
 
     /// <summary> Password equals </summary>
     [JsonProperty("password_eq")]
@@ -6597,6 +6627,16 @@ public class PhoneFilterRequest
     [JsonProperty("idUser_reg")]
     public string? IdUser_REG { get; set; }
 
+    /// <summary> IdTrunkTerminationGateway equals </summary>
+    [JsonProperty("idTrunkTerminationGateway_eq")]
+    public string? IdTrunkTerminationGateway_EQ { get; set; }
+    /// <summary> IdTrunkTerminationGateway contains </summary>
+    [JsonProperty("idTrunkTerminationGateway_con")]
+    public string? IdTrunkTerminationGateway_CON { get; set; }
+    /// <summary> IdTrunkTerminationGateway regex </summary>
+    [JsonProperty("idTrunkTerminationGateway_reg")]
+    public string? IdTrunkTerminationGateway_REG { get; set; }
+
     /// <summary> PhoneConnectionStatus.IpWAN equals </summary>
     [JsonProperty("phoneConnectionStatus_ipWAN_eq")]
     public string? PhoneConnectionStatus_IpWAN_EQ { get; set; }
@@ -6825,6 +6865,16 @@ public class PhoneFilterRequest
     /// <summary> GroupName regex </summary>
     [JsonProperty("groupName_reg")]
     public string? GroupName_REG { get; set; }
+
+    /// <summary> AllowConnectionsFromOnlyThisIp equals </summary>
+    [JsonProperty("allowConnectionsFromOnlyThisIp_eq")]
+    public string? AllowConnectionsFromOnlyThisIp_EQ { get; set; }
+    /// <summary> AllowConnectionsFromOnlyThisIp contains </summary>
+    [JsonProperty("allowConnectionsFromOnlyThisIp_con")]
+    public string? AllowConnectionsFromOnlyThisIp_CON { get; set; }
+    /// <summary> AllowConnectionsFromOnlyThisIp regex </summary>
+    [JsonProperty("allowConnectionsFromOnlyThisIp_reg")]
+    public string? AllowConnectionsFromOnlyThisIp_REG { get; set; }
 
     /// <summary> IdsTags equals </summary>
     [JsonProperty("idsTags_eq")]
@@ -7496,6 +7546,16 @@ public class VoicemailForwardedFilterRequest
     [JsonProperty("phoneThatForwardedVoicemail_idUser_reg")]
     public string? PhoneThatForwardedVoicemail_IdUser_REG { get; set; }
 
+    /// <summary> PhoneThatForwardedVoicemail.IdTrunkTerminationGateway equals </summary>
+    [JsonProperty("phoneThatForwardedVoicemail_idTrunkTerminationGateway_eq")]
+    public string? PhoneThatForwardedVoicemail_IdTrunkTerminationGateway_EQ { get; set; }
+    /// <summary> PhoneThatForwardedVoicemail.IdTrunkTerminationGateway contains </summary>
+    [JsonProperty("phoneThatForwardedVoicemail_idTrunkTerminationGateway_con")]
+    public string? PhoneThatForwardedVoicemail_IdTrunkTerminationGateway_CON { get; set; }
+    /// <summary> PhoneThatForwardedVoicemail.IdTrunkTerminationGateway regex </summary>
+    [JsonProperty("phoneThatForwardedVoicemail_idTrunkTerminationGateway_reg")]
+    public string? PhoneThatForwardedVoicemail_IdTrunkTerminationGateway_REG { get; set; }
+
     /// <summary> PhoneThatForwardedVoicemail.PhoneConnectionStatus.IpWAN equals </summary>
     [JsonProperty("phoneThatForwardedVoicemail_phoneConnectionStatus_ipWAN_eq")]
     public string? PhoneThatForwardedVoicemail_PhoneConnectionStatus_IpWAN_EQ { get; set; }
@@ -7724,6 +7784,16 @@ public class VoicemailForwardedFilterRequest
     /// <summary> PhoneThatForwardedVoicemail.GroupName regex </summary>
     [JsonProperty("phoneThatForwardedVoicemail_groupName_reg")]
     public string? PhoneThatForwardedVoicemail_GroupName_REG { get; set; }
+
+    /// <summary> PhoneThatForwardedVoicemail.AllowConnectionsFromOnlyThisIp equals </summary>
+    [JsonProperty("phoneThatForwardedVoicemail_allowConnectionsFromOnlyThisIp_eq")]
+    public string? PhoneThatForwardedVoicemail_AllowConnectionsFromOnlyThisIp_EQ { get; set; }
+    /// <summary> PhoneThatForwardedVoicemail.AllowConnectionsFromOnlyThisIp contains </summary>
+    [JsonProperty("phoneThatForwardedVoicemail_allowConnectionsFromOnlyThisIp_con")]
+    public string? PhoneThatForwardedVoicemail_AllowConnectionsFromOnlyThisIp_CON { get; set; }
+    /// <summary> PhoneThatForwardedVoicemail.AllowConnectionsFromOnlyThisIp regex </summary>
+    [JsonProperty("phoneThatForwardedVoicemail_allowConnectionsFromOnlyThisIp_reg")]
+    public string? PhoneThatForwardedVoicemail_AllowConnectionsFromOnlyThisIp_REG { get; set; }
 
     /// <summary> PhoneThatForwardedVoicemail.IdsTags equals </summary>
     [JsonProperty("phoneThatForwardedVoicemail_idsTags_eq")]

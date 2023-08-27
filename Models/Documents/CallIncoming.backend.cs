@@ -17,14 +17,14 @@ public abstract partial class CallIncoming : Call
     //public string? ProviderSid { get; set; }
 
     /// <summary>
-    ///     Provider that received and sent us the phone call
+    ///     Provider that received and sent us the phone call. May be null if gateway call
     /// </summary>
     [References(typeof(VoipProvider))]
     [AllowUpdate(false)] 
     [SwaggerSchema(ReadOnly = true)] 
     [IgnoreDataMember]
-    [UbluxValidationRequired]
-    public required string IdVoipProvider { get; set; } = string.Empty;
+    //[UbluxValidationRequired]
+    public string? IdVoipProvider { get; set; } = string.Empty;
 }
 
 #endif

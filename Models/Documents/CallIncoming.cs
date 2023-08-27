@@ -22,8 +22,7 @@ public abstract partial class CallIncoming : Call
     [References(typeof(VoipNumberPhone))]
     [AllowUpdate(false)] 
     [SwaggerSchema(ReadOnly = true)] 
-    [UbluxValidationRequired]
-    public required string IdVoipNumberPhone { get; set; } = string.Empty; // idDID
+    public string? IdVoipNumberPhone { get; set; }  // may be null if gateway call
 
     /// <summary>
     ///     Phone number that received phone call in international format

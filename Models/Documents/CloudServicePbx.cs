@@ -36,10 +36,42 @@ public partial class CloudServicePbx : CloudService
     [AllowUpdate(true)]
     public bool DisableMonitoring { get; set; }
 
+    ///// <summary>
+    /////     Http port where it is listening on SimpleTcpServer. For example PBX listens on port 8181
+    ///// </summary>
+    //[AllowUpdate(false)]
+    //[SwaggerSchema(ReadOnly = true)]
+    //[Obsolete("Remove this")]
+    //public int HttpListenPort { get; set; }
+
+    #region Gateway
+
     /// <summary>
-    ///     Http port where it is listening on SimpleTcpServer. For example PBX listens on port 8181
+    ///     If pbx is behind a fxo gateway forward all PSTN incoming calls to this extension
     /// </summary>
-    [AllowUpdate(false)]
-    [SwaggerSchema(ReadOnly = true)]
-    public int HttpListenPort { get; set; }
+    [AllowUpdate(true)]
+    [References(typeof(Extension))]
+    public string? IdExtensionForwardCallsGateway { get; set; }
+
+    /// <summary>
+    ///     If it is a gateway then what type of processing for incoming calls
+    /// </summary>
+    [AllowUpdate(true)]
+    public CallProcessingType CallProcessingTypeGateway { get; set; }
+
+    /// <summary>
+    ///     If used as gateway then by what account
+    /// </summary>
+    [AllowUpdate(true)]
+    [References(typeof(Account))]
+    public string? IdAccountGateway { get; set; }
+
+    /// <summary>
+    ///     Input to pass to AI engine
+    /// </summary>
+    [AllowUpdate(true)]
+    [References(typeof(AiCallAnalysisInput))]
+    public string? IdAiCallAnalysisInputGateway { get; set; }
+
+    #endregion
 }

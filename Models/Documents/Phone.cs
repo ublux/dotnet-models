@@ -31,6 +31,14 @@ public partial class Phone : UbluxDocument_ReferenceAccount_ReferenceTags
     [References(typeof(User))]
     public string? IdUser { get; set; }
 
+    /// <summary>
+    ///     If has value then we assume this phone is behind a fxo gateway. 
+    ///     All outgoing calls made by this phone will be sent directly to that trunk.
+    /// </summary>
+    [AllowUpdate(true)]
+    [References(typeof(TrunkTermination))]
+    public string? IdTrunkTerminationGateway { get; set; }
+
     #endregion
 
     /// <summary>
@@ -153,7 +161,7 @@ public partial class Phone : UbluxDocument_ReferenceAccount_ReferenceTags
     [SwaggerSchema(ReadOnly = true)]
     public string? MacAddress
     {
-        get => macAddress; 
+        get => macAddress;
         set
         {
             if (value != null)
@@ -194,7 +202,14 @@ public partial class Phone : UbluxDocument_ReferenceAccount_ReferenceTags
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    public string? GroupName { get; set; }    
+    public string? GroupName { get; set; }
+
+    /// <summary>
+    ///     If a phone is hacked we will only allow connections from this ip address.
+    ///     If value is null any ip address will be valid
+    /// </summary>
+    [AllowUpdate(true)]
+    public string? AllowConnectionsFromOnlyThisIp { get; set; }
 
     #region MongoDB
 

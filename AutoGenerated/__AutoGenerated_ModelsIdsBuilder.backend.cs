@@ -113,6 +113,8 @@ namespace Ublux.Communications.Models.Documents {
         public static BuiltId BuildId(CountryIsoCode country, int number) => new($"{DocumentPrefix}.{country}-{number}");
         /// <summary> Build test cloud service: Example: CSP.US-T  CSWA.US-T </summary>
         public static BuiltId BuildIdTest(CountryIsoCode country) => new($"{DocumentPrefix}.{country}-T");
+        /// <summary> Build test cloud service: Example: CSP.US-T  CSWA.US-T </summary>
+        public static BuiltId BuildIdGateway(CountryIsoCode country, string letter) => new($"{DocumentPrefix}.{country}-{letter}");
     }
     public partial class CloudServiceWebApp {
         /// <summary> Id prefix </summary>

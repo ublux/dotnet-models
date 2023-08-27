@@ -429,6 +429,22 @@ public class CloudServicePbxUpdateRequest // : IUbluxDocumentId
     /// </summary>
     public Boolean? DisableMonitoring { get; set; }
     /// <summary>
+    /// If pbx is behind a fxo gateway forward all PSTN incoming calls to this extension
+    /// </summary>
+    public String? IdExtensionForwardCallsGateway { get; set; }
+    /// <summary>
+    /// If it is a gateway then what type of processing for incoming calls
+    /// </summary>
+    public CallProcessingType? CallProcessingTypeGateway { get; set; }
+    /// <summary>
+    /// If used as gateway then by what account
+    /// </summary>
+    public String? IdAccountGateway { get; set; }
+    /// <summary>
+    /// Input to pass to AI engine
+    /// </summary>
+    public String? IdAiCallAnalysisInputGateway { get; set; }
+    /// <summary>
     /// We need instance id in order to reboot cloud service for example. Example: i-0655b45b8134e6425
     /// </summary>
     public String? ProviderInstanceId { get; set; }
@@ -445,6 +461,14 @@ public class CloudServicePbxUpdateRequest // : IUbluxDocumentId
     {
         if(jsonRaw.Contains($@"""{nameof(this.DisableMonitoring)}""", StringComparison.OrdinalIgnoreCase))
             cloudServicePbx.DisableMonitoring = this.DisableMonitoring.Value;
+        if(jsonRaw.Contains($@"""{nameof(this.IdExtensionForwardCallsGateway)}""", StringComparison.OrdinalIgnoreCase))
+            cloudServicePbx.IdExtensionForwardCallsGateway = this.IdExtensionForwardCallsGateway;
+        if(jsonRaw.Contains($@"""{nameof(this.CallProcessingTypeGateway)}""", StringComparison.OrdinalIgnoreCase))
+            cloudServicePbx.CallProcessingTypeGateway = this.CallProcessingTypeGateway.Value;
+        if(jsonRaw.Contains($@"""{nameof(this.IdAccountGateway)}""", StringComparison.OrdinalIgnoreCase))
+            cloudServicePbx.IdAccountGateway = this.IdAccountGateway;
+        if(jsonRaw.Contains($@"""{nameof(this.IdAiCallAnalysisInputGateway)}""", StringComparison.OrdinalIgnoreCase))
+            cloudServicePbx.IdAiCallAnalysisInputGateway = this.IdAiCallAnalysisInputGateway;
         if(jsonRaw.Contains($@"""{nameof(this.ProviderInstanceId)}""", StringComparison.OrdinalIgnoreCase))
             cloudServicePbx.ProviderInstanceId = this.ProviderInstanceId;
         if(jsonRaw.Contains($@"""{nameof(this.ProviderRegion)}""", StringComparison.OrdinalIgnoreCase))
@@ -1258,6 +1282,11 @@ public class PhoneUpdateRequest // : IUbluxDocumentId
     /// </summary>
     public String? IdUser { get; set; }
     /// <summary>
+    /// If has value then we assume this phone is behind a fxo gateway.
+    /// All outgoing calls made by this phone will be sent directly to that trunk.
+    /// </summary>
+    public String? IdTrunkTerminationGateway { get; set; }
+    /// <summary>
     /// Caller id number that will be used to place outbound calls
     /// </summary>
     public List<System.String>? CallerIdNumbers { get; set; }
@@ -1302,6 +1331,11 @@ public class PhoneUpdateRequest // : IUbluxDocumentId
     /// </summary>
     public String? TimeZone { get; set; }
     /// <summary>
+    /// If a phone is hacked we will only allow connections from this ip address.
+    /// If value is null any ip address will be valid
+    /// </summary>
+    public String? AllowConnectionsFromOnlyThisIp { get; set; }
+    /// <summary>
     /// It is nullable because there are cases where it makes no sense to point to an account.
     /// For example a CloudService user will point to no account
     /// </summary>
@@ -1315,6 +1349,8 @@ public class PhoneUpdateRequest // : IUbluxDocumentId
             phone.IdPhoneConfiguration = this.IdPhoneConfiguration;
         if(jsonRaw.Contains($@"""{nameof(this.IdUser)}""", StringComparison.OrdinalIgnoreCase))
             phone.IdUser = this.IdUser;
+        if(jsonRaw.Contains($@"""{nameof(this.IdTrunkTerminationGateway)}""", StringComparison.OrdinalIgnoreCase))
+            phone.IdTrunkTerminationGateway = this.IdTrunkTerminationGateway;
         if(jsonRaw.Contains($@"""{nameof(this.CallerIdNumbers)}""", StringComparison.OrdinalIgnoreCase))
             phone.CallerIdNumbers = this.CallerIdNumbers;
         if(jsonRaw.Contains($@"""{nameof(this.CallerIdIndex)}""", StringComparison.OrdinalIgnoreCase))
@@ -1335,6 +1371,8 @@ public class PhoneUpdateRequest // : IUbluxDocumentId
             phone.DisableEncryption = this.DisableEncryption.Value;
         if(jsonRaw.Contains($@"""{nameof(this.TimeZone)}""", StringComparison.OrdinalIgnoreCase))
             phone.TimeZone = this.TimeZone;
+        if(jsonRaw.Contains($@"""{nameof(this.AllowConnectionsFromOnlyThisIp)}""", StringComparison.OrdinalIgnoreCase))
+            phone.AllowConnectionsFromOnlyThisIp = this.AllowConnectionsFromOnlyThisIp;
         if(jsonRaw.Contains($@"""{nameof(this.IdsTags)}""", StringComparison.OrdinalIgnoreCase))
             phone.IdsTags = this.IdsTags;
     }
