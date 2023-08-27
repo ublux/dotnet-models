@@ -47,7 +47,8 @@ public partial class CloudServicePbx : CloudService
     #region Gateway
 
     /// <summary>
-    ///     If pbx is behind a fxo gateway forward all PSTN incoming calls to this extension
+    ///     If pbx is behind a fxo gateway forward all PSTN incoming calls to this extension.
+    ///     Can also be an extension number
     /// </summary>
     [AllowUpdate(true)]
     [References(typeof(Extension))]
