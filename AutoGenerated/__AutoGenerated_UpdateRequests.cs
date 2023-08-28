@@ -429,7 +429,8 @@ public class CloudServicePbxUpdateRequest // : IUbluxDocumentId
     /// </summary>
     public Boolean? DisableMonitoring { get; set; }
     /// <summary>
-    /// If pbx is behind a fxo gateway forward all PSTN incoming calls to this extension
+    /// If pbx is behind a fxo gateway forward all PSTN incoming calls to this extension.
+    /// Can also be an extension number
     /// </summary>
     public String? IdExtensionForwardCallsGateway { get; set; }
     /// <summary>
@@ -1282,10 +1283,9 @@ public class PhoneUpdateRequest // : IUbluxDocumentId
     /// </summary>
     public String? IdUser { get; set; }
     /// <summary>
-    /// If has value then we assume this phone is behind a fxo gateway.
-    /// All outgoing calls made by this phone will be sent directly to that trunk.
+    /// Use gateway to make outbound calls. If true gateway to use will be TT.Gateway
     /// </summary>
-    public String? IdTrunkTerminationGateway { get; set; }
+    public Boolean? UseGateway { get; set; }
     /// <summary>
     /// Caller id number that will be used to place outbound calls
     /// </summary>
@@ -1349,8 +1349,8 @@ public class PhoneUpdateRequest // : IUbluxDocumentId
             phone.IdPhoneConfiguration = this.IdPhoneConfiguration;
         if(jsonRaw.Contains($@"""{nameof(this.IdUser)}""", StringComparison.OrdinalIgnoreCase))
             phone.IdUser = this.IdUser;
-        if(jsonRaw.Contains($@"""{nameof(this.IdTrunkTerminationGateway)}""", StringComparison.OrdinalIgnoreCase))
-            phone.IdTrunkTerminationGateway = this.IdTrunkTerminationGateway;
+        if(jsonRaw.Contains($@"""{nameof(this.UseGateway)}""", StringComparison.OrdinalIgnoreCase))
+            phone.UseGateway = this.UseGateway.Value;
         if(jsonRaw.Contains($@"""{nameof(this.CallerIdNumbers)}""", StringComparison.OrdinalIgnoreCase))
             phone.CallerIdNumbers = this.CallerIdNumbers;
         if(jsonRaw.Contains($@"""{nameof(this.CallerIdIndex)}""", StringComparison.OrdinalIgnoreCase))

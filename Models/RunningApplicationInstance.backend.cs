@@ -1,4 +1,6 @@
 ﻿#if UBLUX_BACKEND
+using System.Text.RegularExpressions;
+
 namespace Ublux.Communications.Models;
 
 /// <summary>
@@ -79,6 +81,12 @@ public class RunningApplicationInstance
         get => Interlocked.Read(ref _numberOfOperationsExecuting);
         // set => numberOfOperationsExecuting = value; 
     }
+
+    /// <summary>
+    ///     Is pbx a gateway. For example csp.us-1 is not but csp.mx-a is because it has a letter at the end
+    /// </summary>
+    public bool IsGateway => Regex.Match(id, @"(?xi) csp . \w+ - [a-z]").Success;
+
     private long _numberOfOperationsExecuting;
 
     /// <summary>

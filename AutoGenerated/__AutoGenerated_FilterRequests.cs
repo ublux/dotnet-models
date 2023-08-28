@@ -6627,15 +6627,9 @@ public class PhoneFilterRequest
     [JsonProperty("idUser_reg")]
     public string? IdUser_REG { get; set; }
 
-    /// <summary> IdTrunkTerminationGateway equals </summary>
-    [JsonProperty("idTrunkTerminationGateway_eq")]
-    public string? IdTrunkTerminationGateway_EQ { get; set; }
-    /// <summary> IdTrunkTerminationGateway contains </summary>
-    [JsonProperty("idTrunkTerminationGateway_con")]
-    public string? IdTrunkTerminationGateway_CON { get; set; }
-    /// <summary> IdTrunkTerminationGateway regex </summary>
-    [JsonProperty("idTrunkTerminationGateway_reg")]
-    public string? IdTrunkTerminationGateway_REG { get; set; }
+    /// <summary> UseGateway equals </summary>
+    [JsonProperty("useGateway_eq")]
+    public bool? UseGateway_EQ { get; set; }
 
     /// <summary> PhoneConnectionStatus.IpWAN equals </summary>
     [JsonProperty("phoneConnectionStatus_ipWAN_eq")]
@@ -7546,15 +7540,9 @@ public class VoicemailForwardedFilterRequest
     [JsonProperty("phoneThatForwardedVoicemail_idUser_reg")]
     public string? PhoneThatForwardedVoicemail_IdUser_REG { get; set; }
 
-    /// <summary> PhoneThatForwardedVoicemail.IdTrunkTerminationGateway equals </summary>
-    [JsonProperty("phoneThatForwardedVoicemail_idTrunkTerminationGateway_eq")]
-    public string? PhoneThatForwardedVoicemail_IdTrunkTerminationGateway_EQ { get; set; }
-    /// <summary> PhoneThatForwardedVoicemail.IdTrunkTerminationGateway contains </summary>
-    [JsonProperty("phoneThatForwardedVoicemail_idTrunkTerminationGateway_con")]
-    public string? PhoneThatForwardedVoicemail_IdTrunkTerminationGateway_CON { get; set; }
-    /// <summary> PhoneThatForwardedVoicemail.IdTrunkTerminationGateway regex </summary>
-    [JsonProperty("phoneThatForwardedVoicemail_idTrunkTerminationGateway_reg")]
-    public string? PhoneThatForwardedVoicemail_IdTrunkTerminationGateway_REG { get; set; }
+    /// <summary> PhoneThatForwardedVoicemail.UseGateway equals </summary>
+    [JsonProperty("phoneThatForwardedVoicemail_useGateway_eq")]
+    public bool? PhoneThatForwardedVoicemail_UseGateway_EQ { get; set; }
 
     /// <summary> PhoneThatForwardedVoicemail.PhoneConnectionStatus.IpWAN equals </summary>
     [JsonProperty("phoneThatForwardedVoicemail_phoneConnectionStatus_ipWAN_eq")]
