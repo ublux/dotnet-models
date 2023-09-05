@@ -3,7 +3,7 @@
 /// <summary>
 ///     AI call analysis variable that AI engine outputs
 /// </summary>
-public class AiCallAnalysisVariableOutput
+public abstract class AiCallAnalysisVariable
 {
     /// <summary>
     ///     There cannot be two variable names with the same name
@@ -15,11 +15,12 @@ public class AiCallAnalysisVariableOutput
     ///     Type of variable. There are some that are complex that are predefined such as Sentiment that contains positive, neutral and negative values.
     /// </summary>
     [UbluxValidationNotRequired]
-    public AiVariableType AiVariableType { get; set; }    
+    public AiVariableType AiVariableType { get; set; }
 
     /// <summary>
-    ///     Value of variable
+    ///     Description about query. This will be included when sending an email as helpful data
     /// </summary>
-    public string? Value { get; set; }
+    [UbluxValidationStringRange(0, 2_000)]
+    public string? Description { get; set; }
 }
 

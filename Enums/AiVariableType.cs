@@ -14,6 +14,7 @@ public enum AiVariableType
     ///     String or text. Example. "summary of conversation is ..."
     /// </summary>
     Text,
+
     /// <summary>
     ///     Integer values. ...-2,-1,0,1,2...
     /// </summary>
@@ -44,5 +45,5 @@ public enum AiVariableType
     ///     Example: { Name : "Loud Party", Weight : 0.8 }   
     ///     Eeight is decimal value from 0 to 1
     /// </summary>
-    Topics
+    Topics   
 }

@@ -36,18 +36,18 @@ public class EventIncomingCallTerminatedWithAiAnalysis : EventIncomingCallTermin
     {
         var obj = this.GetRandomBase<EventIncomingCallTerminatedWithAiAnalysis>(instance);
 
-        obj.AiCallAnalysis = new AiCallAnalysisOutput()
+        obj.AiCallAnalysis = new ()
         {
             IdAiCallAnalysisInput = AiCallAnalysisInput.BuildId(instance).Id,
-            Output = new List<AiCallAnalysisVariableOutput>()
+            Results = new ()
             {
-                new AiCallAnalysisVariableOutput()
+                new ()
                 {
                     Name = "Summary",
                     AiVariableType = AiVariableType.Text,
                     Value = "Client complains agains Agent that washing mashine is not working"
                 },
-                new AiCallAnalysisVariableOutput()
+                new ()
                 {
                     Name = "CustomerSatisfaction",
                     AiVariableType = AiVariableType.Integer,

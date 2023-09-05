@@ -124,6 +124,11 @@ public class RunningApplicationInstance
         return true;
     }
 
+    /// <summary>
+    ///     Date when instance started running
+    /// </summary>
+    public DateTime DateStarted { get; set; } = DateTime.UtcNow;
+
     #endregion
 
     #region IdGlobal

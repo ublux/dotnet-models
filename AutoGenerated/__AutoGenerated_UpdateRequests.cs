@@ -877,7 +877,15 @@ public class AiCallAnalysisInputUpdateRequest // : IUbluxDocumentId
     /// <summary>
     /// List of queries to ask AI engine about a call
     /// </summary>
-    public List<Ublux.Communications.Models.AiCallAnalysisVariableInput>? Queries { get; set; }
+    public List<Ublux.Communications.Models.AiCallAnalysisQuery>? Queries { get; set; }
+    /// <summary>
+    /// Send email
+    /// </summary>
+    public AiCallSendEmail? SendEmail { get; set; }
+    /// <summary>
+    /// Engine to use. If null Ublux will use the default engine
+    /// </summary>
+    public String? Engine { get; set; }
     /// <summary>
     /// It is nullable because there are cases where it makes no sense to point to an account.
     /// For example a CloudService user will point to no account
@@ -892,6 +900,10 @@ public class AiCallAnalysisInputUpdateRequest // : IUbluxDocumentId
             aiCallAnalysisInput.Description = this.Description;
         if(jsonRaw.Contains($@"""{nameof(this.Queries)}""", StringComparison.OrdinalIgnoreCase))
             aiCallAnalysisInput.Queries = this.Queries;
+        if(jsonRaw.Contains($@"""{nameof(this.SendEmail)}""", StringComparison.OrdinalIgnoreCase))
+            aiCallAnalysisInput.SendEmail = this.SendEmail;
+        if(jsonRaw.Contains($@"""{nameof(this.Engine)}""", StringComparison.OrdinalIgnoreCase))
+            aiCallAnalysisInput.Engine = this.Engine;
         if(jsonRaw.Contains($@"""{nameof(this.IdsTags)}""", StringComparison.OrdinalIgnoreCase))
             aiCallAnalysisInput.IdsTags = this.IdsTags;
     }
@@ -1336,6 +1348,14 @@ public class PhoneUpdateRequest // : IUbluxDocumentId
     /// </summary>
     public String? AllowConnectionsFromOnlyThisIp { get; set; }
     /// <summary>
+    /// Send email if phone disconnectes to these emails
+    /// </summary>
+    public List<System.String>? OnDisconnectedNotifyIdsEmails { get; set; }
+    /// <summary>
+    /// Send email if phone connects to these emails
+    /// </summary>
+    public List<System.String>? OnConnectedNotifyIdsEmails { get; set; }
+    /// <summary>
     /// It is nullable because there are cases where it makes no sense to point to an account.
     /// For example a CloudService user will point to no account
     /// </summary>
@@ -1373,6 +1393,10 @@ public class PhoneUpdateRequest // : IUbluxDocumentId
             phone.TimeZone = this.TimeZone;
         if(jsonRaw.Contains($@"""{nameof(this.AllowConnectionsFromOnlyThisIp)}""", StringComparison.OrdinalIgnoreCase))
             phone.AllowConnectionsFromOnlyThisIp = this.AllowConnectionsFromOnlyThisIp;
+        if(jsonRaw.Contains($@"""{nameof(this.OnDisconnectedNotifyIdsEmails)}""", StringComparison.OrdinalIgnoreCase))
+            phone.OnDisconnectedNotifyIdsEmails = this.OnDisconnectedNotifyIdsEmails;
+        if(jsonRaw.Contains($@"""{nameof(this.OnConnectedNotifyIdsEmails)}""", StringComparison.OrdinalIgnoreCase))
+            phone.OnConnectedNotifyIdsEmails = this.OnConnectedNotifyIdsEmails;
         if(jsonRaw.Contains($@"""{nameof(this.IdsTags)}""", StringComparison.OrdinalIgnoreCase))
             phone.IdsTags = this.IdsTags;
     }

@@ -26,7 +26,7 @@ public class AiCallAnalysisOutput
     /// </summary>    
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    public List<AiCallAnalysisVariableOutput> Output { get; set; } = new();
+    public List<AiCallAnalysisResult> Results { get; set; } = new();
 
     /// <summary>
     ///     Total tokes used by AI engine

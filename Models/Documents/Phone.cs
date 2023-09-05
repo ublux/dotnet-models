@@ -218,6 +218,20 @@ public partial class Phone : UbluxDocument_ReferenceAccount_ReferenceTags
     [AllowUpdate(true)]
     public string? AllowConnectionsFromOnlyThisIp { get; set; }
 
+    /// <summary>
+    ///     Send email if phone disconnectes to these emails
+    /// </summary>
+    [References(typeof(Email))]
+    [AllowUpdate(true)]
+    public List<string> OnDisconnectedNotifyIdsEmails { get; set; } = new();
+
+    /// <summary>
+    ///     Send email if phone connects to these emails
+    /// </summary>
+    [References(typeof(Email))]
+    [AllowUpdate(true)]
+    public List<string> OnConnectedNotifyIdsEmails { get; set; } = new();
+
     #region MongoDB
 
     /// <inheritdoc />

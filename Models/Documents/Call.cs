@@ -276,34 +276,21 @@ public abstract partial class Call : UbluxDocument_ReferenceAccount_ReferenceTag
     [SwaggerSchema(ReadOnly = true)]
     public AiCallAnalysisOutput? AiCallAnalysisOutput { get; set; }
 
+    ///// <summary>
+    /////     Processed AI output
+    ///// </summary>
+    //[AllowUpdate(false)]
+    //[SwaggerSchema(ReadOnly = true)]
+    //[Obsolete("delete")]
+    //public AiCallAnalysisOutput? AiCallAnalysisOutput { get; set; }
+
     /// <summary>
     ///     AI input
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
     [References(typeof(AiCallAnalysisInput))]
-    public string? IdAiCallAnalysisInput { get; set; }
-
-    ///// <summary>
-    /////     AI analysis of the call
-    ///// </summary>
-    //[AllowUpdate(false)]
-    //[SwaggerSchema(ReadOnly = true)]
-    //public AiCallAnalysis? Analysis { get; set; }
-
-    ///// <summary>
-    /////     AI analysis of the call
-    ///// </summary>
-    //[AllowUpdate(false)]
-    //[SwaggerSchema(ReadOnly = true)]
-    //public AiCallAnalysis? Analysis2 { get; set; }
-
-    ///// <summary>
-    /////     AI analysis of the call
-    ///// </summary>
-    //[AllowUpdate(false)]
-    //[SwaggerSchema(ReadOnly = true)]
-    //public AiCallAnalysis? Analysis3 { get; set; }
+    public string? IdAiCallAnalysisInput { get; set; }   
 
     /// <summary>
     ///     Phones that participated in this call
@@ -604,3 +591,79 @@ public abstract partial class Call : UbluxDocument_ReferenceAccount_ReferenceTag
 
     #endregion
 }
+
+
+
+
+///// <summary>
+/////     AI output of analyzed call
+///// </summary>
+//public class AiCallAnalysisOutput
+//{
+//    /// <summary>
+//    ///     What input was passed to get this output?
+//    /// </summary>
+//    [UbluxValidationRequired]
+//    [References(typeof(AiCallAnalysisInput))]
+//    [AllowUpdate(false)]
+//    [SwaggerSchema(ReadOnly = true)]
+//    public required string IdAiCallAnalysisInput { get; set; } = "";
+
+//    /// <summary>
+//    ///     Detected language on call conversation
+//    /// </summary>    
+//    [AllowUpdate(false)]
+//    [SwaggerSchema(ReadOnly = true)]
+//    public required string DetectedLanguage { get; set; }
+
+//    /// <summary>
+//    ///     List of queries to ask AI engine about a call
+//    /// </summary>    
+//    [AllowUpdate(false)]
+//    [SwaggerSchema(ReadOnly = true)]
+//    public List<AiCallAnalysisVariableOutput> Output { get; set; } = new();
+
+//    /// <summary>
+//    ///     Total tokes used by AI engine
+//    /// </summary>    
+//    [AllowUpdate(false)]
+//    [SwaggerSchema(ReadOnly = true)]
+//    public int TokensTotal { get; set; }
+
+//    /// <summary>
+//    ///     Tokens used by completion on AI engine
+//    /// </summary>    
+//    [AllowUpdate(false)]
+//    [SwaggerSchema(ReadOnly = true)]
+//    public int TokensCompletion { get; set; }
+
+//    /// <summary>
+//    ///     Tokens used by prompt on AI engine
+//    /// </summary>    
+//    [AllowUpdate(false)]
+//    [SwaggerSchema(ReadOnly = true)]
+//    public int TokensPrompt { get; set; }
+//}
+
+///// <summary>
+/////     AI call analysis variable that AI engine outputs
+///// </summary>
+//public class AiCallAnalysisVariableOutput
+//{
+//    /// <summary>
+//    ///     There cannot be two variable names with the same name
+//    /// </summary>
+//    [UbluxValidationNotRequired]
+//    public required string Name { get; set; }
+
+//    /// <summary>
+//    ///     Type of variable. There are some that are complex that are predefined such as Sentiment that contains positive, neutral and negative values.
+//    /// </summary>
+//    [UbluxValidationNotRequired]
+//    public AiVariableType AiVariableType { get; set; }
+
+//    /// <summary>
+//    ///     Value of variable
+//    /// </summary>
+//    public string? Value { get; set; }
+//}

@@ -1485,35 +1485,52 @@ public class CallIncomingToCallFlowLogicFilterRequest
     [JsonProperty("aiCallAnalysisOutput_detectedLanguage_reg")]
     public string? AiCallAnalysisOutput_DetectedLanguage_REG { get; set; }
 
-    /// <summary> AiCallAnalysisOutput.Output.Name equals </summary>
-    [JsonProperty("aiCallAnalysisOutput_output_name_eq")]
-    public string? AiCallAnalysisOutput_Output_Name_EQ { get; set; }
-    /// <summary> AiCallAnalysisOutput.Output.Name contains </summary>
-    [JsonProperty("aiCallAnalysisOutput_output_name_con")]
-    public string? AiCallAnalysisOutput_Output_Name_CON { get; set; }
-    /// <summary> AiCallAnalysisOutput.Output.Name regex </summary>
-    [JsonProperty("aiCallAnalysisOutput_output_name_reg")]
-    public string? AiCallAnalysisOutput_Output_Name_REG { get; set; }
+    /// <summary> AiCallAnalysisOutput.Results.Value equals </summary>
+    [JsonProperty("aiCallAnalysisOutput_results_value_eq")]
+    public string? AiCallAnalysisOutput_Results_Value_EQ { get; set; }
+    /// <summary> AiCallAnalysisOutput.Results.Value contains </summary>
+    [JsonProperty("aiCallAnalysisOutput_results_value_con")]
+    public string? AiCallAnalysisOutput_Results_Value_CON { get; set; }
+    /// <summary> AiCallAnalysisOutput.Results.Value regex </summary>
+    [JsonProperty("aiCallAnalysisOutput_results_value_reg")]
+    public string? AiCallAnalysisOutput_Results_Value_REG { get; set; }
 
-    /// <summary> AiCallAnalysisOutput.Output.AiVariableType equals </summary>
-    [JsonProperty("aiCallAnalysisOutput_output_aiVariableType_eq")]
-    public string? AiCallAnalysisOutput_Output_AiVariableType_EQ { get; set; }
-    /// <summary> AiCallAnalysisOutput.Output.AiVariableType contains </summary>
-    [JsonProperty("aiCallAnalysisOutput_output_aiVariableType_con")]
-    public string? AiCallAnalysisOutput_Output_AiVariableType_CON { get; set; }
-    /// <summary> AiCallAnalysisOutput.Output.AiVariableType regex </summary>
-    [JsonProperty("aiCallAnalysisOutput_output_aiVariableType_reg")]
-    public string? AiCallAnalysisOutput_Output_AiVariableType_REG { get; set; }
 
-    /// <summary> AiCallAnalysisOutput.Output.Value equals </summary>
-    [JsonProperty("aiCallAnalysisOutput_output_value_eq")]
-    public string? AiCallAnalysisOutput_Output_Value_EQ { get; set; }
-    /// <summary> AiCallAnalysisOutput.Output.Value contains </summary>
-    [JsonProperty("aiCallAnalysisOutput_output_value_con")]
-    public string? AiCallAnalysisOutput_Output_Value_CON { get; set; }
-    /// <summary> AiCallAnalysisOutput.Output.Value regex </summary>
-    [JsonProperty("aiCallAnalysisOutput_output_value_reg")]
-    public string? AiCallAnalysisOutput_Output_Value_REG { get; set; }
+
+
+
+
+
+
+    /// <summary> AiCallAnalysisOutput.Results.Name equals </summary>
+    [JsonProperty("aiCallAnalysisOutput_results_name_eq")]
+    public string? AiCallAnalysisOutput_Results_Name_EQ { get; set; }
+    /// <summary> AiCallAnalysisOutput.Results.Name contains </summary>
+    [JsonProperty("aiCallAnalysisOutput_results_name_con")]
+    public string? AiCallAnalysisOutput_Results_Name_CON { get; set; }
+    /// <summary> AiCallAnalysisOutput.Results.Name regex </summary>
+    [JsonProperty("aiCallAnalysisOutput_results_name_reg")]
+    public string? AiCallAnalysisOutput_Results_Name_REG { get; set; }
+
+    /// <summary> AiCallAnalysisOutput.Results.AiVariableType equals </summary>
+    [JsonProperty("aiCallAnalysisOutput_results_aiVariableType_eq")]
+    public string? AiCallAnalysisOutput_Results_AiVariableType_EQ { get; set; }
+    /// <summary> AiCallAnalysisOutput.Results.AiVariableType contains </summary>
+    [JsonProperty("aiCallAnalysisOutput_results_aiVariableType_con")]
+    public string? AiCallAnalysisOutput_Results_AiVariableType_CON { get; set; }
+    /// <summary> AiCallAnalysisOutput.Results.AiVariableType regex </summary>
+    [JsonProperty("aiCallAnalysisOutput_results_aiVariableType_reg")]
+    public string? AiCallAnalysisOutput_Results_AiVariableType_REG { get; set; }
+
+    /// <summary> AiCallAnalysisOutput.Results.Description equals </summary>
+    [JsonProperty("aiCallAnalysisOutput_results_description_eq")]
+    public string? AiCallAnalysisOutput_Results_Description_EQ { get; set; }
+    /// <summary> AiCallAnalysisOutput.Results.Description contains </summary>
+    [JsonProperty("aiCallAnalysisOutput_results_description_con")]
+    public string? AiCallAnalysisOutput_Results_Description_CON { get; set; }
+    /// <summary> AiCallAnalysisOutput.Results.Description regex </summary>
+    [JsonProperty("aiCallAnalysisOutput_results_description_reg")]
+    public string? AiCallAnalysisOutput_Results_Description_REG { get; set; }
 
 
     /// <summary> AiCallAnalysisOutput.TokensTotal equals </summary>
@@ -2233,35 +2250,52 @@ public class CallIncomingToExtensionFilterRequest
     [JsonProperty("aiCallAnalysisOutput_detectedLanguage_reg")]
     public string? AiCallAnalysisOutput_DetectedLanguage_REG { get; set; }
 
-    /// <summary> AiCallAnalysisOutput.Output.Name equals </summary>
-    [JsonProperty("aiCallAnalysisOutput_output_name_eq")]
-    public string? AiCallAnalysisOutput_Output_Name_EQ { get; set; }
-    /// <summary> AiCallAnalysisOutput.Output.Name contains </summary>
-    [JsonProperty("aiCallAnalysisOutput_output_name_con")]
-    public string? AiCallAnalysisOutput_Output_Name_CON { get; set; }
-    /// <summary> AiCallAnalysisOutput.Output.Name regex </summary>
-    [JsonProperty("aiCallAnalysisOutput_output_name_reg")]
-    public string? AiCallAnalysisOutput_Output_Name_REG { get; set; }
+    /// <summary> AiCallAnalysisOutput.Results.Value equals </summary>
+    [JsonProperty("aiCallAnalysisOutput_results_value_eq")]
+    public string? AiCallAnalysisOutput_Results_Value_EQ { get; set; }
+    /// <summary> AiCallAnalysisOutput.Results.Value contains </summary>
+    [JsonProperty("aiCallAnalysisOutput_results_value_con")]
+    public string? AiCallAnalysisOutput_Results_Value_CON { get; set; }
+    /// <summary> AiCallAnalysisOutput.Results.Value regex </summary>
+    [JsonProperty("aiCallAnalysisOutput_results_value_reg")]
+    public string? AiCallAnalysisOutput_Results_Value_REG { get; set; }
 
-    /// <summary> AiCallAnalysisOutput.Output.AiVariableType equals </summary>
-    [JsonProperty("aiCallAnalysisOutput_output_aiVariableType_eq")]
-    public string? AiCallAnalysisOutput_Output_AiVariableType_EQ { get; set; }
-    /// <summary> AiCallAnalysisOutput.Output.AiVariableType contains </summary>
-    [JsonProperty("aiCallAnalysisOutput_output_aiVariableType_con")]
-    public string? AiCallAnalysisOutput_Output_AiVariableType_CON { get; set; }
-    /// <summary> AiCallAnalysisOutput.Output.AiVariableType regex </summary>
-    [JsonProperty("aiCallAnalysisOutput_output_aiVariableType_reg")]
-    public string? AiCallAnalysisOutput_Output_AiVariableType_REG { get; set; }
 
-    /// <summary> AiCallAnalysisOutput.Output.Value equals </summary>
-    [JsonProperty("aiCallAnalysisOutput_output_value_eq")]
-    public string? AiCallAnalysisOutput_Output_Value_EQ { get; set; }
-    /// <summary> AiCallAnalysisOutput.Output.Value contains </summary>
-    [JsonProperty("aiCallAnalysisOutput_output_value_con")]
-    public string? AiCallAnalysisOutput_Output_Value_CON { get; set; }
-    /// <summary> AiCallAnalysisOutput.Output.Value regex </summary>
-    [JsonProperty("aiCallAnalysisOutput_output_value_reg")]
-    public string? AiCallAnalysisOutput_Output_Value_REG { get; set; }
+
+
+
+
+
+
+    /// <summary> AiCallAnalysisOutput.Results.Name equals </summary>
+    [JsonProperty("aiCallAnalysisOutput_results_name_eq")]
+    public string? AiCallAnalysisOutput_Results_Name_EQ { get; set; }
+    /// <summary> AiCallAnalysisOutput.Results.Name contains </summary>
+    [JsonProperty("aiCallAnalysisOutput_results_name_con")]
+    public string? AiCallAnalysisOutput_Results_Name_CON { get; set; }
+    /// <summary> AiCallAnalysisOutput.Results.Name regex </summary>
+    [JsonProperty("aiCallAnalysisOutput_results_name_reg")]
+    public string? AiCallAnalysisOutput_Results_Name_REG { get; set; }
+
+    /// <summary> AiCallAnalysisOutput.Results.AiVariableType equals </summary>
+    [JsonProperty("aiCallAnalysisOutput_results_aiVariableType_eq")]
+    public string? AiCallAnalysisOutput_Results_AiVariableType_EQ { get; set; }
+    /// <summary> AiCallAnalysisOutput.Results.AiVariableType contains </summary>
+    [JsonProperty("aiCallAnalysisOutput_results_aiVariableType_con")]
+    public string? AiCallAnalysisOutput_Results_AiVariableType_CON { get; set; }
+    /// <summary> AiCallAnalysisOutput.Results.AiVariableType regex </summary>
+    [JsonProperty("aiCallAnalysisOutput_results_aiVariableType_reg")]
+    public string? AiCallAnalysisOutput_Results_AiVariableType_REG { get; set; }
+
+    /// <summary> AiCallAnalysisOutput.Results.Description equals </summary>
+    [JsonProperty("aiCallAnalysisOutput_results_description_eq")]
+    public string? AiCallAnalysisOutput_Results_Description_EQ { get; set; }
+    /// <summary> AiCallAnalysisOutput.Results.Description contains </summary>
+    [JsonProperty("aiCallAnalysisOutput_results_description_con")]
+    public string? AiCallAnalysisOutput_Results_Description_CON { get; set; }
+    /// <summary> AiCallAnalysisOutput.Results.Description regex </summary>
+    [JsonProperty("aiCallAnalysisOutput_results_description_reg")]
+    public string? AiCallAnalysisOutput_Results_Description_REG { get; set; }
 
 
     /// <summary> AiCallAnalysisOutput.TokensTotal equals </summary>
@@ -2961,35 +2995,52 @@ public class CallOutgoingToExtensionFilterRequest
     [JsonProperty("aiCallAnalysisOutput_detectedLanguage_reg")]
     public string? AiCallAnalysisOutput_DetectedLanguage_REG { get; set; }
 
-    /// <summary> AiCallAnalysisOutput.Output.Name equals </summary>
-    [JsonProperty("aiCallAnalysisOutput_output_name_eq")]
-    public string? AiCallAnalysisOutput_Output_Name_EQ { get; set; }
-    /// <summary> AiCallAnalysisOutput.Output.Name contains </summary>
-    [JsonProperty("aiCallAnalysisOutput_output_name_con")]
-    public string? AiCallAnalysisOutput_Output_Name_CON { get; set; }
-    /// <summary> AiCallAnalysisOutput.Output.Name regex </summary>
-    [JsonProperty("aiCallAnalysisOutput_output_name_reg")]
-    public string? AiCallAnalysisOutput_Output_Name_REG { get; set; }
+    /// <summary> AiCallAnalysisOutput.Results.Value equals </summary>
+    [JsonProperty("aiCallAnalysisOutput_results_value_eq")]
+    public string? AiCallAnalysisOutput_Results_Value_EQ { get; set; }
+    /// <summary> AiCallAnalysisOutput.Results.Value contains </summary>
+    [JsonProperty("aiCallAnalysisOutput_results_value_con")]
+    public string? AiCallAnalysisOutput_Results_Value_CON { get; set; }
+    /// <summary> AiCallAnalysisOutput.Results.Value regex </summary>
+    [JsonProperty("aiCallAnalysisOutput_results_value_reg")]
+    public string? AiCallAnalysisOutput_Results_Value_REG { get; set; }
 
-    /// <summary> AiCallAnalysisOutput.Output.AiVariableType equals </summary>
-    [JsonProperty("aiCallAnalysisOutput_output_aiVariableType_eq")]
-    public string? AiCallAnalysisOutput_Output_AiVariableType_EQ { get; set; }
-    /// <summary> AiCallAnalysisOutput.Output.AiVariableType contains </summary>
-    [JsonProperty("aiCallAnalysisOutput_output_aiVariableType_con")]
-    public string? AiCallAnalysisOutput_Output_AiVariableType_CON { get; set; }
-    /// <summary> AiCallAnalysisOutput.Output.AiVariableType regex </summary>
-    [JsonProperty("aiCallAnalysisOutput_output_aiVariableType_reg")]
-    public string? AiCallAnalysisOutput_Output_AiVariableType_REG { get; set; }
 
-    /// <summary> AiCallAnalysisOutput.Output.Value equals </summary>
-    [JsonProperty("aiCallAnalysisOutput_output_value_eq")]
-    public string? AiCallAnalysisOutput_Output_Value_EQ { get; set; }
-    /// <summary> AiCallAnalysisOutput.Output.Value contains </summary>
-    [JsonProperty("aiCallAnalysisOutput_output_value_con")]
-    public string? AiCallAnalysisOutput_Output_Value_CON { get; set; }
-    /// <summary> AiCallAnalysisOutput.Output.Value regex </summary>
-    [JsonProperty("aiCallAnalysisOutput_output_value_reg")]
-    public string? AiCallAnalysisOutput_Output_Value_REG { get; set; }
+
+
+
+
+
+
+    /// <summary> AiCallAnalysisOutput.Results.Name equals </summary>
+    [JsonProperty("aiCallAnalysisOutput_results_name_eq")]
+    public string? AiCallAnalysisOutput_Results_Name_EQ { get; set; }
+    /// <summary> AiCallAnalysisOutput.Results.Name contains </summary>
+    [JsonProperty("aiCallAnalysisOutput_results_name_con")]
+    public string? AiCallAnalysisOutput_Results_Name_CON { get; set; }
+    /// <summary> AiCallAnalysisOutput.Results.Name regex </summary>
+    [JsonProperty("aiCallAnalysisOutput_results_name_reg")]
+    public string? AiCallAnalysisOutput_Results_Name_REG { get; set; }
+
+    /// <summary> AiCallAnalysisOutput.Results.AiVariableType equals </summary>
+    [JsonProperty("aiCallAnalysisOutput_results_aiVariableType_eq")]
+    public string? AiCallAnalysisOutput_Results_AiVariableType_EQ { get; set; }
+    /// <summary> AiCallAnalysisOutput.Results.AiVariableType contains </summary>
+    [JsonProperty("aiCallAnalysisOutput_results_aiVariableType_con")]
+    public string? AiCallAnalysisOutput_Results_AiVariableType_CON { get; set; }
+    /// <summary> AiCallAnalysisOutput.Results.AiVariableType regex </summary>
+    [JsonProperty("aiCallAnalysisOutput_results_aiVariableType_reg")]
+    public string? AiCallAnalysisOutput_Results_AiVariableType_REG { get; set; }
+
+    /// <summary> AiCallAnalysisOutput.Results.Description equals </summary>
+    [JsonProperty("aiCallAnalysisOutput_results_description_eq")]
+    public string? AiCallAnalysisOutput_Results_Description_EQ { get; set; }
+    /// <summary> AiCallAnalysisOutput.Results.Description contains </summary>
+    [JsonProperty("aiCallAnalysisOutput_results_description_con")]
+    public string? AiCallAnalysisOutput_Results_Description_CON { get; set; }
+    /// <summary> AiCallAnalysisOutput.Results.Description regex </summary>
+    [JsonProperty("aiCallAnalysisOutput_results_description_reg")]
+    public string? AiCallAnalysisOutput_Results_Description_REG { get; set; }
 
 
     /// <summary> AiCallAnalysisOutput.TokensTotal equals </summary>
@@ -3659,35 +3710,52 @@ public class CallOutgoingToPSTNFilterRequest
     [JsonProperty("aiCallAnalysisOutput_detectedLanguage_reg")]
     public string? AiCallAnalysisOutput_DetectedLanguage_REG { get; set; }
 
-    /// <summary> AiCallAnalysisOutput.Output.Name equals </summary>
-    [JsonProperty("aiCallAnalysisOutput_output_name_eq")]
-    public string? AiCallAnalysisOutput_Output_Name_EQ { get; set; }
-    /// <summary> AiCallAnalysisOutput.Output.Name contains </summary>
-    [JsonProperty("aiCallAnalysisOutput_output_name_con")]
-    public string? AiCallAnalysisOutput_Output_Name_CON { get; set; }
-    /// <summary> AiCallAnalysisOutput.Output.Name regex </summary>
-    [JsonProperty("aiCallAnalysisOutput_output_name_reg")]
-    public string? AiCallAnalysisOutput_Output_Name_REG { get; set; }
+    /// <summary> AiCallAnalysisOutput.Results.Value equals </summary>
+    [JsonProperty("aiCallAnalysisOutput_results_value_eq")]
+    public string? AiCallAnalysisOutput_Results_Value_EQ { get; set; }
+    /// <summary> AiCallAnalysisOutput.Results.Value contains </summary>
+    [JsonProperty("aiCallAnalysisOutput_results_value_con")]
+    public string? AiCallAnalysisOutput_Results_Value_CON { get; set; }
+    /// <summary> AiCallAnalysisOutput.Results.Value regex </summary>
+    [JsonProperty("aiCallAnalysisOutput_results_value_reg")]
+    public string? AiCallAnalysisOutput_Results_Value_REG { get; set; }
 
-    /// <summary> AiCallAnalysisOutput.Output.AiVariableType equals </summary>
-    [JsonProperty("aiCallAnalysisOutput_output_aiVariableType_eq")]
-    public string? AiCallAnalysisOutput_Output_AiVariableType_EQ { get; set; }
-    /// <summary> AiCallAnalysisOutput.Output.AiVariableType contains </summary>
-    [JsonProperty("aiCallAnalysisOutput_output_aiVariableType_con")]
-    public string? AiCallAnalysisOutput_Output_AiVariableType_CON { get; set; }
-    /// <summary> AiCallAnalysisOutput.Output.AiVariableType regex </summary>
-    [JsonProperty("aiCallAnalysisOutput_output_aiVariableType_reg")]
-    public string? AiCallAnalysisOutput_Output_AiVariableType_REG { get; set; }
 
-    /// <summary> AiCallAnalysisOutput.Output.Value equals </summary>
-    [JsonProperty("aiCallAnalysisOutput_output_value_eq")]
-    public string? AiCallAnalysisOutput_Output_Value_EQ { get; set; }
-    /// <summary> AiCallAnalysisOutput.Output.Value contains </summary>
-    [JsonProperty("aiCallAnalysisOutput_output_value_con")]
-    public string? AiCallAnalysisOutput_Output_Value_CON { get; set; }
-    /// <summary> AiCallAnalysisOutput.Output.Value regex </summary>
-    [JsonProperty("aiCallAnalysisOutput_output_value_reg")]
-    public string? AiCallAnalysisOutput_Output_Value_REG { get; set; }
+
+
+
+
+
+
+    /// <summary> AiCallAnalysisOutput.Results.Name equals </summary>
+    [JsonProperty("aiCallAnalysisOutput_results_name_eq")]
+    public string? AiCallAnalysisOutput_Results_Name_EQ { get; set; }
+    /// <summary> AiCallAnalysisOutput.Results.Name contains </summary>
+    [JsonProperty("aiCallAnalysisOutput_results_name_con")]
+    public string? AiCallAnalysisOutput_Results_Name_CON { get; set; }
+    /// <summary> AiCallAnalysisOutput.Results.Name regex </summary>
+    [JsonProperty("aiCallAnalysisOutput_results_name_reg")]
+    public string? AiCallAnalysisOutput_Results_Name_REG { get; set; }
+
+    /// <summary> AiCallAnalysisOutput.Results.AiVariableType equals </summary>
+    [JsonProperty("aiCallAnalysisOutput_results_aiVariableType_eq")]
+    public string? AiCallAnalysisOutput_Results_AiVariableType_EQ { get; set; }
+    /// <summary> AiCallAnalysisOutput.Results.AiVariableType contains </summary>
+    [JsonProperty("aiCallAnalysisOutput_results_aiVariableType_con")]
+    public string? AiCallAnalysisOutput_Results_AiVariableType_CON { get; set; }
+    /// <summary> AiCallAnalysisOutput.Results.AiVariableType regex </summary>
+    [JsonProperty("aiCallAnalysisOutput_results_aiVariableType_reg")]
+    public string? AiCallAnalysisOutput_Results_AiVariableType_REG { get; set; }
+
+    /// <summary> AiCallAnalysisOutput.Results.Description equals </summary>
+    [JsonProperty("aiCallAnalysisOutput_results_description_eq")]
+    public string? AiCallAnalysisOutput_Results_Description_EQ { get; set; }
+    /// <summary> AiCallAnalysisOutput.Results.Description contains </summary>
+    [JsonProperty("aiCallAnalysisOutput_results_description_con")]
+    public string? AiCallAnalysisOutput_Results_Description_CON { get; set; }
+    /// <summary> AiCallAnalysisOutput.Results.Description regex </summary>
+    [JsonProperty("aiCallAnalysisOutput_results_description_reg")]
+    public string? AiCallAnalysisOutput_Results_Description_REG { get; set; }
 
 
     /// <summary> AiCallAnalysisOutput.TokensTotal equals </summary>
@@ -5215,6 +5283,92 @@ public class AiCallAnalysisInputFilterRequest
     [JsonProperty("queries_query_reg")]
     public string? Queries_Query_REG { get; set; }
 
+    /// <summary> Queries.SubQueries.IfResponseContainsKeywordQueryEngine equals </summary>
+    [JsonProperty("queries_subQueries_ifResponseContainsKeywordQueryEngine_eq")]
+    public string? Queries_SubQueries_IfResponseContainsKeywordQueryEngine_EQ { get; set; }
+    /// <summary> Queries.SubQueries.IfResponseContainsKeywordQueryEngine contains </summary>
+    [JsonProperty("queries_subQueries_ifResponseContainsKeywordQueryEngine_con")]
+    public string? Queries_SubQueries_IfResponseContainsKeywordQueryEngine_CON { get; set; }
+    /// <summary> Queries.SubQueries.IfResponseContainsKeywordQueryEngine regex </summary>
+    [JsonProperty("queries_subQueries_ifResponseContainsKeywordQueryEngine_reg")]
+    public string? Queries_SubQueries_IfResponseContainsKeywordQueryEngine_REG { get; set; }
+
+    /// <summary> Queries.SubQueries.Queries.Query equals </summary>
+    [JsonProperty("queries_subQueries_queries_query_eq")]
+    public string? Queries_SubQueries_Queries_Query_EQ { get; set; }
+    /// <summary> Queries.SubQueries.Queries.Query contains </summary>
+    [JsonProperty("queries_subQueries_queries_query_con")]
+    public string? Queries_SubQueries_Queries_Query_CON { get; set; }
+    /// <summary> Queries.SubQueries.Queries.Query regex </summary>
+    [JsonProperty("queries_subQueries_queries_query_reg")]
+    public string? Queries_SubQueries_Queries_Query_REG { get; set; }
+
+
+
+
+
+    /// <summary> Queries.SubQueries.Queries.IfResponseContainsKeywordSendEmail equals </summary>
+    [JsonProperty("queries_subQueries_queries_ifResponseContainsKeywordSendEmail_eq")]
+    public string? Queries_SubQueries_Queries_IfResponseContainsKeywordSendEmail_EQ { get; set; }
+    /// <summary> Queries.SubQueries.Queries.IfResponseContainsKeywordSendEmail contains </summary>
+    [JsonProperty("queries_subQueries_queries_ifResponseContainsKeywordSendEmail_con")]
+    public string? Queries_SubQueries_Queries_IfResponseContainsKeywordSendEmail_CON { get; set; }
+    /// <summary> Queries.SubQueries.Queries.IfResponseContainsKeywordSendEmail regex </summary>
+    [JsonProperty("queries_subQueries_queries_ifResponseContainsKeywordSendEmail_reg")]
+    public string? Queries_SubQueries_Queries_IfResponseContainsKeywordSendEmail_REG { get; set; }
+
+    /// <summary> Queries.SubQueries.Queries.Name equals </summary>
+    [JsonProperty("queries_subQueries_queries_name_eq")]
+    public string? Queries_SubQueries_Queries_Name_EQ { get; set; }
+    /// <summary> Queries.SubQueries.Queries.Name contains </summary>
+    [JsonProperty("queries_subQueries_queries_name_con")]
+    public string? Queries_SubQueries_Queries_Name_CON { get; set; }
+    /// <summary> Queries.SubQueries.Queries.Name regex </summary>
+    [JsonProperty("queries_subQueries_queries_name_reg")]
+    public string? Queries_SubQueries_Queries_Name_REG { get; set; }
+
+    /// <summary> Queries.SubQueries.Queries.AiVariableType equals </summary>
+    [JsonProperty("queries_subQueries_queries_aiVariableType_eq")]
+    public string? Queries_SubQueries_Queries_AiVariableType_EQ { get; set; }
+    /// <summary> Queries.SubQueries.Queries.AiVariableType contains </summary>
+    [JsonProperty("queries_subQueries_queries_aiVariableType_con")]
+    public string? Queries_SubQueries_Queries_AiVariableType_CON { get; set; }
+    /// <summary> Queries.SubQueries.Queries.AiVariableType regex </summary>
+    [JsonProperty("queries_subQueries_queries_aiVariableType_reg")]
+    public string? Queries_SubQueries_Queries_AiVariableType_REG { get; set; }
+
+    /// <summary> Queries.SubQueries.Queries.Description equals </summary>
+    [JsonProperty("queries_subQueries_queries_description_eq")]
+    public string? Queries_SubQueries_Queries_Description_EQ { get; set; }
+    /// <summary> Queries.SubQueries.Queries.Description contains </summary>
+    [JsonProperty("queries_subQueries_queries_description_con")]
+    public string? Queries_SubQueries_Queries_Description_CON { get; set; }
+    /// <summary> Queries.SubQueries.Queries.Description regex </summary>
+    [JsonProperty("queries_subQueries_queries_description_reg")]
+    public string? Queries_SubQueries_Queries_Description_REG { get; set; }
+
+
+    /// <summary> Queries.SubQueries.Engine equals </summary>
+    [JsonProperty("queries_subQueries_engine_eq")]
+    public string? Queries_SubQueries_Engine_EQ { get; set; }
+    /// <summary> Queries.SubQueries.Engine contains </summary>
+    [JsonProperty("queries_subQueries_engine_con")]
+    public string? Queries_SubQueries_Engine_CON { get; set; }
+    /// <summary> Queries.SubQueries.Engine regex </summary>
+    [JsonProperty("queries_subQueries_engine_reg")]
+    public string? Queries_SubQueries_Engine_REG { get; set; }
+
+
+    /// <summary> Queries.IfResponseContainsKeywordSendEmail equals </summary>
+    [JsonProperty("queries_ifResponseContainsKeywordSendEmail_eq")]
+    public string? Queries_IfResponseContainsKeywordSendEmail_EQ { get; set; }
+    /// <summary> Queries.IfResponseContainsKeywordSendEmail contains </summary>
+    [JsonProperty("queries_ifResponseContainsKeywordSendEmail_con")]
+    public string? Queries_IfResponseContainsKeywordSendEmail_CON { get; set; }
+    /// <summary> Queries.IfResponseContainsKeywordSendEmail regex </summary>
+    [JsonProperty("queries_ifResponseContainsKeywordSendEmail_reg")]
+    public string? Queries_IfResponseContainsKeywordSendEmail_REG { get; set; }
+
     /// <summary> Queries.Name equals </summary>
     [JsonProperty("queries_name_eq")]
     public string? Queries_Name_EQ { get; set; }
@@ -5235,16 +5389,72 @@ public class AiCallAnalysisInputFilterRequest
     [JsonProperty("queries_aiVariableType_reg")]
     public string? Queries_AiVariableType_REG { get; set; }
 
-    /// <summary> Queries.Value equals </summary>
-    [JsonProperty("queries_value_eq")]
-    public string? Queries_Value_EQ { get; set; }
-    /// <summary> Queries.Value contains </summary>
-    [JsonProperty("queries_value_con")]
-    public string? Queries_Value_CON { get; set; }
-    /// <summary> Queries.Value regex </summary>
-    [JsonProperty("queries_value_reg")]
-    public string? Queries_Value_REG { get; set; }
+    /// <summary> Queries.Description equals </summary>
+    [JsonProperty("queries_description_eq")]
+    public string? Queries_Description_EQ { get; set; }
+    /// <summary> Queries.Description contains </summary>
+    [JsonProperty("queries_description_con")]
+    public string? Queries_Description_CON { get; set; }
+    /// <summary> Queries.Description regex </summary>
+    [JsonProperty("queries_description_reg")]
+    public string? Queries_Description_REG { get; set; }
 
+
+    /// <summary> SendEmail.Emails equals </summary>
+    [JsonProperty("sendEmail_emails_eq")]
+    public string? SendEmail_Emails_EQ { get; set; }
+    /// <summary> SendEmail.Emails contains </summary>
+    [JsonProperty("sendEmail_emails_con")]
+    public string? SendEmail_Emails_CON { get; set; }
+    /// <summary> SendEmail.Emails regex </summary>
+    [JsonProperty("sendEmail_emails_reg")]
+    public string? SendEmail_Emails_REG { get; set; }
+
+    /// <summary> SendEmail.EmailsRules.PhoneNumber equals </summary>
+    [JsonProperty("sendEmail_emailsRules_phoneNumber_eq")]
+    public string? SendEmail_EmailsRules_PhoneNumber_EQ { get; set; }
+    /// <summary> SendEmail.EmailsRules.PhoneNumber contains </summary>
+    [JsonProperty("sendEmail_emailsRules_phoneNumber_con")]
+    public string? SendEmail_EmailsRules_PhoneNumber_CON { get; set; }
+    /// <summary> SendEmail.EmailsRules.PhoneNumber regex </summary>
+    [JsonProperty("sendEmail_emailsRules_phoneNumber_reg")]
+    public string? SendEmail_EmailsRules_PhoneNumber_REG { get; set; }
+
+    /// <summary> SendEmail.EmailsRules.Emails equals </summary>
+    [JsonProperty("sendEmail_emailsRules_emails_eq")]
+    public string? SendEmail_EmailsRules_Emails_EQ { get; set; }
+    /// <summary> SendEmail.EmailsRules.Emails contains </summary>
+    [JsonProperty("sendEmail_emailsRules_emails_con")]
+    public string? SendEmail_EmailsRules_Emails_CON { get; set; }
+    /// <summary> SendEmail.EmailsRules.Emails regex </summary>
+    [JsonProperty("sendEmail_emailsRules_emails_reg")]
+    public string? SendEmail_EmailsRules_Emails_REG { get; set; }
+
+
+    /// <summary> SendEmail.EmailSubject equals </summary>
+    [JsonProperty("sendEmail_emailSubject_eq")]
+    public string? SendEmail_EmailSubject_EQ { get; set; }
+    /// <summary> SendEmail.EmailSubject contains </summary>
+    [JsonProperty("sendEmail_emailSubject_con")]
+    public string? SendEmail_EmailSubject_CON { get; set; }
+    /// <summary> SendEmail.EmailSubject regex </summary>
+    [JsonProperty("sendEmail_emailSubject_reg")]
+    public string? SendEmail_EmailSubject_REG { get; set; }
+
+    /// <summary> SendEmail.EmailRequiresUbluxSupportConfirmation equals </summary>
+    [JsonProperty("sendEmail_emailRequiresUbluxSupportConfirmation_eq")]
+    public bool? SendEmail_EmailRequiresUbluxSupportConfirmation_EQ { get; set; }
+
+
+    /// <summary> Engine equals </summary>
+    [JsonProperty("engine_eq")]
+    public string? Engine_EQ { get; set; }
+    /// <summary> Engine contains </summary>
+    [JsonProperty("engine_con")]
+    public string? Engine_CON { get; set; }
+    /// <summary> Engine regex </summary>
+    [JsonProperty("engine_reg")]
+    public string? Engine_REG { get; set; }
 
     /// <summary> IdsTags equals </summary>
     [JsonProperty("idsTags_eq")]
@@ -6870,6 +7080,26 @@ public class PhoneFilterRequest
     [JsonProperty("allowConnectionsFromOnlyThisIp_reg")]
     public string? AllowConnectionsFromOnlyThisIp_REG { get; set; }
 
+    /// <summary> OnDisconnectedNotifyIdsEmails equals </summary>
+    [JsonProperty("onDisconnectedNotifyIdsEmails_eq")]
+    public string? OnDisconnectedNotifyIdsEmails_EQ { get; set; }
+    /// <summary> OnDisconnectedNotifyIdsEmails contains </summary>
+    [JsonProperty("onDisconnectedNotifyIdsEmails_con")]
+    public string? OnDisconnectedNotifyIdsEmails_CON { get; set; }
+    /// <summary> OnDisconnectedNotifyIdsEmails regex </summary>
+    [JsonProperty("onDisconnectedNotifyIdsEmails_reg")]
+    public string? OnDisconnectedNotifyIdsEmails_REG { get; set; }
+
+    /// <summary> OnConnectedNotifyIdsEmails equals </summary>
+    [JsonProperty("onConnectedNotifyIdsEmails_eq")]
+    public string? OnConnectedNotifyIdsEmails_EQ { get; set; }
+    /// <summary> OnConnectedNotifyIdsEmails contains </summary>
+    [JsonProperty("onConnectedNotifyIdsEmails_con")]
+    public string? OnConnectedNotifyIdsEmails_CON { get; set; }
+    /// <summary> OnConnectedNotifyIdsEmails regex </summary>
+    [JsonProperty("onConnectedNotifyIdsEmails_reg")]
+    public string? OnConnectedNotifyIdsEmails_REG { get; set; }
+
     /// <summary> IdsTags equals </summary>
     [JsonProperty("idsTags_eq")]
     public string? IdsTags_EQ { get; set; }
@@ -7782,6 +8012,26 @@ public class VoicemailForwardedFilterRequest
     /// <summary> PhoneThatForwardedVoicemail.AllowConnectionsFromOnlyThisIp regex </summary>
     [JsonProperty("phoneThatForwardedVoicemail_allowConnectionsFromOnlyThisIp_reg")]
     public string? PhoneThatForwardedVoicemail_AllowConnectionsFromOnlyThisIp_REG { get; set; }
+
+    /// <summary> PhoneThatForwardedVoicemail.OnDisconnectedNotifyIdsEmails equals </summary>
+    [JsonProperty("phoneThatForwardedVoicemail_onDisconnectedNotifyIdsEmails_eq")]
+    public string? PhoneThatForwardedVoicemail_OnDisconnectedNotifyIdsEmails_EQ { get; set; }
+    /// <summary> PhoneThatForwardedVoicemail.OnDisconnectedNotifyIdsEmails contains </summary>
+    [JsonProperty("phoneThatForwardedVoicemail_onDisconnectedNotifyIdsEmails_con")]
+    public string? PhoneThatForwardedVoicemail_OnDisconnectedNotifyIdsEmails_CON { get; set; }
+    /// <summary> PhoneThatForwardedVoicemail.OnDisconnectedNotifyIdsEmails regex </summary>
+    [JsonProperty("phoneThatForwardedVoicemail_onDisconnectedNotifyIdsEmails_reg")]
+    public string? PhoneThatForwardedVoicemail_OnDisconnectedNotifyIdsEmails_REG { get; set; }
+
+    /// <summary> PhoneThatForwardedVoicemail.OnConnectedNotifyIdsEmails equals </summary>
+    [JsonProperty("phoneThatForwardedVoicemail_onConnectedNotifyIdsEmails_eq")]
+    public string? PhoneThatForwardedVoicemail_OnConnectedNotifyIdsEmails_EQ { get; set; }
+    /// <summary> PhoneThatForwardedVoicemail.OnConnectedNotifyIdsEmails contains </summary>
+    [JsonProperty("phoneThatForwardedVoicemail_onConnectedNotifyIdsEmails_con")]
+    public string? PhoneThatForwardedVoicemail_OnConnectedNotifyIdsEmails_CON { get; set; }
+    /// <summary> PhoneThatForwardedVoicemail.OnConnectedNotifyIdsEmails regex </summary>
+    [JsonProperty("phoneThatForwardedVoicemail_onConnectedNotifyIdsEmails_reg")]
+    public string? PhoneThatForwardedVoicemail_OnConnectedNotifyIdsEmails_REG { get; set; }
 
     /// <summary> PhoneThatForwardedVoicemail.IdsTags equals </summary>
     [JsonProperty("phoneThatForwardedVoicemail_idsTags_eq")]
@@ -9585,35 +9835,52 @@ public class CallOutgoingToPowerDialerFilterRequest
     [JsonProperty("aiCallAnalysisOutput_detectedLanguage_reg")]
     public string? AiCallAnalysisOutput_DetectedLanguage_REG { get; set; }
 
-    /// <summary> AiCallAnalysisOutput.Output.Name equals </summary>
-    [JsonProperty("aiCallAnalysisOutput_output_name_eq")]
-    public string? AiCallAnalysisOutput_Output_Name_EQ { get; set; }
-    /// <summary> AiCallAnalysisOutput.Output.Name contains </summary>
-    [JsonProperty("aiCallAnalysisOutput_output_name_con")]
-    public string? AiCallAnalysisOutput_Output_Name_CON { get; set; }
-    /// <summary> AiCallAnalysisOutput.Output.Name regex </summary>
-    [JsonProperty("aiCallAnalysisOutput_output_name_reg")]
-    public string? AiCallAnalysisOutput_Output_Name_REG { get; set; }
+    /// <summary> AiCallAnalysisOutput.Results.Value equals </summary>
+    [JsonProperty("aiCallAnalysisOutput_results_value_eq")]
+    public string? AiCallAnalysisOutput_Results_Value_EQ { get; set; }
+    /// <summary> AiCallAnalysisOutput.Results.Value contains </summary>
+    [JsonProperty("aiCallAnalysisOutput_results_value_con")]
+    public string? AiCallAnalysisOutput_Results_Value_CON { get; set; }
+    /// <summary> AiCallAnalysisOutput.Results.Value regex </summary>
+    [JsonProperty("aiCallAnalysisOutput_results_value_reg")]
+    public string? AiCallAnalysisOutput_Results_Value_REG { get; set; }
 
-    /// <summary> AiCallAnalysisOutput.Output.AiVariableType equals </summary>
-    [JsonProperty("aiCallAnalysisOutput_output_aiVariableType_eq")]
-    public string? AiCallAnalysisOutput_Output_AiVariableType_EQ { get; set; }
-    /// <summary> AiCallAnalysisOutput.Output.AiVariableType contains </summary>
-    [JsonProperty("aiCallAnalysisOutput_output_aiVariableType_con")]
-    public string? AiCallAnalysisOutput_Output_AiVariableType_CON { get; set; }
-    /// <summary> AiCallAnalysisOutput.Output.AiVariableType regex </summary>
-    [JsonProperty("aiCallAnalysisOutput_output_aiVariableType_reg")]
-    public string? AiCallAnalysisOutput_Output_AiVariableType_REG { get; set; }
 
-    /// <summary> AiCallAnalysisOutput.Output.Value equals </summary>
-    [JsonProperty("aiCallAnalysisOutput_output_value_eq")]
-    public string? AiCallAnalysisOutput_Output_Value_EQ { get; set; }
-    /// <summary> AiCallAnalysisOutput.Output.Value contains </summary>
-    [JsonProperty("aiCallAnalysisOutput_output_value_con")]
-    public string? AiCallAnalysisOutput_Output_Value_CON { get; set; }
-    /// <summary> AiCallAnalysisOutput.Output.Value regex </summary>
-    [JsonProperty("aiCallAnalysisOutput_output_value_reg")]
-    public string? AiCallAnalysisOutput_Output_Value_REG { get; set; }
+
+
+
+
+
+
+    /// <summary> AiCallAnalysisOutput.Results.Name equals </summary>
+    [JsonProperty("aiCallAnalysisOutput_results_name_eq")]
+    public string? AiCallAnalysisOutput_Results_Name_EQ { get; set; }
+    /// <summary> AiCallAnalysisOutput.Results.Name contains </summary>
+    [JsonProperty("aiCallAnalysisOutput_results_name_con")]
+    public string? AiCallAnalysisOutput_Results_Name_CON { get; set; }
+    /// <summary> AiCallAnalysisOutput.Results.Name regex </summary>
+    [JsonProperty("aiCallAnalysisOutput_results_name_reg")]
+    public string? AiCallAnalysisOutput_Results_Name_REG { get; set; }
+
+    /// <summary> AiCallAnalysisOutput.Results.AiVariableType equals </summary>
+    [JsonProperty("aiCallAnalysisOutput_results_aiVariableType_eq")]
+    public string? AiCallAnalysisOutput_Results_AiVariableType_EQ { get; set; }
+    /// <summary> AiCallAnalysisOutput.Results.AiVariableType contains </summary>
+    [JsonProperty("aiCallAnalysisOutput_results_aiVariableType_con")]
+    public string? AiCallAnalysisOutput_Results_AiVariableType_CON { get; set; }
+    /// <summary> AiCallAnalysisOutput.Results.AiVariableType regex </summary>
+    [JsonProperty("aiCallAnalysisOutput_results_aiVariableType_reg")]
+    public string? AiCallAnalysisOutput_Results_AiVariableType_REG { get; set; }
+
+    /// <summary> AiCallAnalysisOutput.Results.Description equals </summary>
+    [JsonProperty("aiCallAnalysisOutput_results_description_eq")]
+    public string? AiCallAnalysisOutput_Results_Description_EQ { get; set; }
+    /// <summary> AiCallAnalysisOutput.Results.Description contains </summary>
+    [JsonProperty("aiCallAnalysisOutput_results_description_con")]
+    public string? AiCallAnalysisOutput_Results_Description_CON { get; set; }
+    /// <summary> AiCallAnalysisOutput.Results.Description regex </summary>
+    [JsonProperty("aiCallAnalysisOutput_results_description_reg")]
+    public string? AiCallAnalysisOutput_Results_Description_REG { get; set; }
 
 
     /// <summary> AiCallAnalysisOutput.TokensTotal equals </summary>
@@ -10407,35 +10674,52 @@ public class CallFilterRequest
     [JsonProperty("aiCallAnalysisOutput_detectedLanguage_reg")]
     public string? AiCallAnalysisOutput_DetectedLanguage_REG { get; set; }
 
-    /// <summary> AiCallAnalysisOutput.Output.Name equals </summary>
-    [JsonProperty("aiCallAnalysisOutput_output_name_eq")]
-    public string? AiCallAnalysisOutput_Output_Name_EQ { get; set; }
-    /// <summary> AiCallAnalysisOutput.Output.Name contains </summary>
-    [JsonProperty("aiCallAnalysisOutput_output_name_con")]
-    public string? AiCallAnalysisOutput_Output_Name_CON { get; set; }
-    /// <summary> AiCallAnalysisOutput.Output.Name regex </summary>
-    [JsonProperty("aiCallAnalysisOutput_output_name_reg")]
-    public string? AiCallAnalysisOutput_Output_Name_REG { get; set; }
+    /// <summary> AiCallAnalysisOutput.Results.Value equals </summary>
+    [JsonProperty("aiCallAnalysisOutput_results_value_eq")]
+    public string? AiCallAnalysisOutput_Results_Value_EQ { get; set; }
+    /// <summary> AiCallAnalysisOutput.Results.Value contains </summary>
+    [JsonProperty("aiCallAnalysisOutput_results_value_con")]
+    public string? AiCallAnalysisOutput_Results_Value_CON { get; set; }
+    /// <summary> AiCallAnalysisOutput.Results.Value regex </summary>
+    [JsonProperty("aiCallAnalysisOutput_results_value_reg")]
+    public string? AiCallAnalysisOutput_Results_Value_REG { get; set; }
 
-    /// <summary> AiCallAnalysisOutput.Output.AiVariableType equals </summary>
-    [JsonProperty("aiCallAnalysisOutput_output_aiVariableType_eq")]
-    public string? AiCallAnalysisOutput_Output_AiVariableType_EQ { get; set; }
-    /// <summary> AiCallAnalysisOutput.Output.AiVariableType contains </summary>
-    [JsonProperty("aiCallAnalysisOutput_output_aiVariableType_con")]
-    public string? AiCallAnalysisOutput_Output_AiVariableType_CON { get; set; }
-    /// <summary> AiCallAnalysisOutput.Output.AiVariableType regex </summary>
-    [JsonProperty("aiCallAnalysisOutput_output_aiVariableType_reg")]
-    public string? AiCallAnalysisOutput_Output_AiVariableType_REG { get; set; }
 
-    /// <summary> AiCallAnalysisOutput.Output.Value equals </summary>
-    [JsonProperty("aiCallAnalysisOutput_output_value_eq")]
-    public string? AiCallAnalysisOutput_Output_Value_EQ { get; set; }
-    /// <summary> AiCallAnalysisOutput.Output.Value contains </summary>
-    [JsonProperty("aiCallAnalysisOutput_output_value_con")]
-    public string? AiCallAnalysisOutput_Output_Value_CON { get; set; }
-    /// <summary> AiCallAnalysisOutput.Output.Value regex </summary>
-    [JsonProperty("aiCallAnalysisOutput_output_value_reg")]
-    public string? AiCallAnalysisOutput_Output_Value_REG { get; set; }
+
+
+
+
+
+
+    /// <summary> AiCallAnalysisOutput.Results.Name equals </summary>
+    [JsonProperty("aiCallAnalysisOutput_results_name_eq")]
+    public string? AiCallAnalysisOutput_Results_Name_EQ { get; set; }
+    /// <summary> AiCallAnalysisOutput.Results.Name contains </summary>
+    [JsonProperty("aiCallAnalysisOutput_results_name_con")]
+    public string? AiCallAnalysisOutput_Results_Name_CON { get; set; }
+    /// <summary> AiCallAnalysisOutput.Results.Name regex </summary>
+    [JsonProperty("aiCallAnalysisOutput_results_name_reg")]
+    public string? AiCallAnalysisOutput_Results_Name_REG { get; set; }
+
+    /// <summary> AiCallAnalysisOutput.Results.AiVariableType equals </summary>
+    [JsonProperty("aiCallAnalysisOutput_results_aiVariableType_eq")]
+    public string? AiCallAnalysisOutput_Results_AiVariableType_EQ { get; set; }
+    /// <summary> AiCallAnalysisOutput.Results.AiVariableType contains </summary>
+    [JsonProperty("aiCallAnalysisOutput_results_aiVariableType_con")]
+    public string? AiCallAnalysisOutput_Results_AiVariableType_CON { get; set; }
+    /// <summary> AiCallAnalysisOutput.Results.AiVariableType regex </summary>
+    [JsonProperty("aiCallAnalysisOutput_results_aiVariableType_reg")]
+    public string? AiCallAnalysisOutput_Results_AiVariableType_REG { get; set; }
+
+    /// <summary> AiCallAnalysisOutput.Results.Description equals </summary>
+    [JsonProperty("aiCallAnalysisOutput_results_description_eq")]
+    public string? AiCallAnalysisOutput_Results_Description_EQ { get; set; }
+    /// <summary> AiCallAnalysisOutput.Results.Description contains </summary>
+    [JsonProperty("aiCallAnalysisOutput_results_description_con")]
+    public string? AiCallAnalysisOutput_Results_Description_CON { get; set; }
+    /// <summary> AiCallAnalysisOutput.Results.Description regex </summary>
+    [JsonProperty("aiCallAnalysisOutput_results_description_reg")]
+    public string? AiCallAnalysisOutput_Results_Description_REG { get; set; }
 
 
     /// <summary> AiCallAnalysisOutput.TokensTotal equals </summary>
@@ -11115,35 +11399,52 @@ public class CallIncomingFilterRequest
     [JsonProperty("aiCallAnalysisOutput_detectedLanguage_reg")]
     public string? AiCallAnalysisOutput_DetectedLanguage_REG { get; set; }
 
-    /// <summary> AiCallAnalysisOutput.Output.Name equals </summary>
-    [JsonProperty("aiCallAnalysisOutput_output_name_eq")]
-    public string? AiCallAnalysisOutput_Output_Name_EQ { get; set; }
-    /// <summary> AiCallAnalysisOutput.Output.Name contains </summary>
-    [JsonProperty("aiCallAnalysisOutput_output_name_con")]
-    public string? AiCallAnalysisOutput_Output_Name_CON { get; set; }
-    /// <summary> AiCallAnalysisOutput.Output.Name regex </summary>
-    [JsonProperty("aiCallAnalysisOutput_output_name_reg")]
-    public string? AiCallAnalysisOutput_Output_Name_REG { get; set; }
+    /// <summary> AiCallAnalysisOutput.Results.Value equals </summary>
+    [JsonProperty("aiCallAnalysisOutput_results_value_eq")]
+    public string? AiCallAnalysisOutput_Results_Value_EQ { get; set; }
+    /// <summary> AiCallAnalysisOutput.Results.Value contains </summary>
+    [JsonProperty("aiCallAnalysisOutput_results_value_con")]
+    public string? AiCallAnalysisOutput_Results_Value_CON { get; set; }
+    /// <summary> AiCallAnalysisOutput.Results.Value regex </summary>
+    [JsonProperty("aiCallAnalysisOutput_results_value_reg")]
+    public string? AiCallAnalysisOutput_Results_Value_REG { get; set; }
 
-    /// <summary> AiCallAnalysisOutput.Output.AiVariableType equals </summary>
-    [JsonProperty("aiCallAnalysisOutput_output_aiVariableType_eq")]
-    public string? AiCallAnalysisOutput_Output_AiVariableType_EQ { get; set; }
-    /// <summary> AiCallAnalysisOutput.Output.AiVariableType contains </summary>
-    [JsonProperty("aiCallAnalysisOutput_output_aiVariableType_con")]
-    public string? AiCallAnalysisOutput_Output_AiVariableType_CON { get; set; }
-    /// <summary> AiCallAnalysisOutput.Output.AiVariableType regex </summary>
-    [JsonProperty("aiCallAnalysisOutput_output_aiVariableType_reg")]
-    public string? AiCallAnalysisOutput_Output_AiVariableType_REG { get; set; }
 
-    /// <summary> AiCallAnalysisOutput.Output.Value equals </summary>
-    [JsonProperty("aiCallAnalysisOutput_output_value_eq")]
-    public string? AiCallAnalysisOutput_Output_Value_EQ { get; set; }
-    /// <summary> AiCallAnalysisOutput.Output.Value contains </summary>
-    [JsonProperty("aiCallAnalysisOutput_output_value_con")]
-    public string? AiCallAnalysisOutput_Output_Value_CON { get; set; }
-    /// <summary> AiCallAnalysisOutput.Output.Value regex </summary>
-    [JsonProperty("aiCallAnalysisOutput_output_value_reg")]
-    public string? AiCallAnalysisOutput_Output_Value_REG { get; set; }
+
+
+
+
+
+
+    /// <summary> AiCallAnalysisOutput.Results.Name equals </summary>
+    [JsonProperty("aiCallAnalysisOutput_results_name_eq")]
+    public string? AiCallAnalysisOutput_Results_Name_EQ { get; set; }
+    /// <summary> AiCallAnalysisOutput.Results.Name contains </summary>
+    [JsonProperty("aiCallAnalysisOutput_results_name_con")]
+    public string? AiCallAnalysisOutput_Results_Name_CON { get; set; }
+    /// <summary> AiCallAnalysisOutput.Results.Name regex </summary>
+    [JsonProperty("aiCallAnalysisOutput_results_name_reg")]
+    public string? AiCallAnalysisOutput_Results_Name_REG { get; set; }
+
+    /// <summary> AiCallAnalysisOutput.Results.AiVariableType equals </summary>
+    [JsonProperty("aiCallAnalysisOutput_results_aiVariableType_eq")]
+    public string? AiCallAnalysisOutput_Results_AiVariableType_EQ { get; set; }
+    /// <summary> AiCallAnalysisOutput.Results.AiVariableType contains </summary>
+    [JsonProperty("aiCallAnalysisOutput_results_aiVariableType_con")]
+    public string? AiCallAnalysisOutput_Results_AiVariableType_CON { get; set; }
+    /// <summary> AiCallAnalysisOutput.Results.AiVariableType regex </summary>
+    [JsonProperty("aiCallAnalysisOutput_results_aiVariableType_reg")]
+    public string? AiCallAnalysisOutput_Results_AiVariableType_REG { get; set; }
+
+    /// <summary> AiCallAnalysisOutput.Results.Description equals </summary>
+    [JsonProperty("aiCallAnalysisOutput_results_description_eq")]
+    public string? AiCallAnalysisOutput_Results_Description_EQ { get; set; }
+    /// <summary> AiCallAnalysisOutput.Results.Description contains </summary>
+    [JsonProperty("aiCallAnalysisOutput_results_description_con")]
+    public string? AiCallAnalysisOutput_Results_Description_CON { get; set; }
+    /// <summary> AiCallAnalysisOutput.Results.Description regex </summary>
+    [JsonProperty("aiCallAnalysisOutput_results_description_reg")]
+    public string? AiCallAnalysisOutput_Results_Description_REG { get; set; }
 
 
     /// <summary> AiCallAnalysisOutput.TokensTotal equals </summary>
@@ -11803,35 +12104,52 @@ public class CallOutgoingFilterRequest
     [JsonProperty("aiCallAnalysisOutput_detectedLanguage_reg")]
     public string? AiCallAnalysisOutput_DetectedLanguage_REG { get; set; }
 
-    /// <summary> AiCallAnalysisOutput.Output.Name equals </summary>
-    [JsonProperty("aiCallAnalysisOutput_output_name_eq")]
-    public string? AiCallAnalysisOutput_Output_Name_EQ { get; set; }
-    /// <summary> AiCallAnalysisOutput.Output.Name contains </summary>
-    [JsonProperty("aiCallAnalysisOutput_output_name_con")]
-    public string? AiCallAnalysisOutput_Output_Name_CON { get; set; }
-    /// <summary> AiCallAnalysisOutput.Output.Name regex </summary>
-    [JsonProperty("aiCallAnalysisOutput_output_name_reg")]
-    public string? AiCallAnalysisOutput_Output_Name_REG { get; set; }
+    /// <summary> AiCallAnalysisOutput.Results.Value equals </summary>
+    [JsonProperty("aiCallAnalysisOutput_results_value_eq")]
+    public string? AiCallAnalysisOutput_Results_Value_EQ { get; set; }
+    /// <summary> AiCallAnalysisOutput.Results.Value contains </summary>
+    [JsonProperty("aiCallAnalysisOutput_results_value_con")]
+    public string? AiCallAnalysisOutput_Results_Value_CON { get; set; }
+    /// <summary> AiCallAnalysisOutput.Results.Value regex </summary>
+    [JsonProperty("aiCallAnalysisOutput_results_value_reg")]
+    public string? AiCallAnalysisOutput_Results_Value_REG { get; set; }
 
-    /// <summary> AiCallAnalysisOutput.Output.AiVariableType equals </summary>
-    [JsonProperty("aiCallAnalysisOutput_output_aiVariableType_eq")]
-    public string? AiCallAnalysisOutput_Output_AiVariableType_EQ { get; set; }
-    /// <summary> AiCallAnalysisOutput.Output.AiVariableType contains </summary>
-    [JsonProperty("aiCallAnalysisOutput_output_aiVariableType_con")]
-    public string? AiCallAnalysisOutput_Output_AiVariableType_CON { get; set; }
-    /// <summary> AiCallAnalysisOutput.Output.AiVariableType regex </summary>
-    [JsonProperty("aiCallAnalysisOutput_output_aiVariableType_reg")]
-    public string? AiCallAnalysisOutput_Output_AiVariableType_REG { get; set; }
 
-    /// <summary> AiCallAnalysisOutput.Output.Value equals </summary>
-    [JsonProperty("aiCallAnalysisOutput_output_value_eq")]
-    public string? AiCallAnalysisOutput_Output_Value_EQ { get; set; }
-    /// <summary> AiCallAnalysisOutput.Output.Value contains </summary>
-    [JsonProperty("aiCallAnalysisOutput_output_value_con")]
-    public string? AiCallAnalysisOutput_Output_Value_CON { get; set; }
-    /// <summary> AiCallAnalysisOutput.Output.Value regex </summary>
-    [JsonProperty("aiCallAnalysisOutput_output_value_reg")]
-    public string? AiCallAnalysisOutput_Output_Value_REG { get; set; }
+
+
+
+
+
+
+    /// <summary> AiCallAnalysisOutput.Results.Name equals </summary>
+    [JsonProperty("aiCallAnalysisOutput_results_name_eq")]
+    public string? AiCallAnalysisOutput_Results_Name_EQ { get; set; }
+    /// <summary> AiCallAnalysisOutput.Results.Name contains </summary>
+    [JsonProperty("aiCallAnalysisOutput_results_name_con")]
+    public string? AiCallAnalysisOutput_Results_Name_CON { get; set; }
+    /// <summary> AiCallAnalysisOutput.Results.Name regex </summary>
+    [JsonProperty("aiCallAnalysisOutput_results_name_reg")]
+    public string? AiCallAnalysisOutput_Results_Name_REG { get; set; }
+
+    /// <summary> AiCallAnalysisOutput.Results.AiVariableType equals </summary>
+    [JsonProperty("aiCallAnalysisOutput_results_aiVariableType_eq")]
+    public string? AiCallAnalysisOutput_Results_AiVariableType_EQ { get; set; }
+    /// <summary> AiCallAnalysisOutput.Results.AiVariableType contains </summary>
+    [JsonProperty("aiCallAnalysisOutput_results_aiVariableType_con")]
+    public string? AiCallAnalysisOutput_Results_AiVariableType_CON { get; set; }
+    /// <summary> AiCallAnalysisOutput.Results.AiVariableType regex </summary>
+    [JsonProperty("aiCallAnalysisOutput_results_aiVariableType_reg")]
+    public string? AiCallAnalysisOutput_Results_AiVariableType_REG { get; set; }
+
+    /// <summary> AiCallAnalysisOutput.Results.Description equals </summary>
+    [JsonProperty("aiCallAnalysisOutput_results_description_eq")]
+    public string? AiCallAnalysisOutput_Results_Description_EQ { get; set; }
+    /// <summary> AiCallAnalysisOutput.Results.Description contains </summary>
+    [JsonProperty("aiCallAnalysisOutput_results_description_con")]
+    public string? AiCallAnalysisOutput_Results_Description_CON { get; set; }
+    /// <summary> AiCallAnalysisOutput.Results.Description regex </summary>
+    [JsonProperty("aiCallAnalysisOutput_results_description_reg")]
+    public string? AiCallAnalysisOutput_Results_Description_REG { get; set; }
 
 
     /// <summary> AiCallAnalysisOutput.TokensTotal equals </summary>

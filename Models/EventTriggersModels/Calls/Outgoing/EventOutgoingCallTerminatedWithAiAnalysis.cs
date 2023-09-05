@@ -34,20 +34,20 @@ public class EventOutgoingCallTerminatedWithAiAnalysis : EventOutgoingCallTermin
     /// </summary>
     public override EventOutgoingCallTerminatedWithAiAnalysis BuildRandomFakeObject(RunningApplicationInstance instance)
     {
-        var obj = GetRandomBase<EventOutgoingCallTerminatedWithAiAnalysis>(instance);
+        EventOutgoingCallTerminatedWithAiAnalysis obj = GetRandomBase<EventOutgoingCallTerminatedWithAiAnalysis>(instance);
 
-        obj.AiCallAnalysis = new AiCallAnalysisOutput()
+        obj.AiCallAnalysis = new ()
         {
             IdAiCallAnalysisInput = AiCallAnalysisInput.BuildId(instance).Id,
-            Output = new List<AiCallAnalysisVariableOutput>()
+            Results = new ()
             {
-                new AiCallAnalysisVariableOutput()
+                new AiCallAnalysisResult()
                 {
                     Name = "Summary",
                     AiVariableType = AiVariableType.Text,
                     Value = "Client complains agains Agent that washing mashine is not working"
                 },
-                new AiCallAnalysisVariableOutput()
+                new AiCallAnalysisResult()
                 {
                     Name = "CustomerSatisfaction",
                     AiVariableType = AiVariableType.Integer,
