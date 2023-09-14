@@ -13,5 +13,10 @@ public enum PhoneType
     /// <summary>
     ///     Web phone
     /// </summary>
-    Web
+    Web,
+
+    /// <summary>
+    ///     Mobile app
+    /// </summary>
+    Mobile
 }
