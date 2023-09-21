@@ -119,7 +119,7 @@ public partial class Phone
         if (this.CallerIdNumbers is null || this.CallerIdNumbers.Count == 0)
             return "";
 
-        if(this.CallerIdIndex < this.CallerIdNumbers.Count)
+        if (this.CallerIdIndex < this.CallerIdNumbers.Count)
             return this.CallerIdNumbers[this.CallerIdIndex];
 
         logger.Log(LogLevel.Error, 374827381, "Caller id index is outside of range for phone {id}. Setting first one", this.id);

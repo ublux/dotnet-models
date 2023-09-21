@@ -271,7 +271,7 @@ export interface AiCallAnalysisQuery {
     description?: string | null;
 }
 
-/** AI call analysis variable that AI engine outputs */
+/** AI call analysis variable that AI engine outputs. Result of a query asked to AI angine. */
 export interface AiCallAnalysisResult {
     /** Value of variable */
     value?: string | null;
@@ -770,7 +770,7 @@ When this variable is set the call is marked as completed */
     Reference of contact that we are calling
 If incoming:
     Reference of of Contact that called us */
-    readonly idContact?: string | null;
+    idContact?: string | null;
     /** Contact full name */
     readonly contactFullName?: string | null;
     /** Refernce to AI call transcription */
@@ -1336,6 +1336,499 @@ For example a CloudService user will point to no account */
     idsTags?: string[] | null;
 }
 
+/** Incoming phone call between PSTN and Ublux */
+export interface CallIncoming {
+    /** Id of document */
+    readonly id?: string;
+    /** VOIP phone number that received the phone call */
+    readonly idVoipNumberPhone?: string | null;
+    /** Phone number that received phone call in international format */
+    readonly fromInternationalFormat?: string;
+    /** Providers send us the information if call is being forwarded. It may be helpful to store this. */
+    readonly forwardedBy?: string | null;
+    /** Id of voicemail in case there is one */
+    readonly idVoicemail?: string | null;
+    /** This call was originated with the purpose of tranfering another call with this id    
+When this variable is set the call is marked as completed */
+    readonly idCallThatTerminatedThisCallDoToAttendantTransfer?: string | null;
+    /** If outgoing:
+    Reference of contact that we are calling
+If incoming:
+    Reference of of Contact that called us */
+    idContact?: string | null;
+    /** Contact full name */
+    readonly contactFullName?: string | null;
+    /** Refernce to AI call transcription */
+    readonly idAiCallTranscription?: string | null;
+    channelVariables?: ChannelVariables;
+    /** Child calls */
+    readonly childCalls?: ChildCall[];
+    dialStatus?: DialStatus;
+    /** Number of seconds it took to answer */
+    readonly secondsItTookToAnswer?: number | null;
+    /** Dates when call is placed on hold */
+    readonly timesWhenCallPlacedOnHold?: TimeWhenCallPlacedOnHold[];
+    /** Caller id */
+    readonly from?: string;
+    fromCountry?: CountryIsoCode;
+    /** Phone number called */
+    readonly to?: string;
+    toCountry?: CountryIsoCode;
+    callType?: CallType;
+    recording?: Recording;
+    /** Was video disabled on call? */
+    readonly disabledVideo?: boolean;
+    /** List because user can send digits multiple times */
+    readonly digitsSent?: string[];
+    /** Is call international. This does not include child calls. */
+    readonly isInternational?: boolean;
+    /** True if it contains any child call or master call international */
+    readonly containsInternationalCall?: boolean;
+    callResult?: CallResult;
+    aiCallAnalysisOutput?: AiCallAnalysisOutput;
+    /** AI input */
+    readonly idAiCallAnalysisInput?: string | null;
+    /** Phones that participated in this call */
+    readonly idsParticipantPhones?: string[];
+    /** If not null it means the call is ended */
+    readonly durationInSeconds?: number | null;
+    /** Custom Variables. 
+key = variable name
+value = variable value in json format. It can also be a json array */
+    readonly variables?: CallVariable[];
+    errors?: CallErrors;
+    recordingStatus?: ProcessStatus;
+    aiTranscriptionStatus?: ProcessStatus;
+    aiAnalysisStatus?: ProcessStatus;
+    /** It is nullable because there are cases where it makes no sense to point to an account. 
+For example a CloudService user will point to no account */
+    idsTags?: string[];
+    /** Creation date. Sets DateUpdated if it does not have a value */
+    readonly dateCreated?: Date;
+    /** Updated date. When item is created on database this date will be set too. This is important so that we can sync contacts */
+    readonly dateUpdated?: Date;
+}
+
+/** Enables searching for CallIncomings */
+export interface CallIncomingFilterRequest {
+    /** IdVoipNumberPhone equals */
+    idVoipNumberPhone_eq?: string | null;
+    /** IdVoipNumberPhone contains */
+    idVoipNumberPhone_con?: string | null;
+    /** IdVoipNumberPhone regex */
+    idVoipNumberPhone_reg?: string | null;
+    /** FromInternationalFormat equals */
+    fromInternationalFormat_eq?: string | null;
+    /** FromInternationalFormat contains */
+    fromInternationalFormat_con?: string | null;
+    /** FromInternationalFormat regex */
+    fromInternationalFormat_reg?: string | null;
+    /** ForwardedBy equals */
+    forwardedBy_eq?: string | null;
+    /** ForwardedBy contains */
+    forwardedBy_con?: string | null;
+    /** ForwardedBy regex */
+    forwardedBy_reg?: string | null;
+    /** IdVoicemail equals */
+    idVoicemail_eq?: string | null;
+    /** IdVoicemail contains */
+    idVoicemail_con?: string | null;
+    /** IdVoicemail regex */
+    idVoicemail_reg?: string | null;
+    /** IdCallThatTerminatedThisCallDoToAttendantTransfer equals */
+    idCallThatTerminatedThisCallDoToAttendantTransfer_eq?: string | null;
+    /** IdCallThatTerminatedThisCallDoToAttendantTransfer contains */
+    idCallThatTerminatedThisCallDoToAttendantTransfer_con?: string | null;
+    /** IdCallThatTerminatedThisCallDoToAttendantTransfer regex */
+    idCallThatTerminatedThisCallDoToAttendantTransfer_reg?: string | null;
+    /** IdContact equals */
+    idContact_eq?: string | null;
+    /** IdContact contains */
+    idContact_con?: string | null;
+    /** IdContact regex */
+    idContact_reg?: string | null;
+    /** ContactFullName equals */
+    contactFullName_eq?: string | null;
+    /** ContactFullName contains */
+    contactFullName_con?: string | null;
+    /** ContactFullName regex */
+    contactFullName_reg?: string | null;
+    /** IdAiCallTranscription equals */
+    idAiCallTranscription_eq?: string | null;
+    /** IdAiCallTranscription contains */
+    idAiCallTranscription_con?: string | null;
+    /** IdAiCallTranscription regex */
+    idAiCallTranscription_reg?: string | null;
+    /** ChannelVariables.Language equals */
+    channelVariables_language_eq?: string | null;
+    /** ChannelVariables.Language contains */
+    channelVariables_language_con?: string | null;
+    /** ChannelVariables.Language regex */
+    channelVariables_language_reg?: string | null;
+    /** ChannelVariables.IdMusicOnHoldGroup equals */
+    channelVariables_idMusicOnHoldGroup_eq?: string | null;
+    /** ChannelVariables.IdMusicOnHoldGroup contains */
+    channelVariables_idMusicOnHoldGroup_con?: string | null;
+    /** ChannelVariables.IdMusicOnHoldGroup regex */
+    channelVariables_idMusicOnHoldGroup_reg?: string | null;
+    /** ChannelVariables.CallerIdName equals */
+    channelVariables_callerIdName_eq?: string | null;
+    /** ChannelVariables.CallerIdName contains */
+    channelVariables_callerIdName_con?: string | null;
+    /** ChannelVariables.CallerIdName regex */
+    channelVariables_callerIdName_reg?: string | null;
+    /** ChannelVariables.CallerIdNumber equals */
+    channelVariables_callerIdNumber_eq?: string | null;
+    /** ChannelVariables.CallerIdNumber contains */
+    channelVariables_callerIdNumber_con?: string | null;
+    /** ChannelVariables.CallerIdNumber regex */
+    channelVariables_callerIdNumber_reg?: string | null;
+    /** ChildCalls.ChildCallType equals */
+    childCalls_childCallType_eq?: string | null;
+    /** ChildCalls.ChildCallType contains */
+    childCalls_childCallType_con?: string | null;
+    /** ChildCalls.ChildCallType regex */
+    childCalls_childCallType_reg?: string | null;
+    /** ChildCalls.DialStatus equals */
+    childCalls_dialStatus_eq?: string | null;
+    /** ChildCalls.DialStatus contains */
+    childCalls_dialStatus_con?: string | null;
+    /** ChildCalls.DialStatus regex */
+    childCalls_dialStatus_reg?: string | null;
+    /** ChildCalls.DateCreated equals */
+    childCalls_dateCreated_eq?: Date | null;
+    /** ChildCalls.DateCreated less than or equal to */
+    childCalls_dateCreated_lte?: Date | null;
+    /** ChildCalls.DateCreated greater than or equal to */
+    childCalls_dateCreated_gte?: Date | null;
+    /** ChildCalls.From equals */
+    childCalls_from_eq?: string | null;
+    /** ChildCalls.From contains */
+    childCalls_from_con?: string | null;
+    /** ChildCalls.From regex */
+    childCalls_from_reg?: string | null;
+    /** ChildCalls.FromCountry equals */
+    childCalls_fromCountry_eq?: string | null;
+    /** ChildCalls.FromCountry contains */
+    childCalls_fromCountry_con?: string | null;
+    /** ChildCalls.FromCountry regex */
+    childCalls_fromCountry_reg?: string | null;
+    /** ChildCalls.To equals */
+    childCalls_to_eq?: string | null;
+    /** ChildCalls.To contains */
+    childCalls_to_con?: string | null;
+    /** ChildCalls.To regex */
+    childCalls_to_reg?: string | null;
+    /** ChildCalls.ToCountry equals */
+    childCalls_toCountry_eq?: string | null;
+    /** ChildCalls.ToCountry contains */
+    childCalls_toCountry_con?: string | null;
+    /** ChildCalls.ToCountry regex */
+    childCalls_toCountry_reg?: string | null;
+    /** ChildCalls.IsInternational equals */
+    childCalls_isInternational_eq?: boolean | null;
+    /** DialStatus equals */
+    dialStatus_eq?: string | null;
+    /** DialStatus contains */
+    dialStatus_con?: string | null;
+    /** DialStatus regex */
+    dialStatus_reg?: string | null;
+    /** From equals */
+    from_eq?: string | null;
+    /** From contains */
+    from_con?: string | null;
+    /** From regex */
+    from_reg?: string | null;
+    /** FromCountry equals */
+    fromCountry_eq?: string | null;
+    /** FromCountry contains */
+    fromCountry_con?: string | null;
+    /** FromCountry regex */
+    fromCountry_reg?: string | null;
+    /** To equals */
+    to_eq?: string | null;
+    /** To contains */
+    to_con?: string | null;
+    /** To regex */
+    to_reg?: string | null;
+    /** ToCountry equals */
+    toCountry_eq?: string | null;
+    /** ToCountry contains */
+    toCountry_con?: string | null;
+    /** ToCountry regex */
+    toCountry_reg?: string | null;
+    /** CallType equals */
+    callType_eq?: string | null;
+    /** CallType contains */
+    callType_con?: string | null;
+    /** CallType regex */
+    callType_reg?: string | null;
+    /** Recording.ErrorMessage equals */
+    recording_errorMessage_eq?: string | null;
+    /** Recording.ErrorMessage contains */
+    recording_errorMessage_con?: string | null;
+    /** Recording.ErrorMessage regex */
+    recording_errorMessage_reg?: string | null;
+    /** Recording.RecordingClientMp3.InstanceId equals */
+    recording_recordingClientMp3_instanceId_eq?: string | null;
+    /** Recording.RecordingClientMp3.InstanceId contains */
+    recording_recordingClientMp3_instanceId_con?: string | null;
+    /** Recording.RecordingClientMp3.InstanceId regex */
+    recording_recordingClientMp3_instanceId_reg?: string | null;
+    /** Recording.RecordingClientMp3.FileSizeInBytes equals */
+    recording_recordingClientMp3_fileSizeInBytes_eq?: number | null;
+    /** Recording.RecordingClientMp3.FileSizeInBytes less than or equal to */
+    recording_recordingClientMp3_fileSizeInBytes_lte?: number | null;
+    /** Recording.RecordingClientMp3.FileSizeInBytes greater than or equal to */
+    recording_recordingClientMp3_fileSizeInBytes_gte?: number | null;
+    /** Recording.RecordingClientMp3.Md5Hash equals */
+    recording_recordingClientMp3_md5Hash_eq?: string | null;
+    /** Recording.RecordingClientMp3.Md5Hash contains */
+    recording_recordingClientMp3_md5Hash_con?: string | null;
+    /** Recording.RecordingClientMp3.Md5Hash regex */
+    recording_recordingClientMp3_md5Hash_reg?: string | null;
+    /** Recording.RecordingClientMp3.Url equals */
+    recording_recordingClientMp3_url_eq?: string | null;
+    /** Recording.RecordingClientMp3.Url contains */
+    recording_recordingClientMp3_url_con?: string | null;
+    /** Recording.RecordingClientMp3.Url regex */
+    recording_recordingClientMp3_url_reg?: string | null;
+    /** Recording.RecordingClientMp3.Id equals */
+    recording_recordingClientMp3_id_eq?: string | null;
+    /** Recording.RecordingClientMp3.Id contains */
+    recording_recordingClientMp3_id_con?: string | null;
+    /** Recording.RecordingClientMp3.Id regex */
+    recording_recordingClientMp3_id_reg?: string | null;
+    /** Recording.RecordingAgentMp3.InstanceId equals */
+    recording_recordingAgentMp3_instanceId_eq?: string | null;
+    /** Recording.RecordingAgentMp3.InstanceId contains */
+    recording_recordingAgentMp3_instanceId_con?: string | null;
+    /** Recording.RecordingAgentMp3.InstanceId regex */
+    recording_recordingAgentMp3_instanceId_reg?: string | null;
+    /** Recording.RecordingAgentMp3.FileSizeInBytes equals */
+    recording_recordingAgentMp3_fileSizeInBytes_eq?: number | null;
+    /** Recording.RecordingAgentMp3.FileSizeInBytes less than or equal to */
+    recording_recordingAgentMp3_fileSizeInBytes_lte?: number | null;
+    /** Recording.RecordingAgentMp3.FileSizeInBytes greater than or equal to */
+    recording_recordingAgentMp3_fileSizeInBytes_gte?: number | null;
+    /** Recording.RecordingAgentMp3.Md5Hash equals */
+    recording_recordingAgentMp3_md5Hash_eq?: string | null;
+    /** Recording.RecordingAgentMp3.Md5Hash contains */
+    recording_recordingAgentMp3_md5Hash_con?: string | null;
+    /** Recording.RecordingAgentMp3.Md5Hash regex */
+    recording_recordingAgentMp3_md5Hash_reg?: string | null;
+    /** Recording.RecordingAgentMp3.Url equals */
+    recording_recordingAgentMp3_url_eq?: string | null;
+    /** Recording.RecordingAgentMp3.Url contains */
+    recording_recordingAgentMp3_url_con?: string | null;
+    /** Recording.RecordingAgentMp3.Url regex */
+    recording_recordingAgentMp3_url_reg?: string | null;
+    /** Recording.RecordingAgentMp3.Id equals */
+    recording_recordingAgentMp3_id_eq?: string | null;
+    /** Recording.RecordingAgentMp3.Id contains */
+    recording_recordingAgentMp3_id_con?: string | null;
+    /** Recording.RecordingAgentMp3.Id regex */
+    recording_recordingAgentMp3_id_reg?: string | null;
+    /** Recording.RecordingMp3.InstanceId equals */
+    recording_recordingMp3_instanceId_eq?: string | null;
+    /** Recording.RecordingMp3.InstanceId contains */
+    recording_recordingMp3_instanceId_con?: string | null;
+    /** Recording.RecordingMp3.InstanceId regex */
+    recording_recordingMp3_instanceId_reg?: string | null;
+    /** Recording.RecordingMp3.FileSizeInBytes equals */
+    recording_recordingMp3_fileSizeInBytes_eq?: number | null;
+    /** Recording.RecordingMp3.FileSizeInBytes less than or equal to */
+    recording_recordingMp3_fileSizeInBytes_lte?: number | null;
+    /** Recording.RecordingMp3.FileSizeInBytes greater than or equal to */
+    recording_recordingMp3_fileSizeInBytes_gte?: number | null;
+    /** Recording.RecordingMp3.Md5Hash equals */
+    recording_recordingMp3_md5Hash_eq?: string | null;
+    /** Recording.RecordingMp3.Md5Hash contains */
+    recording_recordingMp3_md5Hash_con?: string | null;
+    /** Recording.RecordingMp3.Md5Hash regex */
+    recording_recordingMp3_md5Hash_reg?: string | null;
+    /** Recording.RecordingMp3.Url equals */
+    recording_recordingMp3_url_eq?: string | null;
+    /** Recording.RecordingMp3.Url contains */
+    recording_recordingMp3_url_con?: string | null;
+    /** Recording.RecordingMp3.Url regex */
+    recording_recordingMp3_url_reg?: string | null;
+    /** Recording.RecordingMp3.Id equals */
+    recording_recordingMp3_id_eq?: string | null;
+    /** Recording.RecordingMp3.Id contains */
+    recording_recordingMp3_id_con?: string | null;
+    /** Recording.RecordingMp3.Id regex */
+    recording_recordingMp3_id_reg?: string | null;
+    /** Recording.Id equals */
+    recording_id_eq?: string | null;
+    /** Recording.Id contains */
+    recording_id_con?: string | null;
+    /** Recording.Id regex */
+    recording_id_reg?: string | null;
+    /** DisabledVideo equals */
+    disabledVideo_eq?: boolean | null;
+    /** DigitsSent equals */
+    digitsSent_eq?: string | null;
+    /** DigitsSent contains */
+    digitsSent_con?: string | null;
+    /** DigitsSent regex */
+    digitsSent_reg?: string | null;
+    /** IsInternational equals */
+    isInternational_eq?: boolean | null;
+    /** ContainsInternationalCall equals */
+    containsInternationalCall_eq?: boolean | null;
+    /** CallResult equals */
+    callResult_eq?: string | null;
+    /** CallResult contains */
+    callResult_con?: string | null;
+    /** CallResult regex */
+    callResult_reg?: string | null;
+    /** AiCallAnalysisOutput.IdAiCallAnalysisInput equals */
+    aiCallAnalysisOutput_idAiCallAnalysisInput_eq?: string | null;
+    /** AiCallAnalysisOutput.IdAiCallAnalysisInput contains */
+    aiCallAnalysisOutput_idAiCallAnalysisInput_con?: string | null;
+    /** AiCallAnalysisOutput.IdAiCallAnalysisInput regex */
+    aiCallAnalysisOutput_idAiCallAnalysisInput_reg?: string | null;
+    /** AiCallAnalysisOutput.DetectedLanguage equals */
+    aiCallAnalysisOutput_detectedLanguage_eq?: string | null;
+    /** AiCallAnalysisOutput.DetectedLanguage contains */
+    aiCallAnalysisOutput_detectedLanguage_con?: string | null;
+    /** AiCallAnalysisOutput.DetectedLanguage regex */
+    aiCallAnalysisOutput_detectedLanguage_reg?: string | null;
+    /** AiCallAnalysisOutput.Results.Value equals */
+    aiCallAnalysisOutput_results_value_eq?: string | null;
+    /** AiCallAnalysisOutput.Results.Value contains */
+    aiCallAnalysisOutput_results_value_con?: string | null;
+    /** AiCallAnalysisOutput.Results.Value regex */
+    aiCallAnalysisOutput_results_value_reg?: string | null;
+    /** AiCallAnalysisOutput.Results.Name equals */
+    aiCallAnalysisOutput_results_name_eq?: string | null;
+    /** AiCallAnalysisOutput.Results.Name contains */
+    aiCallAnalysisOutput_results_name_con?: string | null;
+    /** AiCallAnalysisOutput.Results.Name regex */
+    aiCallAnalysisOutput_results_name_reg?: string | null;
+    /** AiCallAnalysisOutput.Results.AiVariableType equals */
+    aiCallAnalysisOutput_results_aiVariableType_eq?: string | null;
+    /** AiCallAnalysisOutput.Results.AiVariableType contains */
+    aiCallAnalysisOutput_results_aiVariableType_con?: string | null;
+    /** AiCallAnalysisOutput.Results.AiVariableType regex */
+    aiCallAnalysisOutput_results_aiVariableType_reg?: string | null;
+    /** AiCallAnalysisOutput.Results.Description equals */
+    aiCallAnalysisOutput_results_description_eq?: string | null;
+    /** AiCallAnalysisOutput.Results.Description contains */
+    aiCallAnalysisOutput_results_description_con?: string | null;
+    /** AiCallAnalysisOutput.Results.Description regex */
+    aiCallAnalysisOutput_results_description_reg?: string | null;
+    /** AiCallAnalysisOutput.TokensTotal equals */
+    aiCallAnalysisOutput_tokensTotal_eq?: number | null;
+    /** AiCallAnalysisOutput.TokensTotal less than or equal to */
+    aiCallAnalysisOutput_tokensTotal_lte?: number | null;
+    /** AiCallAnalysisOutput.TokensTotal greater than or equal to */
+    aiCallAnalysisOutput_tokensTotal_gte?: number | null;
+    /** AiCallAnalysisOutput.TokensCompletion equals */
+    aiCallAnalysisOutput_tokensCompletion_eq?: number | null;
+    /** AiCallAnalysisOutput.TokensCompletion less than or equal to */
+    aiCallAnalysisOutput_tokensCompletion_lte?: number | null;
+    /** AiCallAnalysisOutput.TokensCompletion greater than or equal to */
+    aiCallAnalysisOutput_tokensCompletion_gte?: number | null;
+    /** AiCallAnalysisOutput.TokensPrompt equals */
+    aiCallAnalysisOutput_tokensPrompt_eq?: number | null;
+    /** AiCallAnalysisOutput.TokensPrompt less than or equal to */
+    aiCallAnalysisOutput_tokensPrompt_lte?: number | null;
+    /** AiCallAnalysisOutput.TokensPrompt greater than or equal to */
+    aiCallAnalysisOutput_tokensPrompt_gte?: number | null;
+    /** IdAiCallAnalysisInput equals */
+    idAiCallAnalysisInput_eq?: string | null;
+    /** IdAiCallAnalysisInput contains */
+    idAiCallAnalysisInput_con?: string | null;
+    /** IdAiCallAnalysisInput regex */
+    idAiCallAnalysisInput_reg?: string | null;
+    /** IdsParticipantPhones equals */
+    idsParticipantPhones_eq?: string | null;
+    /** IdsParticipantPhones contains */
+    idsParticipantPhones_con?: string | null;
+    /** IdsParticipantPhones regex */
+    idsParticipantPhones_reg?: string | null;
+    /** Variables.Name equals */
+    variables_name_eq?: string | null;
+    /** Variables.Name contains */
+    variables_name_con?: string | null;
+    /** Variables.Name regex */
+    variables_name_reg?: string | null;
+    /** Variables.Value equals */
+    variables_value_eq?: string | null;
+    /** Variables.Value contains */
+    variables_value_con?: string | null;
+    /** Variables.Value regex */
+    variables_value_reg?: string | null;
+    /** Errors.ErrorsCall equals */
+    errors_errorsCall_eq?: string | null;
+    /** Errors.ErrorsCall contains */
+    errors_errorsCall_con?: string | null;
+    /** Errors.ErrorsCall regex */
+    errors_errorsCall_reg?: string | null;
+    /** Errors.ErrorsRecording equals */
+    errors_errorsRecording_eq?: string | null;
+    /** Errors.ErrorsRecording contains */
+    errors_errorsRecording_con?: string | null;
+    /** Errors.ErrorsRecording regex */
+    errors_errorsRecording_reg?: string | null;
+    /** Errors.ErrorsAiTranscription equals */
+    errors_errorsAiTranscription_eq?: string | null;
+    /** Errors.ErrorsAiTranscription contains */
+    errors_errorsAiTranscription_con?: string | null;
+    /** Errors.ErrorsAiTranscription regex */
+    errors_errorsAiTranscription_reg?: string | null;
+    /** Errors.ErrorsAiAnalysis equals */
+    errors_errorsAiAnalysis_eq?: string | null;
+    /** Errors.ErrorsAiAnalysis contains */
+    errors_errorsAiAnalysis_con?: string | null;
+    /** Errors.ErrorsAiAnalysis regex */
+    errors_errorsAiAnalysis_reg?: string | null;
+    /** RecordingStatus equals */
+    recordingStatus_eq?: string | null;
+    /** RecordingStatus contains */
+    recordingStatus_con?: string | null;
+    /** RecordingStatus regex */
+    recordingStatus_reg?: string | null;
+    /** AiTranscriptionStatus equals */
+    aiTranscriptionStatus_eq?: string | null;
+    /** AiTranscriptionStatus contains */
+    aiTranscriptionStatus_con?: string | null;
+    /** AiTranscriptionStatus regex */
+    aiTranscriptionStatus_reg?: string | null;
+    /** AiAnalysisStatus equals */
+    aiAnalysisStatus_eq?: string | null;
+    /** AiAnalysisStatus contains */
+    aiAnalysisStatus_con?: string | null;
+    /** AiAnalysisStatus regex */
+    aiAnalysisStatus_reg?: string | null;
+    /** IdsTags equals */
+    idsTags_eq?: string | null;
+    /** IdsTags contains */
+    idsTags_con?: string | null;
+    /** IdsTags regex */
+    idsTags_reg?: string | null;
+    /** Id equals */
+    id_eq?: string | null;
+    /** Id contains */
+    id_con?: string | null;
+    /** Id regex */
+    id_reg?: string | null;
+    /** DateCreated equals */
+    dateCreated_eq?: Date | null;
+    /** DateCreated less than or equal to */
+    dateCreated_lte?: Date | null;
+    /** DateCreated greater than or equal to */
+    dateCreated_gte?: Date | null;
+    /** DateUpdated equals */
+    dateUpdated_eq?: Date | null;
+    /** DateUpdated less than or equal to */
+    dateUpdated_lte?: Date | null;
+    /** DateUpdated greater than or equal to */
+    dateUpdated_gte?: Date | null;
+}
+
 /** Incoming phone call that executed an IVR */
 export interface CallIncomingToCallFlowLogic {
     /** Id of document */
@@ -1358,7 +1851,7 @@ When this variable is set the call is marked as completed */
     Reference of contact that we are calling
 If incoming:
     Reference of of Contact that called us */
-    readonly idContact?: string | null;
+    idContact?: string | null;
     /** Contact full name */
     readonly contactFullName?: string | null;
     /** Refernce to AI call transcription */
@@ -1439,7 +1932,7 @@ When this variable is set the call is marked as completed */
     Reference of contact that we are calling
 If incoming:
     Reference of of Contact that called us */
-    readonly idContact?: string | null;
+    idContact?: string | null;
     /** Contact full name */
     readonly contactFullName?: string | null;
     /** Refernce to AI call transcription */
@@ -1518,7 +2011,7 @@ When this variable is set the call is marked as completed */
     Reference of contact that we are calling
 If incoming:
     Reference of of Contact that called us */
-    readonly idContact?: string | null;
+    idContact?: string | null;
     /** Contact full name */
     readonly contactFullName?: string | null;
     /** Refernce to AI call transcription */
@@ -1587,7 +2080,7 @@ When this variable is set the call is marked as completed */
     Reference of contact that we are calling
 If incoming:
     Reference of of Contact that called us */
-    readonly idContact?: string | null;
+    idContact?: string | null;
     /** Contact full name */
     readonly contactFullName?: string | null;
     /** Refernce to AI call transcription */
@@ -1681,7 +2174,7 @@ export interface CallerIdMask {
     /** Id of document */
     readonly id?: string;
     /** The phone that will be used as caller id */
-    readonly phoneNumber?: string;
+    phoneNumber?: string;
     /** Name of this caller id mask */
     friendlyName?: string;
     /** It is nullable because there are cases where it makes no sense to point to an account. 
@@ -1803,7 +2296,7 @@ export interface ChildCallAttendantTransferToPSTN {
     /** Id of call that attendant transfered this call */
     idCallAttendantTransfer?: string;
     /** Id of contact to whom call is being transfered */
-    readonly idContact?: string | null;
+    idContact?: string | null;
     /** Contact full name */
     readonly contactFullName?: string | null;
     /** Call duration in seconds */
@@ -1857,7 +2350,7 @@ export interface ChildCallBlindTransferToPSTN {
     idTrunkTermination?: string | null;
     childCallType?: ChildCallType;
     /** Id of contact to whom call is being transfered */
-    readonly idContact?: string | null;
+    idContact?: string | null;
     /** Contact full name */
     readonly contactFullName?: string | null;
     /** Id of call that originated blind transfer */
@@ -1911,7 +2404,7 @@ export interface ChildCallForwardToPSTN {
     idTrunkTermination?: string | null;
     childCallType?: ChildCallType;
     /** Id of contact to whom call is being transfered */
-    readonly idContact?: string | null;
+    idContact?: string | null;
     /** Contact full name */
     readonly contactFullName?: string | null;
     /** Call duration in seconds */
@@ -2836,7 +3329,7 @@ export interface EmailFilterRequest {
 
 /** Send additional emails depending phone number */
 export interface EmailsRules {
-    /** If phone contains this send email to this additional emails */
+    /** If phone contains this send email to this additional emails. Also if friendly name did contains */
     phoneNumber?: string;
     /** Emails to send if any of the questions asked contains a specific keyword on Variable IfResponseContainsKeywordSendEmail */
     emails?: string[];
@@ -4435,7 +4928,7 @@ export interface FaxIncoming {
     /** Received fax from this VOIP number. This could also be named the 'To' property. */
     readonly idVoipNumberFax?: string;
     /** Contact */
-    readonly idContact?: string | null;
+    idContact?: string | null;
     pdf?: StoredFile;
     /** Number of pages received */
     readonly numPages?: number;
@@ -4919,6 +5412,18 @@ export interface HttpResponsePaginationResultOfCallFlowLogic {
     readonly recordsCount?: number;
     /** Results */
     records?: CallFlowLogic[] | null;
+}
+
+/** Limits the number of results that can obtained per request. */
+export interface HttpResponsePaginationResultOfCallIncoming {
+    /** Page number */
+    pageNumber?: number;
+    /** Maximum number of records that can be retrieved per page */
+    pageSize?: number;
+    /** Number of records */
+    readonly recordsCount?: number;
+    /** Results */
+    records?: CallIncoming[] | null;
 }
 
 /** Limits the number of results that can obtained per request. */
@@ -6043,6 +6548,7 @@ export interface PhoneFilterRequest {
 export enum PhoneType {
     Physical = "Physical",
     Web = "Web",
+    Mobile = "Mobile",
 }
 
 /** Previously called IpPhone. Represents a phone in UBLUX */
@@ -6088,12 +6594,12 @@ export interface PowerDialerContact {
     /** Id of document */
     readonly id?: string;
     /** To what power dialer group */
-    readonly idPowerDialerGroup?: string;
+    idPowerDialerGroup?: string;
     /** Phone number to call */
-    readonly phoneNumber?: string;
+    phoneNumber?: string;
     countryIsoCode?: CountryIsoCode;
     /** Id of contact */
-    readonly idContact?: string | null;
+    idContact?: string | null;
     /** Date when powerdialer group started */
     readonly dateStarted?: Date | null;
     /** Date when powerdialer group ended */
@@ -6433,7 +6939,7 @@ export interface SMS {
     /** VOIP number that sent/received SMS message */
     readonly idVoipNumber?: string;
     /** Contact */
-    readonly idContact?: string | null;
+    idContact?: string | null;
     /** True if SMS was received false otherwise */
     readonly isIncoming?: boolean;
     /** SMS message */

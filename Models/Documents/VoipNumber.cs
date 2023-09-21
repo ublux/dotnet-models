@@ -1,4 +1,6 @@
-﻿namespace Ublux.Communications.Models.Documents;
+﻿using System.Linq.Expressions;
+
+namespace Ublux.Communications.Models.Documents;
 
 /// <summary>
 ///     Incoming phone number (VoipNumber)
@@ -204,6 +206,31 @@ public abstract partial class VoipNumber : UbluxDocument_ReferenceAccount_Refere
 
         var phoneNumberWithoutIllegalChars = new string(phoneNumber.Where(char.IsDigit).ToArray());
         return phoneNumberWithoutIllegalChars[Math.Max(0, phoneNumberWithoutIllegalChars.Length - 8)..];
+    }
+
+
+    /// <summary>
+    ///     Returns id of voip number in case idVoipNumberOrPhoneNumber is not an ID
+    ///     GetManyOptions? options = null, IEnumerable? projectionPropToInclude = null, ushort timeout = 7, bool searchOnDeletedItems = false
+    /// </summary>
+    public static string? FindIdGivenPhoneNumber(string idVoipNumberOrPhoneNumber, IEnumerable<VoipNumber>? allVoipNumbersFromAccountWhereToSearchFrom)
+    {
+        if (idVoipNumberOrPhoneNumber.Contains(RedisConstants.DelimeterId))
+        {
+            // it should be an id
+            return idVoipNumberOrPhoneNumber;
+        }
+
+        if (allVoipNumbersFromAccountWhereToSearchFrom is null)
+            return null;
+
+        // if its a phone number build id
+        var last8Digits = VoipNumber.GetLast8DigitsOfPhoneNumber(idVoipNumberOrPhoneNumber);
+        var vn = allVoipNumbersFromAccountWhereToSearchFrom.FirstOrDefault(x => x.Id.Contains(last8Digits));
+        if (vn is not null)
+            return vn.id;
+
+        return null;
     }
 
     #endregion

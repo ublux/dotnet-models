@@ -24,4 +24,9 @@ public enum VoipCompany
     ///     Provider from Spain with victor
     /// </summary>
     AirNetworks,
+
+    /// <summary>
+    ///     Telnyx replacement for Twilio
+    /// </summary>
+    Telnyx,
 }
