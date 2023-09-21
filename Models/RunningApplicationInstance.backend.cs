@@ -85,7 +85,9 @@ public class RunningApplicationInstance
     /// <summary>
     ///     Is pbx a gateway. For example csp.us-1 is not but csp.mx-a is because it has a letter at the end
     /// </summary>
-    public bool IsGateway => Regex.Match(id, @"(?xi) csp . \w+ - [a-z]").Success;
+    public bool IsGateway => 
+        id.EndsWith("-T", StringComparison.OrdinalIgnoreCase) == false 
+        && Regex.Match(id, @"(?xi) csp . \w+ - [a-z]").Success;
 
     private long _numberOfOperationsExecuting;
 
