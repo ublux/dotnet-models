@@ -33,6 +33,8 @@ public class AiCallAnalysisOutput
     /// </summary>    
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
+    [JsonIgnore]
+    [System.Text.Json.Serialization.JsonIgnore]
     public int TokensTotal { get; set; }
 
     /// <summary>
@@ -40,6 +42,8 @@ public class AiCallAnalysisOutput
     /// </summary>    
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
+    [JsonIgnore]
+    [System.Text.Json.Serialization.JsonIgnore]
     public int TokensCompletion { get; set; }
 
     /// <summary>
@@ -47,5 +51,7 @@ public class AiCallAnalysisOutput
     /// </summary>    
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
+    [JsonIgnore]
+    [System.Text.Json.Serialization.JsonIgnore]
     public int TokensPrompt { get; set; }
 }

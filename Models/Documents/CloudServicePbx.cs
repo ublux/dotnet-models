@@ -46,13 +46,14 @@ public partial class CloudServicePbx : CloudService
 
     #region Gateway
 
-    /// <summary>
-    ///     If pbx is behind a fxo gateway forward all PSTN incoming calls to this extension.
-    ///     Can also be an extension number
-    /// </summary>
-    [AllowUpdate(true)]
-    [References(typeof(Extension))]
-    public string? IdExtensionForwardCallsGateway { get; set; }
+    ///// <summary>
+    /////     If pbx is behind a fxo gateway forward all PSTN incoming calls to this extension.
+    /////     Can also be an extension number
+    ///// </summary>
+    //[AllowUpdate(true)]
+    //[References(typeof(Extension))]
+    //[Obsolete("gateway")]
+    //public string? IdExtensionForwardCallsGateway { get; set; }
 
     /// <summary>
     ///     If it is a gateway then what type of processing for incoming calls

@@ -429,11 +429,6 @@ public class CloudServicePbxUpdateRequest // : IUbluxDocumentId
     /// </summary>
     public Boolean? DisableMonitoring { get; set; }
     /// <summary>
-    /// If pbx is behind a fxo gateway forward all PSTN incoming calls to this extension.
-    /// Can also be an extension number
-    /// </summary>
-    public String? IdExtensionForwardCallsGateway { get; set; }
-    /// <summary>
     /// If it is a gateway then what type of processing for incoming calls
     /// </summary>
     public CallProcessingType? CallProcessingTypeGateway { get; set; }
@@ -462,8 +457,6 @@ public class CloudServicePbxUpdateRequest // : IUbluxDocumentId
     {
         if(jsonRaw.Contains($@"""{nameof(this.DisableMonitoring)}""", StringComparison.OrdinalIgnoreCase))
             cloudServicePbx.DisableMonitoring = this.DisableMonitoring.Value;
-        if(jsonRaw.Contains($@"""{nameof(this.IdExtensionForwardCallsGateway)}""", StringComparison.OrdinalIgnoreCase))
-            cloudServicePbx.IdExtensionForwardCallsGateway = this.IdExtensionForwardCallsGateway;
         if(jsonRaw.Contains($@"""{nameof(this.CallProcessingTypeGateway)}""", StringComparison.OrdinalIgnoreCase))
             cloudServicePbx.CallProcessingTypeGateway = this.CallProcessingTypeGateway.Value;
         if(jsonRaw.Contains($@"""{nameof(this.IdAccountGateway)}""", StringComparison.OrdinalIgnoreCase))
@@ -1295,10 +1288,6 @@ public class PhoneUpdateRequest // : IUbluxDocumentId
     /// </summary>
     public String? IdUser { get; set; }
     /// <summary>
-    /// Use gateway to make outbound calls. If true gateway to use will be TT.Gateway
-    /// </summary>
-    public Boolean? UseGateway { get; set; }
-    /// <summary>
     /// Caller id number that will be used to place outbound calls
     /// </summary>
     public List<System.String>? CallerIdNumbers { get; set; }
@@ -1369,8 +1358,6 @@ public class PhoneUpdateRequest // : IUbluxDocumentId
             phone.IdPhoneConfiguration = this.IdPhoneConfiguration;
         if(jsonRaw.Contains($@"""{nameof(this.IdUser)}""", StringComparison.OrdinalIgnoreCase))
             phone.IdUser = this.IdUser;
-        if(jsonRaw.Contains($@"""{nameof(this.UseGateway)}""", StringComparison.OrdinalIgnoreCase))
-            phone.UseGateway = this.UseGateway.Value;
         if(jsonRaw.Contains($@"""{nameof(this.CallerIdNumbers)}""", StringComparison.OrdinalIgnoreCase))
             phone.CallerIdNumbers = this.CallerIdNumbers;
         if(jsonRaw.Contains($@"""{nameof(this.CallerIdIndex)}""", StringComparison.OrdinalIgnoreCase))

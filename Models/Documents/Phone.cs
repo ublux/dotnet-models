@@ -32,19 +32,11 @@ public partial class Phone : UbluxDocument_ReferenceAccount_ReferenceTags
     public string? IdUser { get; set; }
 
     ///// <summary>
-    /////     If has value then we assume this phone is behind a fxo gateway. 
-    /////     All outgoing calls made by this phone will be sent directly to that trunk.
-    /////     Example T1 for gateway
+    /////     Use gateway to make outbound calls. If true gateway to use will be TT.Gateway
     ///// </summary>
     //[AllowUpdate(true)]
-    //[References(typeof(TrunkTermination))]
-    //public string? IdTrunkTerminationGateway { get; set; }
-
-    /// <summary>
-    ///     Use gateway to make outbound calls. If true gateway to use will be TT.Gateway
-    /// </summary>
-    [AllowUpdate(true)]
-    public bool UseGateway { get; set; }
+    //[Obsolete("gateway")]
+    //public bool UseGateway { get; set; }
 
     #endregion
 

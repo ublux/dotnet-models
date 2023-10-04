@@ -3960,16 +3960,6 @@ public class CloudServicePbxFilterRequest
     [JsonProperty("disableMonitoring_eq")]
     public bool? DisableMonitoring_EQ { get; set; }
 
-    /// <summary> IdExtensionForwardCallsGateway equals </summary>
-    [JsonProperty("idExtensionForwardCallsGateway_eq")]
-    public string? IdExtensionForwardCallsGateway_EQ { get; set; }
-    /// <summary> IdExtensionForwardCallsGateway contains </summary>
-    [JsonProperty("idExtensionForwardCallsGateway_con")]
-    public string? IdExtensionForwardCallsGateway_CON { get; set; }
-    /// <summary> IdExtensionForwardCallsGateway regex </summary>
-    [JsonProperty("idExtensionForwardCallsGateway_reg")]
-    public string? IdExtensionForwardCallsGateway_REG { get; set; }
-
     /// <summary> CallProcessingTypeGateway equals </summary>
     [JsonProperty("callProcessingTypeGateway_eq")]
     public string? CallProcessingTypeGateway_EQ { get; set; }
@@ -6837,10 +6827,6 @@ public class PhoneFilterRequest
     [JsonProperty("idUser_reg")]
     public string? IdUser_REG { get; set; }
 
-    /// <summary> UseGateway equals </summary>
-    [JsonProperty("useGateway_eq")]
-    public bool? UseGateway_EQ { get; set; }
-
     /// <summary> PhoneConnectionStatus.IpWAN equals </summary>
     [JsonProperty("phoneConnectionStatus_ipWAN_eq")]
     public string? PhoneConnectionStatus_IpWAN_EQ { get; set; }
@@ -7769,10 +7755,6 @@ public class VoicemailForwardedFilterRequest
     /// <summary> PhoneThatForwardedVoicemail.IdUser regex </summary>
     [JsonProperty("phoneThatForwardedVoicemail_idUser_reg")]
     public string? PhoneThatForwardedVoicemail_IdUser_REG { get; set; }
-
-    /// <summary> PhoneThatForwardedVoicemail.UseGateway equals </summary>
-    [JsonProperty("phoneThatForwardedVoicemail_useGateway_eq")]
-    public bool? PhoneThatForwardedVoicemail_UseGateway_EQ { get; set; }
 
     /// <summary> PhoneThatForwardedVoicemail.PhoneConnectionStatus.IpWAN equals </summary>
     [JsonProperty("phoneThatForwardedVoicemail_phoneConnectionStatus_ipWAN_eq")]
@@ -9365,6 +9347,16 @@ public class CallOutgoingToPowerDialerFilterRequest
     /// <summary> IdPowerDialerGroup regex </summary>
     [JsonProperty("idPowerDialerGroup_reg")]
     public string? IdPowerDialerGroup_REG { get; set; }
+
+    /// <summary> IdPowerDialerContact equals </summary>
+    [JsonProperty("idPowerDialerContact_eq")]
+    public string? IdPowerDialerContact_EQ { get; set; }
+    /// <summary> IdPowerDialerContact contains </summary>
+    [JsonProperty("idPowerDialerContact_con")]
+    public string? IdPowerDialerContact_CON { get; set; }
+    /// <summary> IdPowerDialerContact regex </summary>
+    [JsonProperty("idPowerDialerContact_reg")]
+    public string? IdPowerDialerContact_REG { get; set; }
 
     /// <summary> ToInternationalFormat equals </summary>
     [JsonProperty("toInternationalFormat_eq")]

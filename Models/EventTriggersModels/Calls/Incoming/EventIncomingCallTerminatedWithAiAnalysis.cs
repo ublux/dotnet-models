@@ -27,6 +27,34 @@ public class EventIncomingCallTerminatedWithAiAnalysis : EventIncomingCallTermin
     [SwaggerSchema(ReadOnly = true)]
     public required AiCallAnalysisOutput AiCallAnalysis { get; set; }
 
+    /// <summary>
+    ///     Most AI call analysis contain a summary. Sending it outside the array make's it easy to get
+    /// </summary>
+    [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
+    public string? AiCallAnalysisSummary { get; set; }
+
+    /// <summary>
+    ///     Most AI call analysis contains Categories. Sending it outside the array make's it easy to get
+    /// </summary>
+    [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
+    public string? AiCallAnalysisCategories { get; set; }
+
+    /// <summary>
+    ///     Most AI call analysis contain sentiment. Sending it outside the array make's it easy to get
+    /// </summary>
+    [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
+    public string? AiCallAnalysisSentiment { get; set; }
+
+    /// <summary>
+    ///     Most AI call analysis contain a problem. Sending it outside the array make's it easy to get
+    /// </summary>
+    [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
+    public string? AiCallAnalysisProblem { get; set; }
+
     #endregion
 
     /// <summary>

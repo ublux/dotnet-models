@@ -28,4 +28,13 @@ public partial class CallOutgoingToPowerDialer : CallOutgoingToPSTN
     [References(typeof(PowerDialerGroup))]
     [UbluxValidationNotRequired]
     public required string IdPowerDialerGroup { get; set; }
+
+    /// <summary>
+    ///     Belongs to what power dialer contact
+    /// </summary>
+    [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
+    [References(typeof(PowerDialerGroup))]
+    [UbluxValidationNotRequired]
+    public required string IdPowerDialerContact { get; set; }
 }

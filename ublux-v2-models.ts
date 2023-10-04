@@ -2441,9 +2441,6 @@ export interface CloudServicePbx {
     cloudServiceType?: CloudServiceType;
     /** If true we will not monitor pbx in order to update its soft dns in case it is not healthy */
     disableMonitoring?: boolean;
-    /** If pbx is behind a fxo gateway forward all PSTN incoming calls to this extension.
-Can also be an extension number */
-    idExtensionForwardCallsGateway?: string | null;
     callProcessingTypeGateway?: CallProcessingType;
     /** If used as gateway then by what account */
     idAccountGateway?: string | null;
@@ -6178,8 +6175,6 @@ export interface Phone {
     idPhoneConfiguration?: string | null;
     /** Username and password to login to web-app. Two phones cannot point to the same user. */
     idUser?: string | null;
-    /** Use gateway to make outbound calls. If true gateway to use will be TT.Gateway */
-    useGateway?: boolean;
     phoneConnectionStatus?: PhoneConnectionStatus;
     /** Caller id number that will be used to place outbound calls */
     callerIdNumbers?: string[];
@@ -6362,8 +6357,6 @@ export interface PhoneFilterRequest {
     idUser_con?: string | null;
     /** IdUser regex */
     idUser_reg?: string | null;
-    /** UseGateway equals */
-    useGateway_eq?: boolean | null;
     /** PhoneConnectionStatus.IpWAN equals */
     phoneConnectionStatus_ipWAN_eq?: string | null;
     /** PhoneConnectionStatus.IpWAN contains */
@@ -6559,8 +6552,6 @@ export interface PhoneUpdateRequest {
     idPhoneConfiguration?: string | null;
     /** Username and password to login to web-app. Two phones cannot point to the same user. */
     idUser?: string | null;
-    /** Use gateway to make outbound calls. If true gateway to use will be TT.Gateway */
-    useGateway?: boolean | null;
     /** Caller id number that will be used to place outbound calls */
     callerIdNumbers?: string[] | null;
     /** Specifies what caller id to use.  CallerIdIdex cannot be greater than the number of callerIdNumbers. */
