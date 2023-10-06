@@ -110,6 +110,13 @@ public abstract partial class CloudService : UbluxDocument
     [SwaggerSchema(ReadOnly = true)] 
     public bool IsHealthy { get; set; }
 
+    /// <summary>
+    ///     Date when cloud service got disconnected
+    /// </summary>
+    [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
+    public DateTime? DateDisconnected { get; set; }
+
     ///// <summary>
     /////     Instance Id. Example PBX-US-1 for CSP.PBX-US-1
     ///// </summary>

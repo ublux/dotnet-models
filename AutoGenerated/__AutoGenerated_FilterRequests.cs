@@ -4038,6 +4038,16 @@ public class CloudServicePbxFilterRequest
     [JsonProperty("isHealthy_eq")]
     public bool? IsHealthy_EQ { get; set; }
 
+    /// <summary> DateDisconnected equals </summary>
+    [JsonProperty("dateDisconnected_eq")]
+    public DateTime? DateDisconnected_EQ { get; set; }
+    /// <summary> DateDisconnected less than or equal to </summary>
+    [JsonProperty("dateDisconnected_lte")]
+    public DateTime? DateDisconnected_LTE { get; set; }
+    /// <summary> DateDisconnected greater than or equal to </summary>
+    [JsonProperty("dateDisconnected_gte")]
+    public DateTime? DateDisconnected_GTE { get; set; }
+
     /// <summary> IsTest equals </summary>
     [JsonProperty("isTest_eq")]
     public bool? IsTest_EQ { get; set; }
@@ -4174,6 +4184,16 @@ public class CloudServiceWebAppFilterRequest
     [JsonProperty("isHealthy_eq")]
     public bool? IsHealthy_EQ { get; set; }
 
+    /// <summary> DateDisconnected equals </summary>
+    [JsonProperty("dateDisconnected_eq")]
+    public DateTime? DateDisconnected_EQ { get; set; }
+    /// <summary> DateDisconnected less than or equal to </summary>
+    [JsonProperty("dateDisconnected_lte")]
+    public DateTime? DateDisconnected_LTE { get; set; }
+    /// <summary> DateDisconnected greater than or equal to </summary>
+    [JsonProperty("dateDisconnected_gte")]
+    public DateTime? DateDisconnected_GTE { get; set; }
+
     /// <summary> IsTest equals </summary>
     [JsonProperty("isTest_eq")]
     public bool? IsTest_EQ { get; set; }
@@ -4299,6 +4319,16 @@ public class CloudServiceWebHostFilterRequest
     /// <summary> IsHealthy equals </summary>
     [JsonProperty("isHealthy_eq")]
     public bool? IsHealthy_EQ { get; set; }
+
+    /// <summary> DateDisconnected equals </summary>
+    [JsonProperty("dateDisconnected_eq")]
+    public DateTime? DateDisconnected_EQ { get; set; }
+    /// <summary> DateDisconnected less than or equal to </summary>
+    [JsonProperty("dateDisconnected_lte")]
+    public DateTime? DateDisconnected_LTE { get; set; }
+    /// <summary> DateDisconnected greater than or equal to </summary>
+    [JsonProperty("dateDisconnected_gte")]
+    public DateTime? DateDisconnected_GTE { get; set; }
 
     /// <summary> IsTest equals </summary>
     [JsonProperty("isTest_eq")]
@@ -7357,6 +7387,16 @@ public class SMSFilterRequest
     /// <summary> IdContact regex </summary>
     [JsonProperty("idContact_reg")]
     public string? IdContact_REG { get; set; }
+
+    /// <summary> ConversationId equals </summary>
+    [JsonProperty("conversationId_eq")]
+    public string? ConversationId_EQ { get; set; }
+    /// <summary> ConversationId contains </summary>
+    [JsonProperty("conversationId_con")]
+    public string? ConversationId_CON { get; set; }
+    /// <summary> ConversationId regex </summary>
+    [JsonProperty("conversationId_reg")]
+    public string? ConversationId_REG { get; set; }
 
     /// <summary> IsIncoming equals </summary>
     [JsonProperty("isIncoming_eq")]
@@ -12389,6 +12429,16 @@ public class CloudServiceFilterRequest
     /// <summary> IsHealthy equals </summary>
     [JsonProperty("isHealthy_eq")]
     public bool? IsHealthy_EQ { get; set; }
+
+    /// <summary> DateDisconnected equals </summary>
+    [JsonProperty("dateDisconnected_eq")]
+    public DateTime? DateDisconnected_EQ { get; set; }
+    /// <summary> DateDisconnected less than or equal to </summary>
+    [JsonProperty("dateDisconnected_lte")]
+    public DateTime? DateDisconnected_LTE { get; set; }
+    /// <summary> DateDisconnected greater than or equal to </summary>
+    [JsonProperty("dateDisconnected_gte")]
+    public DateTime? DateDisconnected_GTE { get; set; }
 
     /// <summary> IsTest equals </summary>
     [JsonProperty("isTest_eq")]

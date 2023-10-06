@@ -5,6 +5,7 @@
 /// </summary>
 public partial class SMS : UbluxDocument_ReferenceAccount_ReferenceTags
 {
+
     #region Properties
 
     #region References
@@ -29,10 +30,36 @@ public partial class SMS : UbluxDocument_ReferenceAccount_ReferenceTags
     #endregion
 
     /// <summary>
+    ///     Composed of the IdVoipNumber + (last 8 digits of phone number ContactNumber). Example VNP.12345678-98765432
+    /// </summary>
+    [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
+    [UbluxValidationRequired]
+    public string ConversationId
+    {
+        get
+        {
+            if (this.IsIncoming)
+            {
+                return $"{this.IdVoipNumber}-{VoipNumber.GetLast8DigitsOfPhoneNumber(this.From)}";
+            }
+            else
+            {
+                return $"{this.IdVoipNumber}-{VoipNumber.GetLast8DigitsOfPhoneNumber(this.To)}";
+            }
+        }
+        set
+        {
+            // ignore read only
+        }
+    }
+
+
+    /// <summary>
     ///     True if SMS was received false otherwise
     /// </summary>
-    [AllowUpdate(false)] 
-    [SwaggerSchema(ReadOnly = true)] 
+    [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
     public bool IsIncoming { get; set; }
 
     /// <summary>
@@ -157,7 +184,7 @@ public partial class SMS : UbluxDocument_ReferenceAccount_ReferenceTags
 
         // get all mandatory indexes
         foreach (var item in base.GetMandatoryIndexes(collection))
-            yield return item;        
+            yield return item;
     }
 
     #endregion
