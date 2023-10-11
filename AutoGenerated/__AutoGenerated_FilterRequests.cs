@@ -7388,6 +7388,16 @@ public class SMSFilterRequest
     [JsonProperty("idContact_reg")]
     public string? IdContact_REG { get; set; }
 
+    /// <summary> IdUser equals </summary>
+    [JsonProperty("idUser_eq")]
+    public string? IdUser_EQ { get; set; }
+    /// <summary> IdUser contains </summary>
+    [JsonProperty("idUser_con")]
+    public string? IdUser_CON { get; set; }
+    /// <summary> IdUser regex </summary>
+    [JsonProperty("idUser_reg")]
+    public string? IdUser_REG { get; set; }
+
     /// <summary> ConversationId equals </summary>
     [JsonProperty("conversationId_eq")]
     public string? ConversationId_EQ { get; set; }

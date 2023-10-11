@@ -7,20 +7,20 @@ public enum SnsTopic
 {
     #region API
 
-    /// <summary>
-    ///     Item Created
-    /// </summary>
-    Collection_Created,
+    ///// <summary>
+    /////     Item Created
+    ///// </summary>
+    //Collection_Created,
 
-    /// <summary>
-    ///     Item updated
-    /// </summary>
-    Collection_Updated,
+    ///// <summary>
+    /////     Item updated
+    ///// </summary>
+    //Collection_Updated,
 
-    /// <summary>
-    ///     Item deleted
-    /// </summary>
-    Collection_Deleted,
+    ///// <summary>
+    /////     Item deleted
+    ///// </summary>
+    //Collection_Deleted,
 
     /// <summary>
     ///     When a call transcription is complete
@@ -31,6 +31,16 @@ public enum SnsTopic
     ///     When a call ai analysis is complete
     /// </summary>
     AiAnalysis_Complete,
+
+    /// <summary>
+    ///     Sms message sent
+    /// </summary>
+    SmsSent,
+
+    /// <summary>
+    ///     Sms message received
+    /// </summary>
+    SmsReceived,
 
     #endregion
 

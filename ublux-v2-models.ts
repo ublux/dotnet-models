@@ -249,12 +249,6 @@ export interface AiCallAnalysisOutput {
     readonly detectedLanguage?: string;
     /** List of queries to ask AI engine about a call */
     readonly results?: AiCallAnalysisResult[];
-    /** Total tokes used by AI engine */
-    readonly tokensTotal?: number;
-    /** Tokens used by completion on AI engine */
-    readonly tokensCompletion?: number;
-    /** Tokens used by prompt on AI engine */
-    readonly tokensPrompt?: number;
 }
 
 /** AI call analysis variable query sent to AI engine */
@@ -2459,6 +2453,8 @@ Hard host name should point to this */
     readonly nat?: boolean;
     /** Send this constantly to web service when polling. The pbx sends this */
     readonly isHealthy?: boolean;
+    /** Date when cloud service got disconnected */
+    readonly dateDisconnected?: Date | null;
     /** Is this a test cloud serviec */
     readonly isTest?: boolean;
     /** We need instance id in order to reboot cloud service for example. Example: i-0655b45b8134e6425 */
@@ -2509,6 +2505,8 @@ Hard host name should point to this */
     readonly nat?: boolean;
     /** Send this constantly to web service when polling. The pbx sends this */
     readonly isHealthy?: boolean;
+    /** Date when cloud service got disconnected */
+    readonly dateDisconnected?: Date | null;
     /** Is this a test cloud serviec */
     readonly isTest?: boolean;
     /** We need instance id in order to reboot cloud service for example. Example: i-0655b45b8134e6425 */
@@ -2540,6 +2538,8 @@ Hard host name should point to this */
     readonly nat?: boolean;
     /** Send this constantly to web service when polling. The pbx sends this */
     readonly isHealthy?: boolean;
+    /** Date when cloud service got disconnected */
+    readonly dateDisconnected?: Date | null;
     /** Is this a test cloud serviec */
     readonly isTest?: boolean;
     /** We need instance id in order to reboot cloud service for example. Example: i-0655b45b8134e6425 */
@@ -3687,6 +3687,14 @@ If call is outgoing then the name of contact that we are calling. */
 export interface EventIncomingCallTerminatedWithAiAnalysis {
     eventTrigger?: EventTriggerType;
     aiCallAnalysis?: AiCallAnalysisOutput;
+    /** Most AI call analysis contain a summary. Sending it outside the array make's it easy to get */
+    readonly aiCallAnalysisSummary?: string | null;
+    /** Most AI call analysis contains Categories. Sending it outside the array make's it easy to get */
+    readonly aiCallAnalysisCategories?: string | null;
+    /** Most AI call analysis contain sentiment. Sending it outside the array make's it easy to get */
+    readonly aiCallAnalysisSentiment?: string | null;
+    /** Most AI call analysis contain a problem. Sending it outside the array make's it easy to get */
+    readonly aiCallAnalysisProblem?: string | null;
     /** Recording of call */
     readonly recordingUrl?: string;
     /** Date when call was answered */
@@ -3846,6 +3854,14 @@ If call is outgoing then the name of contact that we are calling. */
 export interface EventOutgoingCallTerminatedWithAiAnalysis {
     eventTrigger?: EventTriggerType;
     aiCallAnalysis?: AiCallAnalysisOutput;
+    /** Most AI call analysis contain a summary. Sending it outside the array make's it easy to get */
+    readonly aiCallAnalysisSummary?: string | null;
+    /** Most AI call analysis contains Categories. Sending it outside the array make's it easy to get */
+    readonly aiCallAnalysisCategories?: string | null;
+    /** Most AI call analysis contain sentiment. Sending it outside the array make's it easy to get */
+    readonly aiCallAnalysisSentiment?: string | null;
+    /** Most AI call analysis contain a problem. Sending it outside the array make's it easy to get */
+    readonly aiCallAnalysisProblem?: string | null;
     /** Recording of call */
     readonly recordingUrl?: string;
     /** Date when call was answered */
@@ -6931,6 +6947,10 @@ export interface SMS {
     readonly idVoipNumber?: string;
     /** Contact */
     idContact?: string | null;
+    /** If its an outgoing message the user that sent the message. If its an incoming sms then this will be null */
+    readonly idUser?: string | null;
+    /** Composed of the IdVoipNumber + (last 8 digits of phone number ContactNumber). Example VNP.12345678-98765432 */
+    readonly conversationId?: string;
     /** True if SMS was received false otherwise */
     readonly isIncoming?: boolean;
     /** SMS message */
@@ -6964,6 +6984,18 @@ export interface SMSFilterRequest {
     idContact_con?: string | null;
     /** IdContact regex */
     idContact_reg?: string | null;
+    /** IdUser equals */
+    idUser_eq?: string | null;
+    /** IdUser contains */
+    idUser_con?: string | null;
+    /** IdUser regex */
+    idUser_reg?: string | null;
+    /** ConversationId equals */
+    conversationId_eq?: string | null;
+    /** ConversationId contains */
+    conversationId_con?: string | null;
+    /** ConversationId regex */
+    conversationId_reg?: string | null;
     /** IsIncoming equals */
     isIncoming_eq?: boolean | null;
     /** Body equals */
@@ -7067,11 +7099,10 @@ export interface SnsMessage {
 
 /** Simple notification service topic. Example call_completed. */
 export enum SnsTopic {
-    Collection_Created = "Collection_Created",
-    Collection_Updated = "Collection_Updated",
-    Collection_Deleted = "Collection_Deleted",
     Transcription_Complete = "Transcription_Complete",
     AiAnalysis_Complete = "AiAnalysis_Complete",
+    SmsSent = "SmsSent",
+    SmsReceived = "SmsReceived",
     Call_Started = "Call_Started",
     Call_Terminated = "Call_Terminated",
     Call_TerminatedWithRecording = "Call_TerminatedWithRecording",

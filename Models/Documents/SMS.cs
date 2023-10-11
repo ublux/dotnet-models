@@ -27,6 +27,14 @@ public partial class SMS : UbluxDocument_ReferenceAccount_ReferenceTags
     [References(typeof(Contact))]
     public string? IdContact { get; set; }
 
+    /// <summary>
+    ///     If its an outgoing message the user that sent the message. If its an incoming sms then this will be null
+    /// </summary>
+    [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
+    [References(typeof(User))]
+    public string? IdUser {  get; set; }
+
     #endregion
 
     /// <summary>
