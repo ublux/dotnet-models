@@ -24,7 +24,7 @@ Must have at least one */
     /** Name of company */
     companyName?: string;
     /** If client has granted access to support to make changes to account. 
-This can only be changed by an ownder of the account. */
+This can only be changed by an owner of the account. */
     readonly hasGrantedSupportAccess?: boolean;
     /** Countries on this list will not be marked as international calls */
     readonly countriesThatCanCallLocally?: CountryIsoCode[];
@@ -6917,6 +6917,14 @@ export interface Recording {
     readonly id?: string;
 }
 
+/** Send an email if consecutive calls are missed */
+export interface RuleConsecutiveMissedCalls {
+    /** If this number of consecutive calls are missed an email will be sent. */
+    numberConsecutiveCalls?: number;
+    /** At least one email is required */
+    idsEmails?: string[];
+}
+
 /** Rule to execute when receiving fax */
 export interface RuleFax {
     /** Email address where to send fax */
@@ -8696,6 +8704,7 @@ value = day of week when it executes */
     /** Incoming Faxes will be sent to this email addresses */
     rulesFax?: RuleFax[];
     voipNumberType?: VoipNumberType;
+    ruleConsecutiveMissedCalls?: RuleConsecutiveMissedCalls;
     /** Music on hold to use for outgoing calls to PSTN only */
     idMusicOnHoldGroup?: string | null;
     /** This is only for external incoming calls
@@ -8770,6 +8779,18 @@ export interface VoipNumberPhoneFilterRequest {
     voipNumberType_con?: string | null;
     /** VoipNumberType regex */
     voipNumberType_reg?: string | null;
+    /** RuleConsecutiveMissedCalls.NumberConsecutiveCalls equals */
+    ruleConsecutiveMissedCalls_numberConsecutiveCalls_eq?: number | null;
+    /** RuleConsecutiveMissedCalls.NumberConsecutiveCalls less than or equal to */
+    ruleConsecutiveMissedCalls_numberConsecutiveCalls_lte?: number | null;
+    /** RuleConsecutiveMissedCalls.NumberConsecutiveCalls greater than or equal to */
+    ruleConsecutiveMissedCalls_numberConsecutiveCalls_gte?: number | null;
+    /** RuleConsecutiveMissedCalls.IdsEmails equals */
+    ruleConsecutiveMissedCalls_idsEmails_eq?: string | null;
+    /** RuleConsecutiveMissedCalls.IdsEmails contains */
+    ruleConsecutiveMissedCalls_idsEmails_con?: string | null;
+    /** RuleConsecutiveMissedCalls.IdsEmails regex */
+    ruleConsecutiveMissedCalls_idsEmails_reg?: string | null;
     /** IdMusicOnHoldGroup equals */
     idMusicOnHoldGroup_eq?: string | null;
     /** IdMusicOnHoldGroup contains */
@@ -8881,6 +8902,7 @@ value = day of week when it executes */
     rulesSms?: RuleSms[] | null;
     /** Incoming Faxes will be sent to this email addresses */
     rulesFax?: RuleFax[] | null;
+    ruleConsecutiveMissedCalls?: RuleConsecutiveMissedCalls;
     /** Music on hold to use for outgoing calls to PSTN only */
     idMusicOnHoldGroup?: string | null;
     /** This is only for external incoming calls

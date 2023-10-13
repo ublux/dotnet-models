@@ -34,7 +34,7 @@ public partial class CallOutgoingToPowerDialer : CallOutgoingToPSTN
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [References(typeof(PowerDialerGroup))]
+    [References(typeof(PowerDialerContact))]
     [UbluxValidationNotRequired]
     public required string IdPowerDialerContact { get; set; }
 }
