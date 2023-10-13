@@ -1727,6 +1727,10 @@ public class VoipNumberPhoneUpdateRequest // : IUbluxDocumentId
     /// </summary>
     public List<Ublux.Communications.Models.RuleFax>? RulesFax { get; set; }
     /// <summary>
+    /// If there are 3 consecutive missed calls for a specific phone number then maybe that number is not working and we want to send an email.
+    /// </summary>
+    public RuleConsecutiveMissedCalls? RuleConsecutiveMissedCalls { get; set; }
+    /// <summary>
     /// Music on hold to use for outgoing calls to PSTN only
     /// </summary>
     public String? IdMusicOnHoldGroup { get; set; }
@@ -1777,6 +1781,8 @@ public class VoipNumberPhoneUpdateRequest // : IUbluxDocumentId
             voipNumberPhone.RulesSms = this.RulesSms;
         if(jsonRaw.Contains($@"""{nameof(this.RulesFax)}""", StringComparison.OrdinalIgnoreCase))
             voipNumberPhone.RulesFax = this.RulesFax;
+        if(jsonRaw.Contains($@"""{nameof(this.RuleConsecutiveMissedCalls)}""", StringComparison.OrdinalIgnoreCase))
+            voipNumberPhone.RuleConsecutiveMissedCalls = this.RuleConsecutiveMissedCalls;
         if(jsonRaw.Contains($@"""{nameof(this.IdMusicOnHoldGroup)}""", StringComparison.OrdinalIgnoreCase))
             voipNumberPhone.IdMusicOnHoldGroup = this.IdMusicOnHoldGroup;
         if(jsonRaw.Contains($@"""{nameof(this.InjectFriendlyNameToCallerId)}""", StringComparison.OrdinalIgnoreCase))

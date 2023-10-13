@@ -11,19 +11,19 @@ public partial class VoipNumberPhone : VoipNumber
     /// </summary>    
     [AllowUpdate(true)]
     [UbluxValidationRequired]
-    public required override List<RulePhone> RulesPhone { get; set; } = new();
+    public override required List<RulePhone> RulesPhone { get; set; } = new();
 
     /// <summary>
     ///     Incoming SMS will be sent to these email addresses
     /// </summary>
     [AllowUpdate(true)]
-    public required override List<RuleSms> RulesSms { get; set; } = new();
+    public override required List<RuleSms> RulesSms { get; set; } = new();
 
     /// <summary>
     ///     Incoming Faxes will be sent to this email addresses
     /// </summary>
     [AllowUpdate(true)]
-    public required override List<RuleFax> RulesFax { get; set; } = new();
+    public override required List<RuleFax> RulesFax { get; set; } = new();
 
     /// <summary>
     ///     Type of VOIP number
@@ -38,4 +38,10 @@ public partial class VoipNumberPhone : VoipNumber
         set { }
 #endif
     }
+
+    /// <summary>
+    ///     If there are 3 consecutive missed calls for a specific phone number then maybe that number is not working and we want to send an email.
+    /// </summary>
+    [AllowUpdate(true)]
+    public RuleConsecutiveMissedCalls? RuleConsecutiveMissedCalls { get; set; }
 }

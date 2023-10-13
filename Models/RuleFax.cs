@@ -1,4 +1,5 @@
-﻿namespace Ublux.Communications.Models;
+﻿// ReSharper disable CheckNamespace
+namespace Ublux.Communications.Models;
 
 /// <summary>
 ///     Rule to execute when receiving fax

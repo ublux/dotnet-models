@@ -9,7 +9,7 @@ namespace Ublux.Communications.Models.SubDocuments;
 /// <summary>
 ///     Represents a stored file in ublux such as a recording or audio.
 /// </summary>
-public partial class StoredFile : UbluxSubDocument, IReferncesAccount
+public partial class StoredFile : UbluxSubDocument, IReferencesAccount
 {
     /// <summary>
     ///     Get id of cloud file

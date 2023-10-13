@@ -6,7 +6,7 @@ namespace Ublux.Communications.Models;
 /// <summary>
 ///     Model points to an account. Most models should have this.
 /// </summary>
-public interface IReferncesAccount
+public interface IReferencesAccount
 {
     /// <summary>
     ///     It is nullable because there are cases where it makes no sense to point to an account. 

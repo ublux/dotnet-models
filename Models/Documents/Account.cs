@@ -61,7 +61,7 @@ public partial class Account : UbluxDocument
 
     /// <summary>
     ///     If client has granted access to support to make changes to account. 
-    ///     This can only be changed by an ownder of the account.
+    ///     This can only be changed by an owner of the account.
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
@@ -128,7 +128,7 @@ public partial class Account : UbluxDocument
     /// </summary>
     public bool IsCallMadeToThisCountryInternational(CountryIsoCode country)
     {
-        if (CountriesThatCanCallLocally == null || CountriesThatCanCallLocally.Count < 1)
+        if (CountriesThatCanCallLocally.Count < 1)
             return true;
 
         // This is strange? How come calling to all countries is marked as local calls?
@@ -145,19 +145,17 @@ public partial class Account : UbluxDocument
     /// </summary>
     public bool CanCallCountry(CountryIsoCode country, out bool isInternational)
     {
-        foreach (var item in CountriesThatCanCallLocally)
-            if (item == country || item == CountryIsoCode.All)
-            {
-                isInternational = false;
-                return true;
-            }
+        if (CountriesThatCanCallLocally.Any(item => item == country || item == CountryIsoCode.All))
+        {
+            isInternational = false;
+            return true;
+        }
 
-        foreach (var item in CountriesThatCanCallInternationally)
-            if (item == country || item == CountryIsoCode.All)
-            {
-                isInternational = true;
-                return true;
-            }
+        if (CountriesThatCanCallInternationally.Any(item => item == country || item == CountryIsoCode.All))
+        {
+            isInternational = true;
+            return true;
+        }
 
         isInternational = false;
         return false;

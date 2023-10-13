@@ -6,7 +6,7 @@
 /////     Ublux sends and receives faxes via email. This class enables to know the relationship between an email and a fax.
 /////     For example email foo@gmail.com will send faxes through VoipFax with id XXXX-XXXX
 ///// </summary>
-//public partial class FaxEmailInfo : UbluxDocument, IReferncesAccount
+//public partial class FaxEmailInfo : UbluxDocument, IReferencesAccount
 //{
 //    // id is the email address in lowercase
 

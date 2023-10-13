@@ -135,7 +135,7 @@ public abstract partial class UbluxDocument : IUbluxDocument, IUbluxDocumentId
 /// <summary>
 ///     Ublux document that references an account
 /// </summary>
-public abstract partial class UbluxDocument_ReferenceAccount : UbluxDocument, IReferncesAccount
+public abstract partial class UbluxDocument_ReferenceAccount : UbluxDocument, IReferencesAccount
 {
     /// <summary>
     ///     It is nullable because there are cases where it makes no sense to point to an account. 

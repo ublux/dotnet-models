@@ -8816,6 +8816,27 @@ public class VoipNumberPhoneFilterRequest
     [JsonProperty("voipNumberType_reg")]
     public string? VoipNumberType_REG { get; set; }
 
+    /// <summary> RuleConsecutiveMissedCalls.NumberConsecutiveCalls equals </summary>
+    [JsonProperty("ruleConsecutiveMissedCalls_numberConsecutiveCalls_eq")]
+    public System.Int32? RuleConsecutiveMissedCalls_NumberConsecutiveCalls_EQ { get; set; }
+    /// <summary> RuleConsecutiveMissedCalls.NumberConsecutiveCalls less than or equal to </summary>
+    [JsonProperty("ruleConsecutiveMissedCalls_numberConsecutiveCalls_lte")]
+    public System.Int32? RuleConsecutiveMissedCalls_NumberConsecutiveCalls_LTE { get; set; }
+    /// <summary> RuleConsecutiveMissedCalls.NumberConsecutiveCalls greater than or equal to </summary>
+    [JsonProperty("ruleConsecutiveMissedCalls_numberConsecutiveCalls_gte")]
+    public System.Int32? RuleConsecutiveMissedCalls_NumberConsecutiveCalls_GTE { get; set; }
+
+    /// <summary> RuleConsecutiveMissedCalls.IdsEmails equals </summary>
+    [JsonProperty("ruleConsecutiveMissedCalls_idsEmails_eq")]
+    public string? RuleConsecutiveMissedCalls_IdsEmails_EQ { get; set; }
+    /// <summary> RuleConsecutiveMissedCalls.IdsEmails contains </summary>
+    [JsonProperty("ruleConsecutiveMissedCalls_idsEmails_con")]
+    public string? RuleConsecutiveMissedCalls_IdsEmails_CON { get; set; }
+    /// <summary> RuleConsecutiveMissedCalls.IdsEmails regex </summary>
+    [JsonProperty("ruleConsecutiveMissedCalls_idsEmails_reg")]
+    public string? RuleConsecutiveMissedCalls_IdsEmails_REG { get; set; }
+
+
     /// <summary> IdMusicOnHoldGroup equals </summary>
     [JsonProperty("idMusicOnHoldGroup_eq")]
     public string? IdMusicOnHoldGroup_EQ { get; set; }
