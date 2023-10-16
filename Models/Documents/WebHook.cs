@@ -52,19 +52,19 @@ public partial class WebHook : UbluxDocument_ReferenceAccount_ReferenceTags
     public override IEnumerable<MongoDbIndex> GetMongoDbIndexes()
     {
         // this collection
-        var collection = this.GetType().GetCollectionUsedByType();
+        var collection = GetType().GetCollectionUsedByType();
 
         // get all mandatory indexes
         foreach (var item in base.GetMandatoryIndexes(collection))
             yield return item;
 
         // enable searching fast by URL
-        yield return new MongoDbIndex(collection, nameof(this.Url))
+        yield return new MongoDbIndex(collection, nameof(Url))
             // Append DateCreated at the end so that items are returned by dateCreated
             .Add(nameof(DateCreated));
 
         // enable searching fast by event trigger
-        yield return new MongoDbIndex(collection, nameof(this.EventTriggerType))
+        yield return new MongoDbIndex(collection, nameof(EventTriggerType))
             // Append DateCreated at the end so that items are returned by dateCreated
             .Add(nameof(DateCreated));
     }

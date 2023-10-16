@@ -62,7 +62,7 @@ public class EventIncomingCallTerminatedWithAiAnalysis : EventIncomingCallTermin
     /// </summary>
     public override EventIncomingCallTerminatedWithAiAnalysis BuildRandomFakeObject(RunningApplicationInstance instance)
     {
-        var obj = this.GetRandomBase<EventIncomingCallTerminatedWithAiAnalysis>(instance);
+        var obj = GetRandomBase<EventIncomingCallTerminatedWithAiAnalysis>(instance);
 
         obj.AiCallAnalysis = new ()
         {

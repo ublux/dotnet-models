@@ -69,13 +69,13 @@ public class EventOutgoingCallTerminatedWithAiAnalysis : EventOutgoingCallTermin
             IdAiCallAnalysisInput = AiCallAnalysisInput.BuildId(instance).Id,
             Results = new ()
             {
-                new AiCallAnalysisResult()
+                new AiCallAnalysisResult
                 {
                     Name = "Summary",
                     AiVariableType = AiVariableType.Text,
                     Value = "Client complains agains Agent that washing mashine is not working"
                 },
-                new AiCallAnalysisResult()
+                new AiCallAnalysisResult
                 {
                     Name = "CustomerSatisfaction",
                     AiVariableType = AiVariableType.Integer,

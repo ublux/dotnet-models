@@ -23,7 +23,7 @@ public class EventOutgoingCallStarted : EventOutgoingCallStartedBase
     /// </summary>
     public override EventOutgoingCallStarted BuildRandomFakeObject(RunningApplicationInstance instance)
     {
-        var obj = this.GetRandomBase<EventOutgoingCallStarted>(instance);
+        var obj = GetRandomBase<EventOutgoingCallStarted>(instance);
         return obj;
     }
 }

@@ -66,7 +66,7 @@ public partial class AgreementToTermsAndConditions : UbluxDocument_ReferenceAcco
     public override IEnumerable<MongoDbIndex> GetMongoDbIndexes()
     {
         // this collection
-        var collection = this.GetType().GetCollectionUsedByType();
+        var collection = GetType().GetCollectionUsedByType();
 
         // get all mandatory indexes
         foreach (var item in base.GetMandatoryIndexes(collection))

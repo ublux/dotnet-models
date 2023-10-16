@@ -38,17 +38,11 @@ public abstract partial class Call
     public void SetAllEndDatesToUtcNow()
     {
         var now = DateTime.UtcNow;
-        this.DurationInSeconds ??= (now - this.DateCreated).TotalSeconds;
+        DurationInSeconds ??= (now - DateCreated).TotalSeconds;
 
-        if (this.ChildCalls != null)
+        foreach (var cc in ChildCalls)
         {
-            foreach (var cc in this.ChildCalls)
-            {
-                if (cc is null)
-                    continue;
-
-                cc.DurationInSeconds ??= (now - cc.DateCreated).TotalSeconds;
-            }
+            cc.DurationInSeconds ??= (now - cc.DateCreated).TotalSeconds;
         }
     }
 
@@ -57,10 +51,10 @@ public abstract partial class Call
     /// </summary>
     public ICall GetLastCall()
     {
-        if (this.ChildCalls is null || this.ChildCalls.Count == 0)
+        if (ChildCalls.Count == 0)
             return this;
 
-        return this.ChildCalls.Last();
+        return ChildCalls.Last();
     }
 
     /// <summary>
@@ -78,8 +72,8 @@ public abstract partial class Call
     /// </summary>
     public void AddIdParticipantPhone(string idParticipantPhone)
     {
-        if(this.IdsParticipantPhones.Contains(idParticipantPhone)) return;
-        this.IdsParticipantPhones.Add(idParticipantPhone);
+        if(IdsParticipantPhones.Contains(idParticipantPhone)) return;
+        IdsParticipantPhones.Add(idParticipantPhone);
     }
 }
 

@@ -36,7 +36,7 @@ public partial class Audio
     /// </summary>
     public string GetDirectoryWhereToSaveOnPBX(bool createDirIfItDoesNotExist)
     {
-        return GetDirectoryWhereToSaveOnPBX(this.IdAccount, createDirIfItDoesNotExist);
+        return GetDirectoryWhereToSaveOnPBX(IdAccount, createDirIfItDoesNotExist);
     }
 
     /// <summary>
@@ -61,7 +61,7 @@ public partial class Audio
     /// </summary>
     public string GetFullPathWithoutExtension()
     {
-        return GetFullPathWithoutExtension(this.IdAccount, this.AudioSln.Id);
+        return GetFullPathWithoutExtension(IdAccount, AudioSln.Id);
     }
 }
 

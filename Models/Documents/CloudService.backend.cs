@@ -10,7 +10,7 @@ public abstract partial class CloudService : UbluxDocument
     /// <summary>
     ///     Examples:  csp.us-1.ublux.com            
     /// </summary>
-    public string HostName() => HostName(this.Id);
+    public string HostName() => HostName(Id);
 
     /// <summary>
     ///     Examples:  csp-us-1.ublux.com  

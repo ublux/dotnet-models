@@ -104,16 +104,10 @@ public partial class TrunkTermination : UbluxDocument
     /// </summary>
     public static bool CanCallCountry(IList<CountryIsoCode> countryIsoCodes, CountryIsoCode country)
     {
-        if (countryIsoCodes == null)
-            return false;
-
         if (countryIsoCodes.Count < 1)
             return false;
 
-        if (countryIsoCodes.Any(x => x == CountryIsoCode.All))
-            return true;
-
-        return countryIsoCodes.Contains(country);
+        return countryIsoCodes.Any(x => x == CountryIsoCode.All) || countryIsoCodes.Contains(country);
     }
 
     #endregion
@@ -124,7 +118,7 @@ public partial class TrunkTermination : UbluxDocument
     public override IEnumerable<MongoDbIndex> GetMongoDbIndexes()
     {
         // this collection
-        var collection = this.GetType().GetCollectionUsedByType();
+        var collection = GetType().GetCollectionUsedByType();
 
         // get all mandatory indexes
         foreach (var item in base.GetMandatoryIndexes(collection))

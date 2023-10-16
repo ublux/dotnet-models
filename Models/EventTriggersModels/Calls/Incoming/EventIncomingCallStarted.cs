@@ -23,6 +23,6 @@ public class EventIncomingCallStarted : EventIncomingCallStartedBase
     /// </summary>
     public override EventIncomingCallStarted BuildRandomFakeObject(RunningApplicationInstance instance)
     {
-        return base.GetRandomBase<EventIncomingCallStarted>(instance);
+        return GetRandomBase<EventIncomingCallStarted>(instance);
     }
 }

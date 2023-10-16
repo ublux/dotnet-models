@@ -84,14 +84,14 @@ public abstract class Extension : UbluxDocument_ReferenceAccount_ReferenceTags
     public override IEnumerable<MongoDbIndex> GetMongoDbIndexes()
     {
         // this collection
-        var collection = this.GetType().GetCollectionUsedByType();
+        var collection = GetType().GetCollectionUsedByType();
 
         // get all mandatory indexes
         foreach (var item in base.GetMandatoryIndexes(collection))
             yield return item;
 
         // enable searching fast by number
-        yield return new MongoDbIndex(collection, nameof(this.Number))
+        yield return new MongoDbIndex(collection, nameof(Number))
             // Append DateCreated at the end so that items are returned by dateCreated
             .Add(nameof(DateCreated));
     }

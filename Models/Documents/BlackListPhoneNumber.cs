@@ -40,14 +40,14 @@ public partial class BlackListPhoneNumber : UbluxDocument_ReferenceAccount_Refer
     public override IEnumerable<MongoDbIndex> GetMongoDbIndexes()
     {
         // this collection
-        var collection = this.GetType().GetCollectionUsedByType();
+        var collection = GetType().GetCollectionUsedByType();
 
         // get all mandatory indexes
         foreach (var item in base.GetMandatoryIndexes(collection))
             yield return item;
 
         // enable searching fast by searchIndex fast
-        yield return new MongoDbIndex(collection, nameof(this.searchIndex))
+        yield return new MongoDbIndex(collection, nameof(searchIndex))
             // Append DateCreated at the end so that items are returned by dateCreated
             .Add(nameof(DateCreated));
     }

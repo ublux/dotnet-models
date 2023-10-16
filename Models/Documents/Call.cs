@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json.Linq;
+﻿using System.Diagnostics.CodeAnalysis;
+using Newtonsoft.Json.Linq;
 
 namespace Ublux.Communications.Models.Documents;
 
@@ -38,7 +39,7 @@ public abstract partial class Call : UbluxDocument_ReferenceAccount_ReferenceTag
     public string? IdVoicemail { get; set; }
 
     /// <summary>
-    ///     This call was originated with the purpose of tranfering another call with this id    
+    ///     This call was originated with the purpose of transfer another call with this id    
     ///     When this variable is set the call is marked as completed
     /// </summary>
     [AllowUpdate(false)]
@@ -65,7 +66,7 @@ public abstract partial class Call : UbluxDocument_ReferenceAccount_ReferenceTag
     public string? ContactFullName { get; set; }
 
     /// <summary>
-    ///     Refernce to AI call transcription
+    ///     Reference to AI call transcription
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
@@ -138,6 +139,7 @@ public abstract partial class Call : UbluxDocument_ReferenceAccount_ReferenceTag
     [IgnoreDataMember]
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
+    [SuppressMessage("Resharper","ValueParameterNotUsed")]
     public string FromReversed
     {
         get
@@ -181,6 +183,7 @@ public abstract partial class Call : UbluxDocument_ReferenceAccount_ReferenceTag
         }
 #if UBLUX_Release || RELEASE
         set { }
+        // ReSharper disable ValueParameterNotUsed
 #else
 #endif
     }
@@ -244,13 +247,7 @@ public abstract partial class Call : UbluxDocument_ReferenceAccount_ReferenceTag
     {
         get
         {
-            if (this.IsInternational)
-                return true;
-
-            if (this.ChildCalls is null)
-                return false;
-
-            return this.ChildCalls.Any(x => x.IsInternational);
+            return IsInternational || ChildCalls.Any(x => x.IsInternational);
         }
 #if UBLUX_Release || RELEASE
         set { }
@@ -266,6 +263,7 @@ public abstract partial class Call : UbluxDocument_ReferenceAccount_ReferenceTag
     ///     Result of a call
     /// </summary>
     [AllowUpdate(true)]
+    // ReSharper disable once UnusedAutoPropertyAccessor.Global
     public CallResult CallResult { get; set; }
 
     /// <summary>
@@ -297,6 +295,7 @@ public abstract partial class Call : UbluxDocument_ReferenceAccount_ReferenceTag
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
     [References(typeof(Phone))]
+    // ReSharper disable once PropertyCanBeMadeInitOnly.Global
     public List<string> IdsParticipantPhones { get; set; } = new();
     //{
     //    get
@@ -358,10 +357,11 @@ public abstract partial class Call : UbluxDocument_ReferenceAccount_ReferenceTag
     [SwaggerSchema(ReadOnly = true)]
     public List<CallVariable> Variables
     {
-        get => variables ?? new();
-        set => variables = value ?? new();
+        // ReSharper disable once ArrangeObjectCreationWhenTypeNotEvident
+        get => _variables ?? new();
+        set => _variables = value;
     }
-    private List<CallVariable>? variables = new();
+    private List<CallVariable>? _variables = new();
 
     /// <summary>
     ///     Given a json object get a specific path. Example: prop1.items[0].firstName
@@ -400,14 +400,14 @@ public abstract partial class Call : UbluxDocument_ReferenceAccount_ReferenceTag
                     var indexTemp = propName[(start + 1)..end];
                     int.TryParse(indexTemp, out var index);
 
-                    JArray jarray;
+                    JArray jArray;
                     if (string.IsNullOrEmpty(propNameWithNoIndex) == false)
                     {
-                        if (currentToken is JObject jobject && jobject != null)
+                        if (currentToken is JObject jObject)
                         {
-                            if (jobject[propNameWithNoIndex] is JArray ja)
+                            if (jObject[propNameWithNoIndex] is JArray ja)
                             {
-                                jarray = ja;
+                                jArray = ja;
                             }
                             else
                             {
@@ -425,7 +425,7 @@ public abstract partial class Call : UbluxDocument_ReferenceAccount_ReferenceTag
                     {
                         if (currentToken is JArray ja)
                         {
-                            jarray = ja;
+                            jArray = ja;
                         }
                         else
                         {
@@ -434,21 +434,21 @@ public abstract partial class Call : UbluxDocument_ReferenceAccount_ReferenceTag
                         }
                     }
 
-                    if (index > jarray.Count)
+                    if (index > jArray.Count)
                     {
                         // error
                         return null;
                     }
 
-                    currentToken = jarray[index];
+                    currentToken = jArray[index];
                 }
                 else
                 {
-                    if (currentToken is JObject jobject && jobject != null)
+                    if (currentToken is JObject jObject)
                     {
-                        if (jobject.ContainsKey(propName))
+                        if (jObject.TryGetValue(propName, out var val))
                         {
-                            currentToken = jobject[propName]!;
+                            currentToken = val;
                         }
                         else
                         {
@@ -464,7 +464,7 @@ public abstract partial class Call : UbluxDocument_ReferenceAccount_ReferenceTag
                 }
             }
 
-            return currentToken?.ToString();
+            return currentToken.ToString();
         }
         catch
         {
@@ -521,7 +521,7 @@ public abstract partial class Call : UbluxDocument_ReferenceAccount_ReferenceTag
     public ProcessStatus AiTranscriptionStatus { get; set; }
 
     /// <summary>
-    ///     None if it is not going to be AI processed. This is for analysys. ChatGPT performs the analysis of the transcription
+    ///     None if it is not going to be AI processed. This is for analysis. ChatGPT performs the analysis of the transcription
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
@@ -537,7 +537,7 @@ public abstract partial class Call : UbluxDocument_ReferenceAccount_ReferenceTag
         // we sort calls in descending order; therefore, we pass -1 as the sort order
 
         // this collection
-        var collection = this.GetType().GetCollectionUsedByType();
+        var collection = GetType().GetCollectionUsedByType();
 
         // get all mandatory indexes (we sort calls by descending creation date)
         foreach (var item in base.GetMandatoryIndexes(collection, -1))
@@ -553,18 +553,18 @@ public abstract partial class Call : UbluxDocument_ReferenceAccount_ReferenceTag
          * */
 
         // Search by from and id of account
-        yield return new MongoDbIndex(collection, nameof(this.FromReversed)).Add(nameof(IdAccount))
+        yield return new MongoDbIndex(collection, nameof(FromReversed)).Add(nameof(IdAccount))
             // Append DateCreated at the end so that items are returned by dateCreated
             .Add(-1, nameof(DateCreated));
 
         // Search by to and id of account
-        yield return new MongoDbIndex(collection, nameof(this.ToReversed)).Add(nameof(IdAccount))
+        yield return new MongoDbIndex(collection, nameof(ToReversed)).Add(nameof(IdAccount))
             // Append DateCreated at the end so that items are returned by dateCreated
             .Add(-1, nameof(DateCreated));
 
         #endregion
 
-        // For ougoing calls enable searching fast by line that initiated phone call then by id of account
+        // For outgoing calls enable searching fast by line that initiated phone call then by id of account
         yield return new MongoDbIndex(collection, nameof(CallOutgoing.IdPhoneThatInitiatedCall)).Add(nameof(IdAccount))
             // Append DateCreated at the end so that items are returned by dateCreated
             .Add(-1, nameof(DateCreated));
@@ -575,17 +575,17 @@ public abstract partial class Call : UbluxDocument_ReferenceAccount_ReferenceTag
             .Add(-1, nameof(DateCreated));
 
         // Enable searching fast by the participant lines then by id of account
-        yield return new MongoDbIndex(collection, nameof(this.IdsParticipantPhones)).Add(nameof(IdAccount))
+        yield return new MongoDbIndex(collection, nameof(IdsParticipantPhones)).Add(nameof(IdAccount))
             // Append DateCreated at the end so that items are returned by dateCreated
             .Add(-1, nameof(DateCreated));
 
         // Helps find calls that are ready to be transcribed or ai analyzed
-        yield return new MongoDbIndex(collection, nameof(this.RecordingStatus)).Add(nameof(this.AiAnalysisStatus)).Add(nameof(this.AiTranscriptionStatus));
+        yield return new MongoDbIndex(collection, nameof(RecordingStatus)).Add(nameof(AiAnalysisStatus)).Add(nameof(AiTranscriptionStatus));
 
         // Needed to revert status from queued to pending in case app crashes
-        yield return new MongoDbIndex(collection, nameof(this.RecordingStatus));
-        yield return new MongoDbIndex(collection, nameof(this.AiAnalysisStatus));
-        yield return new MongoDbIndex(collection, nameof(this.AiTranscriptionStatus));
+        yield return new MongoDbIndex(collection, nameof(RecordingStatus));
+        yield return new MongoDbIndex(collection, nameof(AiAnalysisStatus));
+        yield return new MongoDbIndex(collection, nameof(AiTranscriptionStatus));
     }
 
     #endregion

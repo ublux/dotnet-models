@@ -26,7 +26,7 @@ public struct BuiltId
     [Obsolete("Needed for AutoFixture. Without this no dummy objects could be generated")]
     public BuiltId(DateTime doNotCallThisMethod)
     {
-        this.Id = doNotCallThisMethod.Ticks.ToString();
+        Id = doNotCallThisMethod.Ticks.ToString();
     }
 }
 

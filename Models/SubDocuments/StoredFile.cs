@@ -39,7 +39,7 @@ public partial class StoredFile : UbluxSubDocument
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
     [BsonIgnore] // do not store on mongo
-    public string Url => BuildUrl(Constants.WebService_BaseUrl, this.Id);
+    public string Url => BuildUrl(Constants.WebService_BaseUrl, Id);
 
     /// <summary>
     ///     helper method to build url

@@ -1,4 +1,5 @@
 ﻿using Bogus;
+
 #pragma warning disable CA1822 // Mark members as static
 
 namespace Ublux.Communications.Models.EventTriggersModels;
@@ -63,8 +64,8 @@ public abstract class EventCallBase : EventTriggerModel
 
         var f = new Faker<T>()
             .RuleFor(x => x.Id, randomIdCall)
-            .RuleFor(x => x.From, x => x.Phone.PhoneNumberFormat(0))
-            .RuleFor(x => x.To, x => x.Phone.PhoneNumberFormat(0))
+            .RuleFor(x => x.From, x => x.Phone.PhoneNumberFormat())
+            .RuleFor(x => x.To, x => x.Phone.PhoneNumberFormat())
             .RuleFor(x => x.ContactId, randomIdContact)
             .RuleFor(x => x.ContactFullName, x => x.Name.FullName())
             .RuleFor(x => x.DateStart, DateTime.UtcNow.AddHours(-1))

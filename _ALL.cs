@@ -88,7 +88,7 @@ public abstract partial class UbluxDocument : IUbluxDocument, IUbluxDocumentId
                 dateUpdated = value;
         }
     }
-    private DateTime dateCreated = new ();
+    private DateTime dateCreated;
 
     /// <summary>
     ///     Updated date. When item is created on database this date will be set too. This is important so that we can sync contacts
@@ -113,7 +113,7 @@ public abstract partial class UbluxDocument : IUbluxDocument, IUbluxDocumentId
         }
 #endif
     }
-    private DateTime dateUpdated = new ();
+    private DateTime dateUpdated;
 
     /// <summary>
     ///     Get MongoDB indexes

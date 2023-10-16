@@ -32,8 +32,8 @@ public class MongoDbIndex
             throw new Exception("Invalid sort order. FKRO-DLK7");
         }
 
-        this._sortOrders.Add(sortOrder);
-        this._properties.Add(properties);
+        _sortOrders.Add(sortOrder);
+        _properties.Add(properties);
     }
 
     /// <summary>
@@ -63,8 +63,8 @@ public class MongoDbIndex
             throw new Exception("Invalid sort order. FKRO-DLK7");
         }
 
-        this._sortOrders.Add(sortOrder);
-        this._properties.Add(properties);
+        _sortOrders.Add(sortOrder);
+        _properties.Add(properties);
 
         return this;
     }

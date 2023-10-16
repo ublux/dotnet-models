@@ -101,8 +101,8 @@ public abstract class EventExtensionBase : EventTriggerModel
 
         var f = new Faker<T>()
             .RuleFor(x => x.Id, randomId)
-            .RuleFor(x => x.From, x => x.Phone.PhoneNumberFormat(0))
-            .RuleFor(x => x.To, x => x.Phone.PhoneNumberFormat(0))
+            .RuleFor(x => x.From, x => x.Phone.PhoneNumberFormat())
+            .RuleFor(x => x.To, x => x.Phone.PhoneNumberFormat())
             .RuleFor(x => x.ContactId, randomIdContact)
             .RuleFor(x => x.ContactFullName, x => x.Name.FullName())
             .RuleFor(x => x.FriendlyName, x => x.Name.FullName())

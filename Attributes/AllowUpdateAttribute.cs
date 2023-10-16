@@ -3,7 +3,7 @@
 /// <summary>
 ///     Properties containing this attribute will be allowed to be updated
 /// </summary>
-[AttributeUsage(AttributeTargets.Property, AllowMultiple = false)]
+[AttributeUsage(AttributeTargets.Property)]
 public class AllowUpdateAttribute : Attribute
 {
     /// <summary>
@@ -18,5 +18,6 @@ public class AllowUpdateAttribute : Attribute
     /// <summary>
     ///     Allow to update property?
     /// </summary>
-    public bool Allow { get; set; } = false;
+    // ReSharper disable once UnusedAutoPropertyAccessor.Global
+    public bool Allow { get; set; } 
 }

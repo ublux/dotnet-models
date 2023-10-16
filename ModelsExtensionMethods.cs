@@ -23,10 +23,7 @@ public static class ModelsExtensionMethods
     /// </summary>
     public static string ReverseString(this string s)
     {
-        if (s is null)
-            return "";
-
-        char[] charArray = s.ToCharArray();
+        var charArray = s.ToCharArray();
         Array.Reverse(charArray);
         return new string(charArray);
     }
@@ -490,9 +487,9 @@ public static class ModelsExtensionMethods
 
             if (isXUsed == false && isYUsed == false)
                 return 0;
-            if (isXUsed == true && isYUsed == false)
+            if (isXUsed && isYUsed == false)
                 return -1;
-            if (isXUsed == false && isYUsed == true)
+            if (isXUsed == false && isYUsed)
                 return 1;
 
             // at this point we know phone is being used by both extensions. so complare the weights

@@ -47,6 +47,6 @@ public class UbluxSession
     /// <summary>
     ///     Is expired
     /// </summary>
-    public bool IsExpired() => DateTime.UtcNow > this.ExpirationDate;
+    public bool IsExpired() => DateTime.UtcNow > ExpirationDate;
 }
 

@@ -21,7 +21,7 @@ public abstract partial class UbluxSubDocument
     {
         set
         {
-            this.id = value.Id;
+            id = value.Id;
         }
     }
 

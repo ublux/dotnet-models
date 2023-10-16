@@ -78,24 +78,24 @@ public partial class Voicemail : UbluxDocument_ReferenceAccount_ReferenceTags
     public override IEnumerable<MongoDbIndex> GetMongoDbIndexes()
     {
         // this collection
-        var collection = this.GetType().GetCollectionUsedByType();
+        var collection = GetType().GetCollectionUsedByType();
 
         // get all mandatory indexes
         foreach (var item in base.GetMandatoryIndexes(collection))
             yield return item;
 
         // enable searching fast by id of email
-        yield return new MongoDbIndex(collection, nameof(this.IdEmail))
+        yield return new MongoDbIndex(collection, nameof(IdEmail))
             // Append DateCreated at the end so that items are returned by dateCreated
             .Add(nameof(DateCreated));
 
         // enable searching fast by ids lines that can listen to voicemail
-        yield return new MongoDbIndex(collection, nameof(this.IdsPhonesThatCanListenToVoicemail))
+        yield return new MongoDbIndex(collection, nameof(IdsPhonesThatCanListenToVoicemail))
             // Append DateCreated at the end so that items are returned by dateCreated
             .Add(nameof(DateCreated));
 
         // enable searching fast by type of voicemail
-        yield return new MongoDbIndex(collection, nameof(this.VoicemailType))
+        yield return new MongoDbIndex(collection, nameof(VoicemailType))
             // Append DateCreated at the end so that items are returned by dateCreated
             .Add(nameof(DateCreated));
     }

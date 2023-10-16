@@ -27,7 +27,7 @@ public partial class ContactEmail
     /// </summary>
     public void SetSearchIndex(BuiltId accountId)
     {
-        this._searchIndex = BuildSearchIndexCommon(accountId.Id, this.Email);
+        _searchIndex = BuildSearchIndexCommon(accountId.Id, Email);
     }
 
     /// <summary>
@@ -36,7 +36,7 @@ public partial class ContactEmail
     public void SetSearchIndex(Account account)
     {
         if (string.IsNullOrEmpty(account.Id)) throw new Exception("id connot be null");
-        this._searchIndex = BuildSearchIndexCommon(account.Id, this.Email);
+        _searchIndex = BuildSearchIndexCommon(account.Id, Email);
     }
 
     private static string BuildSearchIndexCommon(string idAccount, string email)
@@ -47,7 +47,7 @@ public partial class ContactEmail
             throw new Exception("built id must be and id from an account");
         }
 
-        return $"{idAccount}:{(email ?? "").ToLower()}";
+        return $"{idAccount}:{email.ToLower()}";
     }
 
     #endregion

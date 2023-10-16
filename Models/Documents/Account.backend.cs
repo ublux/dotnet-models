@@ -46,14 +46,14 @@ public partial class Account
     /// <summary>
     ///     Id of account where phones that are TBD connect.
     /// </summary>
-    public static readonly BuiltId IdTbdCase27 = Account.BuildId("27");
+    public static readonly BuiltId IdTbdCase27 = BuildId("27");
 
     /// <summary>
     ///     Get default country. Its the first country that it can call locally that is not none or all
     /// </summary>
     public CountryIsoCode? GetDefaultCountry()
     {
-        foreach (var item in this.CountriesThatCanCallLocally
+        foreach (var item in CountriesThatCanCallLocally
                 .Where(item => item != CountryIsoCode.None && item != CountryIsoCode.All))
             return item;
 

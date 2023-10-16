@@ -1,8 +1,8 @@
 ﻿#if UBLUX_BACKEND
 
-using Microsoft.Extensions.Logging;
 using System.Security.Cryptography;
 using System.Text.RegularExpressions;
+using Microsoft.Extensions.Logging;
 
 namespace Ublux.Communications.Models.Documents;
 
@@ -89,9 +89,9 @@ public partial class Phone
     /// </summary>
     public bool IsConnected()
     {
-        if (this.PhoneConnectionStatus is null)
+        if (PhoneConnectionStatus is null)
             return false;
-        return this.PhoneConnectionStatus.IsConnected;
+        return PhoneConnectionStatus.IsConnected;
     }
 
     /// <summary>
@@ -101,12 +101,12 @@ public partial class Phone
     {
         // string input = "Ph.Ac.1.API.1000";
 
-        var start = Phone.DocumentPrefix.Length + Account.DocumentPrefix.Length + 3;
+        var start = DocumentPrefix.Length + Account.DocumentPrefix.Length + 3;
 
         var thirdDot = start + idPhone[start..].IndexOf(RedisConstants.DelimeterId);
 
         // id account will be substring in btween dot 1 and
-        var idAccount = idPhone[(Phone.DocumentPrefix.Length + 1)..thirdDot];
+        var idAccount = idPhone[(DocumentPrefix.Length + 1)..thirdDot];
 
         return idAccount;
     }
@@ -116,14 +116,14 @@ public partial class Phone
     /// </summary>
     public string GetCallerIdNumber(ILogger logger)
     {
-        if (this.CallerIdNumbers is null || this.CallerIdNumbers.Count == 0)
+        if (CallerIdNumbers.Count == 0)
             return "";
 
-        if (this.CallerIdIndex < this.CallerIdNumbers.Count)
-            return this.CallerIdNumbers[this.CallerIdIndex];
+        if (CallerIdIndex < CallerIdNumbers.Count)
+            return CallerIdNumbers[CallerIdIndex];
 
-        logger.Log(LogLevel.Error, 374827381, "Caller id index is outside of range for phone {id}. Setting first one", this.id);
-        return this.CallerIdNumbers[0];
+        logger.Log(LogLevel.Error, 374827381, "Caller id index is outside of range for phone {id}. Setting first one", id);
+        return CallerIdNumbers[0];
     }
 
 }

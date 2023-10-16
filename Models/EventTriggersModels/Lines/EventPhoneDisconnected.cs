@@ -25,7 +25,7 @@ public class EventPhoneDisconnected : EventPhoneBase
     /// </summary>
     public override EventPhoneDisconnected BuildRandomFakeObject(RunningApplicationInstance instance)
     {
-        var obj = this.RandomBase<EventPhoneDisconnected>(instance);
+        var obj = RandomBase<EventPhoneDisconnected>(instance);
         obj.ConnectionStatus!.IsConnected = true;
 
         return obj;

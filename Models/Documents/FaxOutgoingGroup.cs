@@ -96,7 +96,7 @@ public partial class FaxOutgoingGroup : UbluxDocument_ReferenceAccount_Reference
     public override IEnumerable<MongoDbIndex> GetMongoDbIndexes()
     {
         // this collection
-        var collection = this.GetType().GetCollectionUsedByType();
+        var collection = GetType().GetCollectionUsedByType();
 
         // get all mandatory indexes
         foreach (var item in base.GetMandatoryIndexes(collection))
@@ -104,7 +104,7 @@ public partial class FaxOutgoingGroup : UbluxDocument_ReferenceAccount_Reference
 
         // We use this query to see if an email can be deleted
         // Search fast by IdsEmailsSendConfirmation and status 
-        yield return new MongoDbIndex(collection, nameof(this.IdsEmailsSendConfirmation)).Add(nameof(this.Status))
+        yield return new MongoDbIndex(collection, nameof(IdsEmailsSendConfirmation)).Add(nameof(Status))
             // Append DateCreated at the end so that items are returned by dateCreated
             .Add(-1, nameof(DateCreated));
     }

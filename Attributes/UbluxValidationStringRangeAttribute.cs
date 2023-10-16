@@ -3,7 +3,7 @@
 /// <summary>
 ///     Ensures a string length is between a minimum and maximum length.
 /// </summary>
-[AttributeUsage(AttributeTargets.Property, AllowMultiple = false)]
+[AttributeUsage(AttributeTargets.Property)]
 public class UbluxValidationStringRangeAttribute : Attribute
 {
     /// <summary>

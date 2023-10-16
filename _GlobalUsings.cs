@@ -13,7 +13,6 @@ global using Ublux.Communications.Models.FlowNodes;
 global using Swashbuckle.AspNetCore.Annotations;
 global using Tag = Ublux.Communications.Models.Documents.Tag;
 global using JetBrains.Annotations;
-
 using System.Runtime.CompilerServices;
+
 [assembly: InternalsVisibleTo("Ublux.Communications.API.IntegrationTests")]
-// ReSharper disable CheckNamespace

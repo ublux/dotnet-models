@@ -33,7 +33,6 @@ public abstract partial class UbluxDocument
     ///     There is the possibility that the same object is attempted to be modified at the same time.
     /// </summary>
     // ReSharper disable once InconsistentNaming
-    // ReSharper disable once MemberCanBePrivate.Global
     protected readonly ReaderWriterLockSlim _lock = new();
 
     /// <summary>
@@ -54,7 +53,7 @@ public abstract partial class UbluxDocument
     {
         set
         {
-            this.id = value.Id;
+            id = value.Id;
         }
     }
 

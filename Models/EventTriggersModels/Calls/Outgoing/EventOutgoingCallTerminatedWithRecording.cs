@@ -30,7 +30,7 @@ public class EventOutgoingCallTerminatedWithRecording : EventOutgoingCallEndedBa
     /// </summary>
     public override EventOutgoingCallTerminatedWithRecording BuildRandomFakeObject(RunningApplicationInstance instance)
     {
-        return this.GetRandomBase<EventOutgoingCallTerminatedWithRecording>(instance);
+        return GetRandomBase<EventOutgoingCallTerminatedWithRecording>(instance);
     }
 
     /// <summary>
@@ -39,7 +39,7 @@ public class EventOutgoingCallTerminatedWithRecording : EventOutgoingCallEndedBa
     protected new T GetRandomBase<T>(RunningApplicationInstance instance) where T : EventOutgoingCallTerminatedWithRecording
     {
         var obj = base.GetRandomBase<T>(instance);        
-        obj.RecordingUrl = "https://api.ublux.com/StoredFile/" + Guid.NewGuid().ToString() + ".mp3";
+        obj.RecordingUrl = "https://api.ublux.com/StoredFile/" + Guid.NewGuid() + ".mp3";
 
         return obj;
     }

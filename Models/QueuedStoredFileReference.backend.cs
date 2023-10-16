@@ -26,10 +26,10 @@ public class QueuedStoredFileReference : IUbluxDocumentId
     /// </summary>
     public QueuedStoredFileReference(string pathToFileOnDisk, StoredFileReference sfr, bool deleteDileWhenDisposing = true)
     {
-        this.PathToFile = pathToFileOnDisk;
-        this.StoredFileReference = sfr;
-        this.DeleteFileWhenUploaded = deleteDileWhenDisposing;
-        this.id = sfr.id;
+        PathToFile = pathToFileOnDisk;
+        StoredFileReference = sfr;
+        DeleteFileWhenUploaded = deleteDileWhenDisposing;
+        id = sfr.id;
     }
 
     /// <summary>
@@ -37,9 +37,9 @@ public class QueuedStoredFileReference : IUbluxDocumentId
     /// </summary>    
     public string Id
     {
-        get => this.id;
+        get => id;
 #if UBLUX_Release || RELEASE
-        set { this.id = value; }
+        set { id = value; }
 #endif
     }
     private string id;

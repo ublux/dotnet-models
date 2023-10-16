@@ -25,7 +25,7 @@ public class EventCallPlacedOnHoldFor1Min : EventCallPlacedOnHoldBase
     /// </summary>
     public override EventCallPlacedOnHoldFor1Min BuildRandomFakeObject(RunningApplicationInstance instance)
     {
-        var obj = base.GetRandomBase<EventCallPlacedOnHoldFor1Min>(instance);
+        var obj = GetRandomBase<EventCallPlacedOnHoldFor1Min>(instance);
         return obj;
     }
 }

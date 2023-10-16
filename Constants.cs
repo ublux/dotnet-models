@@ -1,4 +1,6 @@
 ﻿using System.Text.RegularExpressions;
+using Amazon;
+
 #pragma warning disable CA2211 // Non-constant fields should not be visible
 
 namespace Ublux.Communications.Models;
@@ -18,7 +20,7 @@ public static partial class Constants
             public static string BucketName = "api.ublux.com";
 
             /// <summary> Region of S3 bucket</summary>
-            public static Amazon.RegionEndpoint Region = Amazon.RegionEndpoint.USEast1;
+            public static RegionEndpoint Region = RegionEndpoint.USEast1;
         }
     }
 
@@ -45,10 +47,8 @@ public static partial class Constants
                 Directory.CreateDirectory(path);
             return path;
         }
-        else
-        {
-            return "/usr/share/ublux";
-        }
+
+        return "/usr/share/ublux";
     }
 
     /// <summary>
@@ -66,7 +66,7 @@ public static partial class Constants
         }
         return path;
     }
-    private static bool __PathTempUblux__HasBeenChecked = false;
+    private static bool __PathTempUblux__HasBeenChecked;
 
     /// <summary>
     ///     We will send all notification emails from this account
@@ -168,8 +168,7 @@ public static partial class Constants
     /// <summary>
     ///     Common actions
     /// </summary>
-    private static readonly FlowNodeType[] CommonActions = new[]
-    {
+    private static readonly FlowNodeType[] CommonActions = {
         FlowNodeType.Say,
         FlowNodeType.Play,
         FlowNodeType.API,
@@ -266,8 +265,7 @@ public static partial class Constants
         /// <summary>
         ///     Store in array so that when pbx initializes it ensures this directories exist
         /// </summary>
-        public static readonly string[] AllPaths = new[]
-        {
+        public static readonly string[] AllPaths = {
             Path.Combine(BaseDirPbxFiles, "completed-calls"),
             Path.Combine(BaseDirPbxFiles, "completed-calls-errors"),
             Path.Combine(BaseDirPbxFiles, "recordings"),
@@ -306,8 +304,7 @@ public static partial class Constants
     /// <summary>
     ///     100 Random names
     /// </summary>
-    public static readonly string[] RandomNames = new[]
-    {
+    public static readonly string[] RandomNames = {
         "Emma Johnson",
         "Ethan Mitchell",
         "Ava Davis",
@@ -413,7 +410,7 @@ public static partial class Constants
     /// <summary>
     ///     Timezones ordered
     /// </summary>
-    public static KeyValuePair<string, string>[] TimeZonesOrdered = new KeyValuePair<string, string>[]  {
+    public static KeyValuePair<string, string>[] TimeZonesOrdered = {
             new ("Pacific/Apia", "(UTC-11:00) Midway Island, Samoa"),
             new ("Pacific/Honolulu", "(UTC-10:00) Hawaii"),
             new ("America/Anchorage", "(UTC-09:00) Alaska"),

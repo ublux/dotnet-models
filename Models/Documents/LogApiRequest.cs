@@ -151,24 +151,24 @@ public partial class LogApiRequest : UbluxDocument
     public override IEnumerable<MongoDbIndex> GetMongoDbIndexes()
     {
         // this collection
-        var collection = this.GetType().GetCollectionUsedByType();
+        var collection = GetType().GetCollectionUsedByType();
 
         // get all mandatory indexes
         foreach (var item in base.GetMandatoryIndexes(collection))
             yield return item;
 
         // enable searching fast by ip address
-        yield return new MongoDbIndex(collection, nameof(this.Ip))
+        yield return new MongoDbIndex(collection, nameof(Ip))
             // Append DateCreated at the end so that items are returned by dateCreated
             .Add(nameof(DateCreated));
 
         // enable searching fast by id of account
-        yield return new MongoDbIndex(collection, nameof(this.UbluxSession), nameof(UbluxSession.IdAccount))
+        yield return new MongoDbIndex(collection, nameof(UbluxSession), nameof(UbluxSession.IdAccount))
             // Append DateCreated at the end so that items are returned by dateCreated
             .Add(nameof(DateCreated));
 
         // enable searching fast by request url
-        yield return new MongoDbIndex(collection, nameof(this.RequestUrl))
+        yield return new MongoDbIndex(collection, nameof(RequestUrl))
             // Append DateCreated at the end so that items are returned by dateCreated
             .Add(nameof(DateCreated));
     }

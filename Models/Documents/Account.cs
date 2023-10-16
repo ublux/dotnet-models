@@ -104,14 +104,14 @@ public partial class Account : UbluxDocument
     public override IEnumerable<MongoDbIndex> GetMongoDbIndexes()
     {
         // this collection
-        var collection = this.GetType().GetCollectionUsedByType();
+        var collection = GetType().GetCollectionUsedByType();
 
         // get all mandatory indexes
         foreach (var item in base.GetMandatoryIndexes(collection))
             yield return item;
 
         // enable searching by IdGTrunkTerminationGroup fast
-        yield return new MongoDbIndex(collection, nameof(Account.IdGTrunkTerminationGroup));
+        yield return new MongoDbIndex(collection, nameof(IdGTrunkTerminationGroup));
 
         // Enable seraching by date created only with accounts.
         // db.getCollection("AgreementsToTermsAndConditions").createIndex({ 'dateCreated' : 1 })

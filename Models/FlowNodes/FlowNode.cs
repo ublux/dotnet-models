@@ -27,7 +27,7 @@ public abstract partial class FlowNode
         }
         else
         {
-            throw new Exception($"Invalid node {this.GetType().Name}. It must either be {nameof(IMultipleChildren)} or {nameof(IOneChild)}");
+            throw new Exception($"Invalid node {GetType().Name}. It must either be {nameof(IMultipleChildren)} or {nameof(IOneChild)}");
         }
     }
 }

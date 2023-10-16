@@ -23,7 +23,7 @@ public class EventOutgoingCallTerminated : EventOutgoingCallEndedBase
     /// </summary>
     public override EventOutgoingCallTerminated BuildRandomFakeObject(RunningApplicationInstance instance)
     {
-        var obj = this.GetRandomBase<EventOutgoingCallTerminated>(instance);
+        var obj = GetRandomBase<EventOutgoingCallTerminated>(instance);
         return obj;
     }
 }

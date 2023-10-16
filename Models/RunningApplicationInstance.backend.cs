@@ -57,7 +57,7 @@ public class RunningApplicationInstance
     /// </summary>
     public static RunningApplicationInstance GenerateRandom(CloudServiceType type, bool initIdGlobalCounter)
     {
-        var t = new RunningApplicationInstance()
+        var t = new RunningApplicationInstance
         {
             Id = (type + "-" + Guid.NewGuid().ToString()[..3]).ToUpper(),
             CloudServiceType = type
@@ -189,7 +189,7 @@ public class RunningApplicationInstance
     private int numberOfTimesIdGlobalSetValueHasBeenSet;
 
     // Ensures that IdGlobalSetValue value has been set
-    private bool hasBeenInitialized = false;
+    private bool hasBeenInitialized;
 
     #endregion
 

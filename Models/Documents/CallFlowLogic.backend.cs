@@ -24,11 +24,11 @@ public partial class CallFlowLogic
     public IEnumerable<FlowNode> TraverseTreeAndBookmarks()
     {
         // traverse main tree
-        foreach(var node in this.TraverseTree())
+        foreach(var node in TraverseTree())
             yield return node;
 
         // traverse bookmarks
-        foreach (var bk in this.Bookmarks)
+        foreach (var bk in Bookmarks)
             foreach (var node in bk.TraverseNode())
                 yield return node;
     }
@@ -38,16 +38,16 @@ public partial class CallFlowLogic
     /// </summary>
     public static CallFlowLogic CreateDefault(RunningApplicationInstance instance, string idAccount)
     {
-        return new CallFlowLogic()
+        return new CallFlowLogic
         {
             DateCreated = DateTime.UtcNow,
-            BuiltId = CallFlowLogic.BuildId(instance),
+            BuiltId = BuildId(instance),
             FriendlyName = "Default",
             IdAccount = idAccount,
             IdsTags = new(),
             DateDeleted = null,
             Description = "Default IVR",
-            Tree = new NodeSay()
+            Tree = new NodeSay
             {
                 Child = new NodeHangup(),
                 Text = $"This number is not configured. Please configure your new number at {Constants.Domain}",

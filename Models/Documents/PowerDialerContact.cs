@@ -97,14 +97,14 @@ public partial class PowerDialerContact : UbluxDocument_ReferenceAccount_Referen
     public override IEnumerable<MongoDbIndex> GetMongoDbIndexes()
     {
         // this collection
-        var collection = this.GetType().GetCollectionUsedByType();
+        var collection = GetType().GetCollectionUsedByType();
 
         // get all mandatory indexes
         foreach (var item in base.GetMandatoryIndexes(collection))
             yield return item;
 
         // enable searching fast by IdPowerDialerGroup
-        yield return new MongoDbIndex(collection, nameof(this.IdPowerDialerGroup))
+        yield return new MongoDbIndex(collection, nameof(IdPowerDialerGroup))
             // Append DateCreated at the end so that items are returned by dateCreated
             .Add(nameof(DateCreated));
     }

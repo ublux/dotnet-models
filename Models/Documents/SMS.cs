@@ -47,14 +47,12 @@ public partial class SMS : UbluxDocument_ReferenceAccount_ReferenceTags
     {
         get
         {
-            if (this.IsIncoming)
+            if (IsIncoming)
             {
-                return $"{this.IdVoipNumber}-{VoipNumber.GetLast8DigitsOfPhoneNumber(this.From)}";
+                return $"{IdVoipNumber}-{VoipNumber.GetLast8DigitsOfPhoneNumber(From)}";
             }
-            else
-            {
-                return $"{this.IdVoipNumber}-{VoipNumber.GetLast8DigitsOfPhoneNumber(this.To)}";
-            }
+
+            return $"{IdVoipNumber}-{VoipNumber.GetLast8DigitsOfPhoneNumber(To)}";
         }
         set
         {
@@ -174,17 +172,17 @@ public partial class SMS : UbluxDocument_ReferenceAccount_ReferenceTags
     public override IEnumerable<MongoDbIndex> GetMongoDbIndexes()
     {
         // this collection
-        var collection = this.GetType().GetCollectionUsedByType();
+        var collection = GetType().GetCollectionUsedByType();
 
         #region From/To reversed
 
         // Search by from and id of account
-        yield return new MongoDbIndex(collection, nameof(this.FromReversed)).Add(nameof(IdAccount))
+        yield return new MongoDbIndex(collection, nameof(FromReversed)).Add(nameof(IdAccount))
             // Append DateCreated at the end so that items are returned by dateCreated
             .Add(-1, nameof(DateCreated));
 
         // Search by to and id of account
-        yield return new MongoDbIndex(collection, nameof(this.ToReversed)).Add(nameof(IdAccount))
+        yield return new MongoDbIndex(collection, nameof(ToReversed)).Add(nameof(IdAccount))
             // Append DateCreated at the end so that items are returned by dateCreated
             .Add(-1, nameof(DateCreated));
 

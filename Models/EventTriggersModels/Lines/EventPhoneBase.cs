@@ -77,7 +77,7 @@ public abstract class EventPhoneBase : EventTriggerModel
 
         var randUserAgents = new[] { "Yealink W60B 77.85.0.20", "Yealink SIP-CP960 73.83.0.30", "Yealink SIP-T58 58.85.0.5", "Yealink SIP-T43U 108.84.0.50" };
 
-        obj.ConnectionStatus = new PhoneConnectionStatus()
+        obj.ConnectionStatus = new PhoneConnectionStatus
         {
             DateConnected = DateTime.UtcNow,
             DateDisconnected = DateTime.UtcNow.AddHours(-1),

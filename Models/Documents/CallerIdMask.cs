@@ -31,14 +31,14 @@ public partial class CallerIdMask : UbluxDocument_ReferenceAccount_ReferenceTags
     public override IEnumerable<MongoDbIndex> GetMongoDbIndexes()
     {
         // this collection
-        var collection = this.GetType().GetCollectionUsedByType();
+        var collection = GetType().GetCollectionUsedByType();
 
         // get all mandatory indexes
         foreach (var item in base.GetMandatoryIndexes(collection))
             yield return item;
 
         // enable searching fast by phone number
-        yield return new MongoDbIndex(collection, nameof(this.PhoneNumber))
+        yield return new MongoDbIndex(collection, nameof(PhoneNumber))
             // Append DateCreated at the end so that items are returned by dateCreated
             .Add(nameof(DateCreated));
     }

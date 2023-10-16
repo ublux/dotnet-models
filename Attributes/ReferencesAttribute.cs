@@ -3,7 +3,7 @@
 /// <summary>
 ///     Helper method
 /// </summary>
-[AttributeUsage(AttributeTargets.Property, AllowMultiple = false)]
+[AttributeUsage(AttributeTargets.Property)]
 public class ReferencesAttribute : Attribute
 {
     /// <summary>

@@ -161,24 +161,24 @@ public partial class Contact : UbluxDocument_ReferenceAccount_ReferenceTags
     public override IEnumerable<MongoDbIndex> GetMongoDbIndexes()
     {
         // this collection
-        var collection = this.GetType().GetCollectionUsedByType();
+        var collection = GetType().GetCollectionUsedByType();
 
         // get all mandatory indexes
         foreach (var item in base.GetMandatoryIndexes(collection))
             yield return item;
 
         // enable searching fast by IdContactOwner
-        yield return new MongoDbIndex(collection, nameof(this.IdUserOwner))
+        yield return new MongoDbIndex(collection, nameof(IdUserOwner))
             // Append DateCreated at the end so that items are returned by dateCreated
             .Add(nameof(DateCreated));
 
         // enable searching fast by contact phone number search index
-        yield return new MongoDbIndex(collection, nameof(this.ContactNumbers), nameof(ContactNumber.SearchIndex))
+        yield return new MongoDbIndex(collection, nameof(ContactNumbers), nameof(ContactNumber.SearchIndex))
             // Append DateCreated at the end so that items are returned by dateCreated
             .Add(nameof(DateCreated));  
         
         // enable searching fast by contact phone number search index
-        yield return new MongoDbIndex(collection, nameof(this.ContactEmails), nameof(ContactEmail.SearchIndex))
+        yield return new MongoDbIndex(collection, nameof(ContactEmails), nameof(ContactEmail.SearchIndex))
             // Append DateCreated at the end so that items are returned by dateCreated
             .Add(nameof(DateCreated)); 
     }

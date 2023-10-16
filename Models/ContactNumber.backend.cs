@@ -29,7 +29,7 @@ public partial class ContactNumber
     /// </summary>
     public void SetSearchIndex(BuiltId accountId)
     {
-        this._searchIndex = BuildSearchIndexCommon(accountId.Id, this.Number);
+        _searchIndex = BuildSearchIndexCommon(accountId.Id, Number);
     }
 
     /// <summary>
@@ -38,7 +38,7 @@ public partial class ContactNumber
     public void SetSearchIndex(Account account)
     {
         if (string.IsNullOrEmpty(account.Id)) throw new Exception("id cannot be null");
-        this._searchIndex = BuildSearchIndexCommon(account.Id, this.Number);
+        _searchIndex = BuildSearchIndexCommon(account.Id, Number);
     }
 
     /// <summary>

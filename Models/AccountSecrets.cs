@@ -47,7 +47,7 @@ public class AccountSecrets
             return (int)(minValue + randomIntInRange);
         }
 
-        return new AccountSecrets()
+        return new AccountSecrets
         {
             PinPhone = GenerateRandomInt(100000000, 999999999).ToString(),
             PinSpy = GenerateRandomInt(100000000, 999999999).ToString()

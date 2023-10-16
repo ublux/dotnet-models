@@ -54,14 +54,8 @@ public partial class User : UbluxDocument_ReferenceAccount_ReferenceTags
     [UbluxValidationRequired]
     public required string Username
     {
-        get => (username ?? string.Empty).ToLower();
-        set
-        {
-            if (value == null)
-                username = string.Empty;
-            else
-                username = value.ToLower();
-        }
+        get => username.ToLower();
+        set => username = value.ToLower();
     }
     private string username = string.Empty;
 
@@ -111,14 +105,14 @@ public partial class User : UbluxDocument_ReferenceAccount_ReferenceTags
     public override IEnumerable<MongoDbIndex> GetMongoDbIndexes()
     {
         // this collection
-        var collection = this.GetType().GetCollectionUsedByType();
+        var collection = GetType().GetCollectionUsedByType();
 
         // get all mandatory indexes
         foreach (var item in base.GetMandatoryIndexes(collection))
             yield return item;
 
         // enable searching fast by username this will make authentication faster
-        yield return new MongoDbIndex(collection, nameof(this.Username))
+        yield return new MongoDbIndex(collection, nameof(Username))
 
             // Does not make sense to append datCreated because Username should be unique
             //// Append DateCreated at the end so that items are returned by dateCreated

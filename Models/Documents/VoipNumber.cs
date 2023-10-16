@@ -1,6 +1,4 @@
-﻿using System.Linq.Expressions;
-
-namespace Ublux.Communications.Models.Documents;
+﻿namespace Ublux.Communications.Models.Documents;
 
 /// <summary>
 ///     Incoming phone number (VoipNumber)
@@ -225,7 +223,7 @@ public abstract partial class VoipNumber : UbluxDocument_ReferenceAccount_Refere
             return null;
 
         // if its a phone number build id
-        var last8Digits = VoipNumber.GetLast8DigitsOfPhoneNumber(idVoipNumberOrPhoneNumber);
+        var last8Digits = GetLast8DigitsOfPhoneNumber(idVoipNumberOrPhoneNumber);
         var vn = allVoipNumbersFromAccountWhereToSearchFrom.FirstOrDefault(x => x.Id.Contains(last8Digits));
         if (vn is not null)
             return vn.id;
@@ -241,14 +239,14 @@ public abstract partial class VoipNumber : UbluxDocument_ReferenceAccount_Refere
     public override IEnumerable<MongoDbIndex> GetMongoDbIndexes()
     {
         // this collection
-        var collection = this.GetType().GetCollectionUsedByType();
+        var collection = GetType().GetCollectionUsedByType();
 
         // get all mandatory indexes
         foreach (var item in base.GetMandatoryIndexes(collection))
             yield return item;
 
         // enable searching fast by number
-        yield return new MongoDbIndex(collection, nameof(this.Number))
+        yield return new MongoDbIndex(collection, nameof(Number))
             // Append DateCreated at the end so that items are returned by dateCreated
             .Add(nameof(DateCreated));
 

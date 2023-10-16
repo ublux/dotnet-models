@@ -13,9 +13,9 @@ public partial class StoredFileReference : UbluxDocument_ReferenceAccount
     /// </summary>
     public static StoredFileReference Create(StoredFile sf, string idParentDocument)
     {
-        return new StoredFileReference()
+        return new StoredFileReference
         {
-            BuiltId = StoredFileReference.BuildId(sf),
+            BuiltId = BuildId(sf),
             DateCreated = DateTime.UtcNow,
             DateDeleted = null,
             IdDocument = idParentDocument,
@@ -52,14 +52,14 @@ public partial class StoredFileReference : UbluxDocument_ReferenceAccount
     public override IEnumerable<MongoDbIndex> GetMongoDbIndexes()
     {
         // this collection
-        var collection = this.GetType().GetCollectionUsedByType();
+        var collection = GetType().GetCollectionUsedByType();
 
         // get all mandatory indexes
         foreach (var item in base.GetMandatoryIndexes(collection))
             yield return item;
 
         // enable searching fast by id of document
-        yield return new MongoDbIndex(collection, nameof(this.IdDocument))
+        yield return new MongoDbIndex(collection, nameof(IdDocument))
             // Append DateCreated at the end so that items are returned by dateCreated
             .Add(nameof(DateCreated));
     }

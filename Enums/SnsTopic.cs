@@ -78,7 +78,8 @@ public enum SnsTopic
     /// </summary>
     Extension_Unanswered,
 
-#warning TODO implement missing webhooks
+// TODO implement missing webhooks
+
     /// <summary>
     ///     Extension answered
     /// </summary>
@@ -97,7 +98,7 @@ public enum SnsTopic
     //SMS_Received,
     //SMS_Sent,
 
-#warning TODO implement missing sns topics
+// TODO implement missing sns topics
 
     /// <summary>
     ///     Fax is received

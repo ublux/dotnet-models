@@ -5,6 +5,8 @@
 #pragma warning disable IDE0060 // Remove unused parameter
 #pragma warning disable CS8601 // Possible null reference assignment.
 #pragma warning disable CS8629 // Nullable value type may be null.
+// ReSharper disable RedundantNameQualifier
+
 
 namespace Ublux.Communications.Models.Documents;
 

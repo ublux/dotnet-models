@@ -55,7 +55,7 @@ public abstract class EventIncomingCallEndedBase : EventIncomingCallStartedBase
 
         // Time when call was placed on hold
         var timeWhenPlacedOnHold = Random.Shared.Next(10, ((int)obj.DurationInSeconds) - 5);
-        obj.TimesWhenCallPlacedOnHold.Add(new TimeWhenCallPlacedOnHold()
+        obj.TimesWhenCallPlacedOnHold.Add(new TimeWhenCallPlacedOnHold
         {
             SecondsElapsedWhenPlacedOnHold = timeWhenPlacedOnHold + 0.1,
             SecondsElapsedWhenRemovedFromHold = timeWhenPlacedOnHold + 5

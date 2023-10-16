@@ -7,7 +7,7 @@
 ///     - If its a value type it cannot contain its default value and that is including Enums! So if an enum contains this attribute it cannot have its defult value
 ///     - Booleans can have default value of false
 /// </summary>
-[AttributeUsage(AttributeTargets.Property, AllowMultiple = false)]
+[AttributeUsage(AttributeTargets.Property)]
 public class UbluxValidationRequiredAttribute : Attribute
 {
     /// <summary>

@@ -9,5 +9,6 @@ public enum ByteSizes
     ///     100 MB
     ///     100 Megabytes
     /// </summary>
+    // ReSharper disable once InconsistentNaming
     MB100 = 104857600
 }

@@ -3,7 +3,7 @@
 /// <summary>
 ///     Used to override the UbluxValidationRequiredAttribute.
 /// </summary>
-[AttributeUsage(AttributeTargets.Property, AllowMultiple = false)]
+[AttributeUsage(AttributeTargets.Property)]
 public class UbluxValidationNotRequiredAttribute : Attribute
 {
 }

@@ -31,7 +31,7 @@ public partial class BlackListPhoneNumber
     /// </summary>
     public void SetSearchIndex(string idAccount)
     {
-        this.searchIndex = BuildSearchIndexCommon(idAccount, this.Number);
+        searchIndex = BuildSearchIndexCommon(idAccount, Number);
     }
 
     /// <summary>
@@ -40,7 +40,7 @@ public partial class BlackListPhoneNumber
     public void SetSearchIndex(Account account)
     {
         if (string.IsNullOrEmpty(account.Id)) throw new Exception("id connot be null");
-        this.searchIndex = BuildSearchIndexCommon(account.Id, this.Number);
+        searchIndex = BuildSearchIndexCommon(account.Id, Number);
     }
 
     private static string BuildSearchIndexCommon(string idAccount, string phoneNumber)
