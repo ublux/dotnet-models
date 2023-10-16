@@ -18,16 +18,6 @@ public abstract partial class CloudService : UbluxDocument
 {
     #region Properties
 
-    ///// <summary>
-    /////     TODO. Place index on this field on DB
-    /////     Thanks to the user it can login
-    ///// </summary>
-    //[References(typeof(User))]
-    //[AllowUpdate(false)] 
-    //[SwaggerSchema(ReadOnly = true)] 
-    //[UbluxValidationRequired]
-    //public required string IdUser { get; set; } = string.Empty;
-
     /// <summary>
     ///     Cloud services can authenticate differently than users. Makes no sense for a pbx for exaple to have an email address
     /// </summary>

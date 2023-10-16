@@ -4,7 +4,7 @@
 ///     Webhook will send this data when triggered.
 ///     <see cref="EventTriggerType.EventPhoneDisconnected"/>
 /// </summary>
-public partial class EventPhoneDisconnected : EventPhoneBase
+public class EventPhoneDisconnected : EventPhoneBase
 {
     /// <summary>
     ///     Event Trigger Type

@@ -3,7 +3,7 @@
 /// <summary> 
 ///     Session is a logged in User (user). We use JWT Security tokens to store this Session.
 /// </summary>
-public partial class UbluxSession 
+public class UbluxSession 
 {
     /// <summary> sub property from JWT. Logged in by what user? This may be a CloudService </summary>
     [References(typeof(User))]

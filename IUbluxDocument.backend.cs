@@ -1,6 +1,5 @@
 ﻿#if UBLUX_BACKEND
 
-
 namespace Ublux.Communications.Models;
 
 /// <summary>
@@ -10,7 +9,7 @@ namespace Ublux.Communications.Models;
 ///     We need to work with what is stored on our application. 
 ///     DTO objects is what we present to clients
 /// </summary>
-public partial interface IUbluxDocument : IUbluxDocumentId
+public partial interface IUbluxDocument 
 {
     /// <summary>
     ///     Date when item was deleted
@@ -27,12 +26,14 @@ public partial interface IUbluxDocument : IUbluxDocumentId
 ///     All collections on database must contain this attribute.
 ///     Represents a Table on a traditional database
 /// </summary>
-public abstract partial class UbluxDocument : IUbluxDocument, IUbluxDocumentId
+public abstract partial class UbluxDocument 
 {
     /// <summary>
     ///     We need to use a lock because we store a lot of data on the cache. 
-    ///     There is the posibility that the same object is attempted to be modified at the same time.
+    ///     There is the possibility that the same object is attempted to be modified at the same time.
     /// </summary>
+    // ReSharper disable once InconsistentNaming
+    // ReSharper disable once MemberCanBePrivate.Global
     protected readonly ReaderWriterLockSlim _lock = new();
 
     /// <summary>
@@ -67,10 +68,10 @@ public abstract partial class UbluxDocument : IUbluxDocument, IUbluxDocumentId
     [HideForCreateRequest]
     public DateTime? DateDeleted
     {
-        get { try { _lock.EnterReadLock(); return dateDeleted; } finally { _lock.ExitReadLock(); } }
-        set { try { _lock.EnterWriteLock(); dateDeleted = value; } finally { _lock.ExitWriteLock(); } }
+        get { try { _lock.EnterReadLock(); return _dateDeleted; } finally { _lock.ExitReadLock(); } }
+        set { try { _lock.EnterWriteLock(); _dateDeleted = value; } finally { _lock.ExitWriteLock(); } }
     }
-    private DateTime? dateDeleted;      
+    private DateTime? _dateDeleted;      
 }
 /*
 

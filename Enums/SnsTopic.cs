@@ -1,4 +1,6 @@
-﻿namespace Ublux.Communications.Enums;
+﻿// ReSharper disable InconsistentNaming
+// ReSharper disable CheckNamespace
+namespace Ublux.Communications.Enums;
 
 /// <summary>
 ///     Simple notification service topic. Example call_completed.

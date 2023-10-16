@@ -17,7 +17,7 @@
     typeof(ExtensionVoicemail)
 )]
 [DebuggerDisplay("Name:{FriendlyName} Number:{Number} ExtensionType:{ExtensionType}")]
-public abstract partial class Extension : UbluxDocument_ReferenceAccount_ReferenceTags
+public abstract class Extension : UbluxDocument_ReferenceAccount_ReferenceTags
 {
     #region Properties
 

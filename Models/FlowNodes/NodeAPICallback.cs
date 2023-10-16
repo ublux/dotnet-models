@@ -1,5 +1,6 @@
 ﻿namespace Ublux.Communications.Models.FlowNodes;
 
+// ReSharper disable once InconsistentNaming
 public partial class NodeAPICallback
 {
     /// <summary>

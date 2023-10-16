@@ -5,7 +5,7 @@ namespace Ublux.Communications.Models.Documents;
 /// <summary>
 ///     Ublux Account
 /// </summary>
-public partial class Account : UbluxDocument
+public partial class Account
 {
     #region References
 
@@ -27,7 +27,7 @@ public partial class Account : UbluxDocument
     /////     Continental assists has 2 providers on their phones.
     /////     Thanks to this Variable we may ignore an account so that we do not override properties from Netelip for example.
     /////
-    /////     For example value {3,4} will reserver accounts 3 and 4 for personal use of Continental assist
+    /////     For example value {3,4} will reserve accounts 3 and 4 for personal use of Continental assist
     ///// </summary>
     //[AllowUpdate(false)]
     //[SwaggerSchema(ReadOnly = true)]
@@ -53,11 +53,9 @@ public partial class Account : UbluxDocument
     /// </summary>
     public CountryIsoCode? GetDefaultCountry()
     {
-        if (this.CountriesThatCanCallLocally is null)
-            return null;
-        foreach (var item in this.CountriesThatCanCallLocally)
-            if (item != CountryIsoCode.None && item != CountryIsoCode.All)
-                return item;
+        foreach (var item in this.CountriesThatCanCallLocally
+                .Where(item => item != CountryIsoCode.None && item != CountryIsoCode.All))
+            return item;
 
         return null;
     }

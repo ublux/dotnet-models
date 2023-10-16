@@ -5,8 +5,8 @@
 /// </summary>
 public class MongoDbIndex
 {
-    List<string[]> properties = new();
-    List<int> sortOrders = new();
+    private readonly List<string[]> _properties = new();
+    private readonly List<int> _sortOrders = new();
 
     /// <summary>
     ///     Example: Extensions
@@ -32,8 +32,8 @@ public class MongoDbIndex
             throw new Exception("Invalid sort order. FKRO-DLK7");
         }
 
-        this.sortOrders.Add(sortOrder);
-        this.properties.Add(properties);
+        this._sortOrders.Add(sortOrder);
+        this._properties.Add(properties);
     }
 
     /// <summary>
@@ -63,8 +63,8 @@ public class MongoDbIndex
             throw new Exception("Invalid sort order. FKRO-DLK7");
         }
 
-        this.sortOrders.Add(sortOrder);
-        this.properties.Add(properties);
+        this._sortOrders.Add(sortOrder);
+        this._properties.Add(properties);
 
         return this;
     }
@@ -88,19 +88,19 @@ public class MongoDbIndex
 
         sb.Append('{');
 
-        for (int i = 0; i < properties.Count;)
+        for (int i = 0; i < _properties.Count;)
         {
             // key and value
             {
                 // key
                 sb.Append('\"');
-                sb.Append(string.Join('.', properties[i].Select(x => x.FirstCharToLowerCase() ?? throw new Exception($"Invalid property name {x} FLE3-MNFY"))));
+                sb.Append(string.Join('.', _properties[i].Select(x => x.FirstCharToLowerCase() ?? throw new Exception($"Invalid property name {x} FLE3-MNFY"))));
                 sb.Append('\"');
 
                 sb.Append(':');
 
                 // value
-                sb.Append(sortOrders[i]);
+                sb.Append(_sortOrders[i]);
             }
             
 
@@ -108,7 +108,7 @@ public class MongoDbIndex
             i++;
 
             // if its a comound index and there are more index add comma
-            if (i < properties.Count)
+            if (i < _properties.Count)
                 sb.Append(',');
         }
 

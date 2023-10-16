@@ -3,7 +3,7 @@
 /// <summary>
 ///     Converted audio to text
 /// </summary>
-public partial class AiTranscription
+public class AiTranscription
 {
     /// <summary>
     ///     Is it Agent or Client?

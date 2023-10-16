@@ -195,7 +195,6 @@ public abstract partial class Call : UbluxDocument_ReferenceAccount_ReferenceTag
 
     /// <summary>
     ///     Type of call
-    ///     TODO: Create index on DB
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]

@@ -155,7 +155,7 @@ public partial class NodePlay : FlowNode, IOneChild
 }
 
 /// <summary></summary>
-public partial class NodeIfDigits : FlowNode, IMultipleChildren
+public class NodeIfDigits : FlowNode, IMultipleChildren
 {
     /// <inheritdoc />
     public override FlowNodeType FlowNodeType
@@ -195,7 +195,7 @@ public partial class NodeDigits : FlowNode, IOneChild
 }
 
 /// <summary></summary>
-public partial class NodeAnyDigits : FlowNode, IOneChild
+public class NodeAnyDigits : FlowNode, IOneChild
 {
     /// <inheritdoc />
     public override FlowNodeType FlowNodeType
@@ -215,7 +215,7 @@ public partial class NodeAnyDigits : FlowNode, IOneChild
 }
 
 /// <summary></summary>
-public partial class NodeIfTime : FlowNode, IMultipleChildren
+public class NodeIfTime : FlowNode, IMultipleChildren
 {
     /// <inheritdoc />
     public override FlowNodeType FlowNodeType
@@ -275,7 +275,7 @@ public partial class NodeAnyTime : FlowNode, IOneChild
 }
 
 /// <summary></summary>
-public partial class NodeIfWeekDay : FlowNode, IMultipleChildren
+public class NodeIfWeekDay : FlowNode, IMultipleChildren
 {
     /// <inheritdoc />
     public override FlowNodeType FlowNodeType
@@ -315,7 +315,7 @@ public partial class NodeWeekDays : FlowNode, IOneChild
 }
 
 /// <summary></summary>
-public partial class NodeAnyWeekDay : FlowNode, IOneChild
+public class NodeAnyWeekDay : FlowNode, IOneChild
 {
     /// <inheritdoc />
     public override FlowNodeType FlowNodeType
@@ -375,7 +375,7 @@ public partial class NodeDynamicExtension : FlowNode, IOneChild
 }
 
 /// <summary></summary>
-public partial class NodeIfDialStatus : FlowNode, IMultipleChildren
+public class NodeIfDialStatus : FlowNode, IMultipleChildren
 {
     /// <inheritdoc />
     public override FlowNodeType FlowNodeType
@@ -415,7 +415,7 @@ public partial class NodeDialStatus : FlowNode, IOneChild
 }
 
 /// <summary></summary>
-public partial class NodeAnyDialStatus : FlowNode, IOneChild
+public class NodeAnyDialStatus : FlowNode, IOneChild
 {
     /// <inheritdoc />
     public override FlowNodeType FlowNodeType
@@ -435,7 +435,7 @@ public partial class NodeAnyDialStatus : FlowNode, IOneChild
 }
 
 /// <summary></summary>
-public partial class NodeIfPhoneDisconnected : FlowNode, IMultipleChildren
+public class NodeIfPhoneDisconnected : FlowNode, IMultipleChildren
 {
     /// <inheritdoc />
     public override FlowNodeType FlowNodeType
@@ -455,7 +455,7 @@ public partial class NodeIfPhoneDisconnected : FlowNode, IMultipleChildren
 }
 
 /// <summary></summary>
-public partial class NodePhoneConnected : FlowNode, IOneChild
+public class NodePhoneConnected : FlowNode, IOneChild
 {
     /// <inheritdoc />
     public override FlowNodeType FlowNodeType
@@ -475,7 +475,7 @@ public partial class NodePhoneConnected : FlowNode, IOneChild
 }
 
 /// <summary></summary>
-public partial class NodePhoneDisconnected : FlowNode, IOneChild
+public class NodePhoneDisconnected : FlowNode, IOneChild
 {
     /// <inheritdoc />
     public override FlowNodeType FlowNodeType
@@ -615,7 +615,7 @@ public partial class NodeSetVariable : FlowNode, IOneChild
 }
 
 /// <summary></summary>
-public partial class NodeIfVariable : FlowNode, IMultipleChildren
+public class NodeIfVariable : FlowNode, IMultipleChildren
 {
     /// <inheritdoc />
     public override FlowNodeType FlowNodeType
@@ -655,7 +655,7 @@ public partial class NodeVariable : FlowNode, IOneChild
 }
 
 /// <summary></summary>
-public partial class NodeAnyVariable : FlowNode, IOneChild
+public class NodeAnyVariable : FlowNode, IOneChild
 {
     /// <inheritdoc />
     public override FlowNodeType FlowNodeType
@@ -715,7 +715,7 @@ public partial class NodeKeyword : FlowNode, IOneChild
 }
 
 /// <summary></summary>
-public partial class NodeAnyKeyword : FlowNode, IOneChild
+public class NodeAnyKeyword : FlowNode, IOneChild
 {
     /// <inheritdoc />
     public override FlowNodeType FlowNodeType
@@ -775,7 +775,7 @@ public partial class NodeAPICallback : FlowNode, IOneChild
 }
 
 /// <summary></summary>
-public partial class NodeHangup : FlowNode, IOneChild
+public class NodeHangup : FlowNode, IOneChild
 {
     /// <inheritdoc />
     public override FlowNodeType FlowNodeType

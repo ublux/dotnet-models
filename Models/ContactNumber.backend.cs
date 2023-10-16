@@ -2,6 +2,7 @@
 
 namespace Ublux.Communications.Models;
 
+[UsedImplicitly]
 public partial class ContactNumber
 {
     #region SearchIndex
@@ -9,27 +10,26 @@ public partial class ContactNumber
     /// <summary>
     ///     This cannot be the id because if the phone number changes we cannot modify the id
     ///     Thanks to this index we can search fast on database. This index consists of: Account and last 8 numbers of phone number.
-    ///     TODO: make this an index on database. Do not make it unique only and index because we can have two contacts with the same phone number
     /// </summary>
     [AllowUpdate(false)] 
     [SwaggerSchema(ReadOnly = true)] 
     [IgnoreDataMember]
     public string SearchIndex
     {
-        get => searchIndex;
+        get => _searchIndex;
 #if UBLUX_Release || RELEASE
-        set => searchIndex = value;
+        set => _searchIndex = value;
 #else
 #endif        
     }
-    private string searchIndex = string.Empty;
+    private string _searchIndex = string.Empty;
 
     /// <summary>
     ///     Set value of search index
     /// </summary>
     public void SetSearchIndex(BuiltId accountId)
     {
-        this.searchIndex = BuildSearchIndexCommon(accountId.Id, this.Number);
+        this._searchIndex = BuildSearchIndexCommon(accountId.Id, this.Number);
     }
 
     /// <summary>
@@ -37,13 +37,14 @@ public partial class ContactNumber
     /// </summary>
     public void SetSearchIndex(Account account)
     {
-        if (string.IsNullOrEmpty(account.Id)) throw new Exception("id connot be null");
-        this.searchIndex = BuildSearchIndexCommon(account.Id, this.Number);
+        if (string.IsNullOrEmpty(account.Id)) throw new Exception("id cannot be null");
+        this._searchIndex = BuildSearchIndexCommon(account.Id, this.Number);
     }
 
     /// <summary>
     ///     Build search index. Example Ac.1-12345678
     /// </summary>
+    [UsedImplicitly]
     public static string BuildSearchIndexCommon(string idAccount, string phoneNumber)
     {
         if (idAccount.StartsWith(Account.DocumentPrefix) == false)
@@ -70,7 +71,7 @@ public partial class ContactNumber
         buf[index++] = '-';
 
         // append last 8 digits
-        foreach (var c in phoneNumber.Where(x => char.IsDigit(x)).Reverse().Take(8).Reverse())
+        foreach (var c in phoneNumber.Where(char.IsDigit).Reverse().Take(8).Reverse())
             buf[index++] = c;
 
         return new string(buf[..index]);

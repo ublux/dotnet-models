@@ -16,7 +16,7 @@
     typeof(CallOutgoingToPSTN),
     typeof(CallOutgoingToPowerDialer)
 )]
-public abstract partial class CallOutgoing : Call
+public abstract class CallOutgoing : Call
 {
     ///// <summary>    
     /////     Contact to whom we are calling

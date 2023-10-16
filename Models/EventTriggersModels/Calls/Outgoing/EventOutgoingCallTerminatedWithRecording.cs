@@ -4,7 +4,7 @@
 ///     Webhook will send this data when triggered.
 ///     <see cref="EventTriggerType.EventOutgoingCallTerminatedWithRecording"/>
 /// </summary>
-public partial class EventOutgoingCallTerminatedWithRecording : EventOutgoingCallEndedBase
+public class EventOutgoingCallTerminatedWithRecording : EventOutgoingCallEndedBase
 {
     /// <inheritdoc />
     [AllowUpdate(false)]

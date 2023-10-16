@@ -13,7 +13,7 @@
     typeof(EventActionForwardToPhoneNumber),
     typeof(EventActionLeaveVoicemail)
 )]
-public abstract partial class EventAction
+public abstract class EventAction
 {
     /// <summary>
     ///     Reason why this action should execute

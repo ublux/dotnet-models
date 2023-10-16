@@ -135,7 +135,7 @@ public abstract partial class UbluxDocument : IUbluxDocument, IUbluxDocumentId
 /// <summary>
 ///     Ublux document that references an account
 /// </summary>
-public abstract partial class UbluxDocument_ReferenceAccount : UbluxDocument, IReferencesAccount
+public abstract class UbluxDocument_ReferenceAccount : UbluxDocument, IReferencesAccount
 {
     /// <summary>
     ///     It is nullable because there are cases where it makes no sense to point to an account. 
@@ -167,7 +167,7 @@ public abstract partial class UbluxDocument_ReferenceAccount : UbluxDocument, IR
 /// <summary>
 ///     Ublux document that references an account and have tags
 /// </summary>
-public abstract partial class UbluxDocument_ReferenceAccount_ReferenceTags : UbluxDocument_ReferenceAccount, IReferencesTags
+public abstract class UbluxDocument_ReferenceAccount_ReferenceTags : UbluxDocument_ReferenceAccount, IReferencesTags
 {
     /// <summary>
     ///     It is nullable because there are cases where it makes no sense to point to an account. 

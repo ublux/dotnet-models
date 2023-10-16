@@ -1,4 +1,5 @@
-﻿namespace Ublux.Communications.Enums;
+﻿// ReSharper disable CheckNamespace
+namespace Ublux.Communications.Enums;
 
 /// <summary>
 ///     Type of cloud service
