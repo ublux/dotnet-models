@@ -201,19 +201,19 @@ public static partial class Constants
     {
         // Conditionals
         { FlowNodeType.IfPhoneDisconnected,
-            new FlowNodeType[]{ FlowNodeType.PhoneDisconnected, FlowNodeType.PhoneConnected } },
+            new[]{ FlowNodeType.PhoneDisconnected, FlowNodeType.PhoneConnected } },
         { FlowNodeType.IfDigits,
-            new FlowNodeType[]{ FlowNodeType.Digits, FlowNodeType.AnyDigits } },
+            new[]{ FlowNodeType.Digits, FlowNodeType.AnyDigits } },
         { FlowNodeType.IfTime,
-            new FlowNodeType[]{ FlowNodeType.Time, FlowNodeType.AnyTime } },
+            new[]{ FlowNodeType.Time, FlowNodeType.AnyTime } },
         { FlowNodeType.IfWeekDay,
-            new FlowNodeType[]{ FlowNodeType.WeekDays, FlowNodeType.AnyWeekDay } },
+            new[]{ FlowNodeType.WeekDays, FlowNodeType.AnyWeekDay } },
         { FlowNodeType.IfDialStatus,
-            new FlowNodeType[]{ FlowNodeType.DialStatus, FlowNodeType.AnyDialStatus } },
+            new[]{ FlowNodeType.DialStatus, FlowNodeType.AnyDialStatus } },
         { FlowNodeType.IfKeyword,
-            new FlowNodeType[]{ FlowNodeType.Keyword, FlowNodeType.AnyKeyword } },
+            new[]{ FlowNodeType.Keyword, FlowNodeType.AnyKeyword } },
         { FlowNodeType.IfVariable,
-            new FlowNodeType[]{ FlowNodeType.Variable, FlowNodeType.AnyVariable } },
+            new[]{ FlowNodeType.Variable, FlowNodeType.AnyVariable } },
 
         // Childs of conditionals
         { FlowNodeType.Digits, CommonActions },
@@ -266,7 +266,7 @@ public static partial class Constants
         /// <summary>
         ///     Store in array so that when pbx initializes it ensures this directories exist
         /// </summary>
-        public static readonly string[] AllPaths = new string[]
+        public static readonly string[] AllPaths = new[]
         {
             Path.Combine(BaseDirPbxFiles, "completed-calls"),
             Path.Combine(BaseDirPbxFiles, "completed-calls-errors"),
@@ -306,7 +306,7 @@ public static partial class Constants
     /// <summary>
     ///     100 Random names
     /// </summary>
-    public static readonly string[] RandomNames = new string[]
+    public static readonly string[] RandomNames = new[]
     {
         "Emma Johnson",
         "Ethan Mitchell",

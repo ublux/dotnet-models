@@ -21,8 +21,6 @@ public abstract partial class FlowNode
         {
             foreach (var child in m.Children)
             {
-                if (child is null) continue;
-
                 foreach (var subChild in child.TraverseNode())
                     yield return subChild;
             }
