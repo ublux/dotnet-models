@@ -55,7 +55,7 @@ public partial class StoredFile : UbluxSubDocument, IReferencesAccount
     /// <summary>
     ///     Helper to get hash
     /// </summary>
-    public static string ComputeMd5Hash(string filePath)
+    public static string ComputeMd5Hash(string filePath, out long fileSize)
     {
         // compute md5 hash
         try
@@ -63,11 +63,13 @@ public partial class StoredFile : UbluxSubDocument, IReferencesAccount
             using MD5 md5 = MD5.Create();
             using var stream = File.OpenRead(filePath);
             var hash = md5.ComputeHash(stream);
+            fileSize = stream.Position;
             string hex = BitConverter.ToString(hash).Replace("-", string.Empty).ToLower();
             return hex;
         }
         catch
         {
+            fileSize = 0;
             return "";
         }
     }
