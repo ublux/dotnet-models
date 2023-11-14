@@ -213,7 +213,7 @@ public abstract partial class VoipNumber : UbluxDocument_ReferenceAccount_Refere
     /// </summary>
     public static string? FindIdGivenPhoneNumber(string idVoipNumberOrPhoneNumber, IEnumerable<VoipNumber>? allVoipNumbersFromAccountWhereToSearchFrom)
     {
-        if (idVoipNumberOrPhoneNumber.Contains(RedisConstants.DelimeterId))
+        if (idVoipNumberOrPhoneNumber.Contains(RedisConstants.DelimiterId))
         {
             // it should be an id
             return idVoipNumberOrPhoneNumber;

@@ -5,27 +5,27 @@
 /// </summary>
 public class RedisConstants
 {
-    #region Redis delimeters
+    #region Redis delimiters
 
     /// <summary>
-    ///     Delimeter used to split ids
+    ///     Delimiter used to split ids
     /// </summary>
-    public const char DelimeterId = '.';
+    public const char DelimiterId = '.';
 
     /// <summary>
     ///     Delimterer escaped if using a regex
     /// </summary>
-    public const string DelimeterEscaped = @"\.";
+    public const string DelimiterEscaped = @"\.";
 
     /// <summary>
-    ///     Delimeter used for set. Example Phones:Ac.1
+    ///     Delimiter used for set. Example Phones:Ac.1
     /// </summary>
-    public const char DelimeterSet = ':';
+    public const char DelimiterSet = ':';
 
     /// <summary>
-    ///     Delimeter used for streams. For example: modified:1 maning one item was modified. That stream will contain info of object that got modified
+    ///     Delimiter used for streams. For example: modified:1 maning one item was modified. That stream will contain info of object that got modified
     /// </summary>
-    public const char DelimeterEvents = ':';
+    public const char DelimiterEvents = ':';
 
     #endregion
 

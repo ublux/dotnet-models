@@ -43,7 +43,7 @@ public enum AiVariableType
 
     /// <summary>
     ///     Example: { Name : "Loud Party", Weight : 0.8 }   
-    ///     Eeight is decimal value from 0 to 1
+    ///     Weight is decimal value from 0 to 1
     /// </summary>
     Topics   
 }

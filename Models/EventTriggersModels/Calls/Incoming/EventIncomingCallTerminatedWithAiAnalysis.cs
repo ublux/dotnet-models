@@ -73,7 +73,7 @@ public class EventIncomingCallTerminatedWithAiAnalysis : EventIncomingCallTermin
                 {
                     Name = "Summary",
                     AiVariableType = AiVariableType.Text,
-                    Value = "Client complains against Agent that washing mashine is not working"
+                    Value = "Client complains against Agent that washing machine is not working"
                 },
                 new ()
                 {

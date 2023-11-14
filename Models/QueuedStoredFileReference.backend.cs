@@ -112,13 +112,20 @@ public class QueuedStoredFileReference : IUbluxDocumentId
         set;
 #endif
     }
+    
+    // /// <summary>
+    // ///     null = not backup
+    // ///     false = backup failed
+    // ///     true = backup worked
+    // /// </summary>
+    // public bool? IsBackup { get; set; }
 
     /// <summary>
     ///     Fires when this queued file is backed up successfully
     /// </summary>
     [JsonIgnore]
     [System.Text.Json.Serialization.JsonIgnore]
-    public Action<StoredFileReference>? OnBackupSuccessfull { get; set; }
+    public Action<StoredFileReference>? OnBackupSuccessful { get; set; }
 
     /// <summary>
     ///     Fires if there is an error uploading the file

@@ -24,7 +24,7 @@ public enum BlfStatusType
     /// <summary>
     ///     Phone call someone and was placed on hold
     /// </summary>
-    Outgiong_OnHold,
+    Outgoing_OnHold,
 
 
 

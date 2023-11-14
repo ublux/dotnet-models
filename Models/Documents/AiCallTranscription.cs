@@ -3,7 +3,7 @@
 // SHOULD BE CREATED WHEN CALL IS CREATED!
 
 /// <summary>
-///     AI transcription of a phone call. This is the convertion from audio to text only.
+///     AI transcription of a phone call. This is the conversion from audio to text only.
 /// </summary>
 public partial class AiCallTranscription : UbluxDocument_ReferenceAccount_ReferenceTags
 {

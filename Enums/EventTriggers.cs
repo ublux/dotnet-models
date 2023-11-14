@@ -13,20 +13,20 @@ public enum EventTriggerType
 
     #region Call terminated/started
 
-    /// <summary/>
+        /// <summary/>
     EventOutgoingCallTerminated,
     /// <summary/>
     EventIncomingCallTerminated,
+    
+    /// <summary/>
+    EventOutgoingCallStarted,
+    /// <summary/>
+    EventIncomingCallStarted,
 
     /// <summary/>
     EventOutgoingCallTerminatedWithRecording,
     /// <summary/>
     EventIncomingCallTerminatedWithRecording,
-
-    /// <summary/>
-    EventOutgoingCallStarted,
-    /// <summary/>
-    EventIncomingCallStarted,
 
     /// <summary/>
     EventOutgoingCallTerminatedWithTranscription,

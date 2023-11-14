@@ -8,7 +8,7 @@ namespace Ublux.Communications.Models.EventTriggersModels;
 public abstract class EventCallPlacedOnHoldBase : EventTriggerModel
 {
     /// <summary>
-    ///     Is the call incoming? If false call is outgiong
+    ///     Is the call incoming? If false call is outgoing
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
@@ -58,7 +58,7 @@ public abstract class EventCallPlacedOnHoldBase : EventTriggerModel
 
     /// <summary>
     ///     If it is an incoming call then the id of line that answered the call.
-    ///     If it is an outgiong call then the id of the line that initiated the call.
+    ///     If it is an outgoing call then the id of the line that initiated the call.
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
@@ -66,7 +66,7 @@ public abstract class EventCallPlacedOnHoldBase : EventTriggerModel
 
     /// <summary>
     ///     If it is an incoming call then the friendly name of the line that answered the call.
-    ///     If it is an outgiong call then the friendly name of the line that initiated the call.
+    ///     If it is an outgoing call then the friendly name of the line that initiated the call.
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]

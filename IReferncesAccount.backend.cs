@@ -13,7 +13,7 @@ public interface IReferencesAccount
     ///     For example a CloudService user will point to no account
     /// </summary>
     [References(typeof(Account))]
-    [IgnoreDataMember]
+    // [IgnoreDataMember]
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
     [UbluxValidationRequired]

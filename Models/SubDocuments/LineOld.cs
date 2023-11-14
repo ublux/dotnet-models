@@ -99,7 +99,7 @@
 //    #endregion
 
 //    /// <summary>
-//    ///     Langage to use when playing messages
+//    ///     Language to use when playing messages
 //    /// </summary>
 //    [AllowUpdate(true)]
 //    public Language Language { get; set; }

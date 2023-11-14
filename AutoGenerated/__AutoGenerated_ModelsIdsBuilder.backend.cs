@@ -264,7 +264,7 @@ namespace Ublux.Communications.Models.Documents {
         /// <summary> Id prefix </summary>
         public const string DocumentPrefix = "TT";
 
-        /// <summary> Custom: Prefix follwed by trunk name. Example TT.Twilio-Victor-All </summary>
+        /// <summary> Custom: Prefix followed by trunk name. Example TT.Twilio-Victor-All </summary>
         public static BuiltId BuildId(VoipCompany voipCompany, UbluxPartner ubluxPartner, CountryIsoCode countryIsoCode, int number) => new($"{DocumentPrefix}.{voipCompany}-{ubluxPartner}-{countryIsoCode}-{number}");
 
         /// <summary> Default trunk used for gateway </summary>

@@ -60,7 +60,7 @@ public abstract partial class Call
     /// <summary>
     ///     Adds to ChannelsTo makeing sure there are not duplicates
     /// </summary>    
-    public void AddToChannesTo(string idChannel)
+    public void AddToChannelsTo(string idChannel)
     {
         if (ChannelsTo.Contains(idChannel))
             return;

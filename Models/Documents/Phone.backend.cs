@@ -103,7 +103,7 @@ public partial class Phone
 
         var start = DocumentPrefix.Length + Account.DocumentPrefix.Length + 3;
 
-        var thirdDot = start + idPhone[start..].IndexOf(RedisConstants.DelimeterId);
+        var thirdDot = start + idPhone[start..].IndexOf(RedisConstants.DelimiterId);
 
         // id account will be substring in btween dot 1 and
         var idAccount = idPhone[(DocumentPrefix.Length + 1)..thirdDot];

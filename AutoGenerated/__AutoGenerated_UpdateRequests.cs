@@ -1,11 +1,11 @@
 /* THIS FILE IS AUTO GENERATED. DO NOT DELETE/MODIFY */
 /* Contain properties with AllowUpdate=True */
 
+// ReSharper disable RedundantNameQualifier
 #pragma warning disable CA1822 // Mark members as static
 #pragma warning disable IDE0060 // Remove unused parameter
 #pragma warning disable CS8601 // Possible null reference assignment.
 #pragma warning disable CS8629 // Nullable value type may be null.
-// ReSharper disable RedundantNameQualifier
 
 namespace Ublux.Communications.Models.Documents;
 
@@ -21,7 +21,7 @@ public class ApiKeyUpdateRequest // : IUbluxDocumentId
     /// Key = service/role such as Phone. The phone role probably will have access to the PhoneController service
     /// Value = Permissions it has on that role. Maybe it can only read data from that service but it cannot update, create or modify.
     /// </summary>
-    public List<Enums.UbluxRole>? UbluxRoles { get; set; }
+    public List<Ublux.Communications.Enums.UbluxRole>? UbluxRoles { get; set; }
     /// <summary>
     /// If null it will never expire. Else it will have an expiration
     /// </summary>
@@ -80,7 +80,7 @@ public class AccountUpdateRequest // : IUbluxDocumentId
     /// <summary>
     /// If CountriesThatCanCallLocally does not contain country then ublux will attempt to find country on this list and mark call as international
     /// </summary>
-    public List<Enums.CountryIsoCode>? CountriesThatCanCallInternationally { get; set; }
+    public List<Ublux.Communications.Enums.CountryIsoCode>? CountriesThatCanCallInternationally { get; set; }
     /// <summary>
     /// Sector
     /// </summary>
@@ -295,7 +295,7 @@ public class CallFlowLogicUpdateRequest // : IUbluxDocumentId
     /// <summary>
     /// Special bookmarks on tree. This will be separate trees to share common logic
     /// </summary>
-    public List<FlowNodes.NodeBookmark>? Bookmarks { get; set; }
+    public List<Ublux.Communications.Models.FlowNodes.NodeBookmark>? Bookmarks { get; set; }
     /// <summary>
     /// It is nullable because there are cases where it makes no sense to point to an account.
     /// For example a CloudService user will point to no account
@@ -550,15 +550,15 @@ public class ContactUpdateRequest // : IUbluxDocumentId
     /// Key = phone number
     /// Value = type (example = work)
     /// </summary>
-    public List<Models.ContactNumber>? ContactNumbers { get; set; }
+    public List<Ublux.Communications.Models.ContactNumber>? ContactNumbers { get; set; }
     /// <summary>
     /// Email addresses of contact
     /// </summary>
-    public List<Models.ContactEmail>? ContactEmails { get; set; }
+    public List<Ublux.Communications.Models.ContactEmail>? ContactEmails { get; set; }
     /// <summary>
     /// Mailing Addresses of contact
     /// </summary>
-    public List<Models.MailingAddress>? MailingAddresses { get; set; }
+    public List<Ublux.Communications.Models.MailingAddress>? MailingAddresses { get; set; }
     /// <summary>
     /// Contact first name
     /// </summary>
@@ -580,7 +580,7 @@ public class ContactUpdateRequest // : IUbluxDocumentId
     /// <summary>
     /// Customer custom data
     /// </summary>
-    public List<Models.Variable>? Variables { get; set; }
+    public List<Ublux.Communications.Models.Variable>? Variables { get; set; }
     /// <summary>
     /// It is nullable because there are cases where it makes no sense to point to an account.
     /// For example a CloudService user will point to no account
@@ -871,7 +871,7 @@ public class AiCallAnalysisInputUpdateRequest // : IUbluxDocumentId
     /// <summary>
     /// List of queries to ask AI engine about a call
     /// </summary>
-    public List<Models.AiCallAnalysisQuery>? Queries { get; set; }
+    public List<Ublux.Communications.Models.AiCallAnalysisQuery>? Queries { get; set; }
     /// <summary>
     /// Send email
     /// </summary>
@@ -1164,7 +1164,7 @@ public class UserUpdateRequest // : IUbluxDocumentId
     /// Key = service/role such as Phone. The phone role probably will have access to the PhoneController service
     /// Value = Permissions it has on that role. Maybe it can only read data from that service but it cannot update, create or modify.
     /// </summary>
-    public List<Enums.UbluxRole>? UbluxRoles { get; set; }
+    public List<Ublux.Communications.Enums.UbluxRole>? UbluxRoles { get; set; }
     /// <summary>
     /// It is nullable because there are cases where it makes no sense to point to an account.
     /// For example a CloudService user will point to no account
@@ -1189,7 +1189,7 @@ public class SpeedDialGroupUpdateRequest // : IUbluxDocumentId
     /// <summary>
     /// Group of speed dial keys. Must have at least one
     /// </summary>
-    public List<Models.SpeedDial>? SpeedDials { get; set; }
+    public List<Ublux.Communications.Models.SpeedDial>? SpeedDials { get; set; }
     /// <summary>
     /// Friendly name of line key group
     /// </summary>
@@ -1627,15 +1627,15 @@ public class VoipNumberFaxUpdateRequest // : IUbluxDocumentId
     /// key = id of logic OR id of extension.
     /// value = day of week when it executes
     /// </summary>
-    public List<Models.RulePhone>? RulesPhone { get; set; }
+    public List<Ublux.Communications.Models.RulePhone>? RulesPhone { get; set; }
     /// <summary>
     /// Incoming SMS will be sent to these email addresses
     /// </summary>
-    public List<Models.RuleSms>? RulesSms { get; set; }
+    public List<Ublux.Communications.Models.RuleSms>? RulesSms { get; set; }
     /// <summary>
     /// Incoming Faxes will be sent to this email addresses
     /// </summary>
-    public List<Models.RuleFax>? RulesFax { get; set; }
+    public List<Ublux.Communications.Models.RuleFax>? RulesFax { get; set; }
     /// <summary>
     /// Music on hold to use for outgoing calls to PSTN only
     /// </summary>
@@ -1718,15 +1718,15 @@ public class VoipNumberPhoneUpdateRequest // : IUbluxDocumentId
     /// key = id of logic OR id of extension.
     /// value = day of week when it executes
     /// </summary>
-    public List<Models.RulePhone>? RulesPhone { get; set; }
+    public List<Ublux.Communications.Models.RulePhone>? RulesPhone { get; set; }
     /// <summary>
     /// Incoming SMS will be sent to these email addresses
     /// </summary>
-    public List<Models.RuleSms>? RulesSms { get; set; }
+    public List<Ublux.Communications.Models.RuleSms>? RulesSms { get; set; }
     /// <summary>
     /// Incoming Faxes will be sent to this email addresses
     /// </summary>
-    public List<Models.RuleFax>? RulesFax { get; set; }
+    public List<Ublux.Communications.Models.RuleFax>? RulesFax { get; set; }
     /// <summary>
     /// If there are 3 consecutive missed calls for a specific phone number then maybe that number is not working and we want to send an email.
     /// </summary>

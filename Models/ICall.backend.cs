@@ -31,7 +31,7 @@ public partial interface ICall
     /// <summary>
     ///     Adds to ChannelsTo makeing sure there are not duplicates
     /// </summary>    
-    public void AddToChannesTo(string idChannel);
+    public void AddToChannelsTo(string idChannel);
 }
 
 #endif

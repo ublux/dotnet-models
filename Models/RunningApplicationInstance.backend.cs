@@ -40,7 +40,7 @@ public class RunningApplicationInstance
     /// <summary>
     ///     Token used to stop application gracefully
     /// </summary>
-    public CancellationToken GracefullStopToken => _cts.Token;
+    public CancellationToken GracefullyStopToken => _cts.Token;
 
     /// <summary>
     ///     Application will end with this exit code

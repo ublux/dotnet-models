@@ -4,6 +4,7 @@ namespace Ublux.Communications.Enums;
 
 /// <summary>
 ///     Simple notification service topic. Example call_completed.
+///     This will be converted to EventTrigger to send webhooks. This is internal to ubluxd
 /// </summary>
 public enum SnsTopic
 {
@@ -25,7 +26,7 @@ public enum SnsTopic
     //Collection_Deleted,
 
     /// <summary>
-    ///     When a call transcription is complete
+    ///     When a call transcription is complete.
     /// </summary>
     Transcription_Complete,
 
@@ -64,12 +65,12 @@ public enum SnsTopic
     Call_TerminatedWithRecording,
 
     /// <summary>
-    ///     When a line is disconnected (enqueues)
+    ///     When a phone is disconnected (enqueues)
     /// </summary>
     Phone_Disconnected,
 
     /// <summary>
-    ///     When a line is connected. (enqueues)
+    ///     When a phone is connected. (enqueues)
     /// </summary>
     Phone_Connected,
 

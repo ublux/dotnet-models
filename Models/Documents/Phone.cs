@@ -83,7 +83,7 @@ public partial class Phone : UbluxDocument_ReferenceAccount_ReferenceTags
     public required List<string> CallerIdNumbers { get; set; } = new();
 
     /// <summary>
-    ///     Specifies what caller id to use.  CallerIdIdex cannot be greater than the number of callerIdNumbers.
+    ///     Specifies what caller id to use.  CallerIdIndex cannot be greater than the number of callerIdNumbers.
     /// </summary>
     [AllowUpdate(true)]
     public int CallerIdIndex { get; set; }
@@ -97,7 +97,7 @@ public partial class Phone : UbluxDocument_ReferenceAccount_ReferenceTags
     public CallProcessingType ProcessingTypeExternal { get; set; }
 
     /// <summary>
-    ///     Record, transcribe or AI analyse internal calls bewteen extensions. 
+    ///     Record, transcribe or AI analyse internal calls between extensions. 
     ///     This are only for outgoing calls!
     ///     Please note that if you transcribe the call will be recorded. If you AI analyze the call it will be transcribed.    
     /// </summary>
@@ -112,7 +112,7 @@ public partial class Phone : UbluxDocument_ReferenceAccount_ReferenceTags
     public string? IdAiCallAnalysisInput { get; set; }
 
     /// <summary>
-    ///     Langage to use when playing messages
+    ///     Language to use when playing messages
     /// </summary>
     [AllowUpdate(true)]
     public Language Language { get; set; }
@@ -211,7 +211,7 @@ public partial class Phone : UbluxDocument_ReferenceAccount_ReferenceTags
     public string? AllowConnectionsFromOnlyThisIp { get; set; }
 
     /// <summary>
-    ///     Send email if phone disconnectes to these emails
+    ///     Send email if phone disconnects to these emails
     /// </summary>
     [References(typeof(Email))]
     [AllowUpdate(true)]

@@ -34,9 +34,9 @@ public abstract partial class ChildCall : ICall
     public double? DurationInSeconds { get; set; }
 
     /// <summary>
-    ///     Adds to ChannelsTo makeing sure there are not duplicates
+    ///     Adds to ChannelsTo making sure there are not duplicates
     /// </summary>    
-    public void AddToChannesTo(string idChannel)
+    public void AddToChannelsTo(string idChannel)
     {
         if (ChannelsTo.Contains(idChannel))
             return;

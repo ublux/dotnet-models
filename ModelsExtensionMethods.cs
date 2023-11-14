@@ -334,7 +334,7 @@ public static class ModelsExtensionMethods
     /// </summary>
     public static Collections GetCollectionUsedById(this ReadOnlySpan<char> id)
     {
-        int dotIndex = id.IndexOf(RedisConstants.DelimeterId);
+        int dotIndex = id.IndexOf(RedisConstants.DelimiterId);
         if (dotIndex < 0)
         {
             if (Debugger.IsAttached) Debugger.Break();
