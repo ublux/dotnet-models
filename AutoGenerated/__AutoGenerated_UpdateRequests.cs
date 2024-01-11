@@ -430,17 +430,9 @@ public class CloudServicePbxUpdateRequest // : IUbluxDocumentId
     /// </summary>
     public Boolean? DisableMonitoring { get; set; }
     /// <summary>
-    /// If it is a gateway then what type of processing for incoming calls
-    /// </summary>
-    public CallProcessingType? CallProcessingTypeGateway { get; set; }
-    /// <summary>
     /// If used as gateway then by what account
     /// </summary>
     public String? IdAccountGateway { get; set; }
-    /// <summary>
-    /// Input to pass to AI engine
-    /// </summary>
-    public String? IdAiCallAnalysisInputGateway { get; set; }
     /// <summary>
     /// We need instance id in order to reboot cloud service for example. Example: i-0655b45b8134e6425
     /// </summary>
@@ -458,18 +450,44 @@ public class CloudServicePbxUpdateRequest // : IUbluxDocumentId
     {
         if(jsonRaw.Contains($@"""{nameof(DisableMonitoring)}""", StringComparison.OrdinalIgnoreCase))
             cloudServicePbx.DisableMonitoring = DisableMonitoring.Value;
-        if(jsonRaw.Contains($@"""{nameof(CallProcessingTypeGateway)}""", StringComparison.OrdinalIgnoreCase))
-            cloudServicePbx.CallProcessingTypeGateway = CallProcessingTypeGateway.Value;
         if(jsonRaw.Contains($@"""{nameof(IdAccountGateway)}""", StringComparison.OrdinalIgnoreCase))
             cloudServicePbx.IdAccountGateway = IdAccountGateway;
-        if(jsonRaw.Contains($@"""{nameof(IdAiCallAnalysisInputGateway)}""", StringComparison.OrdinalIgnoreCase))
-            cloudServicePbx.IdAiCallAnalysisInputGateway = IdAiCallAnalysisInputGateway;
         if(jsonRaw.Contains($@"""{nameof(ProviderInstanceId)}""", StringComparison.OrdinalIgnoreCase))
             cloudServicePbx.ProviderInstanceId = ProviderInstanceId;
         if(jsonRaw.Contains($@"""{nameof(ProviderRegion)}""", StringComparison.OrdinalIgnoreCase))
             cloudServicePbx.ProviderRegion = ProviderRegion;
         if(jsonRaw.Contains($@"""{nameof(ProviderType)}""", StringComparison.OrdinalIgnoreCase))
             cloudServicePbx.ProviderType = ProviderType.Value;
+    }
+
+}
+
+/// <summary>
+/// Transcription Cloud service
+/// </summary>
+public class CloudServiceTranscriptionUpdateRequest // : IUbluxDocumentId
+{
+    /// <summary>
+    /// We need instance id in order to reboot cloud service for example. Example: i-0655b45b8134e6425
+    /// </summary>
+    public String? ProviderInstanceId { get; set; }
+    /// <summary>
+    /// Region is needed to connect to EC2 instance when using AWS for example: USEast1 or EUWest3 for europe paris
+    /// </summary>
+    public String? ProviderRegion { get; set; }
+    /// <summary>
+    /// Example AWS for amazon web services
+    /// </summary>
+    public CloudServiceProviderType? ProviderType { get; set; }
+    /// <summary> Set values on actual document </summary>
+    public void SetValuesOnCloudServiceTranscription(CloudServiceTranscription cloudServiceTranscription, string jsonRaw)
+    {
+        if(jsonRaw.Contains($@"""{nameof(ProviderInstanceId)}""", StringComparison.OrdinalIgnoreCase))
+            cloudServiceTranscription.ProviderInstanceId = ProviderInstanceId;
+        if(jsonRaw.Contains($@"""{nameof(ProviderRegion)}""", StringComparison.OrdinalIgnoreCase))
+            cloudServiceTranscription.ProviderRegion = ProviderRegion;
+        if(jsonRaw.Contains($@"""{nameof(ProviderType)}""", StringComparison.OrdinalIgnoreCase))
+            cloudServiceTranscription.ProviderType = ProviderType.Value;
     }
 
 }
@@ -802,6 +820,10 @@ public class ExtensionDialUpdateRequest // : IUbluxDocumentId
     /// </summary>
     public Handicap? Handicap { get; set; }
     /// <summary>
+    /// Only one feature can be turned on
+    /// </summary>
+    public AiExtensionFeatures? AiFeatures { get; set; }
+    /// <summary>
     /// Number of seconds each line will ring
     /// </summary>
     public Int32? RingTimeInSeconds { get; set; }
@@ -841,6 +863,8 @@ public class ExtensionDialUpdateRequest // : IUbluxDocumentId
             extensionDial.SendEmailNotificationIfNotAnswered = SendEmailNotificationIfNotAnswered;
         if(jsonRaw.Contains($@"""{nameof(Handicap)}""", StringComparison.OrdinalIgnoreCase))
             extensionDial.Handicap = Handicap;
+        if(jsonRaw.Contains($@"""{nameof(AiFeatures)}""", StringComparison.OrdinalIgnoreCase))
+            extensionDial.AiFeatures = AiFeatures;
         if(jsonRaw.Contains($@"""{nameof(RingTimeInSeconds)}""", StringComparison.OrdinalIgnoreCase))
             extensionDial.RingTimeInSeconds = RingTimeInSeconds.Value;
         if(jsonRaw.Contains($@"""{nameof(IdMusicOnHoldGroup)}""", StringComparison.OrdinalIgnoreCase))
@@ -962,6 +986,10 @@ public class ExtensionQueueUpdateRequest // : IUbluxDocumentId
     /// </summary>
     public Handicap? Handicap { get; set; }
     /// <summary>
+    /// Only one feature can be turned on
+    /// </summary>
+    public AiExtensionFeatures? AiFeatures { get; set; }
+    /// <summary>
     /// Number of seconds each line will ring
     /// </summary>
     public Int32? RingTimeInSeconds { get; set; }
@@ -1019,6 +1047,8 @@ public class ExtensionQueueUpdateRequest // : IUbluxDocumentId
             extensionQueue.SendEmailNotificationIfNotAnswered = SendEmailNotificationIfNotAnswered;
         if(jsonRaw.Contains($@"""{nameof(Handicap)}""", StringComparison.OrdinalIgnoreCase))
             extensionQueue.Handicap = Handicap;
+        if(jsonRaw.Contains($@"""{nameof(AiFeatures)}""", StringComparison.OrdinalIgnoreCase))
+            extensionQueue.AiFeatures = AiFeatures;
         if(jsonRaw.Contains($@"""{nameof(RingTimeInSeconds)}""", StringComparison.OrdinalIgnoreCase))
             extensionQueue.RingTimeInSeconds = RingTimeInSeconds.Value;
         if(jsonRaw.Contains($@"""{nameof(IdMusicOnHoldGroup)}""", StringComparison.OrdinalIgnoreCase))
@@ -1293,7 +1323,7 @@ public class PhoneUpdateRequest // : IUbluxDocumentId
     /// </summary>
     public List<System.String>? CallerIdNumbers { get; set; }
     /// <summary>
-    /// Specifies what caller id to use.  CallerIdIdex cannot be greater than the number of callerIdNumbers.
+    /// Specifies what caller id to use.  CallerIdIndex cannot be greater than the number of callerIdNumbers.
     /// </summary>
     public Int32? CallerIdIndex { get; set; }
     /// <summary>
@@ -1303,7 +1333,7 @@ public class PhoneUpdateRequest // : IUbluxDocumentId
     /// </summary>
     public CallProcessingType? ProcessingTypeExternal { get; set; }
     /// <summary>
-    /// Record, transcribe or AI analyse internal calls bewteen extensions.
+    /// Record, transcribe or AI analyse internal calls between extensions.
     /// This are only for outgoing calls!
     /// Please note that if you transcribe the call will be recorded. If you AI analyze the call it will be transcribed.
     /// </summary>
@@ -1313,7 +1343,7 @@ public class PhoneUpdateRequest // : IUbluxDocumentId
     /// </summary>
     public String? IdAiCallAnalysisInput { get; set; }
     /// <summary>
-    /// Langage to use when playing messages
+    /// Language to use when playing messages
     /// </summary>
     public Language? Language { get; set; }
     /// <summary>
@@ -1333,18 +1363,22 @@ public class PhoneUpdateRequest // : IUbluxDocumentId
     /// </summary>
     public String? TimeZone { get; set; }
     /// <summary>
-    /// If a phone is hacked we will only allow connections from this ip address.
-    /// If value is null any ip address will be valid
+    /// This is needed for yealink cordless phones for example. Phones on the same group name will be sent as a group when autoprovisioning.
+    /// Can only set if phone is disconnected.
     /// </summary>
-    public String? AllowConnectionsFromOnlyThisIp { get; set; }
+    public String? GroupName { get; set; }
     /// <summary>
-    /// Send email if phone disconnectes to these emails
+    /// Send email if phone disconnects to these emails
     /// </summary>
     public List<System.String>? OnDisconnectedNotifyIdsEmails { get; set; }
     /// <summary>
     /// Send email if phone connects to these emails
     /// </summary>
     public List<System.String>? OnConnectedNotifyIdsEmails { get; set; }
+    /// <summary>
+    /// Send email if phone connects to these emails
+    /// </summary>
+    public PhoneAdvanceSettings? AdvanceSettings { get; set; }
     /// <summary>
     /// It is nullable because there are cases where it makes no sense to point to an account.
     /// For example a CloudService user will point to no account
@@ -1379,12 +1413,14 @@ public class PhoneUpdateRequest // : IUbluxDocumentId
             phone.DisableEncryption = DisableEncryption.Value;
         if(jsonRaw.Contains($@"""{nameof(TimeZone)}""", StringComparison.OrdinalIgnoreCase))
             phone.TimeZone = TimeZone;
-        if(jsonRaw.Contains($@"""{nameof(AllowConnectionsFromOnlyThisIp)}""", StringComparison.OrdinalIgnoreCase))
-            phone.AllowConnectionsFromOnlyThisIp = AllowConnectionsFromOnlyThisIp;
+        if(jsonRaw.Contains($@"""{nameof(GroupName)}""", StringComparison.OrdinalIgnoreCase))
+            phone.GroupName = GroupName;
         if(jsonRaw.Contains($@"""{nameof(OnDisconnectedNotifyIdsEmails)}""", StringComparison.OrdinalIgnoreCase))
             phone.OnDisconnectedNotifyIdsEmails = OnDisconnectedNotifyIdsEmails;
         if(jsonRaw.Contains($@"""{nameof(OnConnectedNotifyIdsEmails)}""", StringComparison.OrdinalIgnoreCase))
             phone.OnConnectedNotifyIdsEmails = OnConnectedNotifyIdsEmails;
+        if(jsonRaw.Contains($@"""{nameof(AdvanceSettings)}""", StringComparison.OrdinalIgnoreCase))
+            phone.AdvanceSettings = AdvanceSettings;
         if(jsonRaw.Contains($@"""{nameof(IdsTags)}""", StringComparison.OrdinalIgnoreCase))
             phone.IdsTags = IdsTags;
     }
@@ -1919,7 +1955,7 @@ public class TagUpdateRequest // : IUbluxDocumentId
 }
 
 /// <summary>
-/// AI transcription of a phone call. This is the convertion from audio to text only.
+/// AI transcription of a phone call. This is the conversion from audio to text only.
 /// </summary>
 public class AiCallTranscriptionUpdateRequest // : IUbluxDocumentId
 {

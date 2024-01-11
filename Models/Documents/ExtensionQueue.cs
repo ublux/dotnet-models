@@ -14,7 +14,7 @@ public partial class ExtensionQueue : ExtensionDial
     /// </summary>
     [References(typeof(Audio))]
     [AllowUpdate(true)]
-    public List<string> IdsAudios { get; set; } = new();
+    public List<string> IdsAudios { get; set; } = [];
 
     #endregion
 

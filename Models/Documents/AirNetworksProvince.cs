@@ -21,7 +21,7 @@ public partial class AirNetworksProvince : UbluxDocument
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
     [UbluxValidationRequired]
-    public List<string> Populations { get; set; } = new();
+    public List<string> Populations { get; set; } = [];
 
     #endregion
 

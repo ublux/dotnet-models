@@ -315,15 +315,15 @@ public class PhoneConnectionStatus
         }
     }
 
-    // Have we sent sip notify? we send a sip notify if a phone does not send a packet for to long. 
-    // Sending a sip notify will increase the probably of phone replying so we do not mark it as disconnected when in fact it is connected.
-    private bool _sentSipNotify;
-    /// <summary>
-    ///     Set value of _sentSipNotify
-    /// </summary>
-    public void SetSentSipNofity(bool v) => _sentSipNotify = v;
-    /// <summary>
-    ///     Get value of _sentSipNotify
-    /// </summary>
-    public bool GetSentSipNofity() => _sentSipNotify;
+    // // Have we sent sip notify? we send a sip notify if a phone does not send a packet for to long. 
+    // // Sending a sip notify will increase the probably of phone replying so we do not mark it as disconnected when in fact it is connected.
+    // private bool _sentSipNotify;
+    // /// <summary>
+    // ///     Set value of _sentSipNotify
+    // /// </summary>
+    // public void SetSentSipNotify(bool v) => _sentSipNotify = v;
+    // /// <summary>
+    // ///     Get value of _sentSipNotify
+    // /// </summary>
+    // public bool GetSentSipNotify() => _sentSipNotify;
 }

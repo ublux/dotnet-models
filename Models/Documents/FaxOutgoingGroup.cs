@@ -28,7 +28,7 @@ public partial class FaxOutgoingGroup : UbluxDocument_ReferenceAccount_Reference
     [AllowUpdate(false)] 
     [SwaggerSchema(ReadOnly = true)] 
     [UbluxValidationRequired]
-    public List<FaxOutgoing> FaxesOutgoing { get; set; } = new();
+    public List<FaxOutgoing> FaxesOutgoing { get; set; } = [];
 
     ///// <summary>
     /////     Email that was sent to fax@ublux.com
@@ -61,7 +61,7 @@ public partial class FaxOutgoingGroup : UbluxDocument_ReferenceAccount_Reference
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [UbluxValidationRequired]
+    // [UbluxValidationRequired]
     public required CountryIsoCode ToCountry { get; set; }
 
     /// <summary>
@@ -70,14 +70,14 @@ public partial class FaxOutgoingGroup : UbluxDocument_ReferenceAccount_Reference
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
     [References(typeof(Email))]
-    public List<string> IdsEmailsSendConfirmation { get; set; } = new();
+    public List<string> IdsEmailsSendConfirmation { get; set; } = [];
 
     /// <summary>
     ///     Error message
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    public List<string> Errors { get; set; } = new();
+    public List<string> Errors { get; set; } = [];
 
     /// <summary>
     ///     The status. Is it pending, processing or complete?

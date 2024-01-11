@@ -5,8 +5,8 @@
 /// </summary>
 public class MongoDbIndex
 {
-    private readonly List<string[]> _properties = new();
-    private readonly List<int> _sortOrders = new();
+    private readonly List<string[]> _properties = [];
+    private readonly List<int> _sortOrders = [];
 
     /// <summary>
     ///     Example: Extensions

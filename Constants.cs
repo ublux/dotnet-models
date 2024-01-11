@@ -120,6 +120,17 @@ public static partial class Constants
     public static partial Regex RegexIpAndPort();
 
     /// <summary>
+    ///     Port used by CloudServiceTranscription that converts audio to text using whisper
+    /// </summary>
+    public const int TranscriptionServicePort = 52727;
+
+    /// <summary>
+    ///     Port used by API so that transcription service can connect to it and maintain a health stream so that
+    /// we can know if transcription service is unavailable
+    /// </summary>
+    public const int ApiPortTranscriptionServiceHealthStream = 8282;
+
+    /// <summary>
     ///     Regex used to find ip address V4
     /// </summary>
     [GeneratedRegex("(\\d+\\.\\d+\\.\\d+\\.\\d+)")]
@@ -249,14 +260,14 @@ public static partial class Constants
     /// <summary>
     ///     Valid characters for an instance id. It cannot contain . it will make method GetPhoneId from phone not work!
     /// </summary>
-    public static readonly HashSet<char> InstanceIdValidChars = new("ABCDEFGHIJKLMNOPQRSTUVWXYZ-0123456789".ToCharArray());
+    public static readonly HashSet<char> InstanceIdValidChars = [.."ABCDEFGHIJKLMNOPQRSTUVWXYZ-0123456789".ToCharArray()];
 
     /// <summary>
     ///     Pbx specific constants
     /// </summary>
     public static class Pbx
     {
-        // Initialze before others!!!
+        // Initialize before others!!!
         /// <summary>
         ///     Base directory. 
         /// </summary>

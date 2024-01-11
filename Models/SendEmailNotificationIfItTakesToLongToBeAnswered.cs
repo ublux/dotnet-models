@@ -18,5 +18,5 @@ public class SendEmailNotificationIfItTakesToLongToBeAnswered
     [UbluxValidationRequired]
     [AllowUpdate(true)]
     [References(typeof(Email))]
-    public required List<string> IdsEmails { get; set; } = new();
+    public required List<string> IdsEmails { get; set; } = [];
 }

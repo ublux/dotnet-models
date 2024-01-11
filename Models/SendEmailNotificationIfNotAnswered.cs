@@ -11,7 +11,7 @@ public class SendEmailNotificationIfNotAnswered
     [UbluxValidationRequired]
     [AllowUpdate(true)]
     [References(typeof(Email))]
-    public required List<string> IdsEmails { get; set; } = new();
+    public required List<string> IdsEmails { get; set; } = [];
 
     /// <summary>
     ///     If a caller calls and hung up right away then maybe we don't want to send a notification.

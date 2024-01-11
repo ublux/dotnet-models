@@ -23,7 +23,7 @@ public partial class AiCallAnalysisInput : UbluxDocument_ReferenceAccount_Refere
     /// </summary>    
     [UbluxValidationRequired]
     [AllowUpdate(true)]
-    public List<AiCallAnalysisQuery> Queries { get; set; } = new();
+    public List<AiCallAnalysisQuery> Queries { get; set; } = [];
 
     /// <summary>
     ///     Send email
@@ -58,13 +58,13 @@ public class AiCallSendEmail
     ///     Emails to send if any of the questions asked contains a specific keyword on Variable IfResponseContainsKeywordSendEmail
     /// </summary>
     [AllowUpdate(true)]
-    public List<string> Emails { get; set; } = new();
+    public List<string> Emails { get; set; } = [];
 
     /// <summary>
     ///     For example we may want to send emails to different managers depending phone number that is being called
     /// </summary>
     [AllowUpdate(true)]
-    public List<EmailsRules> EmailsRules { get; set; } = new();
+    public List<EmailsRules> EmailsRules { get; set; } = [];
 
     /// <summary>
     ///     If sending an email what will be the subject of the email?
@@ -95,5 +95,5 @@ public class EmailsRules
     ///     Emails to send if any of the questions asked contains a specific keyword on Variable IfResponseContainsKeywordSendEmail
     /// </summary>
     // [References(typeof(Email))]
-    public List<string> Emails { get; set; } = new();
+    public List<string> Emails { get; set; } = [];
 }

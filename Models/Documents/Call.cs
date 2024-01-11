@@ -1,4 +1,5 @@
-﻿using System.Diagnostics.CodeAnalysis;
+﻿using System.Collections.Concurrent;
+using System.Diagnostics.CodeAnalysis;
 using Newtonsoft.Json.Linq;
 
 namespace Ublux.Communications.Models.Documents;
@@ -90,7 +91,7 @@ public abstract partial class Call : UbluxDocument_ReferenceAccount_ReferenceTag
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    public List<ChildCall> ChildCalls { get; set; } = new();
+    public List<ChildCall> ChildCalls { get; set; } = [];
 
     #endregion
 
@@ -122,7 +123,7 @@ public abstract partial class Call : UbluxDocument_ReferenceAccount_ReferenceTag
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    public List<TimeWhenCallPlacedOnHold> TimesWhenCallPlacedOnHold { get; set; } = new();
+    public List<TimeWhenCallPlacedOnHold> TimesWhenCallPlacedOnHold { get; set; } = [];
 
     /// <summary>
     ///     Caller id
@@ -157,7 +158,7 @@ public abstract partial class Call : UbluxDocument_ReferenceAccount_ReferenceTag
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [UbluxValidationRequired]
+    // [UbluxValidationRequired]
     public virtual required CountryIsoCode FromCountry { get; set; }
 
     /// <summary>
@@ -193,7 +194,7 @@ public abstract partial class Call : UbluxDocument_ReferenceAccount_ReferenceTag
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [UbluxValidationRequired]
+    // [UbluxValidationRequired]
     public virtual required CountryIsoCode ToCountry { get; set; }
 
     /// <summary>
@@ -229,7 +230,7 @@ public abstract partial class Call : UbluxDocument_ReferenceAccount_ReferenceTag
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    public List<string> DigitsSent { get; set; } = new();
+    public List<string> DigitsSent { get; set; } = [];
 
     /// <summary>
     ///     Is call international. This does not include child calls.
@@ -296,36 +297,7 @@ public abstract partial class Call : UbluxDocument_ReferenceAccount_ReferenceTag
     [SwaggerSchema(ReadOnly = true)]
     [References(typeof(Phone))]
     // ReSharper disable once PropertyCanBeMadeInitOnly.Global
-    public List<string> IdsParticipantPhones { get; set; } = new();
-    //{
-    //    get
-    //    {
-    //        if (this is ICallToExtension ce)
-    //        {
-    //            if (ce.IdPhoneThatAnswered != null)
-    //                yield return ce.IdPhoneThatAnswered;
-    //            if (ce.IdsPhonesThatDidNotRing != null)
-    //                foreach (var item in ce.IdsPhonesThatDidNotRing) yield return item;
-    //            if (ce.IdsPhonesThatRing != null)
-    //                foreach (var item in ce.IdsPhonesThatRing) yield return item;
-    //        }
-
-    //        if (this is CallOutgoing co)
-    //        {
-    //            if (co.IdPhoneThatInitiatedCall != null)
-    //                yield return co.IdPhoneThatInitiatedCall;                
-    //        }
-
-    //        if (this.ChildCalls != null)
-    //        {
-    //            foreach(ChildCall cc in this.ChildCalls)
-    //            {
-    //                foreach(var item in cc.par
-    //            }
-    //        }
-
-    //    }
-    //}
+    public ConcurrentBag<string> IdsParticipantPhones { get; set; } = [];
 
 
     /// <summary>
@@ -355,13 +327,7 @@ public abstract partial class Call : UbluxDocument_ReferenceAccount_ReferenceTag
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    public List<CallVariable> Variables
-    {
-        // ReSharper disable once ArrangeObjectCreationWhenTypeNotEvident
-        get => _variables ?? new();
-        set => _variables = value;
-    }
-    private List<CallVariable>? _variables = new();
+    public ConcurrentBag<CallVariable> Variables { get; set; } = [];
 
     /// <summary>
     ///     Given a json object get a specific path. Example: prop1.items[0].firstName
@@ -472,29 +438,6 @@ public abstract partial class Call : UbluxDocument_ReferenceAccount_ReferenceTag
         }
 
     }
-
-    ///// <summary>
-    /////     If there is an error message with the call.
-    ///// </summary>
-    //[AllowUpdate(false)]
-    //[SwaggerSchema(ReadOnly = true)]
-    //[UbluxValidationStringRange(2000)]
-    //public string? ErrorMessage { get; set; }
-
-    ///// <summary>
-    /////     Add error message to list of errors
-    ///// </summary>    
-    //public void AddErrorMessage(string message)
-    //{
-    //    if (this.ErrorMessage is null)
-    //    {
-    //        this.ErrorMessage = message;
-    //    }
-    //    else
-    //    {
-    //        this.ErrorMessage += "\n" + message;
-    //    }
-    //}
 
     /// <summary>
     ///     Contain call errors
@@ -615,12 +558,6 @@ public abstract partial class Call : UbluxDocument_ReferenceAccount_ReferenceTag
 //    [SwaggerSchema(ReadOnly = true)]
 //    public required string DetectedLanguage { get; set; }
 
-//    /// <summary>
-//    ///     List of queries to ask AI engine about a call
-//    /// </summary>    
-//    [AllowUpdate(false)]
-//    [SwaggerSchema(ReadOnly = true)]
-//    public List<AiCallAnalysisVariableOutput> Output { get; set; } = new();
 
 //    /// <summary>
 //    ///     Total tokes used by AI engine

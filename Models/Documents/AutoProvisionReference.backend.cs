@@ -33,13 +33,21 @@ public partial class AutoProvisionReference : UbluxDocument
     public required string Ip { get; set; } = string.Empty;
 
     /// <summary>
-    ///     Ip address where it was autoprovisioned
+    ///     User agent
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
     [UbluxValidationRequired]
     [UbluxValidationStringRange(500)]
     public required string UserAgent { get; set; } = string.Empty;
+    
+    /// <summary>
+    ///     If the phone sends a request from this ip address then we will send credentials and hash once
+    /// </summary>
+    [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
+    [UbluxValidationStringRange(500)]
+    public string? SendCredentialsAndHashOnceFromThisIp { get; set; }
 
     #endregion
 
@@ -64,14 +72,14 @@ public partial class AutoProvisionReference : UbluxDocument
     //[IgnoreDataMember]
     //public string? CommonAesKey { get; set; }
 
-    /// <summary>
-    ///     Password of the phone. We will send the password to the phone only the first time if we have an autoprovision pin.
-    ///     To avoid having to require an autoprovision pin this password should be the same allways per phyisical phone. 
-    /// </summary>
-    [AllowUpdate(false)]
-    [SwaggerSchema(ReadOnly = true)]
-    [IgnoreDataMember]
-    public required string Password { get; set; } = "";
+    // /// <summary>
+    // ///     Password of the phone. We will send the password to the phone only the first time if we have an autoprovision pin.
+    // ///     To avoid having to require an autoprovision pin this password should be the same allways per phyisical phone. 
+    // /// </summary>
+    // [AllowUpdate(false)]
+    // [SwaggerSchema(ReadOnly = true)]
+    // // [IgnoreDataMember]
+    // public required string Password { get; set; } = "";
 
     /// <summary>
     ///     This is the password needed to enter the yealink phone in order to make manual modifications. Our goal is to never have to enter.
@@ -79,7 +87,7 @@ public partial class AutoProvisionReference : UbluxDocument
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [IgnoreDataMember]
+    // [IgnoreDataMember]
     public string? AdminPassword { get; set; }
 
     /// <summary>
@@ -93,20 +101,20 @@ public partial class AutoProvisionReference : UbluxDocument
 
     #endregion
 
-    /// <summary>
-    ///     Generates a random AES key used on yealink phones. Example: y5b0K3z0h3Kw0h03
-    /// </summary>
-    public static string GenerateRandomYealinkAesKey(int length = 16)
-    {
-        // Maybe RandomNumberGenerator is thread safe but just to be sure
-        lock (Phone.alphanumericMainCharacters)
-        {
-            char[] p = new char[length];
-            for (int i = 0; i < length; i++)
-                p[i] = Phone.alphanumericMainCharacters[RandomNumberGenerator.GetInt32(0, Phone.alphanumericMainCharacters.Length)];
-            return new string(p);
-        }
-    }
+    // /// <summary>
+    // ///     Generates a random AES key used on yealink phones. Example: y5b0K3z0h3Kw0h03
+    // /// </summary>
+    // public static string GenerateRandomYealinkAesKey(int length = 16)
+    // {
+    //     // Maybe RandomNumberGenerator is thread safe but just to be sure
+    //     lock (Phone.alphanumericMainCharacters)
+    //     {
+    //         char[] p = new char[length];
+    //         for (int i = 0; i < length; i++)
+    //             p[i] = Phone.alphanumericMainCharacters[RandomNumberGenerator.GetInt32(0, Phone.alphanumericMainCharacters.Length)];
+    //         return new string(p);
+    //     }
+    // }
 
     #region MongoDB
 

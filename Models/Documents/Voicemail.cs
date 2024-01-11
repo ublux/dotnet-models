@@ -20,7 +20,7 @@ public partial class Voicemail : UbluxDocument_ReferenceAccount_ReferenceTags
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
     [References(typeof(Phone))]
-    public List<string> IdsPhonesThatCanListenToVoicemail { get; set; } = new();
+    public List<string> IdsPhonesThatCanListenToVoicemail { get; set; } = [];
 
     /// <summary>
     ///     Email where voicemail was sent
@@ -67,10 +67,25 @@ public partial class Voicemail : UbluxDocument_ReferenceAccount_ReferenceTags
     /// <summary>
     ///     If there is an error sending the voicemail then the error description
     /// </summary>
+    [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
+    // [UbluxValidationStringRange(1000)]
+    public List<string> ErrorMessages { get; set; } = [];
+    
+    /// <summary>
+    ///     Detected transcription language
+    /// </summary>
     [AllowUpdate(false)] 
     [SwaggerSchema(ReadOnly = true)]
-    [UbluxValidationStringRange(1000)]
-    public string? ErrorMessage { get; set; }
+    [UbluxValidationStringRange(100)]
+    public string? TranscriptionLanguage { get; set; }
+    
+    /// <summary>
+    ///     Voicemail converted to text
+    /// </summary>
+    [AllowUpdate(false)] 
+    [SwaggerSchema(ReadOnly = true)]
+    public string? TranscriptionText { get; set; }
 
     #region MongoDB
 

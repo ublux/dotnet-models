@@ -61,6 +61,7 @@ public class ApiKeyFilterRequest
     [JsonProperty("idsTags_reg")]
     public string? IdsTags_REG { get; set; }
 
+
     /// <summary> Id equals </summary>
     [JsonProperty("id_eq")]
     public string? Id_EQ { get; set; }
@@ -261,13 +262,13 @@ public class AccountFilterRequest
 
     /// <summary> ReserveSipAccountIndex equals </summary>
     [JsonProperty("reserveSipAccountIndex_eq")]
-    public Int32? ReserveSipAccountIndex_EQ { get; set; }
+    public System.Int32? ReserveSipAccountIndex_EQ { get; set; }
     /// <summary> ReserveSipAccountIndex less than or equal to </summary>
     [JsonProperty("reserveSipAccountIndex_lte")]
-    public Int32? ReserveSipAccountIndex_LTE { get; set; }
+    public System.Int32? ReserveSipAccountIndex_LTE { get; set; }
     /// <summary> ReserveSipAccountIndex greater than or equal to </summary>
     [JsonProperty("reserveSipAccountIndex_gte")]
-    public Int32? ReserveSipAccountIndex_GTE { get; set; }
+    public System.Int32? ReserveSipAccountIndex_GTE { get; set; }
 
     /// <summary> Id equals </summary>
     [JsonProperty("id_eq")]
@@ -378,6 +379,7 @@ public class EmailFilterRequest
     [JsonProperty("idsTags_reg")]
     public string? IdsTags_REG { get; set; }
 
+
     /// <summary> Id equals </summary>
     [JsonProperty("id_eq")]
     public string? Id_EQ { get; set; }
@@ -421,6 +423,7 @@ public class AgreementToTermsAndConditionsFilterRequest
     /// <summary> IdsTags regex </summary>
     [JsonProperty("idsTags_reg")]
     public string? IdsTags_REG { get; set; }
+
 
     /// <summary> Id equals </summary>
     [JsonProperty("id_eq")]
@@ -522,13 +525,13 @@ public class AudioFilterRequest
 
     /// <summary> AudioMp3.FileSizeInBytes equals </summary>
     [JsonProperty("audioMp3_fileSizeInBytes_eq")]
-    public Int32? AudioMp3_FileSizeInBytes_EQ { get; set; }
+    public System.Int32? AudioMp3_FileSizeInBytes_EQ { get; set; }
     /// <summary> AudioMp3.FileSizeInBytes less than or equal to </summary>
     [JsonProperty("audioMp3_fileSizeInBytes_lte")]
-    public Int32? AudioMp3_FileSizeInBytes_LTE { get; set; }
+    public System.Int32? AudioMp3_FileSizeInBytes_LTE { get; set; }
     /// <summary> AudioMp3.FileSizeInBytes greater than or equal to </summary>
     [JsonProperty("audioMp3_fileSizeInBytes_gte")]
-    public Int32? AudioMp3_FileSizeInBytes_GTE { get; set; }
+    public System.Int32? AudioMp3_FileSizeInBytes_GTE { get; set; }
 
     /// <summary> AudioMp3.Md5Hash equals </summary>
     [JsonProperty("audioMp3_md5Hash_eq")]
@@ -573,13 +576,13 @@ public class AudioFilterRequest
 
     /// <summary> AudioWav.FileSizeInBytes equals </summary>
     [JsonProperty("audioWav_fileSizeInBytes_eq")]
-    public Int32? AudioWav_FileSizeInBytes_EQ { get; set; }
+    public System.Int32? AudioWav_FileSizeInBytes_EQ { get; set; }
     /// <summary> AudioWav.FileSizeInBytes less than or equal to </summary>
     [JsonProperty("audioWav_fileSizeInBytes_lte")]
-    public Int32? AudioWav_FileSizeInBytes_LTE { get; set; }
+    public System.Int32? AudioWav_FileSizeInBytes_LTE { get; set; }
     /// <summary> AudioWav.FileSizeInBytes greater than or equal to </summary>
     [JsonProperty("audioWav_fileSizeInBytes_gte")]
-    public Int32? AudioWav_FileSizeInBytes_GTE { get; set; }
+    public System.Int32? AudioWav_FileSizeInBytes_GTE { get; set; }
 
     /// <summary> AudioWav.Md5Hash equals </summary>
     [JsonProperty("audioWav_md5Hash_eq")]
@@ -643,6 +646,7 @@ public class AudioFilterRequest
     [JsonProperty("idsTags_reg")]
     public string? IdsTags_REG { get; set; }
 
+
     /// <summary> Id equals </summary>
     [JsonProperty("id_eq")]
     public string? Id_EQ { get; set; }
@@ -696,6 +700,26 @@ public class AutoProvisionReferenceFilterRequest
     /// <summary> UserAgent regex </summary>
     [JsonProperty("userAgent_reg")]
     public string? UserAgent_REG { get; set; }
+
+    /// <summary> SendCredentialsAndHashOnceFromThisIp equals </summary>
+    [JsonProperty("sendCredentialsAndHashOnceFromThisIp_eq")]
+    public string? SendCredentialsAndHashOnceFromThisIp_EQ { get; set; }
+    /// <summary> SendCredentialsAndHashOnceFromThisIp contains </summary>
+    [JsonProperty("sendCredentialsAndHashOnceFromThisIp_con")]
+    public string? SendCredentialsAndHashOnceFromThisIp_CON { get; set; }
+    /// <summary> SendCredentialsAndHashOnceFromThisIp regex </summary>
+    [JsonProperty("sendCredentialsAndHashOnceFromThisIp_reg")]
+    public string? SendCredentialsAndHashOnceFromThisIp_REG { get; set; }
+
+    /// <summary> AdminPassword equals </summary>
+    [JsonProperty("adminPassword_eq")]
+    public string? AdminPassword_EQ { get; set; }
+    /// <summary> AdminPassword contains </summary>
+    [JsonProperty("adminPassword_con")]
+    public string? AdminPassword_CON { get; set; }
+    /// <summary> AdminPassword regex </summary>
+    [JsonProperty("adminPassword_reg")]
+    public string? AdminPassword_REG { get; set; }
 
     /// <summary> IdUserThatAllowedAutoprovision equals </summary>
     [JsonProperty("idUserThatAllowedAutoprovision_eq")]
@@ -781,6 +805,7 @@ public class BlackListPhoneNumberFilterRequest
     [JsonProperty("idsTags_reg")]
     public string? IdsTags_REG { get; set; }
 
+
     /// <summary> Id equals </summary>
     [JsonProperty("id_eq")]
     public string? Id_EQ { get; set; }
@@ -844,6 +869,7 @@ public class CallerIdMaskFilterRequest
     /// <summary> IdsTags regex </summary>
     [JsonProperty("idsTags_reg")]
     public string? IdsTags_REG { get; set; }
+
 
     /// <summary> Id equals </summary>
     [JsonProperty("id_eq")]
@@ -951,6 +977,7 @@ public class CallFlowLogicFilterRequest
     /// <summary> IdsTags regex </summary>
     [JsonProperty("idsTags_reg")]
     public string? IdsTags_REG { get; set; }
+
 
     /// <summary> Id equals </summary>
     [JsonProperty("id_eq")]
@@ -1280,13 +1307,13 @@ public class CallIncomingToCallFlowLogicFilterRequest
 
     /// <summary> Recording.RecordingClientMp3.FileSizeInBytes equals </summary>
     [JsonProperty("recording_recordingClientMp3_fileSizeInBytes_eq")]
-    public Int32? Recording_RecordingClientMp3_FileSizeInBytes_EQ { get; set; }
+    public System.Int32? Recording_RecordingClientMp3_FileSizeInBytes_EQ { get; set; }
     /// <summary> Recording.RecordingClientMp3.FileSizeInBytes less than or equal to </summary>
     [JsonProperty("recording_recordingClientMp3_fileSizeInBytes_lte")]
-    public Int32? Recording_RecordingClientMp3_FileSizeInBytes_LTE { get; set; }
+    public System.Int32? Recording_RecordingClientMp3_FileSizeInBytes_LTE { get; set; }
     /// <summary> Recording.RecordingClientMp3.FileSizeInBytes greater than or equal to </summary>
     [JsonProperty("recording_recordingClientMp3_fileSizeInBytes_gte")]
-    public Int32? Recording_RecordingClientMp3_FileSizeInBytes_GTE { get; set; }
+    public System.Int32? Recording_RecordingClientMp3_FileSizeInBytes_GTE { get; set; }
 
     /// <summary> Recording.RecordingClientMp3.Md5Hash equals </summary>
     [JsonProperty("recording_recordingClientMp3_md5Hash_eq")]
@@ -1331,13 +1358,13 @@ public class CallIncomingToCallFlowLogicFilterRequest
 
     /// <summary> Recording.RecordingAgentMp3.FileSizeInBytes equals </summary>
     [JsonProperty("recording_recordingAgentMp3_fileSizeInBytes_eq")]
-    public Int32? Recording_RecordingAgentMp3_FileSizeInBytes_EQ { get; set; }
+    public System.Int32? Recording_RecordingAgentMp3_FileSizeInBytes_EQ { get; set; }
     /// <summary> Recording.RecordingAgentMp3.FileSizeInBytes less than or equal to </summary>
     [JsonProperty("recording_recordingAgentMp3_fileSizeInBytes_lte")]
-    public Int32? Recording_RecordingAgentMp3_FileSizeInBytes_LTE { get; set; }
+    public System.Int32? Recording_RecordingAgentMp3_FileSizeInBytes_LTE { get; set; }
     /// <summary> Recording.RecordingAgentMp3.FileSizeInBytes greater than or equal to </summary>
     [JsonProperty("recording_recordingAgentMp3_fileSizeInBytes_gte")]
-    public Int32? Recording_RecordingAgentMp3_FileSizeInBytes_GTE { get; set; }
+    public System.Int32? Recording_RecordingAgentMp3_FileSizeInBytes_GTE { get; set; }
 
     /// <summary> Recording.RecordingAgentMp3.Md5Hash equals </summary>
     [JsonProperty("recording_recordingAgentMp3_md5Hash_eq")]
@@ -1382,13 +1409,13 @@ public class CallIncomingToCallFlowLogicFilterRequest
 
     /// <summary> Recording.RecordingMp3.FileSizeInBytes equals </summary>
     [JsonProperty("recording_recordingMp3_fileSizeInBytes_eq")]
-    public Int32? Recording_RecordingMp3_FileSizeInBytes_EQ { get; set; }
+    public System.Int32? Recording_RecordingMp3_FileSizeInBytes_EQ { get; set; }
     /// <summary> Recording.RecordingMp3.FileSizeInBytes less than or equal to </summary>
     [JsonProperty("recording_recordingMp3_fileSizeInBytes_lte")]
-    public Int32? Recording_RecordingMp3_FileSizeInBytes_LTE { get; set; }
+    public System.Int32? Recording_RecordingMp3_FileSizeInBytes_LTE { get; set; }
     /// <summary> Recording.RecordingMp3.FileSizeInBytes greater than or equal to </summary>
     [JsonProperty("recording_recordingMp3_fileSizeInBytes_gte")]
-    public Int32? Recording_RecordingMp3_FileSizeInBytes_GTE { get; set; }
+    public System.Int32? Recording_RecordingMp3_FileSizeInBytes_GTE { get; set; }
 
     /// <summary> Recording.RecordingMp3.Md5Hash equals </summary>
     [JsonProperty("recording_recordingMp3_md5Hash_eq")]
@@ -1535,33 +1562,33 @@ public class CallIncomingToCallFlowLogicFilterRequest
 
     /// <summary> AiCallAnalysisOutput.TokensTotal equals </summary>
     [JsonProperty("aiCallAnalysisOutput_tokensTotal_eq")]
-    public Int32? AiCallAnalysisOutput_TokensTotal_EQ { get; set; }
+    public System.Int32? AiCallAnalysisOutput_TokensTotal_EQ { get; set; }
     /// <summary> AiCallAnalysisOutput.TokensTotal less than or equal to </summary>
     [JsonProperty("aiCallAnalysisOutput_tokensTotal_lte")]
-    public Int32? AiCallAnalysisOutput_TokensTotal_LTE { get; set; }
+    public System.Int32? AiCallAnalysisOutput_TokensTotal_LTE { get; set; }
     /// <summary> AiCallAnalysisOutput.TokensTotal greater than or equal to </summary>
     [JsonProperty("aiCallAnalysisOutput_tokensTotal_gte")]
-    public Int32? AiCallAnalysisOutput_TokensTotal_GTE { get; set; }
+    public System.Int32? AiCallAnalysisOutput_TokensTotal_GTE { get; set; }
 
     /// <summary> AiCallAnalysisOutput.TokensCompletion equals </summary>
     [JsonProperty("aiCallAnalysisOutput_tokensCompletion_eq")]
-    public Int32? AiCallAnalysisOutput_TokensCompletion_EQ { get; set; }
+    public System.Int32? AiCallAnalysisOutput_TokensCompletion_EQ { get; set; }
     /// <summary> AiCallAnalysisOutput.TokensCompletion less than or equal to </summary>
     [JsonProperty("aiCallAnalysisOutput_tokensCompletion_lte")]
-    public Int32? AiCallAnalysisOutput_TokensCompletion_LTE { get; set; }
+    public System.Int32? AiCallAnalysisOutput_TokensCompletion_LTE { get; set; }
     /// <summary> AiCallAnalysisOutput.TokensCompletion greater than or equal to </summary>
     [JsonProperty("aiCallAnalysisOutput_tokensCompletion_gte")]
-    public Int32? AiCallAnalysisOutput_TokensCompletion_GTE { get; set; }
+    public System.Int32? AiCallAnalysisOutput_TokensCompletion_GTE { get; set; }
 
     /// <summary> AiCallAnalysisOutput.TokensPrompt equals </summary>
     [JsonProperty("aiCallAnalysisOutput_tokensPrompt_eq")]
-    public Int32? AiCallAnalysisOutput_TokensPrompt_EQ { get; set; }
+    public System.Int32? AiCallAnalysisOutput_TokensPrompt_EQ { get; set; }
     /// <summary> AiCallAnalysisOutput.TokensPrompt less than or equal to </summary>
     [JsonProperty("aiCallAnalysisOutput_tokensPrompt_lte")]
-    public Int32? AiCallAnalysisOutput_TokensPrompt_LTE { get; set; }
+    public System.Int32? AiCallAnalysisOutput_TokensPrompt_LTE { get; set; }
     /// <summary> AiCallAnalysisOutput.TokensPrompt greater than or equal to </summary>
     [JsonProperty("aiCallAnalysisOutput_tokensPrompt_gte")]
-    public Int32? AiCallAnalysisOutput_TokensPrompt_GTE { get; set; }
+    public System.Int32? AiCallAnalysisOutput_TokensPrompt_GTE { get; set; }
 
 
     /// <summary> IdAiCallAnalysisInput equals </summary>
@@ -1686,6 +1713,7 @@ public class CallIncomingToCallFlowLogicFilterRequest
     /// <summary> IdsTags regex </summary>
     [JsonProperty("idsTags_reg")]
     public string? IdsTags_REG { get; set; }
+
 
     /// <summary> Id equals </summary>
     [JsonProperty("id_eq")]
@@ -2045,13 +2073,13 @@ public class CallIncomingToExtensionFilterRequest
 
     /// <summary> Recording.RecordingClientMp3.FileSizeInBytes equals </summary>
     [JsonProperty("recording_recordingClientMp3_fileSizeInBytes_eq")]
-    public Int32? Recording_RecordingClientMp3_FileSizeInBytes_EQ { get; set; }
+    public System.Int32? Recording_RecordingClientMp3_FileSizeInBytes_EQ { get; set; }
     /// <summary> Recording.RecordingClientMp3.FileSizeInBytes less than or equal to </summary>
     [JsonProperty("recording_recordingClientMp3_fileSizeInBytes_lte")]
-    public Int32? Recording_RecordingClientMp3_FileSizeInBytes_LTE { get; set; }
+    public System.Int32? Recording_RecordingClientMp3_FileSizeInBytes_LTE { get; set; }
     /// <summary> Recording.RecordingClientMp3.FileSizeInBytes greater than or equal to </summary>
     [JsonProperty("recording_recordingClientMp3_fileSizeInBytes_gte")]
-    public Int32? Recording_RecordingClientMp3_FileSizeInBytes_GTE { get; set; }
+    public System.Int32? Recording_RecordingClientMp3_FileSizeInBytes_GTE { get; set; }
 
     /// <summary> Recording.RecordingClientMp3.Md5Hash equals </summary>
     [JsonProperty("recording_recordingClientMp3_md5Hash_eq")]
@@ -2096,13 +2124,13 @@ public class CallIncomingToExtensionFilterRequest
 
     /// <summary> Recording.RecordingAgentMp3.FileSizeInBytes equals </summary>
     [JsonProperty("recording_recordingAgentMp3_fileSizeInBytes_eq")]
-    public Int32? Recording_RecordingAgentMp3_FileSizeInBytes_EQ { get; set; }
+    public System.Int32? Recording_RecordingAgentMp3_FileSizeInBytes_EQ { get; set; }
     /// <summary> Recording.RecordingAgentMp3.FileSizeInBytes less than or equal to </summary>
     [JsonProperty("recording_recordingAgentMp3_fileSizeInBytes_lte")]
-    public Int32? Recording_RecordingAgentMp3_FileSizeInBytes_LTE { get; set; }
+    public System.Int32? Recording_RecordingAgentMp3_FileSizeInBytes_LTE { get; set; }
     /// <summary> Recording.RecordingAgentMp3.FileSizeInBytes greater than or equal to </summary>
     [JsonProperty("recording_recordingAgentMp3_fileSizeInBytes_gte")]
-    public Int32? Recording_RecordingAgentMp3_FileSizeInBytes_GTE { get; set; }
+    public System.Int32? Recording_RecordingAgentMp3_FileSizeInBytes_GTE { get; set; }
 
     /// <summary> Recording.RecordingAgentMp3.Md5Hash equals </summary>
     [JsonProperty("recording_recordingAgentMp3_md5Hash_eq")]
@@ -2147,13 +2175,13 @@ public class CallIncomingToExtensionFilterRequest
 
     /// <summary> Recording.RecordingMp3.FileSizeInBytes equals </summary>
     [JsonProperty("recording_recordingMp3_fileSizeInBytes_eq")]
-    public Int32? Recording_RecordingMp3_FileSizeInBytes_EQ { get; set; }
+    public System.Int32? Recording_RecordingMp3_FileSizeInBytes_EQ { get; set; }
     /// <summary> Recording.RecordingMp3.FileSizeInBytes less than or equal to </summary>
     [JsonProperty("recording_recordingMp3_fileSizeInBytes_lte")]
-    public Int32? Recording_RecordingMp3_FileSizeInBytes_LTE { get; set; }
+    public System.Int32? Recording_RecordingMp3_FileSizeInBytes_LTE { get; set; }
     /// <summary> Recording.RecordingMp3.FileSizeInBytes greater than or equal to </summary>
     [JsonProperty("recording_recordingMp3_fileSizeInBytes_gte")]
-    public Int32? Recording_RecordingMp3_FileSizeInBytes_GTE { get; set; }
+    public System.Int32? Recording_RecordingMp3_FileSizeInBytes_GTE { get; set; }
 
     /// <summary> Recording.RecordingMp3.Md5Hash equals </summary>
     [JsonProperty("recording_recordingMp3_md5Hash_eq")]
@@ -2300,33 +2328,33 @@ public class CallIncomingToExtensionFilterRequest
 
     /// <summary> AiCallAnalysisOutput.TokensTotal equals </summary>
     [JsonProperty("aiCallAnalysisOutput_tokensTotal_eq")]
-    public Int32? AiCallAnalysisOutput_TokensTotal_EQ { get; set; }
+    public System.Int32? AiCallAnalysisOutput_TokensTotal_EQ { get; set; }
     /// <summary> AiCallAnalysisOutput.TokensTotal less than or equal to </summary>
     [JsonProperty("aiCallAnalysisOutput_tokensTotal_lte")]
-    public Int32? AiCallAnalysisOutput_TokensTotal_LTE { get; set; }
+    public System.Int32? AiCallAnalysisOutput_TokensTotal_LTE { get; set; }
     /// <summary> AiCallAnalysisOutput.TokensTotal greater than or equal to </summary>
     [JsonProperty("aiCallAnalysisOutput_tokensTotal_gte")]
-    public Int32? AiCallAnalysisOutput_TokensTotal_GTE { get; set; }
+    public System.Int32? AiCallAnalysisOutput_TokensTotal_GTE { get; set; }
 
     /// <summary> AiCallAnalysisOutput.TokensCompletion equals </summary>
     [JsonProperty("aiCallAnalysisOutput_tokensCompletion_eq")]
-    public Int32? AiCallAnalysisOutput_TokensCompletion_EQ { get; set; }
+    public System.Int32? AiCallAnalysisOutput_TokensCompletion_EQ { get; set; }
     /// <summary> AiCallAnalysisOutput.TokensCompletion less than or equal to </summary>
     [JsonProperty("aiCallAnalysisOutput_tokensCompletion_lte")]
-    public Int32? AiCallAnalysisOutput_TokensCompletion_LTE { get; set; }
+    public System.Int32? AiCallAnalysisOutput_TokensCompletion_LTE { get; set; }
     /// <summary> AiCallAnalysisOutput.TokensCompletion greater than or equal to </summary>
     [JsonProperty("aiCallAnalysisOutput_tokensCompletion_gte")]
-    public Int32? AiCallAnalysisOutput_TokensCompletion_GTE { get; set; }
+    public System.Int32? AiCallAnalysisOutput_TokensCompletion_GTE { get; set; }
 
     /// <summary> AiCallAnalysisOutput.TokensPrompt equals </summary>
     [JsonProperty("aiCallAnalysisOutput_tokensPrompt_eq")]
-    public Int32? AiCallAnalysisOutput_TokensPrompt_EQ { get; set; }
+    public System.Int32? AiCallAnalysisOutput_TokensPrompt_EQ { get; set; }
     /// <summary> AiCallAnalysisOutput.TokensPrompt less than or equal to </summary>
     [JsonProperty("aiCallAnalysisOutput_tokensPrompt_lte")]
-    public Int32? AiCallAnalysisOutput_TokensPrompt_LTE { get; set; }
+    public System.Int32? AiCallAnalysisOutput_TokensPrompt_LTE { get; set; }
     /// <summary> AiCallAnalysisOutput.TokensPrompt greater than or equal to </summary>
     [JsonProperty("aiCallAnalysisOutput_tokensPrompt_gte")]
-    public Int32? AiCallAnalysisOutput_TokensPrompt_GTE { get; set; }
+    public System.Int32? AiCallAnalysisOutput_TokensPrompt_GTE { get; set; }
 
 
     /// <summary> IdAiCallAnalysisInput equals </summary>
@@ -2451,6 +2479,7 @@ public class CallIncomingToExtensionFilterRequest
     /// <summary> IdsTags regex </summary>
     [JsonProperty("idsTags_reg")]
     public string? IdsTags_REG { get; set; }
+
 
     /// <summary> Id equals </summary>
     [JsonProperty("id_eq")]
@@ -2790,13 +2819,13 @@ public class CallOutgoingToExtensionFilterRequest
 
     /// <summary> Recording.RecordingClientMp3.FileSizeInBytes equals </summary>
     [JsonProperty("recording_recordingClientMp3_fileSizeInBytes_eq")]
-    public Int32? Recording_RecordingClientMp3_FileSizeInBytes_EQ { get; set; }
+    public System.Int32? Recording_RecordingClientMp3_FileSizeInBytes_EQ { get; set; }
     /// <summary> Recording.RecordingClientMp3.FileSizeInBytes less than or equal to </summary>
     [JsonProperty("recording_recordingClientMp3_fileSizeInBytes_lte")]
-    public Int32? Recording_RecordingClientMp3_FileSizeInBytes_LTE { get; set; }
+    public System.Int32? Recording_RecordingClientMp3_FileSizeInBytes_LTE { get; set; }
     /// <summary> Recording.RecordingClientMp3.FileSizeInBytes greater than or equal to </summary>
     [JsonProperty("recording_recordingClientMp3_fileSizeInBytes_gte")]
-    public Int32? Recording_RecordingClientMp3_FileSizeInBytes_GTE { get; set; }
+    public System.Int32? Recording_RecordingClientMp3_FileSizeInBytes_GTE { get; set; }
 
     /// <summary> Recording.RecordingClientMp3.Md5Hash equals </summary>
     [JsonProperty("recording_recordingClientMp3_md5Hash_eq")]
@@ -2841,13 +2870,13 @@ public class CallOutgoingToExtensionFilterRequest
 
     /// <summary> Recording.RecordingAgentMp3.FileSizeInBytes equals </summary>
     [JsonProperty("recording_recordingAgentMp3_fileSizeInBytes_eq")]
-    public Int32? Recording_RecordingAgentMp3_FileSizeInBytes_EQ { get; set; }
+    public System.Int32? Recording_RecordingAgentMp3_FileSizeInBytes_EQ { get; set; }
     /// <summary> Recording.RecordingAgentMp3.FileSizeInBytes less than or equal to </summary>
     [JsonProperty("recording_recordingAgentMp3_fileSizeInBytes_lte")]
-    public Int32? Recording_RecordingAgentMp3_FileSizeInBytes_LTE { get; set; }
+    public System.Int32? Recording_RecordingAgentMp3_FileSizeInBytes_LTE { get; set; }
     /// <summary> Recording.RecordingAgentMp3.FileSizeInBytes greater than or equal to </summary>
     [JsonProperty("recording_recordingAgentMp3_fileSizeInBytes_gte")]
-    public Int32? Recording_RecordingAgentMp3_FileSizeInBytes_GTE { get; set; }
+    public System.Int32? Recording_RecordingAgentMp3_FileSizeInBytes_GTE { get; set; }
 
     /// <summary> Recording.RecordingAgentMp3.Md5Hash equals </summary>
     [JsonProperty("recording_recordingAgentMp3_md5Hash_eq")]
@@ -2892,13 +2921,13 @@ public class CallOutgoingToExtensionFilterRequest
 
     /// <summary> Recording.RecordingMp3.FileSizeInBytes equals </summary>
     [JsonProperty("recording_recordingMp3_fileSizeInBytes_eq")]
-    public Int32? Recording_RecordingMp3_FileSizeInBytes_EQ { get; set; }
+    public System.Int32? Recording_RecordingMp3_FileSizeInBytes_EQ { get; set; }
     /// <summary> Recording.RecordingMp3.FileSizeInBytes less than or equal to </summary>
     [JsonProperty("recording_recordingMp3_fileSizeInBytes_lte")]
-    public Int32? Recording_RecordingMp3_FileSizeInBytes_LTE { get; set; }
+    public System.Int32? Recording_RecordingMp3_FileSizeInBytes_LTE { get; set; }
     /// <summary> Recording.RecordingMp3.FileSizeInBytes greater than or equal to </summary>
     [JsonProperty("recording_recordingMp3_fileSizeInBytes_gte")]
-    public Int32? Recording_RecordingMp3_FileSizeInBytes_GTE { get; set; }
+    public System.Int32? Recording_RecordingMp3_FileSizeInBytes_GTE { get; set; }
 
     /// <summary> Recording.RecordingMp3.Md5Hash equals </summary>
     [JsonProperty("recording_recordingMp3_md5Hash_eq")]
@@ -3045,33 +3074,33 @@ public class CallOutgoingToExtensionFilterRequest
 
     /// <summary> AiCallAnalysisOutput.TokensTotal equals </summary>
     [JsonProperty("aiCallAnalysisOutput_tokensTotal_eq")]
-    public Int32? AiCallAnalysisOutput_TokensTotal_EQ { get; set; }
+    public System.Int32? AiCallAnalysisOutput_TokensTotal_EQ { get; set; }
     /// <summary> AiCallAnalysisOutput.TokensTotal less than or equal to </summary>
     [JsonProperty("aiCallAnalysisOutput_tokensTotal_lte")]
-    public Int32? AiCallAnalysisOutput_TokensTotal_LTE { get; set; }
+    public System.Int32? AiCallAnalysisOutput_TokensTotal_LTE { get; set; }
     /// <summary> AiCallAnalysisOutput.TokensTotal greater than or equal to </summary>
     [JsonProperty("aiCallAnalysisOutput_tokensTotal_gte")]
-    public Int32? AiCallAnalysisOutput_TokensTotal_GTE { get; set; }
+    public System.Int32? AiCallAnalysisOutput_TokensTotal_GTE { get; set; }
 
     /// <summary> AiCallAnalysisOutput.TokensCompletion equals </summary>
     [JsonProperty("aiCallAnalysisOutput_tokensCompletion_eq")]
-    public Int32? AiCallAnalysisOutput_TokensCompletion_EQ { get; set; }
+    public System.Int32? AiCallAnalysisOutput_TokensCompletion_EQ { get; set; }
     /// <summary> AiCallAnalysisOutput.TokensCompletion less than or equal to </summary>
     [JsonProperty("aiCallAnalysisOutput_tokensCompletion_lte")]
-    public Int32? AiCallAnalysisOutput_TokensCompletion_LTE { get; set; }
+    public System.Int32? AiCallAnalysisOutput_TokensCompletion_LTE { get; set; }
     /// <summary> AiCallAnalysisOutput.TokensCompletion greater than or equal to </summary>
     [JsonProperty("aiCallAnalysisOutput_tokensCompletion_gte")]
-    public Int32? AiCallAnalysisOutput_TokensCompletion_GTE { get; set; }
+    public System.Int32? AiCallAnalysisOutput_TokensCompletion_GTE { get; set; }
 
     /// <summary> AiCallAnalysisOutput.TokensPrompt equals </summary>
     [JsonProperty("aiCallAnalysisOutput_tokensPrompt_eq")]
-    public Int32? AiCallAnalysisOutput_TokensPrompt_EQ { get; set; }
+    public System.Int32? AiCallAnalysisOutput_TokensPrompt_EQ { get; set; }
     /// <summary> AiCallAnalysisOutput.TokensPrompt less than or equal to </summary>
     [JsonProperty("aiCallAnalysisOutput_tokensPrompt_lte")]
-    public Int32? AiCallAnalysisOutput_TokensPrompt_LTE { get; set; }
+    public System.Int32? AiCallAnalysisOutput_TokensPrompt_LTE { get; set; }
     /// <summary> AiCallAnalysisOutput.TokensPrompt greater than or equal to </summary>
     [JsonProperty("aiCallAnalysisOutput_tokensPrompt_gte")]
-    public Int32? AiCallAnalysisOutput_TokensPrompt_GTE { get; set; }
+    public System.Int32? AiCallAnalysisOutput_TokensPrompt_GTE { get; set; }
 
 
     /// <summary> IdAiCallAnalysisInput equals </summary>
@@ -3196,6 +3225,7 @@ public class CallOutgoingToExtensionFilterRequest
     /// <summary> IdsTags regex </summary>
     [JsonProperty("idsTags_reg")]
     public string? IdsTags_REG { get; set; }
+
 
     /// <summary> Id equals </summary>
     [JsonProperty("id_eq")]
@@ -3505,13 +3535,13 @@ public class CallOutgoingToPSTNFilterRequest
 
     /// <summary> Recording.RecordingClientMp3.FileSizeInBytes equals </summary>
     [JsonProperty("recording_recordingClientMp3_fileSizeInBytes_eq")]
-    public Int32? Recording_RecordingClientMp3_FileSizeInBytes_EQ { get; set; }
+    public System.Int32? Recording_RecordingClientMp3_FileSizeInBytes_EQ { get; set; }
     /// <summary> Recording.RecordingClientMp3.FileSizeInBytes less than or equal to </summary>
     [JsonProperty("recording_recordingClientMp3_fileSizeInBytes_lte")]
-    public Int32? Recording_RecordingClientMp3_FileSizeInBytes_LTE { get; set; }
+    public System.Int32? Recording_RecordingClientMp3_FileSizeInBytes_LTE { get; set; }
     /// <summary> Recording.RecordingClientMp3.FileSizeInBytes greater than or equal to </summary>
     [JsonProperty("recording_recordingClientMp3_fileSizeInBytes_gte")]
-    public Int32? Recording_RecordingClientMp3_FileSizeInBytes_GTE { get; set; }
+    public System.Int32? Recording_RecordingClientMp3_FileSizeInBytes_GTE { get; set; }
 
     /// <summary> Recording.RecordingClientMp3.Md5Hash equals </summary>
     [JsonProperty("recording_recordingClientMp3_md5Hash_eq")]
@@ -3556,13 +3586,13 @@ public class CallOutgoingToPSTNFilterRequest
 
     /// <summary> Recording.RecordingAgentMp3.FileSizeInBytes equals </summary>
     [JsonProperty("recording_recordingAgentMp3_fileSizeInBytes_eq")]
-    public Int32? Recording_RecordingAgentMp3_FileSizeInBytes_EQ { get; set; }
+    public System.Int32? Recording_RecordingAgentMp3_FileSizeInBytes_EQ { get; set; }
     /// <summary> Recording.RecordingAgentMp3.FileSizeInBytes less than or equal to </summary>
     [JsonProperty("recording_recordingAgentMp3_fileSizeInBytes_lte")]
-    public Int32? Recording_RecordingAgentMp3_FileSizeInBytes_LTE { get; set; }
+    public System.Int32? Recording_RecordingAgentMp3_FileSizeInBytes_LTE { get; set; }
     /// <summary> Recording.RecordingAgentMp3.FileSizeInBytes greater than or equal to </summary>
     [JsonProperty("recording_recordingAgentMp3_fileSizeInBytes_gte")]
-    public Int32? Recording_RecordingAgentMp3_FileSizeInBytes_GTE { get; set; }
+    public System.Int32? Recording_RecordingAgentMp3_FileSizeInBytes_GTE { get; set; }
 
     /// <summary> Recording.RecordingAgentMp3.Md5Hash equals </summary>
     [JsonProperty("recording_recordingAgentMp3_md5Hash_eq")]
@@ -3607,13 +3637,13 @@ public class CallOutgoingToPSTNFilterRequest
 
     /// <summary> Recording.RecordingMp3.FileSizeInBytes equals </summary>
     [JsonProperty("recording_recordingMp3_fileSizeInBytes_eq")]
-    public Int32? Recording_RecordingMp3_FileSizeInBytes_EQ { get; set; }
+    public System.Int32? Recording_RecordingMp3_FileSizeInBytes_EQ { get; set; }
     /// <summary> Recording.RecordingMp3.FileSizeInBytes less than or equal to </summary>
     [JsonProperty("recording_recordingMp3_fileSizeInBytes_lte")]
-    public Int32? Recording_RecordingMp3_FileSizeInBytes_LTE { get; set; }
+    public System.Int32? Recording_RecordingMp3_FileSizeInBytes_LTE { get; set; }
     /// <summary> Recording.RecordingMp3.FileSizeInBytes greater than or equal to </summary>
     [JsonProperty("recording_recordingMp3_fileSizeInBytes_gte")]
-    public Int32? Recording_RecordingMp3_FileSizeInBytes_GTE { get; set; }
+    public System.Int32? Recording_RecordingMp3_FileSizeInBytes_GTE { get; set; }
 
     /// <summary> Recording.RecordingMp3.Md5Hash equals </summary>
     [JsonProperty("recording_recordingMp3_md5Hash_eq")]
@@ -3760,33 +3790,33 @@ public class CallOutgoingToPSTNFilterRequest
 
     /// <summary> AiCallAnalysisOutput.TokensTotal equals </summary>
     [JsonProperty("aiCallAnalysisOutput_tokensTotal_eq")]
-    public Int32? AiCallAnalysisOutput_TokensTotal_EQ { get; set; }
+    public System.Int32? AiCallAnalysisOutput_TokensTotal_EQ { get; set; }
     /// <summary> AiCallAnalysisOutput.TokensTotal less than or equal to </summary>
     [JsonProperty("aiCallAnalysisOutput_tokensTotal_lte")]
-    public Int32? AiCallAnalysisOutput_TokensTotal_LTE { get; set; }
+    public System.Int32? AiCallAnalysisOutput_TokensTotal_LTE { get; set; }
     /// <summary> AiCallAnalysisOutput.TokensTotal greater than or equal to </summary>
     [JsonProperty("aiCallAnalysisOutput_tokensTotal_gte")]
-    public Int32? AiCallAnalysisOutput_TokensTotal_GTE { get; set; }
+    public System.Int32? AiCallAnalysisOutput_TokensTotal_GTE { get; set; }
 
     /// <summary> AiCallAnalysisOutput.TokensCompletion equals </summary>
     [JsonProperty("aiCallAnalysisOutput_tokensCompletion_eq")]
-    public Int32? AiCallAnalysisOutput_TokensCompletion_EQ { get; set; }
+    public System.Int32? AiCallAnalysisOutput_TokensCompletion_EQ { get; set; }
     /// <summary> AiCallAnalysisOutput.TokensCompletion less than or equal to </summary>
     [JsonProperty("aiCallAnalysisOutput_tokensCompletion_lte")]
-    public Int32? AiCallAnalysisOutput_TokensCompletion_LTE { get; set; }
+    public System.Int32? AiCallAnalysisOutput_TokensCompletion_LTE { get; set; }
     /// <summary> AiCallAnalysisOutput.TokensCompletion greater than or equal to </summary>
     [JsonProperty("aiCallAnalysisOutput_tokensCompletion_gte")]
-    public Int32? AiCallAnalysisOutput_TokensCompletion_GTE { get; set; }
+    public System.Int32? AiCallAnalysisOutput_TokensCompletion_GTE { get; set; }
 
     /// <summary> AiCallAnalysisOutput.TokensPrompt equals </summary>
     [JsonProperty("aiCallAnalysisOutput_tokensPrompt_eq")]
-    public Int32? AiCallAnalysisOutput_TokensPrompt_EQ { get; set; }
+    public System.Int32? AiCallAnalysisOutput_TokensPrompt_EQ { get; set; }
     /// <summary> AiCallAnalysisOutput.TokensPrompt less than or equal to </summary>
     [JsonProperty("aiCallAnalysisOutput_tokensPrompt_lte")]
-    public Int32? AiCallAnalysisOutput_TokensPrompt_LTE { get; set; }
+    public System.Int32? AiCallAnalysisOutput_TokensPrompt_LTE { get; set; }
     /// <summary> AiCallAnalysisOutput.TokensPrompt greater than or equal to </summary>
     [JsonProperty("aiCallAnalysisOutput_tokensPrompt_gte")]
-    public Int32? AiCallAnalysisOutput_TokensPrompt_GTE { get; set; }
+    public System.Int32? AiCallAnalysisOutput_TokensPrompt_GTE { get; set; }
 
 
     /// <summary> IdAiCallAnalysisInput equals </summary>
@@ -3912,6 +3942,7 @@ public class CallOutgoingToPSTNFilterRequest
     [JsonProperty("idsTags_reg")]
     public string? IdsTags_REG { get; set; }
 
+
     /// <summary> Id equals </summary>
     [JsonProperty("id_eq")]
     public string? Id_EQ { get; set; }
@@ -3960,16 +3991,6 @@ public class CloudServicePbxFilterRequest
     [JsonProperty("disableMonitoring_eq")]
     public bool? DisableMonitoring_EQ { get; set; }
 
-    /// <summary> CallProcessingTypeGateway equals </summary>
-    [JsonProperty("callProcessingTypeGateway_eq")]
-    public string? CallProcessingTypeGateway_EQ { get; set; }
-    /// <summary> CallProcessingTypeGateway contains </summary>
-    [JsonProperty("callProcessingTypeGateway_con")]
-    public string? CallProcessingTypeGateway_CON { get; set; }
-    /// <summary> CallProcessingTypeGateway regex </summary>
-    [JsonProperty("callProcessingTypeGateway_reg")]
-    public string? CallProcessingTypeGateway_REG { get; set; }
-
     /// <summary> IdAccountGateway equals </summary>
     [JsonProperty("idAccountGateway_eq")]
     public string? IdAccountGateway_EQ { get; set; }
@@ -3980,15 +4001,151 @@ public class CloudServicePbxFilterRequest
     [JsonProperty("idAccountGateway_reg")]
     public string? IdAccountGateway_REG { get; set; }
 
-    /// <summary> IdAiCallAnalysisInputGateway equals </summary>
-    [JsonProperty("idAiCallAnalysisInputGateway_eq")]
-    public string? IdAiCallAnalysisInputGateway_EQ { get; set; }
-    /// <summary> IdAiCallAnalysisInputGateway contains </summary>
-    [JsonProperty("idAiCallAnalysisInputGateway_con")]
-    public string? IdAiCallAnalysisInputGateway_CON { get; set; }
-    /// <summary> IdAiCallAnalysisInputGateway regex </summary>
-    [JsonProperty("idAiCallAnalysisInputGateway_reg")]
-    public string? IdAiCallAnalysisInputGateway_REG { get; set; }
+    /// <summary> Password equals </summary>
+    [JsonProperty("password_eq")]
+    public string? Password_EQ { get; set; }
+    /// <summary> Password contains </summary>
+    [JsonProperty("password_con")]
+    public string? Password_CON { get; set; }
+    /// <summary> Password regex </summary>
+    [JsonProperty("password_reg")]
+    public string? Password_REG { get; set; }
+
+    /// <summary> CountryIsoCode equals </summary>
+    [JsonProperty("countryIsoCode_eq")]
+    public string? CountryIsoCode_EQ { get; set; }
+    /// <summary> CountryIsoCode contains </summary>
+    [JsonProperty("countryIsoCode_con")]
+    public string? CountryIsoCode_CON { get; set; }
+    /// <summary> CountryIsoCode regex </summary>
+    [JsonProperty("countryIsoCode_reg")]
+    public string? CountryIsoCode_REG { get; set; }
+
+    /// <summary> Localnet equals </summary>
+    [JsonProperty("localnet_eq")]
+    public string? Localnet_EQ { get; set; }
+    /// <summary> Localnet contains </summary>
+    [JsonProperty("localnet_con")]
+    public string? Localnet_CON { get; set; }
+    /// <summary> Localnet regex </summary>
+    [JsonProperty("localnet_reg")]
+    public string? Localnet_REG { get; set; }
+
+    /// <summary> ExternalIp equals </summary>
+    [JsonProperty("externalIp_eq")]
+    public string? ExternalIp_EQ { get; set; }
+    /// <summary> ExternalIp contains </summary>
+    [JsonProperty("externalIp_con")]
+    public string? ExternalIp_CON { get; set; }
+    /// <summary> ExternalIp regex </summary>
+    [JsonProperty("externalIp_reg")]
+    public string? ExternalIp_REG { get; set; }
+
+    /// <summary> Nat equals </summary>
+    [JsonProperty("nat_eq")]
+    public bool? Nat_EQ { get; set; }
+
+    /// <summary> IsHealthy equals </summary>
+    [JsonProperty("isHealthy_eq")]
+    public bool? IsHealthy_EQ { get; set; }
+
+    /// <summary> DateDisconnected equals </summary>
+    [JsonProperty("dateDisconnected_eq")]
+    public DateTime? DateDisconnected_EQ { get; set; }
+    /// <summary> DateDisconnected less than or equal to </summary>
+    [JsonProperty("dateDisconnected_lte")]
+    public DateTime? DateDisconnected_LTE { get; set; }
+    /// <summary> DateDisconnected greater than or equal to </summary>
+    [JsonProperty("dateDisconnected_gte")]
+    public DateTime? DateDisconnected_GTE { get; set; }
+
+    /// <summary> IsTest equals </summary>
+    [JsonProperty("isTest_eq")]
+    public bool? IsTest_EQ { get; set; }
+
+    /// <summary> ProviderInstanceId equals </summary>
+    [JsonProperty("providerInstanceId_eq")]
+    public string? ProviderInstanceId_EQ { get; set; }
+    /// <summary> ProviderInstanceId contains </summary>
+    [JsonProperty("providerInstanceId_con")]
+    public string? ProviderInstanceId_CON { get; set; }
+    /// <summary> ProviderInstanceId regex </summary>
+    [JsonProperty("providerInstanceId_reg")]
+    public string? ProviderInstanceId_REG { get; set; }
+
+    /// <summary> ProviderRegion equals </summary>
+    [JsonProperty("providerRegion_eq")]
+    public string? ProviderRegion_EQ { get; set; }
+    /// <summary> ProviderRegion contains </summary>
+    [JsonProperty("providerRegion_con")]
+    public string? ProviderRegion_CON { get; set; }
+    /// <summary> ProviderRegion regex </summary>
+    [JsonProperty("providerRegion_reg")]
+    public string? ProviderRegion_REG { get; set; }
+
+    /// <summary> ProviderType equals </summary>
+    [JsonProperty("providerType_eq")]
+    public string? ProviderType_EQ { get; set; }
+    /// <summary> ProviderType contains </summary>
+    [JsonProperty("providerType_con")]
+    public string? ProviderType_CON { get; set; }
+    /// <summary> ProviderType regex </summary>
+    [JsonProperty("providerType_reg")]
+    public string? ProviderType_REG { get; set; }
+
+    /// <summary> Id equals </summary>
+    [JsonProperty("id_eq")]
+    public string? Id_EQ { get; set; }
+    /// <summary> Id contains </summary>
+    [JsonProperty("id_con")]
+    public string? Id_CON { get; set; }
+    /// <summary> Id regex </summary>
+    [JsonProperty("id_reg")]
+    public string? Id_REG { get; set; }
+
+    /// <summary> DateCreated equals </summary>
+    [JsonProperty("dateCreated_eq")]
+    public DateTime? DateCreated_EQ { get; set; }
+    /// <summary> DateCreated less than or equal to </summary>
+    [JsonProperty("dateCreated_lte")]
+    public DateTime? DateCreated_LTE { get; set; }
+    /// <summary> DateCreated greater than or equal to </summary>
+    [JsonProperty("dateCreated_gte")]
+    public DateTime? DateCreated_GTE { get; set; }
+
+    /// <summary> DateUpdated equals </summary>
+    [JsonProperty("dateUpdated_eq")]
+    public DateTime? DateUpdated_EQ { get; set; }
+    /// <summary> DateUpdated less than or equal to </summary>
+    [JsonProperty("dateUpdated_lte")]
+    public DateTime? DateUpdated_LTE { get; set; }
+    /// <summary> DateUpdated greater than or equal to </summary>
+    [JsonProperty("dateUpdated_gte")]
+    public DateTime? DateUpdated_GTE { get; set; }
+
+}
+/// <summary> Enables searching for CloudServiceTranscriptions </summary>
+public class CloudServiceTranscriptionFilterRequest 
+{
+    /// <summary> CloudServiceType equals </summary>
+    [JsonProperty("cloudServiceType_eq")]
+    public string? CloudServiceType_EQ { get; set; }
+    /// <summary> CloudServiceType contains </summary>
+    [JsonProperty("cloudServiceType_con")]
+    public string? CloudServiceType_CON { get; set; }
+    /// <summary> CloudServiceType regex </summary>
+    [JsonProperty("cloudServiceType_reg")]
+    public string? CloudServiceType_REG { get; set; }
+
+    /// <summary> DateAlive equals </summary>
+    [JsonProperty("dateAlive_eq")]
+    public DateTime? DateAlive_EQ { get; set; }
+    /// <summary> DateAlive less than or equal to </summary>
+    [JsonProperty("dateAlive_lte")]
+    public DateTime? DateAlive_LTE { get; set; }
+    /// <summary> DateAlive greater than or equal to </summary>
+    [JsonProperty("dateAlive_gte")]
+    public DateTime? DateAlive_GTE { get; set; }
 
     /// <summary> Password equals </summary>
     [JsonProperty("password_eq")]
@@ -4632,6 +4789,7 @@ public class ContactFilterRequest
     [JsonProperty("idsTags_reg")]
     public string? IdsTags_REG { get; set; }
 
+
     /// <summary> Id equals </summary>
     [JsonProperty("id_eq")]
     public string? Id_EQ { get; set; }
@@ -4818,6 +4976,7 @@ public class CustomerInfoFilterRequest
     [JsonProperty("idsTags_reg")]
     public string? IdsTags_REG { get; set; }
 
+
     /// <summary> Id equals </summary>
     [JsonProperty("id_eq")]
     public string? Id_EQ { get; set; }
@@ -4946,6 +5105,7 @@ public class ExtensionCallFlowLogicFilterRequest
     [JsonProperty("idsTags_reg")]
     public string? IdsTags_REG { get; set; }
 
+
     /// <summary> Id equals </summary>
     [JsonProperty("id_eq")]
     public string? Id_EQ { get; set; }
@@ -5068,6 +5228,7 @@ public class ExtensionConferenceFilterRequest
     [JsonProperty("idsTags_reg")]
     public string? IdsTags_REG { get; set; }
 
+
     /// <summary> Id equals </summary>
     [JsonProperty("id_eq")]
     public string? Id_EQ { get; set; }
@@ -5135,45 +5296,72 @@ public class ExtensionDialFilterRequest
 
     /// <summary> SendEmailNotificationIfNotAnswered.PreventSendingNotificationIfLastLessThanNSeconds equals </summary>
     [JsonProperty("sendEmailNotificationIfNotAnswered_preventSendingNotificationIfLastLessThanNSeconds_eq")]
-    public Int32? SendEmailNotificationIfNotAnswered_PreventSendingNotificationIfLastLessThanNSeconds_EQ { get; set; }
+    public System.Int32? SendEmailNotificationIfNotAnswered_PreventSendingNotificationIfLastLessThanNSeconds_EQ { get; set; }
     /// <summary> SendEmailNotificationIfNotAnswered.PreventSendingNotificationIfLastLessThanNSeconds less than or equal to </summary>
     [JsonProperty("sendEmailNotificationIfNotAnswered_preventSendingNotificationIfLastLessThanNSeconds_lte")]
-    public Int32? SendEmailNotificationIfNotAnswered_PreventSendingNotificationIfLastLessThanNSeconds_LTE { get; set; }
+    public System.Int32? SendEmailNotificationIfNotAnswered_PreventSendingNotificationIfLastLessThanNSeconds_LTE { get; set; }
     /// <summary> SendEmailNotificationIfNotAnswered.PreventSendingNotificationIfLastLessThanNSeconds greater than or equal to </summary>
     [JsonProperty("sendEmailNotificationIfNotAnswered_preventSendingNotificationIfLastLessThanNSeconds_gte")]
-    public Int32? SendEmailNotificationIfNotAnswered_PreventSendingNotificationIfLastLessThanNSeconds_GTE { get; set; }
+    public System.Int32? SendEmailNotificationIfNotAnswered_PreventSendingNotificationIfLastLessThanNSeconds_GTE { get; set; }
 
 
     /// <summary> Handicap.StopRingingIfCountReaches equals </summary>
     [JsonProperty("handicap_stopRingingIfCountReaches_eq")]
-    public Int32? Handicap_StopRingingIfCountReaches_EQ { get; set; }
+    public System.Int32? Handicap_StopRingingIfCountReaches_EQ { get; set; }
     /// <summary> Handicap.StopRingingIfCountReaches less than or equal to </summary>
     [JsonProperty("handicap_stopRingingIfCountReaches_lte")]
-    public Int32? Handicap_StopRingingIfCountReaches_LTE { get; set; }
+    public System.Int32? Handicap_StopRingingIfCountReaches_LTE { get; set; }
     /// <summary> Handicap.StopRingingIfCountReaches greater than or equal to </summary>
     [JsonProperty("handicap_stopRingingIfCountReaches_gte")]
-    public Int32? Handicap_StopRingingIfCountReaches_GTE { get; set; }
+    public System.Int32? Handicap_StopRingingIfCountReaches_GTE { get; set; }
 
     /// <summary> Handicap.ResetInMinutes equals </summary>
     [JsonProperty("handicap_resetInMinutes_eq")]
-    public Int32? Handicap_ResetInMinutes_EQ { get; set; }
+    public System.Int32? Handicap_ResetInMinutes_EQ { get; set; }
     /// <summary> Handicap.ResetInMinutes less than or equal to </summary>
     [JsonProperty("handicap_resetInMinutes_lte")]
-    public Int32? Handicap_ResetInMinutes_LTE { get; set; }
+    public System.Int32? Handicap_ResetInMinutes_LTE { get; set; }
     /// <summary> Handicap.ResetInMinutes greater than or equal to </summary>
     [JsonProperty("handicap_resetInMinutes_gte")]
-    public Int32? Handicap_ResetInMinutes_GTE { get; set; }
+    public System.Int32? Handicap_ResetInMinutes_GTE { get; set; }
+
+
+    /// <summary> AiFeatures.AgentCheckLists.Title equals </summary>
+    [JsonProperty("aiFeatures_agentCheckLists_title_eq")]
+    public string? AiFeatures_AgentCheckLists_Title_EQ { get; set; }
+    /// <summary> AiFeatures.AgentCheckLists.Title contains </summary>
+    [JsonProperty("aiFeatures_agentCheckLists_title_con")]
+    public string? AiFeatures_AgentCheckLists_Title_CON { get; set; }
+    /// <summary> AiFeatures.AgentCheckLists.Title regex </summary>
+    [JsonProperty("aiFeatures_agentCheckLists_title_reg")]
+    public string? AiFeatures_AgentCheckLists_Title_REG { get; set; }
+
+    /// <summary> AiFeatures.AgentCheckLists.Items.Item equals </summary>
+    [JsonProperty("aiFeatures_agentCheckLists_items_item_eq")]
+    public string? AiFeatures_AgentCheckLists_Items_Item_EQ { get; set; }
+    /// <summary> AiFeatures.AgentCheckLists.Items.Item contains </summary>
+    [JsonProperty("aiFeatures_agentCheckLists_items_item_con")]
+    public string? AiFeatures_AgentCheckLists_Items_Item_CON { get; set; }
+    /// <summary> AiFeatures.AgentCheckLists.Items.Item regex </summary>
+    [JsonProperty("aiFeatures_agentCheckLists_items_item_reg")]
+    public string? AiFeatures_AgentCheckLists_Items_Item_REG { get; set; }
+
+    /// <summary> AiFeatures.AgentCheckLists.Items.IsComplete equals </summary>
+    [JsonProperty("aiFeatures_agentCheckLists_items_isComplete_eq")]
+    public bool? AiFeatures_AgentCheckLists_Items_IsComplete_EQ { get; set; }
+
+
 
 
     /// <summary> RingTimeInSeconds equals </summary>
     [JsonProperty("ringTimeInSeconds_eq")]
-    public Int32? RingTimeInSeconds_EQ { get; set; }
+    public System.Int32? RingTimeInSeconds_EQ { get; set; }
     /// <summary> RingTimeInSeconds less than or equal to </summary>
     [JsonProperty("ringTimeInSeconds_lte")]
-    public Int32? RingTimeInSeconds_LTE { get; set; }
+    public System.Int32? RingTimeInSeconds_LTE { get; set; }
     /// <summary> RingTimeInSeconds greater than or equal to </summary>
     [JsonProperty("ringTimeInSeconds_gte")]
-    public Int32? RingTimeInSeconds_GTE { get; set; }
+    public System.Int32? RingTimeInSeconds_GTE { get; set; }
 
     /// <summary> ExtensionType equals </summary>
     [JsonProperty("extensionType_eq")]
@@ -5238,6 +5426,7 @@ public class ExtensionDialFilterRequest
     /// <summary> IdsTags regex </summary>
     [JsonProperty("idsTags_reg")]
     public string? IdsTags_REG { get; set; }
+
 
     /// <summary> Id equals </summary>
     [JsonProperty("id_eq")]
@@ -5486,6 +5675,7 @@ public class AiCallAnalysisInputFilterRequest
     [JsonProperty("idsTags_reg")]
     public string? IdsTags_REG { get; set; }
 
+
     /// <summary> Id equals </summary>
     [JsonProperty("id_eq")]
     public string? Id_EQ { get; set; }
@@ -5532,13 +5722,13 @@ public class ExtensionQueueFilterRequest
 
     /// <summary> SendEmailNotificationIfItTakesToLongToBeAnswered.TimeInSeconds equals </summary>
     [JsonProperty("sendEmailNotificationIfItTakesToLongToBeAnswered_timeInSeconds_eq")]
-    public Int32? SendEmailNotificationIfItTakesToLongToBeAnswered_TimeInSeconds_EQ { get; set; }
+    public System.Int32? SendEmailNotificationIfItTakesToLongToBeAnswered_TimeInSeconds_EQ { get; set; }
     /// <summary> SendEmailNotificationIfItTakesToLongToBeAnswered.TimeInSeconds less than or equal to </summary>
     [JsonProperty("sendEmailNotificationIfItTakesToLongToBeAnswered_timeInSeconds_lte")]
-    public Int32? SendEmailNotificationIfItTakesToLongToBeAnswered_TimeInSeconds_LTE { get; set; }
+    public System.Int32? SendEmailNotificationIfItTakesToLongToBeAnswered_TimeInSeconds_LTE { get; set; }
     /// <summary> SendEmailNotificationIfItTakesToLongToBeAnswered.TimeInSeconds greater than or equal to </summary>
     [JsonProperty("sendEmailNotificationIfItTakesToLongToBeAnswered_timeInSeconds_gte")]
-    public Int32? SendEmailNotificationIfItTakesToLongToBeAnswered_TimeInSeconds_GTE { get; set; }
+    public System.Int32? SendEmailNotificationIfItTakesToLongToBeAnswered_TimeInSeconds_GTE { get; set; }
 
     /// <summary> SendEmailNotificationIfItTakesToLongToBeAnswered.IdsEmails equals </summary>
     [JsonProperty("sendEmailNotificationIfItTakesToLongToBeAnswered_idsEmails_eq")]
@@ -5557,13 +5747,13 @@ public class ExtensionQueueFilterRequest
 
     /// <summary> QueueTimeoutInMinutes equals </summary>
     [JsonProperty("queueTimeoutInMinutes_eq")]
-    public Int32? QueueTimeoutInMinutes_EQ { get; set; }
+    public System.Int32? QueueTimeoutInMinutes_EQ { get; set; }
     /// <summary> QueueTimeoutInMinutes less than or equal to </summary>
     [JsonProperty("queueTimeoutInMinutes_lte")]
-    public Int32? QueueTimeoutInMinutes_LTE { get; set; }
+    public System.Int32? QueueTimeoutInMinutes_LTE { get; set; }
     /// <summary> QueueTimeoutInMinutes greater than or equal to </summary>
     [JsonProperty("queueTimeoutInMinutes_gte")]
-    public Int32? QueueTimeoutInMinutes_GTE { get; set; }
+    public System.Int32? QueueTimeoutInMinutes_GTE { get; set; }
 
     /// <summary> AnnouncePosition equals </summary>
     [JsonProperty("announcePosition_eq")]
@@ -5575,23 +5765,23 @@ public class ExtensionQueueFilterRequest
 
     /// <summary> AnnounceFrequency equals </summary>
     [JsonProperty("announceFrequency_eq")]
-    public Int32? AnnounceFrequency_EQ { get; set; }
+    public System.Int32? AnnounceFrequency_EQ { get; set; }
     /// <summary> AnnounceFrequency less than or equal to </summary>
     [JsonProperty("announceFrequency_lte")]
-    public Int32? AnnounceFrequency_LTE { get; set; }
+    public System.Int32? AnnounceFrequency_LTE { get; set; }
     /// <summary> AnnounceFrequency greater than or equal to </summary>
     [JsonProperty("announceFrequency_gte")]
-    public Int32? AnnounceFrequency_GTE { get; set; }
+    public System.Int32? AnnounceFrequency_GTE { get; set; }
 
     /// <summary> RetryFrequency equals </summary>
     [JsonProperty("retryFrequency_eq")]
-    public Int32? RetryFrequency_EQ { get; set; }
+    public System.Int32? RetryFrequency_EQ { get; set; }
     /// <summary> RetryFrequency less than or equal to </summary>
     [JsonProperty("retryFrequency_lte")]
-    public Int32? RetryFrequency_LTE { get; set; }
+    public System.Int32? RetryFrequency_LTE { get; set; }
     /// <summary> RetryFrequency greater than or equal to </summary>
     [JsonProperty("retryFrequency_gte")]
-    public Int32? RetryFrequency_GTE { get; set; }
+    public System.Int32? RetryFrequency_GTE { get; set; }
 
     /// <summary> RingStrategy equals </summary>
     [JsonProperty("ringStrategy_eq")]
@@ -5646,45 +5836,72 @@ public class ExtensionQueueFilterRequest
 
     /// <summary> SendEmailNotificationIfNotAnswered.PreventSendingNotificationIfLastLessThanNSeconds equals </summary>
     [JsonProperty("sendEmailNotificationIfNotAnswered_preventSendingNotificationIfLastLessThanNSeconds_eq")]
-    public Int32? SendEmailNotificationIfNotAnswered_PreventSendingNotificationIfLastLessThanNSeconds_EQ { get; set; }
+    public System.Int32? SendEmailNotificationIfNotAnswered_PreventSendingNotificationIfLastLessThanNSeconds_EQ { get; set; }
     /// <summary> SendEmailNotificationIfNotAnswered.PreventSendingNotificationIfLastLessThanNSeconds less than or equal to </summary>
     [JsonProperty("sendEmailNotificationIfNotAnswered_preventSendingNotificationIfLastLessThanNSeconds_lte")]
-    public Int32? SendEmailNotificationIfNotAnswered_PreventSendingNotificationIfLastLessThanNSeconds_LTE { get; set; }
+    public System.Int32? SendEmailNotificationIfNotAnswered_PreventSendingNotificationIfLastLessThanNSeconds_LTE { get; set; }
     /// <summary> SendEmailNotificationIfNotAnswered.PreventSendingNotificationIfLastLessThanNSeconds greater than or equal to </summary>
     [JsonProperty("sendEmailNotificationIfNotAnswered_preventSendingNotificationIfLastLessThanNSeconds_gte")]
-    public Int32? SendEmailNotificationIfNotAnswered_PreventSendingNotificationIfLastLessThanNSeconds_GTE { get; set; }
+    public System.Int32? SendEmailNotificationIfNotAnswered_PreventSendingNotificationIfLastLessThanNSeconds_GTE { get; set; }
 
 
     /// <summary> Handicap.StopRingingIfCountReaches equals </summary>
     [JsonProperty("handicap_stopRingingIfCountReaches_eq")]
-    public Int32? Handicap_StopRingingIfCountReaches_EQ { get; set; }
+    public System.Int32? Handicap_StopRingingIfCountReaches_EQ { get; set; }
     /// <summary> Handicap.StopRingingIfCountReaches less than or equal to </summary>
     [JsonProperty("handicap_stopRingingIfCountReaches_lte")]
-    public Int32? Handicap_StopRingingIfCountReaches_LTE { get; set; }
+    public System.Int32? Handicap_StopRingingIfCountReaches_LTE { get; set; }
     /// <summary> Handicap.StopRingingIfCountReaches greater than or equal to </summary>
     [JsonProperty("handicap_stopRingingIfCountReaches_gte")]
-    public Int32? Handicap_StopRingingIfCountReaches_GTE { get; set; }
+    public System.Int32? Handicap_StopRingingIfCountReaches_GTE { get; set; }
 
     /// <summary> Handicap.ResetInMinutes equals </summary>
     [JsonProperty("handicap_resetInMinutes_eq")]
-    public Int32? Handicap_ResetInMinutes_EQ { get; set; }
+    public System.Int32? Handicap_ResetInMinutes_EQ { get; set; }
     /// <summary> Handicap.ResetInMinutes less than or equal to </summary>
     [JsonProperty("handicap_resetInMinutes_lte")]
-    public Int32? Handicap_ResetInMinutes_LTE { get; set; }
+    public System.Int32? Handicap_ResetInMinutes_LTE { get; set; }
     /// <summary> Handicap.ResetInMinutes greater than or equal to </summary>
     [JsonProperty("handicap_resetInMinutes_gte")]
-    public Int32? Handicap_ResetInMinutes_GTE { get; set; }
+    public System.Int32? Handicap_ResetInMinutes_GTE { get; set; }
+
+
+    /// <summary> AiFeatures.AgentCheckLists.Title equals </summary>
+    [JsonProperty("aiFeatures_agentCheckLists_title_eq")]
+    public string? AiFeatures_AgentCheckLists_Title_EQ { get; set; }
+    /// <summary> AiFeatures.AgentCheckLists.Title contains </summary>
+    [JsonProperty("aiFeatures_agentCheckLists_title_con")]
+    public string? AiFeatures_AgentCheckLists_Title_CON { get; set; }
+    /// <summary> AiFeatures.AgentCheckLists.Title regex </summary>
+    [JsonProperty("aiFeatures_agentCheckLists_title_reg")]
+    public string? AiFeatures_AgentCheckLists_Title_REG { get; set; }
+
+    /// <summary> AiFeatures.AgentCheckLists.Items.Item equals </summary>
+    [JsonProperty("aiFeatures_agentCheckLists_items_item_eq")]
+    public string? AiFeatures_AgentCheckLists_Items_Item_EQ { get; set; }
+    /// <summary> AiFeatures.AgentCheckLists.Items.Item contains </summary>
+    [JsonProperty("aiFeatures_agentCheckLists_items_item_con")]
+    public string? AiFeatures_AgentCheckLists_Items_Item_CON { get; set; }
+    /// <summary> AiFeatures.AgentCheckLists.Items.Item regex </summary>
+    [JsonProperty("aiFeatures_agentCheckLists_items_item_reg")]
+    public string? AiFeatures_AgentCheckLists_Items_Item_REG { get; set; }
+
+    /// <summary> AiFeatures.AgentCheckLists.Items.IsComplete equals </summary>
+    [JsonProperty("aiFeatures_agentCheckLists_items_isComplete_eq")]
+    public bool? AiFeatures_AgentCheckLists_Items_IsComplete_EQ { get; set; }
+
+
 
 
     /// <summary> RingTimeInSeconds equals </summary>
     [JsonProperty("ringTimeInSeconds_eq")]
-    public Int32? RingTimeInSeconds_EQ { get; set; }
+    public System.Int32? RingTimeInSeconds_EQ { get; set; }
     /// <summary> RingTimeInSeconds less than or equal to </summary>
     [JsonProperty("ringTimeInSeconds_lte")]
-    public Int32? RingTimeInSeconds_LTE { get; set; }
+    public System.Int32? RingTimeInSeconds_LTE { get; set; }
     /// <summary> RingTimeInSeconds greater than or equal to </summary>
     [JsonProperty("ringTimeInSeconds_gte")]
-    public Int32? RingTimeInSeconds_GTE { get; set; }
+    public System.Int32? RingTimeInSeconds_GTE { get; set; }
 
     /// <summary> IdMusicOnHoldGroup equals </summary>
     [JsonProperty("idMusicOnHoldGroup_eq")]
@@ -5739,6 +5956,7 @@ public class ExtensionQueueFilterRequest
     /// <summary> IdsTags regex </summary>
     [JsonProperty("idsTags_reg")]
     public string? IdsTags_REG { get; set; }
+
 
     /// <summary> Id equals </summary>
     [JsonProperty("id_eq")]
@@ -5888,6 +6106,7 @@ public class ExtensionVoicemailFilterRequest
     [JsonProperty("idsTags_reg")]
     public string? IdsTags_REG { get; set; }
 
+
     /// <summary> Id equals </summary>
     [JsonProperty("id_eq")]
     public string? Id_EQ { get; set; }
@@ -5954,13 +6173,13 @@ public class FaxIncomingFilterRequest
 
     /// <summary> Pdf.FileSizeInBytes equals </summary>
     [JsonProperty("pdf_fileSizeInBytes_eq")]
-    public Int32? Pdf_FileSizeInBytes_EQ { get; set; }
+    public System.Int32? Pdf_FileSizeInBytes_EQ { get; set; }
     /// <summary> Pdf.FileSizeInBytes less than or equal to </summary>
     [JsonProperty("pdf_fileSizeInBytes_lte")]
-    public Int32? Pdf_FileSizeInBytes_LTE { get; set; }
+    public System.Int32? Pdf_FileSizeInBytes_LTE { get; set; }
     /// <summary> Pdf.FileSizeInBytes greater than or equal to </summary>
     [JsonProperty("pdf_fileSizeInBytes_gte")]
-    public Int32? Pdf_FileSizeInBytes_GTE { get; set; }
+    public System.Int32? Pdf_FileSizeInBytes_GTE { get; set; }
 
     /// <summary> Pdf.Md5Hash equals </summary>
     [JsonProperty("pdf_md5Hash_eq")]
@@ -5995,13 +6214,13 @@ public class FaxIncomingFilterRequest
 
     /// <summary> NumPages equals </summary>
     [JsonProperty("numPages_eq")]
-    public Int32? NumPages_EQ { get; set; }
+    public System.Int32? NumPages_EQ { get; set; }
     /// <summary> NumPages less than or equal to </summary>
     [JsonProperty("numPages_lte")]
-    public Int32? NumPages_LTE { get; set; }
+    public System.Int32? NumPages_LTE { get; set; }
     /// <summary> NumPages greater than or equal to </summary>
     [JsonProperty("numPages_gte")]
-    public Int32? NumPages_GTE { get; set; }
+    public System.Int32? NumPages_GTE { get; set; }
 
     /// <summary> FaxStatus equals </summary>
     [JsonProperty("faxStatus_eq")]
@@ -6033,15 +6252,15 @@ public class FaxIncomingFilterRequest
     [JsonProperty("to_reg")]
     public string? To_REG { get; set; }
 
-    /// <summary> ErrorMessage equals </summary>
-    [JsonProperty("errorMessage_eq")]
-    public string? ErrorMessage_EQ { get; set; }
-    /// <summary> ErrorMessage contains </summary>
-    [JsonProperty("errorMessage_con")]
-    public string? ErrorMessage_CON { get; set; }
-    /// <summary> ErrorMessage regex </summary>
-    [JsonProperty("errorMessage_reg")]
-    public string? ErrorMessage_REG { get; set; }
+    /// <summary> Errors equals </summary>
+    [JsonProperty("errors_eq")]
+    public string? Errors_EQ { get; set; }
+    /// <summary> Errors contains </summary>
+    [JsonProperty("errors_con")]
+    public string? Errors_CON { get; set; }
+    /// <summary> Errors regex </summary>
+    [JsonProperty("errors_reg")]
+    public string? Errors_REG { get; set; }
 
     /// <summary> IdsTags equals </summary>
     [JsonProperty("idsTags_eq")]
@@ -6052,6 +6271,7 @@ public class FaxIncomingFilterRequest
     /// <summary> IdsTags regex </summary>
     [JsonProperty("idsTags_reg")]
     public string? IdsTags_REG { get; set; }
+
 
     /// <summary> Id equals </summary>
     [JsonProperty("id_eq")]
@@ -6119,13 +6339,13 @@ public class FaxOutgoingGroupFilterRequest
 
     /// <summary> FaxesOutgoing.Pdf.FileSizeInBytes equals </summary>
     [JsonProperty("faxesOutgoing_pdf_fileSizeInBytes_eq")]
-    public Int32? FaxesOutgoing_Pdf_FileSizeInBytes_EQ { get; set; }
+    public System.Int32? FaxesOutgoing_Pdf_FileSizeInBytes_EQ { get; set; }
     /// <summary> FaxesOutgoing.Pdf.FileSizeInBytes less than or equal to </summary>
     [JsonProperty("faxesOutgoing_pdf_fileSizeInBytes_lte")]
-    public Int32? FaxesOutgoing_Pdf_FileSizeInBytes_LTE { get; set; }
+    public System.Int32? FaxesOutgoing_Pdf_FileSizeInBytes_LTE { get; set; }
     /// <summary> FaxesOutgoing.Pdf.FileSizeInBytes greater than or equal to </summary>
     [JsonProperty("faxesOutgoing_pdf_fileSizeInBytes_gte")]
-    public Int32? FaxesOutgoing_Pdf_FileSizeInBytes_GTE { get; set; }
+    public System.Int32? FaxesOutgoing_Pdf_FileSizeInBytes_GTE { get; set; }
 
     /// <summary> FaxesOutgoing.Pdf.Md5Hash equals </summary>
     [JsonProperty("faxesOutgoing_pdf_md5Hash_eq")]
@@ -6170,33 +6390,33 @@ public class FaxOutgoingGroupFilterRequest
 
     /// <summary> FaxesOutgoing.NumberOfPages equals </summary>
     [JsonProperty("faxesOutgoing_numberOfPages_eq")]
-    public Int32? FaxesOutgoing_NumberOfPages_EQ { get; set; }
+    public System.Int32? FaxesOutgoing_NumberOfPages_EQ { get; set; }
     /// <summary> FaxesOutgoing.NumberOfPages less than or equal to </summary>
     [JsonProperty("faxesOutgoing_numberOfPages_lte")]
-    public Int32? FaxesOutgoing_NumberOfPages_LTE { get; set; }
+    public System.Int32? FaxesOutgoing_NumberOfPages_LTE { get; set; }
     /// <summary> FaxesOutgoing.NumberOfPages greater than or equal to </summary>
     [JsonProperty("faxesOutgoing_numberOfPages_gte")]
-    public Int32? FaxesOutgoing_NumberOfPages_GTE { get; set; }
+    public System.Int32? FaxesOutgoing_NumberOfPages_GTE { get; set; }
 
-    /// <summary> FaxesOutgoing.ErrorMessage equals </summary>
-    [JsonProperty("faxesOutgoing_errorMessage_eq")]
-    public string? FaxesOutgoing_ErrorMessage_EQ { get; set; }
-    /// <summary> FaxesOutgoing.ErrorMessage contains </summary>
-    [JsonProperty("faxesOutgoing_errorMessage_con")]
-    public string? FaxesOutgoing_ErrorMessage_CON { get; set; }
-    /// <summary> FaxesOutgoing.ErrorMessage regex </summary>
-    [JsonProperty("faxesOutgoing_errorMessage_reg")]
-    public string? FaxesOutgoing_ErrorMessage_REG { get; set; }
+    /// <summary> FaxesOutgoing.Errors equals </summary>
+    [JsonProperty("faxesOutgoing_errors_eq")]
+    public string? FaxesOutgoing_Errors_EQ { get; set; }
+    /// <summary> FaxesOutgoing.Errors contains </summary>
+    [JsonProperty("faxesOutgoing_errors_con")]
+    public string? FaxesOutgoing_Errors_CON { get; set; }
+    /// <summary> FaxesOutgoing.Errors regex </summary>
+    [JsonProperty("faxesOutgoing_errors_reg")]
+    public string? FaxesOutgoing_Errors_REG { get; set; }
 
     /// <summary> FaxesOutgoing.NumberOfPagesSent equals </summary>
     [JsonProperty("faxesOutgoing_numberOfPagesSent_eq")]
-    public Int32? FaxesOutgoing_NumberOfPagesSent_EQ { get; set; }
+    public System.Int32? FaxesOutgoing_NumberOfPagesSent_EQ { get; set; }
     /// <summary> FaxesOutgoing.NumberOfPagesSent less than or equal to </summary>
     [JsonProperty("faxesOutgoing_numberOfPagesSent_lte")]
-    public Int32? FaxesOutgoing_NumberOfPagesSent_LTE { get; set; }
+    public System.Int32? FaxesOutgoing_NumberOfPagesSent_LTE { get; set; }
     /// <summary> FaxesOutgoing.NumberOfPagesSent greater than or equal to </summary>
     [JsonProperty("faxesOutgoing_numberOfPagesSent_gte")]
-    public Int32? FaxesOutgoing_NumberOfPagesSent_GTE { get; set; }
+    public System.Int32? FaxesOutgoing_NumberOfPagesSent_GTE { get; set; }
 
     /// <summary> FaxesOutgoing.IsPortrait equals </summary>
     [JsonProperty("faxesOutgoing_isPortrait_eq")]
@@ -6214,13 +6434,13 @@ public class FaxOutgoingGroupFilterRequest
 
     /// <summary> FaxesOutgoing.NumberOfAttempts equals </summary>
     [JsonProperty("faxesOutgoing_numberOfAttempts_eq")]
-    public Int32? FaxesOutgoing_NumberOfAttempts_EQ { get; set; }
+    public System.Int32? FaxesOutgoing_NumberOfAttempts_EQ { get; set; }
     /// <summary> FaxesOutgoing.NumberOfAttempts less than or equal to </summary>
     [JsonProperty("faxesOutgoing_numberOfAttempts_lte")]
-    public Int32? FaxesOutgoing_NumberOfAttempts_LTE { get; set; }
+    public System.Int32? FaxesOutgoing_NumberOfAttempts_LTE { get; set; }
     /// <summary> FaxesOutgoing.NumberOfAttempts greater than or equal to </summary>
     [JsonProperty("faxesOutgoing_numberOfAttempts_gte")]
-    public Int32? FaxesOutgoing_NumberOfAttempts_GTE { get; set; }
+    public System.Int32? FaxesOutgoing_NumberOfAttempts_GTE { get; set; }
 
     /// <summary> FaxesOutgoing.Id equals </summary>
     [JsonProperty("faxesOutgoing_id_eq")]
@@ -6302,6 +6522,7 @@ public class FaxOutgoingGroupFilterRequest
     /// <summary> IdsTags regex </summary>
     [JsonProperty("idsTags_reg")]
     public string? IdsTags_REG { get; set; }
+
 
     /// <summary> Id equals </summary>
     [JsonProperty("id_eq")]
@@ -6411,6 +6632,7 @@ public class UserFilterRequest
     [JsonProperty("idsTags_reg")]
     public string? IdsTags_REG { get; set; }
 
+
     /// <summary> Id equals </summary>
     [JsonProperty("id_eq")]
     public string? Id_EQ { get; set; }
@@ -6487,13 +6709,13 @@ public class SpeedDialGroupFilterRequest
 
     /// <summary> SpeedDials.SpeedDialIndex equals </summary>
     [JsonProperty("speedDials_speedDialIndex_eq")]
-    public Int32? SpeedDials_SpeedDialIndex_EQ { get; set; }
+    public System.Int32? SpeedDials_SpeedDialIndex_EQ { get; set; }
     /// <summary> SpeedDials.SpeedDialIndex less than or equal to </summary>
     [JsonProperty("speedDials_speedDialIndex_lte")]
-    public Int32? SpeedDials_SpeedDialIndex_LTE { get; set; }
+    public System.Int32? SpeedDials_SpeedDialIndex_LTE { get; set; }
     /// <summary> SpeedDials.SpeedDialIndex greater than or equal to </summary>
     [JsonProperty("speedDials_speedDialIndex_gte")]
-    public Int32? SpeedDials_SpeedDialIndex_GTE { get; set; }
+    public System.Int32? SpeedDials_SpeedDialIndex_GTE { get; set; }
 
 
     /// <summary> FriendlyName equals </summary>
@@ -6525,6 +6747,7 @@ public class SpeedDialGroupFilterRequest
     /// <summary> IdsTags regex </summary>
     [JsonProperty("idsTags_reg")]
     public string? IdsTags_REG { get; set; }
+
 
     /// <summary> Id equals </summary>
     [JsonProperty("id_eq")]
@@ -6597,43 +6820,43 @@ public class LogApiRequestFilterRequest
 
     /// <summary> ConcurrentRequests equals </summary>
     [JsonProperty("concurrentRequests_eq")]
-    public Int32? ConcurrentRequests_EQ { get; set; }
+    public System.Int32? ConcurrentRequests_EQ { get; set; }
     /// <summary> ConcurrentRequests less than or equal to </summary>
     [JsonProperty("concurrentRequests_lte")]
-    public Int32? ConcurrentRequests_LTE { get; set; }
+    public System.Int32? ConcurrentRequests_LTE { get; set; }
     /// <summary> ConcurrentRequests greater than or equal to </summary>
     [JsonProperty("concurrentRequests_gte")]
-    public Int32? ConcurrentRequests_GTE { get; set; }
+    public System.Int32? ConcurrentRequests_GTE { get; set; }
 
     /// <summary> Charge equals </summary>
     [JsonProperty("charge_eq")]
-    public UInt32? Charge_EQ { get; set; }
+    public System.UInt32? Charge_EQ { get; set; }
     /// <summary> Charge less than or equal to </summary>
     [JsonProperty("charge_lte")]
-    public UInt32? Charge_LTE { get; set; }
+    public System.UInt32? Charge_LTE { get; set; }
     /// <summary> Charge greater than or equal to </summary>
     [JsonProperty("charge_gte")]
-    public UInt32? Charge_GTE { get; set; }
+    public System.UInt32? Charge_GTE { get; set; }
 
     /// <summary> CurrentPenalty equals </summary>
     [JsonProperty("currentPenalty_eq")]
-    public Int64? CurrentPenalty_EQ { get; set; }
+    public System.Int64? CurrentPenalty_EQ { get; set; }
     /// <summary> CurrentPenalty less than or equal to </summary>
     [JsonProperty("currentPenalty_lte")]
-    public Int64? CurrentPenalty_LTE { get; set; }
+    public System.Int64? CurrentPenalty_LTE { get; set; }
     /// <summary> CurrentPenalty greater than or equal to </summary>
     [JsonProperty("currentPenalty_gte")]
-    public Int64? CurrentPenalty_GTE { get; set; }
+    public System.Int64? CurrentPenalty_GTE { get; set; }
 
     /// <summary> TotalPenalty equals </summary>
     [JsonProperty("totalPenalty_eq")]
-    public Int64? TotalPenalty_EQ { get; set; }
+    public System.Int64? TotalPenalty_EQ { get; set; }
     /// <summary> TotalPenalty less than or equal to </summary>
     [JsonProperty("totalPenalty_lte")]
-    public Int64? TotalPenalty_LTE { get; set; }
+    public System.Int64? TotalPenalty_LTE { get; set; }
     /// <summary> TotalPenalty greater than or equal to </summary>
     [JsonProperty("totalPenalty_gte")]
-    public Int64? TotalPenalty_GTE { get; set; }
+    public System.Int64? TotalPenalty_GTE { get; set; }
 
     /// <summary> HttpMethod equals </summary>
     [JsonProperty("httpMethod_eq")]
@@ -6711,13 +6934,13 @@ public class LogApiRequestFilterRequest
 
     /// <summary> ResponseTime equals </summary>
     [JsonProperty("responseTime_eq")]
-    public Int32? ResponseTime_EQ { get; set; }
+    public System.Int32? ResponseTime_EQ { get; set; }
     /// <summary> ResponseTime less than or equal to </summary>
     [JsonProperty("responseTime_lte")]
-    public Int32? ResponseTime_LTE { get; set; }
+    public System.Int32? ResponseTime_LTE { get; set; }
     /// <summary> ResponseTime greater than or equal to </summary>
     [JsonProperty("responseTime_gte")]
-    public Int32? ResponseTime_GTE { get; set; }
+    public System.Int32? ResponseTime_GTE { get; set; }
 
     /// <summary> Id equals </summary>
     [JsonProperty("id_eq")]
@@ -6792,6 +7015,7 @@ public class MusicOnHoldGroupFilterRequest
     /// <summary> IdsTags regex </summary>
     [JsonProperty("idsTags_reg")]
     public string? IdsTags_REG { get; set; }
+
 
     /// <summary> Id equals </summary>
     [JsonProperty("id_eq")]
@@ -6869,13 +7093,13 @@ public class PhoneFilterRequest
 
     /// <summary> PhoneConnectionStatus.PortWAN equals </summary>
     [JsonProperty("phoneConnectionStatus_portWAN_eq")]
-    public Int32? PhoneConnectionStatus_PortWAN_EQ { get; set; }
+    public System.Int32? PhoneConnectionStatus_PortWAN_EQ { get; set; }
     /// <summary> PhoneConnectionStatus.PortWAN less than or equal to </summary>
     [JsonProperty("phoneConnectionStatus_portWAN_lte")]
-    public Int32? PhoneConnectionStatus_PortWAN_LTE { get; set; }
+    public System.Int32? PhoneConnectionStatus_PortWAN_LTE { get; set; }
     /// <summary> PhoneConnectionStatus.PortWAN greater than or equal to </summary>
     [JsonProperty("phoneConnectionStatus_portWAN_gte")]
-    public Int32? PhoneConnectionStatus_PortWAN_GTE { get; set; }
+    public System.Int32? PhoneConnectionStatus_PortWAN_GTE { get; set; }
 
     /// <summary> PhoneConnectionStatus.IpLAN equals </summary>
     [JsonProperty("phoneConnectionStatus_ipLAN_eq")]
@@ -6889,13 +7113,13 @@ public class PhoneFilterRequest
 
     /// <summary> PhoneConnectionStatus.PortLAN equals </summary>
     [JsonProperty("phoneConnectionStatus_portLAN_eq")]
-    public Int32? PhoneConnectionStatus_PortLAN_EQ { get; set; }
+    public System.Int32? PhoneConnectionStatus_PortLAN_EQ { get; set; }
     /// <summary> PhoneConnectionStatus.PortLAN less than or equal to </summary>
     [JsonProperty("phoneConnectionStatus_portLAN_lte")]
-    public Int32? PhoneConnectionStatus_PortLAN_LTE { get; set; }
+    public System.Int32? PhoneConnectionStatus_PortLAN_LTE { get; set; }
     /// <summary> PhoneConnectionStatus.PortLAN greater than or equal to </summary>
     [JsonProperty("phoneConnectionStatus_portLAN_gte")]
-    public Int32? PhoneConnectionStatus_PortLAN_GTE { get; set; }
+    public System.Int32? PhoneConnectionStatus_PortLAN_GTE { get; set; }
 
     /// <summary> PhoneConnectionStatus.UserAgent equals </summary>
     [JsonProperty("phoneConnectionStatus_userAgent_eq")]
@@ -6954,13 +7178,13 @@ public class PhoneFilterRequest
 
     /// <summary> CallerIdIndex equals </summary>
     [JsonProperty("callerIdIndex_eq")]
-    public Int32? CallerIdIndex_EQ { get; set; }
+    public System.Int32? CallerIdIndex_EQ { get; set; }
     /// <summary> CallerIdIndex less than or equal to </summary>
     [JsonProperty("callerIdIndex_lte")]
-    public Int32? CallerIdIndex_LTE { get; set; }
+    public System.Int32? CallerIdIndex_LTE { get; set; }
     /// <summary> CallerIdIndex greater than or equal to </summary>
     [JsonProperty("callerIdIndex_gte")]
-    public Int32? CallerIdIndex_GTE { get; set; }
+    public System.Int32? CallerIdIndex_GTE { get; set; }
 
     /// <summary> ProcessingTypeExternal equals </summary>
     [JsonProperty("processingTypeExternal_eq")]
@@ -7086,16 +7310,6 @@ public class PhoneFilterRequest
     [JsonProperty("groupName_reg")]
     public string? GroupName_REG { get; set; }
 
-    /// <summary> AllowConnectionsFromOnlyThisIp equals </summary>
-    [JsonProperty("allowConnectionsFromOnlyThisIp_eq")]
-    public string? AllowConnectionsFromOnlyThisIp_EQ { get; set; }
-    /// <summary> AllowConnectionsFromOnlyThisIp contains </summary>
-    [JsonProperty("allowConnectionsFromOnlyThisIp_con")]
-    public string? AllowConnectionsFromOnlyThisIp_CON { get; set; }
-    /// <summary> AllowConnectionsFromOnlyThisIp regex </summary>
-    [JsonProperty("allowConnectionsFromOnlyThisIp_reg")]
-    public string? AllowConnectionsFromOnlyThisIp_REG { get; set; }
-
     /// <summary> OnDisconnectedNotifyIdsEmails equals </summary>
     [JsonProperty("onDisconnectedNotifyIdsEmails_eq")]
     public string? OnDisconnectedNotifyIdsEmails_EQ { get; set; }
@@ -7116,6 +7330,45 @@ public class PhoneFilterRequest
     [JsonProperty("onConnectedNotifyIdsEmails_reg")]
     public string? OnConnectedNotifyIdsEmails_REG { get; set; }
 
+    /// <summary> AdvanceSettings.AllowConnectionsFromOnlyThisIp equals </summary>
+    [JsonProperty("advanceSettings_allowConnectionsFromOnlyThisIp_eq")]
+    public string? AdvanceSettings_AllowConnectionsFromOnlyThisIp_EQ { get; set; }
+    /// <summary> AdvanceSettings.AllowConnectionsFromOnlyThisIp contains </summary>
+    [JsonProperty("advanceSettings_allowConnectionsFromOnlyThisIp_con")]
+    public string? AdvanceSettings_AllowConnectionsFromOnlyThisIp_CON { get; set; }
+    /// <summary> AdvanceSettings.AllowConnectionsFromOnlyThisIp regex </summary>
+    [JsonProperty("advanceSettings_allowConnectionsFromOnlyThisIp_reg")]
+    public string? AdvanceSettings_AllowConnectionsFromOnlyThisIp_REG { get; set; }
+
+    /// <summary> AdvanceSettings.DisableMissedCallPopup equals </summary>
+    [JsonProperty("advanceSettings_disableMissedCallPopup_eq")]
+    public bool? AdvanceSettings_DisableMissedCallPopup_EQ { get; set; }
+
+    /// <summary> AdvanceSettings.DisableDoNotDisturb equals </summary>
+    [JsonProperty("advanceSettings_disableDoNotDisturb_eq")]
+    public bool? AdvanceSettings_DisableDoNotDisturb_EQ { get; set; }
+
+    /// <summary> AdvanceSettings.DisableRingVolume equals </summary>
+    [JsonProperty("advanceSettings_disableRingVolume_eq")]
+    public System.Int32? AdvanceSettings_DisableRingVolume_EQ { get; set; }
+    /// <summary> AdvanceSettings.DisableRingVolume less than or equal to </summary>
+    [JsonProperty("advanceSettings_disableRingVolume_lte")]
+    public System.Int32? AdvanceSettings_DisableRingVolume_LTE { get; set; }
+    /// <summary> AdvanceSettings.DisableRingVolume greater than or equal to </summary>
+    [JsonProperty("advanceSettings_disableRingVolume_gte")]
+    public System.Int32? AdvanceSettings_DisableRingVolume_GTE { get; set; }
+
+    /// <summary> AdvanceSettings.DisablePhone equals </summary>
+    [JsonProperty("advanceSettings_disablePhone_eq")]
+    public System.Int32? AdvanceSettings_DisablePhone_EQ { get; set; }
+    /// <summary> AdvanceSettings.DisablePhone less than or equal to </summary>
+    [JsonProperty("advanceSettings_disablePhone_lte")]
+    public System.Int32? AdvanceSettings_DisablePhone_LTE { get; set; }
+    /// <summary> AdvanceSettings.DisablePhone greater than or equal to </summary>
+    [JsonProperty("advanceSettings_disablePhone_gte")]
+    public System.Int32? AdvanceSettings_DisablePhone_GTE { get; set; }
+
+
     /// <summary> IdsTags equals </summary>
     [JsonProperty("idsTags_eq")]
     public string? IdsTags_EQ { get; set; }
@@ -7125,6 +7378,7 @@ public class PhoneFilterRequest
     /// <summary> IdsTags regex </summary>
     [JsonProperty("idsTags_reg")]
     public string? IdsTags_REG { get; set; }
+
 
     /// <summary> Id equals </summary>
     [JsonProperty("id_eq")]
@@ -7199,6 +7453,7 @@ public class PhoneConfigurationFilterRequest
     /// <summary> IdsTags regex </summary>
     [JsonProperty("idsTags_reg")]
     public string? IdsTags_REG { get; set; }
+
 
     /// <summary> Id equals </summary>
     [JsonProperty("id_eq")]
@@ -7334,6 +7589,7 @@ public class PowerDialerGroupFilterRequest
     [JsonProperty("idsTags_reg")]
     public string? IdsTags_REG { get; set; }
 
+
     /// <summary> Id equals </summary>
     [JsonProperty("id_eq")]
     public string? Id_EQ { get; set; }
@@ -7424,13 +7680,13 @@ public class SMSFilterRequest
 
     /// <summary> NumSegments equals </summary>
     [JsonProperty("numSegments_eq")]
-    public Int32? NumSegments_EQ { get; set; }
+    public System.Int32? NumSegments_EQ { get; set; }
     /// <summary> NumSegments less than or equal to </summary>
     [JsonProperty("numSegments_lte")]
-    public Int32? NumSegments_LTE { get; set; }
+    public System.Int32? NumSegments_LTE { get; set; }
     /// <summary> NumSegments greater than or equal to </summary>
     [JsonProperty("numSegments_gte")]
-    public Int32? NumSegments_GTE { get; set; }
+    public System.Int32? NumSegments_GTE { get; set; }
 
     /// <summary> From equals </summary>
     [JsonProperty("from_eq")]
@@ -7461,6 +7717,7 @@ public class SMSFilterRequest
     /// <summary> IdsTags regex </summary>
     [JsonProperty("idsTags_reg")]
     public string? IdsTags_REG { get; set; }
+
 
     /// <summary> Id equals </summary>
     [JsonProperty("id_eq")]
@@ -7622,13 +7879,13 @@ public class VoicemailFilterRequest
 
     /// <summary> VoicemailWav.FileSizeInBytes equals </summary>
     [JsonProperty("voicemailWav_fileSizeInBytes_eq")]
-    public Int32? VoicemailWav_FileSizeInBytes_EQ { get; set; }
+    public System.Int32? VoicemailWav_FileSizeInBytes_EQ { get; set; }
     /// <summary> VoicemailWav.FileSizeInBytes less than or equal to </summary>
     [JsonProperty("voicemailWav_fileSizeInBytes_lte")]
-    public Int32? VoicemailWav_FileSizeInBytes_LTE { get; set; }
+    public System.Int32? VoicemailWav_FileSizeInBytes_LTE { get; set; }
     /// <summary> VoicemailWav.FileSizeInBytes greater than or equal to </summary>
     [JsonProperty("voicemailWav_fileSizeInBytes_gte")]
-    public Int32? VoicemailWav_FileSizeInBytes_GTE { get; set; }
+    public System.Int32? VoicemailWav_FileSizeInBytes_GTE { get; set; }
 
     /// <summary> VoicemailWav.Md5Hash equals </summary>
     [JsonProperty("voicemailWav_md5Hash_eq")]
@@ -7673,13 +7930,13 @@ public class VoicemailFilterRequest
 
     /// <summary> VoicemailMp3.FileSizeInBytes equals </summary>
     [JsonProperty("voicemailMp3_fileSizeInBytes_eq")]
-    public Int32? VoicemailMp3_FileSizeInBytes_EQ { get; set; }
+    public System.Int32? VoicemailMp3_FileSizeInBytes_EQ { get; set; }
     /// <summary> VoicemailMp3.FileSizeInBytes less than or equal to </summary>
     [JsonProperty("voicemailMp3_fileSizeInBytes_lte")]
-    public Int32? VoicemailMp3_FileSizeInBytes_LTE { get; set; }
+    public System.Int32? VoicemailMp3_FileSizeInBytes_LTE { get; set; }
     /// <summary> VoicemailMp3.FileSizeInBytes greater than or equal to </summary>
     [JsonProperty("voicemailMp3_fileSizeInBytes_gte")]
-    public Int32? VoicemailMp3_FileSizeInBytes_GTE { get; set; }
+    public System.Int32? VoicemailMp3_FileSizeInBytes_GTE { get; set; }
 
     /// <summary> VoicemailMp3.Md5Hash equals </summary>
     [JsonProperty("voicemailMp3_md5Hash_eq")]
@@ -7712,15 +7969,35 @@ public class VoicemailFilterRequest
     public string? VoicemailMp3_Id_REG { get; set; }
 
 
-    /// <summary> ErrorMessage equals </summary>
-    [JsonProperty("errorMessage_eq")]
-    public string? ErrorMessage_EQ { get; set; }
-    /// <summary> ErrorMessage contains </summary>
-    [JsonProperty("errorMessage_con")]
-    public string? ErrorMessage_CON { get; set; }
-    /// <summary> ErrorMessage regex </summary>
-    [JsonProperty("errorMessage_reg")]
-    public string? ErrorMessage_REG { get; set; }
+    /// <summary> ErrorMessages equals </summary>
+    [JsonProperty("errorMessages_eq")]
+    public string? ErrorMessages_EQ { get; set; }
+    /// <summary> ErrorMessages contains </summary>
+    [JsonProperty("errorMessages_con")]
+    public string? ErrorMessages_CON { get; set; }
+    /// <summary> ErrorMessages regex </summary>
+    [JsonProperty("errorMessages_reg")]
+    public string? ErrorMessages_REG { get; set; }
+
+    /// <summary> TranscriptionLanguage equals </summary>
+    [JsonProperty("transcriptionLanguage_eq")]
+    public string? TranscriptionLanguage_EQ { get; set; }
+    /// <summary> TranscriptionLanguage contains </summary>
+    [JsonProperty("transcriptionLanguage_con")]
+    public string? TranscriptionLanguage_CON { get; set; }
+    /// <summary> TranscriptionLanguage regex </summary>
+    [JsonProperty("transcriptionLanguage_reg")]
+    public string? TranscriptionLanguage_REG { get; set; }
+
+    /// <summary> TranscriptionText equals </summary>
+    [JsonProperty("transcriptionText_eq")]
+    public string? TranscriptionText_EQ { get; set; }
+    /// <summary> TranscriptionText contains </summary>
+    [JsonProperty("transcriptionText_con")]
+    public string? TranscriptionText_CON { get; set; }
+    /// <summary> TranscriptionText regex </summary>
+    [JsonProperty("transcriptionText_reg")]
+    public string? TranscriptionText_REG { get; set; }
 
     /// <summary> IdsTags equals </summary>
     [JsonProperty("idsTags_eq")]
@@ -7731,6 +8008,7 @@ public class VoicemailFilterRequest
     /// <summary> IdsTags regex </summary>
     [JsonProperty("idsTags_reg")]
     public string? IdsTags_REG { get; set; }
+
 
     /// <summary> Id equals </summary>
     [JsonProperty("id_eq")]
@@ -7818,13 +8096,13 @@ public class VoicemailForwardedFilterRequest
 
     /// <summary> PhoneThatForwardedVoicemail.PhoneConnectionStatus.PortWAN equals </summary>
     [JsonProperty("phoneThatForwardedVoicemail_phoneConnectionStatus_portWAN_eq")]
-    public Int32? PhoneThatForwardedVoicemail_PhoneConnectionStatus_PortWAN_EQ { get; set; }
+    public System.Int32? PhoneThatForwardedVoicemail_PhoneConnectionStatus_PortWAN_EQ { get; set; }
     /// <summary> PhoneThatForwardedVoicemail.PhoneConnectionStatus.PortWAN less than or equal to </summary>
     [JsonProperty("phoneThatForwardedVoicemail_phoneConnectionStatus_portWAN_lte")]
-    public Int32? PhoneThatForwardedVoicemail_PhoneConnectionStatus_PortWAN_LTE { get; set; }
+    public System.Int32? PhoneThatForwardedVoicemail_PhoneConnectionStatus_PortWAN_LTE { get; set; }
     /// <summary> PhoneThatForwardedVoicemail.PhoneConnectionStatus.PortWAN greater than or equal to </summary>
     [JsonProperty("phoneThatForwardedVoicemail_phoneConnectionStatus_portWAN_gte")]
-    public Int32? PhoneThatForwardedVoicemail_PhoneConnectionStatus_PortWAN_GTE { get; set; }
+    public System.Int32? PhoneThatForwardedVoicemail_PhoneConnectionStatus_PortWAN_GTE { get; set; }
 
     /// <summary> PhoneThatForwardedVoicemail.PhoneConnectionStatus.IpLAN equals </summary>
     [JsonProperty("phoneThatForwardedVoicemail_phoneConnectionStatus_ipLAN_eq")]
@@ -7838,13 +8116,13 @@ public class VoicemailForwardedFilterRequest
 
     /// <summary> PhoneThatForwardedVoicemail.PhoneConnectionStatus.PortLAN equals </summary>
     [JsonProperty("phoneThatForwardedVoicemail_phoneConnectionStatus_portLAN_eq")]
-    public Int32? PhoneThatForwardedVoicemail_PhoneConnectionStatus_PortLAN_EQ { get; set; }
+    public System.Int32? PhoneThatForwardedVoicemail_PhoneConnectionStatus_PortLAN_EQ { get; set; }
     /// <summary> PhoneThatForwardedVoicemail.PhoneConnectionStatus.PortLAN less than or equal to </summary>
     [JsonProperty("phoneThatForwardedVoicemail_phoneConnectionStatus_portLAN_lte")]
-    public Int32? PhoneThatForwardedVoicemail_PhoneConnectionStatus_PortLAN_LTE { get; set; }
+    public System.Int32? PhoneThatForwardedVoicemail_PhoneConnectionStatus_PortLAN_LTE { get; set; }
     /// <summary> PhoneThatForwardedVoicemail.PhoneConnectionStatus.PortLAN greater than or equal to </summary>
     [JsonProperty("phoneThatForwardedVoicemail_phoneConnectionStatus_portLAN_gte")]
-    public Int32? PhoneThatForwardedVoicemail_PhoneConnectionStatus_PortLAN_GTE { get; set; }
+    public System.Int32? PhoneThatForwardedVoicemail_PhoneConnectionStatus_PortLAN_GTE { get; set; }
 
     /// <summary> PhoneThatForwardedVoicemail.PhoneConnectionStatus.UserAgent equals </summary>
     [JsonProperty("phoneThatForwardedVoicemail_phoneConnectionStatus_userAgent_eq")]
@@ -7903,13 +8181,13 @@ public class VoicemailForwardedFilterRequest
 
     /// <summary> PhoneThatForwardedVoicemail.CallerIdIndex equals </summary>
     [JsonProperty("phoneThatForwardedVoicemail_callerIdIndex_eq")]
-    public Int32? PhoneThatForwardedVoicemail_CallerIdIndex_EQ { get; set; }
+    public System.Int32? PhoneThatForwardedVoicemail_CallerIdIndex_EQ { get; set; }
     /// <summary> PhoneThatForwardedVoicemail.CallerIdIndex less than or equal to </summary>
     [JsonProperty("phoneThatForwardedVoicemail_callerIdIndex_lte")]
-    public Int32? PhoneThatForwardedVoicemail_CallerIdIndex_LTE { get; set; }
+    public System.Int32? PhoneThatForwardedVoicemail_CallerIdIndex_LTE { get; set; }
     /// <summary> PhoneThatForwardedVoicemail.CallerIdIndex greater than or equal to </summary>
     [JsonProperty("phoneThatForwardedVoicemail_callerIdIndex_gte")]
-    public Int32? PhoneThatForwardedVoicemail_CallerIdIndex_GTE { get; set; }
+    public System.Int32? PhoneThatForwardedVoicemail_CallerIdIndex_GTE { get; set; }
 
     /// <summary> PhoneThatForwardedVoicemail.ProcessingTypeExternal equals </summary>
     [JsonProperty("phoneThatForwardedVoicemail_processingTypeExternal_eq")]
@@ -8035,16 +8313,6 @@ public class VoicemailForwardedFilterRequest
     [JsonProperty("phoneThatForwardedVoicemail_groupName_reg")]
     public string? PhoneThatForwardedVoicemail_GroupName_REG { get; set; }
 
-    /// <summary> PhoneThatForwardedVoicemail.AllowConnectionsFromOnlyThisIp equals </summary>
-    [JsonProperty("phoneThatForwardedVoicemail_allowConnectionsFromOnlyThisIp_eq")]
-    public string? PhoneThatForwardedVoicemail_AllowConnectionsFromOnlyThisIp_EQ { get; set; }
-    /// <summary> PhoneThatForwardedVoicemail.AllowConnectionsFromOnlyThisIp contains </summary>
-    [JsonProperty("phoneThatForwardedVoicemail_allowConnectionsFromOnlyThisIp_con")]
-    public string? PhoneThatForwardedVoicemail_AllowConnectionsFromOnlyThisIp_CON { get; set; }
-    /// <summary> PhoneThatForwardedVoicemail.AllowConnectionsFromOnlyThisIp regex </summary>
-    [JsonProperty("phoneThatForwardedVoicemail_allowConnectionsFromOnlyThisIp_reg")]
-    public string? PhoneThatForwardedVoicemail_AllowConnectionsFromOnlyThisIp_REG { get; set; }
-
     /// <summary> PhoneThatForwardedVoicemail.OnDisconnectedNotifyIdsEmails equals </summary>
     [JsonProperty("phoneThatForwardedVoicemail_onDisconnectedNotifyIdsEmails_eq")]
     public string? PhoneThatForwardedVoicemail_OnDisconnectedNotifyIdsEmails_EQ { get; set; }
@@ -8065,6 +8333,45 @@ public class VoicemailForwardedFilterRequest
     [JsonProperty("phoneThatForwardedVoicemail_onConnectedNotifyIdsEmails_reg")]
     public string? PhoneThatForwardedVoicemail_OnConnectedNotifyIdsEmails_REG { get; set; }
 
+    /// <summary> PhoneThatForwardedVoicemail.AdvanceSettings.AllowConnectionsFromOnlyThisIp equals </summary>
+    [JsonProperty("phoneThatForwardedVoicemail_advanceSettings_allowConnectionsFromOnlyThisIp_eq")]
+    public string? PhoneThatForwardedVoicemail_AdvanceSettings_AllowConnectionsFromOnlyThisIp_EQ { get; set; }
+    /// <summary> PhoneThatForwardedVoicemail.AdvanceSettings.AllowConnectionsFromOnlyThisIp contains </summary>
+    [JsonProperty("phoneThatForwardedVoicemail_advanceSettings_allowConnectionsFromOnlyThisIp_con")]
+    public string? PhoneThatForwardedVoicemail_AdvanceSettings_AllowConnectionsFromOnlyThisIp_CON { get; set; }
+    /// <summary> PhoneThatForwardedVoicemail.AdvanceSettings.AllowConnectionsFromOnlyThisIp regex </summary>
+    [JsonProperty("phoneThatForwardedVoicemail_advanceSettings_allowConnectionsFromOnlyThisIp_reg")]
+    public string? PhoneThatForwardedVoicemail_AdvanceSettings_AllowConnectionsFromOnlyThisIp_REG { get; set; }
+
+    /// <summary> PhoneThatForwardedVoicemail.AdvanceSettings.DisableMissedCallPopup equals </summary>
+    [JsonProperty("phoneThatForwardedVoicemail_advanceSettings_disableMissedCallPopup_eq")]
+    public bool? PhoneThatForwardedVoicemail_AdvanceSettings_DisableMissedCallPopup_EQ { get; set; }
+
+    /// <summary> PhoneThatForwardedVoicemail.AdvanceSettings.DisableDoNotDisturb equals </summary>
+    [JsonProperty("phoneThatForwardedVoicemail_advanceSettings_disableDoNotDisturb_eq")]
+    public bool? PhoneThatForwardedVoicemail_AdvanceSettings_DisableDoNotDisturb_EQ { get; set; }
+
+    /// <summary> PhoneThatForwardedVoicemail.AdvanceSettings.DisableRingVolume equals </summary>
+    [JsonProperty("phoneThatForwardedVoicemail_advanceSettings_disableRingVolume_eq")]
+    public System.Int32? PhoneThatForwardedVoicemail_AdvanceSettings_DisableRingVolume_EQ { get; set; }
+    /// <summary> PhoneThatForwardedVoicemail.AdvanceSettings.DisableRingVolume less than or equal to </summary>
+    [JsonProperty("phoneThatForwardedVoicemail_advanceSettings_disableRingVolume_lte")]
+    public System.Int32? PhoneThatForwardedVoicemail_AdvanceSettings_DisableRingVolume_LTE { get; set; }
+    /// <summary> PhoneThatForwardedVoicemail.AdvanceSettings.DisableRingVolume greater than or equal to </summary>
+    [JsonProperty("phoneThatForwardedVoicemail_advanceSettings_disableRingVolume_gte")]
+    public System.Int32? PhoneThatForwardedVoicemail_AdvanceSettings_DisableRingVolume_GTE { get; set; }
+
+    /// <summary> PhoneThatForwardedVoicemail.AdvanceSettings.DisablePhone equals </summary>
+    [JsonProperty("phoneThatForwardedVoicemail_advanceSettings_disablePhone_eq")]
+    public System.Int32? PhoneThatForwardedVoicemail_AdvanceSettings_DisablePhone_EQ { get; set; }
+    /// <summary> PhoneThatForwardedVoicemail.AdvanceSettings.DisablePhone less than or equal to </summary>
+    [JsonProperty("phoneThatForwardedVoicemail_advanceSettings_disablePhone_lte")]
+    public System.Int32? PhoneThatForwardedVoicemail_AdvanceSettings_DisablePhone_LTE { get; set; }
+    /// <summary> PhoneThatForwardedVoicemail.AdvanceSettings.DisablePhone greater than or equal to </summary>
+    [JsonProperty("phoneThatForwardedVoicemail_advanceSettings_disablePhone_gte")]
+    public System.Int32? PhoneThatForwardedVoicemail_AdvanceSettings_DisablePhone_GTE { get; set; }
+
+
     /// <summary> PhoneThatForwardedVoicemail.IdsTags equals </summary>
     [JsonProperty("phoneThatForwardedVoicemail_idsTags_eq")]
     public string? PhoneThatForwardedVoicemail_IdsTags_EQ { get; set; }
@@ -8074,6 +8381,7 @@ public class VoicemailForwardedFilterRequest
     /// <summary> PhoneThatForwardedVoicemail.IdsTags regex </summary>
     [JsonProperty("phoneThatForwardedVoicemail_idsTags_reg")]
     public string? PhoneThatForwardedVoicemail_IdsTags_REG { get; set; }
+
 
     /// <summary> PhoneThatForwardedVoicemail.Id equals </summary>
     [JsonProperty("phoneThatForwardedVoicemail_id_eq")]
@@ -8149,13 +8457,13 @@ public class VoicemailForwardedFilterRequest
 
     /// <summary> VoicemailWav.FileSizeInBytes equals </summary>
     [JsonProperty("voicemailWav_fileSizeInBytes_eq")]
-    public Int32? VoicemailWav_FileSizeInBytes_EQ { get; set; }
+    public System.Int32? VoicemailWav_FileSizeInBytes_EQ { get; set; }
     /// <summary> VoicemailWav.FileSizeInBytes less than or equal to </summary>
     [JsonProperty("voicemailWav_fileSizeInBytes_lte")]
-    public Int32? VoicemailWav_FileSizeInBytes_LTE { get; set; }
+    public System.Int32? VoicemailWav_FileSizeInBytes_LTE { get; set; }
     /// <summary> VoicemailWav.FileSizeInBytes greater than or equal to </summary>
     [JsonProperty("voicemailWav_fileSizeInBytes_gte")]
-    public Int32? VoicemailWav_FileSizeInBytes_GTE { get; set; }
+    public System.Int32? VoicemailWav_FileSizeInBytes_GTE { get; set; }
 
     /// <summary> VoicemailWav.Md5Hash equals </summary>
     [JsonProperty("voicemailWav_md5Hash_eq")]
@@ -8200,13 +8508,13 @@ public class VoicemailForwardedFilterRequest
 
     /// <summary> VoicemailMp3.FileSizeInBytes equals </summary>
     [JsonProperty("voicemailMp3_fileSizeInBytes_eq")]
-    public Int32? VoicemailMp3_FileSizeInBytes_EQ { get; set; }
+    public System.Int32? VoicemailMp3_FileSizeInBytes_EQ { get; set; }
     /// <summary> VoicemailMp3.FileSizeInBytes less than or equal to </summary>
     [JsonProperty("voicemailMp3_fileSizeInBytes_lte")]
-    public Int32? VoicemailMp3_FileSizeInBytes_LTE { get; set; }
+    public System.Int32? VoicemailMp3_FileSizeInBytes_LTE { get; set; }
     /// <summary> VoicemailMp3.FileSizeInBytes greater than or equal to </summary>
     [JsonProperty("voicemailMp3_fileSizeInBytes_gte")]
-    public Int32? VoicemailMp3_FileSizeInBytes_GTE { get; set; }
+    public System.Int32? VoicemailMp3_FileSizeInBytes_GTE { get; set; }
 
     /// <summary> VoicemailMp3.Md5Hash equals </summary>
     [JsonProperty("voicemailMp3_md5Hash_eq")]
@@ -8239,15 +8547,35 @@ public class VoicemailForwardedFilterRequest
     public string? VoicemailMp3_Id_REG { get; set; }
 
 
-    /// <summary> ErrorMessage equals </summary>
-    [JsonProperty("errorMessage_eq")]
-    public string? ErrorMessage_EQ { get; set; }
-    /// <summary> ErrorMessage contains </summary>
-    [JsonProperty("errorMessage_con")]
-    public string? ErrorMessage_CON { get; set; }
-    /// <summary> ErrorMessage regex </summary>
-    [JsonProperty("errorMessage_reg")]
-    public string? ErrorMessage_REG { get; set; }
+    /// <summary> ErrorMessages equals </summary>
+    [JsonProperty("errorMessages_eq")]
+    public string? ErrorMessages_EQ { get; set; }
+    /// <summary> ErrorMessages contains </summary>
+    [JsonProperty("errorMessages_con")]
+    public string? ErrorMessages_CON { get; set; }
+    /// <summary> ErrorMessages regex </summary>
+    [JsonProperty("errorMessages_reg")]
+    public string? ErrorMessages_REG { get; set; }
+
+    /// <summary> TranscriptionLanguage equals </summary>
+    [JsonProperty("transcriptionLanguage_eq")]
+    public string? TranscriptionLanguage_EQ { get; set; }
+    /// <summary> TranscriptionLanguage contains </summary>
+    [JsonProperty("transcriptionLanguage_con")]
+    public string? TranscriptionLanguage_CON { get; set; }
+    /// <summary> TranscriptionLanguage regex </summary>
+    [JsonProperty("transcriptionLanguage_reg")]
+    public string? TranscriptionLanguage_REG { get; set; }
+
+    /// <summary> TranscriptionText equals </summary>
+    [JsonProperty("transcriptionText_eq")]
+    public string? TranscriptionText_EQ { get; set; }
+    /// <summary> TranscriptionText contains </summary>
+    [JsonProperty("transcriptionText_con")]
+    public string? TranscriptionText_CON { get; set; }
+    /// <summary> TranscriptionText regex </summary>
+    [JsonProperty("transcriptionText_reg")]
+    public string? TranscriptionText_REG { get; set; }
 
     /// <summary> IdsTags equals </summary>
     [JsonProperty("idsTags_eq")]
@@ -8258,6 +8586,7 @@ public class VoicemailForwardedFilterRequest
     /// <summary> IdsTags regex </summary>
     [JsonProperty("idsTags_reg")]
     public string? IdsTags_REG { get; set; }
+
 
     /// <summary> Id equals </summary>
     [JsonProperty("id_eq")]
@@ -8494,6 +8823,7 @@ public class VoipNumberAvailableForPurchaseFilterRequest
     [JsonProperty("idsTags_reg")]
     public string? IdsTags_REG { get; set; }
 
+
     /// <summary> Id equals </summary>
     [JsonProperty("id_eq")]
     public string? Id_EQ { get; set; }
@@ -8725,6 +9055,7 @@ public class VoipNumberFaxFilterRequest
     [JsonProperty("idsTags_reg")]
     public string? IdsTags_REG { get; set; }
 
+
     /// <summary> Id equals </summary>
     [JsonProperty("id_eq")]
     public string? Id_EQ { get; set; }
@@ -8818,13 +9149,13 @@ public class VoipNumberPhoneFilterRequest
 
     /// <summary> RuleConsecutiveMissedCalls.NumberConsecutiveCalls equals </summary>
     [JsonProperty("ruleConsecutiveMissedCalls_numberConsecutiveCalls_eq")]
-    public Int32? RuleConsecutiveMissedCalls_NumberConsecutiveCalls_EQ { get; set; }
+    public System.Int32? RuleConsecutiveMissedCalls_NumberConsecutiveCalls_EQ { get; set; }
     /// <summary> RuleConsecutiveMissedCalls.NumberConsecutiveCalls less than or equal to </summary>
     [JsonProperty("ruleConsecutiveMissedCalls_numberConsecutiveCalls_lte")]
-    public Int32? RuleConsecutiveMissedCalls_NumberConsecutiveCalls_LTE { get; set; }
+    public System.Int32? RuleConsecutiveMissedCalls_NumberConsecutiveCalls_LTE { get; set; }
     /// <summary> RuleConsecutiveMissedCalls.NumberConsecutiveCalls greater than or equal to </summary>
     [JsonProperty("ruleConsecutiveMissedCalls_numberConsecutiveCalls_gte")]
-    public Int32? RuleConsecutiveMissedCalls_NumberConsecutiveCalls_GTE { get; set; }
+    public System.Int32? RuleConsecutiveMissedCalls_NumberConsecutiveCalls_GTE { get; set; }
 
     /// <summary> RuleConsecutiveMissedCalls.IdsEmails equals </summary>
     [JsonProperty("ruleConsecutiveMissedCalls_idsEmails_eq")]
@@ -8977,6 +9308,7 @@ public class VoipNumberPhoneFilterRequest
     [JsonProperty("idsTags_reg")]
     public string? IdsTags_REG { get; set; }
 
+
     /// <summary> Id equals </summary>
     [JsonProperty("id_eq")]
     public string? Id_EQ { get; set; }
@@ -9105,6 +9437,7 @@ public class WebHookFilterRequest
     [JsonProperty("idsTags_reg")]
     public string? IdsTags_REG { get; set; }
 
+
     /// <summary> Id equals </summary>
     [JsonProperty("id_eq")]
     public string? Id_EQ { get; set; }
@@ -9161,13 +9494,13 @@ public class StoredFileReferenceFilterRequest
 
     /// <summary> StoredFile.FileSizeInBytes equals </summary>
     [JsonProperty("storedFile_fileSizeInBytes_eq")]
-    public Int32? StoredFile_FileSizeInBytes_EQ { get; set; }
+    public System.Int32? StoredFile_FileSizeInBytes_EQ { get; set; }
     /// <summary> StoredFile.FileSizeInBytes less than or equal to </summary>
     [JsonProperty("storedFile_fileSizeInBytes_lte")]
-    public Int32? StoredFile_FileSizeInBytes_LTE { get; set; }
+    public System.Int32? StoredFile_FileSizeInBytes_LTE { get; set; }
     /// <summary> StoredFile.FileSizeInBytes greater than or equal to </summary>
     [JsonProperty("storedFile_fileSizeInBytes_gte")]
-    public Int32? StoredFile_FileSizeInBytes_GTE { get; set; }
+    public System.Int32? StoredFile_FileSizeInBytes_GTE { get; set; }
 
     /// <summary> StoredFile.Md5Hash equals </summary>
     [JsonProperty("storedFile_md5Hash_eq")]
@@ -9203,6 +9536,7 @@ public class StoredFileReferenceFilterRequest
     /// <summary> IsBackup equals </summary>
     [JsonProperty("isBackup_eq")]
     public bool? IsBackup_EQ { get; set; }
+
 
     /// <summary> Id equals </summary>
     [JsonProperty("id_eq")]
@@ -9277,6 +9611,7 @@ public class TagFilterRequest
     /// <summary> UserType regex </summary>
     [JsonProperty("userType_reg")]
     public string? UserType_REG { get; set; }
+
 
     /// <summary> Id equals </summary>
     [JsonProperty("id_eq")]
@@ -9364,6 +9699,7 @@ public class AiCallTranscriptionFilterRequest
     /// <summary> IdsTags regex </summary>
     [JsonProperty("idsTags_reg")]
     public string? IdsTags_REG { get; set; }
+
 
     /// <summary> Id equals </summary>
     [JsonProperty("id_eq")]
@@ -9693,13 +10029,13 @@ public class CallOutgoingToPowerDialerFilterRequest
 
     /// <summary> Recording.RecordingClientMp3.FileSizeInBytes equals </summary>
     [JsonProperty("recording_recordingClientMp3_fileSizeInBytes_eq")]
-    public Int32? Recording_RecordingClientMp3_FileSizeInBytes_EQ { get; set; }
+    public System.Int32? Recording_RecordingClientMp3_FileSizeInBytes_EQ { get; set; }
     /// <summary> Recording.RecordingClientMp3.FileSizeInBytes less than or equal to </summary>
     [JsonProperty("recording_recordingClientMp3_fileSizeInBytes_lte")]
-    public Int32? Recording_RecordingClientMp3_FileSizeInBytes_LTE { get; set; }
+    public System.Int32? Recording_RecordingClientMp3_FileSizeInBytes_LTE { get; set; }
     /// <summary> Recording.RecordingClientMp3.FileSizeInBytes greater than or equal to </summary>
     [JsonProperty("recording_recordingClientMp3_fileSizeInBytes_gte")]
-    public Int32? Recording_RecordingClientMp3_FileSizeInBytes_GTE { get; set; }
+    public System.Int32? Recording_RecordingClientMp3_FileSizeInBytes_GTE { get; set; }
 
     /// <summary> Recording.RecordingClientMp3.Md5Hash equals </summary>
     [JsonProperty("recording_recordingClientMp3_md5Hash_eq")]
@@ -9744,13 +10080,13 @@ public class CallOutgoingToPowerDialerFilterRequest
 
     /// <summary> Recording.RecordingAgentMp3.FileSizeInBytes equals </summary>
     [JsonProperty("recording_recordingAgentMp3_fileSizeInBytes_eq")]
-    public Int32? Recording_RecordingAgentMp3_FileSizeInBytes_EQ { get; set; }
+    public System.Int32? Recording_RecordingAgentMp3_FileSizeInBytes_EQ { get; set; }
     /// <summary> Recording.RecordingAgentMp3.FileSizeInBytes less than or equal to </summary>
     [JsonProperty("recording_recordingAgentMp3_fileSizeInBytes_lte")]
-    public Int32? Recording_RecordingAgentMp3_FileSizeInBytes_LTE { get; set; }
+    public System.Int32? Recording_RecordingAgentMp3_FileSizeInBytes_LTE { get; set; }
     /// <summary> Recording.RecordingAgentMp3.FileSizeInBytes greater than or equal to </summary>
     [JsonProperty("recording_recordingAgentMp3_fileSizeInBytes_gte")]
-    public Int32? Recording_RecordingAgentMp3_FileSizeInBytes_GTE { get; set; }
+    public System.Int32? Recording_RecordingAgentMp3_FileSizeInBytes_GTE { get; set; }
 
     /// <summary> Recording.RecordingAgentMp3.Md5Hash equals </summary>
     [JsonProperty("recording_recordingAgentMp3_md5Hash_eq")]
@@ -9795,13 +10131,13 @@ public class CallOutgoingToPowerDialerFilterRequest
 
     /// <summary> Recording.RecordingMp3.FileSizeInBytes equals </summary>
     [JsonProperty("recording_recordingMp3_fileSizeInBytes_eq")]
-    public Int32? Recording_RecordingMp3_FileSizeInBytes_EQ { get; set; }
+    public System.Int32? Recording_RecordingMp3_FileSizeInBytes_EQ { get; set; }
     /// <summary> Recording.RecordingMp3.FileSizeInBytes less than or equal to </summary>
     [JsonProperty("recording_recordingMp3_fileSizeInBytes_lte")]
-    public Int32? Recording_RecordingMp3_FileSizeInBytes_LTE { get; set; }
+    public System.Int32? Recording_RecordingMp3_FileSizeInBytes_LTE { get; set; }
     /// <summary> Recording.RecordingMp3.FileSizeInBytes greater than or equal to </summary>
     [JsonProperty("recording_recordingMp3_fileSizeInBytes_gte")]
-    public Int32? Recording_RecordingMp3_FileSizeInBytes_GTE { get; set; }
+    public System.Int32? Recording_RecordingMp3_FileSizeInBytes_GTE { get; set; }
 
     /// <summary> Recording.RecordingMp3.Md5Hash equals </summary>
     [JsonProperty("recording_recordingMp3_md5Hash_eq")]
@@ -9948,33 +10284,33 @@ public class CallOutgoingToPowerDialerFilterRequest
 
     /// <summary> AiCallAnalysisOutput.TokensTotal equals </summary>
     [JsonProperty("aiCallAnalysisOutput_tokensTotal_eq")]
-    public Int32? AiCallAnalysisOutput_TokensTotal_EQ { get; set; }
+    public System.Int32? AiCallAnalysisOutput_TokensTotal_EQ { get; set; }
     /// <summary> AiCallAnalysisOutput.TokensTotal less than or equal to </summary>
     [JsonProperty("aiCallAnalysisOutput_tokensTotal_lte")]
-    public Int32? AiCallAnalysisOutput_TokensTotal_LTE { get; set; }
+    public System.Int32? AiCallAnalysisOutput_TokensTotal_LTE { get; set; }
     /// <summary> AiCallAnalysisOutput.TokensTotal greater than or equal to </summary>
     [JsonProperty("aiCallAnalysisOutput_tokensTotal_gte")]
-    public Int32? AiCallAnalysisOutput_TokensTotal_GTE { get; set; }
+    public System.Int32? AiCallAnalysisOutput_TokensTotal_GTE { get; set; }
 
     /// <summary> AiCallAnalysisOutput.TokensCompletion equals </summary>
     [JsonProperty("aiCallAnalysisOutput_tokensCompletion_eq")]
-    public Int32? AiCallAnalysisOutput_TokensCompletion_EQ { get; set; }
+    public System.Int32? AiCallAnalysisOutput_TokensCompletion_EQ { get; set; }
     /// <summary> AiCallAnalysisOutput.TokensCompletion less than or equal to </summary>
     [JsonProperty("aiCallAnalysisOutput_tokensCompletion_lte")]
-    public Int32? AiCallAnalysisOutput_TokensCompletion_LTE { get; set; }
+    public System.Int32? AiCallAnalysisOutput_TokensCompletion_LTE { get; set; }
     /// <summary> AiCallAnalysisOutput.TokensCompletion greater than or equal to </summary>
     [JsonProperty("aiCallAnalysisOutput_tokensCompletion_gte")]
-    public Int32? AiCallAnalysisOutput_TokensCompletion_GTE { get; set; }
+    public System.Int32? AiCallAnalysisOutput_TokensCompletion_GTE { get; set; }
 
     /// <summary> AiCallAnalysisOutput.TokensPrompt equals </summary>
     [JsonProperty("aiCallAnalysisOutput_tokensPrompt_eq")]
-    public Int32? AiCallAnalysisOutput_TokensPrompt_EQ { get; set; }
+    public System.Int32? AiCallAnalysisOutput_TokensPrompt_EQ { get; set; }
     /// <summary> AiCallAnalysisOutput.TokensPrompt less than or equal to </summary>
     [JsonProperty("aiCallAnalysisOutput_tokensPrompt_lte")]
-    public Int32? AiCallAnalysisOutput_TokensPrompt_LTE { get; set; }
+    public System.Int32? AiCallAnalysisOutput_TokensPrompt_LTE { get; set; }
     /// <summary> AiCallAnalysisOutput.TokensPrompt greater than or equal to </summary>
     [JsonProperty("aiCallAnalysisOutput_tokensPrompt_gte")]
-    public Int32? AiCallAnalysisOutput_TokensPrompt_GTE { get; set; }
+    public System.Int32? AiCallAnalysisOutput_TokensPrompt_GTE { get; set; }
 
 
     /// <summary> IdAiCallAnalysisInput equals </summary>
@@ -10100,6 +10436,7 @@ public class CallOutgoingToPowerDialerFilterRequest
     [JsonProperty("idsTags_reg")]
     public string? IdsTags_REG { get; set; }
 
+
     /// <summary> Id equals </summary>
     [JsonProperty("id_eq")]
     public string? Id_EQ { get; set; }
@@ -10216,13 +10553,13 @@ public class PowerDialerContactFilterRequest
 
     /// <summary> NumberOfAttempts equals </summary>
     [JsonProperty("numberOfAttempts_eq")]
-    public Int32? NumberOfAttempts_EQ { get; set; }
+    public System.Int32? NumberOfAttempts_EQ { get; set; }
     /// <summary> NumberOfAttempts less than or equal to </summary>
     [JsonProperty("numberOfAttempts_lte")]
-    public Int32? NumberOfAttempts_LTE { get; set; }
+    public System.Int32? NumberOfAttempts_LTE { get; set; }
     /// <summary> NumberOfAttempts greater than or equal to </summary>
     [JsonProperty("numberOfAttempts_gte")]
-    public Int32? NumberOfAttempts_GTE { get; set; }
+    public System.Int32? NumberOfAttempts_GTE { get; set; }
 
     /// <summary> ContactName equals </summary>
     [JsonProperty("contactName_eq")]
@@ -10243,6 +10580,7 @@ public class PowerDialerContactFilterRequest
     /// <summary> IdsTags regex </summary>
     [JsonProperty("idsTags_reg")]
     public string? IdsTags_REG { get; set; }
+
 
     /// <summary> Id equals </summary>
     [JsonProperty("id_eq")]
@@ -10532,13 +10870,13 @@ public class CallFilterRequest
 
     /// <summary> Recording.RecordingClientMp3.FileSizeInBytes equals </summary>
     [JsonProperty("recording_recordingClientMp3_fileSizeInBytes_eq")]
-    public Int32? Recording_RecordingClientMp3_FileSizeInBytes_EQ { get; set; }
+    public System.Int32? Recording_RecordingClientMp3_FileSizeInBytes_EQ { get; set; }
     /// <summary> Recording.RecordingClientMp3.FileSizeInBytes less than or equal to </summary>
     [JsonProperty("recording_recordingClientMp3_fileSizeInBytes_lte")]
-    public Int32? Recording_RecordingClientMp3_FileSizeInBytes_LTE { get; set; }
+    public System.Int32? Recording_RecordingClientMp3_FileSizeInBytes_LTE { get; set; }
     /// <summary> Recording.RecordingClientMp3.FileSizeInBytes greater than or equal to </summary>
     [JsonProperty("recording_recordingClientMp3_fileSizeInBytes_gte")]
-    public Int32? Recording_RecordingClientMp3_FileSizeInBytes_GTE { get; set; }
+    public System.Int32? Recording_RecordingClientMp3_FileSizeInBytes_GTE { get; set; }
 
     /// <summary> Recording.RecordingClientMp3.Md5Hash equals </summary>
     [JsonProperty("recording_recordingClientMp3_md5Hash_eq")]
@@ -10583,13 +10921,13 @@ public class CallFilterRequest
 
     /// <summary> Recording.RecordingAgentMp3.FileSizeInBytes equals </summary>
     [JsonProperty("recording_recordingAgentMp3_fileSizeInBytes_eq")]
-    public Int32? Recording_RecordingAgentMp3_FileSizeInBytes_EQ { get; set; }
+    public System.Int32? Recording_RecordingAgentMp3_FileSizeInBytes_EQ { get; set; }
     /// <summary> Recording.RecordingAgentMp3.FileSizeInBytes less than or equal to </summary>
     [JsonProperty("recording_recordingAgentMp3_fileSizeInBytes_lte")]
-    public Int32? Recording_RecordingAgentMp3_FileSizeInBytes_LTE { get; set; }
+    public System.Int32? Recording_RecordingAgentMp3_FileSizeInBytes_LTE { get; set; }
     /// <summary> Recording.RecordingAgentMp3.FileSizeInBytes greater than or equal to </summary>
     [JsonProperty("recording_recordingAgentMp3_fileSizeInBytes_gte")]
-    public Int32? Recording_RecordingAgentMp3_FileSizeInBytes_GTE { get; set; }
+    public System.Int32? Recording_RecordingAgentMp3_FileSizeInBytes_GTE { get; set; }
 
     /// <summary> Recording.RecordingAgentMp3.Md5Hash equals </summary>
     [JsonProperty("recording_recordingAgentMp3_md5Hash_eq")]
@@ -10634,13 +10972,13 @@ public class CallFilterRequest
 
     /// <summary> Recording.RecordingMp3.FileSizeInBytes equals </summary>
     [JsonProperty("recording_recordingMp3_fileSizeInBytes_eq")]
-    public Int32? Recording_RecordingMp3_FileSizeInBytes_EQ { get; set; }
+    public System.Int32? Recording_RecordingMp3_FileSizeInBytes_EQ { get; set; }
     /// <summary> Recording.RecordingMp3.FileSizeInBytes less than or equal to </summary>
     [JsonProperty("recording_recordingMp3_fileSizeInBytes_lte")]
-    public Int32? Recording_RecordingMp3_FileSizeInBytes_LTE { get; set; }
+    public System.Int32? Recording_RecordingMp3_FileSizeInBytes_LTE { get; set; }
     /// <summary> Recording.RecordingMp3.FileSizeInBytes greater than or equal to </summary>
     [JsonProperty("recording_recordingMp3_fileSizeInBytes_gte")]
-    public Int32? Recording_RecordingMp3_FileSizeInBytes_GTE { get; set; }
+    public System.Int32? Recording_RecordingMp3_FileSizeInBytes_GTE { get; set; }
 
     /// <summary> Recording.RecordingMp3.Md5Hash equals </summary>
     [JsonProperty("recording_recordingMp3_md5Hash_eq")]
@@ -10787,33 +11125,33 @@ public class CallFilterRequest
 
     /// <summary> AiCallAnalysisOutput.TokensTotal equals </summary>
     [JsonProperty("aiCallAnalysisOutput_tokensTotal_eq")]
-    public Int32? AiCallAnalysisOutput_TokensTotal_EQ { get; set; }
+    public System.Int32? AiCallAnalysisOutput_TokensTotal_EQ { get; set; }
     /// <summary> AiCallAnalysisOutput.TokensTotal less than or equal to </summary>
     [JsonProperty("aiCallAnalysisOutput_tokensTotal_lte")]
-    public Int32? AiCallAnalysisOutput_TokensTotal_LTE { get; set; }
+    public System.Int32? AiCallAnalysisOutput_TokensTotal_LTE { get; set; }
     /// <summary> AiCallAnalysisOutput.TokensTotal greater than or equal to </summary>
     [JsonProperty("aiCallAnalysisOutput_tokensTotal_gte")]
-    public Int32? AiCallAnalysisOutput_TokensTotal_GTE { get; set; }
+    public System.Int32? AiCallAnalysisOutput_TokensTotal_GTE { get; set; }
 
     /// <summary> AiCallAnalysisOutput.TokensCompletion equals </summary>
     [JsonProperty("aiCallAnalysisOutput_tokensCompletion_eq")]
-    public Int32? AiCallAnalysisOutput_TokensCompletion_EQ { get; set; }
+    public System.Int32? AiCallAnalysisOutput_TokensCompletion_EQ { get; set; }
     /// <summary> AiCallAnalysisOutput.TokensCompletion less than or equal to </summary>
     [JsonProperty("aiCallAnalysisOutput_tokensCompletion_lte")]
-    public Int32? AiCallAnalysisOutput_TokensCompletion_LTE { get; set; }
+    public System.Int32? AiCallAnalysisOutput_TokensCompletion_LTE { get; set; }
     /// <summary> AiCallAnalysisOutput.TokensCompletion greater than or equal to </summary>
     [JsonProperty("aiCallAnalysisOutput_tokensCompletion_gte")]
-    public Int32? AiCallAnalysisOutput_TokensCompletion_GTE { get; set; }
+    public System.Int32? AiCallAnalysisOutput_TokensCompletion_GTE { get; set; }
 
     /// <summary> AiCallAnalysisOutput.TokensPrompt equals </summary>
     [JsonProperty("aiCallAnalysisOutput_tokensPrompt_eq")]
-    public Int32? AiCallAnalysisOutput_TokensPrompt_EQ { get; set; }
+    public System.Int32? AiCallAnalysisOutput_TokensPrompt_EQ { get; set; }
     /// <summary> AiCallAnalysisOutput.TokensPrompt less than or equal to </summary>
     [JsonProperty("aiCallAnalysisOutput_tokensPrompt_lte")]
-    public Int32? AiCallAnalysisOutput_TokensPrompt_LTE { get; set; }
+    public System.Int32? AiCallAnalysisOutput_TokensPrompt_LTE { get; set; }
     /// <summary> AiCallAnalysisOutput.TokensPrompt greater than or equal to </summary>
     [JsonProperty("aiCallAnalysisOutput_tokensPrompt_gte")]
-    public Int32? AiCallAnalysisOutput_TokensPrompt_GTE { get; set; }
+    public System.Int32? AiCallAnalysisOutput_TokensPrompt_GTE { get; set; }
 
 
     /// <summary> IdAiCallAnalysisInput equals </summary>
@@ -10938,6 +11276,7 @@ public class CallFilterRequest
     /// <summary> IdsTags regex </summary>
     [JsonProperty("idsTags_reg")]
     public string? IdsTags_REG { get; set; }
+
 
     /// <summary> Id equals </summary>
     [JsonProperty("id_eq")]
@@ -11257,13 +11596,13 @@ public class CallIncomingFilterRequest
 
     /// <summary> Recording.RecordingClientMp3.FileSizeInBytes equals </summary>
     [JsonProperty("recording_recordingClientMp3_fileSizeInBytes_eq")]
-    public Int32? Recording_RecordingClientMp3_FileSizeInBytes_EQ { get; set; }
+    public System.Int32? Recording_RecordingClientMp3_FileSizeInBytes_EQ { get; set; }
     /// <summary> Recording.RecordingClientMp3.FileSizeInBytes less than or equal to </summary>
     [JsonProperty("recording_recordingClientMp3_fileSizeInBytes_lte")]
-    public Int32? Recording_RecordingClientMp3_FileSizeInBytes_LTE { get; set; }
+    public System.Int32? Recording_RecordingClientMp3_FileSizeInBytes_LTE { get; set; }
     /// <summary> Recording.RecordingClientMp3.FileSizeInBytes greater than or equal to </summary>
     [JsonProperty("recording_recordingClientMp3_fileSizeInBytes_gte")]
-    public Int32? Recording_RecordingClientMp3_FileSizeInBytes_GTE { get; set; }
+    public System.Int32? Recording_RecordingClientMp3_FileSizeInBytes_GTE { get; set; }
 
     /// <summary> Recording.RecordingClientMp3.Md5Hash equals </summary>
     [JsonProperty("recording_recordingClientMp3_md5Hash_eq")]
@@ -11308,13 +11647,13 @@ public class CallIncomingFilterRequest
 
     /// <summary> Recording.RecordingAgentMp3.FileSizeInBytes equals </summary>
     [JsonProperty("recording_recordingAgentMp3_fileSizeInBytes_eq")]
-    public Int32? Recording_RecordingAgentMp3_FileSizeInBytes_EQ { get; set; }
+    public System.Int32? Recording_RecordingAgentMp3_FileSizeInBytes_EQ { get; set; }
     /// <summary> Recording.RecordingAgentMp3.FileSizeInBytes less than or equal to </summary>
     [JsonProperty("recording_recordingAgentMp3_fileSizeInBytes_lte")]
-    public Int32? Recording_RecordingAgentMp3_FileSizeInBytes_LTE { get; set; }
+    public System.Int32? Recording_RecordingAgentMp3_FileSizeInBytes_LTE { get; set; }
     /// <summary> Recording.RecordingAgentMp3.FileSizeInBytes greater than or equal to </summary>
     [JsonProperty("recording_recordingAgentMp3_fileSizeInBytes_gte")]
-    public Int32? Recording_RecordingAgentMp3_FileSizeInBytes_GTE { get; set; }
+    public System.Int32? Recording_RecordingAgentMp3_FileSizeInBytes_GTE { get; set; }
 
     /// <summary> Recording.RecordingAgentMp3.Md5Hash equals </summary>
     [JsonProperty("recording_recordingAgentMp3_md5Hash_eq")]
@@ -11359,13 +11698,13 @@ public class CallIncomingFilterRequest
 
     /// <summary> Recording.RecordingMp3.FileSizeInBytes equals </summary>
     [JsonProperty("recording_recordingMp3_fileSizeInBytes_eq")]
-    public Int32? Recording_RecordingMp3_FileSizeInBytes_EQ { get; set; }
+    public System.Int32? Recording_RecordingMp3_FileSizeInBytes_EQ { get; set; }
     /// <summary> Recording.RecordingMp3.FileSizeInBytes less than or equal to </summary>
     [JsonProperty("recording_recordingMp3_fileSizeInBytes_lte")]
-    public Int32? Recording_RecordingMp3_FileSizeInBytes_LTE { get; set; }
+    public System.Int32? Recording_RecordingMp3_FileSizeInBytes_LTE { get; set; }
     /// <summary> Recording.RecordingMp3.FileSizeInBytes greater than or equal to </summary>
     [JsonProperty("recording_recordingMp3_fileSizeInBytes_gte")]
-    public Int32? Recording_RecordingMp3_FileSizeInBytes_GTE { get; set; }
+    public System.Int32? Recording_RecordingMp3_FileSizeInBytes_GTE { get; set; }
 
     /// <summary> Recording.RecordingMp3.Md5Hash equals </summary>
     [JsonProperty("recording_recordingMp3_md5Hash_eq")]
@@ -11512,33 +11851,33 @@ public class CallIncomingFilterRequest
 
     /// <summary> AiCallAnalysisOutput.TokensTotal equals </summary>
     [JsonProperty("aiCallAnalysisOutput_tokensTotal_eq")]
-    public Int32? AiCallAnalysisOutput_TokensTotal_EQ { get; set; }
+    public System.Int32? AiCallAnalysisOutput_TokensTotal_EQ { get; set; }
     /// <summary> AiCallAnalysisOutput.TokensTotal less than or equal to </summary>
     [JsonProperty("aiCallAnalysisOutput_tokensTotal_lte")]
-    public Int32? AiCallAnalysisOutput_TokensTotal_LTE { get; set; }
+    public System.Int32? AiCallAnalysisOutput_TokensTotal_LTE { get; set; }
     /// <summary> AiCallAnalysisOutput.TokensTotal greater than or equal to </summary>
     [JsonProperty("aiCallAnalysisOutput_tokensTotal_gte")]
-    public Int32? AiCallAnalysisOutput_TokensTotal_GTE { get; set; }
+    public System.Int32? AiCallAnalysisOutput_TokensTotal_GTE { get; set; }
 
     /// <summary> AiCallAnalysisOutput.TokensCompletion equals </summary>
     [JsonProperty("aiCallAnalysisOutput_tokensCompletion_eq")]
-    public Int32? AiCallAnalysisOutput_TokensCompletion_EQ { get; set; }
+    public System.Int32? AiCallAnalysisOutput_TokensCompletion_EQ { get; set; }
     /// <summary> AiCallAnalysisOutput.TokensCompletion less than or equal to </summary>
     [JsonProperty("aiCallAnalysisOutput_tokensCompletion_lte")]
-    public Int32? AiCallAnalysisOutput_TokensCompletion_LTE { get; set; }
+    public System.Int32? AiCallAnalysisOutput_TokensCompletion_LTE { get; set; }
     /// <summary> AiCallAnalysisOutput.TokensCompletion greater than or equal to </summary>
     [JsonProperty("aiCallAnalysisOutput_tokensCompletion_gte")]
-    public Int32? AiCallAnalysisOutput_TokensCompletion_GTE { get; set; }
+    public System.Int32? AiCallAnalysisOutput_TokensCompletion_GTE { get; set; }
 
     /// <summary> AiCallAnalysisOutput.TokensPrompt equals </summary>
     [JsonProperty("aiCallAnalysisOutput_tokensPrompt_eq")]
-    public Int32? AiCallAnalysisOutput_TokensPrompt_EQ { get; set; }
+    public System.Int32? AiCallAnalysisOutput_TokensPrompt_EQ { get; set; }
     /// <summary> AiCallAnalysisOutput.TokensPrompt less than or equal to </summary>
     [JsonProperty("aiCallAnalysisOutput_tokensPrompt_lte")]
-    public Int32? AiCallAnalysisOutput_TokensPrompt_LTE { get; set; }
+    public System.Int32? AiCallAnalysisOutput_TokensPrompt_LTE { get; set; }
     /// <summary> AiCallAnalysisOutput.TokensPrompt greater than or equal to </summary>
     [JsonProperty("aiCallAnalysisOutput_tokensPrompt_gte")]
-    public Int32? AiCallAnalysisOutput_TokensPrompt_GTE { get; set; }
+    public System.Int32? AiCallAnalysisOutput_TokensPrompt_GTE { get; set; }
 
 
     /// <summary> IdAiCallAnalysisInput equals </summary>
@@ -11663,6 +12002,7 @@ public class CallIncomingFilterRequest
     /// <summary> IdsTags regex </summary>
     [JsonProperty("idsTags_reg")]
     public string? IdsTags_REG { get; set; }
+
 
     /// <summary> Id equals </summary>
     [JsonProperty("id_eq")]
@@ -11962,13 +12302,13 @@ public class CallOutgoingFilterRequest
 
     /// <summary> Recording.RecordingClientMp3.FileSizeInBytes equals </summary>
     [JsonProperty("recording_recordingClientMp3_fileSizeInBytes_eq")]
-    public Int32? Recording_RecordingClientMp3_FileSizeInBytes_EQ { get; set; }
+    public System.Int32? Recording_RecordingClientMp3_FileSizeInBytes_EQ { get; set; }
     /// <summary> Recording.RecordingClientMp3.FileSizeInBytes less than or equal to </summary>
     [JsonProperty("recording_recordingClientMp3_fileSizeInBytes_lte")]
-    public Int32? Recording_RecordingClientMp3_FileSizeInBytes_LTE { get; set; }
+    public System.Int32? Recording_RecordingClientMp3_FileSizeInBytes_LTE { get; set; }
     /// <summary> Recording.RecordingClientMp3.FileSizeInBytes greater than or equal to </summary>
     [JsonProperty("recording_recordingClientMp3_fileSizeInBytes_gte")]
-    public Int32? Recording_RecordingClientMp3_FileSizeInBytes_GTE { get; set; }
+    public System.Int32? Recording_RecordingClientMp3_FileSizeInBytes_GTE { get; set; }
 
     /// <summary> Recording.RecordingClientMp3.Md5Hash equals </summary>
     [JsonProperty("recording_recordingClientMp3_md5Hash_eq")]
@@ -12013,13 +12353,13 @@ public class CallOutgoingFilterRequest
 
     /// <summary> Recording.RecordingAgentMp3.FileSizeInBytes equals </summary>
     [JsonProperty("recording_recordingAgentMp3_fileSizeInBytes_eq")]
-    public Int32? Recording_RecordingAgentMp3_FileSizeInBytes_EQ { get; set; }
+    public System.Int32? Recording_RecordingAgentMp3_FileSizeInBytes_EQ { get; set; }
     /// <summary> Recording.RecordingAgentMp3.FileSizeInBytes less than or equal to </summary>
     [JsonProperty("recording_recordingAgentMp3_fileSizeInBytes_lte")]
-    public Int32? Recording_RecordingAgentMp3_FileSizeInBytes_LTE { get; set; }
+    public System.Int32? Recording_RecordingAgentMp3_FileSizeInBytes_LTE { get; set; }
     /// <summary> Recording.RecordingAgentMp3.FileSizeInBytes greater than or equal to </summary>
     [JsonProperty("recording_recordingAgentMp3_fileSizeInBytes_gte")]
-    public Int32? Recording_RecordingAgentMp3_FileSizeInBytes_GTE { get; set; }
+    public System.Int32? Recording_RecordingAgentMp3_FileSizeInBytes_GTE { get; set; }
 
     /// <summary> Recording.RecordingAgentMp3.Md5Hash equals </summary>
     [JsonProperty("recording_recordingAgentMp3_md5Hash_eq")]
@@ -12064,13 +12404,13 @@ public class CallOutgoingFilterRequest
 
     /// <summary> Recording.RecordingMp3.FileSizeInBytes equals </summary>
     [JsonProperty("recording_recordingMp3_fileSizeInBytes_eq")]
-    public Int32? Recording_RecordingMp3_FileSizeInBytes_EQ { get; set; }
+    public System.Int32? Recording_RecordingMp3_FileSizeInBytes_EQ { get; set; }
     /// <summary> Recording.RecordingMp3.FileSizeInBytes less than or equal to </summary>
     [JsonProperty("recording_recordingMp3_fileSizeInBytes_lte")]
-    public Int32? Recording_RecordingMp3_FileSizeInBytes_LTE { get; set; }
+    public System.Int32? Recording_RecordingMp3_FileSizeInBytes_LTE { get; set; }
     /// <summary> Recording.RecordingMp3.FileSizeInBytes greater than or equal to </summary>
     [JsonProperty("recording_recordingMp3_fileSizeInBytes_gte")]
-    public Int32? Recording_RecordingMp3_FileSizeInBytes_GTE { get; set; }
+    public System.Int32? Recording_RecordingMp3_FileSizeInBytes_GTE { get; set; }
 
     /// <summary> Recording.RecordingMp3.Md5Hash equals </summary>
     [JsonProperty("recording_recordingMp3_md5Hash_eq")]
@@ -12217,33 +12557,33 @@ public class CallOutgoingFilterRequest
 
     /// <summary> AiCallAnalysisOutput.TokensTotal equals </summary>
     [JsonProperty("aiCallAnalysisOutput_tokensTotal_eq")]
-    public Int32? AiCallAnalysisOutput_TokensTotal_EQ { get; set; }
+    public System.Int32? AiCallAnalysisOutput_TokensTotal_EQ { get; set; }
     /// <summary> AiCallAnalysisOutput.TokensTotal less than or equal to </summary>
     [JsonProperty("aiCallAnalysisOutput_tokensTotal_lte")]
-    public Int32? AiCallAnalysisOutput_TokensTotal_LTE { get; set; }
+    public System.Int32? AiCallAnalysisOutput_TokensTotal_LTE { get; set; }
     /// <summary> AiCallAnalysisOutput.TokensTotal greater than or equal to </summary>
     [JsonProperty("aiCallAnalysisOutput_tokensTotal_gte")]
-    public Int32? AiCallAnalysisOutput_TokensTotal_GTE { get; set; }
+    public System.Int32? AiCallAnalysisOutput_TokensTotal_GTE { get; set; }
 
     /// <summary> AiCallAnalysisOutput.TokensCompletion equals </summary>
     [JsonProperty("aiCallAnalysisOutput_tokensCompletion_eq")]
-    public Int32? AiCallAnalysisOutput_TokensCompletion_EQ { get; set; }
+    public System.Int32? AiCallAnalysisOutput_TokensCompletion_EQ { get; set; }
     /// <summary> AiCallAnalysisOutput.TokensCompletion less than or equal to </summary>
     [JsonProperty("aiCallAnalysisOutput_tokensCompletion_lte")]
-    public Int32? AiCallAnalysisOutput_TokensCompletion_LTE { get; set; }
+    public System.Int32? AiCallAnalysisOutput_TokensCompletion_LTE { get; set; }
     /// <summary> AiCallAnalysisOutput.TokensCompletion greater than or equal to </summary>
     [JsonProperty("aiCallAnalysisOutput_tokensCompletion_gte")]
-    public Int32? AiCallAnalysisOutput_TokensCompletion_GTE { get; set; }
+    public System.Int32? AiCallAnalysisOutput_TokensCompletion_GTE { get; set; }
 
     /// <summary> AiCallAnalysisOutput.TokensPrompt equals </summary>
     [JsonProperty("aiCallAnalysisOutput_tokensPrompt_eq")]
-    public Int32? AiCallAnalysisOutput_TokensPrompt_EQ { get; set; }
+    public System.Int32? AiCallAnalysisOutput_TokensPrompt_EQ { get; set; }
     /// <summary> AiCallAnalysisOutput.TokensPrompt less than or equal to </summary>
     [JsonProperty("aiCallAnalysisOutput_tokensPrompt_lte")]
-    public Int32? AiCallAnalysisOutput_TokensPrompt_LTE { get; set; }
+    public System.Int32? AiCallAnalysisOutput_TokensPrompt_LTE { get; set; }
     /// <summary> AiCallAnalysisOutput.TokensPrompt greater than or equal to </summary>
     [JsonProperty("aiCallAnalysisOutput_tokensPrompt_gte")]
-    public Int32? AiCallAnalysisOutput_TokensPrompt_GTE { get; set; }
+    public System.Int32? AiCallAnalysisOutput_TokensPrompt_GTE { get; set; }
 
 
     /// <summary> IdAiCallAnalysisInput equals </summary>
@@ -12368,6 +12708,7 @@ public class CallOutgoingFilterRequest
     /// <summary> IdsTags regex </summary>
     [JsonProperty("idsTags_reg")]
     public string? IdsTags_REG { get; set; }
+
 
     /// <summary> Id equals </summary>
     [JsonProperty("id_eq")]
@@ -12603,6 +12944,7 @@ public class ExtensionFilterRequest
     [JsonProperty("idsTags_reg")]
     public string? IdsTags_REG { get; set; }
 
+
     /// <summary> Id equals </summary>
     [JsonProperty("id_eq")]
     public string? Id_EQ { get; set; }
@@ -12833,6 +13175,7 @@ public class VoipNumberFilterRequest
     /// <summary> IdsTags regex </summary>
     [JsonProperty("idsTags_reg")]
     public string? IdsTags_REG { get; set; }
+
 
     /// <summary> Id equals </summary>
     [JsonProperty("id_eq")]

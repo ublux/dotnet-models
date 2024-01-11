@@ -55,11 +55,11 @@ public partial class CloudServicePbx : CloudService
     //[Obsolete("gateway")]
     //public string? IdExtensionForwardCallsGateway { get; set; }
 
-    /// <summary>
-    ///     If it is a gateway then what type of processing for incoming calls
-    /// </summary>
-    [AllowUpdate(true)]
-    public CallProcessingType CallProcessingTypeGateway { get; set; }
+    // /// <summary>
+    // ///     If it is a gateway then what type of processing for incoming calls
+    // /// </summary>
+    // [AllowUpdate(true)]
+    // public CallProcessingType CallProcessingTypeGateway { get; set; }
 
     /// <summary>
     ///     If used as gateway then by what account
@@ -68,12 +68,12 @@ public partial class CloudServicePbx : CloudService
     [References(typeof(Account))]
     public string? IdAccountGateway { get; set; }
 
-    /// <summary>
-    ///     Input to pass to AI engine
-    /// </summary>
-    [AllowUpdate(true)]
-    [References(typeof(AiCallAnalysisInput))]
-    public string? IdAiCallAnalysisInputGateway { get; set; }
+    // /// <summary>
+    // ///     Input to pass to AI engine
+    // /// </summary>
+    // [AllowUpdate(true)]
+    // [References(typeof(AiCallAnalysisInput))]
+    // public string? IdAiCallAnalysisInputGateway { get; set; }
 
     #endregion
 }

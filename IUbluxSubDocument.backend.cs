@@ -17,14 +17,10 @@ public abstract partial class UbluxSubDocument
     [IgnoreDataMember]
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    public BuiltId BuiltId
+    public required BuiltId BuiltId
     {
-        set
-        {
-            id = value.Id;
-        }
+        set => id = value.Id;
     }
-
 }
 
 #endif

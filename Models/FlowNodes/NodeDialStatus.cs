@@ -8,5 +8,5 @@ public partial class NodeDialStatus
     [AllowUpdate(true)]
     [BsonRepresentation(BsonType.String)]
     
-    public List<DialStatus> DialStatuses { get; set; } = new();
+    public List<DialStatus> DialStatuses { get; set; } = [];
 }

@@ -8,22 +8,23 @@ namespace Ublux.Communications.Enums;
 /// </summary>
 public enum SnsTopic
 {
+    #region DB
+
+    /// <summary>
+    ///     Item Created or Updated
+    /// </summary>
+    Collection_Upserted,
+
+    /// <summary>
+    ///     Item deleted
+    /// </summary>
+    Collection_Deleted,
+
+    #endregion
+    
     #region API
 
-    ///// <summary>
-    /////     Item Created
-    ///// </summary>
-    //Collection_Created,
-
-    ///// <summary>
-    /////     Item updated
-    ///// </summary>
-    //Collection_Updated,
-
-    ///// <summary>
-    /////     Item deleted
-    ///// </summary>
-    //Collection_Deleted,
+    
 
     /// <summary>
     ///     When a call transcription is complete.

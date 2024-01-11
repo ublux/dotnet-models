@@ -1,7 +1,4 @@
 ﻿namespace Ublux.Communications.Models.FlowNodes;
 
 /// <summary></summary>
-public partial class NodeAnyTime
-{
-   
-}
+public partial class NodeAnyTime;

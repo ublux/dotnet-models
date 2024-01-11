@@ -8,9 +8,8 @@ namespace Ublux.Communications.Models;
 /// </summary>
 public class QueuedStoredFileReference : IUbluxDocumentId
 {
-
 #if UBLUX_Release || RELEASE
-#pragma warning disable CS8618 
+#pragma warning disable CS8618
 
     // This constructor is needed by mongo. 
     /// <summary /> 
@@ -18,7 +17,7 @@ public class QueuedStoredFileReference : IUbluxDocumentId
     {
     }
 
-#pragma warning restore CS8618 
+#pragma warning restore CS8618
 #endif
 
     /// <summary>
@@ -42,6 +41,7 @@ public class QueuedStoredFileReference : IUbluxDocumentId
         set { id = value; }
 #endif
     }
+
     private string id;
 
     /// <summary>
@@ -63,7 +63,7 @@ public class QueuedStoredFileReference : IUbluxDocumentId
         get;
 #if UBLUX_Release || RELEASE
         set;
-#else 
+#else
         private set;
 #endif
     }
@@ -85,7 +85,7 @@ public class QueuedStoredFileReference : IUbluxDocumentId
 
                 var fileName = Path.GetFileName(PathToFile);
                 newLocation = Path.Combine(directoryNewLocation, fileName);
-                
+
                 File.Move(PathToFile, newLocation);
 
                 return true;
@@ -99,11 +99,10 @@ public class QueuedStoredFileReference : IUbluxDocumentId
             newLocation = null;
             return false;
         }
-
     }
 
     /// <summary>
-    ///     Once succesffully uploaded delete file?
+    ///     Once successfully uploaded delete file?
     /// </summary>
     public bool DeleteFileWhenUploaded
     {
@@ -112,7 +111,7 @@ public class QueuedStoredFileReference : IUbluxDocumentId
         set;
 #endif
     }
-    
+
     // /// <summary>
     // ///     null = not backup
     // ///     false = backup failed
@@ -121,18 +120,43 @@ public class QueuedStoredFileReference : IUbluxDocumentId
     // public bool? IsBackup { get; set; }
 
     /// <summary>
-    ///     Fires when this queued file is backed up successfully
+    ///     Fires when this queued file is backed up successfully to the cloud AND to database
     /// </summary>
     [JsonIgnore]
     [System.Text.Json.Serialization.JsonIgnore]
-    public Action<StoredFileReference>? OnBackupSuccessful { get; set; }
+    public Action<QueuedStoredFileReference>? OnBackupSuccessful { get; set; }
 
     /// <summary>
     ///     Fires if there is an error uploading the file
     /// </summary>
     [JsonIgnore]
     [System.Text.Json.Serialization.JsonIgnore]
-    public Action<StoredFileReference>? OnBackupFailed { get; set; }
+    public Action<QueuedStoredFileReference>? OnBackupFailed { get; set; }
+    
+    private long backupFlag;
+
+    /// <summary>
+    ///     Returns backup flag
+    /// </summary>
+    /// <returns>
+    ///     0   = not backed up
+    ///     1   = backed up successful
+    ///     -1  = error backing up
+    /// </returns>
+    public long GetBackupFlag()
+    {
+        return Interlocked.Read(ref backupFlag);
+    }
+
+    /// <summary>
+    ///     0   = not backed up
+    ///     1   = backed up successful
+    ///     -1  = error backing up
+    /// </summary>
+    public void SetBackupFlag(long v)
+    {
+        Interlocked.Exchange(ref backupFlag, v);
+    }
 }
 
 #endif

@@ -1,11 +1,12 @@
-﻿namespace Ublux.Communications.Models.Documents;
+﻿// ReSharper disable UnusedAutoPropertyAccessor.Global
+
+namespace Ublux.Communications.Models.Documents;
 
 /// <summary>
 ///     SMS message
 /// </summary>
 public partial class SMS : UbluxDocument_ReferenceAccount_ReferenceTags
 {
-
     #region Properties
 
     #region References
@@ -17,7 +18,15 @@ public partial class SMS : UbluxDocument_ReferenceAccount_ReferenceTags
     [SwaggerSchema(ReadOnly = true)]
     [References(typeof(VoipNumber))]
     [UbluxValidationRequired]
-    public required string IdVoipNumber { get; set; } = string.Empty;
+    public required string IdVoipNumber
+    {
+        get;
+#if UBLUX_Release || RELEASE
+        set;
+#else
+        init;
+#endif
+    } = string.Empty;
 
     /// <summary>
     ///     Contact
@@ -33,7 +42,7 @@ public partial class SMS : UbluxDocument_ReferenceAccount_ReferenceTags
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
     [References(typeof(User))]
-    public string? IdUser {  get; set; }
+    public string? IdUser { get; set; }
 
     #endregion
 
@@ -54,10 +63,11 @@ public partial class SMS : UbluxDocument_ReferenceAccount_ReferenceTags
 
             return $"{IdVoipNumber}-{VoipNumber.GetLast8DigitsOfPhoneNumber(To)}";
         }
-        set
-        {
-            // ignore read only
-        }
+
+#if UBLUX_Release || RELEASE
+        set { }
+        // ignore its readonly
+#endif
     }
 
 
@@ -66,7 +76,15 @@ public partial class SMS : UbluxDocument_ReferenceAccount_ReferenceTags
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    public bool IsIncoming { get; set; }
+    public bool IsIncoming
+    {
+        get;
+#if UBLUX_Release || RELEASE
+        set;
+#else
+        init;
+#endif
+    }
 
     /// <summary>
     ///     SMS message
@@ -117,7 +135,16 @@ public partial class SMS : UbluxDocument_ReferenceAccount_ReferenceTags
     [SwaggerSchema(ReadOnly = true)]
     [UbluxValidationRequired]
     [UbluxValidationStringRange(1, 20)]
-    public required string From { get; set; } = string.Empty;
+    public required string From
+    {
+        get;
+
+#if UBLUX_Release || RELEASE
+        set;
+#else
+        init;
+#endif
+    } = string.Empty;
 
     /// <summary>
     ///     Only used on mongo in oder to search fast on queries by index
@@ -125,17 +152,7 @@ public partial class SMS : UbluxDocument_ReferenceAccount_ReferenceTags
     [IgnoreDataMember]
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    public string FromReversed
-    {
-        get
-        {
-            return From.ReverseString();
-        }
-#if UBLUX_Release || RELEASE
-        set { }
-#else
-#endif
-    }
+    public required string FromReversed { get; set; } = string.Empty;
 
     /// <summary>
     ///     Number to whom SMS was sent to 
@@ -144,7 +161,15 @@ public partial class SMS : UbluxDocument_ReferenceAccount_ReferenceTags
     [SwaggerSchema(ReadOnly = true)]
     [UbluxValidationRequired]
     [UbluxValidationStringRange(1, 20)]
-    public required string To { get; set; } = string.Empty;
+    public required string To
+    {
+        get;
+#if UBLUX_Release || RELEASE
+        set;
+#else
+        init;
+#endif
+    } = string.Empty;
 
     /// <summary>
     ///     Only used on mongo in oder to search fast on queries by index
@@ -152,17 +177,7 @@ public partial class SMS : UbluxDocument_ReferenceAccount_ReferenceTags
     [IgnoreDataMember]
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    public string ToReversed
-    {
-        get
-        {
-            return To.ReverseString();
-        }
-#if UBLUX_Release || RELEASE
-        set { }
-#else
-#endif
-    }
+    public required string ToReversed { get; set; } = string.Empty;
 
     #endregion
 

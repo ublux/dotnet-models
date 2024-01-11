@@ -92,7 +92,7 @@ public abstract partial class ChildCall : ICall
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [UbluxValidationRequired]
+    // [UbluxValidationRequired]
     public required CountryIsoCode FromCountry { get; set; }
 
     /// <summary>
@@ -108,7 +108,7 @@ public abstract partial class ChildCall : ICall
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [UbluxValidationRequired]
+    // [UbluxValidationRequired]
     public required CountryIsoCode ToCountry { get; set; }
 
     /// <summary>

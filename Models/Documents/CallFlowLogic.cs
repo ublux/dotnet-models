@@ -39,7 +39,7 @@ public partial class CallFlowLogic : UbluxDocument_ReferenceAccount_ReferenceTag
     ///     Special bookmarks on tree. This will be separate trees to share common logic
     /// </summary>
     [AllowUpdate(true)]
-    public List<NodeBookmark> Bookmarks { get; set; } = new();
+    public List<NodeBookmark> Bookmarks { get; set; } = [];
 
     #endregion
 

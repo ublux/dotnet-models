@@ -1,4 +1,6 @@
-﻿namespace Ublux.Communications.Models;
+﻿using System.Collections.Concurrent;
+
+namespace Ublux.Communications.Models;
 
 /// <summary>
 ///     If a call is forwarded to an extension. 
@@ -23,13 +25,13 @@ public class ChildCallForwardToExtension : ChildCall, ICallToExtension
     ///     Phones that ring
     /// </summary>
     [References(typeof(Phone))]
-    public List<string> IdsPhonesThatRing { get; set; } = new();
+    public ConcurrentBag<string> IdsPhonesThatRing { get; set; } = [];
 
     /// <summary>
     ///     Phones that did not ring
     /// </summary>
     [References(typeof(Phone))]
-    public List<string> IdsPhonesThatDidNotRing { get; set; } = new();
+    public ConcurrentBag<string> IdsPhonesThatDidNotRing { get; set; } = [];
 
     /// <summary>
     ///     ForwardToExtension

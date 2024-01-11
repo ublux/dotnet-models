@@ -1,4 +1,5 @@
-﻿namespace Ublux.Communications.Models.Documents;
+﻿// ReSharper disable UnusedAutoPropertyAccessor.Global
+namespace Ublux.Communications.Models.Documents;
 
 /// <summary>
 ///     Basic extension
@@ -15,7 +16,7 @@ public partial class ExtensionDial : Extension
     [References(typeof(Phone))]
     [AllowUpdate(true)]
     [UbluxValidationRequired]
-    public List<string> IdsPhones { get; set; } = new();
+    public List<string> IdsPhones { get; set; } = [];
 
     #endregion
 
@@ -38,6 +39,12 @@ public partial class ExtensionDial : Extension
     /// </summary>
     [AllowUpdate(true)]
     public Handicap? Handicap { get; set; }
+    
+    /// <summary>
+    ///     Only one feature can be turned on
+    /// </summary>
+    [AllowUpdate(true)]
+    public AiExtensionFeatures? AiFeatures { get; set; }
 
     #endregion
 
@@ -64,4 +71,74 @@ public partial class ExtensionDial : Extension
 #else
 #endif
     }
+}
+
+/// <summary>
+///     Custom AI features
+/// </summary>
+[UsedImplicitly]
+public class AiExtensionFeatures
+{
+    /// <summary>
+    ///     Specific checklist of actions agent is supposed to say
+    /// </summary>
+    [UsedImplicitly]
+    public List<CheckList>? AgentCheckLists { get; set; }
+
+    /// <summary>
+    ///     Requires transcription in real time
+    ///     0 = do not required
+    ///     1 = require client
+    ///     2 = require agent
+    ///     3 = require agent and client (BOTH)
+    /// </summary>
+    public int RequireTranscriptionInRealTime()
+    {
+        if (AgentCheckLists is not null)
+            return 1;
+
+        // In the future check
+        
+        return 0;
+    }
+    
+    // Future AI variables...
+}
+
+/// <summary>
+///     
+/// </summary>
+[UsedImplicitly]
+public class CheckList
+{
+    /// <summary>
+    ///     Title of the checklist
+    /// </summary>
+    [AllowUpdate(true)]
+    public required string Title { get; set; } = string.Empty;
+
+    /// <summary>
+    ///     Checklist items that agent or client should say
+    /// </summary>
+    [AllowUpdate(true)]
+    public required List<CheckListItem> Items { get; set; } = [];
+}
+
+/// <summary>
+///     Checklist item
+/// </summary>
+[UsedImplicitly]
+public class CheckListItem
+{
+    /// <summary>
+    ///     Item
+    /// </summary>
+    [AllowUpdate(true)]
+    public required string Item { get; set; } = string.Empty;
+    
+    /// <summary>
+    ///     Is the checklist item mentioned in the conversation?
+    /// </summary>
+    [AllowUpdate(false)]
+    public bool IsComplete { get; set; }
 }

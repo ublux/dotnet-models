@@ -1,4 +1,5 @@
-﻿namespace Ublux.Communications.Models.Documents;
+﻿// ReSharper disable PropertyCanBeMadeInitOnly.Global
+namespace Ublux.Communications.Models.Documents;
 
 /// <summary>
 ///     Previously called IpPhone. Represents a phone in UBLUX
@@ -80,7 +81,7 @@ public partial class Phone : UbluxDocument_ReferenceAccount_ReferenceTags
     /// </summary>
     [AllowUpdate(true)]
     [UbluxValidationRequired]
-    public required List<string> CallerIdNumbers { get; set; } = new();
+    public required List<string> CallerIdNumbers { get; set; } = [];
 
     /// <summary>
     ///     Specifies what caller id to use.  CallerIdIndex cannot be greater than the number of callerIdNumbers.
@@ -154,20 +155,15 @@ public partial class Phone : UbluxDocument_ReferenceAccount_ReferenceTags
     //public string? IpAutoProvision { get; set; }
 
     /// <summary>
-    ///     Mac address of phone in case it is a phisical phone that autoprovisions with Ublux.
+    ///     Mac address of phone in case it is a physical phone that autoprovision with Ublux.
+    ///     NOTE THIS CAN CHANGE IF CONNECTED VIA WIFI AND THEN ETHERNET!
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
     public string? MacAddress
     {
         get => macAddress;
-        set
-        {
-            if (value != null)
-                macAddress = value.Replace(":", "").ToLower();
-            else
-                macAddress = "";
-        }
+        set => macAddress = value is null ? "" : value.Replace(":", "").ToLower();
     }
     private string? macAddress;
 
@@ -199,30 +195,28 @@ public partial class Phone : UbluxDocument_ReferenceAccount_ReferenceTags
     ///     This is needed for yealink cordless phones for example. Phones on the same group name will be sent as a group when autoprovisioning.
     ///     Can only set if phone is disconnected.
     /// </summary>
-    [AllowUpdate(false)]
-    [SwaggerSchema(ReadOnly = true)]
-    public string? GroupName { get; set; }
-
-    /// <summary>
-    ///     If a phone is hacked we will only allow connections from this ip address.
-    ///     If value is null any ip address will be valid
-    /// </summary>
     [AllowUpdate(true)]
-    public string? AllowConnectionsFromOnlyThisIp { get; set; }
+    public string? GroupName { get; set; }
 
     /// <summary>
     ///     Send email if phone disconnects to these emails
     /// </summary>
     [References(typeof(Email))]
     [AllowUpdate(true)]
-    public List<string> OnDisconnectedNotifyIdsEmails { get; set; } = new();
+    public List<string> OnDisconnectedNotifyIdsEmails { get; set; } = [];
 
     /// <summary>
     ///     Send email if phone connects to these emails
     /// </summary>
     [References(typeof(Email))]
     [AllowUpdate(true)]
-    public List<string> OnConnectedNotifyIdsEmails { get; set; } = new();
+    public List<string> OnConnectedNotifyIdsEmails { get; set; } = [];
+    
+    /// <summary>
+    ///     Send email if phone connects to these emails
+    /// </summary>
+    [AllowUpdate(true)]
+    public PhoneAdvanceSettings? AdvanceSettings { get; set; } = null;
 
     #region MongoDB
 
@@ -238,4 +232,52 @@ public partial class Phone : UbluxDocument_ReferenceAccount_ReferenceTags
     }
 
     #endregion
+}
+
+/// <summary>
+///     Advanced settings of a phone
+/// </summary>
+[UsedImplicitly]
+public class PhoneAdvanceSettings
+{
+    /// <summary>
+    ///     If a phone is hacked we will only allow connections from this ip address.
+    ///     If value is null any ip address will be valid
+    /// </summary>
+    [AllowUpdate(true)]
+    public string? AllowConnectionsFromOnlyThisIp
+    {
+        get; 
+        [UsedImplicitly]
+        set;
+    }
+    
+    /// <summary>
+    ///     This feature only applies to physical phones. It might only be supported on Yealink phones
+    /// </summary>
+    [AllowUpdate(true)]
+    public bool DisableMissedCallPopup { get; set; } = false;
+    
+    /// <summary>
+    ///     Prevents user from enabling DND on his phone.
+    ///     This feature only applies to physical phones. It might only be supported on Yealink phones.
+    /// </summary>
+    [AllowUpdate(true)]
+    public bool DisableDoNotDisturb { get; set; } = false;
+
+    /// <summary>
+    ///     Prevents user from changing the volume. Volume value will be from 0 to 5
+    ///     This feature only applies to physical phones. It might only be supported on Yealink phones.
+    /// </summary>
+    [AllowUpdate(true)] 
+    public int? DisableRingVolume  { get; set; } = null;
+
+    // Default pin is 24680. Use value of 2
+    /// <summary>
+    ///     (0-All Keys;1-Function Keys;2-Menu Keys)
+    ///     Prevents user from making changes to phone. It will require a pin in order to use phone.
+    ///     This feature only applies to physical phones. It might only be supported on Yealink phones.
+    /// </summary>
+    [AllowUpdate(true)] 
+    public int? DisablePhone { get; set; } = null;
 }

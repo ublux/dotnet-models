@@ -52,7 +52,7 @@ public partial class FaxIncoming : UbluxDocument_ReferenceAccount_ReferenceTags
     [AllowUpdate(false)] 
     [SwaggerSchema(ReadOnly = true)] 
     [UbluxValidationRequired]
-    public required string FaxStatus { get; set; } = string.Empty;
+    public required ProcessStatus FaxStatus { get; set; } 
 
     /// <summary>
     ///     Fax number of sender
@@ -73,10 +73,10 @@ public partial class FaxIncoming : UbluxDocument_ReferenceAccount_ReferenceTags
     /// <summary>
     ///     Description of error if there is one
     /// </summary>
-    [AllowUpdate(false)] 
+    [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [UbluxValidationStringRange(2000)]
-    public string? ErrorMessage { get; set; }
+    // [UbluxValidationStringRange(2000)]
+    public List<string> Errors { get; set; } = [];
 
     #endregion
 

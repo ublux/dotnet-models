@@ -44,5 +44,10 @@ public enum UserType
     /// <summary>
     ///     This is used by API to send a request to the other API to monitor its statuses
     /// </summary>
-    API
+    API,
+    
+    /// <summary>
+    ///     Transcription services that transcribe audio to text
+    /// </summary>
+    TS
 }

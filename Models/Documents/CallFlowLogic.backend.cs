@@ -44,7 +44,7 @@ public partial class CallFlowLogic
             BuiltId = BuildId(instance),
             FriendlyName = "Default",
             IdAccount = idAccount,
-            IdsTags = new(),
+            IdsTags = [],
             DateDeleted = null,
             Description = "Default IVR",
             Tree = new NodeSay

@@ -1,4 +1,6 @@
-﻿#if UBLUX_BACKEND
+﻿using System.Collections.Concurrent;
+
+#if UBLUX_BACKEND
 
 namespace Ublux.Communications.Models;
 
@@ -18,7 +20,7 @@ public partial interface ICall
     [IgnoreDataMember]
     [AllowUpdate(false)] 
     [SwaggerSchema(ReadOnly = true)]
-    public List<string> ChannelsTo { get; set; }
+    public ConcurrentBag<string> ChannelsTo { get; set; }
 
     /// <summary>
     ///     Channel To that answered

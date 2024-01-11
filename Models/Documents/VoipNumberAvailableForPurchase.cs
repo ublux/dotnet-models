@@ -14,7 +14,7 @@ public partial class VoipNumberAvailableForPurchase : VoipNumber
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
     [UbluxValidationNotRequired]
-    public override List<RulePhone> RulesPhone { get; set; } = new();
+    public override List<RulePhone> RulesPhone { get; set; } = [];
 
     /// <summary>
     ///     Incoming SMS will be sent to these email addresses
@@ -22,7 +22,7 @@ public partial class VoipNumberAvailableForPurchase : VoipNumber
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
     [UbluxValidationNotRequired]
-    public override List<RuleSms> RulesSms { get; set; } = new();
+    public override List<RuleSms> RulesSms { get; set; } = [];
 
     /// <summary>
     ///     Incoming Faxes will be sent to this email addresses
@@ -30,7 +30,7 @@ public partial class VoipNumberAvailableForPurchase : VoipNumber
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
     [UbluxValidationNotRequired]
-    public override List<RuleFax> RulesFax { get; set; } = new();
+    public override List<RuleFax> RulesFax { get; set; } = [];
 
     /// <summary>
     ///     Requires customer info in order to be purchased

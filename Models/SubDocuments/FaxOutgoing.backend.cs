@@ -33,13 +33,13 @@ public partial class FaxOutgoing : UbluxSubDocument
     //[IgnoreDataMember]
     public ProcessStatus Status { get; set; }
 
-    /// <summary>
-    ///     Determine if fax contains an error
-    /// </summary>
-    public bool ContainsError()
-    {
-        return !string.IsNullOrEmpty(ErrorMessage);
-    }
+    // /// <summary>
+    // ///     Determine if fax contains an error
+    // /// </summary>
+    // public bool ContainsError()
+    // {
+    //     return !string.IsNullOrEmpty(ErrorMessage);
+    // }
 }
 
 #endif

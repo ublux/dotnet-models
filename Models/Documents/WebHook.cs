@@ -35,7 +35,7 @@ public partial class WebHook : UbluxDocument_ReferenceAccount_ReferenceTags
     /// </summary>
     [AllowUpdate(true)]
     [UbluxValidationStringRange(500)]
-    public List<string> Headers { get; set; } = new();
+    public List<string> Headers { get; set; } = [];
 
     /// <summary>
     ///     Description of webhook

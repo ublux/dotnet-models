@@ -38,7 +38,7 @@ public abstract class EventIncomingCallEndedBase : EventIncomingCallStartedBase
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    public required List<TimeWhenCallPlacedOnHold> TimesWhenCallPlacedOnHold { get; set; } = new();
+    public required List<TimeWhenCallPlacedOnHold> TimesWhenCallPlacedOnHold { get; set; } = [];
 
     /// <summary>
     ///     Return a random object

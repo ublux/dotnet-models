@@ -30,19 +30,19 @@ public partial class Contact : UbluxDocument_ReferenceAccount_ReferenceTags
     ///     Value = type (example = work)
     /// </summary>
     [AllowUpdate(true)]
-    public List<ContactNumber> ContactNumbers { get; set; } = new();
+    public List<ContactNumber> ContactNumbers { get; set; } = [];
 
     /// <summary>
     ///     Email addresses of contact
     /// </summary>
     [AllowUpdate(true)]
-    public List<ContactEmail> ContactEmails { get; set; } = new();
+    public List<ContactEmail> ContactEmails { get; set; } = [];
 
     /// <summary>
     ///     Mailing Addresses of contact
     /// </summary>
     [AllowUpdate(true)]
-    public List<MailingAddress> MailingAddresses { get; set; } = new();
+    public List<MailingAddress> MailingAddresses { get; set; } = [];
 
     #endregion
 
@@ -86,7 +86,7 @@ public partial class Contact : UbluxDocument_ReferenceAccount_ReferenceTags
     ///     Customer custom data
     /// </summary>
     [AllowUpdate(true)]
-    public List<Variable> Variables { get; set; } = new();
+    public List<Variable> Variables { get; set; } = [];
 
     #endregion
 

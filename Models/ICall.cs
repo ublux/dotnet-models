@@ -57,7 +57,7 @@ public partial interface ICall
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [UbluxValidationRequired]
+    // [UbluxValidationRequired]
     CountryIsoCode FromCountry { get; set; }
 
     /// <summary>
@@ -73,7 +73,7 @@ public partial interface ICall
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [UbluxValidationRequired]
+    // [UbluxValidationRequired]
     CountryIsoCode ToCountry { get; set; }
 
     /// <summary>

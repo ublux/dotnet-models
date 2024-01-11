@@ -30,7 +30,50 @@ public partial class Phone
     [SwaggerSchema(ReadOnly = true)]
     [IgnoreDataMember]
     [UbluxValidationStringRange(8, 50)]
-    public required string Password { get; set; } = string.Empty;
+    public required string Password
+    {
+        get; 
+        
+        // Password should not change after it is set
+#if UBLUX_Release || RELEASE
+        set;
+#else
+        init;
+#endif
+
+    } = string.Empty;
+
+    /// <summary>
+    ///     Set password
+    /// </summary>
+    /// <param name="newPass"></param>
+    [Obsolete("This is just to give a warning. Should only update the password when receiving an object from API and setting a new password")]
+    public void SetPassword(string newPass)
+    {
+        var prop = this.GetType().GetProperty(nameof(Password))!;
+        prop.SetValue(this, newPass);
+    }
+
+
+    // /// <summary>
+    // ///     Autoprovision-id. We use this instead of the mac address of the phone.
+    // ///     1) Mac address can change if phone is connected from ethernet and then WiFi
+    // ///     2) This way we can be certain that if we receive this request its not a hacker
+    // /// </summary>
+    // [UbluxValidationRequired]
+    // [AllowUpdate(false)]
+    // [SwaggerSchema(ReadOnly = true)]
+    // [IgnoreDataMember]
+    // [UbluxValidationStringRange(8, 50)]
+    // public required string AutoprovisionId { get; set; } = string.Empty;
+
+    /// <summary>
+    ///     Build an autoprovision id
+    /// </summary>
+    public static string BuildAutoprovisionId(string idAccount)
+    {
+        return $"{idAccount}-{Phone.GetRandomPassword(12, false)}";
+    }
 
     /// <summary>
     ///     It is ok to have it hardcoded. If we change this unit test will fail
@@ -63,14 +106,23 @@ public partial class Phone
     /// <summary>
     ///     Generate a new random password for a phone
     /// </summary>
-    public static string GetRandomPassword(int length = 16)
+    public static string GetRandomPassword(int length = 16, bool includeSpecialCharacters = true)
     {
         // Maybe RandomNumberGenerator is thread safe but just to be sure
         lock (alphanumericMainCharacters)
         {
             char[] p = new char[length];
-            for (int i = 0; i < length; i++)
-                p[i] = alphanumericAllCharacters[RandomNumberGenerator.GetInt32(0, alphanumericAllCharacters.Length)];
+            if (includeSpecialCharacters)
+            {
+                for (int i = 0; i < length; i++)
+                    p[i] = alphanumericAllCharacters[RandomNumberGenerator.GetInt32(0, alphanumericAllCharacters.Length)];
+            }
+            else
+            {
+                for (int i = 0; i < length; i++)
+                    p[i] = alphanumericMainCharacters[RandomNumberGenerator.GetInt32(0, alphanumericMainCharacters.Length)];
+            }
+            
             return new string(p);
         }
     }
@@ -95,7 +147,7 @@ public partial class Phone
     }
 
     /// <summary>
-    ///     Ids of phones contain id of phone embeded
+    ///     Ids of phones contain id of phone embedded
     /// </summary>
     public static string GetIdAccountFromId(string idPhone)
     {
@@ -105,7 +157,7 @@ public partial class Phone
 
         var thirdDot = start + idPhone[start..].IndexOf(RedisConstants.DelimiterId);
 
-        // id account will be substring in btween dot 1 and
+        // id account will be substring in between dot 1 and
         var idAccount = idPhone[(DocumentPrefix.Length + 1)..thirdDot];
 
         return idAccount;

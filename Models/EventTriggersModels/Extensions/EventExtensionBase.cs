@@ -1,4 +1,5 @@
-﻿using Bogus;
+﻿using System.Collections.Concurrent;
+using Bogus;
 
 namespace Ublux.Communications.Models.EventTriggersModels;
 
@@ -68,28 +69,31 @@ public abstract class EventExtensionBase : EventTriggerModel
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    public required List<string> PhonesThatRingIds { get; set; } = new();
+    public List<string> PhonesThatRingIds { get; set; } = [];
+
+
 
     /// <summary>
     ///     Id of lines that ring dit not ring
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    public required List<string> PhonesThatDidNotRingIds { get; set; } = new();
+    public List<string> PhonesThatDidNotRingIds { get; set; } = [];
 
     /// <summary>
     ///     Name of lines that ring
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    public required List<string> PhonesThatRingFriendlyNames { get; set; } = new();
+    public List<string> PhonesThatRingFriendlyNames { get; set; } = [];
 
     /// <summary>
     ///     Name of lines that ring dit not ring
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    public required List<string> PhonesThatDidNotRingFriendlyNames { get; set; } = new();
+    public List<string> PhonesThatDidNotRingFriendlyNames { get; set; } = [];
+    
 
     /// <summary>
     ///     Return a random object
@@ -100,15 +104,15 @@ public abstract class EventExtensionBase : EventTriggerModel
         var randomIdContact = Contact.BuildId(instance).Id;
 
         var f = new Faker<T>()
-            .RuleFor(x => x.Id, randomId)
-            .RuleFor(x => x.From, x => x.Phone.PhoneNumberFormat())
-            .RuleFor(x => x.To, x => x.Phone.PhoneNumberFormat())
-            .RuleFor(x => x.ContactId, randomIdContact)
-            .RuleFor(x => x.ContactFullName, x => x.Name.FullName())
-            .RuleFor(x => x.FriendlyName, x => x.Name.FullName())
-            .RuleFor(x => x.NumberOfSecondsItRing, Random.Shared.Next(0, 60))
-            .RuleFor(x => x.Number, Random.Shared.Next(10, 1000).ToString())
-            .RuleFor(x => x.DateStart, DateTime.UtcNow.AddHours(-1))
+                .RuleFor(x => x.Id, randomId)
+                .RuleFor(x => x.From, x => x.Phone.PhoneNumberFormat())
+                .RuleFor(x => x.To, x => x.Phone.PhoneNumberFormat())
+                .RuleFor(x => x.ContactId, randomIdContact)
+                .RuleFor(x => x.ContactFullName, x => x.Name.FullName())
+                .RuleFor(x => x.FriendlyName, x => x.Name.FullName())
+                .RuleFor(x => x.NumberOfSecondsItRing, Random.Shared.Next(0, 60))
+                .RuleFor(x => x.Number, Random.Shared.Next(10, 1000).ToString())
+                .RuleFor(x => x.DateStart, DateTime.UtcNow.AddHours(-1))
             ;
 
         var obj = f.Generate();

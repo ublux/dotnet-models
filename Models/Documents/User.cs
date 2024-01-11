@@ -33,7 +33,7 @@ public partial class User : UbluxDocument_ReferenceAccount_ReferenceTags
     [AllowUpdate(true)]
     [UbluxValidationRequired]
     [BsonRepresentation(BsonType.String)]
-    public required List<UbluxRole> UbluxRoles { get; set; } = new();
+    public required List<UbluxRole> UbluxRoles { get; set; } = [];
 
     #endregion    
 

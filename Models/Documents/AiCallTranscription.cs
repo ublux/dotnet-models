@@ -33,7 +33,7 @@ public partial class AiCallTranscription : UbluxDocument_ReferenceAccount_Refere
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    public List<AiTranscription> Transcription { get; set; } = new();
+    public List<AiTranscription> Transcription { get; set; } = [];
 
     ///// <summary>
     /////     If the transcription contains an error. This should be part of main call

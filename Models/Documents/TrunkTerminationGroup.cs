@@ -13,7 +13,7 @@ public partial class TrunkTerminationGroup : UbluxDocument
     [SwaggerSchema(ReadOnly = true)]
     // [References(typeof(TrunkTerminationRule))]
     [UbluxValidationRequired]
-    public required List<TrunkTerminationRule> TrunkTerminationRulesOrderedByPriority { get; set; } = new();
+    public required List<TrunkTerminationRule> TrunkTerminationRulesOrderedByPriority { get; set; } = [];
 
     #region MongoDB
 
@@ -52,5 +52,5 @@ public class TrunkTerminationRule
     [SwaggerSchema(ReadOnly = true)]
     [UbluxValidationRequired]
     [BsonRepresentation(BsonType.String)]
-    public required List<CountryIsoCode> CountriesThatCanCall { get; set; } = new ();
+    public required List<CountryIsoCode> CountriesThatCanCall { get; set; } = [];
 }

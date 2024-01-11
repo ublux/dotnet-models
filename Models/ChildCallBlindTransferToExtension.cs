@@ -1,4 +1,6 @@
-﻿namespace Ublux.Communications.Models;
+﻿using System.Collections.Concurrent;
+
+namespace Ublux.Communications.Models;
 
 /// <summary>
 ///     Call is blind transferred to an extension
@@ -36,12 +38,12 @@ public class ChildCallBlindTransferToExtension : ChildCallBlindTransfer, ICallTo
     /// </summary>
     [AllowUpdate(false)]
     [References(typeof(Phone))]
-    public List<string> IdsPhonesThatRing { get; set; } = new();
+    public ConcurrentBag<string> IdsPhonesThatRing { get; set; } = [];
 
     /// <summary>
     ///     Ids of lines that where supposed to ring and did not ring because phone was offline or disconnected.
     /// </summary>
     [AllowUpdate(false)]
     [References(typeof(Phone))]
-    public List<string> IdsPhonesThatDidNotRing { get; set; } = new();
+    public ConcurrentBag<string> IdsPhonesThatDidNotRing { get; set; } = [];
 }

@@ -1,4 +1,6 @@
-﻿namespace Ublux.Communications.Models;
+﻿using System.Collections.Concurrent;
+
+namespace Ublux.Communications.Models;
 
 /// <summary>
 ///     Shared between CallOutgoingToExtension and ChildCallForwardToExtension
@@ -25,12 +27,12 @@ public interface ICallToExtension : ICall
     /// </summary>
     [References(typeof(Phone))]
     [AllowUpdate(false)]
-    List<string> IdsPhonesThatRing { get; set; }
+    ConcurrentBag<string> IdsPhonesThatRing { get; set; }
 
     /// <summary>
     ///     Phones that did not ring
     /// </summary>
     [References(typeof(Phone))]
     [AllowUpdate(false)]
-    List<string> IdsPhonesThatDidNotRing { get; set; }
+    ConcurrentBag<string> IdsPhonesThatDidNotRing { get; set; }
 }

@@ -21,7 +21,7 @@ public partial class ExtensionVoicemail : Extension
     /// </summary>
     [References(typeof(Phone))]
     [AllowUpdate(true)]
-    public List<string> IdsPhonesThatCanListenToVoicemail { get; set; } = new();
+    public List<string> IdsPhonesThatCanListenToVoicemail { get; set; } = [];
 
     #endregion
 

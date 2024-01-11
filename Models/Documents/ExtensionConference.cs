@@ -14,7 +14,7 @@ public partial class ExtensionConference : Extension
     /// </summary>
     [References(typeof(Audio))]
     [AllowUpdate(true)]
-    public List<string> IdsAudiosWhenOneParticipant { get; set; } = new();
+    public List<string> IdsAudiosWhenOneParticipant { get; set; } = [];
 
     #endregion
 

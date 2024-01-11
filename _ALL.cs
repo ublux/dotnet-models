@@ -175,7 +175,7 @@ public abstract class UbluxDocument_ReferenceAccount_ReferenceTags : UbluxDocume
     /// </summary>
     [References(typeof(Tag))]
     [AllowUpdate(true)]
-    public List<string> IdsTags { get; set; } = new();
+    public List<string> IdsTags { get; set; } = [];
 
     /// <summary>
     ///     Required indexes by all collections

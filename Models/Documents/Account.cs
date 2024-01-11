@@ -17,7 +17,7 @@ public partial class Account : UbluxDocument
     [SwaggerSchema(ReadOnly = true)]
     [References(typeof(CloudServicePbx))]
     [UbluxValidationRequired($"Must have at least one {nameof(CloudServicePbx)}")]
-    public required List<string> IdsCloudServicePbxs { get; set; } = new();
+    public required List<string> IdsCloudServicePbxs { get; set; } = [];
 
     #endregion
 
@@ -74,14 +74,14 @@ public partial class Account : UbluxDocument
     [SwaggerSchema(ReadOnly = true)]
     [UbluxValidationRequired]
     [BsonRepresentation(BsonType.String)]
-    public List<CountryIsoCode> CountriesThatCanCallLocally { get; set; } = new();
+    public List<CountryIsoCode> CountriesThatCanCallLocally { get; set; } = [];
 
     /// <summary>
     ///     If CountriesThatCanCallLocally does not contain country then ublux will attempt to find country on this list and mark call as international
     /// </summary>
     [AllowUpdate(true)]
     [BsonRepresentation(BsonType.String)]
-    public List<CountryIsoCode> CountriesThatCanCallInternationally { get; set; } = new();
+    public List<CountryIsoCode> CountriesThatCanCallInternationally { get; set; } = [];
 
     /// <summary>
     ///     Sector

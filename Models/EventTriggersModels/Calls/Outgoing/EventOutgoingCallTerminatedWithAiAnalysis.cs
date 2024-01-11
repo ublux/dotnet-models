@@ -67,21 +67,22 @@ public class EventOutgoingCallTerminatedWithAiAnalysis : EventOutgoingCallTermin
         obj.AiCallAnalysis = new ()
         {
             IdAiCallAnalysisInput = AiCallAnalysisInput.BuildId(instance).Id,
-            Results = new ()
-            {
+            Results =
+            [
                 new AiCallAnalysisResult
                 {
                     Name = "Summary",
                     AiVariableType = AiVariableType.Text,
                     Value = "Client complains against Agent that washing mashine is not working"
                 },
+
                 new AiCallAnalysisResult
                 {
                     Name = "CustomerSatisfaction",
                     AiVariableType = AiVariableType.Integer,
                     Value = "3"
                 }
-            },
+            ],
             DetectedLanguage = "English"           
         };
         return obj;

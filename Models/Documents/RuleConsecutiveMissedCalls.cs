@@ -17,5 +17,5 @@ public class RuleConsecutiveMissedCalls
     [References(typeof(Email))]
     [AllowUpdate(true)]
     [UbluxValidationRequired]
-    public List<string> IdsEmails { get; set; } = new();
+    public List<string> IdsEmails { get; set; } = [];
 }

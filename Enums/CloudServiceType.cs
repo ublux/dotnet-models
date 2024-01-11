@@ -15,16 +15,24 @@ public enum CloudServiceType
     ///     PBX
     /// </summary>
     PBX,
+    
     /// <summary>
     ///     Web service
     /// </summary>
     API,
+    
     /// <summary>
     ///     Web hosting
     /// </summary>
     WH,
+    
     /// <summary>
     /// Web app
     /// </summary>
-    WA
+    WA,
+    
+    /// <summary>
+    ///     Transcription Service
+    /// </summary>
+    TS
 }

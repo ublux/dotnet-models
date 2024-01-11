@@ -76,12 +76,9 @@ public class RunningApplicationInstance
     ///     When stopping application gracefully we wait for this counter to equal 0. 
     ///     That way we are sure we did not terminated application in the middle of something
     /// </summary>
-    public long NumberOfOperationsExecuting
-    {
-        get => Interlocked.Read(ref _numberOfOperationsExecuting);
-        // set => numberOfOperationsExecuting = value; 
-    }
+    public long NumberOfOperationsExecuting => Interlocked.Read(ref _numberOfOperationsExecuting);
 
+    // set => numberOfOperationsExecuting = value; 
     /// <summary>
     ///     Is pbx a gateway. For example csp.us-1 is not but csp.mx-a is because it has a letter at the end
     /// </summary>
@@ -116,7 +113,7 @@ public class RunningApplicationInstance
 
         while (NumberOfOperationsExecuting > 0)
         {
-            await Task.Delay(500);
+            await Task.Delay(500, CancellationToken.None);
             timeoutInSeconds--;
 
             if (timeoutInSeconds < 1)

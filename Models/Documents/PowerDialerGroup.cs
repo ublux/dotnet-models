@@ -46,7 +46,7 @@ public partial class PowerDialerGroup : UbluxDocument_ReferenceAccount_Reference
     /// </summary>
     [References(typeof(Phone))]
     [AllowUpdate(true)]
-    public List<string> IdPhonesAgents { get; set; } = new();
+    public List<string> IdPhonesAgents { get; set; } = [];
 
     #endregion
 

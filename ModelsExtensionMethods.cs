@@ -368,6 +368,7 @@ public static class ModelsExtensionMethods
         { CloudServicePbx.DocumentPrefix, Collections.CloudServices },
         { CloudServiceWebApp.DocumentPrefix, Collections.CloudServices },
         { CloudServiceWebHost.DocumentPrefix, Collections.CloudServices },
+        { CloudServiceTranscription.DocumentPrefix, Collections.CloudServices },
         { Contact.DocumentPrefix, Collections.Contacts },
         { CustomerInfo.DocumentPrefix, Collections.CustomerInfos },
         { ExtensionDial.DocumentPrefix, Collections.Extensions },
@@ -407,45 +408,88 @@ public static class ModelsExtensionMethods
     /// <summary>
     ///     Collections used on pbx. for example collection ApiKey is not used on PBX
     /// </summary>
-    private static readonly HashSet<Collections> collectionsUsedByPBX = new()
-    {
-                Collections.Accounts,
-                // Collections.AgreementsToTermsAndConditions,
-                // Collections.AirNetworksProvinces,
-                Collections.Audios,
-                // Collections.AutoProvisionReferences,
-                Collections.BlackListPhoneNumbers,
-                // Collections.Calls,
-                // Collections.CallerIdMasks,
-                Collections.CallFlowLogics,
-                Collections.CloudServices,
-                Collections.Contacts,
-                // Collections.CustomerInfos,
-                Collections.Extensions,
-                // Collections.FaxesIncoming,
-                // Collections.FaxOutgoingGroups,
-                // Collections.Voicemails,
-                // Collections.Users,
-                //Collections.SpeedDialGroups,
-                // Collections.LogApiRequests,
-                Collections.MusicOnHoldGroups,
-                Collections.Phones,
-                //Collections.PhoneConfigurations,
-                // Collections.PowerDialerGroups,
-                // Collections.PowerDialerContacts,
-                // Collections.SMS,
-                //Collections.TrunkOriginations,
-                Collections.TrunkTerminations,
-                Collections.TrunkTerminationGroups,
-                Collections.VoipNumbers,
-                // Collections.VoipProviders,
-                Collections.WebHooks,
-                // Collections.StoredFileReferences,
-                // Collections.Tags,
-                // Collections.ApiKeys,
-                // Collections.AiCallTranscriptions,
-                Collections.Emails,
-    };
+    private static readonly HashSet<Collections> collectionsUsedByPBX =
+    [
+        Collections.Accounts,
+        // Collections.AgreementsToTermsAndConditions,
+        // Collections.AirNetworksProvinces,
+        Collections.Audios,
+        // Collections.AutoProvisionReferences,
+        Collections.BlackListPhoneNumbers,
+        // Collections.Calls,
+        // Collections.CallerIdMasks,
+        Collections.CallFlowLogics,
+        Collections.CloudServices,
+        Collections.Contacts,
+        // Collections.CustomerInfos,
+        Collections.Extensions,
+        // Collections.FaxesIncoming,
+        // Collections.FaxOutgoingGroups,
+        // Collections.Voicemails,
+        // Collections.Users,
+        //Collections.SpeedDialGroups,
+        // Collections.LogApiRequests,
+        Collections.MusicOnHoldGroups,
+        Collections.Phones,
+        //Collections.PhoneConfigurations,
+        // Collections.PowerDialerGroups,
+        // Collections.PowerDialerContacts,
+        // Collections.SMS,
+        //Collections.TrunkOriginations,
+        Collections.TrunkTerminations,
+        Collections.TrunkTerminationGroups,
+        Collections.VoipNumbers,
+        // Collections.VoipProviders,
+        Collections.WebHooks,
+        // Collections.StoredFileReferences,
+        // Collections.Tags,
+        // Collections.ApiKeys,
+        // Collections.AiCallTranscriptions,
+        Collections.Emails
+    ];
+    
+    /// <summary>
+    ///     Collections used on pbx. for example collection ApiKey is not used on PBX
+    /// </summary>
+    private static readonly HashSet<Collections> collectionsUsedByWa =
+    [
+        Collections.Accounts,
+        // Collections.AgreementsToTermsAndConditions,
+        // Collections.AirNetworksProvinces,
+        Collections.Audios,
+        // Collections.AutoProvisionReferences,
+        Collections.BlackListPhoneNumbers,
+        Collections.Calls,
+        Collections.CallerIdMasks,
+        Collections.CallFlowLogics,
+        Collections.CloudServices,
+        Collections.Contacts,
+        Collections.CustomerInfos,
+        Collections.Extensions,
+        Collections.FaxesIncoming,
+        Collections.FaxOutgoingGroups,
+        Collections.Voicemails,
+        Collections.Users,
+        Collections.SpeedDialGroups,
+        // Collections.LogApiRequests,
+        Collections.MusicOnHoldGroups,
+        Collections.Phones,
+        Collections.PhoneConfigurations,
+        Collections.PowerDialerGroups,
+        Collections.PowerDialerContacts,
+        Collections.SMS,
+        //Collections.TrunkOriginations,
+        //Collections.TrunkTerminations,
+        //Collections.TrunkTerminationGroups,
+        Collections.VoipNumbers,
+        // Collections.VoipProviders,
+        Collections.WebHooks,
+        // Collections.StoredFileReferences,
+        Collections.Tags,
+        Collections.ApiKeys,
+        Collections.AiCallTranscriptions,
+        Collections.Emails,        
+    ];
 
     /// <summary>
     ///     Is collection used by pbx
@@ -455,75 +499,48 @@ public static class ModelsExtensionMethods
         return collectionsUsedByPBX.Contains(collection);
     }
 
-
+    /// <summary>
+    ///     Is collection used by web app
+    /// </summary>
+    public static bool IsCollectionUsedByWebApp(this Collections collection)
+    {
+        return collectionsUsedByWa.Contains(collection);
+    }
+    
     #region GetExtensionsUsedByPhone ordered by priority
 
+    
+    
+
     /// <summary>
-    ///     Get extensions used by phone ordered by prioroty
+    ///     Is an extension used by a phone
     /// </summary>
-    public static IEnumerable<Extension> GetExtensionsUsedByPhoneOrderedByPriority(this IEnumerable<Extension> extensions, string idPhone)
-    {
-        return extensions
-            .Order(new ExtensionPriorityComparer(idPhone))
-            .TakeWhile(x => IsExtensionUsedByPhone(x, idPhone, out _));
-    }
-    private class ExtensionPriorityComparer : IComparer<Extension>
-    {
-        private readonly string idPhone;
-
-        public ExtensionPriorityComparer(string idPhone)
-        {
-            this.idPhone = idPhone;
-        }
-
-        public int Compare(Extension? x, Extension? y)
-        {
-            // less than 0.     x is less than y
-            // 0.     x == y
-            // more than 0.     x is greater than y
-
-            var isXUsed = IsExtensionUsedByPhone(x, idPhone, out var weightX);
-            var isYUsed = IsExtensionUsedByPhone(y, idPhone, out var weightY);
-
-            if (isXUsed == false && isYUsed == false)
-                return 0;
-            if (isXUsed && isYUsed == false)
-                return -1;
-            if (isXUsed == false && isYUsed)
-                return 1;
-
-            // at this point we know phone is being used by both extensions. so complare the weights
-            if (weightX < weightY) return -1;
-            if (weightX == weightY) return 0;
-            return 1;
-        }
-    }
-
-    // Weight. The lower the higher the priority
-    private static bool IsExtensionUsedByPhone(Extension? e, string idPhone, out int weight)
+    /// <param name="e"></param>
+    /// <param name="idPhone"></param>
+    /// <returns></returns>
+    public static bool IsExtensionUsedByPhone(Extension? e, string idPhone)
     {
         if (e is null)
         {
-            weight = 0;
             return false;
         }
 
-        if (e is ExtensionDial dial)
-        {
-            weight = dial.IdsPhones.Count * 2;
-            return dial.IdsPhones.Contains(idPhone);
-        }
+        // this has to go before
         if (e is ExtensionQueue queue)
         {
-            weight = (queue.IdsPhones.Count * 2) + 1;
             return queue.IdsPhones.Contains(idPhone);
         }
+        
+        if (e is ExtensionDial dial)
+        {
+            return dial.IdsPhones.Contains(idPhone);
+        }
+        
         if (e is ExtensionVoicemail vm)
         {
-            weight = (vm.IdsPhonesThatCanListenToVoicemail.Count * 2) + 4;
             return vm.IdsPhonesThatCanListenToVoicemail.Contains(idPhone);
         }
-        weight = 0;
+        
         return false;
     }
 

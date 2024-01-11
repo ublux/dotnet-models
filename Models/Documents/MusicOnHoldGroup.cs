@@ -15,7 +15,7 @@ public partial class MusicOnHoldGroup : UbluxDocument_ReferenceAccount_Reference
     [References(typeof(Audio))]
     [AllowUpdate(true)]
     [UbluxValidationRequired]
-    public required List<string> IdsAudios { get; set; } = new();
+    public required List<string> IdsAudios { get; set; } = [];
 
     #endregion
 

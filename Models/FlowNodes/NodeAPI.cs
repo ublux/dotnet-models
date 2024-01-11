@@ -30,7 +30,7 @@ public partial class NodeAPI
     /// <summary>
     ///     Custom headers to send. For example an Authorization header may be needed
     /// </summary>
-    public List<string> Headers { get; set; } = new();
+    public List<string> Headers { get; set; } = [];
 
     /// <summary>
     ///     Will save response under this variable name

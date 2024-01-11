@@ -20,7 +20,7 @@ public class AiCallAnalysisQuery : AiCallAnalysisVariable
     /// <summary>
     ///     If response contains any of this keywords send email
     /// </summary>
-    public List<string> IfResponseContainsKeywordSendEmail { get; set; } = new();
+    public List<string> IfResponseContainsKeywordSendEmail { get; set; } = [];
 }
 
 /// <summary>
@@ -31,14 +31,14 @@ public class AiCallAnalysisSubQuery
     /// <summary>
     ///     If response contains keyword then query AI engine again
     /// </summary>
-    public List<string> IfResponseContainsKeywordQueryEngine { get; set; } = new();
+    public List<string> IfResponseContainsKeywordQueryEngine { get; set; } = [];
 
     /// <summary>
     ///     Secondary input query to ask AI engine in case response contains keyword.
     ///     For example if the question is to find out if there is a problem we can have a second question to see what type of problem and how severe.
     /// </summary>
     [AllowUpdate(true)]
-    public List<AiCallAnalysisQuery> Queries { get; set; } = new();
+    public List<AiCallAnalysisQuery> Queries { get; set; } = [];
 
     /// <summary>
     ///     Engine to use. If null Ublux will use the default engine

@@ -173,7 +173,7 @@ public partial class NodeIfDigits : FlowNode, IMultipleChildren
     [AllowUpdate(false)] 
     [SwaggerSchema(ReadOnly = true)] 
     [References(typeof(FlowNode))]
-    public List<FlowNode> Children { get; set; } = new List<FlowNode>();
+    public List<FlowNode> Children { get; set; } = [];
 }
 
 /// <summary></summary>
@@ -233,7 +233,7 @@ public partial class NodeIfTime : FlowNode, IMultipleChildren
     [AllowUpdate(false)] 
     [SwaggerSchema(ReadOnly = true)] 
     [References(typeof(FlowNode))]
-    public List<FlowNode> Children { get; set; } = new List<FlowNode>();
+    public List<FlowNode> Children { get; set; } = [];
 }
 
 /// <summary></summary>
@@ -293,7 +293,7 @@ public partial class NodeIfWeekDay : FlowNode, IMultipleChildren
     [AllowUpdate(false)] 
     [SwaggerSchema(ReadOnly = true)] 
     [References(typeof(FlowNode))]
-    public List<FlowNode> Children { get; set; } = new List<FlowNode>();
+    public List<FlowNode> Children { get; set; } = [];
 }
 
 /// <summary></summary>
@@ -393,7 +393,7 @@ public partial class NodeIfDialStatus : FlowNode, IMultipleChildren
     [AllowUpdate(false)] 
     [SwaggerSchema(ReadOnly = true)] 
     [References(typeof(FlowNode))]
-    public List<FlowNode> Children { get; set; } = new List<FlowNode>();
+    public List<FlowNode> Children { get; set; } = [];
 }
 
 /// <summary></summary>
@@ -453,7 +453,7 @@ public partial class NodeIfPhoneDisconnected : FlowNode, IMultipleChildren
     [AllowUpdate(false)] 
     [SwaggerSchema(ReadOnly = true)] 
     [References(typeof(FlowNode))]
-    public List<FlowNode> Children { get; set; } = new List<FlowNode>();
+    public List<FlowNode> Children { get; set; } = [];
 }
 
 /// <summary></summary>
@@ -633,7 +633,7 @@ public partial class NodeIfVariable : FlowNode, IMultipleChildren
     [AllowUpdate(false)] 
     [SwaggerSchema(ReadOnly = true)] 
     [References(typeof(FlowNode))]
-    public List<FlowNode> Children { get; set; } = new List<FlowNode>();
+    public List<FlowNode> Children { get; set; } = [];
 }
 
 /// <summary></summary>
@@ -693,7 +693,7 @@ public partial class NodeIfKeyword : FlowNode, IMultipleChildren
     [AllowUpdate(false)] 
     [SwaggerSchema(ReadOnly = true)] 
     [References(typeof(FlowNode))]
-    public List<FlowNode> Children { get; set; } = new List<FlowNode>();
+    public List<FlowNode> Children { get; set; } = [];
 }
 
 /// <summary></summary>

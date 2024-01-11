@@ -1,4 +1,6 @@
-﻿namespace Ublux.Communications.Models.Documents;
+﻿using System.Collections.Concurrent;
+
+namespace Ublux.Communications.Models.Documents;
 
 /// <summary>
 ///     Incoming phone call from PSTN to an extension
@@ -39,7 +41,7 @@ public partial class CallIncomingToExtension : CallIncoming, ICallToExtension
     [References(typeof(Phone))]
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    public List<string> IdsPhonesThatRing { get; set; } = new();
+    public ConcurrentBag<string> IdsPhonesThatRing { get; set; } = [];
 
     /// <summary>
     ///     Phones that did not ring
@@ -47,7 +49,7 @@ public partial class CallIncomingToExtension : CallIncoming, ICallToExtension
     [References(typeof(Phone))]
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    public List<string> IdsPhonesThatDidNotRing { get; set; } = new();
+    public ConcurrentBag<string> IdsPhonesThatDidNotRing { get; set; } = [];
 
     #endregion
 

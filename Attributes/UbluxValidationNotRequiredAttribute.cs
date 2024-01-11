@@ -4,6 +4,4 @@
 ///     Used to override the UbluxValidationRequiredAttribute.
 /// </summary>
 [AttributeUsage(AttributeTargets.Property)]
-public class UbluxValidationNotRequiredAttribute : Attribute
-{
-}
+public class UbluxValidationNotRequiredAttribute : Attribute;

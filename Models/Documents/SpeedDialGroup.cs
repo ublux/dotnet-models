@@ -13,7 +13,7 @@ public partial class SpeedDialGroup : UbluxDocument_ReferenceAccount_ReferenceTa
     ///     Group of speed dial keys. Must have at least one
     /// </summary>
     [AllowUpdate(true)]    
-    public List<SpeedDial> SpeedDials { get; set; } = new();
+    public List<SpeedDial> SpeedDials { get; set; } = [];
 
     #endregion
 

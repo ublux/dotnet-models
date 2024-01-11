@@ -30,7 +30,7 @@ public class EventOutgoingCallTerminatedWithTranscription : EventOutgoingCallTer
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    public List<AiTranscription> Transcription { get; set; } = new();
+    public List<AiTranscription> Transcription { get; set; } = [];
     
     /// <summary>
     ///     Return a random object

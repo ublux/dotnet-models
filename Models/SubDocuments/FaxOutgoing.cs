@@ -34,8 +34,13 @@ public partial class FaxOutgoing : UbluxSubDocument
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    [UbluxValidationStringRange(2000)]
-    public string? ErrorMessage { get; set; }
+    public List<string> Errors
+    {
+        get; 
+#if UBLUX_Release || RELEASE
+        set;
+#endif        
+    } = [];
 
     ///// <summary>
     /////     Path where Pdf exists on disk

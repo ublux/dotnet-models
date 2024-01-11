@@ -7,11 +7,13 @@
 [JsonSubtypes.KnownSubType(typeof(CloudServicePbx), nameof(CloudServiceType.PBX))]
 [JsonSubtypes.KnownSubType(typeof(CloudServiceWebApp), nameof(CloudServiceType.WA))]
 [JsonSubtypes.KnownSubType(typeof(CloudServiceWebHost), nameof(CloudServiceType.WH))]
+[JsonSubtypes.KnownSubType(typeof(CloudServiceTranscription), nameof(CloudServiceType.TS))]
 //[JsonSubtypes.KnownSubType(typeof(CloudServiceWebService), nameof(CloudServiceType.API))]
 [BsonKnownTypes(
     typeof(CloudServicePbx),
     typeof(CloudServiceWebApp),
-    typeof(CloudServiceWebHost)
+    typeof(CloudServiceWebHost),
+    typeof(CloudServiceTranscription)
 //typeof(CloudServiceWebService)
 )]
 public abstract partial class CloudService : UbluxDocument
@@ -19,7 +21,7 @@ public abstract partial class CloudService : UbluxDocument
     #region Properties
 
     /// <summary>
-    ///     Cloud services can authenticate differently than users. Makes no sense for a pbx for exaple to have an email address
+    ///     Cloud services can authenticate differently than users. Makes no sense for a pbx for example to have an email address
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
@@ -58,19 +60,9 @@ public abstract partial class CloudService : UbluxDocument
     [AllowUpdate(false)] 
     [SwaggerSchema(ReadOnly = true)]
     public string? Localnet { get; set; }
-
-    ///// <summary>
-    /////     If this Linux cloud service is inside a NAT then what is the public ip address.
-    /////     This is needed by asterisk sip.conf file
-    ///// 
-    /////     It is a list because sometimes it may contain multiple public ips. For example in namschul we get requests of ip phones from a different ip
-    ///// </summary>
-    //[AllowUpdate(false)]
-    //[IsUbluxRequired]
-    //public List<string> ExternalIps { get; set; } = new();
-
+    
     /// <summary>
-    ///     It can have multipe ips but only one should be used.
+    ///     It can have multiple ips but only one should be used.
     ///     Hard host name should point to this
     /// </summary>
     [AllowUpdate(false)] 
@@ -118,7 +110,7 @@ public abstract partial class CloudService : UbluxDocument
     //private string instanceId = string.Empty;
 
     /// <summary>
-    ///     Is this a test cloud serviec
+    ///     Is this a test cloud service?
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]

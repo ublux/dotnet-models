@@ -40,11 +40,11 @@ public partial class StoredFileReference : UbluxDocument_ReferenceAccount
     public required StoredFile StoredFile { get; set; }
 
     /// <summary>
-    ///     Is this Cloud file backed up
+    ///     True means its backed up. False means its not
     /// </summary>
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
-    public required bool IsBackup { get; set; }
+    public bool IsBackup { get; set; }
 
     #region MongoDB
 

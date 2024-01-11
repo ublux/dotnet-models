@@ -43,7 +43,7 @@ public class QueuedEmail : IUbluxDocumentId
     ///     Cannot be an IdEmail because we may be sending an email to verify an email address for example.
     ///     List of emails where to send email
     /// </summary>
-    public required List<string> Emails { get; set; } = new();
+    public required IReadOnlyList<string> Emails { get; set; } 
 
     /// <summary>
     ///     Subject of email

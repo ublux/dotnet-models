@@ -16,5 +16,5 @@ public partial class NodeDynamicExtension
     /// <summary>
     ///     Prevent calling this extensions
     /// </summary>
-    public List<string> IdsExtensionsToExclude { get; set; } = new List<string>();
+    public List<string> IdsExtensionsToExclude { get; set; } = [];
 }

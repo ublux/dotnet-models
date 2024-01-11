@@ -68,7 +68,7 @@ public partial class TrunkTermination : UbluxDocument
     [SwaggerSchema(ReadOnly = true)]
     [UbluxValidationRequired]
     [BsonRepresentation(BsonType.String)]
-    public required List<CountryIsoCode> CountryIsoCodesThatCanCall { get; set; } = new();
+    public required List<CountryIsoCode> CountryIsoCodesThatCanCall { get; set; } = [];
 
     /// <summary>
     ///     Friendly name

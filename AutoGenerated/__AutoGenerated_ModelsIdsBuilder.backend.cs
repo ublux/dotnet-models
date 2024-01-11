@@ -116,6 +116,15 @@ namespace Ublux.Communications.Models.Documents {
         /// <summary> Build test cloud service: Example: CSP.US-T  CSWA.US-T </summary>
         public static BuiltId BuildIdGateway(CountryIsoCode country, string letter) => new($"{DocumentPrefix}.{country}-{letter}");
     }
+    public partial class CloudServiceTranscription {
+        /// <summary> Id prefix </summary>
+        public const string DocumentPrefix = "CST";
+
+        /// <summary> Custom: Prefix followed by id. Example: CSP.US-1  CSWA.US-1 </summary>
+        public static BuiltId BuildId(CountryIsoCode country, int number) => new($"{DocumentPrefix}.{country}-{number}");
+        /// <summary> Build test cloud service: Example: CSP.US-T  CSWA.US-T </summary>
+        public static BuiltId BuildIdTest(CountryIsoCode country) => new($"{DocumentPrefix}.{country}-T");
+    }
     public partial class CloudServiceWebApp {
         /// <summary> Id prefix </summary>
         public const string DocumentPrefix = "CSWA";
@@ -194,8 +203,8 @@ namespace Ublux.Communications.Models.Documents {
         /// <summary> Id prefix </summary>
         public const string DocumentPrefix = "FI";
 
-        /// <summary> Build Id </summary>
-        public static BuiltId BuildId(RunningApplicationInstance instance) => new($"{DocumentPrefix}.{instance.Id}.{instance.IdGlobalAutoIncrement()}");
+        /// <summary> Example: FI.1231231.123 </summary>
+        public static BuiltId BuildId(string channelId) => new($"{DocumentPrefix}.{channelId}");
     }
     public partial class FaxOutgoingGroup {
         /// <summary> Id prefix </summary>
