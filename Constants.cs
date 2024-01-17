@@ -17,10 +17,10 @@ public static partial class Constants
         public static class S3
         {
             /// <summary> AWS S3 bucket name </summary>
-            public static string BucketName = "api.ublux.com";
+            public const string BucketName = "api.ublux.com";
 
             /// <summary> Region of S3 bucket</summary>
-            public static RegionEndpoint Region = RegionEndpoint.USEast1;
+            public static readonly RegionEndpoint Region = RegionEndpoint.USEast1;
         }
     }
 
@@ -162,14 +162,19 @@ public static partial class Constants
     public const int RtpPortStart = 10_000;
 
     /// <summary>
-    ///     rtpend on rtp.conf. Used to be port 20_000 but we use that port for Sse to avoid having to change all firewall rules
+    ///     rtpend on rtp.conf. Used to be port 20_000 but we use that port for Sse to avoid having to change all firewall rules and also for real time transcriptions
     /// </summary>
-    public const int RtpPortEnd = 19_999;
+    public const int RtpPortEnd = 19_997;
 
     /// <summary>
-    ///     Port used for Server side events used to send notifications to restaurantes about in progress calls
+    ///     Port used for Server side events used to send notifications to restaurants about in progress calls
     /// </summary>
     public const int PortSse = 20_000;
+
+    /// <summary>
+    ///     Port used by real time transcription
+    /// </summary>
+    public const int PortRealTimeTranscription = 19_998;
 
     /// <summary>
     ///     Tcp tunnel used for pbx

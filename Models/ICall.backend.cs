@@ -29,9 +29,16 @@ public partial interface ICall
     [AllowUpdate(false)] 
     [SwaggerSchema(ReadOnly = true)] 
     public string? ChannelToAnswer { get; set; }
+    
+    /// <summary>
+    ///     Custom AI features. For example determine if agent is speaking to fast
+    /// </summary>
+    [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
+    public CompletedAiExtensionFeatures? CompletedAiExtensionFeatures { get; set; }
 
     /// <summary>
-    ///     Adds to ChannelsTo makeing sure there are not duplicates
+    ///     Adds to ChannelsTo making sure there are not duplicates
     /// </summary>    
     public void AddToChannelsTo(string idChannel);
 }

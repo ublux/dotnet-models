@@ -1155,6 +1155,21 @@ public class CallIncomingToCallFlowLogicFilterRequest
 
 
 
+    /// <summary> ChildCalls.CompletedAiExtensionFeatures.IdExtension equals </summary>
+    [JsonProperty("childCalls_completedAiExtensionFeatures_idExtension_eq")]
+    public string? ChildCalls_CompletedAiExtensionFeatures_IdExtension_EQ { get; set; }
+    /// <summary> ChildCalls.CompletedAiExtensionFeatures.IdExtension contains </summary>
+    [JsonProperty("childCalls_completedAiExtensionFeatures_idExtension_con")]
+    public string? ChildCalls_CompletedAiExtensionFeatures_IdExtension_CON { get; set; }
+    /// <summary> ChildCalls.CompletedAiExtensionFeatures.IdExtension regex </summary>
+    [JsonProperty("childCalls_completedAiExtensionFeatures_idExtension_reg")]
+    public string? ChildCalls_CompletedAiExtensionFeatures_IdExtension_REG { get; set; }
+
+
+
+
+
+
     /// <summary> ChildCalls.ChildCallType equals </summary>
     [JsonProperty("childCalls_childCallType_eq")]
     public string? ChildCalls_ChildCallType_EQ { get; set; }
@@ -1703,6 +1718,32 @@ public class CallIncomingToCallFlowLogicFilterRequest
     /// <summary> AiAnalysisStatus regex </summary>
     [JsonProperty("aiAnalysisStatus_reg")]
     public string? AiAnalysisStatus_REG { get; set; }
+
+    /// <summary> CompletedAiExtensionFeatures.IdExtension equals </summary>
+    [JsonProperty("completedAiExtensionFeatures_idExtension_eq")]
+    public string? CompletedAiExtensionFeatures_IdExtension_EQ { get; set; }
+    /// <summary> CompletedAiExtensionFeatures.IdExtension contains </summary>
+    [JsonProperty("completedAiExtensionFeatures_idExtension_con")]
+    public string? CompletedAiExtensionFeatures_IdExtension_CON { get; set; }
+    /// <summary> CompletedAiExtensionFeatures.IdExtension regex </summary>
+    [JsonProperty("completedAiExtensionFeatures_idExtension_reg")]
+    public string? CompletedAiExtensionFeatures_IdExtension_REG { get; set; }
+
+    /// <summary> CompletedAiExtensionFeatures.AiExtensionFeatures.AgentCheckLists.Title equals </summary>
+    [JsonProperty("completedAiExtensionFeatures_aiExtensionFeatures_agentCheckLists_title_eq")]
+    public string? CompletedAiExtensionFeatures_AiExtensionFeatures_AgentCheckLists_Title_EQ { get; set; }
+    /// <summary> CompletedAiExtensionFeatures.AiExtensionFeatures.AgentCheckLists.Title contains </summary>
+    [JsonProperty("completedAiExtensionFeatures_aiExtensionFeatures_agentCheckLists_title_con")]
+    public string? CompletedAiExtensionFeatures_AiExtensionFeatures_AgentCheckLists_Title_CON { get; set; }
+    /// <summary> CompletedAiExtensionFeatures.AiExtensionFeatures.AgentCheckLists.Title regex </summary>
+    [JsonProperty("completedAiExtensionFeatures_aiExtensionFeatures_agentCheckLists_title_reg")]
+    public string? CompletedAiExtensionFeatures_AiExtensionFeatures_AgentCheckLists_Title_REG { get; set; }
+
+
+
+
+
+
 
     /// <summary> IdsTags equals </summary>
     [JsonProperty("idsTags_eq")]
@@ -1921,6 +1962,21 @@ public class CallIncomingToExtensionFilterRequest
 
 
 
+    /// <summary> ChildCalls.CompletedAiExtensionFeatures.IdExtension equals </summary>
+    [JsonProperty("childCalls_completedAiExtensionFeatures_idExtension_eq")]
+    public string? ChildCalls_CompletedAiExtensionFeatures_IdExtension_EQ { get; set; }
+    /// <summary> ChildCalls.CompletedAiExtensionFeatures.IdExtension contains </summary>
+    [JsonProperty("childCalls_completedAiExtensionFeatures_idExtension_con")]
+    public string? ChildCalls_CompletedAiExtensionFeatures_IdExtension_CON { get; set; }
+    /// <summary> ChildCalls.CompletedAiExtensionFeatures.IdExtension regex </summary>
+    [JsonProperty("childCalls_completedAiExtensionFeatures_idExtension_reg")]
+    public string? ChildCalls_CompletedAiExtensionFeatures_IdExtension_REG { get; set; }
+
+
+
+
+
+
     /// <summary> ChildCalls.ChildCallType equals </summary>
     [JsonProperty("childCalls_childCallType_eq")]
     public string? ChildCalls_ChildCallType_EQ { get; set; }
@@ -2469,6 +2525,32 @@ public class CallIncomingToExtensionFilterRequest
     /// <summary> AiAnalysisStatus regex </summary>
     [JsonProperty("aiAnalysisStatus_reg")]
     public string? AiAnalysisStatus_REG { get; set; }
+
+    /// <summary> CompletedAiExtensionFeatures.IdExtension equals </summary>
+    [JsonProperty("completedAiExtensionFeatures_idExtension_eq")]
+    public string? CompletedAiExtensionFeatures_IdExtension_EQ { get; set; }
+    /// <summary> CompletedAiExtensionFeatures.IdExtension contains </summary>
+    [JsonProperty("completedAiExtensionFeatures_idExtension_con")]
+    public string? CompletedAiExtensionFeatures_IdExtension_CON { get; set; }
+    /// <summary> CompletedAiExtensionFeatures.IdExtension regex </summary>
+    [JsonProperty("completedAiExtensionFeatures_idExtension_reg")]
+    public string? CompletedAiExtensionFeatures_IdExtension_REG { get; set; }
+
+    /// <summary> CompletedAiExtensionFeatures.AiExtensionFeatures.AgentCheckLists.Title equals </summary>
+    [JsonProperty("completedAiExtensionFeatures_aiExtensionFeatures_agentCheckLists_title_eq")]
+    public string? CompletedAiExtensionFeatures_AiExtensionFeatures_AgentCheckLists_Title_EQ { get; set; }
+    /// <summary> CompletedAiExtensionFeatures.AiExtensionFeatures.AgentCheckLists.Title contains </summary>
+    [JsonProperty("completedAiExtensionFeatures_aiExtensionFeatures_agentCheckLists_title_con")]
+    public string? CompletedAiExtensionFeatures_AiExtensionFeatures_AgentCheckLists_Title_CON { get; set; }
+    /// <summary> CompletedAiExtensionFeatures.AiExtensionFeatures.AgentCheckLists.Title regex </summary>
+    [JsonProperty("completedAiExtensionFeatures_aiExtensionFeatures_agentCheckLists_title_reg")]
+    public string? CompletedAiExtensionFeatures_AiExtensionFeatures_AgentCheckLists_Title_REG { get; set; }
+
+
+
+
+
+
 
     /// <summary> IdsTags equals </summary>
     [JsonProperty("idsTags_eq")]
@@ -2687,6 +2769,21 @@ public class CallOutgoingToExtensionFilterRequest
 
 
 
+    /// <summary> ChildCalls.CompletedAiExtensionFeatures.IdExtension equals </summary>
+    [JsonProperty("childCalls_completedAiExtensionFeatures_idExtension_eq")]
+    public string? ChildCalls_CompletedAiExtensionFeatures_IdExtension_EQ { get; set; }
+    /// <summary> ChildCalls.CompletedAiExtensionFeatures.IdExtension contains </summary>
+    [JsonProperty("childCalls_completedAiExtensionFeatures_idExtension_con")]
+    public string? ChildCalls_CompletedAiExtensionFeatures_IdExtension_CON { get; set; }
+    /// <summary> ChildCalls.CompletedAiExtensionFeatures.IdExtension regex </summary>
+    [JsonProperty("childCalls_completedAiExtensionFeatures_idExtension_reg")]
+    public string? ChildCalls_CompletedAiExtensionFeatures_IdExtension_REG { get; set; }
+
+
+
+
+
+
     /// <summary> ChildCalls.ChildCallType equals </summary>
     [JsonProperty("childCalls_childCallType_eq")]
     public string? ChildCalls_ChildCallType_EQ { get; set; }
@@ -3216,6 +3313,32 @@ public class CallOutgoingToExtensionFilterRequest
     [JsonProperty("aiAnalysisStatus_reg")]
     public string? AiAnalysisStatus_REG { get; set; }
 
+    /// <summary> CompletedAiExtensionFeatures.IdExtension equals </summary>
+    [JsonProperty("completedAiExtensionFeatures_idExtension_eq")]
+    public string? CompletedAiExtensionFeatures_IdExtension_EQ { get; set; }
+    /// <summary> CompletedAiExtensionFeatures.IdExtension contains </summary>
+    [JsonProperty("completedAiExtensionFeatures_idExtension_con")]
+    public string? CompletedAiExtensionFeatures_IdExtension_CON { get; set; }
+    /// <summary> CompletedAiExtensionFeatures.IdExtension regex </summary>
+    [JsonProperty("completedAiExtensionFeatures_idExtension_reg")]
+    public string? CompletedAiExtensionFeatures_IdExtension_REG { get; set; }
+
+    /// <summary> CompletedAiExtensionFeatures.AiExtensionFeatures.AgentCheckLists.Title equals </summary>
+    [JsonProperty("completedAiExtensionFeatures_aiExtensionFeatures_agentCheckLists_title_eq")]
+    public string? CompletedAiExtensionFeatures_AiExtensionFeatures_AgentCheckLists_Title_EQ { get; set; }
+    /// <summary> CompletedAiExtensionFeatures.AiExtensionFeatures.AgentCheckLists.Title contains </summary>
+    [JsonProperty("completedAiExtensionFeatures_aiExtensionFeatures_agentCheckLists_title_con")]
+    public string? CompletedAiExtensionFeatures_AiExtensionFeatures_AgentCheckLists_Title_CON { get; set; }
+    /// <summary> CompletedAiExtensionFeatures.AiExtensionFeatures.AgentCheckLists.Title regex </summary>
+    [JsonProperty("completedAiExtensionFeatures_aiExtensionFeatures_agentCheckLists_title_reg")]
+    public string? CompletedAiExtensionFeatures_AiExtensionFeatures_AgentCheckLists_Title_REG { get; set; }
+
+
+
+
+
+
+
     /// <summary> IdsTags equals </summary>
     [JsonProperty("idsTags_eq")]
     public string? IdsTags_EQ { get; set; }
@@ -3380,6 +3503,21 @@ public class CallOutgoingToPSTNFilterRequest
     /// <summary> ChannelVariables.CallerIdNumber regex </summary>
     [JsonProperty("channelVariables_callerIdNumber_reg")]
     public string? ChannelVariables_CallerIdNumber_REG { get; set; }
+
+
+
+    /// <summary> ChildCalls.CompletedAiExtensionFeatures.IdExtension equals </summary>
+    [JsonProperty("childCalls_completedAiExtensionFeatures_idExtension_eq")]
+    public string? ChildCalls_CompletedAiExtensionFeatures_IdExtension_EQ { get; set; }
+    /// <summary> ChildCalls.CompletedAiExtensionFeatures.IdExtension contains </summary>
+    [JsonProperty("childCalls_completedAiExtensionFeatures_idExtension_con")]
+    public string? ChildCalls_CompletedAiExtensionFeatures_IdExtension_CON { get; set; }
+    /// <summary> ChildCalls.CompletedAiExtensionFeatures.IdExtension regex </summary>
+    [JsonProperty("childCalls_completedAiExtensionFeatures_idExtension_reg")]
+    public string? ChildCalls_CompletedAiExtensionFeatures_IdExtension_REG { get; set; }
+
+
+
 
 
 
@@ -3931,6 +4069,32 @@ public class CallOutgoingToPSTNFilterRequest
     /// <summary> AiAnalysisStatus regex </summary>
     [JsonProperty("aiAnalysisStatus_reg")]
     public string? AiAnalysisStatus_REG { get; set; }
+
+    /// <summary> CompletedAiExtensionFeatures.IdExtension equals </summary>
+    [JsonProperty("completedAiExtensionFeatures_idExtension_eq")]
+    public string? CompletedAiExtensionFeatures_IdExtension_EQ { get; set; }
+    /// <summary> CompletedAiExtensionFeatures.IdExtension contains </summary>
+    [JsonProperty("completedAiExtensionFeatures_idExtension_con")]
+    public string? CompletedAiExtensionFeatures_IdExtension_CON { get; set; }
+    /// <summary> CompletedAiExtensionFeatures.IdExtension regex </summary>
+    [JsonProperty("completedAiExtensionFeatures_idExtension_reg")]
+    public string? CompletedAiExtensionFeatures_IdExtension_REG { get; set; }
+
+    /// <summary> CompletedAiExtensionFeatures.AiExtensionFeatures.AgentCheckLists.Title equals </summary>
+    [JsonProperty("completedAiExtensionFeatures_aiExtensionFeatures_agentCheckLists_title_eq")]
+    public string? CompletedAiExtensionFeatures_AiExtensionFeatures_AgentCheckLists_Title_EQ { get; set; }
+    /// <summary> CompletedAiExtensionFeatures.AiExtensionFeatures.AgentCheckLists.Title contains </summary>
+    [JsonProperty("completedAiExtensionFeatures_aiExtensionFeatures_agentCheckLists_title_con")]
+    public string? CompletedAiExtensionFeatures_AiExtensionFeatures_AgentCheckLists_Title_CON { get; set; }
+    /// <summary> CompletedAiExtensionFeatures.AiExtensionFeatures.AgentCheckLists.Title regex </summary>
+    [JsonProperty("completedAiExtensionFeatures_aiExtensionFeatures_agentCheckLists_title_reg")]
+    public string? CompletedAiExtensionFeatures_AiExtensionFeatures_AgentCheckLists_Title_REG { get; set; }
+
+
+
+
+
+
 
     /// <summary> IdsTags equals </summary>
     [JsonProperty("idsTags_eq")]
@@ -5346,9 +5510,15 @@ public class ExtensionDialFilterRequest
     [JsonProperty("aiFeatures_agentCheckLists_items_item_reg")]
     public string? AiFeatures_AgentCheckLists_Items_Item_REG { get; set; }
 
-    /// <summary> AiFeatures.AgentCheckLists.Items.IsComplete equals </summary>
-    [JsonProperty("aiFeatures_agentCheckLists_items_isComplete_eq")]
-    public bool? AiFeatures_AgentCheckLists_Items_IsComplete_EQ { get; set; }
+    /// <summary> AiFeatures.AgentCheckLists.Items.DateComplete equals </summary>
+    [JsonProperty("aiFeatures_agentCheckLists_items_dateComplete_eq")]
+    public DateTime? AiFeatures_AgentCheckLists_Items_DateComplete_EQ { get; set; }
+    /// <summary> AiFeatures.AgentCheckLists.Items.DateComplete less than or equal to </summary>
+    [JsonProperty("aiFeatures_agentCheckLists_items_dateComplete_lte")]
+    public DateTime? AiFeatures_AgentCheckLists_Items_DateComplete_LTE { get; set; }
+    /// <summary> AiFeatures.AgentCheckLists.Items.DateComplete greater than or equal to </summary>
+    [JsonProperty("aiFeatures_agentCheckLists_items_dateComplete_gte")]
+    public DateTime? AiFeatures_AgentCheckLists_Items_DateComplete_GTE { get; set; }
 
 
 
@@ -5886,9 +6056,15 @@ public class ExtensionQueueFilterRequest
     [JsonProperty("aiFeatures_agentCheckLists_items_item_reg")]
     public string? AiFeatures_AgentCheckLists_Items_Item_REG { get; set; }
 
-    /// <summary> AiFeatures.AgentCheckLists.Items.IsComplete equals </summary>
-    [JsonProperty("aiFeatures_agentCheckLists_items_isComplete_eq")]
-    public bool? AiFeatures_AgentCheckLists_Items_IsComplete_EQ { get; set; }
+    /// <summary> AiFeatures.AgentCheckLists.Items.DateComplete equals </summary>
+    [JsonProperty("aiFeatures_agentCheckLists_items_dateComplete_eq")]
+    public DateTime? AiFeatures_AgentCheckLists_Items_DateComplete_EQ { get; set; }
+    /// <summary> AiFeatures.AgentCheckLists.Items.DateComplete less than or equal to </summary>
+    [JsonProperty("aiFeatures_agentCheckLists_items_dateComplete_lte")]
+    public DateTime? AiFeatures_AgentCheckLists_Items_DateComplete_LTE { get; set; }
+    /// <summary> AiFeatures.AgentCheckLists.Items.DateComplete greater than or equal to </summary>
+    [JsonProperty("aiFeatures_agentCheckLists_items_dateComplete_gte")]
+    public DateTime? AiFeatures_AgentCheckLists_Items_DateComplete_GTE { get; set; }
 
 
 
@@ -9877,6 +10053,21 @@ public class CallOutgoingToPowerDialerFilterRequest
 
 
 
+    /// <summary> ChildCalls.CompletedAiExtensionFeatures.IdExtension equals </summary>
+    [JsonProperty("childCalls_completedAiExtensionFeatures_idExtension_eq")]
+    public string? ChildCalls_CompletedAiExtensionFeatures_IdExtension_EQ { get; set; }
+    /// <summary> ChildCalls.CompletedAiExtensionFeatures.IdExtension contains </summary>
+    [JsonProperty("childCalls_completedAiExtensionFeatures_idExtension_con")]
+    public string? ChildCalls_CompletedAiExtensionFeatures_IdExtension_CON { get; set; }
+    /// <summary> ChildCalls.CompletedAiExtensionFeatures.IdExtension regex </summary>
+    [JsonProperty("childCalls_completedAiExtensionFeatures_idExtension_reg")]
+    public string? ChildCalls_CompletedAiExtensionFeatures_IdExtension_REG { get; set; }
+
+
+
+
+
+
     /// <summary> ChildCalls.ChildCallType equals </summary>
     [JsonProperty("childCalls_childCallType_eq")]
     public string? ChildCalls_ChildCallType_EQ { get; set; }
@@ -10425,6 +10616,32 @@ public class CallOutgoingToPowerDialerFilterRequest
     /// <summary> AiAnalysisStatus regex </summary>
     [JsonProperty("aiAnalysisStatus_reg")]
     public string? AiAnalysisStatus_REG { get; set; }
+
+    /// <summary> CompletedAiExtensionFeatures.IdExtension equals </summary>
+    [JsonProperty("completedAiExtensionFeatures_idExtension_eq")]
+    public string? CompletedAiExtensionFeatures_IdExtension_EQ { get; set; }
+    /// <summary> CompletedAiExtensionFeatures.IdExtension contains </summary>
+    [JsonProperty("completedAiExtensionFeatures_idExtension_con")]
+    public string? CompletedAiExtensionFeatures_IdExtension_CON { get; set; }
+    /// <summary> CompletedAiExtensionFeatures.IdExtension regex </summary>
+    [JsonProperty("completedAiExtensionFeatures_idExtension_reg")]
+    public string? CompletedAiExtensionFeatures_IdExtension_REG { get; set; }
+
+    /// <summary> CompletedAiExtensionFeatures.AiExtensionFeatures.AgentCheckLists.Title equals </summary>
+    [JsonProperty("completedAiExtensionFeatures_aiExtensionFeatures_agentCheckLists_title_eq")]
+    public string? CompletedAiExtensionFeatures_AiExtensionFeatures_AgentCheckLists_Title_EQ { get; set; }
+    /// <summary> CompletedAiExtensionFeatures.AiExtensionFeatures.AgentCheckLists.Title contains </summary>
+    [JsonProperty("completedAiExtensionFeatures_aiExtensionFeatures_agentCheckLists_title_con")]
+    public string? CompletedAiExtensionFeatures_AiExtensionFeatures_AgentCheckLists_Title_CON { get; set; }
+    /// <summary> CompletedAiExtensionFeatures.AiExtensionFeatures.AgentCheckLists.Title regex </summary>
+    [JsonProperty("completedAiExtensionFeatures_aiExtensionFeatures_agentCheckLists_title_reg")]
+    public string? CompletedAiExtensionFeatures_AiExtensionFeatures_AgentCheckLists_Title_REG { get; set; }
+
+
+
+
+
+
 
     /// <summary> IdsTags equals </summary>
     [JsonProperty("idsTags_eq")]
@@ -10708,6 +10925,21 @@ public class CallFilterRequest
 
 
 
+    /// <summary> ChildCalls.CompletedAiExtensionFeatures.IdExtension equals </summary>
+    [JsonProperty("childCalls_completedAiExtensionFeatures_idExtension_eq")]
+    public string? ChildCalls_CompletedAiExtensionFeatures_IdExtension_EQ { get; set; }
+    /// <summary> ChildCalls.CompletedAiExtensionFeatures.IdExtension contains </summary>
+    [JsonProperty("childCalls_completedAiExtensionFeatures_idExtension_con")]
+    public string? ChildCalls_CompletedAiExtensionFeatures_IdExtension_CON { get; set; }
+    /// <summary> ChildCalls.CompletedAiExtensionFeatures.IdExtension regex </summary>
+    [JsonProperty("childCalls_completedAiExtensionFeatures_idExtension_reg")]
+    public string? ChildCalls_CompletedAiExtensionFeatures_IdExtension_REG { get; set; }
+
+
+
+
+
+
     /// <summary> ChildCalls.ChildCallType equals </summary>
     [JsonProperty("childCalls_childCallType_eq")]
     public string? ChildCalls_ChildCallType_EQ { get; set; }
@@ -11266,6 +11498,32 @@ public class CallFilterRequest
     /// <summary> AiAnalysisStatus regex </summary>
     [JsonProperty("aiAnalysisStatus_reg")]
     public string? AiAnalysisStatus_REG { get; set; }
+
+    /// <summary> CompletedAiExtensionFeatures.IdExtension equals </summary>
+    [JsonProperty("completedAiExtensionFeatures_idExtension_eq")]
+    public string? CompletedAiExtensionFeatures_IdExtension_EQ { get; set; }
+    /// <summary> CompletedAiExtensionFeatures.IdExtension contains </summary>
+    [JsonProperty("completedAiExtensionFeatures_idExtension_con")]
+    public string? CompletedAiExtensionFeatures_IdExtension_CON { get; set; }
+    /// <summary> CompletedAiExtensionFeatures.IdExtension regex </summary>
+    [JsonProperty("completedAiExtensionFeatures_idExtension_reg")]
+    public string? CompletedAiExtensionFeatures_IdExtension_REG { get; set; }
+
+    /// <summary> CompletedAiExtensionFeatures.AiExtensionFeatures.AgentCheckLists.Title equals </summary>
+    [JsonProperty("completedAiExtensionFeatures_aiExtensionFeatures_agentCheckLists_title_eq")]
+    public string? CompletedAiExtensionFeatures_AiExtensionFeatures_AgentCheckLists_Title_EQ { get; set; }
+    /// <summary> CompletedAiExtensionFeatures.AiExtensionFeatures.AgentCheckLists.Title contains </summary>
+    [JsonProperty("completedAiExtensionFeatures_aiExtensionFeatures_agentCheckLists_title_con")]
+    public string? CompletedAiExtensionFeatures_AiExtensionFeatures_AgentCheckLists_Title_CON { get; set; }
+    /// <summary> CompletedAiExtensionFeatures.AiExtensionFeatures.AgentCheckLists.Title regex </summary>
+    [JsonProperty("completedAiExtensionFeatures_aiExtensionFeatures_agentCheckLists_title_reg")]
+    public string? CompletedAiExtensionFeatures_AiExtensionFeatures_AgentCheckLists_Title_REG { get; set; }
+
+
+
+
+
+
 
     /// <summary> IdsTags equals </summary>
     [JsonProperty("idsTags_eq")]
@@ -11434,6 +11692,21 @@ public class CallIncomingFilterRequest
 
 
 
+    /// <summary> ChildCalls.CompletedAiExtensionFeatures.IdExtension equals </summary>
+    [JsonProperty("childCalls_completedAiExtensionFeatures_idExtension_eq")]
+    public string? ChildCalls_CompletedAiExtensionFeatures_IdExtension_EQ { get; set; }
+    /// <summary> ChildCalls.CompletedAiExtensionFeatures.IdExtension contains </summary>
+    [JsonProperty("childCalls_completedAiExtensionFeatures_idExtension_con")]
+    public string? ChildCalls_CompletedAiExtensionFeatures_IdExtension_CON { get; set; }
+    /// <summary> ChildCalls.CompletedAiExtensionFeatures.IdExtension regex </summary>
+    [JsonProperty("childCalls_completedAiExtensionFeatures_idExtension_reg")]
+    public string? ChildCalls_CompletedAiExtensionFeatures_IdExtension_REG { get; set; }
+
+
+
+
+
+
     /// <summary> ChildCalls.ChildCallType equals </summary>
     [JsonProperty("childCalls_childCallType_eq")]
     public string? ChildCalls_ChildCallType_EQ { get; set; }
@@ -11992,6 +12265,32 @@ public class CallIncomingFilterRequest
     /// <summary> AiAnalysisStatus regex </summary>
     [JsonProperty("aiAnalysisStatus_reg")]
     public string? AiAnalysisStatus_REG { get; set; }
+
+    /// <summary> CompletedAiExtensionFeatures.IdExtension equals </summary>
+    [JsonProperty("completedAiExtensionFeatures_idExtension_eq")]
+    public string? CompletedAiExtensionFeatures_IdExtension_EQ { get; set; }
+    /// <summary> CompletedAiExtensionFeatures.IdExtension contains </summary>
+    [JsonProperty("completedAiExtensionFeatures_idExtension_con")]
+    public string? CompletedAiExtensionFeatures_IdExtension_CON { get; set; }
+    /// <summary> CompletedAiExtensionFeatures.IdExtension regex </summary>
+    [JsonProperty("completedAiExtensionFeatures_idExtension_reg")]
+    public string? CompletedAiExtensionFeatures_IdExtension_REG { get; set; }
+
+    /// <summary> CompletedAiExtensionFeatures.AiExtensionFeatures.AgentCheckLists.Title equals </summary>
+    [JsonProperty("completedAiExtensionFeatures_aiExtensionFeatures_agentCheckLists_title_eq")]
+    public string? CompletedAiExtensionFeatures_AiExtensionFeatures_AgentCheckLists_Title_EQ { get; set; }
+    /// <summary> CompletedAiExtensionFeatures.AiExtensionFeatures.AgentCheckLists.Title contains </summary>
+    [JsonProperty("completedAiExtensionFeatures_aiExtensionFeatures_agentCheckLists_title_con")]
+    public string? CompletedAiExtensionFeatures_AiExtensionFeatures_AgentCheckLists_Title_CON { get; set; }
+    /// <summary> CompletedAiExtensionFeatures.AiExtensionFeatures.AgentCheckLists.Title regex </summary>
+    [JsonProperty("completedAiExtensionFeatures_aiExtensionFeatures_agentCheckLists_title_reg")]
+    public string? CompletedAiExtensionFeatures_AiExtensionFeatures_AgentCheckLists_Title_REG { get; set; }
+
+
+
+
+
+
 
     /// <summary> IdsTags equals </summary>
     [JsonProperty("idsTags_eq")]
@@ -12140,6 +12439,21 @@ public class CallOutgoingFilterRequest
 
 
 
+    /// <summary> ChildCalls.CompletedAiExtensionFeatures.IdExtension equals </summary>
+    [JsonProperty("childCalls_completedAiExtensionFeatures_idExtension_eq")]
+    public string? ChildCalls_CompletedAiExtensionFeatures_IdExtension_EQ { get; set; }
+    /// <summary> ChildCalls.CompletedAiExtensionFeatures.IdExtension contains </summary>
+    [JsonProperty("childCalls_completedAiExtensionFeatures_idExtension_con")]
+    public string? ChildCalls_CompletedAiExtensionFeatures_IdExtension_CON { get; set; }
+    /// <summary> ChildCalls.CompletedAiExtensionFeatures.IdExtension regex </summary>
+    [JsonProperty("childCalls_completedAiExtensionFeatures_idExtension_reg")]
+    public string? ChildCalls_CompletedAiExtensionFeatures_IdExtension_REG { get; set; }
+
+
+
+
+
+
     /// <summary> ChildCalls.ChildCallType equals </summary>
     [JsonProperty("childCalls_childCallType_eq")]
     public string? ChildCalls_ChildCallType_EQ { get; set; }
@@ -12698,6 +13012,32 @@ public class CallOutgoingFilterRequest
     /// <summary> AiAnalysisStatus regex </summary>
     [JsonProperty("aiAnalysisStatus_reg")]
     public string? AiAnalysisStatus_REG { get; set; }
+
+    /// <summary> CompletedAiExtensionFeatures.IdExtension equals </summary>
+    [JsonProperty("completedAiExtensionFeatures_idExtension_eq")]
+    public string? CompletedAiExtensionFeatures_IdExtension_EQ { get; set; }
+    /// <summary> CompletedAiExtensionFeatures.IdExtension contains </summary>
+    [JsonProperty("completedAiExtensionFeatures_idExtension_con")]
+    public string? CompletedAiExtensionFeatures_IdExtension_CON { get; set; }
+    /// <summary> CompletedAiExtensionFeatures.IdExtension regex </summary>
+    [JsonProperty("completedAiExtensionFeatures_idExtension_reg")]
+    public string? CompletedAiExtensionFeatures_IdExtension_REG { get; set; }
+
+    /// <summary> CompletedAiExtensionFeatures.AiExtensionFeatures.AgentCheckLists.Title equals </summary>
+    [JsonProperty("completedAiExtensionFeatures_aiExtensionFeatures_agentCheckLists_title_eq")]
+    public string? CompletedAiExtensionFeatures_AiExtensionFeatures_AgentCheckLists_Title_EQ { get; set; }
+    /// <summary> CompletedAiExtensionFeatures.AiExtensionFeatures.AgentCheckLists.Title contains </summary>
+    [JsonProperty("completedAiExtensionFeatures_aiExtensionFeatures_agentCheckLists_title_con")]
+    public string? CompletedAiExtensionFeatures_AiExtensionFeatures_AgentCheckLists_Title_CON { get; set; }
+    /// <summary> CompletedAiExtensionFeatures.AiExtensionFeatures.AgentCheckLists.Title regex </summary>
+    [JsonProperty("completedAiExtensionFeatures_aiExtensionFeatures_agentCheckLists_title_reg")]
+    public string? CompletedAiExtensionFeatures_AiExtensionFeatures_AgentCheckLists_Title_REG { get; set; }
+
+
+
+
+
+
 
     /// <summary> IdsTags equals </summary>
     [JsonProperty("idsTags_eq")]

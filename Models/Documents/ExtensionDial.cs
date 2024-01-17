@@ -1,4 +1,7 @@
 ﻿// ReSharper disable UnusedAutoPropertyAccessor.Global
+
+using System.ComponentModel.DataAnnotations;
+
 namespace Ublux.Communications.Models.Documents;
 
 /// <summary>
@@ -84,7 +87,7 @@ public class AiExtensionFeatures
     /// </summary>
     [UsedImplicitly]
     public List<CheckList>? AgentCheckLists { get; set; }
-
+    
     /// <summary>
     ///     Requires transcription in real time
     ///     0 = do not required
@@ -134,11 +137,17 @@ public class CheckListItem
     ///     Item
     /// </summary>
     [AllowUpdate(true)]
+    [MaxLength(1000)]
     public required string Item { get; set; } = string.Empty;
     
     /// <summary>
-    ///     Is the checklist item mentioned in the conversation?
+    ///     Is the checklist item mentioned in the conversation? 
     /// </summary>
     [AllowUpdate(false)]
-    public bool IsComplete { get; set; }
+    public DateTime? DateComplete { get; set; }
+
+    // /// <summary>
+    // ///     Helper method that determines if checklist items is completed
+    // /// </summary>
+    // public bool IsCompleted() => DateComplete.HasValue;
 }

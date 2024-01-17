@@ -34,6 +34,13 @@ public abstract partial class ChildCall : ICall
     [AllowUpdate(false)]
     [SwaggerSchema(ReadOnly = true)]
     public double? DurationInSeconds { get; set; }
+    
+    /// <summary>
+    ///     Custom AI features. For example determine if agent is speaking to fast
+    /// </summary>
+    [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
+    public CompletedAiExtensionFeatures? CompletedAiExtensionFeatures { get; set; }
 
     /// <summary>
     ///     Adds to ChannelsTo making sure there are not duplicates

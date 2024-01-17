@@ -151,7 +151,16 @@ public enum SnsTopic
     /// <summary>
     ///     PowerDialer sns topic
     /// </summary>
-    PowerDialer
+    PowerDialer,
+
+    #endregion
+
+    #region AiExtensionFeatures
+
+    /// <summary>
+    ///     AI Extension feature
+    /// </summary>
+    AiExtensionFeature_Checklist,
 
     #endregion
 }

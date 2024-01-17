@@ -25,7 +25,6 @@ namespace Ublux.Communications.Models.Documents;
 )]
 public abstract partial class Call : UbluxDocument_ReferenceAccount_ReferenceTags, ICall
 {
-
     #region Properties
 
     #region References
@@ -532,9 +531,35 @@ public abstract partial class Call : UbluxDocument_ReferenceAccount_ReferenceTag
     }
 
     #endregion
+    
+    /// <summary>
+    ///     Custom AI features. For example determine if agent is speaking to fast
+    /// </summary>
+    [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
+    public CompletedAiExtensionFeatures? CompletedAiExtensionFeatures { get; set; }
 }
 
+/// <summary>
+///     Completed AI extension features
+/// </summary>
+public class CompletedAiExtensionFeatures
+{
+    /// <summary>
+    ///     Id of extension containing this feature
+    /// </summary>
+    [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
+    [References(typeof(Extension))]
+    public required string IdExtension { get; set; }
 
+    /// <summary>
+    ///     Stored AI features
+    /// </summary>
+    [AllowUpdate(false)]
+    [SwaggerSchema(ReadOnly = true)]
+    public required AiExtensionFeatures AiExtensionFeatures { get; set; }
+}
 
 
 ///// <summary>
